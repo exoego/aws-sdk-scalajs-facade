@@ -116,7 +116,9 @@ package object lightsail {
 package lightsail {
   @js.native
   @JSImport("aws-sdk", "Lightsail")
-  class Lightsail(config: AWSConfig) extends js.Object {
+  class Lightsail() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def allocateStaticIp(params: AllocateStaticIpRequest): Request[AllocateStaticIpResult] = js.native
     def attachDisk(params: AttachDiskRequest): Request[AttachDiskResult] = js.native
     def attachInstancesToLoadBalancer(params: AttachInstancesToLoadBalancerRequest): Request[AttachInstancesToLoadBalancerResult] = js.native
@@ -5686,7 +5688,7 @@ package lightsail {
 
   /**
    * Describes a tag key and optional value assigned to an Amazon Lightsail resource.
-   *  For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+   *  For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
    */
   @js.native
   trait Tag extends js.Object {

@@ -26,6 +26,10 @@ package object stepfunctions {
   type SensitiveError = String
   type StateMachineList = js.Array[StateMachineListItem]
   type StateMachineStatus = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type TaskToken = String
   type TimeoutInSeconds = Double
   type Timestamp = js.Date
@@ -34,7 +38,9 @@ package object stepfunctions {
 package stepfunctions {
   @js.native
   @JSImport("aws-sdk", "StepFunctions")
-  class StepFunctions(config: AWSConfig) extends js.Object {
+  class StepFunctions() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createActivity(params: CreateActivityInput): Request[CreateActivityOutput] = js.native
     def createStateMachine(params: CreateStateMachineInput): Request[CreateStateMachineOutput] = js.native
     def deleteActivity(params: DeleteActivityInput): Request[DeleteActivityOutput] = js.native
@@ -48,11 +54,14 @@ package stepfunctions {
     def listActivities(params: ListActivitiesInput): Request[ListActivitiesOutput] = js.native
     def listExecutions(params: ListExecutionsInput): Request[ListExecutionsOutput] = js.native
     def listStateMachines(params: ListStateMachinesInput): Request[ListStateMachinesOutput] = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def sendTaskFailure(params: SendTaskFailureInput): Request[SendTaskFailureOutput] = js.native
     def sendTaskHeartbeat(params: SendTaskHeartbeatInput): Request[SendTaskHeartbeatOutput] = js.native
     def sendTaskSuccess(params: SendTaskSuccessInput): Request[SendTaskSuccessOutput] = js.native
     def startExecution(params: StartExecutionInput): Request[StartExecutionOutput] = js.native
     def stopExecution(params: StopExecutionInput): Request[StopExecutionOutput] = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateStateMachine(params: UpdateStateMachineInput): Request[UpdateStateMachineOutput] = js.native
   }
 
@@ -1130,6 +1139,36 @@ package stepfunctions {
   }
 
   @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var resourceArn: Arn
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+      resourceArn: Arn): ListTagsForResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceOutput {
+    def apply(
+      tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
+  @js.native
   trait SendTaskFailureInput extends js.Object {
     var taskToken: TaskToken
     var cause: js.UndefOr[SensitiveCause]
@@ -1371,6 +1410,58 @@ package stepfunctions {
   }
 
   /**
+   * Tags are key-value pairs that can be associated with Step Functions state machines and activities.
+   */
+  @js.native
+  trait Tag extends js.Object {
+    var key: js.UndefOr[TagKey]
+    var value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+      key: js.UndefOr[TagKey] = js.undefined,
+      value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key" -> key.map { x => x.asInstanceOf[js.Any] },
+        "value" -> value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var resourceArn: Arn
+    var tags: TagList
+  }
+
+  object TagResourceInput {
+    def apply(
+      resourceArn: Arn,
+      tags: TagList): TagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceInput]
+    }
+  }
+
+  @js.native
+  trait TagResourceOutput extends js.Object {
+
+  }
+
+  object TagResourceOutput {
+    def apply(): TagResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceOutput]
+    }
+  }
+
+  /**
    * Contains details about a task failure event.
    */
   @js.native
@@ -1476,7 +1567,7 @@ package stepfunctions {
   }
 
   /**
-   * <p/>
+   * Contains details about a task that failed to submit during an execution.
    */
   @js.native
   trait TaskSubmitFailedEventDetails extends js.Object {
@@ -1503,7 +1594,7 @@ package stepfunctions {
   }
 
   /**
-   * <p/>
+   * Contains details about a task submitted to a resource .
    */
   @js.native
   trait TaskSubmittedEventDetails extends js.Object {
@@ -1527,7 +1618,7 @@ package stepfunctions {
   }
 
   /**
-   * Contains details about the start of connected service by a task state.
+   * Contains details about the successful completion of a task state.
    */
   @js.native
   trait TaskSucceededEventDetails extends js.Object {
@@ -1551,7 +1642,7 @@ package stepfunctions {
   }
 
   /**
-   * Contains details about a connected service timeout that occured during an execution.
+   * Contains details about a resource timeout that occurred during an execution.
    */
   @js.native
   trait TaskTimedOutEventDetails extends js.Object {
@@ -1574,6 +1665,37 @@ package stepfunctions {
         "error" -> error.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaskTimedOutEventDetails]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var resourceArn: Arn
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceInput {
+    def apply(
+      resourceArn: Arn,
+      tagKeys: TagKeyList): UntagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceOutput extends js.Object {
+
+  }
+
+  object UntagResourceOutput {
+    def apply(): UntagResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceOutput]
     }
   }
 

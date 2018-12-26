@@ -38,7 +38,9 @@ package object workmail {
 package workmail {
   @js.native
   @JSImport("aws-sdk", "WorkMail")
-  class WorkMail(config: AWSConfig) extends js.Object {
+  class WorkMail() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateDelegateToResource(params: AssociateDelegateToResourceRequest): Request[AssociateDelegateToResourceResponse] = js.native
     def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse] = js.native

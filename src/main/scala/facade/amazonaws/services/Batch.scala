@@ -40,7 +40,9 @@ package object batch {
 package batch {
   @js.native
   @JSImport("aws-sdk", "Batch")
-  class Batch(config: AWSConfig) extends js.Object {
+  class Batch() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def createComputeEnvironment(params: CreateComputeEnvironmentRequest): Request[CreateComputeEnvironmentResponse] = js.native
     def createJobQueue(params: CreateJobQueueRequest): Request[CreateJobQueueResponse] = js.native
@@ -1352,7 +1354,7 @@ package batch {
   }
 
   /**
-   * Object representing any node overrides to a job definition that is used in a '''SubmitJob''' API operation.
+   * Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
    */
   @js.native
   trait NodeOverrides extends js.Object {
@@ -1418,7 +1420,7 @@ package batch {
   }
 
   /**
-   * Object representing any node overrides to a job definition that is used in a '''SubmitJob''' API operation.
+   * Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.
    */
   @js.native
   trait NodePropertyOverride extends js.Object {

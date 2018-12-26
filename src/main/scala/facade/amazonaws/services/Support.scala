@@ -58,7 +58,9 @@ package object support {
 package support {
   @js.native
   @JSImport("aws-sdk", "Support")
-  class Support(config: AWSConfig) extends js.Object {
+  class Support() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addAttachmentsToSet(params: AddAttachmentsToSetRequest): Request[AddAttachmentsToSetResponse] = js.native
     def addCommunicationToCase(params: AddCommunicationToCaseRequest): Request[AddCommunicationToCaseResponse] = js.native
     def createCase(params: CreateCaseRequest): Request[CreateCaseResponse] = js.native
@@ -97,7 +99,7 @@ package support {
   }
 
   /**
-   * The ID and expiry time of the attachment set returned by the '''AddAttachmentsToSet''' operation.
+   * The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation.
    */
   @js.native
   trait AddAttachmentsToSetResponse extends js.Object {
@@ -145,7 +147,7 @@ package support {
   }
 
   /**
-   * The result of the '''AddCommunicationToCase''' operation.
+   * The result of the <a>AddCommunicationToCase</a> operation.
    */
   @js.native
   trait AddCommunicationToCaseResponse extends js.Object {
@@ -184,7 +186,7 @@ package support {
   }
 
   /**
-   * The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the '''DescribeAttachment''' operation.
+   * The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <a>DescribeAttachment</a> operation.
    */
   @js.native
   trait AttachmentDetails extends js.Object {
@@ -253,19 +255,19 @@ package support {
   }
 
   /**
-   * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a '''DescribeCases''' request. <b>CaseDetails</b> contains the following fields:
-   * * <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
-   *  * <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to '''DescribeServices'''.
-   *  * <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.
-   *  * <b>language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
-   *  * <b>recentCommunications.</b> One or more '''Communication''' objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
-   *  * <b>nextToken.</b> A resumption point for pagination.
-   *  * <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to '''DescribeServices'''.
-   *  * <b>severityCode. </b>The severity code assigned to the case. Contains one of the values returned by the call to '''DescribeSeverityLevels'''.
-   *  * <b>status.</b> The status of the case in the AWS Support Center.
-   *  * <b>subject.</b> The subject line of the case.
-   *  * <b>submittedBy.</b> The email address of the account that submitted the case.
-   *  * <b>timeCreated.</b> The time the case was created, in ISO-8601 format.
+   * A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields:
+   * * ```caseId.``` The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
+   *  * ```categoryCode.``` The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.
+   *  * ```displayId.``` The identifier for the case on pages in the AWS Support Center.
+   *  * ```language.``` The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+   *  * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.
+   *  * ```nextToken.``` A resumption point for pagination.
+   *  * ```serviceCode.``` The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.
+   *  * ```severityCode. ```The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.
+   *  * ```status.``` The status of the case in the AWS Support Center.
+   *  * ```subject.``` The subject line of the case.
+   *  * ```submittedBy.``` The email address of the account that submitted the case.
+   *  * ```timeCreated.``` The time the case was created, in ISO-8601 format.
    */
   @js.native
   trait CaseDetails extends js.Object {
@@ -324,7 +326,7 @@ package support {
   }
 
   /**
-   * A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the '''DescribeServices''' response for each AWS service.
+   * A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service.
    */
   @js.native
   trait Category extends js.Object {
@@ -417,7 +419,7 @@ package support {
   }
 
   /**
-   * The AWS Support case ID returned by a successful completion of the '''CreateCase''' operation.
+   * The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation.
    */
   @js.native
   trait CreateCaseResponse extends js.Object {
@@ -435,7 +437,7 @@ package support {
   }
 
   /**
-   * The limit for the number of '''DescribeAttachment''' requests in a short period of time has been exceeded.
+   * The limit for the number of <a>DescribeAttachment</a> requests in a short period of time has been exceeded.
    */
   @js.native
   trait DescribeAttachmentLimitExceededException extends js.Object {
@@ -458,7 +460,7 @@ package support {
   }
 
   /**
-   * The content and file name of the attachment returned by the '''DescribeAttachment''' operation.
+   * The content and file name of the attachment returned by the <a>DescribeAttachment</a> operation.
    */
   @js.native
   trait DescribeAttachmentResponse extends js.Object {
@@ -518,7 +520,7 @@ package support {
   }
 
   /**
-   * Returns an array of '''CaseDetails''' objects and a <code>nextToken</code> that defines a point for pagination in the result set.
+   * Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.
    */
   @js.native
   trait DescribeCasesResponse extends js.Object {
@@ -569,7 +571,7 @@ package support {
   }
 
   /**
-   * The communications returned by the '''DescribeCommunications''' operation.
+   * The communications returned by the <a>DescribeCommunications</a> operation.
    */
   @js.native
   trait DescribeCommunicationsResponse extends js.Object {
@@ -611,7 +613,7 @@ package support {
   }
 
   /**
-   * The list of AWS services returned by the '''DescribeServices''' operation.
+   * The list of AWS services returned by the <a>DescribeServices</a> operation.
    */
   @js.native
   trait DescribeServicesResponse extends js.Object {
@@ -647,7 +649,7 @@ package support {
   }
 
   /**
-   * The list of severity levels returned by the '''DescribeSeverityLevels''' operation.
+   * The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation.
    */
   @js.native
   trait DescribeSeverityLevelsResponse extends js.Object {
@@ -683,7 +685,7 @@ package support {
   }
 
   /**
-   * The statuses of the Trusted Advisor checks returned by the '''DescribeTrustedAdvisorCheckRefreshStatuses''' operation.
+   * The statuses of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> operation.
    */
   @js.native
   trait DescribeTrustedAdvisorCheckRefreshStatusesResponse extends js.Object {
@@ -722,7 +724,7 @@ package support {
   }
 
   /**
-   * The result of the Trusted Advisor check returned by the '''DescribeTrustedAdvisorCheckResult''' operation.
+   * The result of the Trusted Advisor check returned by the <a>DescribeTrustedAdvisorCheckResult</a> operation.
    */
   @js.native
   trait DescribeTrustedAdvisorCheckResultResponse extends js.Object {
@@ -758,7 +760,7 @@ package support {
   }
 
   /**
-   * The summaries of the Trusted Advisor checks returned by the '''DescribeTrustedAdvisorCheckSummaries''' operation.
+   * The summaries of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckSummaries</a> operation.
    */
   @js.native
   trait DescribeTrustedAdvisorCheckSummariesResponse extends js.Object {
@@ -794,7 +796,7 @@ package support {
   }
 
   /**
-   * Information about the Trusted Advisor checks returned by the '''DescribeTrustedAdvisorChecks''' operation.
+   * Information about the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorChecks</a> operation.
    */
   @js.native
   trait DescribeTrustedAdvisorChecksResponse extends js.Object {
@@ -895,7 +897,7 @@ package support {
   }
 
   /**
-   * The status of the case returned by the '''ResolveCase''' operation.
+   * The status of the case returned by the <a>ResolveCase</a> operation.
    */
   @js.native
   trait ResolveCaseResponse extends js.Object {
@@ -916,7 +918,7 @@ package support {
   }
 
   /**
-   * Information about an AWS service returned by the '''DescribeServices''' operation.
+   * Information about an AWS service returned by the <a>DescribeServices</a> operation.
    */
   @js.native
   trait Service extends js.Object {
@@ -1033,7 +1035,7 @@ package support {
   }
 
   /**
-   * The results of a Trusted Advisor check returned by '''DescribeTrustedAdvisorCheckResult'''.
+   * The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>.
    */
   @js.native
   trait TrustedAdvisorCheckResult extends js.Object {
@@ -1150,7 +1152,7 @@ package support {
   }
 
   /**
-   * Details about AWS resources that were analyzed in a call to Trusted Advisor '''DescribeTrustedAdvisorCheckSummaries'''.
+   * Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
    */
   @js.native
   trait TrustedAdvisorResourcesSummary extends js.Object {

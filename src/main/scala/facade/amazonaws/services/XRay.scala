@@ -86,7 +86,9 @@ package object xray {
 package xray {
   @js.native
   @JSImport("aws-sdk", "XRay")
-  class XRay(config: AWSConfig) extends js.Object {
+  class XRay() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchGetTraces(params: BatchGetTracesRequest): Request[BatchGetTracesResult] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResult] = js.native
     def createSamplingRule(params: CreateSamplingRuleRequest): Request[CreateSamplingRuleResult] = js.native
@@ -1392,7 +1394,7 @@ package xray {
   }
 
   /**
-   * A '''SamplingRule''' and its metadata.
+   * A <a>SamplingRule</a> and its metadata.
    */
   @js.native
   trait SamplingRuleRecord extends js.Object {
@@ -1497,7 +1499,7 @@ package xray {
   }
 
   /**
-   * Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to '''GetSamplingTargets'''.
+   * Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a>GetSamplingTargets</a>.
    */
   @js.native
   trait SamplingStatisticsDocument extends js.Object {
@@ -1530,7 +1532,7 @@ package xray {
   }
 
   /**
-   * Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called '''GetSamplingTargets'''.
+   * Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a>GetSamplingTargets</a>.
    */
   @js.native
   trait SamplingTargetDocument extends js.Object {
@@ -1560,8 +1562,8 @@ package xray {
   }
 
   /**
-   * A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with '''PutTraceSegments''', or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.
-   *  For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
+   * A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.
+   *  For the full segment document schema, see [[https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html|AWS X-Ray Segment Documents]] in the <i>AWS X-Ray Developer Guide</i>.
    */
   @js.native
   trait Segment extends js.Object {
@@ -1843,7 +1845,7 @@ package xray {
   }
 
   /**
-   * Sampling statistics from a call to '''GetSamplingTargets''' that X-Ray could not process.
+   * Sampling statistics from a call to <a>GetSamplingTargets</a> that X-Ray could not process.
    */
   @js.native
   trait UnprocessedStatistics extends js.Object {

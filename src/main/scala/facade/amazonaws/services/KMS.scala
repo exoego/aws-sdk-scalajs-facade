@@ -61,7 +61,9 @@ package object kms {
 package kms {
   @js.native
   @JSImport("aws-sdk", "KMS")
-  class KMS(config: AWSConfig) extends js.Object {
+  class KMS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelKeyDeletion(params: CancelKeyDeletionRequest): Request[CancelKeyDeletionResponse] = js.native
     def connectCustomKeyStore(params: ConnectCustomKeyStoreRequest): Request[ConnectCustomKeyStoreResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[js.Object] = js.native
@@ -961,8 +963,8 @@ package kms {
   }
 
   /**
-   * A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
-   *  Grant constraints apply only to operations that accept encryption context as input. For example, the <code> '''DescribeKey''' </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In constrast, the <code> '''Encrypt''' </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.
+   * A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [[http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html|Encryption Context]] in the <i>AWS Key Management Service Developer Guide</i>.
+   *  Grant constraints apply only to operations that accept encryption context as input. For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption context as input. A grant that allows the <code>DescribeKey</code> operation does so regardless of the grant constraints. In constrast, the <code> <a>Encrypt</a> </code> operation accepts encryption context as input. A grant that allows the <code>Encrypt</code> operation does so only when the encryption context of the <code>Encrypt</code> operation satisfies the grant constraints.
    */
   @js.native
   trait GrantConstraints extends js.Object {
@@ -1108,7 +1110,7 @@ package kms {
 
   /**
    * Contains metadata about a customer master key (CMK).
-   *  This data type is used as a response element for the '''CreateKey''' and '''DescribeKey''' operations.
+   *  This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.
    */
   @js.native
   trait KeyMetadata extends js.Object {
@@ -1568,7 +1570,7 @@ package kms {
 
   /**
    * A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.
-   *  For information about the rules that apply to tag keys and tag values, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+   *  For information about the rules that apply to tag keys and tag values, see [[http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html|User-Defined Tag Restrictions]] in the <i>AWS Billing and Cost Management User Guide</i>.
    */
   @js.native
   trait Tag extends js.Object {

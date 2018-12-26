@@ -14,7 +14,6 @@ package object ecr {
   type BatchedOperationLayerDigestList = js.Array[BatchedOperationLayerDigest]
   type CreationTimestamp = js.Date
   type EvaluationTimestamp = js.Date
-  type ExceptionMessage = String
   type ExpirationTimestamp = js.Date
   type ForceFlag = Boolean
   type GetAuthorizationTokenRegistryIdList = js.Array[RegistryId]
@@ -44,6 +43,7 @@ package object ecr {
   type LifecyclePolicyPreviewStatus = String
   type LifecyclePolicyRulePriority = Int
   type LifecyclePolicyText = String
+  type LifecyclePreviewMaxResults = Int
   type MaxResults = Int
   type MediaType = String
   type MediaTypeList = js.Array[MediaType]
@@ -56,7 +56,11 @@ package object ecr {
   type RepositoryName = String
   type RepositoryNameList = js.Array[RepositoryName]
   type RepositoryPolicyText = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
   type TagStatus = String
+  type TagValue = String
   type UploadId = String
   type Url = String
 }
@@ -64,7 +68,9 @@ package object ecr {
 package ecr {
   @js.native
   @JSImport("aws-sdk", "ECR")
-  class ECR(config: AWSConfig) extends js.Object {
+  class ECR() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchCheckLayerAvailability(params: BatchCheckLayerAvailabilityRequest): Request[BatchCheckLayerAvailabilityResponse] = js.native
     def batchDeleteImage(params: BatchDeleteImageRequest): Request[BatchDeleteImageResponse] = js.native
     def batchGetImage(params: BatchGetImageRequest): Request[BatchGetImageResponse] = js.native
@@ -82,10 +88,13 @@ package ecr {
     def getRepositoryPolicy(params: GetRepositoryPolicyRequest): Request[GetRepositoryPolicyResponse] = js.native
     def initiateLayerUpload(params: InitiateLayerUploadRequest): Request[InitiateLayerUploadResponse] = js.native
     def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putImage(params: PutImageRequest): Request[PutImageResponse] = js.native
     def putLifecyclePolicy(params: PutLifecyclePolicyRequest): Request[PutLifecyclePolicyResponse] = js.native
     def setRepositoryPolicy(params: SetRepositoryPolicyRequest): Request[SetRepositoryPolicyResponse] = js.native
     def startLifecyclePolicyPreview(params: StartLifecyclePolicyPreviewRequest): Request[StartLifecyclePolicyPreviewResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def uploadLayerPart(params: UploadLayerPartRequest): Request[UploadLayerPartResponse] = js.native
   }
 
@@ -287,13 +296,16 @@ package ecr {
   @js.native
   trait CreateRepositoryRequest extends js.Object {
     var repositoryName: RepositoryName
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateRepositoryRequest {
     def apply(
-      repositoryName: RepositoryName): CreateRepositoryRequest = {
+      repositoryName: RepositoryName,
+      tags: js.UndefOr[TagList] = js.undefined): CreateRepositoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "repositoryName" -> repositoryName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRepositoryRequest]
     }
@@ -432,7 +444,7 @@ package ecr {
   }
 
   /**
-   * An object representing a filter on a '''DescribeImages''' operation.
+   * An object representing a filter on a <a>DescribeImages</a> operation.
    */
   @js.native
   trait DescribeImagesFilter extends js.Object {
@@ -539,14 +551,6 @@ package ecr {
     }
   }
 
-  /**
-   * The specified layer upload does not contain any layer parts.
-   */
-  @js.native
-  trait EmptyUploadExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
   @js.native
   trait GetAuthorizationTokenRequest extends js.Object {
     var registryIds: js.UndefOr[GetAuthorizationTokenRegistryIdList]
@@ -621,7 +625,7 @@ package ecr {
     var repositoryName: RepositoryName
     var filter: js.UndefOr[LifecyclePolicyPreviewFilter]
     var imageIds: js.UndefOr[ImageIdentifierList]
-    var maxResults: js.UndefOr[MaxResults]
+    var maxResults: js.UndefOr[LifecyclePreviewMaxResults]
     var nextToken: js.UndefOr[NextToken]
     var registryId: js.UndefOr[RegistryId]
   }
@@ -631,7 +635,7 @@ package ecr {
       repositoryName: RepositoryName,
       filter: js.UndefOr[LifecyclePolicyPreviewFilter] = js.undefined,
       imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
+      maxResults: js.UndefOr[LifecyclePreviewMaxResults] = js.undefined,
       nextToken: js.UndefOr[NextToken] = js.undefined,
       registryId: js.UndefOr[RegistryId] = js.undefined): GetLifecyclePolicyPreviewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -794,15 +798,7 @@ package ecr {
   }
 
   /**
-   * The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.
-   */
-  @js.native
-  trait ImageAlreadyExistsExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * An object that describes an image returned by a '''DescribeImages''' operation.
+   * An object that describes an image returned by a <a>DescribeImages</a> operation.
    */
   @js.native
   trait ImageDetail extends js.Object {
@@ -889,14 +885,6 @@ package ecr {
     }
   }
 
-  /**
-   * The image requested does not exist in the specified repository.
-   */
-  @js.native
-  trait ImageNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
   @js.native
   trait InitiateLayerUploadRequest extends js.Object {
     var repositoryName: RepositoryName
@@ -934,34 +922,6 @@ package ecr {
   }
 
   /**
-   * The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.
-   */
-  @js.native
-  trait InvalidLayerExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.
-   */
-  @js.native
-  trait InvalidLayerPartExceptionException extends js.Object {
-    val repositoryName: RepositoryName
-    val lastValidByteReceived: PartSize
-    val uploadId: UploadId
-    val registryId: RegistryId
-    val message: ExceptionMessage
-  }
-
-  /**
-   * The specified parameter is invalid. Review the available parameters for the API request.
-   */
-  @js.native
-  trait InvalidParameterExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
    * An object representing an Amazon ECR image layer.
    */
   @js.native
@@ -986,14 +946,6 @@ package ecr {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Layer]
     }
-  }
-
-  /**
-   * The image layer already exists in the associated repository.
-   */
-  @js.native
-  trait LayerAlreadyExistsExceptionException extends js.Object {
-    val message: ExceptionMessage
   }
 
   object LayerAvailabilityEnum {
@@ -1035,38 +987,6 @@ package ecr {
   }
 
   /**
-   * The specified layer is not available because it is not associated with an image. Unassociated image layers may be cleaned up at any time.
-   */
-  @js.native
-  trait LayerInaccessibleExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * Layer parts must be at least 5 MiB in size.
-   */
-  @js.native
-  trait LayerPartTooSmallExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * The specified layers could not be found, or the specified layer is not valid for this repository.
-   */
-  @js.native
-  trait LayersNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * The lifecycle policy could not be found, and no policy is set to the repository.
-   */
-  @js.native
-  trait LifecyclePolicyNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
    * The filter for the lifecycle policy preview.
    */
   @js.native
@@ -1082,22 +1002,6 @@ package ecr {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicyPreviewFilter]
     }
-  }
-
-  /**
-   * The previous lifecycle policy preview request has not completed. Please try again later.
-   */
-  @js.native
-  trait LifecyclePolicyPreviewInProgressExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * There is no dry run for this repository.
-   */
-  @js.native
-  trait LifecyclePolicyPreviewNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
   }
 
   /**
@@ -1176,15 +1080,7 @@ package ecr {
   }
 
   /**
-   * The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default Service Limits</a> in the Amazon Elastic Container Registry User Guide.
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * An object representing a filter on a '''ListImages''' operation.
+   * An object representing a filter on a <a>ListImages</a> operation.
    */
   @js.native
   trait ListImagesFilter extends js.Object {
@@ -1243,6 +1139,36 @@ package ecr {
         "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListImagesResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+      resourceArn: Arn): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+      tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -1357,46 +1283,6 @@ package ecr {
     }
   }
 
-  /**
-   * The specified repository already exists in the specified registry.
-   */
-  @js.native
-  trait RepositoryAlreadyExistsExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.
-   */
-  @js.native
-  trait RepositoryNotEmptyExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.
-   */
-  @js.native
-  trait RepositoryNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * The specified repository and registry combination does not have an associated repository policy.
-   */
-  @js.native
-  trait RepositoryPolicyNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
-  /**
-   * These errors are usually caused by a server-side issue.
-   */
-  @js.native
-  trait ServerExceptionException extends js.Object {
-    val message: ExceptionMessage
-  }
-
   @js.native
   trait SetRepositoryPolicyRequest extends js.Object {
     var policyText: RepositoryPolicyText
@@ -1487,11 +1373,95 @@ package ecr {
     }
   }
 
+  /**
+   * The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+   */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+      Key: js.UndefOr[TagKey] = js.undefined,
+      Value: js.UndefOr[TagValue] = js.undefined): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
+        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tags: TagList
+  }
+
+  object TagResourceRequest {
+    def apply(
+      resourceArn: Arn,
+      tags: TagList): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {
+
+  }
+
+  object TagResourceResponse {
+    def apply(): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+    }
+  }
+
   object TagStatusEnum {
     val TAGGED = "TAGGED"
     val UNTAGGED = "UNTAGGED"
+    val ANY = "ANY"
 
-    val values = IndexedSeq(TAGGED, UNTAGGED)
+    val values = IndexedSeq(TAGGED, UNTAGGED, ANY)
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+      resourceArn: Arn,
+      tagKeys: TagKeyList): UntagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {
+
+  }
+
+  object UntagResourceResponse {
+    def apply(): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native
@@ -1546,13 +1516,5 @@ package ecr {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadLayerPartResponse]
     }
-  }
-
-  /**
-   * The upload could not be found, or the specified upload id is not valid for this repository.
-   */
-  @js.native
-  trait UploadNotFoundExceptionException extends js.Object {
-    val message: ExceptionMessage
   }
 }

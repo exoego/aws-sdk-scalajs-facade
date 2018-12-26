@@ -39,7 +39,9 @@ package object resourcegroups {
 package resourcegroups {
   @js.native
   @JSImport("aws-sdk", "ResourceGroups")
-  class ResourceGroups(config: AWSConfig) extends js.Object {
+  class ResourceGroups() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createGroup(params: CreateGroupInput): Request[CreateGroupOutput] = js.native
     def deleteGroup(params: DeleteGroupInput): Request[DeleteGroupOutput] = js.native
     def getGroup(params: GetGroupInput): Request[GetGroupOutput] = js.native

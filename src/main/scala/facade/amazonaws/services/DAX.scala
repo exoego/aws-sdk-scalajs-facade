@@ -39,7 +39,9 @@ package object dax {
 package dax {
   @js.native
   @JSImport("aws-sdk", "DAX")
-  class DAX(config: AWSConfig) extends js.Object {
+  class DAX() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def createParameterGroup(params: CreateParameterGroupRequest): Request[CreateParameterGroupResponse] = js.native
     def createSubnetGroup(params: CreateSubnetGroupRequest): Request[CreateSubnetGroupResponse] = js.native

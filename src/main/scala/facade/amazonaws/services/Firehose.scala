@@ -39,6 +39,7 @@ package object firehose {
   type ElasticsearchTypeName = String
   type ErrorCode = String
   type ErrorMessage = String
+  type ErrorOutputPrefix = String
   type HECAcknowledgmentTimeoutInSeconds = Int
   type HECEndpoint = String
   type HECEndpointType = String
@@ -92,7 +93,9 @@ package object firehose {
 package firehose {
   @js.native
   @JSImport("aws-sdk", "Firehose")
-  class Firehose(config: AWSConfig) extends js.Object {
+  class Firehose() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createDeliveryStream(params: CreateDeliveryStreamInput): Request[CreateDeliveryStreamOutput] = js.native
     def deleteDeliveryStream(params: DeleteDeliveryStreamInput): Request[DeleteDeliveryStreamOutput] = js.native
     def describeDeliveryStream(params: DescribeDeliveryStreamInput): Request[DescribeDeliveryStreamOutput] = js.native
@@ -240,7 +243,7 @@ package firehose {
   }
 
   /**
-   * Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record Format Conversion</a>.
+   * Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then serialize it to the Parquet or ORC format. For more information, see [[https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html|Kinesis Data Firehose Record Format Conversion]].
    */
   @js.native
   trait DataFormatConversionConfiguration extends js.Object {
@@ -421,7 +424,7 @@ package firehose {
   }
 
   /**
-   * The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the '''Serializer'''. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.
+   * The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers: the [[https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON|Apache Hive JSON SerDe]] and the [[https://github.com/rcongiu/Hive-JSON-Serde|OpenX JSON SerDe]].
    */
   @js.native
   trait Deserializer extends js.Object {
@@ -704,6 +707,7 @@ package firehose {
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration]
@@ -719,6 +723,7 @@ package firehose {
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
       S3BackupConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined,
@@ -731,6 +736,7 @@ package firehose {
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "S3BackupConfiguration" -> S3BackupConfiguration.map { x => x.asInstanceOf[js.Any] },
@@ -752,6 +758,7 @@ package firehose {
     var RoleARN: RoleARN
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var S3BackupDescription: js.UndefOr[S3DestinationDescription]
@@ -767,6 +774,7 @@ package firehose {
       RoleARN: RoleARN,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
       DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
       S3BackupDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
@@ -779,6 +787,7 @@ package firehose {
         "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
         "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "S3BackupDescription" -> S3BackupDescription.map { x => x.asInstanceOf[js.Any] },
@@ -799,6 +808,7 @@ package firehose {
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
     var RoleARN: js.UndefOr[RoleARN]
@@ -814,6 +824,7 @@ package firehose {
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined,
@@ -826,6 +837,7 @@ package firehose {
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "DataFormatConversionConfiguration" -> DataFormatConversionConfiguration.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "ProcessingConfiguration" -> ProcessingConfiguration.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] },
@@ -1066,7 +1078,7 @@ package firehose {
   }
 
   /**
-   * A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.
+   * A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see [[https://orc.apache.org/docs/|Apache ORC]].
    */
   @js.native
   trait OrcSerDe extends js.Object {
@@ -1137,7 +1149,7 @@ package firehose {
   }
 
   /**
-   * A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.
+   * A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see [[https://parquet.apache.org/documentation/latest/|Apache Parquet]].
    */
   @js.native
   trait ParquetSerDe extends js.Object {
@@ -1295,7 +1307,7 @@ package firehose {
   }
 
   /**
-   * Contains the result for an individual record from a '''PutRecordBatch''' request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.
+   * Contains the result for an individual record from a <a>PutRecordBatch</a> request. If the record is successfully added to your delivery stream, it receives a record ID. If the record fails to be added to your delivery stream, the result includes an error code and an error message.
    */
   @js.native
   trait PutRecordBatchResponseEntry extends js.Object {
@@ -1556,6 +1568,7 @@ package firehose {
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
   }
 
@@ -1567,6 +1580,7 @@ package firehose {
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined): S3DestinationConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
@@ -1575,6 +1589,7 @@ package firehose {
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationConfiguration]
@@ -1592,6 +1607,7 @@ package firehose {
     var EncryptionConfiguration: EncryptionConfiguration
     var RoleARN: RoleARN
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
   }
 
@@ -1603,6 +1619,7 @@ package firehose {
       EncryptionConfiguration: EncryptionConfiguration,
       RoleARN: RoleARN,
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined): S3DestinationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
@@ -1611,6 +1628,7 @@ package firehose {
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
         "RoleARN" -> RoleARN.asInstanceOf[js.Any],
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationDescription]
@@ -1627,6 +1645,7 @@ package firehose {
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var RoleARN: js.UndefOr[RoleARN]
   }
@@ -1638,6 +1657,7 @@ package firehose {
       CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
       CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
       EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+      ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
       Prefix: js.UndefOr[Prefix] = js.undefined,
       RoleARN: js.UndefOr[RoleARN] = js.undefined): S3DestinationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1646,6 +1666,7 @@ package firehose {
         "CloudWatchLoggingOptions" -> CloudWatchLoggingOptions.map { x => x.asInstanceOf[js.Any] },
         "CompressionFormat" -> CompressionFormat.map { x => x.asInstanceOf[js.Any] },
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "ErrorOutputPrefix" -> ErrorOutputPrefix.map { x => x.asInstanceOf[js.Any] },
         "Prefix" -> Prefix.map { x => x.asInstanceOf[js.Any] },
         "RoleARN" -> RoleARN.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -1687,7 +1708,7 @@ package firehose {
   }
 
   /**
-   * The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>.
+   * The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the [[https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html|ORC SerDe]] and the [[https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html|Parquet SerDe]].
    */
   @js.native
   trait Serializer extends js.Object {

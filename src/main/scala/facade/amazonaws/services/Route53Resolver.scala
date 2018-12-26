@@ -49,7 +49,9 @@ package object route53resolver {
 package route53resolver {
   @js.native
   @JSImport("aws-sdk", "Route53Resolver")
-  class Route53Resolver(config: AWSConfig) extends js.Object {
+  class Route53Resolver() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateResolverEndpointIpAddress(params: AssociateResolverEndpointIpAddressRequest): Request[AssociateResolverEndpointIpAddressResponse] = js.native
     def associateResolverRule(params: AssociateResolverRuleRequest): Request[AssociateResolverRuleResponse] = js.native
     def createResolverEndpoint(params: CreateResolverEndpointRequest): Request[CreateResolverEndpointResponse] = js.native
@@ -504,7 +506,7 @@ package route53resolver {
   }
 
   /**
-   * In an '''CreateResolverEndpoint''' request, a subnet and IP address that you want to use for DNS queries.
+   * In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries.
    */
   @js.native
   trait IpAddressRequest extends js.Object {
@@ -525,7 +527,7 @@ package route53resolver {
   }
 
   /**
-   * In the response to a '''GetResolverEndpoint''' request, information about the IP addresses that the resolver endpoint uses for DNS queries.
+   * In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver endpoint uses for DNS queries.
    */
   @js.native
   trait IpAddressResponse extends js.Object {
@@ -576,7 +578,7 @@ package route53resolver {
   }
 
   /**
-   * In an '''UpdateResolverEndpoint''' request, information about an IP address to update.
+   * In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
    */
   @js.native
   trait IpAddressUpdate extends js.Object {
@@ -843,7 +845,7 @@ package route53resolver {
   }
 
   /**
-   * In the response to a '''CreateResolverEndpoint''', '''DeleteResolverEndpoint''', '''GetResolverEndpoint''', '''ListResolverEndpoints''', or '''UpdateResolverEndpoint''' request, a complex type that contains settings for an existing inbound or outbound resolver endpoint.
+   * In the response to a <a>CreateResolverEndpoint</a>, <a>DeleteResolverEndpoint</a>, <a>GetResolverEndpoint</a>, <a>ListResolverEndpoints</a>, or <a>UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound resolver endpoint.
    */
   @js.native
   trait ResolverEndpoint extends js.Object {
@@ -912,7 +914,7 @@ package route53resolver {
   }
 
   /**
-   * For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a '''CreateResolverRule''', '''DeleteResolverRule''', '''GetResolverRule''', '''ListResolverRules''', or '''UpdateResolverRule''' request.
+   * For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or <a>UpdateResolverRule</a> request.
    */
   @js.native
   trait ResolverRule extends js.Object {
@@ -963,7 +965,7 @@ package route53resolver {
   }
 
   /**
-   * In the response to an '''AssociateResolverRule''', '''DisassociateResolverRule''', or '''ListResolverRuleAssociations''' request, information about an association between a resolver rule and a VPC.
+   * In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC.
    */
   @js.native
   trait ResolverRuleAssociation extends js.Object {
@@ -1006,7 +1008,7 @@ package route53resolver {
   }
 
   /**
-   * In an '''UpdateResolverRule''' request, information about the changes that you want to make.
+   * In an <a>UpdateResolverRule</a> request, information about the changes that you want to make.
    */
   @js.native
   trait ResolverRuleConfig extends js.Object {
@@ -1107,7 +1109,7 @@ package route53resolver {
   }
 
   /**
-   * In a '''CreateResolverRule''' request, an array of the IPs that you want to forward DNS queries to.
+   * In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.
    */
   @js.native
   trait TargetAddress extends js.Object {

@@ -207,7 +207,9 @@ package object servicecatalog {
 package servicecatalog {
   @js.native
   @JSImport("aws-sdk", "ServiceCatalog")
-  class ServiceCatalog(config: AWSConfig) extends js.Object {
+  class ServiceCatalog() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptPortfolioShare(params: AcceptPortfolioShareInput): Request[AcceptPortfolioShareOutput] = js.native
     def associatePrincipalWithPortfolio(params: AssociatePrincipalWithPortfolioInput): Request[AssociatePrincipalWithPortfolioOutput] = js.native
     def associateProductWithPortfolio(params: AssociateProductWithPortfolioInput): Request[AssociateProductWithPortfolioOutput] = js.native
@@ -2991,7 +2993,7 @@ package servicecatalog {
   }
 
   /**
-   * <p/>
+   * Information about the organization node.
    */
   @js.native
   trait OrganizationNode extends js.Object {
@@ -3617,7 +3619,7 @@ package servicecatalog {
 
   /**
    * The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
-   *  For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.
+   *  For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
    */
   @js.native
   trait ProvisioningArtifactPreferences extends js.Object {

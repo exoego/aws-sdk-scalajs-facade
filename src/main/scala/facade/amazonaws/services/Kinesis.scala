@@ -58,7 +58,9 @@ package object kinesis {
 package kinesis {
   @js.native
   @JSImport("aws-sdk", "Kinesis")
-  class Kinesis(config: AWSConfig) extends js.Object {
+  class Kinesis() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToStream(params: AddTagsToStreamInput): Request[js.Object] = js.native
     def createStream(params: CreateStreamInput): Request[js.Object] = js.native
     def decreaseStreamRetentionPeriod(params: DecreaseStreamRetentionPeriodInput): Request[js.Object] = js.native
@@ -196,7 +198,7 @@ package kinesis {
   }
 
   /**
-   * Represents the input for '''DecreaseStreamRetentionPeriod'''.
+   * Represents the input for <a>DecreaseStreamRetentionPeriod</a>.
    */
   @js.native
   trait DecreaseStreamRetentionPeriodInput extends js.Object {
@@ -217,7 +219,7 @@ package kinesis {
   }
 
   /**
-   * Represents the input for '''DeleteStream'''.
+   * Represents the input for <a>DeleteStream</a>.
    */
   @js.native
   trait DeleteStreamInput extends js.Object {
@@ -398,7 +400,7 @@ package kinesis {
   }
 
   /**
-   * Represents the input for '''DisableEnhancedMonitoring'''.
+   * Represents the input for <a>DisableEnhancedMonitoring</a>.
    */
   @js.native
   trait DisableEnhancedMonitoringInput extends js.Object {
@@ -419,7 +421,7 @@ package kinesis {
   }
 
   /**
-   * Represents the input for '''EnableEnhancedMonitoring'''.
+   * Represents the input for <a>EnableEnhancedMonitoring</a>.
    */
   @js.native
   trait EnableEnhancedMonitoringInput extends js.Object {
@@ -465,7 +467,7 @@ package kinesis {
   }
 
   /**
-   * Represents the output for '''EnableEnhancedMonitoring''' and '''DisableEnhancedMonitoring'''.
+   * Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>.
    */
   @js.native
   trait EnhancedMonitoringOutput extends js.Object {
@@ -505,7 +507,7 @@ package kinesis {
   }
 
   /**
-   * Represents the input for '''GetRecords'''.
+   * Represents the input for <a>GetRecords</a>.
    */
   @js.native
   trait GetRecordsInput extends js.Object {
@@ -526,7 +528,7 @@ package kinesis {
   }
 
   /**
-   * Represents the output for '''GetRecords'''.
+   * Represents the output for <a>GetRecords</a>.
    */
   @js.native
   trait GetRecordsOutput extends js.Object {
@@ -619,7 +621,7 @@ package kinesis {
   }
 
   /**
-   * Represents the input for '''IncreaseStreamRetentionPeriod'''.
+   * Represents the input for <a>IncreaseStreamRetentionPeriod</a>.
    */
   @js.native
   trait IncreaseStreamRetentionPeriodInput extends js.Object {
@@ -669,7 +671,7 @@ package kinesis {
   }
 
   /**
-   * The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+   * The request was rejected because the state of the specified resource isn't valid for this request. For more information, see [[http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html|How Key State Affects Use of a Customer Master Key]] in the <i>AWS Key Management Service Developer Guide</i>.
    */
   @js.native
   trait KMSInvalidStateExceptionException extends js.Object {
@@ -693,7 +695,7 @@ package kinesis {
   }
 
   /**
-   * The request was denied due to request throttling. For more information about throttling, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>.
+   * The request was denied due to request throttling. For more information about throttling, see [[http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second|Limits]] in the <i>AWS Key Management Service Developer Guide</i>.
    */
   @js.native
   trait KMSThrottlingExceptionException extends js.Object {
@@ -920,7 +922,7 @@ package kinesis {
   }
 
   /**
-   * The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>.
+   * The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see [[http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html|Streams Limits]] in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and [[http://docs.aws.amazon.com/general/latest/gr/api-retries.html|Error Retries and Exponential Backoff in AWS]] in the <i>AWS General Reference</i>.
    */
   @js.native
   trait ProvisionedThroughputExceededExceptionException extends js.Object {
@@ -1332,7 +1334,7 @@ package kinesis {
   }
 
   /**
-   * Represents the output for '''DescribeStream'''.
+   * Represents the output for <a>DescribeStream</a>.
    */
   @js.native
   trait StreamDescription extends js.Object {
@@ -1377,7 +1379,7 @@ package kinesis {
   }
 
   /**
-   * Represents the output for '''DescribeStreamSummary'''
+   * Represents the output for <a>DescribeStreamSummary</a>
    */
   @js.native
   trait StreamDescriptionSummary extends js.Object {
@@ -1431,7 +1433,7 @@ package kinesis {
   }
 
   /**
-   * After you call '''SubscribeToShard''', Kinesis Data Streams sends events of this type to your consumer.
+   * After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of this type to your consumer.
    */
   @js.native
   trait SubscribeToShardEvent extends js.Object {

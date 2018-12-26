@@ -104,7 +104,9 @@ package object workspaces {
 package workspaces {
   @js.native
   @JSImport("aws-sdk", "WorkSpaces")
-  class WorkSpaces(config: AWSConfig) extends js.Object {
+  class WorkSpaces() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateIpGroups(params: AssociateIpGroupsRequest): Request[AssociateIpGroupsResult] = js.native
     def authorizeIpRules(params: AuthorizeIpRulesRequest): Request[AuthorizeIpRulesResult] = js.native
     def createIpGroup(params: CreateIpGroupRequest): Request[CreateIpGroupResult] = js.native
@@ -966,7 +968,7 @@ package workspaces {
   }
 
   /**
-   * Describes a WorkSpace that could not be rebooted. ('''RebootWorkspaces'''), rebuilt ('''RebuildWorkspaces'''), terminated ('''TerminateWorkspaces'''), started ('''StartWorkspaces'''), or stopped ('''StopWorkspaces''').
+   * Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
    */
   @js.native
   trait FailedWorkspaceChangeRequest extends js.Object {

@@ -54,7 +54,9 @@ package object comprehend {
 package comprehend {
   @js.native
   @JSImport("aws-sdk", "Comprehend")
-  class Comprehend(config: AWSConfig) extends js.Object {
+  class Comprehend() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchDetectDominantLanguage(params: BatchDetectDominantLanguageRequest): Request[BatchDetectDominantLanguageResponse] = js.native
     def batchDetectEntities(params: BatchDetectEntitiesRequest): Request[BatchDetectEntitiesResponse] = js.native
     def batchDetectKeyPhrases(params: BatchDetectKeyPhrasesRequest): Request[BatchDetectKeyPhrasesResponse] = js.native
@@ -95,6 +97,8 @@ package comprehend {
     def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] = js.native
     def stopKeyPhrasesDetectionJob(params: StopKeyPhrasesDetectionJobRequest): Request[StopKeyPhrasesDetectionJobResponse] = js.native
     def stopSentimentDetectionJob(params: StopSentimentDetectionJobRequest): Request[StopSentimentDetectionJobResponse] = js.native
+    def stopTrainingDocumentClassifier(params: StopTrainingDocumentClassifierRequest): Request[StopTrainingDocumentClassifierResponse] = js.native
+    def stopTrainingEntityRecognizer(params: StopTrainingEntityRecognizerRequest): Request[StopTrainingEntityRecognizerResponse] = js.native
   }
 
   /**
@@ -2083,10 +2087,12 @@ package comprehend {
     val SUBMITTED = "SUBMITTED"
     val TRAINING = "TRAINING"
     val DELETING = "DELETING"
+    val STOP_REQUESTED = "STOP_REQUESTED"
+    val STOPPED = "STOPPED"
     val IN_ERROR = "IN_ERROR"
     val TRAINED = "TRAINED"
 
-    val values = IndexedSeq(SUBMITTED, TRAINING, DELETING, IN_ERROR, TRAINED)
+    val values = IndexedSeq(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
   }
 
   /**
@@ -2677,6 +2683,62 @@ package comprehend {
         "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopSentimentDetectionJobResponse]
+    }
+  }
+
+  @js.native
+  trait StopTrainingDocumentClassifierRequest extends js.Object {
+    var DocumentClassifierArn: DocumentClassifierArn
+  }
+
+  object StopTrainingDocumentClassifierRequest {
+    def apply(
+      DocumentClassifierArn: DocumentClassifierArn): StopTrainingDocumentClassifierRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTrainingDocumentClassifierRequest]
+    }
+  }
+
+  @js.native
+  trait StopTrainingDocumentClassifierResponse extends js.Object {
+
+  }
+
+  object StopTrainingDocumentClassifierResponse {
+    def apply(): StopTrainingDocumentClassifierResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTrainingDocumentClassifierResponse]
+    }
+  }
+
+  @js.native
+  trait StopTrainingEntityRecognizerRequest extends js.Object {
+    var EntityRecognizerArn: EntityRecognizerArn
+  }
+
+  object StopTrainingEntityRecognizerRequest {
+    def apply(
+      EntityRecognizerArn: EntityRecognizerArn): StopTrainingEntityRecognizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTrainingEntityRecognizerRequest]
+    }
+  }
+
+  @js.native
+  trait StopTrainingEntityRecognizerResponse extends js.Object {
+
+  }
+
+  object StopTrainingEntityRecognizerResponse {
+    def apply(): StopTrainingEntityRecognizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTrainingEntityRecognizerResponse]
     }
   }
 

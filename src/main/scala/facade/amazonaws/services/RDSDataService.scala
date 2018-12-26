@@ -18,7 +18,9 @@ package object rdsdataservice {
 package rdsdataservice {
   @js.native
   @JSImport("aws-sdk", "RDSDataService")
-  class RDSDataService(config: AWSConfig) extends js.Object {
+  class RDSDataService() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def executeSql(params: ExecuteSqlRequest): Request[ExecuteSqlResponse] = js.native
   }
 

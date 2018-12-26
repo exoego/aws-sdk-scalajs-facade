@@ -75,7 +75,9 @@ package object organizations {
 package organizations {
   @js.native
   @JSImport("aws-sdk", "Organizations")
-  class Organizations(config: AWSConfig) extends js.Object {
+  class Organizations() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptHandshake(params: AcceptHandshakeRequest): Request[AcceptHandshakeResponse] = js.native
     def attachPolicy(params: AttachPolicyRequest): Request[js.Object] = js.native
     def cancelHandshake(params: CancelHandshakeRequest): Request[CancelHandshakeResponse] = js.native
@@ -344,7 +346,7 @@ package organizations {
   }
 
   /**
-   * Contains the status about a '''CreateAccount''' request to create an AWS account in an organization.
+   * Contains the status about a <a>CreateAccount</a> request to create an AWS account in an organization.
    */
   @js.native
   trait CreateAccountStatus extends js.Object {
@@ -871,7 +873,7 @@ package organizations {
 
   /**
    * Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
-   *  <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
+   *  ```Note:``` Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering that state After that they are deleted.
    */
   @js.native
   trait Handshake extends js.Object {
@@ -1689,7 +1691,7 @@ package organizations {
   }
 
   /**
-   * Contains information about a policy, but does not include the content. To see the content of a policy, see '''DescribePolicy'''.
+   * Contains information about a policy, but does not include the content. To see the content of a policy, see <a>DescribePolicy</a>.
    */
   @js.native
   trait PolicySummary extends js.Object {

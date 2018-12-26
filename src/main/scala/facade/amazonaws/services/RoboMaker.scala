@@ -67,7 +67,9 @@ package object robomaker {
 package robomaker {
   @js.native
   @JSImport("aws-sdk", "RoboMaker")
-  class RoboMaker(config: AWSConfig) extends js.Object {
+  class RoboMaker() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchDescribeSimulationJob(params: BatchDescribeSimulationJobRequest): Request[BatchDescribeSimulationJobResponse] = js.native
     def cancelSimulationJob(params: CancelSimulationJobRequest): Request[CancelSimulationJobResponse] = js.native
     def createDeploymentJob(params: CreateDeploymentJobRequest): Request[CreateDeploymentJobResponse] = js.native

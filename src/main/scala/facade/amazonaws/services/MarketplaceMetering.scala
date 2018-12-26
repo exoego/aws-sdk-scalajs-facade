@@ -23,7 +23,9 @@ package object marketplacemetering {
 package marketplacemetering {
   @js.native
   @JSImport("aws-sdk", "MarketplaceMetering")
-  class MarketplaceMetering(config: AWSConfig) extends js.Object {
+  class MarketplaceMetering() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchMeterUsage(params: BatchMeterUsageRequest): Request[BatchMeterUsageResult] = js.native
     def meterUsage(params: MeterUsageRequest): Request[MeterUsageResult] = js.native
     def registerUsage(params: RegisterUsageRequest): Request[RegisterUsageResult] = js.native

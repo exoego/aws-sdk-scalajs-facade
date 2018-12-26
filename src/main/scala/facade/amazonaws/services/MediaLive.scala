@@ -82,6 +82,7 @@ package object medialive {
   type H264ScanType = String
   type H264SceneChangeDetect = String
   type H264SpatialAq = String
+  type H264SubGopLength = String
   type H264Syntax = String
   type H264TemporalAq = String
   type H264TimecodeInsertionBehavior = String
@@ -250,6 +251,8 @@ package object medialive {
   type __listOfInputSourceRequest = js.Array[InputSourceRequest]
   type __listOfInputWhitelistRule = js.Array[InputWhitelistRule]
   type __listOfInputWhitelistRuleCidr = js.Array[InputWhitelistRuleCidr]
+  type __listOfMediaConnectFlow = js.Array[MediaConnectFlow]
+  type __listOfMediaConnectFlowRequest = js.Array[MediaConnectFlowRequest]
   type __listOfOffering = js.Array[Offering]
   type __listOfOutput = js.Array[Output]
   type __listOfOutputDestination = js.Array[OutputDestination]
@@ -274,7 +277,9 @@ package object medialive {
 package medialive {
   @js.native
   @JSImport("aws-sdk", "MediaLive")
-  class MediaLive(config: AWSConfig) extends js.Object {
+  class MediaLive() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchUpdateSchedule(params: BatchUpdateScheduleRequest): Request[BatchUpdateScheduleResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createInput(params: CreateInputRequest): Request[CreateInputResponse] = js.native
@@ -1665,8 +1670,10 @@ package medialive {
   trait CreateInputRequest extends js.Object {
     var Destinations: js.UndefOr[__listOfInputDestinationRequest]
     var InputSecurityGroups: js.UndefOr[__listOf__string]
+    var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest]
     var Name: js.UndefOr[__string]
     var RequestId: js.UndefOr[__string]
+    var RoleArn: js.UndefOr[__string]
     var Sources: js.UndefOr[__listOfInputSourceRequest]
     var Type: js.UndefOr[InputType]
   }
@@ -1675,15 +1682,19 @@ package medialive {
     def apply(
       Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
       InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+      MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
       Name: js.UndefOr[__string] = js.undefined,
       RequestId: js.UndefOr[__string] = js.undefined,
+      RoleArn: js.UndefOr[__string] = js.undefined,
       Sources: js.UndefOr[__listOfInputSourceRequest] = js.undefined,
       Type: js.UndefOr[InputType] = js.undefined): CreateInputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destinations" -> Destinations.map { x => x.asInstanceOf[js.Any] },
         "InputSecurityGroups" -> InputSecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "MediaConnectFlows" -> MediaConnectFlows.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
+        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
         "Sources" -> Sources.map { x => x.asInstanceOf[js.Any] },
         "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2062,7 +2073,9 @@ package medialive {
     var AttachedChannels: js.UndefOr[__listOf__string]
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
+    var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
+    var RoleArn: js.UndefOr[__string]
     var SecurityGroups: js.UndefOr[__listOf__string]
     var Sources: js.UndefOr[__listOfInputSource]
     var State: js.UndefOr[InputState]
@@ -2075,7 +2088,9 @@ package medialive {
       AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
       Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
       Id: js.UndefOr[__string] = js.undefined,
+      MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
       Name: js.UndefOr[__string] = js.undefined,
+      RoleArn: js.UndefOr[__string] = js.undefined,
       SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
       Sources: js.UndefOr[__listOfInputSource] = js.undefined,
       State: js.UndefOr[InputState] = js.undefined,
@@ -2085,7 +2100,9 @@ package medialive {
         "AttachedChannels" -> AttachedChannels.map { x => x.asInstanceOf[js.Any] },
         "Destinations" -> Destinations.map { x => x.asInstanceOf[js.Any] },
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "MediaConnectFlows" -> MediaConnectFlows.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "Sources" -> Sources.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
@@ -3291,6 +3308,7 @@ package medialive {
     var Slices: js.UndefOr[__integerMin1Max32]
     var Softness: js.UndefOr[__integerMin0Max128]
     var SpatialAq: js.UndefOr[H264SpatialAq]
+    var SubgopLength: js.UndefOr[H264SubGopLength]
     var Syntax: js.UndefOr[H264Syntax]
     var TemporalAq: js.UndefOr[H264TemporalAq]
     var TimecodeInsertion: js.UndefOr[H264TimecodeInsertionBehavior]
@@ -3331,6 +3349,7 @@ package medialive {
       Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
       Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
       SpatialAq: js.UndefOr[H264SpatialAq] = js.undefined,
+      SubgopLength: js.UndefOr[H264SubGopLength] = js.undefined,
       Syntax: js.UndefOr[H264Syntax] = js.undefined,
       TemporalAq: js.UndefOr[H264TemporalAq] = js.undefined,
       TimecodeInsertion: js.UndefOr[H264TimecodeInsertionBehavior] = js.undefined): H264Settings = {
@@ -3368,6 +3387,7 @@ package medialive {
         "Slices" -> Slices.map { x => x.asInstanceOf[js.Any] },
         "Softness" -> Softness.map { x => x.asInstanceOf[js.Any] },
         "SpatialAq" -> SpatialAq.map { x => x.asInstanceOf[js.Any] },
+        "SubgopLength" -> SubgopLength.map { x => x.asInstanceOf[js.Any] },
         "Syntax" -> Syntax.map { x => x.asInstanceOf[js.Any] },
         "TemporalAq" -> TemporalAq.map { x => x.asInstanceOf[js.Any] },
         "TimecodeInsertion" -> TimecodeInsertion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -3384,6 +3404,16 @@ package medialive {
     val ENABLED = "ENABLED"
 
     val values = IndexedSeq(DISABLED, ENABLED)
+  }
+
+  /**
+   * Placeholder documentation for H264SubGopLength
+   */
+  object H264SubGopLengthEnum {
+    val DYNAMIC = "DYNAMIC"
+    val FIXED = "FIXED"
+
+    val values = IndexedSeq(DYNAMIC, FIXED)
   }
 
   /**
@@ -3924,6 +3954,24 @@ package medialive {
   }
 
   /**
+   * Settings for the action to emit HLS metadata
+   */
+  @js.native
+  trait HlsTimedMetadataScheduleActionSettings extends js.Object {
+    var Id3: __string
+  }
+
+  object HlsTimedMetadataScheduleActionSettings {
+    def apply(
+      Id3: __string): HlsTimedMetadataScheduleActionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id3" -> Id3.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsTimedMetadataScheduleActionSettings]
+    }
+  }
+
+  /**
    * Placeholder documentation for HlsTsFileMode
    */
   object HlsTsFileModeEnum {
@@ -3982,7 +4030,9 @@ package medialive {
     var AttachedChannels: js.UndefOr[__listOf__string]
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
+    var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
+    var RoleArn: js.UndefOr[__string]
     var SecurityGroups: js.UndefOr[__listOf__string]
     var Sources: js.UndefOr[__listOfInputSource]
     var State: js.UndefOr[InputState]
@@ -3995,7 +4045,9 @@ package medialive {
       AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
       Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
       Id: js.UndefOr[__string] = js.undefined,
+      MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
       Name: js.UndefOr[__string] = js.undefined,
+      RoleArn: js.UndefOr[__string] = js.undefined,
       SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
       Sources: js.UndefOr[__listOfInputSource] = js.undefined,
       State: js.UndefOr[InputState] = js.undefined,
@@ -4005,7 +4057,9 @@ package medialive {
         "AttachedChannels" -> AttachedChannels.map { x => x.asInstanceOf[js.Any] },
         "Destinations" -> Destinations.map { x => x.asInstanceOf[js.Any] },
         "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
+        "MediaConnectFlows" -> MediaConnectFlows.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
         "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
         "Sources" -> Sources.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
@@ -4478,8 +4532,9 @@ package medialive {
     val RTMP_PULL = "RTMP_PULL"
     val URL_PULL = "URL_PULL"
     val MP4_FILE = "MP4_FILE"
+    val MEDIACONNECT = "MEDIACONNECT"
 
-    val values = IndexedSeq(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE)
+    val values = IndexedSeq(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT)
   }
 
   /**
@@ -5232,6 +5287,42 @@ package medialive {
     val PASSTHROUGH = "PASSTHROUGH"
 
     val values = IndexedSeq(NO_PASSTHROUGH, PASSTHROUGH)
+  }
+
+  /**
+   * The settings for a MediaConnect Flow.
+   */
+  @js.native
+  trait MediaConnectFlow extends js.Object {
+    var FlowArn: js.UndefOr[__string]
+  }
+
+  object MediaConnectFlow {
+    def apply(
+      FlowArn: js.UndefOr[__string] = js.undefined): MediaConnectFlow = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaConnectFlow]
+    }
+  }
+
+  /**
+   * The settings for a MediaConnect Flow.
+   */
+  @js.native
+  trait MediaConnectFlowRequest extends js.Object {
+    var FlowArn: js.UndefOr[__string]
+  }
+
+  object MediaConnectFlowRequest {
+    def apply(
+      FlowArn: js.UndefOr[__string] = js.undefined): MediaConnectFlowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaConnectFlowRequest]
+    }
   }
 
   /**
@@ -6049,6 +6140,7 @@ package medialive {
    */
   @js.native
   trait ScheduleActionSettings extends js.Object {
+    var HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings]
     var InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings]
     var Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings]
     var Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings]
@@ -6059,6 +6151,7 @@ package medialive {
 
   object ScheduleActionSettings {
     def apply(
+      HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings] = js.undefined,
       InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings] = js.undefined,
       Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings] = js.undefined,
       Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings] = js.undefined,
@@ -6066,6 +6159,7 @@ package medialive {
       StaticImageActivateSettings: js.UndefOr[StaticImageActivateScheduleActionSettings] = js.undefined,
       StaticImageDeactivateSettings: js.UndefOr[StaticImageDeactivateScheduleActionSettings] = js.undefined): ScheduleActionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "HlsTimedMetadataSettings" -> HlsTimedMetadataSettings.map { x => x.asInstanceOf[js.Any] },
         "InputSwitchSettings" -> InputSwitchSettings.map { x => x.asInstanceOf[js.Any] },
         "Scte35ReturnToNetworkSettings" -> Scte35ReturnToNetworkSettings.map { x => x.asInstanceOf[js.Any] },
         "Scte35SpliceInsertSettings" -> Scte35SpliceInsertSettings.map { x => x.asInstanceOf[js.Any] },
@@ -7069,7 +7163,9 @@ package medialive {
     var InputId: __string
     var Destinations: js.UndefOr[__listOfInputDestinationRequest]
     var InputSecurityGroups: js.UndefOr[__listOf__string]
+    var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest]
     var Name: js.UndefOr[__string]
+    var RoleArn: js.UndefOr[__string]
     var Sources: js.UndefOr[__listOfInputSourceRequest]
   }
 
@@ -7078,13 +7174,17 @@ package medialive {
       InputId: __string,
       Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
       InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+      MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
       Name: js.UndefOr[__string] = js.undefined,
+      RoleArn: js.UndefOr[__string] = js.undefined,
       Sources: js.UndefOr[__listOfInputSourceRequest] = js.undefined): UpdateInputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputId" -> InputId.asInstanceOf[js.Any],
         "Destinations" -> Destinations.map { x => x.asInstanceOf[js.Any] },
         "InputSecurityGroups" -> InputSecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "MediaConnectFlows" -> MediaConnectFlows.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
+        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
         "Sources" -> Sources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInputRequest]

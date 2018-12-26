@@ -44,7 +44,9 @@ package object datapipeline {
 package datapipeline {
   @js.native
   @JSImport("aws-sdk", "DataPipeline")
-  class DataPipeline(config: AWSConfig) extends js.Object {
+  class DataPipeline() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def activatePipeline(params: ActivatePipelineInput): Request[ActivatePipelineOutput] = js.native
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def createPipeline(params: CreatePipelineInput): Request[CreatePipelineOutput] = js.native
@@ -442,7 +444,7 @@ package datapipeline {
   }
 
   /**
-   * <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.
+   * <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html|Instance Metadata]] in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.
    * </p>
    */
   @js.native
@@ -1081,7 +1083,7 @@ package datapipeline {
   }
 
   /**
-   * Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.
+   * Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see [[http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html|Controlling User Access to Pipelines]] in the <i>AWS Data Pipeline Developer Guide</i>.
    */
   @js.native
   trait Tag extends js.Object {

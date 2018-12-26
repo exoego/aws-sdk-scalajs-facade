@@ -15,7 +15,9 @@ package object mediatailor {
 package mediatailor {
   @js.native
   @JSImport("aws-sdk", "MediaTailor")
-  class MediaTailor(config: AWSConfig) extends js.Object {
+  class MediaTailor() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deletePlaybackConfiguration(params: DeletePlaybackConfigurationRequest): Request[DeletePlaybackConfigurationResponse] = js.native
     def getPlaybackConfiguration(params: GetPlaybackConfigurationRequest): Request[GetPlaybackConfigurationResponse] = js.native
     def listPlaybackConfigurations(params: ListPlaybackConfigurationsRequest): Request[ListPlaybackConfigurationsResponse] = js.native
@@ -49,15 +51,36 @@ package mediatailor {
   @js.native
   trait DashConfiguration extends js.Object {
     var ManifestEndpointPrefix: js.UndefOr[__string]
+    var MpdLocation: js.UndefOr[__string]
   }
 
   object DashConfiguration {
     def apply(
-      ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined): DashConfiguration = {
+      ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined,
+      MpdLocation: js.UndefOr[__string] = js.undefined): DashConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ManifestEndpointPrefix" -> ManifestEndpointPrefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ManifestEndpointPrefix" -> ManifestEndpointPrefix.map { x => x.asInstanceOf[js.Any] },
+        "MpdLocation" -> MpdLocation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashConfiguration]
+    }
+  }
+
+  /**
+   * The configuration object for DASH content.
+   */
+  @js.native
+  trait DashConfigurationForPut extends js.Object {
+    var MpdLocation: js.UndefOr[__string]
+  }
+
+  object DashConfigurationForPut {
+    def apply(
+      MpdLocation: js.UndefOr[__string] = js.undefined): DashConfigurationForPut = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MpdLocation" -> MpdLocation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashConfigurationForPut]
     }
   }
 
@@ -234,6 +257,7 @@ package mediatailor {
   trait PutPlaybackConfigurationRequest extends js.Object {
     var AdDecisionServerUrl: js.UndefOr[__string]
     var CdnConfiguration: js.UndefOr[CdnConfiguration]
+    var DashConfiguration: js.UndefOr[DashConfigurationForPut]
     var Name: js.UndefOr[__string]
     var SlateAdUrl: js.UndefOr[__string]
     var TranscodeProfileName: js.UndefOr[__string]
@@ -244,6 +268,7 @@ package mediatailor {
     def apply(
       AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
       CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
+      DashConfiguration: js.UndefOr[DashConfigurationForPut] = js.undefined,
       Name: js.UndefOr[__string] = js.undefined,
       SlateAdUrl: js.UndefOr[__string] = js.undefined,
       TranscodeProfileName: js.UndefOr[__string] = js.undefined,
@@ -251,6 +276,7 @@ package mediatailor {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdDecisionServerUrl" -> AdDecisionServerUrl.map { x => x.asInstanceOf[js.Any] },
         "CdnConfiguration" -> CdnConfiguration.map { x => x.asInstanceOf[js.Any] },
+        "DashConfiguration" -> DashConfiguration.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "SlateAdUrl" -> SlateAdUrl.map { x => x.asInstanceOf[js.Any] },
         "TranscodeProfileName" -> TranscodeProfileName.map { x => x.asInstanceOf[js.Any] },

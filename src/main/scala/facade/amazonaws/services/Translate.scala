@@ -30,7 +30,9 @@ package object translate {
 package translate {
   @js.native
   @JSImport("aws-sdk", "Translate")
-  class Translate(config: AWSConfig) extends js.Object {
+  class Translate() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deleteTerminology(params: DeleteTerminologyRequest): Request[js.Object] = js.native
     def getTerminology(params: GetTerminologyRequest): Request[GetTerminologyResponse] = js.native
     def importTerminology(params: ImportTerminologyRequest): Request[ImportTerminologyResponse] = js.native

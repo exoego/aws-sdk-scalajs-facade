@@ -372,7 +372,9 @@ package object mediaconvert {
 package mediaconvert {
   @js.native
   @JSImport("aws-sdk", "MediaConvert")
-  class MediaConvert(config: AWSConfig) extends js.Object {
+  class MediaConvert() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateCertificate(params: AssociateCertificateRequest): Request[AssociateCertificateResponse] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
@@ -1652,7 +1654,7 @@ package mediaconvert {
   }
 
   /**
-   * The length of time that you commit to when you set up a pricing plan contract for a reserved queue.
+   * The length of the term of your reserved queue pricing plan commitment.
    */
   object CommitmentEnum {
     val ONE_YEAR = "ONE_YEAR"
@@ -6436,7 +6438,7 @@ package mediaconvert {
   }
 
   /**
-   * Specifies whether the pricing plan for the queue is On-demand or Reserved. The pricing plan for the queue determines whether you pay On-demand or Reserved pricing for the transcoding jobs that you run through the queue. For Reserved queue pricing, you must set up a contract. You can create a Reserved queue contract through the AWS Elemental MediaConvert console.
+   * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
    */
   object PricingPlanEnum {
     val ON_DEMAND = "ON_DEMAND"
@@ -6571,7 +6573,7 @@ package mediaconvert {
   }
 
   /**
-   * You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/about-resource-allocation-and-job-prioritization.html.
+   * You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
    */
   @js.native
   trait Queue extends js.Object {
@@ -6690,7 +6692,7 @@ package mediaconvert {
   }
 
   /**
-   * Specifies whether the pricing plan contract for your reserved queue automatically renews (AUTO_RENEW) or expires (EXPIRE) at the end of the contract period.
+   * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
    */
   object RenewalTypeEnum {
     val AUTO_RENEW = "AUTO_RENEW"

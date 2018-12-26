@@ -90,7 +90,9 @@ package object rekognition {
 package rekognition {
   @js.native
   @JSImport("aws-sdk", "Rekognition")
-  class Rekognition(config: AWSConfig) extends js.Object {
+  class Rekognition() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def compareFaces(params: CompareFacesRequest): Request[CompareFacesResponse] = js.native
     def createCollection(params: CreateCollectionRequest): Request[CreateCollectionResponse] = js.native
     def createStreamProcessor(params: CreateStreamProcessorRequest): Request[CreateStreamProcessorResponse] = js.native
@@ -2060,7 +2062,7 @@ package rekognition {
   }
 
   /**
-   * Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (), information about the person ('''PersonDetail'''), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by .
+   * Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (), information about the person (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by .
    */
   @js.native
   trait PersonMatch extends js.Object {

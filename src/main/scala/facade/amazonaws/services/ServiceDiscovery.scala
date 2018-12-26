@@ -58,7 +58,9 @@ package object servicediscovery {
 package servicediscovery {
   @js.native
   @JSImport("aws-sdk", "ServiceDiscovery")
-  class ServiceDiscovery(config: AWSConfig) extends js.Object {
+  class ServiceDiscovery() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createHttpNamespace(params: CreateHttpNamespaceRequest): Request[CreateHttpNamespaceResponse] = js.native
     def createPrivateDnsNamespace(params: CreatePrivateDnsNamespaceRequest): Request[CreatePrivateDnsNamespaceResponse] = js.native
     def createPublicDnsNamespace(params: CreatePublicDnsNamespaceRequest): Request[CreatePublicDnsNamespaceResponse] = js.native
@@ -637,22 +639,22 @@ package servicediscovery {
   /**
    * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.
    *  <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.
-   *  </important> Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+   *  </important> Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]].
    *  Note the following about configuring health checks.
-   *  <b>A and AAAA records</b>
+   *  ```A and AAAA records```
    *  If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy.
-   *  <b>CNAME records</b>
+   *  ```CNAME records```
    *  You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.
-   *  <b>Request interval</b>
+   *  ```Request interval```
    *  A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.
-   *  <b>Health checking regions</b>
-   *  Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.
-   *  <b>Alias records</b>
+   *  ```Health checking regions```
+   *  Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see [[http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions|Regions]].
+   *  ```Alias records```
    *  When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following:
-   * * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.
+   * * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see [[http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth|EvaluateTargetHealth]].
    *  * If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.
-   * <b>Charges for health checks</b>
-   *  Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+   * ```Charges for health checks```
+   *  Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]].
    */
   @js.native
   trait HealthCheckConfig extends js.Object {
@@ -683,7 +685,7 @@ package servicediscovery {
    *  </important> To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. Cloud Map doesn't monitor the status of the resource, it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request.
    *  Here's how custom health checks work:
    *  <ol> * You create a service and specify a value for <code>FailureThreshold</code>.
-   *  The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an '''UpdateInstanceCustomHealthStatus''' request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.
+   *  The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an <a>UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource.
    *  * You register an instance.
    *  <li> You configure a third-party health checker to monitor the resource that is associated with the new instance.
    *
@@ -734,7 +736,7 @@ package servicediscovery {
   }
 
   /**
-   * In a response to a '''DiscoverInstance''' request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
+   * In a response to a <a>DiscoverInstance</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.
    */
   @js.native
   trait HttpInstanceSummary extends js.Object {
@@ -1205,7 +1207,7 @@ package servicediscovery {
   }
 
   /**
-   * A complex type that contains information about an operation that matches the criteria that you specified in a '''ListOperations''' request.
+   * A complex type that contains information about an operation that matches the criteria that you specified in a <a>ListOperations</a> request.
    */
   @js.native
   trait OperationSummary extends js.Object {

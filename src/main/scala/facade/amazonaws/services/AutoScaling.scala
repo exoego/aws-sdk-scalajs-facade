@@ -126,7 +126,9 @@ package object autoscaling {
 package autoscaling {
   @js.native
   @JSImport("aws-sdk", "AutoScaling")
-  class AutoScaling(config: AWSConfig) extends js.Object {
+  class AutoScaling() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def attachInstances(params: AttachInstancesQuery): Request[js.Object] = js.native
     def attachLoadBalancerTargetGroups(params: AttachLoadBalancerTargetGroupsType): Request[AttachLoadBalancerTargetGroupsResultType] = js.native
     def attachLoadBalancers(params: AttachLoadBalancersType): Request[AttachLoadBalancersResultType] = js.native
@@ -263,7 +265,7 @@ package autoscaling {
 
   /**
    * Describes a policy adjustment type.
-   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+   *  For more information, see [[http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html|Dynamic Scaling]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait AdjustmentType extends js.Object {
@@ -1766,7 +1768,7 @@ package autoscaling {
   }
 
   /**
-   * Describes an instances distribution for an Auto Scaling group with '''MixedInstancesPolicy'''.
+   * Describes an instances distribution for an Auto Scaling group with <a>MixedInstancesPolicy</a>.
    *  The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types.
    */
   @js.native
@@ -1967,7 +1969,7 @@ package autoscaling {
 
   /**
    * Describes a launch template and the launch template version.
-   *  The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+   *  The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see [[http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html|Creating a Launch Template for an Auto Scaling group]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1992,7 +1994,7 @@ package autoscaling {
 
   /**
    * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or whenever it terminates instances.
-   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+   *  For more information, see [[http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html|Lifecycle Hooks]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait LifecycleHook extends js.Object {
@@ -2035,7 +2037,7 @@ package autoscaling {
 
   /**
    * Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or whenever it terminates instances.
-   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+   *  For more information, see [[http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html|Lifecycle Hooks]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait LifecycleHookSpecification extends js.Object {
@@ -2210,7 +2212,7 @@ package autoscaling {
   }
 
   /**
-   * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+   * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options|Using Multiple Instance Types and Purchase Options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    *  When you create your Auto Scaling group, you can specify a launch configuration or template as a parameter for the top-level object, or you can specify a mixed instances policy, but not both at the same time.
    */
   @js.native
@@ -2317,7 +2319,7 @@ package autoscaling {
 
   /**
    * Describes a process type.
-   *  For more information, see <a href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+   *  For more information, see [[http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types|Scaling Processes]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
    */
   @js.native
   trait ProcessType extends js.Object {
@@ -2654,7 +2656,7 @@ package autoscaling {
   }
 
   /**
-   * Describes a scheduled scaling action. Used in response to '''DescribeScheduledActions'''.
+   * Describes a scheduled scaling action. Used in response to <a>DescribeScheduledActions</a>.
    */
   @js.native
   trait ScheduledUpdateGroupAction extends js.Object {
@@ -2699,7 +2701,7 @@ package autoscaling {
   }
 
   /**
-   * Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with '''BatchPutScheduledUpdateGroupAction'''.
+   * Describes one or more scheduled scaling action updates for a specified Auto Scaling group. Used in combination with <a>BatchPutScheduledUpdateGroupAction</a>.
    *  When updating a scheduled scaling action, all optional parameters are left unchanged if not specified.
    */
   @js.native
@@ -2844,7 +2846,7 @@ package autoscaling {
   }
 
   /**
-   * Describes an automatic scaling process that has been suspended. For more information, see '''ProcessType'''.
+   * Describes an automatic scaling process that has been suspended. For more information, see <a>ProcessType</a>.
    */
   @js.native
   trait SuspendedProcess extends js.Object {

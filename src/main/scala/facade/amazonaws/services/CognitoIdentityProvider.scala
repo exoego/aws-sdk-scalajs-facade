@@ -160,7 +160,9 @@ package object cognitoidentityprovider {
 package cognitoidentityprovider {
   @js.native
   @JSImport("aws-sdk", "CognitoIdentityServiceProvider")
-  class CognitoIdentityProvider(config: AWSConfig) extends js.Object {
+  class CognitoIdentityProvider() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addCustomAttributes(params: AddCustomAttributesRequest): Request[AddCustomAttributesResponse] = js.native
     def adminAddUserToGroup(params: AdminAddUserToGroupRequest): Request[js.Object] = js.native
     def adminConfirmSignUp(params: AdminConfirmSignUpRequest): Request[AdminConfirmSignUpResponse] = js.native
@@ -254,6 +256,7 @@ package cognitoidentityprovider {
     def updateUserAttributes(params: UpdateUserAttributesRequest): Request[UpdateUserAttributesResponse] = js.native
     def updateUserPool(params: UpdateUserPoolRequest): Request[UpdateUserPoolResponse] = js.native
     def updateUserPoolClient(params: UpdateUserPoolClientRequest): Request[UpdateUserPoolClientResponse] = js.native
+    def updateUserPoolDomain(params: UpdateUserPoolDomainRequest): Request[UpdateUserPoolDomainResponse] = js.native
     def verifySoftwareToken(params: VerifySoftwareTokenRequest): Request[VerifySoftwareTokenResponse] = js.native
     def verifyUserAttribute(params: VerifyUserAttributeRequest): Request[VerifyUserAttributeResponse] = js.native
   }
@@ -5386,6 +5389,48 @@ package cognitoidentityprovider {
         "UserPoolClient" -> UserPoolClient.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserPoolClientResponse]
+    }
+  }
+
+  /**
+   * The UpdateUserPoolDomain request input.
+   */
+  @js.native
+  trait UpdateUserPoolDomainRequest extends js.Object {
+    var CustomDomainConfig: CustomDomainConfigType
+    var Domain: DomainType
+    var UserPoolId: UserPoolIdType
+  }
+
+  object UpdateUserPoolDomainRequest {
+    def apply(
+      CustomDomainConfig: CustomDomainConfigType,
+      Domain: DomainType,
+      UserPoolId: UserPoolIdType): UpdateUserPoolDomainRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomDomainConfig" -> CustomDomainConfig.asInstanceOf[js.Any],
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserPoolDomainRequest]
+    }
+  }
+
+  /**
+   * The UpdateUserPoolDomain response output.
+   */
+  @js.native
+  trait UpdateUserPoolDomainResponse extends js.Object {
+    var CloudFrontDomain: js.UndefOr[DomainType]
+  }
+
+  object UpdateUserPoolDomainResponse {
+    def apply(
+      CloudFrontDomain: js.UndefOr[DomainType] = js.undefined): UpdateUserPoolDomainResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CloudFrontDomain" -> CloudFrontDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserPoolDomainResponse]
     }
   }
 

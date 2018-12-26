@@ -74,7 +74,9 @@ package object es {
 package es {
   @js.native
   @JSImport("aws-sdk", "ES")
-  class ES(config: AWSConfig) extends js.Object {
+  class ES() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTags(params: AddTagsRequest): Request[js.Object] = js.native
     def cancelElasticsearchServiceSoftwareUpdate(params: CancelElasticsearchServiceSoftwareUpdateRequest): Request[CancelElasticsearchServiceSoftwareUpdateResponse] = js.native
     def createElasticsearchDomain(params: CreateElasticsearchDomainRequest): Request[CreateElasticsearchDomainResponse] = js.native
@@ -122,7 +124,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''AddTags'''</code> operation. Specify the tags that you want to attach to the Elasticsearch domain.
+   * Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.
    */
   @js.native
   trait AddTagsRequest extends js.Object {
@@ -143,7 +145,7 @@ package es {
   }
 
   /**
-   * List of limits that are specific to a given InstanceType and for each of it's <code> '''InstanceRole''' </code> .
+   * List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> .
    */
   @js.native
   trait AdditionalLimit extends js.Object {
@@ -167,7 +169,7 @@ package es {
    * Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:
    * * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.
    *  * Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.
-   * For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.
+   * For more information, see [[http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options|Configuring Advanced Options]].
    */
   @js.native
   trait AdvancedOptionsStatus extends js.Object {
@@ -188,7 +190,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''CancelElasticsearchServiceSoftwareUpdate'''</code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.
+   * Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.
    */
   @js.native
   trait CancelElasticsearchServiceSoftwareUpdateRequest extends js.Object {
@@ -272,7 +274,7 @@ package es {
   }
 
   /**
-   * A map from an <code> '''ElasticsearchVersion''' </code> to a list of compatible <code> '''ElasticsearchVersion''' </code> s to which the domain can be upgraded.
+   * A map from an <code> <a>ElasticsearchVersion</a> </code> to a list of compatible <code> <a>ElasticsearchVersion</a> </code> s to which the domain can be upgraded.
    */
   @js.native
   trait CompatibleVersionsMap extends js.Object {
@@ -359,7 +361,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''DeleteElasticsearchDomain'''</code> operation. Specifies the name of the Elasticsearch domain that you want to delete.
+   * Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.
    */
   @js.native
   trait DeleteElasticsearchDomainRequest extends js.Object {
@@ -441,7 +443,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''DescribeElasticsearchDomain'''</code> operation.
+   * Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation.
    */
   @js.native
   trait DescribeElasticsearchDomainRequest extends js.Object {
@@ -477,7 +479,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''DescribeElasticsearchDomains'''</code> operation. By default, the API returns the status of all Elasticsearch domains.
+   * Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains.
    */
   @js.native
   trait DescribeElasticsearchDomainsRequest extends js.Object {
@@ -513,7 +515,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to <code> '''DescribeElasticsearchInstanceTypeLimits''' </code> operation.
+   * Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
    */
   @js.native
   trait DescribeElasticsearchInstanceTypeLimitsRequest extends js.Object {
@@ -537,7 +539,7 @@ package es {
   }
 
   /**
-   * Container for the parameters received from <code> '''DescribeElasticsearchInstanceTypeLimits''' </code> operation.
+   * Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
    */
   @js.native
   trait DescribeElasticsearchInstanceTypeLimitsResponse extends js.Object {
@@ -996,7 +998,7 @@ package es {
   }
 
   /**
-   * Container for request parameters to <code> '''GetCompatibleElasticsearchVersions''' </code> operation.
+   * Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.
    */
   @js.native
   trait GetCompatibleElasticsearchVersionsRequest extends js.Object {
@@ -1014,7 +1016,7 @@ package es {
   }
 
   /**
-   * Container for response returned by <code> '''GetCompatibleElasticsearchVersions''' </code> operation.
+   * Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.
    */
   @js.native
   trait GetCompatibleElasticsearchVersionsResponse extends js.Object {
@@ -1032,7 +1034,7 @@ package es {
   }
 
   /**
-   * Container for request parameters to <code> '''GetUpgradeHistory''' </code> operation.
+   * Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.
    */
   @js.native
   trait GetUpgradeHistoryRequest extends js.Object {
@@ -1056,7 +1058,7 @@ package es {
   }
 
   /**
-   * Container for response returned by <code> '''GetUpgradeHistory''' </code> operation.
+   * Container for response returned by <code> <a>GetUpgradeHistory</a> </code> operation.
    */
   @js.native
   trait GetUpgradeHistoryResponse extends js.Object {
@@ -1077,7 +1079,7 @@ package es {
   }
 
   /**
-   * Container for request parameters to <code> '''GetUpgradeStatus''' </code> operation.
+   * Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation.
    */
   @js.native
   trait GetUpgradeStatusRequest extends js.Object {
@@ -1095,7 +1097,7 @@ package es {
   }
 
   /**
-   * Container for response returned by <code> '''GetUpgradeStatus''' </code> operation.
+   * Container for response returned by <code> <a>GetUpgradeStatus</a> </code> operation.
    */
   @js.native
   trait GetUpgradeStatusResponse extends js.Object {
@@ -1158,7 +1160,7 @@ package es {
   }
 
   /**
-   * Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> '''InstanceLimits''' </code> and <code> '''AdditionalLimits''' </code>
+   * Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code>
    */
   @js.native
   trait Limits extends js.Object {
@@ -1200,7 +1202,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code> '''ListElasticsearchInstanceTypes''' </code> operation.
+   * Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
    */
   @js.native
   trait ListElasticsearchInstanceTypesRequest extends js.Object {
@@ -1227,7 +1229,7 @@ package es {
   }
 
   /**
-   * Container for the parameters returned by <code> '''ListElasticsearchInstanceTypes''' </code> operation.
+   * Container for the parameters returned by <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
    */
   @js.native
   trait ListElasticsearchInstanceTypesResponse extends js.Object {
@@ -1248,8 +1250,8 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code> '''ListElasticsearchVersions''' </code> operation. <p> Use <code> '''MaxResults''' </code> to control the maximum number of results to retrieve in a single call.
-   *  Use <code> '''NextToken''' </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve.
+   * Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call.
+   *  Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve.
    *  </p>
    */
   @js.native
@@ -1271,7 +1273,7 @@ package es {
   }
 
   /**
-   * Container for the parameters for response received from <code> '''ListElasticsearchVersions''' </code> operation.
+   * Container for the parameters for response received from <code> <a>ListElasticsearchVersions</a> </code> operation.
    */
   @js.native
   trait ListElasticsearchVersionsResponse extends js.Object {
@@ -1292,7 +1294,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''ListTags'''</code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.
+   * Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.
    */
   @js.native
   trait ListTagsRequest extends js.Object {
@@ -1534,7 +1536,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''RemoveTags'''</code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.
+   * Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.
    */
   @js.native
   trait RemoveTagsRequest extends js.Object {
@@ -1731,7 +1733,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''StartElasticsearchServiceSoftwareUpdate'''</code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
+   * Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
    */
   @js.native
   trait StartElasticsearchServiceSoftwareUpdateRequest extends js.Object {
@@ -1833,7 +1835,7 @@ package es {
   }
 
   /**
-   * Container for the parameters to the <code>'''UpdateElasticsearchDomain'''</code> operation. Specifies the type and number of instances in the domain cluster.
+   * Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.
    */
   @js.native
   trait UpdateElasticsearchDomainConfigRequest extends js.Object {
@@ -1893,7 +1895,7 @@ package es {
   }
 
   /**
-   * Container for request parameters to <code> '''UpgradeElasticsearchDomain''' </code> operation.
+   * Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation.
    */
   @js.native
   trait UpgradeElasticsearchDomainRequest extends js.Object {
@@ -1917,7 +1919,7 @@ package es {
   }
 
   /**
-   * Container for response returned by <code> '''UpgradeElasticsearchDomain''' </code> operation.
+   * Container for response returned by <code> <a>UpgradeElasticsearchDomain</a> </code> operation.
    */
   @js.native
   trait UpgradeElasticsearchDomainResponse extends js.Object {

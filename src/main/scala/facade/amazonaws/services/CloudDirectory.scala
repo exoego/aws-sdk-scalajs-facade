@@ -14,12 +14,10 @@ package object clouddirectory {
   type AttributeName = String
   type AttributeNameAndValueList = js.Array[AttributeNameAndValue]
   type AttributeNameList = js.Array[AttributeName]
-  type BatchOperationIndex = Int
   type BatchReadExceptionType = String
   type BatchReadOperationList = js.Array[BatchReadOperation]
   type BatchReadOperationResponseList = js.Array[BatchReadOperationResponse]
   type BatchReferenceName = String
-  type BatchWriteExceptionType = String
   type BatchWriteOperationList = js.Array[BatchWriteOperation]
   type BatchWriteOperationResponseList = js.Array[BatchWriteOperationResponse]
   type BinaryAttributeValue = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -38,6 +36,7 @@ package object clouddirectory {
   type FacetAttributeUpdateList = js.Array[FacetAttributeUpdate]
   type FacetName = String
   type FacetNameList = js.Array[FacetName]
+  type FacetStyle = String
   type IndexAttachmentList = js.Array[IndexAttachment]
   type LinkAttributeUpdateList = js.Array[LinkAttributeUpdate]
   type LinkName = String
@@ -48,6 +47,7 @@ package object clouddirectory {
   type ObjectAttributeRangeList = js.Array[ObjectAttributeRange]
   type ObjectAttributeUpdateList = js.Array[ObjectAttributeUpdate]
   type ObjectIdentifier = String
+  type ObjectIdentifierAndLinkNameList = js.Array[ObjectIdentifierAndLinkNameTuple]
   type ObjectIdentifierList = js.Array[ObjectIdentifier]
   type ObjectIdentifierToLinkNameMap = js.Dictionary[LinkName]
   type ObjectType = String
@@ -87,7 +87,9 @@ package object clouddirectory {
 package clouddirectory {
   @js.native
   @JSImport("aws-sdk", "CloudDirectory")
-  class CloudDirectory(config: AWSConfig) extends js.Object {
+  class CloudDirectory() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addFacetToObject(params: AddFacetToObjectRequest): Request[AddFacetToObjectResponse] = js.native
     def applySchema(params: ApplySchemaRequest): Request[ApplySchemaResponse] = js.native
     def attachObject(params: AttachObjectRequest): Request[AttachObjectResponse] = js.native
@@ -129,6 +131,7 @@ package clouddirectory {
     def listFacetNames(params: ListFacetNamesRequest): Request[ListFacetNamesResponse] = js.native
     def listIncomingTypedLinks(params: ListIncomingTypedLinksRequest): Request[ListIncomingTypedLinksResponse] = js.native
     def listIndex(params: ListIndexRequest): Request[ListIndexResponse] = js.native
+    def listManagedSchemaArns(params: ListManagedSchemaArnsRequest): Request[ListManagedSchemaArnsResponse] = js.native
     def listObjectAttributes(params: ListObjectAttributesRequest): Request[ListObjectAttributesResponse] = js.native
     def listObjectChildren(params: ListObjectChildrenRequest): Request[ListObjectChildrenResponse] = js.native
     def listObjectParentPaths(params: ListObjectParentPathsRequest): Request[ListObjectParentPathsResponse] = js.native
@@ -153,14 +156,6 @@ package clouddirectory {
     def updateTypedLinkFacet(params: UpdateTypedLinkFacetRequest): Request[UpdateTypedLinkFacetResponse] = js.native
     def upgradeAppliedSchema(params: UpgradeAppliedSchemaRequest): Request[UpgradeAppliedSchemaResponse] = js.native
     def upgradePublishedSchema(params: UpgradePublishedSchemaRequest): Request[UpgradePublishedSchemaResponse] = js.native
-  }
-
-  /**
-   * Access denied. Check your permissions.
-   */
-  @js.native
-  trait AccessDeniedExceptionException extends js.Object {
-    val Message: ExceptionMessage
   }
 
   @js.native
@@ -494,7 +489,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of an '''AttachObject''' operation.
+   * Represents the output of an <a>AttachObject</a> operation.
    */
   @js.native
   trait BatchAttachObject extends js.Object {
@@ -518,7 +513,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output batch '''AttachObject''' response operation.
+   * Represents the output batch <a>AttachObject</a> response operation.
    */
   @js.native
   trait BatchAttachObjectResponse extends js.Object {
@@ -536,7 +531,7 @@ package clouddirectory {
   }
 
   /**
-   * Attaches a policy object to a regular object inside a '''BatchRead''' operation.?For more information, see '''AttachPolicy''' and [[BatchReadRequest.Operations]].
+   * Attaches a policy object to a regular object inside a <a>BatchRead</a> operation.?For more information, see <a>AttachPolicy</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchAttachPolicy extends js.Object {
@@ -557,7 +552,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of an '''AttachPolicy''' response operation.
+   * Represents the output of an <a>AttachPolicy</a> response operation.
    */
   @js.native
   trait BatchAttachPolicyResponse extends js.Object {
@@ -573,7 +568,7 @@ package clouddirectory {
   }
 
   /**
-   * Attaches the specified object to the specified index inside a '''BatchRead''' operation. For more information, see '''AttachToIndex''' and [[BatchReadRequest.Operations]].
+   * Attaches the specified object to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>AttachToIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchAttachToIndex extends js.Object {
@@ -594,7 +589,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''AttachToIndex''' response operation.
+   * Represents the output of a <a>AttachToIndex</a> response operation.
    */
   @js.native
   trait BatchAttachToIndexResponse extends js.Object {
@@ -612,7 +607,7 @@ package clouddirectory {
   }
 
   /**
-   * Attaches a typed link to a specified source and target object inside a '''BatchRead''' operation. For more information, see '''AttachTypedLink''' and [[BatchReadRequest.Operations]].
+   * Attaches a typed link to a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>AttachTypedLink</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchAttachTypedLink extends js.Object {
@@ -639,7 +634,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''AttachTypedLink''' response operation.
+   * Represents the output of a <a>AttachTypedLink</a> response operation.
    */
   @js.native
   trait BatchAttachTypedLinkResponse extends js.Object {
@@ -657,7 +652,7 @@ package clouddirectory {
   }
 
   /**
-   * Creates an index object inside of a '''BatchRead''' operation. For more information, see '''CreateIndex''' and [[BatchReadRequest.Operations]].
+   * Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchCreateIndex extends js.Object {
@@ -687,7 +682,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''CreateIndex''' response operation.
+   * Represents the output of a <a>CreateIndex</a> response operation.
    */
   @js.native
   trait BatchCreateIndexResponse extends js.Object {
@@ -705,7 +700,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''CreateObject''' operation.
+   * Represents the output of a <a>CreateObject</a> operation.
    */
   @js.native
   trait BatchCreateObject extends js.Object {
@@ -735,7 +730,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''CreateObject''' response operation.
+   * Represents the output of a <a>CreateObject</a> response operation.
    */
   @js.native
   trait BatchCreateObjectResponse extends js.Object {
@@ -753,7 +748,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DeleteObject''' operation.
+   * Represents the output of a <a>DeleteObject</a> operation.
    */
   @js.native
   trait BatchDeleteObject extends js.Object {
@@ -771,7 +766,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DeleteObject''' response operation.
+   * Represents the output of a <a>DeleteObject</a> response operation.
    */
   @js.native
   trait BatchDeleteObjectResponse extends js.Object {
@@ -787,7 +782,7 @@ package clouddirectory {
   }
 
   /**
-   * Detaches the specified object from the specified index inside a '''BatchRead''' operation. For more information, see '''DetachFromIndex''' and [[BatchReadRequest.Operations]].
+   * Detaches the specified object from the specified index inside a <a>BatchRead</a> operation. For more information, see <a>DetachFromIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchDetachFromIndex extends js.Object {
@@ -808,7 +803,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachFromIndex''' response operation.
+   * Represents the output of a <a>DetachFromIndex</a> response operation.
    */
   @js.native
   trait BatchDetachFromIndexResponse extends js.Object {
@@ -826,7 +821,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachObject''' operation.
+   * Represents the output of a <a>DetachObject</a> operation.
    */
   @js.native
   trait BatchDetachObject extends js.Object {
@@ -850,7 +845,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachObject''' response operation.
+   * Represents the output of a <a>DetachObject</a> response operation.
    */
   @js.native
   trait BatchDetachObjectResponse extends js.Object {
@@ -868,7 +863,7 @@ package clouddirectory {
   }
 
   /**
-   * Detaches the specified policy from the specified directory inside a '''BatchWrite''' operation. For more information, see '''DetachPolicy''' and [[BatchWriteRequest.Operations]].
+   * Detaches the specified policy from the specified directory inside a <a>BatchWrite</a> operation. For more information, see <a>DetachPolicy</a> and [[BatchWriteRequest.Operations]].
    */
   @js.native
   trait BatchDetachPolicy extends js.Object {
@@ -889,7 +884,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachPolicy''' response operation.
+   * Represents the output of a <a>DetachPolicy</a> response operation.
    */
   @js.native
   trait BatchDetachPolicyResponse extends js.Object {
@@ -905,7 +900,7 @@ package clouddirectory {
   }
 
   /**
-   * Detaches a typed link from a specified source and target object inside a '''BatchRead''' operation. For more information, see '''DetachTypedLink''' and [[BatchReadRequest.Operations]].
+   * Detaches a typed link from a specified source and target object inside a <a>BatchRead</a> operation. For more information, see <a>DetachTypedLink</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchDetachTypedLink extends js.Object {
@@ -923,7 +918,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''DetachTypedLink''' response operation.
+   * Represents the output of a <a>DetachTypedLink</a> response operation.
    */
   @js.native
   trait BatchDetachTypedLinkResponse extends js.Object {
@@ -939,7 +934,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves attributes that are associated with a typed link inside a '''BatchRead''' operation. For more information, see '''GetLinkAttributes''' and [[BatchReadRequest.Operations]].
+   * Retrieves attributes that are associated with a typed link inside a <a>BatchRead</a> operation. For more information, see <a>GetLinkAttributes</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchGetLinkAttributes extends js.Object {
@@ -960,7 +955,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''GetLinkAttributes''' response operation.
+   * Represents the output of a <a>GetLinkAttributes</a> response operation.
    */
   @js.native
   trait BatchGetLinkAttributesResponse extends js.Object {
@@ -978,7 +973,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves attributes within a facet that are associated with an object inside an '''BatchRead''' operation. For more information, see '''GetObjectAttributes''' and [[BatchReadRequest.Operations]].
+   * Retrieves attributes within a facet that are associated with an object inside an <a>BatchRead</a> operation. For more information, see <a>GetObjectAttributes</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchGetObjectAttributes extends js.Object {
@@ -1002,7 +997,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''GetObjectAttributes''' response operation.
+   * Represents the output of a <a>GetObjectAttributes</a> response operation.
    */
   @js.native
   trait BatchGetObjectAttributesResponse extends js.Object {
@@ -1020,7 +1015,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves metadata about an object inside a '''BatchRead''' operation. For more information, see '''GetObjectInformation''' and [[BatchReadRequest.Operations]].
+   * Retrieves metadata about an object inside a <a>BatchRead</a> operation. For more information, see <a>GetObjectInformation</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchGetObjectInformation extends js.Object {
@@ -1038,7 +1033,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''GetObjectInformation''' response operation.
+   * Represents the output of a <a>GetObjectInformation</a> response operation.
    */
   @js.native
   trait BatchGetObjectInformationResponse extends js.Object {
@@ -1059,7 +1054,7 @@ package clouddirectory {
   }
 
   /**
-   * Lists indices attached to an object inside a '''BatchRead''' operation. For more information, see '''ListAttachedIndices''' and [[BatchReadRequest.Operations]].
+   * Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListAttachedIndices extends js.Object {
@@ -1083,7 +1078,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListAttachedIndices''' response operation.
+   * Represents the output of a <a>ListAttachedIndices</a> response operation.
    */
   @js.native
   trait BatchListAttachedIndicesResponse extends js.Object {
@@ -1104,7 +1099,7 @@ package clouddirectory {
   }
 
   /**
-   * Returns a paginated list of all the incoming '''TypedLinkSpecifier''' information for an object inside a '''BatchRead''' operation. For more information, see '''ListIncomingTypedLinks''' and [[BatchReadRequest.Operations]].
+   * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListIncomingTypedLinks extends js.Object {
@@ -1134,7 +1129,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListIncomingTypedLinks''' response operation.
+   * Represents the output of a <a>ListIncomingTypedLinks</a> response operation.
    */
   @js.native
   trait BatchListIncomingTypedLinksResponse extends js.Object {
@@ -1155,7 +1150,7 @@ package clouddirectory {
   }
 
   /**
-   * Lists objects attached to the specified index inside a '''BatchRead''' operation. For more information, see '''ListIndex''' and [[BatchReadRequest.Operations]].
+   * Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListIndex extends js.Object {
@@ -1182,7 +1177,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListIndex''' response operation.
+   * Represents the output of a <a>ListIndex</a> response operation.
    */
   @js.native
   trait BatchListIndexResponse extends js.Object {
@@ -1203,7 +1198,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectAttributes''' operation.
+   * Represents the output of a <a>ListObjectAttributes</a> operation.
    */
   @js.native
   trait BatchListObjectAttributes extends js.Object {
@@ -1230,7 +1225,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectAttributes''' response operation.
+   * Represents the output of a <a>ListObjectAttributes</a> response operation.
    */
   @js.native
   trait BatchListObjectAttributesResponse extends js.Object {
@@ -1251,7 +1246,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectChildren''' operation.
+   * Represents the output of a <a>ListObjectChildren</a> operation.
    */
   @js.native
   trait BatchListObjectChildren extends js.Object {
@@ -1275,7 +1270,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectChildren''' response operation.
+   * Represents the output of a <a>ListObjectChildren</a> response operation.
    */
   @js.native
   trait BatchListObjectChildrenResponse extends js.Object {
@@ -1296,7 +1291,7 @@ package clouddirectory {
   }
 
   /**
-   * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a '''BatchRead''' operation. For more information, see '''ListObjectParentPaths''' and [[BatchReadRequest.Operations]].
+   * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListObjectParentPaths extends js.Object {
@@ -1320,7 +1315,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectParentPaths''' response operation.
+   * Represents the output of a <a>ListObjectParentPaths</a> response operation.
    */
   @js.native
   trait BatchListObjectParentPathsResponse extends js.Object {
@@ -1340,8 +1335,47 @@ package clouddirectory {
     }
   }
 
+  @js.native
+  trait BatchListObjectParents extends js.Object {
+    var ObjectReference: ObjectReference
+    var MaxResults: js.UndefOr[NumberResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchListObjectParents {
+    def apply(
+      ObjectReference: ObjectReference,
+      MaxResults: js.UndefOr[NumberResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectParents = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListObjectParents]
+    }
+  }
+
+  @js.native
+  trait BatchListObjectParentsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList]
+  }
+
+  object BatchListObjectParentsResponse {
+    def apply(
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined): BatchListObjectParentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ParentLinks" -> ParentLinks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListObjectParentsResponse]
+    }
+  }
+
   /**
-   * Returns policies attached to an object in pagination fashion inside a '''BatchRead''' operation. For more information, see '''ListObjectPolicies''' and [[BatchReadRequest.Operations]].
+   * Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListObjectPolicies extends js.Object {
@@ -1365,7 +1399,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListObjectPolicies''' response operation.
+   * Represents the output of a <a>ListObjectPolicies</a> response operation.
    */
   @js.native
   trait BatchListObjectPoliciesResponse extends js.Object {
@@ -1386,7 +1420,7 @@ package clouddirectory {
   }
 
   /**
-   * Returns a paginated list of all the outgoing '''TypedLinkSpecifier''' information for an object inside a '''BatchRead''' operation. For more information, see '''ListOutgoingTypedLinks''' and [[BatchReadRequest.Operations]].
+   * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListOutgoingTypedLinks extends js.Object {
@@ -1416,7 +1450,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListOutgoingTypedLinks''' response operation.
+   * Represents the output of a <a>ListOutgoingTypedLinks</a> response operation.
    */
   @js.native
   trait BatchListOutgoingTypedLinksResponse extends js.Object {
@@ -1437,7 +1471,7 @@ package clouddirectory {
   }
 
   /**
-   * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a '''BatchRead''' operation. For more information, see '''ListPolicyAttachments''' and [[BatchReadRequest.Operations]].
+   * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchListPolicyAttachments extends js.Object {
@@ -1461,7 +1495,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''ListPolicyAttachments''' response operation.
+   * Represents the output of a <a>ListPolicyAttachments</a> response operation.
    */
   @js.native
   trait BatchListPolicyAttachmentsResponse extends js.Object {
@@ -1482,7 +1516,7 @@ package clouddirectory {
   }
 
   /**
-   * Lists all policies from the root of the Directory to the object specified inside a '''BatchRead''' operation. For more information, see '''LookupPolicy''' and [[BatchReadRequest.Operations]].
+   * Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchLookupPolicy extends js.Object {
@@ -1506,7 +1540,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''LookupPolicy''' response operation.
+   * Represents the output of a <a>LookupPolicy</a> response operation.
    */
   @js.native
   trait BatchLookupPolicyResponse extends js.Object {
@@ -1579,6 +1613,7 @@ package clouddirectory {
     var ListObjectAttributes: js.UndefOr[BatchListObjectAttributes]
     var ListObjectChildren: js.UndefOr[BatchListObjectChildren]
     var ListObjectParentPaths: js.UndefOr[BatchListObjectParentPaths]
+    var ListObjectParents: js.UndefOr[BatchListObjectParents]
     var ListObjectPolicies: js.UndefOr[BatchListObjectPolicies]
     var ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinks]
     var ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachments]
@@ -1596,6 +1631,7 @@ package clouddirectory {
       ListObjectAttributes: js.UndefOr[BatchListObjectAttributes] = js.undefined,
       ListObjectChildren: js.UndefOr[BatchListObjectChildren] = js.undefined,
       ListObjectParentPaths: js.UndefOr[BatchListObjectParentPaths] = js.undefined,
+      ListObjectParents: js.UndefOr[BatchListObjectParents] = js.undefined,
       ListObjectPolicies: js.UndefOr[BatchListObjectPolicies] = js.undefined,
       ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinks] = js.undefined,
       ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachments] = js.undefined,
@@ -1610,6 +1646,7 @@ package clouddirectory {
         "ListObjectAttributes" -> ListObjectAttributes.map { x => x.asInstanceOf[js.Any] },
         "ListObjectChildren" -> ListObjectChildren.map { x => x.asInstanceOf[js.Any] },
         "ListObjectParentPaths" -> ListObjectParentPaths.map { x => x.asInstanceOf[js.Any] },
+        "ListObjectParents" -> ListObjectParents.map { x => x.asInstanceOf[js.Any] },
         "ListObjectPolicies" -> ListObjectPolicies.map { x => x.asInstanceOf[js.Any] },
         "ListOutgoingTypedLinks" -> ListOutgoingTypedLinks.map { x => x.asInstanceOf[js.Any] },
         "ListPolicyAttachments" -> ListPolicyAttachments.map { x => x.asInstanceOf[js.Any] },
@@ -1690,6 +1727,7 @@ package clouddirectory {
     var ListObjectAttributes: js.UndefOr[BatchListObjectAttributesResponse]
     var ListObjectChildren: js.UndefOr[BatchListObjectChildrenResponse]
     var ListObjectParentPaths: js.UndefOr[BatchListObjectParentPathsResponse]
+    var ListObjectParents: js.UndefOr[BatchListObjectParentsResponse]
     var ListObjectPolicies: js.UndefOr[BatchListObjectPoliciesResponse]
     var ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinksResponse]
     var ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachmentsResponse]
@@ -1707,6 +1745,7 @@ package clouddirectory {
       ListObjectAttributes: js.UndefOr[BatchListObjectAttributesResponse] = js.undefined,
       ListObjectChildren: js.UndefOr[BatchListObjectChildrenResponse] = js.undefined,
       ListObjectParentPaths: js.UndefOr[BatchListObjectParentPathsResponse] = js.undefined,
+      ListObjectParents: js.UndefOr[BatchListObjectParentsResponse] = js.undefined,
       ListObjectPolicies: js.UndefOr[BatchListObjectPoliciesResponse] = js.undefined,
       ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinksResponse] = js.undefined,
       ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachmentsResponse] = js.undefined,
@@ -1721,6 +1760,7 @@ package clouddirectory {
         "ListObjectAttributes" -> ListObjectAttributes.map { x => x.asInstanceOf[js.Any] },
         "ListObjectChildren" -> ListObjectChildren.map { x => x.asInstanceOf[js.Any] },
         "ListObjectParentPaths" -> ListObjectParentPaths.map { x => x.asInstanceOf[js.Any] },
+        "ListObjectParents" -> ListObjectParents.map { x => x.asInstanceOf[js.Any] },
         "ListObjectPolicies" -> ListObjectPolicies.map { x => x.asInstanceOf[js.Any] },
         "ListOutgoingTypedLinks" -> ListOutgoingTypedLinks.map { x => x.asInstanceOf[js.Any] },
         "ListPolicyAttachments" -> ListPolicyAttachments.map { x => x.asInstanceOf[js.Any] },
@@ -1768,7 +1808,7 @@ package clouddirectory {
   }
 
   /**
-   * Updates a given typed link�fs attributes inside a '''BatchRead''' operation. Attributes to be updated must not contribute to the typed link�fs identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see '''UpdateLinkAttributes''' and [[BatchReadRequest.Operations]].
+   * Updates a given typed link�fs attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link�fs identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and [[BatchReadRequest.Operations]].
    */
   @js.native
   trait BatchUpdateLinkAttributes extends js.Object {
@@ -1789,7 +1829,7 @@ package clouddirectory {
   }
 
   /**
-   * Represents the output of a '''UpdateLinkAttributes''' response operation.
+   * Represents the output of a <a>UpdateLinkAttributes</a> response operation.
    */
   @js.native
   trait BatchUpdateLinkAttributesResponse extends js.Object {
@@ -1841,39 +1881,6 @@ package clouddirectory {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateObjectAttributesResponse]
     }
-  }
-
-  /**
-   * A <code>BatchWrite</code> exception has occurred.
-   */
-  @js.native
-  trait BatchWriteExceptionException extends js.Object {
-    val Index: BatchOperationIndex
-    val Type: BatchWriteExceptionType
-    val Message: ExceptionMessage
-  }
-
-  object BatchWriteExceptionTypeEnum {
-    val InternalServiceException = "InternalServiceException"
-    val ValidationException = "ValidationException"
-    val InvalidArnException = "InvalidArnException"
-    val LinkNameAlreadyInUseException = "LinkNameAlreadyInUseException"
-    val StillContainsLinksException = "StillContainsLinksException"
-    val FacetValidationException = "FacetValidationException"
-    val ObjectNotDetachedException = "ObjectNotDetachedException"
-    val ResourceNotFoundException = "ResourceNotFoundException"
-    val AccessDeniedException = "AccessDeniedException"
-    val InvalidAttachmentException = "InvalidAttachmentException"
-    val NotIndexException = "NotIndexException"
-    val NotNodeException = "NotNodeException"
-    val IndexedAttributeMissingException = "IndexedAttributeMissingException"
-    val ObjectAlreadyDetachedException = "ObjectAlreadyDetachedException"
-    val NotPolicyException = "NotPolicyException"
-    val DirectoryNotEnabledException = "DirectoryNotEnabledException"
-    val LimitExceededException = "LimitExceededException"
-    val UnsupportedIndexTypeException = "UnsupportedIndexTypeException"
-
-    val values = IndexedSeq(InternalServiceException, ValidationException, InvalidArnException, LinkNameAlreadyInUseException, StillContainsLinksException, FacetValidationException, ObjectNotDetachedException, ResourceNotFoundException, AccessDeniedException, InvalidAttachmentException, NotIndexException, NotNodeException, IndexedAttributeMissingException, ObjectAlreadyDetachedException, NotPolicyException, DirectoryNotEnabledException, LimitExceededException, UnsupportedIndexTypeException)
   }
 
   /**
@@ -2029,14 +2036,6 @@ package clouddirectory {
     }
   }
 
-  /**
-   * Cannot list the parents of a '''Directory''' root.
-   */
-  @js.native
-  trait CannotListParentOfRootExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
   object ConsistencyLevelEnum {
     val SERIALIZABLE = "SERIALIZABLE"
     val EVENTUAL = "EVENTUAL"
@@ -2089,22 +2088,25 @@ package clouddirectory {
   @js.native
   trait CreateFacetRequest extends js.Object {
     var Name: FacetName
-    var ObjectType: ObjectType
     var SchemaArn: Arn
     var Attributes: js.UndefOr[FacetAttributeList]
+    var FacetStyle: js.UndefOr[FacetStyle]
+    var ObjectType: js.UndefOr[ObjectType]
   }
 
   object CreateFacetRequest {
     def apply(
       Name: FacetName,
-      ObjectType: ObjectType,
       SchemaArn: Arn,
-      Attributes: js.UndefOr[FacetAttributeList] = js.undefined): CreateFacetRequest = {
+      Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
+      FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
+      ObjectType: js.UndefOr[ObjectType] = js.undefined): CreateFacetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
-        "ObjectType" -> ObjectType.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
+        "FacetStyle" -> FacetStyle.map { x => x.asInstanceOf[js.Any] },
+        "ObjectType" -> ObjectType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFacetRequest]
     }
@@ -2572,38 +2574,6 @@ package clouddirectory {
     }
   }
 
-  /**
-   * Indicates that a '''Directory''' could not be created due to a naming conflict. Choose a different name and try again.
-   */
-  @js.native
-  trait DirectoryAlreadyExistsExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.
-   */
-  @js.native
-  trait DirectoryDeletedExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * An operation can only operate on a disabled directory.
-   */
-  @js.native
-  trait DirectoryNotDisabledExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Operations are only permitted on enabled directories.
-   */
-  @js.native
-  trait DirectoryNotEnabledExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
   object DirectoryStateEnum {
     val ENABLED = "ENABLED"
     val DISABLED = "DISABLED"
@@ -2673,19 +2643,22 @@ package clouddirectory {
   }
 
   /**
-   * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> '''Rule'''s</code>, and <code>ObjectTypes</code>. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/whatarefacets.html">Facets</a> for more information.
+   * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html|Facets]] for more information.
    */
   @js.native
   trait Facet extends js.Object {
+    var FacetStyle: js.UndefOr[FacetStyle]
     var Name: js.UndefOr[FacetName]
     var ObjectType: js.UndefOr[ObjectType]
   }
 
   object Facet {
     def apply(
+      FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
       Name: js.UndefOr[FacetName] = js.undefined,
       ObjectType: js.UndefOr[ObjectType] = js.undefined): Facet = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "FacetStyle" -> FacetStyle.map { x => x.asInstanceOf[js.Any] },
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
         "ObjectType" -> ObjectType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -2694,15 +2667,7 @@ package clouddirectory {
   }
 
   /**
-   * A facet with the same name already exists.
-   */
-  @js.native
-  trait FacetAlreadyExistsExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * An attribute that is associated with the '''Facet'''.
+   * An attribute that is associated with the <a>Facet</a>.
    */
   @js.native
   trait FacetAttribute extends js.Object {
@@ -2729,7 +2694,7 @@ package clouddirectory {
   }
 
   /**
-   * A facet attribute definition. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute References</a> for more information.
+   * A facet attribute definition. See [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html|Attribute References]] for more information.
    */
   @js.native
   trait FacetAttributeDefinition extends js.Object {
@@ -2782,8 +2747,9 @@ package clouddirectory {
     val BOOLEAN = "BOOLEAN"
     val NUMBER = "NUMBER"
     val DATETIME = "DATETIME"
+    val VARIANT = "VARIANT"
 
-    val values = IndexedSeq(STRING, BINARY, BOOLEAN, NUMBER, DATETIME)
+    val values = IndexedSeq(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT)
   }
 
   /**
@@ -2807,28 +2773,11 @@ package clouddirectory {
     }
   }
 
-  /**
-   * Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different facet.
-   */
-  @js.native
-  trait FacetInUseExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
+  object FacetStyleEnum {
+    val STATIC = "STATIC"
+    val DYNAMIC = "DYNAMIC"
 
-  /**
-   * The specified '''Facet''' could not be found.
-   */
-  @js.native
-  trait FacetNotFoundExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * The '''Facet''' that you provided was not well formed or could not be validated with the schema.
-   */
-  @js.native
-  trait FacetValidationExceptionException extends js.Object {
-    val Message: ExceptionMessage
+    val values = IndexedSeq(STATIC, DYNAMIC)
   }
 
   @js.native
@@ -3111,14 +3060,6 @@ package clouddirectory {
   }
 
   /**
-   * Indicates a failure occurred while performing a check for backward compatibility between the specified schema and the schema that is currently applied to the directory.
-   */
-  @js.native
-  trait IncompatibleSchemaExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
    * Represents an index and an attached object.
    */
   @js.native
@@ -3137,86 +3078,6 @@ package clouddirectory {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexAttachment]
     }
-  }
-
-  /**
-   * An object has been attempted to be attached to an object that does not have the appropriate attribute value.
-   */
-  @js.native
-  trait IndexedAttributeMissingExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.
-   */
-  @js.native
-  trait InternalServiceExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that the provided ARN value is not valid.
-   */
-  @js.native
-  trait InvalidArnExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that an attempt to attach an object with the same link name or to apply a schema with the same name has occurred. Rename the link or the schema and then try again.
-   */
-  @js.native
-  trait InvalidAttachmentExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * An attempt to modify a '''Facet''' resulted in an invalid schema exception.
-   */
-  @js.native
-  trait InvalidFacetUpdateExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that the <code>NextToken</code> value is not valid.
-   */
-  @js.native
-  trait InvalidNextTokenExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Occurs when any of the rule parameter keys or values are invalid.
-   */
-  @js.native
-  trait InvalidRuleExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that the provided <code>SchemaDoc</code> value is not valid.
-   */
-  @js.native
-  trait InvalidSchemaDocExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Can occur for multiple reasons such as when you tag a resource that doesn�ft exist or if you specify a higher number of tags for a resource than the allowed limit. Allowed limit is 50 tags per resource.
-   */
-  @js.native
-  trait InvalidTaggingRequestExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more information.
-   */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val Message: ExceptionMessage
   }
 
   /**
@@ -3259,14 +3120,6 @@ package clouddirectory {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LinkAttributeUpdate]
     }
-  }
-
-  /**
-   * Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.
-   */
-  @js.native
-  trait LinkNameAlreadyInUseExceptionException extends js.Object {
-    val Message: ExceptionMessage
   }
 
   @js.native
@@ -3612,6 +3465,45 @@ package clouddirectory {
   }
 
   @js.native
+  trait ListManagedSchemaArnsRequest extends js.Object {
+    var MaxResults: js.UndefOr[NumberResults]
+    var NextToken: js.UndefOr[NextToken]
+    var SchemaArn: js.UndefOr[Arn]
+  }
+
+  object ListManagedSchemaArnsRequest {
+    def apply(
+      MaxResults: js.UndefOr[NumberResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      SchemaArn: js.UndefOr[Arn] = js.undefined): ListManagedSchemaArnsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SchemaArn" -> SchemaArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListManagedSchemaArnsRequest]
+    }
+  }
+
+  @js.native
+  trait ListManagedSchemaArnsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var SchemaArns: js.UndefOr[Arns]
+  }
+
+  object ListManagedSchemaArnsResponse {
+    def apply(
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      SchemaArns: js.UndefOr[Arns] = js.undefined): ListManagedSchemaArnsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SchemaArns" -> SchemaArns.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListManagedSchemaArnsResponse]
+    }
+  }
+
+  @js.native
   trait ListObjectAttributesRequest extends js.Object {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
@@ -3751,6 +3643,7 @@ package clouddirectory {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
     var ConsistencyLevel: js.UndefOr[ConsistencyLevel]
+    var IncludeAllLinksToEachParent: js.UndefOr[Bool]
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -3760,12 +3653,14 @@ package clouddirectory {
       DirectoryArn: Arn,
       ObjectReference: ObjectReference,
       ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+      IncludeAllLinksToEachParent: js.UndefOr[Bool] = js.undefined,
       MaxResults: js.UndefOr[NumberResults] = js.undefined,
       NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectParentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "ConsistencyLevel" -> ConsistencyLevel.map { x => x.asInstanceOf[js.Any] },
+        "IncludeAllLinksToEachParent" -> IncludeAllLinksToEachParent.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -3776,15 +3671,18 @@ package clouddirectory {
   @js.native
   trait ListObjectParentsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]
+    var ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList]
     var Parents: js.UndefOr[ObjectIdentifierToLinkNameMap]
   }
 
   object ListObjectParentsResponse {
     def apply(
       NextToken: js.UndefOr[NextToken] = js.undefined,
+      ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined,
       Parents: js.UndefOr[ObjectIdentifierToLinkNameMap] = js.undefined): ListObjectParentsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "ParentLinks" -> ParentLinks.map { x => x.asInstanceOf[js.Any] },
         "Parents" -> Parents.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectParentsResponse]
@@ -4134,38 +4032,6 @@ package clouddirectory {
   }
 
   /**
-   * Indicates that the requested operation can only operate on index objects.
-   */
-  @js.native
-  trait NotIndexExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.
-   */
-  @js.native
-  trait NotNodeExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that the requested operation can only operate on policy objects.
-   */
-  @js.native
-  trait NotPolicyExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that the object is not attached to the index.
-   */
-  @js.native
-  trait ObjectAlreadyDetachedExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
    * The action to take on the object attribute.
    */
   @js.native
@@ -4229,11 +4095,24 @@ package clouddirectory {
   }
 
   /**
-   * Indicates that the requested operation cannot be completed because the object has not been detached from the tree.
+   * A pair of ObjectIdentifier and LinkName.
    */
   @js.native
-  trait ObjectNotDetachedExceptionException extends js.Object {
-    val Message: ExceptionMessage
+  trait ObjectIdentifierAndLinkNameTuple extends js.Object {
+    var LinkName: js.UndefOr[LinkName]
+    var ObjectIdentifier: js.UndefOr[ObjectIdentifier]
+  }
+
+  object ObjectIdentifierAndLinkNameTuple {
+    def apply(
+      LinkName: js.UndefOr[LinkName] = js.undefined,
+      ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): ObjectIdentifierAndLinkNameTuple = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LinkName" -> LinkName.map { x => x.asInstanceOf[js.Any] },
+        "ObjectIdentifier" -> ObjectIdentifier.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectIdentifierAndLinkNameTuple]
+    }
   }
 
   /**
@@ -4285,7 +4164,7 @@ package clouddirectory {
   }
 
   /**
-   * Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+   * Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies|Policies]].
    */
   @js.native
   trait PolicyAttachment extends js.Object {
@@ -4309,7 +4188,7 @@ package clouddirectory {
   }
 
   /**
-   * Used when a regular object exists in a '''Directory''' and you want to find all of the policies that are associated with that object and the parent to that object.
+   * Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object.
    */
   @js.native
   trait PolicyToPath extends js.Object {
@@ -4453,22 +4332,6 @@ package clouddirectory {
   }
 
   /**
-   * The specified resource could not be found.
-   */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using �gSERIALIZABLE�h consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.
-   */
-  @js.native
-  trait RetryableConflictExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
    * Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.
    */
   @js.native
@@ -4499,22 +4362,6 @@ package clouddirectory {
   }
 
   /**
-   * Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.
-   */
-  @js.native
-  trait SchemaAlreadyExistsExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
-   * Indicates that a schema is already published.
-   */
-  @js.native
-  trait SchemaAlreadyPublishedExceptionException extends js.Object {
-    val Message: ExceptionMessage
-  }
-
-  /**
    * A facet.
    */
   @js.native
@@ -4533,14 +4380,6 @@ package clouddirectory {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SchemaFacet]
     }
-  }
-
-  /**
-   * The object could not be deleted because links still exist. Remove the links and then try the operation again.
-   */
-  @js.native
-  trait StillContainsLinksExceptionException extends js.Object {
-    val Message: ExceptionMessage
   }
 
   /**
@@ -4626,7 +4465,7 @@ package clouddirectory {
   }
 
   /**
-   * A range of attribute values. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#rangefilters">Range Filters</a>.
+   * A range of attribute values. For more information, see [[https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html|Range Filters]].
    */
   @js.native
   trait TypedAttributeValueRange extends js.Object {
@@ -4707,7 +4546,7 @@ package clouddirectory {
   }
 
   /**
-   * Defines the typed links structure and its attributes. To create a typed link facet, use the '''CreateTypedLinkFacet''' API.
+   * Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API.
    */
   @js.native
   trait TypedLinkFacet extends js.Object {
@@ -4773,7 +4612,7 @@ package clouddirectory {
   }
 
   /**
-   * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The '''AttachTypedLink''' API returns a typed link specifier while the '''DetachTypedLink''' API accepts one as input. Similarly, the '''ListIncomingTypedLinks''' and '''ListOutgoingTypedLinks''' API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
+   * Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.
    */
   @js.native
   trait TypedLinkSpecifier extends js.Object {
@@ -4797,14 +4636,6 @@ package clouddirectory {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TypedLinkSpecifier]
     }
-  }
-
-  /**
-   * Indicates that the requested index type is not supported.
-   */
-  @js.native
-  trait UnsupportedIndexTypeExceptionException extends js.Object {
-    val Message: ExceptionMessage
   }
 
   @js.native
@@ -5098,13 +4929,5 @@ package clouddirectory {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradePublishedSchemaResponse]
     }
-  }
-
-  /**
-   * Indicates that your request is malformed in some manner. See the exception message.
-   */
-  @js.native
-  trait ValidationExceptionException extends js.Object {
-    val Message: ExceptionMessage
   }
 }

@@ -19,6 +19,14 @@ package object alexaforbusiness {
   type AuthorizationResult = js.Dictionary[Value]
   type BulletPoint = String
   type BulletPoints = js.Array[BulletPoint]
+  type BusinessReportDownloadUrl = String
+  type BusinessReportFailureCode = String
+  type BusinessReportFormat = String
+  type BusinessReportInterval = String
+  type BusinessReportS3Path = String
+  type BusinessReportScheduleList = js.Array[BusinessReportSchedule]
+  type BusinessReportScheduleName = String
+  type BusinessReportStatus = String
   type CategoryId = Double
   type CategoryList = js.Array[Category]
   type CategoryName = String
@@ -32,6 +40,8 @@ package object alexaforbusiness {
   type ContactDataList = js.Array[ContactData]
   type ContactName = String
   type CountryCode = String
+  type CustomerS3BucketName = String
+  type Date = String
   type DeveloperName = String
   type DeviceDataList = js.Array[DeviceData]
   type DeviceEventList = js.Array[DeviceEvent]
@@ -71,7 +81,7 @@ package object alexaforbusiness {
   type NextToken = String
   type OneClickIdDelay = String
   type OneClickPinDelay = String
-  type PhoneNumber = String
+  type OutboundPhoneNumber = String
   type PrivacyPolicy = String
   type ProductDescription = String
   type ProductId = String
@@ -89,6 +99,7 @@ package object alexaforbusiness {
   type RoomSkillParameterKey = String
   type RoomSkillParameterValue = String
   type RoomSkillParameters = js.Array[RoomSkillParameter]
+  type S3KeyPrefix = String
   type SampleUtterances = js.Array[Utterance]
   type ShortDescription = String
   type SkillGroupDataList = js.Array[SkillGroupData]
@@ -132,13 +143,17 @@ package object alexaforbusiness {
 package alexaforbusiness {
   @js.native
   @JSImport("aws-sdk", "AlexaForBusiness")
-  class AlexaForBusiness(config: AWSConfig) extends js.Object {
+  class AlexaForBusiness() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def approveSkill(params: ApproveSkillRequest): Request[ApproveSkillResponse] = js.native
     def associateContactWithAddressBook(params: AssociateContactWithAddressBookRequest): Request[AssociateContactWithAddressBookResponse] = js.native
     def associateDeviceWithRoom(params: AssociateDeviceWithRoomRequest): Request[AssociateDeviceWithRoomResponse] = js.native
     def associateSkillGroupWithRoom(params: AssociateSkillGroupWithRoomRequest): Request[AssociateSkillGroupWithRoomResponse] = js.native
     def associateSkillWithSkillGroup(params: AssociateSkillWithSkillGroupRequest): Request[AssociateSkillWithSkillGroupResponse] = js.native
+    def associateSkillWithUsers(params: AssociateSkillWithUsersRequest): Request[AssociateSkillWithUsersResponse] = js.native
     def createAddressBook(params: CreateAddressBookRequest): Request[CreateAddressBookResponse] = js.native
+    def createBusinessReportSchedule(params: CreateBusinessReportScheduleRequest): Request[CreateBusinessReportScheduleResponse] = js.native
     def createConferenceProvider(params: CreateConferenceProviderRequest): Request[CreateConferenceProviderResponse] = js.native
     def createContact(params: CreateContactRequest): Request[CreateContactResponse] = js.native
     def createProfile(params: CreateProfileRequest): Request[CreateProfileResponse] = js.native
@@ -146,6 +161,7 @@ package alexaforbusiness {
     def createSkillGroup(params: CreateSkillGroupRequest): Request[CreateSkillGroupResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteAddressBook(params: DeleteAddressBookRequest): Request[DeleteAddressBookResponse] = js.native
+    def deleteBusinessReportSchedule(params: DeleteBusinessReportScheduleRequest): Request[DeleteBusinessReportScheduleResponse] = js.native
     def deleteConferenceProvider(params: DeleteConferenceProviderRequest): Request[DeleteConferenceProviderResponse] = js.native
     def deleteContact(params: DeleteContactRequest): Request[DeleteContactResponse] = js.native
     def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse] = js.native
@@ -158,6 +174,7 @@ package alexaforbusiness {
     def disassociateContactFromAddressBook(params: DisassociateContactFromAddressBookRequest): Request[DisassociateContactFromAddressBookResponse] = js.native
     def disassociateDeviceFromRoom(params: DisassociateDeviceFromRoomRequest): Request[DisassociateDeviceFromRoomResponse] = js.native
     def disassociateSkillFromSkillGroup(params: DisassociateSkillFromSkillGroupRequest): Request[DisassociateSkillFromSkillGroupResponse] = js.native
+    def disassociateSkillFromUsers(params: DisassociateSkillFromUsersRequest): Request[DisassociateSkillFromUsersResponse] = js.native
     def disassociateSkillGroupFromRoom(params: DisassociateSkillGroupFromRoomRequest): Request[DisassociateSkillGroupFromRoomResponse] = js.native
     def forgetSmartHomeAppliances(params: ForgetSmartHomeAppliancesRequest): Request[ForgetSmartHomeAppliancesResponse] = js.native
     def getAddressBook(params: GetAddressBookRequest): Request[GetAddressBookResponse] = js.native
@@ -169,6 +186,7 @@ package alexaforbusiness {
     def getRoom(params: GetRoomRequest): Request[GetRoomResponse] = js.native
     def getRoomSkillParameter(params: GetRoomSkillParameterRequest): Request[GetRoomSkillParameterResponse] = js.native
     def getSkillGroup(params: GetSkillGroupRequest): Request[GetSkillGroupResponse] = js.native
+    def listBusinessReportSchedules(params: ListBusinessReportSchedulesRequest): Request[ListBusinessReportSchedulesResponse] = js.native
     def listConferenceProviders(params: ListConferenceProvidersRequest): Request[ListConferenceProvidersResponse] = js.native
     def listDeviceEvents(params: ListDeviceEventsRequest): Request[ListDeviceEventsResponse] = js.native
     def listSkills(params: ListSkillsRequest): Request[ListSkillsResponse] = js.native
@@ -196,6 +214,7 @@ package alexaforbusiness {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAddressBook(params: UpdateAddressBookRequest): Request[UpdateAddressBookResponse] = js.native
+    def updateBusinessReportSchedule(params: UpdateBusinessReportScheduleRequest): Request[UpdateBusinessReportScheduleResponse] = js.native
     def updateConferenceProvider(params: UpdateConferenceProviderRequest): Request[UpdateConferenceProviderResponse] = js.native
     def updateContact(params: UpdateContactRequest): Request[UpdateContactResponse] = js.native
     def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse] = js.native
@@ -404,6 +423,193 @@ package alexaforbusiness {
     }
   }
 
+  @js.native
+  trait AssociateSkillWithUsersRequest extends js.Object {
+    var SkillId: SkillId
+    var OrganizationArn: js.UndefOr[Arn]
+  }
+
+  object AssociateSkillWithUsersRequest {
+    def apply(
+      SkillId: SkillId,
+      OrganizationArn: js.UndefOr[Arn] = js.undefined): AssociateSkillWithUsersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SkillId" -> SkillId.asInstanceOf[js.Any],
+        "OrganizationArn" -> OrganizationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSkillWithUsersRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateSkillWithUsersResponse extends js.Object {
+
+  }
+
+  object AssociateSkillWithUsersResponse {
+    def apply(): AssociateSkillWithUsersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSkillWithUsersResponse]
+    }
+  }
+
+  /**
+   * Usage report with specified parameters.
+   */
+  @js.native
+  trait BusinessReport extends js.Object {
+    var DeliveryTime: js.UndefOr[Timestamp]
+    var DownloadUrl: js.UndefOr[BusinessReportDownloadUrl]
+    var FailureCode: js.UndefOr[BusinessReportFailureCode]
+    var S3Location: js.UndefOr[BusinessReportS3Location]
+    var Status: js.UndefOr[BusinessReportStatus]
+  }
+
+  object BusinessReport {
+    def apply(
+      DeliveryTime: js.UndefOr[Timestamp] = js.undefined,
+      DownloadUrl: js.UndefOr[BusinessReportDownloadUrl] = js.undefined,
+      FailureCode: js.UndefOr[BusinessReportFailureCode] = js.undefined,
+      S3Location: js.UndefOr[BusinessReportS3Location] = js.undefined,
+      Status: js.UndefOr[BusinessReportStatus] = js.undefined): BusinessReport = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeliveryTime" -> DeliveryTime.map { x => x.asInstanceOf[js.Any] },
+        "DownloadUrl" -> DownloadUrl.map { x => x.asInstanceOf[js.Any] },
+        "FailureCode" -> FailureCode.map { x => x.asInstanceOf[js.Any] },
+        "S3Location" -> S3Location.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReport]
+    }
+  }
+
+  /**
+   * The content range of the report.
+   */
+  @js.native
+  trait BusinessReportContentRange extends js.Object {
+    var Interval: js.UndefOr[BusinessReportInterval]
+  }
+
+  object BusinessReportContentRange {
+    def apply(
+      Interval: js.UndefOr[BusinessReportInterval] = js.undefined): BusinessReportContentRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Interval" -> Interval.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportContentRange]
+    }
+  }
+
+  object BusinessReportFailureCodeEnum {
+    val ACCESS_DENIED = "ACCESS_DENIED"
+    val NO_SUCH_BUCKET = "NO_SUCH_BUCKET"
+    val INTERNAL_FAILURE = "INTERNAL_FAILURE"
+
+    val values = IndexedSeq(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
+  }
+
+  object BusinessReportFormatEnum {
+    val CSV = "CSV"
+    val CSV_ZIP = "CSV_ZIP"
+
+    val values = IndexedSeq(CSV, CSV_ZIP)
+  }
+
+  object BusinessReportIntervalEnum {
+    val ONE_DAY = "ONE_DAY"
+    val ONE_WEEK = "ONE_WEEK"
+
+    val values = IndexedSeq(ONE_DAY, ONE_WEEK)
+  }
+
+  /**
+   * The recurrence of the reports.
+   */
+  @js.native
+  trait BusinessReportRecurrence extends js.Object {
+    var StartDate: js.UndefOr[Date]
+  }
+
+  object BusinessReportRecurrence {
+    def apply(
+      StartDate: js.UndefOr[Date] = js.undefined): BusinessReportRecurrence = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StartDate" -> StartDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportRecurrence]
+    }
+  }
+
+  /**
+   * The S3 location of the output reports.
+   */
+  @js.native
+  trait BusinessReportS3Location extends js.Object {
+    var BucketName: js.UndefOr[CustomerS3BucketName]
+    var Path: js.UndefOr[BusinessReportS3Path]
+  }
+
+  object BusinessReportS3Location {
+    def apply(
+      BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+      Path: js.UndefOr[BusinessReportS3Path] = js.undefined): BusinessReportS3Location = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BucketName" -> BucketName.map { x => x.asInstanceOf[js.Any] },
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportS3Location]
+    }
+  }
+
+  /**
+   * The schedule of the usage report.
+   */
+  @js.native
+  trait BusinessReportSchedule extends js.Object {
+    var ContentRange: js.UndefOr[BusinessReportContentRange]
+    var Format: js.UndefOr[BusinessReportFormat]
+    var LastBusinessReport: js.UndefOr[BusinessReport]
+    var Recurrence: js.UndefOr[BusinessReportRecurrence]
+    var S3BucketName: js.UndefOr[CustomerS3BucketName]
+    var S3KeyPrefix: js.UndefOr[S3KeyPrefix]
+    var ScheduleArn: js.UndefOr[Arn]
+    var ScheduleName: js.UndefOr[BusinessReportScheduleName]
+  }
+
+  object BusinessReportSchedule {
+    def apply(
+      ContentRange: js.UndefOr[BusinessReportContentRange] = js.undefined,
+      Format: js.UndefOr[BusinessReportFormat] = js.undefined,
+      LastBusinessReport: js.UndefOr[BusinessReport] = js.undefined,
+      Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
+      S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+      S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+      ScheduleArn: js.UndefOr[Arn] = js.undefined,
+      ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined): BusinessReportSchedule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContentRange" -> ContentRange.map { x => x.asInstanceOf[js.Any] },
+        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
+        "LastBusinessReport" -> LastBusinessReport.map { x => x.asInstanceOf[js.Any] },
+        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
+        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
+        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "ScheduleArn" -> ScheduleArn.map { x => x.asInstanceOf[js.Any] },
+        "ScheduleName" -> ScheduleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportSchedule]
+    }
+  }
+
+  object BusinessReportStatusEnum {
+    val RUNNING = "RUNNING"
+    val SUCCEEDED = "SUCCEEDED"
+    val FAILED = "FAILED"
+
+    val values = IndexedSeq(RUNNING, SUCCEEDED, FAILED)
+  }
+
   /**
    * The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.
    */
@@ -603,6 +809,54 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait CreateBusinessReportScheduleRequest extends js.Object {
+    var ContentRange: BusinessReportContentRange
+    var Format: BusinessReportFormat
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Recurrence: js.UndefOr[BusinessReportRecurrence]
+    var S3BucketName: js.UndefOr[CustomerS3BucketName]
+    var S3KeyPrefix: js.UndefOr[S3KeyPrefix]
+    var ScheduleName: js.UndefOr[BusinessReportScheduleName]
+  }
+
+  object CreateBusinessReportScheduleRequest {
+    def apply(
+      ContentRange: BusinessReportContentRange,
+      Format: BusinessReportFormat,
+      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+      Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
+      S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+      S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+      ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined): CreateBusinessReportScheduleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContentRange" -> ContentRange.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
+        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
+        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
+        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "ScheduleName" -> ScheduleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBusinessReportScheduleRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBusinessReportScheduleResponse extends js.Object {
+    var ScheduleArn: js.UndefOr[Arn]
+  }
+
+  object CreateBusinessReportScheduleResponse {
+    def apply(
+      ScheduleArn: js.UndefOr[Arn] = js.undefined): CreateBusinessReportScheduleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ScheduleArn" -> ScheduleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBusinessReportScheduleResponse]
+    }
+  }
+
+  @js.native
   trait CreateConferenceProviderRequest extends js.Object {
     var ConferenceProviderName: ConferenceProviderName
     var ConferenceProviderType: ConferenceProviderType
@@ -650,25 +904,25 @@ package alexaforbusiness {
   @js.native
   trait CreateContactRequest extends js.Object {
     var FirstName: ContactName
-    var PhoneNumber: E164PhoneNumber
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var DisplayName: js.UndefOr[ContactName]
     var LastName: js.UndefOr[ContactName]
+    var PhoneNumber: js.UndefOr[E164PhoneNumber]
   }
 
   object CreateContactRequest {
     def apply(
       FirstName: ContactName,
-      PhoneNumber: E164PhoneNumber,
       ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
       DisplayName: js.UndefOr[ContactName] = js.undefined,
-      LastName: js.UndefOr[ContactName] = js.undefined): CreateContactRequest = {
+      LastName: js.UndefOr[ContactName] = js.undefined,
+      PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): CreateContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FirstName" -> FirstName.asInstanceOf[js.Any],
-        "PhoneNumber" -> PhoneNumber.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
         "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
+        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateContactRequest]
     }
@@ -897,6 +1151,34 @@ package alexaforbusiness {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAddressBookResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteBusinessReportScheduleRequest extends js.Object {
+    var ScheduleArn: Arn
+  }
+
+  object DeleteBusinessReportScheduleRequest {
+    def apply(
+      ScheduleArn: Arn): DeleteBusinessReportScheduleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ScheduleArn" -> ScheduleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBusinessReportScheduleRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBusinessReportScheduleResponse extends js.Object {
+
+  }
+
+  object DeleteBusinessReportScheduleResponse {
+    def apply(): DeleteBusinessReportScheduleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBusinessReportScheduleResponse]
     }
   }
 
@@ -1455,6 +1737,37 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait DisassociateSkillFromUsersRequest extends js.Object {
+    var SkillId: SkillId
+    var OrganizationArn: js.UndefOr[Arn]
+  }
+
+  object DisassociateSkillFromUsersRequest {
+    def apply(
+      SkillId: SkillId,
+      OrganizationArn: js.UndefOr[Arn] = js.undefined): DisassociateSkillFromUsersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SkillId" -> SkillId.asInstanceOf[js.Any],
+        "OrganizationArn" -> OrganizationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateSkillFromUsersRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateSkillFromUsersResponse extends js.Object {
+
+  }
+
+  object DisassociateSkillFromUsersResponse {
+    def apply(): DisassociateSkillFromUsersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateSkillFromUsersResponse]
+    }
+  }
+
+  @js.native
   trait DisassociateSkillGroupFromRoomRequest extends js.Object {
     var RoomArn: js.UndefOr[Arn]
     var SkillGroupArn: js.UndefOr[Arn]
@@ -1872,6 +2185,42 @@ package alexaforbusiness {
   }
 
   @js.native
+  trait ListBusinessReportSchedulesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBusinessReportSchedulesRequest {
+    def apply(
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListBusinessReportSchedulesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBusinessReportSchedulesRequest]
+    }
+  }
+
+  @js.native
+  trait ListBusinessReportSchedulesResponse extends js.Object {
+    var BusinessReportSchedules: js.UndefOr[BusinessReportScheduleList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBusinessReportSchedulesResponse {
+    def apply(
+      BusinessReportSchedules: js.UndefOr[BusinessReportScheduleList] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): ListBusinessReportSchedulesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BusinessReportSchedules" -> BusinessReportSchedules.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBusinessReportSchedulesResponse]
+    }
+  }
+
+  @js.native
   trait ListConferenceProvidersRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
@@ -2176,7 +2525,7 @@ package alexaforbusiness {
     var CountryCode: CountryCode
     var OneClickIdDelay: OneClickIdDelay
     var OneClickPinDelay: OneClickPinDelay
-    var PhoneNumber: PhoneNumber
+    var PhoneNumber: OutboundPhoneNumber
   }
 
   object PSTNDialIn {
@@ -2184,7 +2533,7 @@ package alexaforbusiness {
       CountryCode: CountryCode,
       OneClickIdDelay: OneClickIdDelay,
       OneClickPinDelay: OneClickPinDelay,
-      PhoneNumber: PhoneNumber): PSTNDialIn = {
+      PhoneNumber: OutboundPhoneNumber): PSTNDialIn = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CountryCode" -> CountryCode.asInstanceOf[js.Any],
         "OneClickIdDelay" -> OneClickIdDelay.asInstanceOf[js.Any],
@@ -3365,6 +3714,49 @@ package alexaforbusiness {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAddressBookResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateBusinessReportScheduleRequest extends js.Object {
+    var ScheduleArn: Arn
+    var Format: js.UndefOr[BusinessReportFormat]
+    var Recurrence: js.UndefOr[BusinessReportRecurrence]
+    var S3BucketName: js.UndefOr[CustomerS3BucketName]
+    var S3KeyPrefix: js.UndefOr[S3KeyPrefix]
+    var ScheduleName: js.UndefOr[BusinessReportScheduleName]
+  }
+
+  object UpdateBusinessReportScheduleRequest {
+    def apply(
+      ScheduleArn: Arn,
+      Format: js.UndefOr[BusinessReportFormat] = js.undefined,
+      Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
+      S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+      S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+      ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined): UpdateBusinessReportScheduleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ScheduleArn" -> ScheduleArn.asInstanceOf[js.Any],
+        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
+        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
+        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
+        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
+        "ScheduleName" -> ScheduleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBusinessReportScheduleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBusinessReportScheduleResponse extends js.Object {
+
+  }
+
+  object UpdateBusinessReportScheduleResponse {
+    def apply(): UpdateBusinessReportScheduleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBusinessReportScheduleResponse]
     }
   }
 

@@ -27,6 +27,7 @@ package object health {
   type entityArnList = js.Array[entityArn]
   type entityStatusCode = String
   type entityStatusCodeList = js.Array[entityStatusCode]
+  type entityUrl = String
   type entityValue = String
   type entityValueList = js.Array[entityValue]
   type eventAggregateField = String
@@ -61,7 +62,9 @@ package object health {
 package health {
   @js.native
   @JSImport("aws-sdk", "Health")
-  class Health(config: AWSConfig) extends js.Object {
+  class Health() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def describeAffectedEntities(params: DescribeAffectedEntitiesRequest): Request[DescribeAffectedEntitiesResponse] = js.native
     def describeEntityAggregates(params: DescribeEntityAggregatesRequest): Request[DescribeEntityAggregatesResponse] = js.native
     def describeEventAggregates(params: DescribeEventAggregatesRequest): Request[DescribeEventAggregatesResponse] = js.native
@@ -77,6 +80,7 @@ package health {
   trait AffectedEntity extends js.Object {
     var awsAccountId: js.UndefOr[accountId]
     var entityArn: js.UndefOr[entityArn]
+    var entityUrl: js.UndefOr[entityUrl]
     var entityValue: js.UndefOr[entityValue]
     var eventArn: js.UndefOr[eventArn]
     var lastUpdatedTime: js.UndefOr[timestamp]
@@ -88,6 +92,7 @@ package health {
     def apply(
       awsAccountId: js.UndefOr[accountId] = js.undefined,
       entityArn: js.UndefOr[entityArn] = js.undefined,
+      entityUrl: js.UndefOr[entityUrl] = js.undefined,
       entityValue: js.UndefOr[entityValue] = js.undefined,
       eventArn: js.UndefOr[eventArn] = js.undefined,
       lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
@@ -96,6 +101,7 @@ package health {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsAccountId" -> awsAccountId.map { x => x.asInstanceOf[js.Any] },
         "entityArn" -> entityArn.map { x => x.asInstanceOf[js.Any] },
+        "entityUrl" -> entityUrl.map { x => x.asInstanceOf[js.Any] },
         "entityValue" -> entityValue.map { x => x.asInstanceOf[js.Any] },
         "eventArn" -> eventArn.map { x => x.asInstanceOf[js.Any] },
         "lastUpdatedTime" -> lastUpdatedTime.map { x => x.asInstanceOf[js.Any] },
@@ -107,7 +113,7 @@ package health {
   }
 
   /**
-   * A range of dates and times that is used by the '''EventFilter''' and '''EntityFilter''' objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.
+   * A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.
    */
   @js.native
   trait DateTimeRange extends js.Object {
@@ -362,7 +368,7 @@ package health {
   }
 
   /**
-   * The number of entities that are affected by one or more events. Returned by the '''DescribeEntityAggregates''' operation.
+   * The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a> operation.
    */
   @js.native
   trait EntityAggregate extends js.Object {
@@ -383,7 +389,7 @@ package health {
   }
 
   /**
-   * The values to use to filter results from the '''DescribeAffectedEntities''' operation.
+   * The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.
    */
   @js.native
   trait EntityFilter extends js.Object {
@@ -416,7 +422,7 @@ package health {
   }
 
   /**
-   * Summary information about an event, returned by the '''DescribeEvents''' operation. The '''DescribeEventDetails''' operation also returns this information, as well as the '''EventDescription''' and additional event metadata.
+   * Summary information about an event, returned by the <a>DescribeEvents</a> operation. The <a>DescribeEventDetails</a> operation also returns this information, as well as the <a>EventDescription</a> and additional event metadata.
    */
   @js.native
   trait Event extends js.Object {
@@ -461,7 +467,7 @@ package health {
   }
 
   /**
-   * The number of events of each issue type. Returned by the '''DescribeEventAggregates''' operation.
+   * The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.
    */
   @js.native
   trait EventAggregate extends js.Object {
@@ -482,7 +488,7 @@ package health {
   }
 
   /**
-   * The detailed description of the event. Included in the information returned by the '''DescribeEventDetails''' operation.
+   * The detailed description of the event. Included in the information returned by the <a>DescribeEventDetails</a> operation.
    */
   @js.native
   trait EventDescription extends js.Object {
@@ -500,7 +506,7 @@ package health {
   }
 
   /**
-   * Detailed information about an event. A combination of an '''Event''' object, an '''EventDescription''' object, and additional metadata about the event. Returned by the '''DescribeEventDetails''' operation.
+   * Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation.
    */
   @js.native
   trait EventDetails extends js.Object {
@@ -524,7 +530,7 @@ package health {
   }
 
   /**
-   * Error information returned when a '''DescribeEventDetails''' operation cannot find a specified event.
+   * Error information returned when a <a>DescribeEventDetails</a> operation cannot find a specified event.
    */
   @js.native
   trait EventDetailsErrorItem extends js.Object {
@@ -548,7 +554,7 @@ package health {
   }
 
   /**
-   * The values to use to filter results from the '''DescribeEvents''' and '''DescribeEventAggregates''' operations.
+   * The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations.
    */
   @js.native
   trait EventFilter extends js.Object {
@@ -626,7 +632,7 @@ package health {
   }
 
   /**
-   * The values to use to filter results from the '''DescribeEventTypes''' operation.
+   * The values to use to filter results from the <a>DescribeEventTypes</a> operation.
    */
   @js.native
   trait EventTypeFilter extends js.Object {
@@ -647,22 +653,6 @@ package health {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventTypeFilter]
     }
-  }
-
-  /**
-   * The specified pagination token (<code>nextToken</code>) is not valid.
-   */
-  @js.native
-  trait InvalidPaginationTokenException extends js.Object {
-    val message: string
-  }
-
-  /**
-   * The specified locale is not supported.
-   */
-  @js.native
-  trait UnsupportedLocaleException extends js.Object {
-    val message: string
   }
 
   object entityStatusCodeEnum {

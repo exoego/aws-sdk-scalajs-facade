@@ -57,7 +57,9 @@ package object cloudwatchevents {
 package cloudwatchevents {
   @js.native
   @JSImport("aws-sdk", "CloudWatchEvents")
-  class CloudWatchEvents(config: AWSConfig) extends js.Object {
+  class CloudWatchEvents() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deleteRule(params: DeleteRuleRequest): Request[js.Object] = js.native
     def describeEventBus(params: DescribeEventBusRequest): Request[DescribeEventBusResponse] = js.native
     def describeRule(params: DescribeRuleRequest): Request[DescribeRuleResponse] = js.native
@@ -939,8 +941,8 @@ package cloudwatchevents {
   }
 
   /**
-   * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see '''PutTargets'''.
-   *  If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+   * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.
+   *  If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon CloudWatch Events User Guide</i>.
    */
   @js.native
   trait Target extends js.Object {

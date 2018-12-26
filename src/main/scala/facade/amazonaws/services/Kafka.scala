@@ -29,7 +29,9 @@ package object kafka {
 package kafka {
   @js.native
   @JSImport("aws-sdk", "Kafka")
-  class Kafka(config: AWSConfig) extends js.Object {
+  class Kafka() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResponse] = js.native
     def deleteCluster(params: DeleteClusterRequest): Request[DeleteClusterResponse] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native

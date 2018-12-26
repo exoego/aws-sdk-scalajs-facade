@@ -94,7 +94,9 @@ package object sms {
 package sms {
   @js.native
   @JSImport("aws-sdk", "SMS")
-  class SMS(config: AWSConfig) extends js.Object {
+  class SMS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
     def createReplicationJob(params: CreateReplicationJobRequest): Request[CreateReplicationJobResponse] = js.native
     def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse] = js.native

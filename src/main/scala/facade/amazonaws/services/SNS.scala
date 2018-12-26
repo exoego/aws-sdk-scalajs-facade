@@ -46,7 +46,9 @@ package object sns {
 package sns {
   @js.native
   @JSImport("aws-sdk", "SNS")
-  class SNS(config: AWSConfig) extends js.Object {
+  class SNS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addPermission(params: AddPermissionInput): Request[js.Object] = js.native
     def checkIfPhoneNumberIsOptedOut(params: CheckIfPhoneNumberIsOptedOutInput): Request[CheckIfPhoneNumberIsOptedOutResponse] = js.native
     def confirmSubscription(params: ConfirmSubscriptionInput): Request[ConfirmSubscriptionResponse] = js.native
@@ -797,8 +799,8 @@ package sns {
   }
 
   /**
-   * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.
-   *  Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.
+   * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see [[http://docs.aws.amazon.com/sns/latest/api/API_Publish.html|Publish]].
+   *  Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see [[http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html|Using Amazon SNS Message Attributes]].
    */
   @js.native
   trait MessageAttributeValue extends js.Object {

@@ -112,7 +112,9 @@ package object inspector {
 package inspector {
   @js.native
   @JSImport("aws-sdk", "Inspector")
-  class Inspector(config: AWSConfig) extends js.Object {
+  class Inspector() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addAttributesToFindings(params: AddAttributesToFindingsRequest): Request[AddAttributesToFindingsResponse] = js.native
     def createAssessmentTarget(params: CreateAssessmentTargetRequest): Request[CreateAssessmentTargetResponse] = js.native
     def createAssessmentTemplate(params: CreateAssessmentTemplateRequest): Request[CreateAssessmentTemplateResponse] = js.native
@@ -186,7 +188,7 @@ package inspector {
   }
 
   /**
-   * Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the '''ListAssessmentRunAgents''' action.
+   * Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <a>ListAssessmentRunAgents</a> action.
    */
   @js.native
   trait AgentFilter extends js.Object {
@@ -226,7 +228,7 @@ package inspector {
   }
 
   /**
-   * Used as a response element in the '''PreviewAgents''' action.
+   * Used as a response element in the <a>PreviewAgents</a> action.
    */
   @js.native
   trait AgentPreview extends js.Object {
@@ -266,7 +268,7 @@ package inspector {
 
   /**
    * A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .
-   *  Used as the response element in the '''DescribeAssessmentRuns''' action.
+   *  Used as the response element in the <a>DescribeAssessmentRuns</a> action.
    */
   @js.native
   trait AssessmentRun extends js.Object {
@@ -326,7 +328,7 @@ package inspector {
   }
 
   /**
-   * Contains information about an Amazon Inspector agent. This data type is used as a response element in the '''ListAssessmentRunAgents''' action.
+   * Contains information about an Amazon Inspector agent. This data type is used as a response element in the <a>ListAssessmentRunAgents</a> action.
    */
   @js.native
   trait AssessmentRunAgent extends js.Object {
@@ -362,7 +364,7 @@ package inspector {
   }
 
   /**
-   * Used as the request parameter in the '''ListAssessmentRuns''' action.
+   * Used as the request parameter in the <a>ListAssessmentRuns</a> action.
    */
   @js.native
   trait AssessmentRunFilter extends js.Object {
@@ -398,7 +400,7 @@ package inspector {
   }
 
   /**
-   * Used as one of the elements of the '''AssessmentRun''' data type.
+   * Used as one of the elements of the <a>AssessmentRun</a> data type.
    */
   @js.native
   trait AssessmentRunNotification extends js.Object {
@@ -458,7 +460,7 @@ package inspector {
   }
 
   /**
-   * Used as one of the elements of the '''AssessmentRun''' data type.
+   * Used as one of the elements of the <a>AssessmentRun</a> data type.
    */
   @js.native
   trait AssessmentRunStateChange extends js.Object {
@@ -479,7 +481,7 @@ package inspector {
   }
 
   /**
-   * Contains information about an Amazon Inspector application. This data type is used as the response element in the '''DescribeAssessmentTargets''' action.
+   * Contains information about an Amazon Inspector application. This data type is used as the response element in the <a>DescribeAssessmentTargets</a> action.
    */
   @js.native
   trait AssessmentTarget extends js.Object {
@@ -509,7 +511,7 @@ package inspector {
   }
 
   /**
-   * Used as the request parameter in the '''ListAssessmentTargets''' action.
+   * Used as the request parameter in the <a>ListAssessmentTargets</a> action.
    */
   @js.native
   trait AssessmentTargetFilter extends js.Object {
@@ -527,7 +529,7 @@ package inspector {
   }
 
   /**
-   * Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the '''DescribeAssessmentTemplates''' action.
+   * Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <a>DescribeAssessmentTemplates</a> action.
    */
   @js.native
   trait AssessmentTemplate extends js.Object {
@@ -569,7 +571,7 @@ package inspector {
   }
 
   /**
-   * Used as the request parameter in the '''ListAssessmentTemplates''' action.
+   * Used as the request parameter in the <a>ListAssessmentTemplates</a> action.
    */
   @js.native
   trait AssessmentTemplateFilter extends js.Object {
@@ -638,7 +640,7 @@ package inspector {
   }
 
   /**
-   * This data type is used as a request parameter in the '''AddAttributesToFindings''' and '''CreateAssessmentTemplate''' actions.
+   * This data type is used as a request parameter in the <a>AddAttributesToFindings</a> and <a>CreateAssessmentTemplate</a> actions.
    */
   @js.native
   trait Attribute extends js.Object {
@@ -1100,7 +1102,7 @@ package inspector {
   }
 
   /**
-   * This data type is used in the '''AssessmentTemplateFilter''' data type.
+   * This data type is used in the <a>AssessmentTemplateFilter</a> data type.
    */
   @js.native
   trait DurationRange extends js.Object {
@@ -1121,7 +1123,7 @@ package inspector {
   }
 
   /**
-   * This data type is used in the '''Subscription''' data type.
+   * This data type is used in the <a>Subscription</a> data type.
    */
   @js.native
   trait EventSubscription extends js.Object {
@@ -1237,7 +1239,7 @@ package inspector {
   }
 
   /**
-   * Contains information about an Amazon Inspector finding. This data type is used as the response element in the '''DescribeFindings''' action.
+   * Contains information about an Amazon Inspector finding. This data type is used as the response element in the <a>DescribeFindings</a> action.
    */
   @js.native
   trait Finding extends js.Object {
@@ -1306,7 +1308,7 @@ package inspector {
   }
 
   /**
-   * This data type is used as a request parameter in the '''ListFindings''' action.
+   * This data type is used as a request parameter in the <a>ListFindings</a> action.
    */
   @js.native
   trait FindingFilter extends js.Object {
@@ -1472,7 +1474,7 @@ package inspector {
   }
 
   /**
-   * This data type is used in the '''Finding''' data type.
+   * This data type is used in the <a>Finding</a> data type.
    */
   @js.native
   trait InspectorServiceAttributes extends js.Object {
@@ -1853,7 +1855,7 @@ package inspector {
   }
 
   /**
-   * Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the '''AssetAttributes''' data type.
+   * Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <a>AssetAttributes</a> data type.
    */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -1944,7 +1946,7 @@ package inspector {
   }
 
   /**
-   * Contains information about a private IP address associated with a network interface. This data type is used as a response element in the '''DescribeFindings''' action.
+   * Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <a>DescribeFindings</a> action.
    */
   @js.native
   trait PrivateIp extends js.Object {
@@ -2035,7 +2037,7 @@ package inspector {
   }
 
   /**
-   * Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the '''DescribeResourceGroups''' action.
+   * Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <a>DescribeResourceGroups</a> action.
    */
   @js.native
   trait ResourceGroup extends js.Object {
@@ -2059,7 +2061,7 @@ package inspector {
   }
 
   /**
-   * This data type is used as one of the elements of the '''ResourceGroup''' data type.
+   * This data type is used as one of the elements of the <a>ResourceGroup</a> data type.
    */
   @js.native
   trait ResourceGroupTag extends js.Object {
@@ -2080,7 +2082,7 @@ package inspector {
   }
 
   /**
-   * Contains information about an Amazon Inspector rules package. This data type is used as the response element in the '''DescribeRulesPackages''' action.
+   * Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <a>DescribeRulesPackages</a> action.
    */
   @js.native
   trait RulesPackage extends js.Object {
@@ -2138,7 +2140,7 @@ package inspector {
   }
 
   /**
-   * Contains information about a security group associated with a network interface. This data type is used as one of the elements of the '''NetworkInterface''' data type.
+   * Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <a>NetworkInterface</a> data type.
    */
   @js.native
   trait SecurityGroup extends js.Object {
@@ -2266,7 +2268,7 @@ package inspector {
   }
 
   /**
-   * This data type is used as a response element in the '''ListEventSubscriptions''' action.
+   * This data type is used as a response element in the <a>ListEventSubscriptions</a> action.
    */
   @js.native
   trait Subscription extends js.Object {
@@ -2290,7 +2292,7 @@ package inspector {
   }
 
   /**
-   * A key and value pair. This data type is used as a request parameter in the '''SetTagsForResource''' action and a response element in the '''ListTagsForResource''' action.
+   * A key and value pair. This data type is used as a request parameter in the <a>SetTagsForResource</a> action and a response element in the <a>ListTagsForResource</a> action.
    */
   @js.native
   trait Tag extends js.Object {
@@ -2311,7 +2313,7 @@ package inspector {
   }
 
   /**
-   * The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the '''GetTelemetryMetadata''' action.
+   * The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <a>GetTelemetryMetadata</a> action.
    */
   @js.native
   trait TelemetryMetadata extends js.Object {
@@ -2335,7 +2337,7 @@ package inspector {
   }
 
   /**
-   * This data type is used in the '''AssessmentRunFilter''' data type.
+   * This data type is used in the <a>AssessmentRunFilter</a> data type.
    */
   @js.native
   trait TimestampRange extends js.Object {

@@ -56,7 +56,9 @@ package object datasync {
 package datasync {
   @js.native
   @JSImport("aws-sdk", "DataSync")
-  class DataSync(config: AWSConfig) extends js.Object {
+  class DataSync() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelTaskExecution(params: CancelTaskExecutionRequest): Request[CancelTaskExecutionResponse] = js.native
     def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse] = js.native
     def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse] = js.native
@@ -85,7 +87,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the '''ListAgents''' operation is called.
+   * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.
    */
   @js.native
   trait AgentListEntry extends js.Object {
@@ -724,7 +726,7 @@ package datasync {
    * The subnet and the security group that the target Amazon EFS file system uses. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
    *  The exact relationship between security group M (of the mount target) and security group S (which you provide for DataSync to use at this stage) is as follows:
    * * Security group M (which you associate with the mount target) must allow inbound access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by IP address (CIDR range) or security group.
-   *  * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on one of the file system�fs mount targets. You can enable outbound connections either by IP address (CIDR range) or security group. For information about security groups and mount targets, see <a href="https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access">Security Groups for Amazon EC2 Instances and Mount Targets</a> in the <i>Amazon EFS User Guide.</i>
+   *  * Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on one of the file system�fs mount targets. You can enable outbound connections either by IP address (CIDR range) or security group. For information about security groups and mount targets, see [[https://docs.aws.amazon.com/efs/latest/ug/security-considerations.html#network-access|Security Groups for Amazon EC2 Instances and Mount Targets]] in the <i>Amazon EFS User Guide.</i>
    */
   @js.native
   trait Ec2Config extends js.Object {
@@ -943,7 +945,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the '''ListLocations''' operation is called.
+   * Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called.
    */
   @js.native
   trait LocationListEntry extends js.Object {
@@ -989,8 +991,8 @@ package datasync {
   }
 
   /**
-   * Represents the options that are available to control the behavior of a '''StartTaskExecution''' operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
-   *  A task has a set of default options associated with it. If you don't specify an option in '''StartTaskExecution''', the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to '''StartTaskExecution'''.
+   * Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.
+   *  A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
    */
   @js.native
   trait Options extends js.Object {
@@ -1062,7 +1064,7 @@ package datasync {
   }
 
   /**
-   * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see <a href="https://alpha-aws-docs.aws.amazon.com/sync-service/latest/userguide/create-locations-cli.html#create-location-s3-cli">Components and Terminology</a> in the <i>AWS DataSync User Guide</i>.
+   * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see [[https://alpha-aws-docs.aws.amazon.com/sync-service/latest/userguide/create-locations-cli.html#create-location-s3-cli|Components and Terminology]] in the <i>AWS DataSync User Guide</i>.
    */
   @js.native
   trait S3Config extends js.Object {
@@ -1113,7 +1115,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the '''ListTagsForResource''' operation is called.
+   * Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called.
    */
   @js.native
   trait TagListEntry extends js.Object {
@@ -1165,7 +1167,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when '''ListTaskExecutions''' operation is called.
+   * Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called.
    */
   @js.native
   trait TaskExecutionListEntry extends js.Object {
@@ -1236,7 +1238,7 @@ package datasync {
   }
 
   /**
-   * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the '''ListTasks''' operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
+   * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
    */
   @js.native
   trait TaskListEntry extends js.Object {

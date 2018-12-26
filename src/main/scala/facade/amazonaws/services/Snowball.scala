@@ -38,7 +38,9 @@ package object snowball {
 package snowball {
   @js.native
   @JSImport("aws-sdk", "Snowball")
-  class Snowball(config: AWSConfig) extends js.Object {
+  class Snowball() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelCluster(params: CancelClusterRequest): Request[CancelClusterResult] = js.native
     def cancelJob(params: CancelJobRequest): Request[CancelJobResult] = js.native
     def createAddress(params: CreateAddressRequest): Request[CreateAddressResult] = js.native
@@ -264,7 +266,7 @@ package snowball {
   }
 
   /**
-   * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.
+   * A JSON-formatted object that describes a compatible Amazon Machine Image (AMI). For more information on compatible AMIs, see [[http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html|Using Amazon EC2 Compute Instances]] in the <i>AWS Snowball Developer Guide</i>.
    */
   @js.native
   trait CompatibleImage extends js.Object {

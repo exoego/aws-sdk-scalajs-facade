@@ -48,7 +48,9 @@ package object greengrass {
 package greengrass {
   @js.native
   @JSImport("aws-sdk", "Greengrass")
-  class Greengrass(config: AWSConfig) extends js.Object {
+  class Greengrass() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateRoleToGroup(params: AssociateRoleToGroupRequest): Request[AssociateRoleToGroupResponse] = js.native
     def associateServiceRoleToAccount(params: AssociateServiceRoleToAccountRequest): Request[AssociateServiceRoleToAccountResponse] = js.native
     def createConnectorDefinition(params: CreateConnectorDefinitionRequest): Request[CreateConnectorDefinitionResponse] = js.native

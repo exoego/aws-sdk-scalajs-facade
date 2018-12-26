@@ -43,7 +43,9 @@ package object dynamodbstreams {
 package dynamodbstreams {
   @js.native
   @JSImport("aws-sdk", "DynamoDBStreams")
-  class DynamoDBStreams(config: AWSConfig) extends js.Object {
+  class DynamoDBStreams() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native
     def getRecords(params: GetRecordsInput): Request[GetRecordsOutput] = js.native
     def getShardIterator(params: GetShardIteratorInput): Request[GetShardIteratorOutput] = js.native
@@ -295,7 +297,7 @@ package dynamodbstreams {
   }
 
   /**
-   * Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+   * Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to [[http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries|Error Retries and Exponential Backoff]] in the <i>Amazon DynamoDB Developer Guide</i>.
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {

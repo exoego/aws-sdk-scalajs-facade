@@ -84,7 +84,9 @@ package object directconnect {
 package directconnect {
   @js.native
   @JSImport("aws-sdk", "DirectConnect")
-  class DirectConnect(config: AWSConfig) extends js.Object {
+  class DirectConnect() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def allocateConnectionOnInterconnect(params: AllocateConnectionOnInterconnectRequest): Request[Connection] = js.native
     def allocateHostedConnection(params: AllocateHostedConnectionRequest): Request[Connection] = js.native
     def allocatePrivateVirtualInterface(params: AllocatePrivateVirtualInterfaceRequest): Request[VirtualInterface] = js.native

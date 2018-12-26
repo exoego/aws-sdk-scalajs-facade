@@ -89,7 +89,9 @@ package object redshift {
 package redshift {
   @js.native
   @JSImport("aws-sdk", "Redshift")
-  class Redshift(config: AWSConfig) extends js.Object {
+  class Redshift() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptReservedNodeExchange(params: AcceptReservedNodeExchangeInputMessage): Request[AcceptReservedNodeExchangeOutputMessage] = js.native
     def authorizeClusterSecurityGroupIngress(params: AuthorizeClusterSecurityGroupIngressMessage): Request[AuthorizeClusterSecurityGroupIngressResult] = js.native
     def authorizeSnapshotAccess(params: AuthorizeSnapshotAccessMessage): Request[AuthorizeSnapshotAccessResult] = js.native
@@ -753,7 +755,7 @@ package redshift {
   }
 
   /**
-   * Contains the output from the '''DescribeClusterParameters''' action.
+   * Contains the output from the <a>DescribeClusterParameters</a> action.
    */
   @js.native
   trait ClusterParameterGroupDetails extends js.Object {
@@ -819,7 +821,7 @@ package redshift {
   }
 
   /**
-   * Contains the output from the '''DescribeClusterParameterGroups''' action.
+   * Contains the output from the <a>DescribeClusterParameterGroups</a> action.
    */
   @js.native
   trait ClusterParameterGroupsMessage extends js.Object {
@@ -996,7 +998,7 @@ package redshift {
   }
 
   /**
-   * Contains the output from the '''DescribeClusterSubnetGroups''' action.
+   * Contains the output from the <a>DescribeClusterSubnetGroups</a> action.
    */
   @js.native
   trait ClusterSubnetGroupMessage extends js.Object {
@@ -1041,7 +1043,7 @@ package redshift {
   }
 
   /**
-   * Contains the output from the '''DescribeClusterVersions''' action.
+   * Contains the output from the <a>DescribeClusterVersions</a> action.
    */
   @js.native
   trait ClusterVersionsMessage extends js.Object {
@@ -1062,7 +1064,7 @@ package redshift {
   }
 
   /**
-   * Contains the output from the '''DescribeClusters''' action.
+   * Contains the output from the <a>DescribeClusters</a> action.
    */
   @js.native
   trait ClustersMessage extends js.Object {
@@ -3816,7 +3818,7 @@ package redshift {
   }
 
   /**
-   * Contains the output from the '''DescribeOrderableClusterOptions''' action.
+   * Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
    */
   @js.native
   trait OrderableClusterOptionsMessage extends js.Object {
@@ -4024,7 +4026,7 @@ package redshift {
   }
 
   /**
-   * Describes a reserved node. You can call the '''DescribeReservedNodeOfferings''' API to obtain the available reserved node offerings.
+   * Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings.
    */
   @js.native
   trait ReservedNode extends js.Object {
@@ -4777,7 +4779,7 @@ package redshift {
 
   /**
    * The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.
-   *  For more information about managing snapshot copy grants, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+   *  For more information about managing snapshot copy grants, go to [[http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
    */
   @js.native
   trait SnapshotCopyGrant extends js.Object {
@@ -4849,7 +4851,7 @@ package redshift {
   }
 
   /**
-   * Contains the output from the '''DescribeClusterSnapshots''' action.
+   * Contains the output from the <a>DescribeClusterSnapshots</a> action.
    */
   @js.native
   trait SnapshotMessage extends js.Object {
@@ -4997,7 +4999,7 @@ package redshift {
   }
 
   /**
-   * Describes the status of a '''RestoreTableFromClusterSnapshot''' operation.
+   * Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
    */
   @js.native
   trait TableRestoreStatus extends js.Object {

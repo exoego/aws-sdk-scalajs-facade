@@ -38,7 +38,9 @@ package object sqs {
 package sqs {
   @js.native
   @JSImport("aws-sdk", "SQS")
-  class SQS(config: AWSConfig) extends js.Object {
+  class SQS() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addPermission(params: AddPermissionRequest): Request[js.Object] = js.native
     def changeMessageVisibility(params: ChangeMessageVisibilityRequest): Request[js.Object] = js.native
     def changeMessageVisibilityBatch(params: ChangeMessageVisibilityBatchRequest): Request[ChangeMessageVisibilityBatchResult] = js.native
@@ -137,7 +139,7 @@ package sqs {
   }
 
   /**
-   * Encloses a receipt handle and an entry id for each message in <code> '''ChangeMessageVisibilityBatch'''.</code>
+   * Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
    *  <important> All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:
    *  </important> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
    *  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code>
@@ -165,7 +167,7 @@ package sqs {
   }
 
   /**
-   * For each message in the batch, the response contains a <code> '''ChangeMessageVisibilityBatchResultEntry''' </code> tag if the message succeeds or a <code> '''BatchResultErrorEntry''' </code> tag if the message fails.
+   * For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
    */
   @js.native
   trait ChangeMessageVisibilityBatchResult extends js.Object {
@@ -186,7 +188,7 @@ package sqs {
   }
 
   /**
-   * Encloses the <code>Id</code> of an entry in <code> '''ChangeMessageVisibilityBatch'''.</code>
+   * Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
    */
   @js.native
   trait ChangeMessageVisibilityBatchResultEntry extends js.Object {
@@ -306,7 +308,7 @@ package sqs {
   }
 
   /**
-   * For each message in the batch, the response contains a <code> '''DeleteMessageBatchResultEntry''' </code> tag if the message is deleted or a <code> '''BatchResultErrorEntry''' </code> tag if the message can't be deleted.
+   * For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a> </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message can't be deleted.
    */
   @js.native
   trait DeleteMessageBatchResult extends js.Object {
@@ -327,7 +329,7 @@ package sqs {
   }
 
   /**
-   * Encloses the <code>Id</code> of an entry in <code> '''DeleteMessageBatch'''.</code>
+   * Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code>
    */
   @js.native
   trait DeleteMessageBatchResultEntry extends js.Object {
@@ -444,7 +446,7 @@ package sqs {
   }
 
   /**
-   * For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html">Interpreting Responses</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+   * For more information, see [[http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-api-responses.html|Interpreting Responses]] in the <i>Amazon Simple Queue Service Developer Guide</i>.
    */
   @js.native
   trait GetQueueUrlResult extends js.Object {
@@ -600,7 +602,7 @@ package sqs {
   }
 
   /**
-   * The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> '''SendMessage'''.</code>
+   * The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code>
    *  <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).
    */
   @js.native
@@ -813,7 +815,7 @@ package sqs {
   }
 
   /**
-   * For each message in the batch, the response contains a <code> '''SendMessageBatchResultEntry''' </code> tag if the message succeeds or a <code> '''BatchResultErrorEntry''' </code> tag if the message fails.
+   * For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
    */
   @js.native
   trait SendMessageBatchResult extends js.Object {
@@ -834,7 +836,7 @@ package sqs {
   }
 
   /**
-   * Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> '''SendMessageBatch'''.</code>
+   * Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <a>SendMessageBatch</a>.</code>
    */
   @js.native
   trait SendMessageBatchResultEntry extends js.Object {

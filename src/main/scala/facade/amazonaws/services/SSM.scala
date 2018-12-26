@@ -466,7 +466,9 @@ package object ssm {
 package ssm {
   @js.native
   @JSImport("aws-sdk", "SSM")
-  class SSM(config: AWSConfig) extends js.Object {
+  class SSM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
     def cancelCommand(params: CancelCommandRequest): Request[CancelCommandResult] = js.native
     def cancelMaintenanceWindowExecution(params: CancelMaintenanceWindowExecutionRequest): Request[CancelMaintenanceWindowExecutionResult] = js.native
@@ -6602,7 +6604,7 @@ package ssm {
   /**
    * Information about an Amazon S3 bucket to write instance-level logs to.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    */
   @js.native
   trait LoggingInfo extends js.Object {
@@ -6874,10 +6876,10 @@ package ssm {
 
   /**
    * The parameters for a LAMBDA task type.
-   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
-   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    *  For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
    */
   @js.native
@@ -6909,10 +6911,10 @@ package ssm {
 
   /**
    * The parameters for a RUN_COMMAND task type.
-   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
-   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    *  For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
    */
   @js.native
@@ -6956,10 +6958,10 @@ package ssm {
 
   /**
    * The parameters for a STEP_FUNCTION task.
-   *  For information about specifying and updating task parameters, see '''RegisterTaskWithMaintenanceWindow''' and '''UpdateMaintenanceWindowTask'''.
+   *  For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
    *
-   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
-   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see '''MaintenanceWindowTaskInvocationParameters'''.
+   * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+   *  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
    *  For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
    */
   @js.native
@@ -7383,7 +7385,7 @@ package ssm {
   /**
    * One or more filters. Use a filter to return a more specific list of results.
    *
-   * '''Note:'''The <code>Name</code> field can't be used with the '''GetParametersByPath''' API action.
+   * '''Note:'''The <code>Name</code> field can't be used with the <a>GetParametersByPath</a> API action.
    */
   @js.native
   trait ParameterStringFilter extends js.Object {
@@ -7415,7 +7417,7 @@ package ssm {
   }
 
   /**
-   * This data type is deprecated. Instead, use '''ParameterStringFilter'''.
+   * This data type is deprecated. Instead, use <a>ParameterStringFilter</a>.
    */
   @js.native
   trait ParametersFilter extends js.Object {
@@ -7602,7 +7604,7 @@ package ssm {
    * Defines a patch filter.
    *  A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <code>PRODUCT</code> is valid for all supported operating system types. The key <code>MSRC_SEVERITY</code>, however, is valid only for Windows operating systems, and the key <code>SECTION</code> is valid only for Ubuntu operating systems.
    *  Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.
-   *  <b>Windows Operating Systems</b>
+   *  ```Windows Operating Systems```
    *  The supported keys for Windows operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7638,7 +7640,7 @@ package ssm {
    *  * <code>Moderate</code>
    *  * <code>Low</code>
    *  * <code>Unspecified</code>
-   * <b>Ubuntu Operating Systems</b>
+   * ```Ubuntu Operating Systems```
    *  The supported keys for Ubuntu operating systems are <code>PRODUCT</code>, <code>PRIORITY</code>, and <code>SECTION</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7655,7 +7657,7 @@ package ssm {
    *  * <code>Extra</code>
    * <i>Supported key:</i> <code>SECTION</code>
    *  Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.
-   *  <b>Amazon Linux Operating Systems</b>
+   *  ```Amazon Linux Operating Systems```
    *  The supported keys for Amazon Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7686,7 +7688,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Medium</code>
    *  * <code>Low</code>
-   * <b>Amazon Linux 2 Operating Systems</b>
+   * ```Amazon Linux 2 Operating Systems```
    *  The supported keys for Amazon Linux 2 operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7707,7 +7709,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Medium</code>
    *  * <code>Low</code>
-   * <b>RedHat Enterprise Linux (RHEL) Operating Systems</b>
+   * ```RedHat Enterprise Linux (RHEL) Operating Systems```
    *  The supported keys for RedHat Enterprise Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7736,7 +7738,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Medium</code>
    *  * <code>Low</code>
-   * <b>SUSE Linux Enterprise Server (SLES) Operating Systems</b>
+   * ```SUSE Linux Enterprise Server (SLES) Operating Systems```
    *  The supported keys for SLES operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>
@@ -7766,7 +7768,7 @@ package ssm {
    *  * <code>Important</code>
    *  * <code>Moderate</code>
    *  * <code>Low</code>
-   * <b>CentOS Operating Systems</b>
+   * ```CentOS Operating Systems```
    *  The supported keys for CentOS operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
    *  <i>Supported key:</i> <code>PRODUCT</code>
    *  <i>Supported values:</i>

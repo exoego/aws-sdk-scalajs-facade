@@ -55,7 +55,9 @@ package object codestar {
 package codestar {
   @js.native
   @JSImport("aws-sdk", "CodeStar")
-  class CodeStar(config: AWSConfig) extends js.Object {
+  class CodeStar() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateTeamMember(params: AssociateTeamMemberRequest): Request[AssociateTeamMemberResult] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResult] = js.native
     def createUserProfile(params: CreateUserProfileRequest): Request[CreateUserProfileResult] = js.native

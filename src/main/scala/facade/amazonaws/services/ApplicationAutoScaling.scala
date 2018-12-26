@@ -48,7 +48,9 @@ package object applicationautoscaling {
 package applicationautoscaling {
   @js.native
   @JSImport("aws-sdk", "ApplicationAutoScaling")
-  class ApplicationAutoScaling(config: AWSConfig) extends js.Object {
+  class ApplicationAutoScaling() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def deleteScalingPolicy(params: DeleteScalingPolicyRequest): Request[DeleteScalingPolicyResponse] = js.native
     def deleteScheduledAction(params: DeleteScheduledActionRequest): Request[DeleteScheduledActionResponse] = js.native
     def deregisterScalableTarget(params: DeregisterScalableTargetRequest): Request[DeregisterScalableTargetResponse] = js.native
@@ -423,7 +425,7 @@ package applicationautoscaling {
   }
 
   /**
-   * Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.
+   * Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch [[http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html|DescribeAlarms]] on your behalf.
    */
   @js.native
   trait FailedResourceAccessExceptionException extends js.Object {
@@ -447,7 +449,7 @@ package applicationautoscaling {
   }
 
   /**
-   * A per-account resource limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application Auto Scaling Limits</a>.
+   * A per-account resource limit is exceeded. For more information, see [[http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html|Application Auto Scaling Limits]].
    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
@@ -924,7 +926,7 @@ package applicationautoscaling {
   }
 
   /**
-   * Represents a step adjustment for a '''StepScalingPolicyConfiguration'''. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
+   * Represents a step adjustment for a <a>StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
    *  For the following examples, suppose that you have an alarm with a breach threshold of 50:
    * * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10.
    *  * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0.

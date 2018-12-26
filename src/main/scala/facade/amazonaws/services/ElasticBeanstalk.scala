@@ -83,6 +83,7 @@ package object elasticbeanstalk {
   type InstancesHealthAttribute = String
   type InstancesHealthAttributes = js.Array[InstancesHealthAttribute]
   type LaunchConfigurationList = js.Array[LaunchConfiguration]
+  type LaunchTemplateList = js.Array[LaunchTemplate]
   type LaunchedAt = js.Date
   type LoadAverage = js.Array[LoadAverageValue]
   type LoadAverageValue = Double
@@ -167,7 +168,9 @@ package object elasticbeanstalk {
 package elasticbeanstalk {
   @js.native
   @JSImport("aws-sdk", "ElasticBeanstalk")
-  class ElasticBeanstalk(config: AWSConfig) extends js.Object {
+  class ElasticBeanstalk() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def abortEnvironmentUpdate(params: AbortEnvironmentUpdateMessage): Request[js.Object] = js.native
     def applyEnvironmentManagedAction(params: ApplyEnvironmentManagedActionRequest): Request[ApplyEnvironmentManagedActionResult] = js.native
     def checkDNSAvailability(params: CheckDNSAvailabilityMessage): Request[CheckDNSAvailabilityResultMessage] = js.native
@@ -801,7 +804,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+   * A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
    */
   @js.native
   trait ConfigurationOptionSetting extends js.Object {
@@ -1144,7 +1147,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Results of a '''CreateStorageLocationResult''' call.
+   * Results of a <a>CreateStorageLocationResult</a> call.
    */
   @js.native
   trait CreateStorageLocationResultMessage extends js.Object {
@@ -1955,7 +1958,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
+   * A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html|Environment Manifest (env.yaml)]] for details.
    */
   @js.native
   trait EnvironmentLink extends js.Object {
@@ -1984,6 +1987,7 @@ package elasticbeanstalk {
     var EnvironmentName: js.UndefOr[EnvironmentName]
     var Instances: js.UndefOr[InstanceList]
     var LaunchConfigurations: js.UndefOr[LaunchConfigurationList]
+    var LaunchTemplates: js.UndefOr[LaunchTemplateList]
     var LoadBalancers: js.UndefOr[LoadBalancerList]
     var Queues: js.UndefOr[QueueList]
     var Triggers: js.UndefOr[TriggerList]
@@ -1995,6 +1999,7 @@ package elasticbeanstalk {
       EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
       Instances: js.UndefOr[InstanceList] = js.undefined,
       LaunchConfigurations: js.UndefOr[LaunchConfigurationList] = js.undefined,
+      LaunchTemplates: js.UndefOr[LaunchTemplateList] = js.undefined,
       LoadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
       Queues: js.UndefOr[QueueList] = js.undefined,
       Triggers: js.UndefOr[TriggerList] = js.undefined): EnvironmentResourceDescription = {
@@ -2003,6 +2008,7 @@ package elasticbeanstalk {
         "EnvironmentName" -> EnvironmentName.map { x => x.asInstanceOf[js.Any] },
         "Instances" -> Instances.map { x => x.asInstanceOf[js.Any] },
         "LaunchConfigurations" -> LaunchConfigurations.map { x => x.asInstanceOf[js.Any] },
+        "LaunchTemplates" -> LaunchTemplates.map { x => x.asInstanceOf[js.Any] },
         "LoadBalancers" -> LoadBalancers.map { x => x.asInstanceOf[js.Any] },
         "Queues" -> Queues.map { x => x.asInstanceOf[js.Any] },
         "Triggers" -> Triggers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
@@ -2186,7 +2192,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Represents summary information about the health of an instance. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.
+   * Represents summary information about the health of an instance. For more information, see [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html|Health Colors and Statuses]].
    */
   @js.native
   trait InstanceHealthSummary extends js.Object {
@@ -2294,6 +2300,24 @@ package elasticbeanstalk {
         "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfiguration]
+    }
+  }
+
+  /**
+   * Describes an Amazon EC2 launch template.
+   */
+  @js.native
+  trait LaunchTemplate extends js.Object {
+    var Id: js.UndefOr[ResourceId]
+  }
+
+  object LaunchTemplate {
+    def apply(
+      Id: js.UndefOr[ResourceId] = js.undefined): LaunchTemplate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplate]
     }
   }
 
@@ -2937,7 +2961,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Request to download logs retrieved with '''RequestEnvironmentInfo'''.
+   * Request to download logs retrieved with <a>RequestEnvironmentInfo</a>.
    */
   @js.native
   trait RetrieveEnvironmentInfoMessage extends js.Object {
@@ -3125,7 +3149,7 @@ package elasticbeanstalk {
   }
 
   /**
-   * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.
+   * Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see [[http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html|Status Code Definitions]].
    */
   @js.native
   trait StatusCodes extends js.Object {

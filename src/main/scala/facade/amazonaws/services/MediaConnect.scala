@@ -27,7 +27,9 @@ package object mediaconnect {
 package mediaconnect {
   @js.native
   @JSImport("aws-sdk", "MediaConnect")
-  class MediaConnect(config: AWSConfig) extends js.Object {
+  class MediaConnect() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addFlowOutputs(params: AddFlowOutputsRequest): Request[AddFlowOutputsResponse] = js.native
     def createFlow(params: CreateFlowRequest): Request[CreateFlowResponse] = js.native
     def deleteFlow(params: DeleteFlowRequest): Request[DeleteFlowResponse] = js.native

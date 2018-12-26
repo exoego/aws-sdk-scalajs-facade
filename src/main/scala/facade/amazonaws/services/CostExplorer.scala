@@ -15,6 +15,7 @@ package object costexplorer {
   type Attributes = js.Dictionary[AttributeValue]
   type Context = String
   type CoverageHoursPercentage = String
+  type CoverageNormalizedUnitsPercentage = String
   type CoveragesByTime = js.Array[CoverageByTime]
   type Dimension = String
   type DimensionValuesWithAttributesList = js.Array[DimensionValuesWithAttributes]
@@ -42,12 +43,15 @@ package object costexplorer {
   type NextPageToken = String
   type NonNegativeInteger = Int
   type OfferingClass = String
+  type OnDemandCost = String
   type OnDemandCostOfRIHoursUsed = String
   type OnDemandHours = String
+  type OnDemandNormalizedUnits = String
   type PageSize = Int
   type PaymentOption = String
   type PredictionIntervalLevel = Int
   type PurchasedHours = String
+  type PurchasedUnits = String
   type ReservationCoverageGroups = js.Array[ReservationCoverageGroup]
   type ReservationGroupKey = String
   type ReservationGroupValue = String
@@ -55,17 +59,22 @@ package object costexplorer {
   type ReservationPurchaseRecommendations = js.Array[ReservationPurchaseRecommendation]
   type ReservationUtilizationGroups = js.Array[ReservationUtilizationGroup]
   type ReservedHours = String
+  type ReservedNormalizedUnits = String
   type ResultsByTime = js.Array[ResultByTime]
   type SearchString = String
   type TagKey = String
   type TagList = js.Array[Entity]
   type TermInYears = String
   type TotalActualHours = String
+  type TotalActualUnits = String
   type TotalAmortizedFee = String
   type TotalPotentialRISavings = String
   type TotalRunningHours = String
+  type TotalRunningNormalizedUnits = String
   type UnusedHours = String
+  type UnusedUnits = String
   type UtilizationPercentage = String
+  type UtilizationPercentageInUnits = String
   type UtilizationsByTime = js.Array[UtilizationByTime]
   type Value = String
   type Values = js.Array[Value]
@@ -75,7 +84,9 @@ package object costexplorer {
 package costexplorer {
   @js.native
   @JSImport("aws-sdk", "CostExplorer")
-  class CostExplorer(config: AWSConfig) extends js.Object {
+  class CostExplorer() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def getCostAndUsage(params: GetCostAndUsageRequest): Request[GetCostAndUsageResponse] = js.native
     def getCostForecast(params: GetCostForecastRequest): Request[GetCostForecastResponse] = js.native
     def getDimensionValues(params: GetDimensionValuesRequest): Request[GetDimensionValuesResponse] = js.native
@@ -104,14 +115,20 @@ package costexplorer {
    */
   @js.native
   trait Coverage extends js.Object {
+    var CoverageCost: js.UndefOr[CoverageCost]
     var CoverageHours: js.UndefOr[CoverageHours]
+    var CoverageNormalizedUnits: js.UndefOr[CoverageNormalizedUnits]
   }
 
   object Coverage {
     def apply(
-      CoverageHours: js.UndefOr[CoverageHours] = js.undefined): Coverage = {
+      CoverageCost: js.UndefOr[CoverageCost] = js.undefined,
+      CoverageHours: js.UndefOr[CoverageHours] = js.undefined,
+      CoverageNormalizedUnits: js.UndefOr[CoverageNormalizedUnits] = js.undefined): Coverage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CoverageHours" -> CoverageHours.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CoverageCost" -> CoverageCost.map { x => x.asInstanceOf[js.Any] },
+        "CoverageHours" -> CoverageHours.map { x => x.asInstanceOf[js.Any] },
+        "CoverageNormalizedUnits" -> CoverageNormalizedUnits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Coverage]
     }
@@ -142,6 +159,24 @@ package costexplorer {
   }
 
   /**
+   * How much it cost to run an instance.
+   */
+  @js.native
+  trait CoverageCost extends js.Object {
+    var OnDemandCost: js.UndefOr[OnDemandCost]
+  }
+
+  object CoverageCost {
+    def apply(
+      OnDemandCost: js.UndefOr[OnDemandCost] = js.undefined): CoverageCost = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OnDemandCost" -> OnDemandCost.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoverageCost]
+    }
+  }
+
+  /**
    * How long a running instance either used a reservation or was On-Demand.
    */
   @js.native
@@ -165,6 +200,34 @@ package costexplorer {
         "TotalRunningHours" -> TotalRunningHours.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoverageHours]
+    }
+  }
+
+  /**
+   * The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.
+   *  For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html|Modifying Reserved Instances]] in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+   */
+  @js.native
+  trait CoverageNormalizedUnits extends js.Object {
+    var CoverageNormalizedUnitsPercentage: js.UndefOr[CoverageNormalizedUnitsPercentage]
+    var OnDemandNormalizedUnits: js.UndefOr[OnDemandNormalizedUnits]
+    var ReservedNormalizedUnits: js.UndefOr[ReservedNormalizedUnits]
+    var TotalRunningNormalizedUnits: js.UndefOr[TotalRunningNormalizedUnits]
+  }
+
+  object CoverageNormalizedUnits {
+    def apply(
+      CoverageNormalizedUnitsPercentage: js.UndefOr[CoverageNormalizedUnitsPercentage] = js.undefined,
+      OnDemandNormalizedUnits: js.UndefOr[OnDemandNormalizedUnits] = js.undefined,
+      ReservedNormalizedUnits: js.UndefOr[ReservedNormalizedUnits] = js.undefined,
+      TotalRunningNormalizedUnits: js.UndefOr[TotalRunningNormalizedUnits] = js.undefined): CoverageNormalizedUnits = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CoverageNormalizedUnitsPercentage" -> CoverageNormalizedUnitsPercentage.map { x => x.asInstanceOf[js.Any] },
+        "OnDemandNormalizedUnits" -> OnDemandNormalizedUnits.map { x => x.asInstanceOf[js.Any] },
+        "ReservedNormalizedUnits" -> ReservedNormalizedUnits.map { x => x.asInstanceOf[js.Any] },
+        "TotalRunningNormalizedUnits" -> TotalRunningNormalizedUnits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoverageNormalizedUnits]
     }
   }
 
@@ -259,7 +322,7 @@ package costexplorer {
   }
 
   /**
-   * Details about the EC2 instances that AWS recommends that you purchase.
+   * Details about the Amazon EC2 instances that AWS recommends that you purchase.
    */
   @js.native
   trait EC2InstanceDetails extends js.Object {
@@ -298,7 +361,7 @@ package costexplorer {
   }
 
   /**
-   * The EC2 hardware specifications that you want AWS to provide recommendations for.
+   * The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
    */
   @js.native
   trait EC2Specification extends js.Object {
@@ -316,7 +379,7 @@ package costexplorer {
   }
 
   /**
-   * Details about the ES instances that AWS recommends that you purchase.
+   * Details about the Amazon ES instances that AWS recommends that you purchase.
    */
   @js.native
   trait ESInstanceDetails extends js.Object {
@@ -346,7 +409,7 @@ package costexplorer {
   }
 
   /**
-   * Details about the ElastiCache instances that AWS recommends that you purchase.
+   * Details about the Amazon ElastiCache instances that AWS recommends that you purchase.
    */
   @js.native
   trait ElastiCacheInstanceDetails extends js.Object {
@@ -592,7 +655,7 @@ package costexplorer {
   }
 
   /**
-   * You can use the following request parameters to query for how much of your instance usage is covered by a reservation.
+   * You can use the following request parameters to query for how much of your instance usage a reservation covered.
    */
   @js.native
   trait GetReservationCoverageRequest extends js.Object {
@@ -600,6 +663,7 @@ package costexplorer {
     var Filter: js.UndefOr[Expression]
     var Granularity: js.UndefOr[Granularity]
     var GroupBy: js.UndefOr[GroupDefinitions]
+    var Metrics: js.UndefOr[MetricNames]
     var NextPageToken: js.UndefOr[NextPageToken]
   }
 
@@ -609,12 +673,14 @@ package costexplorer {
       Filter: js.UndefOr[Expression] = js.undefined,
       Granularity: js.UndefOr[Granularity] = js.undefined,
       GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+      Metrics: js.UndefOr[MetricNames] = js.undefined,
       NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationCoverageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
         "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
         "Granularity" -> Granularity.map { x => x.asInstanceOf[js.Any] },
         "GroupBy" -> GroupBy.map { x => x.asInstanceOf[js.Any] },
+        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
         "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReservationCoverageRequest]
@@ -807,7 +873,7 @@ package costexplorer {
   }
 
   /**
-   * One level of grouped data within the results.
+   * One level of grouped data in the results.
    */
   @js.native
   trait Group extends js.Object {
@@ -828,7 +894,7 @@ package costexplorer {
   }
 
   /**
-   * Represents a group when you specify a group by criteria, or in the response to a query with a specific grouping.
+   * Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.
    */
   @js.native
   trait GroupDefinition extends js.Object {
@@ -945,7 +1011,7 @@ package costexplorer {
   }
 
   /**
-   * Details about the RDS instances that AWS recommends that you purchase.
+   * Details about the Amazon RDS instances that AWS recommends that you purchase.
    */
   @js.native
   trait RDSInstanceDetails extends js.Object {
@@ -1017,7 +1083,7 @@ package costexplorer {
   }
 
   /**
-   * The aggregated numbers for your Reserved Instance (RI) usage.
+   * The aggregated numbers for your reservation usage.
    */
   @js.native
   trait ReservationAggregates extends js.Object {
@@ -1026,11 +1092,15 @@ package costexplorer {
     var NetRISavings: js.UndefOr[NetRISavings]
     var OnDemandCostOfRIHoursUsed: js.UndefOr[OnDemandCostOfRIHoursUsed]
     var PurchasedHours: js.UndefOr[PurchasedHours]
+    var PurchasedUnits: js.UndefOr[PurchasedUnits]
     var TotalActualHours: js.UndefOr[TotalActualHours]
+    var TotalActualUnits: js.UndefOr[TotalActualUnits]
     var TotalAmortizedFee: js.UndefOr[TotalAmortizedFee]
     var TotalPotentialRISavings: js.UndefOr[TotalPotentialRISavings]
     var UnusedHours: js.UndefOr[UnusedHours]
+    var UnusedUnits: js.UndefOr[UnusedUnits]
     var UtilizationPercentage: js.UndefOr[UtilizationPercentage]
+    var UtilizationPercentageInUnits: js.UndefOr[UtilizationPercentageInUnits]
   }
 
   object ReservationAggregates {
@@ -1040,22 +1110,30 @@ package costexplorer {
       NetRISavings: js.UndefOr[NetRISavings] = js.undefined,
       OnDemandCostOfRIHoursUsed: js.UndefOr[OnDemandCostOfRIHoursUsed] = js.undefined,
       PurchasedHours: js.UndefOr[PurchasedHours] = js.undefined,
+      PurchasedUnits: js.UndefOr[PurchasedUnits] = js.undefined,
       TotalActualHours: js.UndefOr[TotalActualHours] = js.undefined,
+      TotalActualUnits: js.UndefOr[TotalActualUnits] = js.undefined,
       TotalAmortizedFee: js.UndefOr[TotalAmortizedFee] = js.undefined,
       TotalPotentialRISavings: js.UndefOr[TotalPotentialRISavings] = js.undefined,
       UnusedHours: js.UndefOr[UnusedHours] = js.undefined,
-      UtilizationPercentage: js.UndefOr[UtilizationPercentage] = js.undefined): ReservationAggregates = {
+      UnusedUnits: js.UndefOr[UnusedUnits] = js.undefined,
+      UtilizationPercentage: js.UndefOr[UtilizationPercentage] = js.undefined,
+      UtilizationPercentageInUnits: js.UndefOr[UtilizationPercentageInUnits] = js.undefined): ReservationAggregates = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AmortizedRecurringFee" -> AmortizedRecurringFee.map { x => x.asInstanceOf[js.Any] },
         "AmortizedUpfrontFee" -> AmortizedUpfrontFee.map { x => x.asInstanceOf[js.Any] },
         "NetRISavings" -> NetRISavings.map { x => x.asInstanceOf[js.Any] },
         "OnDemandCostOfRIHoursUsed" -> OnDemandCostOfRIHoursUsed.map { x => x.asInstanceOf[js.Any] },
         "PurchasedHours" -> PurchasedHours.map { x => x.asInstanceOf[js.Any] },
+        "PurchasedUnits" -> PurchasedUnits.map { x => x.asInstanceOf[js.Any] },
         "TotalActualHours" -> TotalActualHours.map { x => x.asInstanceOf[js.Any] },
+        "TotalActualUnits" -> TotalActualUnits.map { x => x.asInstanceOf[js.Any] },
         "TotalAmortizedFee" -> TotalAmortizedFee.map { x => x.asInstanceOf[js.Any] },
         "TotalPotentialRISavings" -> TotalPotentialRISavings.map { x => x.asInstanceOf[js.Any] },
         "UnusedHours" -> UnusedHours.map { x => x.asInstanceOf[js.Any] },
-        "UtilizationPercentage" -> UtilizationPercentage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UnusedUnits" -> UnusedUnits.map { x => x.asInstanceOf[js.Any] },
+        "UtilizationPercentage" -> UtilizationPercentage.map { x => x.asInstanceOf[js.Any] },
+        "UtilizationPercentageInUnits" -> UtilizationPercentageInUnits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationAggregates]
     }
@@ -1236,7 +1314,7 @@ package costexplorer {
   }
 
   /**
-   * A group of Reserved Instances (RIs) that share a set of attributes.
+   * A group of reservations that share a set of attributes.
    */
   @js.native
   trait ReservationUtilizationGroup extends js.Object {

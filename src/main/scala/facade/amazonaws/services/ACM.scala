@@ -53,7 +53,9 @@ package object acm {
 package acm {
   @js.native
   @JSImport("aws-sdk", "ACM")
-  class ACM(config: AWSConfig) extends js.Object {
+  class ACM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addTagsToCertificate(params: AddTagsToCertificateRequest): Request[js.Object] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[js.Object] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResponse] = js.native
@@ -87,7 +89,7 @@ package acm {
   }
 
   /**
-   * Contains metadata about an ACM certificate. This structure is returned in the response to a '''DescribeCertificate''' request.
+   * Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request.
    */
   @js.native
   trait CertificateDetail extends js.Object {
@@ -180,7 +182,7 @@ package acm {
   }
 
   /**
-   * Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.
+   * Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see [[http://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency|Certificate Transparency Logging]].
    */
   @js.native
   trait CertificateOptions extends js.Object {
@@ -210,7 +212,7 @@ package acm {
   }
 
   /**
-   * This structure is returned in the response object of '''ListCertificates''' action.
+   * This structure is returned in the response object of <a>ListCertificates</a> action.
    */
   @js.native
   trait CertificateSummary extends js.Object {
@@ -447,7 +449,7 @@ package acm {
   }
 
   /**
-   * This structure can be used in the '''ListCertificates''' action to filter the output of the certificate list.
+   * This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list.
    */
   @js.native
   trait Filters extends js.Object {
@@ -551,7 +553,7 @@ package acm {
   }
 
   /**
-   * One or more values in the '''DomainValidationOption''' structure is incorrect.
+   * One or more values in the <a>DomainValidationOption</a> structure is incorrect.
    */
   @js.native
   trait InvalidDomainValidationOptionsExceptionException extends js.Object {
@@ -740,7 +742,7 @@ package acm {
   }
 
   /**
-   * Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+   * Contains information about the status of ACM's [[http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html|managed renewal]] for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
    */
   @js.native
   trait RenewalSummary extends js.Object {
@@ -854,7 +856,7 @@ package acm {
   }
 
   /**
-   * Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the '''DescribeCertificate''' action.
+   * Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.
    */
   @js.native
   trait ResourceRecord extends js.Object {

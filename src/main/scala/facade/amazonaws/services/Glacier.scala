@@ -43,7 +43,9 @@ package object glacier {
 package glacier {
   @js.native
   @JSImport("aws-sdk", "Glacier")
-  class Glacier(config: AWSConfig) extends js.Object {
+  class Glacier() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def abortMultipartUpload(params: AbortMultipartUploadInput): Request[js.Object] = js.native
     def abortVaultLock(params: AbortVaultLockInput): Request[js.Object] = js.native
     def addTagsToVault(params: AddTagsToVaultInput): Request[js.Object] = js.native
@@ -81,7 +83,7 @@ package glacier {
 
   /**
    * Provides options to abort a multipart upload identified by the upload ID.
-   *  For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort Multipart Upload</a>. For conceptual information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a>.
+   *  For information about the underlying REST API, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html|Abort Multipart Upload]]. For conceptual information, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon Glacier]].
    */
   @js.native
   trait AbortMultipartUploadInput extends js.Object {
@@ -159,7 +161,7 @@ package glacier {
 
   /**
    * Contains the Amazon Glacier response to your request.
-   *  For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon Glacier</a>.
+   *  For information about the underlying REST API, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html|Upload Archive]]. For conceptual information, see [[http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html|Working with Archives in Amazon Glacier]].
    */
   @js.native
   trait ArchiveCreationOutput extends js.Object {

@@ -163,7 +163,9 @@ package object glue {
 package glue {
   @js.native
   @JSImport("aws-sdk", "Glue")
-  class Glue(config: AWSConfig) extends js.Object {
+  class Glue() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchCreatePartition(params: BatchCreatePartitionRequest): Request[BatchCreatePartitionResponse] = js.native
     def batchDeleteConnection(params: BatchDeleteConnectionRequest): Request[BatchDeleteConnectionResponse] = js.native
     def batchDeletePartition(params: BatchDeletePartitionRequest): Request[BatchDeletePartitionResponse] = js.native
@@ -898,11 +900,35 @@ package glue {
     }
   }
 
+  /**
+   * The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.
+   *  When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your KMS key, and then encrypts the whole connection object again if catalog encryption is also enabled.
+   *  This encryption requires that you set KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you may want only admin users to have decrypt permission on the password key.
+   */
+  @js.native
+  trait ConnectionPasswordEncryption extends js.Object {
+    var ReturnConnectionPasswordEncrypted: Boolean
+    var AwsKmsKeyId: js.UndefOr[NameString]
+  }
+
+  object ConnectionPasswordEncryption {
+    def apply(
+      ReturnConnectionPasswordEncrypted: Boolean,
+      AwsKmsKeyId: js.UndefOr[NameString] = js.undefined): ConnectionPasswordEncryption = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReturnConnectionPasswordEncrypted" -> ReturnConnectionPasswordEncrypted.asInstanceOf[js.Any],
+        "AwsKmsKeyId" -> AwsKmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionPasswordEncryption]
+    }
+  }
+
   object ConnectionPropertyKeyEnum {
     val HOST = "HOST"
     val PORT = "PORT"
     val USERNAME = "USERNAME"
     val PASSWORD = "PASSWORD"
+    val ENCRYPTED_PASSWORD = "ENCRYPTED_PASSWORD"
     val JDBC_DRIVER_JAR_URI = "JDBC_DRIVER_JAR_URI"
     val JDBC_DRIVER_CLASS_NAME = "JDBC_DRIVER_CLASS_NAME"
     val JDBC_ENGINE = "JDBC_ENGINE"
@@ -912,7 +938,7 @@ package glue {
     val JDBC_CONNECTION_URL = "JDBC_CONNECTION_URL"
     val JDBC_ENFORCE_SSL = "JDBC_ENFORCE_SSL"
 
-    val values = IndexedSeq(HOST, PORT, USERNAME, PASSWORD, JDBC_DRIVER_JAR_URI, JDBC_DRIVER_CLASS_NAME, JDBC_ENGINE, JDBC_ENGINE_VERSION, CONFIG_FILES, INSTANCE_ID, JDBC_CONNECTION_URL, JDBC_ENFORCE_SSL)
+    val values = IndexedSeq(HOST, PORT, USERNAME, PASSWORD, ENCRYPTED_PASSWORD, JDBC_DRIVER_JAR_URI, JDBC_DRIVER_CLASS_NAME, JDBC_ENGINE, JDBC_ENGINE_VERSION, CONFIG_FILES, INSTANCE_ID, JDBC_CONNECTION_URL, JDBC_ENFORCE_SSL)
   }
 
   object ConnectionTypeEnum {
@@ -1701,13 +1727,16 @@ package glue {
    */
   @js.native
   trait DataCatalogEncryptionSettings extends js.Object {
+    var ConnectionPasswordEncryption: js.UndefOr[ConnectionPasswordEncryption]
     var EncryptionAtRest: js.UndefOr[EncryptionAtRest]
   }
 
   object DataCatalogEncryptionSettings {
     def apply(
+      ConnectionPasswordEncryption: js.UndefOr[ConnectionPasswordEncryption] = js.undefined,
       EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined): DataCatalogEncryptionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectionPasswordEncryption" -> ConnectionPasswordEncryption.map { x => x.asInstanceOf[js.Any] },
         "EncryptionAtRest" -> EncryptionAtRest.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataCatalogEncryptionSettings]
@@ -2492,15 +2521,18 @@ package glue {
   trait GetConnectionRequest extends js.Object {
     var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
+    var HidePassword: js.UndefOr[Boolean]
   }
 
   object GetConnectionRequest {
     def apply(
       Name: NameString,
-      CatalogId: js.UndefOr[CatalogIdString] = js.undefined): GetConnectionRequest = {
+      CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+      HidePassword: js.UndefOr[Boolean] = js.undefined): GetConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
-        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
+        "HidePassword" -> HidePassword.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionRequest]
     }
@@ -2546,6 +2578,7 @@ package glue {
   trait GetConnectionsRequest extends js.Object {
     var CatalogId: js.UndefOr[CatalogIdString]
     var Filter: js.UndefOr[GetConnectionsFilter]
+    var HidePassword: js.UndefOr[Boolean]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
   }
@@ -2554,11 +2587,13 @@ package glue {
     def apply(
       CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
       Filter: js.UndefOr[GetConnectionsFilter] = js.undefined,
+      HidePassword: js.UndefOr[Boolean] = js.undefined,
       MaxResults: js.UndefOr[PageSize] = js.undefined,
       NextToken: js.UndefOr[Token] = js.undefined): GetConnectionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CatalogId" -> CatalogId.map { x => x.asInstanceOf[js.Any] },
         "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
+        "HidePassword" -> HidePassword.map { x => x.asInstanceOf[js.Any] },
         "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 

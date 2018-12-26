@@ -35,7 +35,9 @@ package object iot1clickprojects {
 package iot1clickprojects {
   @js.native
   @JSImport("aws-sdk", "IoT1ClickProjects")
-  class IoT1ClickProjects(config: AWSConfig) extends js.Object {
+  class IoT1ClickProjects() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateDeviceWithPlacement(params: AssociateDeviceWithPlacementRequest): Request[AssociateDeviceWithPlacementResponse] = js.native
     def createPlacement(params: CreatePlacementRequest): Request[CreatePlacementResponse] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
@@ -279,7 +281,7 @@ package iot1clickprojects {
   }
 
   /**
-   * An object representing a device for a placement template (see '''PlacementTemplate''').
+   * An object representing a device for a placement template (see <a>PlacementTemplate</a>).
    */
   @js.native
   trait DeviceTemplate extends js.Object {

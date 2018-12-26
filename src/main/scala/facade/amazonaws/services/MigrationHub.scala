@@ -40,7 +40,9 @@ package object migrationhub {
 package migrationhub {
   @js.native
   @JSImport("aws-sdk", "MigrationHub")
-  class MigrationHub(config: AWSConfig) extends js.Object {
+  class MigrationHub() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateCreatedArtifact(params: AssociateCreatedArtifactRequest): Request[AssociateCreatedArtifactResult] = js.native
     def associateDiscoveredResource(params: AssociateDiscoveredResourceRequest): Request[AssociateDiscoveredResourceResult] = js.native
     def createProgressUpdateStream(params: CreateProgressUpdateStreamRequest): Request[CreateProgressUpdateStreamResult] = js.native

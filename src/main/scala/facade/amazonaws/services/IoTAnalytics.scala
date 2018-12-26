@@ -92,7 +92,9 @@ package object iotanalytics {
 package iotanalytics {
   @js.native
   @JSImport("aws-sdk", "IoTAnalytics")
-  class IoTAnalytics(config: AWSConfig) extends js.Object {
+  class IoTAnalytics() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchPutMessage(params: BatchPutMessageRequest): Request[BatchPutMessageResponse] = js.native
     def cancelPipelineReprocessing(params: CancelPipelineReprocessingRequest): Request[CancelPipelineReprocessingResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native

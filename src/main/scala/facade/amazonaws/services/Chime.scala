@@ -32,7 +32,9 @@ package object chime {
 package chime {
   @js.native
   @JSImport("aws-sdk", "Chime")
-  class Chime(config: AWSConfig) extends js.Object {
+  class Chime() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchSuspendUser(params: BatchSuspendUserRequest): Request[BatchSuspendUserResponse] = js.native
     def batchUnsuspendUser(params: BatchUnsuspendUserRequest): Request[BatchUnsuspendUserResponse] = js.native
     def batchUpdateUser(params: BatchUpdateUserRequest): Request[BatchUpdateUserResponse] = js.native
@@ -88,7 +90,7 @@ package chime {
   }
 
   /**
-   * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
+   * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see [[http://docs.aws.amazon.com/chime/latest/ag/policies.html|Use the Policies Page]] in the <i>Amazon Chime Administration Guide</i>.
    */
   @js.native
   trait AccountSettings extends js.Object {
@@ -709,7 +711,7 @@ package chime {
   }
 
   /**
-   * The user ID and user fields to update, used with the '''BatchUpdateUser''' action.
+   * The user ID and user fields to update, used with the <a>BatchUpdateUser</a> action.
    */
   @js.native
   trait UpdateUserRequestItem extends js.Object {
@@ -790,7 +792,7 @@ package chime {
   }
 
   /**
-   * The list of errors returned when errors are encountered during the '''BatchSuspendUser''', '''BatchUnsuspendUser''', or '''BatchUpdateUser''' actions. This includes user IDs, error codes, and error messages.
+   * The list of errors returned when errors are encountered during the <a>BatchSuspendUser</a>, <a>BatchUnsuspendUser</a>, or <a>BatchUpdateUser</a> actions. This includes user IDs, error codes, and error messages.
    */
   @js.native
   trait UserError extends js.Object {

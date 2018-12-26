@@ -100,7 +100,9 @@ package object emr {
 package emr {
   @js.native
   @JSImport("aws-sdk", "EMR")
-  class EMR(config: AWSConfig) extends js.Object {
+  class EMR() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addInstanceFleet(params: AddInstanceFleetInput): Request[AddInstanceFleetOutput] = js.native
     def addInstanceGroups(params: AddInstanceGroupsInput): Request[AddInstanceGroupsOutput] = js.native
     def addJobFlowSteps(params: AddJobFlowStepsInput): Request[AddJobFlowStepsOutput] = js.native
@@ -218,7 +220,7 @@ package emr {
   }
 
   /**
-   * The input argument to the '''AddJobFlowSteps''' operation.
+   * The input argument to the <a>AddJobFlowSteps</a> operation.
    */
   @js.native
   trait AddJobFlowStepsInput extends js.Object {
@@ -239,7 +241,7 @@ package emr {
   }
 
   /**
-   * The output for the '''AddJobFlowSteps''' operation.
+   * The output for the <a>AddJobFlowSteps</a> operation.
    */
   @js.native
   trait AddJobFlowStepsOutput extends js.Object {
@@ -302,7 +304,7 @@ package emr {
   }
 
   /**
-   * An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html">Using the MapR Distribution for Hadoop</a>. Currently supported values are:
+   * An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see [[http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html|Using the MapR Distribution for Hadoop]]. Currently supported values are:
    * * "mapr-m3" - launch the cluster using MapR M3 Edition.
    *  * "mapr-m5" - launch the cluster using MapR M5 Edition.
    *  * "mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the cluster using MapR M3 or M5 Edition, respectively.
@@ -333,7 +335,7 @@ package emr {
   }
 
   /**
-   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See '''PutAutoScalingPolicy'''.
+   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. An automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
    */
   @js.native
   trait AutoScalingPolicy extends js.Object {
@@ -354,7 +356,7 @@ package emr {
   }
 
   /**
-   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See '''PutAutoScalingPolicy'''.
+   * An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.
    */
   @js.native
   trait AutoScalingPolicyDescription extends js.Object {
@@ -389,7 +391,7 @@ package emr {
   }
 
   /**
-   * The reason for an '''AutoScalingPolicyStatus''' change.
+   * The reason for an <a>AutoScalingPolicyStatus</a> change.
    */
   @js.native
   trait AutoScalingPolicyStateChangeReason extends js.Object {
@@ -502,7 +504,7 @@ package emr {
   }
 
   /**
-   * The input argument to the '''CancelSteps''' operation.
+   * The input argument to the <a>CancelSteps</a> operation.
    */
   @js.native
   trait CancelStepsInput extends js.Object {
@@ -523,7 +525,7 @@ package emr {
   }
 
   /**
-   * The output for the '''CancelSteps''' operation.
+   * The output for the <a>CancelSteps</a> operation.
    */
   @js.native
   trait CancelStepsOutput extends js.Object {
@@ -835,7 +837,7 @@ package emr {
 
   /**
    * '''Note:'''Amazon EMR releases 4.x or later.
-   * An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring Applications</a>.
+   * An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see [[http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
    */
   @js.native
   trait Configuration extends js.Object {
@@ -959,7 +961,7 @@ package emr {
   }
 
   /**
-   * The input for the '''DescribeJobFlows''' operation.
+   * The input for the <a>DescribeJobFlows</a> operation.
    */
   @js.native
   trait DescribeJobFlowsInput extends js.Object {
@@ -986,7 +988,7 @@ package emr {
   }
 
   /**
-   * The output for the '''DescribeJobFlows''' operation.
+   * The output for the <a>DescribeJobFlows</a> operation.
    */
   @js.native
   trait DescribeJobFlowsOutput extends js.Object {
@@ -2308,7 +2310,7 @@ package emr {
   }
 
   /**
-   * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+   * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>EMR Management Guide</i>.
    */
   @js.native
   trait KerberosAttributes extends js.Object {
@@ -2870,7 +2872,7 @@ package emr {
   }
 
   /**
-   * Input to the '''RunJobFlow''' operation.
+   * Input to the <a>RunJobFlow</a> operation.
    */
   @js.native
   trait RunJobFlowInput extends js.Object {
@@ -2954,7 +2956,7 @@ package emr {
   }
 
   /**
-   * The result of the '''RunJobFlow''' operation.
+   * The result of the <a>RunJobFlow</a> operation.
    */
   @js.native
   trait RunJobFlowOutput extends js.Object {
@@ -3108,7 +3110,7 @@ package emr {
   }
 
   /**
-   * The input argument to the '''TerminationProtection''' operation.
+   * The input argument to the <a>TerminationProtection</a> operation.
    */
   @js.native
   trait SetTerminationProtectionInput extends js.Object {
@@ -3496,7 +3498,7 @@ package emr {
   }
 
   /**
-   * A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>.
+   * A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
    */
   @js.native
   trait Tag extends js.Object {
@@ -3517,7 +3519,7 @@ package emr {
   }
 
   /**
-   * Input to the '''TerminateJobFlows''' operation.
+   * Input to the <a>TerminateJobFlows</a> operation.
    */
   @js.native
   trait TerminateJobFlowsInput extends js.Object {

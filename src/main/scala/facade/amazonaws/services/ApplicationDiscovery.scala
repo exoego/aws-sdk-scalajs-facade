@@ -62,7 +62,9 @@ package object applicationdiscovery {
 package applicationdiscovery {
   @js.native
   @JSImport("aws-sdk", "Discovery")
-  class ApplicationDiscovery(config: AWSConfig) extends js.Object {
+  class ApplicationDiscovery() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def associateConfigurationItemsToApplication(params: AssociateConfigurationItemsToApplicationRequest): Request[AssociateConfigurationItemsToApplicationResponse] = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResponse] = js.native
     def createTags(params: CreateTagsRequest): Request[CreateTagsResponse] = js.native
@@ -795,7 +797,7 @@ package applicationdiscovery {
   }
 
   /**
-   * Used to select which agent's data is to be exported. A single agent ID may be selected for export using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a> action.
+   * Used to select which agent's data is to be exported. A single agent ID may be selected for export using the [[http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html|StartExportTask]] action.
    */
   @js.native
   trait ExportFilter extends js.Object {
@@ -867,7 +869,7 @@ package applicationdiscovery {
 
   /**
    * A filter that can use conditional operators.
-   *  For more information about filters, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html">Querying Discovered Configuration Items</a>.
+   *  For more information about filters, see [[http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html|Querying Discovered Configuration Items]].
    */
   @js.native
   trait Filter extends js.Object {

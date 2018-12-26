@@ -34,7 +34,9 @@ package object resourcegroupstaggingapi {
 package resourcegroupstaggingapi {
   @js.native
   @JSImport("aws-sdk", "ResourceGroupsTaggingAPI")
-  class ResourceGroupsTaggingAPI(config: AWSConfig) extends js.Object {
+  class ResourceGroupsTaggingAPI() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def getResources(params: GetResourcesInput): Request[GetResourcesOutput] = js.native
     def getTagKeys(params: GetTagKeysInput): Request[GetTagKeysOutput] = js.native
     def getTagValues(params: GetTagValuesInput): Request[GetTagValuesOutput] = js.native
@@ -233,7 +235,7 @@ package resourcegroupstaggingapi {
   }
 
   /**
-   * The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-basics">Tag Basics</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+   * The metadata that you apply to AWS resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-basics|Tag Basics]] in the <i>Amazon EC2 User Guide for Linux Instances</i>.
    */
   @js.native
   trait Tag extends js.Object {

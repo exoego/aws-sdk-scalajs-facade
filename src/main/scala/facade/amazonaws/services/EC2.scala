@@ -20,8 +20,12 @@ package object ec2 {
   type AllocationStrategy = String
   type AllowedPrincipalSet = js.Array[AllowedPrincipal]
   type ArchitectureValues = String
+  type AssociatedNetworkType = String
+  type AssociatedTargetNetworkSet = js.Array[AssociatedTargetNetwork]
   type AssociationIdList = js.Array[String]
+  type AssociationStatusCode = String
   type AttachmentStatus = String
+  type AuthorizationRuleSet = js.Array[AuthorizationRule]
   type AutoAcceptSharedAttachmentsValue = String
   type AutoPlacement = String
   type AvailabilityZoneList = js.Array[AvailabilityZone]
@@ -53,6 +57,17 @@ package object ec2 {
   type ClassicLinkDnsSupportList = js.Array[ClassicLinkDnsSupport]
   type ClassicLinkInstanceList = js.Array[ClassicLinkInstance]
   type ClassicLoadBalancers = js.Array[ClassicLoadBalancer]
+  type ClientCertificateRevocationListStatusCode = String
+  type ClientVpnAuthenticationList = js.Array[ClientVpnAuthentication]
+  type ClientVpnAuthenticationRequestList = js.Array[ClientVpnAuthenticationRequest]
+  type ClientVpnAuthenticationType = String
+  type ClientVpnAuthorizationRuleStatusCode = String
+  type ClientVpnConnectionSet = js.Array[ClientVpnConnection]
+  type ClientVpnConnectionStatusCode = String
+  type ClientVpnEndpointStatusCode = String
+  type ClientVpnRouteSet = js.Array[ClientVpnRoute]
+  type ClientVpnRouteStatusCode = String
+  type ClientVpnSecurityGroupIdSet = js.Array[String]
   type ConnectionNotificationSet = js.Array[ConnectionNotification]
   type ConnectionNotificationState = String
   type ConnectionNotificationType = String
@@ -102,6 +117,7 @@ package object ec2 {
   type ElasticInferenceAcceleratorAssociationList = js.Array[ElasticInferenceAcceleratorAssociation]
   type ElasticInferenceAccelerators = js.Array[ElasticInferenceAccelerator]
   type EndDateType = String
+  type EndpointSet = js.Array[ClientVpnEndpoint]
   type EventCode = String
   type EventType = String
   type ExcessCapacityTerminationPolicy = String
@@ -374,9 +390,11 @@ package object ec2 {
   type TagSpecificationList = js.Array[TagSpecification]
   type TargetConfigurationRequestSet = js.Array[TargetConfigurationRequest]
   type TargetGroups = js.Array[TargetGroup]
+  type TargetNetworkSet = js.Array[TargetNetwork]
   type TargetReservationValueSet = js.Array[TargetReservationValue]
   type TelemetryStatus = String
   type Tenancy = String
+  type TerminateConnectionStatusSet = js.Array[TerminateConnectionStatus]
   type TrafficType = String
   type TransitGatewayAssociationState = String
   type TransitGatewayAttachmentIdStringList = js.Array[String]
@@ -399,6 +417,7 @@ package object ec2 {
   type TransitGatewayRouteType = String
   type TransitGatewayState = String
   type TransitGatewayVpcAttachmentList = js.Array[TransitGatewayVpcAttachment]
+  type TransportProtocol = String
   type TunnelOptionsList = js.Array[VpnTunnelOptionsSpecification]
   type UnsuccessfulInstanceCreditSpecificationErrorCode = String
   type UnsuccessfulInstanceCreditSpecificationSet = js.Array[UnsuccessfulInstanceCreditSpecificationItem]
@@ -449,6 +468,7 @@ package object ec2 {
   type VpnEcmpSupportValue = String
   type VpnGatewayIdStringList = js.Array[String]
   type VpnGatewayList = js.Array[VpnGateway]
+  type VpnProtocol = String
   type VpnState = String
   type VpnStaticRouteList = js.Array[VpnStaticRoute]
   type VpnStaticRouteSource = String
@@ -460,7 +480,9 @@ package object ec2 {
 package ec2 {
   @js.native
   @JSImport("aws-sdk", "EC2")
-  class EC2(config: AWSConfig) extends js.Object {
+  class EC2() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptReservedInstancesExchangeQuote(params: AcceptReservedInstancesExchangeQuoteRequest): Request[AcceptReservedInstancesExchangeQuoteResult] = js.native
     def acceptTransitGatewayVpcAttachment(params: AcceptTransitGatewayVpcAttachmentRequest): Request[AcceptTransitGatewayVpcAttachmentResult] = js.native
     def acceptVpcEndpointConnections(params: AcceptVpcEndpointConnectionsRequest): Request[AcceptVpcEndpointConnectionsResult] = js.native
@@ -468,9 +490,11 @@ package ec2 {
     def advertiseByoipCidr(params: AdvertiseByoipCidrRequest): Request[AdvertiseByoipCidrResult] = js.native
     def allocateAddress(params: AllocateAddressRequest): Request[AllocateAddressResult] = js.native
     def allocateHosts(params: AllocateHostsRequest): Request[AllocateHostsResult] = js.native
+    def applySecurityGroupsToClientVpnTargetNetwork(params: ApplySecurityGroupsToClientVpnTargetNetworkRequest): Request[ApplySecurityGroupsToClientVpnTargetNetworkResult] = js.native
     def assignIpv6Addresses(params: AssignIpv6AddressesRequest): Request[AssignIpv6AddressesResult] = js.native
     def assignPrivateIpAddresses(params: AssignPrivateIpAddressesRequest): Request[js.Object] = js.native
     def associateAddress(params: AssociateAddressRequest): Request[AssociateAddressResult] = js.native
+    def associateClientVpnTargetNetwork(params: AssociateClientVpnTargetNetworkRequest): Request[AssociateClientVpnTargetNetworkResult] = js.native
     def associateDhcpOptions(params: AssociateDhcpOptionsRequest): Request[js.Object] = js.native
     def associateIamInstanceProfile(params: AssociateIamInstanceProfileRequest): Request[AssociateIamInstanceProfileResult] = js.native
     def associateRouteTable(params: AssociateRouteTableRequest): Request[AssociateRouteTableResult] = js.native
@@ -482,6 +506,7 @@ package ec2 {
     def attachNetworkInterface(params: AttachNetworkInterfaceRequest): Request[AttachNetworkInterfaceResult] = js.native
     def attachVolume(params: AttachVolumeRequest): Request[VolumeAttachment] = js.native
     def attachVpnGateway(params: AttachVpnGatewayRequest): Request[AttachVpnGatewayResult] = js.native
+    def authorizeClientVpnIngress(params: AuthorizeClientVpnIngressRequest): Request[AuthorizeClientVpnIngressResult] = js.native
     def authorizeSecurityGroupEgress(params: AuthorizeSecurityGroupEgressRequest): Request[js.Object] = js.native
     def authorizeSecurityGroupIngress(params: AuthorizeSecurityGroupIngressRequest): Request[js.Object] = js.native
     def bundleInstance(params: BundleInstanceRequest): Request[BundleInstanceResult] = js.native
@@ -498,6 +523,8 @@ package ec2 {
     def copyImage(params: CopyImageRequest): Request[CopyImageResult] = js.native
     def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
     def createCapacityReservation(params: CreateCapacityReservationRequest): Request[CreateCapacityReservationResult] = js.native
+    def createClientVpnEndpoint(params: CreateClientVpnEndpointRequest): Request[CreateClientVpnEndpointResult] = js.native
+    def createClientVpnRoute(params: CreateClientVpnRouteRequest): Request[CreateClientVpnRouteResult] = js.native
     def createCustomerGateway(params: CreateCustomerGatewayRequest): Request[CreateCustomerGatewayResult] = js.native
     def createDefaultSubnet(params: CreateDefaultSubnetRequest): Request[CreateDefaultSubnetResult] = js.native
     def createDefaultVpc(params: CreateDefaultVpcRequest): Request[CreateDefaultVpcResult] = js.native
@@ -539,6 +566,8 @@ package ec2 {
     def createVpnConnection(params: CreateVpnConnectionRequest): Request[CreateVpnConnectionResult] = js.native
     def createVpnConnectionRoute(params: CreateVpnConnectionRouteRequest): Request[js.Object] = js.native
     def createVpnGateway(params: CreateVpnGatewayRequest): Request[CreateVpnGatewayResult] = js.native
+    def deleteClientVpnEndpoint(params: DeleteClientVpnEndpointRequest): Request[DeleteClientVpnEndpointResult] = js.native
+    def deleteClientVpnRoute(params: DeleteClientVpnRouteRequest): Request[DeleteClientVpnRouteResult] = js.native
     def deleteCustomerGateway(params: DeleteCustomerGatewayRequest): Request[js.Object] = js.native
     def deleteDhcpOptions(params: DeleteDhcpOptionsRequest): Request[js.Object] = js.native
     def deleteEgressOnlyInternetGateway(params: DeleteEgressOnlyInternetGatewayRequest): Request[DeleteEgressOnlyInternetGatewayResult] = js.native
@@ -585,6 +614,11 @@ package ec2 {
     def describeByoipCidrs(params: DescribeByoipCidrsRequest): Request[DescribeByoipCidrsResult] = js.native
     def describeCapacityReservations(params: DescribeCapacityReservationsRequest): Request[DescribeCapacityReservationsResult] = js.native
     def describeClassicLinkInstances(params: DescribeClassicLinkInstancesRequest): Request[DescribeClassicLinkInstancesResult] = js.native
+    def describeClientVpnAuthorizationRules(params: DescribeClientVpnAuthorizationRulesRequest): Request[DescribeClientVpnAuthorizationRulesResult] = js.native
+    def describeClientVpnConnections(params: DescribeClientVpnConnectionsRequest): Request[DescribeClientVpnConnectionsResult] = js.native
+    def describeClientVpnEndpoints(params: DescribeClientVpnEndpointsRequest): Request[DescribeClientVpnEndpointsResult] = js.native
+    def describeClientVpnRoutes(params: DescribeClientVpnRoutesRequest): Request[DescribeClientVpnRoutesResult] = js.native
+    def describeClientVpnTargetNetworks(params: DescribeClientVpnTargetNetworksRequest): Request[DescribeClientVpnTargetNetworksResult] = js.native
     def describeConversionTasks(params: DescribeConversionTasksRequest): Request[DescribeConversionTasksResult] = js.native
     def describeCustomerGateways(params: DescribeCustomerGatewaysRequest): Request[DescribeCustomerGatewaysResult] = js.native
     def describeDhcpOptions(params: DescribeDhcpOptionsRequest): Request[DescribeDhcpOptionsResult] = js.native
@@ -677,6 +711,7 @@ package ec2 {
     def disableVpcClassicLink(params: DisableVpcClassicLinkRequest): Request[DisableVpcClassicLinkResult] = js.native
     def disableVpcClassicLinkDnsSupport(params: DisableVpcClassicLinkDnsSupportRequest): Request[DisableVpcClassicLinkDnsSupportResult] = js.native
     def disassociateAddress(params: DisassociateAddressRequest): Request[js.Object] = js.native
+    def disassociateClientVpnTargetNetwork(params: DisassociateClientVpnTargetNetworkRequest): Request[DisassociateClientVpnTargetNetworkResult] = js.native
     def disassociateIamInstanceProfile(params: DisassociateIamInstanceProfileRequest): Request[DisassociateIamInstanceProfileResult] = js.native
     def disassociateRouteTable(params: DisassociateRouteTableRequest): Request[js.Object] = js.native
     def disassociateSubnetCidrBlock(params: DisassociateSubnetCidrBlockRequest): Request[DisassociateSubnetCidrBlockResult] = js.native
@@ -687,6 +722,8 @@ package ec2 {
     def enableVolumeIO(params: EnableVolumeIORequest): Request[js.Object] = js.native
     def enableVpcClassicLink(params: EnableVpcClassicLinkRequest): Request[EnableVpcClassicLinkResult] = js.native
     def enableVpcClassicLinkDnsSupport(params: EnableVpcClassicLinkDnsSupportRequest): Request[EnableVpcClassicLinkDnsSupportResult] = js.native
+    def exportClientVpnClientCertificateRevocationList(params: ExportClientVpnClientCertificateRevocationListRequest): Request[ExportClientVpnClientCertificateRevocationListResult] = js.native
+    def exportClientVpnClientConfiguration(params: ExportClientVpnClientConfigurationRequest): Request[ExportClientVpnClientConfigurationResult] = js.native
     def exportTransitGatewayRoutes(params: ExportTransitGatewayRoutesRequest): Request[ExportTransitGatewayRoutesResult] = js.native
     def getConsoleOutput(params: GetConsoleOutputRequest): Request[GetConsoleOutputResult] = js.native
     def getConsoleScreenshot(params: GetConsoleScreenshotRequest): Request[GetConsoleScreenshotResult] = js.native
@@ -697,12 +734,14 @@ package ec2 {
     def getTransitGatewayAttachmentPropagations(params: GetTransitGatewayAttachmentPropagationsRequest): Request[GetTransitGatewayAttachmentPropagationsResult] = js.native
     def getTransitGatewayRouteTableAssociations(params: GetTransitGatewayRouteTableAssociationsRequest): Request[GetTransitGatewayRouteTableAssociationsResult] = js.native
     def getTransitGatewayRouteTablePropagations(params: GetTransitGatewayRouteTablePropagationsRequest): Request[GetTransitGatewayRouteTablePropagationsResult] = js.native
+    def importClientVpnClientCertificateRevocationList(params: ImportClientVpnClientCertificateRevocationListRequest): Request[ImportClientVpnClientCertificateRevocationListResult] = js.native
     def importImage(params: ImportImageRequest): Request[ImportImageResult] = js.native
     def importInstance(params: ImportInstanceRequest): Request[ImportInstanceResult] = js.native
     def importKeyPair(params: ImportKeyPairRequest): Request[ImportKeyPairResult] = js.native
     def importSnapshot(params: ImportSnapshotRequest): Request[ImportSnapshotResult] = js.native
     def importVolume(params: ImportVolumeRequest): Request[ImportVolumeResult] = js.native
     def modifyCapacityReservation(params: ModifyCapacityReservationRequest): Request[ModifyCapacityReservationResult] = js.native
+    def modifyClientVpnEndpoint(params: ModifyClientVpnEndpointRequest): Request[ModifyClientVpnEndpointResult] = js.native
     def modifyFleet(params: ModifyFleetRequest): Request[ModifyFleetResult] = js.native
     def modifyFpgaImageAttribute(params: ModifyFpgaImageAttributeRequest): Request[ModifyFpgaImageAttributeResult] = js.native
     def modifyHosts(params: ModifyHostsRequest): Request[ModifyHostsResult] = js.native
@@ -757,6 +796,7 @@ package ec2 {
     def resetNetworkInterfaceAttribute(params: ResetNetworkInterfaceAttributeRequest): Request[js.Object] = js.native
     def resetSnapshotAttribute(params: ResetSnapshotAttributeRequest): Request[js.Object] = js.native
     def restoreAddressToClassic(params: RestoreAddressToClassicRequest): Request[RestoreAddressToClassicResult] = js.native
+    def revokeClientVpnIngress(params: RevokeClientVpnIngressRequest): Request[RevokeClientVpnIngressResult] = js.native
     def revokeSecurityGroupEgress(params: RevokeSecurityGroupEgressRequest): Request[js.Object] = js.native
     def revokeSecurityGroupIngress(params: RevokeSecurityGroupIngressRequest): Request[js.Object] = js.native
     def runInstances(params: RunInstancesRequest): Request[Reservation] = js.native
@@ -764,6 +804,7 @@ package ec2 {
     def searchTransitGatewayRoutes(params: SearchTransitGatewayRoutesRequest): Request[SearchTransitGatewayRoutesResult] = js.native
     def startInstances(params: StartInstancesRequest): Request[StartInstancesResult] = js.native
     def stopInstances(params: StopInstancesRequest): Request[StopInstancesResult] = js.native
+    def terminateClientVpnConnections(params: TerminateClientVpnConnectionsRequest): Request[TerminateClientVpnConnectionsResult] = js.native
     def terminateInstances(params: TerminateInstancesRequest): Request[TerminateInstancesResult] = js.native
     def unassignIpv6Addresses(params: UnassignIpv6AddressesRequest): Request[UnassignIpv6AddressesResult] = js.native
     def unassignPrivateIpAddresses(params: UnassignPrivateIpAddressesRequest): Request[js.Object] = js.native
@@ -1218,6 +1259,45 @@ package ec2 {
     }
   }
 
+  @js.native
+  trait ApplySecurityGroupsToClientVpnTargetNetworkRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var SecurityGroupIds: ClientVpnSecurityGroupIdSet
+    var VpcId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object ApplySecurityGroupsToClientVpnTargetNetworkRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      SecurityGroupIds: ClientVpnSecurityGroupIdSet,
+      VpcId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined): ApplySecurityGroupsToClientVpnTargetNetworkRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplySecurityGroupsToClientVpnTargetNetworkRequest]
+    }
+  }
+
+  @js.native
+  trait ApplySecurityGroupsToClientVpnTargetNetworkResult extends js.Object {
+    var SecurityGroupIds: js.UndefOr[ClientVpnSecurityGroupIdSet]
+  }
+
+  object ApplySecurityGroupsToClientVpnTargetNetworkResult {
+    def apply(
+      SecurityGroupIds: js.UndefOr[ClientVpnSecurityGroupIdSet] = js.undefined): ApplySecurityGroupsToClientVpnTargetNetworkResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplySecurityGroupsToClientVpnTargetNetworkResult]
+    }
+  }
+
   object ArchitectureValuesEnum {
     val i386 = "i386"
     val x86_64 = "x86_64"
@@ -1337,6 +1417,45 @@ package ec2 {
         "AssociationId" -> AssociationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateAddressResult]
+    }
+  }
+
+  @js.native
+  trait AssociateClientVpnTargetNetworkRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var SubnetId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object AssociateClientVpnTargetNetworkRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      SubnetId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined): AssociateClientVpnTargetNetworkRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateClientVpnTargetNetworkRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateClientVpnTargetNetworkResult extends js.Object {
+    var AssociationId: js.UndefOr[String]
+    var Status: js.UndefOr[AssociationStatus]
+  }
+
+  object AssociateClientVpnTargetNetworkResult {
+    def apply(
+      AssociationId: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[AssociationStatus] = js.undefined): AssociateClientVpnTargetNetworkResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationId" -> AssociationId.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateClientVpnTargetNetworkResult]
     }
   }
 
@@ -1542,6 +1661,64 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateVpcCidrBlockResult]
     }
+  }
+
+  object AssociatedNetworkTypeEnum {
+    val vpc = "vpc"
+
+    val values = IndexedSeq(vpc)
+  }
+
+  /**
+   * Describes a target network that is associated with a Client VPN endpoint. A target network is a subnet in a VPC.
+   */
+  @js.native
+  trait AssociatedTargetNetwork extends js.Object {
+    var NetworkId: js.UndefOr[String]
+    var NetworkType: js.UndefOr[AssociatedNetworkType]
+  }
+
+  object AssociatedTargetNetwork {
+    def apply(
+      NetworkId: js.UndefOr[String] = js.undefined,
+      NetworkType: js.UndefOr[AssociatedNetworkType] = js.undefined): AssociatedTargetNetwork = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NetworkId" -> NetworkId.map { x => x.asInstanceOf[js.Any] },
+        "NetworkType" -> NetworkType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociatedTargetNetwork]
+    }
+  }
+
+  /**
+   * Describes the state of a target network association.
+   */
+  @js.native
+  trait AssociationStatus extends js.Object {
+    var Code: js.UndefOr[AssociationStatusCode]
+    var Message: js.UndefOr[String]
+  }
+
+  object AssociationStatus {
+    def apply(
+      Code: js.UndefOr[AssociationStatusCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): AssociationStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociationStatus]
+    }
+  }
+
+  object AssociationStatusCodeEnum {
+    val associating = "associating"
+    val associated = "associated"
+    val `association-failed` = "association-failed"
+    val disassociating = "disassociating"
+    val disassociated = "disassociated"
+
+    val values = IndexedSeq(associating, associated, `association-failed`, disassociating, disassociated)
   }
 
   @js.native
@@ -1760,6 +1937,84 @@ package ec2 {
         "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeValue]
+    }
+  }
+
+  /**
+   * ```Information about an authorization rule.```
+   */
+  @js.native
+  trait AuthorizationRule extends js.Object {
+    var AccessAll: js.UndefOr[Boolean]
+    var ClientVpnEndpointId: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var DestinationCidr: js.UndefOr[String]
+    var GroupId: js.UndefOr[String]
+    var Status: js.UndefOr[ClientVpnAuthorizationRuleStatus]
+  }
+
+  object AuthorizationRule {
+    def apply(
+      AccessAll: js.UndefOr[Boolean] = js.undefined,
+      ClientVpnEndpointId: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DestinationCidr: js.UndefOr[String] = js.undefined,
+      GroupId: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[ClientVpnAuthorizationRuleStatus] = js.undefined): AuthorizationRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccessAll" -> AccessAll.map { x => x.asInstanceOf[js.Any] },
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DestinationCidr" -> DestinationCidr.map { x => x.asInstanceOf[js.Any] },
+        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizationRule]
+    }
+  }
+
+  @js.native
+  trait AuthorizeClientVpnIngressRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var TargetNetworkCidr: String
+    var AccessGroupId: js.UndefOr[String]
+    var AuthorizeAllGroups: js.UndefOr[Boolean]
+    var Description: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object AuthorizeClientVpnIngressRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      TargetNetworkCidr: String,
+      AccessGroupId: js.UndefOr[String] = js.undefined,
+      AuthorizeAllGroups: js.UndefOr[Boolean] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): AuthorizeClientVpnIngressRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "TargetNetworkCidr" -> TargetNetworkCidr.asInstanceOf[js.Any],
+        "AccessGroupId" -> AccessGroupId.map { x => x.asInstanceOf[js.Any] },
+        "AuthorizeAllGroups" -> AuthorizeAllGroups.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeClientVpnIngressRequest]
+    }
+  }
+
+  @js.native
+  trait AuthorizeClientVpnIngressResult extends js.Object {
+    var Status: js.UndefOr[ClientVpnAuthorizationRuleStatus]
+  }
+
+  object AuthorizeClientVpnIngressResult {
+    def apply(
+      Status: js.UndefOr[ClientVpnAuthorizationRuleStatus] = js.undefined): AuthorizeClientVpnIngressResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeClientVpnIngressResult]
     }
   }
 
@@ -2072,7 +2327,7 @@ package ec2 {
   }
 
   /**
-   * Describes an error for '''BundleInstance'''.
+   * Describes an error for <a>BundleInstance</a>.
    */
   @js.native
   trait BundleTaskError extends js.Object {
@@ -2355,17 +2610,17 @@ package ec2 {
    */
   @js.native
   trait CancelSpotFleetRequestsError extends js.Object {
-    var Code: CancelBatchErrorCode
-    var Message: String
+    var Code: js.UndefOr[CancelBatchErrorCode]
+    var Message: js.UndefOr[String]
   }
 
   object CancelSpotFleetRequestsError {
     def apply(
-      Code: CancelBatchErrorCode,
-      Message: String): CancelSpotFleetRequestsError = {
+      Code: js.UndefOr[CancelBatchErrorCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): CancelSpotFleetRequestsError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.asInstanceOf[js.Any],
-        "Message" -> Message.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsError]
     }
@@ -2376,17 +2631,17 @@ package ec2 {
    */
   @js.native
   trait CancelSpotFleetRequestsErrorItem extends js.Object {
-    var Error: CancelSpotFleetRequestsError
-    var SpotFleetRequestId: String
+    var Error: js.UndefOr[CancelSpotFleetRequestsError]
+    var SpotFleetRequestId: js.UndefOr[String]
   }
 
   object CancelSpotFleetRequestsErrorItem {
     def apply(
-      Error: CancelSpotFleetRequestsError,
-      SpotFleetRequestId: String): CancelSpotFleetRequestsErrorItem = {
+      Error: js.UndefOr[CancelSpotFleetRequestsError] = js.undefined,
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined): CancelSpotFleetRequestsErrorItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Error" -> Error.asInstanceOf[js.Any],
-        "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestId" -> SpotFleetRequestId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsErrorItem]
     }
@@ -2442,20 +2697,20 @@ package ec2 {
    */
   @js.native
   trait CancelSpotFleetRequestsSuccessItem extends js.Object {
-    var CurrentSpotFleetRequestState: BatchState
-    var PreviousSpotFleetRequestState: BatchState
-    var SpotFleetRequestId: String
+    var CurrentSpotFleetRequestState: js.UndefOr[BatchState]
+    var PreviousSpotFleetRequestState: js.UndefOr[BatchState]
+    var SpotFleetRequestId: js.UndefOr[String]
   }
 
   object CancelSpotFleetRequestsSuccessItem {
     def apply(
-      CurrentSpotFleetRequestState: BatchState,
-      PreviousSpotFleetRequestState: BatchState,
-      SpotFleetRequestId: String): CancelSpotFleetRequestsSuccessItem = {
+      CurrentSpotFleetRequestState: js.UndefOr[BatchState] = js.undefined,
+      PreviousSpotFleetRequestState: js.UndefOr[BatchState] = js.undefined,
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined): CancelSpotFleetRequestsSuccessItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CurrentSpotFleetRequestState" -> CurrentSpotFleetRequestState.asInstanceOf[js.Any],
-        "PreviousSpotFleetRequestState" -> PreviousSpotFleetRequestState.asInstanceOf[js.Any],
-        "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "CurrentSpotFleetRequestState" -> CurrentSpotFleetRequestState.map { x => x.asInstanceOf[js.Any] },
+        "PreviousSpotFleetRequestState" -> PreviousSpotFleetRequestState.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestId" -> SpotFleetRequestId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSpotFleetRequestsSuccessItem]
     }
@@ -2707,6 +2962,42 @@ package ec2 {
   }
 
   /**
+   * ```Information about the client certificate used for authentication.```
+   */
+  @js.native
+  trait CertificateAuthentication extends js.Object {
+    var ClientRootCertificateChain: js.UndefOr[String]
+  }
+
+  object CertificateAuthentication {
+    def apply(
+      ClientRootCertificateChain: js.UndefOr[String] = js.undefined): CertificateAuthentication = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientRootCertificateChain" -> ClientRootCertificateChain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateAuthentication]
+    }
+  }
+
+  /**
+   * ```Information about the client certificate to be used for authentication.```
+   */
+  @js.native
+  trait CertificateAuthenticationRequest extends js.Object {
+    var ClientRootCertificateChainArn: js.UndefOr[String]
+  }
+
+  object CertificateAuthenticationRequest {
+    def apply(
+      ClientRootCertificateChainArn: js.UndefOr[String] = js.undefined): CertificateAuthenticationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientRootCertificateChainArn" -> ClientRootCertificateChainArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateAuthenticationRequest]
+    }
+  }
+
+  /**
    * Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP).
    */
   @js.native
@@ -2798,14 +3089,14 @@ package ec2 {
    */
   @js.native
   trait ClassicLoadBalancer extends js.Object {
-    var Name: String
+    var Name: js.UndefOr[String]
   }
 
   object ClassicLoadBalancer {
     def apply(
-      Name: String): ClassicLoadBalancer = {
+      Name: js.UndefOr[String] = js.undefined): ClassicLoadBalancer = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassicLoadBalancer]
     }
@@ -2816,17 +3107,45 @@ package ec2 {
    */
   @js.native
   trait ClassicLoadBalancersConfig extends js.Object {
-    var ClassicLoadBalancers: ClassicLoadBalancers
+    var ClassicLoadBalancers: js.UndefOr[ClassicLoadBalancers]
   }
 
   object ClassicLoadBalancersConfig {
     def apply(
-      ClassicLoadBalancers: ClassicLoadBalancers): ClassicLoadBalancersConfig = {
+      ClassicLoadBalancers: js.UndefOr[ClassicLoadBalancers] = js.undefined): ClassicLoadBalancersConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClassicLoadBalancers" -> ClassicLoadBalancers.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ClassicLoadBalancers" -> ClassicLoadBalancers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassicLoadBalancersConfig]
     }
+  }
+
+  /**
+   * Describes the state of a client certificate revocation list.
+   */
+  @js.native
+  trait ClientCertificateRevocationListStatus extends js.Object {
+    var Code: js.UndefOr[ClientCertificateRevocationListStatusCode]
+    var Message: js.UndefOr[String]
+  }
+
+  object ClientCertificateRevocationListStatus {
+    def apply(
+      Code: js.UndefOr[ClientCertificateRevocationListStatusCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): ClientCertificateRevocationListStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientCertificateRevocationListStatus]
+    }
+  }
+
+  object ClientCertificateRevocationListStatusCodeEnum {
+    val pending = "pending"
+    val active = "active"
+
+    val values = IndexedSeq(pending, active)
   }
 
   /**
@@ -2854,6 +3173,328 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientData]
     }
+  }
+
+  /**
+   * Describes the authentication methods used by a Client VPN endpoint. Client VPN supports Active Directory and mutual authentication. For more information, see [[vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication|Authentication]] in the <i>AWS Client VPN Admin Guide</i>.
+   */
+  @js.native
+  trait ClientVpnAuthentication extends js.Object {
+    var ActiveDirectory: js.UndefOr[DirectoryServiceAuthentication]
+    var MutualAuthentication: js.UndefOr[CertificateAuthentication]
+    var Type: js.UndefOr[ClientVpnAuthenticationType]
+  }
+
+  object ClientVpnAuthentication {
+    def apply(
+      ActiveDirectory: js.UndefOr[DirectoryServiceAuthentication] = js.undefined,
+      MutualAuthentication: js.UndefOr[CertificateAuthentication] = js.undefined,
+      Type: js.UndefOr[ClientVpnAuthenticationType] = js.undefined): ClientVpnAuthentication = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActiveDirectory" -> ActiveDirectory.map { x => x.asInstanceOf[js.Any] },
+        "MutualAuthentication" -> MutualAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnAuthentication]
+    }
+  }
+
+  /**
+   * Describes the authentication method to be used by a Client VPN endpoint. Client VPN supports Active Directory and mutual authentication. For more information, see [[vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication|Authentication]] in the <i>AWS Client VPN Admin Guide</i>.
+   */
+  @js.native
+  trait ClientVpnAuthenticationRequest extends js.Object {
+    var ActiveDirectory: js.UndefOr[DirectoryServiceAuthenticationRequest]
+    var MutualAuthentication: js.UndefOr[CertificateAuthenticationRequest]
+    var Type: js.UndefOr[ClientVpnAuthenticationType]
+  }
+
+  object ClientVpnAuthenticationRequest {
+    def apply(
+      ActiveDirectory: js.UndefOr[DirectoryServiceAuthenticationRequest] = js.undefined,
+      MutualAuthentication: js.UndefOr[CertificateAuthenticationRequest] = js.undefined,
+      Type: js.UndefOr[ClientVpnAuthenticationType] = js.undefined): ClientVpnAuthenticationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActiveDirectory" -> ActiveDirectory.map { x => x.asInstanceOf[js.Any] },
+        "MutualAuthentication" -> MutualAuthentication.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnAuthenticationRequest]
+    }
+  }
+
+  object ClientVpnAuthenticationTypeEnum {
+    val `certificate-authentication` = "certificate-authentication"
+    val `directory-service-authentication` = "directory-service-authentication"
+
+    val values = IndexedSeq(`certificate-authentication`, `directory-service-authentication`)
+  }
+
+  /**
+   * Describes the state of an authorization rule.
+   */
+  @js.native
+  trait ClientVpnAuthorizationRuleStatus extends js.Object {
+    var Code: js.UndefOr[ClientVpnAuthorizationRuleStatusCode]
+    var Message: js.UndefOr[String]
+  }
+
+  object ClientVpnAuthorizationRuleStatus {
+    def apply(
+      Code: js.UndefOr[ClientVpnAuthorizationRuleStatusCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): ClientVpnAuthorizationRuleStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnAuthorizationRuleStatus]
+    }
+  }
+
+  object ClientVpnAuthorizationRuleStatusCodeEnum {
+    val authorizing = "authorizing"
+    val active = "active"
+    val failed = "failed"
+    val revoking = "revoking"
+
+    val values = IndexedSeq(authorizing, active, failed, revoking)
+  }
+
+  /**
+   * Describes a client connection.
+   */
+  @js.native
+  trait ClientVpnConnection extends js.Object {
+    var ClientIp: js.UndefOr[String]
+    var ClientVpnEndpointId: js.UndefOr[String]
+    var CommonName: js.UndefOr[String]
+    var ConnectionEndTime: js.UndefOr[String]
+    var ConnectionEstablishedTime: js.UndefOr[String]
+    var ConnectionId: js.UndefOr[String]
+    var EgressBytes: js.UndefOr[String]
+    var EgressPackets: js.UndefOr[String]
+    var IngressBytes: js.UndefOr[String]
+    var IngressPackets: js.UndefOr[String]
+    var Status: js.UndefOr[ClientVpnConnectionStatus]
+    var Timestamp: js.UndefOr[String]
+    var Username: js.UndefOr[String]
+  }
+
+  object ClientVpnConnection {
+    def apply(
+      ClientIp: js.UndefOr[String] = js.undefined,
+      ClientVpnEndpointId: js.UndefOr[String] = js.undefined,
+      CommonName: js.UndefOr[String] = js.undefined,
+      ConnectionEndTime: js.UndefOr[String] = js.undefined,
+      ConnectionEstablishedTime: js.UndefOr[String] = js.undefined,
+      ConnectionId: js.UndefOr[String] = js.undefined,
+      EgressBytes: js.UndefOr[String] = js.undefined,
+      EgressPackets: js.UndefOr[String] = js.undefined,
+      IngressBytes: js.UndefOr[String] = js.undefined,
+      IngressPackets: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[ClientVpnConnectionStatus] = js.undefined,
+      Timestamp: js.UndefOr[String] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): ClientVpnConnection = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientIp" -> ClientIp.map { x => x.asInstanceOf[js.Any] },
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.map { x => x.asInstanceOf[js.Any] },
+        "CommonName" -> CommonName.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionEndTime" -> ConnectionEndTime.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionEstablishedTime" -> ConnectionEstablishedTime.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionId" -> ConnectionId.map { x => x.asInstanceOf[js.Any] },
+        "EgressBytes" -> EgressBytes.map { x => x.asInstanceOf[js.Any] },
+        "EgressPackets" -> EgressPackets.map { x => x.asInstanceOf[js.Any] },
+        "IngressBytes" -> IngressBytes.map { x => x.asInstanceOf[js.Any] },
+        "IngressPackets" -> IngressPackets.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnConnection]
+    }
+  }
+
+  /**
+   * Describes the status of a client connection.
+   */
+  @js.native
+  trait ClientVpnConnectionStatus extends js.Object {
+    var Code: js.UndefOr[ClientVpnConnectionStatusCode]
+    var Message: js.UndefOr[String]
+  }
+
+  object ClientVpnConnectionStatus {
+    def apply(
+      Code: js.UndefOr[ClientVpnConnectionStatusCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): ClientVpnConnectionStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnConnectionStatus]
+    }
+  }
+
+  object ClientVpnConnectionStatusCodeEnum {
+    val active = "active"
+    val `failed-to-terminate` = "failed-to-terminate"
+    val terminating = "terminating"
+    val terminated = "terminated"
+
+    val values = IndexedSeq(active, `failed-to-terminate`, terminating, terminated)
+  }
+
+  /**
+   * Describes a Client VPN endpoint.
+   */
+  @js.native
+  trait ClientVpnEndpoint extends js.Object {
+    var AssociatedTargetNetworks: js.UndefOr[AssociatedTargetNetworkSet]
+    var AuthenticationOptions: js.UndefOr[ClientVpnAuthenticationList]
+    var ClientCidrBlock: js.UndefOr[String]
+    var ClientVpnEndpointId: js.UndefOr[String]
+    var ConnectionLogOptions: js.UndefOr[ConnectionLogResponseOptions]
+    var CreationTime: js.UndefOr[String]
+    var DeletionTime: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var DnsName: js.UndefOr[String]
+    var ServerCertificateArn: js.UndefOr[String]
+    var SplitTunnel: js.UndefOr[Boolean]
+    var Status: js.UndefOr[ClientVpnEndpointStatus]
+    var TransportProtocol: js.UndefOr[TransportProtocol]
+    var VpnProtocol: js.UndefOr[VpnProtocol]
+  }
+
+  object ClientVpnEndpoint {
+    def apply(
+      AssociatedTargetNetworks: js.UndefOr[AssociatedTargetNetworkSet] = js.undefined,
+      AuthenticationOptions: js.UndefOr[ClientVpnAuthenticationList] = js.undefined,
+      ClientCidrBlock: js.UndefOr[String] = js.undefined,
+      ClientVpnEndpointId: js.UndefOr[String] = js.undefined,
+      ConnectionLogOptions: js.UndefOr[ConnectionLogResponseOptions] = js.undefined,
+      CreationTime: js.UndefOr[String] = js.undefined,
+      DeletionTime: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DnsName: js.UndefOr[String] = js.undefined,
+      ServerCertificateArn: js.UndefOr[String] = js.undefined,
+      SplitTunnel: js.UndefOr[Boolean] = js.undefined,
+      Status: js.UndefOr[ClientVpnEndpointStatus] = js.undefined,
+      TransportProtocol: js.UndefOr[TransportProtocol] = js.undefined,
+      VpnProtocol: js.UndefOr[VpnProtocol] = js.undefined): ClientVpnEndpoint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociatedTargetNetworks" -> AssociatedTargetNetworks.map { x => x.asInstanceOf[js.Any] },
+        "AuthenticationOptions" -> AuthenticationOptions.map { x => x.asInstanceOf[js.Any] },
+        "ClientCidrBlock" -> ClientCidrBlock.map { x => x.asInstanceOf[js.Any] },
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionLogOptions" -> ConnectionLogOptions.map { x => x.asInstanceOf[js.Any] },
+        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
+        "DeletionTime" -> DeletionTime.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DnsName" -> DnsName.map { x => x.asInstanceOf[js.Any] },
+        "ServerCertificateArn" -> ServerCertificateArn.map { x => x.asInstanceOf[js.Any] },
+        "SplitTunnel" -> SplitTunnel.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TransportProtocol" -> TransportProtocol.map { x => x.asInstanceOf[js.Any] },
+        "VpnProtocol" -> VpnProtocol.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnEndpoint]
+    }
+  }
+
+  /**
+   * Describes the state of a Client VPN endpoint.
+   */
+  @js.native
+  trait ClientVpnEndpointStatus extends js.Object {
+    var Code: js.UndefOr[ClientVpnEndpointStatusCode]
+    var Message: js.UndefOr[String]
+  }
+
+  object ClientVpnEndpointStatus {
+    def apply(
+      Code: js.UndefOr[ClientVpnEndpointStatusCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): ClientVpnEndpointStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnEndpointStatus]
+    }
+  }
+
+  object ClientVpnEndpointStatusCodeEnum {
+    val `pending-associate` = "pending-associate"
+    val available = "available"
+    val deleting = "deleting"
+    val deleted = "deleted"
+
+    val values = IndexedSeq(`pending-associate`, available, deleting, deleted)
+  }
+
+  /**
+   * ```Information about a Client VPN endpoint route.```
+   */
+  @js.native
+  trait ClientVpnRoute extends js.Object {
+    var ClientVpnEndpointId: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var DestinationCidr: js.UndefOr[String]
+    var Origin: js.UndefOr[String]
+    var Status: js.UndefOr[ClientVpnRouteStatus]
+    var TargetSubnet: js.UndefOr[String]
+    var Type: js.UndefOr[String]
+  }
+
+  object ClientVpnRoute {
+    def apply(
+      ClientVpnEndpointId: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DestinationCidr: js.UndefOr[String] = js.undefined,
+      Origin: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[ClientVpnRouteStatus] = js.undefined,
+      TargetSubnet: js.UndefOr[String] = js.undefined,
+      Type: js.UndefOr[String] = js.undefined): ClientVpnRoute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DestinationCidr" -> DestinationCidr.map { x => x.asInstanceOf[js.Any] },
+        "Origin" -> Origin.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TargetSubnet" -> TargetSubnet.map { x => x.asInstanceOf[js.Any] },
+        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnRoute]
+    }
+  }
+
+  /**
+   * Describes the state of a Client VPN endpoint route.
+   */
+  @js.native
+  trait ClientVpnRouteStatus extends js.Object {
+    var Code: js.UndefOr[ClientVpnRouteStatusCode]
+    var Message: js.UndefOr[String]
+  }
+
+  object ClientVpnRouteStatus {
+    def apply(
+      Code: js.UndefOr[ClientVpnRouteStatusCode] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): ClientVpnRouteStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientVpnRouteStatus]
+    }
+  }
+
+  object ClientVpnRouteStatusCodeEnum {
+    val creating = "creating"
+    val active = "active"
+    val failed = "failed"
+    val deleting = "deleting"
+
+    val values = IndexedSeq(creating, active, failed, deleting)
   }
 
   @js.native
@@ -2892,6 +3533,54 @@ package ec2 {
         "Return" -> Return.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmProductInstanceResult]
+    }
+  }
+
+  /**
+   * Describes the client connection logging options for the Client VPN endpoint.
+   */
+  @js.native
+  trait ConnectionLogOptions extends js.Object {
+    var CloudwatchLogGroup: js.UndefOr[String]
+    var CloudwatchLogStream: js.UndefOr[String]
+    var Enabled: js.UndefOr[Boolean]
+  }
+
+  object ConnectionLogOptions {
+    def apply(
+      CloudwatchLogGroup: js.UndefOr[String] = js.undefined,
+      CloudwatchLogStream: js.UndefOr[String] = js.undefined,
+      Enabled: js.UndefOr[Boolean] = js.undefined): ConnectionLogOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CloudwatchLogGroup" -> CloudwatchLogGroup.map { x => x.asInstanceOf[js.Any] },
+        "CloudwatchLogStream" -> CloudwatchLogStream.map { x => x.asInstanceOf[js.Any] },
+        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionLogOptions]
+    }
+  }
+
+  /**
+   * Information about the client connection logging options for a Client VPN endpoint.
+   */
+  @js.native
+  trait ConnectionLogResponseOptions extends js.Object {
+    var CloudwatchLogGroup: js.UndefOr[String]
+    var CloudwatchLogStream: js.UndefOr[String]
+    var Enabled: js.UndefOr[Boolean]
+  }
+
+  object ConnectionLogResponseOptions {
+    def apply(
+      CloudwatchLogGroup: js.UndefOr[String] = js.undefined,
+      CloudwatchLogStream: js.UndefOr[String] = js.undefined,
+      Enabled: js.UndefOr[Boolean] = js.undefined): ConnectionLogResponseOptions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CloudwatchLogGroup" -> CloudwatchLogGroup.map { x => x.asInstanceOf[js.Any] },
+        "CloudwatchLogStream" -> CloudwatchLogStream.map { x => x.asInstanceOf[js.Any] },
+        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectionLogResponseOptions]
     }
   }
 
@@ -3259,6 +3948,108 @@ package ec2 {
         "CapacityReservation" -> CapacityReservation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCapacityReservationResult]
+    }
+  }
+
+  @js.native
+  trait CreateClientVpnEndpointRequest extends js.Object {
+    var AuthenticationOptions: ClientVpnAuthenticationRequestList
+    var ClientCidrBlock: String
+    var ConnectionLogOptions: ConnectionLogOptions
+    var ServerCertificateArn: String
+    var ClientToken: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var DnsServers: js.UndefOr[ValueStringList]
+    var DryRun: js.UndefOr[Boolean]
+    var TransportProtocol: js.UndefOr[TransportProtocol]
+  }
+
+  object CreateClientVpnEndpointRequest {
+    def apply(
+      AuthenticationOptions: ClientVpnAuthenticationRequestList,
+      ClientCidrBlock: String,
+      ConnectionLogOptions: ConnectionLogOptions,
+      ServerCertificateArn: String,
+      ClientToken: js.UndefOr[String] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DnsServers: js.UndefOr[ValueStringList] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      TransportProtocol: js.UndefOr[TransportProtocol] = js.undefined): CreateClientVpnEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AuthenticationOptions" -> AuthenticationOptions.asInstanceOf[js.Any],
+        "ClientCidrBlock" -> ClientCidrBlock.asInstanceOf[js.Any],
+        "ConnectionLogOptions" -> ConnectionLogOptions.asInstanceOf[js.Any],
+        "ServerCertificateArn" -> ServerCertificateArn.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DnsServers" -> DnsServers.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "TransportProtocol" -> TransportProtocol.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClientVpnEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait CreateClientVpnEndpointResult extends js.Object {
+    var ClientVpnEndpointId: js.UndefOr[String]
+    var DnsName: js.UndefOr[String]
+    var Status: js.UndefOr[ClientVpnEndpointStatus]
+  }
+
+  object CreateClientVpnEndpointResult {
+    def apply(
+      ClientVpnEndpointId: js.UndefOr[String] = js.undefined,
+      DnsName: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[ClientVpnEndpointStatus] = js.undefined): CreateClientVpnEndpointResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.map { x => x.asInstanceOf[js.Any] },
+        "DnsName" -> DnsName.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClientVpnEndpointResult]
+    }
+  }
+
+  @js.native
+  trait CreateClientVpnRouteRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DestinationCidrBlock: String
+    var TargetVpcSubnetId: String
+    var Description: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object CreateClientVpnRouteRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DestinationCidrBlock: String,
+      TargetVpcSubnetId: String,
+      Description: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined): CreateClientVpnRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "TargetVpcSubnetId" -> TargetVpcSubnetId.asInstanceOf[js.Any],
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClientVpnRouteRequest]
+    }
+  }
+
+  @js.native
+  trait CreateClientVpnRouteResult extends js.Object {
+    var Status: js.UndefOr[ClientVpnRouteStatus]
+  }
+
+  object CreateClientVpnRouteResult {
+    def apply(
+      Status: js.UndefOr[ClientVpnRouteStatus] = js.undefined): CreateClientVpnRouteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClientVpnRouteResult]
     }
   }
 
@@ -4137,20 +4928,23 @@ package ec2 {
 
   @js.native
   trait CreatePlacementGroupRequest extends js.Object {
-    var GroupName: String
-    var Strategy: PlacementStrategy
     var DryRun: js.UndefOr[Boolean]
+    var GroupName: js.UndefOr[String]
+    var PartitionCount: js.UndefOr[Int]
+    var Strategy: js.UndefOr[PlacementStrategy]
   }
 
   object CreatePlacementGroupRequest {
     def apply(
-      GroupName: String,
-      Strategy: PlacementStrategy,
-      DryRun: js.UndefOr[Boolean] = js.undefined): CreatePlacementGroupRequest = {
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      GroupName: js.UndefOr[String] = js.undefined,
+      PartitionCount: js.UndefOr[Int] = js.undefined,
+      Strategy: js.UndefOr[PlacementStrategy] = js.undefined): CreatePlacementGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupName" -> GroupName.asInstanceOf[js.Any],
-        "Strategy" -> Strategy.asInstanceOf[js.Any],
-        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "PartitionCount" -> PartitionCount.map { x => x.asInstanceOf[js.Any] },
+        "Strategy" -> Strategy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlacementGroupRequest]
     }
@@ -5190,6 +5984,78 @@ package ec2 {
     val `on-demand` = "on-demand"
 
     val values = IndexedSeq(spot, `on-demand`)
+  }
+
+  @js.native
+  trait DeleteClientVpnEndpointRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DeleteClientVpnEndpointRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DeleteClientVpnEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClientVpnEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteClientVpnEndpointResult extends js.Object {
+    var Status: js.UndefOr[ClientVpnEndpointStatus]
+  }
+
+  object DeleteClientVpnEndpointResult {
+    def apply(
+      Status: js.UndefOr[ClientVpnEndpointStatus] = js.undefined): DeleteClientVpnEndpointResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClientVpnEndpointResult]
+    }
+  }
+
+  @js.native
+  trait DeleteClientVpnRouteRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DestinationCidrBlock: String
+    var DryRun: js.UndefOr[Boolean]
+    var TargetVpcSubnetId: js.UndefOr[String]
+  }
+
+  object DeleteClientVpnRouteRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DestinationCidrBlock: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      TargetVpcSubnetId: js.UndefOr[String] = js.undefined): DeleteClientVpnRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DestinationCidrBlock" -> DestinationCidrBlock.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "TargetVpcSubnetId" -> TargetVpcSubnetId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClientVpnRouteRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteClientVpnRouteResult extends js.Object {
+    var Status: js.UndefOr[ClientVpnRouteStatus]
+  }
+
+  object DeleteClientVpnRouteResult {
+    def apply(
+      Status: js.UndefOr[ClientVpnRouteStatus] = js.undefined): DeleteClientVpnRouteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClientVpnRouteResult]
+    }
   }
 
   /**
@@ -6644,6 +7510,234 @@ package ec2 {
         "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClassicLinkInstancesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnAuthorizationRulesRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnAuthorizationRulesRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnAuthorizationRulesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnAuthorizationRulesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnAuthorizationRulesResult extends js.Object {
+    var AuthorizationRules: js.UndefOr[AuthorizationRuleSet]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnAuthorizationRulesResult {
+    def apply(
+      AuthorizationRules: js.UndefOr[AuthorizationRuleSet] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnAuthorizationRulesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AuthorizationRules" -> AuthorizationRules.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnAuthorizationRulesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnConnectionsRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnConnectionsRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnConnectionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnConnectionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnConnectionsResult extends js.Object {
+    var Connections: js.UndefOr[ClientVpnConnectionSet]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnConnectionsResult {
+    def apply(
+      Connections: js.UndefOr[ClientVpnConnectionSet] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnConnectionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Connections" -> Connections.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnConnectionsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnEndpointsRequest extends js.Object {
+    var ClientVpnEndpointIds: js.UndefOr[ValueStringList]
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnEndpointsRequest {
+    def apply(
+      ClientVpnEndpointIds: js.UndefOr[ValueStringList] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnEndpointsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointIds" -> ClientVpnEndpointIds.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnEndpointsResult extends js.Object {
+    var ClientVpnEndpoints: js.UndefOr[EndpointSet]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnEndpointsResult {
+    def apply(
+      ClientVpnEndpoints: js.UndefOr[EndpointSet] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnEndpointsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpoints" -> ClientVpnEndpoints.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnEndpointsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnRoutesRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnRoutesRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnRoutesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnRoutesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnRoutesResult extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Routes: js.UndefOr[ClientVpnRouteSet]
+  }
+
+  object DescribeClientVpnRoutesResult {
+    def apply(
+      NextToken: js.UndefOr[NextToken] = js.undefined,
+      Routes: js.UndefOr[ClientVpnRouteSet] = js.undefined): DescribeClientVpnRoutesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "Routes" -> Routes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnRoutesResult]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnTargetNetworksRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var AssociationIds: js.UndefOr[ValueStringList]
+    var DryRun: js.UndefOr[Boolean]
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnTargetNetworksRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      AssociationIds: js.UndefOr[ValueStringList] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      Filters: js.UndefOr[FilterList] = js.undefined,
+      MaxResults: js.UndefOr[MaxResults] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnTargetNetworksRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "AssociationIds" -> AssociationIds.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
+        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnTargetNetworksRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeClientVpnTargetNetworksResult extends js.Object {
+    var ClientVpnTargetNetworks: js.UndefOr[TargetNetworkSet]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientVpnTargetNetworksResult {
+    def apply(
+      ClientVpnTargetNetworks: js.UndefOr[TargetNetworkSet] = js.undefined,
+      NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClientVpnTargetNetworksResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnTargetNetworks" -> ClientVpnTargetNetworks.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClientVpnTargetNetworksResult]
     }
   }
 
@@ -9079,20 +10173,20 @@ package ec2 {
    */
   @js.native
   trait DescribeSpotFleetInstancesResponse extends js.Object {
-    var ActiveInstances: ActiveInstanceSet
-    var SpotFleetRequestId: String
+    var ActiveInstances: js.UndefOr[ActiveInstanceSet]
     var NextToken: js.UndefOr[String]
+    var SpotFleetRequestId: js.UndefOr[String]
   }
 
   object DescribeSpotFleetInstancesResponse {
     def apply(
-      ActiveInstances: ActiveInstanceSet,
-      SpotFleetRequestId: String,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeSpotFleetInstancesResponse = {
+      ActiveInstances: js.UndefOr[ActiveInstanceSet] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined): DescribeSpotFleetInstancesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ActiveInstances" -> ActiveInstances.asInstanceOf[js.Any],
-        "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ActiveInstances" -> ActiveInstances.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestId" -> SpotFleetRequestId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetInstancesResponse]
     }
@@ -9136,26 +10230,26 @@ package ec2 {
    */
   @js.native
   trait DescribeSpotFleetRequestHistoryResponse extends js.Object {
-    var HistoryRecords: HistoryRecords
-    var LastEvaluatedTime: DateTime
-    var SpotFleetRequestId: String
-    var StartTime: DateTime
+    var HistoryRecords: js.UndefOr[HistoryRecords]
+    var LastEvaluatedTime: js.UndefOr[DateTime]
     var NextToken: js.UndefOr[String]
+    var SpotFleetRequestId: js.UndefOr[String]
+    var StartTime: js.UndefOr[DateTime]
   }
 
   object DescribeSpotFleetRequestHistoryResponse {
     def apply(
-      HistoryRecords: HistoryRecords,
-      LastEvaluatedTime: DateTime,
-      SpotFleetRequestId: String,
-      StartTime: DateTime,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeSpotFleetRequestHistoryResponse = {
+      HistoryRecords: js.UndefOr[HistoryRecords] = js.undefined,
+      LastEvaluatedTime: js.UndefOr[DateTime] = js.undefined,
+      NextToken: js.UndefOr[String] = js.undefined,
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      StartTime: js.UndefOr[DateTime] = js.undefined): DescribeSpotFleetRequestHistoryResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HistoryRecords" -> HistoryRecords.asInstanceOf[js.Any],
-        "LastEvaluatedTime" -> LastEvaluatedTime.asInstanceOf[js.Any],
-        "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any],
-        "StartTime" -> StartTime.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HistoryRecords" -> HistoryRecords.map { x => x.asInstanceOf[js.Any] },
+        "LastEvaluatedTime" -> LastEvaluatedTime.map { x => x.asInstanceOf[js.Any] },
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestId" -> SpotFleetRequestId.map { x => x.asInstanceOf[js.Any] },
+        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetRequestHistoryResponse]
     }
@@ -9193,17 +10287,17 @@ package ec2 {
    */
   @js.native
   trait DescribeSpotFleetRequestsResponse extends js.Object {
-    var SpotFleetRequestConfigs: SpotFleetRequestConfigSet
     var NextToken: js.UndefOr[String]
+    var SpotFleetRequestConfigs: js.UndefOr[SpotFleetRequestConfigSet]
   }
 
   object DescribeSpotFleetRequestsResponse {
     def apply(
-      SpotFleetRequestConfigs: SpotFleetRequestConfigSet,
-      NextToken: js.UndefOr[String] = js.undefined): DescribeSpotFleetRequestsResponse = {
+      NextToken: js.UndefOr[String] = js.undefined,
+      SpotFleetRequestConfigs: js.UndefOr[SpotFleetRequestConfigSet] = js.undefined): DescribeSpotFleetRequestsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SpotFleetRequestConfigs" -> SpotFleetRequestConfigs.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestConfigs" -> SpotFleetRequestConfigs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSpotFleetRequestsResponse]
     }
@@ -10554,6 +11648,42 @@ package ec2 {
     }
   }
 
+  /**
+   * Describes an Active Directory.
+   */
+  @js.native
+  trait DirectoryServiceAuthentication extends js.Object {
+    var DirectoryId: js.UndefOr[String]
+  }
+
+  object DirectoryServiceAuthentication {
+    def apply(
+      DirectoryId: js.UndefOr[String] = js.undefined): DirectoryServiceAuthentication = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DirectoryServiceAuthentication]
+    }
+  }
+
+  /**
+   * Describes the Active Directory to be used for client authentication.
+   */
+  @js.native
+  trait DirectoryServiceAuthenticationRequest extends js.Object {
+    var DirectoryId: js.UndefOr[String]
+  }
+
+  object DirectoryServiceAuthenticationRequest {
+    def apply(
+      DirectoryId: js.UndefOr[String] = js.undefined): DirectoryServiceAuthenticationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DirectoryServiceAuthenticationRequest]
+    }
+  }
+
   @js.native
   trait DisableTransitGatewayRouteTablePropagationRequest extends js.Object {
     var TransitGatewayAttachmentId: String
@@ -10692,6 +11822,45 @@ package ec2 {
         "PublicIp" -> PublicIp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateAddressRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateClientVpnTargetNetworkRequest extends js.Object {
+    var AssociationId: String
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object DisassociateClientVpnTargetNetworkRequest {
+    def apply(
+      AssociationId: String,
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined): DisassociateClientVpnTargetNetworkRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateClientVpnTargetNetworkRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateClientVpnTargetNetworkResult extends js.Object {
+    var AssociationId: js.UndefOr[String]
+    var Status: js.UndefOr[AssociationStatus]
+  }
+
+  object DisassociateClientVpnTargetNetworkResult {
+    def apply(
+      AssociationId: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[AssociationStatus] = js.undefined): DisassociateClientVpnTargetNetworkResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationId" -> AssociationId.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateClientVpnTargetNetworkResult]
     }
   }
 
@@ -10970,6 +12139,27 @@ package ec2 {
         "HostedZoneId" -> HostedZoneId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DnsEntry]
+    }
+  }
+
+  /**
+   * Information about the DNS server to be used.
+   */
+  @js.native
+  trait DnsServersOptionsModifyStructure extends js.Object {
+    var CustomDnsServers: js.UndefOr[ValueStringList]
+    var Enabled: js.UndefOr[Boolean]
+  }
+
+  object DnsServersOptionsModifyStructure {
+    def apply(
+      CustomDnsServers: js.UndefOr[ValueStringList] = js.undefined,
+      Enabled: js.UndefOr[Boolean] = js.undefined): DnsServersOptionsModifyStructure = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CustomDnsServers" -> CustomDnsServers.map { x => x.asInstanceOf[js.Any] },
+        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DnsServersOptionsModifyStructure]
     }
   }
 
@@ -11461,6 +12651,75 @@ package ec2 {
     val values = IndexedSeq(noTermination, default)
   }
 
+  @js.native
+  trait ExportClientVpnClientCertificateRevocationListRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object ExportClientVpnClientCertificateRevocationListRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined): ExportClientVpnClientCertificateRevocationListRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportClientVpnClientCertificateRevocationListRequest]
+    }
+  }
+
+  @js.native
+  trait ExportClientVpnClientCertificateRevocationListResult extends js.Object {
+    var CertificateRevocationList: js.UndefOr[String]
+    var Status: js.UndefOr[ClientCertificateRevocationListStatus]
+  }
+
+  object ExportClientVpnClientCertificateRevocationListResult {
+    def apply(
+      CertificateRevocationList: js.UndefOr[String] = js.undefined,
+      Status: js.UndefOr[ClientCertificateRevocationListStatus] = js.undefined): ExportClientVpnClientCertificateRevocationListResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateRevocationList" -> CertificateRevocationList.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportClientVpnClientCertificateRevocationListResult]
+    }
+  }
+
+  @js.native
+  trait ExportClientVpnClientConfigurationRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object ExportClientVpnClientConfigurationRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined): ExportClientVpnClientConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportClientVpnClientConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait ExportClientVpnClientConfigurationResult extends js.Object {
+    var ClientConfiguration: js.UndefOr[String]
+  }
+
+  object ExportClientVpnClientConfigurationResult {
+    def apply(
+      ClientConfiguration: js.UndefOr[String] = js.undefined): ExportClientVpnClientConfigurationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientConfiguration" -> ClientConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportClientVpnClientConfigurationResult]
+    }
+  }
+
   object ExportEnvironmentEnum {
     val citrix = "citrix"
     val vmware = "vmware"
@@ -11606,16 +12865,16 @@ package ec2 {
 
   /**
    * A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters supported by a describe operation are documented with the describe operation. For example:
-   * * '''DescribeAvailabilityZones'''
-   *  * '''DescribeImages'''
-   *  * '''DescribeInstances'''
-   *  * '''DescribeKeyPairs'''
-   *  * '''DescribeSecurityGroups'''
-   *  * '''DescribeSnapshots'''
-   *  * '''DescribeSubnets'''
-   *  * '''DescribeTags'''
-   *  * '''DescribeVolumes'''
-   *  * '''DescribeVpcs'''
+   * * <a>DescribeAvailabilityZones</a>
+   *  * <a>DescribeImages</a>
+   *  * <a>DescribeInstances</a>
+   *  * <a>DescribeKeyPairs</a>
+   *  * <a>DescribeSecurityGroups</a>
+   *  * <a>DescribeSnapshots</a>
+   *  * <a>DescribeSubnets</a>
+   *  * <a>DescribeTags</a>
+   *  * <a>DescribeVolumes</a>
+   *  * <a>DescribeVpcs</a>
    */
   @js.native
   trait Filter extends js.Object {
@@ -12529,7 +13788,7 @@ package ec2 {
   }
 
   /**
-   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. Hibernation is currently supported only for Amazon Linux. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate Your Instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
    */
   @js.native
   trait HibernationOptions extends js.Object {
@@ -12547,7 +13806,7 @@ package ec2 {
   }
 
   /**
-   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+   * Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. Hibernation is currently supported only for Amazon Linux. For more information, see [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html|Hibernate Your Instance]] in the <i>Amazon Elastic Compute Cloud User Guide</i>.
    */
   @js.native
   trait HibernationOptionsRequest extends js.Object {
@@ -12569,20 +13828,20 @@ package ec2 {
    */
   @js.native
   trait HistoryRecord extends js.Object {
-    var EventInformation: EventInformation
-    var EventType: EventType
-    var Timestamp: DateTime
+    var EventInformation: js.UndefOr[EventInformation]
+    var EventType: js.UndefOr[EventType]
+    var Timestamp: js.UndefOr[DateTime]
   }
 
   object HistoryRecord {
     def apply(
-      EventInformation: EventInformation,
-      EventType: EventType,
-      Timestamp: DateTime): HistoryRecord = {
+      EventInformation: js.UndefOr[EventInformation] = js.undefined,
+      EventType: js.UndefOr[EventType] = js.undefined,
+      Timestamp: js.UndefOr[DateTime] = js.undefined): HistoryRecord = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EventInformation" -> EventInformation.asInstanceOf[js.Any],
-        "EventType" -> EventType.asInstanceOf[js.Any],
-        "Timestamp" -> Timestamp.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EventInformation" -> EventInformation.map { x => x.asInstanceOf[js.Any] },
+        "EventType" -> EventType.map { x => x.asInstanceOf[js.Any] },
+        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoryRecord]
     }
@@ -13130,6 +14389,42 @@ package ec2 {
     val ramdisk = "ramdisk"
 
     val values = IndexedSeq(machine, kernel, ramdisk)
+  }
+
+  @js.native
+  trait ImportClientVpnClientCertificateRevocationListRequest extends js.Object {
+    var CertificateRevocationList: String
+    var ClientVpnEndpointId: String
+    var DryRun: js.UndefOr[Boolean]
+  }
+
+  object ImportClientVpnClientCertificateRevocationListRequest {
+    def apply(
+      CertificateRevocationList: String,
+      ClientVpnEndpointId: String,
+      DryRun: js.UndefOr[Boolean] = js.undefined): ImportClientVpnClientCertificateRevocationListRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateRevocationList" -> CertificateRevocationList.asInstanceOf[js.Any],
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportClientVpnClientCertificateRevocationListRequest]
+    }
+  }
+
+  @js.native
+  trait ImportClientVpnClientCertificateRevocationListResult extends js.Object {
+    var Return: js.UndefOr[Boolean]
+  }
+
+  object ImportClientVpnClientCertificateRevocationListResult {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined): ImportClientVpnClientCertificateRevocationListResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Return" -> Return.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportClientVpnClientCertificateRevocationListResult]
+    }
   }
 
   /**
@@ -14641,6 +15936,7 @@ package ec2 {
     val `p3.2xlarge` = "p3.2xlarge"
     val `p3.8xlarge` = "p3.8xlarge"
     val `p3.16xlarge` = "p3.16xlarge"
+    val `p3dn.24xlarge` = "p3dn.24xlarge"
     val `d2.xlarge` = "d2.xlarge"
     val `d2.2xlarge` = "d2.2xlarge"
     val `d2.4xlarge` = "d2.4xlarge"
@@ -14685,7 +15981,7 @@ package ec2 {
     val `a1.2xlarge` = "a1.2xlarge"
     val `a1.4xlarge` = "a1.4xlarge"
 
-    val values = IndexedSeq(`t1.micro`, `t2.nano`, `t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `t2.xlarge`, `t2.2xlarge`, `t3.nano`, `t3.micro`, `t3.small`, `t3.medium`, `t3.large`, `t3.xlarge`, `t3.2xlarge`, `m1.small`, `m1.medium`, `m1.large`, `m1.xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m4.16xlarge`, `m2.xlarge`, `m2.2xlarge`, `m2.4xlarge`, `cr1.8xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5.metal`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.12xlarge`, `r5a.24xlarge`, `r5d.large`, `r5d.xlarge`, `r5d.2xlarge`, `r5d.4xlarge`, `r5d.8xlarge`, `r5d.12xlarge`, `r5d.16xlarge`, `r5d.24xlarge`, `r5d.metal`, `x1.16xlarge`, `x1.32xlarge`, `x1e.xlarge`, `x1e.2xlarge`, `x1e.4xlarge`, `x1e.8xlarge`, `x1e.16xlarge`, `x1e.32xlarge`, `i2.xlarge`, `i2.2xlarge`, `i2.4xlarge`, `i2.8xlarge`, `i3.large`, `i3.xlarge`, `i3.2xlarge`, `i3.4xlarge`, `i3.8xlarge`, `i3.16xlarge`, `i3.metal`, `hi1.4xlarge`, `hs1.8xlarge`, `c1.medium`, `c1.xlarge`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.18xlarge`, `c5d.large`, `c5d.xlarge`, `c5d.2xlarge`, `c5d.4xlarge`, `c5d.9xlarge`, `c5d.18xlarge`, `c5n.large`, `c5n.xlarge`, `c5n.2xlarge`, `c5n.4xlarge`, `c5n.9xlarge`, `c5n.18xlarge`, `cc1.4xlarge`, `cc2.8xlarge`, `g2.2xlarge`, `g2.8xlarge`, `g3.4xlarge`, `g3.8xlarge`, `g3.16xlarge`, `g3s.xlarge`, `cg1.4xlarge`, `p2.xlarge`, `p2.8xlarge`, `p2.16xlarge`, `p3.2xlarge`, `p3.8xlarge`, `p3.16xlarge`, `d2.xlarge`, `d2.2xlarge`, `d2.4xlarge`, `d2.8xlarge`, `f1.2xlarge`, `f1.4xlarge`, `f1.16xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.12xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.12xlarge`, `m5a.24xlarge`, `m5d.large`, `m5d.xlarge`, `m5d.2xlarge`, `m5d.4xlarge`, `m5d.12xlarge`, `m5d.24xlarge`, `h1.2xlarge`, `h1.4xlarge`, `h1.8xlarge`, `h1.16xlarge`, `z1d.large`, `z1d.xlarge`, `z1d.2xlarge`, `z1d.3xlarge`, `z1d.6xlarge`, `z1d.12xlarge`, `u-6tb1.metal`, `u-9tb1.metal`, `u-12tb1.metal`, `a1.medium`, `a1.large`, `a1.xlarge`, `a1.2xlarge`, `a1.4xlarge`)
+    val values = IndexedSeq(`t1.micro`, `t2.nano`, `t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `t2.xlarge`, `t2.2xlarge`, `t3.nano`, `t3.micro`, `t3.small`, `t3.medium`, `t3.large`, `t3.xlarge`, `t3.2xlarge`, `m1.small`, `m1.medium`, `m1.large`, `m1.xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m4.16xlarge`, `m2.xlarge`, `m2.2xlarge`, `m2.4xlarge`, `cr1.8xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5.metal`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.12xlarge`, `r5a.24xlarge`, `r5d.large`, `r5d.xlarge`, `r5d.2xlarge`, `r5d.4xlarge`, `r5d.8xlarge`, `r5d.12xlarge`, `r5d.16xlarge`, `r5d.24xlarge`, `r5d.metal`, `x1.16xlarge`, `x1.32xlarge`, `x1e.xlarge`, `x1e.2xlarge`, `x1e.4xlarge`, `x1e.8xlarge`, `x1e.16xlarge`, `x1e.32xlarge`, `i2.xlarge`, `i2.2xlarge`, `i2.4xlarge`, `i2.8xlarge`, `i3.large`, `i3.xlarge`, `i3.2xlarge`, `i3.4xlarge`, `i3.8xlarge`, `i3.16xlarge`, `i3.metal`, `hi1.4xlarge`, `hs1.8xlarge`, `c1.medium`, `c1.xlarge`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.18xlarge`, `c5d.large`, `c5d.xlarge`, `c5d.2xlarge`, `c5d.4xlarge`, `c5d.9xlarge`, `c5d.18xlarge`, `c5n.large`, `c5n.xlarge`, `c5n.2xlarge`, `c5n.4xlarge`, `c5n.9xlarge`, `c5n.18xlarge`, `cc1.4xlarge`, `cc2.8xlarge`, `g2.2xlarge`, `g2.8xlarge`, `g3.4xlarge`, `g3.8xlarge`, `g3.16xlarge`, `g3s.xlarge`, `cg1.4xlarge`, `p2.xlarge`, `p2.8xlarge`, `p2.16xlarge`, `p3.2xlarge`, `p3.8xlarge`, `p3.16xlarge`, `p3dn.24xlarge`, `d2.xlarge`, `d2.2xlarge`, `d2.4xlarge`, `d2.8xlarge`, `f1.2xlarge`, `f1.4xlarge`, `f1.16xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.12xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.12xlarge`, `m5a.24xlarge`, `m5d.large`, `m5d.xlarge`, `m5d.2xlarge`, `m5d.4xlarge`, `m5d.12xlarge`, `m5d.24xlarge`, `h1.2xlarge`, `h1.4xlarge`, `h1.8xlarge`, `h1.16xlarge`, `z1d.large`, `z1d.xlarge`, `z1d.2xlarge`, `z1d.3xlarge`, `z1d.6xlarge`, `z1d.12xlarge`, `u-6tb1.metal`, `u-9tb1.metal`, `u-12tb1.metal`, `a1.medium`, `a1.large`, `a1.xlarge`, `a1.2xlarge`, `a1.4xlarge`)
   }
 
   object InterfacePermissionTypeEnum {
@@ -15347,7 +16643,7 @@ package ec2 {
   }
 
   /**
-   * Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. Hibernation is currently supported only for Amazon Linux.
+   * Indicates whether the instance is configured for hibernation. This parameter is valid only if the instance meets the [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites|hibernation prerequisites]]. Hibernation is currently supported only for Amazon Linux.
    */
   @js.native
   trait LaunchTemplateHibernationOptionsRequest extends js.Object {
@@ -16080,6 +17376,51 @@ package ec2 {
   }
 
   @js.native
+  trait ModifyClientVpnEndpointRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var ConnectionLogOptions: js.UndefOr[ConnectionLogOptions]
+    var Description: js.UndefOr[String]
+    var DnsServers: js.UndefOr[DnsServersOptionsModifyStructure]
+    var DryRun: js.UndefOr[Boolean]
+    var ServerCertificateArn: js.UndefOr[String]
+  }
+
+  object ModifyClientVpnEndpointRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      ConnectionLogOptions: js.UndefOr[ConnectionLogOptions] = js.undefined,
+      Description: js.UndefOr[String] = js.undefined,
+      DnsServers: js.UndefOr[DnsServersOptionsModifyStructure] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      ServerCertificateArn: js.UndefOr[String] = js.undefined): ModifyClientVpnEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "ConnectionLogOptions" -> ConnectionLogOptions.map { x => x.asInstanceOf[js.Any] },
+        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
+        "DnsServers" -> DnsServers.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "ServerCertificateArn" -> ServerCertificateArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClientVpnEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyClientVpnEndpointResult extends js.Object {
+    var Return: js.UndefOr[Boolean]
+  }
+
+  object ModifyClientVpnEndpointResult {
+    def apply(
+      Return: js.UndefOr[Boolean] = js.undefined): ModifyClientVpnEndpointResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Return" -> Return.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClientVpnEndpointResult]
+    }
+  }
+
+  @js.native
   trait ModifyFleetRequest extends js.Object {
     var FleetId: FleetIdentifier
     var TargetCapacitySpecification: TargetCapacitySpecificationRequest
@@ -16436,6 +17777,7 @@ package ec2 {
     var Affinity: js.UndefOr[Affinity]
     var GroupName: js.UndefOr[String]
     var HostId: js.UndefOr[String]
+    var PartitionNumber: js.UndefOr[Int]
     var Tenancy: js.UndefOr[HostTenancy]
   }
 
@@ -16445,12 +17787,14 @@ package ec2 {
       Affinity: js.UndefOr[Affinity] = js.undefined,
       GroupName: js.UndefOr[String] = js.undefined,
       HostId: js.UndefOr[String] = js.undefined,
+      PartitionNumber: js.UndefOr[Int] = js.undefined,
       Tenancy: js.UndefOr[HostTenancy] = js.undefined): ModifyInstancePlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Affinity" -> Affinity.map { x => x.asInstanceOf[js.Any] },
         "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
         "HostId" -> HostId.map { x => x.asInstanceOf[js.Any] },
+        "PartitionNumber" -> PartitionNumber.map { x => x.asInstanceOf[js.Any] },
         "Tenancy" -> Tenancy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyInstancePlacementRequest]
@@ -17899,6 +19243,7 @@ package ec2 {
     var AvailabilityZone: js.UndefOr[String]
     var GroupName: js.UndefOr[String]
     var HostId: js.UndefOr[String]
+    var PartitionNumber: js.UndefOr[Int]
     var SpreadDomain: js.UndefOr[String]
     var Tenancy: js.UndefOr[Tenancy]
   }
@@ -17909,6 +19254,7 @@ package ec2 {
       AvailabilityZone: js.UndefOr[String] = js.undefined,
       GroupName: js.UndefOr[String] = js.undefined,
       HostId: js.UndefOr[String] = js.undefined,
+      PartitionNumber: js.UndefOr[Int] = js.undefined,
       SpreadDomain: js.UndefOr[String] = js.undefined,
       Tenancy: js.UndefOr[Tenancy] = js.undefined): Placement = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -17916,6 +19262,7 @@ package ec2 {
         "AvailabilityZone" -> AvailabilityZone.map { x => x.asInstanceOf[js.Any] },
         "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
         "HostId" -> HostId.map { x => x.asInstanceOf[js.Any] },
+        "PartitionNumber" -> PartitionNumber.map { x => x.asInstanceOf[js.Any] },
         "SpreadDomain" -> SpreadDomain.map { x => x.asInstanceOf[js.Any] },
         "Tenancy" -> Tenancy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -17929,6 +19276,7 @@ package ec2 {
   @js.native
   trait PlacementGroup extends js.Object {
     var GroupName: js.UndefOr[String]
+    var PartitionCount: js.UndefOr[Int]
     var State: js.UndefOr[PlacementGroupState]
     var Strategy: js.UndefOr[PlacementStrategy]
   }
@@ -17936,10 +19284,12 @@ package ec2 {
   object PlacementGroup {
     def apply(
       GroupName: js.UndefOr[String] = js.undefined,
+      PartitionCount: js.UndefOr[Int] = js.undefined,
       State: js.UndefOr[PlacementGroupState] = js.undefined,
       Strategy: js.UndefOr[PlacementStrategy] = js.undefined): PlacementGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GroupName" -> GroupName.map { x => x.asInstanceOf[js.Any] },
+        "PartitionCount" -> PartitionCount.map { x => x.asInstanceOf[js.Any] },
         "State" -> State.map { x => x.asInstanceOf[js.Any] },
         "Strategy" -> Strategy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
@@ -17977,8 +19327,9 @@ package ec2 {
   object PlacementStrategyEnum {
     val cluster = "cluster"
     val spread = "spread"
+    val partition = "partition"
 
-    val values = IndexedSeq(cluster, spread)
+    val values = IndexedSeq(cluster, spread, partition)
   }
 
   object PlatformValuesEnum {
@@ -18264,7 +19615,7 @@ package ec2 {
   }
 
   /**
-   * Reserved. If you need to sustain traffic greater than the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+   * Reserved. If you need to sustain traffic greater than the [[http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html|documented limits]], contact us through the [[https://console.aws.amazon.com/support/home?|Support Center]].
    */
   @js.native
   trait ProvisionedBandwidth extends js.Object {
@@ -19258,14 +20609,14 @@ package ec2 {
    */
   @js.native
   trait RequestSpotFleetResponse extends js.Object {
-    var SpotFleetRequestId: String
+    var SpotFleetRequestId: js.UndefOr[String]
   }
 
   object RequestSpotFleetResponse {
     def apply(
-      SpotFleetRequestId: String): RequestSpotFleetResponse = {
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined): RequestSpotFleetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "SpotFleetRequestId" -> SpotFleetRequestId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestSpotFleetResponse]
     }
@@ -20119,6 +21470,48 @@ package ec2 {
         "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreAddressToClassicResult]
+    }
+  }
+
+  @js.native
+  trait RevokeClientVpnIngressRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var TargetNetworkCidr: String
+    var AccessGroupId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+    var RevokeAllGroups: js.UndefOr[Boolean]
+  }
+
+  object RevokeClientVpnIngressRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      TargetNetworkCidr: String,
+      AccessGroupId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      RevokeAllGroups: js.UndefOr[Boolean] = js.undefined): RevokeClientVpnIngressRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "TargetNetworkCidr" -> TargetNetworkCidr.asInstanceOf[js.Any],
+        "AccessGroupId" -> AccessGroupId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "RevokeAllGroups" -> RevokeAllGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeClientVpnIngressRequest]
+    }
+  }
+
+  @js.native
+  trait RevokeClientVpnIngressResult extends js.Object {
+    var Status: js.UndefOr[ClientVpnAuthorizationRuleStatus]
+  }
+
+  object RevokeClientVpnIngressResult {
+    def apply(
+      Status: js.UndefOr[ClientVpnAuthorizationRuleStatus] = js.undefined): RevokeClientVpnIngressResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeClientVpnIngressResult]
     }
   }
 
@@ -21609,26 +23002,26 @@ package ec2 {
    */
   @js.native
   trait SpotFleetRequestConfig extends js.Object {
-    var CreateTime: DateTime
-    var SpotFleetRequestConfig: SpotFleetRequestConfigData
-    var SpotFleetRequestId: String
-    var SpotFleetRequestState: BatchState
     var ActivityStatus: js.UndefOr[ActivityStatus]
+    var CreateTime: js.UndefOr[DateTime]
+    var SpotFleetRequestConfig: js.UndefOr[SpotFleetRequestConfigData]
+    var SpotFleetRequestId: js.UndefOr[String]
+    var SpotFleetRequestState: js.UndefOr[BatchState]
   }
 
   object SpotFleetRequestConfig {
     def apply(
-      CreateTime: DateTime,
-      SpotFleetRequestConfig: SpotFleetRequestConfigData,
-      SpotFleetRequestId: String,
-      SpotFleetRequestState: BatchState,
-      ActivityStatus: js.UndefOr[ActivityStatus] = js.undefined): SpotFleetRequestConfig = {
+      ActivityStatus: js.UndefOr[ActivityStatus] = js.undefined,
+      CreateTime: js.UndefOr[DateTime] = js.undefined,
+      SpotFleetRequestConfig: js.UndefOr[SpotFleetRequestConfigData] = js.undefined,
+      SpotFleetRequestId: js.UndefOr[String] = js.undefined,
+      SpotFleetRequestState: js.UndefOr[BatchState] = js.undefined): SpotFleetRequestConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreateTime" -> CreateTime.asInstanceOf[js.Any],
-        "SpotFleetRequestConfig" -> SpotFleetRequestConfig.asInstanceOf[js.Any],
-        "SpotFleetRequestId" -> SpotFleetRequestId.asInstanceOf[js.Any],
-        "SpotFleetRequestState" -> SpotFleetRequestState.asInstanceOf[js.Any],
-        "ActivityStatus" -> ActivityStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ActivityStatus" -> ActivityStatus.map { x => x.asInstanceOf[js.Any] },
+        "CreateTime" -> CreateTime.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestConfig" -> SpotFleetRequestConfig.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestId" -> SpotFleetRequestId.map { x => x.asInstanceOf[js.Any] },
+        "SpotFleetRequestState" -> SpotFleetRequestState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SpotFleetRequestConfig]
     }
@@ -22571,14 +23964,14 @@ package ec2 {
    */
   @js.native
   trait TargetGroup extends js.Object {
-    var Arn: String
+    var Arn: js.UndefOr[String]
   }
 
   object TargetGroup {
     def apply(
-      Arn: String): TargetGroup = {
+      Arn: js.UndefOr[String] = js.undefined): TargetGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroup]
     }
@@ -22589,16 +23982,49 @@ package ec2 {
    */
   @js.native
   trait TargetGroupsConfig extends js.Object {
-    var TargetGroups: TargetGroups
+    var TargetGroups: js.UndefOr[TargetGroups]
   }
 
   object TargetGroupsConfig {
     def apply(
-      TargetGroups: TargetGroups): TargetGroupsConfig = {
+      TargetGroups: js.UndefOr[TargetGroups] = js.undefined): TargetGroupsConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TargetGroups" -> TargetGroups.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "TargetGroups" -> TargetGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroupsConfig]
+    }
+  }
+
+  /**
+   * Describes a target network associated with a Client VPN endpoint.
+   */
+  @js.native
+  trait TargetNetwork extends js.Object {
+    var AssociationId: js.UndefOr[String]
+    var ClientVpnEndpointId: js.UndefOr[String]
+    var SecurityGroups: js.UndefOr[ValueStringList]
+    var Status: js.UndefOr[AssociationStatus]
+    var TargetNetworkId: js.UndefOr[String]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object TargetNetwork {
+    def apply(
+      AssociationId: js.UndefOr[String] = js.undefined,
+      ClientVpnEndpointId: js.UndefOr[String] = js.undefined,
+      SecurityGroups: js.UndefOr[ValueStringList] = js.undefined,
+      Status: js.UndefOr[AssociationStatus] = js.undefined,
+      TargetNetworkId: js.UndefOr[String] = js.undefined,
+      VpcId: js.UndefOr[String] = js.undefined): TargetNetwork = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationId" -> AssociationId.map { x => x.asInstanceOf[js.Any] },
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.map { x => x.asInstanceOf[js.Any] },
+        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
+        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
+        "TargetNetworkId" -> TargetNetworkId.map { x => x.asInstanceOf[js.Any] },
+        "VpcId" -> VpcId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetNetwork]
     }
   }
 
@@ -22636,6 +24062,75 @@ package ec2 {
     val host = "host"
 
     val values = IndexedSeq(default, dedicated, host)
+  }
+
+  @js.native
+  trait TerminateClientVpnConnectionsRequest extends js.Object {
+    var ClientVpnEndpointId: String
+    var ConnectionId: js.UndefOr[String]
+    var DryRun: js.UndefOr[Boolean]
+    var Username: js.UndefOr[String]
+  }
+
+  object TerminateClientVpnConnectionsRequest {
+    def apply(
+      ClientVpnEndpointId: String,
+      ConnectionId: js.UndefOr[String] = js.undefined,
+      DryRun: js.UndefOr[Boolean] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): TerminateClientVpnConnectionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.asInstanceOf[js.Any],
+        "ConnectionId" -> ConnectionId.map { x => x.asInstanceOf[js.Any] },
+        "DryRun" -> DryRun.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateClientVpnConnectionsRequest]
+    }
+  }
+
+  @js.native
+  trait TerminateClientVpnConnectionsResult extends js.Object {
+    var ClientVpnEndpointId: js.UndefOr[String]
+    var ConnectionStatuses: js.UndefOr[TerminateConnectionStatusSet]
+    var Username: js.UndefOr[String]
+  }
+
+  object TerminateClientVpnConnectionsResult {
+    def apply(
+      ClientVpnEndpointId: js.UndefOr[String] = js.undefined,
+      ConnectionStatuses: js.UndefOr[TerminateConnectionStatusSet] = js.undefined,
+      Username: js.UndefOr[String] = js.undefined): TerminateClientVpnConnectionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientVpnEndpointId" -> ClientVpnEndpointId.map { x => x.asInstanceOf[js.Any] },
+        "ConnectionStatuses" -> ConnectionStatuses.map { x => x.asInstanceOf[js.Any] },
+        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateClientVpnConnectionsResult]
+    }
+  }
+
+  /**
+   * Information about a terminated Client VPN endpoint client connection.
+   */
+  @js.native
+  trait TerminateConnectionStatus extends js.Object {
+    var ConnectionId: js.UndefOr[String]
+    var CurrentStatus: js.UndefOr[ClientVpnConnectionStatus]
+    var PreviousStatus: js.UndefOr[ClientVpnConnectionStatus]
+  }
+
+  object TerminateConnectionStatus {
+    def apply(
+      ConnectionId: js.UndefOr[String] = js.undefined,
+      CurrentStatus: js.UndefOr[ClientVpnConnectionStatus] = js.undefined,
+      PreviousStatus: js.UndefOr[ClientVpnConnectionStatus] = js.undefined): TerminateConnectionStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectionId" -> ConnectionId.map { x => x.asInstanceOf[js.Any] },
+        "CurrentStatus" -> CurrentStatus.map { x => x.asInstanceOf[js.Any] },
+        "PreviousStatus" -> PreviousStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateConnectionStatus]
+    }
   }
 
   @js.native
@@ -23218,6 +24713,13 @@ package ec2 {
     }
   }
 
+  object TransportProtocolEnum {
+    val tcp = "tcp"
+    val udp = "udp"
+
+    val values = IndexedSeq(tcp, udp)
+  }
+
   @js.native
   trait UnassignIpv6AddressesRequest extends js.Object {
     var Ipv6Addresses: Ipv6AddressList
@@ -23364,16 +24866,16 @@ package ec2 {
    */
   @js.native
   trait UnsuccessfulItem extends js.Object {
-    var Error: UnsuccessfulItemError
+    var Error: js.UndefOr[UnsuccessfulItemError]
     var ResourceId: js.UndefOr[String]
   }
 
   object UnsuccessfulItem {
     def apply(
-      Error: UnsuccessfulItemError,
+      Error: js.UndefOr[UnsuccessfulItemError] = js.undefined,
       ResourceId: js.UndefOr[String] = js.undefined): UnsuccessfulItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Error" -> Error.asInstanceOf[js.Any],
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
         "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsuccessfulItem]
@@ -23381,21 +24883,21 @@ package ec2 {
   }
 
   /**
-   * Information about the error that occurred. For more information about errors, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+   * Information about the error that occurred. For more information about errors, see [[http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html|Error Codes]].
    */
   @js.native
   trait UnsuccessfulItemError extends js.Object {
-    var Code: String
-    var Message: String
+    var Code: js.UndefOr[String]
+    var Message: js.UndefOr[String]
   }
 
   object UnsuccessfulItemError {
     def apply(
-      Code: String,
-      Message: String): UnsuccessfulItemError = {
+      Code: js.UndefOr[String] = js.undefined,
+      Message: js.UndefOr[String] = js.undefined): UnsuccessfulItemError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.asInstanceOf[js.Any],
-        "Message" -> Message.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
+        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsuccessfulItemError]
     }
@@ -24497,6 +25999,12 @@ package ec2 {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpnGateway]
     }
+  }
+
+  object VpnProtocolEnum {
+    val openvpn = "openvpn"
+
+    val values = IndexedSeq(openvpn)
   }
 
   object VpnStateEnum {

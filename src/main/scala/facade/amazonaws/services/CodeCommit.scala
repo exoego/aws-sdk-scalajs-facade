@@ -86,7 +86,9 @@ package object codecommit {
 package codecommit {
   @js.native
   @JSImport("aws-sdk", "CodeCommit")
-  class CodeCommit(config: AWSConfig) extends js.Object {
+  class CodeCommit() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def batchGetRepositories(params: BatchGetRepositoriesInput): Request[BatchGetRepositoriesOutput] = js.native
     def createBranch(params: CreateBranchInput): Request[js.Object] = js.native
     def createPullRequest(params: CreatePullRequestInput): Request[CreatePullRequestOutput] = js.native

@@ -54,7 +54,9 @@ package object importexport {
 package importexport {
   @js.native
   @JSImport("aws-sdk", "ImportExport")
-  class ImportExport(config: AWSConfig) extends js.Object {
+  class ImportExport() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def cancelJob(params: CancelJobInput): Request[CancelJobOutput] = js.native
     def createJob(params: CreateJobInput): Request[CreateJobOutput] = js.native
     def getShippingLabel(params: GetShippingLabelInput): Request[GetShippingLabelOutput] = js.native

@@ -81,7 +81,9 @@ package object guardduty {
 package guardduty {
   @js.native
   @JSImport("aws-sdk", "GuardDuty")
-  class GuardDuty(config: AWSConfig) extends js.Object {
+  class GuardDuty() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
     def archiveFindings(params: ArchiveFindingsRequest): Request[ArchiveFindingsResponse] = js.native
     def createDetector(params: CreateDetectorRequest): Request[CreateDetectorResponse] = js.native

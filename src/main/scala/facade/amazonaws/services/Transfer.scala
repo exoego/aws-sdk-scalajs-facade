@@ -39,7 +39,9 @@ package object transfer {
 package transfer {
   @js.native
   @JSImport("aws-sdk", "Transfer")
-  class Transfer(config: AWSConfig) extends js.Object {
+  class Transfer() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def createServer(params: CreateServerRequest): Request[CreateServerResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteServer(params: DeleteServerRequest): Request[js.Object] = js.native

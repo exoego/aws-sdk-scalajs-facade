@@ -52,6 +52,7 @@ package object iam {
   type SAMLProviderNameType = String
   type SSHPublicKeyListType = js.Array[SSHPublicKeyMetadata]
   type ServiceSpecificCredentialsListType = js.Array[ServiceSpecificCredentialMetadata]
+  type ServicesLastAccessed = js.Array[ServiceLastAccessed]
   type SimulationPolicyListType = js.Array[policyDocumentType]
   type StatementListType = js.Array[Statement]
   type accessKeyIdType = String
@@ -75,7 +76,9 @@ package object iam {
   type customSuffixType = String
   type dateType = js.Date
   type encodingType = String
+  type entityDetailsListType = js.Array[EntityDetails]
   type entityListType = js.Array[EntityType]
+  type entityNameType = String
   type existingUserNameType = String
   type groupDetailListType = js.Array[GroupDetail]
   type groupListType = js.Array[Group]
@@ -84,6 +87,10 @@ package object iam {
   type idType = String
   type instanceProfileListType = js.Array[InstanceProfile]
   type instanceProfileNameType = String
+  type integerType = Int
+  type jobIDType = String
+  type jobStatusType = String
+  type listPolicyGrantingServiceAccessResponseListType = js.Array[ListPoliciesGrantingServiceAccessEntry]
   type markerType = String
   type maxItemsType = Int
   type maxPasswordAgeType = Int
@@ -97,11 +104,14 @@ package object iam {
   type policyDetailListType = js.Array[PolicyDetail]
   type policyDocumentType = String
   type policyDocumentVersionListType = js.Array[PolicyVersion]
+  type policyGrantingServiceAccessListType = js.Array[PolicyGrantingServiceAccess]
   type policyListType = js.Array[Policy]
   type policyNameListType = js.Array[policyNameType]
   type policyNameType = String
+  type policyOwnerEntityType = String
   type policyPathType = String
   type policyScopeType = String
+  type policyType = String
   type policyVersionIdType = String
   type privateKeyType = String
   type publicKeyFingerprintType = String
@@ -116,6 +126,9 @@ package object iam {
   type serverCertificateMetadataListType = js.Array[ServerCertificateMetadata]
   type serverCertificateNameType = String
   type serviceName = String
+  type serviceNameType = String
+  type serviceNamespaceListType = js.Array[serviceNamespaceType]
+  type serviceNamespaceType = String
   type servicePassword = String
   type serviceSpecificCredentialId = String
   type serviceUserName = String
@@ -140,7 +153,9 @@ package object iam {
 package iam {
   @js.native
   @JSImport("aws-sdk", "IAM")
-  class IAM(config: AWSConfig) extends js.Object {
+  class IAM() extends js.Object {
+    def this(config: AWSConfig) = this()
+
     def addClientIDToOpenIDConnectProvider(params: AddClientIDToOpenIDConnectProviderRequest): Request[js.Object] = js.native
     def addRoleToInstanceProfile(params: AddRoleToInstanceProfileRequest): Request[js.Object] = js.native
     def addUserToGroup(params: AddUserToGroupRequest): Request[js.Object] = js.native
@@ -191,6 +206,7 @@ package iam {
     def detachUserPolicy(params: DetachUserPolicyRequest): Request[js.Object] = js.native
     def enableMFADevice(params: EnableMFADeviceRequest): Request[js.Object] = js.native
     def generateCredentialReport(): Request[GenerateCredentialReportResponse] = js.native
+    def generateServiceLastAccessedDetails(params: GenerateServiceLastAccessedDetailsRequest): Request[GenerateServiceLastAccessedDetailsResponse] = js.native
     def getAccessKeyLastUsed(params: GetAccessKeyLastUsedRequest): Request[GetAccessKeyLastUsedResponse] = js.native
     def getAccountAuthorizationDetails(params: GetAccountAuthorizationDetailsRequest): Request[GetAccountAuthorizationDetailsResponse] = js.native
     def getAccountPasswordPolicy(): Request[GetAccountPasswordPolicyResponse] = js.native
@@ -210,6 +226,8 @@ package iam {
     def getSAMLProvider(params: GetSAMLProviderRequest): Request[GetSAMLProviderResponse] = js.native
     def getSSHPublicKey(params: GetSSHPublicKeyRequest): Request[GetSSHPublicKeyResponse] = js.native
     def getServerCertificate(params: GetServerCertificateRequest): Request[GetServerCertificateResponse] = js.native
+    def getServiceLastAccessedDetails(params: GetServiceLastAccessedDetailsRequest): Request[GetServiceLastAccessedDetailsResponse] = js.native
+    def getServiceLastAccessedDetailsWithEntities(params: GetServiceLastAccessedDetailsWithEntitiesRequest): Request[GetServiceLastAccessedDetailsWithEntitiesResponse] = js.native
     def getServiceLinkedRoleDeletionStatus(params: GetServiceLinkedRoleDeletionStatusRequest): Request[GetServiceLinkedRoleDeletionStatusResponse] = js.native
     def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
     def getUserPolicy(params: GetUserPolicyRequest): Request[GetUserPolicyResponse] = js.native
@@ -227,6 +245,7 @@ package iam {
     def listMFADevices(params: ListMFADevicesRequest): Request[ListMFADevicesResponse] = js.native
     def listOpenIDConnectProviders(params: ListOpenIDConnectProvidersRequest): Request[ListOpenIDConnectProvidersResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
+    def listPoliciesGrantingServiceAccess(params: ListPoliciesGrantingServiceAccessRequest): Request[ListPoliciesGrantingServiceAccessResponse] = js.native
     def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse] = js.native
     def listRolePolicies(params: ListRolePoliciesRequest): Request[ListRolePoliciesResponse] = js.native
     def listRoleTags(params: ListRoleTagsRequest): Request[ListRoleTagsResponse] = js.native
@@ -278,9 +297,9 @@ package iam {
 
   /**
    * Contains information about an AWS access key.
-   *  This data type is used as a response element in the '''CreateAccessKey''' and '''ListAccessKeys''' operations.
+   *  This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations.
    *
-   * '''Note:'''The <code>SecretAccessKey</code> value is returned only in response to '''CreateAccessKey'''. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.
+   * '''Note:'''The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.
    */
   @js.native
   trait AccessKey extends js.Object {
@@ -310,8 +329,8 @@ package iam {
   }
 
   /**
-   * Contains information about the last time an AWS access key was used.
-   *  This data type is used as a response element in the '''GetAccessKeyLastUsed''' operation.
+   * Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015.
+   *  This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
    */
   @js.native
   trait AccessKeyLastUsed extends js.Object {
@@ -336,7 +355,7 @@ package iam {
 
   /**
    * Contains information about an AWS access key, without its secret key.
-   *  This data type is used as a response element in the '''ListAccessKeys''' operation.
+   *  This data type is used as a response element in the <a>ListAccessKeys</a> operation.
    */
   @js.native
   trait AccessKeyMetadata extends js.Object {
@@ -473,7 +492,7 @@ package iam {
   /**
    * Contains information about an attached permissions boundary.
    *  An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.
-   *  For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+   *  For more information about permissions boundaries, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
    */
   @js.native
   trait AttachedPermissionsBoundary extends js.Object {
@@ -495,8 +514,8 @@ package iam {
 
   /**
    * Contains information about an attached policy.
-   *  An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the '''ListAttachedGroupPolicies''', '''ListAttachedRolePolicies''', '''ListAttachedUserPolicies''', and '''GetAccountAuthorizationDetails''' operations.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the <a>ListAttachedGroupPolicies</a>, <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and <a>GetAccountAuthorizationDetails</a> operations.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait AttachedPolicy extends js.Object {
@@ -536,7 +555,7 @@ package iam {
 
   /**
    * Contains information about a condition context key. It includes the name of the key and specifies the value (or values, if the context key supports multiple values) to use in the simulation. This information is used when evaluating the <code>Condition</code> elements of the input policies.
-   *  This data type is used as an input parameter to <code> '''SimulateCustomPolicy''' </code> and <code> '''SimulateCustomPolicy''' </code>.
+   *  This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulateCustomPolicy</a> </code>.
    */
   @js.native
   trait ContextEntry extends js.Object {
@@ -592,7 +611,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateAccessKey''' request.
+   * Contains the response to a successful <a>CreateAccessKey</a> request.
    */
   @js.native
   trait CreateAccessKeyResponse extends js.Object {
@@ -643,7 +662,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateGroup''' request.
+   * Contains the response to a successful <a>CreateGroup</a> request.
    */
   @js.native
   trait CreateGroupResponse extends js.Object {
@@ -679,7 +698,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateInstanceProfile''' request.
+   * Contains the response to a successful <a>CreateInstanceProfile</a> request.
    */
   @js.native
   trait CreateInstanceProfileResponse extends js.Object {
@@ -718,7 +737,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateLoginProfile''' request.
+   * Contains the response to a successful <a>CreateLoginProfile</a> request.
    */
   @js.native
   trait CreateLoginProfileResponse extends js.Object {
@@ -757,7 +776,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateOpenIDConnectProvider''' request.
+   * Contains the response to a successful <a>CreateOpenIDConnectProvider</a> request.
    */
   @js.native
   trait CreateOpenIDConnectProviderResponse extends js.Object {
@@ -799,7 +818,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreatePolicy''' request.
+   * Contains the response to a successful <a>CreatePolicy</a> request.
    */
   @js.native
   trait CreatePolicyResponse extends js.Object {
@@ -838,7 +857,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreatePolicyVersion''' request.
+   * Contains the response to a successful <a>CreatePolicyVersion</a> request.
    */
   @js.native
   trait CreatePolicyVersionResponse extends js.Object {
@@ -889,7 +908,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateRole''' request.
+   * Contains the response to a successful <a>CreateRole</a> request.
    */
   @js.native
   trait CreateRoleResponse extends js.Object {
@@ -925,7 +944,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateSAMLProvider''' request.
+   * Contains the response to a successful <a>CreateSAMLProvider</a> request.
    */
   @js.native
   trait CreateSAMLProviderResponse extends js.Object {
@@ -1036,7 +1055,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateUser''' request.
+   * Contains the response to a successful <a>CreateUser</a> request.
    */
   @js.native
   trait CreateUserResponse extends js.Object {
@@ -1072,7 +1091,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''CreateVirtualMFADevice''' request.
+   * Contains the response to a successful <a>CreateVirtualMFADevice</a> request.
    */
   @js.native
   trait CreateVirtualMFADeviceResponse extends js.Object {
@@ -1478,7 +1497,7 @@ package iam {
 
   /**
    * The reason that the service-linked role deletion failed.
-   *  This data type is used as a response element in the '''GetServiceLinkedRoleDeletionStatus''' operation.
+   *  This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.
    */
   @js.native
   trait DeletionTaskFailureReasonType extends js.Object {
@@ -1585,6 +1604,59 @@ package iam {
     }
   }
 
+  /**
+   * An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified AWS service.
+   *  This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+   */
+  @js.native
+  trait EntityDetails extends js.Object {
+    var EntityInfo: EntityInfo
+    var LastAuthenticated: js.UndefOr[dateType]
+  }
+
+  object EntityDetails {
+    def apply(
+      EntityInfo: EntityInfo,
+      LastAuthenticated: js.UndefOr[dateType] = js.undefined): EntityDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityInfo" -> EntityInfo.asInstanceOf[js.Any],
+        "LastAuthenticated" -> LastAuthenticated.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityDetails]
+    }
+  }
+
+  /**
+   * Contains details about the specified entity (user or role).
+   *  This data type is an element of the <a>EntityDetails</a> object.
+   */
+  @js.native
+  trait EntityInfo extends js.Object {
+    var Arn: arnType
+    var Id: idType
+    var Name: userNameType
+    var Type: policyOwnerEntityType
+    var Path: js.UndefOr[pathType]
+  }
+
+  object EntityInfo {
+    def apply(
+      Arn: arnType,
+      Id: idType,
+      Name: userNameType,
+      Type: policyOwnerEntityType,
+      Path: js.UndefOr[pathType] = js.undefined): EntityInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityInfo]
+    }
+  }
+
   object EntityTypeEnum {
     val User = "User"
     val Role = "Role"
@@ -1596,8 +1668,30 @@ package iam {
   }
 
   /**
+   * Contains information about the reason that the operation failed.
+   *  This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation and the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+   */
+  @js.native
+  trait ErrorDetails extends js.Object {
+    var Code: stringType
+    var Message: stringType
+  }
+
+  object ErrorDetails {
+    def apply(
+      Code: stringType,
+      Message: stringType): ErrorDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorDetails]
+    }
+  }
+
+  /**
    * Contains the results of a simulation.
-   *  This data type is used by the return parameter of <code> '''SimulateCustomPolicy''' </code> and <code> '''SimulatePrincipalPolicy''' </code>.
+   *  This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a> </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
    */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -1636,7 +1730,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GenerateCredentialReport''' request.
+   * Contains the response to a successful <a>GenerateCredentialReport</a> request.
    */
   @js.native
   trait GenerateCredentialReportResponse extends js.Object {
@@ -1657,6 +1751,36 @@ package iam {
   }
 
   @js.native
+  trait GenerateServiceLastAccessedDetailsRequest extends js.Object {
+    var Arn: arnType
+  }
+
+  object GenerateServiceLastAccessedDetailsRequest {
+    def apply(
+      Arn: arnType): GenerateServiceLastAccessedDetailsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateServiceLastAccessedDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateServiceLastAccessedDetailsResponse extends js.Object {
+    var JobId: js.UndefOr[jobIDType]
+  }
+
+  object GenerateServiceLastAccessedDetailsResponse {
+    def apply(
+      JobId: js.UndefOr[jobIDType] = js.undefined): GenerateServiceLastAccessedDetailsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateServiceLastAccessedDetailsResponse]
+    }
+  }
+
+  @js.native
   trait GetAccessKeyLastUsedRequest extends js.Object {
     var AccessKeyId: accessKeyIdType
   }
@@ -1672,7 +1796,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetAccessKeyLastUsed''' request. It is also returned as a member of the '''AccessKeyMetaData''' structure returned by the '''ListAccessKeys''' action.
+   * Contains the response to a successful <a>GetAccessKeyLastUsed</a> request. It is also returned as a member of the <a>AccessKeyMetaData</a> structure returned by the <a>ListAccessKeys</a> action.
    */
   @js.native
   trait GetAccessKeyLastUsedResponse extends js.Object {
@@ -1714,7 +1838,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetAccountAuthorizationDetails''' request.
+   * Contains the response to a successful <a>GetAccountAuthorizationDetails</a> request.
    */
   @js.native
   trait GetAccountAuthorizationDetailsResponse extends js.Object {
@@ -1747,7 +1871,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetAccountPasswordPolicy''' request.
+   * Contains the response to a successful <a>GetAccountPasswordPolicy</a> request.
    */
   @js.native
   trait GetAccountPasswordPolicyResponse extends js.Object {
@@ -1765,7 +1889,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetAccountSummary''' request.
+   * Contains the response to a successful <a>GetAccountSummary</a> request.
    */
   @js.native
   trait GetAccountSummaryResponse extends js.Object {
@@ -1798,7 +1922,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetContextKeysForPrincipalPolicy''' or '''GetContextKeysForCustomPolicy''' request.
+   * Contains the response to a successful <a>GetContextKeysForPrincipalPolicy</a> or <a>GetContextKeysForCustomPolicy</a> request.
    */
   @js.native
   trait GetContextKeysForPolicyResponse extends js.Object {
@@ -1834,7 +1958,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetCredentialReport''' request.
+   * Contains the response to a successful <a>GetCredentialReport</a> request.
    */
   @js.native
   trait GetCredentialReportResponse extends js.Object {
@@ -1876,7 +2000,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetGroupPolicy''' request.
+   * Contains the response to a successful <a>GetGroupPolicy</a> request.
    */
   @js.native
   trait GetGroupPolicyResponse extends js.Object {
@@ -1921,7 +2045,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetGroup''' request.
+   * Contains the response to a successful <a>GetGroup</a> request.
    */
   @js.native
   trait GetGroupResponse extends js.Object {
@@ -1963,7 +2087,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetInstanceProfile''' request.
+   * Contains the response to a successful <a>GetInstanceProfile</a> request.
    */
   @js.native
   trait GetInstanceProfileResponse extends js.Object {
@@ -1996,7 +2120,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetLoginProfile''' request.
+   * Contains the response to a successful <a>GetLoginProfile</a> request.
    */
   @js.native
   trait GetLoginProfileResponse extends js.Object {
@@ -2029,7 +2153,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetOpenIDConnectProvider''' request.
+   * Contains the response to a successful <a>GetOpenIDConnectProvider</a> request.
    */
   @js.native
   trait GetOpenIDConnectProviderResponse extends js.Object {
@@ -2071,7 +2195,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetPolicy''' request.
+   * Contains the response to a successful <a>GetPolicy</a> request.
    */
   @js.native
   trait GetPolicyResponse extends js.Object {
@@ -2107,7 +2231,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetPolicyVersion''' request.
+   * Contains the response to a successful <a>GetPolicyVersion</a> request.
    */
   @js.native
   trait GetPolicyVersionResponse extends js.Object {
@@ -2143,7 +2267,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetRolePolicy''' request.
+   * Contains the response to a successful <a>GetRolePolicy</a> request.
    */
   @js.native
   trait GetRolePolicyResponse extends js.Object {
@@ -2182,7 +2306,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetRole''' request.
+   * Contains the response to a successful <a>GetRole</a> request.
    */
   @js.native
   trait GetRoleResponse extends js.Object {
@@ -2215,7 +2339,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetSAMLProvider''' request.
+   * Contains the response to a successful <a>GetSAMLProvider</a> request.
    */
   @js.native
   trait GetSAMLProviderResponse extends js.Object {
@@ -2260,7 +2384,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetSSHPublicKey''' request.
+   * Contains the response to a successful <a>GetSSHPublicKey</a> request.
    */
   @js.native
   trait GetSSHPublicKeyResponse extends js.Object {
@@ -2293,7 +2417,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetServerCertificate''' request.
+   * Contains the response to a successful <a>GetServerCertificate</a> request.
    */
   @js.native
   trait GetServerCertificateResponse extends js.Object {
@@ -2307,6 +2431,117 @@ package iam {
         "ServerCertificate" -> ServerCertificate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServerCertificateResponse]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsRequest extends js.Object {
+    var JobId: jobIDType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object GetServiceLastAccessedDetailsRequest {
+    def apply(
+      JobId: jobIDType,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined): GetServiceLastAccessedDetailsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsResponse extends js.Object {
+    var JobCompletionDate: dateType
+    var JobCreationDate: dateType
+    var JobStatus: jobStatusType
+    var ServicesLastAccessed: ServicesLastAccessed
+    var Error: js.UndefOr[ErrorDetails]
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object GetServiceLastAccessedDetailsResponse {
+    def apply(
+      JobCompletionDate: dateType,
+      JobCreationDate: dateType,
+      JobStatus: jobStatusType,
+      ServicesLastAccessed: ServicesLastAccessed,
+      Error: js.UndefOr[ErrorDetails] = js.undefined,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined): GetServiceLastAccessedDetailsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobCompletionDate" -> JobCompletionDate.asInstanceOf[js.Any],
+        "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any],
+        "ServicesLastAccessed" -> ServicesLastAccessed.asInstanceOf[js.Any],
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
+        "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsResponse]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsWithEntitiesRequest extends js.Object {
+    var JobId: jobIDType
+    var ServiceNamespace: serviceNamespaceType
+    var Marker: js.UndefOr[markerType]
+    var MaxItems: js.UndefOr[maxItemsType]
+  }
+
+  object GetServiceLastAccessedDetailsWithEntitiesRequest {
+    def apply(
+      JobId: jobIDType,
+      ServiceNamespace: serviceNamespaceType,
+      Marker: js.UndefOr[markerType] = js.undefined,
+      MaxItems: js.UndefOr[maxItemsType] = js.undefined): GetServiceLastAccessedDetailsWithEntitiesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
+        "MaxItems" -> MaxItems.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsWithEntitiesRequest]
+    }
+  }
+
+  @js.native
+  trait GetServiceLastAccessedDetailsWithEntitiesResponse extends js.Object {
+    var EntityDetailsList: entityDetailsListType
+    var JobCompletionDate: dateType
+    var JobCreationDate: dateType
+    var JobStatus: jobStatusType
+    var Error: js.UndefOr[ErrorDetails]
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object GetServiceLastAccessedDetailsWithEntitiesResponse {
+    def apply(
+      EntityDetailsList: entityDetailsListType,
+      JobCompletionDate: dateType,
+      JobCreationDate: dateType,
+      JobStatus: jobStatusType,
+      Error: js.UndefOr[ErrorDetails] = js.undefined,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined): GetServiceLastAccessedDetailsWithEntitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntityDetailsList" -> EntityDetailsList.asInstanceOf[js.Any],
+        "JobCompletionDate" -> JobCompletionDate.asInstanceOf[js.Any],
+        "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
+        "JobStatus" -> JobStatus.asInstanceOf[js.Any],
+        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
+        "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceLastAccessedDetailsWithEntitiesResponse]
     }
   }
 
@@ -2362,7 +2597,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetUserPolicy''' request.
+   * Contains the response to a successful <a>GetUserPolicy</a> request.
    */
   @js.native
   trait GetUserPolicyResponse extends js.Object {
@@ -2401,7 +2636,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''GetUser''' request.
+   * Contains the response to a successful <a>GetUser</a> request.
    */
   @js.native
   trait GetUserResponse extends js.Object {
@@ -2421,9 +2656,9 @@ package iam {
   /**
    * Contains information about an IAM group entity.
    *  This data type is used as a response element in the following operations:
-   * * '''CreateGroup'''
-   *  * '''GetGroup'''
-   *  * '''ListGroups'''
+   * * <a>CreateGroup</a>
+   *  * <a>GetGroup</a>
+   *  * <a>ListGroups</a>
    */
   @js.native
   trait Group extends js.Object {
@@ -2454,7 +2689,7 @@ package iam {
 
   /**
    * Contains information about an IAM group, including all of the group's policies.
-   *  This data type is used as a response element in the '''GetAccountAuthorizationDetails''' operation.
+   *  This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
    */
   @js.native
   trait GroupDetail extends js.Object {
@@ -2492,10 +2727,10 @@ package iam {
   /**
    * Contains information about an instance profile.
    *  This data type is used as a response element in the following operations:
-   * * '''CreateInstanceProfile'''
-   *  * '''GetInstanceProfile'''
-   *  * '''ListInstanceProfiles'''
-   *  * '''ListInstanceProfilesForRole'''
+   * * <a>CreateInstanceProfile</a>
+   *  * <a>GetInstanceProfile</a>
+   *  * <a>ListInstanceProfiles</a>
+   *  * <a>ListInstanceProfilesForRole</a>
    */
   @js.native
   trait InstanceProfile extends js.Object {
@@ -2549,7 +2784,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListAccessKeys''' request.
+   * Contains the response to a successful <a>ListAccessKeys</a> request.
    */
   @js.native
   trait ListAccessKeysResponse extends js.Object {
@@ -2591,7 +2826,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListAccountAliases''' request.
+   * Contains the response to a successful <a>ListAccountAliases</a> request.
    */
   @js.native
   trait ListAccountAliasesResponse extends js.Object {
@@ -2639,7 +2874,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListAttachedGroupPolicies''' request.
+   * Contains the response to a successful <a>ListAttachedGroupPolicies</a> request.
    */
   @js.native
   trait ListAttachedGroupPoliciesResponse extends js.Object {
@@ -2687,7 +2922,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListAttachedRolePolicies''' request.
+   * Contains the response to a successful <a>ListAttachedRolePolicies</a> request.
    */
   @js.native
   trait ListAttachedRolePoliciesResponse extends js.Object {
@@ -2735,7 +2970,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListAttachedUserPolicies''' request.
+   * Contains the response to a successful <a>ListAttachedUserPolicies</a> request.
    */
   @js.native
   trait ListAttachedUserPoliciesResponse extends js.Object {
@@ -2789,7 +3024,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListEntitiesForPolicy''' request.
+   * Contains the response to a successful <a>ListEntitiesForPolicy</a> request.
    */
   @js.native
   trait ListEntitiesForPolicyResponse extends js.Object {
@@ -2840,7 +3075,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListGroupPolicies''' request.
+   * Contains the response to a successful <a>ListGroupPolicies</a> request.
    */
   @js.native
   trait ListGroupPoliciesResponse extends js.Object {
@@ -2885,7 +3120,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListGroupsForUser''' request.
+   * Contains the response to a successful <a>ListGroupsForUser</a> request.
    */
   @js.native
   trait ListGroupsForUserResponse extends js.Object {
@@ -2930,7 +3165,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListGroups''' request.
+   * Contains the response to a successful <a>ListGroups</a> request.
    */
   @js.native
   trait ListGroupsResponse extends js.Object {
@@ -2975,7 +3210,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListInstanceProfilesForRole''' request.
+   * Contains the response to a successful <a>ListInstanceProfilesForRole</a> request.
    */
   @js.native
   trait ListInstanceProfilesForRoleResponse extends js.Object {
@@ -3020,7 +3255,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListInstanceProfiles''' request.
+   * Contains the response to a successful <a>ListInstanceProfiles</a> request.
    */
   @js.native
   trait ListInstanceProfilesResponse extends js.Object {
@@ -3065,7 +3300,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListMFADevices''' request.
+   * Contains the response to a successful <a>ListMFADevices</a> request.
    */
   @js.native
   trait ListMFADevicesResponse extends js.Object {
@@ -3102,7 +3337,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListOpenIDConnectProviders''' request.
+   * Contains the response to a successful <a>ListOpenIDConnectProviders</a> request.
    */
   @js.native
   trait ListOpenIDConnectProvidersResponse extends js.Object {
@@ -3116,6 +3351,70 @@ package iam {
         "OpenIDConnectProviderList" -> OpenIDConnectProviderList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOpenIDConnectProvidersResponse]
+    }
+  }
+
+  /**
+   * Contains details about the permissions policies that are attached to the specified identity (user, group, or role).
+   *  This data type is used as a response element in the <a>ListPoliciesGrantingServiceAccess</a> operation.
+   */
+  @js.native
+  trait ListPoliciesGrantingServiceAccessEntry extends js.Object {
+    var Policies: js.UndefOr[policyGrantingServiceAccessListType]
+    var ServiceNamespace: js.UndefOr[serviceNamespaceType]
+  }
+
+  object ListPoliciesGrantingServiceAccessEntry {
+    def apply(
+      Policies: js.UndefOr[policyGrantingServiceAccessListType] = js.undefined,
+      ServiceNamespace: js.UndefOr[serviceNamespaceType] = js.undefined): ListPoliciesGrantingServiceAccessEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policies" -> Policies.map { x => x.asInstanceOf[js.Any] },
+        "ServiceNamespace" -> ServiceNamespace.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesGrantingServiceAccessEntry]
+    }
+  }
+
+  @js.native
+  trait ListPoliciesGrantingServiceAccessRequest extends js.Object {
+    var Arn: arnType
+    var ServiceNamespaces: serviceNamespaceListType
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object ListPoliciesGrantingServiceAccessRequest {
+    def apply(
+      Arn: arnType,
+      ServiceNamespaces: serviceNamespaceListType,
+      Marker: js.UndefOr[markerType] = js.undefined): ListPoliciesGrantingServiceAccessRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "ServiceNamespaces" -> ServiceNamespaces.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesGrantingServiceAccessRequest]
+    }
+  }
+
+  @js.native
+  trait ListPoliciesGrantingServiceAccessResponse extends js.Object {
+    var PoliciesGrantingServiceAccess: listPolicyGrantingServiceAccessResponseListType
+    var IsTruncated: js.UndefOr[booleanType]
+    var Marker: js.UndefOr[markerType]
+  }
+
+  object ListPoliciesGrantingServiceAccessResponse {
+    def apply(
+      PoliciesGrantingServiceAccess: listPolicyGrantingServiceAccessResponseListType,
+      IsTruncated: js.UndefOr[booleanType] = js.undefined,
+      Marker: js.UndefOr[markerType] = js.undefined): ListPoliciesGrantingServiceAccessResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PoliciesGrantingServiceAccess" -> PoliciesGrantingServiceAccess.asInstanceOf[js.Any],
+        "IsTruncated" -> IsTruncated.map { x => x.asInstanceOf[js.Any] },
+        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesGrantingServiceAccessResponse]
     }
   }
 
@@ -3150,7 +3449,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListPolicies''' request.
+   * Contains the response to a successful <a>ListPolicies</a> request.
    */
   @js.native
   trait ListPoliciesResponse extends js.Object {
@@ -3195,7 +3494,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListPolicyVersions''' request.
+   * Contains the response to a successful <a>ListPolicyVersions</a> request.
    */
   @js.native
   trait ListPolicyVersionsResponse extends js.Object {
@@ -3240,7 +3539,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListRolePolicies''' request.
+   * Contains the response to a successful <a>ListRolePolicies</a> request.
    */
   @js.native
   trait ListRolePoliciesResponse extends js.Object {
@@ -3327,7 +3626,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListRoles''' request.
+   * Contains the response to a successful <a>ListRoles</a> request.
    */
   @js.native
   trait ListRolesResponse extends js.Object {
@@ -3364,7 +3663,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListSAMLProviders''' request.
+   * Contains the response to a successful <a>ListSAMLProviders</a> request.
    */
   @js.native
   trait ListSAMLProvidersResponse extends js.Object {
@@ -3403,7 +3702,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListSSHPublicKeys''' request.
+   * Contains the response to a successful <a>ListSSHPublicKeys</a> request.
    */
   @js.native
   trait ListSSHPublicKeysResponse extends js.Object {
@@ -3448,7 +3747,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListServerCertificates''' request.
+   * Contains the response to a successful <a>ListServerCertificates</a> request.
    */
   @js.native
   trait ListServerCertificatesResponse extends js.Object {
@@ -3526,7 +3825,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListSigningCertificates''' request.
+   * Contains the response to a successful <a>ListSigningCertificates</a> request.
    */
   @js.native
   trait ListSigningCertificatesResponse extends js.Object {
@@ -3571,7 +3870,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListUserPolicies''' request.
+   * Contains the response to a successful <a>ListUserPolicies</a> request.
    */
   @js.native
   trait ListUserPoliciesResponse extends js.Object {
@@ -3658,7 +3957,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListUsers''' request.
+   * Contains the response to a successful <a>ListUsers</a> request.
    */
   @js.native
   trait ListUsersResponse extends js.Object {
@@ -3703,7 +4002,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''ListVirtualMFADevices''' request.
+   * Contains the response to a successful <a>ListVirtualMFADevices</a> request.
    */
   @js.native
   trait ListVirtualMFADevicesResponse extends js.Object {
@@ -3728,7 +4027,7 @@ package iam {
 
   /**
    * Contains the user name and password create date for a user.
-   *  This data type is used as a response element in the '''CreateLoginProfile''' and '''GetLoginProfile''' operations.
+   *  This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations.
    */
   @js.native
   trait LoginProfile extends js.Object {
@@ -3753,7 +4052,7 @@ package iam {
 
   /**
    * Contains information about an MFA device.
-   *  This data type is used as a response element in the '''ListMFADevices''' operation.
+   *  This data type is used as a response element in the <a>ListMFADevices</a> operation.
    */
   @js.native
   trait MFADevice extends js.Object {
@@ -3778,8 +4077,8 @@ package iam {
 
   /**
    * Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.
-   *  This data type is used as a response element in the '''GetAccountAuthorizationDetails''' operation.
-   *  For more information about managed policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
+   *  For more information about managed policies, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait ManagedPolicyDetail extends js.Object {
@@ -3867,7 +4166,7 @@ package iam {
 
   /**
    * Contains information about the account password policy.
-   *  This data type is used as a response element in the '''GetAccountPasswordPolicy''' operation.
+   *  This data type is used as a response element in the <a>GetAccountPasswordPolicy</a> operation.
    */
   @js.native
   trait PasswordPolicy extends js.Object {
@@ -3919,8 +4218,8 @@ package iam {
 
   /**
    * Contains information about a managed policy.
-   *  This data type is used as a response element in the '''CreatePolicy''', '''GetPolicy''', and '''ListPolicies''' operations.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a> operations.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait Policy extends js.Object {
@@ -3969,7 +4268,7 @@ package iam {
 
   /**
    * Contains information about an IAM policy, including the policy document.
-   *  This data type is used as a response element in the '''GetAccountAuthorizationDetails''' operation.
+   *  This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
    */
   @js.native
   trait PolicyDetail extends js.Object {
@@ -3998,9 +4297,40 @@ package iam {
   }
 
   /**
+   * Contains details about the permissions policies that are attached to the specified identity (user, group, or role).
+   *  This data type is an element of the <a>ListPoliciesGrantingServiceAccessEntry</a> object.
+   */
+  @js.native
+  trait PolicyGrantingServiceAccess extends js.Object {
+    var PolicyName: policyNameType
+    var PolicyType: policyType
+    var EntityName: js.UndefOr[entityNameType]
+    var EntityType: js.UndefOr[policyOwnerEntityType]
+    var PolicyArn: js.UndefOr[arnType]
+  }
+
+  object PolicyGrantingServiceAccess {
+    def apply(
+      PolicyName: policyNameType,
+      PolicyType: policyType,
+      EntityName: js.UndefOr[entityNameType] = js.undefined,
+      EntityType: js.UndefOr[policyOwnerEntityType] = js.undefined,
+      PolicyArn: js.UndefOr[arnType] = js.undefined): PolicyGrantingServiceAccess = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "PolicyType" -> PolicyType.asInstanceOf[js.Any],
+        "EntityName" -> EntityName.map { x => x.asInstanceOf[js.Any] },
+        "EntityType" -> EntityType.map { x => x.asInstanceOf[js.Any] },
+        "PolicyArn" -> PolicyArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyGrantingServiceAccess]
+    }
+  }
+
+  /**
    * Contains information about a group that a managed policy is attached to.
-   *  This data type is used as a response element in the '''ListEntitiesForPolicy''' operation.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyGroup extends js.Object {
@@ -4022,8 +4352,8 @@ package iam {
 
   /**
    * Contains information about a role that a managed policy is attached to.
-   *  This data type is used as a response element in the '''ListEntitiesForPolicy''' operation.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyRole extends js.Object {
@@ -4057,7 +4387,7 @@ package iam {
 
   /**
    * The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.
-   *  For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+   *  For more information about permissions boundaries, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions Boundaries for IAM Identities ]] in the <i>IAM User Guide</i>.
    */
   object PolicyUsageTypeEnum {
     val PermissionsPolicy = "PermissionsPolicy"
@@ -4068,8 +4398,8 @@ package iam {
 
   /**
    * Contains information about a user that a managed policy is attached to.
-   *  This data type is used as a response element in the '''ListEntitiesForPolicy''' operation.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyUser extends js.Object {
@@ -4091,8 +4421,8 @@ package iam {
 
   /**
    * Contains information about a version of a managed policy.
-   *  This data type is used as a response element in the '''CreatePolicyVersion''', '''GetPolicyVersion''', '''ListPolicyVersions''', and '''GetAccountAuthorizationDetails''' operations.
-   *  For more information about managed policies, refer to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <i>Using IAM</i> guide.
+   *  This data type is used as a response element in the <a>CreatePolicyVersion</a>, <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and <a>GetAccountAuthorizationDetails</a> operations.
+   *  For more information about managed policies, refer to [[http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html|Managed Policies and Inline Policies]] in the <i>Using IAM</i> guide.
    */
   @js.native
   trait PolicyVersion extends js.Object {
@@ -4120,7 +4450,7 @@ package iam {
 
   /**
    * Contains the row and column of a location of a <code>Statement</code> element in a policy document.
-   *  This data type is used as a member of the <code> '''Statement''' </code> type.
+   *  This data type is used as a member of the <code> <a>Statement</a> </code> type.
    */
   @js.native
   trait Position extends js.Object {
@@ -4342,7 +4672,7 @@ package iam {
 
   /**
    * Contains the result of the simulation of a single API operation call on a single resource.
-   *  This data type is used by a member of the '''EvaluationResult''' data type.
+   *  This data type is used by a member of the <a>EvaluationResult</a> data type.
    */
   @js.native
   trait ResourceSpecificResult extends js.Object {
@@ -4442,7 +4772,7 @@ package iam {
 
   /**
    * Contains information about an IAM role, including all of the role's policies.
-   *  This data type is used as a response element in the '''GetAccountAuthorizationDetails''' operation.
+   *  This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
    */
   @js.native
   trait RoleDetail extends js.Object {
@@ -4491,7 +4821,7 @@ package iam {
 
   /**
    * An object that contains details about how a service-linked role is used, if that information is returned by the service.
-   *  This data type is used as a response element in the '''GetServiceLinkedRoleDeletionStatus''' operation.
+   *  This data type is used as a response element in the <a>GetServiceLinkedRoleDeletionStatus</a> operation.
    */
   @js.native
   trait RoleUsageType extends js.Object {
@@ -4537,7 +4867,7 @@ package iam {
 
   /**
    * Contains information about an SSH public key.
-   *  This data type is used as a response element in the '''GetSSHPublicKey''' and '''UploadSSHPublicKey''' operations.
+   *  This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations.
    */
   @js.native
   trait SSHPublicKey extends js.Object {
@@ -4571,7 +4901,7 @@ package iam {
 
   /**
    * Contains information about an SSH public key, without the key's body or fingerprint.
-   *  This data type is used as a response element in the '''ListSSHPublicKeys''' operation.
+   *  This data type is used as a response element in the <a>ListSSHPublicKeys</a> operation.
    */
   @js.native
   trait SSHPublicKeyMetadata extends js.Object {
@@ -4599,7 +4929,7 @@ package iam {
 
   /**
    * Contains information about a server certificate.
-   *  This data type is used as a response element in the '''GetServerCertificate''' operation.
+   *  This data type is used as a response element in the <a>GetServerCertificate</a> operation.
    */
   @js.native
   trait ServerCertificate extends js.Object {
@@ -4624,7 +4954,7 @@ package iam {
 
   /**
    * Contains information about a server certificate without its certificate body, certificate chain, and private key.
-   *  This data type is used as a response element in the '''UploadServerCertificate''' and '''ListServerCertificates''' operations.
+   *  This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a> operations.
    */
   @js.native
   trait ServerCertificateMetadata extends js.Object {
@@ -4653,6 +4983,37 @@ package iam {
         "UploadDate" -> UploadDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerCertificateMetadata]
+    }
+  }
+
+  /**
+   * Contains details about the most recent attempt to access the service.
+   *  This data type is used as a response element in the <a>GetServiceLastAccessedDetails</a> operation.
+   */
+  @js.native
+  trait ServiceLastAccessed extends js.Object {
+    var ServiceName: serviceNameType
+    var ServiceNamespace: serviceNamespaceType
+    var LastAuthenticated: js.UndefOr[dateType]
+    var LastAuthenticatedEntity: js.UndefOr[arnType]
+    var TotalAuthenticatedEntities: js.UndefOr[integerType]
+  }
+
+  object ServiceLastAccessed {
+    def apply(
+      ServiceName: serviceNameType,
+      ServiceNamespace: serviceNamespaceType,
+      LastAuthenticated: js.UndefOr[dateType] = js.undefined,
+      LastAuthenticatedEntity: js.UndefOr[arnType] = js.undefined,
+      TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined): ServiceLastAccessed = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any],
+        "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any],
+        "LastAuthenticated" -> LastAuthenticated.map { x => x.asInstanceOf[js.Any] },
+        "LastAuthenticatedEntity" -> LastAuthenticatedEntity.map { x => x.asInstanceOf[js.Any] },
+        "TotalAuthenticatedEntities" -> TotalAuthenticatedEntities.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceLastAccessed]
     }
   }
 
@@ -4745,7 +5106,7 @@ package iam {
 
   /**
    * Contains information about an X.509 signing certificate.
-   *  This data type is used as a response element in the '''UploadSigningCertificate''' and '''ListSigningCertificates''' operations.
+   *  This data type is used as a response element in the <a>UploadSigningCertificate</a> and <a>ListSigningCertificates</a> operations.
    */
   @js.native
   trait SigningCertificate extends js.Object {
@@ -4817,7 +5178,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''SimulatePrincipalPolicy''' or '''SimulateCustomPolicy''' request.
+   * Contains the response to a successful <a>SimulatePrincipalPolicy</a> or <a>SimulateCustomPolicy</a> request.
    */
   @js.native
   trait SimulatePolicyResponse extends js.Object {
@@ -4887,7 +5248,7 @@ package iam {
 
   /**
    * Contains a reference to a <code>Statement</code> element in a policy document that determines the result of the simulation.
-   *  This data type is used by the <code>MatchedStatements</code> member of the <code> '''EvaluationResult''' </code> type.
+   *  This data type is used by the <code>MatchedStatements</code> member of the <code> <a>EvaluationResult</a> </code> type.
    */
   @js.native
   trait Statement extends js.Object {
@@ -4914,7 +5275,7 @@ package iam {
   }
 
   /**
-   * A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM User Guide</i>.
+   * A structure that represents user-provided metadata that can be associated with a resource such as an IAM user or role. For more information about tagging, see [[http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html|Tagging IAM Identities]] in the <i>IAM User Guide</i>.
    */
   @js.native
   trait Tag extends js.Object {
@@ -5230,7 +5591,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''UpdateSAMLProvider''' request.
+   * Contains the response to a successful <a>UpdateSAMLProvider</a> request.
    */
   @js.native
   trait UpdateSAMLProviderResponse extends js.Object {
@@ -5371,7 +5732,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''UploadSSHPublicKey''' request.
+   * Contains the response to a successful <a>UploadSSHPublicKey</a> request.
    */
   @js.native
   trait UploadSSHPublicKeyResponse extends js.Object {
@@ -5416,7 +5777,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''UploadServerCertificate''' request.
+   * Contains the response to a successful <a>UploadServerCertificate</a> request.
    */
   @js.native
   trait UploadServerCertificateResponse extends js.Object {
@@ -5452,7 +5813,7 @@ package iam {
   }
 
   /**
-   * Contains the response to a successful '''UploadSigningCertificate''' request.
+   * Contains the response to a successful <a>UploadSigningCertificate</a> request.
    */
   @js.native
   trait UploadSigningCertificateResponse extends js.Object {
@@ -5472,9 +5833,9 @@ package iam {
   /**
    * Contains information about an IAM user entity.
    *  This data type is used as a response element in the following operations:
-   * * '''CreateUser'''
-   *  * '''GetUser'''
-   *  * '''ListUsers'''
+   * * <a>CreateUser</a>
+   *  * <a>GetUser</a>
+   *  * <a>ListUsers</a>
    */
   @js.native
   trait User extends js.Object {
@@ -5514,7 +5875,7 @@ package iam {
 
   /**
    * Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.
-   *  This data type is used as a response element in the '''GetAccountAuthorizationDetails''' operation.
+   *  This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
    */
   @js.native
   trait UserDetail extends js.Object {
@@ -5603,12 +5964,35 @@ package iam {
     val values = IndexedSeq(SSH, PEM)
   }
 
+  object jobStatusTypeEnum {
+    val IN_PROGRESS = "IN_PROGRESS"
+    val COMPLETED = "COMPLETED"
+    val FAILED = "FAILED"
+
+    val values = IndexedSeq(IN_PROGRESS, COMPLETED, FAILED)
+  }
+
+  object policyOwnerEntityTypeEnum {
+    val USER = "USER"
+    val ROLE = "ROLE"
+    val GROUP = "GROUP"
+
+    val values = IndexedSeq(USER, ROLE, GROUP)
+  }
+
   object policyScopeTypeEnum {
     val All = "All"
     val AWS = "AWS"
     val Local = "Local"
 
     val values = IndexedSeq(All, AWS, Local)
+  }
+
+  object policyTypeEnum {
+    val INLINE = "INLINE"
+    val MANAGED = "MANAGED"
+
+    val values = IndexedSeq(INLINE, MANAGED)
   }
 
   object statusTypeEnum {
