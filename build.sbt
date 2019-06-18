@@ -52,10 +52,10 @@ lazy val root = (project in file(".")).
       setReleaseVersion,
       commitReleaseVersion,
       tagRelease,
-      ReleaseStep(action = Command.process("publishSigned", _)),
+      releaseStepCommandAndRemaining("+publishSigned"),
       setNextVersion,
       commitNextVersion,
-      ReleaseStep(action = Command.process("sonatypeRelease", _))
+      releaseStepCommand("sonatypeReleaseAll"),
     ),
     skip in packageJSDependencies := false,
     scalaJSModuleKind := ModuleKind.CommonJSModule,
