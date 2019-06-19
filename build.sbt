@@ -52,14 +52,14 @@ lazy val root = (project in file(".")).
       setReleaseVersion,
       commitReleaseVersion,
       tagRelease,
-      ReleaseStep(action = Command.process("publishSigned", _)),
+      releaseStepCommandAndRemaining("+publishSigned"),
       setNextVersion,
       commitNextVersion,
-      ReleaseStep(action = Command.process("sonatypeRelease", _))
+      releaseStepCommand("sonatypeReleaseAll"),
     ),
     skip in packageJSDependencies := false,
     scalaJSModuleKind := ModuleKind.CommonJSModule,
     libraryDependencies ++= Seq(
-      "io.scalajs" %%% "nodejs" % "0.4.2"
+      "net.exoego" %%% "scala-js-nodejs-v8" % "0.8.0"
     )
   )
