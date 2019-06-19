@@ -7,73 +7,73 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object lexmodelbuildingservice {
-  type AliasName = String
-  type AliasNameOrListAll = String
-  type Blob = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BotAliasMetadataList = js.Array[BotAliasMetadata]
-  type BotChannelAssociationList = js.Array[BotChannelAssociation]
-  type BotChannelName = String
-  type BotMetadataList = js.Array[BotMetadata]
-  type BotName = String
-  type BotVersions = js.Array[Version]
-  type BuiltinIntentMetadataList = js.Array[BuiltinIntentMetadata]
-  type BuiltinIntentSignature = String
-  type BuiltinIntentSlotList = js.Array[BuiltinIntentSlot]
+  type AliasName                   = String
+  type AliasNameOrListAll          = String
+  type Blob                        = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BotAliasMetadataList        = js.Array[BotAliasMetadata]
+  type BotChannelAssociationList   = js.Array[BotChannelAssociation]
+  type BotChannelName              = String
+  type BotMetadataList             = js.Array[BotMetadata]
+  type BotName                     = String
+  type BotVersions                 = js.Array[Version]
+  type BuiltinIntentMetadataList   = js.Array[BuiltinIntentMetadata]
+  type BuiltinIntentSignature      = String
+  type BuiltinIntentSlotList       = js.Array[BuiltinIntentSlot]
   type BuiltinSlotTypeMetadataList = js.Array[BuiltinSlotTypeMetadata]
-  type BuiltinSlotTypeSignature = String
-  type ChannelConfigurationMap = js.Dictionary[String]
-  type ChannelStatus = String
-  type ChannelType = String
-  type ContentString = String
-  type ContentType = String
-  type Count = Int
+  type BuiltinSlotTypeSignature    = String
+  type ChannelConfigurationMap     = js.Dictionary[String]
+  type ChannelStatus               = String
+  type ChannelType                 = String
+  type ContentString               = String
+  type ContentType                 = String
+  type Count                       = Int
   type CustomOrBuiltinSlotTypeName = String
-  type Description = String
-  type EnumerationValues = js.Array[EnumerationValue]
-  type ExportStatus = String
-  type ExportType = String
-  type FulfillmentActivityType = String
-  type GroupNumber = Int
-  type ImportStatus = String
-  type IntentList = js.Array[Intent]
-  type IntentMetadataList = js.Array[IntentMetadata]
-  type IntentName = String
-  type IntentUtteranceList = js.Array[Utterance]
-  type LambdaARN = String
-  type ListOfUtterance = js.Array[UtteranceData]
-  type ListsOfUtterances = js.Array[UtteranceList]
-  type Locale = String
-  type LocaleList = js.Array[Locale]
-  type MaxResults = Int
-  type MergeStrategy = String
-  type MessageList = js.Array[Message]
-  type MessageVersion = String
-  type Name = String
-  type NextToken = String
-  type NumericalVersion = String
-  type Priority = Int
-  type ProcessBehavior = String
-  type PromptMaxAttempts = Int
-  type ResourceType = String
-  type ResponseCard = String
-  type SessionTTL = Int
-  type SlotConstraint = String
-  type SlotList = js.Array[Slot]
-  type SlotName = String
-  type SlotTypeMetadataList = js.Array[SlotTypeMetadata]
-  type SlotTypeName = String
-  type SlotUtteranceList = js.Array[Utterance]
-  type SlotValueSelectionStrategy = String
-  type Status = String
-  type StatusType = String
-  type StringList = js.Array[String]
-  type SynonymList = js.Array[Value]
-  type Timestamp = js.Date
-  type UserId = String
-  type Utterance = String
-  type UtteranceString = String
-  type Value = String
-  type Version = String
+  type Description                 = String
+  type EnumerationValues           = js.Array[EnumerationValue]
+  type ExportStatus                = String
+  type ExportType                  = String
+  type FulfillmentActivityType     = String
+  type GroupNumber                 = Int
+  type ImportStatus                = String
+  type IntentList                  = js.Array[Intent]
+  type IntentMetadataList          = js.Array[IntentMetadata]
+  type IntentName                  = String
+  type IntentUtteranceList         = js.Array[Utterance]
+  type LambdaARN                   = String
+  type ListOfUtterance             = js.Array[UtteranceData]
+  type ListsOfUtterances           = js.Array[UtteranceList]
+  type Locale                      = String
+  type LocaleList                  = js.Array[Locale]
+  type MaxResults                  = Int
+  type MergeStrategy               = String
+  type MessageList                 = js.Array[Message]
+  type MessageVersion              = String
+  type Name                        = String
+  type NextToken                   = String
+  type NumericalVersion            = String
+  type Priority                    = Int
+  type ProcessBehavior             = String
+  type PromptMaxAttempts           = Int
+  type ResourceType                = String
+  type ResponseCard                = String
+  type SessionTTL                  = Int
+  type SlotConstraint              = String
+  type SlotList                    = js.Array[Slot]
+  type SlotName                    = String
+  type SlotTypeMetadataList        = js.Array[SlotTypeMetadata]
+  type SlotTypeName                = String
+  type SlotUtteranceList           = js.Array[Utterance]
+  type SlotValueSelectionStrategy  = String
+  type Status                      = String
+  type StatusType                  = String
+  type StringList                  = js.Array[String]
+  type SynonymList                 = js.Array[Value]
+  type Timestamp                   = js.Date
+  type UserId                      = String
+  type Utterance                   = String
+  type UtteranceString             = String
+  type Value                       = String
+  type Version                     = String
 }
 
 package lexmodelbuildingservice {
@@ -82,47 +82,50 @@ package lexmodelbuildingservice {
   class LexModelBuildingService() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createBotVersion(params: CreateBotVersionRequest): Request[CreateBotVersionResponse] = js.native
-    def createIntentVersion(params: CreateIntentVersionRequest): Request[CreateIntentVersionResponse] = js.native
+    def createBotVersion(params: CreateBotVersionRequest): Request[CreateBotVersionResponse]                = js.native
+    def createIntentVersion(params: CreateIntentVersionRequest): Request[CreateIntentVersionResponse]       = js.native
     def createSlotTypeVersion(params: CreateSlotTypeVersionRequest): Request[CreateSlotTypeVersionResponse] = js.native
-    def deleteBot(params: DeleteBotRequest): Request[js.Object] = js.native
-    def deleteBotAlias(params: DeleteBotAliasRequest): Request[js.Object] = js.native
-    def deleteBotChannelAssociation(params: DeleteBotChannelAssociationRequest): Request[js.Object] = js.native
-    def deleteBotVersion(params: DeleteBotVersionRequest): Request[js.Object] = js.native
-    def deleteIntent(params: DeleteIntentRequest): Request[js.Object] = js.native
-    def deleteIntentVersion(params: DeleteIntentVersionRequest): Request[js.Object] = js.native
-    def deleteSlotType(params: DeleteSlotTypeRequest): Request[js.Object] = js.native
-    def deleteSlotTypeVersion(params: DeleteSlotTypeVersionRequest): Request[js.Object] = js.native
-    def deleteUtterances(params: DeleteUtterancesRequest): Request[js.Object] = js.native
-    def getBot(params: GetBotRequest): Request[GetBotResponse] = js.native
-    def getBotAlias(params: GetBotAliasRequest): Request[GetBotAliasResponse] = js.native
-    def getBotAliases(params: GetBotAliasesRequest): Request[GetBotAliasesResponse] = js.native
-    def getBotChannelAssociation(params: GetBotChannelAssociationRequest): Request[GetBotChannelAssociationResponse] = js.native
-    def getBotChannelAssociations(params: GetBotChannelAssociationsRequest): Request[GetBotChannelAssociationsResponse] = js.native
-    def getBotVersions(params: GetBotVersionsRequest): Request[GetBotVersionsResponse] = js.native
-    def getBots(params: GetBotsRequest): Request[GetBotsResponse] = js.native
-    def getBuiltinIntent(params: GetBuiltinIntentRequest): Request[GetBuiltinIntentResponse] = js.native
-    def getBuiltinIntents(params: GetBuiltinIntentsRequest): Request[GetBuiltinIntentsResponse] = js.native
+    def deleteBot(params: DeleteBotRequest): Request[js.Object]                                             = js.native
+    def deleteBotAlias(params: DeleteBotAliasRequest): Request[js.Object]                                   = js.native
+    def deleteBotChannelAssociation(params: DeleteBotChannelAssociationRequest): Request[js.Object]         = js.native
+    def deleteBotVersion(params: DeleteBotVersionRequest): Request[js.Object]                               = js.native
+    def deleteIntent(params: DeleteIntentRequest): Request[js.Object]                                       = js.native
+    def deleteIntentVersion(params: DeleteIntentVersionRequest): Request[js.Object]                         = js.native
+    def deleteSlotType(params: DeleteSlotTypeRequest): Request[js.Object]                                   = js.native
+    def deleteSlotTypeVersion(params: DeleteSlotTypeVersionRequest): Request[js.Object]                     = js.native
+    def deleteUtterances(params: DeleteUtterancesRequest): Request[js.Object]                               = js.native
+    def getBot(params: GetBotRequest): Request[GetBotResponse]                                              = js.native
+    def getBotAlias(params: GetBotAliasRequest): Request[GetBotAliasResponse]                               = js.native
+    def getBotAliases(params: GetBotAliasesRequest): Request[GetBotAliasesResponse]                         = js.native
+    def getBotChannelAssociation(params: GetBotChannelAssociationRequest): Request[GetBotChannelAssociationResponse] =
+      js.native
+    def getBotChannelAssociations(
+        params: GetBotChannelAssociationsRequest
+    ): Request[GetBotChannelAssociationsResponse]                                                     = js.native
+    def getBotVersions(params: GetBotVersionsRequest): Request[GetBotVersionsResponse]                = js.native
+    def getBots(params: GetBotsRequest): Request[GetBotsResponse]                                     = js.native
+    def getBuiltinIntent(params: GetBuiltinIntentRequest): Request[GetBuiltinIntentResponse]          = js.native
+    def getBuiltinIntents(params: GetBuiltinIntentsRequest): Request[GetBuiltinIntentsResponse]       = js.native
     def getBuiltinSlotTypes(params: GetBuiltinSlotTypesRequest): Request[GetBuiltinSlotTypesResponse] = js.native
-    def getExport(params: GetExportRequest): Request[GetExportResponse] = js.native
-    def getImport(params: GetImportRequest): Request[GetImportResponse] = js.native
-    def getIntent(params: GetIntentRequest): Request[GetIntentResponse] = js.native
-    def getIntentVersions(params: GetIntentVersionsRequest): Request[GetIntentVersionsResponse] = js.native
-    def getIntents(params: GetIntentsRequest): Request[GetIntentsResponse] = js.native
-    def getSlotType(params: GetSlotTypeRequest): Request[GetSlotTypeResponse] = js.native
+    def getExport(params: GetExportRequest): Request[GetExportResponse]                               = js.native
+    def getImport(params: GetImportRequest): Request[GetImportResponse]                               = js.native
+    def getIntent(params: GetIntentRequest): Request[GetIntentResponse]                               = js.native
+    def getIntentVersions(params: GetIntentVersionsRequest): Request[GetIntentVersionsResponse]       = js.native
+    def getIntents(params: GetIntentsRequest): Request[GetIntentsResponse]                            = js.native
+    def getSlotType(params: GetSlotTypeRequest): Request[GetSlotTypeResponse]                         = js.native
     def getSlotTypeVersions(params: GetSlotTypeVersionsRequest): Request[GetSlotTypeVersionsResponse] = js.native
-    def getSlotTypes(params: GetSlotTypesRequest): Request[GetSlotTypesResponse] = js.native
-    def getUtterancesView(params: GetUtterancesViewRequest): Request[GetUtterancesViewResponse] = js.native
-    def putBot(params: PutBotRequest): Request[PutBotResponse] = js.native
-    def putBotAlias(params: PutBotAliasRequest): Request[PutBotAliasResponse] = js.native
-    def putIntent(params: PutIntentRequest): Request[PutIntentResponse] = js.native
-    def putSlotType(params: PutSlotTypeRequest): Request[PutSlotTypeResponse] = js.native
-    def startImport(params: StartImportRequest): Request[StartImportResponse] = js.native
+    def getSlotTypes(params: GetSlotTypesRequest): Request[GetSlotTypesResponse]                      = js.native
+    def getUtterancesView(params: GetUtterancesViewRequest): Request[GetUtterancesViewResponse]       = js.native
+    def putBot(params: PutBotRequest): Request[PutBotResponse]                                        = js.native
+    def putBotAlias(params: PutBotAliasRequest): Request[PutBotAliasResponse]                         = js.native
+    def putIntent(params: PutIntentRequest): Request[PutIntentResponse]                               = js.native
+    def putSlotType(params: PutSlotTypeRequest): Request[PutSlotTypeResponse]                         = js.native
+    def startImport(params: StartImportRequest): Request[StartImportResponse]                         = js.native
   }
 
   /**
-   * Provides information about a bot alias.
-   */
+    * Provides information about a bot alias.
+    */
   @js.native
   trait BotAliasMetadata extends js.Object {
     var botName: js.UndefOr[BotName]
@@ -135,30 +138,44 @@ package lexmodelbuildingservice {
   }
 
   object BotAliasMetadata {
-    def apply(
-      botName: js.UndefOr[BotName] = js.undefined,
-      botVersion: js.UndefOr[Version] = js.undefined,
-      checksum: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[AliasName] = js.undefined): BotAliasMetadata = {
+    def apply(botName: js.UndefOr[BotName] = js.undefined,
+              botVersion: js.UndefOr[Version] = js.undefined,
+              checksum: js.UndefOr[String] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[AliasName] = js.undefined): BotAliasMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x => x.asInstanceOf[js.Any] },
-        "botVersion" -> botVersion.map { x => x.asInstanceOf[js.Any] },
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "botName" -> botName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "botVersion" -> botVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BotAliasMetadata]
     }
   }
 
   /**
-   * Represents an association between an Amazon Lex bot and an external messaging platform.
-   */
+    * Represents an association between an Amazon Lex bot and an external messaging platform.
+    */
   @js.native
   trait BotChannelAssociation extends js.Object {
     var botAlias: js.UndefOr[AliasName]
@@ -173,34 +190,52 @@ package lexmodelbuildingservice {
   }
 
   object BotChannelAssociation {
-    def apply(
-      botAlias: js.UndefOr[AliasName] = js.undefined,
-      botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
-      botName: js.UndefOr[BotName] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      failureReason: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[BotChannelName] = js.undefined,
-      status: js.UndefOr[ChannelStatus] = js.undefined,
-      `type`: js.UndefOr[ChannelType] = js.undefined): BotChannelAssociation = {
+    def apply(botAlias: js.UndefOr[AliasName] = js.undefined,
+              botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
+              botName: js.UndefOr[BotName] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              failureReason: js.UndefOr[String] = js.undefined,
+              name: js.UndefOr[BotChannelName] = js.undefined,
+              status: js.UndefOr[ChannelStatus] = js.undefined,
+              `type`: js.UndefOr[ChannelType] = js.undefined): BotChannelAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "botAlias" -> botAlias.map { x => x.asInstanceOf[js.Any] },
-        "botConfiguration" -> botConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "botName" -> botName.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "botAlias" -> botAlias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "botConfiguration" -> botConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "botName" -> botName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failureReason" -> failureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BotChannelAssociation]
     }
   }
 
   /**
-   * Provides information about a bot. .
-   */
+    * Provides information about a bot. .
+    */
   @js.native
   trait BotMetadata extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
@@ -212,28 +247,40 @@ package lexmodelbuildingservice {
   }
 
   object BotMetadata {
-    def apply(
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[BotName] = js.undefined,
-      status: js.UndefOr[Status] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): BotMetadata = {
+    def apply(createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[BotName] = js.undefined,
+              status: js.UndefOr[Status] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): BotMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BotMetadata]
     }
   }
 
   /**
-   * Provides metadata for a built-in intent.
-   */
+    * Provides metadata for a built-in intent.
+    */
   @js.native
   trait BuiltinIntentMetadata extends js.Object {
     var signature: js.UndefOr[BuiltinIntentSignature]
@@ -241,38 +288,39 @@ package lexmodelbuildingservice {
   }
 
   object BuiltinIntentMetadata {
-    def apply(
-      signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-      supportedLocales: js.UndefOr[LocaleList] = js.undefined): BuiltinIntentMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.map { x => x.asInstanceOf[js.Any] },
-        "supportedLocales" -> supportedLocales.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
+              supportedLocales: js.UndefOr[LocaleList] = js.undefined): BuiltinIntentMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)]("signature" -> signature.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "supportedLocales" -> supportedLocales.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuiltinIntentMetadata]
     }
   }
 
   /**
-   * Provides information about a slot used in a built-in intent.
-   */
+    * Provides information about a slot used in a built-in intent.
+    */
   @js.native
   trait BuiltinIntentSlot extends js.Object {
     var name: js.UndefOr[String]
   }
 
   object BuiltinIntentSlot {
-    def apply(
-      name: js.UndefOr[String] = js.undefined): BuiltinIntentSlot = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: js.UndefOr[String] = js.undefined): BuiltinIntentSlot = {
+      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuiltinIntentSlot]
     }
   }
 
   /**
-   * Provides information about a built in slot type.
-   */
+    * Provides information about a built in slot type.
+    */
   @js.native
   trait BuiltinSlotTypeMetadata extends js.Object {
     var signature: js.UndefOr[BuiltinSlotTypeSignature]
@@ -280,12 +328,13 @@ package lexmodelbuildingservice {
   }
 
   object BuiltinSlotTypeMetadata {
-    def apply(
-      signature: js.UndefOr[BuiltinSlotTypeSignature] = js.undefined,
-      supportedLocales: js.UndefOr[LocaleList] = js.undefined): BuiltinSlotTypeMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.map { x => x.asInstanceOf[js.Any] },
-        "supportedLocales" -> supportedLocales.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(signature: js.UndefOr[BuiltinSlotTypeSignature] = js.undefined,
+              supportedLocales: js.UndefOr[LocaleList] = js.undefined): BuiltinSlotTypeMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)]("signature" -> signature.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "supportedLocales" -> supportedLocales.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BuiltinSlotTypeMetadata]
     }
@@ -293,24 +342,24 @@ package lexmodelbuildingservice {
 
   object ChannelStatusEnum {
     val IN_PROGRESS = "IN_PROGRESS"
-    val CREATED = "CREATED"
-    val FAILED = "FAILED"
+    val CREATED     = "CREATED"
+    val FAILED      = "FAILED"
 
     val values = IndexedSeq(IN_PROGRESS, CREATED, FAILED)
   }
 
   object ChannelTypeEnum {
-    val Facebook = "Facebook"
-    val Slack = "Slack"
+    val Facebook     = "Facebook"
+    val Slack        = "Slack"
     val `Twilio-Sms` = "Twilio-Sms"
-    val Kik = "Kik"
+    val Kik          = "Kik"
 
     val values = IndexedSeq(Facebook, Slack, `Twilio-Sms`, Kik)
   }
 
   /**
-   * Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..
-   */
+    * Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..
+    */
   @js.native
   trait CodeHook extends js.Object {
     var messageVersion: MessageVersion
@@ -318,20 +367,19 @@ package lexmodelbuildingservice {
   }
 
   object CodeHook {
-    def apply(
-      messageVersion: MessageVersion,
-      uri: LambdaARN): CodeHook = {
+    def apply(messageVersion: MessageVersion, uri: LambdaARN): CodeHook = {
       val _fields = IndexedSeq[(String, js.Any)](
         "messageVersion" -> messageVersion.asInstanceOf[js.Any],
-        "uri" -> uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "uri"            -> uri.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeHook]
     }
   }
 
   object ContentTypeEnum {
-    val PlainText = "PlainText"
-    val SSML = "SSML"
+    val PlainText     = "PlainText"
+    val SSML          = "SSML"
     val CustomPayload = "CustomPayload"
 
     val values = IndexedSeq(PlainText, SSML, CustomPayload)
@@ -344,12 +392,10 @@ package lexmodelbuildingservice {
   }
 
   object CreateBotVersionRequest {
-    def apply(
-      name: BotName,
-      checksum: js.UndefOr[String] = js.undefined): CreateBotVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: BotName, checksum: js.UndefOr[String] = js.undefined): CreateBotVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "checksum" -> checksum.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBotVersionRequest]
     }
@@ -375,38 +421,68 @@ package lexmodelbuildingservice {
   }
 
   object CreateBotVersionResponse {
-    def apply(
-      abortStatement: js.UndefOr[Statement] = js.undefined,
-      checksum: js.UndefOr[String] = js.undefined,
-      childDirected: js.UndefOr[Boolean] = js.undefined,
-      clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      failureReason: js.UndefOr[String] = js.undefined,
-      idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-      intents: js.UndefOr[IntentList] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      locale: js.UndefOr[Locale] = js.undefined,
-      name: js.UndefOr[BotName] = js.undefined,
-      status: js.UndefOr[Status] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      voiceId: js.UndefOr[String] = js.undefined): CreateBotVersionResponse = {
+    def apply(abortStatement: js.UndefOr[Statement] = js.undefined,
+              checksum: js.UndefOr[String] = js.undefined,
+              childDirected: js.UndefOr[Boolean] = js.undefined,
+              clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              failureReason: js.UndefOr[String] = js.undefined,
+              idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
+              intents: js.UndefOr[IntentList] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              locale: js.UndefOr[Locale] = js.undefined,
+              name: js.UndefOr[BotName] = js.undefined,
+              status: js.UndefOr[Status] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined,
+              voiceId: js.UndefOr[String] = js.undefined): CreateBotVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "abortStatement" -> abortStatement.map { x => x.asInstanceOf[js.Any] },
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "childDirected" -> childDirected.map { x => x.asInstanceOf[js.Any] },
-        "clarificationPrompt" -> clarificationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "intents" -> intents.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "locale" -> locale.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "voiceId" -> voiceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "abortStatement" -> abortStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "childDirected" -> childDirected.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "clarificationPrompt" -> clarificationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failureReason" -> failureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "intents" -> intents.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "locale" -> locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "voiceId" -> voiceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBotVersionResponse]
     }
@@ -419,12 +495,10 @@ package lexmodelbuildingservice {
   }
 
   object CreateIntentVersionRequest {
-    def apply(
-      name: IntentName,
-      checksum: js.UndefOr[String] = js.undefined): CreateIntentVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: IntentName, checksum: js.UndefOr[String] = js.undefined): CreateIntentVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "checksum" -> checksum.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntentVersionRequest]
     }
@@ -450,38 +524,68 @@ package lexmodelbuildingservice {
   }
 
   object CreateIntentVersionResponse {
-    def apply(
-      checksum: js.UndefOr[String] = js.undefined,
-      conclusionStatement: js.UndefOr[Statement] = js.undefined,
-      confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-      followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-      fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[IntentName] = js.undefined,
-      parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-      rejectionStatement: js.UndefOr[Statement] = js.undefined,
-      sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-      slots: js.UndefOr[SlotList] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): CreateIntentVersionResponse = {
+    def apply(checksum: js.UndefOr[String] = js.undefined,
+              conclusionStatement: js.UndefOr[Statement] = js.undefined,
+              confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
+              followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
+              fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[IntentName] = js.undefined,
+              parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
+              rejectionStatement: js.UndefOr[Statement] = js.undefined,
+              sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
+              slots: js.UndefOr[SlotList] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): CreateIntentVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "conclusionStatement" -> conclusionStatement.map { x => x.asInstanceOf[js.Any] },
-        "confirmationPrompt" -> confirmationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "dialogCodeHook" -> dialogCodeHook.map { x => x.asInstanceOf[js.Any] },
-        "followUpPrompt" -> followUpPrompt.map { x => x.asInstanceOf[js.Any] },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "parentIntentSignature" -> parentIntentSignature.map { x => x.asInstanceOf[js.Any] },
-        "rejectionStatement" -> rejectionStatement.map { x => x.asInstanceOf[js.Any] },
-        "sampleUtterances" -> sampleUtterances.map { x => x.asInstanceOf[js.Any] },
-        "slots" -> slots.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "conclusionStatement" -> conclusionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "confirmationPrompt" -> confirmationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dialogCodeHook" -> dialogCodeHook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "followUpPrompt" -> followUpPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "parentIntentSignature" -> parentIntentSignature.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "rejectionStatement" -> rejectionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sampleUtterances" -> sampleUtterances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "slots" -> slots.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntentVersionResponse]
     }
@@ -494,12 +598,10 @@ package lexmodelbuildingservice {
   }
 
   object CreateSlotTypeVersionRequest {
-    def apply(
-      name: SlotTypeName,
-      checksum: js.UndefOr[String] = js.undefined): CreateSlotTypeVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: SlotTypeName, checksum: js.UndefOr[String] = js.undefined): CreateSlotTypeVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "checksum" -> checksum.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSlotTypeVersionRequest]
     }
@@ -518,24 +620,40 @@ package lexmodelbuildingservice {
   }
 
   object CreateSlotTypeVersionResponse {
-    def apply(
-      checksum: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[SlotTypeName] = js.undefined,
-      valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): CreateSlotTypeVersionResponse = {
+    def apply(checksum: js.UndefOr[String] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[SlotTypeName] = js.undefined,
+              valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): CreateSlotTypeVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "enumerationValues" -> enumerationValues.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "enumerationValues" -> enumerationValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSlotTypeVersionResponse]
     }
@@ -548,12 +666,10 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotAliasRequest {
-    def apply(
-      botName: BotName,
-      name: AliasName): DeleteBotAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(botName: BotName, name: AliasName): DeleteBotAliasRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("botName" -> botName.asInstanceOf[js.Any], "name" -> name.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotAliasRequest]
     }
@@ -567,14 +683,12 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotChannelAssociationRequest {
-    def apply(
-      botAlias: AliasName,
-      botName: BotName,
-      name: BotChannelName): DeleteBotChannelAssociationRequest = {
+    def apply(botAlias: AliasName, botName: BotName, name: BotChannelName): DeleteBotChannelAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName" -> botName.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "botName"  -> botName.asInstanceOf[js.Any],
+        "name"     -> name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotChannelAssociationRequest]
     }
@@ -586,10 +700,9 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotRequest {
-    def apply(
-      name: BotName): DeleteBotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: BotName): DeleteBotRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotRequest]
     }
@@ -602,12 +715,10 @@ package lexmodelbuildingservice {
   }
 
   object DeleteBotVersionRequest {
-    def apply(
-      name: BotName,
-      version: NumericalVersion): DeleteBotVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: BotName, version: NumericalVersion): DeleteBotVersionRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "version" -> version.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBotVersionRequest]
     }
@@ -619,10 +730,9 @@ package lexmodelbuildingservice {
   }
 
   object DeleteIntentRequest {
-    def apply(
-      name: IntentName): DeleteIntentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: IntentName): DeleteIntentRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntentRequest]
     }
@@ -635,12 +745,10 @@ package lexmodelbuildingservice {
   }
 
   object DeleteIntentVersionRequest {
-    def apply(
-      name: IntentName,
-      version: NumericalVersion): DeleteIntentVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: IntentName, version: NumericalVersion): DeleteIntentVersionRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "version" -> version.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntentVersionRequest]
     }
@@ -652,10 +760,9 @@ package lexmodelbuildingservice {
   }
 
   object DeleteSlotTypeRequest {
-    def apply(
-      name: SlotTypeName): DeleteSlotTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: SlotTypeName): DeleteSlotTypeRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSlotTypeRequest]
     }
@@ -668,12 +775,10 @@ package lexmodelbuildingservice {
   }
 
   object DeleteSlotTypeVersionRequest {
-    def apply(
-      name: SlotTypeName,
-      version: NumericalVersion): DeleteSlotTypeVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: SlotTypeName, version: NumericalVersion): DeleteSlotTypeVersionRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "version" -> version.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSlotTypeVersionRequest]
     }
@@ -686,24 +791,22 @@ package lexmodelbuildingservice {
   }
 
   object DeleteUtterancesRequest {
-    def apply(
-      botName: BotName,
-      userId: UserId): DeleteUtterancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.asInstanceOf[js.Any],
-        "userId" -> userId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(botName: BotName, userId: UserId): DeleteUtterancesRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("botName" -> botName.asInstanceOf[js.Any], "userId" -> userId.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUtterancesRequest]
     }
   }
 
   /**
-   * Each slot type can have a set of values. Each enumeration value represents a value the slot type can take.
-   *  For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values
-   * * thick
-   *  * thin
-   *  * stuffed
-   */
+    * Each slot type can have a set of values. Each enumeration value represents a value the slot type can take.
+    *  For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values
+    * * thick
+    *  * thin
+    *  * stuffed
+    */
   @js.native
   trait EnumerationValue extends js.Object {
     var value: Value
@@ -711,12 +814,11 @@ package lexmodelbuildingservice {
   }
 
   object EnumerationValue {
-    def apply(
-      value: Value,
-      synonyms: js.UndefOr[SynonymList] = js.undefined): EnumerationValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "value" -> value.asInstanceOf[js.Any],
-        "synonyms" -> synonyms.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(value: Value, synonyms: js.UndefOr[SynonymList] = js.undefined): EnumerationValue = {
+      val _fields = IndexedSeq[(String, js.Any)]("value" -> value.asInstanceOf[js.Any], "synonyms" -> synonyms.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnumerationValue]
     }
@@ -724,22 +826,22 @@ package lexmodelbuildingservice {
 
   object ExportStatusEnum {
     val IN_PROGRESS = "IN_PROGRESS"
-    val READY = "READY"
-    val FAILED = "FAILED"
+    val READY       = "READY"
+    val FAILED      = "FAILED"
 
     val values = IndexedSeq(IN_PROGRESS, READY, FAILED)
   }
 
   object ExportTypeEnum {
     val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT"
-    val LEX = "LEX"
+    val LEX              = "LEX"
 
     val values = IndexedSeq(ALEXA_SKILLS_KIT, LEX)
   }
 
   /**
-   * A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
-   */
+    * A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
+    */
   @js.native
   trait FollowUpPrompt extends js.Object {
     var prompt: Prompt
@@ -747,23 +849,22 @@ package lexmodelbuildingservice {
   }
 
   object FollowUpPrompt {
-    def apply(
-      prompt: Prompt,
-      rejectionStatement: Statement): FollowUpPrompt = {
+    def apply(prompt: Prompt, rejectionStatement: Statement): FollowUpPrompt = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "prompt" -> prompt.asInstanceOf[js.Any],
-        "rejectionStatement" -> rejectionStatement.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "prompt"             -> prompt.asInstanceOf[js.Any],
+        "rejectionStatement" -> rejectionStatement.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FollowUpPrompt]
     }
   }
 
   /**
-   * Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application.
-   *  Consider the following examples:
-   * * In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria.
-   *  * In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client.
-   */
+    * Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application.
+    *  Consider the following examples:
+    * * In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria.
+    *  * In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client.
+    */
   @js.native
   trait FulfillmentActivity extends js.Object {
     var `type`: FulfillmentActivityType
@@ -771,12 +872,11 @@ package lexmodelbuildingservice {
   }
 
   object FulfillmentActivity {
-    def apply(
-      `type`: FulfillmentActivityType,
-      codeHook: js.UndefOr[CodeHook] = js.undefined): FulfillmentActivity = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.asInstanceOf[js.Any],
-        "codeHook" -> codeHook.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(`type`: FulfillmentActivityType, codeHook: js.UndefOr[CodeHook] = js.undefined): FulfillmentActivity = {
+      val _fields = IndexedSeq[(String, js.Any)]("`type`" -> `type`.asInstanceOf[js.Any], "codeHook" -> codeHook.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FulfillmentActivity]
     }
@@ -784,7 +884,7 @@ package lexmodelbuildingservice {
 
   object FulfillmentActivityTypeEnum {
     val ReturnIntent = "ReturnIntent"
-    val CodeHook = "CodeHook"
+    val CodeHook     = "CodeHook"
 
     val values = IndexedSeq(ReturnIntent, CodeHook)
   }
@@ -796,12 +896,10 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasRequest {
-    def apply(
-      botName: BotName,
-      name: AliasName): GetBotAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(botName: BotName, name: AliasName): GetBotAliasRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("botName" -> botName.asInstanceOf[js.Any], "name" -> name.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasRequest]
     }
@@ -819,22 +917,36 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasResponse {
-    def apply(
-      botName: js.UndefOr[BotName] = js.undefined,
-      botVersion: js.UndefOr[Version] = js.undefined,
-      checksum: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[AliasName] = js.undefined): GetBotAliasResponse = {
+    def apply(botName: js.UndefOr[BotName] = js.undefined,
+              botVersion: js.UndefOr[Version] = js.undefined,
+              checksum: js.UndefOr[String] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[AliasName] = js.undefined): GetBotAliasResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x => x.asInstanceOf[js.Any] },
-        "botVersion" -> botVersion.map { x => x.asInstanceOf[js.Any] },
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "botName" -> botName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "botVersion" -> botVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasResponse]
     }
@@ -849,16 +961,22 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasesRequest {
-    def apply(
-      botName: BotName,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nameContains: js.UndefOr[AliasName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotAliasesRequest = {
+    def apply(botName: BotName,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nameContains: js.UndefOr[AliasName] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotAliasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "botName" -> botName.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nameContains" -> nameContains.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nameContains" -> nameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasesRequest]
     }
@@ -871,12 +989,13 @@ package lexmodelbuildingservice {
   }
 
   object GetBotAliasesResponse {
-    def apply(
-      BotAliases: js.UndefOr[BotAliasMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotAliasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BotAliases" -> BotAliases.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(BotAliases: js.UndefOr[BotAliasMetadataList] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotAliasesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("BotAliases" -> BotAliases.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotAliasesResponse]
     }
@@ -890,14 +1009,12 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationRequest {
-    def apply(
-      botAlias: AliasName,
-      botName: BotName,
-      name: BotChannelName): GetBotChannelAssociationRequest = {
+    def apply(botAlias: AliasName, botName: BotName, name: BotChannelName): GetBotChannelAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName" -> botName.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "botName"  -> botName.asInstanceOf[js.Any],
+        "name"     -> name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationRequest]
     }
@@ -917,26 +1034,44 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationResponse {
-    def apply(
-      botAlias: js.UndefOr[AliasName] = js.undefined,
-      botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
-      botName: js.UndefOr[BotName] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      failureReason: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[BotChannelName] = js.undefined,
-      status: js.UndefOr[ChannelStatus] = js.undefined,
-      `type`: js.UndefOr[ChannelType] = js.undefined): GetBotChannelAssociationResponse = {
+    def apply(botAlias: js.UndefOr[AliasName] = js.undefined,
+              botConfiguration: js.UndefOr[ChannelConfigurationMap] = js.undefined,
+              botName: js.UndefOr[BotName] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              failureReason: js.UndefOr[String] = js.undefined,
+              name: js.UndefOr[BotChannelName] = js.undefined,
+              status: js.UndefOr[ChannelStatus] = js.undefined,
+              `type`: js.UndefOr[ChannelType] = js.undefined): GetBotChannelAssociationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "botAlias" -> botAlias.map { x => x.asInstanceOf[js.Any] },
-        "botConfiguration" -> botConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "botName" -> botName.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "botAlias" -> botAlias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "botConfiguration" -> botConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "botName" -> botName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failureReason" -> failureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationResponse]
     }
@@ -952,18 +1087,24 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationsRequest {
-    def apply(
-      botAlias: AliasNameOrListAll,
-      botName: BotName,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nameContains: js.UndefOr[BotChannelName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotChannelAssociationsRequest = {
+    def apply(botAlias: AliasNameOrListAll,
+              botName: BotName,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nameContains: js.UndefOr[BotChannelName] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotChannelAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "botAlias" -> botAlias.asInstanceOf[js.Any],
-        "botName" -> botName.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nameContains" -> nameContains.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "botName"  -> botName.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nameContains" -> nameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationsRequest]
     }
@@ -976,12 +1117,13 @@ package lexmodelbuildingservice {
   }
 
   object GetBotChannelAssociationsResponse {
-    def apply(
-      botChannelAssociations: js.UndefOr[BotChannelAssociationList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotChannelAssociationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botChannelAssociations" -> botChannelAssociations.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(botChannelAssociations: js.UndefOr[BotChannelAssociationList] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotChannelAssociationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("botChannelAssociations" -> botChannelAssociations.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotChannelAssociationsResponse]
     }
@@ -994,12 +1136,11 @@ package lexmodelbuildingservice {
   }
 
   object GetBotRequest {
-    def apply(
-      name: BotName,
-      versionOrAlias: String): GetBotRequest = {
+    def apply(name: BotName, versionOrAlias: String): GetBotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "versionOrAlias" -> versionOrAlias.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "name"           -> name.asInstanceOf[js.Any],
+        "versionOrAlias" -> versionOrAlias.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotRequest]
     }
@@ -1025,38 +1166,68 @@ package lexmodelbuildingservice {
   }
 
   object GetBotResponse {
-    def apply(
-      abortStatement: js.UndefOr[Statement] = js.undefined,
-      checksum: js.UndefOr[String] = js.undefined,
-      childDirected: js.UndefOr[Boolean] = js.undefined,
-      clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      failureReason: js.UndefOr[String] = js.undefined,
-      idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-      intents: js.UndefOr[IntentList] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      locale: js.UndefOr[Locale] = js.undefined,
-      name: js.UndefOr[BotName] = js.undefined,
-      status: js.UndefOr[Status] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      voiceId: js.UndefOr[String] = js.undefined): GetBotResponse = {
+    def apply(abortStatement: js.UndefOr[Statement] = js.undefined,
+              checksum: js.UndefOr[String] = js.undefined,
+              childDirected: js.UndefOr[Boolean] = js.undefined,
+              clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              failureReason: js.UndefOr[String] = js.undefined,
+              idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
+              intents: js.UndefOr[IntentList] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              locale: js.UndefOr[Locale] = js.undefined,
+              name: js.UndefOr[BotName] = js.undefined,
+              status: js.UndefOr[Status] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined,
+              voiceId: js.UndefOr[String] = js.undefined): GetBotResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "abortStatement" -> abortStatement.map { x => x.asInstanceOf[js.Any] },
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "childDirected" -> childDirected.map { x => x.asInstanceOf[js.Any] },
-        "clarificationPrompt" -> clarificationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "intents" -> intents.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "locale" -> locale.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "voiceId" -> voiceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "abortStatement" -> abortStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "childDirected" -> childDirected.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "clarificationPrompt" -> clarificationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failureReason" -> failureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "intents" -> intents.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "locale" -> locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "voiceId" -> voiceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotResponse]
     }
@@ -1070,14 +1241,15 @@ package lexmodelbuildingservice {
   }
 
   object GetBotVersionsRequest {
-    def apply(
-      name: BotName,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: BotName,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "maxResults" -> maxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotVersionsRequest]
     }
@@ -1090,12 +1262,13 @@ package lexmodelbuildingservice {
   }
 
   object GetBotVersionsResponse {
-    def apply(
-      bots: js.UndefOr[BotMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bots" -> bots.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(bots: js.UndefOr[BotMetadataList] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("bots" -> bots.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotVersionsResponse]
     }
@@ -1109,14 +1282,20 @@ package lexmodelbuildingservice {
   }
 
   object GetBotsRequest {
-    def apply(
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nameContains: js.UndefOr[BotName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotsRequest = {
+    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nameContains: js.UndefOr[BotName] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nameContains" -> nameContains.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nameContains" -> nameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotsRequest]
     }
@@ -1129,12 +1308,13 @@ package lexmodelbuildingservice {
   }
 
   object GetBotsResponse {
-    def apply(
-      bots: js.UndefOr[BotMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBotsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bots" -> bots.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(bots: js.UndefOr[BotMetadataList] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBotsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("bots" -> bots.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBotsResponse]
     }
@@ -1146,10 +1326,9 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentRequest {
-    def apply(
-      signature: BuiltinIntentSignature): GetBuiltinIntentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(signature: BuiltinIntentSignature): GetBuiltinIntentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("signature" -> signature.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentRequest]
     }
@@ -1163,14 +1342,20 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentResponse {
-    def apply(
-      signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-      slots: js.UndefOr[BuiltinIntentSlotList] = js.undefined,
-      supportedLocales: js.UndefOr[LocaleList] = js.undefined): GetBuiltinIntentResponse = {
+    def apply(signature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
+              slots: js.UndefOr[BuiltinIntentSlotList] = js.undefined,
+              supportedLocales: js.UndefOr[LocaleList] = js.undefined): GetBuiltinIntentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "signature" -> signature.map { x => x.asInstanceOf[js.Any] },
-        "slots" -> slots.map { x => x.asInstanceOf[js.Any] },
-        "supportedLocales" -> supportedLocales.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "signature" -> signature.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "slots" -> slots.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "supportedLocales" -> supportedLocales.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentResponse]
     }
@@ -1185,16 +1370,24 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentsRequest {
-    def apply(
-      locale: js.UndefOr[Locale] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      signatureContains: js.UndefOr[String] = js.undefined): GetBuiltinIntentsRequest = {
+    def apply(locale: js.UndefOr[Locale] = js.undefined,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined,
+              signatureContains: js.UndefOr[String] = js.undefined): GetBuiltinIntentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "locale" -> locale.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "signatureContains" -> signatureContains.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "locale" -> locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "signatureContains" -> signatureContains.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentsRequest]
     }
@@ -1207,12 +1400,13 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinIntentsResponse {
-    def apply(
-      intents: js.UndefOr[BuiltinIntentMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetBuiltinIntentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "intents" -> intents.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(intents: js.UndefOr[BuiltinIntentMetadataList] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetBuiltinIntentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("intents" -> intents.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinIntentsResponse]
     }
@@ -1227,16 +1421,24 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinSlotTypesRequest {
-    def apply(
-      locale: js.UndefOr[Locale] = js.undefined,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      signatureContains: js.UndefOr[String] = js.undefined): GetBuiltinSlotTypesRequest = {
+    def apply(locale: js.UndefOr[Locale] = js.undefined,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined,
+              signatureContains: js.UndefOr[String] = js.undefined): GetBuiltinSlotTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "locale" -> locale.map { x => x.asInstanceOf[js.Any] },
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "signatureContains" -> signatureContains.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "locale" -> locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "signatureContains" -> signatureContains.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinSlotTypesRequest]
     }
@@ -1249,12 +1451,13 @@ package lexmodelbuildingservice {
   }
 
   object GetBuiltinSlotTypesResponse {
-    def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      slotTypes: js.UndefOr[BuiltinSlotTypeMetadataList] = js.undefined): GetBuiltinSlotTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "slotTypes" -> slotTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
+              slotTypes: js.UndefOr[BuiltinSlotTypeMetadataList] = js.undefined): GetBuiltinSlotTypesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "slotTypes" -> slotTypes.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBuiltinSlotTypesResponse]
     }
@@ -1269,16 +1472,16 @@ package lexmodelbuildingservice {
   }
 
   object GetExportRequest {
-    def apply(
-      exportType: ExportType,
-      name: Name,
-      resourceType: ResourceType,
-      version: NumericalVersion): GetExportRequest = {
+    def apply(exportType: ExportType,
+              name: Name,
+              resourceType: ResourceType,
+              version: NumericalVersion): GetExportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exportType" -> exportType.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
+        "exportType"   -> exportType.asInstanceOf[js.Any],
+        "name"         -> name.asInstanceOf[js.Any],
         "resourceType" -> resourceType.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "version"      -> version.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportRequest]
     }
@@ -1296,22 +1499,36 @@ package lexmodelbuildingservice {
   }
 
   object GetExportResponse {
-    def apply(
-      exportStatus: js.UndefOr[ExportStatus] = js.undefined,
-      exportType: js.UndefOr[ExportType] = js.undefined,
-      failureReason: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      resourceType: js.UndefOr[ResourceType] = js.undefined,
-      url: js.UndefOr[String] = js.undefined,
-      version: js.UndefOr[NumericalVersion] = js.undefined): GetExportResponse = {
+    def apply(exportStatus: js.UndefOr[ExportStatus] = js.undefined,
+              exportType: js.UndefOr[ExportType] = js.undefined,
+              failureReason: js.UndefOr[String] = js.undefined,
+              name: js.UndefOr[Name] = js.undefined,
+              resourceType: js.UndefOr[ResourceType] = js.undefined,
+              url: js.UndefOr[String] = js.undefined,
+              version: js.UndefOr[NumericalVersion] = js.undefined): GetExportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "exportStatus" -> exportStatus.map { x => x.asInstanceOf[js.Any] },
-        "exportType" -> exportType.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] },
-        "url" -> url.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "exportStatus" -> exportStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "exportType" -> exportType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failureReason" -> failureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resourceType" -> resourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "url" -> url.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportResponse]
     }
@@ -1323,10 +1540,9 @@ package lexmodelbuildingservice {
   }
 
   object GetImportRequest {
-    def apply(
-      importId: String): GetImportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "importId" -> importId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(importId: String): GetImportRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("importId" -> importId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportRequest]
     }
@@ -1344,22 +1560,36 @@ package lexmodelbuildingservice {
   }
 
   object GetImportResponse {
-    def apply(
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      failureReason: js.UndefOr[StringList] = js.undefined,
-      importId: js.UndefOr[String] = js.undefined,
-      importStatus: js.UndefOr[ImportStatus] = js.undefined,
-      mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      resourceType: js.UndefOr[ResourceType] = js.undefined): GetImportResponse = {
+    def apply(createdDate: js.UndefOr[Timestamp] = js.undefined,
+              failureReason: js.UndefOr[StringList] = js.undefined,
+              importId: js.UndefOr[String] = js.undefined,
+              importStatus: js.UndefOr[ImportStatus] = js.undefined,
+              mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined,
+              name: js.UndefOr[Name] = js.undefined,
+              resourceType: js.UndefOr[ResourceType] = js.undefined): GetImportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
-        "importId" -> importId.map { x => x.asInstanceOf[js.Any] },
-        "importStatus" -> importStatus.map { x => x.asInstanceOf[js.Any] },
-        "mergeStrategy" -> mergeStrategy.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failureReason" -> failureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "importId" -> importId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "importStatus" -> importStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "mergeStrategy" -> mergeStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resourceType" -> resourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportResponse]
     }
@@ -1372,12 +1602,10 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentRequest {
-    def apply(
-      name: IntentName,
-      version: Version): GetIntentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: IntentName, version: Version): GetIntentRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "version" -> version.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentRequest]
     }
@@ -1403,38 +1631,68 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentResponse {
-    def apply(
-      checksum: js.UndefOr[String] = js.undefined,
-      conclusionStatement: js.UndefOr[Statement] = js.undefined,
-      confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-      followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-      fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[IntentName] = js.undefined,
-      parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-      rejectionStatement: js.UndefOr[Statement] = js.undefined,
-      sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-      slots: js.UndefOr[SlotList] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): GetIntentResponse = {
+    def apply(checksum: js.UndefOr[String] = js.undefined,
+              conclusionStatement: js.UndefOr[Statement] = js.undefined,
+              confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
+              followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
+              fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[IntentName] = js.undefined,
+              parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
+              rejectionStatement: js.UndefOr[Statement] = js.undefined,
+              sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
+              slots: js.UndefOr[SlotList] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): GetIntentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "conclusionStatement" -> conclusionStatement.map { x => x.asInstanceOf[js.Any] },
-        "confirmationPrompt" -> confirmationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "dialogCodeHook" -> dialogCodeHook.map { x => x.asInstanceOf[js.Any] },
-        "followUpPrompt" -> followUpPrompt.map { x => x.asInstanceOf[js.Any] },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "parentIntentSignature" -> parentIntentSignature.map { x => x.asInstanceOf[js.Any] },
-        "rejectionStatement" -> rejectionStatement.map { x => x.asInstanceOf[js.Any] },
-        "sampleUtterances" -> sampleUtterances.map { x => x.asInstanceOf[js.Any] },
-        "slots" -> slots.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "conclusionStatement" -> conclusionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "confirmationPrompt" -> confirmationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dialogCodeHook" -> dialogCodeHook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "followUpPrompt" -> followUpPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "parentIntentSignature" -> parentIntentSignature.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "rejectionStatement" -> rejectionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sampleUtterances" -> sampleUtterances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "slots" -> slots.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentResponse]
     }
@@ -1448,14 +1706,15 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentVersionsRequest {
-    def apply(
-      name: IntentName,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: IntentName,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "maxResults" -> maxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentVersionsRequest]
     }
@@ -1468,12 +1727,13 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentVersionsResponse {
-    def apply(
-      intents: js.UndefOr[IntentMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "intents" -> intents.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(intents: js.UndefOr[IntentMetadataList] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("intents" -> intents.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentVersionsResponse]
     }
@@ -1487,14 +1747,20 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentsRequest {
-    def apply(
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nameContains: js.UndefOr[IntentName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentsRequest = {
+    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nameContains: js.UndefOr[IntentName] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nameContains" -> nameContains.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nameContains" -> nameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentsRequest]
     }
@@ -1507,12 +1773,13 @@ package lexmodelbuildingservice {
   }
 
   object GetIntentsResponse {
-    def apply(
-      intents: js.UndefOr[IntentMetadataList] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "intents" -> intents.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(intents: js.UndefOr[IntentMetadataList] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetIntentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("intents" -> intents.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntentsResponse]
     }
@@ -1525,12 +1792,10 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeRequest {
-    def apply(
-      name: SlotTypeName,
-      version: Version): GetSlotTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "version" -> version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: SlotTypeName, version: Version): GetSlotTypeRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "version" -> version.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeRequest]
     }
@@ -1549,24 +1814,40 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeResponse {
-    def apply(
-      checksum: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[SlotTypeName] = js.undefined,
-      valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): GetSlotTypeResponse = {
+    def apply(checksum: js.UndefOr[String] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[SlotTypeName] = js.undefined,
+              valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): GetSlotTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "enumerationValues" -> enumerationValues.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "enumerationValues" -> enumerationValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeResponse]
     }
@@ -1580,14 +1861,15 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeVersionsRequest {
-    def apply(
-      name: SlotTypeName,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetSlotTypeVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(name: SlotTypeName,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetSlotTypeVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "maxResults" -> maxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeVersionsRequest]
     }
@@ -1600,12 +1882,13 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypeVersionsResponse {
-    def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined): GetSlotTypeVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "slotTypes" -> slotTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
+              slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined): GetSlotTypeVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "slotTypes" -> slotTypes.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypeVersionsResponse]
     }
@@ -1619,14 +1902,20 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypesRequest {
-    def apply(
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nameContains: js.UndefOr[SlotTypeName] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): GetSlotTypesRequest = {
+    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nameContains: js.UndefOr[SlotTypeName] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): GetSlotTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nameContains" -> nameContains.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nameContains" -> nameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypesRequest]
     }
@@ -1639,12 +1928,13 @@ package lexmodelbuildingservice {
   }
 
   object GetSlotTypesResponse {
-    def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined): GetSlotTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "slotTypes" -> slotTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
+              slotTypes: js.UndefOr[SlotTypeMetadataList] = js.undefined): GetSlotTypesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "slotTypes" -> slotTypes.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSlotTypesResponse]
     }
@@ -1658,14 +1948,12 @@ package lexmodelbuildingservice {
   }
 
   object GetUtterancesViewRequest {
-    def apply(
-      botName: BotName,
-      botVersions: BotVersions,
-      statusType: StatusType): GetUtterancesViewRequest = {
+    def apply(botName: BotName, botVersions: BotVersions, statusType: StatusType): GetUtterancesViewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.asInstanceOf[js.Any],
+        "botName"     -> botName.asInstanceOf[js.Any],
         "botVersions" -> botVersions.asInstanceOf[js.Any],
-        "statusType" -> statusType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "statusType"  -> statusType.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUtterancesViewRequest]
     }
@@ -1678,12 +1966,13 @@ package lexmodelbuildingservice {
   }
 
   object GetUtterancesViewResponse {
-    def apply(
-      botName: js.UndefOr[BotName] = js.undefined,
-      utterances: js.UndefOr[ListsOfUtterances] = js.undefined): GetUtterancesViewResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x => x.asInstanceOf[js.Any] },
-        "utterances" -> utterances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(botName: js.UndefOr[BotName] = js.undefined,
+              utterances: js.UndefOr[ListsOfUtterances] = js.undefined): GetUtterancesViewResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("botName" -> botName.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "utterances" -> utterances.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUtterancesViewResponse]
     }
@@ -1691,15 +1980,15 @@ package lexmodelbuildingservice {
 
   object ImportStatusEnum {
     val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETE = "COMPLETE"
-    val FAILED = "FAILED"
+    val COMPLETE    = "COMPLETE"
+    val FAILED      = "FAILED"
 
     val values = IndexedSeq(IN_PROGRESS, COMPLETE, FAILED)
   }
 
   /**
-   * Identifies the specific version of an intent.
-   */
+    * Identifies the specific version of an intent.
+    */
   @js.native
   trait Intent extends js.Object {
     var intentName: IntentName
@@ -1707,20 +1996,19 @@ package lexmodelbuildingservice {
   }
 
   object Intent {
-    def apply(
-      intentName: IntentName,
-      intentVersion: Version): Intent = {
+    def apply(intentName: IntentName, intentVersion: Version): Intent = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "intentName" -> intentName.asInstanceOf[js.Any],
-        "intentVersion" -> intentVersion.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "intentName"    -> intentName.asInstanceOf[js.Any],
+        "intentVersion" -> intentVersion.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Intent]
     }
   }
 
   /**
-   * Provides information about an intent.
-   */
+    * Provides information about an intent.
+    */
   @js.native
   trait IntentMetadata extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
@@ -1731,18 +2019,28 @@ package lexmodelbuildingservice {
   }
 
   object IntentMetadata {
-    def apply(
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[IntentName] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): IntentMetadata = {
+    def apply(createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[IntentName] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): IntentMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IntentMetadata]
     }
@@ -1764,8 +2062,8 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * The message object that provides the message text and its type.
-   */
+    * The message object that provides the message text and its type.
+    */
   @js.native
   trait Message extends js.Object {
     var content: ContentString
@@ -1774,29 +2072,31 @@ package lexmodelbuildingservice {
   }
 
   object Message {
-    def apply(
-      content: ContentString,
-      contentType: ContentType,
-      groupNumber: js.UndefOr[GroupNumber] = js.undefined): Message = {
+    def apply(content: ContentString,
+              contentType: ContentType,
+              groupNumber: js.UndefOr[GroupNumber] = js.undefined): Message = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "content" -> content.asInstanceOf[js.Any],
+        "content"     -> content.asInstanceOf[js.Any],
         "contentType" -> contentType.asInstanceOf[js.Any],
-        "groupNumber" -> groupNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "groupNumber" -> groupNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Message]
     }
   }
 
   object ProcessBehaviorEnum {
-    val SAVE = "SAVE"
+    val SAVE  = "SAVE"
     val BUILD = "BUILD"
 
     val values = IndexedSeq(SAVE, BUILD)
   }
 
   /**
-   * Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.
-   */
+    * Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>.
+    */
   @js.native
   trait Prompt extends js.Object {
     var maxAttempts: PromptMaxAttempts
@@ -1805,14 +2105,16 @@ package lexmodelbuildingservice {
   }
 
   object Prompt {
-    def apply(
-      maxAttempts: PromptMaxAttempts,
-      messages: MessageList,
-      responseCard: js.UndefOr[ResponseCard] = js.undefined): Prompt = {
+    def apply(maxAttempts: PromptMaxAttempts,
+              messages: MessageList,
+              responseCard: js.UndefOr[ResponseCard] = js.undefined): Prompt = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxAttempts" -> maxAttempts.asInstanceOf[js.Any],
-        "messages" -> messages.asInstanceOf[js.Any],
-        "responseCard" -> responseCard.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "messages"    -> messages.asInstanceOf[js.Any],
+        "responseCard" -> responseCard.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Prompt]
     }
@@ -1828,18 +2130,22 @@ package lexmodelbuildingservice {
   }
 
   object PutBotAliasRequest {
-    def apply(
-      botName: BotName,
-      botVersion: Version,
-      name: AliasName,
-      checksum: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined): PutBotAliasRequest = {
+    def apply(botName: BotName,
+              botVersion: Version,
+              name: AliasName,
+              checksum: js.UndefOr[String] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined): PutBotAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.asInstanceOf[js.Any],
+        "botName"    -> botName.asInstanceOf[js.Any],
         "botVersion" -> botVersion.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name"       -> name.asInstanceOf[js.Any],
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotAliasRequest]
     }
@@ -1857,22 +2163,36 @@ package lexmodelbuildingservice {
   }
 
   object PutBotAliasResponse {
-    def apply(
-      botName: js.UndefOr[BotName] = js.undefined,
-      botVersion: js.UndefOr[Version] = js.undefined,
-      checksum: js.UndefOr[String] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[AliasName] = js.undefined): PutBotAliasResponse = {
+    def apply(botName: js.UndefOr[BotName] = js.undefined,
+              botVersion: js.UndefOr[Version] = js.undefined,
+              checksum: js.UndefOr[String] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[AliasName] = js.undefined): PutBotAliasResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "botName" -> botName.map { x => x.asInstanceOf[js.Any] },
-        "botVersion" -> botVersion.map { x => x.asInstanceOf[js.Any] },
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "botName" -> botName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "botVersion" -> botVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotAliasResponse]
     }
@@ -1895,32 +2215,50 @@ package lexmodelbuildingservice {
   }
 
   object PutBotRequest {
-    def apply(
-      childDirected: Boolean,
-      locale: Locale,
-      name: BotName,
-      abortStatement: js.UndefOr[Statement] = js.undefined,
-      checksum: js.UndefOr[String] = js.undefined,
-      clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createVersion: js.UndefOr[Boolean] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-      intents: js.UndefOr[IntentList] = js.undefined,
-      processBehavior: js.UndefOr[ProcessBehavior] = js.undefined,
-      voiceId: js.UndefOr[String] = js.undefined): PutBotRequest = {
+    def apply(childDirected: Boolean,
+              locale: Locale,
+              name: BotName,
+              abortStatement: js.UndefOr[Statement] = js.undefined,
+              checksum: js.UndefOr[String] = js.undefined,
+              clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createVersion: js.UndefOr[Boolean] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
+              intents: js.UndefOr[IntentList] = js.undefined,
+              processBehavior: js.UndefOr[ProcessBehavior] = js.undefined,
+              voiceId: js.UndefOr[String] = js.undefined): PutBotRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "childDirected" -> childDirected.asInstanceOf[js.Any],
-        "locale" -> locale.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
-        "abortStatement" -> abortStatement.map { x => x.asInstanceOf[js.Any] },
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "clarificationPrompt" -> clarificationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createVersion" -> createVersion.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "intents" -> intents.map { x => x.asInstanceOf[js.Any] },
-        "processBehavior" -> processBehavior.map { x => x.asInstanceOf[js.Any] },
-        "voiceId" -> voiceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "locale"        -> locale.asInstanceOf[js.Any],
+        "name"          -> name.asInstanceOf[js.Any],
+        "abortStatement" -> abortStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "clarificationPrompt" -> clarificationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createVersion" -> createVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "intents" -> intents.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "processBehavior" -> processBehavior.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "voiceId" -> voiceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotRequest]
     }
@@ -1947,40 +2285,72 @@ package lexmodelbuildingservice {
   }
 
   object PutBotResponse {
-    def apply(
-      abortStatement: js.UndefOr[Statement] = js.undefined,
-      checksum: js.UndefOr[String] = js.undefined,
-      childDirected: js.UndefOr[Boolean] = js.undefined,
-      clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createVersion: js.UndefOr[Boolean] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      failureReason: js.UndefOr[String] = js.undefined,
-      idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
-      intents: js.UndefOr[IntentList] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      locale: js.UndefOr[Locale] = js.undefined,
-      name: js.UndefOr[BotName] = js.undefined,
-      status: js.UndefOr[Status] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined,
-      voiceId: js.UndefOr[String] = js.undefined): PutBotResponse = {
+    def apply(abortStatement: js.UndefOr[Statement] = js.undefined,
+              checksum: js.UndefOr[String] = js.undefined,
+              childDirected: js.UndefOr[Boolean] = js.undefined,
+              clarificationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createVersion: js.UndefOr[Boolean] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              failureReason: js.UndefOr[String] = js.undefined,
+              idleSessionTTLInSeconds: js.UndefOr[SessionTTL] = js.undefined,
+              intents: js.UndefOr[IntentList] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              locale: js.UndefOr[Locale] = js.undefined,
+              name: js.UndefOr[BotName] = js.undefined,
+              status: js.UndefOr[Status] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined,
+              voiceId: js.UndefOr[String] = js.undefined): PutBotResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "abortStatement" -> abortStatement.map { x => x.asInstanceOf[js.Any] },
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "childDirected" -> childDirected.map { x => x.asInstanceOf[js.Any] },
-        "clarificationPrompt" -> clarificationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createVersion" -> createVersion.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "failureReason" -> failureReason.map { x => x.asInstanceOf[js.Any] },
-        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "intents" -> intents.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "locale" -> locale.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] },
-        "voiceId" -> voiceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "abortStatement" -> abortStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "childDirected" -> childDirected.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "clarificationPrompt" -> clarificationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createVersion" -> createVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failureReason" -> failureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "idleSessionTTLInSeconds" -> idleSessionTTLInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "intents" -> intents.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "locale" -> locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "voiceId" -> voiceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutBotResponse]
     }
@@ -2004,34 +2374,58 @@ package lexmodelbuildingservice {
   }
 
   object PutIntentRequest {
-    def apply(
-      name: IntentName,
-      checksum: js.UndefOr[String] = js.undefined,
-      conclusionStatement: js.UndefOr[Statement] = js.undefined,
-      confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createVersion: js.UndefOr[Boolean] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-      followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-      fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-      parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-      rejectionStatement: js.UndefOr[Statement] = js.undefined,
-      sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-      slots: js.UndefOr[SlotList] = js.undefined): PutIntentRequest = {
+    def apply(name: IntentName,
+              checksum: js.UndefOr[String] = js.undefined,
+              conclusionStatement: js.UndefOr[Statement] = js.undefined,
+              confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createVersion: js.UndefOr[Boolean] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
+              followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
+              fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+              parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
+              rejectionStatement: js.UndefOr[Statement] = js.undefined,
+              sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
+              slots: js.UndefOr[SlotList] = js.undefined): PutIntentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "conclusionStatement" -> conclusionStatement.map { x => x.asInstanceOf[js.Any] },
-        "confirmationPrompt" -> confirmationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createVersion" -> createVersion.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "dialogCodeHook" -> dialogCodeHook.map { x => x.asInstanceOf[js.Any] },
-        "followUpPrompt" -> followUpPrompt.map { x => x.asInstanceOf[js.Any] },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x => x.asInstanceOf[js.Any] },
-        "parentIntentSignature" -> parentIntentSignature.map { x => x.asInstanceOf[js.Any] },
-        "rejectionStatement" -> rejectionStatement.map { x => x.asInstanceOf[js.Any] },
-        "sampleUtterances" -> sampleUtterances.map { x => x.asInstanceOf[js.Any] },
-        "slots" -> slots.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "conclusionStatement" -> conclusionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "confirmationPrompt" -> confirmationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createVersion" -> createVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dialogCodeHook" -> dialogCodeHook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "followUpPrompt" -> followUpPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "parentIntentSignature" -> parentIntentSignature.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "rejectionStatement" -> rejectionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sampleUtterances" -> sampleUtterances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "slots" -> slots.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutIntentRequest]
     }
@@ -2058,40 +2452,72 @@ package lexmodelbuildingservice {
   }
 
   object PutIntentResponse {
-    def apply(
-      checksum: js.UndefOr[String] = js.undefined,
-      conclusionStatement: js.UndefOr[Statement] = js.undefined,
-      confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
-      createVersion: js.UndefOr[Boolean] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
-      followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
-      fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[IntentName] = js.undefined,
-      parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
-      rejectionStatement: js.UndefOr[Statement] = js.undefined,
-      sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
-      slots: js.UndefOr[SlotList] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): PutIntentResponse = {
+    def apply(checksum: js.UndefOr[String] = js.undefined,
+              conclusionStatement: js.UndefOr[Statement] = js.undefined,
+              confirmationPrompt: js.UndefOr[Prompt] = js.undefined,
+              createVersion: js.UndefOr[Boolean] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              dialogCodeHook: js.UndefOr[CodeHook] = js.undefined,
+              followUpPrompt: js.UndefOr[FollowUpPrompt] = js.undefined,
+              fulfillmentActivity: js.UndefOr[FulfillmentActivity] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[IntentName] = js.undefined,
+              parentIntentSignature: js.UndefOr[BuiltinIntentSignature] = js.undefined,
+              rejectionStatement: js.UndefOr[Statement] = js.undefined,
+              sampleUtterances: js.UndefOr[IntentUtteranceList] = js.undefined,
+              slots: js.UndefOr[SlotList] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): PutIntentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "conclusionStatement" -> conclusionStatement.map { x => x.asInstanceOf[js.Any] },
-        "confirmationPrompt" -> confirmationPrompt.map { x => x.asInstanceOf[js.Any] },
-        "createVersion" -> createVersion.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "dialogCodeHook" -> dialogCodeHook.map { x => x.asInstanceOf[js.Any] },
-        "followUpPrompt" -> followUpPrompt.map { x => x.asInstanceOf[js.Any] },
-        "fulfillmentActivity" -> fulfillmentActivity.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "parentIntentSignature" -> parentIntentSignature.map { x => x.asInstanceOf[js.Any] },
-        "rejectionStatement" -> rejectionStatement.map { x => x.asInstanceOf[js.Any] },
-        "sampleUtterances" -> sampleUtterances.map { x => x.asInstanceOf[js.Any] },
-        "slots" -> slots.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "conclusionStatement" -> conclusionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "confirmationPrompt" -> confirmationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createVersion" -> createVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dialogCodeHook" -> dialogCodeHook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "followUpPrompt" -> followUpPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fulfillmentActivity" -> fulfillmentActivity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "parentIntentSignature" -> parentIntentSignature.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "rejectionStatement" -> rejectionStatement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sampleUtterances" -> sampleUtterances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "slots" -> slots.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutIntentResponse]
     }
@@ -2108,20 +2534,30 @@ package lexmodelbuildingservice {
   }
 
   object PutSlotTypeRequest {
-    def apply(
-      name: SlotTypeName,
-      checksum: js.UndefOr[String] = js.undefined,
-      createVersion: js.UndefOr[Boolean] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-      valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined): PutSlotTypeRequest = {
+    def apply(name: SlotTypeName,
+              checksum: js.UndefOr[String] = js.undefined,
+              createVersion: js.UndefOr[Boolean] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
+              valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined): PutSlotTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.asInstanceOf[js.Any],
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "createVersion" -> createVersion.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "enumerationValues" -> enumerationValues.map { x => x.asInstanceOf[js.Any] },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createVersion" -> createVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "enumerationValues" -> enumerationValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSlotTypeRequest]
     }
@@ -2141,42 +2577,60 @@ package lexmodelbuildingservice {
   }
 
   object PutSlotTypeResponse {
-    def apply(
-      checksum: js.UndefOr[String] = js.undefined,
-      createVersion: js.UndefOr[Boolean] = js.undefined,
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[SlotTypeName] = js.undefined,
-      valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): PutSlotTypeResponse = {
+    def apply(checksum: js.UndefOr[String] = js.undefined,
+              createVersion: js.UndefOr[Boolean] = js.undefined,
+              createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              enumerationValues: js.UndefOr[EnumerationValues] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[SlotTypeName] = js.undefined,
+              valueSelectionStrategy: js.UndefOr[SlotValueSelectionStrategy] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): PutSlotTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "checksum" -> checksum.map { x => x.asInstanceOf[js.Any] },
-        "createVersion" -> createVersion.map { x => x.asInstanceOf[js.Any] },
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "enumerationValues" -> enumerationValues.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "valueSelectionStrategy" -> valueSelectionStrategy.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createVersion" -> createVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "enumerationValues" -> enumerationValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "valueSelectionStrategy" -> valueSelectionStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSlotTypeResponse]
     }
   }
 
   object ResourceTypeEnum {
-    val BOT = "BOT"
-    val INTENT = "INTENT"
+    val BOT       = "BOT"
+    val INTENT    = "INTENT"
     val SLOT_TYPE = "SLOT_TYPE"
 
     val values = IndexedSeq(BOT, INTENT, SLOT_TYPE)
   }
 
   /**
-   * Identifies the version of a specific slot.
-   */
+    * Identifies the version of a specific slot.
+    */
   @js.native
   trait Slot extends js.Object {
     var name: SlotName
@@ -2191,26 +2645,40 @@ package lexmodelbuildingservice {
   }
 
   object Slot {
-    def apply(
-      name: SlotName,
-      slotConstraint: SlotConstraint,
-      description: js.UndefOr[Description] = js.undefined,
-      priority: js.UndefOr[Priority] = js.undefined,
-      responseCard: js.UndefOr[ResponseCard] = js.undefined,
-      sampleUtterances: js.UndefOr[SlotUtteranceList] = js.undefined,
-      slotType: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
-      slotTypeVersion: js.UndefOr[Version] = js.undefined,
-      valueElicitationPrompt: js.UndefOr[Prompt] = js.undefined): Slot = {
+    def apply(name: SlotName,
+              slotConstraint: SlotConstraint,
+              description: js.UndefOr[Description] = js.undefined,
+              priority: js.UndefOr[Priority] = js.undefined,
+              responseCard: js.UndefOr[ResponseCard] = js.undefined,
+              sampleUtterances: js.UndefOr[SlotUtteranceList] = js.undefined,
+              slotType: js.UndefOr[CustomOrBuiltinSlotTypeName] = js.undefined,
+              slotTypeVersion: js.UndefOr[Version] = js.undefined,
+              valueElicitationPrompt: js.UndefOr[Prompt] = js.undefined): Slot = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "name" -> name.asInstanceOf[js.Any],
+        "name"           -> name.asInstanceOf[js.Any],
         "slotConstraint" -> slotConstraint.asInstanceOf[js.Any],
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "priority" -> priority.map { x => x.asInstanceOf[js.Any] },
-        "responseCard" -> responseCard.map { x => x.asInstanceOf[js.Any] },
-        "sampleUtterances" -> sampleUtterances.map { x => x.asInstanceOf[js.Any] },
-        "slotType" -> slotType.map { x => x.asInstanceOf[js.Any] },
-        "slotTypeVersion" -> slotTypeVersion.map { x => x.asInstanceOf[js.Any] },
-        "valueElicitationPrompt" -> valueElicitationPrompt.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "priority" -> priority.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "responseCard" -> responseCard.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sampleUtterances" -> sampleUtterances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "slotType" -> slotType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "slotTypeVersion" -> slotTypeVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "valueElicitationPrompt" -> valueElicitationPrompt.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Slot]
     }
@@ -2224,8 +2692,8 @@ package lexmodelbuildingservice {
   }
 
   /**
-   * Provides information about a slot type..
-   */
+    * Provides information about a slot type..
+    */
   @js.native
   trait SlotTypeMetadata extends js.Object {
     var createdDate: js.UndefOr[Timestamp]
@@ -2236,18 +2704,28 @@ package lexmodelbuildingservice {
   }
 
   object SlotTypeMetadata {
-    def apply(
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      description: js.UndefOr[Description] = js.undefined,
-      lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      name: js.UndefOr[SlotTypeName] = js.undefined,
-      version: js.UndefOr[Version] = js.undefined): SlotTypeMetadata = {
+    def apply(createdDate: js.UndefOr[Timestamp] = js.undefined,
+              description: js.UndefOr[Description] = js.undefined,
+              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              name: js.UndefOr[SlotTypeName] = js.undefined,
+              version: js.UndefOr[Version] = js.undefined): SlotTypeMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "lastUpdatedDate" -> lastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "version" -> version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUpdatedDate" -> lastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SlotTypeMetadata]
     }
@@ -2268,14 +2746,12 @@ package lexmodelbuildingservice {
   }
 
   object StartImportRequest {
-    def apply(
-      mergeStrategy: MergeStrategy,
-      payload: Blob,
-      resourceType: ResourceType): StartImportRequest = {
+    def apply(mergeStrategy: MergeStrategy, payload: Blob, resourceType: ResourceType): StartImportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "mergeStrategy" -> mergeStrategy.asInstanceOf[js.Any],
-        "payload" -> payload.asInstanceOf[js.Any],
-        "resourceType" -> resourceType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "payload"       -> payload.asInstanceOf[js.Any],
+        "resourceType"  -> resourceType.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImportRequest]
     }
@@ -2292,28 +2768,40 @@ package lexmodelbuildingservice {
   }
 
   object StartImportResponse {
-    def apply(
-      createdDate: js.UndefOr[Timestamp] = js.undefined,
-      importId: js.UndefOr[String] = js.undefined,
-      importStatus: js.UndefOr[ImportStatus] = js.undefined,
-      mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined,
-      name: js.UndefOr[Name] = js.undefined,
-      resourceType: js.UndefOr[ResourceType] = js.undefined): StartImportResponse = {
+    def apply(createdDate: js.UndefOr[Timestamp] = js.undefined,
+              importId: js.UndefOr[String] = js.undefined,
+              importStatus: js.UndefOr[ImportStatus] = js.undefined,
+              mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined,
+              name: js.UndefOr[Name] = js.undefined,
+              resourceType: js.UndefOr[ResourceType] = js.undefined): StartImportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "createdDate" -> createdDate.map { x => x.asInstanceOf[js.Any] },
-        "importId" -> importId.map { x => x.asInstanceOf[js.Any] },
-        "importStatus" -> importStatus.map { x => x.asInstanceOf[js.Any] },
-        "mergeStrategy" -> mergeStrategy.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "resourceType" -> resourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "createdDate" -> createdDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "importId" -> importId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "importStatus" -> importStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "mergeStrategy" -> mergeStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resourceType" -> resourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartImportResponse]
     }
   }
 
   /**
-   * A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.
-   */
+    * A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.
+    */
   @js.native
   trait Statement extends js.Object {
     var messages: MessageList
@@ -2321,37 +2809,37 @@ package lexmodelbuildingservice {
   }
 
   object Statement {
-    def apply(
-      messages: MessageList,
-      responseCard: js.UndefOr[ResponseCard] = js.undefined): Statement = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "messages" -> messages.asInstanceOf[js.Any],
-        "responseCard" -> responseCard.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(messages: MessageList, responseCard: js.UndefOr[ResponseCard] = js.undefined): Statement = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("messages" -> messages.asInstanceOf[js.Any], "responseCard" -> responseCard.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Statement]
     }
   }
 
   object StatusEnum {
-    val BUILDING = "BUILDING"
-    val READY = "READY"
+    val BUILDING            = "BUILDING"
+    val READY               = "READY"
     val READY_BASIC_TESTING = "READY_BASIC_TESTING"
-    val FAILED = "FAILED"
-    val NOT_BUILT = "NOT_BUILT"
+    val FAILED              = "FAILED"
+    val NOT_BUILT           = "NOT_BUILT"
 
     val values = IndexedSeq(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT)
   }
 
   object StatusTypeEnum {
     val Detected = "Detected"
-    val Missed = "Missed"
+    val Missed   = "Missed"
 
     val values = IndexedSeq(Detected, Missed)
   }
 
   /**
-   * Provides information about a single utterance that was made to your bot.
-   */
+    * Provides information about a single utterance that was made to your bot.
+    */
   @js.native
   trait UtteranceData extends js.Object {
     var count: js.UndefOr[Count]
@@ -2362,26 +2850,36 @@ package lexmodelbuildingservice {
   }
 
   object UtteranceData {
-    def apply(
-      count: js.UndefOr[Count] = js.undefined,
-      distinctUsers: js.UndefOr[Count] = js.undefined,
-      firstUtteredDate: js.UndefOr[Timestamp] = js.undefined,
-      lastUtteredDate: js.UndefOr[Timestamp] = js.undefined,
-      utteranceString: js.UndefOr[UtteranceString] = js.undefined): UtteranceData = {
+    def apply(count: js.UndefOr[Count] = js.undefined,
+              distinctUsers: js.UndefOr[Count] = js.undefined,
+              firstUtteredDate: js.UndefOr[Timestamp] = js.undefined,
+              lastUtteredDate: js.UndefOr[Timestamp] = js.undefined,
+              utteranceString: js.UndefOr[UtteranceString] = js.undefined): UtteranceData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "count" -> count.map { x => x.asInstanceOf[js.Any] },
-        "distinctUsers" -> distinctUsers.map { x => x.asInstanceOf[js.Any] },
-        "firstUtteredDate" -> firstUtteredDate.map { x => x.asInstanceOf[js.Any] },
-        "lastUtteredDate" -> lastUtteredDate.map { x => x.asInstanceOf[js.Any] },
-        "utteranceString" -> utteranceString.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "count" -> count.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "distinctUsers" -> distinctUsers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "firstUtteredDate" -> firstUtteredDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lastUtteredDate" -> lastUtteredDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "utteranceString" -> utteranceString.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UtteranceData]
     }
   }
 
   /**
-   * Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.
-   */
+    * Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances.
+    */
   @js.native
   trait UtteranceList extends js.Object {
     var botVersion: js.UndefOr[Version]
@@ -2389,12 +2887,13 @@ package lexmodelbuildingservice {
   }
 
   object UtteranceList {
-    def apply(
-      botVersion: js.UndefOr[Version] = js.undefined,
-      utterances: js.UndefOr[ListOfUtterance] = js.undefined): UtteranceList = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "botVersion" -> botVersion.map { x => x.asInstanceOf[js.Any] },
-        "utterances" -> utterances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(botVersion: js.UndefOr[Version] = js.undefined,
+              utterances: js.UndefOr[ListOfUtterance] = js.undefined): UtteranceList = {
+      val _fields = IndexedSeq[(String, js.Any)]("botVersion" -> botVersion.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "utterances" -> utterances.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UtteranceList]
     }

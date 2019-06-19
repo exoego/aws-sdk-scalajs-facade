@@ -7,29 +7,29 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object appsync {
-  type ApiKeys = js.Array[ApiKey]
-  type AuthenticationType = String
-  type AuthorizationType = String
-  type Blob = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type DataSourceType = String
-  type DataSources = js.Array[DataSource]
-  type DefaultAction = String
-  type FieldLogLevel = String
-  type Functions = js.Array[FunctionConfiguration]
-  type FunctionsIds = js.Array[String]
-  type GraphqlApis = js.Array[GraphqlApi]
-  type MapOfStringToString = js.Dictionary[String]
-  type MappingTemplate = String
-  type MaxResults = Int
-  type OutputType = String
-  type PaginationToken = String
+  type ApiKeys                      = js.Array[ApiKey]
+  type AuthenticationType           = String
+  type AuthorizationType            = String
+  type Blob                         = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type DataSourceType               = String
+  type DataSources                  = js.Array[DataSource]
+  type DefaultAction                = String
+  type FieldLogLevel                = String
+  type Functions                    = js.Array[FunctionConfiguration]
+  type FunctionsIds                 = js.Array[String]
+  type GraphqlApis                  = js.Array[GraphqlApi]
+  type MapOfStringToString          = js.Dictionary[String]
+  type MappingTemplate              = String
+  type MaxResults                   = Int
+  type OutputType                   = String
+  type PaginationToken              = String
   type RelationalDatabaseSourceType = String
-  type ResolverKind = String
-  type Resolvers = js.Array[Resolver]
-  type ResourceName = String
-  type SchemaStatus = String
-  type TypeDefinitionFormat = String
-  type TypeList = js.Array[Type]
+  type ResolverKind                 = String
+  type Resolvers                    = js.Array[Resolver]
+  type ResourceName                 = String
+  type SchemaStatus                 = String
+  type TypeDefinitionFormat         = String
+  type TypeList                     = js.Array[Type]
 }
 
 package appsync {
@@ -38,57 +38,60 @@ package appsync {
   class AppSync() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse] = js.native
+    def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse]             = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
-    def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse] = js.native
+    def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse]       = js.native
     def createGraphqlApi(params: CreateGraphqlApiRequest): Request[CreateGraphqlApiResponse] = js.native
-    def createResolver(params: CreateResolverRequest): Request[CreateResolverResponse] = js.native
-    def createType(params: CreateTypeRequest): Request[CreateTypeResponse] = js.native
-    def deleteApiKey(params: DeleteApiKeyRequest): Request[DeleteApiKeyResponse] = js.native
+    def createResolver(params: CreateResolverRequest): Request[CreateResolverResponse]       = js.native
+    def createType(params: CreateTypeRequest): Request[CreateTypeResponse]                   = js.native
+    def deleteApiKey(params: DeleteApiKeyRequest): Request[DeleteApiKeyResponse]             = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
-    def deleteFunction(params: DeleteFunctionRequest): Request[DeleteFunctionResponse] = js.native
+    def deleteFunction(params: DeleteFunctionRequest): Request[DeleteFunctionResponse]       = js.native
     def deleteGraphqlApi(params: DeleteGraphqlApiRequest): Request[DeleteGraphqlApiResponse] = js.native
-    def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse] = js.native
-    def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse] = js.native
-    def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse] = js.native
-    def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
-    def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse] = js.native
-    def getIntrospectionSchema(params: GetIntrospectionSchemaRequest): Request[GetIntrospectionSchemaResponse] = js.native
+    def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse]       = js.native
+    def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse]                   = js.native
+    def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse]          = js.native
+    def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse]                = js.native
+    def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse]          = js.native
+    def getIntrospectionSchema(params: GetIntrospectionSchemaRequest): Request[GetIntrospectionSchemaResponse] =
+      js.native
     def getResolver(params: GetResolverRequest): Request[GetResolverResponse] = js.native
-    def getSchemaCreationStatus(params: GetSchemaCreationStatusRequest): Request[GetSchemaCreationStatusResponse] = js.native
-    def getType(params: GetTypeRequest): Request[GetTypeResponse] = js.native
-    def listApiKeys(params: ListApiKeysRequest): Request[ListApiKeysResponse] = js.native
+    def getSchemaCreationStatus(params: GetSchemaCreationStatusRequest): Request[GetSchemaCreationStatusResponse] =
+      js.native
+    def getType(params: GetTypeRequest): Request[GetTypeResponse]                         = js.native
+    def listApiKeys(params: ListApiKeysRequest): Request[ListApiKeysResponse]             = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
-    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
+    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse]       = js.native
     def listGraphqlApis(params: ListGraphqlApisRequest): Request[ListGraphqlApisResponse] = js.native
-    def listResolvers(params: ListResolversRequest): Request[ListResolversResponse] = js.native
-    def listResolversByFunction(params: ListResolversByFunctionRequest): Request[ListResolversByFunctionResponse] = js.native
-    def listTypes(params: ListTypesRequest): Request[ListTypesResponse] = js.native
+    def listResolvers(params: ListResolversRequest): Request[ListResolversResponse]       = js.native
+    def listResolversByFunction(params: ListResolversByFunctionRequest): Request[ListResolversByFunctionResponse] =
+      js.native
+    def listTypes(params: ListTypesRequest): Request[ListTypesResponse]                               = js.native
     def startSchemaCreation(params: StartSchemaCreationRequest): Request[StartSchemaCreationResponse] = js.native
-    def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse] = js.native
-    def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse] = js.native
-    def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse] = js.native
-    def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse] = js.native
-    def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse] = js.native
-    def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse] = js.native
+    def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse]                      = js.native
+    def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse]          = js.native
+    def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse]                = js.native
+    def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse]          = js.native
+    def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse]                = js.native
+    def updateType(params: UpdateTypeRequest): Request[UpdateTypeResponse]                            = js.native
   }
 
   /**
-   * Describes an API key.
-   *  Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
-   *  ```da1```: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.
-   * * <code>ListApiKeys</code> returns the expiration time in milliseconds.
-   *  * <code>CreateApiKey</code> returns the expiration time in milliseconds.
-   *  * <code>UpdateApiKey</code> is not available for this key version.
-   *  * <code>DeleteApiKey</code> deletes the item from the table.
-   *  * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
-   * ```da2```: This version was introduced in February 2018 when AppSync added support to extend key expiration.
-   * * <code>ListApiKeys</code> returns the expiration time in seconds.
-   *  * <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.
-   *  * <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.
-   *  * <code>DeleteApiKey</code> deletes the item from the table.
-   *  * Expiration is stored in Amazon DynamoDB as seconds.
-   */
+    * Describes an API key.
+    *  Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
+    *  ```da1```: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.
+    * * <code>ListApiKeys</code> returns the expiration time in milliseconds.
+    *  * <code>CreateApiKey</code> returns the expiration time in milliseconds.
+    *  * <code>UpdateApiKey</code> is not available for this key version.
+    *  * <code>DeleteApiKey</code> deletes the item from the table.
+    *  * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
+    * ```da2```: This version was introduced in February 2018 when AppSync added support to extend key expiration.
+    * * <code>ListApiKeys</code> returns the expiration time in seconds.
+    *  * <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.
+    *  * <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.
+    *  * <code>DeleteApiKey</code> deletes the item from the table.
+    *  * Expiration is stored in Amazon DynamoDB as seconds.
+    */
   @js.native
   trait ApiKey extends js.Object {
     var description: js.UndefOr[String]
@@ -97,31 +100,33 @@ package appsync {
   }
 
   object ApiKey {
-    def apply(
-      description: js.UndefOr[String] = js.undefined,
-      expires: js.UndefOr[Double] = js.undefined,
-      id: js.UndefOr[String] = js.undefined): ApiKey = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "expires" -> expires.map { x => x.asInstanceOf[js.Any] },
-        "id" -> id.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(description: js.UndefOr[String] = js.undefined,
+              expires: js.UndefOr[Double] = js.undefined,
+              id: js.UndefOr[String] = js.undefined): ApiKey = {
+      val _fields = IndexedSeq[(String, js.Any)]("description" -> description.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "expires" -> expires.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "id" -> id.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApiKey]
     }
   }
 
   object AuthenticationTypeEnum {
-    val API_KEY = "API_KEY"
-    val AWS_IAM = "AWS_IAM"
+    val API_KEY                   = "API_KEY"
+    val AWS_IAM                   = "AWS_IAM"
     val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS"
-    val OPENID_CONNECT = "OPENID_CONNECT"
+    val OPENID_CONNECT            = "OPENID_CONNECT"
 
     val values = IndexedSeq(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
   }
 
   /**
-   * The authorization config in case the HTTP endpoint requires authorization.
-   */
+    * The authorization config in case the HTTP endpoint requires authorization.
+    */
   @js.native
   trait AuthorizationConfig extends js.Object {
     var authorizationType: AuthorizationType
@@ -129,12 +134,14 @@ package appsync {
   }
 
   object AuthorizationConfig {
-    def apply(
-      authorizationType: AuthorizationType,
-      awsIamConfig: js.UndefOr[AwsIamConfig] = js.undefined): AuthorizationConfig = {
+    def apply(authorizationType: AuthorizationType,
+              awsIamConfig: js.UndefOr[AwsIamConfig] = js.undefined): AuthorizationConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizationType" -> authorizationType.asInstanceOf[js.Any],
-        "awsIamConfig" -> awsIamConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "awsIamConfig" -> awsIamConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizationConfig]
     }
@@ -147,8 +154,8 @@ package appsync {
   }
 
   /**
-   * The AWS IAM configuration.
-   */
+    * The AWS IAM configuration.
+    */
   @js.native
   trait AwsIamConfig extends js.Object {
     var signingRegion: js.UndefOr[String]
@@ -156,12 +163,13 @@ package appsync {
   }
 
   object AwsIamConfig {
-    def apply(
-      signingRegion: js.UndefOr[String] = js.undefined,
-      signingServiceName: js.UndefOr[String] = js.undefined): AwsIamConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "signingRegion" -> signingRegion.map { x => x.asInstanceOf[js.Any] },
-        "signingServiceName" -> signingServiceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(signingRegion: js.UndefOr[String] = js.undefined,
+              signingServiceName: js.UndefOr[String] = js.undefined): AwsIamConfig = {
+      val _fields = IndexedSeq[(String, js.Any)]("signingRegion" -> signingRegion.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "signingServiceName" -> signingServiceName.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AwsIamConfig]
     }
@@ -175,14 +183,15 @@ package appsync {
   }
 
   object CreateApiKeyRequest {
-    def apply(
-      apiId: String,
-      description: js.UndefOr[String] = js.undefined,
-      expires: js.UndefOr[Double] = js.undefined): CreateApiKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "expires" -> expires.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String,
+              description: js.UndefOr[String] = js.undefined,
+              expires: js.UndefOr[Double] = js.undefined): CreateApiKeyRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        }, "expires" -> expires.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApiKeyRequest]
     }
@@ -194,10 +203,10 @@ package appsync {
   }
 
   object CreateApiKeyResponse {
-    def apply(
-      apiKey: js.UndefOr[ApiKey] = js.undefined): CreateApiKeyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiKey" -> apiKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiKey: js.UndefOr[ApiKey] = js.undefined): CreateApiKeyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("apiKey" -> apiKey.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApiKeyResponse]
     }
@@ -218,28 +227,42 @@ package appsync {
   }
 
   object CreateDataSourceRequest {
-    def apply(
-      apiId: String,
-      name: ResourceName,
-      `type`: DataSourceType,
-      description: js.UndefOr[String] = js.undefined,
-      dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
-      elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
-      httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
-      lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
-      relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
-      serviceRoleArn: js.UndefOr[String] = js.undefined): CreateDataSourceRequest = {
+    def apply(apiId: String,
+              name: ResourceName,
+              `type`: DataSourceType,
+              description: js.UndefOr[String] = js.undefined,
+              dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
+              elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
+              httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
+              lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
+              relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
+              serviceRoleArn: js.UndefOr[String] = js.undefined): CreateDataSourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
+        "apiId"  -> apiId.asInstanceOf[js.Any],
+        "name"   -> name.asInstanceOf[js.Any],
         "`type`" -> `type`.asInstanceOf[js.Any],
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "dynamodbConfig" -> dynamodbConfig.map { x => x.asInstanceOf[js.Any] },
-        "elasticsearchConfig" -> elasticsearchConfig.map { x => x.asInstanceOf[js.Any] },
-        "httpConfig" -> httpConfig.map { x => x.asInstanceOf[js.Any] },
-        "lambdaConfig" -> lambdaConfig.map { x => x.asInstanceOf[js.Any] },
-        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x => x.asInstanceOf[js.Any] },
-        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dynamodbConfig" -> dynamodbConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "elasticsearchConfig" -> elasticsearchConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "httpConfig" -> httpConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lambdaConfig" -> lambdaConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "serviceRoleArn" -> serviceRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDataSourceRequest]
     }
@@ -251,10 +274,10 @@ package appsync {
   }
 
   object CreateDataSourceResponse {
-    def apply(
-      dataSource: js.UndefOr[DataSource] = js.undefined): CreateDataSourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(dataSource: js.UndefOr[DataSource] = js.undefined): CreateDataSourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("dataSource" -> dataSource.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDataSourceResponse]
     }
@@ -272,22 +295,26 @@ package appsync {
   }
 
   object CreateFunctionRequest {
-    def apply(
-      apiId: String,
-      dataSourceName: ResourceName,
-      functionVersion: String,
-      name: ResourceName,
-      requestMappingTemplate: MappingTemplate,
-      description: js.UndefOr[String] = js.undefined,
-      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): CreateFunctionRequest = {
+    def apply(apiId: String,
+              dataSourceName: ResourceName,
+              functionVersion: String,
+              name: ResourceName,
+              requestMappingTemplate: MappingTemplate,
+              description: js.UndefOr[String] = js.undefined,
+              responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): CreateFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
-        "functionVersion" -> functionVersion.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
+        "apiId"                  -> apiId.asInstanceOf[js.Any],
+        "dataSourceName"         -> dataSourceName.asInstanceOf[js.Any],
+        "functionVersion"        -> functionVersion.asInstanceOf[js.Any],
+        "name"                   -> name.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFunctionRequest]
     }
@@ -299,10 +326,10 @@ package appsync {
   }
 
   object CreateFunctionResponse {
-    def apply(
-      functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): CreateFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "functionConfiguration" -> functionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): CreateFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("functionConfiguration" -> functionConfiguration.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFunctionResponse]
     }
@@ -318,18 +345,24 @@ package appsync {
   }
 
   object CreateGraphqlApiRequest {
-    def apply(
-      authenticationType: AuthenticationType,
-      name: String,
-      logConfig: js.UndefOr[LogConfig] = js.undefined,
-      openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
-      userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined): CreateGraphqlApiRequest = {
+    def apply(authenticationType: AuthenticationType,
+              name: String,
+              logConfig: js.UndefOr[LogConfig] = js.undefined,
+              openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
+              userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined): CreateGraphqlApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authenticationType" -> authenticationType.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
-        "logConfig" -> logConfig.map { x => x.asInstanceOf[js.Any] },
-        "openIDConnectConfig" -> openIDConnectConfig.map { x => x.asInstanceOf[js.Any] },
-        "userPoolConfig" -> userPoolConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name"               -> name.asInstanceOf[js.Any],
+        "logConfig" -> logConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "openIDConnectConfig" -> openIDConnectConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "userPoolConfig" -> userPoolConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGraphqlApiRequest]
     }
@@ -341,10 +374,10 @@ package appsync {
   }
 
   object CreateGraphqlApiResponse {
-    def apply(
-      graphqlApi: js.UndefOr[GraphqlApi] = js.undefined): CreateGraphqlApiResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "graphqlApi" -> graphqlApi.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(graphqlApi: js.UndefOr[GraphqlApi] = js.undefined): CreateGraphqlApiResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("graphqlApi" -> graphqlApi.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGraphqlApiResponse]
     }
@@ -363,24 +396,32 @@ package appsync {
   }
 
   object CreateResolverRequest {
-    def apply(
-      apiId: String,
-      fieldName: ResourceName,
-      requestMappingTemplate: MappingTemplate,
-      typeName: ResourceName,
-      dataSourceName: js.UndefOr[ResourceName] = js.undefined,
-      kind: js.UndefOr[ResolverKind] = js.undefined,
-      pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
-      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): CreateResolverRequest = {
+    def apply(apiId: String,
+              fieldName: ResourceName,
+              requestMappingTemplate: MappingTemplate,
+              typeName: ResourceName,
+              dataSourceName: js.UndefOr[ResourceName] = js.undefined,
+              kind: js.UndefOr[ResolverKind] = js.undefined,
+              pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
+              responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): CreateResolverRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "fieldName" -> fieldName.asInstanceOf[js.Any],
+        "apiId"                  -> apiId.asInstanceOf[js.Any],
+        "fieldName"              -> fieldName.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
-        "typeName" -> typeName.asInstanceOf[js.Any],
-        "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
-        "kind" -> kind.map { x => x.asInstanceOf[js.Any] },
-        "pipelineConfig" -> pipelineConfig.map { x => x.asInstanceOf[js.Any] },
-        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "typeName"               -> typeName.asInstanceOf[js.Any],
+        "dataSourceName" -> dataSourceName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "kind" -> kind.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "pipelineConfig" -> pipelineConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResolverRequest]
     }
@@ -392,10 +433,10 @@ package appsync {
   }
 
   object CreateResolverResponse {
-    def apply(
-      resolver: js.UndefOr[Resolver] = js.undefined): CreateResolverResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "resolver" -> resolver.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(resolver: js.UndefOr[Resolver] = js.undefined): CreateResolverResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("resolver" -> resolver.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResolverResponse]
     }
@@ -409,14 +450,12 @@ package appsync {
   }
 
   object CreateTypeRequest {
-    def apply(
-      apiId: String,
-      definition: String,
-      format: TypeDefinitionFormat): CreateTypeRequest = {
+    def apply(apiId: String, definition: String, format: TypeDefinitionFormat): CreateTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
+        "apiId"      -> apiId.asInstanceOf[js.Any],
         "definition" -> definition.asInstanceOf[js.Any],
-        "format" -> format.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "format"     -> format.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTypeRequest]
     }
@@ -428,18 +467,18 @@ package appsync {
   }
 
   object CreateTypeResponse {
-    def apply(
-      `type`: js.UndefOr[Type] = js.undefined): CreateTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(`type`: js.UndefOr[Type] = js.undefined): CreateTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("`type`" -> `type`.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTypeResponse]
     }
   }
 
   /**
-   * Describes a data source.
-   */
+    * Describes a data source.
+    */
   @js.native
   trait DataSource extends js.Object {
     var dataSourceArn: js.UndefOr[String]
@@ -455,47 +494,67 @@ package appsync {
   }
 
   object DataSource {
-    def apply(
-      dataSourceArn: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
-      dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
-      elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
-      httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
-      lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
-      name: js.UndefOr[ResourceName] = js.undefined,
-      relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
-      serviceRoleArn: js.UndefOr[String] = js.undefined,
-      `type`: js.UndefOr[DataSourceType] = js.undefined): DataSource = {
+    def apply(dataSourceArn: js.UndefOr[String] = js.undefined,
+              description: js.UndefOr[String] = js.undefined,
+              dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
+              elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
+              httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
+              lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
+              name: js.UndefOr[ResourceName] = js.undefined,
+              relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
+              serviceRoleArn: js.UndefOr[String] = js.undefined,
+              `type`: js.UndefOr[DataSourceType] = js.undefined): DataSource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "dataSourceArn" -> dataSourceArn.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "dynamodbConfig" -> dynamodbConfig.map { x => x.asInstanceOf[js.Any] },
-        "elasticsearchConfig" -> elasticsearchConfig.map { x => x.asInstanceOf[js.Any] },
-        "httpConfig" -> httpConfig.map { x => x.asInstanceOf[js.Any] },
-        "lambdaConfig" -> lambdaConfig.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x => x.asInstanceOf[js.Any] },
-        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "dataSourceArn" -> dataSourceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dynamodbConfig" -> dynamodbConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "elasticsearchConfig" -> elasticsearchConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "httpConfig" -> httpConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lambdaConfig" -> lambdaConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "serviceRoleArn" -> serviceRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataSource]
     }
   }
 
   object DataSourceTypeEnum {
-    val AWS_LAMBDA = "AWS_LAMBDA"
-    val AMAZON_DYNAMODB = "AMAZON_DYNAMODB"
+    val AWS_LAMBDA           = "AWS_LAMBDA"
+    val AMAZON_DYNAMODB      = "AMAZON_DYNAMODB"
     val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH"
-    val NONE = "NONE"
-    val HTTP = "HTTP"
-    val RELATIONAL_DATABASE = "RELATIONAL_DATABASE"
+    val NONE                 = "NONE"
+    val HTTP                 = "HTTP"
+    val RELATIONAL_DATABASE  = "RELATIONAL_DATABASE"
 
     val values = IndexedSeq(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
   }
 
   object DefaultActionEnum {
     val ALLOW = "ALLOW"
-    val DENY = "DENY"
+    val DENY  = "DENY"
 
     val values = IndexedSeq(ALLOW, DENY)
   }
@@ -507,21 +566,16 @@ package appsync {
   }
 
   object DeleteApiKeyRequest {
-    def apply(
-      apiId: String,
-      id: String): DeleteApiKeyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "id" -> id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String, id: String): DeleteApiKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "id" -> id.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApiKeyRequest]
     }
   }
 
   @js.native
-  trait DeleteApiKeyResponse extends js.Object {
-
-  }
+  trait DeleteApiKeyResponse extends js.Object {}
 
   object DeleteApiKeyResponse {
     def apply(): DeleteApiKeyResponse = {
@@ -538,21 +592,17 @@ package appsync {
   }
 
   object DeleteDataSourceRequest {
-    def apply(
-      apiId: String,
-      name: ResourceName): DeleteDataSourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String, name: ResourceName): DeleteDataSourceRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "name" -> name.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDataSourceRequest]
     }
   }
 
   @js.native
-  trait DeleteDataSourceResponse extends js.Object {
-
-  }
+  trait DeleteDataSourceResponse extends js.Object {}
 
   object DeleteDataSourceResponse {
     def apply(): DeleteDataSourceResponse = {
@@ -569,21 +619,18 @@ package appsync {
   }
 
   object DeleteFunctionRequest {
-    def apply(
-      apiId: String,
-      functionId: ResourceName): DeleteFunctionRequest = {
+    def apply(apiId: String, functionId: ResourceName): DeleteFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "functionId" -> functionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "functionId" -> functionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFunctionRequest]
     }
   }
 
   @js.native
-  trait DeleteFunctionResponse extends js.Object {
-
-  }
+  trait DeleteFunctionResponse extends js.Object {}
 
   object DeleteFunctionResponse {
     def apply(): DeleteFunctionResponse = {
@@ -599,19 +646,16 @@ package appsync {
   }
 
   object DeleteGraphqlApiRequest {
-    def apply(
-      apiId: String): DeleteGraphqlApiRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String): DeleteGraphqlApiRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGraphqlApiRequest]
     }
   }
 
   @js.native
-  trait DeleteGraphqlApiResponse extends js.Object {
-
-  }
+  trait DeleteGraphqlApiResponse extends js.Object {}
 
   object DeleteGraphqlApiResponse {
     def apply(): DeleteGraphqlApiResponse = {
@@ -629,23 +673,19 @@ package appsync {
   }
 
   object DeleteResolverRequest {
-    def apply(
-      apiId: String,
-      fieldName: ResourceName,
-      typeName: ResourceName): DeleteResolverRequest = {
+    def apply(apiId: String, fieldName: ResourceName, typeName: ResourceName): DeleteResolverRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
+        "apiId"     -> apiId.asInstanceOf[js.Any],
         "fieldName" -> fieldName.asInstanceOf[js.Any],
-        "typeName" -> typeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "typeName"  -> typeName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResolverRequest]
     }
   }
 
   @js.native
-  trait DeleteResolverResponse extends js.Object {
-
-  }
+  trait DeleteResolverResponse extends js.Object {}
 
   object DeleteResolverResponse {
     def apply(): DeleteResolverResponse = {
@@ -662,21 +702,17 @@ package appsync {
   }
 
   object DeleteTypeRequest {
-    def apply(
-      apiId: String,
-      typeName: ResourceName): DeleteTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "typeName" -> typeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String, typeName: ResourceName): DeleteTypeRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "typeName" -> typeName.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTypeRequest]
     }
   }
 
   @js.native
-  trait DeleteTypeResponse extends js.Object {
-
-  }
+  trait DeleteTypeResponse extends js.Object {}
 
   object DeleteTypeResponse {
     def apply(): DeleteTypeResponse = {
@@ -687,8 +723,8 @@ package appsync {
   }
 
   /**
-   * Describes an Amazon DynamoDB data source configuration.
-   */
+    * Describes an Amazon DynamoDB data source configuration.
+    */
   @js.native
   trait DynamodbDataSourceConfig extends js.Object {
     var awsRegion: String
@@ -697,22 +733,24 @@ package appsync {
   }
 
   object DynamodbDataSourceConfig {
-    def apply(
-      awsRegion: String,
-      tableName: String,
-      useCallerCredentials: js.UndefOr[Boolean] = js.undefined): DynamodbDataSourceConfig = {
+    def apply(awsRegion: String,
+              tableName: String,
+              useCallerCredentials: js.UndefOr[Boolean] = js.undefined): DynamodbDataSourceConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsRegion" -> awsRegion.asInstanceOf[js.Any],
         "tableName" -> tableName.asInstanceOf[js.Any],
-        "useCallerCredentials" -> useCallerCredentials.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "useCallerCredentials" -> useCallerCredentials.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DynamodbDataSourceConfig]
     }
   }
 
   /**
-   * Describes an Elasticsearch data source configuration.
-   */
+    * Describes an Elasticsearch data source configuration.
+    */
   @js.native
   trait ElasticsearchDataSourceConfig extends js.Object {
     var awsRegion: String
@@ -720,28 +758,27 @@ package appsync {
   }
 
   object ElasticsearchDataSourceConfig {
-    def apply(
-      awsRegion: String,
-      endpoint: String): ElasticsearchDataSourceConfig = {
+    def apply(awsRegion: String, endpoint: String): ElasticsearchDataSourceConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsRegion" -> awsRegion.asInstanceOf[js.Any],
-        "endpoint" -> endpoint.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "endpoint"  -> endpoint.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticsearchDataSourceConfig]
     }
   }
 
   object FieldLogLevelEnum {
-    val NONE = "NONE"
+    val NONE  = "NONE"
     val ERROR = "ERROR"
-    val ALL = "ALL"
+    val ALL   = "ALL"
 
     val values = IndexedSeq(NONE, ERROR, ALL)
   }
 
   /**
-   * A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
-   */
+    * A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
+    */
   @js.native
   trait FunctionConfiguration extends js.Object {
     var dataSourceName: js.UndefOr[ResourceName]
@@ -755,24 +792,40 @@ package appsync {
   }
 
   object FunctionConfiguration {
-    def apply(
-      dataSourceName: js.UndefOr[ResourceName] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
-      functionArn: js.UndefOr[String] = js.undefined,
-      functionId: js.UndefOr[String] = js.undefined,
-      functionVersion: js.UndefOr[String] = js.undefined,
-      name: js.UndefOr[ResourceName] = js.undefined,
-      requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
-      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): FunctionConfiguration = {
+    def apply(dataSourceName: js.UndefOr[ResourceName] = js.undefined,
+              description: js.UndefOr[String] = js.undefined,
+              functionArn: js.UndefOr[String] = js.undefined,
+              functionId: js.UndefOr[String] = js.undefined,
+              functionVersion: js.UndefOr[String] = js.undefined,
+              name: js.UndefOr[ResourceName] = js.undefined,
+              requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+              responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): FunctionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "functionArn" -> functionArn.map { x => x.asInstanceOf[js.Any] },
-        "functionId" -> functionId.map { x => x.asInstanceOf[js.Any] },
-        "functionVersion" -> functionVersion.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
-        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "dataSourceName" -> dataSourceName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "functionArn" -> functionArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "functionId" -> functionId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "functionVersion" -> functionVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "requestMappingTemplate" -> requestMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FunctionConfiguration]
     }
@@ -785,12 +838,10 @@ package appsync {
   }
 
   object GetDataSourceRequest {
-    def apply(
-      apiId: String,
-      name: ResourceName): GetDataSourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String, name: ResourceName): GetDataSourceRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "name" -> name.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataSourceRequest]
     }
@@ -802,10 +853,10 @@ package appsync {
   }
 
   object GetDataSourceResponse {
-    def apply(
-      dataSource: js.UndefOr[DataSource] = js.undefined): GetDataSourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(dataSource: js.UndefOr[DataSource] = js.undefined): GetDataSourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("dataSource" -> dataSource.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataSourceResponse]
     }
@@ -818,12 +869,11 @@ package appsync {
   }
 
   object GetFunctionRequest {
-    def apply(
-      apiId: String,
-      functionId: ResourceName): GetFunctionRequest = {
+    def apply(apiId: String, functionId: ResourceName): GetFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "functionId" -> functionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "functionId" -> functionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionRequest]
     }
@@ -835,10 +885,10 @@ package appsync {
   }
 
   object GetFunctionResponse {
-    def apply(
-      functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): GetFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "functionConfiguration" -> functionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): GetFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("functionConfiguration" -> functionConfiguration.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFunctionResponse]
     }
@@ -850,10 +900,9 @@ package appsync {
   }
 
   object GetGraphqlApiRequest {
-    def apply(
-      apiId: String): GetGraphqlApiRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String): GetGraphqlApiRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGraphqlApiRequest]
     }
@@ -865,10 +914,10 @@ package appsync {
   }
 
   object GetGraphqlApiResponse {
-    def apply(
-      graphqlApi: js.UndefOr[GraphqlApi] = js.undefined): GetGraphqlApiResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "graphqlApi" -> graphqlApi.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(graphqlApi: js.UndefOr[GraphqlApi] = js.undefined): GetGraphqlApiResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("graphqlApi" -> graphqlApi.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGraphqlApiResponse]
     }
@@ -881,12 +930,10 @@ package appsync {
   }
 
   object GetIntrospectionSchemaRequest {
-    def apply(
-      apiId: String,
-      format: OutputType): GetIntrospectionSchemaRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "format" -> format.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String, format: OutputType): GetIntrospectionSchemaRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "format" -> format.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntrospectionSchemaRequest]
     }
@@ -898,10 +945,10 @@ package appsync {
   }
 
   object GetIntrospectionSchemaResponse {
-    def apply(
-      schema: js.UndefOr[Blob] = js.undefined): GetIntrospectionSchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "schema" -> schema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(schema: js.UndefOr[Blob] = js.undefined): GetIntrospectionSchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("schema" -> schema.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntrospectionSchemaResponse]
     }
@@ -915,14 +962,12 @@ package appsync {
   }
 
   object GetResolverRequest {
-    def apply(
-      apiId: String,
-      fieldName: ResourceName,
-      typeName: ResourceName): GetResolverRequest = {
+    def apply(apiId: String, fieldName: ResourceName, typeName: ResourceName): GetResolverRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
+        "apiId"     -> apiId.asInstanceOf[js.Any],
         "fieldName" -> fieldName.asInstanceOf[js.Any],
-        "typeName" -> typeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "typeName"  -> typeName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverRequest]
     }
@@ -934,10 +979,10 @@ package appsync {
   }
 
   object GetResolverResponse {
-    def apply(
-      resolver: js.UndefOr[Resolver] = js.undefined): GetResolverResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "resolver" -> resolver.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(resolver: js.UndefOr[Resolver] = js.undefined): GetResolverResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("resolver" -> resolver.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverResponse]
     }
@@ -949,10 +994,9 @@ package appsync {
   }
 
   object GetSchemaCreationStatusRequest {
-    def apply(
-      apiId: String): GetSchemaCreationStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String): GetSchemaCreationStatusRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSchemaCreationStatusRequest]
     }
@@ -965,12 +1009,13 @@ package appsync {
   }
 
   object GetSchemaCreationStatusResponse {
-    def apply(
-      details: js.UndefOr[String] = js.undefined,
-      status: js.UndefOr[SchemaStatus] = js.undefined): GetSchemaCreationStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "details" -> details.map { x => x.asInstanceOf[js.Any] },
-        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(details: js.UndefOr[String] = js.undefined,
+              status: js.UndefOr[SchemaStatus] = js.undefined): GetSchemaCreationStatusResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("details" -> details.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "status" -> status.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSchemaCreationStatusResponse]
     }
@@ -984,14 +1029,12 @@ package appsync {
   }
 
   object GetTypeRequest {
-    def apply(
-      apiId: String,
-      format: TypeDefinitionFormat,
-      typeName: ResourceName): GetTypeRequest = {
+    def apply(apiId: String, format: TypeDefinitionFormat, typeName: ResourceName): GetTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "format" -> format.asInstanceOf[js.Any],
-        "typeName" -> typeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "apiId"    -> apiId.asInstanceOf[js.Any],
+        "format"   -> format.asInstanceOf[js.Any],
+        "typeName" -> typeName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTypeRequest]
     }
@@ -1003,18 +1046,18 @@ package appsync {
   }
 
   object GetTypeResponse {
-    def apply(
-      `type`: js.UndefOr[Type] = js.undefined): GetTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(`type`: js.UndefOr[Type] = js.undefined): GetTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("`type`" -> `type`.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTypeResponse]
     }
   }
 
   /**
-   * Describes a GraphQL API.
-   */
+    * Describes a GraphQL API.
+    */
   @js.native
   trait GraphqlApi extends js.Object {
     var apiId: js.UndefOr[String]
@@ -1028,32 +1071,48 @@ package appsync {
   }
 
   object GraphqlApi {
-    def apply(
-      apiId: js.UndefOr[String] = js.undefined,
-      arn: js.UndefOr[String] = js.undefined,
-      authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
-      logConfig: js.UndefOr[LogConfig] = js.undefined,
-      name: js.UndefOr[ResourceName] = js.undefined,
-      openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
-      uris: js.UndefOr[MapOfStringToString] = js.undefined,
-      userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined): GraphqlApi = {
+    def apply(apiId: js.UndefOr[String] = js.undefined,
+              arn: js.UndefOr[String] = js.undefined,
+              authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+              logConfig: js.UndefOr[LogConfig] = js.undefined,
+              name: js.UndefOr[ResourceName] = js.undefined,
+              openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
+              uris: js.UndefOr[MapOfStringToString] = js.undefined,
+              userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined): GraphqlApi = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.map { x => x.asInstanceOf[js.Any] },
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "authenticationType" -> authenticationType.map { x => x.asInstanceOf[js.Any] },
-        "logConfig" -> logConfig.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] },
-        "openIDConnectConfig" -> openIDConnectConfig.map { x => x.asInstanceOf[js.Any] },
-        "uris" -> uris.map { x => x.asInstanceOf[js.Any] },
-        "userPoolConfig" -> userPoolConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "apiId" -> apiId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "authenticationType" -> authenticationType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "logConfig" -> logConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "openIDConnectConfig" -> openIDConnectConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "uris" -> uris.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "userPoolConfig" -> userPoolConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GraphqlApi]
     }
   }
 
   /**
-   * Describes an HTTP data source configuration.
-   */
+    * Describes an HTTP data source configuration.
+    */
   @js.native
   trait HttpDataSourceConfig extends js.Object {
     var authorizationConfig: js.UndefOr[AuthorizationConfig]
@@ -1061,30 +1120,30 @@ package appsync {
   }
 
   object HttpDataSourceConfig {
-    def apply(
-      authorizationConfig: js.UndefOr[AuthorizationConfig] = js.undefined,
-      endpoint: js.UndefOr[String] = js.undefined): HttpDataSourceConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "authorizationConfig" -> authorizationConfig.map { x => x.asInstanceOf[js.Any] },
-        "endpoint" -> endpoint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(authorizationConfig: js.UndefOr[AuthorizationConfig] = js.undefined,
+              endpoint: js.UndefOr[String] = js.undefined): HttpDataSourceConfig = {
+      val _fields = IndexedSeq[(String, js.Any)]("authorizationConfig" -> authorizationConfig.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "endpoint" -> endpoint.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HttpDataSourceConfig]
     }
   }
 
   /**
-   * Describes an AWS Lambda data source configuration.
-   */
+    * Describes an AWS Lambda data source configuration.
+    */
   @js.native
   trait LambdaDataSourceConfig extends js.Object {
     var lambdaFunctionArn: String
   }
 
   object LambdaDataSourceConfig {
-    def apply(
-      lambdaFunctionArn: String): LambdaDataSourceConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "lambdaFunctionArn" -> lambdaFunctionArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(lambdaFunctionArn: String): LambdaDataSourceConfig = {
+      val _fields = IndexedSeq[(String, js.Any)]("lambdaFunctionArn" -> lambdaFunctionArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaDataSourceConfig]
     }
@@ -1098,14 +1157,15 @@ package appsync {
   }
 
   object ListApiKeysRequest {
-    def apply(
-      apiId: String,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListApiKeysRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListApiKeysRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "maxResults" -> maxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApiKeysRequest]
     }
@@ -1118,12 +1178,13 @@ package appsync {
   }
 
   object ListApiKeysResponse {
-    def apply(
-      apiKeys: js.UndefOr[ApiKeys] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListApiKeysResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiKeys" -> apiKeys.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiKeys: js.UndefOr[ApiKeys] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListApiKeysResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("apiKeys" -> apiKeys.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApiKeysResponse]
     }
@@ -1137,14 +1198,15 @@ package appsync {
   }
 
   object ListDataSourcesRequest {
-    def apply(
-      apiId: String,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDataSourcesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDataSourcesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "maxResults" -> maxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDataSourcesRequest]
     }
@@ -1157,12 +1219,13 @@ package appsync {
   }
 
   object ListDataSourcesResponse {
-    def apply(
-      dataSources: js.UndefOr[DataSources] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDataSourcesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataSources" -> dataSources.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(dataSources: js.UndefOr[DataSources] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDataSourcesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("dataSources" -> dataSources.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDataSourcesResponse]
     }
@@ -1176,14 +1239,15 @@ package appsync {
   }
 
   object ListFunctionsRequest {
-    def apply(
-      apiId: String,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFunctionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiId: String,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFunctionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("apiId" -> apiId.asInstanceOf[js.Any], "maxResults" -> maxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFunctionsRequest]
     }
@@ -1196,12 +1260,13 @@ package appsync {
   }
 
   object ListFunctionsResponse {
-    def apply(
-      functions: js.UndefOr[Functions] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFunctionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "functions" -> functions.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(functions: js.UndefOr[Functions] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListFunctionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("functions" -> functions.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFunctionsResponse]
     }
@@ -1214,12 +1279,13 @@ package appsync {
   }
 
   object ListGraphqlApisRequest {
-    def apply(
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListGraphqlApisRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListGraphqlApisRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGraphqlApisRequest]
     }
@@ -1232,12 +1298,13 @@ package appsync {
   }
 
   object ListGraphqlApisResponse {
-    def apply(
-      graphqlApis: js.UndefOr[GraphqlApis] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListGraphqlApisResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "graphqlApis" -> graphqlApis.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(graphqlApis: js.UndefOr[GraphqlApis] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListGraphqlApisResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("graphqlApis" -> graphqlApis.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGraphqlApisResponse]
     }
@@ -1252,16 +1319,20 @@ package appsync {
   }
 
   object ListResolversByFunctionRequest {
-    def apply(
-      apiId: String,
-      functionId: String,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListResolversByFunctionRequest = {
+    def apply(apiId: String,
+              functionId: String,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListResolversByFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
+        "apiId"      -> apiId.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResolversByFunctionRequest]
     }
@@ -1274,12 +1345,13 @@ package appsync {
   }
 
   object ListResolversByFunctionResponse {
-    def apply(
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      resolvers: js.UndefOr[Resolvers] = js.undefined): ListResolversByFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "resolvers" -> resolvers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
+              resolvers: js.UndefOr[Resolvers] = js.undefined): ListResolversByFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "resolvers" -> resolvers.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResolversByFunctionResponse]
     }
@@ -1294,16 +1366,20 @@ package appsync {
   }
 
   object ListResolversRequest {
-    def apply(
-      apiId: String,
-      typeName: String,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListResolversRequest = {
+    def apply(apiId: String,
+              typeName: String,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListResolversRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
+        "apiId"    -> apiId.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResolversRequest]
     }
@@ -1316,12 +1392,13 @@ package appsync {
   }
 
   object ListResolversResponse {
-    def apply(
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      resolvers: js.UndefOr[Resolvers] = js.undefined): ListResolversResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "resolvers" -> resolvers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
+              resolvers: js.UndefOr[Resolvers] = js.undefined): ListResolversResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "resolvers" -> resolvers.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResolversResponse]
     }
@@ -1336,16 +1413,20 @@ package appsync {
   }
 
   object ListTypesRequest {
-    def apply(
-      apiId: String,
-      format: TypeDefinitionFormat,
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[PaginationToken] = js.undefined): ListTypesRequest = {
+    def apply(apiId: String,
+              format: TypeDefinitionFormat,
+              maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
+        "apiId"  -> apiId.asInstanceOf[js.Any],
         "format" -> format.asInstanceOf[js.Any],
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTypesRequest]
     }
@@ -1358,20 +1439,21 @@ package appsync {
   }
 
   object ListTypesResponse {
-    def apply(
-      nextToken: js.UndefOr[PaginationToken] = js.undefined,
-      types: js.UndefOr[TypeList] = js.undefined): ListTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "types" -> types.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
+              types: js.UndefOr[TypeList] = js.undefined): ListTypesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "types" -> types.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTypesResponse]
     }
   }
 
   /**
-   * The CloudWatch Logs configuration.
-   */
+    * The CloudWatch Logs configuration.
+    */
   @js.native
   trait LogConfig extends js.Object {
     var cloudWatchLogsRoleArn: String
@@ -1379,20 +1461,19 @@ package appsync {
   }
 
   object LogConfig {
-    def apply(
-      cloudWatchLogsRoleArn: String,
-      fieldLogLevel: FieldLogLevel): LogConfig = {
+    def apply(cloudWatchLogsRoleArn: String, fieldLogLevel: FieldLogLevel): LogConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "cloudWatchLogsRoleArn" -> cloudWatchLogsRoleArn.asInstanceOf[js.Any],
-        "fieldLogLevel" -> fieldLogLevel.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "fieldLogLevel"         -> fieldLogLevel.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogConfig]
     }
   }
 
   /**
-   * Describes an OpenID Connect configuration.
-   */
+    * Describes an OpenID Connect configuration.
+    */
   @js.native
   trait OpenIDConnectConfig extends js.Object {
     var issuer: String
@@ -1402,49 +1483,55 @@ package appsync {
   }
 
   object OpenIDConnectConfig {
-    def apply(
-      issuer: String,
-      authTTL: js.UndefOr[Double] = js.undefined,
-      clientId: js.UndefOr[String] = js.undefined,
-      iatTTL: js.UndefOr[Double] = js.undefined): OpenIDConnectConfig = {
+    def apply(issuer: String,
+              authTTL: js.UndefOr[Double] = js.undefined,
+              clientId: js.UndefOr[String] = js.undefined,
+              iatTTL: js.UndefOr[Double] = js.undefined): OpenIDConnectConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "issuer" -> issuer.asInstanceOf[js.Any],
-        "authTTL" -> authTTL.map { x => x.asInstanceOf[js.Any] },
-        "clientId" -> clientId.map { x => x.asInstanceOf[js.Any] },
-        "iatTTL" -> iatTTL.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "authTTL" -> authTTL.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "clientId" -> clientId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "iatTTL" -> iatTTL.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OpenIDConnectConfig]
     }
   }
 
   object OutputTypeEnum {
-    val SDL = "SDL"
+    val SDL  = "SDL"
     val JSON = "JSON"
 
     val values = IndexedSeq(SDL, JSON)
   }
 
   /**
-   * The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
-   */
+    * The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
+    */
   @js.native
   trait PipelineConfig extends js.Object {
     var functions: js.UndefOr[FunctionsIds]
   }
 
   object PipelineConfig {
-    def apply(
-      functions: js.UndefOr[FunctionsIds] = js.undefined): PipelineConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "functions" -> functions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(functions: js.UndefOr[FunctionsIds] = js.undefined): PipelineConfig = {
+      val _fields = IndexedSeq[(String, js.Any)]("functions" -> functions.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelineConfig]
     }
   }
 
   /**
-   * The Amazon RDS HTTP endpoint configuration.
-   */
+    * The Amazon RDS HTTP endpoint configuration.
+    */
   @js.native
   trait RdsHttpEndpointConfig extends js.Object {
     var awsRegion: js.UndefOr[String]
@@ -1455,26 +1542,36 @@ package appsync {
   }
 
   object RdsHttpEndpointConfig {
-    def apply(
-      awsRegion: js.UndefOr[String] = js.undefined,
-      awsSecretStoreArn: js.UndefOr[String] = js.undefined,
-      databaseName: js.UndefOr[String] = js.undefined,
-      dbClusterIdentifier: js.UndefOr[String] = js.undefined,
-      schema: js.UndefOr[String] = js.undefined): RdsHttpEndpointConfig = {
+    def apply(awsRegion: js.UndefOr[String] = js.undefined,
+              awsSecretStoreArn: js.UndefOr[String] = js.undefined,
+              databaseName: js.UndefOr[String] = js.undefined,
+              dbClusterIdentifier: js.UndefOr[String] = js.undefined,
+              schema: js.UndefOr[String] = js.undefined): RdsHttpEndpointConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "awsRegion" -> awsRegion.map { x => x.asInstanceOf[js.Any] },
-        "awsSecretStoreArn" -> awsSecretStoreArn.map { x => x.asInstanceOf[js.Any] },
-        "databaseName" -> databaseName.map { x => x.asInstanceOf[js.Any] },
-        "dbClusterIdentifier" -> dbClusterIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "schema" -> schema.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "awsRegion" -> awsRegion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "awsSecretStoreArn" -> awsSecretStoreArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "databaseName" -> databaseName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dbClusterIdentifier" -> dbClusterIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "schema" -> schema.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RdsHttpEndpointConfig]
     }
   }
 
   /**
-   * Describes a relational database data source configuration.
-   */
+    * Describes a relational database data source configuration.
+    */
   @js.native
   trait RelationalDatabaseDataSourceConfig extends js.Object {
     var rdsHttpEndpointConfig: js.UndefOr[RdsHttpEndpointConfig]
@@ -1483,11 +1580,17 @@ package appsync {
 
   object RelationalDatabaseDataSourceConfig {
     def apply(
-      rdsHttpEndpointConfig: js.UndefOr[RdsHttpEndpointConfig] = js.undefined,
-      relationalDatabaseSourceType: js.UndefOr[RelationalDatabaseSourceType] = js.undefined): RelationalDatabaseDataSourceConfig = {
+        rdsHttpEndpointConfig: js.UndefOr[RdsHttpEndpointConfig] = js.undefined,
+        relationalDatabaseSourceType: js.UndefOr[RelationalDatabaseSourceType] = js.undefined
+    ): RelationalDatabaseDataSourceConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "rdsHttpEndpointConfig" -> rdsHttpEndpointConfig.map { x => x.asInstanceOf[js.Any] },
-        "relationalDatabaseSourceType" -> relationalDatabaseSourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "rdsHttpEndpointConfig" -> rdsHttpEndpointConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "relationalDatabaseSourceType" -> relationalDatabaseSourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RelationalDatabaseDataSourceConfig]
     }
@@ -1500,8 +1603,8 @@ package appsync {
   }
 
   /**
-   * Describes a resolver.
-   */
+    * Describes a resolver.
+    */
   @js.native
   trait Resolver extends js.Object {
     var dataSourceName: js.UndefOr[ResourceName]
@@ -1515,31 +1618,47 @@ package appsync {
   }
 
   object Resolver {
-    def apply(
-      dataSourceName: js.UndefOr[ResourceName] = js.undefined,
-      fieldName: js.UndefOr[ResourceName] = js.undefined,
-      kind: js.UndefOr[ResolverKind] = js.undefined,
-      pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
-      requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
-      resolverArn: js.UndefOr[String] = js.undefined,
-      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
-      typeName: js.UndefOr[ResourceName] = js.undefined): Resolver = {
+    def apply(dataSourceName: js.UndefOr[ResourceName] = js.undefined,
+              fieldName: js.UndefOr[ResourceName] = js.undefined,
+              kind: js.UndefOr[ResolverKind] = js.undefined,
+              pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
+              requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+              resolverArn: js.UndefOr[String] = js.undefined,
+              responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+              typeName: js.UndefOr[ResourceName] = js.undefined): Resolver = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
-        "fieldName" -> fieldName.map { x => x.asInstanceOf[js.Any] },
-        "kind" -> kind.map { x => x.asInstanceOf[js.Any] },
-        "pipelineConfig" -> pipelineConfig.map { x => x.asInstanceOf[js.Any] },
-        "requestMappingTemplate" -> requestMappingTemplate.map { x => x.asInstanceOf[js.Any] },
-        "resolverArn" -> resolverArn.map { x => x.asInstanceOf[js.Any] },
-        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] },
-        "typeName" -> typeName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "dataSourceName" -> dataSourceName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fieldName" -> fieldName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "kind" -> kind.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "pipelineConfig" -> pipelineConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "requestMappingTemplate" -> requestMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resolverArn" -> resolverArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "typeName" -> typeName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resolver]
     }
   }
 
   object ResolverKindEnum {
-    val UNIT = "UNIT"
+    val UNIT     = "UNIT"
     val PIPELINE = "PIPELINE"
 
     val values = IndexedSeq(UNIT, PIPELINE)
@@ -1547,8 +1666,8 @@ package appsync {
 
   object SchemaStatusEnum {
     val PROCESSING = "PROCESSING"
-    val ACTIVE = "ACTIVE"
-    val DELETING = "DELETING"
+    val ACTIVE     = "ACTIVE"
+    val DELETING   = "DELETING"
 
     val values = IndexedSeq(PROCESSING, ACTIVE, DELETING)
   }
@@ -1560,12 +1679,11 @@ package appsync {
   }
 
   object StartSchemaCreationRequest {
-    def apply(
-      apiId: String,
-      definition: Blob): StartSchemaCreationRequest = {
+    def apply(apiId: String, definition: Blob): StartSchemaCreationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "definition" -> definition.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "apiId"      -> apiId.asInstanceOf[js.Any],
+        "definition" -> definition.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSchemaCreationRequest]
     }
@@ -1577,18 +1695,18 @@ package appsync {
   }
 
   object StartSchemaCreationResponse {
-    def apply(
-      status: js.UndefOr[SchemaStatus] = js.undefined): StartSchemaCreationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "status" -> status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(status: js.UndefOr[SchemaStatus] = js.undefined): StartSchemaCreationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("status" -> status.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSchemaCreationResponse]
     }
   }
 
   /**
-   * Describes a type.
-   */
+    * Describes a type.
+    */
   @js.native
   trait Type extends js.Object {
     var arn: js.UndefOr[String]
@@ -1599,25 +1717,35 @@ package appsync {
   }
 
   object Type {
-    def apply(
-      arn: js.UndefOr[String] = js.undefined,
-      definition: js.UndefOr[String] = js.undefined,
-      description: js.UndefOr[String] = js.undefined,
-      format: js.UndefOr[TypeDefinitionFormat] = js.undefined,
-      name: js.UndefOr[ResourceName] = js.undefined): Type = {
+    def apply(arn: js.UndefOr[String] = js.undefined,
+              definition: js.UndefOr[String] = js.undefined,
+              description: js.UndefOr[String] = js.undefined,
+              format: js.UndefOr[TypeDefinitionFormat] = js.undefined,
+              name: js.UndefOr[ResourceName] = js.undefined): Type = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "arn" -> arn.map { x => x.asInstanceOf[js.Any] },
-        "definition" -> definition.map { x => x.asInstanceOf[js.Any] },
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "format" -> format.map { x => x.asInstanceOf[js.Any] },
-        "name" -> name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "definition" -> definition.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "format" -> format.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Type]
     }
   }
 
   object TypeDefinitionFormatEnum {
-    val SDL = "SDL"
+    val SDL  = "SDL"
     val JSON = "JSON"
 
     val values = IndexedSeq(SDL, JSON)
@@ -1632,16 +1760,20 @@ package appsync {
   }
 
   object UpdateApiKeyRequest {
-    def apply(
-      apiId: String,
-      id: String,
-      description: js.UndefOr[String] = js.undefined,
-      expires: js.UndefOr[Double] = js.undefined): UpdateApiKeyRequest = {
+    def apply(apiId: String,
+              id: String,
+              description: js.UndefOr[String] = js.undefined,
+              expires: js.UndefOr[Double] = js.undefined): UpdateApiKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "id" -> id.asInstanceOf[js.Any],
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "expires" -> expires.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "id"    -> id.asInstanceOf[js.Any],
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "expires" -> expires.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApiKeyRequest]
     }
@@ -1653,10 +1785,10 @@ package appsync {
   }
 
   object UpdateApiKeyResponse {
-    def apply(
-      apiKey: js.UndefOr[ApiKey] = js.undefined): UpdateApiKeyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "apiKey" -> apiKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(apiKey: js.UndefOr[ApiKey] = js.undefined): UpdateApiKeyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("apiKey" -> apiKey.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApiKeyResponse]
     }
@@ -1677,28 +1809,42 @@ package appsync {
   }
 
   object UpdateDataSourceRequest {
-    def apply(
-      apiId: String,
-      name: ResourceName,
-      `type`: DataSourceType,
-      description: js.UndefOr[String] = js.undefined,
-      dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
-      elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
-      httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
-      lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
-      relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
-      serviceRoleArn: js.UndefOr[String] = js.undefined): UpdateDataSourceRequest = {
+    def apply(apiId: String,
+              name: ResourceName,
+              `type`: DataSourceType,
+              description: js.UndefOr[String] = js.undefined,
+              dynamodbConfig: js.UndefOr[DynamodbDataSourceConfig] = js.undefined,
+              elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
+              httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
+              lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
+              relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
+              serviceRoleArn: js.UndefOr[String] = js.undefined): UpdateDataSourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
+        "apiId"  -> apiId.asInstanceOf[js.Any],
+        "name"   -> name.asInstanceOf[js.Any],
         "`type`" -> `type`.asInstanceOf[js.Any],
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "dynamodbConfig" -> dynamodbConfig.map { x => x.asInstanceOf[js.Any] },
-        "elasticsearchConfig" -> elasticsearchConfig.map { x => x.asInstanceOf[js.Any] },
-        "httpConfig" -> httpConfig.map { x => x.asInstanceOf[js.Any] },
-        "lambdaConfig" -> lambdaConfig.map { x => x.asInstanceOf[js.Any] },
-        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x => x.asInstanceOf[js.Any] },
-        "serviceRoleArn" -> serviceRoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "dynamodbConfig" -> dynamodbConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "elasticsearchConfig" -> elasticsearchConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "httpConfig" -> httpConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lambdaConfig" -> lambdaConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "relationalDatabaseConfig" -> relationalDatabaseConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "serviceRoleArn" -> serviceRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDataSourceRequest]
     }
@@ -1710,10 +1856,10 @@ package appsync {
   }
 
   object UpdateDataSourceResponse {
-    def apply(
-      dataSource: js.UndefOr[DataSource] = js.undefined): UpdateDataSourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "dataSource" -> dataSource.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(dataSource: js.UndefOr[DataSource] = js.undefined): UpdateDataSourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("dataSource" -> dataSource.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDataSourceResponse]
     }
@@ -1732,24 +1878,28 @@ package appsync {
   }
 
   object UpdateFunctionRequest {
-    def apply(
-      apiId: String,
-      dataSourceName: ResourceName,
-      functionId: ResourceName,
-      functionVersion: String,
-      name: ResourceName,
-      requestMappingTemplate: MappingTemplate,
-      description: js.UndefOr[String] = js.undefined,
-      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): UpdateFunctionRequest = {
+    def apply(apiId: String,
+              dataSourceName: ResourceName,
+              functionId: ResourceName,
+              functionVersion: String,
+              name: ResourceName,
+              requestMappingTemplate: MappingTemplate,
+              description: js.UndefOr[String] = js.undefined,
+              responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): UpdateFunctionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
-        "functionId" -> functionId.asInstanceOf[js.Any],
-        "functionVersion" -> functionVersion.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
+        "apiId"                  -> apiId.asInstanceOf[js.Any],
+        "dataSourceName"         -> dataSourceName.asInstanceOf[js.Any],
+        "functionId"             -> functionId.asInstanceOf[js.Any],
+        "functionVersion"        -> functionVersion.asInstanceOf[js.Any],
+        "name"                   -> name.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
-        "description" -> description.map { x => x.asInstanceOf[js.Any] },
-        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFunctionRequest]
     }
@@ -1761,10 +1911,10 @@ package appsync {
   }
 
   object UpdateFunctionResponse {
-    def apply(
-      functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): UpdateFunctionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "functionConfiguration" -> functionConfiguration.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(functionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined): UpdateFunctionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("functionConfiguration" -> functionConfiguration.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFunctionResponse]
     }
@@ -1781,20 +1931,28 @@ package appsync {
   }
 
   object UpdateGraphqlApiRequest {
-    def apply(
-      apiId: String,
-      name: String,
-      authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
-      logConfig: js.UndefOr[LogConfig] = js.undefined,
-      openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
-      userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined): UpdateGraphqlApiRequest = {
+    def apply(apiId: String,
+              name: String,
+              authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+              logConfig: js.UndefOr[LogConfig] = js.undefined,
+              openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
+              userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined): UpdateGraphqlApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "apiId" -> apiId.asInstanceOf[js.Any],
-        "name" -> name.asInstanceOf[js.Any],
-        "authenticationType" -> authenticationType.map { x => x.asInstanceOf[js.Any] },
-        "logConfig" -> logConfig.map { x => x.asInstanceOf[js.Any] },
-        "openIDConnectConfig" -> openIDConnectConfig.map { x => x.asInstanceOf[js.Any] },
-        "userPoolConfig" -> userPoolConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "name"  -> name.asInstanceOf[js.Any],
+        "authenticationType" -> authenticationType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "logConfig" -> logConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "openIDConnectConfig" -> openIDConnectConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "userPoolConfig" -> userPoolConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGraphqlApiRequest]
     }
@@ -1806,10 +1964,10 @@ package appsync {
   }
 
   object UpdateGraphqlApiResponse {
-    def apply(
-      graphqlApi: js.UndefOr[GraphqlApi] = js.undefined): UpdateGraphqlApiResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "graphqlApi" -> graphqlApi.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(graphqlApi: js.UndefOr[GraphqlApi] = js.undefined): UpdateGraphqlApiResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("graphqlApi" -> graphqlApi.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGraphqlApiResponse]
     }
@@ -1828,24 +1986,32 @@ package appsync {
   }
 
   object UpdateResolverRequest {
-    def apply(
-      apiId: String,
-      fieldName: ResourceName,
-      requestMappingTemplate: MappingTemplate,
-      typeName: ResourceName,
-      dataSourceName: js.UndefOr[ResourceName] = js.undefined,
-      kind: js.UndefOr[ResolverKind] = js.undefined,
-      pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
-      responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): UpdateResolverRequest = {
+    def apply(apiId: String,
+              fieldName: ResourceName,
+              requestMappingTemplate: MappingTemplate,
+              typeName: ResourceName,
+              dataSourceName: js.UndefOr[ResourceName] = js.undefined,
+              kind: js.UndefOr[ResolverKind] = js.undefined,
+              pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
+              responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined): UpdateResolverRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "fieldName" -> fieldName.asInstanceOf[js.Any],
+        "apiId"                  -> apiId.asInstanceOf[js.Any],
+        "fieldName"              -> fieldName.asInstanceOf[js.Any],
         "requestMappingTemplate" -> requestMappingTemplate.asInstanceOf[js.Any],
-        "typeName" -> typeName.asInstanceOf[js.Any],
-        "dataSourceName" -> dataSourceName.map { x => x.asInstanceOf[js.Any] },
-        "kind" -> kind.map { x => x.asInstanceOf[js.Any] },
-        "pipelineConfig" -> pipelineConfig.map { x => x.asInstanceOf[js.Any] },
-        "responseMappingTemplate" -> responseMappingTemplate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "typeName"               -> typeName.asInstanceOf[js.Any],
+        "dataSourceName" -> dataSourceName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "kind" -> kind.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "pipelineConfig" -> pipelineConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "responseMappingTemplate" -> responseMappingTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResolverRequest]
     }
@@ -1857,10 +2023,10 @@ package appsync {
   }
 
   object UpdateResolverResponse {
-    def apply(
-      resolver: js.UndefOr[Resolver] = js.undefined): UpdateResolverResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "resolver" -> resolver.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(resolver: js.UndefOr[Resolver] = js.undefined): UpdateResolverResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("resolver" -> resolver.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResolverResponse]
     }
@@ -1875,16 +2041,18 @@ package appsync {
   }
 
   object UpdateTypeRequest {
-    def apply(
-      apiId: String,
-      format: TypeDefinitionFormat,
-      typeName: ResourceName,
-      definition: js.UndefOr[String] = js.undefined): UpdateTypeRequest = {
+    def apply(apiId: String,
+              format: TypeDefinitionFormat,
+              typeName: ResourceName,
+              definition: js.UndefOr[String] = js.undefined): UpdateTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "apiId" -> apiId.asInstanceOf[js.Any],
-        "format" -> format.asInstanceOf[js.Any],
+        "apiId"    -> apiId.asInstanceOf[js.Any],
+        "format"   -> format.asInstanceOf[js.Any],
         "typeName" -> typeName.asInstanceOf[js.Any],
-        "definition" -> definition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "definition" -> definition.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTypeRequest]
     }
@@ -1896,18 +2064,18 @@ package appsync {
   }
 
   object UpdateTypeResponse {
-    def apply(
-      `type`: js.UndefOr[Type] = js.undefined): UpdateTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "`type`" -> `type`.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(`type`: js.UndefOr[Type] = js.undefined): UpdateTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("`type`" -> `type`.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTypeResponse]
     }
   }
 
   /**
-   * Describes an Amazon Cognito user pool configuration.
-   */
+    * Describes an Amazon Cognito user pool configuration.
+    */
   @js.native
   trait UserPoolConfig extends js.Object {
     var awsRegion: String
@@ -1917,16 +2085,18 @@ package appsync {
   }
 
   object UserPoolConfig {
-    def apply(
-      awsRegion: String,
-      defaultAction: DefaultAction,
-      userPoolId: String,
-      appIdClientRegex: js.UndefOr[String] = js.undefined): UserPoolConfig = {
+    def apply(awsRegion: String,
+              defaultAction: DefaultAction,
+              userPoolId: String,
+              appIdClientRegex: js.UndefOr[String] = js.undefined): UserPoolConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "awsRegion" -> awsRegion.asInstanceOf[js.Any],
+        "awsRegion"     -> awsRegion.asInstanceOf[js.Any],
         "defaultAction" -> defaultAction.asInstanceOf[js.Any],
-        "userPoolId" -> userPoolId.asInstanceOf[js.Any],
-        "appIdClientRegex" -> appIdClientRegex.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "userPoolId"    -> userPoolId.asInstanceOf[js.Any],
+        "appIdClientRegex" -> appIdClientRegex.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserPoolConfig]
     }

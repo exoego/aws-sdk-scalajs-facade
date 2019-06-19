@@ -7,10 +7,11 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object sagemakerruntime {
-  type BodyBlob = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BodyBlob =
+    nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CustomAttributesHeader = String
-  type EndpointName = String
-  type Header = String
+  type EndpointName           = String
+  type Header                 = String
 }
 
 package sagemakerruntime {
@@ -32,18 +33,24 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointInput {
-    def apply(
-      Body: BodyBlob,
-      EndpointName: EndpointName,
-      Accept: js.UndefOr[Header] = js.undefined,
-      ContentType: js.UndefOr[Header] = js.undefined,
-      CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined): InvokeEndpointInput = {
+    def apply(Body: BodyBlob,
+              EndpointName: EndpointName,
+              Accept: js.UndefOr[Header] = js.undefined,
+              ContentType: js.UndefOr[Header] = js.undefined,
+              CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined): InvokeEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.asInstanceOf[js.Any],
+        "Body"         -> Body.asInstanceOf[js.Any],
         "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "Accept" -> Accept.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
-        "CustomAttributes" -> CustomAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Accept" -> Accept.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CustomAttributes" -> CustomAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvokeEndpointInput]
     }
@@ -58,16 +65,22 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointOutput {
-    def apply(
-      Body: BodyBlob,
-      ContentType: js.UndefOr[Header] = js.undefined,
-      CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
-      InvokedProductionVariant: js.UndefOr[Header] = js.undefined): InvokeEndpointOutput = {
+    def apply(Body: BodyBlob,
+              ContentType: js.UndefOr[Header] = js.undefined,
+              CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
+              InvokedProductionVariant: js.UndefOr[Header] = js.undefined): InvokeEndpointOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Body" -> Body.asInstanceOf[js.Any],
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
-        "CustomAttributes" -> CustomAttributes.map { x => x.asInstanceOf[js.Any] },
-        "InvokedProductionVariant" -> InvokedProductionVariant.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CustomAttributes" -> CustomAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InvokedProductionVariant" -> InvokedProductionVariant.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InvokeEndpointOutput]
     }

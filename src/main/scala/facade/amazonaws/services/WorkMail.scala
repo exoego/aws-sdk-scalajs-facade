@@ -7,32 +7,32 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object workmail {
-  type Aliases = js.Array[EmailAddress]
-  type EmailAddress = String
-  type EntityState = String
-  type GroupName = String
-  type Groups = js.Array[Group]
-  type MaxResults = Int
-  type MemberType = String
-  type Members = js.Array[Member]
-  type NextToken = String
-  type OrganizationId = String
-  type OrganizationName = String
+  type Aliases               = js.Array[EmailAddress]
+  type EmailAddress          = String
+  type EntityState           = String
+  type GroupName             = String
+  type Groups                = js.Array[Group]
+  type MaxResults            = Int
+  type MemberType            = String
+  type Members               = js.Array[Member]
+  type NextToken             = String
+  type OrganizationId        = String
+  type OrganizationName      = String
   type OrganizationSummaries = js.Array[OrganizationSummary]
-  type Password = String
-  type PermissionType = String
-  type PermissionValues = js.Array[PermissionType]
-  type Permissions = js.Array[Permission]
-  type ResourceDelegates = js.Array[Delegate]
-  type ResourceId = String
-  type ResourceName = String
-  type ResourceType = String
-  type Resources = js.Array[Resource]
-  type Timestamp = js.Date
-  type UserName = String
-  type UserRole = String
-  type Users = js.Array[User]
-  type WorkMailIdentifier = String
+  type Password              = String
+  type PermissionType        = String
+  type PermissionValues      = js.Array[PermissionType]
+  type Permissions           = js.Array[Permission]
+  type ResourceDelegates     = js.Array[Delegate]
+  type ResourceId            = String
+  type ResourceName          = String
+  type ResourceType          = String
+  type Resources             = js.Array[Resource]
+  type Timestamp             = js.Date
+  type UserName              = String
+  type UserRole              = String
+  type Users                 = js.Array[User]
+  type WorkMailIdentifier    = String
 }
 
 package workmail {
@@ -41,36 +41,48 @@ package workmail {
   class WorkMail() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateDelegateToResource(params: AssociateDelegateToResourceRequest): Request[AssociateDelegateToResourceResponse] = js.native
-    def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] = js.native
-    def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse] = js.native
-    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
+    def associateDelegateToResource(
+        params: AssociateDelegateToResourceRequest
+    ): Request[AssociateDelegateToResourceResponse] = js.native
+    def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] =
+      js.native
+    def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse]          = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse]          = js.native
     def createResource(params: CreateResourceRequest): Request[CreateResourceResponse] = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
-    def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
-    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
-    def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse]             = js.native
+    def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse]          = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse]          = js.native
+    def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] =
+      js.native
     def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
-    def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] = js.native
-    def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]             = js.native
+    def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] =
+      js.native
+    def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse]                      = js.native
     def describeOrganization(params: DescribeOrganizationRequest): Request[DescribeOrganizationResponse] = js.native
-    def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse] = js.native
-    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
-    def disassociateDelegateFromResource(params: DisassociateDelegateFromResourceRequest): Request[DisassociateDelegateFromResourceResponse] = js.native
-    def disassociateMemberFromGroup(params: DisassociateMemberFromGroupRequest): Request[DisassociateMemberFromGroupResponse] = js.native
-    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
+    def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse]             = js.native
+    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse]                         = js.native
+    def disassociateDelegateFromResource(
+        params: DisassociateDelegateFromResourceRequest
+    ): Request[DisassociateDelegateFromResourceResponse] = js.native
+    def disassociateMemberFromGroup(
+        params: DisassociateMemberFromGroupRequest
+    ): Request[DisassociateMemberFromGroupResponse]                                          = js.native
+    def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                = js.native
     def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
-    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
-    def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] = js.native
-    def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse] = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse]                   = js.native
+    def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] =
+      js.native
+    def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse]             = js.native
     def listResourceDelegates(params: ListResourceDelegatesRequest): Request[ListResourceDelegatesResponse] = js.native
-    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse] = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def listResources(params: ListResourcesRequest): Request[ListResourcesResponse]                         = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                     = js.native
     def putMailboxPermissions(params: PutMailboxPermissionsRequest): Request[PutMailboxPermissionsResponse] = js.native
-    def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse] = js.native
-    def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse] = js.native
-    def updatePrimaryEmailAddress(params: UpdatePrimaryEmailAddressRequest): Request[UpdatePrimaryEmailAddressResponse] = js.native
+    def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse]          = js.native
+    def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse]                         = js.native
+    def updatePrimaryEmailAddress(
+        params: UpdatePrimaryEmailAddressRequest
+    ): Request[UpdatePrimaryEmailAddressResponse]                                      = js.native
     def updateResource(params: UpdateResourceRequest): Request[UpdateResourceResponse] = js.native
   }
 
@@ -82,23 +94,21 @@ package workmail {
   }
 
   object AssociateDelegateToResourceRequest {
-    def apply(
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId,
-      ResourceId: ResourceId): AssociateDelegateToResourceRequest = {
+    def apply(EntityId: WorkMailIdentifier,
+              OrganizationId: OrganizationId,
+              ResourceId: ResourceId): AssociateDelegateToResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateDelegateToResourceRequest]
     }
   }
 
   @js.native
-  trait AssociateDelegateToResourceResponse extends js.Object {
-
-  }
+  trait AssociateDelegateToResourceResponse extends js.Object {}
 
   object AssociateDelegateToResourceResponse {
     def apply(): AssociateDelegateToResourceResponse = {
@@ -116,23 +126,21 @@ package workmail {
   }
 
   object AssociateMemberToGroupRequest {
-    def apply(
-      GroupId: WorkMailIdentifier,
-      MemberId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): AssociateMemberToGroupRequest = {
+    def apply(GroupId: WorkMailIdentifier,
+              MemberId: WorkMailIdentifier,
+              OrganizationId: OrganizationId): AssociateMemberToGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.asInstanceOf[js.Any],
-        "MemberId" -> MemberId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "MemberId"       -> MemberId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateMemberToGroupRequest]
     }
   }
 
   @js.native
-  trait AssociateMemberToGroupResponse extends js.Object {
-
-  }
+  trait AssociateMemberToGroupResponse extends js.Object {}
 
   object AssociateMemberToGroupResponse {
     def apply(): AssociateMemberToGroupResponse = {
@@ -143,8 +151,8 @@ package workmail {
   }
 
   /**
-   * At least one delegate must be associated to the resource to disable automatic replies from the resource.
-   */
+    * At least one delegate must be associated to the resource to disable automatic replies from the resource.
+    */
   @js.native
   trait BookingOptions extends js.Object {
     var AutoAcceptRequests: js.UndefOr[Boolean]
@@ -153,14 +161,20 @@ package workmail {
   }
 
   object BookingOptions {
-    def apply(
-      AutoAcceptRequests: js.UndefOr[Boolean] = js.undefined,
-      AutoDeclineConflictingRequests: js.UndefOr[Boolean] = js.undefined,
-      AutoDeclineRecurringRequests: js.UndefOr[Boolean] = js.undefined): BookingOptions = {
+    def apply(AutoAcceptRequests: js.UndefOr[Boolean] = js.undefined,
+              AutoDeclineConflictingRequests: js.UndefOr[Boolean] = js.undefined,
+              AutoDeclineRecurringRequests: js.UndefOr[Boolean] = js.undefined): BookingOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoAcceptRequests" -> AutoAcceptRequests.map { x => x.asInstanceOf[js.Any] },
-        "AutoDeclineConflictingRequests" -> AutoDeclineConflictingRequests.map { x => x.asInstanceOf[js.Any] },
-        "AutoDeclineRecurringRequests" -> AutoDeclineRecurringRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoAcceptRequests" -> AutoAcceptRequests.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoDeclineConflictingRequests" -> AutoDeclineConflictingRequests.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoDeclineRecurringRequests" -> AutoDeclineRecurringRequests.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BookingOptions]
     }
@@ -174,23 +188,19 @@ package workmail {
   }
 
   object CreateAliasRequest {
-    def apply(
-      Alias: EmailAddress,
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): CreateAliasRequest = {
+    def apply(Alias: EmailAddress, EntityId: WorkMailIdentifier, OrganizationId: OrganizationId): CreateAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Alias" -> Alias.asInstanceOf[js.Any],
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Alias"          -> Alias.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAliasRequest]
     }
   }
 
   @js.native
-  trait CreateAliasResponse extends js.Object {
-
-  }
+  trait CreateAliasResponse extends js.Object {}
 
   object CreateAliasResponse {
     def apply(): CreateAliasResponse = {
@@ -207,12 +217,11 @@ package workmail {
   }
 
   object CreateGroupRequest {
-    def apply(
-      Name: GroupName,
-      OrganizationId: OrganizationId): CreateGroupRequest = {
+    def apply(Name: GroupName, OrganizationId: OrganizationId): CreateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Name"           -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupRequest]
     }
@@ -224,10 +233,10 @@ package workmail {
   }
 
   object CreateGroupResponse {
-    def apply(
-      GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined): CreateGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined): CreateGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("GroupId" -> GroupId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupResponse]
     }
@@ -241,14 +250,12 @@ package workmail {
   }
 
   object CreateResourceRequest {
-    def apply(
-      Name: ResourceName,
-      OrganizationId: OrganizationId,
-      Type: ResourceType): CreateResourceRequest = {
+    def apply(Name: ResourceName, OrganizationId: OrganizationId, Type: ResourceType): CreateResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
+        "Name"           -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Type"           -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceRequest]
     }
@@ -260,10 +267,10 @@ package workmail {
   }
 
   object CreateResourceResponse {
-    def apply(
-      ResourceId: js.UndefOr[ResourceId] = js.undefined): CreateResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ResourceId: js.UndefOr[ResourceId] = js.undefined): CreateResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ResourceId" -> ResourceId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceResponse]
     }
@@ -278,16 +285,16 @@ package workmail {
   }
 
   object CreateUserRequest {
-    def apply(
-      DisplayName: String,
-      Name: UserName,
-      OrganizationId: OrganizationId,
-      Password: Password): CreateUserRequest = {
+    def apply(DisplayName: String,
+              Name: UserName,
+              OrganizationId: OrganizationId,
+              Password: Password): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisplayName" -> DisplayName.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
+        "DisplayName"    -> DisplayName.asInstanceOf[js.Any],
+        "Name"           -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Password" -> Password.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Password"       -> Password.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
     }
@@ -299,18 +306,18 @@ package workmail {
   }
 
   object CreateUserResponse {
-    def apply(
-      UserId: js.UndefOr[WorkMailIdentifier] = js.undefined): CreateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(UserId: js.UndefOr[WorkMailIdentifier] = js.undefined): CreateUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("UserId" -> UserId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
     }
   }
 
   /**
-   * The name of the attribute, which is one of the values defined in the UserAttribute enumeration.
-   */
+    * The name of the attribute, which is one of the values defined in the UserAttribute enumeration.
+    */
   @js.native
   trait Delegate extends js.Object {
     var Id: String
@@ -318,12 +325,9 @@ package workmail {
   }
 
   object Delegate {
-    def apply(
-      Id: String,
-      Type: MemberType): Delegate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: String, Type: MemberType): Delegate = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "Type" -> Type.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Delegate]
     }
@@ -337,23 +341,19 @@ package workmail {
   }
 
   object DeleteAliasRequest {
-    def apply(
-      Alias: EmailAddress,
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): DeleteAliasRequest = {
+    def apply(Alias: EmailAddress, EntityId: WorkMailIdentifier, OrganizationId: OrganizationId): DeleteAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Alias" -> Alias.asInstanceOf[js.Any],
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Alias"          -> Alias.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAliasRequest]
     }
   }
 
   @js.native
-  trait DeleteAliasResponse extends js.Object {
-
-  }
+  trait DeleteAliasResponse extends js.Object {}
 
   object DeleteAliasResponse {
     def apply(): DeleteAliasResponse = {
@@ -370,21 +370,18 @@ package workmail {
   }
 
   object DeleteGroupRequest {
-    def apply(
-      GroupId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): DeleteGroupRequest = {
+    def apply(GroupId: WorkMailIdentifier, OrganizationId: OrganizationId): DeleteGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupRequest]
     }
   }
 
   @js.native
-  trait DeleteGroupResponse extends js.Object {
-
-  }
+  trait DeleteGroupResponse extends js.Object {}
 
   object DeleteGroupResponse {
     def apply(): DeleteGroupResponse = {
@@ -402,23 +399,21 @@ package workmail {
   }
 
   object DeleteMailboxPermissionsRequest {
-    def apply(
-      EntityId: WorkMailIdentifier,
-      GranteeId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): DeleteMailboxPermissionsRequest = {
+    def apply(EntityId: WorkMailIdentifier,
+              GranteeId: WorkMailIdentifier,
+              OrganizationId: OrganizationId): DeleteMailboxPermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
-        "GranteeId" -> GranteeId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "GranteeId"      -> GranteeId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMailboxPermissionsRequest]
     }
   }
 
   @js.native
-  trait DeleteMailboxPermissionsResponse extends js.Object {
-
-  }
+  trait DeleteMailboxPermissionsResponse extends js.Object {}
 
   object DeleteMailboxPermissionsResponse {
     def apply(): DeleteMailboxPermissionsResponse = {
@@ -435,21 +430,18 @@ package workmail {
   }
 
   object DeleteResourceRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      ResourceId: ResourceId): DeleteResourceRequest = {
+    def apply(OrganizationId: OrganizationId, ResourceId: ResourceId): DeleteResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceRequest]
     }
   }
 
   @js.native
-  trait DeleteResourceResponse extends js.Object {
-
-  }
+  trait DeleteResourceResponse extends js.Object {}
 
   object DeleteResourceResponse {
     def apply(): DeleteResourceResponse = {
@@ -466,21 +458,18 @@ package workmail {
   }
 
   object DeleteUserRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      UserId: WorkMailIdentifier): DeleteUserRequest = {
+    def apply(OrganizationId: OrganizationId, UserId: WorkMailIdentifier): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserId"         -> UserId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
   }
 
   @js.native
-  trait DeleteUserResponse extends js.Object {
-
-  }
+  trait DeleteUserResponse extends js.Object {}
 
   object DeleteUserResponse {
     def apply(): DeleteUserResponse = {
@@ -497,21 +486,18 @@ package workmail {
   }
 
   object DeregisterFromWorkMailRequest {
-    def apply(
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): DeregisterFromWorkMailRequest = {
+    def apply(EntityId: WorkMailIdentifier, OrganizationId: OrganizationId): DeregisterFromWorkMailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterFromWorkMailRequest]
     }
   }
 
   @js.native
-  trait DeregisterFromWorkMailResponse extends js.Object {
-
-  }
+  trait DeregisterFromWorkMailResponse extends js.Object {}
 
   object DeregisterFromWorkMailResponse {
     def apply(): DeregisterFromWorkMailResponse = {
@@ -528,12 +514,11 @@ package workmail {
   }
 
   object DescribeGroupRequest {
-    def apply(
-      GroupId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): DescribeGroupRequest = {
+    def apply(GroupId: WorkMailIdentifier, OrganizationId: OrganizationId): DescribeGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGroupRequest]
     }
@@ -550,20 +535,32 @@ package workmail {
   }
 
   object DescribeGroupResponse {
-    def apply(
-      DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Email: js.UndefOr[EmailAddress] = js.undefined,
-      EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-      GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined,
-      Name: js.UndefOr[GroupName] = js.undefined,
-      State: js.UndefOr[EntityState] = js.undefined): DescribeGroupResponse = {
+    def apply(DisabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Email: js.UndefOr[EmailAddress] = js.undefined,
+              EnabledDate: js.UndefOr[Timestamp] = js.undefined,
+              GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined,
+              Name: js.UndefOr[GroupName] = js.undefined,
+              State: js.UndefOr[EntityState] = js.undefined): DescribeGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisabledDate" -> DisabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "EnabledDate" -> EnabledDate.map { x => x.asInstanceOf[js.Any] },
-        "GroupId" -> GroupId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisabledDate" -> DisabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnabledDate" -> EnabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GroupId" -> GroupId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGroupResponse]
     }
@@ -575,10 +572,9 @@ package workmail {
   }
 
   object DescribeOrganizationRequest {
-    def apply(
-      OrganizationId: OrganizationId): DescribeOrganizationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(OrganizationId: OrganizationId): DescribeOrganizationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("OrganizationId" -> OrganizationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrganizationRequest]
     }
@@ -597,24 +593,40 @@ package workmail {
   }
 
   object DescribeOrganizationResponse {
-    def apply(
-      Alias: js.UndefOr[OrganizationName] = js.undefined,
-      CompletedDate: js.UndefOr[Timestamp] = js.undefined,
-      DefaultMailDomain: js.UndefOr[String] = js.undefined,
-      DirectoryId: js.UndefOr[String] = js.undefined,
-      DirectoryType: js.UndefOr[String] = js.undefined,
-      ErrorMessage: js.UndefOr[String] = js.undefined,
-      OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
-      State: js.UndefOr[String] = js.undefined): DescribeOrganizationResponse = {
+    def apply(Alias: js.UndefOr[OrganizationName] = js.undefined,
+              CompletedDate: js.UndefOr[Timestamp] = js.undefined,
+              DefaultMailDomain: js.UndefOr[String] = js.undefined,
+              DirectoryId: js.UndefOr[String] = js.undefined,
+              DirectoryType: js.UndefOr[String] = js.undefined,
+              ErrorMessage: js.UndefOr[String] = js.undefined,
+              OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
+              State: js.UndefOr[String] = js.undefined): DescribeOrganizationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Alias" -> Alias.map { x => x.asInstanceOf[js.Any] },
-        "CompletedDate" -> CompletedDate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultMailDomain" -> DefaultMailDomain.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryId" -> DirectoryId.map { x => x.asInstanceOf[js.Any] },
-        "DirectoryType" -> DirectoryType.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Alias" -> Alias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompletedDate" -> CompletedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultMailDomain" -> DefaultMailDomain.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DirectoryId" -> DirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DirectoryType" -> DirectoryType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ErrorMessage" -> ErrorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOrganizationResponse]
     }
@@ -627,12 +639,11 @@ package workmail {
   }
 
   object DescribeResourceRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      ResourceId: ResourceId): DescribeResourceRequest = {
+    def apply(OrganizationId: OrganizationId, ResourceId: ResourceId): DescribeResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourceRequest]
     }
@@ -651,24 +662,40 @@ package workmail {
   }
 
   object DescribeResourceResponse {
-    def apply(
-      BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
-      DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Email: js.UndefOr[EmailAddress] = js.undefined,
-      EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Name: js.UndefOr[ResourceName] = js.undefined,
-      ResourceId: js.UndefOr[ResourceId] = js.undefined,
-      State: js.UndefOr[EntityState] = js.undefined,
-      Type: js.UndefOr[ResourceType] = js.undefined): DescribeResourceResponse = {
+    def apply(BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
+              DisabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Email: js.UndefOr[EmailAddress] = js.undefined,
+              EnabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Name: js.UndefOr[ResourceName] = js.undefined,
+              ResourceId: js.UndefOr[ResourceId] = js.undefined,
+              State: js.UndefOr[EntityState] = js.undefined,
+              Type: js.UndefOr[ResourceType] = js.undefined): DescribeResourceResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BookingOptions" -> BookingOptions.map { x => x.asInstanceOf[js.Any] },
-        "DisabledDate" -> DisabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "EnabledDate" -> EnabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BookingOptions" -> BookingOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisabledDate" -> DisabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnabledDate" -> EnabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceId" -> ResourceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourceResponse]
     }
@@ -681,12 +708,11 @@ package workmail {
   }
 
   object DescribeUserRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      UserId: WorkMailIdentifier): DescribeUserRequest = {
+    def apply(OrganizationId: OrganizationId, UserId: WorkMailIdentifier): DescribeUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserId"         -> UserId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserRequest]
     }
@@ -705,40 +731,56 @@ package workmail {
   }
 
   object DescribeUserResponse {
-    def apply(
-      DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-      DisplayName: js.UndefOr[String] = js.undefined,
-      Email: js.UndefOr[EmailAddress] = js.undefined,
-      EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Name: js.UndefOr[UserName] = js.undefined,
-      State: js.UndefOr[EntityState] = js.undefined,
-      UserId: js.UndefOr[WorkMailIdentifier] = js.undefined,
-      UserRole: js.UndefOr[UserRole] = js.undefined): DescribeUserResponse = {
+    def apply(DisabledDate: js.UndefOr[Timestamp] = js.undefined,
+              DisplayName: js.UndefOr[String] = js.undefined,
+              Email: js.UndefOr[EmailAddress] = js.undefined,
+              EnabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Name: js.UndefOr[UserName] = js.undefined,
+              State: js.UndefOr[EntityState] = js.undefined,
+              UserId: js.UndefOr[WorkMailIdentifier] = js.undefined,
+              UserRole: js.UndefOr[UserRole] = js.undefined): DescribeUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisabledDate" -> DisabledDate.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "EnabledDate" -> EnabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] },
-        "UserRole" -> UserRole.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisabledDate" -> DisabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnabledDate" -> EnabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserId" -> UserId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserRole" -> UserRole.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserResponse]
     }
   }
 
   /**
-   * The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.
-   */
+    * The Directory Service doesn't recognize the credentials supplied by the Amazon WorkMail service.
+    */
   @js.native
   trait DirectoryServiceAuthenticationFailedExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The directory that you are trying to perform operations on isn't available.
-   */
+    * The directory that you are trying to perform operations on isn't available.
+    */
   @js.native
   trait DirectoryUnavailableExceptionException extends js.Object {
     val Message: String
@@ -752,23 +794,21 @@ package workmail {
   }
 
   object DisassociateDelegateFromResourceRequest {
-    def apply(
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId,
-      ResourceId: ResourceId): DisassociateDelegateFromResourceRequest = {
+    def apply(EntityId: WorkMailIdentifier,
+              OrganizationId: OrganizationId,
+              ResourceId: ResourceId): DisassociateDelegateFromResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateDelegateFromResourceRequest]
     }
   }
 
   @js.native
-  trait DisassociateDelegateFromResourceResponse extends js.Object {
-
-  }
+  trait DisassociateDelegateFromResourceResponse extends js.Object {}
 
   object DisassociateDelegateFromResourceResponse {
     def apply(): DisassociateDelegateFromResourceResponse = {
@@ -786,23 +826,21 @@ package workmail {
   }
 
   object DisassociateMemberFromGroupRequest {
-    def apply(
-      GroupId: WorkMailIdentifier,
-      MemberId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): DisassociateMemberFromGroupRequest = {
+    def apply(GroupId: WorkMailIdentifier,
+              MemberId: WorkMailIdentifier,
+              OrganizationId: OrganizationId): DisassociateMemberFromGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.asInstanceOf[js.Any],
-        "MemberId" -> MemberId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "GroupId"        -> GroupId.asInstanceOf[js.Any],
+        "MemberId"       -> MemberId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateMemberFromGroupRequest]
     }
   }
 
   @js.native
-  trait DisassociateMemberFromGroupResponse extends js.Object {
-
-  }
+  trait DisassociateMemberFromGroupResponse extends js.Object {}
 
   object DisassociateMemberFromGroupResponse {
     def apply(): DisassociateMemberFromGroupResponse = {
@@ -813,48 +851,48 @@ package workmail {
   }
 
   /**
-   * The email address that you're trying to assign is already created for a different user, group, or resource.
-   */
+    * The email address that you're trying to assign is already created for a different user, group, or resource.
+    */
   @js.native
   trait EmailAddressInUseExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The user, group, or resource that you're trying to register is already registered.
-   */
+    * The user, group, or resource that you're trying to register is already registered.
+    */
   @js.native
   trait EntityAlreadyRegisteredExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The identifier supplied for the entity is valid, but it does not exist in your organization.
-   */
+    * The identifier supplied for the entity is valid, but it does not exist in your organization.
+    */
   @js.native
   trait EntityNotFoundExceptionException extends js.Object {
     val Message: String
   }
 
   object EntityStateEnum {
-    val ENABLED = "ENABLED"
+    val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
-    val DELETED = "DELETED"
+    val DELETED  = "DELETED"
 
     val values = IndexedSeq(ENABLED, DISABLED, DELETED)
   }
 
   /**
-   * You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted user.
-   */
+    * You are performing an operation on an entity that isn't in the expected state, such as trying to update a deleted user.
+    */
   @js.native
   trait EntityStateExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The representation of an Amazon WorkMail group.
-   */
+    * The representation of an Amazon WorkMail group.
+    */
   @js.native
   trait Group extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
@@ -866,44 +904,56 @@ package workmail {
   }
 
   object Group {
-    def apply(
-      DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Email: js.UndefOr[EmailAddress] = js.undefined,
-      EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
-      Name: js.UndefOr[GroupName] = js.undefined,
-      State: js.UndefOr[EntityState] = js.undefined): Group = {
+    def apply(DisabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Email: js.UndefOr[EmailAddress] = js.undefined,
+              EnabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
+              Name: js.UndefOr[GroupName] = js.undefined,
+              State: js.UndefOr[EntityState] = js.undefined): Group = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisabledDate" -> DisabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "EnabledDate" -> EnabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisabledDate" -> DisabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnabledDate" -> EnabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Group]
     }
   }
 
   /**
-   * The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do it on its behalf.
-   */
+    * The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at least one delegate associated that can do it on its behalf.
+    */
   @js.native
   trait InvalidConfigurationExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * One or more of the input parameters don't match the service's restrictions.
-   */
+    * One or more of the input parameters don't match the service's restrictions.
+    */
   @js.native
   trait InvalidParameterExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The supplied password doesn't match the minimum security constraints, such as length or use of special characters.
-   */
+    * The supplied password doesn't match the minimum security constraints, such as length or use of special characters.
+    */
   @js.native
   trait InvalidPasswordExceptionException extends js.Object {
     val Message: String
@@ -918,16 +968,20 @@ package workmail {
   }
 
   object ListAliasesRequest {
-    def apply(
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListAliasesRequest = {
+    def apply(EntityId: WorkMailIdentifier,
+              OrganizationId: OrganizationId,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListAliasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAliasesRequest]
     }
@@ -940,12 +994,13 @@ package workmail {
   }
 
   object ListAliasesResponse {
-    def apply(
-      Aliases: js.UndefOr[Aliases] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListAliasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Aliases" -> Aliases.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Aliases: js.UndefOr[Aliases] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListAliasesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Aliases" -> Aliases.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAliasesResponse]
     }
@@ -960,16 +1015,20 @@ package workmail {
   }
 
   object ListGroupMembersRequest {
-    def apply(
-      GroupId: WorkMailIdentifier,
-      OrganizationId: OrganizationId,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupMembersRequest = {
+    def apply(GroupId: WorkMailIdentifier,
+              OrganizationId: OrganizationId,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "GroupId"        -> GroupId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupMembersRequest]
     }
@@ -982,12 +1041,13 @@ package workmail {
   }
 
   object ListGroupMembersResponse {
-    def apply(
-      Members: js.UndefOr[Members] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Members" -> Members.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Members: js.UndefOr[Members] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Members" -> Members.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupMembersResponse]
     }
@@ -1001,14 +1061,18 @@ package workmail {
   }
 
   object ListGroupsRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupsRequest = {
+    def apply(OrganizationId: OrganizationId,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupsRequest]
     }
@@ -1021,12 +1085,13 @@ package workmail {
   }
 
   object ListGroupsResponse {
-    def apply(
-      Groups: js.UndefOr[Groups] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Groups: js.UndefOr[Groups] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Groups" -> Groups.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGroupsResponse]
     }
@@ -1041,16 +1106,20 @@ package workmail {
   }
 
   object ListMailboxPermissionsRequest {
-    def apply(
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListMailboxPermissionsRequest = {
+    def apply(EntityId: WorkMailIdentifier,
+              OrganizationId: OrganizationId,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListMailboxPermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMailboxPermissionsRequest]
     }
@@ -1063,12 +1132,13 @@ package workmail {
   }
 
   object ListMailboxPermissionsResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Permissions: js.UndefOr[Permissions] = js.undefined): ListMailboxPermissionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Permissions" -> Permissions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Permissions: js.UndefOr[Permissions] = js.undefined): ListMailboxPermissionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Permissions" -> Permissions.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMailboxPermissionsResponse]
     }
@@ -1081,12 +1151,13 @@ package workmail {
   }
 
   object ListOrganizationsRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListOrganizationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListOrganizationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOrganizationsRequest]
     }
@@ -1099,12 +1170,13 @@ package workmail {
   }
 
   object ListOrganizationsResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      OrganizationSummaries: js.UndefOr[OrganizationSummaries] = js.undefined): ListOrganizationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationSummaries" -> OrganizationSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              OrganizationSummaries: js.UndefOr[OrganizationSummaries] = js.undefined): ListOrganizationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "OrganizationSummaries" -> OrganizationSummaries.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOrganizationsResponse]
     }
@@ -1119,16 +1191,20 @@ package workmail {
   }
 
   object ListResourceDelegatesRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      ResourceId: WorkMailIdentifier,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListResourceDelegatesRequest = {
+    def apply(OrganizationId: OrganizationId,
+              ResourceId: WorkMailIdentifier,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListResourceDelegatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceDelegatesRequest]
     }
@@ -1141,12 +1217,13 @@ package workmail {
   }
 
   object ListResourceDelegatesResponse {
-    def apply(
-      Delegates: js.UndefOr[ResourceDelegates] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListResourceDelegatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Delegates" -> Delegates.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Delegates: js.UndefOr[ResourceDelegates] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListResourceDelegatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Delegates" -> Delegates.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceDelegatesResponse]
     }
@@ -1160,14 +1237,18 @@ package workmail {
   }
 
   object ListResourcesRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListResourcesRequest = {
+    def apply(OrganizationId: OrganizationId,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesRequest]
     }
@@ -1180,12 +1261,13 @@ package workmail {
   }
 
   object ListResourcesResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Resources: js.UndefOr[Resources] = js.undefined): ListResourcesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Resources" -> Resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Resources: js.UndefOr[Resources] = js.undefined): ListResourcesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Resources" -> Resources.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesResponse]
     }
@@ -1199,14 +1281,18 @@ package workmail {
   }
 
   object ListUsersRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersRequest = {
+    def apply(OrganizationId: OrganizationId,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
     }
@@ -1219,36 +1305,37 @@ package workmail {
   }
 
   object ListUsersResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Users: js.UndefOr[Users] = js.undefined): ListUsersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Users: js.UndefOr[Users] = js.undefined): ListUsersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Users" -> Users.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
     }
   }
 
   /**
-   * For an email or alias to be created in Amazon WorkMail, the included domain must be defined in the organization.
-   */
+    * For an email or alias to be created in Amazon WorkMail, the included domain must be defined in the organization.
+    */
   @js.native
   trait MailDomainNotFoundExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * After a domain has been added to the organization, it must be verified. The domain is not yet verified.
-   */
+    * After a domain has been added to the organization, it must be verified. The domain is not yet verified.
+    */
   @js.native
   trait MailDomainStateExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The representation of a group member (user or group).
-   */
+    * The representation of a group member (user or group).
+    */
   @js.native
   trait Member extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
@@ -1260,20 +1347,32 @@ package workmail {
   }
 
   object Member {
-    def apply(
-      DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-      EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Id: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      State: js.UndefOr[EntityState] = js.undefined,
-      Type: js.UndefOr[MemberType] = js.undefined): Member = {
+    def apply(DisabledDate: js.UndefOr[Timestamp] = js.undefined,
+              EnabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Id: js.UndefOr[String] = js.undefined,
+              Name: js.UndefOr[String] = js.undefined,
+              State: js.UndefOr[EntityState] = js.undefined,
+              Type: js.UndefOr[MemberType] = js.undefined): Member = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisabledDate" -> DisabledDate.map { x => x.asInstanceOf[js.Any] },
-        "EnabledDate" -> EnabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisabledDate" -> DisabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnabledDate" -> EnabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Member]
     }
@@ -1281,38 +1380,38 @@ package workmail {
 
   object MemberTypeEnum {
     val GROUP = "GROUP"
-    val USER = "USER"
+    val USER  = "USER"
 
     val values = IndexedSeq(GROUP, USER)
   }
 
   /**
-   * The entity (user, group, or user) name isn't unique in Amazon WorkMail.
-   */
+    * The entity (user, group, or user) name isn't unique in Amazon WorkMail.
+    */
   @js.native
   trait NameAvailabilityExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * An operation received a valid organization identifier that either doesn't belong or exist in the system.
-   */
+    * An operation received a valid organization identifier that either doesn't belong or exist in the system.
+    */
   @js.native
   trait OrganizationNotFoundExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its entities.
-   */
+    * The organization must have a valid state (Active or Synchronizing) to perform certain operations on the organization or its entities.
+    */
   @js.native
   trait OrganizationStateExceptionException extends js.Object {
     val Message: String
   }
 
   /**
-   * The brief overview associated with an organization.
-   */
+    * The brief overview associated with an organization.
+    */
   @js.native
   trait OrganizationSummary extends js.Object {
     var Alias: js.UndefOr[OrganizationName]
@@ -1322,24 +1421,32 @@ package workmail {
   }
 
   object OrganizationSummary {
-    def apply(
-      Alias: js.UndefOr[OrganizationName] = js.undefined,
-      ErrorMessage: js.UndefOr[String] = js.undefined,
-      OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
-      State: js.UndefOr[String] = js.undefined): OrganizationSummary = {
+    def apply(Alias: js.UndefOr[OrganizationName] = js.undefined,
+              ErrorMessage: js.UndefOr[String] = js.undefined,
+              OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
+              State: js.UndefOr[String] = js.undefined): OrganizationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Alias" -> Alias.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Alias" -> Alias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ErrorMessage" -> ErrorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrganizationSummary]
     }
   }
 
   /**
-   * Permission granted to an entity (user, group) to access a certain aspect of another entity's mailbox.
-   */
+    * Permission granted to an entity (user, group) to access a certain aspect of another entity's mailbox.
+    */
   @js.native
   trait Permission extends js.Object {
     var GranteeId: WorkMailIdentifier
@@ -1348,22 +1455,22 @@ package workmail {
   }
 
   object Permission {
-    def apply(
-      GranteeId: WorkMailIdentifier,
-      GranteeType: MemberType,
-      PermissionValues: PermissionValues): Permission = {
+    def apply(GranteeId: WorkMailIdentifier,
+              GranteeType: MemberType,
+              PermissionValues: PermissionValues): Permission = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GranteeId" -> GranteeId.asInstanceOf[js.Any],
-        "GranteeType" -> GranteeType.asInstanceOf[js.Any],
-        "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
+        "GranteeType"      -> GranteeType.asInstanceOf[js.Any],
+        "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Permission]
     }
   }
 
   object PermissionTypeEnum {
-    val FULL_ACCESS = "FULL_ACCESS"
-    val SEND_AS = "SEND_AS"
+    val FULL_ACCESS    = "FULL_ACCESS"
+    val SEND_AS        = "SEND_AS"
     val SEND_ON_BEHALF = "SEND_ON_BEHALF"
 
     val values = IndexedSeq(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
@@ -1378,25 +1485,23 @@ package workmail {
   }
 
   object PutMailboxPermissionsRequest {
-    def apply(
-      EntityId: WorkMailIdentifier,
-      GranteeId: WorkMailIdentifier,
-      OrganizationId: OrganizationId,
-      PermissionValues: PermissionValues): PutMailboxPermissionsRequest = {
+    def apply(EntityId: WorkMailIdentifier,
+              GranteeId: WorkMailIdentifier,
+              OrganizationId: OrganizationId,
+              PermissionValues: PermissionValues): PutMailboxPermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
-        "GranteeId" -> GranteeId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EntityId"         -> EntityId.asInstanceOf[js.Any],
+        "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
+        "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
+        "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutMailboxPermissionsRequest]
     }
   }
 
   @js.native
-  trait PutMailboxPermissionsResponse extends js.Object {
-
-  }
+  trait PutMailboxPermissionsResponse extends js.Object {}
 
   object PutMailboxPermissionsResponse {
     def apply(): PutMailboxPermissionsResponse = {
@@ -1414,23 +1519,21 @@ package workmail {
   }
 
   object RegisterToWorkMailRequest {
-    def apply(
-      Email: EmailAddress,
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): RegisterToWorkMailRequest = {
+    def apply(Email: EmailAddress,
+              EntityId: WorkMailIdentifier,
+              OrganizationId: OrganizationId): RegisterToWorkMailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Email" -> Email.asInstanceOf[js.Any],
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Email"          -> Email.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterToWorkMailRequest]
     }
   }
 
   @js.native
-  trait RegisterToWorkMailResponse extends js.Object {
-
-  }
+  trait RegisterToWorkMailResponse extends js.Object {}
 
   object RegisterToWorkMailResponse {
     def apply(): RegisterToWorkMailResponse = {
@@ -1441,8 +1544,8 @@ package workmail {
   }
 
   /**
-   * This entity name is not allowed in Amazon WorkMail.
-   */
+    * This entity name is not allowed in Amazon WorkMail.
+    */
   @js.native
   trait ReservedNameExceptionException extends js.Object {
     val Message: String
@@ -1456,23 +1559,19 @@ package workmail {
   }
 
   object ResetPasswordRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      Password: Password,
-      UserId: WorkMailIdentifier): ResetPasswordRequest = {
+    def apply(OrganizationId: OrganizationId, Password: Password, UserId: WorkMailIdentifier): ResetPasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Password" -> Password.asInstanceOf[js.Any],
-        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Password"       -> Password.asInstanceOf[js.Any],
+        "UserId"         -> UserId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetPasswordRequest]
     }
   }
 
   @js.native
-  trait ResetPasswordResponse extends js.Object {
-
-  }
+  trait ResetPasswordResponse extends js.Object {}
 
   object ResetPasswordResponse {
     def apply(): ResetPasswordResponse = {
@@ -1483,8 +1582,8 @@ package workmail {
   }
 
   /**
-   * The overview for a resource containing relevant data regarding it.
-   */
+    * The overview for a resource containing relevant data regarding it.
+    */
   @js.native
   trait Resource extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
@@ -1497,37 +1596,51 @@ package workmail {
   }
 
   object Resource {
-    def apply(
-      DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Email: js.UndefOr[EmailAddress] = js.undefined,
-      EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
-      Name: js.UndefOr[ResourceName] = js.undefined,
-      State: js.UndefOr[EntityState] = js.undefined,
-      Type: js.UndefOr[ResourceType] = js.undefined): Resource = {
+    def apply(DisabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Email: js.UndefOr[EmailAddress] = js.undefined,
+              EnabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
+              Name: js.UndefOr[ResourceName] = js.undefined,
+              State: js.UndefOr[EntityState] = js.undefined,
+              Type: js.UndefOr[ResourceType] = js.undefined): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisabledDate" -> DisabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "EnabledDate" -> EnabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisabledDate" -> DisabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnabledDate" -> EnabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resource]
     }
   }
 
   object ResourceTypeEnum {
-    val ROOM = "ROOM"
+    val ROOM      = "ROOM"
     val EQUIPMENT = "EQUIPMENT"
 
     val values = IndexedSeq(ROOM, EQUIPMENT)
   }
 
   /**
-   * You can't perform a write operation against a read-only directory.
-   */
+    * You can't perform a write operation against a read-only directory.
+    */
   @js.native
   trait UnsupportedOperationExceptionException extends js.Object {
     val Message: String
@@ -1541,23 +1654,21 @@ package workmail {
   }
 
   object UpdatePrimaryEmailAddressRequest {
-    def apply(
-      Email: EmailAddress,
-      EntityId: WorkMailIdentifier,
-      OrganizationId: OrganizationId): UpdatePrimaryEmailAddressRequest = {
+    def apply(Email: EmailAddress,
+              EntityId: WorkMailIdentifier,
+              OrganizationId: OrganizationId): UpdatePrimaryEmailAddressRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Email" -> Email.asInstanceOf[js.Any],
-        "EntityId" -> EntityId.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Email"          -> Email.asInstanceOf[js.Any],
+        "EntityId"       -> EntityId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePrimaryEmailAddressRequest]
     }
   }
 
   @js.native
-  trait UpdatePrimaryEmailAddressResponse extends js.Object {
-
-  }
+  trait UpdatePrimaryEmailAddressResponse extends js.Object {}
 
   object UpdatePrimaryEmailAddressResponse {
     def apply(): UpdatePrimaryEmailAddressResponse = {
@@ -1576,25 +1687,27 @@ package workmail {
   }
 
   object UpdateResourceRequest {
-    def apply(
-      OrganizationId: OrganizationId,
-      ResourceId: ResourceId,
-      BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
-      Name: js.UndefOr[ResourceName] = js.undefined): UpdateResourceRequest = {
+    def apply(OrganizationId: OrganizationId,
+              ResourceId: ResourceId,
+              BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
+              Name: js.UndefOr[ResourceName] = js.undefined): UpdateResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "BookingOptions" -> BookingOptions.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any],
+        "BookingOptions" -> BookingOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResourceRequest]
     }
   }
 
   @js.native
-  trait UpdateResourceResponse extends js.Object {
-
-  }
+  trait UpdateResourceResponse extends js.Object {}
 
   object UpdateResourceResponse {
     def apply(): UpdateResourceResponse = {
@@ -1605,8 +1718,8 @@ package workmail {
   }
 
   /**
-   * The representation of an Amazon WorkMail user.
-   */
+    * The representation of an Amazon WorkMail user.
+    */
   @js.native
   trait User extends js.Object {
     var DisabledDate: js.UndefOr[Timestamp]
@@ -1620,32 +1733,48 @@ package workmail {
   }
 
   object User {
-    def apply(
-      DisabledDate: js.UndefOr[Timestamp] = js.undefined,
-      DisplayName: js.UndefOr[String] = js.undefined,
-      Email: js.UndefOr[EmailAddress] = js.undefined,
-      EnabledDate: js.UndefOr[Timestamp] = js.undefined,
-      Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
-      Name: js.UndefOr[UserName] = js.undefined,
-      State: js.UndefOr[EntityState] = js.undefined,
-      UserRole: js.UndefOr[UserRole] = js.undefined): User = {
+    def apply(DisabledDate: js.UndefOr[Timestamp] = js.undefined,
+              DisplayName: js.UndefOr[String] = js.undefined,
+              Email: js.UndefOr[EmailAddress] = js.undefined,
+              EnabledDate: js.UndefOr[Timestamp] = js.undefined,
+              Id: js.UndefOr[WorkMailIdentifier] = js.undefined,
+              Name: js.UndefOr[UserName] = js.undefined,
+              State: js.UndefOr[EntityState] = js.undefined,
+              UserRole: js.UndefOr[UserRole] = js.undefined): User = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisabledDate" -> DisabledDate.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "EnabledDate" -> EnabledDate.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "UserRole" -> UserRole.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisabledDate" -> DisabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnabledDate" -> EnabledDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserRole" -> UserRole.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
     }
   }
 
   object UserRoleEnum {
-    val USER = "USER"
-    val RESOURCE = "RESOURCE"
+    val USER        = "USER"
+    val RESOURCE    = "RESOURCE"
     val SYSTEM_USER = "SYSTEM_USER"
 
     val values = IndexedSeq(USER, RESOURCE, SYSTEM_USER)

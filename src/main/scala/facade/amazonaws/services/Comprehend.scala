@@ -7,48 +7,48 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object comprehend {
-  type AnyLengthString = String
-  type BatchItemErrorList = js.Array[BatchItemError]
-  type ClientRequestTokenString = String
-  type ComprehendArnName = String
-  type DocumentClassificationJobPropertiesList = js.Array[DocumentClassificationJobProperties]
-  type DocumentClassifierArn = String
-  type DocumentClassifierPropertiesList = js.Array[DocumentClassifierProperties]
+  type AnyLengthString                            = String
+  type BatchItemErrorList                         = js.Array[BatchItemError]
+  type ClientRequestTokenString                   = String
+  type ComprehendArnName                          = String
+  type DocumentClassificationJobPropertiesList    = js.Array[DocumentClassificationJobProperties]
+  type DocumentClassifierArn                      = String
+  type DocumentClassifierPropertiesList           = js.Array[DocumentClassifierProperties]
   type DominantLanguageDetectionJobPropertiesList = js.Array[DominantLanguageDetectionJobProperties]
-  type EntitiesDetectionJobPropertiesList = js.Array[EntitiesDetectionJobProperties]
-  type EntityRecognizerArn = String
-  type EntityRecognizerMetadataEntityTypesList = js.Array[EntityRecognizerMetadataEntityTypesListItem]
-  type EntityRecognizerPropertiesList = js.Array[EntityRecognizerProperties]
-  type EntityType = String
-  type EntityTypeName = String
-  type EntityTypesList = js.Array[EntityTypesListItem]
-  type IamRoleArn = String
-  type InputFormat = String
-  type JobId = String
-  type JobName = String
-  type JobStatus = String
-  type KeyPhrasesDetectionJobPropertiesList = js.Array[KeyPhrasesDetectionJobProperties]
-  type LanguageCode = String
-  type ListOfDetectDominantLanguageResult = js.Array[BatchDetectDominantLanguageItemResult]
-  type ListOfDetectEntitiesResult = js.Array[BatchDetectEntitiesItemResult]
-  type ListOfDetectKeyPhrasesResult = js.Array[BatchDetectKeyPhrasesItemResult]
-  type ListOfDetectSentimentResult = js.Array[BatchDetectSentimentItemResult]
-  type ListOfDetectSyntaxResult = js.Array[BatchDetectSyntaxItemResult]
-  type ListOfDominantLanguages = js.Array[DominantLanguage]
-  type ListOfEntities = js.Array[Entity]
-  type ListOfKeyPhrases = js.Array[KeyPhrase]
-  type ListOfSyntaxTokens = js.Array[SyntaxToken]
-  type MaxResultsInteger = Int
-  type ModelStatus = String
-  type NumberOfTopicsInteger = Int
-  type PartOfSpeechTagType = String
-  type S3Uri = String
-  type SentimentDetectionJobPropertiesList = js.Array[SentimentDetectionJobProperties]
-  type SentimentType = String
-  type StringList = js.Array[String]
-  type SyntaxLanguageCode = String
-  type Timestamp = js.Date
-  type TopicsDetectionJobPropertiesList = js.Array[TopicsDetectionJobProperties]
+  type EntitiesDetectionJobPropertiesList         = js.Array[EntitiesDetectionJobProperties]
+  type EntityRecognizerArn                        = String
+  type EntityRecognizerMetadataEntityTypesList    = js.Array[EntityRecognizerMetadataEntityTypesListItem]
+  type EntityRecognizerPropertiesList             = js.Array[EntityRecognizerProperties]
+  type EntityType                                 = String
+  type EntityTypeName                             = String
+  type EntityTypesList                            = js.Array[EntityTypesListItem]
+  type IamRoleArn                                 = String
+  type InputFormat                                = String
+  type JobId                                      = String
+  type JobName                                    = String
+  type JobStatus                                  = String
+  type KeyPhrasesDetectionJobPropertiesList       = js.Array[KeyPhrasesDetectionJobProperties]
+  type LanguageCode                               = String
+  type ListOfDetectDominantLanguageResult         = js.Array[BatchDetectDominantLanguageItemResult]
+  type ListOfDetectEntitiesResult                 = js.Array[BatchDetectEntitiesItemResult]
+  type ListOfDetectKeyPhrasesResult               = js.Array[BatchDetectKeyPhrasesItemResult]
+  type ListOfDetectSentimentResult                = js.Array[BatchDetectSentimentItemResult]
+  type ListOfDetectSyntaxResult                   = js.Array[BatchDetectSyntaxItemResult]
+  type ListOfDominantLanguages                    = js.Array[DominantLanguage]
+  type ListOfEntities                             = js.Array[Entity]
+  type ListOfKeyPhrases                           = js.Array[KeyPhrase]
+  type ListOfSyntaxTokens                         = js.Array[SyntaxToken]
+  type MaxResultsInteger                          = Int
+  type ModelStatus                                = String
+  type NumberOfTopicsInteger                      = Int
+  type PartOfSpeechTagType                        = String
+  type S3Uri                                      = String
+  type SentimentDetectionJobPropertiesList        = js.Array[SentimentDetectionJobProperties]
+  type SentimentType                              = String
+  type StringList                                 = js.Array[String]
+  type SyntaxLanguageCode                         = String
+  type Timestamp                                  = js.Date
+  type TopicsDetectionJobPropertiesList           = js.Array[TopicsDetectionJobProperties]
 }
 
 package comprehend {
@@ -57,53 +57,109 @@ package comprehend {
   class Comprehend() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def batchDetectDominantLanguage(params: BatchDetectDominantLanguageRequest): Request[BatchDetectDominantLanguageResponse] = js.native
-    def batchDetectEntities(params: BatchDetectEntitiesRequest): Request[BatchDetectEntitiesResponse] = js.native
+    def batchDetectDominantLanguage(
+        params: BatchDetectDominantLanguageRequest
+    ): Request[BatchDetectDominantLanguageResponse]                                                         = js.native
+    def batchDetectEntities(params: BatchDetectEntitiesRequest): Request[BatchDetectEntitiesResponse]       = js.native
     def batchDetectKeyPhrases(params: BatchDetectKeyPhrasesRequest): Request[BatchDetectKeyPhrasesResponse] = js.native
-    def batchDetectSentiment(params: BatchDetectSentimentRequest): Request[BatchDetectSentimentResponse] = js.native
-    def batchDetectSyntax(params: BatchDetectSyntaxRequest): Request[BatchDetectSyntaxResponse] = js.native
-    def createDocumentClassifier(params: CreateDocumentClassifierRequest): Request[CreateDocumentClassifierResponse] = js.native
-    def createEntityRecognizer(params: CreateEntityRecognizerRequest): Request[CreateEntityRecognizerResponse] = js.native
-    def deleteDocumentClassifier(params: DeleteDocumentClassifierRequest): Request[DeleteDocumentClassifierResponse] = js.native
-    def deleteEntityRecognizer(params: DeleteEntityRecognizerRequest): Request[DeleteEntityRecognizerResponse] = js.native
-    def describeDocumentClassificationJob(params: DescribeDocumentClassificationJobRequest): Request[DescribeDocumentClassificationJobResponse] = js.native
-    def describeDocumentClassifier(params: DescribeDocumentClassifierRequest): Request[DescribeDocumentClassifierResponse] = js.native
-    def describeDominantLanguageDetectionJob(params: DescribeDominantLanguageDetectionJobRequest): Request[DescribeDominantLanguageDetectionJobResponse] = js.native
-    def describeEntitiesDetectionJob(params: DescribeEntitiesDetectionJobRequest): Request[DescribeEntitiesDetectionJobResponse] = js.native
-    def describeEntityRecognizer(params: DescribeEntityRecognizerRequest): Request[DescribeEntityRecognizerResponse] = js.native
-    def describeKeyPhrasesDetectionJob(params: DescribeKeyPhrasesDetectionJobRequest): Request[DescribeKeyPhrasesDetectionJobResponse] = js.native
-    def describeSentimentDetectionJob(params: DescribeSentimentDetectionJobRequest): Request[DescribeSentimentDetectionJobResponse] = js.native
-    def describeTopicsDetectionJob(params: DescribeTopicsDetectionJobRequest): Request[DescribeTopicsDetectionJobResponse] = js.native
-    def detectDominantLanguage(params: DetectDominantLanguageRequest): Request[DetectDominantLanguageResponse] = js.native
-    def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
+    def batchDetectSentiment(params: BatchDetectSentimentRequest): Request[BatchDetectSentimentResponse]    = js.native
+    def batchDetectSyntax(params: BatchDetectSyntaxRequest): Request[BatchDetectSyntaxResponse]             = js.native
+    def createDocumentClassifier(params: CreateDocumentClassifierRequest): Request[CreateDocumentClassifierResponse] =
+      js.native
+    def createEntityRecognizer(params: CreateEntityRecognizerRequest): Request[CreateEntityRecognizerResponse] =
+      js.native
+    def deleteDocumentClassifier(params: DeleteDocumentClassifierRequest): Request[DeleteDocumentClassifierResponse] =
+      js.native
+    def deleteEntityRecognizer(params: DeleteEntityRecognizerRequest): Request[DeleteEntityRecognizerResponse] =
+      js.native
+    def describeDocumentClassificationJob(
+        params: DescribeDocumentClassificationJobRequest
+    ): Request[DescribeDocumentClassificationJobResponse] = js.native
+    def describeDocumentClassifier(
+        params: DescribeDocumentClassifierRequest
+    ): Request[DescribeDocumentClassifierResponse] = js.native
+    def describeDominantLanguageDetectionJob(
+        params: DescribeDominantLanguageDetectionJobRequest
+    ): Request[DescribeDominantLanguageDetectionJobResponse] = js.native
+    def describeEntitiesDetectionJob(
+        params: DescribeEntitiesDetectionJobRequest
+    ): Request[DescribeEntitiesDetectionJobResponse] = js.native
+    def describeEntityRecognizer(params: DescribeEntityRecognizerRequest): Request[DescribeEntityRecognizerResponse] =
+      js.native
+    def describeKeyPhrasesDetectionJob(
+        params: DescribeKeyPhrasesDetectionJobRequest
+    ): Request[DescribeKeyPhrasesDetectionJobResponse] = js.native
+    def describeSentimentDetectionJob(
+        params: DescribeSentimentDetectionJobRequest
+    ): Request[DescribeSentimentDetectionJobResponse] = js.native
+    def describeTopicsDetectionJob(
+        params: DescribeTopicsDetectionJobRequest
+    ): Request[DescribeTopicsDetectionJobResponse] = js.native
+    def detectDominantLanguage(params: DetectDominantLanguageRequest): Request[DetectDominantLanguageResponse] =
+      js.native
+    def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse]       = js.native
     def detectKeyPhrases(params: DetectKeyPhrasesRequest): Request[DetectKeyPhrasesResponse] = js.native
-    def detectSentiment(params: DetectSentimentRequest): Request[DetectSentimentResponse] = js.native
-    def detectSyntax(params: DetectSyntaxRequest): Request[DetectSyntaxResponse] = js.native
-    def listDocumentClassificationJobs(params: ListDocumentClassificationJobsRequest): Request[ListDocumentClassificationJobsResponse] = js.native
-    def listDocumentClassifiers(params: ListDocumentClassifiersRequest): Request[ListDocumentClassifiersResponse] = js.native
-    def listDominantLanguageDetectionJobs(params: ListDominantLanguageDetectionJobsRequest): Request[ListDominantLanguageDetectionJobsResponse] = js.native
-    def listEntitiesDetectionJobs(params: ListEntitiesDetectionJobsRequest): Request[ListEntitiesDetectionJobsResponse] = js.native
+    def detectSentiment(params: DetectSentimentRequest): Request[DetectSentimentResponse]    = js.native
+    def detectSyntax(params: DetectSyntaxRequest): Request[DetectSyntaxResponse]             = js.native
+    def listDocumentClassificationJobs(
+        params: ListDocumentClassificationJobsRequest
+    ): Request[ListDocumentClassificationJobsResponse] = js.native
+    def listDocumentClassifiers(params: ListDocumentClassifiersRequest): Request[ListDocumentClassifiersResponse] =
+      js.native
+    def listDominantLanguageDetectionJobs(
+        params: ListDominantLanguageDetectionJobsRequest
+    ): Request[ListDominantLanguageDetectionJobsResponse] = js.native
+    def listEntitiesDetectionJobs(
+        params: ListEntitiesDetectionJobsRequest
+    ): Request[ListEntitiesDetectionJobsResponse]                                                           = js.native
     def listEntityRecognizers(params: ListEntityRecognizersRequest): Request[ListEntityRecognizersResponse] = js.native
-    def listKeyPhrasesDetectionJobs(params: ListKeyPhrasesDetectionJobsRequest): Request[ListKeyPhrasesDetectionJobsResponse] = js.native
-    def listSentimentDetectionJobs(params: ListSentimentDetectionJobsRequest): Request[ListSentimentDetectionJobsResponse] = js.native
-    def listTopicsDetectionJobs(params: ListTopicsDetectionJobsRequest): Request[ListTopicsDetectionJobsResponse] = js.native
-    def startDocumentClassificationJob(params: StartDocumentClassificationJobRequest): Request[StartDocumentClassificationJobResponse] = js.native
-    def startDominantLanguageDetectionJob(params: StartDominantLanguageDetectionJobRequest): Request[StartDominantLanguageDetectionJobResponse] = js.native
-    def startEntitiesDetectionJob(params: StartEntitiesDetectionJobRequest): Request[StartEntitiesDetectionJobResponse] = js.native
-    def startKeyPhrasesDetectionJob(params: StartKeyPhrasesDetectionJobRequest): Request[StartKeyPhrasesDetectionJobResponse] = js.native
-    def startSentimentDetectionJob(params: StartSentimentDetectionJobRequest): Request[StartSentimentDetectionJobResponse] = js.native
-    def startTopicsDetectionJob(params: StartTopicsDetectionJobRequest): Request[StartTopicsDetectionJobResponse] = js.native
-    def stopDominantLanguageDetectionJob(params: StopDominantLanguageDetectionJobRequest): Request[StopDominantLanguageDetectionJobResponse] = js.native
-    def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] = js.native
-    def stopKeyPhrasesDetectionJob(params: StopKeyPhrasesDetectionJobRequest): Request[StopKeyPhrasesDetectionJobResponse] = js.native
-    def stopSentimentDetectionJob(params: StopSentimentDetectionJobRequest): Request[StopSentimentDetectionJobResponse] = js.native
-    def stopTrainingDocumentClassifier(params: StopTrainingDocumentClassifierRequest): Request[StopTrainingDocumentClassifierResponse] = js.native
-    def stopTrainingEntityRecognizer(params: StopTrainingEntityRecognizerRequest): Request[StopTrainingEntityRecognizerResponse] = js.native
+    def listKeyPhrasesDetectionJobs(
+        params: ListKeyPhrasesDetectionJobsRequest
+    ): Request[ListKeyPhrasesDetectionJobsResponse] = js.native
+    def listSentimentDetectionJobs(
+        params: ListSentimentDetectionJobsRequest
+    ): Request[ListSentimentDetectionJobsResponse] = js.native
+    def listTopicsDetectionJobs(params: ListTopicsDetectionJobsRequest): Request[ListTopicsDetectionJobsResponse] =
+      js.native
+    def startDocumentClassificationJob(
+        params: StartDocumentClassificationJobRequest
+    ): Request[StartDocumentClassificationJobResponse] = js.native
+    def startDominantLanguageDetectionJob(
+        params: StartDominantLanguageDetectionJobRequest
+    ): Request[StartDominantLanguageDetectionJobResponse] = js.native
+    def startEntitiesDetectionJob(
+        params: StartEntitiesDetectionJobRequest
+    ): Request[StartEntitiesDetectionJobResponse] = js.native
+    def startKeyPhrasesDetectionJob(
+        params: StartKeyPhrasesDetectionJobRequest
+    ): Request[StartKeyPhrasesDetectionJobResponse] = js.native
+    def startSentimentDetectionJob(
+        params: StartSentimentDetectionJobRequest
+    ): Request[StartSentimentDetectionJobResponse] = js.native
+    def startTopicsDetectionJob(params: StartTopicsDetectionJobRequest): Request[StartTopicsDetectionJobResponse] =
+      js.native
+    def stopDominantLanguageDetectionJob(
+        params: StopDominantLanguageDetectionJobRequest
+    ): Request[StopDominantLanguageDetectionJobResponse] = js.native
+    def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] =
+      js.native
+    def stopKeyPhrasesDetectionJob(
+        params: StopKeyPhrasesDetectionJobRequest
+    ): Request[StopKeyPhrasesDetectionJobResponse] = js.native
+    def stopSentimentDetectionJob(
+        params: StopSentimentDetectionJobRequest
+    ): Request[StopSentimentDetectionJobResponse] = js.native
+    def stopTrainingDocumentClassifier(
+        params: StopTrainingDocumentClassifierRequest
+    ): Request[StopTrainingDocumentClassifierResponse] = js.native
+    def stopTrainingEntityRecognizer(
+        params: StopTrainingEntityRecognizerRequest
+    ): Request[StopTrainingEntityRecognizerResponse] = js.native
   }
 
   /**
-   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
-   */
+    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+    */
   @js.native
   trait BatchDetectDominantLanguageItemResult extends js.Object {
     var Index: js.UndefOr[Int]
@@ -111,12 +167,13 @@ package comprehend {
   }
 
   object BatchDetectDominantLanguageItemResult {
-    def apply(
-      Index: js.UndefOr[Int] = js.undefined,
-      Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined): BatchDetectDominantLanguageItemResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Index" -> Index.map { x => x.asInstanceOf[js.Any] },
-        "Languages" -> Languages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Index: js.UndefOr[Int] = js.undefined,
+              Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined): BatchDetectDominantLanguageItemResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("Index" -> Index.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Languages" -> Languages.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectDominantLanguageItemResult]
     }
@@ -128,10 +185,9 @@ package comprehend {
   }
 
   object BatchDetectDominantLanguageRequest {
-    def apply(
-      TextList: StringList): BatchDetectDominantLanguageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TextList" -> TextList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(TextList: StringList): BatchDetectDominantLanguageRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("TextList" -> TextList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectDominantLanguageRequest]
     }
@@ -144,20 +200,20 @@ package comprehend {
   }
 
   object BatchDetectDominantLanguageResponse {
-    def apply(
-      ErrorList: BatchItemErrorList,
-      ResultList: ListOfDetectDominantLanguageResult): BatchDetectDominantLanguageResponse = {
+    def apply(ErrorList: BatchItemErrorList,
+              ResultList: ListOfDetectDominantLanguageResult): BatchDetectDominantLanguageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorList" -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
+        "ResultList" -> ResultList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectDominantLanguageResponse]
     }
   }
 
   /**
-   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
-   */
+    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+    */
   @js.native
   trait BatchDetectEntitiesItemResult extends js.Object {
     var Entities: js.UndefOr[ListOfEntities]
@@ -165,12 +221,13 @@ package comprehend {
   }
 
   object BatchDetectEntitiesItemResult {
-    def apply(
-      Entities: js.UndefOr[ListOfEntities] = js.undefined,
-      Index: js.UndefOr[Int] = js.undefined): BatchDetectEntitiesItemResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entities" -> Entities.map { x => x.asInstanceOf[js.Any] },
-        "Index" -> Index.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Entities: js.UndefOr[ListOfEntities] = js.undefined,
+              Index: js.UndefOr[Int] = js.undefined): BatchDetectEntitiesItemResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("Entities" -> Entities.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Index" -> Index.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectEntitiesItemResult]
     }
@@ -183,12 +240,11 @@ package comprehend {
   }
 
   object BatchDetectEntitiesRequest {
-    def apply(
-      LanguageCode: LanguageCode,
-      TextList: StringList): BatchDetectEntitiesRequest = {
+    def apply(LanguageCode: LanguageCode, TextList: StringList): BatchDetectEntitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList" -> TextList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "TextList"     -> TextList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectEntitiesRequest]
     }
@@ -201,20 +257,19 @@ package comprehend {
   }
 
   object BatchDetectEntitiesResponse {
-    def apply(
-      ErrorList: BatchItemErrorList,
-      ResultList: ListOfDetectEntitiesResult): BatchDetectEntitiesResponse = {
+    def apply(ErrorList: BatchItemErrorList, ResultList: ListOfDetectEntitiesResult): BatchDetectEntitiesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorList" -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
+        "ResultList" -> ResultList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectEntitiesResponse]
     }
   }
 
   /**
-   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
-   */
+    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+    */
   @js.native
   trait BatchDetectKeyPhrasesItemResult extends js.Object {
     var Index: js.UndefOr[Int]
@@ -222,12 +277,13 @@ package comprehend {
   }
 
   object BatchDetectKeyPhrasesItemResult {
-    def apply(
-      Index: js.UndefOr[Int] = js.undefined,
-      KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined): BatchDetectKeyPhrasesItemResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Index" -> Index.map { x => x.asInstanceOf[js.Any] },
-        "KeyPhrases" -> KeyPhrases.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Index: js.UndefOr[Int] = js.undefined,
+              KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined): BatchDetectKeyPhrasesItemResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("Index" -> Index.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "KeyPhrases" -> KeyPhrases.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectKeyPhrasesItemResult]
     }
@@ -240,12 +296,11 @@ package comprehend {
   }
 
   object BatchDetectKeyPhrasesRequest {
-    def apply(
-      LanguageCode: LanguageCode,
-      TextList: StringList): BatchDetectKeyPhrasesRequest = {
+    def apply(LanguageCode: LanguageCode, TextList: StringList): BatchDetectKeyPhrasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList" -> TextList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "TextList"     -> TextList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectKeyPhrasesRequest]
     }
@@ -258,20 +313,20 @@ package comprehend {
   }
 
   object BatchDetectKeyPhrasesResponse {
-    def apply(
-      ErrorList: BatchItemErrorList,
-      ResultList: ListOfDetectKeyPhrasesResult): BatchDetectKeyPhrasesResponse = {
+    def apply(ErrorList: BatchItemErrorList,
+              ResultList: ListOfDetectKeyPhrasesResult): BatchDetectKeyPhrasesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorList" -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
+        "ResultList" -> ResultList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectKeyPhrasesResponse]
     }
   }
 
   /**
-   * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
-   */
+    * The result of calling the operation. The operation returns one object for each document that is successfully processed by the operation.
+    */
   @js.native
   trait BatchDetectSentimentItemResult extends js.Object {
     var Index: js.UndefOr[Int]
@@ -280,14 +335,20 @@ package comprehend {
   }
 
   object BatchDetectSentimentItemResult {
-    def apply(
-      Index: js.UndefOr[Int] = js.undefined,
-      Sentiment: js.UndefOr[SentimentType] = js.undefined,
-      SentimentScore: js.UndefOr[SentimentScore] = js.undefined): BatchDetectSentimentItemResult = {
+    def apply(Index: js.UndefOr[Int] = js.undefined,
+              Sentiment: js.UndefOr[SentimentType] = js.undefined,
+              SentimentScore: js.UndefOr[SentimentScore] = js.undefined): BatchDetectSentimentItemResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Index" -> Index.map { x => x.asInstanceOf[js.Any] },
-        "Sentiment" -> Sentiment.map { x => x.asInstanceOf[js.Any] },
-        "SentimentScore" -> SentimentScore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Index" -> Index.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sentiment" -> Sentiment.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SentimentScore" -> SentimentScore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectSentimentItemResult]
     }
@@ -300,12 +361,11 @@ package comprehend {
   }
 
   object BatchDetectSentimentRequest {
-    def apply(
-      LanguageCode: LanguageCode,
-      TextList: StringList): BatchDetectSentimentRequest = {
+    def apply(LanguageCode: LanguageCode, TextList: StringList): BatchDetectSentimentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList" -> TextList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "TextList"     -> TextList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectSentimentRequest]
     }
@@ -318,20 +378,19 @@ package comprehend {
   }
 
   object BatchDetectSentimentResponse {
-    def apply(
-      ErrorList: BatchItemErrorList,
-      ResultList: ListOfDetectSentimentResult): BatchDetectSentimentResponse = {
+    def apply(ErrorList: BatchItemErrorList, ResultList: ListOfDetectSentimentResult): BatchDetectSentimentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorList" -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
+        "ResultList" -> ResultList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectSentimentResponse]
     }
   }
 
   /**
-   * The result of calling the operation. The operation returns one object that is successfully processed by the operation.
-   */
+    * The result of calling the operation. The operation returns one object that is successfully processed by the operation.
+    */
   @js.native
   trait BatchDetectSyntaxItemResult extends js.Object {
     var Index: js.UndefOr[Int]
@@ -339,12 +398,13 @@ package comprehend {
   }
 
   object BatchDetectSyntaxItemResult {
-    def apply(
-      Index: js.UndefOr[Int] = js.undefined,
-      SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined): BatchDetectSyntaxItemResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Index" -> Index.map { x => x.asInstanceOf[js.Any] },
-        "SyntaxTokens" -> SyntaxTokens.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Index: js.UndefOr[Int] = js.undefined,
+              SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined): BatchDetectSyntaxItemResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("Index" -> Index.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SyntaxTokens" -> SyntaxTokens.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectSyntaxItemResult]
     }
@@ -357,12 +417,11 @@ package comprehend {
   }
 
   object BatchDetectSyntaxRequest {
-    def apply(
-      LanguageCode: SyntaxLanguageCode,
-      TextList: StringList): BatchDetectSyntaxRequest = {
+    def apply(LanguageCode: SyntaxLanguageCode, TextList: StringList): BatchDetectSyntaxRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "TextList" -> TextList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "TextList"     -> TextList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectSyntaxRequest]
     }
@@ -375,20 +434,19 @@ package comprehend {
   }
 
   object BatchDetectSyntaxResponse {
-    def apply(
-      ErrorList: BatchItemErrorList,
-      ResultList: ListOfDetectSyntaxResult): BatchDetectSyntaxResponse = {
+    def apply(ErrorList: BatchItemErrorList, ResultList: ListOfDetectSyntaxResult): BatchDetectSyntaxResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorList" -> ErrorList.asInstanceOf[js.Any],
-        "ResultList" -> ResultList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ErrorList"  -> ErrorList.asInstanceOf[js.Any],
+        "ResultList" -> ResultList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetectSyntaxResponse]
     }
   }
 
   /**
-   * Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
-   */
+    * Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
+    */
   @js.native
   trait BatchItemError extends js.Object {
     var ErrorCode: js.UndefOr[String]
@@ -397,22 +455,28 @@ package comprehend {
   }
 
   object BatchItemError {
-    def apply(
-      ErrorCode: js.UndefOr[String] = js.undefined,
-      ErrorMessage: js.UndefOr[String] = js.undefined,
-      Index: js.UndefOr[Int] = js.undefined): BatchItemError = {
+    def apply(ErrorCode: js.UndefOr[String] = js.undefined,
+              ErrorMessage: js.UndefOr[String] = js.undefined,
+              Index: js.UndefOr[Int] = js.undefined): BatchItemError = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
-        "Index" -> Index.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorCode" -> ErrorCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ErrorMessage" -> ErrorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Index" -> Index.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchItemError]
     }
   }
 
   /**
-   * Describes the result metrics for the test data associated with an documentation classifier.
-   */
+    * Describes the result metrics for the test data associated with an documentation classifier.
+    */
   @js.native
   trait ClassifierEvaluationMetrics extends js.Object {
     var Accuracy: js.UndefOr[Double]
@@ -422,24 +486,32 @@ package comprehend {
   }
 
   object ClassifierEvaluationMetrics {
-    def apply(
-      Accuracy: js.UndefOr[Double] = js.undefined,
-      F1Score: js.UndefOr[Double] = js.undefined,
-      Precision: js.UndefOr[Double] = js.undefined,
-      Recall: js.UndefOr[Double] = js.undefined): ClassifierEvaluationMetrics = {
+    def apply(Accuracy: js.UndefOr[Double] = js.undefined,
+              F1Score: js.UndefOr[Double] = js.undefined,
+              Precision: js.UndefOr[Double] = js.undefined,
+              Recall: js.UndefOr[Double] = js.undefined): ClassifierEvaluationMetrics = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Accuracy" -> Accuracy.map { x => x.asInstanceOf[js.Any] },
-        "F1Score" -> F1Score.map { x => x.asInstanceOf[js.Any] },
-        "Precision" -> Precision.map { x => x.asInstanceOf[js.Any] },
-        "Recall" -> Recall.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Accuracy" -> Accuracy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "F1Score" -> F1Score.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Precision" -> Precision.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Recall" -> Recall.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassifierEvaluationMetrics]
     }
   }
 
   /**
-   * Provides information about a document classifier.
-   */
+    * Provides information about a document classifier.
+    */
   @js.native
   trait ClassifierMetadata extends js.Object {
     var EvaluationMetrics: js.UndefOr[ClassifierEvaluationMetrics]
@@ -449,16 +521,24 @@ package comprehend {
   }
 
   object ClassifierMetadata {
-    def apply(
-      EvaluationMetrics: js.UndefOr[ClassifierEvaluationMetrics] = js.undefined,
-      NumberOfLabels: js.UndefOr[Int] = js.undefined,
-      NumberOfTestDocuments: js.UndefOr[Int] = js.undefined,
-      NumberOfTrainedDocuments: js.UndefOr[Int] = js.undefined): ClassifierMetadata = {
+    def apply(EvaluationMetrics: js.UndefOr[ClassifierEvaluationMetrics] = js.undefined,
+              NumberOfLabels: js.UndefOr[Int] = js.undefined,
+              NumberOfTestDocuments: js.UndefOr[Int] = js.undefined,
+              NumberOfTrainedDocuments: js.UndefOr[Int] = js.undefined): ClassifierMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EvaluationMetrics" -> EvaluationMetrics.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfLabels" -> NumberOfLabels.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfTestDocuments" -> NumberOfTestDocuments.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfTrainedDocuments" -> NumberOfTrainedDocuments.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EvaluationMetrics" -> EvaluationMetrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfLabels" -> NumberOfLabels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfTestDocuments" -> NumberOfTestDocuments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfTrainedDocuments" -> NumberOfTrainedDocuments.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassifierMetadata]
     }
@@ -475,17 +555,21 @@ package comprehend {
 
   object CreateDocumentClassifierRequest {
     def apply(
-      DataAccessRoleArn: IamRoleArn,
-      DocumentClassifierName: ComprehendArnName,
-      InputDataConfig: DocumentClassifierInputDataConfig,
-      LanguageCode: LanguageCode,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined): CreateDocumentClassifierRequest = {
+        DataAccessRoleArn: IamRoleArn,
+        DocumentClassifierName: ComprehendArnName,
+        InputDataConfig: DocumentClassifierInputDataConfig,
+        LanguageCode: LanguageCode,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined
+    ): CreateDocumentClassifierRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "DataAccessRoleArn"      -> DataAccessRoleArn.asInstanceOf[js.Any],
         "DocumentClassifierName" -> DocumentClassifierName.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"        -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode"           -> LanguageCode.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDocumentClassifierRequest]
     }
@@ -498,9 +582,11 @@ package comprehend {
 
   object CreateDocumentClassifierResponse {
     def apply(
-      DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined): CreateDocumentClassifierResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassifierArn" -> DocumentClassifierArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined
+    ): CreateDocumentClassifierResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("DocumentClassifierArn" -> DocumentClassifierArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDocumentClassifierResponse]
     }
@@ -517,17 +603,21 @@ package comprehend {
 
   object CreateEntityRecognizerRequest {
     def apply(
-      DataAccessRoleArn: IamRoleArn,
-      InputDataConfig: EntityRecognizerInputDataConfig,
-      LanguageCode: LanguageCode,
-      RecognizerName: ComprehendArnName,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined): CreateEntityRecognizerRequest = {
+        DataAccessRoleArn: IamRoleArn,
+        InputDataConfig: EntityRecognizerInputDataConfig,
+        LanguageCode: LanguageCode,
+        RecognizerName: ComprehendArnName,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined
+    ): CreateEntityRecognizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "RecognizerName" -> RecognizerName.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
+        "RecognizerName"    -> RecognizerName.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEntityRecognizerRequest]
     }
@@ -539,10 +629,10 @@ package comprehend {
   }
 
   object CreateEntityRecognizerResponse {
-    def apply(
-      EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined): CreateEntityRecognizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntityRecognizerArn" -> EntityRecognizerArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined): CreateEntityRecognizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EntityRecognizerArn" -> EntityRecognizerArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEntityRecognizerResponse]
     }
@@ -554,19 +644,16 @@ package comprehend {
   }
 
   object DeleteDocumentClassifierRequest {
-    def apply(
-      DocumentClassifierArn: DocumentClassifierArn): DeleteDocumentClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(DocumentClassifierArn: DocumentClassifierArn): DeleteDocumentClassifierRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDocumentClassifierRequest]
     }
   }
 
   @js.native
-  trait DeleteDocumentClassifierResponse extends js.Object {
-
-  }
+  trait DeleteDocumentClassifierResponse extends js.Object {}
 
   object DeleteDocumentClassifierResponse {
     def apply(): DeleteDocumentClassifierResponse = {
@@ -582,19 +669,16 @@ package comprehend {
   }
 
   object DeleteEntityRecognizerRequest {
-    def apply(
-      EntityRecognizerArn: EntityRecognizerArn): DeleteEntityRecognizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EntityRecognizerArn: EntityRecognizerArn): DeleteEntityRecognizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEntityRecognizerRequest]
     }
   }
 
   @js.native
-  trait DeleteEntityRecognizerResponse extends js.Object {
-
-  }
+  trait DeleteEntityRecognizerResponse extends js.Object {}
 
   object DeleteEntityRecognizerResponse {
     def apply(): DeleteEntityRecognizerResponse = {
@@ -610,10 +694,9 @@ package comprehend {
   }
 
   object DescribeDocumentClassificationJobRequest {
-    def apply(
-      JobId: JobId): DescribeDocumentClassificationJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): DescribeDocumentClassificationJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentClassificationJobRequest]
     }
@@ -626,9 +709,13 @@ package comprehend {
 
   object DescribeDocumentClassificationJobResponse {
     def apply(
-      DocumentClassificationJobProperties: js.UndefOr[DocumentClassificationJobProperties] = js.undefined): DescribeDocumentClassificationJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassificationJobProperties" -> DocumentClassificationJobProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        DocumentClassificationJobProperties: js.UndefOr[DocumentClassificationJobProperties] = js.undefined
+    ): DescribeDocumentClassificationJobResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("DocumentClassificationJobProperties" -> DocumentClassificationJobProperties.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentClassificationJobResponse]
     }
@@ -640,10 +727,9 @@ package comprehend {
   }
 
   object DescribeDocumentClassifierRequest {
-    def apply(
-      DocumentClassifierArn: DocumentClassifierArn): DescribeDocumentClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(DocumentClassifierArn: DocumentClassifierArn): DescribeDocumentClassifierRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentClassifierRequest]
     }
@@ -656,9 +742,12 @@ package comprehend {
 
   object DescribeDocumentClassifierResponse {
     def apply(
-      DocumentClassifierProperties: js.UndefOr[DocumentClassifierProperties] = js.undefined): DescribeDocumentClassifierResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassifierProperties" -> DocumentClassifierProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        DocumentClassifierProperties: js.UndefOr[DocumentClassifierProperties] = js.undefined
+    ): DescribeDocumentClassifierResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("DocumentClassifierProperties" -> DocumentClassifierProperties.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentClassifierResponse]
     }
@@ -670,12 +759,13 @@ package comprehend {
   }
 
   object DescribeDominantLanguageDetectionJobRequest {
-    def apply(
-      JobId: JobId): DescribeDominantLanguageDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): DescribeDominantLanguageDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDominantLanguageDetectionJobRequest]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DescribeDominantLanguageDetectionJobRequest]
     }
   }
 
@@ -686,11 +776,17 @@ package comprehend {
 
   object DescribeDominantLanguageDetectionJobResponse {
     def apply(
-      DominantLanguageDetectionJobProperties: js.UndefOr[DominantLanguageDetectionJobProperties] = js.undefined): DescribeDominantLanguageDetectionJobResponse = {
+        DominantLanguageDetectionJobProperties: js.UndefOr[DominantLanguageDetectionJobProperties] = js.undefined
+    ): DescribeDominantLanguageDetectionJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DominantLanguageDetectionJobProperties" -> DominantLanguageDetectionJobProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DominantLanguageDetectionJobProperties" -> DominantLanguageDetectionJobProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDominantLanguageDetectionJobResponse]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DescribeDominantLanguageDetectionJobResponse]
     }
   }
 
@@ -700,10 +796,9 @@ package comprehend {
   }
 
   object DescribeEntitiesDetectionJobRequest {
-    def apply(
-      JobId: JobId): DescribeEntitiesDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): DescribeEntitiesDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEntitiesDetectionJobRequest]
     }
@@ -716,9 +811,12 @@ package comprehend {
 
   object DescribeEntitiesDetectionJobResponse {
     def apply(
-      EntitiesDetectionJobProperties: js.UndefOr[EntitiesDetectionJobProperties] = js.undefined): DescribeEntitiesDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntitiesDetectionJobProperties" -> EntitiesDetectionJobProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        EntitiesDetectionJobProperties: js.UndefOr[EntitiesDetectionJobProperties] = js.undefined
+    ): DescribeEntitiesDetectionJobResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("EntitiesDetectionJobProperties" -> EntitiesDetectionJobProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEntitiesDetectionJobResponse]
     }
@@ -730,10 +828,9 @@ package comprehend {
   }
 
   object DescribeEntityRecognizerRequest {
-    def apply(
-      EntityRecognizerArn: EntityRecognizerArn): DescribeEntityRecognizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EntityRecognizerArn: EntityRecognizerArn): DescribeEntityRecognizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEntityRecognizerRequest]
     }
@@ -746,9 +843,11 @@ package comprehend {
 
   object DescribeEntityRecognizerResponse {
     def apply(
-      EntityRecognizerProperties: js.UndefOr[EntityRecognizerProperties] = js.undefined): DescribeEntityRecognizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntityRecognizerProperties" -> EntityRecognizerProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        EntityRecognizerProperties: js.UndefOr[EntityRecognizerProperties] = js.undefined
+    ): DescribeEntityRecognizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EntityRecognizerProperties" -> EntityRecognizerProperties.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEntityRecognizerResponse]
     }
@@ -760,10 +859,9 @@ package comprehend {
   }
 
   object DescribeKeyPhrasesDetectionJobRequest {
-    def apply(
-      JobId: JobId): DescribeKeyPhrasesDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): DescribeKeyPhrasesDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeKeyPhrasesDetectionJobRequest]
     }
@@ -776,9 +874,12 @@ package comprehend {
 
   object DescribeKeyPhrasesDetectionJobResponse {
     def apply(
-      KeyPhrasesDetectionJobProperties: js.UndefOr[KeyPhrasesDetectionJobProperties] = js.undefined): DescribeKeyPhrasesDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyPhrasesDetectionJobProperties" -> KeyPhrasesDetectionJobProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        KeyPhrasesDetectionJobProperties: js.UndefOr[KeyPhrasesDetectionJobProperties] = js.undefined
+    ): DescribeKeyPhrasesDetectionJobResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("KeyPhrasesDetectionJobProperties" -> KeyPhrasesDetectionJobProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeKeyPhrasesDetectionJobResponse]
     }
@@ -790,10 +891,9 @@ package comprehend {
   }
 
   object DescribeSentimentDetectionJobRequest {
-    def apply(
-      JobId: JobId): DescribeSentimentDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): DescribeSentimentDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSentimentDetectionJobRequest]
     }
@@ -806,9 +906,12 @@ package comprehend {
 
   object DescribeSentimentDetectionJobResponse {
     def apply(
-      SentimentDetectionJobProperties: js.UndefOr[SentimentDetectionJobProperties] = js.undefined): DescribeSentimentDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SentimentDetectionJobProperties" -> SentimentDetectionJobProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        SentimentDetectionJobProperties: js.UndefOr[SentimentDetectionJobProperties] = js.undefined
+    ): DescribeSentimentDetectionJobResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("SentimentDetectionJobProperties" -> SentimentDetectionJobProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSentimentDetectionJobResponse]
     }
@@ -820,10 +923,9 @@ package comprehend {
   }
 
   object DescribeTopicsDetectionJobRequest {
-    def apply(
-      JobId: JobId): DescribeTopicsDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): DescribeTopicsDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTopicsDetectionJobRequest]
     }
@@ -836,9 +938,12 @@ package comprehend {
 
   object DescribeTopicsDetectionJobResponse {
     def apply(
-      TopicsDetectionJobProperties: js.UndefOr[TopicsDetectionJobProperties] = js.undefined): DescribeTopicsDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TopicsDetectionJobProperties" -> TopicsDetectionJobProperties.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        TopicsDetectionJobProperties: js.UndefOr[TopicsDetectionJobProperties] = js.undefined
+    ): DescribeTopicsDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("TopicsDetectionJobProperties" -> TopicsDetectionJobProperties.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTopicsDetectionJobResponse]
     }
@@ -850,10 +955,9 @@ package comprehend {
   }
 
   object DetectDominantLanguageRequest {
-    def apply(
-      Text: String): DetectDominantLanguageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Text: String): DetectDominantLanguageRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectDominantLanguageRequest]
     }
@@ -865,10 +969,10 @@ package comprehend {
   }
 
   object DetectDominantLanguageResponse {
-    def apply(
-      Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined): DetectDominantLanguageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Languages" -> Languages.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined): DetectDominantLanguageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Languages" -> Languages.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectDominantLanguageResponse]
     }
@@ -881,12 +985,11 @@ package comprehend {
   }
 
   object DetectEntitiesRequest {
-    def apply(
-      LanguageCode: LanguageCode,
-      Text: String): DetectEntitiesRequest = {
+    def apply(LanguageCode: LanguageCode, Text: String): DetectEntitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Text"         -> Text.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectEntitiesRequest]
     }
@@ -898,10 +1001,10 @@ package comprehend {
   }
 
   object DetectEntitiesResponse {
-    def apply(
-      Entities: js.UndefOr[ListOfEntities] = js.undefined): DetectEntitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Entities" -> Entities.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Entities: js.UndefOr[ListOfEntities] = js.undefined): DetectEntitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Entities" -> Entities.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectEntitiesResponse]
     }
@@ -914,12 +1017,11 @@ package comprehend {
   }
 
   object DetectKeyPhrasesRequest {
-    def apply(
-      LanguageCode: LanguageCode,
-      Text: String): DetectKeyPhrasesRequest = {
+    def apply(LanguageCode: LanguageCode, Text: String): DetectKeyPhrasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Text"         -> Text.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectKeyPhrasesRequest]
     }
@@ -931,10 +1033,10 @@ package comprehend {
   }
 
   object DetectKeyPhrasesResponse {
-    def apply(
-      KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined): DetectKeyPhrasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "KeyPhrases" -> KeyPhrases.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined): DetectKeyPhrasesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("KeyPhrases" -> KeyPhrases.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectKeyPhrasesResponse]
     }
@@ -947,12 +1049,11 @@ package comprehend {
   }
 
   object DetectSentimentRequest {
-    def apply(
-      LanguageCode: LanguageCode,
-      Text: String): DetectSentimentRequest = {
+    def apply(LanguageCode: LanguageCode, Text: String): DetectSentimentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Text"         -> Text.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectSentimentRequest]
     }
@@ -965,12 +1066,13 @@ package comprehend {
   }
 
   object DetectSentimentResponse {
-    def apply(
-      Sentiment: js.UndefOr[SentimentType] = js.undefined,
-      SentimentScore: js.UndefOr[SentimentScore] = js.undefined): DetectSentimentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Sentiment" -> Sentiment.map { x => x.asInstanceOf[js.Any] },
-        "SentimentScore" -> SentimentScore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Sentiment: js.UndefOr[SentimentType] = js.undefined,
+              SentimentScore: js.UndefOr[SentimentScore] = js.undefined): DetectSentimentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Sentiment" -> Sentiment.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SentimentScore" -> SentimentScore.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectSentimentResponse]
     }
@@ -983,12 +1085,11 @@ package comprehend {
   }
 
   object DetectSyntaxRequest {
-    def apply(
-      LanguageCode: SyntaxLanguageCode,
-      Text: String): DetectSyntaxRequest = {
+    def apply(LanguageCode: SyntaxLanguageCode, Text: String): DetectSyntaxRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "Text" -> Text.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Text"         -> Text.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectSyntaxRequest]
     }
@@ -1000,18 +1101,18 @@ package comprehend {
   }
 
   object DetectSyntaxResponse {
-    def apply(
-      SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined): DetectSyntaxResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SyntaxTokens" -> SyntaxTokens.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined): DetectSyntaxResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SyntaxTokens" -> SyntaxTokens.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectSyntaxResponse]
     }
   }
 
   /**
-   * Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
-   */
+    * Provides information for filtering a list of document classification jobs. For more information, see the operation. You can provide only one filter parameter in each request.
+    */
   @js.native
   trait DocumentClassificationJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
@@ -1021,24 +1122,32 @@ package comprehend {
   }
 
   object DocumentClassificationJobFilter {
-    def apply(
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): DocumentClassificationJobFilter = {
+    def apply(JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): DocumentClassificationJobFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentClassificationJobFilter]
     }
   }
 
   /**
-   * Provides information about a document classification job.
-   */
+    * Provides information about a document classification job.
+    */
   @js.native
   trait DocumentClassificationJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
@@ -1054,36 +1163,56 @@ package comprehend {
   }
 
   object DocumentClassificationJobProperties {
-    def apply(
-      DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-      DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined): DocumentClassificationJobProperties = {
+    def apply(DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+              DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              JobId: js.UndefOr[JobId] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined): DocumentClassificationJobProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "DocumentClassifierArn" -> DocumentClassifierArn.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataAccessRoleArn" -> DataAccessRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DocumentClassifierArn" -> DocumentClassifierArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobId" -> JobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentClassificationJobProperties]
     }
   }
 
   /**
-   * Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.
-   */
+    * Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a request. For more information, see the operation.
+    */
   @js.native
   trait DocumentClassifierFilter extends js.Object {
     var Status: js.UndefOr[ModelStatus]
@@ -1092,41 +1221,46 @@ package comprehend {
   }
 
   object DocumentClassifierFilter {
-    def apply(
-      Status: js.UndefOr[ModelStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): DocumentClassifierFilter = {
+    def apply(Status: js.UndefOr[ModelStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): DocumentClassifierFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentClassifierFilter]
     }
   }
 
   /**
-   * The input properties for training a document classifier.
-   *  For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
-   */
+    * The input properties for training a document classifier.
+    *  For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
+    */
   @js.native
   trait DocumentClassifierInputDataConfig extends js.Object {
     var S3Uri: S3Uri
   }
 
   object DocumentClassifierInputDataConfig {
-    def apply(
-      S3Uri: S3Uri): DocumentClassifierInputDataConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3Uri: S3Uri): DocumentClassifierInputDataConfig = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentClassifierInputDataConfig]
     }
   }
 
   /**
-   * Provides information about a document classifier.
-   */
+    * Provides information about a document classifier.
+    */
   @js.native
   trait DocumentClassifierProperties extends js.Object {
     var ClassifierMetadata: js.UndefOr[ClassifierMetadata]
@@ -1143,38 +1277,60 @@ package comprehend {
   }
 
   object DocumentClassifierProperties {
-    def apply(
-      ClassifierMetadata: js.UndefOr[ClassifierMetadata] = js.undefined,
-      DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-      DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      InputDataConfig: js.UndefOr[DocumentClassifierInputDataConfig] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      Status: js.UndefOr[ModelStatus] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingStartTime: js.UndefOr[Timestamp] = js.undefined): DocumentClassifierProperties = {
+    def apply(ClassifierMetadata: js.UndefOr[ClassifierMetadata] = js.undefined,
+              DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+              DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              InputDataConfig: js.UndefOr[DocumentClassifierInputDataConfig] = js.undefined,
+              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              Status: js.UndefOr[ModelStatus] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined,
+              TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
+              TrainingStartTime: js.UndefOr[Timestamp] = js.undefined): DocumentClassifierProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClassifierMetadata" -> ClassifierMetadata.map { x => x.asInstanceOf[js.Any] },
-        "DataAccessRoleArn" -> DataAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "DocumentClassifierArn" -> DocumentClassifierArn.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingEndTime" -> TrainingEndTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingStartTime" -> TrainingStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClassifierMetadata" -> ClassifierMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DataAccessRoleArn" -> DataAccessRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DocumentClassifierArn" -> DocumentClassifierArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LanguageCode" -> LanguageCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingEndTime" -> TrainingEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingStartTime" -> TrainingStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentClassifierProperties]
     }
   }
 
   /**
-   * Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.
-   */
+    * Returns the code for the dominant language in the input text and the level of confidence that Amazon Comprehend has in the accuracy of the detection.
+    */
   @js.native
   trait DominantLanguage extends js.Object {
     var LanguageCode: js.UndefOr[String]
@@ -1182,20 +1338,21 @@ package comprehend {
   }
 
   object DominantLanguage {
-    def apply(
-      LanguageCode: js.UndefOr[String] = js.undefined,
-      Score: js.UndefOr[Float] = js.undefined): DominantLanguage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Score" -> Score.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(LanguageCode: js.UndefOr[String] = js.undefined,
+              Score: js.UndefOr[Float] = js.undefined): DominantLanguage = {
+      val _fields = IndexedSeq[(String, js.Any)]("LanguageCode" -> LanguageCode.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Score" -> Score.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DominantLanguage]
     }
   }
 
   /**
-   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
-   */
+    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+    */
   @js.native
   trait DominantLanguageDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
@@ -1205,24 +1362,32 @@ package comprehend {
   }
 
   object DominantLanguageDetectionJobFilter {
-    def apply(
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): DominantLanguageDetectionJobFilter = {
+    def apply(JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): DominantLanguageDetectionJobFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DominantLanguageDetectionJobFilter]
     }
   }
 
   /**
-   * Provides information about a dominant language detection job.
-   */
+    * Provides information about a dominant language detection job.
+    */
   @js.native
   trait DominantLanguageDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
@@ -1237,34 +1402,52 @@ package comprehend {
   }
 
   object DominantLanguageDetectionJobProperties {
-    def apply(
-      DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined): DominantLanguageDetectionJobProperties = {
+    def apply(DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              JobId: js.UndefOr[JobId] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined): DominantLanguageDetectionJobProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataAccessRoleArn" -> DataAccessRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobId" -> JobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DominantLanguageDetectionJobProperties]
     }
   }
 
   /**
-   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
-   */
+    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+    */
   @js.native
   trait EntitiesDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
@@ -1274,24 +1457,32 @@ package comprehend {
   }
 
   object EntitiesDetectionJobFilter {
-    def apply(
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): EntitiesDetectionJobFilter = {
+    def apply(JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): EntitiesDetectionJobFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntitiesDetectionJobFilter]
     }
   }
 
   /**
-   * Provides information about an entities detection job.
-   */
+    * Provides information about an entities detection job.
+    */
   @js.native
   trait EntitiesDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
@@ -1308,39 +1499,61 @@ package comprehend {
   }
 
   object EntitiesDetectionJobProperties {
-    def apply(
-      DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined): EntitiesDetectionJobProperties = {
+    def apply(DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              JobId: js.UndefOr[JobId] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined): EntitiesDetectionJobProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "EntityRecognizerArn" -> EntityRecognizerArn.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataAccessRoleArn" -> DataAccessRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EntityRecognizerArn" -> EntityRecognizerArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobId" -> JobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LanguageCode" -> LanguageCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntitiesDetectionJobProperties]
     }
   }
 
   /**
-   * Provides information about an entity.
-   *
-   */
+    * Provides information about an entity.
+    *
+    */
   @js.native
   trait Entity extends js.Object {
     var BeginOffset: js.UndefOr[Int]
@@ -1351,80 +1564,87 @@ package comprehend {
   }
 
   object Entity {
-    def apply(
-      BeginOffset: js.UndefOr[Int] = js.undefined,
-      EndOffset: js.UndefOr[Int] = js.undefined,
-      Score: js.UndefOr[Float] = js.undefined,
-      Text: js.UndefOr[String] = js.undefined,
-      Type: js.UndefOr[EntityType] = js.undefined): Entity = {
+    def apply(BeginOffset: js.UndefOr[Int] = js.undefined,
+              EndOffset: js.UndefOr[Int] = js.undefined,
+              Score: js.UndefOr[Float] = js.undefined,
+              Text: js.UndefOr[String] = js.undefined,
+              Type: js.UndefOr[EntityType] = js.undefined): Entity = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BeginOffset" -> BeginOffset.map { x => x.asInstanceOf[js.Any] },
-        "EndOffset" -> EndOffset.map { x => x.asInstanceOf[js.Any] },
-        "Score" -> Score.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BeginOffset" -> BeginOffset.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndOffset" -> EndOffset.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Score" -> Score.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Text" -> Text.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Entity]
     }
   }
 
   /**
-   * Describes the annotations associated with a entity recognizer.
-   */
+    * Describes the annotations associated with a entity recognizer.
+    */
   @js.native
   trait EntityRecognizerAnnotations extends js.Object {
     var S3Uri: S3Uri
   }
 
   object EntityRecognizerAnnotations {
-    def apply(
-      S3Uri: S3Uri): EntityRecognizerAnnotations = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3Uri: S3Uri): EntityRecognizerAnnotations = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerAnnotations]
     }
   }
 
   /**
-   * Describes the training documents submitted with an entity recognizer.
-   */
+    * Describes the training documents submitted with an entity recognizer.
+    */
   @js.native
   trait EntityRecognizerDocuments extends js.Object {
     var S3Uri: S3Uri
   }
 
   object EntityRecognizerDocuments {
-    def apply(
-      S3Uri: S3Uri): EntityRecognizerDocuments = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3Uri: S3Uri): EntityRecognizerDocuments = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerDocuments]
     }
   }
 
   /**
-   * Describes the entity recognizer submitted with an entity recognizer.
-   */
+    * Describes the entity recognizer submitted with an entity recognizer.
+    */
   @js.native
   trait EntityRecognizerEntityList extends js.Object {
     var S3Uri: S3Uri
   }
 
   object EntityRecognizerEntityList {
-    def apply(
-      S3Uri: S3Uri): EntityRecognizerEntityList = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3Uri: S3Uri): EntityRecognizerEntityList = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerEntityList]
     }
   }
 
   /**
-   * Detailed information about the accuracy of an entity recognizer.
-   */
+    * Detailed information about the accuracy of an entity recognizer.
+    */
   @js.native
   trait EntityRecognizerEvaluationMetrics extends js.Object {
     var F1Score: js.UndefOr[Double]
@@ -1433,22 +1653,28 @@ package comprehend {
   }
 
   object EntityRecognizerEvaluationMetrics {
-    def apply(
-      F1Score: js.UndefOr[Double] = js.undefined,
-      Precision: js.UndefOr[Double] = js.undefined,
-      Recall: js.UndefOr[Double] = js.undefined): EntityRecognizerEvaluationMetrics = {
+    def apply(F1Score: js.UndefOr[Double] = js.undefined,
+              Precision: js.UndefOr[Double] = js.undefined,
+              Recall: js.UndefOr[Double] = js.undefined): EntityRecognizerEvaluationMetrics = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "F1Score" -> F1Score.map { x => x.asInstanceOf[js.Any] },
-        "Precision" -> Precision.map { x => x.asInstanceOf[js.Any] },
-        "Recall" -> Recall.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "F1Score" -> F1Score.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Precision" -> Precision.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Recall" -> Recall.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerEvaluationMetrics]
     }
   }
 
   /**
-   * Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;
-   */
+    * Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a request. For more information, see the operation./&gt;
+    */
   @js.native
   trait EntityRecognizerFilter extends js.Object {
     var Status: js.UndefOr[ModelStatus]
@@ -1457,22 +1683,28 @@ package comprehend {
   }
 
   object EntityRecognizerFilter {
-    def apply(
-      Status: js.UndefOr[ModelStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): EntityRecognizerFilter = {
+    def apply(Status: js.UndefOr[ModelStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): EntityRecognizerFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerFilter]
     }
   }
 
   /**
-   * Specifies the format and location of the input data.
-   */
+    * Specifies the format and location of the input data.
+    */
   @js.native
   trait EntityRecognizerInputDataConfig extends js.Object {
     var Documents: EntityRecognizerDocuments
@@ -1482,24 +1714,28 @@ package comprehend {
   }
 
   object EntityRecognizerInputDataConfig {
-    def apply(
-      Documents: EntityRecognizerDocuments,
-      EntityTypes: EntityTypesList,
-      Annotations: js.UndefOr[EntityRecognizerAnnotations] = js.undefined,
-      EntityList: js.UndefOr[EntityRecognizerEntityList] = js.undefined): EntityRecognizerInputDataConfig = {
+    def apply(Documents: EntityRecognizerDocuments,
+              EntityTypes: EntityTypesList,
+              Annotations: js.UndefOr[EntityRecognizerAnnotations] = js.undefined,
+              EntityList: js.UndefOr[EntityRecognizerEntityList] = js.undefined): EntityRecognizerInputDataConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Documents" -> Documents.asInstanceOf[js.Any],
+        "Documents"   -> Documents.asInstanceOf[js.Any],
         "EntityTypes" -> EntityTypes.asInstanceOf[js.Any],
-        "Annotations" -> Annotations.map { x => x.asInstanceOf[js.Any] },
-        "EntityList" -> EntityList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Annotations" -> Annotations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EntityList" -> EntityList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerInputDataConfig]
     }
   }
 
   /**
-   * Detailed information about an entity recognizer.
-   */
+    * Detailed information about an entity recognizer.
+    */
   @js.native
   trait EntityRecognizerMetadata extends js.Object {
     var EntityTypes: js.UndefOr[EntityRecognizerMetadataEntityTypesList]
@@ -1509,42 +1745,52 @@ package comprehend {
   }
 
   object EntityRecognizerMetadata {
-    def apply(
-      EntityTypes: js.UndefOr[EntityRecognizerMetadataEntityTypesList] = js.undefined,
-      EvaluationMetrics: js.UndefOr[EntityRecognizerEvaluationMetrics] = js.undefined,
-      NumberOfTestDocuments: js.UndefOr[Int] = js.undefined,
-      NumberOfTrainedDocuments: js.UndefOr[Int] = js.undefined): EntityRecognizerMetadata = {
+    def apply(EntityTypes: js.UndefOr[EntityRecognizerMetadataEntityTypesList] = js.undefined,
+              EvaluationMetrics: js.UndefOr[EntityRecognizerEvaluationMetrics] = js.undefined,
+              NumberOfTestDocuments: js.UndefOr[Int] = js.undefined,
+              NumberOfTrainedDocuments: js.UndefOr[Int] = js.undefined): EntityRecognizerMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntityTypes" -> EntityTypes.map { x => x.asInstanceOf[js.Any] },
-        "EvaluationMetrics" -> EvaluationMetrics.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfTestDocuments" -> NumberOfTestDocuments.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfTrainedDocuments" -> NumberOfTrainedDocuments.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EntityTypes" -> EntityTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EvaluationMetrics" -> EvaluationMetrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfTestDocuments" -> NumberOfTestDocuments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfTrainedDocuments" -> NumberOfTrainedDocuments.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerMetadata]
     }
   }
 
   /**
-   * Individual item from the list of entity types in the metadata of an entity recognizer.
-   */
+    * Individual item from the list of entity types in the metadata of an entity recognizer.
+    */
   @js.native
   trait EntityRecognizerMetadataEntityTypesListItem extends js.Object {
     var Type: js.UndefOr[AnyLengthString]
   }
 
   object EntityRecognizerMetadataEntityTypesListItem {
-    def apply(
-      Type: js.UndefOr[AnyLengthString] = js.undefined): EntityRecognizerMetadataEntityTypesListItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Type: js.UndefOr[AnyLengthString] = js.undefined): EntityRecognizerMetadataEntityTypesListItem = {
+      val _fields = IndexedSeq[(String, js.Any)]("Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerMetadataEntityTypesListItem]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[EntityRecognizerMetadataEntityTypesListItem]
     }
   }
 
   /**
-   * Describes information about an entity recognizer.
-   */
+    * Describes information about an entity recognizer.
+    */
   @js.native
   trait EntityRecognizerProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
@@ -1561,70 +1807,91 @@ package comprehend {
   }
 
   object EntityRecognizerProperties {
-    def apply(
-      DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
-      InputDataConfig: js.UndefOr[EntityRecognizerInputDataConfig] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      RecognizerMetadata: js.UndefOr[EntityRecognizerMetadata] = js.undefined,
-      Status: js.UndefOr[ModelStatus] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingStartTime: js.UndefOr[Timestamp] = js.undefined): EntityRecognizerProperties = {
+    def apply(DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
+              InputDataConfig: js.UndefOr[EntityRecognizerInputDataConfig] = js.undefined,
+              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              RecognizerMetadata: js.UndefOr[EntityRecognizerMetadata] = js.undefined,
+              Status: js.UndefOr[ModelStatus] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined,
+              TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
+              TrainingStartTime: js.UndefOr[Timestamp] = js.undefined): EntityRecognizerProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "EntityRecognizerArn" -> EntityRecognizerArn.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "RecognizerMetadata" -> RecognizerMetadata.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingEndTime" -> TrainingEndTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingStartTime" -> TrainingStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataAccessRoleArn" -> DataAccessRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EntityRecognizerArn" -> EntityRecognizerArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LanguageCode" -> LanguageCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecognizerMetadata" -> RecognizerMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingEndTime" -> TrainingEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingStartTime" -> TrainingStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityRecognizerProperties]
     }
   }
 
   object EntityTypeEnum {
-    val PERSON = "PERSON"
-    val LOCATION = "LOCATION"
-    val ORGANIZATION = "ORGANIZATION"
+    val PERSON          = "PERSON"
+    val LOCATION        = "LOCATION"
+    val ORGANIZATION    = "ORGANIZATION"
     val COMMERCIAL_ITEM = "COMMERCIAL_ITEM"
-    val EVENT = "EVENT"
-    val DATE = "DATE"
-    val QUANTITY = "QUANTITY"
-    val TITLE = "TITLE"
-    val OTHER = "OTHER"
+    val EVENT           = "EVENT"
+    val DATE            = "DATE"
+    val QUANTITY        = "QUANTITY"
+    val TITLE           = "TITLE"
+    val OTHER           = "OTHER"
 
     val values = IndexedSeq(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER)
   }
 
   /**
-   * Information about an individual item on a list of entity types.
-   */
+    * Information about an individual item on a list of entity types.
+    */
   @js.native
   trait EntityTypesListItem extends js.Object {
     var Type: EntityTypeName
   }
 
   object EntityTypesListItem {
-    def apply(
-      Type: EntityTypeName): EntityTypesListItem = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Type: EntityTypeName): EntityTypesListItem = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityTypesListItem]
     }
   }
 
   /**
-   * The input properties for a topic detection job.
-   */
+    * The input properties for a topic detection job.
+    */
   @js.native
   trait InputDataConfig extends js.Object {
     var S3Uri: S3Uri
@@ -1632,12 +1899,11 @@ package comprehend {
   }
 
   object InputDataConfig {
-    def apply(
-      S3Uri: S3Uri,
-      InputFormat: js.UndefOr[InputFormat] = js.undefined): InputDataConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any],
-        "InputFormat" -> InputFormat.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3Uri: S3Uri, InputFormat: js.UndefOr[InputFormat] = js.undefined): InputDataConfig = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3Uri" -> S3Uri.asInstanceOf[js.Any], "InputFormat" -> InputFormat.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDataConfig]
     }
@@ -1651,19 +1917,19 @@ package comprehend {
   }
 
   object JobStatusEnum {
-    val SUBMITTED = "SUBMITTED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED = "COMPLETED"
-    val FAILED = "FAILED"
+    val SUBMITTED      = "SUBMITTED"
+    val IN_PROGRESS    = "IN_PROGRESS"
+    val COMPLETED      = "COMPLETED"
+    val FAILED         = "FAILED"
     val STOP_REQUESTED = "STOP_REQUESTED"
-    val STOPPED = "STOPPED"
+    val STOPPED        = "STOPPED"
 
     val values = IndexedSeq(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED)
   }
 
   /**
-   * Describes a key noun phrase.
-   */
+    * Describes a key noun phrase.
+    */
   @js.native
   trait KeyPhrase extends js.Object {
     var BeginOffset: js.UndefOr[Int]
@@ -1673,24 +1939,32 @@ package comprehend {
   }
 
   object KeyPhrase {
-    def apply(
-      BeginOffset: js.UndefOr[Int] = js.undefined,
-      EndOffset: js.UndefOr[Int] = js.undefined,
-      Score: js.UndefOr[Float] = js.undefined,
-      Text: js.UndefOr[String] = js.undefined): KeyPhrase = {
+    def apply(BeginOffset: js.UndefOr[Int] = js.undefined,
+              EndOffset: js.UndefOr[Int] = js.undefined,
+              Score: js.UndefOr[Float] = js.undefined,
+              Text: js.UndefOr[String] = js.undefined): KeyPhrase = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BeginOffset" -> BeginOffset.map { x => x.asInstanceOf[js.Any] },
-        "EndOffset" -> EndOffset.map { x => x.asInstanceOf[js.Any] },
-        "Score" -> Score.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BeginOffset" -> BeginOffset.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndOffset" -> EndOffset.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Score" -> Score.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Text" -> Text.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyPhrase]
     }
   }
 
   /**
-   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
-   */
+    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+    */
   @js.native
   trait KeyPhrasesDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
@@ -1700,24 +1974,32 @@ package comprehend {
   }
 
   object KeyPhrasesDetectionJobFilter {
-    def apply(
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): KeyPhrasesDetectionJobFilter = {
+    def apply(JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): KeyPhrasesDetectionJobFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyPhrasesDetectionJobFilter]
     }
   }
 
   /**
-   * Provides information about a key phrases detection job.
-   */
+    * Provides information about a key phrases detection job.
+    */
   @js.native
   trait KeyPhrasesDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
@@ -1733,28 +2015,48 @@ package comprehend {
   }
 
   object KeyPhrasesDetectionJobProperties {
-    def apply(
-      DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined): KeyPhrasesDetectionJobProperties = {
+    def apply(DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              JobId: js.UndefOr[JobId] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined): KeyPhrasesDetectionJobProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataAccessRoleArn" -> DataAccessRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobId" -> JobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LanguageCode" -> LanguageCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyPhrasesDetectionJobProperties]
     }
@@ -1779,14 +2081,20 @@ package comprehend {
   }
 
   object ListDocumentClassificationJobsRequest {
-    def apply(
-      Filter: js.UndefOr[DocumentClassificationJobFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassificationJobsRequest = {
+    def apply(Filter: js.UndefOr[DocumentClassificationJobFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassificationJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDocumentClassificationJobsRequest]
     }
@@ -1799,12 +2107,17 @@ package comprehend {
   }
 
   object ListDocumentClassificationJobsResponse {
-    def apply(
-      DocumentClassificationJobPropertiesList: js.UndefOr[DocumentClassificationJobPropertiesList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassificationJobsResponse = {
+    def apply(DocumentClassificationJobPropertiesList: js.UndefOr[DocumentClassificationJobPropertiesList] =
+                js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassificationJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassificationJobPropertiesList" -> DocumentClassificationJobPropertiesList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DocumentClassificationJobPropertiesList" -> DocumentClassificationJobPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDocumentClassificationJobsResponse]
     }
@@ -1818,14 +2131,20 @@ package comprehend {
   }
 
   object ListDocumentClassifiersRequest {
-    def apply(
-      Filter: js.UndefOr[DocumentClassifierFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassifiersRequest = {
+    def apply(Filter: js.UndefOr[DocumentClassifierFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassifiersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDocumentClassifiersRequest]
     }
@@ -1838,12 +2157,16 @@ package comprehend {
   }
 
   object ListDocumentClassifiersResponse {
-    def apply(
-      DocumentClassifierPropertiesList: js.UndefOr[DocumentClassifierPropertiesList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassifiersResponse = {
+    def apply(DocumentClassifierPropertiesList: js.UndefOr[DocumentClassifierPropertiesList] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListDocumentClassifiersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassifierPropertiesList" -> DocumentClassifierPropertiesList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DocumentClassifierPropertiesList" -> DocumentClassifierPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDocumentClassifiersResponse]
     }
@@ -1857,14 +2180,20 @@ package comprehend {
   }
 
   object ListDominantLanguageDetectionJobsRequest {
-    def apply(
-      Filter: js.UndefOr[DominantLanguageDetectionJobFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListDominantLanguageDetectionJobsRequest = {
+    def apply(Filter: js.UndefOr[DominantLanguageDetectionJobFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListDominantLanguageDetectionJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDominantLanguageDetectionJobsRequest]
     }
@@ -1877,12 +2206,17 @@ package comprehend {
   }
 
   object ListDominantLanguageDetectionJobsResponse {
-    def apply(
-      DominantLanguageDetectionJobPropertiesList: js.UndefOr[DominantLanguageDetectionJobPropertiesList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListDominantLanguageDetectionJobsResponse = {
+    def apply(DominantLanguageDetectionJobPropertiesList: js.UndefOr[DominantLanguageDetectionJobPropertiesList] =
+                js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListDominantLanguageDetectionJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DominantLanguageDetectionJobPropertiesList" -> DominantLanguageDetectionJobPropertiesList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DominantLanguageDetectionJobPropertiesList" -> DominantLanguageDetectionJobPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDominantLanguageDetectionJobsResponse]
     }
@@ -1896,14 +2230,20 @@ package comprehend {
   }
 
   object ListEntitiesDetectionJobsRequest {
-    def apply(
-      Filter: js.UndefOr[EntitiesDetectionJobFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListEntitiesDetectionJobsRequest = {
+    def apply(Filter: js.UndefOr[EntitiesDetectionJobFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListEntitiesDetectionJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitiesDetectionJobsRequest]
     }
@@ -1916,12 +2256,16 @@ package comprehend {
   }
 
   object ListEntitiesDetectionJobsResponse {
-    def apply(
-      EntitiesDetectionJobPropertiesList: js.UndefOr[EntitiesDetectionJobPropertiesList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListEntitiesDetectionJobsResponse = {
+    def apply(EntitiesDetectionJobPropertiesList: js.UndefOr[EntitiesDetectionJobPropertiesList] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListEntitiesDetectionJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EntitiesDetectionJobPropertiesList" -> EntitiesDetectionJobPropertiesList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EntitiesDetectionJobPropertiesList" -> EntitiesDetectionJobPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitiesDetectionJobsResponse]
     }
@@ -1935,14 +2279,20 @@ package comprehend {
   }
 
   object ListEntityRecognizersRequest {
-    def apply(
-      Filter: js.UndefOr[EntityRecognizerFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListEntityRecognizersRequest = {
+    def apply(Filter: js.UndefOr[EntityRecognizerFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListEntityRecognizersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntityRecognizersRequest]
     }
@@ -1955,12 +2305,14 @@ package comprehend {
   }
 
   object ListEntityRecognizersResponse {
-    def apply(
-      EntityRecognizerPropertiesList: js.UndefOr[EntityRecognizerPropertiesList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListEntityRecognizersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntityRecognizerPropertiesList" -> EntityRecognizerPropertiesList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(EntityRecognizerPropertiesList: js.UndefOr[EntityRecognizerPropertiesList] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListEntityRecognizersResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("EntityRecognizerPropertiesList" -> EntityRecognizerPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        }, "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntityRecognizersResponse]
     }
@@ -1974,14 +2326,20 @@ package comprehend {
   }
 
   object ListKeyPhrasesDetectionJobsRequest {
-    def apply(
-      Filter: js.UndefOr[KeyPhrasesDetectionJobFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListKeyPhrasesDetectionJobsRequest = {
+    def apply(Filter: js.UndefOr[KeyPhrasesDetectionJobFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListKeyPhrasesDetectionJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListKeyPhrasesDetectionJobsRequest]
     }
@@ -1994,12 +2352,16 @@ package comprehend {
   }
 
   object ListKeyPhrasesDetectionJobsResponse {
-    def apply(
-      KeyPhrasesDetectionJobPropertiesList: js.UndefOr[KeyPhrasesDetectionJobPropertiesList] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListKeyPhrasesDetectionJobsResponse = {
+    def apply(KeyPhrasesDetectionJobPropertiesList: js.UndefOr[KeyPhrasesDetectionJobPropertiesList] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListKeyPhrasesDetectionJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "KeyPhrasesDetectionJobPropertiesList" -> KeyPhrasesDetectionJobPropertiesList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KeyPhrasesDetectionJobPropertiesList" -> KeyPhrasesDetectionJobPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListKeyPhrasesDetectionJobsResponse]
     }
@@ -2013,14 +2375,20 @@ package comprehend {
   }
 
   object ListSentimentDetectionJobsRequest {
-    def apply(
-      Filter: js.UndefOr[SentimentDetectionJobFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListSentimentDetectionJobsRequest = {
+    def apply(Filter: js.UndefOr[SentimentDetectionJobFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListSentimentDetectionJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSentimentDetectionJobsRequest]
     }
@@ -2034,11 +2402,17 @@ package comprehend {
 
   object ListSentimentDetectionJobsResponse {
     def apply(
-      NextToken: js.UndefOr[String] = js.undefined,
-      SentimentDetectionJobPropertiesList: js.UndefOr[SentimentDetectionJobPropertiesList] = js.undefined): ListSentimentDetectionJobsResponse = {
+        NextToken: js.UndefOr[String] = js.undefined,
+        SentimentDetectionJobPropertiesList: js.UndefOr[SentimentDetectionJobPropertiesList] = js.undefined
+    ): ListSentimentDetectionJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SentimentDetectionJobPropertiesList" -> SentimentDetectionJobPropertiesList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SentimentDetectionJobPropertiesList" -> SentimentDetectionJobPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSentimentDetectionJobsResponse]
     }
@@ -2052,14 +2426,20 @@ package comprehend {
   }
 
   object ListTopicsDetectionJobsRequest {
-    def apply(
-      Filter: js.UndefOr[TopicsDetectionJobFilter] = js.undefined,
-      MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-      NextToken: js.UndefOr[String] = js.undefined): ListTopicsDetectionJobsRequest = {
+    def apply(Filter: js.UndefOr[TopicsDetectionJobFilter] = js.undefined,
+              MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+              NextToken: js.UndefOr[String] = js.undefined): ListTopicsDetectionJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filter" -> Filter.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicsDetectionJobsRequest]
     }
@@ -2073,50 +2453,55 @@ package comprehend {
 
   object ListTopicsDetectionJobsResponse {
     def apply(
-      NextToken: js.UndefOr[String] = js.undefined,
-      TopicsDetectionJobPropertiesList: js.UndefOr[TopicsDetectionJobPropertiesList] = js.undefined): ListTopicsDetectionJobsResponse = {
+        NextToken: js.UndefOr[String] = js.undefined,
+        TopicsDetectionJobPropertiesList: js.UndefOr[TopicsDetectionJobPropertiesList] = js.undefined
+    ): ListTopicsDetectionJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "TopicsDetectionJobPropertiesList" -> TopicsDetectionJobPropertiesList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TopicsDetectionJobPropertiesList" -> TopicsDetectionJobPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicsDetectionJobsResponse]
     }
   }
 
   object ModelStatusEnum {
-    val SUBMITTED = "SUBMITTED"
-    val TRAINING = "TRAINING"
-    val DELETING = "DELETING"
+    val SUBMITTED      = "SUBMITTED"
+    val TRAINING       = "TRAINING"
+    val DELETING       = "DELETING"
     val STOP_REQUESTED = "STOP_REQUESTED"
-    val STOPPED = "STOPPED"
-    val IN_ERROR = "IN_ERROR"
-    val TRAINED = "TRAINED"
+    val STOPPED        = "STOPPED"
+    val IN_ERROR       = "IN_ERROR"
+    val TRAINED        = "TRAINED"
 
     val values = IndexedSeq(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
   }
 
   /**
-   * Provides configuration parameters for the output of topic detection jobs.
-   *  <p/>
-   */
+    * Provides configuration parameters for the output of topic detection jobs.
+    *  <p/>
+    */
   @js.native
   trait OutputDataConfig extends js.Object {
     var S3Uri: S3Uri
   }
 
   object OutputDataConfig {
-    def apply(
-      S3Uri: S3Uri): OutputDataConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3Uri: S3Uri): OutputDataConfig = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputDataConfig]
     }
   }
 
   /**
-   * Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
-   */
+    * Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
+    */
   @js.native
   trait PartOfSpeechTag extends js.Object {
     var Score: js.UndefOr[Float]
@@ -2124,43 +2509,45 @@ package comprehend {
   }
 
   object PartOfSpeechTag {
-    def apply(
-      Score: js.UndefOr[Float] = js.undefined,
-      Tag: js.UndefOr[PartOfSpeechTagType] = js.undefined): PartOfSpeechTag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Score" -> Score.map { x => x.asInstanceOf[js.Any] },
-        "Tag" -> Tag.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Score: js.UndefOr[Float] = js.undefined,
+              Tag: js.UndefOr[PartOfSpeechTagType] = js.undefined): PartOfSpeechTag = {
+      val _fields = IndexedSeq[(String, js.Any)]("Score" -> Score.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Tag" -> Tag.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartOfSpeechTag]
     }
   }
 
   object PartOfSpeechTagTypeEnum {
-    val ADJ = "ADJ"
-    val ADP = "ADP"
-    val ADV = "ADV"
-    val AUX = "AUX"
-    val CONJ = "CONJ"
+    val ADJ   = "ADJ"
+    val ADP   = "ADP"
+    val ADV   = "ADV"
+    val AUX   = "AUX"
+    val CONJ  = "CONJ"
     val CCONJ = "CCONJ"
-    val DET = "DET"
-    val INTJ = "INTJ"
-    val NOUN = "NOUN"
-    val NUM = "NUM"
-    val O = "O"
-    val PART = "PART"
-    val PRON = "PRON"
+    val DET   = "DET"
+    val INTJ  = "INTJ"
+    val NOUN  = "NOUN"
+    val NUM   = "NUM"
+    val O     = "O"
+    val PART  = "PART"
+    val PRON  = "PRON"
     val PROPN = "PROPN"
     val PUNCT = "PUNCT"
     val SCONJ = "SCONJ"
-    val SYM = "SYM"
-    val VERB = "VERB"
+    val SYM   = "SYM"
+    val VERB  = "VERB"
 
-    val values = IndexedSeq(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
+    val values =
+      IndexedSeq(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
   }
 
   /**
-   * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
-   */
+    * Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+    */
   @js.native
   trait SentimentDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
@@ -2170,24 +2557,32 @@ package comprehend {
   }
 
   object SentimentDetectionJobFilter {
-    def apply(
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): SentimentDetectionJobFilter = {
+    def apply(JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): SentimentDetectionJobFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SentimentDetectionJobFilter]
     }
   }
 
   /**
-   * Provides information about a sentiment detection job.
-   */
+    * Provides information about a sentiment detection job.
+    */
   @js.native
   trait SentimentDetectionJobProperties extends js.Object {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
@@ -2203,36 +2598,56 @@ package comprehend {
   }
 
   object SentimentDetectionJobProperties {
-    def apply(
-      DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined): SentimentDetectionJobProperties = {
+    def apply(DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              JobId: js.UndefOr[JobId] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined): SentimentDetectionJobProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataAccessRoleArn" -> DataAccessRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobId" -> JobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LanguageCode" -> LanguageCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SentimentDetectionJobProperties]
     }
   }
 
   /**
-   * Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.
-   */
+    * Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.
+    */
   @js.native
   trait SentimentScore extends js.Object {
     var Mixed: js.UndefOr[Float]
@@ -2242,16 +2657,24 @@ package comprehend {
   }
 
   object SentimentScore {
-    def apply(
-      Mixed: js.UndefOr[Float] = js.undefined,
-      Negative: js.UndefOr[Float] = js.undefined,
-      Neutral: js.UndefOr[Float] = js.undefined,
-      Positive: js.UndefOr[Float] = js.undefined): SentimentScore = {
+    def apply(Mixed: js.UndefOr[Float] = js.undefined,
+              Negative: js.UndefOr[Float] = js.undefined,
+              Neutral: js.UndefOr[Float] = js.undefined,
+              Positive: js.UndefOr[Float] = js.undefined): SentimentScore = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Mixed" -> Mixed.map { x => x.asInstanceOf[js.Any] },
-        "Negative" -> Negative.map { x => x.asInstanceOf[js.Any] },
-        "Neutral" -> Neutral.map { x => x.asInstanceOf[js.Any] },
-        "Positive" -> Positive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Mixed" -> Mixed.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Negative" -> Negative.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Neutral" -> Neutral.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Positive" -> Positive.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SentimentScore]
     }
@@ -2260,8 +2683,8 @@ package comprehend {
   object SentimentTypeEnum {
     val POSITIVE = "POSITIVE"
     val NEGATIVE = "NEGATIVE"
-    val NEUTRAL = "NEUTRAL"
-    val MIXED = "MIXED"
+    val NEUTRAL  = "NEUTRAL"
+    val MIXED    = "MIXED"
 
     val values = IndexedSeq(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
   }
@@ -2277,20 +2700,24 @@ package comprehend {
   }
 
   object StartDocumentClassificationJobRequest {
-    def apply(
-      DataAccessRoleArn: IamRoleArn,
-      DocumentClassifierArn: DocumentClassifierArn,
-      InputDataConfig: InputDataConfig,
-      OutputDataConfig: OutputDataConfig,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined): StartDocumentClassificationJobRequest = {
+    def apply(DataAccessRoleArn: IamRoleArn,
+              DocumentClassifierArn: DocumentClassifierArn,
+              InputDataConfig: InputDataConfig,
+              OutputDataConfig: OutputDataConfig,
+              ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined): StartDocumentClassificationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "DataAccessRoleArn"     -> DataAccessRoleArn.asInstanceOf[js.Any],
         "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"       -> InputDataConfig.asInstanceOf[js.Any],
+        "OutputDataConfig"      -> OutputDataConfig.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDocumentClassificationJobRequest]
     }
@@ -2303,12 +2730,13 @@ package comprehend {
   }
 
   object StartDocumentClassificationJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StartDocumentClassificationJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StartDocumentClassificationJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDocumentClassificationJobResponse]
     }
@@ -2324,18 +2752,22 @@ package comprehend {
   }
 
   object StartDominantLanguageDetectionJobRequest {
-    def apply(
-      DataAccessRoleArn: IamRoleArn,
-      InputDataConfig: InputDataConfig,
-      OutputDataConfig: OutputDataConfig,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined): StartDominantLanguageDetectionJobRequest = {
+    def apply(DataAccessRoleArn: IamRoleArn,
+              InputDataConfig: InputDataConfig,
+              OutputDataConfig: OutputDataConfig,
+              ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined): StartDominantLanguageDetectionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDominantLanguageDetectionJobRequest]
     }
@@ -2348,12 +2780,13 @@ package comprehend {
   }
 
   object StartDominantLanguageDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StartDominantLanguageDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StartDominantLanguageDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDominantLanguageDetectionJobResponse]
     }
@@ -2371,22 +2804,28 @@ package comprehend {
   }
 
   object StartEntitiesDetectionJobRequest {
-    def apply(
-      DataAccessRoleArn: IamRoleArn,
-      InputDataConfig: InputDataConfig,
-      LanguageCode: LanguageCode,
-      OutputDataConfig: OutputDataConfig,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-      EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined): StartEntitiesDetectionJobRequest = {
+    def apply(DataAccessRoleArn: IamRoleArn,
+              InputDataConfig: InputDataConfig,
+              LanguageCode: LanguageCode,
+              OutputDataConfig: OutputDataConfig,
+              ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+              EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined): StartEntitiesDetectionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "EntityRecognizerArn" -> EntityRecognizerArn.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EntityRecognizerArn" -> EntityRecognizerArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartEntitiesDetectionJobRequest]
     }
@@ -2399,12 +2838,13 @@ package comprehend {
   }
 
   object StartEntitiesDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StartEntitiesDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StartEntitiesDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartEntitiesDetectionJobResponse]
     }
@@ -2421,20 +2861,24 @@ package comprehend {
   }
 
   object StartKeyPhrasesDetectionJobRequest {
-    def apply(
-      DataAccessRoleArn: IamRoleArn,
-      InputDataConfig: InputDataConfig,
-      LanguageCode: LanguageCode,
-      OutputDataConfig: OutputDataConfig,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined): StartKeyPhrasesDetectionJobRequest = {
+    def apply(DataAccessRoleArn: IamRoleArn,
+              InputDataConfig: InputDataConfig,
+              LanguageCode: LanguageCode,
+              OutputDataConfig: OutputDataConfig,
+              ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined): StartKeyPhrasesDetectionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartKeyPhrasesDetectionJobRequest]
     }
@@ -2447,12 +2891,13 @@ package comprehend {
   }
 
   object StartKeyPhrasesDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StartKeyPhrasesDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StartKeyPhrasesDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartKeyPhrasesDetectionJobResponse]
     }
@@ -2469,20 +2914,24 @@ package comprehend {
   }
 
   object StartSentimentDetectionJobRequest {
-    def apply(
-      DataAccessRoleArn: IamRoleArn,
-      InputDataConfig: InputDataConfig,
-      LanguageCode: LanguageCode,
-      OutputDataConfig: OutputDataConfig,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined): StartSentimentDetectionJobRequest = {
+    def apply(DataAccessRoleArn: IamRoleArn,
+              InputDataConfig: InputDataConfig,
+              LanguageCode: LanguageCode,
+              OutputDataConfig: OutputDataConfig,
+              ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined): StartSentimentDetectionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode"      -> LanguageCode.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSentimentDetectionJobRequest]
     }
@@ -2495,12 +2944,13 @@ package comprehend {
   }
 
   object StartSentimentDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StartSentimentDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StartSentimentDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSentimentDetectionJobResponse]
     }
@@ -2517,20 +2967,26 @@ package comprehend {
   }
 
   object StartTopicsDetectionJobRequest {
-    def apply(
-      DataAccessRoleArn: IamRoleArn,
-      InputDataConfig: InputDataConfig,
-      OutputDataConfig: OutputDataConfig,
-      ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
-      NumberOfTopics: js.UndefOr[NumberOfTopicsInteger] = js.undefined): StartTopicsDetectionJobRequest = {
+    def apply(DataAccessRoleArn: IamRoleArn,
+              InputDataConfig: InputDataConfig,
+              OutputDataConfig: OutputDataConfig,
+              ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined,
+              NumberOfTopics: js.UndefOr[NumberOfTopicsInteger] = js.undefined): StartTopicsDetectionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfTopics" -> NumberOfTopics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfTopics" -> NumberOfTopics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTopicsDetectionJobRequest]
     }
@@ -2543,12 +2999,13 @@ package comprehend {
   }
 
   object StartTopicsDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StartTopicsDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StartTopicsDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTopicsDetectionJobResponse]
     }
@@ -2560,10 +3017,9 @@ package comprehend {
   }
 
   object StopDominantLanguageDetectionJobRequest {
-    def apply(
-      JobId: JobId): StopDominantLanguageDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): StopDominantLanguageDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDominantLanguageDetectionJobRequest]
     }
@@ -2576,12 +3032,13 @@ package comprehend {
   }
 
   object StopDominantLanguageDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StopDominantLanguageDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StopDominantLanguageDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDominantLanguageDetectionJobResponse]
     }
@@ -2593,10 +3050,9 @@ package comprehend {
   }
 
   object StopEntitiesDetectionJobRequest {
-    def apply(
-      JobId: JobId): StopEntitiesDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): StopEntitiesDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopEntitiesDetectionJobRequest]
     }
@@ -2609,12 +3065,13 @@ package comprehend {
   }
 
   object StopEntitiesDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StopEntitiesDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StopEntitiesDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopEntitiesDetectionJobResponse]
     }
@@ -2626,10 +3083,9 @@ package comprehend {
   }
 
   object StopKeyPhrasesDetectionJobRequest {
-    def apply(
-      JobId: JobId): StopKeyPhrasesDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): StopKeyPhrasesDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopKeyPhrasesDetectionJobRequest]
     }
@@ -2642,12 +3098,13 @@ package comprehend {
   }
 
   object StopKeyPhrasesDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StopKeyPhrasesDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StopKeyPhrasesDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopKeyPhrasesDetectionJobResponse]
     }
@@ -2659,10 +3116,9 @@ package comprehend {
   }
 
   object StopSentimentDetectionJobRequest {
-    def apply(
-      JobId: JobId): StopSentimentDetectionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: JobId): StopSentimentDetectionJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopSentimentDetectionJobRequest]
     }
@@ -2675,12 +3131,13 @@ package comprehend {
   }
 
   object StopSentimentDetectionJobResponse {
-    def apply(
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined): StopSentimentDetectionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(JobId: js.UndefOr[JobId] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined): StopSentimentDetectionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "JobStatus" -> JobStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopSentimentDetectionJobResponse]
     }
@@ -2692,19 +3149,16 @@ package comprehend {
   }
 
   object StopTrainingDocumentClassifierRequest {
-    def apply(
-      DocumentClassifierArn: DocumentClassifierArn): StopTrainingDocumentClassifierRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(DocumentClassifierArn: DocumentClassifierArn): StopTrainingDocumentClassifierRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DocumentClassifierArn" -> DocumentClassifierArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTrainingDocumentClassifierRequest]
     }
   }
 
   @js.native
-  trait StopTrainingDocumentClassifierResponse extends js.Object {
-
-  }
+  trait StopTrainingDocumentClassifierResponse extends js.Object {}
 
   object StopTrainingDocumentClassifierResponse {
     def apply(): StopTrainingDocumentClassifierResponse = {
@@ -2720,19 +3174,16 @@ package comprehend {
   }
 
   object StopTrainingEntityRecognizerRequest {
-    def apply(
-      EntityRecognizerArn: EntityRecognizerArn): StopTrainingEntityRecognizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EntityRecognizerArn: EntityRecognizerArn): StopTrainingEntityRecognizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("EntityRecognizerArn" -> EntityRecognizerArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTrainingEntityRecognizerRequest]
     }
   }
 
   @js.native
-  trait StopTrainingEntityRecognizerResponse extends js.Object {
-
-  }
+  trait StopTrainingEntityRecognizerResponse extends js.Object {}
 
   object StopTrainingEntityRecognizerResponse {
     def apply(): StopTrainingEntityRecognizerResponse = {
@@ -2754,8 +3205,8 @@ package comprehend {
   }
 
   /**
-   * Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.
-   */
+    * Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.
+    */
   @js.native
   trait SyntaxToken extends js.Object {
     var BeginOffset: js.UndefOr[Int]
@@ -2766,26 +3217,36 @@ package comprehend {
   }
 
   object SyntaxToken {
-    def apply(
-      BeginOffset: js.UndefOr[Int] = js.undefined,
-      EndOffset: js.UndefOr[Int] = js.undefined,
-      PartOfSpeech: js.UndefOr[PartOfSpeechTag] = js.undefined,
-      Text: js.UndefOr[String] = js.undefined,
-      TokenId: js.UndefOr[Int] = js.undefined): SyntaxToken = {
+    def apply(BeginOffset: js.UndefOr[Int] = js.undefined,
+              EndOffset: js.UndefOr[Int] = js.undefined,
+              PartOfSpeech: js.UndefOr[PartOfSpeechTag] = js.undefined,
+              Text: js.UndefOr[String] = js.undefined,
+              TokenId: js.UndefOr[Int] = js.undefined): SyntaxToken = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BeginOffset" -> BeginOffset.map { x => x.asInstanceOf[js.Any] },
-        "EndOffset" -> EndOffset.map { x => x.asInstanceOf[js.Any] },
-        "PartOfSpeech" -> PartOfSpeech.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
-        "TokenId" -> TokenId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BeginOffset" -> BeginOffset.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndOffset" -> EndOffset.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PartOfSpeech" -> PartOfSpeech.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Text" -> Text.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenId" -> TokenId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SyntaxToken]
     }
   }
 
   /**
-   * Provides information for filtering topic detection jobs. For more information, see .
-   */
+    * Provides information for filtering topic detection jobs. For more information, see .
+    */
   @js.native
   trait TopicsDetectionJobFilter extends js.Object {
     var JobName: js.UndefOr[JobName]
@@ -2795,24 +3256,32 @@ package comprehend {
   }
 
   object TopicsDetectionJobFilter {
-    def apply(
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): TopicsDetectionJobFilter = {
+    def apply(JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined): TopicsDetectionJobFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeAfter" -> SubmitTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTimeBefore" -> SubmitTimeBefore.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeAfter" -> SubmitTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTimeBefore" -> SubmitTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TopicsDetectionJobFilter]
     }
   }
 
   /**
-   * Provides information about a topic detection job.
-   */
+    * Provides information about a topic detection job.
+    */
   @js.native
   trait TopicsDetectionJobProperties extends js.Object {
     var EndTime: js.UndefOr[Timestamp]
@@ -2827,26 +3296,44 @@ package comprehend {
   }
 
   object TopicsDetectionJobProperties {
-    def apply(
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      JobId: js.UndefOr[JobId] = js.undefined,
-      JobName: js.UndefOr[JobName] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      Message: js.UndefOr[AnyLengthString] = js.undefined,
-      NumberOfTopics: js.UndefOr[Int] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined): TopicsDetectionJobProperties = {
+    def apply(EndTime: js.UndefOr[Timestamp] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              JobId: js.UndefOr[JobId] = js.undefined,
+              JobName: js.UndefOr[JobName] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              Message: js.UndefOr[AnyLengthString] = js.undefined,
+              NumberOfTopics: js.UndefOr[Int] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined): TopicsDetectionJobProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "JobId" -> JobId.map { x => x.asInstanceOf[js.Any] },
-        "JobName" -> JobName.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfTopics" -> NumberOfTopics.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobId" -> JobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobName" -> JobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfTopics" -> NumberOfTopics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TopicsDetectionJobProperties]
     }

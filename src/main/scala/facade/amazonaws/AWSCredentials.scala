@@ -14,11 +14,11 @@ class AWSCredentials extends js.Object {
 
   def refreshPromise(): js.Promise[Unit] = js.native
 
-  val accessKeyId: String = js.native
+  val accessKeyId: String     = js.native
   val secretAccessKey: String = js.native
-  val sessionToken: String = js.native
-  val expired: Boolean = js.native
-  val expireTime: js.Date = js.native
+  val sessionToken: String    = js.native
+  val expired: Boolean        = js.native
+  val expireTime: js.Date     = js.native
 }
 
 @js.native
