@@ -60,6 +60,6 @@ lazy val root = (project in file(".")).
     skip in packageJSDependencies := false,
     scalaJSModuleKind := ModuleKind.CommonJSModule,
     libraryDependencies ++= Seq(
-      "io.scalajs" %%% "nodejs" % "0.4.2"
+      "net.exoego" %%% "scala-js-nodejs-v8" % "0.8.0"
     )
   )
