@@ -31,8 +31,6 @@ package object emr {
   type EbsBlockDeviceConfigList               = js.Array[EbsBlockDeviceConfig]
   type EbsBlockDeviceList                     = js.Array[EbsBlockDevice]
   type EbsVolumeList                          = js.Array[EbsVolume]
-  type ErrorCode                              = String
-  type ErrorMessage                           = String
   type InstanceCollectionType                 = String
   type InstanceFleetConfigList                = js.Array[InstanceFleetConfig]
   type InstanceFleetId                        = String
@@ -156,7 +154,10 @@ package emr {
   }
 
   object AddInstanceFleetInput {
-    def apply(ClusterId: XmlStringMaxLen256, InstanceFleet: InstanceFleetConfig): AddInstanceFleetInput = {
+    def apply(
+        ClusterId: XmlStringMaxLen256,
+        InstanceFleet: InstanceFleetConfig
+    ): AddInstanceFleetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
@@ -173,13 +174,18 @@ package emr {
   }
 
   object AddInstanceFleetOutput {
-    def apply(ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined): AddInstanceFleetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "InstanceFleetId" -> InstanceFleetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined
+    ): AddInstanceFleetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceFleetId" -> InstanceFleetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddInstanceFleetOutput]
     }
@@ -195,7 +201,10 @@ package emr {
   }
 
   object AddInstanceGroupsInput {
-    def apply(InstanceGroups: InstanceGroupConfigList, JobFlowId: XmlStringMaxLen256): AddInstanceGroupsInput = {
+    def apply(
+        InstanceGroups: InstanceGroupConfigList,
+        JobFlowId: XmlStringMaxLen256
+    ): AddInstanceGroupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceGroups" -> InstanceGroups.asInstanceOf[js.Any],
         "JobFlowId"      -> JobFlowId.asInstanceOf[js.Any]
@@ -215,13 +224,18 @@ package emr {
   }
 
   object AddInstanceGroupsOutput {
-    def apply(InstanceGroupIds: js.UndefOr[InstanceGroupIdsList] = js.undefined,
-              JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined): AddInstanceGroupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceGroupIds" -> InstanceGroupIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "JobFlowId" -> JobFlowId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceGroupIds: js.UndefOr[InstanceGroupIdsList] = js.undefined,
+        JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): AddInstanceGroupsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceGroupIds" -> InstanceGroupIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobFlowId" -> JobFlowId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddInstanceGroupsOutput]
     }
@@ -237,7 +251,10 @@ package emr {
   }
 
   object AddJobFlowStepsInput {
-    def apply(JobFlowId: XmlStringMaxLen256, Steps: StepConfigList): AddJobFlowStepsInput = {
+    def apply(
+        JobFlowId: XmlStringMaxLen256,
+        Steps: StepConfigList
+    ): AddJobFlowStepsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobFlowId" -> JobFlowId.asInstanceOf[js.Any],
         "Steps"     -> Steps.asInstanceOf[js.Any]
@@ -256,10 +273,14 @@ package emr {
   }
 
   object AddJobFlowStepsOutput {
-    def apply(StepIds: js.UndefOr[StepIdsList] = js.undefined): AddJobFlowStepsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StepIds" -> StepIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StepIds: js.UndefOr[StepIdsList] = js.undefined
+    ): AddJobFlowStepsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StepIds" -> StepIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddJobFlowStepsOutput]
     }
@@ -275,7 +296,10 @@ package emr {
   }
 
   object AddTagsInput {
-    def apply(ResourceId: ResourceId, Tags: TagList): AddTagsInput = {
+    def apply(
+        ResourceId: ResourceId,
+        Tags: TagList
+    ): AddTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags"       -> Tags.asInstanceOf[js.Any]
@@ -292,8 +316,10 @@ package emr {
   trait AddTagsOutput extends js.Object {}
 
   object AddTagsOutput {
-    def apply(): AddTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AddTagsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsOutput]
     }
@@ -308,11 +334,8 @@ package emr {
   }
 
   /**
-    * An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see [[http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html|Using the MapR Distribution for Hadoop]]. Currently supported values are:
-    * * "mapr-m3" - launch the cluster using MapR M3 Edition.
-    *  * "mapr-m5" - launch the cluster using MapR M5 Edition.
-    *  * "mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the cluster using MapR M3 or M5 Edition, respectively.
-    * '''Note:'''In Amazon EMR releases 4.x and later, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.
+    * With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see [[https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
+    *  With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.
     */
   @js.native
   trait Application extends js.Object {
@@ -323,10 +346,12 @@ package emr {
   }
 
   object Application {
-    def apply(AdditionalInfo: js.UndefOr[StringMap] = js.undefined,
-              Args: js.UndefOr[StringList] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): Application = {
+    def apply(
+        AdditionalInfo: js.UndefOr[StringMap] = js.undefined,
+        Args: js.UndefOr[StringList] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): Application = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdditionalInfo" -> AdditionalInfo.map { x =>
           x.asInstanceOf[js.Any]
@@ -356,7 +381,10 @@ package emr {
   }
 
   object AutoScalingPolicy {
-    def apply(Constraints: ScalingConstraints, Rules: ScalingRuleList): AutoScalingPolicy = {
+    def apply(
+        Constraints: ScalingConstraints,
+        Rules: ScalingRuleList
+    ): AutoScalingPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Constraints" -> Constraints.asInstanceOf[js.Any],
         "Rules"       -> Rules.asInstanceOf[js.Any]
@@ -377,9 +405,11 @@ package emr {
   }
 
   object AutoScalingPolicyDescription {
-    def apply(Constraints: js.UndefOr[ScalingConstraints] = js.undefined,
-              Rules: js.UndefOr[ScalingRuleList] = js.undefined,
-              Status: js.UndefOr[AutoScalingPolicyStatus] = js.undefined): AutoScalingPolicyDescription = {
+    def apply(
+        Constraints: js.UndefOr[ScalingConstraints] = js.undefined,
+        Rules: js.UndefOr[ScalingRuleList] = js.undefined,
+        Status: js.UndefOr[AutoScalingPolicyStatus] = js.undefined
+    ): AutoScalingPolicyDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Constraints" -> Constraints.map { x =>
           x.asInstanceOf[js.Any]
@@ -417,13 +447,18 @@ package emr {
   }
 
   object AutoScalingPolicyStateChangeReason {
-    def apply(Code: js.UndefOr[AutoScalingPolicyStateChangeReasonCode] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined): AutoScalingPolicyStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[AutoScalingPolicyStateChangeReasonCode] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): AutoScalingPolicyStateChangeReason = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingPolicyStateChangeReason]
     }
@@ -451,11 +486,14 @@ package emr {
         State: js.UndefOr[AutoScalingPolicyState] = js.undefined,
         StateChangeReason: js.UndefOr[AutoScalingPolicyStateChangeReason] = js.undefined
     ): AutoScalingPolicyStatus = {
-      val _fields = IndexedSeq[(String, js.Any)]("State" -> State.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StateChangeReason" -> StateChangeReason.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StateChangeReason" -> StateChangeReason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingPolicyStatus]
     }
@@ -471,7 +509,10 @@ package emr {
   }
 
   object BootstrapActionConfig {
-    def apply(Name: XmlStringMaxLen256, ScriptBootstrapAction: ScriptBootstrapActionConfig): BootstrapActionConfig = {
+    def apply(
+        Name: XmlStringMaxLen256,
+        ScriptBootstrapAction: ScriptBootstrapActionConfig
+    ): BootstrapActionConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"                  -> Name.asInstanceOf[js.Any],
         "ScriptBootstrapAction" -> ScriptBootstrapAction.asInstanceOf[js.Any]
@@ -490,10 +531,14 @@ package emr {
   }
 
   object BootstrapActionDetail {
-    def apply(BootstrapActionConfig: js.UndefOr[BootstrapActionConfig] = js.undefined): BootstrapActionDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("BootstrapActionConfig" -> BootstrapActionConfig.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BootstrapActionConfig: js.UndefOr[BootstrapActionConfig] = js.undefined
+    ): BootstrapActionDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BootstrapActionConfig" -> BootstrapActionConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BootstrapActionDetail]
     }
@@ -510,16 +555,22 @@ package emr {
   }
 
   object CancelStepsInfo {
-    def apply(Reason: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[CancelStepsRequestStatus] = js.undefined,
-              StepId: js.UndefOr[StepId] = js.undefined): CancelStepsInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("Reason" -> Reason.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StepId" -> StepId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Reason: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[CancelStepsRequestStatus] = js.undefined,
+        StepId: js.UndefOr[StepId] = js.undefined
+    ): CancelStepsInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Reason" -> Reason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StepId" -> StepId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelStepsInfo]
     }
@@ -535,13 +586,18 @@ package emr {
   }
 
   object CancelStepsInput {
-    def apply(ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              StepIds: js.UndefOr[StepIdsList] = js.undefined): CancelStepsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StepIds" -> StepIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        StepIds: js.UndefOr[StepIdsList] = js.undefined
+    ): CancelStepsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StepIds" -> StepIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelStepsInput]
     }
@@ -556,10 +612,14 @@ package emr {
   }
 
   object CancelStepsOutput {
-    def apply(CancelStepsInfoList: js.UndefOr[CancelStepsInfoList] = js.undefined): CancelStepsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("CancelStepsInfoList" -> CancelStepsInfoList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CancelStepsInfoList: js.UndefOr[CancelStepsInfoList] = js.undefined
+    ): CancelStepsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CancelStepsInfoList" -> CancelStepsInfoList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelStepsOutput]
     }
@@ -589,15 +649,17 @@ package emr {
   }
 
   object CloudWatchAlarmDefinition {
-    def apply(ComparisonOperator: ComparisonOperator,
-              MetricName: String,
-              Period: Int,
-              Threshold: NonNegativeDouble,
-              Dimensions: js.UndefOr[MetricDimensionList] = js.undefined,
-              EvaluationPeriods: js.UndefOr[Int] = js.undefined,
-              Namespace: js.UndefOr[String] = js.undefined,
-              Statistic: js.UndefOr[Statistic] = js.undefined,
-              Unit: js.UndefOr[Unit] = js.undefined): CloudWatchAlarmDefinition = {
+    def apply(
+        ComparisonOperator: ComparisonOperator,
+        MetricName: String,
+        Period: Int,
+        Threshold: NonNegativeDouble,
+        Dimensions: js.UndefOr[MetricDimensionList] = js.undefined,
+        EvaluationPeriods: js.UndefOr[Int] = js.undefined,
+        Namespace: js.UndefOr[String] = js.undefined,
+        Statistic: js.UndefOr[Statistic] = js.undefined,
+        Unit: js.UndefOr[Unit] = js.undefined
+    ): CloudWatchAlarmDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "MetricName"         -> MetricName.asInstanceOf[js.Any],
@@ -657,31 +719,33 @@ package emr {
   }
 
   object Cluster {
-    def apply(Applications: js.UndefOr[ApplicationList] = js.undefined,
-              AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
-              AutoTerminate: js.UndefOr[Boolean] = js.undefined,
-              Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-              CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
-              Ec2InstanceAttributes: js.UndefOr[Ec2InstanceAttributes] = js.undefined,
-              Id: js.UndefOr[ClusterId] = js.undefined,
-              InstanceCollectionType: js.UndefOr[InstanceCollectionType] = js.undefined,
-              KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
-              LogUri: js.UndefOr[String] = js.undefined,
-              MasterPublicDnsName: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
-              ReleaseLabel: js.UndefOr[String] = js.undefined,
-              RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
-              RequestedAmiVersion: js.UndefOr[String] = js.undefined,
-              RunningAmiVersion: js.UndefOr[String] = js.undefined,
-              ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
-              SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
-              ServiceRole: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[ClusterStatus] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              TerminationProtected: js.UndefOr[Boolean] = js.undefined,
-              VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined): Cluster = {
+    def apply(
+        Applications: js.UndefOr[ApplicationList] = js.undefined,
+        AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
+        AutoTerminate: js.UndefOr[Boolean] = js.undefined,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
+        Ec2InstanceAttributes: js.UndefOr[Ec2InstanceAttributes] = js.undefined,
+        Id: js.UndefOr[ClusterId] = js.undefined,
+        InstanceCollectionType: js.UndefOr[InstanceCollectionType] = js.undefined,
+        KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
+        LogUri: js.UndefOr[String] = js.undefined,
+        MasterPublicDnsName: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
+        ReleaseLabel: js.UndefOr[String] = js.undefined,
+        RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
+        RequestedAmiVersion: js.UndefOr[String] = js.undefined,
+        RunningAmiVersion: js.UndefOr[String] = js.undefined,
+        ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
+        SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
+        ServiceRole: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[ClusterStatus] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TerminationProtected: js.UndefOr[Boolean] = js.undefined,
+        VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
+    ): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Applications" -> Applications.map { x =>
           x.asInstanceOf[js.Any]
@@ -786,13 +850,18 @@ package emr {
   }
 
   object ClusterStateChangeReason {
-    def apply(Code: js.UndefOr[ClusterStateChangeReasonCode] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined): ClusterStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[ClusterStateChangeReasonCode] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): ClusterStateChangeReason = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterStateChangeReason]
     }
@@ -831,9 +900,11 @@ package emr {
   }
 
   object ClusterStatus {
-    def apply(State: js.UndefOr[ClusterState] = js.undefined,
-              StateChangeReason: js.UndefOr[ClusterStateChangeReason] = js.undefined,
-              Timeline: js.UndefOr[ClusterTimeline] = js.undefined): ClusterStatus = {
+    def apply(
+        State: js.UndefOr[ClusterState] = js.undefined,
+        StateChangeReason: js.UndefOr[ClusterStateChangeReason] = js.undefined,
+        Timeline: js.UndefOr[ClusterTimeline] = js.undefined
+    ): ClusterStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
@@ -862,10 +933,12 @@ package emr {
   }
 
   object ClusterSummary {
-    def apply(Id: js.UndefOr[ClusterId] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
-              Status: js.UndefOr[ClusterStatus] = js.undefined): ClusterSummary = {
+    def apply(
+        Id: js.UndefOr[ClusterId] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
+        Status: js.UndefOr[ClusterStatus] = js.undefined
+    ): ClusterSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.map { x =>
           x.asInstanceOf[js.Any]
@@ -896,9 +969,11 @@ package emr {
   }
 
   object ClusterTimeline {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              ReadyDateTime: js.UndefOr[Date] = js.undefined): ClusterTimeline = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        ReadyDateTime: js.UndefOr[Date] = js.undefined
+    ): ClusterTimeline = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -926,16 +1001,22 @@ package emr {
   }
 
   object Command {
-    def apply(Args: js.UndefOr[StringList] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              ScriptPath: js.UndefOr[String] = js.undefined): Command = {
-      val _fields = IndexedSeq[(String, js.Any)]("Args" -> Args.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ScriptPath" -> ScriptPath.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Args: js.UndefOr[StringList] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        ScriptPath: js.UndefOr[String] = js.undefined
+    ): Command = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Args" -> Args.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScriptPath" -> ScriptPath.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Command]
     }
@@ -952,7 +1033,7 @@ package emr {
 
   /**
     * '''Note:'''Amazon EMR releases 4.x or later.
-    * An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see [[http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
+    * An optional configuration specification to be used when provisioning cluster instances, which can include configurations for applications and software bundled with Amazon EMR. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see [[https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html|Configuring Applications]].
     */
   @js.native
   trait Configuration extends js.Object {
@@ -962,9 +1043,11 @@ package emr {
   }
 
   object Configuration {
-    def apply(Classification: js.UndefOr[String] = js.undefined,
-              Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-              Properties: js.UndefOr[StringMap] = js.undefined): Configuration = {
+    def apply(
+        Classification: js.UndefOr[String] = js.undefined,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        Properties: js.UndefOr[StringMap] = js.undefined
+    ): Configuration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Classification" -> Classification.map { x =>
           x.asInstanceOf[js.Any]
@@ -988,7 +1071,10 @@ package emr {
   }
 
   object CreateSecurityConfigurationInput {
-    def apply(Name: XmlString, SecurityConfiguration: String): CreateSecurityConfigurationInput = {
+    def apply(
+        Name: XmlString,
+        SecurityConfiguration: String
+    ): CreateSecurityConfigurationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"                  -> Name.asInstanceOf[js.Any],
         "SecurityConfiguration" -> SecurityConfiguration.asInstanceOf[js.Any]
@@ -1005,7 +1091,10 @@ package emr {
   }
 
   object CreateSecurityConfigurationOutput {
-    def apply(CreationDateTime: Date, Name: XmlString): CreateSecurityConfigurationOutput = {
+    def apply(
+        CreationDateTime: Date,
+        Name: XmlString
+    ): CreateSecurityConfigurationOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any]
@@ -1021,9 +1110,12 @@ package emr {
   }
 
   object DeleteSecurityConfigurationInput {
-    def apply(Name: XmlString): DeleteSecurityConfigurationInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: XmlString
+    ): DeleteSecurityConfigurationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityConfigurationInput]
     }
@@ -1033,8 +1125,10 @@ package emr {
   trait DeleteSecurityConfigurationOutput extends js.Object {}
 
   object DeleteSecurityConfigurationOutput {
-    def apply(): DeleteSecurityConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteSecurityConfigurationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityConfigurationOutput]
     }
@@ -1049,9 +1143,12 @@ package emr {
   }
 
   object DescribeClusterInput {
-    def apply(ClusterId: ClusterId): DescribeClusterInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: ClusterId
+    ): DescribeClusterInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterInput]
     }
@@ -1066,10 +1163,14 @@ package emr {
   }
 
   object DescribeClusterOutput {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): DescribeClusterOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): DescribeClusterOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterOutput]
     }
@@ -1087,10 +1188,12 @@ package emr {
   }
 
   object DescribeJobFlowsInput {
-    def apply(CreatedAfter: js.UndefOr[Date] = js.undefined,
-              CreatedBefore: js.UndefOr[Date] = js.undefined,
-              JobFlowIds: js.UndefOr[XmlStringList] = js.undefined,
-              JobFlowStates: js.UndefOr[JobFlowExecutionStateList] = js.undefined): DescribeJobFlowsInput = {
+    def apply(
+        CreatedAfter: js.UndefOr[Date] = js.undefined,
+        CreatedBefore: js.UndefOr[Date] = js.undefined,
+        JobFlowIds: js.UndefOr[XmlStringList] = js.undefined,
+        JobFlowStates: js.UndefOr[JobFlowExecutionStateList] = js.undefined
+    ): DescribeJobFlowsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedAfter" -> CreatedAfter.map { x =>
           x.asInstanceOf[js.Any]
@@ -1119,10 +1222,14 @@ package emr {
   }
 
   object DescribeJobFlowsOutput {
-    def apply(JobFlows: js.UndefOr[JobFlowDetailList] = js.undefined): DescribeJobFlowsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobFlows" -> JobFlows.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobFlows: js.UndefOr[JobFlowDetailList] = js.undefined
+    ): DescribeJobFlowsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobFlows" -> JobFlows.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobFlowsOutput]
     }
@@ -1134,9 +1241,12 @@ package emr {
   }
 
   object DescribeSecurityConfigurationInput {
-    def apply(Name: XmlString): DescribeSecurityConfigurationInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: XmlString
+    ): DescribeSecurityConfigurationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityConfigurationInput]
     }
@@ -1150,9 +1260,11 @@ package emr {
   }
 
   object DescribeSecurityConfigurationOutput {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              Name: js.UndefOr[XmlString] = js.undefined,
-              SecurityConfiguration: js.UndefOr[String] = js.undefined): DescribeSecurityConfigurationOutput = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        Name: js.UndefOr[XmlString] = js.undefined,
+        SecurityConfiguration: js.UndefOr[String] = js.undefined
+    ): DescribeSecurityConfigurationOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -1179,7 +1291,10 @@ package emr {
   }
 
   object DescribeStepInput {
-    def apply(ClusterId: ClusterId, StepId: StepId): DescribeStepInput = {
+    def apply(
+        ClusterId: ClusterId,
+        StepId: StepId
+    ): DescribeStepInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "StepId"    -> StepId.asInstanceOf[js.Any]
@@ -1198,10 +1313,14 @@ package emr {
   }
 
   object DescribeStepOutput {
-    def apply(Step: js.UndefOr[Step] = js.undefined): DescribeStepOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Step" -> Step.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Step: js.UndefOr[Step] = js.undefined
+    ): DescribeStepOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Step" -> Step.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStepOutput]
     }
@@ -1217,13 +1336,18 @@ package emr {
   }
 
   object EbsBlockDevice {
-    def apply(Device: js.UndefOr[String] = js.undefined,
-              VolumeSpecification: js.UndefOr[VolumeSpecification] = js.undefined): EbsBlockDevice = {
-      val _fields = IndexedSeq[(String, js.Any)]("Device" -> Device.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VolumeSpecification" -> VolumeSpecification.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Device: js.UndefOr[String] = js.undefined,
+        VolumeSpecification: js.UndefOr[VolumeSpecification] = js.undefined
+    ): EbsBlockDevice = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Device" -> Device.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeSpecification" -> VolumeSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EbsBlockDevice]
     }
@@ -1239,8 +1363,10 @@ package emr {
   }
 
   object EbsBlockDeviceConfig {
-    def apply(VolumeSpecification: VolumeSpecification,
-              VolumesPerInstance: js.UndefOr[Int] = js.undefined): EbsBlockDeviceConfig = {
+    def apply(
+        VolumeSpecification: VolumeSpecification,
+        VolumesPerInstance: js.UndefOr[Int] = js.undefined
+    ): EbsBlockDeviceConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "VolumeSpecification" -> VolumeSpecification.asInstanceOf[js.Any],
         "VolumesPerInstance" -> VolumesPerInstance.map { x =>
@@ -1262,13 +1388,18 @@ package emr {
   }
 
   object EbsConfiguration {
-    def apply(EbsBlockDeviceConfigs: js.UndefOr[EbsBlockDeviceConfigList] = js.undefined,
-              EbsOptimized: js.UndefOr[BooleanObject] = js.undefined): EbsConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("EbsBlockDeviceConfigs" -> EbsBlockDeviceConfigs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EbsOptimized" -> EbsOptimized.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EbsBlockDeviceConfigs: js.UndefOr[EbsBlockDeviceConfigList] = js.undefined,
+        EbsOptimized: js.UndefOr[BooleanObject] = js.undefined
+    ): EbsConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EbsBlockDeviceConfigs" -> EbsBlockDeviceConfigs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EbsOptimized" -> EbsOptimized.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EbsConfiguration]
     }
@@ -1284,12 +1415,18 @@ package emr {
   }
 
   object EbsVolume {
-    def apply(Device: js.UndefOr[String] = js.undefined, VolumeId: js.UndefOr[String] = js.undefined): EbsVolume = {
-      val _fields = IndexedSeq[(String, js.Any)]("Device" -> Device.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VolumeId" -> VolumeId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Device: js.UndefOr[String] = js.undefined,
+        VolumeId: js.UndefOr[String] = js.undefined
+    ): EbsVolume = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Device" -> Device.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeId" -> VolumeId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EbsVolume]
     }
@@ -1314,17 +1451,19 @@ package emr {
   }
 
   object Ec2InstanceAttributes {
-    def apply(AdditionalMasterSecurityGroups: js.UndefOr[StringList] = js.undefined,
-              AdditionalSlaveSecurityGroups: js.UndefOr[StringList] = js.undefined,
-              Ec2AvailabilityZone: js.UndefOr[String] = js.undefined,
-              Ec2KeyName: js.UndefOr[String] = js.undefined,
-              Ec2SubnetId: js.UndefOr[String] = js.undefined,
-              EmrManagedMasterSecurityGroup: js.UndefOr[String] = js.undefined,
-              EmrManagedSlaveSecurityGroup: js.UndefOr[String] = js.undefined,
-              IamInstanceProfile: js.UndefOr[String] = js.undefined,
-              RequestedEc2AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
-              RequestedEc2SubnetIds: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
-              ServiceAccessSecurityGroup: js.UndefOr[String] = js.undefined): Ec2InstanceAttributes = {
+    def apply(
+        AdditionalMasterSecurityGroups: js.UndefOr[StringList] = js.undefined,
+        AdditionalSlaveSecurityGroups: js.UndefOr[StringList] = js.undefined,
+        Ec2AvailabilityZone: js.UndefOr[String] = js.undefined,
+        Ec2KeyName: js.UndefOr[String] = js.undefined,
+        Ec2SubnetId: js.UndefOr[String] = js.undefined,
+        EmrManagedMasterSecurityGroup: js.UndefOr[String] = js.undefined,
+        EmrManagedSlaveSecurityGroup: js.UndefOr[String] = js.undefined,
+        IamInstanceProfile: js.UndefOr[String] = js.undefined,
+        RequestedEc2AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
+        RequestedEc2SubnetIds: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
+        ServiceAccessSecurityGroup: js.UndefOr[String] = js.undefined
+    ): Ec2InstanceAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdditionalMasterSecurityGroups" -> AdditionalMasterSecurityGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -1376,16 +1515,22 @@ package emr {
   }
 
   object FailureDetails {
-    def apply(LogFile: js.UndefOr[String] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined,
-              Reason: js.UndefOr[String] = js.undefined): FailureDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("LogFile" -> LogFile.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Reason" -> Reason.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LogFile: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        Reason: js.UndefOr[String] = js.undefined
+    ): FailureDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LogFile" -> LogFile.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Reason" -> Reason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailureDetails]
     }
@@ -1403,10 +1548,12 @@ package emr {
   }
 
   object HadoopJarStepConfig {
-    def apply(Jar: XmlString,
-              Args: js.UndefOr[XmlStringList] = js.undefined,
-              MainClass: js.UndefOr[XmlString] = js.undefined,
-              Properties: js.UndefOr[KeyValueList] = js.undefined): HadoopJarStepConfig = {
+    def apply(
+        Jar: XmlString,
+        Args: js.UndefOr[XmlStringList] = js.undefined,
+        MainClass: js.UndefOr[XmlString] = js.undefined,
+        Properties: js.UndefOr[KeyValueList] = js.undefined
+    ): HadoopJarStepConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Jar" -> Jar.asInstanceOf[js.Any],
         "Args" -> Args.map { x =>
@@ -1436,10 +1583,12 @@ package emr {
   }
 
   object HadoopStepConfig {
-    def apply(Args: js.UndefOr[StringList] = js.undefined,
-              Jar: js.UndefOr[String] = js.undefined,
-              MainClass: js.UndefOr[String] = js.undefined,
-              Properties: js.UndefOr[StringMap] = js.undefined): HadoopStepConfig = {
+    def apply(
+        Args: js.UndefOr[StringList] = js.undefined,
+        Jar: js.UndefOr[String] = js.undefined,
+        MainClass: js.UndefOr[String] = js.undefined,
+        Properties: js.UndefOr[StringMap] = js.undefined
+    ): HadoopStepConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Args" -> Args.map { x =>
           x.asInstanceOf[js.Any]
@@ -1479,18 +1628,20 @@ package emr {
   }
 
   object Instance {
-    def apply(EbsVolumes: js.UndefOr[EbsVolumeList] = js.undefined,
-              Ec2InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              Id: js.UndefOr[InstanceId] = js.undefined,
-              InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined,
-              InstanceGroupId: js.UndefOr[String] = js.undefined,
-              InstanceType: js.UndefOr[InstanceType] = js.undefined,
-              Market: js.UndefOr[MarketType] = js.undefined,
-              PrivateDnsName: js.UndefOr[String] = js.undefined,
-              PrivateIpAddress: js.UndefOr[String] = js.undefined,
-              PublicDnsName: js.UndefOr[String] = js.undefined,
-              PublicIpAddress: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[InstanceStatus] = js.undefined): Instance = {
+    def apply(
+        EbsVolumes: js.UndefOr[EbsVolumeList] = js.undefined,
+        Ec2InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        Id: js.UndefOr[InstanceId] = js.undefined,
+        InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined,
+        InstanceGroupId: js.UndefOr[String] = js.undefined,
+        InstanceType: js.UndefOr[InstanceType] = js.undefined,
+        Market: js.UndefOr[MarketType] = js.undefined,
+        PrivateDnsName: js.UndefOr[String] = js.undefined,
+        PrivateIpAddress: js.UndefOr[String] = js.undefined,
+        PublicDnsName: js.UndefOr[String] = js.undefined,
+        PublicIpAddress: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[InstanceStatus] = js.undefined
+    ): Instance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EbsVolumes" -> EbsVolumes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1561,16 +1712,18 @@ package emr {
   }
 
   object InstanceFleet {
-    def apply(Id: js.UndefOr[InstanceFleetId] = js.undefined,
-              InstanceFleetType: js.UndefOr[InstanceFleetType] = js.undefined,
-              InstanceTypeSpecifications: js.UndefOr[InstanceTypeSpecificationList] = js.undefined,
-              LaunchSpecifications: js.UndefOr[InstanceFleetProvisioningSpecifications] = js.undefined,
-              Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              ProvisionedOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-              ProvisionedSpotCapacity: js.UndefOr[WholeNumber] = js.undefined,
-              Status: js.UndefOr[InstanceFleetStatus] = js.undefined,
-              TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-              TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined): InstanceFleet = {
+    def apply(
+        Id: js.UndefOr[InstanceFleetId] = js.undefined,
+        InstanceFleetType: js.UndefOr[InstanceFleetType] = js.undefined,
+        InstanceTypeSpecifications: js.UndefOr[InstanceTypeSpecificationList] = js.undefined,
+        LaunchSpecifications: js.UndefOr[InstanceFleetProvisioningSpecifications] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        ProvisionedOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
+        ProvisionedSpotCapacity: js.UndefOr[WholeNumber] = js.undefined,
+        Status: js.UndefOr[InstanceFleetStatus] = js.undefined,
+        TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
+        TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
+    ): InstanceFleet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.map { x =>
           x.asInstanceOf[js.Any]
@@ -1624,12 +1777,14 @@ package emr {
   }
 
   object InstanceFleetConfig {
-    def apply(InstanceFleetType: InstanceFleetType,
-              InstanceTypeConfigs: js.UndefOr[InstanceTypeConfigList] = js.undefined,
-              LaunchSpecifications: js.UndefOr[InstanceFleetProvisioningSpecifications] = js.undefined,
-              Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-              TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined): InstanceFleetConfig = {
+    def apply(
+        InstanceFleetType: InstanceFleetType,
+        InstanceTypeConfigs: js.UndefOr[InstanceTypeConfigList] = js.undefined,
+        LaunchSpecifications: js.UndefOr[InstanceFleetProvisioningSpecifications] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
+        TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
+    ): InstanceFleetConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceFleetType" -> InstanceFleetType.asInstanceOf[js.Any],
         "InstanceTypeConfigs" -> InstanceTypeConfigs.map { x =>
@@ -1666,9 +1821,11 @@ package emr {
   }
 
   object InstanceFleetModifyConfig {
-    def apply(InstanceFleetId: InstanceFleetId,
-              TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
-              TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined): InstanceFleetModifyConfig = {
+    def apply(
+        InstanceFleetId: InstanceFleetId,
+        TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
+        TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
+    ): InstanceFleetModifyConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceFleetId" -> InstanceFleetId.asInstanceOf[js.Any],
         "TargetOnDemandCapacity" -> TargetOnDemandCapacity.map { x =>
@@ -1694,9 +1851,12 @@ package emr {
   }
 
   object InstanceFleetProvisioningSpecifications {
-    def apply(SpotSpecification: SpotProvisioningSpecification): InstanceFleetProvisioningSpecifications = {
-      val _fields = IndexedSeq[(String, js.Any)]("SpotSpecification" -> SpotSpecification.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SpotSpecification: SpotProvisioningSpecification
+    ): InstanceFleetProvisioningSpecifications = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SpotSpecification" -> SpotSpecification.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceFleetProvisioningSpecifications]
     }
@@ -1726,13 +1886,18 @@ package emr {
   }
 
   object InstanceFleetStateChangeReason {
-    def apply(Code: js.UndefOr[InstanceFleetStateChangeReasonCode] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined): InstanceFleetStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[InstanceFleetStateChangeReasonCode] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): InstanceFleetStateChangeReason = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceFleetStateChangeReason]
     }
@@ -1760,9 +1925,11 @@ package emr {
   }
 
   object InstanceFleetStatus {
-    def apply(State: js.UndefOr[InstanceFleetState] = js.undefined,
-              StateChangeReason: js.UndefOr[InstanceFleetStateChangeReason] = js.undefined,
-              Timeline: js.UndefOr[InstanceFleetTimeline] = js.undefined): InstanceFleetStatus = {
+    def apply(
+        State: js.UndefOr[InstanceFleetState] = js.undefined,
+        StateChangeReason: js.UndefOr[InstanceFleetStateChangeReason] = js.undefined,
+        Timeline: js.UndefOr[InstanceFleetTimeline] = js.undefined
+    ): InstanceFleetStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
@@ -1792,9 +1959,11 @@ package emr {
   }
 
   object InstanceFleetTimeline {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              ReadyDateTime: js.UndefOr[Date] = js.undefined): InstanceFleetTimeline = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        ReadyDateTime: js.UndefOr[Date] = js.undefined
+    ): InstanceFleetTimeline = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -1827,11 +1996,14 @@ package emr {
     var AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription]
     var BidPrice: js.UndefOr[String]
     var Configurations: js.UndefOr[ConfigurationList]
+    var ConfigurationsVersion: js.UndefOr[Double]
     var EbsBlockDevices: js.UndefOr[EbsBlockDeviceList]
     var EbsOptimized: js.UndefOr[BooleanObject]
     var Id: js.UndefOr[InstanceGroupId]
     var InstanceGroupType: js.UndefOr[InstanceGroupType]
     var InstanceType: js.UndefOr[InstanceType]
+    var LastSuccessfullyAppliedConfigurations: js.UndefOr[ConfigurationList]
+    var LastSuccessfullyAppliedConfigurationsVersion: js.UndefOr[Double]
     var Market: js.UndefOr[MarketType]
     var Name: js.UndefOr[String]
     var RequestedInstanceCount: js.UndefOr[Int]
@@ -1841,20 +2013,25 @@ package emr {
   }
 
   object InstanceGroup {
-    def apply(AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
-              BidPrice: js.UndefOr[String] = js.undefined,
-              Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-              EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
-              EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
-              Id: js.UndefOr[InstanceGroupId] = js.undefined,
-              InstanceGroupType: js.UndefOr[InstanceGroupType] = js.undefined,
-              InstanceType: js.UndefOr[InstanceType] = js.undefined,
-              Market: js.UndefOr[MarketType] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              RequestedInstanceCount: js.UndefOr[Int] = js.undefined,
-              RunningInstanceCount: js.UndefOr[Int] = js.undefined,
-              ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined,
-              Status: js.UndefOr[InstanceGroupStatus] = js.undefined): InstanceGroup = {
+    def apply(
+        AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
+        BidPrice: js.UndefOr[String] = js.undefined,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        ConfigurationsVersion: js.UndefOr[Double] = js.undefined,
+        EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
+        EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
+        Id: js.UndefOr[InstanceGroupId] = js.undefined,
+        InstanceGroupType: js.UndefOr[InstanceGroupType] = js.undefined,
+        InstanceType: js.UndefOr[InstanceType] = js.undefined,
+        LastSuccessfullyAppliedConfigurations: js.UndefOr[ConfigurationList] = js.undefined,
+        LastSuccessfullyAppliedConfigurationsVersion: js.UndefOr[Double] = js.undefined,
+        Market: js.UndefOr[MarketType] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        RequestedInstanceCount: js.UndefOr[Int] = js.undefined,
+        RunningInstanceCount: js.UndefOr[Int] = js.undefined,
+        ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined,
+        Status: js.UndefOr[InstanceGroupStatus] = js.undefined
+    ): InstanceGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingPolicy" -> AutoScalingPolicy.map { x =>
           x.asInstanceOf[js.Any]
@@ -1863,6 +2040,9 @@ package emr {
           x.asInstanceOf[js.Any]
         },
         "Configurations" -> Configurations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConfigurationsVersion" -> ConfigurationsVersion.map { x =>
           x.asInstanceOf[js.Any]
         },
         "EbsBlockDevices" -> EbsBlockDevices.map { x =>
@@ -1878,6 +2058,12 @@ package emr {
           x.asInstanceOf[js.Any]
         },
         "InstanceType" -> InstanceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastSuccessfullyAppliedConfigurations" -> LastSuccessfullyAppliedConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastSuccessfullyAppliedConfigurationsVersion" -> LastSuccessfullyAppliedConfigurationsVersion.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Market" -> Market.map { x =>
@@ -1921,15 +2107,17 @@ package emr {
   }
 
   object InstanceGroupConfig {
-    def apply(InstanceCount: Int,
-              InstanceRole: InstanceRoleType,
-              InstanceType: InstanceType,
-              AutoScalingPolicy: js.UndefOr[AutoScalingPolicy] = js.undefined,
-              BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-              EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
-              Market: js.UndefOr[MarketType] = js.undefined,
-              Name: js.UndefOr[XmlStringMaxLen256] = js.undefined): InstanceGroupConfig = {
+    def apply(
+        InstanceCount: Int,
+        InstanceRole: InstanceRoleType,
+        InstanceType: InstanceType,
+        AutoScalingPolicy: js.UndefOr[AutoScalingPolicy] = js.undefined,
+        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
+        Market: js.UndefOr[MarketType] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): InstanceGroupConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
         "InstanceRole"  -> InstanceRole.asInstanceOf[js.Any],
@@ -1980,20 +2168,22 @@ package emr {
   }
 
   object InstanceGroupDetail {
-    def apply(CreationDateTime: Date,
-              InstanceRequestCount: Int,
-              InstanceRole: InstanceRoleType,
-              InstanceRunningCount: Int,
-              InstanceType: InstanceType,
-              Market: MarketType,
-              State: InstanceGroupState,
-              BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              InstanceGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
-              Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              ReadyDateTime: js.UndefOr[Date] = js.undefined,
-              StartDateTime: js.UndefOr[Date] = js.undefined): InstanceGroupDetail = {
+    def apply(
+        CreationDateTime: Date,
+        InstanceRequestCount: Int,
+        InstanceRole: InstanceRoleType,
+        InstanceRunningCount: Int,
+        InstanceType: InstanceType,
+        Market: MarketType,
+        State: InstanceGroupState,
+        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        InstanceGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        ReadyDateTime: js.UndefOr[Date] = js.undefined,
+        StartDateTime: js.UndefOr[Date] = js.undefined
+    ): InstanceGroupDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime"     -> CreationDateTime.asInstanceOf[js.Any],
         "InstanceRequestCount" -> InstanceRequestCount.asInstanceOf[js.Any],
@@ -2030,23 +2220,30 @@ package emr {
   }
 
   /**
-    * Modify an instance group size.
+    * Modify the size or configurations of an instance group.
     */
   @js.native
   trait InstanceGroupModifyConfig extends js.Object {
     var InstanceGroupId: XmlStringMaxLen256
+    var Configurations: js.UndefOr[ConfigurationList]
     var EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList]
     var InstanceCount: js.UndefOr[Int]
     var ShrinkPolicy: js.UndefOr[ShrinkPolicy]
   }
 
   object InstanceGroupModifyConfig {
-    def apply(InstanceGroupId: XmlStringMaxLen256,
-              EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList] = js.undefined,
-              InstanceCount: js.UndefOr[Int] = js.undefined,
-              ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined): InstanceGroupModifyConfig = {
+    def apply(
+        InstanceGroupId: XmlStringMaxLen256,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList] = js.undefined,
+        InstanceCount: js.UndefOr[Int] = js.undefined,
+        ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined
+    ): InstanceGroupModifyConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any],
+        "Configurations" -> Configurations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "EC2InstanceIdsToTerminate" -> EC2InstanceIdsToTerminate.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -2066,6 +2263,7 @@ package emr {
     val PROVISIONING  = "PROVISIONING"
     val BOOTSTRAPPING = "BOOTSTRAPPING"
     val RUNNING       = "RUNNING"
+    val RECONFIGURING = "RECONFIGURING"
     val RESIZING      = "RESIZING"
     val SUSPENDED     = "SUSPENDED"
     val TERMINATING   = "TERMINATING"
@@ -2078,6 +2276,7 @@ package emr {
       PROVISIONING,
       BOOTSTRAPPING,
       RUNNING,
+      RECONFIGURING,
       RESIZING,
       SUSPENDED,
       TERMINATING,
@@ -2098,13 +2297,18 @@ package emr {
   }
 
   object InstanceGroupStateChangeReason {
-    def apply(Code: js.UndefOr[InstanceGroupStateChangeReasonCode] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined): InstanceGroupStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[InstanceGroupStateChangeReasonCode] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): InstanceGroupStateChangeReason = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceGroupStateChangeReason]
     }
@@ -2130,9 +2334,11 @@ package emr {
   }
 
   object InstanceGroupStatus {
-    def apply(State: js.UndefOr[InstanceGroupState] = js.undefined,
-              StateChangeReason: js.UndefOr[InstanceGroupStateChangeReason] = js.undefined,
-              Timeline: js.UndefOr[InstanceGroupTimeline] = js.undefined): InstanceGroupStatus = {
+    def apply(
+        State: js.UndefOr[InstanceGroupState] = js.undefined,
+        StateChangeReason: js.UndefOr[InstanceGroupStateChangeReason] = js.undefined,
+        Timeline: js.UndefOr[InstanceGroupTimeline] = js.undefined
+    ): InstanceGroupStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
@@ -2160,9 +2366,11 @@ package emr {
   }
 
   object InstanceGroupTimeline {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              ReadyDateTime: js.UndefOr[Date] = js.undefined): InstanceGroupTimeline = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        ReadyDateTime: js.UndefOr[Date] = js.undefined
+    ): InstanceGroupTimeline = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2198,9 +2406,11 @@ package emr {
   }
 
   object InstanceResizePolicy {
-    def apply(InstanceTerminationTimeout: js.UndefOr[Int] = js.undefined,
-              InstancesToProtect: js.UndefOr[EC2InstanceIdsList] = js.undefined,
-              InstancesToTerminate: js.UndefOr[EC2InstanceIdsList] = js.undefined): InstanceResizePolicy = {
+    def apply(
+        InstanceTerminationTimeout: js.UndefOr[Int] = js.undefined,
+        InstancesToProtect: js.UndefOr[EC2InstanceIdsList] = js.undefined,
+        InstancesToTerminate: js.UndefOr[EC2InstanceIdsList] = js.undefined
+    ): InstanceResizePolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceTerminationTimeout" -> InstanceTerminationTimeout.map { x =>
           x.asInstanceOf[js.Any]
@@ -2245,13 +2455,18 @@ package emr {
   }
 
   object InstanceStateChangeReason {
-    def apply(Code: js.UndefOr[InstanceStateChangeReasonCode] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined): InstanceStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[InstanceStateChangeReasonCode] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): InstanceStateChangeReason = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceStateChangeReason]
     }
@@ -2278,9 +2493,11 @@ package emr {
   }
 
   object InstanceStatus {
-    def apply(State: js.UndefOr[InstanceState] = js.undefined,
-              StateChangeReason: js.UndefOr[InstanceStateChangeReason] = js.undefined,
-              Timeline: js.UndefOr[InstanceTimeline] = js.undefined): InstanceStatus = {
+    def apply(
+        State: js.UndefOr[InstanceState] = js.undefined,
+        StateChangeReason: js.UndefOr[InstanceStateChangeReason] = js.undefined,
+        Timeline: js.UndefOr[InstanceTimeline] = js.undefined
+    ): InstanceStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
@@ -2308,9 +2525,11 @@ package emr {
   }
 
   object InstanceTimeline {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              ReadyDateTime: js.UndefOr[Date] = js.undefined): InstanceTimeline = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        ReadyDateTime: js.UndefOr[Date] = js.undefined
+    ): InstanceTimeline = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2343,12 +2562,14 @@ package emr {
   }
 
   object InstanceTypeConfig {
-    def apply(InstanceType: InstanceType,
-              BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
-              Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-              EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
-              WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined): InstanceTypeConfig = {
+    def apply(
+        InstanceType: InstanceType,
+        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
+        WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined
+    ): InstanceTypeConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "BidPrice" -> BidPrice.map { x =>
@@ -2389,13 +2610,15 @@ package emr {
   }
 
   object InstanceTypeSpecification {
-    def apply(BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
-              Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-              EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
-              EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
-              InstanceType: js.UndefOr[InstanceType] = js.undefined,
-              WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined): InstanceTypeSpecification = {
+    def apply(
+        BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
+        EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
+        InstanceType: js.UndefOr[InstanceType] = js.undefined,
+        WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined
+    ): InstanceTypeSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BidPrice" -> BidPrice.map { x =>
           x.asInstanceOf[js.Any]
@@ -2425,29 +2648,6 @@ package emr {
   }
 
   /**
-    * Indicates that an error occurred while processing the request and that the request was not completed.
-    */
-  @js.native
-  trait InternalServerErrorException extends js.Object {}
-
-  /**
-    * This exception occurs when there is an internal failure in the EMR service.
-    */
-  @js.native
-  trait InternalServerExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * This exception occurs when there is something wrong with user input.
-    */
-  @js.native
-  trait InvalidRequestExceptionException extends js.Object {
-    val ErrorCode: ErrorCode
-    val Message: ErrorMessage
-  }
-
-  /**
     * A description of a cluster (job flow).
     */
   @js.native
@@ -2469,20 +2669,22 @@ package emr {
   }
 
   object JobFlowDetail {
-    def apply(ExecutionStatusDetail: JobFlowExecutionStatusDetail,
-              Instances: JobFlowInstancesDetail,
-              JobFlowId: XmlStringMaxLen256,
-              Name: XmlStringMaxLen256,
-              AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
-              BootstrapActions: js.UndefOr[BootstrapActionDetailList] = js.undefined,
-              JobFlowRole: js.UndefOr[XmlString] = js.undefined,
-              LogUri: js.UndefOr[XmlString] = js.undefined,
-              ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
-              ServiceRole: js.UndefOr[XmlString] = js.undefined,
-              Steps: js.UndefOr[StepDetailList] = js.undefined,
-              SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
-              VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined): JobFlowDetail = {
+    def apply(
+        ExecutionStatusDetail: JobFlowExecutionStatusDetail,
+        Instances: JobFlowInstancesDetail,
+        JobFlowId: XmlStringMaxLen256,
+        Name: XmlStringMaxLen256,
+        AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
+        BootstrapActions: js.UndefOr[BootstrapActionDetailList] = js.undefined,
+        JobFlowRole: js.UndefOr[XmlString] = js.undefined,
+        LogUri: js.UndefOr[XmlString] = js.undefined,
+        ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
+        ServiceRole: js.UndefOr[XmlString] = js.undefined,
+        Steps: js.UndefOr[StepDetailList] = js.undefined,
+        SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
+        VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
+    ): JobFlowDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
         "Instances"             -> Instances.asInstanceOf[js.Any],
@@ -2554,12 +2756,14 @@ package emr {
   }
 
   object JobFlowExecutionStatusDetail {
-    def apply(CreationDateTime: Date,
-              State: JobFlowExecutionState,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
-              ReadyDateTime: js.UndefOr[Date] = js.undefined,
-              StartDateTime: js.UndefOr[Date] = js.undefined): JobFlowExecutionStatusDetail = {
+    def apply(
+        CreationDateTime: Date,
+        State: JobFlowExecutionState,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
+        ReadyDateTime: js.UndefOr[Date] = js.undefined,
+        StartDateTime: js.UndefOr[Date] = js.undefined
+    ): JobFlowExecutionStatusDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "State"            -> State.asInstanceOf[js.Any],
@@ -2606,23 +2810,25 @@ package emr {
   }
 
   object JobFlowInstancesConfig {
-    def apply(AdditionalMasterSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
-              AdditionalSlaveSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
-              Ec2KeyName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              Ec2SubnetId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              Ec2SubnetIds: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
-              EmrManagedMasterSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              EmrManagedSlaveSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              HadoopVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              InstanceCount: js.UndefOr[Int] = js.undefined,
-              InstanceFleets: js.UndefOr[InstanceFleetConfigList] = js.undefined,
-              InstanceGroups: js.UndefOr[InstanceGroupConfigList] = js.undefined,
-              KeepJobFlowAliveWhenNoSteps: js.UndefOr[Boolean] = js.undefined,
-              MasterInstanceType: js.UndefOr[InstanceType] = js.undefined,
-              Placement: js.UndefOr[PlacementType] = js.undefined,
-              ServiceAccessSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              SlaveInstanceType: js.UndefOr[InstanceType] = js.undefined,
-              TerminationProtected: js.UndefOr[Boolean] = js.undefined): JobFlowInstancesConfig = {
+    def apply(
+        AdditionalMasterSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
+        AdditionalSlaveSecurityGroups: js.UndefOr[SecurityGroupsList] = js.undefined,
+        Ec2KeyName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Ec2SubnetId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Ec2SubnetIds: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
+        EmrManagedMasterSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EmrManagedSlaveSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        HadoopVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        InstanceCount: js.UndefOr[Int] = js.undefined,
+        InstanceFleets: js.UndefOr[InstanceFleetConfigList] = js.undefined,
+        InstanceGroups: js.UndefOr[InstanceGroupConfigList] = js.undefined,
+        KeepJobFlowAliveWhenNoSteps: js.UndefOr[Boolean] = js.undefined,
+        MasterInstanceType: js.UndefOr[InstanceType] = js.undefined,
+        Placement: js.UndefOr[PlacementType] = js.undefined,
+        ServiceAccessSecurityGroup: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        SlaveInstanceType: js.UndefOr[InstanceType] = js.undefined,
+        TerminationProtected: js.UndefOr[Boolean] = js.undefined
+    ): JobFlowInstancesConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdditionalMasterSecurityGroups" -> AdditionalMasterSecurityGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -2702,19 +2908,21 @@ package emr {
   }
 
   object JobFlowInstancesDetail {
-    def apply(InstanceCount: Int,
-              MasterInstanceType: InstanceType,
-              SlaveInstanceType: InstanceType,
-              Ec2KeyName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              Ec2SubnetId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              HadoopVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              InstanceGroups: js.UndefOr[InstanceGroupDetailList] = js.undefined,
-              KeepJobFlowAliveWhenNoSteps: js.UndefOr[Boolean] = js.undefined,
-              MasterInstanceId: js.UndefOr[XmlString] = js.undefined,
-              MasterPublicDnsName: js.UndefOr[XmlString] = js.undefined,
-              NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
-              Placement: js.UndefOr[PlacementType] = js.undefined,
-              TerminationProtected: js.UndefOr[Boolean] = js.undefined): JobFlowInstancesDetail = {
+    def apply(
+        InstanceCount: Int,
+        MasterInstanceType: InstanceType,
+        SlaveInstanceType: InstanceType,
+        Ec2KeyName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Ec2SubnetId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        HadoopVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        InstanceGroups: js.UndefOr[InstanceGroupDetailList] = js.undefined,
+        KeepJobFlowAliveWhenNoSteps: js.UndefOr[Boolean] = js.undefined,
+        MasterInstanceId: js.UndefOr[XmlString] = js.undefined,
+        MasterPublicDnsName: js.UndefOr[XmlString] = js.undefined,
+        NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
+        Placement: js.UndefOr[PlacementType] = js.undefined,
+        TerminationProtected: js.UndefOr[Boolean] = js.undefined
+    ): JobFlowInstancesDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceCount"      -> InstanceCount.asInstanceOf[js.Any],
         "MasterInstanceType" -> MasterInstanceType.asInstanceOf[js.Any],
@@ -2756,7 +2964,7 @@ package emr {
   }
 
   /**
-    * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>EMR Management Guide</i>.
+    * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html|Use Kerberos Authentication]] in the <i>EMR Management Guide</i>.
     */
   @js.native
   trait KerberosAttributes extends js.Object {
@@ -2768,11 +2976,13 @@ package emr {
   }
 
   object KerberosAttributes {
-    def apply(KdcAdminPassword: XmlStringMaxLen256,
-              Realm: XmlStringMaxLen256,
-              ADDomainJoinPassword: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              ADDomainJoinUser: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              CrossRealmTrustPrincipalPassword: js.UndefOr[XmlStringMaxLen256] = js.undefined): KerberosAttributes = {
+    def apply(
+        KdcAdminPassword: XmlStringMaxLen256,
+        Realm: XmlStringMaxLen256,
+        ADDomainJoinPassword: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        ADDomainJoinUser: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        CrossRealmTrustPrincipalPassword: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): KerberosAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KdcAdminPassword" -> KdcAdminPassword.asInstanceOf[js.Any],
         "Realm"            -> Realm.asInstanceOf[js.Any],
@@ -2801,12 +3011,18 @@ package emr {
   }
 
   object KeyValue {
-    def apply(Key: js.UndefOr[XmlString] = js.undefined, Value: js.UndefOr[XmlString] = js.undefined): KeyValue = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[XmlString] = js.undefined,
+        Value: js.UndefOr[XmlString] = js.undefined
+    ): KeyValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyValue]
     }
@@ -2822,11 +3038,16 @@ package emr {
   }
 
   object ListBootstrapActionsInput {
-    def apply(ClusterId: ClusterId, Marker: js.UndefOr[Marker] = js.undefined): ListBootstrapActionsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.asInstanceOf[js.Any], "Marker" -> Marker.map {
-        x =>
+    def apply(
+        ClusterId: ClusterId,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListBootstrapActionsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBootstrapActionsInput]
     }
@@ -2842,13 +3063,18 @@ package emr {
   }
 
   object ListBootstrapActionsOutput {
-    def apply(BootstrapActions: js.UndefOr[CommandList] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListBootstrapActionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BootstrapActions" -> BootstrapActions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BootstrapActions: js.UndefOr[CommandList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListBootstrapActionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BootstrapActions" -> BootstrapActions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBootstrapActionsOutput]
     }
@@ -2866,10 +3092,12 @@ package emr {
   }
 
   object ListClustersInput {
-    def apply(ClusterStates: js.UndefOr[ClusterStateList] = js.undefined,
-              CreatedAfter: js.UndefOr[Date] = js.undefined,
-              CreatedBefore: js.UndefOr[Date] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListClustersInput = {
+    def apply(
+        ClusterStates: js.UndefOr[ClusterStateList] = js.undefined,
+        CreatedAfter: js.UndefOr[Date] = js.undefined,
+        CreatedBefore: js.UndefOr[Date] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListClustersInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterStates" -> ClusterStates.map { x =>
           x.asInstanceOf[js.Any]
@@ -2899,13 +3127,18 @@ package emr {
   }
 
   object ListClustersOutput {
-    def apply(Clusters: js.UndefOr[ClusterSummaryList] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListClustersOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Clusters" -> Clusters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Clusters: js.UndefOr[ClusterSummaryList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListClustersOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Clusters" -> Clusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersOutput]
     }
@@ -2918,11 +3151,16 @@ package emr {
   }
 
   object ListInstanceFleetsInput {
-    def apply(ClusterId: ClusterId, Marker: js.UndefOr[Marker] = js.undefined): ListInstanceFleetsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.asInstanceOf[js.Any], "Marker" -> Marker.map {
-        x =>
+    def apply(
+        ClusterId: ClusterId,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListInstanceFleetsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceFleetsInput]
     }
@@ -2935,13 +3173,18 @@ package emr {
   }
 
   object ListInstanceFleetsOutput {
-    def apply(InstanceFleets: js.UndefOr[InstanceFleetList] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListInstanceFleetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceFleets" -> InstanceFleets.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceFleets: js.UndefOr[InstanceFleetList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListInstanceFleetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceFleets" -> InstanceFleets.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceFleetsOutput]
     }
@@ -2957,11 +3200,16 @@ package emr {
   }
 
   object ListInstanceGroupsInput {
-    def apply(ClusterId: ClusterId, Marker: js.UndefOr[Marker] = js.undefined): ListInstanceGroupsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.asInstanceOf[js.Any], "Marker" -> Marker.map {
-        x =>
+    def apply(
+        ClusterId: ClusterId,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListInstanceGroupsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any],
+        "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceGroupsInput]
     }
@@ -2977,13 +3225,18 @@ package emr {
   }
 
   object ListInstanceGroupsOutput {
-    def apply(InstanceGroups: js.UndefOr[InstanceGroupList] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListInstanceGroupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceGroups" -> InstanceGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceGroups: js.UndefOr[InstanceGroupList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListInstanceGroupsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceGroups" -> InstanceGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceGroupsOutput]
     }
@@ -3004,13 +3257,15 @@ package emr {
   }
 
   object ListInstancesInput {
-    def apply(ClusterId: ClusterId,
-              InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined,
-              InstanceFleetType: js.UndefOr[InstanceFleetType] = js.undefined,
-              InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined,
-              InstanceGroupTypes: js.UndefOr[InstanceGroupTypeList] = js.undefined,
-              InstanceStates: js.UndefOr[InstanceStateList] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListInstancesInput = {
+    def apply(
+        ClusterId: ClusterId,
+        InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined,
+        InstanceFleetType: js.UndefOr[InstanceFleetType] = js.undefined,
+        InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined,
+        InstanceGroupTypes: js.UndefOr[InstanceGroupTypeList] = js.undefined,
+        InstanceStates: js.UndefOr[InstanceStateList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleetId" -> InstanceFleetId.map { x =>
@@ -3047,13 +3302,18 @@ package emr {
   }
 
   object ListInstancesOutput {
-    def apply(Instances: js.UndefOr[InstanceList] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Instances" -> Instances.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Instances: js.UndefOr[InstanceList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Instances" -> Instances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstancesOutput]
     }
@@ -3065,10 +3325,14 @@ package emr {
   }
 
   object ListSecurityConfigurationsInput {
-    def apply(Marker: js.UndefOr[Marker] = js.undefined): ListSecurityConfigurationsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListSecurityConfigurationsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityConfigurationsInput]
     }
@@ -3085,11 +3349,14 @@ package emr {
         Marker: js.UndefOr[Marker] = js.undefined,
         SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined
     ): ListSecurityConfigurationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SecurityConfigurations" -> SecurityConfigurations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecurityConfigurations" -> SecurityConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityConfigurationsOutput]
     }
@@ -3107,10 +3374,12 @@ package emr {
   }
 
   object ListStepsInput {
-    def apply(ClusterId: ClusterId,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              StepIds: js.UndefOr[XmlStringList] = js.undefined,
-              StepStates: js.UndefOr[StepStateList] = js.undefined): ListStepsInput = {
+    def apply(
+        ClusterId: ClusterId,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        StepIds: js.UndefOr[XmlStringList] = js.undefined,
+        StepStates: js.UndefOr[StepStateList] = js.undefined
+    ): ListStepsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x =>
@@ -3138,13 +3407,18 @@ package emr {
   }
 
   object ListStepsOutput {
-    def apply(Marker: js.UndefOr[Marker] = js.undefined,
-              Steps: js.UndefOr[StepSummaryList] = js.undefined): ListStepsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Steps" -> Steps.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        Steps: js.UndefOr[StepSummaryList] = js.undefined
+    ): ListStepsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Steps" -> Steps.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStepsOutput]
     }
@@ -3167,12 +3441,18 @@ package emr {
   }
 
   object MetricDimension {
-    def apply(Key: js.UndefOr[String] = js.undefined, Value: js.UndefOr[String] = js.undefined): MetricDimension = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): MetricDimension = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricDimension]
     }
@@ -3185,7 +3465,10 @@ package emr {
   }
 
   object ModifyInstanceFleetInput {
-    def apply(ClusterId: ClusterId, InstanceFleet: InstanceFleetModifyConfig): ModifyInstanceFleetInput = {
+    def apply(
+        ClusterId: ClusterId,
+        InstanceFleet: InstanceFleetModifyConfig
+    ): ModifyInstanceFleetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
@@ -3205,13 +3488,18 @@ package emr {
   }
 
   object ModifyInstanceGroupsInput {
-    def apply(ClusterId: js.UndefOr[ClusterId] = js.undefined,
-              InstanceGroups: js.UndefOr[InstanceGroupModifyConfigList] = js.undefined): ModifyInstanceGroupsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "InstanceGroups" -> InstanceGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: js.UndefOr[ClusterId] = js.undefined,
+        InstanceGroups: js.UndefOr[InstanceGroupModifyConfigList] = js.undefined
+    ): ModifyInstanceGroupsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceGroups" -> InstanceGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyInstanceGroupsInput]
     }
@@ -3227,13 +3515,18 @@ package emr {
   }
 
   object PlacementType {
-    def apply(AvailabilityZone: js.UndefOr[XmlString] = js.undefined,
-              AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined): PlacementType = {
-      val _fields = IndexedSeq[(String, js.Any)]("AvailabilityZone" -> AvailabilityZone.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AvailabilityZones" -> AvailabilityZones.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AvailabilityZone: js.UndefOr[XmlString] = js.undefined,
+        AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined
+    ): PlacementType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AvailabilityZone" -> AvailabilityZone.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AvailabilityZones" -> AvailabilityZones.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementType]
     }
@@ -3247,9 +3540,11 @@ package emr {
   }
 
   object PutAutoScalingPolicyInput {
-    def apply(AutoScalingPolicy: AutoScalingPolicy,
-              ClusterId: ClusterId,
-              InstanceGroupId: InstanceGroupId): PutAutoScalingPolicyInput = {
+    def apply(
+        AutoScalingPolicy: AutoScalingPolicy,
+        ClusterId: ClusterId,
+        InstanceGroupId: InstanceGroupId
+    ): PutAutoScalingPolicyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingPolicy" -> AutoScalingPolicy.asInstanceOf[js.Any],
         "ClusterId"         -> ClusterId.asInstanceOf[js.Any],
@@ -3268,9 +3563,11 @@ package emr {
   }
 
   object PutAutoScalingPolicyOutput {
-    def apply(AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
-              ClusterId: js.UndefOr[ClusterId] = js.undefined,
-              InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined): PutAutoScalingPolicyOutput = {
+    def apply(
+        AutoScalingPolicy: js.UndefOr[AutoScalingPolicyDescription] = js.undefined,
+        ClusterId: js.UndefOr[ClusterId] = js.undefined,
+        InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined
+    ): PutAutoScalingPolicyOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingPolicy" -> AutoScalingPolicy.map { x =>
           x.asInstanceOf[js.Any]
@@ -3294,7 +3591,10 @@ package emr {
   }
 
   object RemoveAutoScalingPolicyInput {
-    def apply(ClusterId: ClusterId, InstanceGroupId: InstanceGroupId): RemoveAutoScalingPolicyInput = {
+    def apply(
+        ClusterId: ClusterId,
+        InstanceGroupId: InstanceGroupId
+    ): RemoveAutoScalingPolicyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId"       -> ClusterId.asInstanceOf[js.Any],
         "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
@@ -3308,8 +3608,10 @@ package emr {
   trait RemoveAutoScalingPolicyOutput extends js.Object {}
 
   object RemoveAutoScalingPolicyOutput {
-    def apply(): RemoveAutoScalingPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveAutoScalingPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAutoScalingPolicyOutput]
     }
@@ -3325,7 +3627,10 @@ package emr {
   }
 
   object RemoveTagsInput {
-    def apply(ResourceId: ResourceId, TagKeys: StringList): RemoveTagsInput = {
+    def apply(
+        ResourceId: ResourceId,
+        TagKeys: StringList
+    ): RemoveTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
@@ -3342,8 +3647,10 @@ package emr {
   trait RemoveTagsOutput extends js.Object {}
 
   object RemoveTagsOutput {
-    def apply(): RemoveTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveTagsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsOutput]
     }
@@ -3387,29 +3694,31 @@ package emr {
   }
 
   object RunJobFlowInput {
-    def apply(Instances: JobFlowInstancesConfig,
-              Name: XmlStringMaxLen256,
-              AdditionalInfo: js.UndefOr[XmlString] = js.undefined,
-              AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              Applications: js.UndefOr[ApplicationList] = js.undefined,
-              AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
-              BootstrapActions: js.UndefOr[BootstrapActionConfigList] = js.undefined,
-              Configurations: js.UndefOr[ConfigurationList] = js.undefined,
-              CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
-              JobFlowRole: js.UndefOr[XmlString] = js.undefined,
-              KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
-              LogUri: js.UndefOr[XmlString] = js.undefined,
-              NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
-              ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-              RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
-              ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
-              SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
-              ServiceRole: js.UndefOr[XmlString] = js.undefined,
-              Steps: js.UndefOr[StepConfigList] = js.undefined,
-              SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined): RunJobFlowInput = {
+    def apply(
+        Instances: JobFlowInstancesConfig,
+        Name: XmlStringMaxLen256,
+        AdditionalInfo: js.UndefOr[XmlString] = js.undefined,
+        AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Applications: js.UndefOr[ApplicationList] = js.undefined,
+        AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
+        BootstrapActions: js.UndefOr[BootstrapActionConfigList] = js.undefined,
+        Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        EbsRootVolumeSize: js.UndefOr[Int] = js.undefined,
+        JobFlowRole: js.UndefOr[XmlString] = js.undefined,
+        KerberosAttributes: js.UndefOr[KerberosAttributes] = js.undefined,
+        LogUri: js.UndefOr[XmlString] = js.undefined,
+        NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
+        ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
+        ScaleDownBehavior: js.UndefOr[ScaleDownBehavior] = js.undefined,
+        SecurityConfiguration: js.UndefOr[XmlString] = js.undefined,
+        ServiceRole: js.UndefOr[XmlString] = js.undefined,
+        Steps: js.UndefOr[StepConfigList] = js.undefined,
+        SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
+    ): RunJobFlowInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Instances" -> Instances.asInstanceOf[js.Any],
         "Name"      -> Name.asInstanceOf[js.Any],
@@ -3491,10 +3800,14 @@ package emr {
   }
 
   object RunJobFlowOutput {
-    def apply(JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined): RunJobFlowOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobFlowId" -> JobFlowId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): RunJobFlowOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobFlowId" -> JobFlowId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunJobFlowOutput]
     }
@@ -3517,8 +3830,10 @@ package emr {
   }
 
   object ScalingAction {
-    def apply(SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration,
-              Market: js.UndefOr[MarketType] = js.undefined): ScalingAction = {
+    def apply(
+        SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration,
+        Market: js.UndefOr[MarketType] = js.undefined
+    ): ScalingAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SimpleScalingPolicyConfiguration" -> SimpleScalingPolicyConfiguration.asInstanceOf[js.Any],
         "Market" -> Market.map { x =>
@@ -3540,7 +3855,10 @@ package emr {
   }
 
   object ScalingConstraints {
-    def apply(MaxCapacity: Int, MinCapacity: Int): ScalingConstraints = {
+    def apply(
+        MaxCapacity: Int,
+        MinCapacity: Int
+    ): ScalingConstraints = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxCapacity" -> MaxCapacity.asInstanceOf[js.Any],
         "MinCapacity" -> MinCapacity.asInstanceOf[js.Any]
@@ -3562,10 +3880,12 @@ package emr {
   }
 
   object ScalingRule {
-    def apply(Action: ScalingAction,
-              Name: String,
-              Trigger: ScalingTrigger,
-              Description: js.UndefOr[String] = js.undefined): ScalingRule = {
+    def apply(
+        Action: ScalingAction,
+        Name: String,
+        Trigger: ScalingTrigger,
+        Description: js.UndefOr[String] = js.undefined
+    ): ScalingRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"  -> Action.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
@@ -3588,10 +3908,12 @@ package emr {
   }
 
   object ScalingTrigger {
-    def apply(CloudWatchAlarmDefinition: CloudWatchAlarmDefinition): ScalingTrigger = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("CloudWatchAlarmDefinition" -> CloudWatchAlarmDefinition.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
+    ): ScalingTrigger = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CloudWatchAlarmDefinition" -> CloudWatchAlarmDefinition.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScalingTrigger]
     }
@@ -3607,10 +3929,16 @@ package emr {
   }
 
   object ScriptBootstrapActionConfig {
-    def apply(Path: XmlString, Args: js.UndefOr[XmlStringList] = js.undefined): ScriptBootstrapActionConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("Path" -> Path.asInstanceOf[js.Any], "Args" -> Args.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Path: XmlString,
+        Args: js.UndefOr[XmlStringList] = js.undefined
+    ): ScriptBootstrapActionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Path" -> Path.asInstanceOf[js.Any],
+        "Args" -> Args.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScriptBootstrapActionConfig]
     }
@@ -3626,13 +3954,18 @@ package emr {
   }
 
   object SecurityConfigurationSummary {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              Name: js.UndefOr[XmlString] = js.undefined): SecurityConfigurationSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("CreationDateTime" -> CreationDateTime.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        Name: js.UndefOr[XmlString] = js.undefined
+    ): SecurityConfigurationSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CreationDateTime" -> CreationDateTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityConfigurationSummary]
     }
@@ -3648,7 +3981,10 @@ package emr {
   }
 
   object SetTerminationProtectionInput {
-    def apply(JobFlowIds: XmlStringList, TerminationProtected: Boolean): SetTerminationProtectionInput = {
+    def apply(
+        JobFlowIds: XmlStringList,
+        TerminationProtected: Boolean
+    ): SetTerminationProtectionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobFlowIds"           -> JobFlowIds.asInstanceOf[js.Any],
         "TerminationProtected" -> TerminationProtected.asInstanceOf[js.Any]
@@ -3668,7 +4004,10 @@ package emr {
   }
 
   object SetVisibleToAllUsersInput {
-    def apply(JobFlowIds: XmlStringList, VisibleToAllUsers: Boolean): SetVisibleToAllUsersInput = {
+    def apply(
+        JobFlowIds: XmlStringList,
+        VisibleToAllUsers: Boolean
+    ): SetVisibleToAllUsersInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobFlowIds"        -> JobFlowIds.asInstanceOf[js.Any],
         "VisibleToAllUsers" -> VisibleToAllUsers.asInstanceOf[js.Any]
@@ -3688,13 +4027,18 @@ package emr {
   }
 
   object ShrinkPolicy {
-    def apply(DecommissionTimeout: js.UndefOr[Int] = js.undefined,
-              InstanceResizePolicy: js.UndefOr[InstanceResizePolicy] = js.undefined): ShrinkPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)]("DecommissionTimeout" -> DecommissionTimeout.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "InstanceResizePolicy" -> InstanceResizePolicy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DecommissionTimeout: js.UndefOr[Int] = js.undefined,
+        InstanceResizePolicy: js.UndefOr[InstanceResizePolicy] = js.undefined
+    ): ShrinkPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DecommissionTimeout" -> DecommissionTimeout.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceResizePolicy" -> InstanceResizePolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShrinkPolicy]
     }
@@ -3711,9 +4055,11 @@ package emr {
   }
 
   object SimpleScalingPolicyConfiguration {
-    def apply(ScalingAdjustment: Int,
-              AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
-              CoolDown: js.UndefOr[Int] = js.undefined): SimpleScalingPolicyConfiguration = {
+    def apply(
+        ScalingAdjustment: Int,
+        AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
+        CoolDown: js.UndefOr[Int] = js.undefined
+    ): SimpleScalingPolicyConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any],
         "AdjustmentType" -> AdjustmentType.map { x =>
@@ -3741,9 +4087,11 @@ package emr {
   }
 
   object SpotProvisioningSpecification {
-    def apply(TimeoutAction: SpotProvisioningTimeoutAction,
-              TimeoutDurationMinutes: WholeNumber,
-              BlockDurationMinutes: js.UndefOr[WholeNumber] = js.undefined): SpotProvisioningSpecification = {
+    def apply(
+        TimeoutAction: SpotProvisioningTimeoutAction,
+        TimeoutDurationMinutes: WholeNumber,
+        BlockDurationMinutes: js.UndefOr[WholeNumber] = js.undefined
+    ): SpotProvisioningSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TimeoutAction"          -> TimeoutAction.asInstanceOf[js.Any],
         "TimeoutDurationMinutes" -> TimeoutDurationMinutes.asInstanceOf[js.Any],
@@ -3786,11 +4134,13 @@ package emr {
   }
 
   object Step {
-    def apply(ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
-              Config: js.UndefOr[HadoopStepConfig] = js.undefined,
-              Id: js.UndefOr[StepId] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[StepStatus] = js.undefined): Step = {
+    def apply(
+        ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
+        Config: js.UndefOr[HadoopStepConfig] = js.undefined,
+        Id: js.UndefOr[StepId] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StepStatus] = js.undefined
+    ): Step = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionOnFailure" -> ActionOnFailure.map { x =>
           x.asInstanceOf[js.Any]
@@ -3824,9 +4174,11 @@ package emr {
   }
 
   object StepConfig {
-    def apply(HadoopJarStep: HadoopJarStepConfig,
-              Name: XmlStringMaxLen256,
-              ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined): StepConfig = {
+    def apply(
+        HadoopJarStep: HadoopJarStepConfig,
+        Name: XmlStringMaxLen256,
+        ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined
+    ): StepConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HadoopJarStep" -> HadoopJarStep.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any],
@@ -3849,7 +4201,10 @@ package emr {
   }
 
   object StepDetail {
-    def apply(ExecutionStatusDetail: StepExecutionStatusDetail, StepConfig: StepConfig): StepDetail = {
+    def apply(
+        ExecutionStatusDetail: StepExecutionStatusDetail,
+        StepConfig: StepConfig
+    ): StepDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
         "StepConfig"            -> StepConfig.asInstanceOf[js.Any]
@@ -3884,11 +4239,13 @@ package emr {
   }
 
   object StepExecutionStatusDetail {
-    def apply(CreationDateTime: Date,
-              State: StepExecutionState,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
-              StartDateTime: js.UndefOr[Date] = js.undefined): StepExecutionStatusDetail = {
+    def apply(
+        CreationDateTime: Date,
+        State: StepExecutionState,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
+        StartDateTime: js.UndefOr[Date] = js.undefined
+    ): StepExecutionStatusDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "State"            -> State.asInstanceOf[js.Any],
@@ -3929,13 +4286,18 @@ package emr {
   }
 
   object StepStateChangeReason {
-    def apply(Code: js.UndefOr[StepStateChangeReasonCode] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined): StepStateChangeReason = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[StepStateChangeReasonCode] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): StepStateChangeReason = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StepStateChangeReason]
     }
@@ -3959,10 +4321,12 @@ package emr {
   }
 
   object StepStatus {
-    def apply(FailureDetails: js.UndefOr[FailureDetails] = js.undefined,
-              State: js.UndefOr[StepState] = js.undefined,
-              StateChangeReason: js.UndefOr[StepStateChangeReason] = js.undefined,
-              Timeline: js.UndefOr[StepTimeline] = js.undefined): StepStatus = {
+    def apply(
+        FailureDetails: js.UndefOr[FailureDetails] = js.undefined,
+        State: js.UndefOr[StepState] = js.undefined,
+        StateChangeReason: js.UndefOr[StepStateChangeReason] = js.undefined,
+        Timeline: js.UndefOr[StepTimeline] = js.undefined
+    ): StepStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FailureDetails" -> FailureDetails.map { x =>
           x.asInstanceOf[js.Any]
@@ -3995,11 +4359,13 @@ package emr {
   }
 
   object StepSummary {
-    def apply(ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
-              Config: js.UndefOr[HadoopStepConfig] = js.undefined,
-              Id: js.UndefOr[StepId] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[StepStatus] = js.undefined): StepSummary = {
+    def apply(
+        ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
+        Config: js.UndefOr[HadoopStepConfig] = js.undefined,
+        Id: js.UndefOr[StepId] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StepStatus] = js.undefined
+    ): StepSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionOnFailure" -> ActionOnFailure.map { x =>
           x.asInstanceOf[js.Any]
@@ -4033,9 +4399,11 @@ package emr {
   }
 
   object StepTimeline {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              EndDateTime: js.UndefOr[Date] = js.undefined,
-              StartDateTime: js.UndefOr[Date] = js.undefined): StepTimeline = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        EndDateTime: js.UndefOr[Date] = js.undefined,
+        StartDateTime: js.UndefOr[Date] = js.undefined
+    ): StepTimeline = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -4062,20 +4430,25 @@ package emr {
   }
 
   object SupportedProductConfig {
-    def apply(Args: js.UndefOr[XmlStringList] = js.undefined,
-              Name: js.UndefOr[XmlStringMaxLen256] = js.undefined): SupportedProductConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("Args" -> Args.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Args: js.UndefOr[XmlStringList] = js.undefined,
+        Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
+    ): SupportedProductConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Args" -> Args.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SupportedProductConfig]
     }
   }
 
   /**
-    * A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
+    * A key/value pair containing user-defined metadata that you can associate with an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html|Tag Clusters]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -4084,12 +4457,18 @@ package emr {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[String] = js.undefined, Value: js.UndefOr[String] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -4104,9 +4483,12 @@ package emr {
   }
 
   object TerminateJobFlowsInput {
-    def apply(JobFlowIds: XmlStringList): TerminateJobFlowsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobFlowIds: XmlStringList
+    ): TerminateJobFlowsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateJobFlowsInput]
     }
@@ -4183,7 +4565,11 @@ package emr {
   }
 
   object VolumeSpecification {
-    def apply(SizeInGB: Int, VolumeType: String, Iops: js.UndefOr[Int] = js.undefined): VolumeSpecification = {
+    def apply(
+        SizeInGB: Int,
+        VolumeType: String,
+        Iops: js.UndefOr[Int] = js.undefined
+    ): VolumeSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SizeInGB"   -> SizeInGB.asInstanceOf[js.Any],
         "VolumeType" -> VolumeType.asInstanceOf[js.Any],

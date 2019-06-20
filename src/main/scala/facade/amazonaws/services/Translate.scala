@@ -51,13 +51,18 @@ package translate {
   }
 
   object AppliedTerminology {
-    def apply(Name: js.UndefOr[ResourceName] = js.undefined,
-              Terms: js.UndefOr[TermList] = js.undefined): AppliedTerminology = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Terms" -> Terms.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        Terms: js.UndefOr[TermList] = js.undefined
+    ): AppliedTerminology = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Terms" -> Terms.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AppliedTerminology]
     }
@@ -69,9 +74,12 @@ package translate {
   }
 
   object DeleteTerminologyRequest {
-    def apply(Name: ResourceName): DeleteTerminologyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: ResourceName
+    ): DeleteTerminologyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTerminologyRequest]
     }
@@ -87,9 +95,14 @@ package translate {
   }
 
   object EncryptionKey {
-    def apply(Id: EncryptionKeyID, Type: EncryptionKeyType): EncryptionKey = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "Type" -> Type.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: EncryptionKeyID,
+        Type: EncryptionKeyType
+    ): EncryptionKey = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id"   -> Id.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionKey]
     }
@@ -108,7 +121,10 @@ package translate {
   }
 
   object GetTerminologyRequest {
-    def apply(Name: ResourceName, TerminologyDataFormat: TerminologyDataFormat): GetTerminologyRequest = {
+    def apply(
+        Name: ResourceName,
+        TerminologyDataFormat: TerminologyDataFormat
+    ): GetTerminologyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"                  -> Name.asInstanceOf[js.Any],
         "TerminologyDataFormat" -> TerminologyDataFormat.asInstanceOf[js.Any]
@@ -125,8 +141,10 @@ package translate {
   }
 
   object GetTerminologyResponse {
-    def apply(TerminologyDataLocation: js.UndefOr[TerminologyDataLocation] = js.undefined,
-              TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined): GetTerminologyResponse = {
+    def apply(
+        TerminologyDataLocation: js.UndefOr[TerminologyDataLocation] = js.undefined,
+        TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined
+    ): GetTerminologyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TerminologyDataLocation" -> TerminologyDataLocation.map { x =>
           x.asInstanceOf[js.Any]
@@ -150,11 +168,13 @@ package translate {
   }
 
   object ImportTerminologyRequest {
-    def apply(MergeStrategy: MergeStrategy,
-              Name: ResourceName,
-              TerminologyData: TerminologyData,
-              Description: js.UndefOr[Description] = js.undefined,
-              EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined): ImportTerminologyRequest = {
+    def apply(
+        MergeStrategy: MergeStrategy,
+        Name: ResourceName,
+        TerminologyData: TerminologyData,
+        Description: js.UndefOr[Description] = js.undefined,
+        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined
+    ): ImportTerminologyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MergeStrategy"   -> MergeStrategy.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any],
@@ -177,10 +197,14 @@ package translate {
   }
 
   object ImportTerminologyResponse {
-    def apply(TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined): ImportTerminologyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("TerminologyProperties" -> TerminologyProperties.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined
+    ): ImportTerminologyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TerminologyProperties" -> TerminologyProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportTerminologyResponse]
     }
@@ -193,13 +217,18 @@ package translate {
   }
 
   object ListTerminologiesRequest {
-    def apply(MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTerminologiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTerminologiesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTerminologiesRequest]
     }
@@ -216,11 +245,14 @@ package translate {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TerminologyPropertiesList: js.UndefOr[TerminologyPropertiesList] = js.undefined
     ): ListTerminologiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TerminologyPropertiesList" -> TerminologyPropertiesList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TerminologyPropertiesList" -> TerminologyPropertiesList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTerminologiesResponse]
     }
@@ -242,12 +274,18 @@ package translate {
   }
 
   object Term {
-    def apply(SourceText: js.UndefOr[String] = js.undefined, TargetText: js.UndefOr[String] = js.undefined): Term = {
-      val _fields = IndexedSeq[(String, js.Any)]("SourceText" -> SourceText.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TargetText" -> TargetText.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SourceText: js.UndefOr[String] = js.undefined,
+        TargetText: js.UndefOr[String] = js.undefined
+    ): Term = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceText" -> SourceText.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetText" -> TargetText.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Term]
     }
@@ -263,10 +301,14 @@ package translate {
   }
 
   object TerminologyData {
-    def apply(File: TerminologyFile, Format: TerminologyDataFormat): TerminologyData = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("File" -> File.asInstanceOf[js.Any], "Format" -> Format.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        File: TerminologyFile,
+        Format: TerminologyDataFormat
+    ): TerminologyData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "File"   -> File.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminologyData]
     }
@@ -289,7 +331,10 @@ package translate {
   }
 
   object TerminologyDataLocation {
-    def apply(Location: String, RepositoryType: String): TerminologyDataLocation = {
+    def apply(
+        Location: String,
+        RepositoryType: String
+    ): TerminologyDataLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Location"       -> Location.asInstanceOf[js.Any],
         "RepositoryType" -> RepositoryType.asInstanceOf[js.Any]
@@ -317,16 +362,18 @@ package translate {
   }
 
   object TerminologyProperties {
-    def apply(Arn: js.UndefOr[TerminologyArn] = js.undefined,
-              CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined,
-              LastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
-              Name: js.UndefOr[ResourceName] = js.undefined,
-              SizeBytes: js.UndefOr[Int] = js.undefined,
-              SourceLanguageCode: js.UndefOr[LanguageCodeString] = js.undefined,
-              TargetLanguageCodes: js.UndefOr[LanguageCodeStringList] = js.undefined,
-              TermCount: js.UndefOr[Int] = js.undefined): TerminologyProperties = {
+    def apply(
+        Arn: js.UndefOr[TerminologyArn] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined,
+        LastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        SizeBytes: js.UndefOr[Int] = js.undefined,
+        SourceLanguageCode: js.UndefOr[LanguageCodeString] = js.undefined,
+        TargetLanguageCodes: js.UndefOr[LanguageCodeStringList] = js.undefined,
+        TermCount: js.UndefOr[Int] = js.undefined
+    ): TerminologyProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -373,10 +420,12 @@ package translate {
   }
 
   object TranslateTextRequest {
-    def apply(SourceLanguageCode: LanguageCodeString,
-              TargetLanguageCode: LanguageCodeString,
-              Text: BoundedLengthString,
-              TerminologyNames: js.UndefOr[ResourceNameList] = js.undefined): TranslateTextRequest = {
+    def apply(
+        SourceLanguageCode: LanguageCodeString,
+        TargetLanguageCode: LanguageCodeString,
+        Text: BoundedLengthString,
+        TerminologyNames: js.UndefOr[ResourceNameList] = js.undefined
+    ): TranslateTextRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceLanguageCode" -> SourceLanguageCode.asInstanceOf[js.Any],
         "TargetLanguageCode" -> TargetLanguageCode.asInstanceOf[js.Any],
@@ -399,10 +448,12 @@ package translate {
   }
 
   object TranslateTextResponse {
-    def apply(SourceLanguageCode: LanguageCodeString,
-              TargetLanguageCode: LanguageCodeString,
-              TranslatedText: String,
-              AppliedTerminologies: js.UndefOr[AppliedTerminologyList] = js.undefined): TranslateTextResponse = {
+    def apply(
+        SourceLanguageCode: LanguageCodeString,
+        TargetLanguageCode: LanguageCodeString,
+        TranslatedText: String,
+        AppliedTerminologies: js.UndefOr[AppliedTerminologyList] = js.undefined
+    ): TranslateTextResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceLanguageCode" -> SourceLanguageCode.asInstanceOf[js.Any],
         "TargetLanguageCode" -> TargetLanguageCode.asInstanceOf[js.Any],

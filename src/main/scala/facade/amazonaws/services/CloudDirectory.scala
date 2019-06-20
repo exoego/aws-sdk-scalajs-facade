@@ -181,10 +181,12 @@ package clouddirectory {
   }
 
   object AddFacetToObjectRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              SchemaFacet: SchemaFacet,
-              ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined): AddFacetToObjectRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        SchemaFacet: SchemaFacet,
+        ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined
+    ): AddFacetToObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -202,8 +204,10 @@ package clouddirectory {
   trait AddFacetToObjectResponse extends js.Object {}
 
   object AddFacetToObjectResponse {
-    def apply(): AddFacetToObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AddFacetToObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddFacetToObjectResponse]
     }
@@ -216,7 +220,10 @@ package clouddirectory {
   }
 
   object ApplySchemaRequest {
-    def apply(DirectoryArn: Arn, PublishedSchemaArn: Arn): ApplySchemaRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        PublishedSchemaArn: Arn
+    ): ApplySchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
@@ -233,13 +240,18 @@ package clouddirectory {
   }
 
   object ApplySchemaResponse {
-    def apply(AppliedSchemaArn: js.UndefOr[Arn] = js.undefined,
-              DirectoryArn: js.UndefOr[Arn] = js.undefined): ApplySchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AppliedSchemaArn" -> AppliedSchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "DirectoryArn" -> DirectoryArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AppliedSchemaArn: js.UndefOr[Arn] = js.undefined,
+        DirectoryArn: js.UndefOr[Arn] = js.undefined
+    ): ApplySchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AppliedSchemaArn" -> AppliedSchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DirectoryArn" -> DirectoryArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplySchemaResponse]
     }
@@ -254,10 +266,12 @@ package clouddirectory {
   }
 
   object AttachObjectRequest {
-    def apply(ChildReference: ObjectReference,
-              DirectoryArn: Arn,
-              LinkName: LinkName,
-              ParentReference: ObjectReference): AttachObjectRequest = {
+    def apply(
+        ChildReference: ObjectReference,
+        DirectoryArn: Arn,
+        LinkName: LinkName,
+        ParentReference: ObjectReference
+    ): AttachObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
@@ -275,10 +289,14 @@ package clouddirectory {
   }
 
   object AttachObjectResponse {
-    def apply(AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): AttachObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttachedObjectIdentifier" -> AttachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): AttachObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttachedObjectIdentifier" -> AttachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachObjectResponse]
     }
@@ -292,9 +310,11 @@ package clouddirectory {
   }
 
   object AttachPolicyRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              PolicyReference: ObjectReference): AttachPolicyRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        PolicyReference: ObjectReference
+    ): AttachPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -309,8 +329,10 @@ package clouddirectory {
   trait AttachPolicyResponse extends js.Object {}
 
   object AttachPolicyResponse {
-    def apply(): AttachPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AttachPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachPolicyResponse]
     }
@@ -324,9 +346,11 @@ package clouddirectory {
   }
 
   object AttachToIndexRequest {
-    def apply(DirectoryArn: Arn,
-              IndexReference: ObjectReference,
-              TargetReference: ObjectReference): AttachToIndexRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        IndexReference: ObjectReference,
+        TargetReference: ObjectReference
+    ): AttachToIndexRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
@@ -343,10 +367,14 @@ package clouddirectory {
   }
 
   object AttachToIndexResponse {
-    def apply(AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): AttachToIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttachedObjectIdentifier" -> AttachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): AttachToIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttachedObjectIdentifier" -> AttachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachToIndexResponse]
     }
@@ -362,11 +390,13 @@ package clouddirectory {
   }
 
   object AttachTypedLinkRequest {
-    def apply(Attributes: AttributeNameAndValueList,
-              DirectoryArn: Arn,
-              SourceObjectReference: ObjectReference,
-              TargetObjectReference: ObjectReference,
-              TypedLinkFacet: TypedLinkSchemaAndFacetName): AttachTypedLinkRequest = {
+    def apply(
+        Attributes: AttributeNameAndValueList,
+        DirectoryArn: Arn,
+        SourceObjectReference: ObjectReference,
+        TargetObjectReference: ObjectReference,
+        TypedLinkFacet: TypedLinkSchemaAndFacetName
+    ): AttachTypedLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes"            -> Attributes.asInstanceOf[js.Any],
         "DirectoryArn"          -> DirectoryArn.asInstanceOf[js.Any],
@@ -385,10 +415,14 @@ package clouddirectory {
   }
 
   object AttachTypedLinkResponse {
-    def apply(TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined): AttachTypedLinkResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("TypedLinkSpecifier" -> TypedLinkSpecifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
+    ): AttachTypedLinkResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TypedLinkSpecifier" -> TypedLinkSpecifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachTypedLinkResponse]
     }
@@ -405,7 +439,11 @@ package clouddirectory {
   }
 
   object AttributeKey {
-    def apply(FacetName: FacetName, Name: AttributeName, SchemaArn: Arn): AttributeKey = {
+    def apply(
+        FacetName: FacetName,
+        Name: AttributeName,
+        SchemaArn: Arn
+    ): AttributeKey = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FacetName" -> FacetName.asInstanceOf[js.Any],
         "Name"      -> Name.asInstanceOf[js.Any],
@@ -426,10 +464,14 @@ package clouddirectory {
   }
 
   object AttributeKeyAndValue {
-    def apply(Key: AttributeKey, Value: TypedAttributeValue): AttributeKeyAndValue = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: AttributeKey,
+        Value: TypedAttributeValue
+    ): AttributeKeyAndValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeKeyAndValue]
     }
@@ -445,7 +487,10 @@ package clouddirectory {
   }
 
   object AttributeNameAndValue {
-    def apply(AttributeName: AttributeName, Value: TypedAttributeValue): AttributeNameAndValue = {
+    def apply(
+        AttributeName: AttributeName,
+        Value: TypedAttributeValue
+    ): AttributeNameAndValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "Value"         -> Value.asInstanceOf[js.Any]
@@ -466,9 +511,11 @@ package clouddirectory {
   }
 
   object BatchAddFacetToObject {
-    def apply(ObjectAttributeList: AttributeKeyAndValueList,
-              ObjectReference: ObjectReference,
-              SchemaFacet: SchemaFacet): BatchAddFacetToObject = {
+    def apply(
+        ObjectAttributeList: AttributeKeyAndValueList,
+        ObjectReference: ObjectReference,
+        SchemaFacet: SchemaFacet
+    ): BatchAddFacetToObject = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
         "ObjectReference"     -> ObjectReference.asInstanceOf[js.Any],
@@ -486,8 +533,10 @@ package clouddirectory {
   trait BatchAddFacetToObjectResponse extends js.Object {}
 
   object BatchAddFacetToObjectResponse {
-    def apply(): BatchAddFacetToObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): BatchAddFacetToObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAddFacetToObjectResponse]
     }
@@ -504,9 +553,11 @@ package clouddirectory {
   }
 
   object BatchAttachObject {
-    def apply(ChildReference: ObjectReference,
-              LinkName: LinkName,
-              ParentReference: ObjectReference): BatchAttachObject = {
+    def apply(
+        ChildReference: ObjectReference,
+        LinkName: LinkName,
+        ParentReference: ObjectReference
+    ): BatchAttachObject = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
         "LinkName"        -> LinkName.asInstanceOf[js.Any],
@@ -526,17 +577,21 @@ package clouddirectory {
   }
 
   object BatchAttachObjectResponse {
-    def apply(attachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): BatchAttachObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("attachedObjectIdentifier" -> attachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): BatchAttachObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attachedObjectIdentifier" -> attachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAttachObjectResponse]
     }
   }
 
   /**
-    * Attaches a policy object to a regular object inside a <a>BatchRead</a> operation.?For more information, see <a>AttachPolicy</a> and [[BatchReadRequest.Operations]].
+    * Attaches a policy object to a regular object inside a <a>BatchRead</a> operation. For more information, see <a>AttachPolicy</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
   trait BatchAttachPolicy extends js.Object {
@@ -545,7 +600,10 @@ package clouddirectory {
   }
 
   object BatchAttachPolicy {
-    def apply(ObjectReference: ObjectReference, PolicyReference: ObjectReference): BatchAttachPolicy = {
+    def apply(
+        ObjectReference: ObjectReference,
+        PolicyReference: ObjectReference
+    ): BatchAttachPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
@@ -562,8 +620,10 @@ package clouddirectory {
   trait BatchAttachPolicyResponse extends js.Object {}
 
   object BatchAttachPolicyResponse {
-    def apply(): BatchAttachPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): BatchAttachPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAttachPolicyResponse]
     }
@@ -579,7 +639,10 @@ package clouddirectory {
   }
 
   object BatchAttachToIndex {
-    def apply(IndexReference: ObjectReference, TargetReference: ObjectReference): BatchAttachToIndex = {
+    def apply(
+        IndexReference: ObjectReference,
+        TargetReference: ObjectReference
+    ): BatchAttachToIndex = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
@@ -598,10 +661,14 @@ package clouddirectory {
   }
 
   object BatchAttachToIndexResponse {
-    def apply(AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): BatchAttachToIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttachedObjectIdentifier" -> AttachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): BatchAttachToIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttachedObjectIdentifier" -> AttachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAttachToIndexResponse]
     }
@@ -619,10 +686,12 @@ package clouddirectory {
   }
 
   object BatchAttachTypedLink {
-    def apply(Attributes: AttributeNameAndValueList,
-              SourceObjectReference: ObjectReference,
-              TargetObjectReference: ObjectReference,
-              TypedLinkFacet: TypedLinkSchemaAndFacetName): BatchAttachTypedLink = {
+    def apply(
+        Attributes: AttributeNameAndValueList,
+        SourceObjectReference: ObjectReference,
+        TargetObjectReference: ObjectReference,
+        TypedLinkFacet: TypedLinkSchemaAndFacetName
+    ): BatchAttachTypedLink = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes"            -> Attributes.asInstanceOf[js.Any],
         "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
@@ -643,10 +712,14 @@ package clouddirectory {
   }
 
   object BatchAttachTypedLinkResponse {
-    def apply(TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined): BatchAttachTypedLinkResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("TypedLinkSpecifier" -> TypedLinkSpecifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
+    ): BatchAttachTypedLinkResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TypedLinkSpecifier" -> TypedLinkSpecifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAttachTypedLinkResponse]
     }
@@ -665,11 +738,13 @@ package clouddirectory {
   }
 
   object BatchCreateIndex {
-    def apply(IsUnique: Bool,
-              OrderedIndexedAttributeList: AttributeKeyList,
-              BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined,
-              LinkName: js.UndefOr[LinkName] = js.undefined,
-              ParentReference: js.UndefOr[ObjectReference] = js.undefined): BatchCreateIndex = {
+    def apply(
+        IsUnique: Bool,
+        OrderedIndexedAttributeList: AttributeKeyList,
+        BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined,
+        LinkName: js.UndefOr[LinkName] = js.undefined,
+        ParentReference: js.UndefOr[ObjectReference] = js.undefined
+    ): BatchCreateIndex = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
         "OrderedIndexedAttributeList" -> OrderedIndexedAttributeList.asInstanceOf[js.Any],
@@ -697,10 +772,14 @@ package clouddirectory {
   }
 
   object BatchCreateIndexResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): BatchCreateIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): BatchCreateIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchCreateIndexResponse]
     }
@@ -719,11 +798,13 @@ package clouddirectory {
   }
 
   object BatchCreateObject {
-    def apply(ObjectAttributeList: AttributeKeyAndValueList,
-              SchemaFacet: SchemaFacetList,
-              BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined,
-              LinkName: js.UndefOr[LinkName] = js.undefined,
-              ParentReference: js.UndefOr[ObjectReference] = js.undefined): BatchCreateObject = {
+    def apply(
+        ObjectAttributeList: AttributeKeyAndValueList,
+        SchemaFacet: SchemaFacetList,
+        BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined,
+        LinkName: js.UndefOr[LinkName] = js.undefined,
+        ParentReference: js.UndefOr[ObjectReference] = js.undefined
+    ): BatchCreateObject = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
         "SchemaFacet"         -> SchemaFacet.asInstanceOf[js.Any],
@@ -751,10 +832,14 @@ package clouddirectory {
   }
 
   object BatchCreateObjectResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): BatchCreateObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): BatchCreateObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchCreateObjectResponse]
     }
@@ -769,9 +854,12 @@ package clouddirectory {
   }
 
   object BatchDeleteObject {
-    def apply(ObjectReference: ObjectReference): BatchDeleteObject = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectReference" -> ObjectReference.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectReference: ObjectReference
+    ): BatchDeleteObject = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteObject]
     }
@@ -784,8 +872,10 @@ package clouddirectory {
   trait BatchDeleteObjectResponse extends js.Object {}
 
   object BatchDeleteObjectResponse {
-    def apply(): BatchDeleteObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): BatchDeleteObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteObjectResponse]
     }
@@ -801,7 +891,10 @@ package clouddirectory {
   }
 
   object BatchDetachFromIndex {
-    def apply(IndexReference: ObjectReference, TargetReference: ObjectReference): BatchDetachFromIndex = {
+    def apply(
+        IndexReference: ObjectReference,
+        TargetReference: ObjectReference
+    ): BatchDetachFromIndex = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
@@ -820,10 +913,14 @@ package clouddirectory {
   }
 
   object BatchDetachFromIndexResponse {
-    def apply(DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): BatchDetachFromIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetachedObjectIdentifier" -> DetachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): BatchDetachFromIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetachedObjectIdentifier" -> DetachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetachFromIndexResponse]
     }
@@ -840,9 +937,11 @@ package clouddirectory {
   }
 
   object BatchDetachObject {
-    def apply(LinkName: LinkName,
-              ParentReference: ObjectReference,
-              BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined): BatchDetachObject = {
+    def apply(
+        LinkName: LinkName,
+        ParentReference: ObjectReference,
+        BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined
+    ): BatchDetachObject = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LinkName"        -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any],
@@ -864,10 +963,14 @@ package clouddirectory {
   }
 
   object BatchDetachObjectResponse {
-    def apply(detachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): BatchDetachObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("detachedObjectIdentifier" -> detachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        detachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): BatchDetachObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "detachedObjectIdentifier" -> detachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetachObjectResponse]
     }
@@ -883,7 +986,10 @@ package clouddirectory {
   }
 
   object BatchDetachPolicy {
-    def apply(ObjectReference: ObjectReference, PolicyReference: ObjectReference): BatchDetachPolicy = {
+    def apply(
+        ObjectReference: ObjectReference,
+        PolicyReference: ObjectReference
+    ): BatchDetachPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
@@ -900,8 +1006,10 @@ package clouddirectory {
   trait BatchDetachPolicyResponse extends js.Object {}
 
   object BatchDetachPolicyResponse {
-    def apply(): BatchDetachPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): BatchDetachPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetachPolicyResponse]
     }
@@ -916,9 +1024,12 @@ package clouddirectory {
   }
 
   object BatchDetachTypedLink {
-    def apply(TypedLinkSpecifier: TypedLinkSpecifier): BatchDetachTypedLink = {
-      val _fields = IndexedSeq[(String, js.Any)]("TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TypedLinkSpecifier: TypedLinkSpecifier
+    ): BatchDetachTypedLink = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetachTypedLink]
     }
@@ -931,8 +1042,10 @@ package clouddirectory {
   trait BatchDetachTypedLinkResponse extends js.Object {}
 
   object BatchDetachTypedLinkResponse {
-    def apply(): BatchDetachTypedLinkResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): BatchDetachTypedLinkResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDetachTypedLinkResponse]
     }
@@ -948,7 +1061,10 @@ package clouddirectory {
   }
 
   object BatchGetLinkAttributes {
-    def apply(AttributeNames: AttributeNameList, TypedLinkSpecifier: TypedLinkSpecifier): BatchGetLinkAttributes = {
+    def apply(
+        AttributeNames: AttributeNameList,
+        TypedLinkSpecifier: TypedLinkSpecifier
+    ): BatchGetLinkAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
@@ -967,10 +1083,14 @@ package clouddirectory {
   }
 
   object BatchGetLinkAttributesResponse {
-    def apply(Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined): BatchGetLinkAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
+    ): BatchGetLinkAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetLinkAttributesResponse]
     }
@@ -987,9 +1107,11 @@ package clouddirectory {
   }
 
   object BatchGetObjectAttributes {
-    def apply(AttributeNames: AttributeNameList,
-              ObjectReference: ObjectReference,
-              SchemaFacet: SchemaFacet): BatchGetObjectAttributes = {
+    def apply(
+        AttributeNames: AttributeNameList,
+        ObjectReference: ObjectReference,
+        SchemaFacet: SchemaFacet
+    ): BatchGetObjectAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -1009,10 +1131,14 @@ package clouddirectory {
   }
 
   object BatchGetObjectAttributesResponse {
-    def apply(Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined): BatchGetObjectAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
+    ): BatchGetObjectAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetObjectAttributesResponse]
     }
@@ -1027,9 +1153,12 @@ package clouddirectory {
   }
 
   object BatchGetObjectInformation {
-    def apply(ObjectReference: ObjectReference): BatchGetObjectInformation = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectReference" -> ObjectReference.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectReference: ObjectReference
+    ): BatchGetObjectInformation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetObjectInformation]
     }
@@ -1045,13 +1174,18 @@ package clouddirectory {
   }
 
   object BatchGetObjectInformationResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
-              SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined): BatchGetObjectInformationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaFacets" -> SchemaFacets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
+        SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
+    ): BatchGetObjectInformationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaFacets" -> SchemaFacets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetObjectInformationResponse]
     }
@@ -1068,9 +1202,11 @@ package clouddirectory {
   }
 
   object BatchListAttachedIndices {
-    def apply(TargetReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListAttachedIndices = {
+    def apply(
+        TargetReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListAttachedIndices = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetReference" -> TargetReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1095,13 +1231,18 @@ package clouddirectory {
   }
 
   object BatchListAttachedIndicesResponse {
-    def apply(IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListAttachedIndicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IndexAttachments" -> IndexAttachments.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListAttachedIndicesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IndexAttachments" -> IndexAttachments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListAttachedIndicesResponse]
     }
@@ -1120,11 +1261,13 @@ package clouddirectory {
   }
 
   object BatchListIncomingTypedLinks {
-    def apply(ObjectReference: ObjectReference,
-              FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-              FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListIncomingTypedLinks = {
+    def apply(
+        ObjectReference: ObjectReference,
+        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
+        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListIncomingTypedLinks = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "FilterAttributeRanges" -> FilterAttributeRanges.map { x =>
@@ -1155,13 +1298,18 @@ package clouddirectory {
   }
 
   object BatchListIncomingTypedLinksResponse {
-    def apply(LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListIncomingTypedLinksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("LinkSpecifiers" -> LinkSpecifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListIncomingTypedLinksResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LinkSpecifiers" -> LinkSpecifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListIncomingTypedLinksResponse]
     }
@@ -1179,10 +1327,12 @@ package clouddirectory {
   }
 
   object BatchListIndex {
-    def apply(IndexReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined): BatchListIndex = {
+    def apply(
+        IndexReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined
+    ): BatchListIndex = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexReference" -> IndexReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1210,13 +1360,18 @@ package clouddirectory {
   }
 
   object BatchListIndexResponse {
-    def apply(IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IndexAttachments" -> IndexAttachments.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IndexAttachments" -> IndexAttachments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListIndexResponse]
     }
@@ -1234,10 +1389,12 @@ package clouddirectory {
   }
 
   object BatchListObjectAttributes {
-    def apply(ObjectReference: ObjectReference,
-              FacetFilter: js.UndefOr[SchemaFacet] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectAttributes = {
+    def apply(
+        ObjectReference: ObjectReference,
+        FacetFilter: js.UndefOr[SchemaFacet] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "FacetFilter" -> FacetFilter.map { x =>
@@ -1265,13 +1422,18 @@ package clouddirectory {
   }
 
   object BatchListObjectAttributesResponse {
-    def apply(Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListObjectAttributesResponse]
     }
@@ -1288,9 +1450,11 @@ package clouddirectory {
   }
 
   object BatchListObjectChildren {
-    def apply(ObjectReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectChildren = {
+    def apply(
+        ObjectReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectChildren = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1315,13 +1479,18 @@ package clouddirectory {
   }
 
   object BatchListObjectChildrenResponse {
-    def apply(Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectChildrenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Children" -> Children.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectChildrenResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Children" -> Children.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListObjectChildrenResponse]
     }
@@ -1338,9 +1507,11 @@ package clouddirectory {
   }
 
   object BatchListObjectParentPaths {
-    def apply(ObjectReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectParentPaths = {
+    def apply(
+        ObjectReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectParentPaths = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1369,11 +1540,14 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
     ): BatchListObjectParentPathsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PathToObjectIdentifiersList" -> PathToObjectIdentifiersList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathToObjectIdentifiersList" -> PathToObjectIdentifiersList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListObjectParentPathsResponse]
     }
@@ -1387,9 +1561,11 @@ package clouddirectory {
   }
 
   object BatchListObjectParents {
-    def apply(ObjectReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectParents = {
+    def apply(
+        ObjectReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectParents = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1415,11 +1591,14 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined
     ): BatchListObjectParentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ParentLinks" -> ParentLinks.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentLinks" -> ParentLinks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListObjectParentsResponse]
     }
@@ -1436,9 +1615,11 @@ package clouddirectory {
   }
 
   object BatchListObjectPolicies {
-    def apply(ObjectReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectPolicies = {
+    def apply(
+        ObjectReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectPolicies = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1463,13 +1644,18 @@ package clouddirectory {
   }
 
   object BatchListObjectPoliciesResponse {
-    def apply(AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListObjectPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttachedPolicyIds" -> AttachedPolicyIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListObjectPoliciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttachedPolicyIds" -> AttachedPolicyIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListObjectPoliciesResponse]
     }
@@ -1488,11 +1674,13 @@ package clouddirectory {
   }
 
   object BatchListOutgoingTypedLinks {
-    def apply(ObjectReference: ObjectReference,
-              FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-              FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListOutgoingTypedLinks = {
+    def apply(
+        ObjectReference: ObjectReference,
+        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
+        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListOutgoingTypedLinks = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "FilterAttributeRanges" -> FilterAttributeRanges.map { x =>
@@ -1527,11 +1715,14 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
     ): BatchListOutgoingTypedLinksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TypedLinkSpecifiers" -> TypedLinkSpecifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TypedLinkSpecifiers" -> TypedLinkSpecifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListOutgoingTypedLinksResponse]
     }
@@ -1548,9 +1739,11 @@ package clouddirectory {
   }
 
   object BatchListPolicyAttachments {
-    def apply(PolicyReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchListPolicyAttachments = {
+    def apply(
+        PolicyReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchListPolicyAttachments = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1579,11 +1772,14 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
     ): BatchListPolicyAttachmentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ObjectIdentifiers" -> ObjectIdentifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ObjectIdentifiers" -> ObjectIdentifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchListPolicyAttachmentsResponse]
     }
@@ -1600,9 +1796,11 @@ package clouddirectory {
   }
 
   object BatchLookupPolicy {
-    def apply(ObjectReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): BatchLookupPolicy = {
+    def apply(
+        ObjectReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchLookupPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1627,13 +1825,18 @@ package clouddirectory {
   }
 
   object BatchLookupPolicyResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined): BatchLookupPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PolicyToPathList" -> PolicyToPathList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
+    ): BatchLookupPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PolicyToPathList" -> PolicyToPathList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchLookupPolicyResponse]
     }
@@ -1649,13 +1852,18 @@ package clouddirectory {
   }
 
   object BatchReadException {
-    def apply(Message: js.UndefOr[ExceptionMessage] = js.undefined,
-              Type: js.UndefOr[BatchReadExceptionType] = js.undefined): BatchReadException = {
-      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Message: js.UndefOr[ExceptionMessage] = js.undefined,
+        Type: js.UndefOr[BatchReadExceptionType] = js.undefined
+    ): BatchReadException = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchReadException]
     }
@@ -1715,20 +1923,22 @@ package clouddirectory {
   }
 
   object BatchReadOperation {
-    def apply(GetLinkAttributes: js.UndefOr[BatchGetLinkAttributes] = js.undefined,
-              GetObjectAttributes: js.UndefOr[BatchGetObjectAttributes] = js.undefined,
-              GetObjectInformation: js.UndefOr[BatchGetObjectInformation] = js.undefined,
-              ListAttachedIndices: js.UndefOr[BatchListAttachedIndices] = js.undefined,
-              ListIncomingTypedLinks: js.UndefOr[BatchListIncomingTypedLinks] = js.undefined,
-              ListIndex: js.UndefOr[BatchListIndex] = js.undefined,
-              ListObjectAttributes: js.UndefOr[BatchListObjectAttributes] = js.undefined,
-              ListObjectChildren: js.UndefOr[BatchListObjectChildren] = js.undefined,
-              ListObjectParentPaths: js.UndefOr[BatchListObjectParentPaths] = js.undefined,
-              ListObjectParents: js.UndefOr[BatchListObjectParents] = js.undefined,
-              ListObjectPolicies: js.UndefOr[BatchListObjectPolicies] = js.undefined,
-              ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinks] = js.undefined,
-              ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachments] = js.undefined,
-              LookupPolicy: js.UndefOr[BatchLookupPolicy] = js.undefined): BatchReadOperation = {
+    def apply(
+        GetLinkAttributes: js.UndefOr[BatchGetLinkAttributes] = js.undefined,
+        GetObjectAttributes: js.UndefOr[BatchGetObjectAttributes] = js.undefined,
+        GetObjectInformation: js.UndefOr[BatchGetObjectInformation] = js.undefined,
+        ListAttachedIndices: js.UndefOr[BatchListAttachedIndices] = js.undefined,
+        ListIncomingTypedLinks: js.UndefOr[BatchListIncomingTypedLinks] = js.undefined,
+        ListIndex: js.UndefOr[BatchListIndex] = js.undefined,
+        ListObjectAttributes: js.UndefOr[BatchListObjectAttributes] = js.undefined,
+        ListObjectChildren: js.UndefOr[BatchListObjectChildren] = js.undefined,
+        ListObjectParentPaths: js.UndefOr[BatchListObjectParentPaths] = js.undefined,
+        ListObjectParents: js.UndefOr[BatchListObjectParents] = js.undefined,
+        ListObjectPolicies: js.UndefOr[BatchListObjectPolicies] = js.undefined,
+        ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinks] = js.undefined,
+        ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachments] = js.undefined,
+        LookupPolicy: js.UndefOr[BatchLookupPolicy] = js.undefined
+    ): BatchReadOperation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GetLinkAttributes" -> GetLinkAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1792,11 +2002,14 @@ package clouddirectory {
         ExceptionResponse: js.UndefOr[BatchReadException] = js.undefined,
         SuccessfulResponse: js.UndefOr[BatchReadSuccessfulResponse] = js.undefined
     ): BatchReadOperationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ExceptionResponse" -> ExceptionResponse.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SuccessfulResponse" -> SuccessfulResponse.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ExceptionResponse" -> ExceptionResponse.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SuccessfulResponse" -> SuccessfulResponse.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchReadOperationResponse]
     }
@@ -1810,9 +2023,11 @@ package clouddirectory {
   }
 
   object BatchReadRequest {
-    def apply(DirectoryArn: Arn,
-              Operations: BatchReadOperationList,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined): BatchReadRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        Operations: BatchReadOperationList,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
+    ): BatchReadRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "Operations"   -> Operations.asInstanceOf[js.Any],
@@ -1831,10 +2046,14 @@ package clouddirectory {
   }
 
   object BatchReadResponse {
-    def apply(Responses: js.UndefOr[BatchReadOperationResponseList] = js.undefined): BatchReadResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Responses" -> Responses.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Responses: js.UndefOr[BatchReadOperationResponseList] = js.undefined
+    ): BatchReadResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Responses" -> Responses.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchReadResponse]
     }
@@ -1862,20 +2081,22 @@ package clouddirectory {
   }
 
   object BatchReadSuccessfulResponse {
-    def apply(GetLinkAttributes: js.UndefOr[BatchGetLinkAttributesResponse] = js.undefined,
-              GetObjectAttributes: js.UndefOr[BatchGetObjectAttributesResponse] = js.undefined,
-              GetObjectInformation: js.UndefOr[BatchGetObjectInformationResponse] = js.undefined,
-              ListAttachedIndices: js.UndefOr[BatchListAttachedIndicesResponse] = js.undefined,
-              ListIncomingTypedLinks: js.UndefOr[BatchListIncomingTypedLinksResponse] = js.undefined,
-              ListIndex: js.UndefOr[BatchListIndexResponse] = js.undefined,
-              ListObjectAttributes: js.UndefOr[BatchListObjectAttributesResponse] = js.undefined,
-              ListObjectChildren: js.UndefOr[BatchListObjectChildrenResponse] = js.undefined,
-              ListObjectParentPaths: js.UndefOr[BatchListObjectParentPathsResponse] = js.undefined,
-              ListObjectParents: js.UndefOr[BatchListObjectParentsResponse] = js.undefined,
-              ListObjectPolicies: js.UndefOr[BatchListObjectPoliciesResponse] = js.undefined,
-              ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinksResponse] = js.undefined,
-              ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachmentsResponse] = js.undefined,
-              LookupPolicy: js.UndefOr[BatchLookupPolicyResponse] = js.undefined): BatchReadSuccessfulResponse = {
+    def apply(
+        GetLinkAttributes: js.UndefOr[BatchGetLinkAttributesResponse] = js.undefined,
+        GetObjectAttributes: js.UndefOr[BatchGetObjectAttributesResponse] = js.undefined,
+        GetObjectInformation: js.UndefOr[BatchGetObjectInformationResponse] = js.undefined,
+        ListAttachedIndices: js.UndefOr[BatchListAttachedIndicesResponse] = js.undefined,
+        ListIncomingTypedLinks: js.UndefOr[BatchListIncomingTypedLinksResponse] = js.undefined,
+        ListIndex: js.UndefOr[BatchListIndexResponse] = js.undefined,
+        ListObjectAttributes: js.UndefOr[BatchListObjectAttributesResponse] = js.undefined,
+        ListObjectChildren: js.UndefOr[BatchListObjectChildrenResponse] = js.undefined,
+        ListObjectParentPaths: js.UndefOr[BatchListObjectParentPathsResponse] = js.undefined,
+        ListObjectParents: js.UndefOr[BatchListObjectParentsResponse] = js.undefined,
+        ListObjectPolicies: js.UndefOr[BatchListObjectPoliciesResponse] = js.undefined,
+        ListOutgoingTypedLinks: js.UndefOr[BatchListOutgoingTypedLinksResponse] = js.undefined,
+        ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachmentsResponse] = js.undefined,
+        LookupPolicy: js.UndefOr[BatchLookupPolicyResponse] = js.undefined
+    ): BatchReadSuccessfulResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GetLinkAttributes" -> GetLinkAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1935,7 +2156,10 @@ package clouddirectory {
   }
 
   object BatchRemoveFacetFromObject {
-    def apply(ObjectReference: ObjectReference, SchemaFacet: SchemaFacet): BatchRemoveFacetFromObject = {
+    def apply(
+        ObjectReference: ObjectReference,
+        SchemaFacet: SchemaFacet
+    ): BatchRemoveFacetFromObject = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
@@ -1952,15 +2176,17 @@ package clouddirectory {
   trait BatchRemoveFacetFromObjectResponse extends js.Object {}
 
   object BatchRemoveFacetFromObjectResponse {
-    def apply(): BatchRemoveFacetFromObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): BatchRemoveFacetFromObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchRemoveFacetFromObjectResponse]
     }
   }
 
   /**
-    * Updates a given typed link�fs attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link�fs identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and [[BatchReadRequest.Operations]].
+    * Updates a given typed link’s attributes inside a <a>BatchRead</a> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <a>UpdateLinkAttributes</a> and [[BatchReadRequest.Operations]].
     */
   @js.native
   trait BatchUpdateLinkAttributes extends js.Object {
@@ -1969,8 +2195,10 @@ package clouddirectory {
   }
 
   object BatchUpdateLinkAttributes {
-    def apply(AttributeUpdates: LinkAttributeUpdateList,
-              TypedLinkSpecifier: TypedLinkSpecifier): BatchUpdateLinkAttributes = {
+    def apply(
+        AttributeUpdates: LinkAttributeUpdateList,
+        TypedLinkSpecifier: TypedLinkSpecifier
+    ): BatchUpdateLinkAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
@@ -1987,8 +2215,10 @@ package clouddirectory {
   trait BatchUpdateLinkAttributesResponse extends js.Object {}
 
   object BatchUpdateLinkAttributesResponse {
-    def apply(): BatchUpdateLinkAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): BatchUpdateLinkAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateLinkAttributesResponse]
     }
@@ -2004,8 +2234,10 @@ package clouddirectory {
   }
 
   object BatchUpdateObjectAttributes {
-    def apply(AttributeUpdates: ObjectAttributeUpdateList,
-              ObjectReference: ObjectReference): BatchUpdateObjectAttributes = {
+    def apply(
+        AttributeUpdates: ObjectAttributeUpdateList,
+        ObjectReference: ObjectReference
+    ): BatchUpdateObjectAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
         "ObjectReference"  -> ObjectReference.asInstanceOf[js.Any]
@@ -2024,10 +2256,14 @@ package clouddirectory {
   }
 
   object BatchUpdateObjectAttributesResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): BatchUpdateObjectAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): BatchUpdateObjectAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateObjectAttributesResponse]
     }
@@ -2056,21 +2292,23 @@ package clouddirectory {
   }
 
   object BatchWriteOperation {
-    def apply(AddFacetToObject: js.UndefOr[BatchAddFacetToObject] = js.undefined,
-              AttachObject: js.UndefOr[BatchAttachObject] = js.undefined,
-              AttachPolicy: js.UndefOr[BatchAttachPolicy] = js.undefined,
-              AttachToIndex: js.UndefOr[BatchAttachToIndex] = js.undefined,
-              AttachTypedLink: js.UndefOr[BatchAttachTypedLink] = js.undefined,
-              CreateIndex: js.UndefOr[BatchCreateIndex] = js.undefined,
-              CreateObject: js.UndefOr[BatchCreateObject] = js.undefined,
-              DeleteObject: js.UndefOr[BatchDeleteObject] = js.undefined,
-              DetachFromIndex: js.UndefOr[BatchDetachFromIndex] = js.undefined,
-              DetachObject: js.UndefOr[BatchDetachObject] = js.undefined,
-              DetachPolicy: js.UndefOr[BatchDetachPolicy] = js.undefined,
-              DetachTypedLink: js.UndefOr[BatchDetachTypedLink] = js.undefined,
-              RemoveFacetFromObject: js.UndefOr[BatchRemoveFacetFromObject] = js.undefined,
-              UpdateLinkAttributes: js.UndefOr[BatchUpdateLinkAttributes] = js.undefined,
-              UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributes] = js.undefined): BatchWriteOperation = {
+    def apply(
+        AddFacetToObject: js.UndefOr[BatchAddFacetToObject] = js.undefined,
+        AttachObject: js.UndefOr[BatchAttachObject] = js.undefined,
+        AttachPolicy: js.UndefOr[BatchAttachPolicy] = js.undefined,
+        AttachToIndex: js.UndefOr[BatchAttachToIndex] = js.undefined,
+        AttachTypedLink: js.UndefOr[BatchAttachTypedLink] = js.undefined,
+        CreateIndex: js.UndefOr[BatchCreateIndex] = js.undefined,
+        CreateObject: js.UndefOr[BatchCreateObject] = js.undefined,
+        DeleteObject: js.UndefOr[BatchDeleteObject] = js.undefined,
+        DetachFromIndex: js.UndefOr[BatchDetachFromIndex] = js.undefined,
+        DetachObject: js.UndefOr[BatchDetachObject] = js.undefined,
+        DetachPolicy: js.UndefOr[BatchDetachPolicy] = js.undefined,
+        DetachTypedLink: js.UndefOr[BatchDetachTypedLink] = js.undefined,
+        RemoveFacetFromObject: js.UndefOr[BatchRemoveFacetFromObject] = js.undefined,
+        UpdateLinkAttributes: js.UndefOr[BatchUpdateLinkAttributes] = js.undefined,
+        UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributes] = js.undefined
+    ): BatchWriteOperation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddFacetToObject" -> AddFacetToObject.map { x =>
           x.asInstanceOf[js.Any]
@@ -2222,7 +2460,10 @@ package clouddirectory {
   }
 
   object BatchWriteRequest {
-    def apply(DirectoryArn: Arn, Operations: BatchWriteOperationList): BatchWriteRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        Operations: BatchWriteOperationList
+    ): BatchWriteRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "Operations"   -> Operations.asInstanceOf[js.Any]
@@ -2238,10 +2479,14 @@ package clouddirectory {
   }
 
   object BatchWriteResponse {
-    def apply(Responses: js.UndefOr[BatchWriteOperationResponseList] = js.undefined): BatchWriteResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Responses" -> Responses.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Responses: js.UndefOr[BatchWriteOperationResponseList] = js.undefined
+    ): BatchWriteResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Responses" -> Responses.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchWriteResponse]
     }
@@ -2261,10 +2506,14 @@ package clouddirectory {
   }
 
   object CreateDirectoryRequest {
-    def apply(Name: DirectoryName, SchemaArn: Arn): CreateDirectoryRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: DirectoryName,
+        SchemaArn: Arn
+    ): CreateDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDirectoryRequest]
     }
@@ -2279,10 +2528,12 @@ package clouddirectory {
   }
 
   object CreateDirectoryResponse {
-    def apply(AppliedSchemaArn: Arn,
-              DirectoryArn: DirectoryArn,
-              Name: DirectoryName,
-              ObjectIdentifier: ObjectIdentifier): CreateDirectoryResponse = {
+    def apply(
+        AppliedSchemaArn: Arn,
+        DirectoryArn: DirectoryArn,
+        Name: DirectoryName,
+        ObjectIdentifier: ObjectIdentifier
+    ): CreateDirectoryResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AppliedSchemaArn" -> AppliedSchemaArn.asInstanceOf[js.Any],
         "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
@@ -2304,11 +2555,13 @@ package clouddirectory {
   }
 
   object CreateFacetRequest {
-    def apply(Name: FacetName,
-              SchemaArn: Arn,
-              Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
-              FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
-              ObjectType: js.UndefOr[ObjectType] = js.undefined): CreateFacetRequest = {
+    def apply(
+        Name: FacetName,
+        SchemaArn: Arn,
+        Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
+        FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
+        ObjectType: js.UndefOr[ObjectType] = js.undefined
+    ): CreateFacetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
@@ -2331,8 +2584,10 @@ package clouddirectory {
   trait CreateFacetResponse extends js.Object {}
 
   object CreateFacetResponse {
-    def apply(): CreateFacetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateFacetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFacetResponse]
     }
@@ -2348,11 +2603,13 @@ package clouddirectory {
   }
 
   object CreateIndexRequest {
-    def apply(DirectoryArn: Arn,
-              IsUnique: Bool,
-              OrderedIndexedAttributeList: AttributeKeyList,
-              LinkName: js.UndefOr[LinkName] = js.undefined,
-              ParentReference: js.UndefOr[ObjectReference] = js.undefined): CreateIndexRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        IsUnique: Bool,
+        OrderedIndexedAttributeList: AttributeKeyList,
+        LinkName: js.UndefOr[LinkName] = js.undefined,
+        ParentReference: js.UndefOr[ObjectReference] = js.undefined
+    ): CreateIndexRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"                -> DirectoryArn.asInstanceOf[js.Any],
         "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
@@ -2375,10 +2632,14 @@ package clouddirectory {
   }
 
   object CreateIndexResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): CreateIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): CreateIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIndexResponse]
     }
@@ -2394,11 +2655,13 @@ package clouddirectory {
   }
 
   object CreateObjectRequest {
-    def apply(DirectoryArn: Arn,
-              SchemaFacets: SchemaFacetList,
-              LinkName: js.UndefOr[LinkName] = js.undefined,
-              ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-              ParentReference: js.UndefOr[ObjectReference] = js.undefined): CreateObjectRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        SchemaFacets: SchemaFacetList,
+        LinkName: js.UndefOr[LinkName] = js.undefined,
+        ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
+        ParentReference: js.UndefOr[ObjectReference] = js.undefined
+    ): CreateObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "SchemaFacets" -> SchemaFacets.asInstanceOf[js.Any],
@@ -2423,10 +2686,14 @@ package clouddirectory {
   }
 
   object CreateObjectResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): CreateObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): CreateObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateObjectResponse]
     }
@@ -2438,9 +2705,12 @@ package clouddirectory {
   }
 
   object CreateSchemaRequest {
-    def apply(Name: SchemaName): CreateSchemaRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: SchemaName
+    ): CreateSchemaRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSchemaRequest]
     }
@@ -2452,10 +2722,14 @@ package clouddirectory {
   }
 
   object CreateSchemaResponse {
-    def apply(SchemaArn: js.UndefOr[Arn] = js.undefined): CreateSchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SchemaArn" -> SchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SchemaArn: js.UndefOr[Arn] = js.undefined
+    ): CreateSchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SchemaArn" -> SchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSchemaResponse]
     }
@@ -2468,7 +2742,10 @@ package clouddirectory {
   }
 
   object CreateTypedLinkFacetRequest {
-    def apply(Facet: TypedLinkFacet, SchemaArn: Arn): CreateTypedLinkFacetRequest = {
+    def apply(
+        Facet: TypedLinkFacet,
+        SchemaArn: Arn
+    ): CreateTypedLinkFacetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Facet"     -> Facet.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
@@ -2482,8 +2759,10 @@ package clouddirectory {
   trait CreateTypedLinkFacetResponse extends js.Object {}
 
   object CreateTypedLinkFacetResponse {
-    def apply(): CreateTypedLinkFacetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateTypedLinkFacetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTypedLinkFacetResponse]
     }
@@ -2495,9 +2774,12 @@ package clouddirectory {
   }
 
   object DeleteDirectoryRequest {
-    def apply(DirectoryArn: Arn): DeleteDirectoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: Arn
+    ): DeleteDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectoryRequest]
     }
@@ -2509,9 +2791,12 @@ package clouddirectory {
   }
 
   object DeleteDirectoryResponse {
-    def apply(DirectoryArn: Arn): DeleteDirectoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: Arn
+    ): DeleteDirectoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectoryResponse]
     }
@@ -2524,10 +2809,14 @@ package clouddirectory {
   }
 
   object DeleteFacetRequest {
-    def apply(Name: FacetName, SchemaArn: Arn): DeleteFacetRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: FacetName,
+        SchemaArn: Arn
+    ): DeleteFacetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFacetRequest]
     }
@@ -2537,8 +2826,10 @@ package clouddirectory {
   trait DeleteFacetResponse extends js.Object {}
 
   object DeleteFacetResponse {
-    def apply(): DeleteFacetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteFacetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFacetResponse]
     }
@@ -2551,7 +2842,10 @@ package clouddirectory {
   }
 
   object DeleteObjectRequest {
-    def apply(DirectoryArn: Arn, ObjectReference: ObjectReference): DeleteObjectRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference
+    ): DeleteObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
@@ -2565,8 +2859,10 @@ package clouddirectory {
   trait DeleteObjectResponse extends js.Object {}
 
   object DeleteObjectResponse {
-    def apply(): DeleteObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteObjectResponse]
     }
@@ -2578,9 +2874,12 @@ package clouddirectory {
   }
 
   object DeleteSchemaRequest {
-    def apply(SchemaArn: Arn): DeleteSchemaRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SchemaArn: Arn
+    ): DeleteSchemaRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSchemaRequest]
     }
@@ -2592,10 +2891,14 @@ package clouddirectory {
   }
 
   object DeleteSchemaResponse {
-    def apply(SchemaArn: js.UndefOr[Arn] = js.undefined): DeleteSchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SchemaArn" -> SchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SchemaArn: js.UndefOr[Arn] = js.undefined
+    ): DeleteSchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SchemaArn" -> SchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSchemaResponse]
     }
@@ -2608,10 +2911,14 @@ package clouddirectory {
   }
 
   object DeleteTypedLinkFacetRequest {
-    def apply(Name: TypedLinkName, SchemaArn: Arn): DeleteTypedLinkFacetRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: TypedLinkName,
+        SchemaArn: Arn
+    ): DeleteTypedLinkFacetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTypedLinkFacetRequest]
     }
@@ -2621,8 +2928,10 @@ package clouddirectory {
   trait DeleteTypedLinkFacetResponse extends js.Object {}
 
   object DeleteTypedLinkFacetResponse {
-    def apply(): DeleteTypedLinkFacetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteTypedLinkFacetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTypedLinkFacetResponse]
     }
@@ -2636,9 +2945,11 @@ package clouddirectory {
   }
 
   object DetachFromIndexRequest {
-    def apply(DirectoryArn: Arn,
-              IndexReference: ObjectReference,
-              TargetReference: ObjectReference): DetachFromIndexRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        IndexReference: ObjectReference,
+        TargetReference: ObjectReference
+    ): DetachFromIndexRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
@@ -2655,10 +2966,14 @@ package clouddirectory {
   }
 
   object DetachFromIndexResponse {
-    def apply(DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): DetachFromIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetachedObjectIdentifier" -> DetachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): DetachFromIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetachedObjectIdentifier" -> DetachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachFromIndexResponse]
     }
@@ -2672,7 +2987,11 @@ package clouddirectory {
   }
 
   object DetachObjectRequest {
-    def apply(DirectoryArn: Arn, LinkName: LinkName, ParentReference: ObjectReference): DetachObjectRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        LinkName: LinkName,
+        ParentReference: ObjectReference
+    ): DetachObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "LinkName"        -> LinkName.asInstanceOf[js.Any],
@@ -2689,10 +3008,14 @@ package clouddirectory {
   }
 
   object DetachObjectResponse {
-    def apply(DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): DetachObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetachedObjectIdentifier" -> DetachedObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): DetachObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetachedObjectIdentifier" -> DetachedObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachObjectResponse]
     }
@@ -2706,9 +3029,11 @@ package clouddirectory {
   }
 
   object DetachPolicyRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              PolicyReference: ObjectReference): DetachPolicyRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        PolicyReference: ObjectReference
+    ): DetachPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -2723,8 +3048,10 @@ package clouddirectory {
   trait DetachPolicyResponse extends js.Object {}
 
   object DetachPolicyResponse {
-    def apply(): DetachPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DetachPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachPolicyResponse]
     }
@@ -2737,7 +3064,10 @@ package clouddirectory {
   }
 
   object DetachTypedLinkRequest {
-    def apply(DirectoryArn: Arn, TypedLinkSpecifier: TypedLinkSpecifier): DetachTypedLinkRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        TypedLinkSpecifier: TypedLinkSpecifier
+    ): DetachTypedLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
@@ -2759,10 +3089,12 @@ package clouddirectory {
   }
 
   object Directory {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              DirectoryArn: js.UndefOr[DirectoryArn] = js.undefined,
-              Name: js.UndefOr[DirectoryName] = js.undefined,
-              State: js.UndefOr[DirectoryState] = js.undefined): Directory = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        DirectoryArn: js.UndefOr[DirectoryArn] = js.undefined,
+        Name: js.UndefOr[DirectoryName] = js.undefined,
+        State: js.UndefOr[DirectoryState] = js.undefined
+    ): Directory = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2796,9 +3128,12 @@ package clouddirectory {
   }
 
   object DisableDirectoryRequest {
-    def apply(DirectoryArn: Arn): DisableDirectoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: Arn
+    ): DisableDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableDirectoryRequest]
     }
@@ -2810,9 +3145,12 @@ package clouddirectory {
   }
 
   object DisableDirectoryResponse {
-    def apply(DirectoryArn: Arn): DisableDirectoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: Arn
+    ): DisableDirectoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableDirectoryResponse]
     }
@@ -2824,9 +3162,12 @@ package clouddirectory {
   }
 
   object EnableDirectoryRequest {
-    def apply(DirectoryArn: Arn): EnableDirectoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: Arn
+    ): EnableDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableDirectoryRequest]
     }
@@ -2838,9 +3179,12 @@ package clouddirectory {
   }
 
   object EnableDirectoryResponse {
-    def apply(DirectoryArn: Arn): EnableDirectoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: Arn
+    ): EnableDirectoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableDirectoryResponse]
     }
@@ -2857,9 +3201,11 @@ package clouddirectory {
   }
 
   object Facet {
-    def apply(FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
-              Name: js.UndefOr[FacetName] = js.undefined,
-              ObjectType: js.UndefOr[ObjectType] = js.undefined): Facet = {
+    def apply(
+        FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
+        Name: js.UndefOr[FacetName] = js.undefined,
+        ObjectType: js.UndefOr[ObjectType] = js.undefined
+    ): Facet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FacetStyle" -> FacetStyle.map { x =>
           x.asInstanceOf[js.Any]
@@ -2888,10 +3234,12 @@ package clouddirectory {
   }
 
   object FacetAttribute {
-    def apply(Name: AttributeName,
-              AttributeDefinition: js.UndefOr[FacetAttributeDefinition] = js.undefined,
-              AttributeReference: js.UndefOr[FacetAttributeReference] = js.undefined,
-              RequiredBehavior: js.UndefOr[RequiredAttributeBehavior] = js.undefined): FacetAttribute = {
+    def apply(
+        Name: AttributeName,
+        AttributeDefinition: js.UndefOr[FacetAttributeDefinition] = js.undefined,
+        AttributeReference: js.UndefOr[FacetAttributeReference] = js.undefined,
+        RequiredBehavior: js.UndefOr[RequiredAttributeBehavior] = js.undefined
+    ): FacetAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "AttributeDefinition" -> AttributeDefinition.map { x =>
@@ -2921,10 +3269,12 @@ package clouddirectory {
   }
 
   object FacetAttributeDefinition {
-    def apply(Type: FacetAttributeType,
-              DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-              IsImmutable: js.UndefOr[Bool] = js.undefined,
-              Rules: js.UndefOr[RuleMap] = js.undefined): FacetAttributeDefinition = {
+    def apply(
+        Type: FacetAttributeType,
+        DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
+        IsImmutable: js.UndefOr[Bool] = js.undefined,
+        Rules: js.UndefOr[RuleMap] = js.undefined
+    ): FacetAttributeDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Type" -> Type.asInstanceOf[js.Any],
         "DefaultValue" -> DefaultValue.map { x =>
@@ -2952,7 +3302,10 @@ package clouddirectory {
   }
 
   object FacetAttributeReference {
-    def apply(TargetAttributeName: AttributeName, TargetFacetName: FacetName): FacetAttributeReference = {
+    def apply(
+        TargetAttributeName: AttributeName,
+        TargetFacetName: FacetName
+    ): FacetAttributeReference = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetAttributeName" -> TargetAttributeName.asInstanceOf[js.Any],
         "TargetFacetName"     -> TargetFacetName.asInstanceOf[js.Any]
@@ -2983,13 +3336,18 @@ package clouddirectory {
   }
 
   object FacetAttributeUpdate {
-    def apply(Action: js.UndefOr[UpdateActionType] = js.undefined,
-              Attribute: js.UndefOr[FacetAttribute] = js.undefined): FacetAttributeUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)]("Action" -> Action.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Attribute" -> Attribute.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Action: js.UndefOr[UpdateActionType] = js.undefined,
+        Attribute: js.UndefOr[FacetAttribute] = js.undefined
+    ): FacetAttributeUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Attribute" -> Attribute.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FacetAttributeUpdate]
     }
@@ -3008,9 +3366,12 @@ package clouddirectory {
   }
 
   object GetAppliedSchemaVersionRequest {
-    def apply(SchemaArn: Arn): GetAppliedSchemaVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SchemaArn: Arn
+    ): GetAppliedSchemaVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppliedSchemaVersionRequest]
     }
@@ -3022,10 +3383,14 @@ package clouddirectory {
   }
 
   object GetAppliedSchemaVersionResponse {
-    def apply(AppliedSchemaArn: js.UndefOr[Arn] = js.undefined): GetAppliedSchemaVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AppliedSchemaArn" -> AppliedSchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AppliedSchemaArn: js.UndefOr[Arn] = js.undefined
+    ): GetAppliedSchemaVersionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AppliedSchemaArn" -> AppliedSchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppliedSchemaVersionResponse]
     }
@@ -3037,9 +3402,12 @@ package clouddirectory {
   }
 
   object GetDirectoryRequest {
-    def apply(DirectoryArn: DirectoryArn): GetDirectoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: DirectoryArn
+    ): GetDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDirectoryRequest]
     }
@@ -3051,9 +3419,12 @@ package clouddirectory {
   }
 
   object GetDirectoryResponse {
-    def apply(Directory: Directory): GetDirectoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Directory" -> Directory.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Directory: Directory
+    ): GetDirectoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Directory" -> Directory.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDirectoryResponse]
     }
@@ -3066,10 +3437,14 @@ package clouddirectory {
   }
 
   object GetFacetRequest {
-    def apply(Name: FacetName, SchemaArn: Arn): GetFacetRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: FacetName,
+        SchemaArn: Arn
+    ): GetFacetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFacetRequest]
     }
@@ -3081,10 +3456,14 @@ package clouddirectory {
   }
 
   object GetFacetResponse {
-    def apply(Facet: js.UndefOr[Facet] = js.undefined): GetFacetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Facet" -> Facet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Facet: js.UndefOr[Facet] = js.undefined
+    ): GetFacetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Facet" -> Facet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFacetResponse]
     }
@@ -3099,10 +3478,12 @@ package clouddirectory {
   }
 
   object GetLinkAttributesRequest {
-    def apply(AttributeNames: AttributeNameList,
-              DirectoryArn: Arn,
-              TypedLinkSpecifier: TypedLinkSpecifier,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined): GetLinkAttributesRequest = {
+    def apply(
+        AttributeNames: AttributeNameList,
+        DirectoryArn: Arn,
+        TypedLinkSpecifier: TypedLinkSpecifier,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
+    ): GetLinkAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
@@ -3122,10 +3503,14 @@ package clouddirectory {
   }
 
   object GetLinkAttributesResponse {
-    def apply(Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined): GetLinkAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
+    ): GetLinkAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLinkAttributesResponse]
     }
@@ -3141,11 +3526,13 @@ package clouddirectory {
   }
 
   object GetObjectAttributesRequest {
-    def apply(AttributeNames: AttributeNameList,
-              DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              SchemaFacet: SchemaFacet,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined): GetObjectAttributesRequest = {
+    def apply(
+        AttributeNames: AttributeNameList,
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        SchemaFacet: SchemaFacet,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
+    ): GetObjectAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
@@ -3166,10 +3553,14 @@ package clouddirectory {
   }
 
   object GetObjectAttributesResponse {
-    def apply(Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined): GetObjectAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
+    ): GetObjectAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectAttributesResponse]
     }
@@ -3183,9 +3574,11 @@ package clouddirectory {
   }
 
   object GetObjectInformationRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined): GetObjectInformationRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
+    ): GetObjectInformationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -3205,13 +3598,18 @@ package clouddirectory {
   }
 
   object GetObjectInformationResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
-              SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined): GetObjectInformationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaFacets" -> SchemaFacets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
+        SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
+    ): GetObjectInformationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaFacets" -> SchemaFacets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetObjectInformationResponse]
     }
@@ -3223,9 +3621,12 @@ package clouddirectory {
   }
 
   object GetSchemaAsJsonRequest {
-    def apply(SchemaArn: Arn): GetSchemaAsJsonRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SchemaArn: Arn
+    ): GetSchemaAsJsonRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSchemaAsJsonRequest]
     }
@@ -3238,13 +3639,18 @@ package clouddirectory {
   }
 
   object GetSchemaAsJsonResponse {
-    def apply(Document: js.UndefOr[SchemaJsonDocument] = js.undefined,
-              Name: js.UndefOr[SchemaName] = js.undefined): GetSchemaAsJsonResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Document" -> Document.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Document: js.UndefOr[SchemaJsonDocument] = js.undefined,
+        Name: js.UndefOr[SchemaName] = js.undefined
+    ): GetSchemaAsJsonResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Document" -> Document.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSchemaAsJsonResponse]
     }
@@ -3257,10 +3663,14 @@ package clouddirectory {
   }
 
   object GetTypedLinkFacetInformationRequest {
-    def apply(Name: TypedLinkName, SchemaArn: Arn): GetTypedLinkFacetInformationRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: TypedLinkName,
+        SchemaArn: Arn
+    ): GetTypedLinkFacetInformationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTypedLinkFacetInformationRequest]
     }
@@ -3275,9 +3685,11 @@ package clouddirectory {
     def apply(
         IdentityAttributeOrder: js.UndefOr[AttributeNameList] = js.undefined
     ): GetTypedLinkFacetInformationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityAttributeOrder" -> IdentityAttributeOrder.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityAttributeOrder" -> IdentityAttributeOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTypedLinkFacetInformationResponse]
     }
@@ -3293,20 +3705,25 @@ package clouddirectory {
   }
 
   object IndexAttachment {
-    def apply(IndexedAttributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-              ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): IndexAttachment = {
-      val _fields = IndexedSeq[(String, js.Any)]("IndexedAttributes" -> IndexedAttributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IndexedAttributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): IndexAttachment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IndexedAttributes" -> IndexedAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IndexAttachment]
     }
   }
 
   /**
-    * The action to take on a typed link attribute value. Updates are only supported for attributes which don�ft contribute to link identity.
+    * The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.
     */
   @js.native
   trait LinkAttributeAction extends js.Object {
@@ -3315,13 +3732,18 @@ package clouddirectory {
   }
 
   object LinkAttributeAction {
-    def apply(AttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
-              AttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined): LinkAttributeAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeActionType" -> AttributeActionType.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AttributeUpdateValue" -> AttributeUpdateValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
+        AttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
+    ): LinkAttributeAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeActionType" -> AttributeActionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttributeUpdateValue" -> AttributeUpdateValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LinkAttributeAction]
     }
@@ -3337,13 +3759,18 @@ package clouddirectory {
   }
 
   object LinkAttributeUpdate {
-    def apply(AttributeAction: js.UndefOr[LinkAttributeAction] = js.undefined,
-              AttributeKey: js.UndefOr[AttributeKey] = js.undefined): LinkAttributeUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeAction" -> AttributeAction.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AttributeKey" -> AttributeKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeAction: js.UndefOr[LinkAttributeAction] = js.undefined,
+        AttributeKey: js.UndefOr[AttributeKey] = js.undefined
+    ): LinkAttributeUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeAction" -> AttributeAction.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttributeKey" -> AttributeKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LinkAttributeUpdate]
     }
@@ -3358,10 +3785,12 @@ package clouddirectory {
   }
 
   object ListAppliedSchemaArnsRequest {
-    def apply(DirectoryArn: Arn,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaArn: js.UndefOr[Arn] = js.undefined): ListAppliedSchemaArnsRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaArn: js.UndefOr[Arn] = js.undefined
+    ): ListAppliedSchemaArnsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -3386,13 +3815,18 @@ package clouddirectory {
   }
 
   object ListAppliedSchemaArnsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaArns: js.UndefOr[Arns] = js.undefined): ListAppliedSchemaArnsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaArns" -> SchemaArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaArns: js.UndefOr[Arns] = js.undefined
+    ): ListAppliedSchemaArnsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaArns" -> SchemaArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAppliedSchemaArnsResponse]
     }
@@ -3408,11 +3842,13 @@ package clouddirectory {
   }
 
   object ListAttachedIndicesRequest {
-    def apply(DirectoryArn: Arn,
-              TargetReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListAttachedIndicesRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        TargetReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAttachedIndicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any],
@@ -3438,13 +3874,18 @@ package clouddirectory {
   }
 
   object ListAttachedIndicesResponse {
-    def apply(IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListAttachedIndicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IndexAttachments" -> IndexAttachments.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAttachedIndicesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IndexAttachments" -> IndexAttachments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttachedIndicesResponse]
     }
@@ -3457,13 +3898,18 @@ package clouddirectory {
   }
 
   object ListDevelopmentSchemaArnsRequest {
-    def apply(MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDevelopmentSchemaArnsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDevelopmentSchemaArnsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevelopmentSchemaArnsRequest]
     }
@@ -3476,13 +3922,18 @@ package clouddirectory {
   }
 
   object ListDevelopmentSchemaArnsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaArns: js.UndefOr[Arns] = js.undefined): ListDevelopmentSchemaArnsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaArns" -> SchemaArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaArns: js.UndefOr[Arns] = js.undefined
+    ): ListDevelopmentSchemaArnsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaArns" -> SchemaArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevelopmentSchemaArnsResponse]
     }
@@ -3496,9 +3947,11 @@ package clouddirectory {
   }
 
   object ListDirectoriesRequest {
-    def apply(MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              state: js.UndefOr[DirectoryState] = js.undefined): ListDirectoriesRequest = {
+    def apply(
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        state: js.UndefOr[DirectoryState] = js.undefined
+    ): ListDirectoriesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -3522,12 +3975,16 @@ package clouddirectory {
   }
 
   object ListDirectoriesResponse {
-    def apply(Directories: DirectoryList, NextToken: js.UndefOr[NextToken] = js.undefined): ListDirectoriesResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Directories" -> Directories.asInstanceOf[js.Any], "NextToken" -> NextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Directories: DirectoryList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDirectoriesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Directories" -> Directories.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDirectoriesResponse]
     }
@@ -3542,10 +3999,12 @@ package clouddirectory {
   }
 
   object ListFacetAttributesRequest {
-    def apply(Name: FacetName,
-              SchemaArn: Arn,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListFacetAttributesRequest = {
+    def apply(
+        Name: FacetName,
+        SchemaArn: Arn,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFacetAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
@@ -3568,13 +4027,18 @@ package clouddirectory {
   }
 
   object ListFacetAttributesResponse {
-    def apply(Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListFacetAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFacetAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFacetAttributesResponse]
     }
@@ -3588,9 +4052,11 @@ package clouddirectory {
   }
 
   object ListFacetNamesRequest {
-    def apply(SchemaArn: Arn,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListFacetNamesRequest = {
+    def apply(
+        SchemaArn: Arn,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFacetNamesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -3612,13 +4078,18 @@ package clouddirectory {
   }
 
   object ListFacetNamesResponse {
-    def apply(FacetNames: js.UndefOr[FacetNameList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListFacetNamesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FacetNames" -> FacetNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FacetNames: js.UndefOr[FacetNameList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFacetNamesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FacetNames" -> FacetNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFacetNamesResponse]
     }
@@ -3636,13 +4107,15 @@ package clouddirectory {
   }
 
   object ListIncomingTypedLinksRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-              FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListIncomingTypedLinksRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
+        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIncomingTypedLinksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -3674,13 +4147,18 @@ package clouddirectory {
   }
 
   object ListIncomingTypedLinksResponse {
-    def apply(LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListIncomingTypedLinksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("LinkSpecifiers" -> LinkSpecifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIncomingTypedLinksResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LinkSpecifiers" -> LinkSpecifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIncomingTypedLinksResponse]
     }
@@ -3697,12 +4175,14 @@ package clouddirectory {
   }
 
   object ListIndexRequest {
-    def apply(DirectoryArn: Arn,
-              IndexReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined): ListIndexRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        IndexReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined
+    ): ListIndexRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"   -> DirectoryArn.asInstanceOf[js.Any],
         "IndexReference" -> IndexReference.asInstanceOf[js.Any],
@@ -3731,13 +4211,18 @@ package clouddirectory {
   }
 
   object ListIndexResponse {
-    def apply(IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListIndexResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IndexAttachments" -> IndexAttachments.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIndexResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IndexAttachments" -> IndexAttachments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIndexResponse]
     }
@@ -3751,9 +4236,11 @@ package clouddirectory {
   }
 
   object ListManagedSchemaArnsRequest {
-    def apply(MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaArn: js.UndefOr[Arn] = js.undefined): ListManagedSchemaArnsRequest = {
+    def apply(
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaArn: js.UndefOr[Arn] = js.undefined
+    ): ListManagedSchemaArnsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -3777,13 +4264,18 @@ package clouddirectory {
   }
 
   object ListManagedSchemaArnsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaArns: js.UndefOr[Arns] = js.undefined): ListManagedSchemaArnsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaArns" -> SchemaArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaArns: js.UndefOr[Arns] = js.undefined
+    ): ListManagedSchemaArnsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaArns" -> SchemaArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListManagedSchemaArnsResponse]
     }
@@ -3800,12 +4292,14 @@ package clouddirectory {
   }
 
   object ListObjectAttributesRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              FacetFilter: js.UndefOr[SchemaFacet] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectAttributesRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        FacetFilter: js.UndefOr[SchemaFacet] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -3834,13 +4328,18 @@ package clouddirectory {
   }
 
   object ListObjectAttributesResponse {
-    def apply(Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectAttributesResponse]
     }
@@ -3856,11 +4355,13 @@ package clouddirectory {
   }
 
   object ListObjectChildrenRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectChildrenRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectChildrenRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -3886,13 +4387,18 @@ package clouddirectory {
   }
 
   object ListObjectChildrenResponse {
-    def apply(Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectChildrenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Children" -> Children.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectChildrenResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Children" -> Children.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectChildrenResponse]
     }
@@ -3907,10 +4413,12 @@ package clouddirectory {
   }
 
   object ListObjectParentPathsRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectParentPathsRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectParentPathsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -3937,11 +4445,14 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
     ): ListObjectParentPathsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PathToObjectIdentifiersList" -> PathToObjectIdentifiersList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathToObjectIdentifiersList" -> PathToObjectIdentifiersList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectParentPathsResponse]
     }
@@ -3958,12 +4469,14 @@ package clouddirectory {
   }
 
   object ListObjectParentsRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              IncludeAllLinksToEachParent: js.UndefOr[Bool] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectParentsRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        IncludeAllLinksToEachParent: js.UndefOr[Bool] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectParentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -3993,9 +4506,11 @@ package clouddirectory {
   }
 
   object ListObjectParentsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined,
-              Parents: js.UndefOr[ObjectIdentifierToLinkNameMap] = js.undefined): ListObjectParentsResponse = {
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined,
+        Parents: js.UndefOr[ObjectIdentifierToLinkNameMap] = js.undefined
+    ): ListObjectParentsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -4022,11 +4537,13 @@ package clouddirectory {
   }
 
   object ListObjectPoliciesRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectPoliciesRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -4052,13 +4569,18 @@ package clouddirectory {
   }
 
   object ListObjectPoliciesResponse {
-    def apply(AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListObjectPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttachedPolicyIds" -> AttachedPolicyIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObjectPoliciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttachedPolicyIds" -> AttachedPolicyIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListObjectPoliciesResponse]
     }
@@ -4076,13 +4598,15 @@ package clouddirectory {
   }
 
   object ListOutgoingTypedLinksRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
-              FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListOutgoingTypedLinksRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
+        FilterTypedLink: js.UndefOr[TypedLinkSchemaAndFacetName] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListOutgoingTypedLinksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -4118,11 +4642,14 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
     ): ListOutgoingTypedLinksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TypedLinkSpecifiers" -> TypedLinkSpecifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TypedLinkSpecifiers" -> TypedLinkSpecifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOutgoingTypedLinksResponse]
     }
@@ -4138,11 +4665,13 @@ package clouddirectory {
   }
 
   object ListPolicyAttachmentsRequest {
-    def apply(DirectoryArn: Arn,
-              PolicyReference: ObjectReference,
-              ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListPolicyAttachmentsRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        PolicyReference: ObjectReference,
+        ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPolicyAttachmentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any],
@@ -4168,13 +4697,18 @@ package clouddirectory {
   }
 
   object ListPolicyAttachmentsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined): ListPolicyAttachmentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ObjectIdentifiers" -> ObjectIdentifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
+    ): ListPolicyAttachmentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ObjectIdentifiers" -> ObjectIdentifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyAttachmentsResponse]
     }
@@ -4188,9 +4722,11 @@ package clouddirectory {
   }
 
   object ListPublishedSchemaArnsRequest {
-    def apply(MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaArn: js.UndefOr[Arn] = js.undefined): ListPublishedSchemaArnsRequest = {
+    def apply(
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaArn: js.UndefOr[Arn] = js.undefined
+    ): ListPublishedSchemaArnsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -4214,13 +4750,18 @@ package clouddirectory {
   }
 
   object ListPublishedSchemaArnsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaArns: js.UndefOr[Arns] = js.undefined): ListPublishedSchemaArnsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaArns" -> SchemaArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaArns: js.UndefOr[Arns] = js.undefined
+    ): ListPublishedSchemaArnsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaArns" -> SchemaArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPublishedSchemaArnsResponse]
     }
@@ -4234,9 +4775,11 @@ package clouddirectory {
   }
 
   object ListTagsForResourceRequest {
-    def apply(ResourceArn: Arn,
-              MaxResults: js.UndefOr[TagsNumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
+    def apply(
+        ResourceArn: Arn,
+        MaxResults: js.UndefOr[TagsNumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -4258,13 +4801,18 @@ package clouddirectory {
   }
 
   object ListTagsForResourceResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -4279,10 +4827,12 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetAttributesRequest {
-    def apply(Name: TypedLinkName,
-              SchemaArn: Arn,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTypedLinkFacetAttributesRequest = {
+    def apply(
+        Name: TypedLinkName,
+        SchemaArn: Arn,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTypedLinkFacetAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
@@ -4305,13 +4855,18 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetAttributesResponse {
-    def apply(Attributes: js.UndefOr[TypedLinkAttributeDefinitionList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTypedLinkFacetAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[TypedLinkAttributeDefinitionList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTypedLinkFacetAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTypedLinkFacetAttributesResponse]
     }
@@ -4325,9 +4880,11 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetNamesRequest {
-    def apply(SchemaArn: Arn,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTypedLinkFacetNamesRequest = {
+    def apply(
+        SchemaArn: Arn,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTypedLinkFacetNamesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -4349,13 +4906,18 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetNamesResponse {
-    def apply(FacetNames: js.UndefOr[TypedLinkNameList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTypedLinkFacetNamesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FacetNames" -> FacetNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FacetNames: js.UndefOr[TypedLinkNameList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTypedLinkFacetNamesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FacetNames" -> FacetNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTypedLinkFacetNamesResponse]
     }
@@ -4370,10 +4932,12 @@ package clouddirectory {
   }
 
   object LookupPolicyRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              MaxResults: js.UndefOr[NumberResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): LookupPolicyRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        MaxResults: js.UndefOr[NumberResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): LookupPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -4396,13 +4960,18 @@ package clouddirectory {
   }
 
   object LookupPolicyResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined): LookupPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PolicyToPathList" -> PolicyToPathList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
+    ): LookupPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PolicyToPathList" -> PolicyToPathList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LookupPolicyResponse]
     }
@@ -4418,8 +4987,10 @@ package clouddirectory {
   }
 
   object ObjectAttributeAction {
-    def apply(ObjectAttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
-              ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined): ObjectAttributeAction = {
+    def apply(
+        ObjectAttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
+        ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
+    ): ObjectAttributeAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectAttributeActionType" -> ObjectAttributeActionType.map { x =>
           x.asInstanceOf[js.Any]
@@ -4443,13 +5014,18 @@ package clouddirectory {
   }
 
   object ObjectAttributeRange {
-    def apply(AttributeKey: js.UndefOr[AttributeKey] = js.undefined,
-              Range: js.UndefOr[TypedAttributeValueRange] = js.undefined): ObjectAttributeRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeKey" -> AttributeKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Range" -> Range.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeKey: js.UndefOr[AttributeKey] = js.undefined,
+        Range: js.UndefOr[TypedAttributeValueRange] = js.undefined
+    ): ObjectAttributeRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeKey" -> AttributeKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Range" -> Range.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectAttributeRange]
     }
@@ -4465,13 +5041,18 @@ package clouddirectory {
   }
 
   object ObjectAttributeUpdate {
-    def apply(ObjectAttributeAction: js.UndefOr[ObjectAttributeAction] = js.undefined,
-              ObjectAttributeKey: js.UndefOr[AttributeKey] = js.undefined): ObjectAttributeUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectAttributeAction" -> ObjectAttributeAction.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ObjectAttributeKey" -> ObjectAttributeKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectAttributeAction: js.UndefOr[ObjectAttributeAction] = js.undefined,
+        ObjectAttributeKey: js.UndefOr[AttributeKey] = js.undefined
+    ): ObjectAttributeUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectAttributeAction" -> ObjectAttributeAction.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ObjectAttributeKey" -> ObjectAttributeKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectAttributeUpdate]
     }
@@ -4487,13 +5068,18 @@ package clouddirectory {
   }
 
   object ObjectIdentifierAndLinkNameTuple {
-    def apply(LinkName: js.UndefOr[LinkName] = js.undefined,
-              ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): ObjectIdentifierAndLinkNameTuple = {
-      val _fields = IndexedSeq[(String, js.Any)]("LinkName" -> LinkName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LinkName: js.UndefOr[LinkName] = js.undefined,
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): ObjectIdentifierAndLinkNameTuple = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LinkName" -> LinkName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectIdentifierAndLinkNameTuple]
     }
@@ -4508,10 +5094,14 @@ package clouddirectory {
   }
 
   object ObjectReference {
-    def apply(Selector: js.UndefOr[SelectorObjectReference] = js.undefined): ObjectReference = {
-      val _fields = IndexedSeq[(String, js.Any)]("Selector" -> Selector.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Selector: js.UndefOr[SelectorObjectReference] = js.undefined
+    ): ObjectReference = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Selector" -> Selector.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectReference]
     }
@@ -4536,13 +5126,18 @@ package clouddirectory {
   }
 
   object PathToObjectIdentifiers {
-    def apply(ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined,
-              Path: js.UndefOr[PathString] = js.undefined): PathToObjectIdentifiers = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifiers" -> ObjectIdentifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Path" -> Path.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined,
+        Path: js.UndefOr[PathString] = js.undefined
+    ): PathToObjectIdentifiers = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifiers" -> ObjectIdentifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Path" -> Path.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PathToObjectIdentifiers]
     }
@@ -4559,9 +5154,11 @@ package clouddirectory {
   }
 
   object PolicyAttachment {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
-              PolicyId: js.UndefOr[ObjectIdentifier] = js.undefined,
-              PolicyType: js.UndefOr[PolicyType] = js.undefined): PolicyAttachment = {
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
+        PolicyId: js.UndefOr[ObjectIdentifier] = js.undefined,
+        PolicyType: js.UndefOr[PolicyType] = js.undefined
+    ): PolicyAttachment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ObjectIdentifier" -> ObjectIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -4588,13 +5185,18 @@ package clouddirectory {
   }
 
   object PolicyToPath {
-    def apply(Path: js.UndefOr[PathString] = js.undefined,
-              Policies: js.UndefOr[PolicyAttachmentList] = js.undefined): PolicyToPath = {
-      val _fields = IndexedSeq[(String, js.Any)]("Path" -> Path.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Policies" -> Policies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Path: js.UndefOr[PathString] = js.undefined,
+        Policies: js.UndefOr[PolicyAttachmentList] = js.undefined
+    ): PolicyToPath = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Path" -> Path.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Policies" -> Policies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyToPath]
     }
@@ -4609,10 +5211,12 @@ package clouddirectory {
   }
 
   object PublishSchemaRequest {
-    def apply(DevelopmentSchemaArn: Arn,
-              Version: Version,
-              MinorVersion: js.UndefOr[Version] = js.undefined,
-              Name: js.UndefOr[SchemaName] = js.undefined): PublishSchemaRequest = {
+    def apply(
+        DevelopmentSchemaArn: Arn,
+        Version: Version,
+        MinorVersion: js.UndefOr[Version] = js.undefined,
+        Name: js.UndefOr[SchemaName] = js.undefined
+    ): PublishSchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
         "Version"              -> Version.asInstanceOf[js.Any],
@@ -4634,10 +5238,14 @@ package clouddirectory {
   }
 
   object PublishSchemaResponse {
-    def apply(PublishedSchemaArn: js.UndefOr[Arn] = js.undefined): PublishSchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("PublishedSchemaArn" -> PublishedSchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PublishedSchemaArn: js.UndefOr[Arn] = js.undefined
+    ): PublishSchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PublishedSchemaArn" -> PublishedSchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublishSchemaResponse]
     }
@@ -4650,7 +5258,10 @@ package clouddirectory {
   }
 
   object PutSchemaFromJsonRequest {
-    def apply(Document: SchemaJsonDocument, SchemaArn: Arn): PutSchemaFromJsonRequest = {
+    def apply(
+        Document: SchemaJsonDocument,
+        SchemaArn: Arn
+    ): PutSchemaFromJsonRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Document"  -> Document.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
@@ -4666,10 +5277,14 @@ package clouddirectory {
   }
 
   object PutSchemaFromJsonResponse {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined): PutSchemaFromJsonResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined
+    ): PutSchemaFromJsonResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSchemaFromJsonResponse]
     }
@@ -4693,9 +5308,11 @@ package clouddirectory {
   }
 
   object RemoveFacetFromObjectRequest {
-    def apply(DirectoryArn: Arn,
-              ObjectReference: ObjectReference,
-              SchemaFacet: SchemaFacet): RemoveFacetFromObjectRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference,
+        SchemaFacet: SchemaFacet
+    ): RemoveFacetFromObjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
@@ -4710,8 +5327,10 @@ package clouddirectory {
   trait RemoveFacetFromObjectResponse extends js.Object {}
 
   object RemoveFacetFromObjectResponse {
-    def apply(): RemoveFacetFromObjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveFacetFromObjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFacetFromObjectResponse]
     }
@@ -4734,13 +5353,18 @@ package clouddirectory {
   }
 
   object Rule {
-    def apply(Parameters: js.UndefOr[RuleParameterMap] = js.undefined,
-              Type: js.UndefOr[RuleType] = js.undefined): Rule = {
-      val _fields = IndexedSeq[(String, js.Any)]("Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Parameters: js.UndefOr[RuleParameterMap] = js.undefined,
+        Type: js.UndefOr[RuleType] = js.undefined
+    ): Rule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Rule]
     }
@@ -4765,13 +5389,18 @@ package clouddirectory {
   }
 
   object SchemaFacet {
-    def apply(FacetName: js.UndefOr[FacetName] = js.undefined,
-              SchemaArn: js.UndefOr[Arn] = js.undefined): SchemaFacet = {
-      val _fields = IndexedSeq[(String, js.Any)]("FacetName" -> FacetName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaArn" -> SchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FacetName: js.UndefOr[FacetName] = js.undefined,
+        SchemaArn: js.UndefOr[Arn] = js.undefined
+    ): SchemaFacet = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FacetName" -> FacetName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaArn" -> SchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SchemaFacet]
     }
@@ -4787,12 +5416,18 @@ package clouddirectory {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[TagKey] = js.undefined, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -4805,7 +5440,10 @@ package clouddirectory {
   }
 
   object TagResourceRequest {
-    def apply(ResourceArn: Arn, Tags: TagList): TagResourceRequest = {
+    def apply(
+        ResourceArn: Arn,
+        Tags: TagList
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
@@ -4819,8 +5457,10 @@ package clouddirectory {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -4839,11 +5479,13 @@ package clouddirectory {
   }
 
   object TypedAttributeValue {
-    def apply(BinaryValue: js.UndefOr[BinaryAttributeValue] = js.undefined,
-              BooleanValue: js.UndefOr[BooleanAttributeValue] = js.undefined,
-              DatetimeValue: js.UndefOr[DatetimeAttributeValue] = js.undefined,
-              NumberValue: js.UndefOr[NumberAttributeValue] = js.undefined,
-              StringValue: js.UndefOr[StringAttributeValue] = js.undefined): TypedAttributeValue = {
+    def apply(
+        BinaryValue: js.UndefOr[BinaryAttributeValue] = js.undefined,
+        BooleanValue: js.UndefOr[BooleanAttributeValue] = js.undefined,
+        DatetimeValue: js.UndefOr[DatetimeAttributeValue] = js.undefined,
+        NumberValue: js.UndefOr[NumberAttributeValue] = js.undefined,
+        StringValue: js.UndefOr[StringAttributeValue] = js.undefined
+    ): TypedAttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BinaryValue" -> BinaryValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -4878,10 +5520,12 @@ package clouddirectory {
   }
 
   object TypedAttributeValueRange {
-    def apply(EndMode: RangeMode,
-              StartMode: RangeMode,
-              EndValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-              StartValue: js.UndefOr[TypedAttributeValue] = js.undefined): TypedAttributeValueRange = {
+    def apply(
+        EndMode: RangeMode,
+        StartMode: RangeMode,
+        EndValue: js.UndefOr[TypedAttributeValue] = js.undefined,
+        StartValue: js.UndefOr[TypedAttributeValue] = js.undefined
+    ): TypedAttributeValueRange = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndMode"   -> EndMode.asInstanceOf[js.Any],
         "StartMode" -> StartMode.asInstanceOf[js.Any],
@@ -4911,12 +5555,14 @@ package clouddirectory {
   }
 
   object TypedLinkAttributeDefinition {
-    def apply(Name: AttributeName,
-              RequiredBehavior: RequiredAttributeBehavior,
-              Type: FacetAttributeType,
-              DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-              IsImmutable: js.UndefOr[Bool] = js.undefined,
-              Rules: js.UndefOr[RuleMap] = js.undefined): TypedLinkAttributeDefinition = {
+    def apply(
+        Name: AttributeName,
+        RequiredBehavior: RequiredAttributeBehavior,
+        Type: FacetAttributeType,
+        DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
+        IsImmutable: js.UndefOr[Bool] = js.undefined,
+        Rules: js.UndefOr[RuleMap] = js.undefined
+    ): TypedLinkAttributeDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"             -> Name.asInstanceOf[js.Any],
         "RequiredBehavior" -> RequiredBehavior.asInstanceOf[js.Any],
@@ -4946,12 +5592,16 @@ package clouddirectory {
   }
 
   object TypedLinkAttributeRange {
-    def apply(Range: TypedAttributeValueRange,
-              AttributeName: js.UndefOr[AttributeName] = js.undefined): TypedLinkAttributeRange = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Range" -> Range.asInstanceOf[js.Any], "AttributeName" -> AttributeName.map { x =>
+    def apply(
+        Range: TypedAttributeValueRange,
+        AttributeName: js.UndefOr[AttributeName] = js.undefined
+    ): TypedLinkAttributeRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Range" -> Range.asInstanceOf[js.Any],
+        "AttributeName" -> AttributeName.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TypedLinkAttributeRange]
     }
@@ -4968,9 +5618,11 @@ package clouddirectory {
   }
 
   object TypedLinkFacet {
-    def apply(Attributes: TypedLinkAttributeDefinitionList,
-              IdentityAttributeOrder: AttributeNameList,
-              Name: TypedLinkName): TypedLinkFacet = {
+    def apply(
+        Attributes: TypedLinkAttributeDefinitionList,
+        IdentityAttributeOrder: AttributeNameList,
+        Name: TypedLinkName
+    ): TypedLinkFacet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes"             -> Attributes.asInstanceOf[js.Any],
         "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
@@ -4991,7 +5643,10 @@ package clouddirectory {
   }
 
   object TypedLinkFacetAttributeUpdate {
-    def apply(Action: UpdateActionType, Attribute: TypedLinkAttributeDefinition): TypedLinkFacetAttributeUpdate = {
+    def apply(
+        Action: UpdateActionType,
+        Attribute: TypedLinkAttributeDefinition
+    ): TypedLinkFacetAttributeUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"    -> Action.asInstanceOf[js.Any],
         "Attribute" -> Attribute.asInstanceOf[js.Any]
@@ -5011,7 +5666,10 @@ package clouddirectory {
   }
 
   object TypedLinkSchemaAndFacetName {
-    def apply(SchemaArn: Arn, TypedLinkName: TypedLinkName): TypedLinkSchemaAndFacetName = {
+    def apply(
+        SchemaArn: Arn,
+        TypedLinkName: TypedLinkName
+    ): TypedLinkSchemaAndFacetName = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SchemaArn"     -> SchemaArn.asInstanceOf[js.Any],
         "TypedLinkName" -> TypedLinkName.asInstanceOf[js.Any]
@@ -5033,10 +5691,12 @@ package clouddirectory {
   }
 
   object TypedLinkSpecifier {
-    def apply(IdentityAttributeValues: AttributeNameAndValueList,
-              SourceObjectReference: ObjectReference,
-              TargetObjectReference: ObjectReference,
-              TypedLinkFacet: TypedLinkSchemaAndFacetName): TypedLinkSpecifier = {
+    def apply(
+        IdentityAttributeValues: AttributeNameAndValueList,
+        SourceObjectReference: ObjectReference,
+        TargetObjectReference: ObjectReference,
+        TypedLinkFacet: TypedLinkSchemaAndFacetName
+    ): TypedLinkSpecifier = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityAttributeValues" -> IdentityAttributeValues.asInstanceOf[js.Any],
         "SourceObjectReference"   -> SourceObjectReference.asInstanceOf[js.Any],
@@ -5055,7 +5715,10 @@ package clouddirectory {
   }
 
   object UntagResourceRequest {
-    def apply(ResourceArn: Arn, TagKeys: TagKeyList): UntagResourceRequest = {
+    def apply(
+        ResourceArn: Arn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
@@ -5069,8 +5732,10 @@ package clouddirectory {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
@@ -5092,10 +5757,12 @@ package clouddirectory {
   }
 
   object UpdateFacetRequest {
-    def apply(Name: FacetName,
-              SchemaArn: Arn,
-              AttributeUpdates: js.UndefOr[FacetAttributeUpdateList] = js.undefined,
-              ObjectType: js.UndefOr[ObjectType] = js.undefined): UpdateFacetRequest = {
+    def apply(
+        Name: FacetName,
+        SchemaArn: Arn,
+        AttributeUpdates: js.UndefOr[FacetAttributeUpdateList] = js.undefined,
+        ObjectType: js.UndefOr[ObjectType] = js.undefined
+    ): UpdateFacetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any],
@@ -5115,8 +5782,10 @@ package clouddirectory {
   trait UpdateFacetResponse extends js.Object {}
 
   object UpdateFacetResponse {
-    def apply(): UpdateFacetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateFacetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFacetResponse]
     }
@@ -5130,9 +5799,11 @@ package clouddirectory {
   }
 
   object UpdateLinkAttributesRequest {
-    def apply(AttributeUpdates: LinkAttributeUpdateList,
-              DirectoryArn: Arn,
-              TypedLinkSpecifier: TypedLinkSpecifier): UpdateLinkAttributesRequest = {
+    def apply(
+        AttributeUpdates: LinkAttributeUpdateList,
+        DirectoryArn: Arn,
+        TypedLinkSpecifier: TypedLinkSpecifier
+    ): UpdateLinkAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
@@ -5147,8 +5818,10 @@ package clouddirectory {
   trait UpdateLinkAttributesResponse extends js.Object {}
 
   object UpdateLinkAttributesResponse {
-    def apply(): UpdateLinkAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateLinkAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateLinkAttributesResponse]
     }
@@ -5162,9 +5835,11 @@ package clouddirectory {
   }
 
   object UpdateObjectAttributesRequest {
-    def apply(AttributeUpdates: ObjectAttributeUpdateList,
-              DirectoryArn: Arn,
-              ObjectReference: ObjectReference): UpdateObjectAttributesRequest = {
+    def apply(
+        AttributeUpdates: ObjectAttributeUpdateList,
+        DirectoryArn: Arn,
+        ObjectReference: ObjectReference
+    ): UpdateObjectAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
         "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
@@ -5181,10 +5856,14 @@ package clouddirectory {
   }
 
   object UpdateObjectAttributesResponse {
-    def apply(ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined): UpdateObjectAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ObjectIdentifier" -> ObjectIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
+    ): UpdateObjectAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ObjectIdentifier" -> ObjectIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateObjectAttributesResponse]
     }
@@ -5197,10 +5876,14 @@ package clouddirectory {
   }
 
   object UpdateSchemaRequest {
-    def apply(Name: SchemaName, SchemaArn: Arn): UpdateSchemaRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "SchemaArn" -> SchemaArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: SchemaName,
+        SchemaArn: Arn
+    ): UpdateSchemaRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"      -> Name.asInstanceOf[js.Any],
+        "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSchemaRequest]
     }
@@ -5212,10 +5895,14 @@ package clouddirectory {
   }
 
   object UpdateSchemaResponse {
-    def apply(SchemaArn: js.UndefOr[Arn] = js.undefined): UpdateSchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SchemaArn" -> SchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SchemaArn: js.UndefOr[Arn] = js.undefined
+    ): UpdateSchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SchemaArn" -> SchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSchemaResponse]
     }
@@ -5230,10 +5917,12 @@ package clouddirectory {
   }
 
   object UpdateTypedLinkFacetRequest {
-    def apply(AttributeUpdates: TypedLinkFacetAttributeUpdateList,
-              IdentityAttributeOrder: AttributeNameList,
-              Name: TypedLinkName,
-              SchemaArn: Arn): UpdateTypedLinkFacetRequest = {
+    def apply(
+        AttributeUpdates: TypedLinkFacetAttributeUpdateList,
+        IdentityAttributeOrder: AttributeNameList,
+        Name: TypedLinkName,
+        SchemaArn: Arn
+    ): UpdateTypedLinkFacetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeUpdates"       -> AttributeUpdates.asInstanceOf[js.Any],
         "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
@@ -5249,8 +5938,10 @@ package clouddirectory {
   trait UpdateTypedLinkFacetResponse extends js.Object {}
 
   object UpdateTypedLinkFacetResponse {
-    def apply(): UpdateTypedLinkFacetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateTypedLinkFacetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTypedLinkFacetResponse]
     }
@@ -5264,9 +5955,11 @@ package clouddirectory {
   }
 
   object UpgradeAppliedSchemaRequest {
-    def apply(DirectoryArn: Arn,
-              PublishedSchemaArn: Arn,
-              DryRun: js.UndefOr[Bool] = js.undefined): UpgradeAppliedSchemaRequest = {
+    def apply(
+        DirectoryArn: Arn,
+        PublishedSchemaArn: Arn,
+        DryRun: js.UndefOr[Bool] = js.undefined
+    ): UpgradeAppliedSchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any],
@@ -5286,13 +5979,18 @@ package clouddirectory {
   }
 
   object UpgradeAppliedSchemaResponse {
-    def apply(DirectoryArn: js.UndefOr[Arn] = js.undefined,
-              UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined): UpgradeAppliedSchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryArn" -> DirectoryArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UpgradedSchemaArn" -> UpgradedSchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryArn: js.UndefOr[Arn] = js.undefined,
+        UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
+    ): UpgradeAppliedSchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryArn" -> DirectoryArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UpgradedSchemaArn" -> UpgradedSchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradeAppliedSchemaResponse]
     }
@@ -5307,10 +6005,12 @@ package clouddirectory {
   }
 
   object UpgradePublishedSchemaRequest {
-    def apply(DevelopmentSchemaArn: Arn,
-              MinorVersion: Version,
-              PublishedSchemaArn: Arn,
-              DryRun: js.UndefOr[Bool] = js.undefined): UpgradePublishedSchemaRequest = {
+    def apply(
+        DevelopmentSchemaArn: Arn,
+        MinorVersion: Version,
+        PublishedSchemaArn: Arn,
+        DryRun: js.UndefOr[Bool] = js.undefined
+    ): UpgradePublishedSchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
         "MinorVersion"         -> MinorVersion.asInstanceOf[js.Any],
@@ -5330,10 +6030,14 @@ package clouddirectory {
   }
 
   object UpgradePublishedSchemaResponse {
-    def apply(UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined): UpgradePublishedSchemaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UpgradedSchemaArn" -> UpgradedSchemaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
+    ): UpgradePublishedSchemaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UpgradedSchemaArn" -> UpgradedSchemaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpgradePublishedSchemaResponse]
     }

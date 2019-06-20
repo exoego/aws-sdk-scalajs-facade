@@ -77,13 +77,15 @@ package sts {
   }
 
   object AssumeRoleRequest {
-    def apply(RoleArn: arnType,
-              RoleSessionName: roleSessionNameType,
-              DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
-              ExternalId: js.UndefOr[externalIdType] = js.undefined,
-              Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
-              SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
-              TokenCode: js.UndefOr[tokenCodeType] = js.undefined): AssumeRoleRequest = {
+    def apply(
+        RoleArn: arnType,
+        RoleSessionName: roleSessionNameType,
+        DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
+        ExternalId: js.UndefOr[externalIdType] = js.undefined,
+        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
+        SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
+        TokenCode: js.UndefOr[tokenCodeType] = js.undefined
+    ): AssumeRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RoleArn"         -> RoleArn.asInstanceOf[js.Any],
         "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any],
@@ -119,9 +121,11 @@ package sts {
   }
 
   object AssumeRoleResponse {
-    def apply(AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
-              Credentials: js.UndefOr[Credentials] = js.undefined,
-              PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined): AssumeRoleResponse = {
+    def apply(
+        AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
+        Credentials: js.UndefOr[Credentials] = js.undefined,
+        PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined
+    ): AssumeRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssumedRoleUser" -> AssumedRoleUser.map { x =>
           x.asInstanceOf[js.Any]
@@ -148,11 +152,13 @@ package sts {
   }
 
   object AssumeRoleWithSAMLRequest {
-    def apply(PrincipalArn: arnType,
-              RoleArn: arnType,
-              SAMLAssertion: SAMLAssertionType,
-              DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
-              Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined): AssumeRoleWithSAMLRequest = {
+    def apply(
+        PrincipalArn: arnType,
+        RoleArn: arnType,
+        SAMLAssertion: SAMLAssertionType,
+        DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
+        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined
+    ): AssumeRoleWithSAMLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PrincipalArn"  -> PrincipalArn.asInstanceOf[js.Any],
         "RoleArn"       -> RoleArn.asInstanceOf[js.Any],
@@ -185,14 +191,16 @@ package sts {
   }
 
   object AssumeRoleWithSAMLResponse {
-    def apply(AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
-              Audience: js.UndefOr[Audience] = js.undefined,
-              Credentials: js.UndefOr[Credentials] = js.undefined,
-              Issuer: js.UndefOr[Issuer] = js.undefined,
-              NameQualifier: js.UndefOr[NameQualifier] = js.undefined,
-              PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
-              Subject: js.UndefOr[Subject] = js.undefined,
-              SubjectType: js.UndefOr[SubjectType] = js.undefined): AssumeRoleWithSAMLResponse = {
+    def apply(
+        AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
+        Audience: js.UndefOr[Audience] = js.undefined,
+        Credentials: js.UndefOr[Credentials] = js.undefined,
+        Issuer: js.UndefOr[Issuer] = js.undefined,
+        NameQualifier: js.UndefOr[NameQualifier] = js.undefined,
+        PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined,
+        Subject: js.UndefOr[Subject] = js.undefined,
+        SubjectType: js.UndefOr[SubjectType] = js.undefined
+    ): AssumeRoleWithSAMLResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssumedRoleUser" -> AssumedRoleUser.map { x =>
           x.asInstanceOf[js.Any]
@@ -235,12 +243,14 @@ package sts {
   }
 
   object AssumeRoleWithWebIdentityRequest {
-    def apply(RoleArn: arnType,
-              RoleSessionName: roleSessionNameType,
-              WebIdentityToken: clientTokenType,
-              DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
-              Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
-              ProviderId: js.UndefOr[urlType] = js.undefined): AssumeRoleWithWebIdentityRequest = {
+    def apply(
+        RoleArn: arnType,
+        RoleSessionName: roleSessionNameType,
+        WebIdentityToken: clientTokenType,
+        DurationSeconds: js.UndefOr[roleDurationSecondsType] = js.undefined,
+        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
+        ProviderId: js.UndefOr[urlType] = js.undefined
+    ): AssumeRoleWithWebIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RoleArn"          -> RoleArn.asInstanceOf[js.Any],
         "RoleSessionName"  -> RoleSessionName.asInstanceOf[js.Any],
@@ -317,7 +327,10 @@ package sts {
   }
 
   object AssumedRoleUser {
-    def apply(Arn: arnType, AssumedRoleId: assumedRoleIdType): AssumedRoleUser = {
+    def apply(
+        Arn: arnType,
+        AssumedRoleId: assumedRoleIdType
+    ): AssumedRoleUser = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn"           -> Arn.asInstanceOf[js.Any],
         "AssumedRoleId" -> AssumedRoleId.asInstanceOf[js.Any]
@@ -339,10 +352,12 @@ package sts {
   }
 
   object Credentials {
-    def apply(AccessKeyId: accessKeyIdType,
-              Expiration: dateType,
-              SecretAccessKey: accessKeySecretType,
-              SessionToken: tokenType): Credentials = {
+    def apply(
+        AccessKeyId: accessKeyIdType,
+        Expiration: dateType,
+        SecretAccessKey: accessKeySecretType,
+        SessionToken: tokenType
+    ): Credentials = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessKeyId"     -> AccessKeyId.asInstanceOf[js.Any],
         "Expiration"      -> Expiration.asInstanceOf[js.Any],
@@ -360,9 +375,12 @@ package sts {
   }
 
   object DecodeAuthorizationMessageRequest {
-    def apply(EncodedMessage: encodedMessageType): DecodeAuthorizationMessageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("EncodedMessage" -> EncodedMessage.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EncodedMessage: encodedMessageType
+    ): DecodeAuthorizationMessageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EncodedMessage" -> EncodedMessage.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecodeAuthorizationMessageRequest]
     }
@@ -377,10 +395,14 @@ package sts {
   }
 
   object DecodeAuthorizationMessageResponse {
-    def apply(DecodedMessage: js.UndefOr[decodedMessageType] = js.undefined): DecodeAuthorizationMessageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DecodedMessage" -> DecodedMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DecodedMessage: js.UndefOr[decodedMessageType] = js.undefined
+    ): DecodeAuthorizationMessageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DecodedMessage" -> DecodedMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DecodeAuthorizationMessageResponse]
     }
@@ -404,7 +426,10 @@ package sts {
   }
 
   object FederatedUser {
-    def apply(Arn: arnType, FederatedUserId: federatedIdType): FederatedUser = {
+    def apply(
+        Arn: arnType,
+        FederatedUserId: federatedIdType
+    ): FederatedUser = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn"             -> Arn.asInstanceOf[js.Any],
         "FederatedUserId" -> FederatedUserId.asInstanceOf[js.Any]
@@ -418,8 +443,10 @@ package sts {
   trait GetCallerIdentityRequest extends js.Object {}
 
   object GetCallerIdentityRequest {
-    def apply(): GetCallerIdentityRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetCallerIdentityRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCallerIdentityRequest]
     }
@@ -436,16 +463,22 @@ package sts {
   }
 
   object GetCallerIdentityResponse {
-    def apply(Account: js.UndefOr[accountType] = js.undefined,
-              Arn: js.UndefOr[arnType] = js.undefined,
-              UserId: js.UndefOr[userIdType] = js.undefined): GetCallerIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Account" -> Account.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UserId" -> UserId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Account: js.UndefOr[accountType] = js.undefined,
+        Arn: js.UndefOr[arnType] = js.undefined,
+        UserId: js.UndefOr[userIdType] = js.undefined
+    ): GetCallerIdentityResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Account" -> Account.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserId" -> UserId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCallerIdentityResponse]
     }
@@ -459,16 +492,20 @@ package sts {
   }
 
   object GetFederationTokenRequest {
-    def apply(Name: userNameType,
-              DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
-              Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined): GetFederationTokenRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "DurationSeconds" -> DurationSeconds.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }, "Policy" -> Policy.map { x =>
+    def apply(
+        Name: userNameType,
+        DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
+        Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined
+    ): GetFederationTokenRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "DurationSeconds" -> DurationSeconds.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFederationTokenRequest]
     }
@@ -485,9 +522,11 @@ package sts {
   }
 
   object GetFederationTokenResponse {
-    def apply(Credentials: js.UndefOr[Credentials] = js.undefined,
-              FederatedUser: js.UndefOr[FederatedUser] = js.undefined,
-              PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined): GetFederationTokenResponse = {
+    def apply(
+        Credentials: js.UndefOr[Credentials] = js.undefined,
+        FederatedUser: js.UndefOr[FederatedUser] = js.undefined,
+        PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined
+    ): GetFederationTokenResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Credentials" -> Credentials.map { x =>
           x.asInstanceOf[js.Any]
@@ -512,9 +551,11 @@ package sts {
   }
 
   object GetSessionTokenRequest {
-    def apply(DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
-              SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
-              TokenCode: js.UndefOr[tokenCodeType] = js.undefined): GetSessionTokenRequest = {
+    def apply(
+        DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
+        SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
+        TokenCode: js.UndefOr[tokenCodeType] = js.undefined
+    ): GetSessionTokenRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DurationSeconds" -> DurationSeconds.map { x =>
           x.asInstanceOf[js.Any]
@@ -540,10 +581,14 @@ package sts {
   }
 
   object GetSessionTokenResponse {
-    def apply(Credentials: js.UndefOr[Credentials] = js.undefined): GetSessionTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Credentials" -> Credentials.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Credentials: js.UndefOr[Credentials] = js.undefined
+    ): GetSessionTokenResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Credentials" -> Credentials.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSessionTokenResponse]
     }

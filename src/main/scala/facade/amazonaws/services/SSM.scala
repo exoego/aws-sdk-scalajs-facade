@@ -68,6 +68,7 @@ package object ssm {
   type AutomationParameterMap                               = js.Dictionary[AutomationParameterValueList]
   type AutomationParameterValue                             = String
   type AutomationParameterValueList                         = js.Array[AutomationParameterValue]
+  type AutomationTargetParameterName                        = String
   type AutomationType                                       = String
   type BaselineDescription                                  = String
   type BaselineId                                           = String
@@ -404,6 +405,8 @@ package object ssm {
   type ScheduleExpression                      = String
   type ScheduledWindowExecutionList            = js.Array[ScheduledWindowExecution]
   type ServiceRole                             = String
+  type ServiceSettingId                        = String
+  type ServiceSettingValue                     = String
   type SessionDetails                          = String
   type SessionFilterKey                        = String
   type SessionFilterList                       = js.Array[SessionFilter]
@@ -608,6 +611,7 @@ package ssm {
     def getPatchBaselineForPatchGroup(
         params: GetPatchBaselineForPatchGroupRequest
     ): Request[GetPatchBaselineForPatchGroupResult]                                                       = js.native
+    def getServiceSetting(params: GetServiceSettingRequest): Request[GetServiceSettingResult]             = js.native
     def labelParameterVersion(params: LabelParameterVersionRequest): Request[LabelParameterVersionResult] = js.native
     def listAssociationVersions(params: ListAssociationVersionsRequest): Request[ListAssociationVersionsResult] =
       js.native
@@ -643,6 +647,7 @@ package ssm {
         params: RegisterTaskWithMaintenanceWindowRequest
     ): Request[RegisterTaskWithMaintenanceWindowResult]                                                      = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceRequest): Request[RemoveTagsFromResourceResult] = js.native
+    def resetServiceSetting(params: ResetServiceSettingRequest): Request[ResetServiceSettingResult]          = js.native
     def resumeSession(params: ResumeSessionRequest): Request[ResumeSessionResponse]                          = js.native
     def sendAutomationSignal(params: SendAutomationSignalRequest): Request[SendAutomationSignalResult]       = js.native
     def sendCommand(params: SendCommandRequest): Request[SendCommandResult]                                  = js.native
@@ -670,7 +675,8 @@ package ssm {
     ): Request[UpdateMaintenanceWindowTaskResult] = js.native
     def updateManagedInstanceRole(params: UpdateManagedInstanceRoleRequest): Request[UpdateManagedInstanceRoleResult] =
       js.native
-    def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult] = js.native
+    def updatePatchBaseline(params: UpdatePatchBaselineRequest): Request[UpdatePatchBaselineResult]    = js.native
+    def updateServiceSetting(params: UpdateServiceSettingRequest): Request[UpdateServiceSettingResult] = js.native
   }
 
   /**
@@ -687,18 +693,22 @@ package ssm {
     var IamRole: js.UndefOr[IamRole]
     var RegistrationLimit: js.UndefOr[RegistrationLimit]
     var RegistrationsCount: js.UndefOr[RegistrationsCount]
+    var Tags: js.UndefOr[TagList]
   }
 
   object Activation {
-    def apply(ActivationId: js.UndefOr[ActivationId] = js.undefined,
-              CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
-              DefaultInstanceName: js.UndefOr[DefaultInstanceName] = js.undefined,
-              Description: js.UndefOr[ActivationDescription] = js.undefined,
-              ExpirationDate: js.UndefOr[ExpirationDate] = js.undefined,
-              Expired: js.UndefOr[Boolean] = js.undefined,
-              IamRole: js.UndefOr[IamRole] = js.undefined,
-              RegistrationLimit: js.UndefOr[RegistrationLimit] = js.undefined,
-              RegistrationsCount: js.UndefOr[RegistrationsCount] = js.undefined): Activation = {
+    def apply(
+        ActivationId: js.UndefOr[ActivationId] = js.undefined,
+        CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
+        DefaultInstanceName: js.UndefOr[DefaultInstanceName] = js.undefined,
+        Description: js.UndefOr[ActivationDescription] = js.undefined,
+        ExpirationDate: js.UndefOr[ExpirationDate] = js.undefined,
+        Expired: js.UndefOr[Boolean] = js.undefined,
+        IamRole: js.UndefOr[IamRole] = js.undefined,
+        RegistrationLimit: js.UndefOr[RegistrationLimit] = js.undefined,
+        RegistrationsCount: js.UndefOr[RegistrationsCount] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): Activation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActivationId" -> ActivationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -726,6 +736,9 @@ package ssm {
         },
         "RegistrationsCount" -> RegistrationsCount.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -741,7 +754,11 @@ package ssm {
   }
 
   object AddTagsToResourceRequest {
-    def apply(ResourceId: ResourceId, ResourceType: ResourceTypeForTagging, Tags: TagList): AddTagsToResourceRequest = {
+    def apply(
+        ResourceId: ResourceId,
+        ResourceType: ResourceTypeForTagging,
+        Tags: TagList
+    ): AddTagsToResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
@@ -756,8 +773,10 @@ package ssm {
   trait AddTagsToResourceResult extends js.Object {}
 
   object AddTagsToResourceResult {
-    def apply(): AddTagsToResourceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AddTagsToResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceResult]
     }
@@ -774,23 +793,25 @@ package ssm {
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var InstanceId: js.UndefOr[InstanceId]
     var LastExecutionDate: js.UndefOr[DateTime]
-    var Name: js.UndefOr[DocumentName]
+    var Name: js.UndefOr[DocumentARN]
     var Overview: js.UndefOr[AssociationOverview]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var Targets: js.UndefOr[Targets]
   }
 
   object Association {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationName: js.UndefOr[AssociationName] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined,
-              Overview: js.UndefOr[AssociationOverview] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): Association = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationName: js.UndefOr[AssociationName] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        Overview: js.UndefOr[AssociationOverview] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): Association = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -846,6 +867,7 @@ package ssm {
     var AssociationId: js.UndefOr[AssociationId]
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
+    var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var Date: js.UndefOr[DateTime]
     var DocumentVersion: js.UndefOr[DocumentVersion]
@@ -855,7 +877,7 @@ package ssm {
     var LastUpdateAssociationDate: js.UndefOr[DateTime]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
     var MaxErrors: js.UndefOr[MaxErrors]
-    var Name: js.UndefOr[DocumentName]
+    var Name: js.UndefOr[DocumentARN]
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Overview: js.UndefOr[AssociationOverview]
     var Parameters: js.UndefOr[Parameters]
@@ -865,25 +887,28 @@ package ssm {
   }
 
   object AssociationDescription {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationName: js.UndefOr[AssociationName] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
-              Date: js.UndefOr[DateTime] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              LastSuccessfulExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              LastUpdateAssociationDate: js.UndefOr[DateTime] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined,
-              OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
-              Overview: js.UndefOr[AssociationOverview] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              Status: js.UndefOr[AssociationStatus] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): AssociationDescription = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationName: js.UndefOr[AssociationName] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
+        Date: js.UndefOr[DateTime] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        LastSuccessfulExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        LastUpdateAssociationDate: js.UndefOr[DateTime] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
+        Overview: js.UndefOr[AssociationOverview] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        Status: js.UndefOr[AssociationStatus] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): AssociationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -892,6 +917,9 @@ package ssm {
           x.asInstanceOf[js.Any]
         },
         "AssociationVersion" -> AssociationVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutomationTargetParameterName" -> AutomationTargetParameterName.map { x =>
           x.asInstanceOf[js.Any]
         },
         "ComplianceSeverity" -> ComplianceSeverity.map { x =>
@@ -964,14 +992,16 @@ package ssm {
   }
 
   object AssociationExecution {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              CreatedTime: js.UndefOr[DateTime] = js.undefined,
-              DetailedStatus: js.UndefOr[StatusName] = js.undefined,
-              ExecutionId: js.UndefOr[AssociationExecutionId] = js.undefined,
-              LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              ResourceCountByStatus: js.UndefOr[ResourceCountByStatus] = js.undefined,
-              Status: js.UndefOr[StatusName] = js.undefined): AssociationExecution = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        CreatedTime: js.UndefOr[DateTime] = js.undefined,
+        DetailedStatus: js.UndefOr[StatusName] = js.undefined,
+        ExecutionId: js.UndefOr[AssociationExecutionId] = js.undefined,
+        LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        ResourceCountByStatus: js.UndefOr[ResourceCountByStatus] = js.undefined,
+        Status: js.UndefOr[StatusName] = js.undefined
+    ): AssociationExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1014,9 +1044,11 @@ package ssm {
   }
 
   object AssociationExecutionFilter {
-    def apply(Key: AssociationExecutionFilterKey,
-              Type: AssociationFilterOperatorType,
-              Value: AssociationExecutionFilterValue): AssociationExecutionFilter = {
+    def apply(
+        Key: AssociationExecutionFilterKey,
+        Type: AssociationFilterOperatorType,
+        Value: AssociationExecutionFilterValue
+    ): AssociationExecutionFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
@@ -1052,15 +1084,17 @@ package ssm {
   }
 
   object AssociationExecutionTarget {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              DetailedStatus: js.UndefOr[StatusName] = js.undefined,
-              ExecutionId: js.UndefOr[AssociationExecutionId] = js.undefined,
-              LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              OutputSource: js.UndefOr[OutputSource] = js.undefined,
-              ResourceId: js.UndefOr[AssociationResourceId] = js.undefined,
-              ResourceType: js.UndefOr[AssociationResourceType] = js.undefined,
-              Status: js.UndefOr[StatusName] = js.undefined): AssociationExecutionTarget = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        DetailedStatus: js.UndefOr[StatusName] = js.undefined,
+        ExecutionId: js.UndefOr[AssociationExecutionId] = js.undefined,
+        LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        OutputSource: js.UndefOr[OutputSource] = js.undefined,
+        ResourceId: js.UndefOr[AssociationResourceId] = js.undefined,
+        ResourceType: js.UndefOr[AssociationResourceType] = js.undefined,
+        Status: js.UndefOr[StatusName] = js.undefined
+    ): AssociationExecutionTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1105,11 +1139,14 @@ package ssm {
   }
 
   object AssociationExecutionTargetsFilter {
-    def apply(Key: AssociationExecutionTargetsFilterKey,
-              Value: AssociationExecutionTargetsFilterValue): AssociationExecutionTargetsFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: AssociationExecutionTargetsFilterKey,
+        Value: AssociationExecutionTargetsFilterValue
+    ): AssociationExecutionTargetsFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociationExecutionTargetsFilter]
     }
@@ -1133,10 +1170,14 @@ package ssm {
   }
 
   object AssociationFilter {
-    def apply(key: AssociationFilterKey, value: AssociationFilterValue): AssociationFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("key" -> key.asInstanceOf[js.Any], "value" -> value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        key: AssociationFilterKey,
+        value: AssociationFilterValue
+    ): AssociationFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key"   -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociationFilter]
     }
@@ -1181,9 +1222,11 @@ package ssm {
   }
 
   object AssociationOverview {
-    def apply(AssociationStatusAggregatedCount: js.UndefOr[AssociationStatusAggregatedCount] = js.undefined,
-              DetailedStatus: js.UndefOr[StatusName] = js.undefined,
-              Status: js.UndefOr[StatusName] = js.undefined): AssociationOverview = {
+    def apply(
+        AssociationStatusAggregatedCount: js.UndefOr[AssociationStatusAggregatedCount] = js.undefined,
+        DetailedStatus: js.UndefOr[StatusName] = js.undefined,
+        Status: js.UndefOr[StatusName] = js.undefined
+    ): AssociationOverview = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationStatusAggregatedCount" -> AssociationStatusAggregatedCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -1212,10 +1255,12 @@ package ssm {
   }
 
   object AssociationStatus {
-    def apply(Date: DateTime,
-              Message: StatusMessage,
-              Name: AssociationStatusName,
-              AdditionalInfo: js.UndefOr[StatusAdditionalInfo] = js.undefined): AssociationStatus = {
+    def apply(
+        Date: DateTime,
+        Message: StatusMessage,
+        Name: AssociationStatusName,
+        AdditionalInfo: js.UndefOr[StatusAdditionalInfo] = js.undefined
+    ): AssociationStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Date"    -> Date.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any],
@@ -1250,7 +1295,7 @@ package ssm {
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
     var MaxErrors: js.UndefOr[MaxErrors]
-    var Name: js.UndefOr[DocumentName]
+    var Name: js.UndefOr[DocumentARN]
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
@@ -1258,19 +1303,21 @@ package ssm {
   }
 
   object AssociationVersionInfo {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationName: js.UndefOr[AssociationName] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
-              CreatedDate: js.UndefOr[DateTime] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined,
-              OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): AssociationVersionInfo = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationName: js.UndefOr[AssociationName] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): AssociationVersionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1330,11 +1377,13 @@ package ssm {
   }
 
   object AttachmentContent {
-    def apply(Hash: js.UndefOr[AttachmentHash] = js.undefined,
-              HashType: js.UndefOr[AttachmentHashType] = js.undefined,
-              Name: js.UndefOr[AttachmentName] = js.undefined,
-              Size: js.UndefOr[ContentLength] = js.undefined,
-              Url: js.UndefOr[AttachmentUrl] = js.undefined): AttachmentContent = {
+    def apply(
+        Hash: js.UndefOr[AttachmentHash] = js.undefined,
+        HashType: js.UndefOr[AttachmentHashType] = js.undefined,
+        Name: js.UndefOr[AttachmentName] = js.undefined,
+        Size: js.UndefOr[ContentLength] = js.undefined,
+        Url: js.UndefOr[AttachmentUrl] = js.undefined
+    ): AttachmentContent = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Hash" -> Hash.map { x =>
           x.asInstanceOf[js.Any]
@@ -1364,7 +1413,7 @@ package ssm {
   }
 
   /**
-    * An attribute of an attachment, such as the attachment name or size.
+    * An attribute of an attachment, such as the attachment name.
     */
   @js.native
   trait AttachmentInformation extends js.Object {
@@ -1372,10 +1421,14 @@ package ssm {
   }
 
   object AttachmentInformation {
-    def apply(Name: js.UndefOr[AttachmentName] = js.undefined): AttachmentInformation = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[AttachmentName] = js.undefined
+    ): AttachmentInformation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachmentInformation]
     }
@@ -1391,13 +1444,18 @@ package ssm {
   }
 
   object AttachmentsSource {
-    def apply(Key: js.UndefOr[AttachmentsSourceKey] = js.undefined,
-              Values: js.UndefOr[AttachmentsSourceValues] = js.undefined): AttachmentsSource = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[AttachmentsSourceKey] = js.undefined,
+        Values: js.UndefOr[AttachmentsSourceValues] = js.undefined
+    ): AttachmentsSource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachmentsSource]
     }
@@ -1442,31 +1500,33 @@ package ssm {
   }
 
   object AutomationExecution {
-    def apply(AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
-              AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
-              CurrentAction: js.UndefOr[String] = js.undefined,
-              CurrentStepName: js.UndefOr[String] = js.undefined,
-              DocumentName: js.UndefOr[DocumentName] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              ExecutedBy: js.UndefOr[String] = js.undefined,
-              ExecutionEndTime: js.UndefOr[DateTime] = js.undefined,
-              ExecutionStartTime: js.UndefOr[DateTime] = js.undefined,
-              FailureMessage: js.UndefOr[String] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Mode: js.UndefOr[ExecutionMode] = js.undefined,
-              Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
-              Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
-              ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
-              ProgressCounters: js.UndefOr[ProgressCounters] = js.undefined,
-              ResolvedTargets: js.UndefOr[ResolvedTargets] = js.undefined,
-              StepExecutions: js.UndefOr[StepExecutionList] = js.undefined,
-              StepExecutionsTruncated: js.UndefOr[Boolean] = js.undefined,
-              Target: js.UndefOr[String] = js.undefined,
-              TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
-              TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
-              TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): AutomationExecution = {
+    def apply(
+        AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
+        AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
+        CurrentAction: js.UndefOr[String] = js.undefined,
+        CurrentStepName: js.UndefOr[String] = js.undefined,
+        DocumentName: js.UndefOr[DocumentName] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        ExecutedBy: js.UndefOr[String] = js.undefined,
+        ExecutionEndTime: js.UndefOr[DateTime] = js.undefined,
+        ExecutionStartTime: js.UndefOr[DateTime] = js.undefined,
+        FailureMessage: js.UndefOr[String] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Mode: js.UndefOr[ExecutionMode] = js.undefined,
+        Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
+        Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
+        ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
+        ProgressCounters: js.UndefOr[ProgressCounters] = js.undefined,
+        ResolvedTargets: js.UndefOr[ResolvedTargets] = js.undefined,
+        StepExecutions: js.UndefOr[StepExecutionList] = js.undefined,
+        StepExecutionsTruncated: js.UndefOr[Boolean] = js.undefined,
+        Target: js.UndefOr[String] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
+        TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): AutomationExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutomationExecutionId" -> AutomationExecutionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1559,11 +1619,14 @@ package ssm {
   }
 
   object AutomationExecutionFilter {
-    def apply(Key: AutomationExecutionFilterKey,
-              Values: AutomationExecutionFilterValueList): AutomationExecutionFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: AutomationExecutionFilterKey,
+        Values: AutomationExecutionFilterValueList
+    ): AutomationExecutionFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"    -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutomationExecutionFilter]
     }
@@ -1621,28 +1684,30 @@ package ssm {
   }
 
   object AutomationExecutionMetadata {
-    def apply(AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
-              AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
-              AutomationType: js.UndefOr[AutomationType] = js.undefined,
-              CurrentAction: js.UndefOr[String] = js.undefined,
-              CurrentStepName: js.UndefOr[String] = js.undefined,
-              DocumentName: js.UndefOr[DocumentName] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              ExecutedBy: js.UndefOr[String] = js.undefined,
-              ExecutionEndTime: js.UndefOr[DateTime] = js.undefined,
-              ExecutionStartTime: js.UndefOr[DateTime] = js.undefined,
-              FailureMessage: js.UndefOr[String] = js.undefined,
-              LogFile: js.UndefOr[String] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Mode: js.UndefOr[ExecutionMode] = js.undefined,
-              Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
-              ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
-              ResolvedTargets: js.UndefOr[ResolvedTargets] = js.undefined,
-              Target: js.UndefOr[String] = js.undefined,
-              TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
-              TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): AutomationExecutionMetadata = {
+    def apply(
+        AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
+        AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
+        AutomationType: js.UndefOr[AutomationType] = js.undefined,
+        CurrentAction: js.UndefOr[String] = js.undefined,
+        CurrentStepName: js.UndefOr[String] = js.undefined,
+        DocumentName: js.UndefOr[DocumentName] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        ExecutedBy: js.UndefOr[String] = js.undefined,
+        ExecutionEndTime: js.UndefOr[DateTime] = js.undefined,
+        ExecutionStartTime: js.UndefOr[DateTime] = js.undefined,
+        FailureMessage: js.UndefOr[String] = js.undefined,
+        LogFile: js.UndefOr[String] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Mode: js.UndefOr[ExecutionMode] = js.undefined,
+        Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
+        ParentAutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
+        ResolvedTargets: js.UndefOr[ResolvedTargets] = js.undefined,
+        Target: js.UndefOr[String] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
+        TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): AutomationExecutionMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutomationExecutionId" -> AutomationExecutionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1746,12 +1811,16 @@ package ssm {
   }
 
   object CancelCommandRequest {
-    def apply(CommandId: CommandId, InstanceIds: js.UndefOr[InstanceIdList] = js.undefined): CancelCommandRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("CommandId" -> CommandId.asInstanceOf[js.Any], "InstanceIds" -> InstanceIds.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CommandId: CommandId,
+        InstanceIds: js.UndefOr[InstanceIdList] = js.undefined
+    ): CancelCommandRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CommandId" -> CommandId.asInstanceOf[js.Any],
+        "InstanceIds" -> InstanceIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelCommandRequest]
     }
@@ -1764,8 +1833,10 @@ package ssm {
   trait CancelCommandResult extends js.Object {}
 
   object CancelCommandResult {
-    def apply(): CancelCommandResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CancelCommandResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelCommandResult]
     }
@@ -1777,9 +1848,12 @@ package ssm {
   }
 
   object CancelMaintenanceWindowExecutionRequest {
-    def apply(WindowExecutionId: MaintenanceWindowExecutionId): CancelMaintenanceWindowExecutionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WindowExecutionId: MaintenanceWindowExecutionId
+    ): CancelMaintenanceWindowExecutionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelMaintenanceWindowExecutionRequest]
     }
@@ -1794,9 +1868,11 @@ package ssm {
     def apply(
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): CancelMaintenanceWindowExecutionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowExecutionId" -> WindowExecutionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowExecutionId" -> WindowExecutionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelMaintenanceWindowExecutionResult]
     }
@@ -1812,8 +1888,10 @@ package ssm {
   }
 
   object CloudWatchOutputConfig {
-    def apply(CloudWatchLogGroupName: js.UndefOr[CloudWatchLogGroupName] = js.undefined,
-              CloudWatchOutputEnabled: js.UndefOr[CloudWatchOutputEnabled] = js.undefined): CloudWatchOutputConfig = {
+    def apply(
+        CloudWatchLogGroupName: js.UndefOr[CloudWatchLogGroupName] = js.undefined,
+        CloudWatchOutputEnabled: js.UndefOr[CloudWatchOutputEnabled] = js.undefined
+    ): CloudWatchOutputConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudWatchLogGroupName" -> CloudWatchLogGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1858,29 +1936,31 @@ package ssm {
   }
 
   object Command {
-    def apply(CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
-              CommandId: js.UndefOr[CommandId] = js.undefined,
-              Comment: js.UndefOr[Comment] = js.undefined,
-              CompletedCount: js.UndefOr[CompletedCount] = js.undefined,
-              DeliveryTimedOutCount: js.UndefOr[DeliveryTimedOutCount] = js.undefined,
-              DocumentName: js.UndefOr[DocumentName] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              ErrorCount: js.UndefOr[ErrorCount] = js.undefined,
-              ExpiresAfter: js.UndefOr[DateTime] = js.undefined,
-              InstanceIds: js.UndefOr[InstanceIdList] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
-              OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
-              OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-              OutputS3Region: js.UndefOr[S3Region] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              RequestedDateTime: js.UndefOr[DateTime] = js.undefined,
-              ServiceRole: js.UndefOr[ServiceRole] = js.undefined,
-              Status: js.UndefOr[CommandStatus] = js.undefined,
-              StatusDetails: js.UndefOr[StatusDetails] = js.undefined,
-              TargetCount: js.UndefOr[TargetCount] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): Command = {
+    def apply(
+        CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
+        CommandId: js.UndefOr[CommandId] = js.undefined,
+        Comment: js.UndefOr[Comment] = js.undefined,
+        CompletedCount: js.UndefOr[CompletedCount] = js.undefined,
+        DeliveryTimedOutCount: js.UndefOr[DeliveryTimedOutCount] = js.undefined,
+        DocumentName: js.UndefOr[DocumentName] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        ErrorCount: js.UndefOr[ErrorCount] = js.undefined,
+        ExpiresAfter: js.UndefOr[DateTime] = js.undefined,
+        InstanceIds: js.UndefOr[InstanceIdList] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
+        OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        OutputS3Region: js.UndefOr[S3Region] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        RequestedDateTime: js.UndefOr[DateTime] = js.undefined,
+        ServiceRole: js.UndefOr[ServiceRole] = js.undefined,
+        Status: js.UndefOr[CommandStatus] = js.undefined,
+        StatusDetails: js.UndefOr[StatusDetails] = js.undefined,
+        TargetCount: js.UndefOr[TargetCount] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): Command = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudWatchOutputConfig" -> CloudWatchOutputConfig.map { x =>
           x.asInstanceOf[js.Any]
@@ -1967,10 +2047,14 @@ package ssm {
   }
 
   object CommandFilter {
-    def apply(key: CommandFilterKey, value: CommandFilterValue): CommandFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("key" -> key.asInstanceOf[js.Any], "value" -> value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        key: CommandFilterKey,
+        value: CommandFilterValue
+    ): CommandFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key"   -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CommandFilter]
     }
@@ -1987,7 +2071,7 @@ package ssm {
   }
 
   /**
-    * An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you executed.
+    * An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you ran.
     */
   @js.native
   trait CommandInvocation extends js.Object {
@@ -2010,22 +2094,24 @@ package ssm {
   }
 
   object CommandInvocation {
-    def apply(CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
-              CommandId: js.UndefOr[CommandId] = js.undefined,
-              CommandPlugins: js.UndefOr[CommandPluginList] = js.undefined,
-              Comment: js.UndefOr[Comment] = js.undefined,
-              DocumentName: js.UndefOr[DocumentName] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              InstanceName: js.UndefOr[InstanceTagName] = js.undefined,
-              NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
-              RequestedDateTime: js.UndefOr[DateTime] = js.undefined,
-              ServiceRole: js.UndefOr[ServiceRole] = js.undefined,
-              StandardErrorUrl: js.UndefOr[Url] = js.undefined,
-              StandardOutputUrl: js.UndefOr[Url] = js.undefined,
-              Status: js.UndefOr[CommandInvocationStatus] = js.undefined,
-              StatusDetails: js.UndefOr[StatusDetails] = js.undefined,
-              TraceOutput: js.UndefOr[InvocationTraceOutput] = js.undefined): CommandInvocation = {
+    def apply(
+        CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
+        CommandId: js.UndefOr[CommandId] = js.undefined,
+        CommandPlugins: js.UndefOr[CommandPluginList] = js.undefined,
+        Comment: js.UndefOr[Comment] = js.undefined,
+        DocumentName: js.UndefOr[DocumentName] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        InstanceName: js.UndefOr[InstanceTagName] = js.undefined,
+        NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
+        RequestedDateTime: js.UndefOr[DateTime] = js.undefined,
+        ServiceRole: js.UndefOr[ServiceRole] = js.undefined,
+        StandardErrorUrl: js.UndefOr[Url] = js.undefined,
+        StandardOutputUrl: js.UndefOr[Url] = js.undefined,
+        Status: js.UndefOr[CommandInvocationStatus] = js.undefined,
+        StatusDetails: js.UndefOr[StatusDetails] = js.undefined,
+        TraceOutput: js.UndefOr[InvocationTraceOutput] = js.undefined
+    ): CommandInvocation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudWatchOutputConfig" -> CloudWatchOutputConfig.map { x =>
           x.asInstanceOf[js.Any]
@@ -2114,18 +2200,20 @@ package ssm {
   }
 
   object CommandPlugin {
-    def apply(Name: js.UndefOr[CommandPluginName] = js.undefined,
-              Output: js.UndefOr[CommandPluginOutput] = js.undefined,
-              OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
-              OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-              OutputS3Region: js.UndefOr[S3Region] = js.undefined,
-              ResponseCode: js.UndefOr[ResponseCode] = js.undefined,
-              ResponseFinishDateTime: js.UndefOr[DateTime] = js.undefined,
-              ResponseStartDateTime: js.UndefOr[DateTime] = js.undefined,
-              StandardErrorUrl: js.UndefOr[Url] = js.undefined,
-              StandardOutputUrl: js.UndefOr[Url] = js.undefined,
-              Status: js.UndefOr[CommandPluginStatus] = js.undefined,
-              StatusDetails: js.UndefOr[StatusDetails] = js.undefined): CommandPlugin = {
+    def apply(
+        Name: js.UndefOr[CommandPluginName] = js.undefined,
+        Output: js.UndefOr[CommandPluginOutput] = js.undefined,
+        OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        OutputS3Region: js.UndefOr[S3Region] = js.undefined,
+        ResponseCode: js.UndefOr[ResponseCode] = js.undefined,
+        ResponseFinishDateTime: js.UndefOr[DateTime] = js.undefined,
+        ResponseStartDateTime: js.UndefOr[DateTime] = js.undefined,
+        StandardErrorUrl: js.UndefOr[Url] = js.undefined,
+        StandardOutputUrl: js.UndefOr[Url] = js.undefined,
+        Status: js.UndefOr[CommandPluginStatus] = js.undefined,
+        StatusDetails: js.UndefOr[StatusDetails] = js.undefined
+    ): CommandPlugin = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
@@ -2203,9 +2291,11 @@ package ssm {
   }
 
   object ComplianceExecutionSummary {
-    def apply(ExecutionTime: DateTime,
-              ExecutionId: js.UndefOr[ComplianceExecutionId] = js.undefined,
-              ExecutionType: js.UndefOr[ComplianceExecutionType] = js.undefined): ComplianceExecutionSummary = {
+    def apply(
+        ExecutionTime: DateTime,
+        ExecutionId: js.UndefOr[ComplianceExecutionId] = js.undefined,
+        ExecutionType: js.UndefOr[ComplianceExecutionType] = js.undefined
+    ): ComplianceExecutionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExecutionTime" -> ExecutionTime.asInstanceOf[js.Any],
         "ExecutionId" -> ExecutionId.map { x =>
@@ -2237,15 +2327,17 @@ package ssm {
   }
 
   object ComplianceItem {
-    def apply(ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
-              Details: js.UndefOr[ComplianceItemDetails] = js.undefined,
-              ExecutionSummary: js.UndefOr[ComplianceExecutionSummary] = js.undefined,
-              Id: js.UndefOr[ComplianceItemId] = js.undefined,
-              ResourceId: js.UndefOr[ComplianceResourceId] = js.undefined,
-              ResourceType: js.UndefOr[ComplianceResourceType] = js.undefined,
-              Severity: js.UndefOr[ComplianceSeverity] = js.undefined,
-              Status: js.UndefOr[ComplianceStatus] = js.undefined,
-              Title: js.UndefOr[ComplianceItemTitle] = js.undefined): ComplianceItem = {
+    def apply(
+        ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
+        Details: js.UndefOr[ComplianceItemDetails] = js.undefined,
+        ExecutionSummary: js.UndefOr[ComplianceExecutionSummary] = js.undefined,
+        Id: js.UndefOr[ComplianceItemId] = js.undefined,
+        ResourceId: js.UndefOr[ComplianceResourceId] = js.undefined,
+        ResourceType: js.UndefOr[ComplianceResourceType] = js.undefined,
+        Severity: js.UndefOr[ComplianceSeverity] = js.undefined,
+        Status: js.UndefOr[ComplianceStatus] = js.undefined,
+        Title: js.UndefOr[ComplianceItemTitle] = js.undefined
+    ): ComplianceItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComplianceType" -> ComplianceType.map { x =>
           x.asInstanceOf[js.Any]
@@ -2293,11 +2385,13 @@ package ssm {
   }
 
   object ComplianceItemEntry {
-    def apply(Severity: ComplianceSeverity,
-              Status: ComplianceStatus,
-              Details: js.UndefOr[ComplianceItemDetails] = js.undefined,
-              Id: js.UndefOr[ComplianceItemId] = js.undefined,
-              Title: js.UndefOr[ComplianceItemTitle] = js.undefined): ComplianceItemEntry = {
+    def apply(
+        Severity: ComplianceSeverity,
+        Status: ComplianceStatus,
+        Details: js.UndefOr[ComplianceItemDetails] = js.undefined,
+        Id: js.UndefOr[ComplianceItemId] = js.undefined,
+        Title: js.UndefOr[ComplianceItemTitle] = js.undefined
+    ): ComplianceItemEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Severity" -> Severity.asInstanceOf[js.Any],
         "Status"   -> Status.asInstanceOf[js.Any],
@@ -2355,16 +2449,22 @@ package ssm {
   }
 
   object ComplianceStringFilter {
-    def apply(Key: js.UndefOr[ComplianceStringFilterKey] = js.undefined,
-              Type: js.UndefOr[ComplianceQueryOperatorType] = js.undefined,
-              Values: js.UndefOr[ComplianceStringFilterValueList] = js.undefined): ComplianceStringFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[ComplianceStringFilterKey] = js.undefined,
+        Type: js.UndefOr[ComplianceQueryOperatorType] = js.undefined,
+        Values: js.UndefOr[ComplianceStringFilterValueList] = js.undefined
+    ): ComplianceStringFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ComplianceStringFilter]
     }
@@ -2381,9 +2481,11 @@ package ssm {
   }
 
   object ComplianceSummaryItem {
-    def apply(ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
-              CompliantSummary: js.UndefOr[CompliantSummary] = js.undefined,
-              NonCompliantSummary: js.UndefOr[NonCompliantSummary] = js.undefined): ComplianceSummaryItem = {
+    def apply(
+        ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
+        CompliantSummary: js.UndefOr[CompliantSummary] = js.undefined,
+        NonCompliantSummary: js.UndefOr[NonCompliantSummary] = js.undefined
+    ): ComplianceSummaryItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComplianceType" -> ComplianceType.map { x =>
           x.asInstanceOf[js.Any]
@@ -2410,13 +2512,18 @@ package ssm {
   }
 
   object CompliantSummary {
-    def apply(CompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
-              SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined): CompliantSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("CompliantCount" -> CompliantCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SeveritySummary" -> SeveritySummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
+        SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined
+    ): CompliantSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CompliantCount" -> CompliantCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SeveritySummary" -> SeveritySummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompliantSummary]
     }
@@ -2436,14 +2543,18 @@ package ssm {
     var Description: js.UndefOr[ActivationDescription]
     var ExpirationDate: js.UndefOr[ExpirationDate]
     var RegistrationLimit: js.UndefOr[RegistrationLimit]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateActivationRequest {
-    def apply(IamRole: IamRole,
-              DefaultInstanceName: js.UndefOr[DefaultInstanceName] = js.undefined,
-              Description: js.UndefOr[ActivationDescription] = js.undefined,
-              ExpirationDate: js.UndefOr[ExpirationDate] = js.undefined,
-              RegistrationLimit: js.UndefOr[RegistrationLimit] = js.undefined): CreateActivationRequest = {
+    def apply(
+        IamRole: IamRole,
+        DefaultInstanceName: js.UndefOr[DefaultInstanceName] = js.undefined,
+        Description: js.UndefOr[ActivationDescription] = js.undefined,
+        ExpirationDate: js.UndefOr[ExpirationDate] = js.undefined,
+        RegistrationLimit: js.UndefOr[RegistrationLimit] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateActivationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamRole" -> IamRole.asInstanceOf[js.Any],
         "DefaultInstanceName" -> DefaultInstanceName.map { x =>
@@ -2456,6 +2567,9 @@ package ssm {
           x.asInstanceOf[js.Any]
         },
         "RegistrationLimit" -> RegistrationLimit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -2471,13 +2585,18 @@ package ssm {
   }
 
   object CreateActivationResult {
-    def apply(ActivationCode: js.UndefOr[ActivationCode] = js.undefined,
-              ActivationId: js.UndefOr[ActivationId] = js.undefined): CreateActivationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ActivationCode" -> ActivationCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ActivationId" -> ActivationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ActivationCode: js.UndefOr[ActivationCode] = js.undefined,
+        ActivationId: js.UndefOr[ActivationId] = js.undefined
+    ): CreateActivationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActivationCode" -> ActivationCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ActivationId" -> ActivationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateActivationResult]
     }
@@ -2489,9 +2608,12 @@ package ssm {
   }
 
   object CreateAssociationBatchRequest {
-    def apply(Entries: CreateAssociationBatchRequestEntries): CreateAssociationBatchRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Entries" -> Entries.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entries: CreateAssociationBatchRequestEntries
+    ): CreateAssociationBatchRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entries" -> Entries.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAssociationBatchRequest]
     }
@@ -2502,8 +2624,9 @@ package ssm {
     */
   @js.native
   trait CreateAssociationBatchRequestEntry extends js.Object {
-    var Name: DocumentName
+    var Name: DocumentARN
     var AssociationName: js.UndefOr[AssociationName]
+    var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var InstanceId: js.UndefOr[InstanceId]
@@ -2516,20 +2639,26 @@ package ssm {
   }
 
   object CreateAssociationBatchRequestEntry {
-    def apply(Name: DocumentName,
-              AssociationName: js.UndefOr[AssociationName] = js.undefined,
-              ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): CreateAssociationBatchRequestEntry = {
+    def apply(
+        Name: DocumentARN,
+        AssociationName: js.UndefOr[AssociationName] = js.undefined,
+        AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): CreateAssociationBatchRequestEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "AssociationName" -> AssociationName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutomationTargetParameterName" -> AutomationTargetParameterName.map { x =>
           x.asInstanceOf[js.Any]
         },
         "ComplianceSeverity" -> ComplianceSeverity.map { x =>
@@ -2572,13 +2701,18 @@ package ssm {
   }
 
   object CreateAssociationBatchResult {
-    def apply(Failed: js.UndefOr[FailedCreateAssociationList] = js.undefined,
-              Successful: js.UndefOr[AssociationDescriptionList] = js.undefined): CreateAssociationBatchResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Failed" -> Failed.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Successful" -> Successful.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Failed: js.UndefOr[FailedCreateAssociationList] = js.undefined,
+        Successful: js.UndefOr[AssociationDescriptionList] = js.undefined
+    ): CreateAssociationBatchResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Failed" -> Failed.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Successful" -> Successful.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAssociationBatchResult]
     }
@@ -2586,8 +2720,9 @@ package ssm {
 
   @js.native
   trait CreateAssociationRequest extends js.Object {
-    var Name: DocumentName
+    var Name: DocumentARN
     var AssociationName: js.UndefOr[AssociationName]
+    var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var InstanceId: js.UndefOr[InstanceId]
@@ -2600,20 +2735,26 @@ package ssm {
   }
 
   object CreateAssociationRequest {
-    def apply(Name: DocumentName,
-              AssociationName: js.UndefOr[AssociationName] = js.undefined,
-              ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): CreateAssociationRequest = {
+    def apply(
+        Name: DocumentARN,
+        AssociationName: js.UndefOr[AssociationName] = js.undefined,
+        AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): CreateAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "AssociationName" -> AssociationName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutomationTargetParameterName" -> AutomationTargetParameterName.map { x =>
           x.asInstanceOf[js.Any]
         },
         "ComplianceSeverity" -> ComplianceSeverity.map { x =>
@@ -2655,10 +2796,14 @@ package ssm {
   }
 
   object CreateAssociationResult {
-    def apply(AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined): CreateAssociationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationDescription" -> AssociationDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
+    ): CreateAssociationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationDescription" -> AssociationDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAssociationResult]
     }
@@ -2671,18 +2816,22 @@ package ssm {
     var Attachments: js.UndefOr[AttachmentsSourceList]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentType: js.UndefOr[DocumentType]
+    var Tags: js.UndefOr[TagList]
     var TargetType: js.UndefOr[TargetType]
     var VersionName: js.UndefOr[DocumentVersionName]
   }
 
   object CreateDocumentRequest {
-    def apply(Content: DocumentContent,
-              Name: DocumentName,
-              Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
-              DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
-              DocumentType: js.UndefOr[DocumentType] = js.undefined,
-              TargetType: js.UndefOr[TargetType] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): CreateDocumentRequest = {
+    def apply(
+        Content: DocumentContent,
+        Name: DocumentName,
+        Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
+        DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+        DocumentType: js.UndefOr[DocumentType] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetType: js.UndefOr[TargetType] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): CreateDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Content" -> Content.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
@@ -2693,6 +2842,9 @@ package ssm {
           x.asInstanceOf[js.Any]
         },
         "DocumentType" -> DocumentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "TargetType" -> TargetType.map { x =>
@@ -2713,10 +2865,14 @@ package ssm {
   }
 
   object CreateDocumentResult {
-    def apply(DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined): CreateDocumentResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DocumentDescription" -> DocumentDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined
+    ): CreateDocumentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DocumentDescription" -> DocumentDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDocumentResult]
     }
@@ -2734,19 +2890,23 @@ package ssm {
     var EndDate: js.UndefOr[MaintenanceWindowStringDateTime]
     var ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone]
     var StartDate: js.UndefOr[MaintenanceWindowStringDateTime]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateMaintenanceWindowRequest {
-    def apply(AllowUnassociatedTargets: MaintenanceWindowAllowUnassociatedTargets,
-              Cutoff: MaintenanceWindowCutoff,
-              Duration: MaintenanceWindowDurationHours,
-              Name: MaintenanceWindowName,
-              Schedule: MaintenanceWindowSchedule,
-              ClientToken: js.UndefOr[ClientToken] = js.undefined,
-              Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
-              StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined): CreateMaintenanceWindowRequest = {
+    def apply(
+        AllowUnassociatedTargets: MaintenanceWindowAllowUnassociatedTargets,
+        Cutoff: MaintenanceWindowCutoff,
+        Duration: MaintenanceWindowDurationHours,
+        Name: MaintenanceWindowName,
+        Schedule: MaintenanceWindowSchedule,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
+        StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateMaintenanceWindowRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowUnassociatedTargets" -> AllowUnassociatedTargets.asInstanceOf[js.Any],
         "Cutoff"                   -> Cutoff.asInstanceOf[js.Any],
@@ -2767,6 +2927,9 @@ package ssm {
         },
         "StartDate" -> StartDate.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -2780,10 +2943,14 @@ package ssm {
   }
 
   object CreateMaintenanceWindowResult {
-    def apply(WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): CreateMaintenanceWindowResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowId" -> WindowId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): CreateMaintenanceWindowResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowId" -> WindowId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMaintenanceWindowResult]
     }
@@ -2803,21 +2970,25 @@ package ssm {
     var RejectedPatches: js.UndefOr[PatchIdList]
     var RejectedPatchesAction: js.UndefOr[PatchAction]
     var Sources: js.UndefOr[PatchSourceList]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreatePatchBaselineRequest {
-    def apply(Name: BaselineName,
-              ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
-              ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
-              ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
-              ClientToken: js.UndefOr[ClientToken] = js.undefined,
-              Description: js.UndefOr[BaselineDescription] = js.undefined,
-              GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
-              Sources: js.UndefOr[PatchSourceList] = js.undefined): CreatePatchBaselineRequest = {
+    def apply(
+        Name: BaselineName,
+        ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
+        ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
+        ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Description: js.UndefOr[BaselineDescription] = js.undefined,
+        GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
+        Sources: js.UndefOr[PatchSourceList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreatePatchBaselineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "ApprovalRules" -> ApprovalRules.map { x =>
@@ -2852,6 +3023,9 @@ package ssm {
         },
         "Sources" -> Sources.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -2865,10 +3039,14 @@ package ssm {
   }
 
   object CreatePatchBaselineResult {
-    def apply(BaselineId: js.UndefOr[BaselineId] = js.undefined): CreatePatchBaselineResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: js.UndefOr[BaselineId] = js.undefined
+    ): CreatePatchBaselineResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePatchBaselineResult]
     }
@@ -2881,8 +3059,10 @@ package ssm {
   }
 
   object CreateResourceDataSyncRequest {
-    def apply(S3Destination: ResourceDataSyncS3Destination,
-              SyncName: ResourceDataSyncName): CreateResourceDataSyncRequest = {
+    def apply(
+        S3Destination: ResourceDataSyncS3Destination,
+        SyncName: ResourceDataSyncName
+    ): CreateResourceDataSyncRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "S3Destination" -> S3Destination.asInstanceOf[js.Any],
         "SyncName"      -> SyncName.asInstanceOf[js.Any]
@@ -2896,8 +3076,10 @@ package ssm {
   trait CreateResourceDataSyncResult extends js.Object {}
 
   object CreateResourceDataSyncResult {
-    def apply(): CreateResourceDataSyncResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateResourceDataSyncResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResourceDataSyncResult]
     }
@@ -2909,9 +3091,12 @@ package ssm {
   }
 
   object DeleteActivationRequest {
-    def apply(ActivationId: ActivationId): DeleteActivationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ActivationId" -> ActivationId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ActivationId: ActivationId
+    ): DeleteActivationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActivationId" -> ActivationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteActivationRequest]
     }
@@ -2921,8 +3106,10 @@ package ssm {
   trait DeleteActivationResult extends js.Object {}
 
   object DeleteActivationResult {
-    def apply(): DeleteActivationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteActivationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteActivationResult]
     }
@@ -2932,13 +3119,15 @@ package ssm {
   trait DeleteAssociationRequest extends js.Object {
     var AssociationId: js.UndefOr[AssociationId]
     var InstanceId: js.UndefOr[InstanceId]
-    var Name: js.UndefOr[DocumentName]
+    var Name: js.UndefOr[DocumentARN]
   }
 
   object DeleteAssociationRequest {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined): DeleteAssociationRequest = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined
+    ): DeleteAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2959,8 +3148,10 @@ package ssm {
   trait DeleteAssociationResult extends js.Object {}
 
   object DeleteAssociationResult {
-    def apply(): DeleteAssociationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteAssociationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAssociationResult]
     }
@@ -2972,9 +3163,12 @@ package ssm {
   }
 
   object DeleteDocumentRequest {
-    def apply(Name: DocumentName): DeleteDocumentRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: DocumentName
+    ): DeleteDocumentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDocumentRequest]
     }
@@ -2984,8 +3178,10 @@ package ssm {
   trait DeleteDocumentResult extends js.Object {}
 
   object DeleteDocumentResult {
-    def apply(): DeleteDocumentResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteDocumentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDocumentResult]
     }
@@ -3000,10 +3196,12 @@ package ssm {
   }
 
   object DeleteInventoryRequest {
-    def apply(TypeName: InventoryItemTypeName,
-              ClientToken: js.UndefOr[ClientToken] = js.undefined,
-              DryRun: js.UndefOr[DryRun] = js.undefined,
-              SchemaDeleteOption: js.UndefOr[InventorySchemaDeleteOption] = js.undefined): DeleteInventoryRequest = {
+    def apply(
+        TypeName: InventoryItemTypeName,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        DryRun: js.UndefOr[DryRun] = js.undefined,
+        SchemaDeleteOption: js.UndefOr[InventorySchemaDeleteOption] = js.undefined
+    ): DeleteInventoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TypeName" -> TypeName.asInstanceOf[js.Any],
         "ClientToken" -> ClientToken.map { x =>
@@ -3029,9 +3227,11 @@ package ssm {
   }
 
   object DeleteInventoryResult {
-    def apply(DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
-              DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
-              TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined): DeleteInventoryResult = {
+    def apply(
+        DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
+        DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
+        TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined
+    ): DeleteInventoryResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeletionId" -> DeletionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3054,9 +3254,12 @@ package ssm {
   }
 
   object DeleteMaintenanceWindowRequest {
-    def apply(WindowId: MaintenanceWindowId): DeleteMaintenanceWindowRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("WindowId" -> WindowId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WindowId: MaintenanceWindowId
+    ): DeleteMaintenanceWindowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowId" -> WindowId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMaintenanceWindowRequest]
     }
@@ -3068,10 +3271,14 @@ package ssm {
   }
 
   object DeleteMaintenanceWindowResult {
-    def apply(WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): DeleteMaintenanceWindowResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowId" -> WindowId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): DeleteMaintenanceWindowResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowId" -> WindowId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMaintenanceWindowResult]
     }
@@ -3083,9 +3290,12 @@ package ssm {
   }
 
   object DeleteParameterRequest {
-    def apply(Name: PSParameterName): DeleteParameterRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: PSParameterName
+    ): DeleteParameterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteParameterRequest]
     }
@@ -3095,8 +3305,10 @@ package ssm {
   trait DeleteParameterResult extends js.Object {}
 
   object DeleteParameterResult {
-    def apply(): DeleteParameterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteParameterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteParameterResult]
     }
@@ -3108,9 +3320,12 @@ package ssm {
   }
 
   object DeleteParametersRequest {
-    def apply(Names: ParameterNameList): DeleteParametersRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Names" -> Names.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Names: ParameterNameList
+    ): DeleteParametersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Names" -> Names.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteParametersRequest]
     }
@@ -3123,13 +3338,18 @@ package ssm {
   }
 
   object DeleteParametersResult {
-    def apply(DeletedParameters: js.UndefOr[ParameterNameList] = js.undefined,
-              InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined): DeleteParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DeletedParameters" -> DeletedParameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "InvalidParameters" -> InvalidParameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DeletedParameters: js.UndefOr[ParameterNameList] = js.undefined,
+        InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined
+    ): DeleteParametersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeletedParameters" -> DeletedParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InvalidParameters" -> InvalidParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteParametersResult]
     }
@@ -3141,9 +3361,12 @@ package ssm {
   }
 
   object DeletePatchBaselineRequest {
-    def apply(BaselineId: BaselineId): DeletePatchBaselineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: BaselineId
+    ): DeletePatchBaselineRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePatchBaselineRequest]
     }
@@ -3155,10 +3378,14 @@ package ssm {
   }
 
   object DeletePatchBaselineResult {
-    def apply(BaselineId: js.UndefOr[BaselineId] = js.undefined): DeletePatchBaselineResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: js.UndefOr[BaselineId] = js.undefined
+    ): DeletePatchBaselineResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePatchBaselineResult]
     }
@@ -3170,9 +3397,12 @@ package ssm {
   }
 
   object DeleteResourceDataSyncRequest {
-    def apply(SyncName: ResourceDataSyncName): DeleteResourceDataSyncRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("SyncName" -> SyncName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SyncName: ResourceDataSyncName
+    ): DeleteResourceDataSyncRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SyncName" -> SyncName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceDataSyncRequest]
     }
@@ -3182,8 +3412,10 @@ package ssm {
   trait DeleteResourceDataSyncResult extends js.Object {}
 
   object DeleteResourceDataSyncResult {
-    def apply(): DeleteResourceDataSyncResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteResourceDataSyncResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResourceDataSyncResult]
     }
@@ -3195,9 +3427,12 @@ package ssm {
   }
 
   object DeregisterManagedInstanceRequest {
-    def apply(InstanceId: ManagedInstanceId): DeregisterManagedInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: ManagedInstanceId
+    ): DeregisterManagedInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterManagedInstanceRequest]
     }
@@ -3207,8 +3442,10 @@ package ssm {
   trait DeregisterManagedInstanceResult extends js.Object {}
 
   object DeregisterManagedInstanceResult {
-    def apply(): DeregisterManagedInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeregisterManagedInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterManagedInstanceResult]
     }
@@ -3221,7 +3458,10 @@ package ssm {
   }
 
   object DeregisterPatchBaselineForPatchGroupRequest {
-    def apply(BaselineId: BaselineId, PatchGroup: PatchGroup): DeregisterPatchBaselineForPatchGroupRequest = {
+    def apply(
+        BaselineId: BaselineId,
+        PatchGroup: PatchGroup
+    ): DeregisterPatchBaselineForPatchGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
@@ -3240,13 +3480,18 @@ package ssm {
   }
 
   object DeregisterPatchBaselineForPatchGroupResult {
-    def apply(BaselineId: js.UndefOr[BaselineId] = js.undefined,
-              PatchGroup: js.UndefOr[PatchGroup] = js.undefined): DeregisterPatchBaselineForPatchGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PatchGroup" -> PatchGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: js.UndefOr[BaselineId] = js.undefined,
+        PatchGroup: js.UndefOr[PatchGroup] = js.undefined
+    ): DeregisterPatchBaselineForPatchGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PatchGroup" -> PatchGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -3262,9 +3507,11 @@ package ssm {
   }
 
   object DeregisterTargetFromMaintenanceWindowRequest {
-    def apply(WindowId: MaintenanceWindowId,
-              WindowTargetId: MaintenanceWindowTargetId,
-              Safe: js.UndefOr[Boolean] = js.undefined): DeregisterTargetFromMaintenanceWindowRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        WindowTargetId: MaintenanceWindowTargetId,
+        Safe: js.UndefOr[Boolean] = js.undefined
+    ): DeregisterTargetFromMaintenanceWindowRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId"       -> WindowId.asInstanceOf[js.Any],
         "WindowTargetId" -> WindowTargetId.asInstanceOf[js.Any],
@@ -3290,11 +3537,14 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
     ): DeregisterTargetFromMaintenanceWindowResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowId" -> WindowId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WindowTargetId" -> WindowTargetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowId" -> WindowId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WindowTargetId" -> WindowTargetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -3309,8 +3559,10 @@ package ssm {
   }
 
   object DeregisterTaskFromMaintenanceWindowRequest {
-    def apply(WindowId: MaintenanceWindowId,
-              WindowTaskId: MaintenanceWindowTaskId): DeregisterTaskFromMaintenanceWindowRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        WindowTaskId: MaintenanceWindowTaskId
+    ): DeregisterTaskFromMaintenanceWindowRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId"     -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
@@ -3333,11 +3585,14 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): DeregisterTaskFromMaintenanceWindowResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowId" -> WindowId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WindowTaskId" -> WindowTaskId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowId" -> WindowId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WindowTaskId" -> WindowTaskId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterTaskFromMaintenanceWindowResult]
     }
@@ -3353,13 +3608,18 @@ package ssm {
   }
 
   object DescribeActivationsFilter {
-    def apply(FilterKey: js.UndefOr[DescribeActivationsFilterKeys] = js.undefined,
-              FilterValues: js.UndefOr[StringList] = js.undefined): DescribeActivationsFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("FilterKey" -> FilterKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FilterValues" -> FilterValues.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FilterKey: js.UndefOr[DescribeActivationsFilterKeys] = js.undefined,
+        FilterValues: js.UndefOr[StringList] = js.undefined
+    ): DescribeActivationsFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FilterKey" -> FilterKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FilterValues" -> FilterValues.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeActivationsFilter]
     }
@@ -3381,9 +3641,11 @@ package ssm {
   }
 
   object DescribeActivationsRequest {
-    def apply(Filters: js.UndefOr[DescribeActivationsFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeActivationsRequest = {
+    def apply(
+        Filters: js.UndefOr[DescribeActivationsFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeActivationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -3407,13 +3669,18 @@ package ssm {
   }
 
   object DescribeActivationsResult {
-    def apply(ActivationList: js.UndefOr[ActivationList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeActivationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ActivationList" -> ActivationList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ActivationList: js.UndefOr[ActivationList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeActivationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActivationList" -> ActivationList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeActivationsResult]
     }
@@ -3429,11 +3696,13 @@ package ssm {
   }
 
   object DescribeAssociationExecutionTargetsRequest {
-    def apply(AssociationId: AssociationId,
-              ExecutionId: AssociationExecutionId,
-              Filters: js.UndefOr[AssociationExecutionTargetsFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAssociationExecutionTargetsRequest = {
+    def apply(
+        AssociationId: AssociationId,
+        ExecutionId: AssociationExecutionId,
+        Filters: js.UndefOr[AssociationExecutionTargetsFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAssociationExecutionTargetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "ExecutionId"   -> ExecutionId.asInstanceOf[js.Any],
@@ -3461,13 +3730,18 @@ package ssm {
   }
 
   object DescribeAssociationExecutionTargetsResult {
-    def apply(AssociationExecutionTargets: js.UndefOr[AssociationExecutionTargetsList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAssociationExecutionTargetsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationExecutionTargets" -> AssociationExecutionTargets.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AssociationExecutionTargets: js.UndefOr[AssociationExecutionTargetsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAssociationExecutionTargetsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationExecutionTargets" -> AssociationExecutionTargets.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssociationExecutionTargetsResult]
     }
@@ -3482,10 +3756,12 @@ package ssm {
   }
 
   object DescribeAssociationExecutionsRequest {
-    def apply(AssociationId: AssociationId,
-              Filters: js.UndefOr[AssociationExecutionFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAssociationExecutionsRequest = {
+    def apply(
+        AssociationId: AssociationId,
+        Filters: js.UndefOr[AssociationExecutionFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAssociationExecutionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -3510,13 +3786,18 @@ package ssm {
   }
 
   object DescribeAssociationExecutionsResult {
-    def apply(AssociationExecutions: js.UndefOr[AssociationExecutionsList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAssociationExecutionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationExecutions" -> AssociationExecutions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AssociationExecutions: js.UndefOr[AssociationExecutionsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAssociationExecutionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationExecutions" -> AssociationExecutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssociationExecutionsResult]
     }
@@ -3527,14 +3808,16 @@ package ssm {
     var AssociationId: js.UndefOr[AssociationId]
     var AssociationVersion: js.UndefOr[AssociationVersion]
     var InstanceId: js.UndefOr[InstanceId]
-    var Name: js.UndefOr[DocumentName]
+    var Name: js.UndefOr[DocumentARN]
   }
 
   object DescribeAssociationRequest {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined): DescribeAssociationRequest = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined
+    ): DescribeAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3560,10 +3843,14 @@ package ssm {
   }
 
   object DescribeAssociationResult {
-    def apply(AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined): DescribeAssociationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationDescription" -> AssociationDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
+    ): DescribeAssociationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationDescription" -> AssociationDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAssociationResult]
     }
@@ -3577,9 +3864,11 @@ package ssm {
   }
 
   object DescribeAutomationExecutionsRequest {
-    def apply(Filters: js.UndefOr[AutomationExecutionFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAutomationExecutionsRequest = {
+    def apply(
+        Filters: js.UndefOr[AutomationExecutionFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAutomationExecutionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -3603,8 +3892,10 @@ package ssm {
   }
 
   object DescribeAutomationExecutionsResult {
-    def apply(AutomationExecutionMetadataList: js.UndefOr[AutomationExecutionMetadataList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAutomationExecutionsResult = {
+    def apply(
+        AutomationExecutionMetadataList: js.UndefOr[AutomationExecutionMetadataList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAutomationExecutionsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutomationExecutionMetadataList" -> AutomationExecutionMetadataList.map { x =>
           x.asInstanceOf[js.Any]
@@ -3628,11 +3919,13 @@ package ssm {
   }
 
   object DescribeAutomationStepExecutionsRequest {
-    def apply(AutomationExecutionId: AutomationExecutionId,
-              Filters: js.UndefOr[StepExecutionFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ReverseOrder: js.UndefOr[Boolean] = js.undefined): DescribeAutomationStepExecutionsRequest = {
+    def apply(
+        AutomationExecutionId: AutomationExecutionId,
+        Filters: js.UndefOr[StepExecutionFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ReverseOrder: js.UndefOr[Boolean] = js.undefined
+    ): DescribeAutomationStepExecutionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -3660,13 +3953,18 @@ package ssm {
   }
 
   object DescribeAutomationStepExecutionsResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StepExecutions: js.UndefOr[StepExecutionList] = js.undefined): DescribeAutomationStepExecutionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StepExecutions" -> StepExecutions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StepExecutions: js.UndefOr[StepExecutionList] = js.undefined
+    ): DescribeAutomationStepExecutionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StepExecutions" -> StepExecutions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAutomationStepExecutionsResult]
     }
@@ -3680,9 +3978,11 @@ package ssm {
   }
 
   object DescribeAvailablePatchesRequest {
-    def apply(Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
-              MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAvailablePatchesRequest = {
+    def apply(
+        Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
+        MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAvailablePatchesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -3706,13 +4006,18 @@ package ssm {
   }
 
   object DescribeAvailablePatchesResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Patches: js.UndefOr[PatchList] = js.undefined): DescribeAvailablePatchesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Patches" -> Patches.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Patches: js.UndefOr[PatchList] = js.undefined
+    ): DescribeAvailablePatchesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Patches" -> Patches.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAvailablePatchesResult]
     }
@@ -3725,7 +4030,10 @@ package ssm {
   }
 
   object DescribeDocumentPermissionRequest {
-    def apply(Name: DocumentName, PermissionType: DocumentPermissionType): DescribeDocumentPermissionRequest = {
+    def apply(
+        Name: DocumentName,
+        PermissionType: DocumentPermissionType
+    ): DescribeDocumentPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"           -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any]
@@ -3741,10 +4049,14 @@ package ssm {
   }
 
   object DescribeDocumentPermissionResponse {
-    def apply(AccountIds: js.UndefOr[AccountIdList] = js.undefined): DescribeDocumentPermissionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+    ): DescribeDocumentPermissionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentPermissionResponse]
     }
@@ -3758,9 +4070,11 @@ package ssm {
   }
 
   object DescribeDocumentRequest {
-    def apply(Name: DocumentARN,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): DescribeDocumentRequest = {
+    def apply(
+        Name: DocumentARN,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): DescribeDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "DocumentVersion" -> DocumentVersion.map { x =>
@@ -3781,10 +4095,14 @@ package ssm {
   }
 
   object DescribeDocumentResult {
-    def apply(Document: js.UndefOr[DocumentDescription] = js.undefined): DescribeDocumentResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Document" -> Document.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Document: js.UndefOr[DocumentDescription] = js.undefined
+    ): DescribeDocumentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Document" -> Document.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentResult]
     }
@@ -3798,9 +4116,11 @@ package ssm {
   }
 
   object DescribeEffectiveInstanceAssociationsRequest {
-    def apply(InstanceId: InstanceId,
-              MaxResults: js.UndefOr[EffectiveInstanceAssociationMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeEffectiveInstanceAssociationsRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[EffectiveInstanceAssociationMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeEffectiveInstanceAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -3824,13 +4144,18 @@ package ssm {
   }
 
   object DescribeEffectiveInstanceAssociationsResult {
-    def apply(Associations: js.UndefOr[InstanceAssociationList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeEffectiveInstanceAssociationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Associations" -> Associations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Associations: js.UndefOr[InstanceAssociationList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeEffectiveInstanceAssociationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Associations" -> Associations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -3846,9 +4171,11 @@ package ssm {
   }
 
   object DescribeEffectivePatchesForPatchBaselineRequest {
-    def apply(BaselineId: BaselineId,
-              MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeEffectivePatchesForPatchBaselineRequest = {
+    def apply(
+        BaselineId: BaselineId,
+        MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeEffectivePatchesForPatchBaselineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -3872,13 +4199,18 @@ package ssm {
   }
 
   object DescribeEffectivePatchesForPatchBaselineResult {
-    def apply(EffectivePatches: js.UndefOr[EffectivePatchList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeEffectivePatchesForPatchBaselineResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EffectivePatches" -> EffectivePatches.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EffectivePatches: js.UndefOr[EffectivePatchList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeEffectivePatchesForPatchBaselineResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EffectivePatches" -> EffectivePatches.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -3894,9 +4226,11 @@ package ssm {
   }
 
   object DescribeInstanceAssociationsStatusRequest {
-    def apply(InstanceId: InstanceId,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstanceAssociationsStatusRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceAssociationsStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -3918,14 +4252,18 @@ package ssm {
   }
 
   object DescribeInstanceAssociationsStatusResult {
-    def apply(InstanceAssociationStatusInfos: js.UndefOr[InstanceAssociationStatusInfos] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstanceAssociationsStatusResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("InstanceAssociationStatusInfos" -> InstanceAssociationStatusInfos.map { x =>
+    def apply(
+        InstanceAssociationStatusInfos: js.UndefOr[InstanceAssociationStatusInfos] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceAssociationsStatusResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceAssociationStatusInfos" -> InstanceAssociationStatusInfos.map { x =>
           x.asInstanceOf[js.Any]
-        }, "NextToken" -> NextToken.map { x =>
+        },
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstanceAssociationsStatusResult]
     }
@@ -3940,10 +4278,12 @@ package ssm {
   }
 
   object DescribeInstanceInformationRequest {
-    def apply(Filters: js.UndefOr[InstanceInformationStringFilterList] = js.undefined,
-              InstanceInformationFilterList: js.UndefOr[InstanceInformationFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResultsEC2Compatible] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstanceInformationRequest = {
+    def apply(
+        Filters: js.UndefOr[InstanceInformationStringFilterList] = js.undefined,
+        InstanceInformationFilterList: js.UndefOr[InstanceInformationFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsEC2Compatible] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceInformationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -3970,13 +4310,18 @@ package ssm {
   }
 
   object DescribeInstanceInformationResult {
-    def apply(InstanceInformationList: js.UndefOr[InstanceInformationList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstanceInformationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceInformationList" -> InstanceInformationList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceInformationList: js.UndefOr[InstanceInformationList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstanceInformationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceInformationList" -> InstanceInformationList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstanceInformationResult]
     }
@@ -3991,10 +4336,12 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesForPatchGroupRequest {
-    def apply(PatchGroup: PatchGroup,
-              Filters: js.UndefOr[InstancePatchStateFilterList] = js.undefined,
-              MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancePatchStatesForPatchGroupRequest = {
+    def apply(
+        PatchGroup: PatchGroup,
+        Filters: js.UndefOr[InstancePatchStateFilterList] = js.undefined,
+        MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstancePatchStatesForPatchGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4021,13 +4368,18 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesForPatchGroupResult {
-    def apply(InstancePatchStates: js.UndefOr[InstancePatchStatesList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancePatchStatesForPatchGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstancePatchStates" -> InstancePatchStates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstancePatchStates: js.UndefOr[InstancePatchStatesList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstancePatchStatesForPatchGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstancePatchStates" -> InstancePatchStates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -4043,9 +4395,11 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesRequest {
-    def apply(InstanceIds: InstanceIdList,
-              MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancePatchStatesRequest = {
+    def apply(
+        InstanceIds: InstanceIdList,
+        MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstancePatchStatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceIds" -> InstanceIds.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -4067,13 +4421,18 @@ package ssm {
   }
 
   object DescribeInstancePatchStatesResult {
-    def apply(InstancePatchStates: js.UndefOr[InstancePatchStateList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancePatchStatesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstancePatchStates" -> InstancePatchStates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstancePatchStates: js.UndefOr[InstancePatchStateList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstancePatchStatesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstancePatchStates" -> InstancePatchStates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancePatchStatesResult]
     }
@@ -4088,10 +4447,12 @@ package ssm {
   }
 
   object DescribeInstancePatchesRequest {
-    def apply(InstanceId: InstanceId,
-              Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
-              MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancePatchesRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
+        MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstancePatchesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4116,13 +4477,18 @@ package ssm {
   }
 
   object DescribeInstancePatchesResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Patches: js.UndefOr[PatchComplianceDataList] = js.undefined): DescribeInstancePatchesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Patches" -> Patches.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Patches: js.UndefOr[PatchComplianceDataList] = js.undefined
+    ): DescribeInstancePatchesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Patches" -> Patches.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancePatchesResult]
     }
@@ -4136,9 +4502,11 @@ package ssm {
   }
 
   object DescribeInventoryDeletionsRequest {
-    def apply(DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInventoryDeletionsRequest = {
+    def apply(
+        DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInventoryDeletionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeletionId" -> DeletionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -4162,13 +4530,18 @@ package ssm {
   }
 
   object DescribeInventoryDeletionsResult {
-    def apply(InventoryDeletions: js.UndefOr[InventoryDeletionsList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInventoryDeletionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InventoryDeletions" -> InventoryDeletions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InventoryDeletions: js.UndefOr[InventoryDeletionsList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInventoryDeletionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InventoryDeletions" -> InventoryDeletions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInventoryDeletionsResult]
     }
@@ -4247,10 +4620,12 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionTasksRequest {
-    def apply(WindowExecutionId: MaintenanceWindowExecutionId,
-              Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeMaintenanceWindowExecutionTasksRequest = {
+    def apply(
+        WindowExecutionId: MaintenanceWindowExecutionId,
+        Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMaintenanceWindowExecutionTasksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4281,11 +4656,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowExecutionTaskIdentities: js.UndefOr[MaintenanceWindowExecutionTaskIdentityList] = js.undefined
     ): DescribeMaintenanceWindowExecutionTasksResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WindowExecutionTaskIdentities" -> WindowExecutionTaskIdentities.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WindowExecutionTaskIdentities" -> WindowExecutionTaskIdentities.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -4302,10 +4680,12 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowExecutionsRequest {
-    def apply(WindowId: MaintenanceWindowId,
-              Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeMaintenanceWindowExecutionsRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMaintenanceWindowExecutionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId" -> WindowId.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4336,11 +4716,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowExecutions: js.UndefOr[MaintenanceWindowExecutionList] = js.undefined
     ): DescribeMaintenanceWindowExecutionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WindowExecutions" -> WindowExecutions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WindowExecutions" -> WindowExecutions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMaintenanceWindowExecutionsResult]
     }
@@ -4357,12 +4740,14 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowScheduleRequest {
-    def apply(Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaintenanceWindowSearchMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ResourceType: js.UndefOr[MaintenanceWindowResourceType] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): DescribeMaintenanceWindowScheduleRequest = {
+    def apply(
+        Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaintenanceWindowSearchMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResourceType: js.UndefOr[MaintenanceWindowResourceType] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): DescribeMaintenanceWindowScheduleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -4399,11 +4784,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ScheduledWindowExecutions: js.UndefOr[ScheduledWindowExecutionList] = js.undefined
     ): DescribeMaintenanceWindowScheduleResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ScheduledWindowExecutions" -> ScheduledWindowExecutions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduledWindowExecutions" -> ScheduledWindowExecutions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMaintenanceWindowScheduleResult]
     }
@@ -4418,10 +4806,12 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowTargetsRequest {
-    def apply(WindowId: MaintenanceWindowId,
-              Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeMaintenanceWindowTargetsRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMaintenanceWindowTargetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId" -> WindowId.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4450,11 +4840,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Targets: js.UndefOr[MaintenanceWindowTargetList] = js.undefined
     ): DescribeMaintenanceWindowTargetsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Targets" -> Targets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Targets" -> Targets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMaintenanceWindowTargetsResult]
     }
@@ -4469,10 +4862,12 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowTasksRequest {
-    def apply(WindowId: MaintenanceWindowId,
-              Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeMaintenanceWindowTasksRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMaintenanceWindowTasksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId" -> WindowId.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4497,13 +4892,18 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowTasksResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tasks: js.UndefOr[MaintenanceWindowTaskList] = js.undefined): DescribeMaintenanceWindowTasksResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tasks" -> Tasks.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tasks: js.UndefOr[MaintenanceWindowTaskList] = js.undefined
+    ): DescribeMaintenanceWindowTasksResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tasks" -> Tasks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMaintenanceWindowTasksResult]
     }
@@ -4518,10 +4918,12 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowsForTargetRequest {
-    def apply(ResourceType: MaintenanceWindowResourceType,
-              Targets: Targets,
-              MaxResults: js.UndefOr[MaintenanceWindowSearchMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeMaintenanceWindowsForTargetRequest = {
+    def apply(
+        ResourceType: MaintenanceWindowResourceType,
+        Targets: Targets,
+        MaxResults: js.UndefOr[MaintenanceWindowSearchMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMaintenanceWindowsForTargetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "Targets"      -> Targets.asInstanceOf[js.Any],
@@ -4550,11 +4952,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowIdentities: js.UndefOr[MaintenanceWindowsForTargetList] = js.undefined
     ): DescribeMaintenanceWindowsForTargetResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WindowIdentities" -> WindowIdentities.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WindowIdentities" -> WindowIdentities.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMaintenanceWindowsForTargetResult]
     }
@@ -4568,9 +4973,11 @@ package ssm {
   }
 
   object DescribeMaintenanceWindowsRequest {
-    def apply(Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeMaintenanceWindowsRequest = {
+    def apply(
+        Filters: js.UndefOr[MaintenanceWindowFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeMaintenanceWindowsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -4598,11 +5005,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowIdentities: js.UndefOr[MaintenanceWindowIdentityList] = js.undefined
     ): DescribeMaintenanceWindowsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WindowIdentities" -> WindowIdentities.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WindowIdentities" -> WindowIdentities.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMaintenanceWindowsResult]
     }
@@ -4617,10 +5027,12 @@ package ssm {
   }
 
   object DescribeParametersRequest {
-    def apply(Filters: js.UndefOr[ParametersFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ParameterFilters: js.UndefOr[ParameterStringFilterList] = js.undefined): DescribeParametersRequest = {
+    def apply(
+        Filters: js.UndefOr[ParametersFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ParameterFilters: js.UndefOr[ParameterStringFilterList] = js.undefined
+    ): DescribeParametersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -4647,13 +5059,18 @@ package ssm {
   }
 
   object DescribeParametersResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Parameters: js.UndefOr[ParameterMetadataList] = js.undefined): DescribeParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Parameters: js.UndefOr[ParameterMetadataList] = js.undefined
+    ): DescribeParametersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeParametersResult]
     }
@@ -4667,9 +5084,11 @@ package ssm {
   }
 
   object DescribePatchBaselinesRequest {
-    def apply(Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
-              MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribePatchBaselinesRequest = {
+    def apply(
+        Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
+        MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribePatchBaselinesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -4693,13 +5112,18 @@ package ssm {
   }
 
   object DescribePatchBaselinesResult {
-    def apply(BaselineIdentities: js.UndefOr[PatchBaselineIdentityList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribePatchBaselinesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineIdentities" -> BaselineIdentities.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineIdentities: js.UndefOr[PatchBaselineIdentityList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribePatchBaselinesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineIdentities" -> BaselineIdentities.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePatchBaselinesResult]
     }
@@ -4711,9 +5135,12 @@ package ssm {
   }
 
   object DescribePatchGroupStateRequest {
-    def apply(PatchGroup: PatchGroup): DescribePatchGroupStateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("PatchGroup" -> PatchGroup.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PatchGroup: PatchGroup
+    ): DescribePatchGroupStateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePatchGroupStateRequest]
     }
@@ -4731,13 +5158,15 @@ package ssm {
   }
 
   object DescribePatchGroupStateResult {
-    def apply(Instances: js.UndefOr[Int] = js.undefined,
-              InstancesWithFailedPatches: js.UndefOr[Int] = js.undefined,
-              InstancesWithInstalledOtherPatches: js.UndefOr[Int] = js.undefined,
-              InstancesWithInstalledPatches: js.UndefOr[Int] = js.undefined,
-              InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount] = js.undefined,
-              InstancesWithMissingPatches: js.UndefOr[Int] = js.undefined,
-              InstancesWithNotApplicablePatches: js.UndefOr[Int] = js.undefined): DescribePatchGroupStateResult = {
+    def apply(
+        Instances: js.UndefOr[Int] = js.undefined,
+        InstancesWithFailedPatches: js.UndefOr[Int] = js.undefined,
+        InstancesWithInstalledOtherPatches: js.UndefOr[Int] = js.undefined,
+        InstancesWithInstalledPatches: js.UndefOr[Int] = js.undefined,
+        InstancesWithInstalledRejectedPatches: js.UndefOr[InstancesCount] = js.undefined,
+        InstancesWithMissingPatches: js.UndefOr[Int] = js.undefined,
+        InstancesWithNotApplicablePatches: js.UndefOr[Int] = js.undefined
+    ): DescribePatchGroupStateResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Instances" -> Instances.map { x =>
           x.asInstanceOf[js.Any]
@@ -4774,9 +5203,11 @@ package ssm {
   }
 
   object DescribePatchGroupsRequest {
-    def apply(Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
-              MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribePatchGroupsRequest = {
+    def apply(
+        Filters: js.UndefOr[PatchOrchestratorFilterList] = js.undefined,
+        MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribePatchGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -4800,13 +5231,18 @@ package ssm {
   }
 
   object DescribePatchGroupsResult {
-    def apply(Mappings: js.UndefOr[PatchGroupPatchBaselineMappingList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribePatchGroupsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Mappings" -> Mappings.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Mappings: js.UndefOr[PatchGroupPatchBaselineMappingList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribePatchGroupsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Mappings" -> Mappings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePatchGroupsResult]
     }
@@ -4821,10 +5257,12 @@ package ssm {
   }
 
   object DescribeSessionsRequest {
-    def apply(State: SessionState,
-              Filters: js.UndefOr[SessionFilterList] = js.undefined,
-              MaxResults: js.UndefOr[SessionMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeSessionsRequest = {
+    def apply(
+        State: SessionState,
+        Filters: js.UndefOr[SessionFilterList] = js.undefined,
+        MaxResults: js.UndefOr[SessionMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeSessionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "State" -> State.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4849,13 +5287,18 @@ package ssm {
   }
 
   object DescribeSessionsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Sessions: js.UndefOr[SessionList] = js.undefined): DescribeSessionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Sessions" -> Sessions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Sessions: js.UndefOr[SessionList] = js.undefined
+    ): DescribeSessionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sessions" -> Sessions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSessionsResponse]
     }
@@ -4872,9 +5315,11 @@ package ssm {
   }
 
   object DocumentDefaultVersionDescription {
-    def apply(DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              DefaultVersionName: js.UndefOr[DocumentVersionName] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined): DocumentDefaultVersionDescription = {
+    def apply(
+        DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        DefaultVersionName: js.UndefOr[DocumentVersionName] = js.undefined,
+        Name: js.UndefOr[DocumentName] = js.undefined
+    ): DocumentDefaultVersionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultVersion" -> DefaultVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -4920,27 +5365,29 @@ package ssm {
   }
 
   object DocumentDescription {
-    def apply(AttachmentsInformation: js.UndefOr[AttachmentInformationList] = js.undefined,
-              CreatedDate: js.UndefOr[DateTime] = js.undefined,
-              DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              Description: js.UndefOr[DescriptionInDocument] = js.undefined,
-              DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
-              DocumentType: js.UndefOr[DocumentType] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              Hash: js.UndefOr[DocumentHash] = js.undefined,
-              HashType: js.UndefOr[DocumentHashType] = js.undefined,
-              LatestVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              Name: js.UndefOr[DocumentARN] = js.undefined,
-              Owner: js.UndefOr[DocumentOwner] = js.undefined,
-              Parameters: js.UndefOr[DocumentParameterList] = js.undefined,
-              PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
-              SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
-              Sha1: js.UndefOr[DocumentSha1] = js.undefined,
-              Status: js.UndefOr[DocumentStatus] = js.undefined,
-              StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              TargetType: js.UndefOr[TargetType] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): DocumentDescription = {
+    def apply(
+        AttachmentsInformation: js.UndefOr[AttachmentInformationList] = js.undefined,
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Description: js.UndefOr[DescriptionInDocument] = js.undefined,
+        DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+        DocumentType: js.UndefOr[DocumentType] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Hash: js.UndefOr[DocumentHash] = js.undefined,
+        HashType: js.UndefOr[DocumentHashType] = js.undefined,
+        LatestVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        Owner: js.UndefOr[DocumentOwner] = js.undefined,
+        Parameters: js.UndefOr[DocumentParameterList] = js.undefined,
+        PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
+        SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
+        Sha1: js.UndefOr[DocumentSha1] = js.undefined,
+        Status: js.UndefOr[DocumentStatus] = js.undefined,
+        StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetType: js.UndefOr[TargetType] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): DocumentDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttachmentsInformation" -> AttachmentsInformation.map { x =>
           x.asInstanceOf[js.Any]
@@ -5021,10 +5468,14 @@ package ssm {
   }
 
   object DocumentFilter {
-    def apply(key: DocumentFilterKey, value: DocumentFilterValue): DocumentFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("key" -> key.asInstanceOf[js.Any], "value" -> value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        key: DocumentFilterKey,
+        value: DocumentFilterValue
+    ): DocumentFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key"   -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentFilter]
     }
@@ -5071,16 +5522,18 @@ package ssm {
   }
 
   object DocumentIdentifier {
-    def apply(DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
-              DocumentType: js.UndefOr[DocumentType] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              Name: js.UndefOr[DocumentARN] = js.undefined,
-              Owner: js.UndefOr[DocumentOwner] = js.undefined,
-              PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
-              SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              TargetType: js.UndefOr[TargetType] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): DocumentIdentifier = {
+    def apply(
+        DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+        DocumentType: js.UndefOr[DocumentType] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        Owner: js.UndefOr[DocumentOwner] = js.undefined,
+        PlatformTypes: js.UndefOr[PlatformTypeList] = js.undefined,
+        SchemaVersion: js.UndefOr[DocumentSchemaVersion] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetType: js.UndefOr[TargetType] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): DocumentIdentifier = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentFormat" -> DocumentFormat.map { x =>
           x.asInstanceOf[js.Any]
@@ -5137,20 +5590,25 @@ package ssm {
   }
 
   object DocumentKeyValuesFilter {
-    def apply(Key: js.UndefOr[DocumentKeyValuesFilterKey] = js.undefined,
-              Values: js.UndefOr[DocumentKeyValuesFilterValues] = js.undefined): DocumentKeyValuesFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[DocumentKeyValuesFilterKey] = js.undefined,
+        Values: js.UndefOr[DocumentKeyValuesFilterValues] = js.undefined
+    ): DocumentKeyValuesFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentKeyValuesFilter]
     }
   }
 
   /**
-    * Parameters specified in a System Manager document that execute on the server when the command is run.
+    * Parameters specified in a System Manager document that run on the server when the command is run.
     */
   @js.native
   trait DocumentParameter extends js.Object {
@@ -5161,10 +5619,12 @@ package ssm {
   }
 
   object DocumentParameter {
-    def apply(DefaultValue: js.UndefOr[DocumentParameterDefaultValue] = js.undefined,
-              Description: js.UndefOr[DocumentParameterDescrption] = js.undefined,
-              Name: js.UndefOr[DocumentParameterName] = js.undefined,
-              Type: js.UndefOr[DocumentParameterType] = js.undefined): DocumentParameter = {
+    def apply(
+        DefaultValue: js.UndefOr[DocumentParameterDefaultValue] = js.undefined,
+        Description: js.UndefOr[DocumentParameterDescrption] = js.undefined,
+        Name: js.UndefOr[DocumentParameterName] = js.undefined,
+        Type: js.UndefOr[DocumentParameterType] = js.undefined
+    ): DocumentParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultValue" -> DefaultValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -5236,14 +5696,16 @@ package ssm {
   }
 
   object DocumentVersionInfo {
-    def apply(CreatedDate: js.UndefOr[DateTime] = js.undefined,
-              DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              IsDefaultVersion: js.UndefOr[Boolean] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined,
-              Status: js.UndefOr[DocumentStatus] = js.undefined,
-              StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): DocumentVersionInfo = {
+    def apply(
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        IsDefaultVersion: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[DocumentName] = js.undefined,
+        Status: js.UndefOr[DocumentStatus] = js.undefined,
+        StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): DocumentVersionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDate" -> CreatedDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -5285,13 +5747,18 @@ package ssm {
   }
 
   object EffectivePatch {
-    def apply(Patch: js.UndefOr[Patch] = js.undefined,
-              PatchStatus: js.UndefOr[PatchStatus] = js.undefined): EffectivePatch = {
-      val _fields = IndexedSeq[(String, js.Any)]("Patch" -> Patch.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PatchStatus" -> PatchStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Patch: js.UndefOr[Patch] = js.undefined,
+        PatchStatus: js.UndefOr[PatchStatus] = js.undefined
+    ): EffectivePatch = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Patch" -> Patch.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PatchStatus" -> PatchStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EffectivePatch]
     }
@@ -5315,16 +5782,22 @@ package ssm {
   }
 
   object FailedCreateAssociation {
-    def apply(Entry: js.UndefOr[CreateAssociationBatchRequestEntry] = js.undefined,
-              Fault: js.UndefOr[Fault] = js.undefined,
-              Message: js.UndefOr[BatchErrorMessage] = js.undefined): FailedCreateAssociation = {
-      val _fields = IndexedSeq[(String, js.Any)]("Entry" -> Entry.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Fault" -> Fault.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entry: js.UndefOr[CreateAssociationBatchRequestEntry] = js.undefined,
+        Fault: js.UndefOr[Fault] = js.undefined,
+        Message: js.UndefOr[BatchErrorMessage] = js.undefined
+    ): FailedCreateAssociation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entry" -> Entry.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Fault" -> Fault.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedCreateAssociation]
     }
@@ -5341,9 +5814,11 @@ package ssm {
   }
 
   object FailureDetails {
-    def apply(Details: js.UndefOr[AutomationParameterMap] = js.undefined,
-              FailureStage: js.UndefOr[String] = js.undefined,
-              FailureType: js.UndefOr[String] = js.undefined): FailureDetails = {
+    def apply(
+        Details: js.UndefOr[AutomationParameterMap] = js.undefined,
+        FailureStage: js.UndefOr[String] = js.undefined,
+        FailureType: js.UndefOr[String] = js.undefined
+    ): FailureDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Details" -> Details.map { x =>
           x.asInstanceOf[js.Any]
@@ -5374,9 +5849,12 @@ package ssm {
   }
 
   object GetAutomationExecutionRequest {
-    def apply(AutomationExecutionId: AutomationExecutionId): GetAutomationExecutionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AutomationExecutionId: AutomationExecutionId
+    ): GetAutomationExecutionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAutomationExecutionRequest]
     }
@@ -5388,10 +5866,14 @@ package ssm {
   }
 
   object GetAutomationExecutionResult {
-    def apply(AutomationExecution: js.UndefOr[AutomationExecution] = js.undefined): GetAutomationExecutionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AutomationExecution" -> AutomationExecution.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AutomationExecution: js.UndefOr[AutomationExecution] = js.undefined
+    ): GetAutomationExecutionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AutomationExecution" -> AutomationExecution.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAutomationExecutionResult]
     }
@@ -5405,9 +5887,11 @@ package ssm {
   }
 
   object GetCommandInvocationRequest {
-    def apply(CommandId: CommandId,
-              InstanceId: InstanceId,
-              PluginName: js.UndefOr[CommandPluginName] = js.undefined): GetCommandInvocationRequest = {
+    def apply(
+        CommandId: CommandId,
+        InstanceId: InstanceId,
+        PluginName: js.UndefOr[CommandPluginName] = js.undefined
+    ): GetCommandInvocationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CommandId"  -> CommandId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
@@ -5442,23 +5926,25 @@ package ssm {
   }
 
   object GetCommandInvocationResult {
-    def apply(CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
-              CommandId: js.UndefOr[CommandId] = js.undefined,
-              Comment: js.UndefOr[Comment] = js.undefined,
-              DocumentName: js.UndefOr[DocumentName] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              ExecutionElapsedTime: js.UndefOr[StringDateTime] = js.undefined,
-              ExecutionEndDateTime: js.UndefOr[StringDateTime] = js.undefined,
-              ExecutionStartDateTime: js.UndefOr[StringDateTime] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              PluginName: js.UndefOr[CommandPluginName] = js.undefined,
-              ResponseCode: js.UndefOr[ResponseCode] = js.undefined,
-              StandardErrorContent: js.UndefOr[StandardErrorContent] = js.undefined,
-              StandardErrorUrl: js.UndefOr[Url] = js.undefined,
-              StandardOutputContent: js.UndefOr[StandardOutputContent] = js.undefined,
-              StandardOutputUrl: js.UndefOr[Url] = js.undefined,
-              Status: js.UndefOr[CommandInvocationStatus] = js.undefined,
-              StatusDetails: js.UndefOr[StatusDetails] = js.undefined): GetCommandInvocationResult = {
+    def apply(
+        CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
+        CommandId: js.UndefOr[CommandId] = js.undefined,
+        Comment: js.UndefOr[Comment] = js.undefined,
+        DocumentName: js.UndefOr[DocumentName] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        ExecutionElapsedTime: js.UndefOr[StringDateTime] = js.undefined,
+        ExecutionEndDateTime: js.UndefOr[StringDateTime] = js.undefined,
+        ExecutionStartDateTime: js.UndefOr[StringDateTime] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        PluginName: js.UndefOr[CommandPluginName] = js.undefined,
+        ResponseCode: js.UndefOr[ResponseCode] = js.undefined,
+        StandardErrorContent: js.UndefOr[StandardErrorContent] = js.undefined,
+        StandardErrorUrl: js.UndefOr[Url] = js.undefined,
+        StandardOutputContent: js.UndefOr[StandardOutputContent] = js.undefined,
+        StandardOutputUrl: js.UndefOr[Url] = js.undefined,
+        Status: js.UndefOr[CommandInvocationStatus] = js.undefined,
+        StatusDetails: js.UndefOr[StatusDetails] = js.undefined
+    ): GetCommandInvocationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudWatchOutputConfig" -> CloudWatchOutputConfig.map { x =>
           x.asInstanceOf[js.Any]
@@ -5523,9 +6009,12 @@ package ssm {
   }
 
   object GetConnectionStatusRequest {
-    def apply(Target: SessionTarget): GetConnectionStatusRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Target" -> Target.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Target: SessionTarget
+    ): GetConnectionStatusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Target" -> Target.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionStatusRequest]
     }
@@ -5538,13 +6027,18 @@ package ssm {
   }
 
   object GetConnectionStatusResponse {
-    def apply(Status: js.UndefOr[ConnectionStatus] = js.undefined,
-              Target: js.UndefOr[SessionTarget] = js.undefined): GetConnectionStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Target" -> Target.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: js.UndefOr[ConnectionStatus] = js.undefined,
+        Target: js.UndefOr[SessionTarget] = js.undefined
+    ): GetConnectionStatusResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Target" -> Target.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectionStatusResponse]
     }
@@ -5556,10 +6050,14 @@ package ssm {
   }
 
   object GetDefaultPatchBaselineRequest {
-    def apply(OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined): GetDefaultPatchBaselineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperatingSystem" -> OperatingSystem.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
+    ): GetDefaultPatchBaselineRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperatingSystem" -> OperatingSystem.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDefaultPatchBaselineRequest]
     }
@@ -5572,13 +6070,18 @@ package ssm {
   }
 
   object GetDefaultPatchBaselineResult {
-    def apply(BaselineId: js.UndefOr[BaselineId] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined): GetDefaultPatchBaselineResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OperatingSystem" -> OperatingSystem.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: js.UndefOr[BaselineId] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
+    ): GetDefaultPatchBaselineResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OperatingSystem" -> OperatingSystem.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDefaultPatchBaselineResult]
     }
@@ -5591,7 +6094,10 @@ package ssm {
   }
 
   object GetDeployablePatchSnapshotForInstanceRequest {
-    def apply(InstanceId: InstanceId, SnapshotId: SnapshotId): GetDeployablePatchSnapshotForInstanceRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        SnapshotId: SnapshotId
+    ): GetDeployablePatchSnapshotForInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
@@ -5612,10 +6118,12 @@ package ssm {
   }
 
   object GetDeployablePatchSnapshotForInstanceResult {
-    def apply(InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              Product: js.UndefOr[Product] = js.undefined,
-              SnapshotDownloadUrl: js.UndefOr[SnapshotDownloadUrl] = js.undefined,
-              SnapshotId: js.UndefOr[SnapshotId] = js.undefined): GetDeployablePatchSnapshotForInstanceResult = {
+    def apply(
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        Product: js.UndefOr[Product] = js.undefined,
+        SnapshotDownloadUrl: js.UndefOr[SnapshotDownloadUrl] = js.undefined,
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined
+    ): GetDeployablePatchSnapshotForInstanceResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -5646,10 +6154,12 @@ package ssm {
   }
 
   object GetDocumentRequest {
-    def apply(Name: DocumentARN,
-              DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): GetDocumentRequest = {
+    def apply(
+        Name: DocumentARN,
+        DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): GetDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "DocumentFormat" -> DocumentFormat.map { x =>
@@ -5681,15 +6191,17 @@ package ssm {
   }
 
   object GetDocumentResult {
-    def apply(AttachmentsContent: js.UndefOr[AttachmentContentList] = js.undefined,
-              Content: js.UndefOr[DocumentContent] = js.undefined,
-              DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
-              DocumentType: js.UndefOr[DocumentType] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              Name: js.UndefOr[DocumentARN] = js.undefined,
-              Status: js.UndefOr[DocumentStatus] = js.undefined,
-              StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): GetDocumentResult = {
+    def apply(
+        AttachmentsContent: js.UndefOr[AttachmentContentList] = js.undefined,
+        Content: js.UndefOr[DocumentContent] = js.undefined,
+        DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+        DocumentType: js.UndefOr[DocumentType] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        Status: js.UndefOr[DocumentStatus] = js.undefined,
+        StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): GetDocumentResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttachmentsContent" -> AttachmentsContent.map { x =>
           x.asInstanceOf[js.Any]
@@ -5734,11 +6246,13 @@ package ssm {
   }
 
   object GetInventoryRequest {
-    def apply(Aggregators: js.UndefOr[InventoryAggregatorList] = js.undefined,
-              Filters: js.UndefOr[InventoryFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ResultAttributes: js.UndefOr[ResultAttributeList] = js.undefined): GetInventoryRequest = {
+    def apply(
+        Aggregators: js.UndefOr[InventoryAggregatorList] = js.undefined,
+        Filters: js.UndefOr[InventoryFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResultAttributes: js.UndefOr[ResultAttributeList] = js.undefined
+    ): GetInventoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Aggregators" -> Aggregators.map { x =>
           x.asInstanceOf[js.Any]
@@ -5768,13 +6282,18 @@ package ssm {
   }
 
   object GetInventoryResult {
-    def apply(Entities: js.UndefOr[InventoryResultEntityList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetInventoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Entities" -> Entities.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entities: js.UndefOr[InventoryResultEntityList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetInventoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entities" -> Entities.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInventoryResult]
     }
@@ -5790,11 +6309,13 @@ package ssm {
   }
 
   object GetInventorySchemaRequest {
-    def apply(Aggregator: js.UndefOr[AggregatorSchemaOnly] = js.undefined,
-              MaxResults: js.UndefOr[GetInventorySchemaMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SubType: js.UndefOr[IsSubTypeSchema] = js.undefined,
-              TypeName: js.UndefOr[InventoryItemTypeNameFilter] = js.undefined): GetInventorySchemaRequest = {
+    def apply(
+        Aggregator: js.UndefOr[AggregatorSchemaOnly] = js.undefined,
+        MaxResults: js.UndefOr[GetInventorySchemaMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SubType: js.UndefOr[IsSubTypeSchema] = js.undefined,
+        TypeName: js.UndefOr[InventoryItemTypeNameFilter] = js.undefined
+    ): GetInventorySchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Aggregator" -> Aggregator.map { x =>
           x.asInstanceOf[js.Any]
@@ -5824,13 +6345,18 @@ package ssm {
   }
 
   object GetInventorySchemaResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Schemas: js.UndefOr[InventoryItemSchemaResultList] = js.undefined): GetInventorySchemaResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Schemas" -> Schemas.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Schemas: js.UndefOr[InventoryItemSchemaResultList] = js.undefined
+    ): GetInventorySchemaResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Schemas" -> Schemas.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInventorySchemaResult]
     }
@@ -5842,9 +6368,12 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionRequest {
-    def apply(WindowExecutionId: MaintenanceWindowExecutionId): GetMaintenanceWindowExecutionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WindowExecutionId: MaintenanceWindowExecutionId
+    ): GetMaintenanceWindowExecutionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMaintenanceWindowExecutionRequest]
     }
@@ -5902,9 +6431,11 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionTaskInvocationRequest {
-    def apply(InvocationId: MaintenanceWindowExecutionTaskInvocationId,
-              TaskId: MaintenanceWindowExecutionTaskId,
-              WindowExecutionId: MaintenanceWindowExecutionId): GetMaintenanceWindowExecutionTaskInvocationRequest = {
+    def apply(
+        InvocationId: MaintenanceWindowExecutionTaskInvocationId,
+        TaskId: MaintenanceWindowExecutionTaskId,
+        WindowExecutionId: MaintenanceWindowExecutionId
+    ): GetMaintenanceWindowExecutionTaskInvocationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InvocationId"      -> InvocationId.asInstanceOf[js.Any],
         "TaskId"            -> TaskId.asInstanceOf[js.Any],
@@ -6000,8 +6531,10 @@ package ssm {
   }
 
   object GetMaintenanceWindowExecutionTaskRequest {
-    def apply(TaskId: MaintenanceWindowExecutionTaskId,
-              WindowExecutionId: MaintenanceWindowExecutionId): GetMaintenanceWindowExecutionTaskRequest = {
+    def apply(
+        TaskId: MaintenanceWindowExecutionTaskId,
+        WindowExecutionId: MaintenanceWindowExecutionId
+    ): GetMaintenanceWindowExecutionTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TaskId"            -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
@@ -6096,9 +6629,12 @@ package ssm {
   }
 
   object GetMaintenanceWindowRequest {
-    def apply(WindowId: MaintenanceWindowId): GetMaintenanceWindowRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("WindowId" -> WindowId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WindowId: MaintenanceWindowId
+    ): GetMaintenanceWindowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowId" -> WindowId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMaintenanceWindowRequest]
     }
@@ -6123,20 +6659,22 @@ package ssm {
   }
 
   object GetMaintenanceWindowResult {
-    def apply(AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
-              CreatedDate: js.UndefOr[DateTime] = js.undefined,
-              Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
-              Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
-              Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
-              EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              ModifiedDate: js.UndefOr[DateTime] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
-              ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
-              StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): GetMaintenanceWindowResult = {
+    def apply(
+        AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
+        Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
+        EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        ModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
+        StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): GetMaintenanceWindowResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowUnassociatedTargets" -> AllowUnassociatedTargets.map { x =>
           x.asInstanceOf[js.Any]
@@ -6193,7 +6731,10 @@ package ssm {
   }
 
   object GetMaintenanceWindowTaskRequest {
-    def apply(WindowId: MaintenanceWindowId, WindowTaskId: MaintenanceWindowTaskId): GetMaintenanceWindowTaskRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        WindowTaskId: MaintenanceWindowTaskId
+    ): GetMaintenanceWindowTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId"     -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
@@ -6222,20 +6763,22 @@ package ssm {
   }
 
   object GetMaintenanceWindowTaskResult {
-    def apply(Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              Priority: js.UndefOr[MaintenanceWindowTaskPriority] = js.undefined,
-              ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined,
-              TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
-              TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters] = js.undefined,
-              TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined,
-              TaskType: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
-              WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined): GetMaintenanceWindowTaskResult = {
+    def apply(
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        Priority: js.UndefOr[MaintenanceWindowTaskPriority] = js.undefined,
+        ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
+        TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters] = js.undefined,
+        TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined,
+        TaskType: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
+        WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
+    ): GetMaintenanceWindowTaskResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -6294,10 +6837,12 @@ package ssm {
   }
 
   object GetParameterHistoryRequest {
-    def apply(Name: PSParameterName,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              WithDecryption: js.UndefOr[Boolean] = js.undefined): GetParameterHistoryRequest = {
+    def apply(
+        Name: PSParameterName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        WithDecryption: js.UndefOr[Boolean] = js.undefined
+    ): GetParameterHistoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -6322,13 +6867,18 @@ package ssm {
   }
 
   object GetParameterHistoryResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Parameters: js.UndefOr[ParameterHistoryList] = js.undefined): GetParameterHistoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Parameters: js.UndefOr[ParameterHistoryList] = js.undefined
+    ): GetParameterHistoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParameterHistoryResult]
     }
@@ -6341,11 +6891,16 @@ package ssm {
   }
 
   object GetParameterRequest {
-    def apply(Name: PSParameterName, WithDecryption: js.UndefOr[Boolean] = js.undefined): GetParameterRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "WithDecryption" -> WithDecryption.map { x =>
+    def apply(
+        Name: PSParameterName,
+        WithDecryption: js.UndefOr[Boolean] = js.undefined
+    ): GetParameterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "WithDecryption" -> WithDecryption.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParameterRequest]
     }
@@ -6357,10 +6912,14 @@ package ssm {
   }
 
   object GetParameterResult {
-    def apply(Parameter: js.UndefOr[Parameter] = js.undefined): GetParameterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Parameter" -> Parameter.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Parameter: js.UndefOr[Parameter] = js.undefined
+    ): GetParameterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Parameter" -> Parameter.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParameterResult]
     }
@@ -6377,12 +6936,14 @@ package ssm {
   }
 
   object GetParametersByPathRequest {
-    def apply(Path: PSParameterName,
-              MaxResults: js.UndefOr[GetParametersByPathMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ParameterFilters: js.UndefOr[ParameterStringFilterList] = js.undefined,
-              Recursive: js.UndefOr[Boolean] = js.undefined,
-              WithDecryption: js.UndefOr[Boolean] = js.undefined): GetParametersByPathRequest = {
+    def apply(
+        Path: PSParameterName,
+        MaxResults: js.UndefOr[GetParametersByPathMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ParameterFilters: js.UndefOr[ParameterStringFilterList] = js.undefined,
+        Recursive: js.UndefOr[Boolean] = js.undefined,
+        WithDecryption: js.UndefOr[Boolean] = js.undefined
+    ): GetParametersByPathRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Path" -> Path.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -6413,13 +6974,18 @@ package ssm {
   }
 
   object GetParametersByPathResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Parameters: js.UndefOr[ParameterList] = js.undefined): GetParametersByPathResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Parameters: js.UndefOr[ParameterList] = js.undefined
+    ): GetParametersByPathResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParametersByPathResult]
     }
@@ -6432,12 +6998,16 @@ package ssm {
   }
 
   object GetParametersRequest {
-    def apply(Names: ParameterNameList, WithDecryption: js.UndefOr[Boolean] = js.undefined): GetParametersRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Names" -> Names.asInstanceOf[js.Any], "WithDecryption" -> WithDecryption.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Names: ParameterNameList,
+        WithDecryption: js.UndefOr[Boolean] = js.undefined
+    ): GetParametersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Names" -> Names.asInstanceOf[js.Any],
+        "WithDecryption" -> WithDecryption.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParametersRequest]
     }
@@ -6450,13 +7020,18 @@ package ssm {
   }
 
   object GetParametersResult {
-    def apply(InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined,
-              Parameters: js.UndefOr[ParameterList] = js.undefined): GetParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InvalidParameters" -> InvalidParameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined,
+        Parameters: js.UndefOr[ParameterList] = js.undefined
+    ): GetParametersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InvalidParameters" -> InvalidParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetParametersResult]
     }
@@ -6469,8 +7044,10 @@ package ssm {
   }
 
   object GetPatchBaselineForPatchGroupRequest {
-    def apply(PatchGroup: PatchGroup,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined): GetPatchBaselineForPatchGroupRequest = {
+    def apply(
+        PatchGroup: PatchGroup,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
+    ): GetPatchBaselineForPatchGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any],
         "OperatingSystem" -> OperatingSystem.map { x =>
@@ -6490,9 +7067,11 @@ package ssm {
   }
 
   object GetPatchBaselineForPatchGroupResult {
-    def apply(BaselineId: js.UndefOr[BaselineId] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              PatchGroup: js.UndefOr[PatchGroup] = js.undefined): GetPatchBaselineForPatchGroupResult = {
+    def apply(
+        BaselineId: js.UndefOr[BaselineId] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        PatchGroup: js.UndefOr[PatchGroup] = js.undefined
+    ): GetPatchBaselineForPatchGroupResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaselineId" -> BaselineId.map { x =>
           x.asInstanceOf[js.Any]
@@ -6515,9 +7094,12 @@ package ssm {
   }
 
   object GetPatchBaselineRequest {
-    def apply(BaselineId: BaselineId): GetPatchBaselineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: BaselineId
+    ): GetPatchBaselineRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPatchBaselineRequest]
     }
@@ -6543,21 +7125,23 @@ package ssm {
   }
 
   object GetPatchBaselineResult {
-    def apply(ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
-              ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
-              ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
-              BaselineId: js.UndefOr[BaselineId] = js.undefined,
-              CreatedDate: js.UndefOr[DateTime] = js.undefined,
-              Description: js.UndefOr[BaselineDescription] = js.undefined,
-              GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
-              ModifiedDate: js.UndefOr[DateTime] = js.undefined,
-              Name: js.UndefOr[BaselineName] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              PatchGroups: js.UndefOr[PatchGroupList] = js.undefined,
-              RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
-              Sources: js.UndefOr[PatchSourceList] = js.undefined): GetPatchBaselineResult = {
+    def apply(
+        ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
+        ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
+        ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
+        BaselineId: js.UndefOr[BaselineId] = js.undefined,
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        Description: js.UndefOr[BaselineDescription] = js.undefined,
+        GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
+        ModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        Name: js.UndefOr[BaselineName] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        PatchGroups: js.UndefOr[PatchGroupList] = js.undefined,
+        RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
+        Sources: js.UndefOr[PatchSourceList] = js.undefined
+    ): GetPatchBaselineResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApprovalRules" -> ApprovalRules.map { x =>
           x.asInstanceOf[js.Any]
@@ -6611,6 +7195,48 @@ package ssm {
   }
 
   /**
+    * The request body of the GetServiceSetting API action.
+    */
+  @js.native
+  trait GetServiceSettingRequest extends js.Object {
+    var SettingId: ServiceSettingId
+  }
+
+  object GetServiceSettingRequest {
+    def apply(
+        SettingId: ServiceSettingId
+    ): GetServiceSettingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SettingId" -> SettingId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceSettingRequest]
+    }
+  }
+
+  /**
+    * The query result body of the GetServiceSetting API action.
+    */
+  @js.native
+  trait GetServiceSettingResult extends js.Object {
+    var ServiceSetting: js.UndefOr[ServiceSetting]
+  }
+
+  object GetServiceSettingResult {
+    def apply(
+        ServiceSetting: js.UndefOr[ServiceSetting] = js.undefined
+    ): GetServiceSettingResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceSetting" -> ServiceSetting.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceSettingResult]
+    }
+  }
+
+  /**
     * Status information about the aggregated associations.
     */
   @js.native
@@ -6620,9 +7246,10 @@ package ssm {
   }
 
   object InstanceAggregatedAssociationOverview {
-    def apply(DetailedStatus: js.UndefOr[StatusName] = js.undefined,
-              InstanceAssociationStatusAggregatedCount: js.UndefOr[InstanceAssociationStatusAggregatedCount] =
-                js.undefined): InstanceAggregatedAssociationOverview = {
+    def apply(
+        DetailedStatus: js.UndefOr[StatusName] = js.undefined,
+        InstanceAssociationStatusAggregatedCount: js.UndefOr[InstanceAssociationStatusAggregatedCount] = js.undefined
+    ): InstanceAggregatedAssociationOverview = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetailedStatus" -> DetailedStatus.map { x =>
           x.asInstanceOf[js.Any]
@@ -6648,10 +7275,12 @@ package ssm {
   }
 
   object InstanceAssociation {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              Content: js.UndefOr[DocumentContent] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined): InstanceAssociation = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        Content: js.UndefOr[DocumentContent] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined
+    ): InstanceAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -6680,10 +7309,14 @@ package ssm {
   }
 
   object InstanceAssociationOutputLocation {
-    def apply(S3Location: js.UndefOr[S3OutputLocation] = js.undefined): InstanceAssociationOutputLocation = {
-      val _fields = IndexedSeq[(String, js.Any)]("S3Location" -> S3Location.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        S3Location: js.UndefOr[S3OutputLocation] = js.undefined
+    ): InstanceAssociationOutputLocation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3Location" -> S3Location.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceAssociationOutputLocation]
     }
@@ -6698,10 +7331,14 @@ package ssm {
   }
 
   object InstanceAssociationOutputUrl {
-    def apply(S3OutputUrl: js.UndefOr[S3OutputUrl] = js.undefined): InstanceAssociationOutputUrl = {
-      val _fields = IndexedSeq[(String, js.Any)]("S3OutputUrl" -> S3OutputUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        S3OutputUrl: js.UndefOr[S3OutputUrl] = js.undefined
+    ): InstanceAssociationOutputUrl = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3OutputUrl" -> S3OutputUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceAssociationOutputUrl]
     }
@@ -6721,24 +7358,26 @@ package ssm {
     var ExecutionDate: js.UndefOr[DateTime]
     var ExecutionSummary: js.UndefOr[InstanceAssociationExecutionSummary]
     var InstanceId: js.UndefOr[InstanceId]
-    var Name: js.UndefOr[DocumentName]
+    var Name: js.UndefOr[DocumentARN]
     var OutputUrl: js.UndefOr[InstanceAssociationOutputUrl]
     var Status: js.UndefOr[StatusName]
   }
 
   object InstanceAssociationStatusInfo {
-    def apply(AssociationId: js.UndefOr[AssociationId] = js.undefined,
-              AssociationName: js.UndefOr[AssociationName] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              DetailedStatus: js.UndefOr[StatusName] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              ErrorCode: js.UndefOr[AgentErrorCode] = js.undefined,
-              ExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              ExecutionSummary: js.UndefOr[InstanceAssociationExecutionSummary] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined,
-              OutputUrl: js.UndefOr[InstanceAssociationOutputUrl] = js.undefined,
-              Status: js.UndefOr[StatusName] = js.undefined): InstanceAssociationStatusInfo = {
+    def apply(
+        AssociationId: js.UndefOr[AssociationId] = js.undefined,
+        AssociationName: js.UndefOr[AssociationName] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        DetailedStatus: js.UndefOr[StatusName] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        ErrorCode: js.UndefOr[AgentErrorCode] = js.undefined,
+        ExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        ExecutionSummary: js.UndefOr[InstanceAssociationExecutionSummary] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        OutputUrl: js.UndefOr[InstanceAssociationOutputUrl] = js.undefined,
+        Status: js.UndefOr[StatusName] = js.undefined
+    ): InstanceAssociationStatusInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -6809,25 +7448,27 @@ package ssm {
   }
 
   object InstanceInformation {
-    def apply(ActivationId: js.UndefOr[ActivationId] = js.undefined,
-              AgentVersion: js.UndefOr[Version] = js.undefined,
-              AssociationOverview: js.UndefOr[InstanceAggregatedAssociationOverview] = js.undefined,
-              AssociationStatus: js.UndefOr[StatusName] = js.undefined,
-              ComputerName: js.UndefOr[ComputerName] = js.undefined,
-              IPAddress: js.UndefOr[IPAddress] = js.undefined,
-              IamRole: js.UndefOr[IamRole] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              IsLatestVersion: js.UndefOr[Boolean] = js.undefined,
-              LastAssociationExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              LastPingDateTime: js.UndefOr[DateTime] = js.undefined,
-              LastSuccessfulAssociationExecutionDate: js.UndefOr[DateTime] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              PingStatus: js.UndefOr[PingStatus] = js.undefined,
-              PlatformName: js.UndefOr[String] = js.undefined,
-              PlatformType: js.UndefOr[PlatformType] = js.undefined,
-              PlatformVersion: js.UndefOr[String] = js.undefined,
-              RegistrationDate: js.UndefOr[DateTime] = js.undefined,
-              ResourceType: js.UndefOr[ResourceType] = js.undefined): InstanceInformation = {
+    def apply(
+        ActivationId: js.UndefOr[ActivationId] = js.undefined,
+        AgentVersion: js.UndefOr[Version] = js.undefined,
+        AssociationOverview: js.UndefOr[InstanceAggregatedAssociationOverview] = js.undefined,
+        AssociationStatus: js.UndefOr[StatusName] = js.undefined,
+        ComputerName: js.UndefOr[ComputerName] = js.undefined,
+        IPAddress: js.UndefOr[IPAddress] = js.undefined,
+        IamRole: js.UndefOr[IamRole] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        IsLatestVersion: js.UndefOr[Boolean] = js.undefined,
+        LastAssociationExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        LastPingDateTime: js.UndefOr[DateTime] = js.undefined,
+        LastSuccessfulAssociationExecutionDate: js.UndefOr[DateTime] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        PingStatus: js.UndefOr[PingStatus] = js.undefined,
+        PlatformName: js.UndefOr[String] = js.undefined,
+        PlatformType: js.UndefOr[PlatformType] = js.undefined,
+        PlatformVersion: js.UndefOr[String] = js.undefined,
+        RegistrationDate: js.UndefOr[DateTime] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined
+    ): InstanceInformation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActivationId" -> ActivationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -6903,11 +7544,14 @@ package ssm {
   }
 
   object InstanceInformationFilter {
-    def apply(key: InstanceInformationFilterKey,
-              valueSet: InstanceInformationFilterValueSet): InstanceInformationFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("key" -> key.asInstanceOf[js.Any], "valueSet" -> valueSet.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        key: InstanceInformationFilterKey,
+        valueSet: InstanceInformationFilterValueSet
+    ): InstanceInformationFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key"      -> key.asInstanceOf[js.Any],
+        "valueSet" -> valueSet.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceInformationFilter]
     }
@@ -6945,11 +7589,14 @@ package ssm {
   }
 
   object InstanceInformationStringFilter {
-    def apply(Key: InstanceInformationStringFilterKey,
-              Values: InstanceInformationFilterValueSet): InstanceInformationStringFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: InstanceInformationStringFilterKey,
+        Values: InstanceInformationFilterValueSet
+    ): InstanceInformationStringFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"    -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceInformationStringFilter]
     }
@@ -6978,21 +7625,23 @@ package ssm {
   }
 
   object InstancePatchState {
-    def apply(BaselineId: BaselineId,
-              InstanceId: InstanceId,
-              Operation: PatchOperationType,
-              OperationEndTime: DateTime,
-              OperationStartTime: DateTime,
-              PatchGroup: PatchGroup,
-              FailedCount: js.UndefOr[PatchFailedCount] = js.undefined,
-              InstallOverrideList: js.UndefOr[InstallOverrideList] = js.undefined,
-              InstalledCount: js.UndefOr[PatchInstalledCount] = js.undefined,
-              InstalledOtherCount: js.UndefOr[PatchInstalledOtherCount] = js.undefined,
-              InstalledRejectedCount: js.UndefOr[PatchInstalledRejectedCount] = js.undefined,
-              MissingCount: js.UndefOr[PatchMissingCount] = js.undefined,
-              NotApplicableCount: js.UndefOr[PatchNotApplicableCount] = js.undefined,
-              OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
-              SnapshotId: js.UndefOr[SnapshotId] = js.undefined): InstancePatchState = {
+    def apply(
+        BaselineId: BaselineId,
+        InstanceId: InstanceId,
+        Operation: PatchOperationType,
+        OperationEndTime: DateTime,
+        OperationStartTime: DateTime,
+        PatchGroup: PatchGroup,
+        FailedCount: js.UndefOr[PatchFailedCount] = js.undefined,
+        InstallOverrideList: js.UndefOr[InstallOverrideList] = js.undefined,
+        InstalledCount: js.UndefOr[PatchInstalledCount] = js.undefined,
+        InstalledOtherCount: js.UndefOr[PatchInstalledOtherCount] = js.undefined,
+        InstalledRejectedCount: js.UndefOr[PatchInstalledRejectedCount] = js.undefined,
+        MissingCount: js.UndefOr[PatchMissingCount] = js.undefined,
+        NotApplicableCount: js.UndefOr[PatchNotApplicableCount] = js.undefined,
+        OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined
+    ): InstancePatchState = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaselineId"         -> BaselineId.asInstanceOf[js.Any],
         "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
@@ -7044,9 +7693,11 @@ package ssm {
   }
 
   object InstancePatchStateFilter {
-    def apply(Key: InstancePatchStateFilterKey,
-              Type: InstancePatchStateOperatorType,
-              Values: InstancePatchStateFilterValues): InstancePatchStateFilter = {
+    def apply(
+        Key: InstancePatchStateFilterKey,
+        Type: InstancePatchStateOperatorType,
+        Values: InstancePatchStateFilterValues
+    ): InstancePatchStateFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"    -> Key.asInstanceOf[js.Any],
         "Type"   -> Type.asInstanceOf[js.Any],
@@ -7077,9 +7728,11 @@ package ssm {
   }
 
   object InventoryAggregator {
-    def apply(Aggregators: js.UndefOr[InventoryAggregatorList] = js.undefined,
-              Expression: js.UndefOr[InventoryAggregatorExpression] = js.undefined,
-              Groups: js.UndefOr[InventoryGroupList] = js.undefined): InventoryAggregator = {
+    def apply(
+        Aggregators: js.UndefOr[InventoryAggregatorList] = js.undefined,
+        Expression: js.UndefOr[InventoryAggregatorExpression] = js.undefined,
+        Groups: js.UndefOr[InventoryGroupList] = js.undefined
+    ): InventoryAggregator = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Aggregators" -> Aggregators.map { x =>
           x.asInstanceOf[js.Any]
@@ -7125,13 +7778,15 @@ package ssm {
   }
 
   object InventoryDeletionStatusItem {
-    def apply(DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
-              DeletionStartTime: js.UndefOr[InventoryDeletionStartTime] = js.undefined,
-              DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
-              LastStatus: js.UndefOr[InventoryDeletionStatus] = js.undefined,
-              LastStatusMessage: js.UndefOr[InventoryDeletionLastStatusMessage] = js.undefined,
-              LastStatusUpdateTime: js.UndefOr[InventoryDeletionLastStatusUpdateTime] = js.undefined,
-              TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined): InventoryDeletionStatusItem = {
+    def apply(
+        DeletionId: js.UndefOr[InventoryDeletionId] = js.undefined,
+        DeletionStartTime: js.UndefOr[InventoryDeletionStartTime] = js.undefined,
+        DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
+        LastStatus: js.UndefOr[InventoryDeletionStatus] = js.undefined,
+        LastStatusMessage: js.UndefOr[InventoryDeletionLastStatusMessage] = js.undefined,
+        LastStatusUpdateTime: js.UndefOr[InventoryDeletionLastStatusUpdateTime] = js.undefined,
+        TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined
+    ): InventoryDeletionStatusItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeletionId" -> DeletionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -7171,9 +7826,11 @@ package ssm {
   }
 
   object InventoryDeletionSummary {
-    def apply(RemainingCount: js.UndefOr[RemainingCount] = js.undefined,
-              SummaryItems: js.UndefOr[InventoryDeletionSummaryItems] = js.undefined,
-              TotalCount: js.UndefOr[TotalCount] = js.undefined): InventoryDeletionSummary = {
+    def apply(
+        RemainingCount: js.UndefOr[RemainingCount] = js.undefined,
+        SummaryItems: js.UndefOr[InventoryDeletionSummaryItems] = js.undefined,
+        TotalCount: js.UndefOr[TotalCount] = js.undefined
+    ): InventoryDeletionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RemainingCount" -> RemainingCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -7201,9 +7858,11 @@ package ssm {
   }
 
   object InventoryDeletionSummaryItem {
-    def apply(Count: js.UndefOr[ResourceCount] = js.undefined,
-              RemainingCount: js.UndefOr[RemainingCount] = js.undefined,
-              Version: js.UndefOr[InventoryItemSchemaVersion] = js.undefined): InventoryDeletionSummaryItem = {
+    def apply(
+        Count: js.UndefOr[ResourceCount] = js.undefined,
+        RemainingCount: js.UndefOr[RemainingCount] = js.undefined,
+        Version: js.UndefOr[InventoryItemSchemaVersion] = js.undefined
+    ): InventoryDeletionSummaryItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Count" -> Count.map { x =>
           x.asInstanceOf[js.Any]
@@ -7231,9 +7890,11 @@ package ssm {
   }
 
   object InventoryFilter {
-    def apply(Key: InventoryFilterKey,
-              Values: InventoryFilterValueList,
-              Type: js.UndefOr[InventoryQueryOperatorType] = js.undefined): InventoryFilter = {
+    def apply(
+        Key: InventoryFilterKey,
+        Values: InventoryFilterValueList,
+        Type: js.UndefOr[InventoryQueryOperatorType] = js.undefined
+    ): InventoryFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any],
@@ -7256,10 +7917,14 @@ package ssm {
   }
 
   object InventoryGroup {
-    def apply(Filters: InventoryFilterList, Name: InventoryGroupName): InventoryGroup = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Filters" -> Filters.asInstanceOf[js.Any], "Name" -> Name.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Filters: InventoryFilterList,
+        Name: InventoryGroupName
+    ): InventoryGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "Name"    -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryGroup]
     }
@@ -7279,12 +7944,14 @@ package ssm {
   }
 
   object InventoryItem {
-    def apply(CaptureTime: InventoryItemCaptureTime,
-              SchemaVersion: InventoryItemSchemaVersion,
-              TypeName: InventoryItemTypeName,
-              Content: js.UndefOr[InventoryItemEntryList] = js.undefined,
-              ContentHash: js.UndefOr[InventoryItemContentHash] = js.undefined,
-              Context: js.UndefOr[InventoryItemContentContext] = js.undefined): InventoryItem = {
+    def apply(
+        CaptureTime: InventoryItemCaptureTime,
+        SchemaVersion: InventoryItemSchemaVersion,
+        TypeName: InventoryItemTypeName,
+        Content: js.UndefOr[InventoryItemEntryList] = js.undefined,
+        ContentHash: js.UndefOr[InventoryItemContentHash] = js.undefined,
+        Context: js.UndefOr[InventoryItemContentContext] = js.undefined
+    ): InventoryItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CaptureTime"   -> CaptureTime.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
@@ -7314,10 +7981,14 @@ package ssm {
   }
 
   object InventoryItemAttribute {
-    def apply(DataType: InventoryAttributeDataType, Name: InventoryItemAttributeName): InventoryItemAttribute = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DataType" -> DataType.asInstanceOf[js.Any], "Name" -> Name.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DataType: InventoryAttributeDataType,
+        Name: InventoryItemAttributeName
+    ): InventoryItemAttribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DataType" -> DataType.asInstanceOf[js.Any],
+        "Name"     -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryItemAttribute]
     }
@@ -7335,10 +8006,12 @@ package ssm {
   }
 
   object InventoryItemSchema {
-    def apply(Attributes: InventoryItemAttributeList,
-              TypeName: InventoryItemTypeName,
-              DisplayName: js.UndefOr[InventoryTypeDisplayName] = js.undefined,
-              Version: js.UndefOr[InventoryItemSchemaVersion] = js.undefined): InventoryItemSchema = {
+    def apply(
+        Attributes: InventoryItemAttributeList,
+        TypeName: InventoryItemTypeName,
+        DisplayName: js.UndefOr[InventoryTypeDisplayName] = js.undefined,
+        Version: js.UndefOr[InventoryItemSchemaVersion] = js.undefined
+    ): InventoryItemSchema = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "TypeName"   -> TypeName.asInstanceOf[js.Any],
@@ -7375,13 +8048,18 @@ package ssm {
   }
 
   object InventoryResultEntity {
-    def apply(Data: js.UndefOr[InventoryResultItemMap] = js.undefined,
-              Id: js.UndefOr[InventoryResultEntityId] = js.undefined): InventoryResultEntity = {
-      val _fields = IndexedSeq[(String, js.Any)]("Data" -> Data.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Data: js.UndefOr[InventoryResultItemMap] = js.undefined,
+        Id: js.UndefOr[InventoryResultEntityId] = js.undefined
+    ): InventoryResultEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InventoryResultEntity]
     }
@@ -7400,11 +8078,13 @@ package ssm {
   }
 
   object InventoryResultItem {
-    def apply(Content: InventoryItemEntryList,
-              SchemaVersion: InventoryItemSchemaVersion,
-              TypeName: InventoryItemTypeName,
-              CaptureTime: js.UndefOr[InventoryItemCaptureTime] = js.undefined,
-              ContentHash: js.UndefOr[InventoryItemContentHash] = js.undefined): InventoryResultItem = {
+    def apply(
+        Content: InventoryItemEntryList,
+        SchemaVersion: InventoryItemSchemaVersion,
+        TypeName: InventoryItemTypeName,
+        CaptureTime: js.UndefOr[InventoryItemCaptureTime] = js.undefined,
+        ContentHash: js.UndefOr[InventoryItemContentHash] = js.undefined
+    ): InventoryResultItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Content"       -> Content.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
@@ -7436,9 +8116,11 @@ package ssm {
   }
 
   object LabelParameterVersionRequest {
-    def apply(Labels: ParameterLabelList,
-              Name: PSParameterName,
-              ParameterVersion: js.UndefOr[PSParameterVersion] = js.undefined): LabelParameterVersionRequest = {
+    def apply(
+        Labels: ParameterLabelList,
+        Name: PSParameterName,
+        ParameterVersion: js.UndefOr[PSParameterVersion] = js.undefined
+    ): LabelParameterVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Labels" -> Labels.asInstanceOf[js.Any],
         "Name"   -> Name.asInstanceOf[js.Any],
@@ -7457,10 +8139,14 @@ package ssm {
   }
 
   object LabelParameterVersionResult {
-    def apply(InvalidLabels: js.UndefOr[ParameterLabelList] = js.undefined): LabelParameterVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InvalidLabels" -> InvalidLabels.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InvalidLabels: js.UndefOr[ParameterLabelList] = js.undefined
+    ): LabelParameterVersionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InvalidLabels" -> InvalidLabels.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelParameterVersionResult]
     }
@@ -7482,9 +8168,11 @@ package ssm {
   }
 
   object ListAssociationVersionsRequest {
-    def apply(AssociationId: AssociationId,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListAssociationVersionsRequest = {
+    def apply(
+        AssociationId: AssociationId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssociationVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -7506,13 +8194,18 @@ package ssm {
   }
 
   object ListAssociationVersionsResult {
-    def apply(AssociationVersions: js.UndefOr[AssociationVersionList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListAssociationVersionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationVersions" -> AssociationVersions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AssociationVersions: js.UndefOr[AssociationVersionList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssociationVersionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationVersions" -> AssociationVersions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociationVersionsResult]
     }
@@ -7526,9 +8219,11 @@ package ssm {
   }
 
   object ListAssociationsRequest {
-    def apply(AssociationFilterList: js.UndefOr[AssociationFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListAssociationsRequest = {
+    def apply(
+        AssociationFilterList: js.UndefOr[AssociationFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationFilterList" -> AssociationFilterList.map { x =>
           x.asInstanceOf[js.Any]
@@ -7552,13 +8247,18 @@ package ssm {
   }
 
   object ListAssociationsResult {
-    def apply(Associations: js.UndefOr[AssociationList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListAssociationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Associations" -> Associations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Associations: js.UndefOr[AssociationList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssociationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Associations" -> Associations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssociationsResult]
     }
@@ -7575,12 +8275,14 @@ package ssm {
   }
 
   object ListCommandInvocationsRequest {
-    def apply(CommandId: js.UndefOr[CommandId] = js.undefined,
-              Details: js.UndefOr[Boolean] = js.undefined,
-              Filters: js.UndefOr[CommandFilterList] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              MaxResults: js.UndefOr[CommandMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCommandInvocationsRequest = {
+    def apply(
+        CommandId: js.UndefOr[CommandId] = js.undefined,
+        Details: js.UndefOr[Boolean] = js.undefined,
+        Filters: js.UndefOr[CommandFilterList] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        MaxResults: js.UndefOr[CommandMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCommandInvocationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CommandId" -> CommandId.map { x =>
           x.asInstanceOf[js.Any]
@@ -7613,13 +8315,18 @@ package ssm {
   }
 
   object ListCommandInvocationsResult {
-    def apply(CommandInvocations: js.UndefOr[CommandInvocationList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCommandInvocationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("CommandInvocations" -> CommandInvocations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CommandInvocations: js.UndefOr[CommandInvocationList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCommandInvocationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CommandInvocations" -> CommandInvocations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCommandInvocationsResult]
     }
@@ -7635,11 +8342,13 @@ package ssm {
   }
 
   object ListCommandsRequest {
-    def apply(CommandId: js.UndefOr[CommandId] = js.undefined,
-              Filters: js.UndefOr[CommandFilterList] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              MaxResults: js.UndefOr[CommandMaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCommandsRequest = {
+    def apply(
+        CommandId: js.UndefOr[CommandId] = js.undefined,
+        Filters: js.UndefOr[CommandFilterList] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        MaxResults: js.UndefOr[CommandMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCommandsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CommandId" -> CommandId.map { x =>
           x.asInstanceOf[js.Any]
@@ -7669,13 +8378,18 @@ package ssm {
   }
 
   object ListCommandsResult {
-    def apply(Commands: js.UndefOr[CommandList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCommandsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Commands" -> Commands.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Commands: js.UndefOr[CommandList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCommandsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Commands" -> Commands.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCommandsResult]
     }
@@ -7691,11 +8405,13 @@ package ssm {
   }
 
   object ListComplianceItemsRequest {
-    def apply(Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ResourceIds: js.UndefOr[ComplianceResourceIdList] = js.undefined,
-              ResourceTypes: js.UndefOr[ComplianceResourceTypeList] = js.undefined): ListComplianceItemsRequest = {
+    def apply(
+        Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResourceIds: js.UndefOr[ComplianceResourceIdList] = js.undefined,
+        ResourceTypes: js.UndefOr[ComplianceResourceTypeList] = js.undefined
+    ): ListComplianceItemsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -7725,13 +8441,18 @@ package ssm {
   }
 
   object ListComplianceItemsResult {
-    def apply(ComplianceItems: js.UndefOr[ComplianceItemList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListComplianceItemsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ComplianceItems" -> ComplianceItems.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ComplianceItems: js.UndefOr[ComplianceItemList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListComplianceItemsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ComplianceItems" -> ComplianceItems.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListComplianceItemsResult]
     }
@@ -7745,9 +8466,11 @@ package ssm {
   }
 
   object ListComplianceSummariesRequest {
-    def apply(Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListComplianceSummariesRequest = {
+    def apply(
+        Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListComplianceSummariesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -7771,13 +8494,18 @@ package ssm {
   }
 
   object ListComplianceSummariesResult {
-    def apply(ComplianceSummaryItems: js.UndefOr[ComplianceSummaryItemList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListComplianceSummariesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ComplianceSummaryItems" -> ComplianceSummaryItems.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ComplianceSummaryItems: js.UndefOr[ComplianceSummaryItemList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListComplianceSummariesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ComplianceSummaryItems" -> ComplianceSummaryItems.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListComplianceSummariesResult]
     }
@@ -7791,15 +8519,20 @@ package ssm {
   }
 
   object ListDocumentVersionsRequest {
-    def apply(Name: DocumentName,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDocumentVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
-        x =>
+    def apply(
+        Name: DocumentName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDocumentVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDocumentVersionsRequest]
     }
@@ -7812,13 +8545,18 @@ package ssm {
   }
 
   object ListDocumentVersionsResult {
-    def apply(DocumentVersions: js.UndefOr[DocumentVersionList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDocumentVersionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DocumentVersions" -> DocumentVersions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DocumentVersions: js.UndefOr[DocumentVersionList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDocumentVersionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DocumentVersions" -> DocumentVersions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDocumentVersionsResult]
     }
@@ -7833,10 +8571,12 @@ package ssm {
   }
 
   object ListDocumentsRequest {
-    def apply(DocumentFilterList: js.UndefOr[DocumentFilterList] = js.undefined,
-              Filters: js.UndefOr[DocumentKeyValuesFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDocumentsRequest = {
+    def apply(
+        DocumentFilterList: js.UndefOr[DocumentFilterList] = js.undefined,
+        Filters: js.UndefOr[DocumentKeyValuesFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDocumentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentFilterList" -> DocumentFilterList.map { x =>
           x.asInstanceOf[js.Any]
@@ -7863,13 +8603,18 @@ package ssm {
   }
 
   object ListDocumentsResult {
-    def apply(DocumentIdentifiers: js.UndefOr[DocumentIdentifierList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDocumentsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DocumentIdentifiers" -> DocumentIdentifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DocumentIdentifiers: js.UndefOr[DocumentIdentifierList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDocumentsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DocumentIdentifiers" -> DocumentIdentifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDocumentsResult]
     }
@@ -7885,11 +8630,13 @@ package ssm {
   }
 
   object ListInventoryEntriesRequest {
-    def apply(InstanceId: InstanceId,
-              TypeName: InventoryItemTypeName,
-              Filters: js.UndefOr[InventoryFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListInventoryEntriesRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        TypeName: InventoryItemTypeName,
+        Filters: js.UndefOr[InventoryFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInventoryEntriesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "TypeName"   -> TypeName.asInstanceOf[js.Any],
@@ -7919,12 +8666,14 @@ package ssm {
   }
 
   object ListInventoryEntriesResult {
-    def apply(CaptureTime: js.UndefOr[InventoryItemCaptureTime] = js.undefined,
-              Entries: js.UndefOr[InventoryItemEntryList] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaVersion: js.UndefOr[InventoryItemSchemaVersion] = js.undefined,
-              TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined): ListInventoryEntriesResult = {
+    def apply(
+        CaptureTime: js.UndefOr[InventoryItemCaptureTime] = js.undefined,
+        Entries: js.UndefOr[InventoryItemEntryList] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaVersion: js.UndefOr[InventoryItemSchemaVersion] = js.undefined,
+        TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined
+    ): ListInventoryEntriesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CaptureTime" -> CaptureTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -7958,9 +8707,11 @@ package ssm {
   }
 
   object ListResourceComplianceSummariesRequest {
-    def apply(Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListResourceComplianceSummariesRequest = {
+    def apply(
+        Filters: js.UndefOr[ComplianceStringFilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResourceComplianceSummariesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -7988,11 +8739,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceComplianceSummaryItems: js.UndefOr[ResourceComplianceSummaryItemList] = js.undefined
     ): ListResourceComplianceSummariesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ResourceComplianceSummaryItems" -> ResourceComplianceSummaryItems.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceComplianceSummaryItems" -> ResourceComplianceSummaryItems.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceComplianceSummariesResult]
     }
@@ -8005,13 +8759,18 @@ package ssm {
   }
 
   object ListResourceDataSyncRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListResourceDataSyncRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResourceDataSyncRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceDataSyncRequest]
     }
@@ -8028,11 +8787,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceDataSyncItems: js.UndefOr[ResourceDataSyncItemList] = js.undefined
     ): ListResourceDataSyncResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ResourceDataSyncItems" -> ResourceDataSyncItems.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceDataSyncItems" -> ResourceDataSyncItems.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourceDataSyncResult]
     }
@@ -8045,7 +8807,10 @@ package ssm {
   }
 
   object ListTagsForResourceRequest {
-    def apply(ResourceId: ResourceId, ResourceType: ResourceTypeForTagging): ListTagsForResourceRequest = {
+    def apply(
+        ResourceId: ResourceId,
+        ResourceType: ResourceTypeForTagging
+    ): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
@@ -8061,10 +8826,14 @@ package ssm {
   }
 
   object ListTagsForResourceResult {
-    def apply(TagList: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("TagList" -> TagList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TagList: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TagList" -> TagList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResult]
     }
@@ -8083,9 +8852,11 @@ package ssm {
   }
 
   object LoggingInfo {
-    def apply(S3BucketName: S3BucketName,
-              S3Region: S3Region,
-              S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined): LoggingInfo = {
+    def apply(
+        S3BucketName: S3BucketName,
+        S3Region: S3Region,
+        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): LoggingInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
         "S3Region"     -> S3Region.asInstanceOf[js.Any],
@@ -8108,13 +8879,18 @@ package ssm {
   }
 
   object MaintenanceWindowAutomationParameters {
-    def apply(DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              Parameters: js.UndefOr[AutomationParameterMap] = js.undefined): MaintenanceWindowAutomationParameters = {
-      val _fields = IndexedSeq[(String, js.Any)]("DocumentVersion" -> DocumentVersion.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        Parameters: js.UndefOr[AutomationParameterMap] = js.undefined
+    ): MaintenanceWindowAutomationParameters = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DocumentVersion" -> DocumentVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaintenanceWindowAutomationParameters]
     }
@@ -8134,12 +8910,14 @@ package ssm {
   }
 
   object MaintenanceWindowExecution {
-    def apply(EndTime: js.UndefOr[DateTime] = js.undefined,
-              StartTime: js.UndefOr[DateTime] = js.undefined,
-              Status: js.UndefOr[MaintenanceWindowExecutionStatus] = js.undefined,
-              StatusDetails: js.UndefOr[MaintenanceWindowExecutionStatusDetails] = js.undefined,
-              WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): MaintenanceWindowExecution = {
+    def apply(
+        EndTime: js.UndefOr[DateTime] = js.undefined,
+        StartTime: js.UndefOr[DateTime] = js.undefined,
+        Status: js.UndefOr[MaintenanceWindowExecutionStatus] = js.undefined,
+        StatusDetails: js.UndefOr[MaintenanceWindowExecutionStatusDetails] = js.undefined,
+        WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): MaintenanceWindowExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime" -> EndTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -8325,13 +9103,18 @@ package ssm {
   }
 
   object MaintenanceWindowFilter {
-    def apply(Key: js.UndefOr[MaintenanceWindowFilterKey] = js.undefined,
-              Values: js.UndefOr[MaintenanceWindowFilterValues] = js.undefined): MaintenanceWindowFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[MaintenanceWindowFilterKey] = js.undefined,
+        Values: js.UndefOr[MaintenanceWindowFilterValues] = js.undefined
+    ): MaintenanceWindowFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaintenanceWindowFilter]
     }
@@ -8356,17 +9139,19 @@ package ssm {
   }
 
   object MaintenanceWindowIdentity {
-    def apply(Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
-              Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
-              Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
-              EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
-              ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
-              StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): MaintenanceWindowIdentity = {
+    def apply(
+        Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
+        Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
+        EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        NextExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
+        StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): MaintenanceWindowIdentity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Cutoff" -> Cutoff.map { x =>
           x.asInstanceOf[js.Any]
@@ -8417,13 +9202,18 @@ package ssm {
   }
 
   object MaintenanceWindowIdentityForTarget {
-    def apply(Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): MaintenanceWindowIdentityForTarget = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WindowId" -> WindowId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): MaintenanceWindowIdentityForTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WindowId" -> WindowId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaintenanceWindowIdentityForTarget]
     }
@@ -8494,15 +9284,17 @@ package ssm {
   }
 
   object MaintenanceWindowRunCommandParameters {
-    def apply(Comment: js.UndefOr[Comment] = js.undefined,
-              DocumentHash: js.UndefOr[DocumentHash] = js.undefined,
-              DocumentHashType: js.UndefOr[DocumentHashType] = js.undefined,
-              NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
-              OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
-              OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
-              TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined): MaintenanceWindowRunCommandParameters = {
+    def apply(
+        Comment: js.UndefOr[Comment] = js.undefined,
+        DocumentHash: js.UndefOr[DocumentHash] = js.undefined,
+        DocumentHashType: js.UndefOr[DocumentHashType] = js.undefined,
+        NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
+        OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
+        TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined
+    ): MaintenanceWindowRunCommandParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Comment" -> Comment.map { x =>
           x.asInstanceOf[js.Any]
@@ -8556,11 +9348,14 @@ package ssm {
         Input: js.UndefOr[MaintenanceWindowStepFunctionsInput] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowStepFunctionsName] = js.undefined
     ): MaintenanceWindowStepFunctionsParameters = {
-      val _fields = IndexedSeq[(String, js.Any)]("Input" -> Input.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Input" -> Input.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MaintenanceWindowStepFunctionsParameters]
     }
@@ -8581,13 +9376,15 @@ package ssm {
   }
 
   object MaintenanceWindowTarget {
-    def apply(Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
-              ResourceType: js.UndefOr[MaintenanceWindowResourceType] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
-              WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined): MaintenanceWindowTarget = {
+    def apply(
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
+        ResourceType: js.UndefOr[MaintenanceWindowResourceType] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
+        WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
+    ): MaintenanceWindowTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -8637,19 +9434,21 @@ package ssm {
   }
 
   object MaintenanceWindowTask {
-    def apply(Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              Priority: js.UndefOr[MaintenanceWindowTaskPriority] = js.undefined,
-              ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined,
-              TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
-              TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined,
-              Type: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
-              WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined): MaintenanceWindowTask = {
+    def apply(
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        Priority: js.UndefOr[MaintenanceWindowTaskPriority] = js.undefined,
+        ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
+        TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined,
+        Type: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
+        WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
+    ): MaintenanceWindowTask = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -8745,9 +9544,11 @@ package ssm {
     def apply(
         Values: js.UndefOr[MaintenanceWindowTaskParameterValueList] = js.undefined
     ): MaintenanceWindowTaskParameterValueExpression = {
-      val _fields = IndexedSeq[(String, js.Any)]("Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -8773,10 +9574,12 @@ package ssm {
   }
 
   object ModifyDocumentPermissionRequest {
-    def apply(Name: DocumentName,
-              PermissionType: DocumentPermissionType,
-              AccountIdsToAdd: js.UndefOr[AccountIdList] = js.undefined,
-              AccountIdsToRemove: js.UndefOr[AccountIdList] = js.undefined): ModifyDocumentPermissionRequest = {
+    def apply(
+        Name: DocumentName,
+        PermissionType: DocumentPermissionType,
+        AccountIdsToAdd: js.UndefOr[AccountIdList] = js.undefined,
+        AccountIdsToRemove: js.UndefOr[AccountIdList] = js.undefined
+    ): ModifyDocumentPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"           -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any],
@@ -8796,8 +9599,10 @@ package ssm {
   trait ModifyDocumentPermissionResponse extends js.Object {}
 
   object ModifyDocumentPermissionResponse {
-    def apply(): ModifyDocumentPermissionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ModifyDocumentPermissionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDocumentPermissionResponse]
     }
@@ -8813,13 +9618,18 @@ package ssm {
   }
 
   object NonCompliantSummary {
-    def apply(NonCompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
-              SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined): NonCompliantSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("NonCompliantCount" -> NonCompliantCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SeveritySummary" -> SeveritySummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NonCompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
+        SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined
+    ): NonCompliantSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NonCompliantCount" -> NonCompliantCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SeveritySummary" -> SeveritySummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NonCompliantSummary]
     }
@@ -8836,9 +9646,11 @@ package ssm {
   }
 
   object NotificationConfig {
-    def apply(NotificationArn: js.UndefOr[NotificationArn] = js.undefined,
-              NotificationEvents: js.UndefOr[NotificationEventList] = js.undefined,
-              NotificationType: js.UndefOr[NotificationType] = js.undefined): NotificationConfig = {
+    def apply(
+        NotificationArn: js.UndefOr[NotificationArn] = js.undefined,
+        NotificationEvents: js.UndefOr[NotificationEventList] = js.undefined,
+        NotificationType: js.UndefOr[NotificationType] = js.undefined
+    ): NotificationConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NotificationArn" -> NotificationArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -8895,13 +9707,18 @@ package ssm {
   }
 
   object OutputSource {
-    def apply(OutputSourceId: js.UndefOr[OutputSourceId] = js.undefined,
-              OutputSourceType: js.UndefOr[OutputSourceType] = js.undefined): OutputSource = {
-      val _fields = IndexedSeq[(String, js.Any)]("OutputSourceId" -> OutputSourceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OutputSourceType" -> OutputSourceType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OutputSourceId: js.UndefOr[OutputSourceId] = js.undefined,
+        OutputSourceType: js.UndefOr[OutputSourceType] = js.undefined
+    ): OutputSource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OutputSourceId" -> OutputSourceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputSourceType" -> OutputSourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputSource]
     }
@@ -8923,14 +9740,16 @@ package ssm {
   }
 
   object Parameter {
-    def apply(ARN: js.UndefOr[String] = js.undefined,
-              LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
-              Name: js.UndefOr[PSParameterName] = js.undefined,
-              Selector: js.UndefOr[PSParameterSelector] = js.undefined,
-              SourceResult: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[ParameterType] = js.undefined,
-              Value: js.UndefOr[PSParameterValue] = js.undefined,
-              Version: js.UndefOr[PSParameterVersion] = js.undefined): Parameter = {
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined,
+        LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        Name: js.UndefOr[PSParameterName] = js.undefined,
+        Selector: js.UndefOr[PSParameterSelector] = js.undefined,
+        SourceResult: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[ParameterType] = js.undefined,
+        Value: js.UndefOr[PSParameterValue] = js.undefined,
+        Version: js.UndefOr[PSParameterVersion] = js.undefined
+    ): Parameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ARN" -> ARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -8980,16 +9799,18 @@ package ssm {
   }
 
   object ParameterHistory {
-    def apply(AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
-              Description: js.UndefOr[ParameterDescription] = js.undefined,
-              KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
-              Labels: js.UndefOr[ParameterLabelList] = js.undefined,
-              LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
-              LastModifiedUser: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[PSParameterName] = js.undefined,
-              Type: js.UndefOr[ParameterType] = js.undefined,
-              Value: js.UndefOr[PSParameterValue] = js.undefined,
-              Version: js.UndefOr[PSParameterVersion] = js.undefined): ParameterHistory = {
+    def apply(
+        AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
+        Description: js.UndefOr[ParameterDescription] = js.undefined,
+        KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
+        Labels: js.UndefOr[ParameterLabelList] = js.undefined,
+        LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        LastModifiedUser: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[PSParameterName] = js.undefined,
+        Type: js.UndefOr[ParameterType] = js.undefined,
+        Value: js.UndefOr[PSParameterValue] = js.undefined,
+        Version: js.UndefOr[PSParameterVersion] = js.undefined
+    ): ParameterHistory = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowedPattern" -> AllowedPattern.map { x =>
           x.asInstanceOf[js.Any]
@@ -9043,14 +9864,16 @@ package ssm {
   }
 
   object ParameterMetadata {
-    def apply(AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
-              Description: js.UndefOr[ParameterDescription] = js.undefined,
-              KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
-              LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
-              LastModifiedUser: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[PSParameterName] = js.undefined,
-              Type: js.UndefOr[ParameterType] = js.undefined,
-              Version: js.UndefOr[PSParameterVersion] = js.undefined): ParameterMetadata = {
+    def apply(
+        AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
+        Description: js.UndefOr[ParameterDescription] = js.undefined,
+        KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
+        LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        LastModifiedUser: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[PSParameterName] = js.undefined,
+        Type: js.UndefOr[ParameterType] = js.undefined,
+        Version: js.UndefOr[PSParameterVersion] = js.undefined
+    ): ParameterMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowedPattern" -> AllowedPattern.map { x =>
           x.asInstanceOf[js.Any]
@@ -9095,14 +9918,20 @@ package ssm {
   }
 
   object ParameterStringFilter {
-    def apply(Key: ParameterStringFilterKey,
-              Option: js.UndefOr[ParameterStringQueryOption] = js.undefined,
-              Values: js.UndefOr[ParameterStringFilterValueList] = js.undefined): ParameterStringFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Option" -> Option.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: ParameterStringFilterKey,
+        Option: js.UndefOr[ParameterStringQueryOption] = js.undefined,
+        Values: js.UndefOr[ParameterStringFilterValueList] = js.undefined
+    ): ParameterStringFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Option" -> Option.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterStringFilter]
     }
@@ -9126,10 +9955,14 @@ package ssm {
   }
 
   object ParametersFilter {
-    def apply(Key: ParametersFilterKey, Values: ParametersFilterValueList): ParametersFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: ParametersFilterKey,
+        Values: ParametersFilterValueList
+    ): ParametersFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"    -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParametersFilter]
     }
@@ -9164,19 +9997,21 @@ package ssm {
   }
 
   object Patch {
-    def apply(Classification: js.UndefOr[PatchClassification] = js.undefined,
-              ContentUrl: js.UndefOr[PatchContentUrl] = js.undefined,
-              Description: js.UndefOr[PatchDescription] = js.undefined,
-              Id: js.UndefOr[PatchId] = js.undefined,
-              KbNumber: js.UndefOr[PatchKbNumber] = js.undefined,
-              Language: js.UndefOr[PatchLanguage] = js.undefined,
-              MsrcNumber: js.UndefOr[PatchMsrcNumber] = js.undefined,
-              MsrcSeverity: js.UndefOr[PatchMsrcSeverity] = js.undefined,
-              Product: js.UndefOr[PatchProduct] = js.undefined,
-              ProductFamily: js.UndefOr[PatchProductFamily] = js.undefined,
-              ReleaseDate: js.UndefOr[DateTime] = js.undefined,
-              Title: js.UndefOr[PatchTitle] = js.undefined,
-              Vendor: js.UndefOr[PatchVendor] = js.undefined): Patch = {
+    def apply(
+        Classification: js.UndefOr[PatchClassification] = js.undefined,
+        ContentUrl: js.UndefOr[PatchContentUrl] = js.undefined,
+        Description: js.UndefOr[PatchDescription] = js.undefined,
+        Id: js.UndefOr[PatchId] = js.undefined,
+        KbNumber: js.UndefOr[PatchKbNumber] = js.undefined,
+        Language: js.UndefOr[PatchLanguage] = js.undefined,
+        MsrcNumber: js.UndefOr[PatchMsrcNumber] = js.undefined,
+        MsrcSeverity: js.UndefOr[PatchMsrcSeverity] = js.undefined,
+        Product: js.UndefOr[PatchProduct] = js.undefined,
+        ProductFamily: js.UndefOr[PatchProductFamily] = js.undefined,
+        ReleaseDate: js.UndefOr[DateTime] = js.undefined,
+        Title: js.UndefOr[PatchTitle] = js.undefined,
+        Vendor: js.UndefOr[PatchVendor] = js.undefined
+    ): Patch = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Classification" -> Classification.map { x =>
           x.asInstanceOf[js.Any]
@@ -9243,11 +10078,13 @@ package ssm {
   }
 
   object PatchBaselineIdentity {
-    def apply(BaselineDescription: js.UndefOr[BaselineDescription] = js.undefined,
-              BaselineId: js.UndefOr[BaselineId] = js.undefined,
-              BaselineName: js.UndefOr[BaselineName] = js.undefined,
-              DefaultBaseline: js.UndefOr[DefaultBaseline] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined): PatchBaselineIdentity = {
+    def apply(
+        BaselineDescription: js.UndefOr[BaselineDescription] = js.undefined,
+        BaselineId: js.UndefOr[BaselineId] = js.undefined,
+        BaselineName: js.UndefOr[BaselineName] = js.undefined,
+        DefaultBaseline: js.UndefOr[DefaultBaseline] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
+    ): PatchBaselineIdentity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaselineDescription" -> BaselineDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -9284,12 +10121,14 @@ package ssm {
   }
 
   object PatchComplianceData {
-    def apply(Classification: PatchClassification,
-              InstalledTime: DateTime,
-              KBId: PatchKbNumber,
-              Severity: PatchSeverity,
-              State: PatchComplianceDataState,
-              Title: PatchTitle): PatchComplianceData = {
+    def apply(
+        Classification: PatchClassification,
+        InstalledTime: DateTime,
+        KBId: PatchKbNumber,
+        Severity: PatchSeverity,
+        State: PatchComplianceDataState,
+        Title: PatchTitle
+    ): PatchComplianceData = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Classification" -> Classification.asInstanceOf[js.Any],
         "InstalledTime"  -> InstalledTime.asInstanceOf[js.Any],
@@ -9353,6 +10192,7 @@ package ssm {
     *  * <code>WindowsServer2012</code>
     *  * <code>WindowsServer2012R2</code>
     *  * <code>WindowsServer2016</code>
+    *  * <code>WindowsServer2019</code>
     *  * <code>*</code>
     *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
     * <i>Supported key:</i> <code>CLASSIFICATION</code>
@@ -9457,6 +10297,8 @@ package ssm {
     *  * <code>RedhatEnterpriseLinux7.2</code>
     *  * <code>RedhatEnterpriseLinux7.3</code>
     *  * <code>RedhatEnterpriseLinux7.4</code>
+    *  * <code>RedhatEnterpriseLinux7.5</code>
+    *  * <code>RedhatEnterpriseLinux7.6</code>
     *  * <code>*</code>
     *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
     * <i>Supported key:</i> <code>CLASSIFICATION</code>
@@ -9516,6 +10358,8 @@ package ssm {
     *  * <code>CentOS7.2</code>
     *  * <code>CentOS7.3</code>
     *  * <code>CentOS7.4</code>
+    *  * <code>CentOS7.5</code>
+    *  * <code>CentOS7.6</code>
     *  * <code>*</code>
     *  <i>Use a wildcard character (*) to target all supported operating system versions.</i>
     * <i>Supported key:</i> <code>CLASSIFICATION</code>
@@ -9539,10 +10383,14 @@ package ssm {
   }
 
   object PatchFilter {
-    def apply(Key: PatchFilterKey, Values: PatchFilterValueList): PatchFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: PatchFilterKey,
+        Values: PatchFilterValueList
+    ): PatchFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"    -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PatchFilter]
     }
@@ -9557,9 +10405,12 @@ package ssm {
   }
 
   object PatchFilterGroup {
-    def apply(PatchFilters: PatchFilterList): PatchFilterGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("PatchFilters" -> PatchFilters.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PatchFilters: PatchFilterList
+    ): PatchFilterGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PatchFilters" -> PatchFilters.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PatchFilterGroup]
     }
@@ -9587,13 +10438,18 @@ package ssm {
   }
 
   object PatchGroupPatchBaselineMapping {
-    def apply(BaselineIdentity: js.UndefOr[PatchBaselineIdentity] = js.undefined,
-              PatchGroup: js.UndefOr[PatchGroup] = js.undefined): PatchGroupPatchBaselineMapping = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineIdentity" -> BaselineIdentity.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PatchGroup" -> PatchGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineIdentity: js.UndefOr[PatchBaselineIdentity] = js.undefined,
+        PatchGroup: js.UndefOr[PatchGroup] = js.undefined
+    ): PatchGroupPatchBaselineMapping = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineIdentity" -> BaselineIdentity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PatchGroup" -> PatchGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PatchGroupPatchBaselineMapping]
     }
@@ -9616,13 +10472,18 @@ package ssm {
   }
 
   object PatchOrchestratorFilter {
-    def apply(Key: js.UndefOr[PatchOrchestratorFilterKey] = js.undefined,
-              Values: js.UndefOr[PatchOrchestratorFilterValues] = js.undefined): PatchOrchestratorFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[PatchOrchestratorFilterKey] = js.undefined,
+        Values: js.UndefOr[PatchOrchestratorFilterValues] = js.undefined
+    ): PatchOrchestratorFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PatchOrchestratorFilter]
     }
@@ -9640,10 +10501,12 @@ package ssm {
   }
 
   object PatchRule {
-    def apply(ApproveAfterDays: ApproveAfterDays,
-              PatchFilterGroup: PatchFilterGroup,
-              ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
-              EnableNonSecurity: js.UndefOr[Boolean] = js.undefined): PatchRule = {
+    def apply(
+        ApproveAfterDays: ApproveAfterDays,
+        PatchFilterGroup: PatchFilterGroup,
+        ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
+        EnableNonSecurity: js.UndefOr[Boolean] = js.undefined
+    ): PatchRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApproveAfterDays" -> ApproveAfterDays.asInstanceOf[js.Any],
         "PatchFilterGroup" -> PatchFilterGroup.asInstanceOf[js.Any],
@@ -9668,9 +10531,12 @@ package ssm {
   }
 
   object PatchRuleGroup {
-    def apply(PatchRules: PatchRuleList): PatchRuleGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("PatchRules" -> PatchRules.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PatchRules: PatchRuleList
+    ): PatchRuleGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PatchRules" -> PatchRules.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PatchRuleGroup]
     }
@@ -9687,9 +10553,11 @@ package ssm {
   }
 
   object PatchSource {
-    def apply(Configuration: PatchSourceConfiguration,
-              Name: PatchSourceName,
-              Products: PatchSourceProductList): PatchSource = {
+    def apply(
+        Configuration: PatchSourceConfiguration,
+        Name: PatchSourceName,
+        Products: PatchSourceProductList
+    ): PatchSource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Configuration" -> Configuration.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any],
@@ -9711,9 +10579,11 @@ package ssm {
   }
 
   object PatchStatus {
-    def apply(ApprovalDate: js.UndefOr[DateTime] = js.undefined,
-              ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
-              DeploymentStatus: js.UndefOr[PatchDeploymentStatus] = js.undefined): PatchStatus = {
+    def apply(
+        ApprovalDate: js.UndefOr[DateTime] = js.undefined,
+        ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
+        DeploymentStatus: js.UndefOr[PatchDeploymentStatus] = js.undefined
+    ): PatchStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApprovalDate" -> ApprovalDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -9758,11 +10628,13 @@ package ssm {
   }
 
   object ProgressCounters {
-    def apply(CancelledSteps: js.UndefOr[Int] = js.undefined,
-              FailedSteps: js.UndefOr[Int] = js.undefined,
-              SuccessSteps: js.UndefOr[Int] = js.undefined,
-              TimedOutSteps: js.UndefOr[Int] = js.undefined,
-              TotalSteps: js.UndefOr[Int] = js.undefined): ProgressCounters = {
+    def apply(
+        CancelledSteps: js.UndefOr[Int] = js.undefined,
+        FailedSteps: js.UndefOr[Int] = js.undefined,
+        SuccessSteps: js.UndefOr[Int] = js.undefined,
+        TimedOutSteps: js.UndefOr[Int] = js.undefined,
+        TotalSteps: js.UndefOr[Int] = js.undefined
+    ): ProgressCounters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CancelledSteps" -> CancelledSteps.map { x =>
           x.asInstanceOf[js.Any]
@@ -9796,12 +10668,14 @@ package ssm {
   }
 
   object PutComplianceItemsRequest {
-    def apply(ComplianceType: ComplianceTypeName,
-              ExecutionSummary: ComplianceExecutionSummary,
-              Items: ComplianceItemEntryList,
-              ResourceId: ComplianceResourceId,
-              ResourceType: ComplianceResourceType,
-              ItemContentHash: js.UndefOr[ComplianceItemContentHash] = js.undefined): PutComplianceItemsRequest = {
+    def apply(
+        ComplianceType: ComplianceTypeName,
+        ExecutionSummary: ComplianceExecutionSummary,
+        Items: ComplianceItemEntryList,
+        ResourceId: ComplianceResourceId,
+        ResourceType: ComplianceResourceType,
+        ItemContentHash: js.UndefOr[ComplianceItemContentHash] = js.undefined
+    ): PutComplianceItemsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComplianceType"   -> ComplianceType.asInstanceOf[js.Any],
         "ExecutionSummary" -> ExecutionSummary.asInstanceOf[js.Any],
@@ -9821,8 +10695,10 @@ package ssm {
   trait PutComplianceItemsResult extends js.Object {}
 
   object PutComplianceItemsResult {
-    def apply(): PutComplianceItemsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): PutComplianceItemsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutComplianceItemsResult]
     }
@@ -9835,7 +10711,10 @@ package ssm {
   }
 
   object PutInventoryRequest {
-    def apply(InstanceId: InstanceId, Items: InventoryItemList): PutInventoryRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        Items: InventoryItemList
+    ): PutInventoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Items"      -> Items.asInstanceOf[js.Any]
@@ -9851,10 +10730,14 @@ package ssm {
   }
 
   object PutInventoryResult {
-    def apply(Message: js.UndefOr[PutInventoryMessage] = js.undefined): PutInventoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Message: js.UndefOr[PutInventoryMessage] = js.undefined
+    ): PutInventoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutInventoryResult]
     }
@@ -9869,16 +10752,20 @@ package ssm {
     var Description: js.UndefOr[ParameterDescription]
     var KeyId: js.UndefOr[ParameterKeyId]
     var Overwrite: js.UndefOr[Boolean]
+    var Tags: js.UndefOr[TagList]
   }
 
   object PutParameterRequest {
-    def apply(Name: PSParameterName,
-              Type: ParameterType,
-              Value: PSParameterValue,
-              AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
-              Description: js.UndefOr[ParameterDescription] = js.undefined,
-              KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
-              Overwrite: js.UndefOr[Boolean] = js.undefined): PutParameterRequest = {
+    def apply(
+        Name: PSParameterName,
+        Type: ParameterType,
+        Value: PSParameterValue,
+        AllowedPattern: js.UndefOr[AllowedPattern] = js.undefined,
+        Description: js.UndefOr[ParameterDescription] = js.undefined,
+        KeyId: js.UndefOr[ParameterKeyId] = js.undefined,
+        Overwrite: js.UndefOr[Boolean] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): PutParameterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
@@ -9894,6 +10781,9 @@ package ssm {
         },
         "Overwrite" -> Overwrite.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -9907,10 +10797,14 @@ package ssm {
   }
 
   object PutParameterResult {
-    def apply(Version: js.UndefOr[PSParameterVersion] = js.undefined): PutParameterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Version: js.UndefOr[PSParameterVersion] = js.undefined
+    ): PutParameterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutParameterResult]
     }
@@ -9922,9 +10816,12 @@ package ssm {
   }
 
   object RegisterDefaultPatchBaselineRequest {
-    def apply(BaselineId: BaselineId): RegisterDefaultPatchBaselineRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: BaselineId
+    ): RegisterDefaultPatchBaselineRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterDefaultPatchBaselineRequest]
     }
@@ -9936,10 +10833,14 @@ package ssm {
   }
 
   object RegisterDefaultPatchBaselineResult {
-    def apply(BaselineId: js.UndefOr[BaselineId] = js.undefined): RegisterDefaultPatchBaselineResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: js.UndefOr[BaselineId] = js.undefined
+    ): RegisterDefaultPatchBaselineResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterDefaultPatchBaselineResult]
     }
@@ -9952,7 +10853,10 @@ package ssm {
   }
 
   object RegisterPatchBaselineForPatchGroupRequest {
-    def apply(BaselineId: BaselineId, PatchGroup: PatchGroup): RegisterPatchBaselineForPatchGroupRequest = {
+    def apply(
+        BaselineId: BaselineId,
+        PatchGroup: PatchGroup
+    ): RegisterPatchBaselineForPatchGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
@@ -9969,13 +10873,18 @@ package ssm {
   }
 
   object RegisterPatchBaselineForPatchGroupResult {
-    def apply(BaselineId: js.UndefOr[BaselineId] = js.undefined,
-              PatchGroup: js.UndefOr[PatchGroup] = js.undefined): RegisterPatchBaselineForPatchGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("BaselineId" -> BaselineId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PatchGroup" -> PatchGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BaselineId: js.UndefOr[BaselineId] = js.undefined,
+        PatchGroup: js.UndefOr[PatchGroup] = js.undefined
+    ): RegisterPatchBaselineForPatchGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BaselineId" -> BaselineId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PatchGroup" -> PatchGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterPatchBaselineForPatchGroupResult]
     }
@@ -10035,9 +10944,11 @@ package ssm {
     def apply(
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
     ): RegisterTargetWithMaintenanceWindowResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowTargetId" -> WindowTargetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowTargetId" -> WindowTargetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterTargetWithMaintenanceWindowResult]
     }
@@ -10124,9 +11035,11 @@ package ssm {
     def apply(
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): RegisterTaskWithMaintenanceWindowResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("WindowTaskId" -> WindowTaskId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WindowTaskId" -> WindowTaskId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterTaskWithMaintenanceWindowResult]
     }
@@ -10140,9 +11053,11 @@ package ssm {
   }
 
   object RemoveTagsFromResourceRequest {
-    def apply(ResourceId: ResourceId,
-              ResourceType: ResourceTypeForTagging,
-              TagKeys: KeyList): RemoveTagsFromResourceRequest = {
+    def apply(
+        ResourceId: ResourceId,
+        ResourceType: ResourceTypeForTagging,
+        TagKeys: KeyList
+    ): RemoveTagsFromResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
@@ -10157,10 +11072,54 @@ package ssm {
   trait RemoveTagsFromResourceResult extends js.Object {}
 
   object RemoveTagsFromResourceResult {
-    def apply(): RemoveTagsFromResourceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveTagsFromResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceResult]
+    }
+  }
+
+  /**
+    * The request body of the ResetServiceSetting API action.
+    */
+  @js.native
+  trait ResetServiceSettingRequest extends js.Object {
+    var SettingId: ServiceSettingId
+  }
+
+  object ResetServiceSettingRequest {
+    def apply(
+        SettingId: ServiceSettingId
+    ): ResetServiceSettingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SettingId" -> SettingId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetServiceSettingRequest]
+    }
+  }
+
+  /**
+    * The result body of the ResetServiceSetting API action.
+    */
+  @js.native
+  trait ResetServiceSettingResult extends js.Object {
+    var ServiceSetting: js.UndefOr[ServiceSetting]
+  }
+
+  object ResetServiceSettingResult {
+    def apply(
+        ServiceSetting: js.UndefOr[ServiceSetting] = js.undefined
+    ): ResetServiceSettingResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceSetting" -> ServiceSetting.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetServiceSettingResult]
     }
   }
 
@@ -10174,13 +11133,18 @@ package ssm {
   }
 
   object ResolvedTargets {
-    def apply(ParameterValues: js.UndefOr[TargetParameterList] = js.undefined,
-              Truncated: js.UndefOr[Boolean] = js.undefined): ResolvedTargets = {
-      val _fields = IndexedSeq[(String, js.Any)]("ParameterValues" -> ParameterValues.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Truncated" -> Truncated.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ParameterValues: js.UndefOr[TargetParameterList] = js.undefined,
+        Truncated: js.UndefOr[Boolean] = js.undefined
+    ): ResolvedTargets = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ParameterValues" -> ParameterValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Truncated" -> Truncated.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolvedTargets]
     }
@@ -10202,14 +11166,16 @@ package ssm {
   }
 
   object ResourceComplianceSummaryItem {
-    def apply(ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
-              CompliantSummary: js.UndefOr[CompliantSummary] = js.undefined,
-              ExecutionSummary: js.UndefOr[ComplianceExecutionSummary] = js.undefined,
-              NonCompliantSummary: js.UndefOr[NonCompliantSummary] = js.undefined,
-              OverallSeverity: js.UndefOr[ComplianceSeverity] = js.undefined,
-              ResourceId: js.UndefOr[ComplianceResourceId] = js.undefined,
-              ResourceType: js.UndefOr[ComplianceResourceType] = js.undefined,
-              Status: js.UndefOr[ComplianceStatus] = js.undefined): ResourceComplianceSummaryItem = {
+    def apply(
+        ComplianceType: js.UndefOr[ComplianceTypeName] = js.undefined,
+        CompliantSummary: js.UndefOr[CompliantSummary] = js.undefined,
+        ExecutionSummary: js.UndefOr[ComplianceExecutionSummary] = js.undefined,
+        NonCompliantSummary: js.UndefOr[NonCompliantSummary] = js.undefined,
+        OverallSeverity: js.UndefOr[ComplianceSeverity] = js.undefined,
+        ResourceId: js.UndefOr[ComplianceResourceId] = js.undefined,
+        ResourceType: js.UndefOr[ComplianceResourceType] = js.undefined,
+        Status: js.UndefOr[ComplianceStatus] = js.undefined
+    ): ResourceComplianceSummaryItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComplianceType" -> ComplianceType.map { x =>
           x.asInstanceOf[js.Any]
@@ -10256,13 +11222,15 @@ package ssm {
   }
 
   object ResourceDataSyncItem {
-    def apply(LastStatus: js.UndefOr[LastResourceDataSyncStatus] = js.undefined,
-              LastSuccessfulSyncTime: js.UndefOr[LastSuccessfulResourceDataSyncTime] = js.undefined,
-              LastSyncStatusMessage: js.UndefOr[LastResourceDataSyncMessage] = js.undefined,
-              LastSyncTime: js.UndefOr[LastResourceDataSyncTime] = js.undefined,
-              S3Destination: js.UndefOr[ResourceDataSyncS3Destination] = js.undefined,
-              SyncCreatedTime: js.UndefOr[ResourceDataSyncCreatedTime] = js.undefined,
-              SyncName: js.UndefOr[ResourceDataSyncName] = js.undefined): ResourceDataSyncItem = {
+    def apply(
+        LastStatus: js.UndefOr[LastResourceDataSyncStatus] = js.undefined,
+        LastSuccessfulSyncTime: js.UndefOr[LastSuccessfulResourceDataSyncTime] = js.undefined,
+        LastSyncStatusMessage: js.UndefOr[LastResourceDataSyncMessage] = js.undefined,
+        LastSyncTime: js.UndefOr[LastResourceDataSyncTime] = js.undefined,
+        S3Destination: js.UndefOr[ResourceDataSyncS3Destination] = js.undefined,
+        SyncCreatedTime: js.UndefOr[ResourceDataSyncCreatedTime] = js.undefined,
+        SyncName: js.UndefOr[ResourceDataSyncName] = js.undefined
+    ): ResourceDataSyncItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LastStatus" -> LastStatus.map { x =>
           x.asInstanceOf[js.Any]
@@ -10304,11 +11272,13 @@ package ssm {
   }
 
   object ResourceDataSyncS3Destination {
-    def apply(BucketName: ResourceDataSyncS3BucketName,
-              Region: ResourceDataSyncS3Region,
-              SyncFormat: ResourceDataSyncS3Format,
-              AWSKMSKeyARN: js.UndefOr[ResourceDataSyncAWSKMSKeyARN] = js.undefined,
-              Prefix: js.UndefOr[ResourceDataSyncS3Prefix] = js.undefined): ResourceDataSyncS3Destination = {
+    def apply(
+        BucketName: ResourceDataSyncS3BucketName,
+        Region: ResourceDataSyncS3Region,
+        SyncFormat: ResourceDataSyncS3Format,
+        AWSKMSKeyARN: js.UndefOr[ResourceDataSyncAWSKMSKeyARN] = js.undefined,
+        Prefix: js.UndefOr[ResourceDataSyncS3Prefix] = js.undefined
+    ): ResourceDataSyncS3Destination = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BucketName" -> BucketName.asInstanceOf[js.Any],
         "Region"     -> Region.asInstanceOf[js.Any],
@@ -10358,9 +11328,12 @@ package ssm {
   }
 
   object ResultAttribute {
-    def apply(TypeName: InventoryItemTypeName): ResultAttribute = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TypeName" -> TypeName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TypeName: InventoryItemTypeName
+    ): ResultAttribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TypeName" -> TypeName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultAttribute]
     }
@@ -10372,9 +11345,12 @@ package ssm {
   }
 
   object ResumeSessionRequest {
-    def apply(SessionId: SessionId): ResumeSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SessionId" -> SessionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SessionId: SessionId
+    ): ResumeSessionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SessionId" -> SessionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResumeSessionRequest]
     }
@@ -10388,9 +11364,11 @@ package ssm {
   }
 
   object ResumeSessionResponse {
-    def apply(SessionId: js.UndefOr[SessionId] = js.undefined,
-              StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
-              TokenValue: js.UndefOr[TokenValue] = js.undefined): ResumeSessionResponse = {
+    def apply(
+        SessionId: js.UndefOr[SessionId] = js.undefined,
+        StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
+        TokenValue: js.UndefOr[TokenValue] = js.undefined
+    ): ResumeSessionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SessionId" -> SessionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -10418,9 +11396,11 @@ package ssm {
   }
 
   object S3OutputLocation {
-    def apply(OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
-              OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-              OutputS3Region: js.UndefOr[S3Region] = js.undefined): S3OutputLocation = {
+    def apply(
+        OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        OutputS3Region: js.UndefOr[S3Region] = js.undefined
+    ): S3OutputLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OutputS3BucketName" -> OutputS3BucketName.map { x =>
           x.asInstanceOf[js.Any]
@@ -10446,10 +11426,14 @@ package ssm {
   }
 
   object S3OutputUrl {
-    def apply(OutputUrl: js.UndefOr[Url] = js.undefined): S3OutputUrl = {
-      val _fields = IndexedSeq[(String, js.Any)]("OutputUrl" -> OutputUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OutputUrl: js.UndefOr[Url] = js.undefined
+    ): S3OutputUrl = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OutputUrl" -> OutputUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3OutputUrl]
     }
@@ -10466,9 +11450,11 @@ package ssm {
   }
 
   object ScheduledWindowExecution {
-    def apply(ExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): ScheduledWindowExecution = {
+    def apply(
+        ExecutionTime: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): ScheduledWindowExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExecutionTime" -> ExecutionTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -10493,9 +11479,11 @@ package ssm {
   }
 
   object SendAutomationSignalRequest {
-    def apply(AutomationExecutionId: AutomationExecutionId,
-              SignalType: SignalType,
-              Payload: js.UndefOr[AutomationParameterMap] = js.undefined): SendAutomationSignalRequest = {
+    def apply(
+        AutomationExecutionId: AutomationExecutionId,
+        SignalType: SignalType,
+        Payload: js.UndefOr[AutomationParameterMap] = js.undefined
+    ): SendAutomationSignalRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any],
         "SignalType"            -> SignalType.asInstanceOf[js.Any],
@@ -10512,8 +11500,10 @@ package ssm {
   trait SendAutomationSignalResult extends js.Object {}
 
   object SendAutomationSignalResult {
-    def apply(): SendAutomationSignalResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): SendAutomationSignalResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendAutomationSignalResult]
     }
@@ -10541,23 +11531,25 @@ package ssm {
   }
 
   object SendCommandRequest {
-    def apply(DocumentName: DocumentARN,
-              CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
-              Comment: js.UndefOr[Comment] = js.undefined,
-              DocumentHash: js.UndefOr[DocumentHash] = js.undefined,
-              DocumentHashType: js.UndefOr[DocumentHashType] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              InstanceIds: js.UndefOr[InstanceIdList] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
-              OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
-              OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-              OutputS3Region: js.UndefOr[S3Region] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined,
-              TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined): SendCommandRequest = {
+    def apply(
+        DocumentName: DocumentARN,
+        CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
+        Comment: js.UndefOr[Comment] = js.undefined,
+        DocumentHash: js.UndefOr[DocumentHash] = js.undefined,
+        DocumentHashType: js.UndefOr[DocumentHashType] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        InstanceIds: js.UndefOr[InstanceIdList] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        NotificationConfig: js.UndefOr[NotificationConfig] = js.undefined,
+        OutputS3BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        OutputS3Region: js.UndefOr[S3Region] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined
+    ): SendCommandRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentName" -> DocumentName.asInstanceOf[js.Any],
         "CloudWatchOutputConfig" -> CloudWatchOutputConfig.map { x =>
@@ -10620,12 +11612,65 @@ package ssm {
   }
 
   object SendCommandResult {
-    def apply(Command: js.UndefOr[Command] = js.undefined): SendCommandResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Command" -> Command.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Command: js.UndefOr[Command] = js.undefined
+    ): SendCommandResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Command" -> Command.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendCommandResult]
+    }
+  }
+
+  /**
+    * The service setting data structure.
+    *  <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.
+    *  Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS service team.
+    */
+  @js.native
+  trait ServiceSetting extends js.Object {
+    var ARN: js.UndefOr[String]
+    var LastModifiedDate: js.UndefOr[DateTime]
+    var LastModifiedUser: js.UndefOr[String]
+    var SettingId: js.UndefOr[ServiceSettingId]
+    var SettingValue: js.UndefOr[ServiceSettingValue]
+    var Status: js.UndefOr[String]
+  }
+
+  object ServiceSetting {
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined,
+        LastModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        LastModifiedUser: js.UndefOr[String] = js.undefined,
+        SettingId: js.UndefOr[ServiceSettingId] = js.undefined,
+        SettingValue: js.UndefOr[ServiceSettingValue] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): ServiceSetting = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ARN" -> ARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedUser" -> LastModifiedUser.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SettingId" -> SettingId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SettingValue" -> SettingValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSetting]
     }
   }
 
@@ -10646,15 +11691,17 @@ package ssm {
   }
 
   object Session {
-    def apply(Details: js.UndefOr[SessionDetails] = js.undefined,
-              DocumentName: js.UndefOr[DocumentName] = js.undefined,
-              EndDate: js.UndefOr[DateTime] = js.undefined,
-              OutputUrl: js.UndefOr[SessionManagerOutputUrl] = js.undefined,
-              Owner: js.UndefOr[SessionOwner] = js.undefined,
-              SessionId: js.UndefOr[SessionId] = js.undefined,
-              StartDate: js.UndefOr[DateTime] = js.undefined,
-              Status: js.UndefOr[SessionStatus] = js.undefined,
-              Target: js.UndefOr[SessionTarget] = js.undefined): Session = {
+    def apply(
+        Details: js.UndefOr[SessionDetails] = js.undefined,
+        DocumentName: js.UndefOr[DocumentName] = js.undefined,
+        EndDate: js.UndefOr[DateTime] = js.undefined,
+        OutputUrl: js.UndefOr[SessionManagerOutputUrl] = js.undefined,
+        Owner: js.UndefOr[SessionOwner] = js.undefined,
+        SessionId: js.UndefOr[SessionId] = js.undefined,
+        StartDate: js.UndefOr[DateTime] = js.undefined,
+        Status: js.UndefOr[SessionStatus] = js.undefined,
+        Target: js.UndefOr[SessionTarget] = js.undefined
+    ): Session = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Details" -> Details.map { x =>
           x.asInstanceOf[js.Any]
@@ -10699,10 +11746,14 @@ package ssm {
   }
 
   object SessionFilter {
-    def apply(key: SessionFilterKey, value: SessionFilterValue): SessionFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("key" -> key.asInstanceOf[js.Any], "value" -> value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        key: SessionFilterKey,
+        value: SessionFilterValue
+    ): SessionFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key"   -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SessionFilter]
     }
@@ -10728,13 +11779,18 @@ package ssm {
   }
 
   object SessionManagerOutputUrl {
-    def apply(CloudWatchOutputUrl: js.UndefOr[SessionManagerCloudWatchOutputUrl] = js.undefined,
-              S3OutputUrl: js.UndefOr[SessionManagerS3OutputUrl] = js.undefined): SessionManagerOutputUrl = {
-      val _fields = IndexedSeq[(String, js.Any)]("CloudWatchOutputUrl" -> CloudWatchOutputUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "S3OutputUrl" -> S3OutputUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CloudWatchOutputUrl: js.UndefOr[SessionManagerCloudWatchOutputUrl] = js.undefined,
+        S3OutputUrl: js.UndefOr[SessionManagerS3OutputUrl] = js.undefined
+    ): SessionManagerOutputUrl = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CloudWatchOutputUrl" -> CloudWatchOutputUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3OutputUrl" -> S3OutputUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SessionManagerOutputUrl]
     }
@@ -10772,12 +11828,14 @@ package ssm {
   }
 
   object SeveritySummary {
-    def apply(CriticalCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
-              HighCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
-              InformationalCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
-              LowCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
-              MediumCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
-              UnspecifiedCount: js.UndefOr[ComplianceSummaryCount] = js.undefined): SeveritySummary = {
+    def apply(
+        CriticalCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
+        HighCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
+        InformationalCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
+        LowCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
+        MediumCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
+        UnspecifiedCount: js.UndefOr[ComplianceSummaryCount] = js.undefined
+    ): SeveritySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CriticalCount" -> CriticalCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -10819,9 +11877,12 @@ package ssm {
   }
 
   object StartAssociationsOnceRequest {
-    def apply(AssociationIds: AssociationIdList): StartAssociationsOnceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationIds" -> AssociationIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AssociationIds: AssociationIdList
+    ): StartAssociationsOnceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationIds" -> AssociationIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAssociationsOnceRequest]
     }
@@ -10831,8 +11892,10 @@ package ssm {
   trait StartAssociationsOnceResult extends js.Object {}
 
   object StartAssociationsOnceResult {
-    def apply(): StartAssociationsOnceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StartAssociationsOnceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAssociationsOnceResult]
     }
@@ -10854,17 +11917,19 @@ package ssm {
   }
 
   object StartAutomationExecutionRequest {
-    def apply(DocumentName: DocumentARN,
-              ClientToken: js.UndefOr[IdempotencyToken] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Mode: js.UndefOr[ExecutionMode] = js.undefined,
-              Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
-              TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
-              TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
-              TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): StartAutomationExecutionRequest = {
+    def apply(
+        DocumentName: DocumentARN,
+        ClientToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Mode: js.UndefOr[ExecutionMode] = js.undefined,
+        Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
+        TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
+        TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): StartAutomationExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentName" -> DocumentName.asInstanceOf[js.Any],
         "ClientToken" -> ClientToken.map { x =>
@@ -10912,9 +11977,11 @@ package ssm {
     def apply(
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined
     ): StartAutomationExecutionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AutomationExecutionId" -> AutomationExecutionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AutomationExecutionId" -> AutomationExecutionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAutomationExecutionResult]
     }
@@ -10928,9 +11995,11 @@ package ssm {
   }
 
   object StartSessionRequest {
-    def apply(Target: SessionTarget,
-              DocumentName: js.UndefOr[DocumentARN] = js.undefined,
-              Parameters: js.UndefOr[SessionManagerParameters] = js.undefined): StartSessionRequest = {
+    def apply(
+        Target: SessionTarget,
+        DocumentName: js.UndefOr[DocumentARN] = js.undefined,
+        Parameters: js.UndefOr[SessionManagerParameters] = js.undefined
+    ): StartSessionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Target" -> Target.asInstanceOf[js.Any],
         "DocumentName" -> DocumentName.map { x =>
@@ -10953,9 +12022,11 @@ package ssm {
   }
 
   object StartSessionResponse {
-    def apply(SessionId: js.UndefOr[SessionId] = js.undefined,
-              StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
-              TokenValue: js.UndefOr[TokenValue] = js.undefined): StartSessionResponse = {
+    def apply(
+        SessionId: js.UndefOr[SessionId] = js.undefined,
+        StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
+        TokenValue: js.UndefOr[TokenValue] = js.undefined
+    ): StartSessionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SessionId" -> SessionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -11002,28 +12073,30 @@ package ssm {
   }
 
   object StepExecution {
-    def apply(Action: js.UndefOr[AutomationActionName] = js.undefined,
-              ExecutionEndTime: js.UndefOr[DateTime] = js.undefined,
-              ExecutionStartTime: js.UndefOr[DateTime] = js.undefined,
-              FailureDetails: js.UndefOr[FailureDetails] = js.undefined,
-              FailureMessage: js.UndefOr[String] = js.undefined,
-              Inputs: js.UndefOr[NormalStringMap] = js.undefined,
-              IsCritical: js.UndefOr[Boolean] = js.undefined,
-              IsEnd: js.UndefOr[Boolean] = js.undefined,
-              MaxAttempts: js.UndefOr[Int] = js.undefined,
-              NextStep: js.UndefOr[String] = js.undefined,
-              OnFailure: js.UndefOr[String] = js.undefined,
-              Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
-              OverriddenParameters: js.UndefOr[AutomationParameterMap] = js.undefined,
-              Response: js.UndefOr[String] = js.undefined,
-              ResponseCode: js.UndefOr[String] = js.undefined,
-              StepExecutionId: js.UndefOr[String] = js.undefined,
-              StepName: js.UndefOr[String] = js.undefined,
-              StepStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
-              TargetLocation: js.UndefOr[TargetLocation] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined,
-              TimeoutSeconds: js.UndefOr[Double] = js.undefined,
-              ValidNextSteps: js.UndefOr[ValidNextStepList] = js.undefined): StepExecution = {
+    def apply(
+        Action: js.UndefOr[AutomationActionName] = js.undefined,
+        ExecutionEndTime: js.UndefOr[DateTime] = js.undefined,
+        ExecutionStartTime: js.UndefOr[DateTime] = js.undefined,
+        FailureDetails: js.UndefOr[FailureDetails] = js.undefined,
+        FailureMessage: js.UndefOr[String] = js.undefined,
+        Inputs: js.UndefOr[NormalStringMap] = js.undefined,
+        IsCritical: js.UndefOr[Boolean] = js.undefined,
+        IsEnd: js.UndefOr[Boolean] = js.undefined,
+        MaxAttempts: js.UndefOr[Int] = js.undefined,
+        NextStep: js.UndefOr[String] = js.undefined,
+        OnFailure: js.UndefOr[String] = js.undefined,
+        Outputs: js.UndefOr[AutomationParameterMap] = js.undefined,
+        OverriddenParameters: js.UndefOr[AutomationParameterMap] = js.undefined,
+        Response: js.UndefOr[String] = js.undefined,
+        ResponseCode: js.UndefOr[String] = js.undefined,
+        StepExecutionId: js.UndefOr[String] = js.undefined,
+        StepName: js.UndefOr[String] = js.undefined,
+        StepStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
+        TargetLocation: js.UndefOr[TargetLocation] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TimeoutSeconds: js.UndefOr[Double] = js.undefined,
+        ValidNextSteps: js.UndefOr[ValidNextStepList] = js.undefined
+    ): StepExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -11107,10 +12180,14 @@ package ssm {
   }
 
   object StepExecutionFilter {
-    def apply(Key: StepExecutionFilterKey, Values: StepExecutionFilterValueList): StepExecutionFilter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: StepExecutionFilterKey,
+        Values: StepExecutionFilterValueList
+    ): StepExecutionFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"    -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StepExecutionFilter]
     }
@@ -11134,8 +12211,10 @@ package ssm {
   }
 
   object StopAutomationExecutionRequest {
-    def apply(AutomationExecutionId: AutomationExecutionId,
-              Type: js.UndefOr[StopType] = js.undefined): StopAutomationExecutionRequest = {
+    def apply(
+        AutomationExecutionId: AutomationExecutionId,
+        Type: js.UndefOr[StopType] = js.undefined
+    ): StopAutomationExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any],
         "Type" -> Type.map { x =>
@@ -11151,8 +12230,10 @@ package ssm {
   trait StopAutomationExecutionResult extends js.Object {}
 
   object StopAutomationExecutionResult {
-    def apply(): StopAutomationExecutionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopAutomationExecutionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopAutomationExecutionResult]
     }
@@ -11175,10 +12256,14 @@ package ssm {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: TagValue): Tag = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -11195,12 +12280,18 @@ package ssm {
   }
 
   object Target {
-    def apply(Key: js.UndefOr[TargetKey] = js.undefined, Values: js.UndefOr[TargetValues] = js.undefined): Target = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TargetKey] = js.undefined,
+        Values: js.UndefOr[TargetValues] = js.undefined
+    ): Target = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Target]
     }
@@ -11219,11 +12310,13 @@ package ssm {
   }
 
   object TargetLocation {
-    def apply(Accounts: js.UndefOr[Accounts] = js.undefined,
-              ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
-              Regions: js.UndefOr[Regions] = js.undefined,
-              TargetLocationMaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              TargetLocationMaxErrors: js.UndefOr[MaxErrors] = js.undefined): TargetLocation = {
+    def apply(
+        Accounts: js.UndefOr[Accounts] = js.undefined,
+        ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        Regions: js.UndefOr[Regions] = js.undefined,
+        TargetLocationMaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        TargetLocationMaxErrors: js.UndefOr[MaxErrors] = js.undefined
+    ): TargetLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Accounts" -> Accounts.map { x =>
           x.asInstanceOf[js.Any]
@@ -11252,9 +12345,12 @@ package ssm {
   }
 
   object TerminateSessionRequest {
-    def apply(SessionId: SessionId): TerminateSessionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SessionId" -> SessionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SessionId: SessionId
+    ): TerminateSessionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SessionId" -> SessionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateSessionRequest]
     }
@@ -11266,10 +12362,14 @@ package ssm {
   }
 
   object TerminateSessionResponse {
-    def apply(SessionId: js.UndefOr[SessionId] = js.undefined): TerminateSessionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SessionId" -> SessionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SessionId: js.UndefOr[SessionId] = js.undefined
+    ): TerminateSessionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SessionId" -> SessionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateSessionResponse]
     }
@@ -11280,11 +12380,12 @@ package ssm {
     var AssociationId: AssociationId
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
+    var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
     var MaxErrors: js.UndefOr[MaxErrors]
-    var Name: js.UndefOr[DocumentName]
+    var Name: js.UndefOr[DocumentARN]
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
@@ -11292,24 +12393,30 @@ package ssm {
   }
 
   object UpdateAssociationRequest {
-    def apply(AssociationId: AssociationId,
-              AssociationName: js.UndefOr[AssociationName] = js.undefined,
-              AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
-              ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Name: js.UndefOr[DocumentName] = js.undefined,
-              OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): UpdateAssociationRequest = {
+    def apply(
+        AssociationId: AssociationId,
+        AssociationName: js.UndefOr[AssociationName] = js.undefined,
+        AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Name: js.UndefOr[DocumentARN] = js.undefined,
+        OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): UpdateAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "AssociationName" -> AssociationName.map { x =>
           x.asInstanceOf[js.Any]
         },
         "AssociationVersion" -> AssociationVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutomationTargetParameterName" -> AutomationTargetParameterName.map { x =>
           x.asInstanceOf[js.Any]
         },
         "ComplianceSeverity" -> ComplianceSeverity.map { x =>
@@ -11351,10 +12458,14 @@ package ssm {
   }
 
   object UpdateAssociationResult {
-    def apply(AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined): UpdateAssociationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationDescription" -> AssociationDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
+    ): UpdateAssociationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationDescription" -> AssociationDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAssociationResult]
     }
@@ -11364,13 +12475,15 @@ package ssm {
   trait UpdateAssociationStatusRequest extends js.Object {
     var AssociationStatus: AssociationStatus
     var InstanceId: InstanceId
-    var Name: DocumentName
+    var Name: DocumentARN
   }
 
   object UpdateAssociationStatusRequest {
-    def apply(AssociationStatus: AssociationStatus,
-              InstanceId: InstanceId,
-              Name: DocumentName): UpdateAssociationStatusRequest = {
+    def apply(
+        AssociationStatus: AssociationStatus,
+        InstanceId: InstanceId,
+        Name: DocumentARN
+    ): UpdateAssociationStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssociationStatus" -> AssociationStatus.asInstanceOf[js.Any],
         "InstanceId"        -> InstanceId.asInstanceOf[js.Any],
@@ -11390,9 +12503,11 @@ package ssm {
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): UpdateAssociationStatusResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AssociationDescription" -> AssociationDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AssociationDescription" -> AssociationDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAssociationStatusResult]
     }
@@ -11405,7 +12520,10 @@ package ssm {
   }
 
   object UpdateDocumentDefaultVersionRequest {
-    def apply(DocumentVersion: DocumentVersionNumber, Name: DocumentName): UpdateDocumentDefaultVersionRequest = {
+    def apply(
+        DocumentVersion: DocumentVersionNumber,
+        Name: DocumentName
+    ): UpdateDocumentDefaultVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentVersion" -> DocumentVersion.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
@@ -11424,9 +12542,11 @@ package ssm {
     def apply(
         Description: js.UndefOr[DocumentDefaultVersionDescription] = js.undefined
     ): UpdateDocumentDefaultVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Description" -> Description.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentDefaultVersionResult]
     }
@@ -11444,13 +12564,15 @@ package ssm {
   }
 
   object UpdateDocumentRequest {
-    def apply(Content: DocumentContent,
-              Name: DocumentName,
-              Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
-              DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
-              DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
-              TargetType: js.UndefOr[TargetType] = js.undefined,
-              VersionName: js.UndefOr[DocumentVersionName] = js.undefined): UpdateDocumentRequest = {
+    def apply(
+        Content: DocumentContent,
+        Name: DocumentName,
+        Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
+        DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
+        DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
+        TargetType: js.UndefOr[TargetType] = js.undefined,
+        VersionName: js.UndefOr[DocumentVersionName] = js.undefined
+    ): UpdateDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Content" -> Content.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
@@ -11481,10 +12603,14 @@ package ssm {
   }
 
   object UpdateDocumentResult {
-    def apply(DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined): UpdateDocumentResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DocumentDescription" -> DocumentDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined
+    ): UpdateDocumentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DocumentDescription" -> DocumentDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentResult]
     }
@@ -11507,18 +12633,20 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowRequest {
-    def apply(WindowId: MaintenanceWindowId,
-              AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
-              Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
-              Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
-              Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
-              EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              Replace: js.UndefOr[Boolean] = js.undefined,
-              Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
-              ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
-              StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined): UpdateMaintenanceWindowRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
+        Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
+        Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
+        EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        Replace: js.UndefOr[Boolean] = js.undefined,
+        Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
+        StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined
+    ): UpdateMaintenanceWindowRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId" -> WindowId.asInstanceOf[js.Any],
         "AllowUnassociatedTargets" -> AllowUnassociatedTargets.map { x =>
@@ -11576,17 +12704,19 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowResult {
-    def apply(AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
-              Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
-              Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
-              Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
-              EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
-              ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
-              StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined): UpdateMaintenanceWindowResult = {
+    def apply(
+        AllowUnassociatedTargets: js.UndefOr[MaintenanceWindowAllowUnassociatedTargets] = js.undefined,
+        Cutoff: js.UndefOr[MaintenanceWindowCutoff] = js.undefined,
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        Duration: js.UndefOr[MaintenanceWindowDurationHours] = js.undefined,
+        Enabled: js.UndefOr[MaintenanceWindowEnabled] = js.undefined,
+        EndDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        Schedule: js.UndefOr[MaintenanceWindowSchedule] = js.undefined,
+        ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
+        StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
+    ): UpdateMaintenanceWindowResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowUnassociatedTargets" -> AllowUnassociatedTargets.map { x =>
           x.asInstanceOf[js.Any]
@@ -11639,13 +12769,15 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowTargetRequest {
-    def apply(WindowId: MaintenanceWindowId,
-              WindowTargetId: MaintenanceWindowTargetId,
-              Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
-              Replace: js.UndefOr[Boolean] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined): UpdateMaintenanceWindowTargetRequest = {
+    def apply(
+        WindowId: MaintenanceWindowId,
+        WindowTargetId: MaintenanceWindowTargetId,
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined,
+        Replace: js.UndefOr[Boolean] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined
+    ): UpdateMaintenanceWindowTargetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WindowId"       -> WindowId.asInstanceOf[js.Any],
         "WindowTargetId" -> WindowTargetId.asInstanceOf[js.Any],
@@ -11812,19 +12944,21 @@ package ssm {
   }
 
   object UpdateMaintenanceWindowTaskResult {
-    def apply(Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
-              LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
-              MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
-              MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
-              Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
-              Priority: js.UndefOr[MaintenanceWindowTaskPriority] = js.undefined,
-              ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
-              Targets: js.UndefOr[Targets] = js.undefined,
-              TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
-              TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters] = js.undefined,
-              TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined,
-              WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
-              WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined): UpdateMaintenanceWindowTaskResult = {
+    def apply(
+        Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
+        LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
+        MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
+        Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
+        Priority: js.UndefOr[MaintenanceWindowTaskPriority] = js.undefined,
+        ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
+        TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters] = js.undefined,
+        TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined,
+        WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
+        WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
+    ): UpdateMaintenanceWindowTaskResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -11878,7 +13012,10 @@ package ssm {
   }
 
   object UpdateManagedInstanceRoleRequest {
-    def apply(IamRole: IamRole, InstanceId: ManagedInstanceId): UpdateManagedInstanceRoleRequest = {
+    def apply(
+        IamRole: IamRole,
+        InstanceId: ManagedInstanceId
+    ): UpdateManagedInstanceRoleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamRole"    -> IamRole.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
@@ -11892,8 +13029,10 @@ package ssm {
   trait UpdateManagedInstanceRoleResult extends js.Object {}
 
   object UpdateManagedInstanceRoleResult {
-    def apply(): UpdateManagedInstanceRoleResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateManagedInstanceRoleResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateManagedInstanceRoleResult]
     }
@@ -11916,18 +13055,20 @@ package ssm {
   }
 
   object UpdatePatchBaselineRequest {
-    def apply(BaselineId: BaselineId,
-              ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
-              ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
-              ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
-              Description: js.UndefOr[BaselineDescription] = js.undefined,
-              GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
-              Name: js.UndefOr[BaselineName] = js.undefined,
-              RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
-              Replace: js.UndefOr[Boolean] = js.undefined,
-              Sources: js.UndefOr[PatchSourceList] = js.undefined): UpdatePatchBaselineRequest = {
+    def apply(
+        BaselineId: BaselineId,
+        ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
+        ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
+        ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
+        Description: js.UndefOr[BaselineDescription] = js.undefined,
+        GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
+        Name: js.UndefOr[BaselineName] = js.undefined,
+        RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
+        Replace: js.UndefOr[Boolean] = js.undefined,
+        Sources: js.UndefOr[PatchSourceList] = js.undefined
+    ): UpdatePatchBaselineRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "ApprovalRules" -> ApprovalRules.map { x =>
@@ -11988,20 +13129,22 @@ package ssm {
   }
 
   object UpdatePatchBaselineResult {
-    def apply(ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
-              ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
-              ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
-              BaselineId: js.UndefOr[BaselineId] = js.undefined,
-              CreatedDate: js.UndefOr[DateTime] = js.undefined,
-              Description: js.UndefOr[BaselineDescription] = js.undefined,
-              GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
-              ModifiedDate: js.UndefOr[DateTime] = js.undefined,
-              Name: js.UndefOr[BaselineName] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
-              RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
-              Sources: js.UndefOr[PatchSourceList] = js.undefined): UpdatePatchBaselineResult = {
+    def apply(
+        ApprovalRules: js.UndefOr[PatchRuleGroup] = js.undefined,
+        ApprovedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        ApprovedPatchesComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
+        ApprovedPatchesEnableNonSecurity: js.UndefOr[Boolean] = js.undefined,
+        BaselineId: js.UndefOr[BaselineId] = js.undefined,
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        Description: js.UndefOr[BaselineDescription] = js.undefined,
+        GlobalFilters: js.UndefOr[PatchFilterGroup] = js.undefined,
+        ModifiedDate: js.UndefOr[DateTime] = js.undefined,
+        Name: js.UndefOr[BaselineName] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        RejectedPatches: js.UndefOr[PatchIdList] = js.undefined,
+        RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
+        Sources: js.UndefOr[PatchSourceList] = js.undefined
+    ): UpdatePatchBaselineResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApprovalRules" -> ApprovalRules.map { x =>
           x.asInstanceOf[js.Any]
@@ -12048,6 +13191,45 @@ package ssm {
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePatchBaselineResult]
+    }
+  }
+
+  /**
+    * The request body of the UpdateServiceSetting API action.
+    */
+  @js.native
+  trait UpdateServiceSettingRequest extends js.Object {
+    var SettingId: ServiceSettingId
+    var SettingValue: ServiceSettingValue
+  }
+
+  object UpdateServiceSettingRequest {
+    def apply(
+        SettingId: ServiceSettingId,
+        SettingValue: ServiceSettingValue
+    ): UpdateServiceSettingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SettingId"    -> SettingId.asInstanceOf[js.Any],
+        "SettingValue" -> SettingValue.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceSettingRequest]
+    }
+  }
+
+  /**
+    * The result body of the UpdateServiceSetting API action.
+    */
+  @js.native
+  trait UpdateServiceSettingResult extends js.Object {}
+
+  object UpdateServiceSettingResult {
+    def apply(
+        ): UpdateServiceSettingResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceSettingResult]
     }
   }
 }

@@ -87,12 +87,14 @@ package mobile {
   }
 
   object BundleDetails {
-    def apply(availablePlatforms: js.UndefOr[Platforms] = js.undefined,
-              bundleId: js.UndefOr[BundleId] = js.undefined,
-              description: js.UndefOr[BundleDescription] = js.undefined,
-              iconUrl: js.UndefOr[IconUrl] = js.undefined,
-              title: js.UndefOr[BundleTitle] = js.undefined,
-              version: js.UndefOr[BundleVersion] = js.undefined): BundleDetails = {
+    def apply(
+        availablePlatforms: js.UndefOr[Platforms] = js.undefined,
+        bundleId: js.UndefOr[BundleId] = js.undefined,
+        description: js.UndefOr[BundleDescription] = js.undefined,
+        iconUrl: js.UndefOr[IconUrl] = js.undefined,
+        title: js.UndefOr[BundleTitle] = js.undefined,
+        version: js.UndefOr[BundleVersion] = js.undefined
+    ): BundleDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "availablePlatforms" -> availablePlatforms.map { x =>
           x.asInstanceOf[js.Any]
@@ -130,10 +132,12 @@ package mobile {
   }
 
   object CreateProjectRequest {
-    def apply(contents: js.UndefOr[Contents] = js.undefined,
-              name: js.UndefOr[ProjectName] = js.undefined,
-              region: js.UndefOr[ProjectRegion] = js.undefined,
-              snapshotId: js.UndefOr[SnapshotId] = js.undefined): CreateProjectRequest = {
+    def apply(
+        contents: js.UndefOr[Contents] = js.undefined,
+        name: js.UndefOr[ProjectName] = js.undefined,
+        region: js.UndefOr[ProjectRegion] = js.undefined,
+        snapshotId: js.UndefOr[SnapshotId] = js.undefined
+    ): CreateProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "contents" -> contents.map { x =>
           x.asInstanceOf[js.Any]
@@ -162,10 +166,14 @@ package mobile {
   }
 
   object CreateProjectResult {
-    def apply(details: js.UndefOr[ProjectDetails] = js.undefined): CreateProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("details" -> details.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        details: js.UndefOr[ProjectDetails] = js.undefined
+    ): CreateProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "details" -> details.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProjectResult]
     }
@@ -180,9 +188,12 @@ package mobile {
   }
 
   object DeleteProjectRequest {
-    def apply(projectId: ProjectId): DeleteProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("projectId" -> projectId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        projectId: ProjectId
+    ): DeleteProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projectId" -> projectId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectRequest]
     }
@@ -198,13 +209,18 @@ package mobile {
   }
 
   object DeleteProjectResult {
-    def apply(deletedResources: js.UndefOr[Resources] = js.undefined,
-              orphanedResources: js.UndefOr[Resources] = js.undefined): DeleteProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("deletedResources" -> deletedResources.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "orphanedResources" -> orphanedResources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deletedResources: js.UndefOr[Resources] = js.undefined,
+        orphanedResources: js.UndefOr[Resources] = js.undefined
+    ): DeleteProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deletedResources" -> deletedResources.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "orphanedResources" -> orphanedResources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectResult]
     }
@@ -219,9 +235,12 @@ package mobile {
   }
 
   object DescribeBundleRequest {
-    def apply(bundleId: BundleId): DescribeBundleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("bundleId" -> bundleId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bundleId: BundleId
+    ): DescribeBundleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bundleId" -> bundleId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBundleRequest]
     }
@@ -236,10 +255,14 @@ package mobile {
   }
 
   object DescribeBundleResult {
-    def apply(details: js.UndefOr[BundleDetails] = js.undefined): DescribeBundleResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("details" -> details.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        details: js.UndefOr[BundleDetails] = js.undefined
+    ): DescribeBundleResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "details" -> details.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBundleResult]
     }
@@ -255,7 +278,10 @@ package mobile {
   }
 
   object DescribeProjectRequest {
-    def apply(projectId: ProjectId, syncFromResources: js.UndefOr[Boolean] = js.undefined): DescribeProjectRequest = {
+    def apply(
+        projectId: ProjectId,
+        syncFromResources: js.UndefOr[Boolean] = js.undefined
+    ): DescribeProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectId" -> projectId.asInstanceOf[js.Any],
         "syncFromResources" -> syncFromResources.map { x =>
@@ -276,10 +302,14 @@ package mobile {
   }
 
   object DescribeProjectResult {
-    def apply(details: js.UndefOr[ProjectDetails] = js.undefined): DescribeProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("details" -> details.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        details: js.UndefOr[ProjectDetails] = js.undefined
+    ): DescribeProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "details" -> details.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProjectResult]
     }
@@ -296,15 +326,20 @@ package mobile {
   }
 
   object ExportBundleRequest {
-    def apply(bundleId: BundleId,
-              platform: js.UndefOr[Platform] = js.undefined,
-              projectId: js.UndefOr[ProjectId] = js.undefined): ExportBundleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("bundleId" -> bundleId.asInstanceOf[js.Any], "platform" -> platform.map { x =>
+    def apply(
+        bundleId: BundleId,
+        platform: js.UndefOr[Platform] = js.undefined,
+        projectId: js.UndefOr[ProjectId] = js.undefined
+    ): ExportBundleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bundleId" -> bundleId.asInstanceOf[js.Any],
+        "platform" -> platform.map { x =>
           x.asInstanceOf[js.Any]
-        }, "projectId" -> projectId.map { x =>
+        },
+        "projectId" -> projectId.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportBundleRequest]
     }
@@ -319,10 +354,14 @@ package mobile {
   }
 
   object ExportBundleResult {
-    def apply(downloadUrl: js.UndefOr[DownloadUrl] = js.undefined): ExportBundleResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("downloadUrl" -> downloadUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        downloadUrl: js.UndefOr[DownloadUrl] = js.undefined
+    ): ExportBundleResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "downloadUrl" -> downloadUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportBundleResult]
     }
@@ -337,9 +376,12 @@ package mobile {
   }
 
   object ExportProjectRequest {
-    def apply(projectId: ProjectId): ExportProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("projectId" -> projectId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        projectId: ProjectId
+    ): ExportProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projectId" -> projectId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportProjectRequest]
     }
@@ -356,9 +398,11 @@ package mobile {
   }
 
   object ExportProjectResult {
-    def apply(downloadUrl: js.UndefOr[DownloadUrl] = js.undefined,
-              shareUrl: js.UndefOr[ShareUrl] = js.undefined,
-              snapshotId: js.UndefOr[SnapshotId] = js.undefined): ExportProjectResult = {
+    def apply(
+        downloadUrl: js.UndefOr[DownloadUrl] = js.undefined,
+        shareUrl: js.UndefOr[ShareUrl] = js.undefined,
+        snapshotId: js.UndefOr[SnapshotId] = js.undefined
+    ): ExportProjectResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "downloadUrl" -> downloadUrl.map { x =>
           x.asInstanceOf[js.Any]
@@ -402,13 +446,18 @@ package mobile {
   }
 
   object ListBundlesRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListBundlesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBundlesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBundlesRequest]
     }
@@ -424,13 +473,18 @@ package mobile {
   }
 
   object ListBundlesResult {
-    def apply(bundleList: js.UndefOr[BundleList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListBundlesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("bundleList" -> bundleList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bundleList: js.UndefOr[BundleList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBundlesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bundleList" -> bundleList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBundlesResult]
     }
@@ -446,13 +500,18 @@ package mobile {
   }
 
   object ListProjectsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListProjectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListProjectsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsRequest]
     }
@@ -468,13 +527,18 @@ package mobile {
   }
 
   object ListProjectsResult {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              projects: js.UndefOr[ProjectSummaries] = js.undefined): ListProjectsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "projects" -> projects.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        projects: js.UndefOr[ProjectSummaries] = js.undefined
+    ): ListProjectsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "projects" -> projects.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsResult]
     }
@@ -519,14 +583,16 @@ package mobile {
   }
 
   object ProjectDetails {
-    def apply(consoleUrl: js.UndefOr[ConsoleUrl] = js.undefined,
-              createdDate: js.UndefOr[Date] = js.undefined,
-              lastUpdatedDate: js.UndefOr[Date] = js.undefined,
-              name: js.UndefOr[ProjectName] = js.undefined,
-              projectId: js.UndefOr[ProjectId] = js.undefined,
-              region: js.UndefOr[ProjectRegion] = js.undefined,
-              resources: js.UndefOr[Resources] = js.undefined,
-              state: js.UndefOr[ProjectState] = js.undefined): ProjectDetails = {
+    def apply(
+        consoleUrl: js.UndefOr[ConsoleUrl] = js.undefined,
+        createdDate: js.UndefOr[Date] = js.undefined,
+        lastUpdatedDate: js.UndefOr[Date] = js.undefined,
+        name: js.UndefOr[ProjectName] = js.undefined,
+        projectId: js.UndefOr[ProjectId] = js.undefined,
+        region: js.UndefOr[ProjectRegion] = js.undefined,
+        resources: js.UndefOr[Resources] = js.undefined,
+        state: js.UndefOr[ProjectState] = js.undefined
+    ): ProjectDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "consoleUrl" -> consoleUrl.map { x =>
           x.asInstanceOf[js.Any]
@@ -579,13 +645,18 @@ package mobile {
   }
 
   object ProjectSummary {
-    def apply(name: js.UndefOr[ProjectName] = js.undefined,
-              projectId: js.UndefOr[ProjectId] = js.undefined): ProjectSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "projectId" -> projectId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: js.UndefOr[ProjectName] = js.undefined,
+        projectId: js.UndefOr[ProjectId] = js.undefined
+    ): ProjectSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "projectId" -> projectId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProjectSummary]
     }
@@ -604,11 +675,13 @@ package mobile {
   }
 
   object Resource {
-    def apply(arn: js.UndefOr[ResourceArn] = js.undefined,
-              attributes: js.UndefOr[Attributes] = js.undefined,
-              feature: js.UndefOr[Feature] = js.undefined,
-              name: js.UndefOr[ResourceName] = js.undefined,
-              `type`: js.UndefOr[ResourceType] = js.undefined): Resource = {
+    def apply(
+        arn: js.UndefOr[ResourceArn] = js.undefined,
+        attributes: js.UndefOr[Attributes] = js.undefined,
+        feature: js.UndefOr[Feature] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        `type`: js.UndefOr[ResourceType] = js.undefined
+    ): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -667,11 +740,16 @@ package mobile {
   }
 
   object UpdateProjectRequest {
-    def apply(projectId: ProjectId, contents: js.UndefOr[Contents] = js.undefined): UpdateProjectRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("projectId" -> projectId.asInstanceOf[js.Any], "contents" -> contents.map { x =>
+    def apply(
+        projectId: ProjectId,
+        contents: js.UndefOr[Contents] = js.undefined
+    ): UpdateProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projectId" -> projectId.asInstanceOf[js.Any],
+        "contents" -> contents.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectRequest]
     }
@@ -686,10 +764,14 @@ package mobile {
   }
 
   object UpdateProjectResult {
-    def apply(details: js.UndefOr[ProjectDetails] = js.undefined): UpdateProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("details" -> details.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        details: js.UndefOr[ProjectDetails] = js.undefined
+    ): UpdateProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "details" -> details.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectResult]
     }

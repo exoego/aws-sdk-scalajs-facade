@@ -100,8 +100,10 @@ package support {
   }
 
   object AddAttachmentsToSetRequest {
-    def apply(attachments: Attachments,
-              attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined): AddAttachmentsToSetRequest = {
+    def apply(
+        attachments: Attachments,
+        attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined
+    ): AddAttachmentsToSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attachments" -> attachments.asInstanceOf[js.Any],
         "attachmentSetId" -> attachmentSetId.map { x =>
@@ -123,13 +125,18 @@ package support {
   }
 
   object AddAttachmentsToSetResponse {
-    def apply(attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
-              expiryTime: js.UndefOr[ExpiryTime] = js.undefined): AddAttachmentsToSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("attachmentSetId" -> attachmentSetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "expiryTime" -> expiryTime.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
+        expiryTime: js.UndefOr[ExpiryTime] = js.undefined
+    ): AddAttachmentsToSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attachmentSetId" -> attachmentSetId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "expiryTime" -> expiryTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddAttachmentsToSetResponse]
     }
@@ -147,10 +154,12 @@ package support {
   }
 
   object AddCommunicationToCaseRequest {
-    def apply(communicationBody: CommunicationBody,
-              attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
-              caseId: js.UndefOr[CaseId] = js.undefined,
-              ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined): AddCommunicationToCaseRequest = {
+    def apply(
+        communicationBody: CommunicationBody,
+        attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
+        caseId: js.UndefOr[CaseId] = js.undefined,
+        ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined
+    ): AddCommunicationToCaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "communicationBody" -> communicationBody.asInstanceOf[js.Any],
         "attachmentSetId" -> attachmentSetId.map { x =>
@@ -177,10 +186,14 @@ package support {
   }
 
   object AddCommunicationToCaseResponse {
-    def apply(result: js.UndefOr[Result] = js.undefined): AddCommunicationToCaseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("result" -> result.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        result: js.UndefOr[Result] = js.undefined
+    ): AddCommunicationToCaseResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "result" -> result.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddCommunicationToCaseResponse]
     }
@@ -196,12 +209,18 @@ package support {
   }
 
   object Attachment {
-    def apply(data: js.UndefOr[Data] = js.undefined, fileName: js.UndefOr[FileName] = js.undefined): Attachment = {
-      val _fields = IndexedSeq[(String, js.Any)]("data" -> data.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "fileName" -> fileName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        data: js.UndefOr[Data] = js.undefined,
+        fileName: js.UndefOr[FileName] = js.undefined
+    ): Attachment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "data" -> data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fileName" -> fileName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attachment]
     }
@@ -217,13 +236,18 @@ package support {
   }
 
   object AttachmentDetails {
-    def apply(attachmentId: js.UndefOr[AttachmentId] = js.undefined,
-              fileName: js.UndefOr[FileName] = js.undefined): AttachmentDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("attachmentId" -> attachmentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "fileName" -> fileName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attachmentId: js.UndefOr[AttachmentId] = js.undefined,
+        fileName: js.UndefOr[FileName] = js.undefined
+    ): AttachmentDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attachmentId" -> attachmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fileName" -> fileName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachmentDetails]
     }
@@ -309,18 +333,20 @@ package support {
   }
 
   object CaseDetails {
-    def apply(caseId: js.UndefOr[CaseId] = js.undefined,
-              categoryCode: js.UndefOr[CategoryCode] = js.undefined,
-              ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
-              displayId: js.UndefOr[DisplayId] = js.undefined,
-              language: js.UndefOr[Language] = js.undefined,
-              recentCommunications: js.UndefOr[RecentCaseCommunications] = js.undefined,
-              serviceCode: js.UndefOr[ServiceCode] = js.undefined,
-              severityCode: js.UndefOr[SeverityCode] = js.undefined,
-              status: js.UndefOr[Status] = js.undefined,
-              subject: js.UndefOr[Subject] = js.undefined,
-              submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
-              timeCreated: js.UndefOr[TimeCreated] = js.undefined): CaseDetails = {
+    def apply(
+        caseId: js.UndefOr[CaseId] = js.undefined,
+        categoryCode: js.UndefOr[CategoryCode] = js.undefined,
+        ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
+        displayId: js.UndefOr[DisplayId] = js.undefined,
+        language: js.UndefOr[Language] = js.undefined,
+        recentCommunications: js.UndefOr[RecentCaseCommunications] = js.undefined,
+        serviceCode: js.UndefOr[ServiceCode] = js.undefined,
+        severityCode: js.UndefOr[SeverityCode] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined,
+        subject: js.UndefOr[Subject] = js.undefined,
+        submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
+        timeCreated: js.UndefOr[TimeCreated] = js.undefined
+    ): CaseDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "caseId" -> caseId.map { x =>
           x.asInstanceOf[js.Any]
@@ -382,13 +408,18 @@ package support {
   }
 
   object Category {
-    def apply(code: js.UndefOr[CategoryCode] = js.undefined,
-              name: js.UndefOr[CategoryName] = js.undefined): Category = {
-      val _fields = IndexedSeq[(String, js.Any)]("code" -> code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        code: js.UndefOr[CategoryCode] = js.undefined,
+        name: js.UndefOr[CategoryName] = js.undefined
+    ): Category = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "code" -> code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Category]
     }
@@ -407,11 +438,13 @@ package support {
   }
 
   object Communication {
-    def apply(attachmentSet: js.UndefOr[AttachmentSet] = js.undefined,
-              body: js.UndefOr[CommunicationBody] = js.undefined,
-              caseId: js.UndefOr[CaseId] = js.undefined,
-              submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
-              timeCreated: js.UndefOr[TimeCreated] = js.undefined): Communication = {
+    def apply(
+        attachmentSet: js.UndefOr[AttachmentSet] = js.undefined,
+        body: js.UndefOr[CommunicationBody] = js.undefined,
+        caseId: js.UndefOr[CaseId] = js.undefined,
+        submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
+        timeCreated: js.UndefOr[TimeCreated] = js.undefined
+    ): Communication = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attachmentSet" -> attachmentSet.map { x =>
           x.asInstanceOf[js.Any]
@@ -451,15 +484,17 @@ package support {
   }
 
   object CreateCaseRequest {
-    def apply(communicationBody: CommunicationBody,
-              subject: Subject,
-              attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
-              categoryCode: js.UndefOr[CategoryCode] = js.undefined,
-              ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
-              issueType: js.UndefOr[IssueType] = js.undefined,
-              language: js.UndefOr[Language] = js.undefined,
-              serviceCode: js.UndefOr[ServiceCode] = js.undefined,
-              severityCode: js.UndefOr[SeverityCode] = js.undefined): CreateCaseRequest = {
+    def apply(
+        communicationBody: CommunicationBody,
+        subject: Subject,
+        attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
+        categoryCode: js.UndefOr[CategoryCode] = js.undefined,
+        ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined,
+        issueType: js.UndefOr[IssueType] = js.undefined,
+        language: js.UndefOr[Language] = js.undefined,
+        serviceCode: js.UndefOr[ServiceCode] = js.undefined,
+        severityCode: js.UndefOr[SeverityCode] = js.undefined
+    ): CreateCaseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "communicationBody" -> communicationBody.asInstanceOf[js.Any],
         "subject"           -> subject.asInstanceOf[js.Any],
@@ -499,10 +534,14 @@ package support {
   }
 
   object CreateCaseResponse {
-    def apply(caseId: js.UndefOr[CaseId] = js.undefined): CreateCaseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("caseId" -> caseId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        caseId: js.UndefOr[CaseId] = js.undefined
+    ): CreateCaseResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "caseId" -> caseId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCaseResponse]
     }
@@ -522,9 +561,12 @@ package support {
   }
 
   object DescribeAttachmentRequest {
-    def apply(attachmentId: AttachmentId): DescribeAttachmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("attachmentId" -> attachmentId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attachmentId: AttachmentId
+    ): DescribeAttachmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attachmentId" -> attachmentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAttachmentRequest]
     }
@@ -539,10 +581,14 @@ package support {
   }
 
   object DescribeAttachmentResponse {
-    def apply(attachment: js.UndefOr[Attachment] = js.undefined): DescribeAttachmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("attachment" -> attachment.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attachment: js.UndefOr[Attachment] = js.undefined
+    ): DescribeAttachmentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attachment" -> attachment.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAttachmentResponse]
     }
@@ -565,15 +611,17 @@ package support {
   }
 
   object DescribeCasesRequest {
-    def apply(afterTime: js.UndefOr[AfterTime] = js.undefined,
-              beforeTime: js.UndefOr[BeforeTime] = js.undefined,
-              caseIdList: js.UndefOr[CaseIdList] = js.undefined,
-              displayId: js.UndefOr[DisplayId] = js.undefined,
-              includeCommunications: js.UndefOr[IncludeCommunications] = js.undefined,
-              includeResolvedCases: js.UndefOr[IncludeResolvedCases] = js.undefined,
-              language: js.UndefOr[Language] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): DescribeCasesRequest = {
+    def apply(
+        afterTime: js.UndefOr[AfterTime] = js.undefined,
+        beforeTime: js.UndefOr[BeforeTime] = js.undefined,
+        caseIdList: js.UndefOr[CaseIdList] = js.undefined,
+        displayId: js.UndefOr[DisplayId] = js.undefined,
+        includeCommunications: js.UndefOr[IncludeCommunications] = js.undefined,
+        includeResolvedCases: js.UndefOr[IncludeResolvedCases] = js.undefined,
+        language: js.UndefOr[Language] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeCasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterTime" -> afterTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -618,13 +666,18 @@ package support {
   }
 
   object DescribeCasesResponse {
-    def apply(cases: js.UndefOr[CaseList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): DescribeCasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("cases" -> cases.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        cases: js.UndefOr[CaseList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeCasesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cases" -> cases.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCasesResponse]
     }
@@ -643,11 +696,13 @@ package support {
   }
 
   object DescribeCommunicationsRequest {
-    def apply(caseId: CaseId,
-              afterTime: js.UndefOr[AfterTime] = js.undefined,
-              beforeTime: js.UndefOr[BeforeTime] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): DescribeCommunicationsRequest = {
+    def apply(
+        caseId: CaseId,
+        afterTime: js.UndefOr[AfterTime] = js.undefined,
+        beforeTime: js.UndefOr[BeforeTime] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeCommunicationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "caseId" -> caseId.asInstanceOf[js.Any],
         "afterTime" -> afterTime.map { x =>
@@ -678,13 +733,18 @@ package support {
   }
 
   object DescribeCommunicationsResponse {
-    def apply(communications: js.UndefOr[CommunicationList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): DescribeCommunicationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("communications" -> communications.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        communications: js.UndefOr[CommunicationList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeCommunicationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "communications" -> communications.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCommunicationsResponse]
     }
@@ -700,13 +760,18 @@ package support {
   }
 
   object DescribeServicesRequest {
-    def apply(language: js.UndefOr[Language] = js.undefined,
-              serviceCodeList: js.UndefOr[ServiceCodeList] = js.undefined): DescribeServicesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("language" -> language.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "serviceCodeList" -> serviceCodeList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        language: js.UndefOr[Language] = js.undefined,
+        serviceCodeList: js.UndefOr[ServiceCodeList] = js.undefined
+    ): DescribeServicesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "language" -> language.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "serviceCodeList" -> serviceCodeList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServicesRequest]
     }
@@ -721,10 +786,14 @@ package support {
   }
 
   object DescribeServicesResponse {
-    def apply(services: js.UndefOr[ServiceList] = js.undefined): DescribeServicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("services" -> services.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        services: js.UndefOr[ServiceList] = js.undefined
+    ): DescribeServicesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "services" -> services.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServicesResponse]
     }
@@ -739,10 +808,14 @@ package support {
   }
 
   object DescribeSeverityLevelsRequest {
-    def apply(language: js.UndefOr[Language] = js.undefined): DescribeSeverityLevelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("language" -> language.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        language: js.UndefOr[Language] = js.undefined
+    ): DescribeSeverityLevelsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "language" -> language.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSeverityLevelsRequest]
     }
@@ -757,10 +830,14 @@ package support {
   }
 
   object DescribeSeverityLevelsResponse {
-    def apply(severityLevels: js.UndefOr[SeverityLevelsList] = js.undefined): DescribeSeverityLevelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("severityLevels" -> severityLevels.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        severityLevels: js.UndefOr[SeverityLevelsList] = js.undefined
+    ): DescribeSeverityLevelsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "severityLevels" -> severityLevels.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSeverityLevelsResponse]
     }
@@ -775,9 +852,12 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckRefreshStatusesRequest {
-    def apply(checkIds: StringList): DescribeTrustedAdvisorCheckRefreshStatusesRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("checkIds" -> checkIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        checkIds: StringList
+    ): DescribeTrustedAdvisorCheckRefreshStatusesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "checkIds" -> checkIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -794,9 +874,12 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckRefreshStatusesResponse {
-    def apply(statuses: TrustedAdvisorCheckRefreshStatusList): DescribeTrustedAdvisorCheckRefreshStatusesResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("statuses" -> statuses.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        statuses: TrustedAdvisorCheckRefreshStatusList
+    ): DescribeTrustedAdvisorCheckRefreshStatusesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "statuses" -> statuses.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -814,12 +897,16 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckResultRequest {
-    def apply(checkId: String,
-              language: js.UndefOr[String] = js.undefined): DescribeTrustedAdvisorCheckResultRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("checkId" -> checkId.asInstanceOf[js.Any], "language" -> language.map {
-        x =>
+    def apply(
+        checkId: String,
+        language: js.UndefOr[String] = js.undefined
+    ): DescribeTrustedAdvisorCheckResultRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "checkId" -> checkId.asInstanceOf[js.Any],
+        "language" -> language.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorCheckResultRequest]
     }
@@ -837,9 +924,11 @@ package support {
     def apply(
         result: js.UndefOr[TrustedAdvisorCheckResult] = js.undefined
     ): DescribeTrustedAdvisorCheckResultResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("result" -> result.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "result" -> result.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorCheckResultResponse]
     }
@@ -854,9 +943,12 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckSummariesRequest {
-    def apply(checkIds: StringList): DescribeTrustedAdvisorCheckSummariesRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("checkIds" -> checkIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        checkIds: StringList
+    ): DescribeTrustedAdvisorCheckSummariesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "checkIds" -> checkIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -873,9 +965,12 @@ package support {
   }
 
   object DescribeTrustedAdvisorCheckSummariesResponse {
-    def apply(summaries: TrustedAdvisorCheckSummaryList): DescribeTrustedAdvisorCheckSummariesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("summaries" -> summaries.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        summaries: TrustedAdvisorCheckSummaryList
+    ): DescribeTrustedAdvisorCheckSummariesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "summaries" -> summaries.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -892,9 +987,12 @@ package support {
   }
 
   object DescribeTrustedAdvisorChecksRequest {
-    def apply(language: String): DescribeTrustedAdvisorChecksRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("language" -> language.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        language: String
+    ): DescribeTrustedAdvisorChecksRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "language" -> language.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorChecksRequest]
     }
@@ -909,9 +1007,12 @@ package support {
   }
 
   object DescribeTrustedAdvisorChecksResponse {
-    def apply(checks: TrustedAdvisorCheckList): DescribeTrustedAdvisorChecksResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("checks" -> checks.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        checks: TrustedAdvisorCheckList
+    ): DescribeTrustedAdvisorChecksResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "checks" -> checks.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustedAdvisorChecksResponse]
     }
@@ -935,13 +1036,18 @@ package support {
   }
 
   object RecentCaseCommunications {
-    def apply(communications: js.UndefOr[CommunicationList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): RecentCaseCommunications = {
-      val _fields = IndexedSeq[(String, js.Any)]("communications" -> communications.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        communications: js.UndefOr[CommunicationList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): RecentCaseCommunications = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "communications" -> communications.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecentCaseCommunications]
     }
@@ -956,9 +1062,12 @@ package support {
   }
 
   object RefreshTrustedAdvisorCheckRequest {
-    def apply(checkId: String): RefreshTrustedAdvisorCheckRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("checkId" -> checkId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        checkId: String
+    ): RefreshTrustedAdvisorCheckRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "checkId" -> checkId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RefreshTrustedAdvisorCheckRequest]
     }
@@ -973,9 +1082,12 @@ package support {
   }
 
   object RefreshTrustedAdvisorCheckResponse {
-    def apply(status: TrustedAdvisorCheckRefreshStatus): RefreshTrustedAdvisorCheckResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("status" -> status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        status: TrustedAdvisorCheckRefreshStatus
+    ): RefreshTrustedAdvisorCheckResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "status" -> status.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RefreshTrustedAdvisorCheckResponse]
     }
@@ -990,10 +1102,14 @@ package support {
   }
 
   object ResolveCaseRequest {
-    def apply(caseId: js.UndefOr[CaseId] = js.undefined): ResolveCaseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("caseId" -> caseId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        caseId: js.UndefOr[CaseId] = js.undefined
+    ): ResolveCaseRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "caseId" -> caseId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveCaseRequest]
     }
@@ -1009,13 +1125,18 @@ package support {
   }
 
   object ResolveCaseResponse {
-    def apply(finalCaseStatus: js.UndefOr[CaseStatus] = js.undefined,
-              initialCaseStatus: js.UndefOr[CaseStatus] = js.undefined): ResolveCaseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("finalCaseStatus" -> finalCaseStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "initialCaseStatus" -> initialCaseStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        finalCaseStatus: js.UndefOr[CaseStatus] = js.undefined,
+        initialCaseStatus: js.UndefOr[CaseStatus] = js.undefined
+    ): ResolveCaseResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "finalCaseStatus" -> finalCaseStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "initialCaseStatus" -> initialCaseStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveCaseResponse]
     }
@@ -1032,16 +1153,22 @@ package support {
   }
 
   object Service {
-    def apply(categories: js.UndefOr[CategoryList] = js.undefined,
-              code: js.UndefOr[ServiceCode] = js.undefined,
-              name: js.UndefOr[ServiceName] = js.undefined): Service = {
-      val _fields = IndexedSeq[(String, js.Any)]("categories" -> categories.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "code" -> code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        categories: js.UndefOr[CategoryList] = js.undefined,
+        code: js.UndefOr[ServiceCode] = js.undefined,
+        name: js.UndefOr[ServiceName] = js.undefined
+    ): Service = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "categories" -> categories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "code" -> code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Service]
     }
@@ -1057,13 +1184,18 @@ package support {
   }
 
   object SeverityLevel {
-    def apply(code: js.UndefOr[SeverityLevelCode] = js.undefined,
-              name: js.UndefOr[SeverityLevelName] = js.undefined): SeverityLevel = {
-      val _fields = IndexedSeq[(String, js.Any)]("code" -> code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        code: js.UndefOr[SeverityLevelCode] = js.undefined,
+        name: js.UndefOr[SeverityLevelName] = js.undefined
+    ): SeverityLevel = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "code" -> code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SeverityLevel]
     }
@@ -1081,9 +1213,11 @@ package support {
     def apply(
         costOptimizing: js.UndefOr[TrustedAdvisorCostOptimizingSummary] = js.undefined
     ): TrustedAdvisorCategorySpecificSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("costOptimizing" -> costOptimizing.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "costOptimizing" -> costOptimizing.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrustedAdvisorCategorySpecificSummary]
     }
@@ -1102,11 +1236,13 @@ package support {
   }
 
   object TrustedAdvisorCheckDescription {
-    def apply(category: String,
-              description: String,
-              id: String,
-              metadata: StringList,
-              name: String): TrustedAdvisorCheckDescription = {
+    def apply(
+        category: String,
+        description: String,
+        id: String,
+        metadata: StringList,
+        name: String
+    ): TrustedAdvisorCheckDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "category"    -> category.asInstanceOf[js.Any],
         "description" -> description.asInstanceOf[js.Any],
@@ -1130,7 +1266,11 @@ package support {
   }
 
   object TrustedAdvisorCheckRefreshStatus {
-    def apply(checkId: String, millisUntilNextRefreshable: Double, status: String): TrustedAdvisorCheckRefreshStatus = {
+    def apply(
+        checkId: String,
+        millisUntilNextRefreshable: Double,
+        status: String
+    ): TrustedAdvisorCheckRefreshStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "checkId"                    -> checkId.asInstanceOf[js.Any],
         "millisUntilNextRefreshable" -> millisUntilNextRefreshable.asInstanceOf[js.Any],
@@ -1155,12 +1295,14 @@ package support {
   }
 
   object TrustedAdvisorCheckResult {
-    def apply(categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
-              checkId: String,
-              flaggedResources: TrustedAdvisorResourceDetailList,
-              resourcesSummary: TrustedAdvisorResourcesSummary,
-              status: String,
-              timestamp: String): TrustedAdvisorCheckResult = {
+    def apply(
+        categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
+        checkId: String,
+        flaggedResources: TrustedAdvisorResourceDetailList,
+        resourcesSummary: TrustedAdvisorResourcesSummary,
+        status: String,
+        timestamp: String
+    ): TrustedAdvisorCheckResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
         "checkId"                 -> checkId.asInstanceOf[js.Any],
@@ -1188,12 +1330,14 @@ package support {
   }
 
   object TrustedAdvisorCheckSummary {
-    def apply(categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
-              checkId: String,
-              resourcesSummary: TrustedAdvisorResourcesSummary,
-              status: String,
-              timestamp: String,
-              hasFlaggedResources: js.UndefOr[Boolean] = js.undefined): TrustedAdvisorCheckSummary = {
+    def apply(
+        categorySpecificSummary: TrustedAdvisorCategorySpecificSummary,
+        checkId: String,
+        resourcesSummary: TrustedAdvisorResourcesSummary,
+        status: String,
+        timestamp: String,
+        hasFlaggedResources: js.UndefOr[Boolean] = js.undefined
+    ): TrustedAdvisorCheckSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
         "checkId"                 -> checkId.asInstanceOf[js.Any],
@@ -1219,8 +1363,10 @@ package support {
   }
 
   object TrustedAdvisorCostOptimizingSummary {
-    def apply(estimatedMonthlySavings: Double,
-              estimatedPercentMonthlySavings: Double): TrustedAdvisorCostOptimizingSummary = {
+    def apply(
+        estimatedMonthlySavings: Double,
+        estimatedPercentMonthlySavings: Double
+    ): TrustedAdvisorCostOptimizingSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "estimatedMonthlySavings"        -> estimatedMonthlySavings.asInstanceOf[js.Any],
         "estimatedPercentMonthlySavings" -> estimatedPercentMonthlySavings.asInstanceOf[js.Any]
@@ -1243,11 +1389,13 @@ package support {
   }
 
   object TrustedAdvisorResourceDetail {
-    def apply(metadata: StringList,
-              resourceId: String,
-              status: String,
-              isSuppressed: js.UndefOr[Boolean] = js.undefined,
-              region: js.UndefOr[String] = js.undefined): TrustedAdvisorResourceDetail = {
+    def apply(
+        metadata: StringList,
+        resourceId: String,
+        status: String,
+        isSuppressed: js.UndefOr[Boolean] = js.undefined,
+        region: js.UndefOr[String] = js.undefined
+    ): TrustedAdvisorResourceDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "metadata"   -> metadata.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -1276,10 +1424,12 @@ package support {
   }
 
   object TrustedAdvisorResourcesSummary {
-    def apply(resourcesFlagged: Double,
-              resourcesIgnored: Double,
-              resourcesProcessed: Double,
-              resourcesSuppressed: Double): TrustedAdvisorResourcesSummary = {
+    def apply(
+        resourcesFlagged: Double,
+        resourcesIgnored: Double,
+        resourcesProcessed: Double,
+        resourcesSuppressed: Double
+    ): TrustedAdvisorResourcesSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourcesFlagged"    -> resourcesFlagged.asInstanceOf[js.Any],
         "resourcesIgnored"    -> resourcesIgnored.asInstanceOf[js.Any],

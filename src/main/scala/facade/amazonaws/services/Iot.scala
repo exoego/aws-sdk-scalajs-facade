@@ -13,7 +13,9 @@ package object iot {
   type ActionList                            = js.Array[Action]
   type ActionType                            = String
   type ActiveViolations                      = js.Array[ActiveViolation]
+  type AdditionalMetricsToRetainList         = js.Array[BehaviorMetric]
   type AdditionalParameterMap                = js.Dictionary[Value]
+  type AggregationField                      = String
   type AlarmName                             = String
   type AlertTargetArn                        = String
   type AlertTargetType                       = String
@@ -86,6 +88,8 @@ package object iot {
   type ComparisonOperator                    = String
   type CompliantChecksCount                  = Int
   type ConnectivityTimestamp                 = Double
+  type ConsecutiveDatapointsToAlarm          = Int
+  type ConsecutiveDatapointsToClear          = Int
   type Count                                 = Int
   type CreatedAtDate                         = js.Date
   type CreationDate                          = js.Date
@@ -94,6 +98,9 @@ package object iot {
   type DateType                              = js.Date
   type DayOfMonth                            = String
   type DayOfWeek                             = String
+  type DeleteAdditionalMetricsToRetain       = Boolean
+  type DeleteAlertTargets                    = Boolean
+  type DeleteBehaviors                       = Boolean
   type DeleteScheduledAudits                 = Boolean
   type DeleteStream                          = Boolean
   type DeliveryStreamName                    = String
@@ -117,6 +124,7 @@ package object iot {
   type EndpointType                          = String
   type ErrorCode                             = String
   type ErrorMessage                          = String
+  type EvaluationStatistic                   = String
   type EventConfigurations                   = js.Dictionary[Configuration]
   type EventType                             = String
   type ExecutionNamePrefix                   = String
@@ -477,6 +485,7 @@ package iot {
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                  = js.native
     def getPolicyVersion(params: GetPolicyVersionRequest): Request[GetPolicyVersionResponse]             = js.native
     def getRegistrationCode(params: GetRegistrationCodeRequest): Request[GetRegistrationCodeResponse]    = js.native
+    def getStatistics(params: GetStatisticsRequest): Request[GetStatisticsResponse]                      = js.native
     def getTopicRule(params: GetTopicRuleRequest): Request[GetTopicRuleResponse]                         = js.native
     def getV2LoggingOptions(params: GetV2LoggingOptionsRequest): Request[GetV2LoggingOptionsResponse]    = js.native
     def listActiveViolations(params: ListActiveViolationsRequest): Request[ListActiveViolationsResponse] = js.native
@@ -609,9 +618,12 @@ package iot {
   }
 
   object AbortConfig {
-    def apply(criteriaList: AbortCriteriaList): AbortConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("criteriaList" -> criteriaList.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        criteriaList: AbortCriteriaList
+    ): AbortConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "criteriaList" -> criteriaList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortConfig]
     }
@@ -629,10 +641,12 @@ package iot {
   }
 
   object AbortCriteria {
-    def apply(action: AbortAction,
-              failureType: JobExecutionFailureType,
-              minNumberOfExecutedThings: MinimumNumberOfExecutedThings,
-              thresholdPercentage: AbortThresholdPercentage): AbortCriteria = {
+    def apply(
+        action: AbortAction,
+        failureType: JobExecutionFailureType,
+        minNumberOfExecutedThings: MinimumNumberOfExecutedThings,
+        thresholdPercentage: AbortThresholdPercentage
+    ): AbortCriteria = {
       val _fields = IndexedSeq[(String, js.Any)](
         "action"                    -> action.asInstanceOf[js.Any],
         "failureType"               -> failureType.asInstanceOf[js.Any],
@@ -654,8 +668,10 @@ package iot {
   }
 
   object AcceptCertificateTransferRequest {
-    def apply(certificateId: CertificateId,
-              setAsActive: js.UndefOr[SetAsActive] = js.undefined): AcceptCertificateTransferRequest = {
+    def apply(
+        certificateId: CertificateId,
+        setAsActive: js.UndefOr[SetAsActive] = js.undefined
+    ): AcceptCertificateTransferRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateId" -> certificateId.asInstanceOf[js.Any],
         "setAsActive" -> setAsActive.map { x =>
@@ -691,22 +707,24 @@ package iot {
   }
 
   object Action {
-    def apply(cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction] = js.undefined,
-              cloudwatchMetric: js.UndefOr[CloudwatchMetricAction] = js.undefined,
-              dynamoDB: js.UndefOr[DynamoDBAction] = js.undefined,
-              dynamoDBv2: js.UndefOr[DynamoDBv2Action] = js.undefined,
-              elasticsearch: js.UndefOr[ElasticsearchAction] = js.undefined,
-              firehose: js.UndefOr[FirehoseAction] = js.undefined,
-              iotAnalytics: js.UndefOr[IotAnalyticsAction] = js.undefined,
-              iotEvents: js.UndefOr[IotEventsAction] = js.undefined,
-              kinesis: js.UndefOr[KinesisAction] = js.undefined,
-              lambda: js.UndefOr[LambdaAction] = js.undefined,
-              republish: js.UndefOr[RepublishAction] = js.undefined,
-              s3: js.UndefOr[S3Action] = js.undefined,
-              salesforce: js.UndefOr[SalesforceAction] = js.undefined,
-              sns: js.UndefOr[SnsAction] = js.undefined,
-              sqs: js.UndefOr[SqsAction] = js.undefined,
-              stepFunctions: js.UndefOr[StepFunctionsAction] = js.undefined): Action = {
+    def apply(
+        cloudwatchAlarm: js.UndefOr[CloudwatchAlarmAction] = js.undefined,
+        cloudwatchMetric: js.UndefOr[CloudwatchMetricAction] = js.undefined,
+        dynamoDB: js.UndefOr[DynamoDBAction] = js.undefined,
+        dynamoDBv2: js.UndefOr[DynamoDBv2Action] = js.undefined,
+        elasticsearch: js.UndefOr[ElasticsearchAction] = js.undefined,
+        firehose: js.UndefOr[FirehoseAction] = js.undefined,
+        iotAnalytics: js.UndefOr[IotAnalyticsAction] = js.undefined,
+        iotEvents: js.UndefOr[IotEventsAction] = js.undefined,
+        kinesis: js.UndefOr[KinesisAction] = js.undefined,
+        lambda: js.UndefOr[LambdaAction] = js.undefined,
+        republish: js.UndefOr[RepublishAction] = js.undefined,
+        s3: js.UndefOr[S3Action] = js.undefined,
+        salesforce: js.UndefOr[SalesforceAction] = js.undefined,
+        sns: js.UndefOr[SnsAction] = js.undefined,
+        sqs: js.UndefOr[SqsAction] = js.undefined,
+        stepFunctions: js.UndefOr[StepFunctionsAction] = js.undefined
+    ): Action = {
       val _fields = IndexedSeq[(String, js.Any)](
         "cloudwatchAlarm" -> cloudwatchAlarm.map { x =>
           x.asInstanceOf[js.Any]
@@ -786,13 +804,15 @@ package iot {
   }
 
   object ActiveViolation {
-    def apply(behavior: js.UndefOr[Behavior] = js.undefined,
-              lastViolationTime: js.UndefOr[Timestamp] = js.undefined,
-              lastViolationValue: js.UndefOr[MetricValue] = js.undefined,
-              securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined,
-              violationId: js.UndefOr[ViolationId] = js.undefined,
-              violationStartTime: js.UndefOr[Timestamp] = js.undefined): ActiveViolation = {
+    def apply(
+        behavior: js.UndefOr[Behavior] = js.undefined,
+        lastViolationTime: js.UndefOr[Timestamp] = js.undefined,
+        lastViolationValue: js.UndefOr[MetricValue] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined,
+        violationId: js.UndefOr[ViolationId] = js.undefined,
+        violationStartTime: js.UndefOr[Timestamp] = js.undefined
+    ): ActiveViolation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "behavior" -> behavior.map { x =>
           x.asInstanceOf[js.Any]
@@ -830,10 +850,12 @@ package iot {
   }
 
   object AddThingToBillingGroupRequest {
-    def apply(billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
-              billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
-              thingArn: js.UndefOr[ThingArn] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): AddThingToBillingGroupRequest = {
+    def apply(
+        billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+        billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): AddThingToBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupArn" -> billingGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -857,8 +879,10 @@ package iot {
   trait AddThingToBillingGroupResponse extends js.Object {}
 
   object AddThingToBillingGroupResponse {
-    def apply(): AddThingToBillingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AddThingToBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddThingToBillingGroupResponse]
     }
@@ -874,11 +898,13 @@ package iot {
   }
 
   object AddThingToThingGroupRequest {
-    def apply(overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
-              thingArn: js.UndefOr[ThingArn] = js.undefined,
-              thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-              thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): AddThingToThingGroupRequest = {
+    def apply(
+        overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+        thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): AddThingToThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "overrideDynamicGroups" -> overrideDynamicGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -905,8 +931,10 @@ package iot {
   trait AddThingToThingGroupResponse extends js.Object {}
 
   object AddThingToThingGroupResponse {
-    def apply(): AddThingToThingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AddThingToThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddThingToThingGroupResponse]
     }
@@ -922,7 +950,10 @@ package iot {
   }
 
   object AlertTarget {
-    def apply(alertTargetArn: AlertTargetArn, roleArn: RoleArn): AlertTarget = {
+    def apply(
+        alertTargetArn: AlertTargetArn,
+        roleArn: RoleArn
+    ): AlertTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "alertTargetArn" -> alertTargetArn.asInstanceOf[js.Any],
         "roleArn"        -> roleArn.asInstanceOf[js.Any]
@@ -950,10 +981,14 @@ package iot {
   }
 
   object Allowed {
-    def apply(policies: js.UndefOr[Policies] = js.undefined): Allowed = {
-      val _fields = IndexedSeq[(String, js.Any)]("policies" -> policies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policies: js.UndefOr[Policies] = js.undefined
+    ): Allowed = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policies" -> policies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Allowed]
     }
@@ -967,9 +1002,11 @@ package iot {
   }
 
   object AssociateTargetsWithJobRequest {
-    def apply(jobId: JobId,
-              targets: JobTargets,
-              comment: js.UndefOr[Comment] = js.undefined): AssociateTargetsWithJobRequest = {
+    def apply(
+        jobId: JobId,
+        targets: JobTargets,
+        comment: js.UndefOr[Comment] = js.undefined
+    ): AssociateTargetsWithJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId"   -> jobId.asInstanceOf[js.Any],
         "targets" -> targets.asInstanceOf[js.Any],
@@ -990,9 +1027,11 @@ package iot {
   }
 
   object AssociateTargetsWithJobResponse {
-    def apply(description: js.UndefOr[JobDescription] = js.undefined,
-              jobArn: js.UndefOr[JobArn] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined): AssociateTargetsWithJobResponse = {
+    def apply(
+        description: js.UndefOr[JobDescription] = js.undefined,
+        jobArn: js.UndefOr[JobArn] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined
+    ): AssociateTargetsWithJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -1016,7 +1055,10 @@ package iot {
   }
 
   object AttachPolicyRequest {
-    def apply(policyName: PolicyName, target: PolicyTarget): AttachPolicyRequest = {
+    def apply(
+        policyName: PolicyName,
+        target: PolicyTarget
+    ): AttachPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName" -> policyName.asInstanceOf[js.Any],
         "target"     -> target.asInstanceOf[js.Any]
@@ -1036,7 +1078,10 @@ package iot {
   }
 
   object AttachPrincipalPolicyRequest {
-    def apply(policyName: PolicyName, principal: Principal): AttachPrincipalPolicyRequest = {
+    def apply(
+        policyName: PolicyName,
+        principal: Principal
+    ): AttachPrincipalPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName" -> policyName.asInstanceOf[js.Any],
         "principal"  -> principal.asInstanceOf[js.Any]
@@ -1053,8 +1098,10 @@ package iot {
   }
 
   object AttachSecurityProfileRequest {
-    def apply(securityProfileName: SecurityProfileName,
-              securityProfileTargetArn: SecurityProfileTargetArn): AttachSecurityProfileRequest = {
+    def apply(
+        securityProfileName: SecurityProfileName,
+        securityProfileTargetArn: SecurityProfileTargetArn
+    ): AttachSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "securityProfileName"      -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
@@ -1068,8 +1115,10 @@ package iot {
   trait AttachSecurityProfileResponse extends js.Object {}
 
   object AttachSecurityProfileResponse {
-    def apply(): AttachSecurityProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AttachSecurityProfileResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachSecurityProfileResponse]
     }
@@ -1085,7 +1134,10 @@ package iot {
   }
 
   object AttachThingPrincipalRequest {
-    def apply(principal: Principal, thingName: ThingName): AttachThingPrincipalRequest = {
+    def apply(
+        principal: Principal,
+        thingName: ThingName
+    ): AttachThingPrincipalRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "principal" -> principal.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
@@ -1102,8 +1154,10 @@ package iot {
   trait AttachThingPrincipalResponse extends js.Object {}
 
   object AttachThingPrincipalResponse {
-    def apply(): AttachThingPrincipalResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AttachThingPrincipalResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachThingPrincipalResponse]
     }
@@ -1119,13 +1173,18 @@ package iot {
   }
 
   object AttributePayload {
-    def apply(attributes: js.UndefOr[Attributes] = js.undefined,
-              merge: js.UndefOr[Flag] = js.undefined): AttributePayload = {
-      val _fields = IndexedSeq[(String, js.Any)]("attributes" -> attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "merge" -> merge.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attributes: js.UndefOr[Attributes] = js.undefined,
+        merge: js.UndefOr[Flag] = js.undefined
+    ): AttributePayload = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attributes" -> attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "merge" -> merge.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributePayload]
     }
@@ -1140,10 +1199,14 @@ package iot {
   }
 
   object AuditCheckConfiguration {
-    def apply(enabled: js.UndefOr[Enabled] = js.undefined): AuditCheckConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("enabled" -> enabled.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        enabled: js.UndefOr[Enabled] = js.undefined
+    ): AuditCheckConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "enabled" -> enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuditCheckConfiguration]
     }
@@ -1163,12 +1226,14 @@ package iot {
   }
 
   object AuditCheckDetails {
-    def apply(checkCompliant: js.UndefOr[CheckCompliant] = js.undefined,
-              checkRunStatus: js.UndefOr[AuditCheckRunStatus] = js.undefined,
-              errorCode: js.UndefOr[ErrorCode] = js.undefined,
-              message: js.UndefOr[ErrorMessage] = js.undefined,
-              nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount] = js.undefined,
-              totalResourcesCount: js.UndefOr[TotalResourcesCount] = js.undefined): AuditCheckDetails = {
+    def apply(
+        checkCompliant: js.UndefOr[CheckCompliant] = js.undefined,
+        checkRunStatus: js.UndefOr[AuditCheckRunStatus] = js.undefined,
+        errorCode: js.UndefOr[ErrorCode] = js.undefined,
+        message: js.UndefOr[ErrorMessage] = js.undefined,
+        nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount] = js.undefined,
+        totalResourcesCount: js.UndefOr[TotalResourcesCount] = js.undefined
+    ): AuditCheckDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "checkCompliant" -> checkCompliant.map { x =>
           x.asInstanceOf[js.Any]
@@ -1229,15 +1294,17 @@ package iot {
   }
 
   object AuditFinding {
-    def apply(checkName: js.UndefOr[AuditCheckName] = js.undefined,
-              findingTime: js.UndefOr[Timestamp] = js.undefined,
-              nonCompliantResource: js.UndefOr[NonCompliantResource] = js.undefined,
-              reasonForNonCompliance: js.UndefOr[ReasonForNonCompliance] = js.undefined,
-              reasonForNonComplianceCode: js.UndefOr[ReasonForNonComplianceCode] = js.undefined,
-              relatedResources: js.UndefOr[RelatedResources] = js.undefined,
-              severity: js.UndefOr[AuditFindingSeverity] = js.undefined,
-              taskId: js.UndefOr[AuditTaskId] = js.undefined,
-              taskStartTime: js.UndefOr[Timestamp] = js.undefined): AuditFinding = {
+    def apply(
+        checkName: js.UndefOr[AuditCheckName] = js.undefined,
+        findingTime: js.UndefOr[Timestamp] = js.undefined,
+        nonCompliantResource: js.UndefOr[NonCompliantResource] = js.undefined,
+        reasonForNonCompliance: js.UndefOr[ReasonForNonCompliance] = js.undefined,
+        reasonForNonComplianceCode: js.UndefOr[ReasonForNonComplianceCode] = js.undefined,
+        relatedResources: js.UndefOr[RelatedResources] = js.undefined,
+        severity: js.UndefOr[AuditFindingSeverity] = js.undefined,
+        taskId: js.UndefOr[AuditTaskId] = js.undefined,
+        taskStartTime: js.UndefOr[Timestamp] = js.undefined
+    ): AuditFinding = {
       val _fields = IndexedSeq[(String, js.Any)](
         "checkName" -> checkName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1301,9 +1368,11 @@ package iot {
   }
 
   object AuditNotificationTarget {
-    def apply(enabled: js.UndefOr[Enabled] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined,
-              targetArn: js.UndefOr[TargetArn] = js.undefined): AuditNotificationTarget = {
+    def apply(
+        enabled: js.UndefOr[Enabled] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        targetArn: js.UndefOr[TargetArn] = js.undefined
+    ): AuditNotificationTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "enabled" -> enabled.map { x =>
           x.asInstanceOf[js.Any]
@@ -1337,9 +1406,11 @@ package iot {
   }
 
   object AuditTaskMetadata {
-    def apply(taskId: js.UndefOr[AuditTaskId] = js.undefined,
-              taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
-              taskType: js.UndefOr[AuditTaskType] = js.undefined): AuditTaskMetadata = {
+    def apply(
+        taskId: js.UndefOr[AuditTaskId] = js.undefined,
+        taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
+        taskType: js.UndefOr[AuditTaskType] = js.undefined
+    ): AuditTaskMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "taskId" -> taskId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1390,13 +1461,18 @@ package iot {
   }
 
   object AuthInfo {
-    def apply(actionType: js.UndefOr[ActionType] = js.undefined,
-              resources: js.UndefOr[Resources] = js.undefined): AuthInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("actionType" -> actionType.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "resources" -> resources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        actionType: js.UndefOr[ActionType] = js.undefined,
+        resources: js.UndefOr[Resources] = js.undefined
+    ): AuthInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "actionType" -> actionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resources" -> resources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthInfo]
     }
@@ -1415,11 +1491,13 @@ package iot {
   }
 
   object AuthResult {
-    def apply(allowed: js.UndefOr[Allowed] = js.undefined,
-              authDecision: js.UndefOr[AuthDecision] = js.undefined,
-              authInfo: js.UndefOr[AuthInfo] = js.undefined,
-              denied: js.UndefOr[Denied] = js.undefined,
-              missingContextValues: js.UndefOr[MissingContextValues] = js.undefined): AuthResult = {
+    def apply(
+        allowed: js.UndefOr[Allowed] = js.undefined,
+        authDecision: js.UndefOr[AuthDecision] = js.undefined,
+        authInfo: js.UndefOr[AuthInfo] = js.undefined,
+        denied: js.UndefOr[Denied] = js.undefined,
+        missingContextValues: js.UndefOr[MissingContextValues] = js.undefined
+    ): AuthResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "allowed" -> allowed.map { x =>
           x.asInstanceOf[js.Any]
@@ -1458,14 +1536,16 @@ package iot {
   }
 
   object AuthorizerDescription {
-    def apply(authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
-              authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
-              authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
-              creationDate: js.UndefOr[DateType] = js.undefined,
-              lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              status: js.UndefOr[AuthorizerStatus] = js.undefined,
-              tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
-              tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined): AuthorizerDescription = {
+    def apply(
+        authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+        authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
+        authorizerName: js.UndefOr[AuthorizerName] = js.undefined,
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        status: js.UndefOr[AuthorizerStatus] = js.undefined,
+        tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
+        tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined
+    ): AuthorizerDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerArn" -> authorizerArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1514,13 +1594,18 @@ package iot {
   }
 
   object AuthorizerSummary {
-    def apply(authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
-              authorizerName: js.UndefOr[AuthorizerName] = js.undefined): AuthorizerSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerArn" -> authorizerArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "authorizerName" -> authorizerName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+        authorizerName: js.UndefOr[AuthorizerName] = js.undefined
+    ): AuthorizerSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerArn" -> authorizerArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "authorizerName" -> authorizerName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizerSummary]
     }
@@ -1542,10 +1627,14 @@ package iot {
   }
 
   object AwsJobExecutionsRolloutConfig {
-    def apply(maximumPerMinute: js.UndefOr[MaximumPerMinute] = js.undefined): AwsJobExecutionsRolloutConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("maximumPerMinute" -> maximumPerMinute.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maximumPerMinute: js.UndefOr[MaximumPerMinute] = js.undefined
+    ): AwsJobExecutionsRolloutConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maximumPerMinute" -> maximumPerMinute.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AwsJobExecutionsRolloutConfig]
     }
@@ -1562,14 +1651,20 @@ package iot {
   }
 
   object Behavior {
-    def apply(name: BehaviorName,
-              criteria: js.UndefOr[BehaviorCriteria] = js.undefined,
-              metric: js.UndefOr[BehaviorMetric] = js.undefined): Behavior = {
-      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "criteria" -> criteria.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "metric" -> metric.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: BehaviorName,
+        criteria: js.UndefOr[BehaviorCriteria] = js.undefined,
+        metric: js.UndefOr[BehaviorMetric] = js.undefined
+    ): Behavior = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.asInstanceOf[js.Any],
+        "criteria" -> criteria.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "metric" -> metric.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Behavior]
     }
@@ -1581,19 +1676,36 @@ package iot {
   @js.native
   trait BehaviorCriteria extends js.Object {
     var comparisonOperator: js.UndefOr[ComparisonOperator]
+    var consecutiveDatapointsToAlarm: js.UndefOr[ConsecutiveDatapointsToAlarm]
+    var consecutiveDatapointsToClear: js.UndefOr[ConsecutiveDatapointsToClear]
     var durationSeconds: js.UndefOr[DurationSeconds]
+    var statisticalThreshold: js.UndefOr[StatisticalThreshold]
     var value: js.UndefOr[MetricValue]
   }
 
   object BehaviorCriteria {
-    def apply(comparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
-              durationSeconds: js.UndefOr[DurationSeconds] = js.undefined,
-              value: js.UndefOr[MetricValue] = js.undefined): BehaviorCriteria = {
+    def apply(
+        comparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
+        consecutiveDatapointsToAlarm: js.UndefOr[ConsecutiveDatapointsToAlarm] = js.undefined,
+        consecutiveDatapointsToClear: js.UndefOr[ConsecutiveDatapointsToClear] = js.undefined,
+        durationSeconds: js.UndefOr[DurationSeconds] = js.undefined,
+        statisticalThreshold: js.UndefOr[StatisticalThreshold] = js.undefined,
+        value: js.UndefOr[MetricValue] = js.undefined
+    ): BehaviorCriteria = {
       val _fields = IndexedSeq[(String, js.Any)](
         "comparisonOperator" -> comparisonOperator.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "consecutiveDatapointsToAlarm" -> consecutiveDatapointsToAlarm.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "consecutiveDatapointsToClear" -> consecutiveDatapointsToClear.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "durationSeconds" -> durationSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "statisticalThreshold" -> statisticalThreshold.map { x =>
           x.asInstanceOf[js.Any]
         },
         "value" -> value.map { x =>
@@ -1614,10 +1726,14 @@ package iot {
   }
 
   object BillingGroupMetadata {
-    def apply(creationDate: js.UndefOr[CreationDate] = js.undefined): BillingGroupMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)]("creationDate" -> creationDate.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        creationDate: js.UndefOr[CreationDate] = js.undefined
+    ): BillingGroupMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "creationDate" -> creationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BillingGroupMetadata]
     }
@@ -1632,10 +1748,14 @@ package iot {
   }
 
   object BillingGroupProperties {
-    def apply(billingGroupDescription: js.UndefOr[BillingGroupDescription] = js.undefined): BillingGroupProperties = {
-      val _fields = IndexedSeq[(String, js.Any)]("billingGroupDescription" -> billingGroupDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        billingGroupDescription: js.UndefOr[BillingGroupDescription] = js.undefined
+    ): BillingGroupProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupDescription" -> billingGroupDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BillingGroupProperties]
     }
@@ -1653,10 +1773,12 @@ package iot {
   }
 
   object CACertificate {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined,
-              creationDate: js.UndefOr[DateType] = js.undefined,
-              status: js.UndefOr[CACertificateStatus] = js.undefined): CACertificate = {
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined,
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        status: js.UndefOr[CACertificateStatus] = js.undefined
+    ): CACertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1695,17 +1817,19 @@ package iot {
   }
 
   object CACertificateDescription {
-    def apply(autoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
-              certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined,
-              certificatePem: js.UndefOr[CertificatePem] = js.undefined,
-              creationDate: js.UndefOr[DateType] = js.undefined,
-              customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
-              generationId: js.UndefOr[GenerationId] = js.undefined,
-              lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              ownedBy: js.UndefOr[AwsAccountId] = js.undefined,
-              status: js.UndefOr[CACertificateStatus] = js.undefined,
-              validity: js.UndefOr[CertificateValidity] = js.undefined): CACertificateDescription = {
+    def apply(
+        autoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificatePem: js.UndefOr[CertificatePem] = js.undefined,
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
+        generationId: js.UndefOr[GenerationId] = js.undefined,
+        lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        ownedBy: js.UndefOr[AwsAccountId] = js.undefined,
+        status: js.UndefOr[CACertificateStatus] = js.undefined,
+        validity: js.UndefOr[CertificateValidity] = js.undefined
+    ): CACertificateDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "autoRegistrationStatus" -> autoRegistrationStatus.map { x =>
           x.asInstanceOf[js.Any]
@@ -1759,9 +1883,12 @@ package iot {
   }
 
   object CancelAuditTaskRequest {
-    def apply(taskId: AuditTaskId): CancelAuditTaskRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        taskId: AuditTaskId
+    ): CancelAuditTaskRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelAuditTaskRequest]
     }
@@ -1771,8 +1898,10 @@ package iot {
   trait CancelAuditTaskResponse extends js.Object {}
 
   object CancelAuditTaskResponse {
-    def apply(): CancelAuditTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CancelAuditTaskResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelAuditTaskResponse]
     }
@@ -1787,9 +1916,12 @@ package iot {
   }
 
   object CancelCertificateTransferRequest {
-    def apply(certificateId: CertificateId): CancelCertificateTransferRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateId" -> certificateId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateId: CertificateId
+    ): CancelCertificateTransferRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateId" -> certificateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelCertificateTransferRequest]
     }
@@ -1805,11 +1937,13 @@ package iot {
   }
 
   object CancelJobExecutionRequest {
-    def apply(jobId: JobId,
-              thingName: ThingName,
-              expectedVersion: js.UndefOr[ExpectedVersion] = js.undefined,
-              force: js.UndefOr[ForceFlag] = js.undefined,
-              statusDetails: js.UndefOr[DetailsMap] = js.undefined): CancelJobExecutionRequest = {
+    def apply(
+        jobId: JobId,
+        thingName: ThingName,
+        expectedVersion: js.UndefOr[ExpectedVersion] = js.undefined,
+        force: js.UndefOr[ForceFlag] = js.undefined,
+        statusDetails: js.UndefOr[DetailsMap] = js.undefined
+    ): CancelJobExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId"     -> jobId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any],
@@ -1837,10 +1971,12 @@ package iot {
   }
 
   object CancelJobRequest {
-    def apply(jobId: JobId,
-              comment: js.UndefOr[Comment] = js.undefined,
-              force: js.UndefOr[ForceFlag] = js.undefined,
-              reasonCode: js.UndefOr[ReasonCode] = js.undefined): CancelJobRequest = {
+    def apply(
+        jobId: JobId,
+        comment: js.UndefOr[Comment] = js.undefined,
+        force: js.UndefOr[ForceFlag] = js.undefined,
+        reasonCode: js.UndefOr[ReasonCode] = js.undefined
+    ): CancelJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId" -> jobId.asInstanceOf[js.Any],
         "comment" -> comment.map { x =>
@@ -1866,9 +2002,11 @@ package iot {
   }
 
   object CancelJobResponse {
-    def apply(description: js.UndefOr[JobDescription] = js.undefined,
-              jobArn: js.UndefOr[JobArn] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined): CancelJobResponse = {
+    def apply(
+        description: js.UndefOr[JobDescription] = js.undefined,
+        jobArn: js.UndefOr[JobArn] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined
+    ): CancelJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -1919,10 +2057,12 @@ package iot {
   }
 
   object Certificate {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined,
-              creationDate: js.UndefOr[DateType] = js.undefined,
-              status: js.UndefOr[CertificateStatus] = js.undefined): Certificate = {
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined,
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        status: js.UndefOr[CertificateStatus] = js.undefined
+    ): Certificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1963,19 +2103,21 @@ package iot {
   }
 
   object CertificateDescription {
-    def apply(caCertificateId: js.UndefOr[CertificateId] = js.undefined,
-              certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined,
-              certificatePem: js.UndefOr[CertificatePem] = js.undefined,
-              creationDate: js.UndefOr[DateType] = js.undefined,
-              customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
-              generationId: js.UndefOr[GenerationId] = js.undefined,
-              lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              ownedBy: js.UndefOr[AwsAccountId] = js.undefined,
-              previousOwnedBy: js.UndefOr[AwsAccountId] = js.undefined,
-              status: js.UndefOr[CertificateStatus] = js.undefined,
-              transferData: js.UndefOr[TransferData] = js.undefined,
-              validity: js.UndefOr[CertificateValidity] = js.undefined): CertificateDescription = {
+    def apply(
+        caCertificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificatePem: js.UndefOr[CertificatePem] = js.undefined,
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
+        generationId: js.UndefOr[GenerationId] = js.undefined,
+        lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        ownedBy: js.UndefOr[AwsAccountId] = js.undefined,
+        previousOwnedBy: js.UndefOr[AwsAccountId] = js.undefined,
+        status: js.UndefOr[CertificateStatus] = js.undefined,
+        transferData: js.UndefOr[TransferData] = js.undefined,
+        validity: js.UndefOr[CertificateValidity] = js.undefined
+    ): CertificateDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "caCertificateId" -> caCertificateId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2043,13 +2185,18 @@ package iot {
   }
 
   object CertificateValidity {
-    def apply(notAfter: js.UndefOr[DateType] = js.undefined,
-              notBefore: js.UndefOr[DateType] = js.undefined): CertificateValidity = {
-      val _fields = IndexedSeq[(String, js.Any)]("notAfter" -> notAfter.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "notBefore" -> notBefore.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        notAfter: js.UndefOr[DateType] = js.undefined,
+        notBefore: js.UndefOr[DateType] = js.undefined
+    ): CertificateValidity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "notAfter" -> notAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "notBefore" -> notBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateValidity]
     }
@@ -2059,8 +2206,10 @@ package iot {
   trait ClearDefaultAuthorizerRequest extends js.Object {}
 
   object ClearDefaultAuthorizerRequest {
-    def apply(): ClearDefaultAuthorizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ClearDefaultAuthorizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClearDefaultAuthorizerRequest]
     }
@@ -2070,8 +2219,10 @@ package iot {
   trait ClearDefaultAuthorizerResponse extends js.Object {}
 
   object ClearDefaultAuthorizerResponse {
-    def apply(): ClearDefaultAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ClearDefaultAuthorizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClearDefaultAuthorizerResponse]
     }
@@ -2089,10 +2240,12 @@ package iot {
   }
 
   object CloudwatchAlarmAction {
-    def apply(alarmName: AlarmName,
-              roleArn: AwsArn,
-              stateReason: StateReason,
-              stateValue: StateValue): CloudwatchAlarmAction = {
+    def apply(
+        alarmName: AlarmName,
+        roleArn: AwsArn,
+        stateReason: StateReason,
+        stateValue: StateValue
+    ): CloudwatchAlarmAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "alarmName"   -> alarmName.asInstanceOf[js.Any],
         "roleArn"     -> roleArn.asInstanceOf[js.Any],
@@ -2118,12 +2271,14 @@ package iot {
   }
 
   object CloudwatchMetricAction {
-    def apply(metricName: String,
-              metricNamespace: String,
-              metricUnit: String,
-              metricValue: String,
-              roleArn: AwsArn,
-              metricTimestamp: js.UndefOr[String] = js.undefined): CloudwatchMetricAction = {
+    def apply(
+        metricName: String,
+        metricNamespace: String,
+        metricUnit: String,
+        metricValue: String,
+        roleArn: AwsArn,
+        metricTimestamp: js.UndefOr[String] = js.undefined
+    ): CloudwatchMetricAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "metricName"      -> metricName.asInstanceOf[js.Any],
         "metricNamespace" -> metricNamespace.asInstanceOf[js.Any],
@@ -2150,9 +2305,11 @@ package iot {
   }
 
   object CodeSigning {
-    def apply(awsSignerJobId: js.UndefOr[SigningJobId] = js.undefined,
-              customCodeSigning: js.UndefOr[CustomCodeSigning] = js.undefined,
-              startSigningJobParameter: js.UndefOr[StartSigningJobParameter] = js.undefined): CodeSigning = {
+    def apply(
+        awsSignerJobId: js.UndefOr[SigningJobId] = js.undefined,
+        customCodeSigning: js.UndefOr[CustomCodeSigning] = js.undefined,
+        startSigningJobParameter: js.UndefOr[StartSigningJobParameter] = js.undefined
+    ): CodeSigning = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsSignerJobId" -> awsSignerJobId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2179,13 +2336,18 @@ package iot {
   }
 
   object CodeSigningCertificateChain {
-    def apply(certificateName: js.UndefOr[CertificateName] = js.undefined,
-              inlineDocument: js.UndefOr[InlineDocument] = js.undefined): CodeSigningCertificateChain = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateName" -> certificateName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "inlineDocument" -> inlineDocument.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateName: js.UndefOr[CertificateName] = js.undefined,
+        inlineDocument: js.UndefOr[InlineDocument] = js.undefined
+    ): CodeSigningCertificateChain = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateName" -> certificateName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "inlineDocument" -> inlineDocument.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeSigningCertificateChain]
     }
@@ -2200,10 +2362,14 @@ package iot {
   }
 
   object CodeSigningSignature {
-    def apply(inlineDocument: js.UndefOr[Signature] = js.undefined): CodeSigningSignature = {
-      val _fields = IndexedSeq[(String, js.Any)]("inlineDocument" -> inlineDocument.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        inlineDocument: js.UndefOr[Signature] = js.undefined
+    ): CodeSigningSignature = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "inlineDocument" -> inlineDocument.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeSigningSignature]
     }
@@ -2240,10 +2406,14 @@ package iot {
   }
 
   object Configuration {
-    def apply(Enabled: js.UndefOr[Enabled] = js.undefined): Configuration = {
-      val _fields = IndexedSeq[(String, js.Any)]("Enabled" -> Enabled.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Enabled: js.UndefOr[Enabled] = js.undefined
+    ): Configuration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Configuration]
     }
@@ -2259,11 +2429,13 @@ package iot {
   }
 
   object CreateAuthorizerRequest {
-    def apply(authorizerFunctionArn: AuthorizerFunctionArn,
-              authorizerName: AuthorizerName,
-              tokenKeyName: TokenKeyName,
-              tokenSigningPublicKeys: PublicKeyMap,
-              status: js.UndefOr[AuthorizerStatus] = js.undefined): CreateAuthorizerRequest = {
+    def apply(
+        authorizerFunctionArn: AuthorizerFunctionArn,
+        authorizerName: AuthorizerName,
+        tokenKeyName: TokenKeyName,
+        tokenSigningPublicKeys: PublicKeyMap,
+        status: js.UndefOr[AuthorizerStatus] = js.undefined
+    ): CreateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerFunctionArn"  -> authorizerFunctionArn.asInstanceOf[js.Any],
         "authorizerName"         -> authorizerName.asInstanceOf[js.Any],
@@ -2285,13 +2457,18 @@ package iot {
   }
 
   object CreateAuthorizerResponse {
-    def apply(authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
-              authorizerName: js.UndefOr[AuthorizerName] = js.undefined): CreateAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerArn" -> authorizerArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "authorizerName" -> authorizerName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+        authorizerName: js.UndefOr[AuthorizerName] = js.undefined
+    ): CreateAuthorizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerArn" -> authorizerArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "authorizerName" -> authorizerName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAuthorizerResponse]
     }
@@ -2305,9 +2482,11 @@ package iot {
   }
 
   object CreateBillingGroupRequest {
-    def apply(billingGroupName: BillingGroupName,
-              billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined): CreateBillingGroupRequest = {
+    def apply(
+        billingGroupName: BillingGroupName,
+        billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
         "billingGroupProperties" -> billingGroupProperties.map { x =>
@@ -2330,9 +2509,11 @@ package iot {
   }
 
   object CreateBillingGroupResponse {
-    def apply(billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
-              billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
-              billingGroupName: js.UndefOr[BillingGroupName] = js.undefined): CreateBillingGroupResponse = {
+    def apply(
+        billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+        billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
+        billingGroupName: js.UndefOr[BillingGroupName] = js.undefined
+    ): CreateBillingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupArn" -> billingGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2359,8 +2540,10 @@ package iot {
   }
 
   object CreateCertificateFromCsrRequest {
-    def apply(certificateSigningRequest: CertificateSigningRequest,
-              setAsActive: js.UndefOr[SetAsActive] = js.undefined): CreateCertificateFromCsrRequest = {
+    def apply(
+        certificateSigningRequest: CertificateSigningRequest,
+        setAsActive: js.UndefOr[SetAsActive] = js.undefined
+    ): CreateCertificateFromCsrRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateSigningRequest" -> certificateSigningRequest.asInstanceOf[js.Any],
         "setAsActive" -> setAsActive.map { x =>
@@ -2383,9 +2566,11 @@ package iot {
   }
 
   object CreateCertificateFromCsrResponse {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined,
-              certificatePem: js.UndefOr[CertificatePem] = js.undefined): CreateCertificateFromCsrResponse = {
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificatePem: js.UndefOr[CertificatePem] = js.undefined
+    ): CreateCertificateFromCsrResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2413,12 +2598,14 @@ package iot {
   }
 
   object CreateDynamicThingGroupRequest {
-    def apply(queryString: QueryString,
-              thingGroupName: ThingGroupName,
-              indexName: js.UndefOr[IndexName] = js.undefined,
-              queryVersion: js.UndefOr[QueryVersion] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined,
-              thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined): CreateDynamicThingGroupRequest = {
+    def apply(
+        queryString: QueryString,
+        thingGroupName: ThingGroupName,
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined
+    ): CreateDynamicThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "queryString"    -> queryString.asInstanceOf[js.Any],
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
@@ -2451,12 +2638,14 @@ package iot {
   }
 
   object CreateDynamicThingGroupResponse {
-    def apply(indexName: js.UndefOr[IndexName] = js.undefined,
-              queryString: js.UndefOr[QueryString] = js.undefined,
-              queryVersion: js.UndefOr[QueryVersion] = js.undefined,
-              thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-              thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
-              thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): CreateDynamicThingGroupResponse = {
+    def apply(
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        queryString: js.UndefOr[QueryString] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined,
+        thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+        thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+        thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
+    ): CreateDynamicThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "indexName" -> indexName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2498,17 +2687,19 @@ package iot {
   }
 
   object CreateJobRequest {
-    def apply(jobId: JobId,
-              targets: JobTargets,
-              abortConfig: js.UndefOr[AbortConfig] = js.undefined,
-              description: js.UndefOr[JobDescription] = js.undefined,
-              document: js.UndefOr[JobDocument] = js.undefined,
-              documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
-              jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
-              presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined,
-              targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-              timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined): CreateJobRequest = {
+    def apply(
+        jobId: JobId,
+        targets: JobTargets,
+        abortConfig: js.UndefOr[AbortConfig] = js.undefined,
+        description: js.UndefOr[JobDescription] = js.undefined,
+        document: js.UndefOr[JobDocument] = js.undefined,
+        documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
+        jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
+        presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+        timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
+    ): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId"   -> jobId.asInstanceOf[js.Any],
         "targets" -> targets.asInstanceOf[js.Any],
@@ -2553,9 +2744,11 @@ package iot {
   }
 
   object CreateJobResponse {
-    def apply(description: js.UndefOr[JobDescription] = js.undefined,
-              jobArn: js.UndefOr[JobArn] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined): CreateJobResponse = {
+    def apply(
+        description: js.UndefOr[JobDescription] = js.undefined,
+        jobArn: js.UndefOr[JobArn] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined
+    ): CreateJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -2581,10 +2774,14 @@ package iot {
   }
 
   object CreateKeysAndCertificateRequest {
-    def apply(setAsActive: js.UndefOr[SetAsActive] = js.undefined): CreateKeysAndCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("setAsActive" -> setAsActive.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        setAsActive: js.UndefOr[SetAsActive] = js.undefined
+    ): CreateKeysAndCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "setAsActive" -> setAsActive.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateKeysAndCertificateRequest]
     }
@@ -2602,10 +2799,12 @@ package iot {
   }
 
   object CreateKeysAndCertificateResponse {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined,
-              certificatePem: js.UndefOr[CertificatePem] = js.undefined,
-              keyPair: js.UndefOr[KeyPair] = js.undefined): CreateKeysAndCertificateResponse = {
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificatePem: js.UndefOr[CertificatePem] = js.undefined,
+        keyPair: js.UndefOr[KeyPair] = js.undefined
+    ): CreateKeysAndCertificateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2634,18 +2833,22 @@ package iot {
     var additionalParameters: js.UndefOr[AdditionalParameterMap]
     var awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig]
     var description: js.UndefOr[OTAUpdateDescription]
+    var tags: js.UndefOr[TagList]
     var targetSelection: js.UndefOr[TargetSelection]
   }
 
   object CreateOTAUpdateRequest {
-    def apply(files: OTAUpdateFiles,
-              otaUpdateId: OTAUpdateId,
-              roleArn: RoleArn,
-              targets: Targets,
-              additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
-              awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
-              description: js.UndefOr[OTAUpdateDescription] = js.undefined,
-              targetSelection: js.UndefOr[TargetSelection] = js.undefined): CreateOTAUpdateRequest = {
+    def apply(
+        files: OTAUpdateFiles,
+        otaUpdateId: OTAUpdateId,
+        roleArn: RoleArn,
+        targets: Targets,
+        additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
+        awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
+        description: js.UndefOr[OTAUpdateDescription] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        targetSelection: js.UndefOr[TargetSelection] = js.undefined
+    ): CreateOTAUpdateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "files"       -> files.asInstanceOf[js.Any],
         "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any],
@@ -2658,6 +2861,9 @@ package iot {
           x.asInstanceOf[js.Any]
         },
         "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "targetSelection" -> targetSelection.map { x =>
@@ -2679,11 +2885,13 @@ package iot {
   }
 
   object CreateOTAUpdateResponse {
-    def apply(awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
-              awsIotJobId: js.UndefOr[AwsIotJobId] = js.undefined,
-              otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
-              otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
-              otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined): CreateOTAUpdateResponse = {
+    def apply(
+        awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
+        awsIotJobId: js.UndefOr[AwsIotJobId] = js.undefined,
+        otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
+        otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
+        otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined
+    ): CreateOTAUpdateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsIotJobArn" -> awsIotJobArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2716,7 +2924,10 @@ package iot {
   }
 
   object CreatePolicyRequest {
-    def apply(policyDocument: PolicyDocument, policyName: PolicyName): CreatePolicyRequest = {
+    def apply(
+        policyDocument: PolicyDocument,
+        policyName: PolicyName
+    ): CreatePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyDocument" -> policyDocument.asInstanceOf[js.Any],
         "policyName"     -> policyName.asInstanceOf[js.Any]
@@ -2738,10 +2949,12 @@ package iot {
   }
 
   object CreatePolicyResponse {
-    def apply(policyArn: js.UndefOr[PolicyArn] = js.undefined,
-              policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
-              policyName: js.UndefOr[PolicyName] = js.undefined,
-              policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): CreatePolicyResponse = {
+    def apply(
+        policyArn: js.UndefOr[PolicyArn] = js.undefined,
+        policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+        policyName: js.UndefOr[PolicyName] = js.undefined,
+        policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
+    ): CreatePolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyArn" -> policyArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2772,9 +2985,11 @@ package iot {
   }
 
   object CreatePolicyVersionRequest {
-    def apply(policyDocument: PolicyDocument,
-              policyName: PolicyName,
-              setAsDefault: js.UndefOr[SetAsDefault] = js.undefined): CreatePolicyVersionRequest = {
+    def apply(
+        policyDocument: PolicyDocument,
+        policyName: PolicyName,
+        setAsDefault: js.UndefOr[SetAsDefault] = js.undefined
+    ): CreatePolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyDocument" -> policyDocument.asInstanceOf[js.Any],
         "policyName"     -> policyName.asInstanceOf[js.Any],
@@ -2799,10 +3014,12 @@ package iot {
   }
 
   object CreatePolicyVersionResponse {
-    def apply(isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
-              policyArn: js.UndefOr[PolicyArn] = js.undefined,
-              policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
-              policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): CreatePolicyVersionResponse = {
+    def apply(
+        isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
+        policyArn: js.UndefOr[PolicyArn] = js.undefined,
+        policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+        policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
+    ): CreatePolicyVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "isDefaultVersion" -> isDefaultVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -2854,13 +3071,18 @@ package iot {
   }
 
   object CreateRoleAliasResponse {
-    def apply(roleAlias: js.UndefOr[RoleAlias] = js.undefined,
-              roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined): CreateRoleAliasResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("roleAlias" -> roleAlias.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "roleAliasArn" -> roleAliasArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        roleAlias: js.UndefOr[RoleAlias] = js.undefined,
+        roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined
+    ): CreateRoleAliasResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleAlias" -> roleAlias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "roleAliasArn" -> roleAliasArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRoleAliasResponse]
     }
@@ -2873,14 +3095,18 @@ package iot {
     var targetCheckNames: TargetAuditCheckNames
     var dayOfMonth: js.UndefOr[DayOfMonth]
     var dayOfWeek: js.UndefOr[DayOfWeek]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateScheduledAuditRequest {
-    def apply(frequency: AuditFrequency,
-              scheduledAuditName: ScheduledAuditName,
-              targetCheckNames: TargetAuditCheckNames,
-              dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
-              dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined): CreateScheduledAuditRequest = {
+    def apply(
+        frequency: AuditFrequency,
+        scheduledAuditName: ScheduledAuditName,
+        targetCheckNames: TargetAuditCheckNames,
+        dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+        dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateScheduledAuditRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "frequency"          -> frequency.asInstanceOf[js.Any],
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any],
@@ -2889,6 +3115,9 @@ package iot {
           x.asInstanceOf[js.Any]
         },
         "dayOfWeek" -> dayOfWeek.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -2903,10 +3132,14 @@ package iot {
   }
 
   object CreateScheduledAuditResponse {
-    def apply(scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined): CreateScheduledAuditResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("scheduledAuditArn" -> scheduledAuditArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined
+    ): CreateScheduledAuditResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "scheduledAuditArn" -> scheduledAuditArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateScheduledAuditResponse]
     }
@@ -2914,23 +3147,32 @@ package iot {
 
   @js.native
   trait CreateSecurityProfileRequest extends js.Object {
-    var behaviors: Behaviors
     var securityProfileName: SecurityProfileName
+    var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
     var alertTargets: js.UndefOr[AlertTargets]
+    var behaviors: js.UndefOr[Behaviors]
     var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
     var tags: js.UndefOr[TagList]
   }
 
   object CreateSecurityProfileRequest {
-    def apply(behaviors: Behaviors,
-              securityProfileName: SecurityProfileName,
-              alertTargets: js.UndefOr[AlertTargets] = js.undefined,
-              securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined): CreateSecurityProfileRequest = {
+    def apply(
+        securityProfileName: SecurityProfileName,
+        additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
+        alertTargets: js.UndefOr[AlertTargets] = js.undefined,
+        behaviors: js.UndefOr[Behaviors] = js.undefined,
+        securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "behaviors"           -> behaviors.asInstanceOf[js.Any],
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
+        "additionalMetricsToRetain" -> additionalMetricsToRetain.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "alertTargets" -> alertTargets.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "behaviors" -> behaviors.map { x =>
           x.asInstanceOf[js.Any]
         },
         "securityProfileDescription" -> securityProfileDescription.map { x =>
@@ -2952,13 +3194,18 @@ package iot {
   }
 
   object CreateSecurityProfileResponse {
-    def apply(securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
-              securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined): CreateSecurityProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("securityProfileArn" -> securityProfileArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "securityProfileName" -> securityProfileName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined
+    ): CreateSecurityProfileResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "securityProfileArn" -> securityProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "securityProfileName" -> securityProfileName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSecurityProfileResponse]
     }
@@ -2970,18 +3217,25 @@ package iot {
     var roleArn: RoleArn
     var streamId: StreamId
     var description: js.UndefOr[StreamDescription]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateStreamRequest {
-    def apply(files: StreamFiles,
-              roleArn: RoleArn,
-              streamId: StreamId,
-              description: js.UndefOr[StreamDescription] = js.undefined): CreateStreamRequest = {
+    def apply(
+        files: StreamFiles,
+        roleArn: RoleArn,
+        streamId: StreamId,
+        description: js.UndefOr[StreamDescription] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateStreamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "files"    -> files.asInstanceOf[js.Any],
         "roleArn"  -> roleArn.asInstanceOf[js.Any],
         "streamId" -> streamId.asInstanceOf[js.Any],
         "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -2999,10 +3253,12 @@ package iot {
   }
 
   object CreateStreamResponse {
-    def apply(description: js.UndefOr[StreamDescription] = js.undefined,
-              streamArn: js.UndefOr[StreamArn] = js.undefined,
-              streamId: js.UndefOr[StreamId] = js.undefined,
-              streamVersion: js.UndefOr[StreamVersion] = js.undefined): CreateStreamResponse = {
+    def apply(
+        description: js.UndefOr[StreamDescription] = js.undefined,
+        streamArn: js.UndefOr[StreamArn] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined,
+        streamVersion: js.UndefOr[StreamVersion] = js.undefined
+    ): CreateStreamResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -3031,10 +3287,12 @@ package iot {
   }
 
   object CreateThingGroupRequest {
-    def apply(thingGroupName: ThingGroupName,
-              parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined,
-              thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined): CreateThingGroupRequest = {
+    def apply(
+        thingGroupName: ThingGroupName,
+        parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined
+    ): CreateThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "parentGroupName" -> parentGroupName.map { x =>
@@ -3060,9 +3318,11 @@ package iot {
   }
 
   object CreateThingGroupResponse {
-    def apply(thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-              thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
-              thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): CreateThingGroupResponse = {
+    def apply(
+        thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+        thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+        thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
+    ): CreateThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupArn" -> thingGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3091,10 +3351,12 @@ package iot {
   }
 
   object CreateThingRequest {
-    def apply(thingName: ThingName,
-              attributePayload: js.UndefOr[AttributePayload] = js.undefined,
-              billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): CreateThingRequest = {
+    def apply(
+        thingName: ThingName,
+        attributePayload: js.UndefOr[AttributePayload] = js.undefined,
+        billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
+    ): CreateThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingName" -> thingName.asInstanceOf[js.Any],
         "attributePayload" -> attributePayload.map { x =>
@@ -3123,9 +3385,11 @@ package iot {
   }
 
   object CreateThingResponse {
-    def apply(thingArn: js.UndefOr[ThingArn] = js.undefined,
-              thingId: js.UndefOr[ThingId] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): CreateThingResponse = {
+    def apply(
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        thingId: js.UndefOr[ThingId] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): CreateThingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingArn" -> thingArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3153,9 +3417,11 @@ package iot {
   }
 
   object CreateThingTypeRequest {
-    def apply(thingTypeName: ThingTypeName,
-              tags: js.UndefOr[TagList] = js.undefined,
-              thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined): CreateThingTypeRequest = {
+    def apply(
+        thingTypeName: ThingTypeName,
+        tags: js.UndefOr[TagList] = js.undefined,
+        thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined
+    ): CreateThingTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any],
         "tags" -> tags.map { x =>
@@ -3181,9 +3447,11 @@ package iot {
   }
 
   object CreateThingTypeResponse {
-    def apply(thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
-              thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): CreateThingTypeResponse = {
+    def apply(
+        thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
+        thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
+    ): CreateThingTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingTypeArn" -> thingTypeArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3207,13 +3475,21 @@ package iot {
   trait CreateTopicRuleRequest extends js.Object {
     var ruleName: RuleName
     var topicRulePayload: TopicRulePayload
+    var tags: js.UndefOr[String]
   }
 
   object CreateTopicRuleRequest {
-    def apply(ruleName: RuleName, topicRulePayload: TopicRulePayload): CreateTopicRuleRequest = {
+    def apply(
+        ruleName: RuleName,
+        topicRulePayload: TopicRulePayload,
+        tags: js.UndefOr[String] = js.undefined
+    ): CreateTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ruleName"         -> ruleName.asInstanceOf[js.Any],
-        "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]
+        "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any],
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTopicRuleRequest]
@@ -3232,10 +3508,12 @@ package iot {
   }
 
   object CustomCodeSigning {
-    def apply(certificateChain: js.UndefOr[CodeSigningCertificateChain] = js.undefined,
-              hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined,
-              signature: js.UndefOr[CodeSigningSignature] = js.undefined,
-              signatureAlgorithm: js.UndefOr[SignatureAlgorithm] = js.undefined): CustomCodeSigning = {
+    def apply(
+        certificateChain: js.UndefOr[CodeSigningCertificateChain] = js.undefined,
+        hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined,
+        signature: js.UndefOr[CodeSigningSignature] = js.undefined,
+        signatureAlgorithm: js.UndefOr[SignatureAlgorithm] = js.undefined
+    ): CustomCodeSigning = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateChain" -> certificateChain.map { x =>
           x.asInstanceOf[js.Any]
@@ -3276,9 +3554,11 @@ package iot {
     def apply(
         deleteScheduledAudits: js.UndefOr[DeleteScheduledAudits] = js.undefined
     ): DeleteAccountAuditConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("deleteScheduledAudits" -> deleteScheduledAudits.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deleteScheduledAudits" -> deleteScheduledAudits.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccountAuditConfigurationRequest]
     }
@@ -3288,8 +3568,10 @@ package iot {
   trait DeleteAccountAuditConfigurationResponse extends js.Object {}
 
   object DeleteAccountAuditConfigurationResponse {
-    def apply(): DeleteAccountAuditConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteAccountAuditConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAccountAuditConfigurationResponse]
     }
@@ -3301,9 +3583,12 @@ package iot {
   }
 
   object DeleteAuthorizerRequest {
-    def apply(authorizerName: AuthorizerName): DeleteAuthorizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerName" -> authorizerName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerName: AuthorizerName
+    ): DeleteAuthorizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAuthorizerRequest]
     }
@@ -3313,8 +3598,10 @@ package iot {
   trait DeleteAuthorizerResponse extends js.Object {}
 
   object DeleteAuthorizerResponse {
-    def apply(): DeleteAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteAuthorizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAuthorizerResponse]
     }
@@ -3327,8 +3614,10 @@ package iot {
   }
 
   object DeleteBillingGroupRequest {
-    def apply(billingGroupName: BillingGroupName,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteBillingGroupRequest = {
+    def apply(
+        billingGroupName: BillingGroupName,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
+    ): DeleteBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x =>
@@ -3344,8 +3633,10 @@ package iot {
   trait DeleteBillingGroupResponse extends js.Object {}
 
   object DeleteBillingGroupResponse {
-    def apply(): DeleteBillingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBillingGroupResponse]
     }
@@ -3360,9 +3651,12 @@ package iot {
   }
 
   object DeleteCACertificateRequest {
-    def apply(certificateId: CertificateId): DeleteCACertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateId" -> certificateId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateId: CertificateId
+    ): DeleteCACertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateId" -> certificateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCACertificateRequest]
     }
@@ -3375,8 +3669,10 @@ package iot {
   trait DeleteCACertificateResponse extends js.Object {}
 
   object DeleteCACertificateResponse {
-    def apply(): DeleteCACertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteCACertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCACertificateResponse]
     }
@@ -3392,8 +3688,10 @@ package iot {
   }
 
   object DeleteCertificateRequest {
-    def apply(certificateId: CertificateId,
-              forceDelete: js.UndefOr[ForceDelete] = js.undefined): DeleteCertificateRequest = {
+    def apply(
+        certificateId: CertificateId,
+        forceDelete: js.UndefOr[ForceDelete] = js.undefined
+    ): DeleteCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateId" -> certificateId.asInstanceOf[js.Any],
         "forceDelete" -> forceDelete.map { x =>
@@ -3412,8 +3710,10 @@ package iot {
   }
 
   object DeleteDynamicThingGroupRequest {
-    def apply(thingGroupName: ThingGroupName,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteDynamicThingGroupRequest = {
+    def apply(
+        thingGroupName: ThingGroupName,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
+    ): DeleteDynamicThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x =>
@@ -3429,8 +3729,10 @@ package iot {
   trait DeleteDynamicThingGroupResponse extends js.Object {}
 
   object DeleteDynamicThingGroupResponse {
-    def apply(): DeleteDynamicThingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteDynamicThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDynamicThingGroupResponse]
     }
@@ -3445,10 +3747,12 @@ package iot {
   }
 
   object DeleteJobExecutionRequest {
-    def apply(executionNumber: ExecutionNumber,
-              jobId: JobId,
-              thingName: ThingName,
-              force: js.UndefOr[ForceFlag] = js.undefined): DeleteJobExecutionRequest = {
+    def apply(
+        executionNumber: ExecutionNumber,
+        jobId: JobId,
+        thingName: ThingName,
+        force: js.UndefOr[ForceFlag] = js.undefined
+    ): DeleteJobExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "executionNumber" -> executionNumber.asInstanceOf[js.Any],
         "jobId"           -> jobId.asInstanceOf[js.Any],
@@ -3469,10 +3773,16 @@ package iot {
   }
 
   object DeleteJobRequest {
-    def apply(jobId: JobId, force: js.UndefOr[ForceFlag] = js.undefined): DeleteJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("jobId" -> jobId.asInstanceOf[js.Any], "force" -> force.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobId: JobId,
+        force: js.UndefOr[ForceFlag] = js.undefined
+    ): DeleteJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "force" -> force.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobRequest]
     }
@@ -3486,9 +3796,11 @@ package iot {
   }
 
   object DeleteOTAUpdateRequest {
-    def apply(otaUpdateId: OTAUpdateId,
-              deleteStream: js.UndefOr[DeleteStream] = js.undefined,
-              forceDeleteAWSJob: js.UndefOr[ForceDeleteAWSJob] = js.undefined): DeleteOTAUpdateRequest = {
+    def apply(
+        otaUpdateId: OTAUpdateId,
+        deleteStream: js.UndefOr[DeleteStream] = js.undefined,
+        forceDeleteAWSJob: js.UndefOr[ForceDeleteAWSJob] = js.undefined
+    ): DeleteOTAUpdateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any],
         "deleteStream" -> deleteStream.map { x =>
@@ -3507,8 +3819,10 @@ package iot {
   trait DeleteOTAUpdateResponse extends js.Object {}
 
   object DeleteOTAUpdateResponse {
-    def apply(): DeleteOTAUpdateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteOTAUpdateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteOTAUpdateResponse]
     }
@@ -3523,9 +3837,12 @@ package iot {
   }
 
   object DeletePolicyRequest {
-    def apply(policyName: PolicyName): DeletePolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("policyName" -> policyName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policyName: PolicyName
+    ): DeletePolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policyName" -> policyName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyRequest]
     }
@@ -3541,7 +3858,10 @@ package iot {
   }
 
   object DeletePolicyVersionRequest {
-    def apply(policyName: PolicyName, policyVersionId: PolicyVersionId): DeletePolicyVersionRequest = {
+    def apply(
+        policyName: PolicyName,
+        policyVersionId: PolicyVersionId
+    ): DeletePolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName"      -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
@@ -3558,8 +3878,10 @@ package iot {
   trait DeleteRegistrationCodeRequest extends js.Object {}
 
   object DeleteRegistrationCodeRequest {
-    def apply(): DeleteRegistrationCodeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteRegistrationCodeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegistrationCodeRequest]
     }
@@ -3572,8 +3894,10 @@ package iot {
   trait DeleteRegistrationCodeResponse extends js.Object {}
 
   object DeleteRegistrationCodeResponse {
-    def apply(): DeleteRegistrationCodeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteRegistrationCodeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegistrationCodeResponse]
     }
@@ -3585,9 +3909,12 @@ package iot {
   }
 
   object DeleteRoleAliasRequest {
-    def apply(roleAlias: RoleAlias): DeleteRoleAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("roleAlias" -> roleAlias.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        roleAlias: RoleAlias
+    ): DeleteRoleAliasRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleAlias" -> roleAlias.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRoleAliasRequest]
     }
@@ -3597,8 +3924,10 @@ package iot {
   trait DeleteRoleAliasResponse extends js.Object {}
 
   object DeleteRoleAliasResponse {
-    def apply(): DeleteRoleAliasResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteRoleAliasResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRoleAliasResponse]
     }
@@ -3610,9 +3939,12 @@ package iot {
   }
 
   object DeleteScheduledAuditRequest {
-    def apply(scheduledAuditName: ScheduledAuditName): DeleteScheduledAuditRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        scheduledAuditName: ScheduledAuditName
+    ): DeleteScheduledAuditRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScheduledAuditRequest]
     }
@@ -3622,8 +3954,10 @@ package iot {
   trait DeleteScheduledAuditResponse extends js.Object {}
 
   object DeleteScheduledAuditResponse {
-    def apply(): DeleteScheduledAuditResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteScheduledAuditResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScheduledAuditResponse]
     }
@@ -3636,8 +3970,10 @@ package iot {
   }
 
   object DeleteSecurityProfileRequest {
-    def apply(securityProfileName: SecurityProfileName,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteSecurityProfileRequest = {
+    def apply(
+        securityProfileName: SecurityProfileName,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
+    ): DeleteSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x =>
@@ -3653,8 +3989,10 @@ package iot {
   trait DeleteSecurityProfileResponse extends js.Object {}
 
   object DeleteSecurityProfileResponse {
-    def apply(): DeleteSecurityProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteSecurityProfileResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSecurityProfileResponse]
     }
@@ -3666,9 +4004,12 @@ package iot {
   }
 
   object DeleteStreamRequest {
-    def apply(streamId: StreamId): DeleteStreamRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("streamId" -> streamId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        streamId: StreamId
+    ): DeleteStreamRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "streamId" -> streamId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamRequest]
     }
@@ -3678,8 +4019,10 @@ package iot {
   trait DeleteStreamResponse extends js.Object {}
 
   object DeleteStreamResponse {
-    def apply(): DeleteStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteStreamResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamResponse]
     }
@@ -3692,8 +4035,10 @@ package iot {
   }
 
   object DeleteThingGroupRequest {
-    def apply(thingGroupName: ThingGroupName,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteThingGroupRequest = {
+    def apply(
+        thingGroupName: ThingGroupName,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
+    ): DeleteThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x =>
@@ -3709,8 +4054,10 @@ package iot {
   trait DeleteThingGroupResponse extends js.Object {}
 
   object DeleteThingGroupResponse {
-    def apply(): DeleteThingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThingGroupResponse]
     }
@@ -3726,7 +4073,10 @@ package iot {
   }
 
   object DeleteThingRequest {
-    def apply(thingName: ThingName, expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): DeleteThingRequest = {
+    def apply(
+        thingName: ThingName,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
+    ): DeleteThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingName" -> thingName.asInstanceOf[js.Any],
         "expectedVersion" -> expectedVersion.map { x =>
@@ -3745,8 +4095,10 @@ package iot {
   trait DeleteThingResponse extends js.Object {}
 
   object DeleteThingResponse {
-    def apply(): DeleteThingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteThingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThingResponse]
     }
@@ -3761,9 +4113,12 @@ package iot {
   }
 
   object DeleteThingTypeRequest {
-    def apply(thingTypeName: ThingTypeName): DeleteThingTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("thingTypeName" -> thingTypeName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        thingTypeName: ThingTypeName
+    ): DeleteThingTypeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThingTypeRequest]
     }
@@ -3776,8 +4131,10 @@ package iot {
   trait DeleteThingTypeResponse extends js.Object {}
 
   object DeleteThingTypeResponse {
-    def apply(): DeleteThingTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteThingTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThingTypeResponse]
     }
@@ -3792,9 +4149,12 @@ package iot {
   }
 
   object DeleteTopicRuleRequest {
-    def apply(ruleName: RuleName): DeleteTopicRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ruleName: RuleName
+    ): DeleteTopicRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTopicRuleRequest]
     }
@@ -3807,7 +4167,10 @@ package iot {
   }
 
   object DeleteV2LoggingLevelRequest {
-    def apply(targetName: LogTargetName, targetType: LogTargetType): DeleteV2LoggingLevelRequest = {
+    def apply(
+        targetName: LogTargetName,
+        targetType: LogTargetType
+    ): DeleteV2LoggingLevelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "targetName" -> targetName.asInstanceOf[js.Any],
         "targetType" -> targetType.asInstanceOf[js.Any]
@@ -3827,13 +4190,18 @@ package iot {
   }
 
   object Denied {
-    def apply(explicitDeny: js.UndefOr[ExplicitDeny] = js.undefined,
-              implicitDeny: js.UndefOr[ImplicitDeny] = js.undefined): Denied = {
-      val _fields = IndexedSeq[(String, js.Any)]("explicitDeny" -> explicitDeny.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "implicitDeny" -> implicitDeny.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        explicitDeny: js.UndefOr[ExplicitDeny] = js.undefined,
+        implicitDeny: js.UndefOr[ImplicitDeny] = js.undefined
+    ): Denied = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "explicitDeny" -> explicitDeny.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "implicitDeny" -> implicitDeny.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Denied]
     }
@@ -3849,8 +4217,10 @@ package iot {
   }
 
   object DeprecateThingTypeRequest {
-    def apply(thingTypeName: ThingTypeName,
-              undoDeprecate: js.UndefOr[UndoDeprecate] = js.undefined): DeprecateThingTypeRequest = {
+    def apply(
+        thingTypeName: ThingTypeName,
+        undoDeprecate: js.UndefOr[UndoDeprecate] = js.undefined
+    ): DeprecateThingTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any],
         "undoDeprecate" -> undoDeprecate.map { x =>
@@ -3869,8 +4239,10 @@ package iot {
   trait DeprecateThingTypeResponse extends js.Object {}
 
   object DeprecateThingTypeResponse {
-    def apply(): DeprecateThingTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeprecateThingTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeprecateThingTypeResponse]
     }
@@ -3880,8 +4252,10 @@ package iot {
   trait DescribeAccountAuditConfigurationRequest extends js.Object {}
 
   object DescribeAccountAuditConfigurationRequest {
-    def apply(): DescribeAccountAuditConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeAccountAuditConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAuditConfigurationRequest]
     }
@@ -3895,9 +4269,11 @@ package iot {
   }
 
   object DescribeAccountAuditConfigurationResponse {
-    def apply(auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
-              auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined): DescribeAccountAuditConfigurationResponse = {
+    def apply(
+        auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
+        auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): DescribeAccountAuditConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "auditCheckConfigurations" -> auditCheckConfigurations.map { x =>
           x.asInstanceOf[js.Any]
@@ -3920,9 +4296,12 @@ package iot {
   }
 
   object DescribeAuditTaskRequest {
-    def apply(taskId: AuditTaskId): DescribeAuditTaskRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        taskId: AuditTaskId
+    ): DescribeAuditTaskRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAuditTaskRequest]
     }
@@ -3939,12 +4318,14 @@ package iot {
   }
 
   object DescribeAuditTaskResponse {
-    def apply(auditDetails: js.UndefOr[AuditDetails] = js.undefined,
-              scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
-              taskStartTime: js.UndefOr[Timestamp] = js.undefined,
-              taskStatistics: js.UndefOr[TaskStatistics] = js.undefined,
-              taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
-              taskType: js.UndefOr[AuditTaskType] = js.undefined): DescribeAuditTaskResponse = {
+    def apply(
+        auditDetails: js.UndefOr[AuditDetails] = js.undefined,
+        scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
+        taskStartTime: js.UndefOr[Timestamp] = js.undefined,
+        taskStatistics: js.UndefOr[TaskStatistics] = js.undefined,
+        taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
+        taskType: js.UndefOr[AuditTaskType] = js.undefined
+    ): DescribeAuditTaskResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "auditDetails" -> auditDetails.map { x =>
           x.asInstanceOf[js.Any]
@@ -3976,9 +4357,12 @@ package iot {
   }
 
   object DescribeAuthorizerRequest {
-    def apply(authorizerName: AuthorizerName): DescribeAuthorizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerName" -> authorizerName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerName: AuthorizerName
+    ): DescribeAuthorizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAuthorizerRequest]
     }
@@ -3990,10 +4374,14 @@ package iot {
   }
 
   object DescribeAuthorizerResponse {
-    def apply(authorizerDescription: js.UndefOr[AuthorizerDescription] = js.undefined): DescribeAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerDescription" -> authorizerDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerDescription: js.UndefOr[AuthorizerDescription] = js.undefined
+    ): DescribeAuthorizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerDescription" -> authorizerDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAuthorizerResponse]
     }
@@ -4005,9 +4393,12 @@ package iot {
   }
 
   object DescribeBillingGroupRequest {
-    def apply(billingGroupName: BillingGroupName): DescribeBillingGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("billingGroupName" -> billingGroupName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        billingGroupName: BillingGroupName
+    ): DescribeBillingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroupName" -> billingGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBillingGroupRequest]
     }
@@ -4024,12 +4415,14 @@ package iot {
   }
 
   object DescribeBillingGroupResponse {
-    def apply(billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
-              billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
-              billingGroupMetadata: js.UndefOr[BillingGroupMetadata] = js.undefined,
-              billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
-              billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
-              version: js.UndefOr[Version] = js.undefined): DescribeBillingGroupResponse = {
+    def apply(
+        billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+        billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
+        billingGroupMetadata: js.UndefOr[BillingGroupMetadata] = js.undefined,
+        billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+        billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
+        version: js.UndefOr[Version] = js.undefined
+    ): DescribeBillingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupArn" -> billingGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -4064,9 +4457,12 @@ package iot {
   }
 
   object DescribeCACertificateRequest {
-    def apply(certificateId: CertificateId): DescribeCACertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateId" -> certificateId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateId: CertificateId
+    ): DescribeCACertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateId" -> certificateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCACertificateRequest]
     }
@@ -4082,8 +4478,10 @@ package iot {
   }
 
   object DescribeCACertificateResponse {
-    def apply(certificateDescription: js.UndefOr[CACertificateDescription] = js.undefined,
-              registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined): DescribeCACertificateResponse = {
+    def apply(
+        certificateDescription: js.UndefOr[CACertificateDescription] = js.undefined,
+        registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined
+    ): DescribeCACertificateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateDescription" -> certificateDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -4106,9 +4504,12 @@ package iot {
   }
 
   object DescribeCertificateRequest {
-    def apply(certificateId: CertificateId): DescribeCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateId" -> certificateId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateId: CertificateId
+    ): DescribeCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateId" -> certificateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificateRequest]
     }
@@ -4126,9 +4527,11 @@ package iot {
     def apply(
         certificateDescription: js.UndefOr[CertificateDescription] = js.undefined
     ): DescribeCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateDescription" -> certificateDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateDescription" -> certificateDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificateResponse]
     }
@@ -4138,8 +4541,10 @@ package iot {
   trait DescribeDefaultAuthorizerRequest extends js.Object {}
 
   object DescribeDefaultAuthorizerRequest {
-    def apply(): DescribeDefaultAuthorizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeDefaultAuthorizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDefaultAuthorizerRequest]
     }
@@ -4154,9 +4559,11 @@ package iot {
     def apply(
         authorizerDescription: js.UndefOr[AuthorizerDescription] = js.undefined
     ): DescribeDefaultAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerDescription" -> authorizerDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerDescription" -> authorizerDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDefaultAuthorizerResponse]
     }
@@ -4171,10 +4578,14 @@ package iot {
   }
 
   object DescribeEndpointRequest {
-    def apply(endpointType: js.UndefOr[EndpointType] = js.undefined): DescribeEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("endpointType" -> endpointType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        endpointType: js.UndefOr[EndpointType] = js.undefined
+    ): DescribeEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "endpointType" -> endpointType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointRequest]
     }
@@ -4189,10 +4600,14 @@ package iot {
   }
 
   object DescribeEndpointResponse {
-    def apply(endpointAddress: js.UndefOr[EndpointAddress] = js.undefined): DescribeEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("endpointAddress" -> endpointAddress.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        endpointAddress: js.UndefOr[EndpointAddress] = js.undefined
+    ): DescribeEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "endpointAddress" -> endpointAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointResponse]
     }
@@ -4202,8 +4617,10 @@ package iot {
   trait DescribeEventConfigurationsRequest extends js.Object {}
 
   object DescribeEventConfigurationsRequest {
-    def apply(): DescribeEventConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeEventConfigurationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventConfigurationsRequest]
     }
@@ -4217,9 +4634,11 @@ package iot {
   }
 
   object DescribeEventConfigurationsResponse {
-    def apply(creationDate: js.UndefOr[CreationDate] = js.undefined,
-              eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined,
-              lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined): DescribeEventConfigurationsResponse = {
+    def apply(
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined,
+        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined
+    ): DescribeEventConfigurationsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -4242,9 +4661,12 @@ package iot {
   }
 
   object DescribeIndexRequest {
-    def apply(indexName: IndexName): DescribeIndexRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("indexName" -> indexName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        indexName: IndexName
+    ): DescribeIndexRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "indexName" -> indexName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIndexRequest]
     }
@@ -4258,9 +4680,11 @@ package iot {
   }
 
   object DescribeIndexResponse {
-    def apply(indexName: js.UndefOr[IndexName] = js.undefined,
-              indexStatus: js.UndefOr[IndexStatus] = js.undefined,
-              schema: js.UndefOr[IndexSchema] = js.undefined): DescribeIndexResponse = {
+    def apply(
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        indexStatus: js.UndefOr[IndexStatus] = js.undefined,
+        schema: js.UndefOr[IndexSchema] = js.undefined
+    ): DescribeIndexResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "indexName" -> indexName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4285,9 +4709,11 @@ package iot {
   }
 
   object DescribeJobExecutionRequest {
-    def apply(jobId: JobId,
-              thingName: ThingName,
-              executionNumber: js.UndefOr[ExecutionNumber] = js.undefined): DescribeJobExecutionRequest = {
+    def apply(
+        jobId: JobId,
+        thingName: ThingName,
+        executionNumber: js.UndefOr[ExecutionNumber] = js.undefined
+    ): DescribeJobExecutionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId"     -> jobId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any],
@@ -4306,10 +4732,14 @@ package iot {
   }
 
   object DescribeJobExecutionResponse {
-    def apply(execution: js.UndefOr[JobExecution] = js.undefined): DescribeJobExecutionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("execution" -> execution.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        execution: js.UndefOr[JobExecution] = js.undefined
+    ): DescribeJobExecutionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "execution" -> execution.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobExecutionResponse]
     }
@@ -4321,9 +4751,12 @@ package iot {
   }
 
   object DescribeJobRequest {
-    def apply(jobId: JobId): DescribeJobRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobId: JobId
+    ): DescribeJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobRequest]
     }
@@ -4336,13 +4769,18 @@ package iot {
   }
 
   object DescribeJobResponse {
-    def apply(documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
-              job: js.UndefOr[Job] = js.undefined): DescribeJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("documentSource" -> documentSource.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "job" -> job.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
+        job: js.UndefOr[Job] = js.undefined
+    ): DescribeJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "documentSource" -> documentSource.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "job" -> job.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobResponse]
     }
@@ -4354,9 +4792,12 @@ package iot {
   }
 
   object DescribeRoleAliasRequest {
-    def apply(roleAlias: RoleAlias): DescribeRoleAliasRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("roleAlias" -> roleAlias.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        roleAlias: RoleAlias
+    ): DescribeRoleAliasRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleAlias" -> roleAlias.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRoleAliasRequest]
     }
@@ -4368,10 +4809,14 @@ package iot {
   }
 
   object DescribeRoleAliasResponse {
-    def apply(roleAliasDescription: js.UndefOr[RoleAliasDescription] = js.undefined): DescribeRoleAliasResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("roleAliasDescription" -> roleAliasDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        roleAliasDescription: js.UndefOr[RoleAliasDescription] = js.undefined
+    ): DescribeRoleAliasResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleAliasDescription" -> roleAliasDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRoleAliasResponse]
     }
@@ -4383,9 +4828,12 @@ package iot {
   }
 
   object DescribeScheduledAuditRequest {
-    def apply(scheduledAuditName: ScheduledAuditName): DescribeScheduledAuditRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        scheduledAuditName: ScheduledAuditName
+    ): DescribeScheduledAuditRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduledAuditRequest]
     }
@@ -4402,12 +4850,14 @@ package iot {
   }
 
   object DescribeScheduledAuditResponse {
-    def apply(dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
-              dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
-              frequency: js.UndefOr[AuditFrequency] = js.undefined,
-              scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined,
-              scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
-              targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined): DescribeScheduledAuditResponse = {
+    def apply(
+        dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+        dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+        frequency: js.UndefOr[AuditFrequency] = js.undefined,
+        scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined,
+        scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
+        targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined
+    ): DescribeScheduledAuditResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "dayOfMonth" -> dayOfMonth.map { x =>
           x.asInstanceOf[js.Any]
@@ -4439,9 +4889,12 @@ package iot {
   }
 
   object DescribeSecurityProfileRequest {
-    def apply(securityProfileName: SecurityProfileName): DescribeSecurityProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("securityProfileName" -> securityProfileName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        securityProfileName: SecurityProfileName
+    ): DescribeSecurityProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSecurityProfileRequest]
     }
@@ -4449,6 +4902,7 @@ package iot {
 
   @js.native
   trait DescribeSecurityProfileResponse extends js.Object {
+    var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
     var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var creationDate: js.UndefOr[Timestamp]
@@ -4460,15 +4914,21 @@ package iot {
   }
 
   object DescribeSecurityProfileResponse {
-    def apply(alertTargets: js.UndefOr[AlertTargets] = js.undefined,
-              behaviors: js.UndefOr[Behaviors] = js.undefined,
-              creationDate: js.UndefOr[Timestamp] = js.undefined,
-              lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
-              securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
-              securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-              securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-              version: js.UndefOr[Version] = js.undefined): DescribeSecurityProfileResponse = {
+    def apply(
+        additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
+        alertTargets: js.UndefOr[AlertTargets] = js.undefined,
+        behaviors: js.UndefOr[Behaviors] = js.undefined,
+        creationDate: js.UndefOr[Timestamp] = js.undefined,
+        lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+        securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
+        securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        version: js.UndefOr[Version] = js.undefined
+    ): DescribeSecurityProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "additionalMetricsToRetain" -> additionalMetricsToRetain.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "alertTargets" -> alertTargets.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -4505,9 +4965,12 @@ package iot {
   }
 
   object DescribeStreamRequest {
-    def apply(streamId: StreamId): DescribeStreamRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("streamId" -> streamId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        streamId: StreamId
+    ): DescribeStreamRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "streamId" -> streamId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamRequest]
     }
@@ -4519,10 +4982,14 @@ package iot {
   }
 
   object DescribeStreamResponse {
-    def apply(streamInfo: js.UndefOr[StreamInfo] = js.undefined): DescribeStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("streamInfo" -> streamInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        streamInfo: js.UndefOr[StreamInfo] = js.undefined
+    ): DescribeStreamResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "streamInfo" -> streamInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamResponse]
     }
@@ -4534,9 +5001,12 @@ package iot {
   }
 
   object DescribeThingGroupRequest {
-    def apply(thingGroupName: ThingGroupName): DescribeThingGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("thingGroupName" -> thingGroupName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        thingGroupName: ThingGroupName
+    ): DescribeThingGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingGroupRequest]
     }
@@ -4557,16 +5027,18 @@ package iot {
   }
 
   object DescribeThingGroupResponse {
-    def apply(indexName: js.UndefOr[IndexName] = js.undefined,
-              queryString: js.UndefOr[QueryString] = js.undefined,
-              queryVersion: js.UndefOr[QueryVersion] = js.undefined,
-              status: js.UndefOr[DynamicGroupStatus] = js.undefined,
-              thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-              thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
-              thingGroupMetadata: js.UndefOr[ThingGroupMetadata] = js.undefined,
-              thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-              thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
-              version: js.UndefOr[Version] = js.undefined): DescribeThingGroupResponse = {
+    def apply(
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        queryString: js.UndefOr[QueryString] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined,
+        status: js.UndefOr[DynamicGroupStatus] = js.undefined,
+        thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+        thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+        thingGroupMetadata: js.UndefOr[ThingGroupMetadata] = js.undefined,
+        thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+        thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
+        version: js.UndefOr[Version] = js.undefined
+    ): DescribeThingGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "indexName" -> indexName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4610,9 +5082,12 @@ package iot {
   }
 
   object DescribeThingRegistrationTaskRequest {
-    def apply(taskId: TaskId): DescribeThingRegistrationTaskRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        taskId: TaskId
+    ): DescribeThingRegistrationTaskRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingRegistrationTaskRequest]
     }
@@ -4635,18 +5110,20 @@ package iot {
   }
 
   object DescribeThingRegistrationTaskResponse {
-    def apply(creationDate: js.UndefOr[CreationDate] = js.undefined,
-              failureCount: js.UndefOr[Count] = js.undefined,
-              inputFileBucket: js.UndefOr[RegistryS3BucketName] = js.undefined,
-              inputFileKey: js.UndefOr[RegistryS3KeyName] = js.undefined,
-              lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
-              message: js.UndefOr[ErrorMessage] = js.undefined,
-              percentageProgress: js.UndefOr[Percentage] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined,
-              status: js.UndefOr[Status] = js.undefined,
-              successCount: js.UndefOr[Count] = js.undefined,
-              taskId: js.UndefOr[TaskId] = js.undefined,
-              templateBody: js.UndefOr[TemplateBody] = js.undefined): DescribeThingRegistrationTaskResponse = {
+    def apply(
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        failureCount: js.UndefOr[Count] = js.undefined,
+        inputFileBucket: js.UndefOr[RegistryS3BucketName] = js.undefined,
+        inputFileKey: js.UndefOr[RegistryS3KeyName] = js.undefined,
+        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
+        message: js.UndefOr[ErrorMessage] = js.undefined,
+        percentageProgress: js.UndefOr[Percentage] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined,
+        successCount: js.UndefOr[Count] = js.undefined,
+        taskId: js.UndefOr[TaskId] = js.undefined,
+        templateBody: js.UndefOr[TemplateBody] = js.undefined
+    ): DescribeThingRegistrationTaskResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -4699,9 +5176,12 @@ package iot {
   }
 
   object DescribeThingRequest {
-    def apply(thingName: ThingName): DescribeThingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("thingName" -> thingName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        thingName: ThingName
+    ): DescribeThingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingRequest]
     }
@@ -4723,14 +5203,16 @@ package iot {
   }
 
   object DescribeThingResponse {
-    def apply(attributes: js.UndefOr[Attributes] = js.undefined,
-              billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
-              defaultClientId: js.UndefOr[ClientId] = js.undefined,
-              thingArn: js.UndefOr[ThingArn] = js.undefined,
-              thingId: js.UndefOr[ThingId] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-              version: js.UndefOr[Version] = js.undefined): DescribeThingResponse = {
+    def apply(
+        attributes: js.UndefOr[Attributes] = js.undefined,
+        billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+        defaultClientId: js.UndefOr[ClientId] = js.undefined,
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        thingId: js.UndefOr[ThingId] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+        version: js.UndefOr[Version] = js.undefined
+    ): DescribeThingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributes" -> attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -4771,9 +5253,12 @@ package iot {
   }
 
   object DescribeThingTypeRequest {
-    def apply(thingTypeName: ThingTypeName): DescribeThingTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("thingTypeName" -> thingTypeName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        thingTypeName: ThingTypeName
+    ): DescribeThingTypeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeThingTypeRequest]
     }
@@ -4792,11 +5277,13 @@ package iot {
   }
 
   object DescribeThingTypeResponse {
-    def apply(thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
-              thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
-              thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-              thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined): DescribeThingTypeResponse = {
+    def apply(
+        thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
+        thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
+        thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+        thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined
+    ): DescribeThingTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingTypeArn" -> thingTypeArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -4828,10 +5315,14 @@ package iot {
   }
 
   object Destination {
-    def apply(s3Destination: js.UndefOr[S3Destination] = js.undefined): Destination = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3Destination" -> s3Destination.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3Destination: js.UndefOr[S3Destination] = js.undefined
+    ): Destination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3Destination" -> s3Destination.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Destination]
     }
@@ -4844,7 +5335,10 @@ package iot {
   }
 
   object DetachPolicyRequest {
-    def apply(policyName: PolicyName, target: PolicyTarget): DetachPolicyRequest = {
+    def apply(
+        policyName: PolicyName,
+        target: PolicyTarget
+    ): DetachPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName" -> policyName.asInstanceOf[js.Any],
         "target"     -> target.asInstanceOf[js.Any]
@@ -4864,7 +5358,10 @@ package iot {
   }
 
   object DetachPrincipalPolicyRequest {
-    def apply(policyName: PolicyName, principal: Principal): DetachPrincipalPolicyRequest = {
+    def apply(
+        policyName: PolicyName,
+        principal: Principal
+    ): DetachPrincipalPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName" -> policyName.asInstanceOf[js.Any],
         "principal"  -> principal.asInstanceOf[js.Any]
@@ -4881,8 +5378,10 @@ package iot {
   }
 
   object DetachSecurityProfileRequest {
-    def apply(securityProfileName: SecurityProfileName,
-              securityProfileTargetArn: SecurityProfileTargetArn): DetachSecurityProfileRequest = {
+    def apply(
+        securityProfileName: SecurityProfileName,
+        securityProfileTargetArn: SecurityProfileTargetArn
+    ): DetachSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "securityProfileName"      -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
@@ -4896,8 +5395,10 @@ package iot {
   trait DetachSecurityProfileResponse extends js.Object {}
 
   object DetachSecurityProfileResponse {
-    def apply(): DetachSecurityProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DetachSecurityProfileResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachSecurityProfileResponse]
     }
@@ -4913,7 +5414,10 @@ package iot {
   }
 
   object DetachThingPrincipalRequest {
-    def apply(principal: Principal, thingName: ThingName): DetachThingPrincipalRequest = {
+    def apply(
+        principal: Principal,
+        thingName: ThingName
+    ): DetachThingPrincipalRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "principal" -> principal.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
@@ -4930,8 +5434,10 @@ package iot {
   trait DetachThingPrincipalResponse extends js.Object {}
 
   object DetachThingPrincipalResponse {
-    def apply(): DetachThingPrincipalResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DetachThingPrincipalResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachThingPrincipalResponse]
     }
@@ -4946,9 +5452,12 @@ package iot {
   }
 
   object DisableTopicRuleRequest {
-    def apply(ruleName: RuleName): DisableTopicRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ruleName: RuleName
+    ): DisableTopicRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableTopicRuleRequest]
     }
@@ -4986,16 +5495,18 @@ package iot {
   }
 
   object DynamoDBAction {
-    def apply(hashKeyField: HashKeyField,
-              hashKeyValue: HashKeyValue,
-              roleArn: AwsArn,
-              tableName: TableName,
-              hashKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
-              operation: js.UndefOr[DynamoOperation] = js.undefined,
-              payloadField: js.UndefOr[PayloadField] = js.undefined,
-              rangeKeyField: js.UndefOr[RangeKeyField] = js.undefined,
-              rangeKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
-              rangeKeyValue: js.UndefOr[RangeKeyValue] = js.undefined): DynamoDBAction = {
+    def apply(
+        hashKeyField: HashKeyField,
+        hashKeyValue: HashKeyValue,
+        roleArn: AwsArn,
+        tableName: TableName,
+        hashKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
+        operation: js.UndefOr[DynamoOperation] = js.undefined,
+        payloadField: js.UndefOr[PayloadField] = js.undefined,
+        rangeKeyField: js.UndefOr[RangeKeyField] = js.undefined,
+        rangeKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
+        rangeKeyValue: js.UndefOr[RangeKeyValue] = js.undefined
+    ): DynamoDBAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "hashKeyField" -> hashKeyField.asInstanceOf[js.Any],
         "hashKeyValue" -> hashKeyValue.asInstanceOf[js.Any],
@@ -5031,18 +5542,19 @@ package iot {
     */
   @js.native
   trait DynamoDBv2Action extends js.Object {
-    var putItem: js.UndefOr[PutItemInput]
-    var roleArn: js.UndefOr[AwsArn]
+    var putItem: PutItemInput
+    var roleArn: AwsArn
   }
 
   object DynamoDBv2Action {
-    def apply(putItem: js.UndefOr[PutItemInput] = js.undefined,
-              roleArn: js.UndefOr[AwsArn] = js.undefined): DynamoDBv2Action = {
-      val _fields = IndexedSeq[(String, js.Any)]("putItem" -> putItem.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "roleArn" -> roleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        putItem: PutItemInput,
+        roleArn: AwsArn
+    ): DynamoDBv2Action = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "putItem" -> putItem.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DynamoDBv2Action]
     }
@@ -5066,9 +5578,11 @@ package iot {
   }
 
   object EffectivePolicy {
-    def apply(policyArn: js.UndefOr[PolicyArn] = js.undefined,
-              policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
-              policyName: js.UndefOr[PolicyName] = js.undefined): EffectivePolicy = {
+    def apply(
+        policyArn: js.UndefOr[PolicyArn] = js.undefined,
+        policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+        policyName: js.UndefOr[PolicyName] = js.undefined
+    ): EffectivePolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyArn" -> policyArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -5098,11 +5612,13 @@ package iot {
   }
 
   object ElasticsearchAction {
-    def apply(endpoint: ElasticsearchEndpoint,
-              id: ElasticsearchId,
-              index: ElasticsearchIndex,
-              roleArn: AwsArn,
-              `type`: ElasticsearchType): ElasticsearchAction = {
+    def apply(
+        endpoint: ElasticsearchEndpoint,
+        id: ElasticsearchId,
+        index: ElasticsearchIndex,
+        roleArn: AwsArn,
+        `type`: ElasticsearchType
+    ): ElasticsearchAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "endpoint" -> endpoint.asInstanceOf[js.Any],
         "id"       -> id.asInstanceOf[js.Any],
@@ -5124,9 +5640,12 @@ package iot {
   }
 
   object EnableTopicRuleRequest {
-    def apply(ruleName: RuleName): EnableTopicRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ruleName: RuleName
+    ): EnableTopicRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableTopicRuleRequest]
     }
@@ -5142,13 +5661,18 @@ package iot {
   }
 
   object ErrorInfo {
-    def apply(code: js.UndefOr[Code] = js.undefined,
-              message: js.UndefOr[OTAUpdateErrorMessage] = js.undefined): ErrorInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("code" -> code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "message" -> message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        code: js.UndefOr[Code] = js.undefined,
+        message: js.UndefOr[OTAUpdateErrorMessage] = js.undefined
+    ): ErrorInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "code" -> code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "message" -> message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorInfo]
     }
@@ -5191,10 +5715,14 @@ package iot {
   }
 
   object ExplicitDeny {
-    def apply(policies: js.UndefOr[Policies] = js.undefined): ExplicitDeny = {
-      val _fields = IndexedSeq[(String, js.Any)]("policies" -> policies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policies: js.UndefOr[Policies] = js.undefined
+    ): ExplicitDeny = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policies" -> policies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExplicitDeny]
     }
@@ -5211,9 +5739,11 @@ package iot {
   }
 
   object ExponentialRolloutRate {
-    def apply(baseRatePerMinute: RolloutRatePerMinute,
-              incrementFactor: IncrementFactor,
-              rateIncreaseCriteria: RateIncreaseCriteria): ExponentialRolloutRate = {
+    def apply(
+        baseRatePerMinute: RolloutRatePerMinute,
+        incrementFactor: IncrementFactor,
+        rateIncreaseCriteria: RateIncreaseCriteria
+    ): ExponentialRolloutRate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "baseRatePerMinute"    -> baseRatePerMinute.asInstanceOf[js.Any],
         "incrementFactor"      -> incrementFactor.asInstanceOf[js.Any],
@@ -5234,13 +5764,18 @@ package iot {
   }
 
   object FileLocation {
-    def apply(s3Location: js.UndefOr[S3Location] = js.undefined,
-              stream: js.UndefOr[Stream] = js.undefined): FileLocation = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3Location" -> s3Location.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "stream" -> stream.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3Location: js.UndefOr[S3Location] = js.undefined,
+        stream: js.UndefOr[Stream] = js.undefined
+    ): FileLocation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3Location" -> s3Location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "stream" -> stream.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileLocation]
     }
@@ -5257,9 +5792,11 @@ package iot {
   }
 
   object FirehoseAction {
-    def apply(deliveryStreamName: DeliveryStreamName,
-              roleArn: AwsArn,
-              separator: js.UndefOr[FirehoseSeparator] = js.undefined): FirehoseAction = {
+    def apply(
+        deliveryStreamName: DeliveryStreamName,
+        roleArn: AwsArn,
+        separator: js.UndefOr[FirehoseSeparator] = js.undefined
+    ): FirehoseAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deliveryStreamName" -> deliveryStreamName.asInstanceOf[js.Any],
         "roleArn"            -> roleArn.asInstanceOf[js.Any],
@@ -5280,9 +5817,11 @@ package iot {
   }
 
   object GetEffectivePoliciesRequest {
-    def apply(cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
-              principal: js.UndefOr[Principal] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): GetEffectivePoliciesRequest = {
+    def apply(
+        cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
+        principal: js.UndefOr[Principal] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): GetEffectivePoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "cognitoIdentityPoolId" -> cognitoIdentityPoolId.map { x =>
           x.asInstanceOf[js.Any]
@@ -5305,10 +5844,14 @@ package iot {
   }
 
   object GetEffectivePoliciesResponse {
-    def apply(effectivePolicies: js.UndefOr[EffectivePolicies] = js.undefined): GetEffectivePoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("effectivePolicies" -> effectivePolicies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        effectivePolicies: js.UndefOr[EffectivePolicies] = js.undefined
+    ): GetEffectivePoliciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "effectivePolicies" -> effectivePolicies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEffectivePoliciesResponse]
     }
@@ -5318,8 +5861,10 @@ package iot {
   trait GetIndexingConfigurationRequest extends js.Object {}
 
   object GetIndexingConfigurationRequest {
-    def apply(): GetIndexingConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetIndexingConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIndexingConfigurationRequest]
     }
@@ -5355,9 +5900,12 @@ package iot {
   }
 
   object GetJobDocumentRequest {
-    def apply(jobId: JobId): GetJobDocumentRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobId: JobId
+    ): GetJobDocumentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobDocumentRequest]
     }
@@ -5369,10 +5917,14 @@ package iot {
   }
 
   object GetJobDocumentResponse {
-    def apply(document: js.UndefOr[JobDocument] = js.undefined): GetJobDocumentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("document" -> document.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        document: js.UndefOr[JobDocument] = js.undefined
+    ): GetJobDocumentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "document" -> document.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobDocumentResponse]
     }
@@ -5385,8 +5937,10 @@ package iot {
   trait GetLoggingOptionsRequest extends js.Object {}
 
   object GetLoggingOptionsRequest {
-    def apply(): GetLoggingOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetLoggingOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggingOptionsRequest]
     }
@@ -5402,13 +5956,18 @@ package iot {
   }
 
   object GetLoggingOptionsResponse {
-    def apply(logLevel: js.UndefOr[LogLevel] = js.undefined,
-              roleArn: js.UndefOr[AwsArn] = js.undefined): GetLoggingOptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("logLevel" -> logLevel.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "roleArn" -> roleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        logLevel: js.UndefOr[LogLevel] = js.undefined,
+        roleArn: js.UndefOr[AwsArn] = js.undefined
+    ): GetLoggingOptionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logLevel" -> logLevel.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "roleArn" -> roleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggingOptionsResponse]
     }
@@ -5420,9 +5979,12 @@ package iot {
   }
 
   object GetOTAUpdateRequest {
-    def apply(otaUpdateId: OTAUpdateId): GetOTAUpdateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        otaUpdateId: OTAUpdateId
+    ): GetOTAUpdateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOTAUpdateRequest]
     }
@@ -5434,10 +5996,14 @@ package iot {
   }
 
   object GetOTAUpdateResponse {
-    def apply(otaUpdateInfo: js.UndefOr[OTAUpdateInfo] = js.undefined): GetOTAUpdateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("otaUpdateInfo" -> otaUpdateInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        otaUpdateInfo: js.UndefOr[OTAUpdateInfo] = js.undefined
+    ): GetOTAUpdateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "otaUpdateInfo" -> otaUpdateInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOTAUpdateResponse]
     }
@@ -5452,9 +6018,12 @@ package iot {
   }
 
   object GetPolicyRequest {
-    def apply(policyName: PolicyName): GetPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("policyName" -> policyName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policyName: PolicyName
+    ): GetPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policyName" -> policyName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyRequest]
     }
@@ -5475,13 +6044,15 @@ package iot {
   }
 
   object GetPolicyResponse {
-    def apply(creationDate: js.UndefOr[DateType] = js.undefined,
-              defaultVersionId: js.UndefOr[PolicyVersionId] = js.undefined,
-              generationId: js.UndefOr[GenerationId] = js.undefined,
-              lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              policyArn: js.UndefOr[PolicyArn] = js.undefined,
-              policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
-              policyName: js.UndefOr[PolicyName] = js.undefined): GetPolicyResponse = {
+    def apply(
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        defaultVersionId: js.UndefOr[PolicyVersionId] = js.undefined,
+        generationId: js.UndefOr[GenerationId] = js.undefined,
+        lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        policyArn: js.UndefOr[PolicyArn] = js.undefined,
+        policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+        policyName: js.UndefOr[PolicyName] = js.undefined
+    ): GetPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -5520,7 +6091,10 @@ package iot {
   }
 
   object GetPolicyVersionRequest {
-    def apply(policyName: PolicyName, policyVersionId: PolicyVersionId): GetPolicyVersionRequest = {
+    def apply(
+        policyName: PolicyName,
+        policyVersionId: PolicyVersionId
+    ): GetPolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName"      -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
@@ -5546,14 +6120,16 @@ package iot {
   }
 
   object GetPolicyVersionResponse {
-    def apply(creationDate: js.UndefOr[DateType] = js.undefined,
-              generationId: js.UndefOr[GenerationId] = js.undefined,
-              isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
-              lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              policyArn: js.UndefOr[PolicyArn] = js.undefined,
-              policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
-              policyName: js.UndefOr[PolicyName] = js.undefined,
-              policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): GetPolicyVersionResponse = {
+    def apply(
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        generationId: js.UndefOr[GenerationId] = js.undefined,
+        isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
+        lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        policyArn: js.UndefOr[PolicyArn] = js.undefined,
+        policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+        policyName: js.UndefOr[PolicyName] = js.undefined,
+        policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
+    ): GetPolicyVersionResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -5592,8 +6168,10 @@ package iot {
   trait GetRegistrationCodeRequest extends js.Object {}
 
   object GetRegistrationCodeRequest {
-    def apply(): GetRegistrationCodeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetRegistrationCodeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegistrationCodeRequest]
     }
@@ -5608,12 +6186,67 @@ package iot {
   }
 
   object GetRegistrationCodeResponse {
-    def apply(registrationCode: js.UndefOr[RegistrationCode] = js.undefined): GetRegistrationCodeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("registrationCode" -> registrationCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        registrationCode: js.UndefOr[RegistrationCode] = js.undefined
+    ): GetRegistrationCodeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "registrationCode" -> registrationCode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegistrationCodeResponse]
+    }
+  }
+
+  @js.native
+  trait GetStatisticsRequest extends js.Object {
+    var queryString: QueryString
+    var aggregationField: js.UndefOr[AggregationField]
+    var indexName: js.UndefOr[IndexName]
+    var queryVersion: js.UndefOr[QueryVersion]
+  }
+
+  object GetStatisticsRequest {
+    def apply(
+        queryString: QueryString,
+        aggregationField: js.UndefOr[AggregationField] = js.undefined,
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined
+    ): GetStatisticsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "queryString" -> queryString.asInstanceOf[js.Any],
+        "aggregationField" -> aggregationField.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "indexName" -> indexName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "queryVersion" -> queryVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStatisticsRequest]
+    }
+  }
+
+  @js.native
+  trait GetStatisticsResponse extends js.Object {
+    var statistics: js.UndefOr[Statistics]
+  }
+
+  object GetStatisticsResponse {
+    def apply(
+        statistics: js.UndefOr[Statistics] = js.undefined
+    ): GetStatisticsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "statistics" -> statistics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStatisticsResponse]
     }
   }
 
@@ -5626,9 +6259,12 @@ package iot {
   }
 
   object GetTopicRuleRequest {
-    def apply(ruleName: RuleName): GetTopicRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ruleName" -> ruleName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ruleName: RuleName
+    ): GetTopicRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ruleName" -> ruleName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTopicRuleRequest]
     }
@@ -5644,13 +6280,18 @@ package iot {
   }
 
   object GetTopicRuleResponse {
-    def apply(rule: js.UndefOr[TopicRule] = js.undefined,
-              ruleArn: js.UndefOr[RuleArn] = js.undefined): GetTopicRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("rule" -> rule.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ruleArn" -> ruleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        rule: js.UndefOr[TopicRule] = js.undefined,
+        ruleArn: js.UndefOr[RuleArn] = js.undefined
+    ): GetTopicRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "rule" -> rule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ruleArn" -> ruleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTopicRuleResponse]
     }
@@ -5660,8 +6301,10 @@ package iot {
   trait GetV2LoggingOptionsRequest extends js.Object {}
 
   object GetV2LoggingOptionsRequest {
-    def apply(): GetV2LoggingOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetV2LoggingOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetV2LoggingOptionsRequest]
     }
@@ -5675,9 +6318,11 @@ package iot {
   }
 
   object GetV2LoggingOptionsResponse {
-    def apply(defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
-              disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
-              roleArn: js.UndefOr[AwsArn] = js.undefined): GetV2LoggingOptionsResponse = {
+    def apply(
+        defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
+        disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
+        roleArn: js.UndefOr[AwsArn] = js.undefined
+    ): GetV2LoggingOptionsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "defaultLogLevel" -> defaultLogLevel.map { x =>
           x.asInstanceOf[js.Any]
@@ -5704,13 +6349,18 @@ package iot {
   }
 
   object GroupNameAndArn {
-    def apply(groupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-              groupName: js.UndefOr[ThingGroupName] = js.undefined): GroupNameAndArn = {
-      val _fields = IndexedSeq[(String, js.Any)]("groupArn" -> groupArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "groupName" -> groupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        groupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+        groupName: js.UndefOr[ThingGroupName] = js.undefined
+    ): GroupNameAndArn = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "groupArn" -> groupArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "groupName" -> groupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupNameAndArn]
     }
@@ -5725,10 +6375,14 @@ package iot {
   }
 
   object ImplicitDeny {
-    def apply(policies: js.UndefOr[Policies] = js.undefined): ImplicitDeny = {
-      val _fields = IndexedSeq[(String, js.Any)]("policies" -> policies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policies: js.UndefOr[Policies] = js.undefined
+    ): ImplicitDeny = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policies" -> policies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImplicitDeny]
     }
@@ -5753,9 +6407,11 @@ package iot {
   }
 
   object IotAnalyticsAction {
-    def apply(channelArn: js.UndefOr[AwsArn] = js.undefined,
-              channelName: js.UndefOr[ChannelName] = js.undefined,
-              roleArn: js.UndefOr[AwsArn] = js.undefined): IotAnalyticsAction = {
+    def apply(
+        channelArn: js.UndefOr[AwsArn] = js.undefined,
+        channelName: js.UndefOr[ChannelName] = js.undefined,
+        roleArn: js.UndefOr[AwsArn] = js.undefined
+    ): IotAnalyticsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "channelArn" -> channelArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -5783,9 +6439,11 @@ package iot {
   }
 
   object IotEventsAction {
-    def apply(inputName: InputName,
-              roleArn: AwsArn,
-              messageId: js.UndefOr[MessageId] = js.undefined): IotEventsAction = {
+    def apply(
+        inputName: InputName,
+        roleArn: AwsArn,
+        messageId: js.UndefOr[MessageId] = js.undefined
+    ): IotEventsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "inputName" -> inputName.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any],
@@ -5823,23 +6481,25 @@ package iot {
   }
 
   object Job {
-    def apply(abortConfig: js.UndefOr[AbortConfig] = js.undefined,
-              comment: js.UndefOr[Comment] = js.undefined,
-              completedAt: js.UndefOr[DateType] = js.undefined,
-              createdAt: js.UndefOr[DateType] = js.undefined,
-              description: js.UndefOr[JobDescription] = js.undefined,
-              forceCanceled: js.UndefOr[Forced] = js.undefined,
-              jobArn: js.UndefOr[JobArn] = js.undefined,
-              jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined,
-              jobProcessDetails: js.UndefOr[JobProcessDetails] = js.undefined,
-              lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
-              presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
-              reasonCode: js.UndefOr[ReasonCode] = js.undefined,
-              status: js.UndefOr[JobStatus] = js.undefined,
-              targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-              targets: js.UndefOr[JobTargets] = js.undefined,
-              timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined): Job = {
+    def apply(
+        abortConfig: js.UndefOr[AbortConfig] = js.undefined,
+        comment: js.UndefOr[Comment] = js.undefined,
+        completedAt: js.UndefOr[DateType] = js.undefined,
+        createdAt: js.UndefOr[DateType] = js.undefined,
+        description: js.UndefOr[JobDescription] = js.undefined,
+        forceCanceled: js.UndefOr[Forced] = js.undefined,
+        jobArn: js.UndefOr[JobArn] = js.undefined,
+        jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined,
+        jobProcessDetails: js.UndefOr[JobProcessDetails] = js.undefined,
+        lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
+        presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
+        reasonCode: js.UndefOr[ReasonCode] = js.undefined,
+        status: js.UndefOr[JobStatus] = js.undefined,
+        targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+        targets: js.UndefOr[JobTargets] = js.undefined,
+        timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
+    ): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
         "abortConfig" -> abortConfig.map { x =>
           x.asInstanceOf[js.Any]
@@ -5917,17 +6577,19 @@ package iot {
   }
 
   object JobExecution {
-    def apply(approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut] = js.undefined,
-              executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
-              forceCanceled: js.UndefOr[Forced] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined,
-              lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
-              queuedAt: js.UndefOr[DateType] = js.undefined,
-              startedAt: js.UndefOr[DateType] = js.undefined,
-              status: js.UndefOr[JobExecutionStatus] = js.undefined,
-              statusDetails: js.UndefOr[JobExecutionStatusDetails] = js.undefined,
-              thingArn: js.UndefOr[ThingArn] = js.undefined,
-              versionNumber: js.UndefOr[VersionNumber] = js.undefined): JobExecution = {
+    def apply(
+        approximateSecondsBeforeTimedOut: js.UndefOr[ApproximateSecondsBeforeTimedOut] = js.undefined,
+        executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
+        forceCanceled: js.UndefOr[Forced] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined,
+        lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
+        queuedAt: js.UndefOr[DateType] = js.undefined,
+        startedAt: js.UndefOr[DateType] = js.undefined,
+        status: js.UndefOr[JobExecutionStatus] = js.undefined,
+        statusDetails: js.UndefOr[JobExecutionStatusDetails] = js.undefined,
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        versionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): JobExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "approximateSecondsBeforeTimedOut" -> approximateSecondsBeforeTimedOut.map { x =>
           x.asInstanceOf[js.Any]
@@ -5999,10 +6661,14 @@ package iot {
   }
 
   object JobExecutionStatusDetails {
-    def apply(detailsMap: js.UndefOr[DetailsMap] = js.undefined): JobExecutionStatusDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("detailsMap" -> detailsMap.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        detailsMap: js.UndefOr[DetailsMap] = js.undefined
+    ): JobExecutionStatusDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "detailsMap" -> detailsMap.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionStatusDetails]
     }
@@ -6021,11 +6687,13 @@ package iot {
   }
 
   object JobExecutionSummary {
-    def apply(executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
-              lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
-              queuedAt: js.UndefOr[DateType] = js.undefined,
-              startedAt: js.UndefOr[DateType] = js.undefined,
-              status: js.UndefOr[JobExecutionStatus] = js.undefined): JobExecutionSummary = {
+    def apply(
+        executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
+        lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
+        queuedAt: js.UndefOr[DateType] = js.undefined,
+        startedAt: js.UndefOr[DateType] = js.undefined,
+        status: js.UndefOr[JobExecutionStatus] = js.undefined
+    ): JobExecutionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "executionNumber" -> executionNumber.map { x =>
           x.asInstanceOf[js.Any]
@@ -6058,13 +6726,18 @@ package iot {
   }
 
   object JobExecutionSummaryForJob {
-    def apply(jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
-              thingArn: js.UndefOr[ThingArn] = js.undefined): JobExecutionSummaryForJob = {
-      val _fields = IndexedSeq[(String, js.Any)]("jobExecutionSummary" -> jobExecutionSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "thingArn" -> thingArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
+        thingArn: js.UndefOr[ThingArn] = js.undefined
+    ): JobExecutionSummaryForJob = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobExecutionSummary" -> jobExecutionSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "thingArn" -> thingArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionSummaryForJob]
     }
@@ -6080,13 +6753,18 @@ package iot {
   }
 
   object JobExecutionSummaryForThing {
-    def apply(jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined): JobExecutionSummaryForThing = {
-      val _fields = IndexedSeq[(String, js.Any)]("jobExecutionSummary" -> jobExecutionSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "jobId" -> jobId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined
+    ): JobExecutionSummaryForThing = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobExecutionSummary" -> jobExecutionSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "jobId" -> jobId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionSummaryForThing]
     }
@@ -6102,13 +6780,18 @@ package iot {
   }
 
   object JobExecutionsRolloutConfig {
-    def apply(exponentialRate: js.UndefOr[ExponentialRolloutRate] = js.undefined,
-              maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined): JobExecutionsRolloutConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("exponentialRate" -> exponentialRate.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "maximumPerMinute" -> maximumPerMinute.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        exponentialRate: js.UndefOr[ExponentialRolloutRate] = js.undefined,
+        maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined
+    ): JobExecutionsRolloutConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "exponentialRate" -> exponentialRate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "maximumPerMinute" -> maximumPerMinute.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JobExecutionsRolloutConfig]
     }
@@ -6131,15 +6814,17 @@ package iot {
   }
 
   object JobProcessDetails {
-    def apply(numberOfCanceledThings: js.UndefOr[CanceledThings] = js.undefined,
-              numberOfFailedThings: js.UndefOr[FailedThings] = js.undefined,
-              numberOfInProgressThings: js.UndefOr[InProgressThings] = js.undefined,
-              numberOfQueuedThings: js.UndefOr[QueuedThings] = js.undefined,
-              numberOfRejectedThings: js.UndefOr[RejectedThings] = js.undefined,
-              numberOfRemovedThings: js.UndefOr[RemovedThings] = js.undefined,
-              numberOfSucceededThings: js.UndefOr[SucceededThings] = js.undefined,
-              numberOfTimedOutThings: js.UndefOr[TimedOutThings] = js.undefined,
-              processingTargets: js.UndefOr[ProcessingTargetNameList] = js.undefined): JobProcessDetails = {
+    def apply(
+        numberOfCanceledThings: js.UndefOr[CanceledThings] = js.undefined,
+        numberOfFailedThings: js.UndefOr[FailedThings] = js.undefined,
+        numberOfInProgressThings: js.UndefOr[InProgressThings] = js.undefined,
+        numberOfQueuedThings: js.UndefOr[QueuedThings] = js.undefined,
+        numberOfRejectedThings: js.UndefOr[RejectedThings] = js.undefined,
+        numberOfRemovedThings: js.UndefOr[RemovedThings] = js.undefined,
+        numberOfSucceededThings: js.UndefOr[SucceededThings] = js.undefined,
+        numberOfTimedOutThings: js.UndefOr[TimedOutThings] = js.undefined,
+        processingTargets: js.UndefOr[ProcessingTargetNameList] = js.undefined
+    ): JobProcessDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "numberOfCanceledThings" -> numberOfCanceledThings.map { x =>
           x.asInstanceOf[js.Any]
@@ -6199,14 +6884,16 @@ package iot {
   }
 
   object JobSummary {
-    def apply(completedAt: js.UndefOr[DateType] = js.undefined,
-              createdAt: js.UndefOr[DateType] = js.undefined,
-              jobArn: js.UndefOr[JobArn] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined,
-              lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
-              status: js.UndefOr[JobStatus] = js.undefined,
-              targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-              thingGroupId: js.UndefOr[ThingGroupId] = js.undefined): JobSummary = {
+    def apply(
+        completedAt: js.UndefOr[DateType] = js.undefined,
+        createdAt: js.UndefOr[DateType] = js.undefined,
+        jobArn: js.UndefOr[JobArn] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined,
+        lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
+        status: js.UndefOr[JobStatus] = js.undefined,
+        targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+        thingGroupId: js.UndefOr[ThingGroupId] = js.undefined
+    ): JobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "completedAt" -> completedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -6248,13 +6935,18 @@ package iot {
   }
 
   object KeyPair {
-    def apply(PrivateKey: js.UndefOr[PrivateKey] = js.undefined,
-              PublicKey: js.UndefOr[PublicKey] = js.undefined): KeyPair = {
-      val _fields = IndexedSeq[(String, js.Any)]("PrivateKey" -> PrivateKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PublicKey" -> PublicKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PrivateKey: js.UndefOr[PrivateKey] = js.undefined,
+        PublicKey: js.UndefOr[PublicKey] = js.undefined
+    ): KeyPair = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PrivateKey" -> PrivateKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PublicKey" -> PublicKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyPair]
     }
@@ -6271,9 +6963,11 @@ package iot {
   }
 
   object KinesisAction {
-    def apply(roleArn: AwsArn,
-              streamName: StreamName,
-              partitionKey: js.UndefOr[PartitionKey] = js.undefined): KinesisAction = {
+    def apply(
+        roleArn: AwsArn,
+        streamName: StreamName,
+        partitionKey: js.UndefOr[PartitionKey] = js.undefined
+    ): KinesisAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "roleArn"    -> roleArn.asInstanceOf[js.Any],
         "streamName" -> streamName.asInstanceOf[js.Any],
@@ -6295,9 +6989,12 @@ package iot {
   }
 
   object LambdaAction {
-    def apply(functionArn: FunctionArn): LambdaAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("functionArn" -> functionArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        functionArn: FunctionArn
+    ): LambdaAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "functionArn" -> functionArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaAction]
     }
@@ -6312,10 +7009,12 @@ package iot {
   }
 
   object ListActiveViolationsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): ListActiveViolationsRequest = {
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): ListActiveViolationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -6342,13 +7041,18 @@ package iot {
   }
 
   object ListActiveViolationsResponse {
-    def apply(activeViolations: js.UndefOr[ActiveViolations] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListActiveViolationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("activeViolations" -> activeViolations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        activeViolations: js.UndefOr[ActiveViolations] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListActiveViolationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "activeViolations" -> activeViolations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListActiveViolationsResponse]
     }
@@ -6363,10 +7067,12 @@ package iot {
   }
 
   object ListAttachedPoliciesRequest {
-    def apply(target: PolicyTarget,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined,
-              recursive: js.UndefOr[Recursive] = js.undefined): ListAttachedPoliciesRequest = {
+    def apply(
+        target: PolicyTarget,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined,
+        recursive: js.UndefOr[Recursive] = js.undefined
+    ): ListAttachedPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "target" -> target.asInstanceOf[js.Any],
         "marker" -> marker.map { x =>
@@ -6391,13 +7097,18 @@ package iot {
   }
 
   object ListAttachedPoliciesResponse {
-    def apply(nextMarker: js.UndefOr[Marker] = js.undefined,
-              policies: js.UndefOr[Policies] = js.undefined): ListAttachedPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "policies" -> policies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextMarker: js.UndefOr[Marker] = js.undefined,
+        policies: js.UndefOr[Policies] = js.undefined
+    ): ListAttachedPoliciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "policies" -> policies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttachedPoliciesResponse]
     }
@@ -6415,13 +7126,15 @@ package iot {
   }
 
   object ListAuditFindingsRequest {
-    def apply(checkName: js.UndefOr[AuditCheckName] = js.undefined,
-              endTime: js.UndefOr[Timestamp] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
-              startTime: js.UndefOr[Timestamp] = js.undefined,
-              taskId: js.UndefOr[AuditTaskId] = js.undefined): ListAuditFindingsRequest = {
+    def apply(
+        checkName: js.UndefOr[AuditCheckName] = js.undefined,
+        endTime: js.UndefOr[Timestamp] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
+        startTime: js.UndefOr[Timestamp] = js.undefined,
+        taskId: js.UndefOr[AuditTaskId] = js.undefined
+    ): ListAuditFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "checkName" -> checkName.map { x =>
           x.asInstanceOf[js.Any]
@@ -6457,13 +7170,18 @@ package iot {
   }
 
   object ListAuditFindingsResponse {
-    def apply(findings: js.UndefOr[AuditFindings] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListAuditFindingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("findings" -> findings.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        findings: js.UndefOr[AuditFindings] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAuditFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "findings" -> findings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAuditFindingsResponse]
     }
@@ -6480,12 +7198,14 @@ package iot {
   }
 
   object ListAuditTasksRequest {
-    def apply(endTime: Timestamp,
-              startTime: Timestamp,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
-              taskType: js.UndefOr[AuditTaskType] = js.undefined): ListAuditTasksRequest = {
+    def apply(
+        endTime: Timestamp,
+        startTime: Timestamp,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
+        taskType: js.UndefOr[AuditTaskType] = js.undefined
+    ): ListAuditTasksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "endTime"   -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any],
@@ -6514,13 +7234,18 @@ package iot {
   }
 
   object ListAuditTasksResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              tasks: js.UndefOr[AuditTaskMetadataList] = js.undefined): ListAuditTasksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "tasks" -> tasks.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        tasks: js.UndefOr[AuditTaskMetadataList] = js.undefined
+    ): ListAuditTasksResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tasks" -> tasks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAuditTasksResponse]
     }
@@ -6535,10 +7260,12 @@ package iot {
   }
 
   object ListAuthorizersRequest {
-    def apply(ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined,
-              status: js.UndefOr[AuthorizerStatus] = js.undefined): ListAuthorizersRequest = {
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined,
+        status: js.UndefOr[AuthorizerStatus] = js.undefined
+    ): ListAuthorizersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ascendingOrder" -> ascendingOrder.map { x =>
           x.asInstanceOf[js.Any]
@@ -6565,13 +7292,18 @@ package iot {
   }
 
   object ListAuthorizersResponse {
-    def apply(authorizers: js.UndefOr[Authorizers] = js.undefined,
-              nextMarker: js.UndefOr[Marker] = js.undefined): ListAuthorizersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizers" -> authorizers.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizers: js.UndefOr[Authorizers] = js.undefined,
+        nextMarker: js.UndefOr[Marker] = js.undefined
+    ): ListAuthorizersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizers" -> authorizers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAuthorizersResponse]
     }
@@ -6585,9 +7317,11 @@ package iot {
   }
 
   object ListBillingGroupsRequest {
-    def apply(maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              namePrefixFilter: js.UndefOr[BillingGroupName] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListBillingGroupsRequest = {
+    def apply(
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        namePrefixFilter: js.UndefOr[BillingGroupName] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBillingGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -6611,13 +7345,18 @@ package iot {
   }
 
   object ListBillingGroupsResponse {
-    def apply(billingGroups: js.UndefOr[BillingGroupNameAndArnList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListBillingGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("billingGroups" -> billingGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        billingGroups: js.UndefOr[BillingGroupNameAndArnList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBillingGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingGroups" -> billingGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBillingGroupsResponse]
     }
@@ -6634,9 +7373,11 @@ package iot {
   }
 
   object ListCACertificatesRequest {
-    def apply(ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListCACertificatesRequest = {
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListCACertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ascendingOrder" -> ascendingOrder.map { x =>
           x.asInstanceOf[js.Any]
@@ -6663,13 +7404,18 @@ package iot {
   }
 
   object ListCACertificatesResponse {
-    def apply(certificates: js.UndefOr[CACertificates] = js.undefined,
-              nextMarker: js.UndefOr[Marker] = js.undefined): ListCACertificatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificates" -> certificates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificates: js.UndefOr[CACertificates] = js.undefined,
+        nextMarker: js.UndefOr[Marker] = js.undefined
+    ): ListCACertificatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificates" -> certificates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCACertificatesResponse]
     }
@@ -6687,10 +7433,12 @@ package iot {
   }
 
   object ListCertificatesByCARequest {
-    def apply(caCertificateId: CertificateId,
-              ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListCertificatesByCARequest = {
+    def apply(
+        caCertificateId: CertificateId,
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListCertificatesByCARequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "caCertificateId" -> caCertificateId.asInstanceOf[js.Any],
         "ascendingOrder" -> ascendingOrder.map { x =>
@@ -6718,13 +7466,18 @@ package iot {
   }
 
   object ListCertificatesByCAResponse {
-    def apply(certificates: js.UndefOr[Certificates] = js.undefined,
-              nextMarker: js.UndefOr[Marker] = js.undefined): ListCertificatesByCAResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificates" -> certificates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificates: js.UndefOr[Certificates] = js.undefined,
+        nextMarker: js.UndefOr[Marker] = js.undefined
+    ): ListCertificatesByCAResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificates" -> certificates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCertificatesByCAResponse]
     }
@@ -6741,9 +7494,11 @@ package iot {
   }
 
   object ListCertificatesRequest {
-    def apply(ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListCertificatesRequest = {
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ascendingOrder" -> ascendingOrder.map { x =>
           x.asInstanceOf[js.Any]
@@ -6770,13 +7525,18 @@ package iot {
   }
 
   object ListCertificatesResponse {
-    def apply(certificates: js.UndefOr[Certificates] = js.undefined,
-              nextMarker: js.UndefOr[Marker] = js.undefined): ListCertificatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificates" -> certificates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificates: js.UndefOr[Certificates] = js.undefined,
+        nextMarker: js.UndefOr[Marker] = js.undefined
+    ): ListCertificatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificates" -> certificates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCertificatesResponse]
     }
@@ -6789,13 +7549,18 @@ package iot {
   }
 
   object ListIndicesRequest {
-    def apply(maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListIndicesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIndicesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIndicesRequest]
     }
@@ -6808,13 +7573,18 @@ package iot {
   }
 
   object ListIndicesResponse {
-    def apply(indexNames: js.UndefOr[IndexNamesList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListIndicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("indexNames" -> indexNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        indexNames: js.UndefOr[IndexNamesList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIndicesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "indexNames" -> indexNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIndicesResponse]
     }
@@ -6829,10 +7599,12 @@ package iot {
   }
 
   object ListJobExecutionsForJobRequest {
-    def apply(jobId: JobId,
-              maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              status: js.UndefOr[JobExecutionStatus] = js.undefined): ListJobExecutionsForJobRequest = {
+    def apply(
+        jobId: JobId,
+        maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        status: js.UndefOr[JobExecutionStatus] = js.undefined
+    ): ListJobExecutionsForJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId" -> jobId.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -6857,13 +7629,18 @@ package iot {
   }
 
   object ListJobExecutionsForJobResponse {
-    def apply(executionSummaries: js.UndefOr[JobExecutionSummaryForJobList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListJobExecutionsForJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("executionSummaries" -> executionSummaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        executionSummaries: js.UndefOr[JobExecutionSummaryForJobList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListJobExecutionsForJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "executionSummaries" -> executionSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobExecutionsForJobResponse]
     }
@@ -6878,10 +7655,12 @@ package iot {
   }
 
   object ListJobExecutionsForThingRequest {
-    def apply(thingName: ThingName,
-              maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              status: js.UndefOr[JobExecutionStatus] = js.undefined): ListJobExecutionsForThingRequest = {
+    def apply(
+        thingName: ThingName,
+        maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        status: js.UndefOr[JobExecutionStatus] = js.undefined
+    ): ListJobExecutionsForThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingName" -> thingName.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -6906,13 +7685,18 @@ package iot {
   }
 
   object ListJobExecutionsForThingResponse {
-    def apply(executionSummaries: js.UndefOr[JobExecutionSummaryForThingList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListJobExecutionsForThingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("executionSummaries" -> executionSummaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        executionSummaries: js.UndefOr[JobExecutionSummaryForThingList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListJobExecutionsForThingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "executionSummaries" -> executionSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobExecutionsForThingResponse]
     }
@@ -6929,12 +7713,14 @@ package iot {
   }
 
   object ListJobsRequest {
-    def apply(maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              status: js.UndefOr[JobStatus] = js.undefined,
-              targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-              thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
-              thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): ListJobsRequest = {
+    def apply(
+        maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        status: js.UndefOr[JobStatus] = js.undefined,
+        targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+        thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+        thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
+    ): ListJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -6967,13 +7753,18 @@ package iot {
   }
 
   object ListJobsResponse {
-    def apply(jobs: js.UndefOr[JobSummaryList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("jobs" -> jobs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobs: js.UndefOr[JobSummaryList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobs" -> jobs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResponse]
     }
@@ -6987,9 +7778,11 @@ package iot {
   }
 
   object ListOTAUpdatesRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined): ListOTAUpdatesRequest = {
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined
+    ): ListOTAUpdatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -7013,13 +7806,18 @@ package iot {
   }
 
   object ListOTAUpdatesResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              otaUpdates: js.UndefOr[OTAUpdatesSummary] = js.undefined): ListOTAUpdatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "otaUpdates" -> otaUpdates.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        otaUpdates: js.UndefOr[OTAUpdatesSummary] = js.undefined
+    ): ListOTAUpdatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "otaUpdates" -> otaUpdates.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOTAUpdatesResponse]
     }
@@ -7036,9 +7834,11 @@ package iot {
   }
 
   object ListOutgoingCertificatesRequest {
-    def apply(ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListOutgoingCertificatesRequest = {
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListOutgoingCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ascendingOrder" -> ascendingOrder.map { x =>
           x.asInstanceOf[js.Any]
@@ -7069,11 +7869,14 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         outgoingCertificates: js.UndefOr[OutgoingCertificates] = js.undefined
     ): ListOutgoingCertificatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "outgoingCertificates" -> outgoingCertificates.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "outgoingCertificates" -> outgoingCertificates.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOutgoingCertificatesResponse]
     }
@@ -7090,9 +7893,11 @@ package iot {
   }
 
   object ListPoliciesRequest {
-    def apply(ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListPoliciesRequest = {
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ascendingOrder" -> ascendingOrder.map { x =>
           x.asInstanceOf[js.Any]
@@ -7119,13 +7924,18 @@ package iot {
   }
 
   object ListPoliciesResponse {
-    def apply(nextMarker: js.UndefOr[Marker] = js.undefined,
-              policies: js.UndefOr[Policies] = js.undefined): ListPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "policies" -> policies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextMarker: js.UndefOr[Marker] = js.undefined,
+        policies: js.UndefOr[Policies] = js.undefined
+    ): ListPoliciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "policies" -> policies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesResponse]
     }
@@ -7143,10 +7953,12 @@ package iot {
   }
 
   object ListPolicyPrincipalsRequest {
-    def apply(policyName: PolicyName,
-              ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListPolicyPrincipalsRequest = {
+    def apply(
+        policyName: PolicyName,
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListPolicyPrincipalsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName" -> policyName.asInstanceOf[js.Any],
         "ascendingOrder" -> ascendingOrder.map { x =>
@@ -7174,13 +7986,18 @@ package iot {
   }
 
   object ListPolicyPrincipalsResponse {
-    def apply(nextMarker: js.UndefOr[Marker] = js.undefined,
-              principals: js.UndefOr[Principals] = js.undefined): ListPolicyPrincipalsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "principals" -> principals.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextMarker: js.UndefOr[Marker] = js.undefined,
+        principals: js.UndefOr[Principals] = js.undefined
+    ): ListPolicyPrincipalsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "principals" -> principals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyPrincipalsResponse]
     }
@@ -7195,9 +8012,12 @@ package iot {
   }
 
   object ListPolicyVersionsRequest {
-    def apply(policyName: PolicyName): ListPolicyVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("policyName" -> policyName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policyName: PolicyName
+    ): ListPolicyVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policyName" -> policyName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyVersionsRequest]
     }
@@ -7212,10 +8032,14 @@ package iot {
   }
 
   object ListPolicyVersionsResponse {
-    def apply(policyVersions: js.UndefOr[PolicyVersions] = js.undefined): ListPolicyVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("policyVersions" -> policyVersions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policyVersions: js.UndefOr[PolicyVersions] = js.undefined
+    ): ListPolicyVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policyVersions" -> policyVersions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPolicyVersionsResponse]
     }
@@ -7233,10 +8057,12 @@ package iot {
   }
 
   object ListPrincipalPoliciesRequest {
-    def apply(principal: Principal,
-              ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListPrincipalPoliciesRequest = {
+    def apply(
+        principal: Principal,
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListPrincipalPoliciesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "principal" -> principal.asInstanceOf[js.Any],
         "ascendingOrder" -> ascendingOrder.map { x =>
@@ -7264,13 +8090,18 @@ package iot {
   }
 
   object ListPrincipalPoliciesResponse {
-    def apply(nextMarker: js.UndefOr[Marker] = js.undefined,
-              policies: js.UndefOr[Policies] = js.undefined): ListPrincipalPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "policies" -> policies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextMarker: js.UndefOr[Marker] = js.undefined,
+        policies: js.UndefOr[Policies] = js.undefined
+    ): ListPrincipalPoliciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "policies" -> policies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalPoliciesResponse]
     }
@@ -7287,9 +8118,11 @@ package iot {
   }
 
   object ListPrincipalThingsRequest {
-    def apply(principal: Principal,
-              maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListPrincipalThingsRequest = {
+    def apply(
+        principal: Principal,
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPrincipalThingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "principal" -> principal.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -7314,13 +8147,18 @@ package iot {
   }
 
   object ListPrincipalThingsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              things: js.UndefOr[ThingNameList] = js.undefined): ListPrincipalThingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "things" -> things.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        things: js.UndefOr[ThingNameList] = js.undefined
+    ): ListPrincipalThingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "things" -> things.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalThingsResponse]
     }
@@ -7334,9 +8172,11 @@ package iot {
   }
 
   object ListRoleAliasesRequest {
-    def apply(ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListRoleAliasesRequest = {
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListRoleAliasesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ascendingOrder" -> ascendingOrder.map { x =>
           x.asInstanceOf[js.Any]
@@ -7360,13 +8200,18 @@ package iot {
   }
 
   object ListRoleAliasesResponse {
-    def apply(nextMarker: js.UndefOr[Marker] = js.undefined,
-              roleAliases: js.UndefOr[RoleAliases] = js.undefined): ListRoleAliasesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "roleAliases" -> roleAliases.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextMarker: js.UndefOr[Marker] = js.undefined,
+        roleAliases: js.UndefOr[RoleAliases] = js.undefined
+    ): ListRoleAliasesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "roleAliases" -> roleAliases.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoleAliasesResponse]
     }
@@ -7379,13 +8224,18 @@ package iot {
   }
 
   object ListScheduledAuditsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListScheduledAuditsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListScheduledAuditsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListScheduledAuditsRequest]
     }
@@ -7398,13 +8248,18 @@ package iot {
   }
 
   object ListScheduledAuditsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              scheduledAudits: js.UndefOr[ScheduledAuditMetadataList] = js.undefined): ListScheduledAuditsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "scheduledAudits" -> scheduledAudits.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        scheduledAudits: js.UndefOr[ScheduledAuditMetadataList] = js.undefined
+    ): ListScheduledAuditsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "scheduledAudits" -> scheduledAudits.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListScheduledAuditsResponse]
     }
@@ -7419,10 +8274,12 @@ package iot {
   }
 
   object ListSecurityProfilesForTargetRequest {
-    def apply(securityProfileTargetArn: SecurityProfileTargetArn,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              recursive: js.UndefOr[Recursive] = js.undefined): ListSecurityProfilesForTargetRequest = {
+    def apply(
+        securityProfileTargetArn: SecurityProfileTargetArn,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        recursive: js.UndefOr[Recursive] = js.undefined
+    ): ListSecurityProfilesForTargetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -7451,11 +8308,14 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileTargetMappings: js.UndefOr[SecurityProfileTargetMappings] = js.undefined
     ): ListSecurityProfilesForTargetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "securityProfileTargetMappings" -> securityProfileTargetMappings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "securityProfileTargetMappings" -> securityProfileTargetMappings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesForTargetResponse]
     }
@@ -7468,13 +8328,18 @@ package iot {
   }
 
   object ListSecurityProfilesRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListSecurityProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSecurityProfilesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesRequest]
     }
@@ -7491,11 +8356,14 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileIdentifiers: js.UndefOr[SecurityProfileIdentifiers] = js.undefined
     ): ListSecurityProfilesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "securityProfileIdentifiers" -> securityProfileIdentifiers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "securityProfileIdentifiers" -> securityProfileIdentifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesResponse]
     }
@@ -7509,9 +8377,11 @@ package iot {
   }
 
   object ListStreamsRequest {
-    def apply(ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListStreamsRequest = {
+    def apply(
+        ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListStreamsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ascendingOrder" -> ascendingOrder.map { x =>
           x.asInstanceOf[js.Any]
@@ -7535,13 +8405,18 @@ package iot {
   }
 
   object ListStreamsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              streams: js.UndefOr[StreamsSummary] = js.undefined): ListStreamsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "streams" -> streams.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        streams: js.UndefOr[StreamsSummary] = js.undefined
+    ): ListStreamsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "streams" -> streams.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsResponse]
     }
@@ -7554,12 +8429,16 @@ package iot {
   }
 
   object ListTagsForResourceRequest {
-    def apply(resourceArn: ResourceArn, nextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("resourceArn" -> resourceArn.asInstanceOf[js.Any], "nextToken" -> nextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        resourceArn: ResourceArn,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -7572,13 +8451,18 @@ package iot {
   }
 
   object ListTagsForResourceResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "tags" -> tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -7592,15 +8476,20 @@ package iot {
   }
 
   object ListTargetsForPolicyRequest {
-    def apply(policyName: PolicyName,
-              marker: js.UndefOr[Marker] = js.undefined,
-              pageSize: js.UndefOr[PageSize] = js.undefined): ListTargetsForPolicyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("policyName" -> policyName.asInstanceOf[js.Any], "marker" -> marker.map { x =>
+    def apply(
+        policyName: PolicyName,
+        marker: js.UndefOr[Marker] = js.undefined,
+        pageSize: js.UndefOr[PageSize] = js.undefined
+    ): ListTargetsForPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policyName" -> policyName.asInstanceOf[js.Any],
+        "marker" -> marker.map { x =>
           x.asInstanceOf[js.Any]
-        }, "pageSize" -> pageSize.map { x =>
+        },
+        "pageSize" -> pageSize.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsForPolicyRequest]
     }
@@ -7613,13 +8502,18 @@ package iot {
   }
 
   object ListTargetsForPolicyResponse {
-    def apply(nextMarker: js.UndefOr[Marker] = js.undefined,
-              targets: js.UndefOr[PolicyTargets] = js.undefined): ListTargetsForPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextMarker" -> nextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "targets" -> targets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextMarker: js.UndefOr[Marker] = js.undefined,
+        targets: js.UndefOr[PolicyTargets] = js.undefined
+    ): ListTargetsForPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextMarker" -> nextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "targets" -> targets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsForPolicyResponse]
     }
@@ -7633,9 +8527,11 @@ package iot {
   }
 
   object ListTargetsForSecurityProfileRequest {
-    def apply(securityProfileName: SecurityProfileName,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListTargetsForSecurityProfileRequest = {
+    def apply(
+        securityProfileName: SecurityProfileName,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTargetsForSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -7661,11 +8557,14 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileTargets: js.UndefOr[SecurityProfileTargets] = js.undefined
     ): ListTargetsForSecurityProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "securityProfileTargets" -> securityProfileTargets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "securityProfileTargets" -> securityProfileTargets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsForSecurityProfileResponse]
     }
@@ -7679,9 +8578,11 @@ package iot {
   }
 
   object ListThingGroupsForThingRequest {
-    def apply(thingName: ThingName,
-              maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListThingGroupsForThingRequest = {
+    def apply(
+        thingName: ThingName,
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListThingGroupsForThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingName" -> thingName.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -7703,13 +8604,18 @@ package iot {
   }
 
   object ListThingGroupsForThingResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined): ListThingGroupsForThingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "thingGroups" -> thingGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
+    ): ListThingGroupsForThingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "thingGroups" -> thingGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingGroupsForThingResponse]
     }
@@ -7725,11 +8631,13 @@ package iot {
   }
 
   object ListThingGroupsRequest {
-    def apply(maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              namePrefixFilter: js.UndefOr[ThingGroupName] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              parentGroup: js.UndefOr[ThingGroupName] = js.undefined,
-              recursive: js.UndefOr[RecursiveWithoutDefault] = js.undefined): ListThingGroupsRequest = {
+    def apply(
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        namePrefixFilter: js.UndefOr[ThingGroupName] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        parentGroup: js.UndefOr[ThingGroupName] = js.undefined,
+        recursive: js.UndefOr[RecursiveWithoutDefault] = js.undefined
+    ): ListThingGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -7759,13 +8667,18 @@ package iot {
   }
 
   object ListThingGroupsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined): ListThingGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "thingGroups" -> thingGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
+    ): ListThingGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "thingGroups" -> thingGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingGroupsResponse]
     }
@@ -7780,9 +8693,12 @@ package iot {
   }
 
   object ListThingPrincipalsRequest {
-    def apply(thingName: ThingName): ListThingPrincipalsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("thingName" -> thingName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        thingName: ThingName
+    ): ListThingPrincipalsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingPrincipalsRequest]
     }
@@ -7797,10 +8713,14 @@ package iot {
   }
 
   object ListThingPrincipalsResponse {
-    def apply(principals: js.UndefOr[Principals] = js.undefined): ListThingPrincipalsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("principals" -> principals.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        principals: js.UndefOr[Principals] = js.undefined
+    ): ListThingPrincipalsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "principals" -> principals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingPrincipalsResponse]
     }
@@ -7815,10 +8735,12 @@ package iot {
   }
 
   object ListThingRegistrationTaskReportsRequest {
-    def apply(reportType: ReportType,
-              taskId: TaskId,
-              maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListThingRegistrationTaskReportsRequest = {
+    def apply(
+        reportType: ReportType,
+        taskId: TaskId,
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListThingRegistrationTaskReportsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "reportType" -> reportType.asInstanceOf[js.Any],
         "taskId"     -> taskId.asInstanceOf[js.Any],
@@ -7842,9 +8764,11 @@ package iot {
   }
 
   object ListThingRegistrationTaskReportsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              reportType: js.UndefOr[ReportType] = js.undefined,
-              resourceLinks: js.UndefOr[S3FileUrlList] = js.undefined): ListThingRegistrationTaskReportsResponse = {
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        reportType: js.UndefOr[ReportType] = js.undefined,
+        resourceLinks: js.UndefOr[S3FileUrlList] = js.undefined
+    ): ListThingRegistrationTaskReportsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "nextToken" -> nextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -7869,9 +8793,11 @@ package iot {
   }
 
   object ListThingRegistrationTasksRequest {
-    def apply(maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              status: js.UndefOr[Status] = js.undefined): ListThingRegistrationTasksRequest = {
+    def apply(
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): ListThingRegistrationTasksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -7895,13 +8821,18 @@ package iot {
   }
 
   object ListThingRegistrationTasksResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              taskIds: js.UndefOr[TaskIdList] = js.undefined): ListThingRegistrationTasksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "taskIds" -> taskIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        taskIds: js.UndefOr[TaskIdList] = js.undefined
+    ): ListThingRegistrationTasksResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "taskIds" -> taskIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingRegistrationTasksResponse]
     }
@@ -7918,9 +8849,11 @@ package iot {
   }
 
   object ListThingTypesRequest {
-    def apply(maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): ListThingTypesRequest = {
+    def apply(
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
+    ): ListThingTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -7947,13 +8880,18 @@ package iot {
   }
 
   object ListThingTypesResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              thingTypes: js.UndefOr[ThingTypeList] = js.undefined): ListThingTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "thingTypes" -> thingTypes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        thingTypes: js.UndefOr[ThingTypeList] = js.undefined
+    ): ListThingTypesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "thingTypes" -> thingTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingTypesResponse]
     }
@@ -7967,9 +8905,11 @@ package iot {
   }
 
   object ListThingsInBillingGroupRequest {
-    def apply(billingGroupName: BillingGroupName,
-              maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListThingsInBillingGroupRequest = {
+    def apply(
+        billingGroupName: BillingGroupName,
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListThingsInBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -7991,13 +8931,18 @@ package iot {
   }
 
   object ListThingsInBillingGroupResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              things: js.UndefOr[ThingNameList] = js.undefined): ListThingsInBillingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "things" -> things.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        things: js.UndefOr[ThingNameList] = js.undefined
+    ): ListThingsInBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "things" -> things.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInBillingGroupResponse]
     }
@@ -8012,10 +8957,12 @@ package iot {
   }
 
   object ListThingsInThingGroupRequest {
-    def apply(thingGroupName: ThingGroupName,
-              maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              recursive: js.UndefOr[Recursive] = js.undefined): ListThingsInThingGroupRequest = {
+    def apply(
+        thingGroupName: ThingGroupName,
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        recursive: js.UndefOr[Recursive] = js.undefined
+    ): ListThingsInThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -8040,13 +8987,18 @@ package iot {
   }
 
   object ListThingsInThingGroupResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              things: js.UndefOr[ThingNameList] = js.undefined): ListThingsInThingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "things" -> things.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        things: js.UndefOr[ThingNameList] = js.undefined
+    ): ListThingsInThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "things" -> things.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsInThingGroupResponse]
     }
@@ -8065,11 +9017,13 @@ package iot {
   }
 
   object ListThingsRequest {
-    def apply(attributeName: js.UndefOr[AttributeName] = js.undefined,
-              attributeValue: js.UndefOr[AttributeValue] = js.undefined,
-              maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): ListThingsRequest = {
+    def apply(
+        attributeName: js.UndefOr[AttributeName] = js.undefined,
+        attributeValue: js.UndefOr[AttributeValue] = js.undefined,
+        maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
+    ): ListThingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributeName" -> attributeName.map { x =>
           x.asInstanceOf[js.Any]
@@ -8102,13 +9056,18 @@ package iot {
   }
 
   object ListThingsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              things: js.UndefOr[ThingAttributeList] = js.undefined): ListThingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "things" -> things.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        things: js.UndefOr[ThingAttributeList] = js.undefined
+    ): ListThingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "things" -> things.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThingsResponse]
     }
@@ -8126,10 +9085,12 @@ package iot {
   }
 
   object ListTopicRulesRequest {
-    def apply(maxResults: js.UndefOr[GEMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
-              topic: js.UndefOr[Topic] = js.undefined): ListTopicRulesRequest = {
+    def apply(
+        maxResults: js.UndefOr[GEMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
+        topic: js.UndefOr[Topic] = js.undefined
+    ): ListTopicRulesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -8159,13 +9120,18 @@ package iot {
   }
 
   object ListTopicRulesResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              rules: js.UndefOr[TopicRuleList] = js.undefined): ListTopicRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "rules" -> rules.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        rules: js.UndefOr[TopicRuleList] = js.undefined
+    ): ListTopicRulesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "rules" -> rules.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicRulesResponse]
     }
@@ -8179,9 +9145,11 @@ package iot {
   }
 
   object ListV2LoggingLevelsRequest {
-    def apply(maxResults: js.UndefOr[SkyfallMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              targetType: js.UndefOr[LogTargetType] = js.undefined): ListV2LoggingLevelsRequest = {
+    def apply(
+        maxResults: js.UndefOr[SkyfallMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        targetType: js.UndefOr[LogTargetType] = js.undefined
+    ): ListV2LoggingLevelsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -8205,13 +9173,18 @@ package iot {
   }
 
   object ListV2LoggingLevelsResponse {
-    def apply(logTargetConfigurations: js.UndefOr[LogTargetConfigurations] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListV2LoggingLevelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("logTargetConfigurations" -> logTargetConfigurations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        logTargetConfigurations: js.UndefOr[LogTargetConfigurations] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListV2LoggingLevelsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logTargetConfigurations" -> logTargetConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListV2LoggingLevelsResponse]
     }
@@ -8228,12 +9201,14 @@ package iot {
   }
 
   object ListViolationEventsRequest {
-    def apply(endTime: Timestamp,
-              startTime: Timestamp,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): ListViolationEventsRequest = {
+    def apply(
+        endTime: Timestamp,
+        startTime: Timestamp,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): ListViolationEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "endTime"   -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any],
@@ -8262,13 +9237,18 @@ package iot {
   }
 
   object ListViolationEventsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              violationEvents: js.UndefOr[ViolationEvents] = js.undefined): ListViolationEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "violationEvents" -> violationEvents.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        violationEvents: js.UndefOr[ViolationEvents] = js.undefined
+    ): ListViolationEventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "violationEvents" -> violationEvents.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListViolationEventsResponse]
     }
@@ -8294,12 +9274,16 @@ package iot {
   }
 
   object LogTarget {
-    def apply(targetType: LogTargetType, targetName: js.UndefOr[LogTargetName] = js.undefined): LogTarget = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("targetType" -> targetType.asInstanceOf[js.Any], "targetName" -> targetName.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        targetType: LogTargetType,
+        targetName: js.UndefOr[LogTargetName] = js.undefined
+    ): LogTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetType" -> targetType.asInstanceOf[js.Any],
+        "targetName" -> targetName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogTarget]
     }
@@ -8315,13 +9299,18 @@ package iot {
   }
 
   object LogTargetConfiguration {
-    def apply(logLevel: js.UndefOr[LogLevel] = js.undefined,
-              logTarget: js.UndefOr[LogTarget] = js.undefined): LogTargetConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("logLevel" -> logLevel.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "logTarget" -> logTarget.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        logLevel: js.UndefOr[LogLevel] = js.undefined,
+        logTarget: js.UndefOr[LogTarget] = js.undefined
+    ): LogTargetConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "logLevel" -> logLevel.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "logTarget" -> logTarget.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogTargetConfiguration]
     }
@@ -8344,11 +9333,16 @@ package iot {
   }
 
   object LoggingOptionsPayload {
-    def apply(roleArn: AwsArn, logLevel: js.UndefOr[LogLevel] = js.undefined): LoggingOptionsPayload = {
-      val _fields = IndexedSeq[(String, js.Any)]("roleArn" -> roleArn.asInstanceOf[js.Any], "logLevel" -> logLevel.map {
-        x =>
+    def apply(
+        roleArn: AwsArn,
+        logLevel: js.UndefOr[LogLevel] = js.undefined
+    ): LoggingOptionsPayload = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "logLevel" -> logLevel.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoggingOptionsPayload]
     }
@@ -8372,16 +9366,22 @@ package iot {
   }
 
   object MetricValue {
-    def apply(cidrs: js.UndefOr[Cidrs] = js.undefined,
-              count: js.UndefOr[UnsignedLong] = js.undefined,
-              ports: js.UndefOr[Ports] = js.undefined): MetricValue = {
-      val _fields = IndexedSeq[(String, js.Any)]("cidrs" -> cidrs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "count" -> count.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ports" -> ports.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        cidrs: js.UndefOr[Cidrs] = js.undefined,
+        count: js.UndefOr[UnsignedLong] = js.undefined,
+        ports: js.UndefOr[Ports] = js.undefined
+    ): MetricValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cidrs" -> cidrs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "count" -> count.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ports" -> ports.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricValue]
     }
@@ -8398,9 +9398,11 @@ package iot {
   }
 
   object NonCompliantResource {
-    def apply(additionalInfo: js.UndefOr[StringMap] = js.undefined,
-              resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
-              resourceType: js.UndefOr[ResourceType] = js.undefined): NonCompliantResource = {
+    def apply(
+        additionalInfo: js.UndefOr[StringMap] = js.undefined,
+        resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined
+    ): NonCompliantResource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "additionalInfo" -> additionalInfo.map { x =>
           x.asInstanceOf[js.Any]
@@ -8430,11 +9432,13 @@ package iot {
   }
 
   object OTAUpdateFile {
-    def apply(attributes: js.UndefOr[AttributesMap] = js.undefined,
-              codeSigning: js.UndefOr[CodeSigning] = js.undefined,
-              fileLocation: js.UndefOr[FileLocation] = js.undefined,
-              fileName: js.UndefOr[FileName] = js.undefined,
-              fileVersion: js.UndefOr[OTAUpdateFileVersion] = js.undefined): OTAUpdateFile = {
+    def apply(
+        attributes: js.UndefOr[AttributesMap] = js.undefined,
+        codeSigning: js.UndefOr[CodeSigning] = js.undefined,
+        fileLocation: js.UndefOr[FileLocation] = js.undefined,
+        fileName: js.UndefOr[FileName] = js.undefined,
+        fileVersion: js.UndefOr[OTAUpdateFileVersion] = js.undefined
+    ): OTAUpdateFile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributes" -> attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -8479,20 +9483,22 @@ package iot {
   }
 
   object OTAUpdateInfo {
-    def apply(additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
-              awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
-              awsIotJobId: js.UndefOr[AwsIotJobId] = js.undefined,
-              awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
-              creationDate: js.UndefOr[DateType] = js.undefined,
-              description: js.UndefOr[OTAUpdateDescription] = js.undefined,
-              errorInfo: js.UndefOr[ErrorInfo] = js.undefined,
-              lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
-              otaUpdateFiles: js.UndefOr[OTAUpdateFiles] = js.undefined,
-              otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
-              otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined,
-              targetSelection: js.UndefOr[TargetSelection] = js.undefined,
-              targets: js.UndefOr[Targets] = js.undefined): OTAUpdateInfo = {
+    def apply(
+        additionalParameters: js.UndefOr[AdditionalParameterMap] = js.undefined,
+        awsIotJobArn: js.UndefOr[AwsIotJobArn] = js.undefined,
+        awsIotJobId: js.UndefOr[AwsIotJobId] = js.undefined,
+        awsJobExecutionsRolloutConfig: js.UndefOr[AwsJobExecutionsRolloutConfig] = js.undefined,
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        description: js.UndefOr[OTAUpdateDescription] = js.undefined,
+        errorInfo: js.UndefOr[ErrorInfo] = js.undefined,
+        lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
+        otaUpdateFiles: js.UndefOr[OTAUpdateFiles] = js.undefined,
+        otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
+        otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined,
+        targetSelection: js.UndefOr[TargetSelection] = js.undefined,
+        targets: js.UndefOr[Targets] = js.undefined
+    ): OTAUpdateInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "additionalParameters" -> additionalParameters.map { x =>
           x.asInstanceOf[js.Any]
@@ -8562,9 +9568,11 @@ package iot {
   }
 
   object OTAUpdateSummary {
-    def apply(creationDate: js.UndefOr[DateType] = js.undefined,
-              otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
-              otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined): OTAUpdateSummary = {
+    def apply(
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
+        otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined
+    ): OTAUpdateSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -8595,12 +9603,14 @@ package iot {
   }
 
   object OutgoingCertificate {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined,
-              creationDate: js.UndefOr[DateType] = js.undefined,
-              transferDate: js.UndefOr[DateType] = js.undefined,
-              transferMessage: js.UndefOr[Message] = js.undefined,
-              transferredTo: js.UndefOr[AwsAccountId] = js.undefined): OutgoingCertificate = {
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined,
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        transferDate: js.UndefOr[DateType] = js.undefined,
+        transferMessage: js.UndefOr[Message] = js.undefined,
+        transferredTo: js.UndefOr[AwsAccountId] = js.undefined
+    ): OutgoingCertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -8636,13 +9646,18 @@ package iot {
   }
 
   object Policy {
-    def apply(policyArn: js.UndefOr[PolicyArn] = js.undefined,
-              policyName: js.UndefOr[PolicyName] = js.undefined): Policy = {
-      val _fields = IndexedSeq[(String, js.Any)]("policyArn" -> policyArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "policyName" -> policyName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policyArn: js.UndefOr[PolicyArn] = js.undefined,
+        policyName: js.UndefOr[PolicyName] = js.undefined
+    ): Policy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policyArn" -> policyArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "policyName" -> policyName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Policy]
     }
@@ -8659,9 +9674,11 @@ package iot {
   }
 
   object PolicyVersion {
-    def apply(createDate: js.UndefOr[DateType] = js.undefined,
-              isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
-              versionId: js.UndefOr[PolicyVersionId] = js.undefined): PolicyVersion = {
+    def apply(
+        createDate: js.UndefOr[DateType] = js.undefined,
+        isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
+        versionId: js.UndefOr[PolicyVersionId] = js.undefined
+    ): PolicyVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createDate" -> createDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -8688,13 +9705,18 @@ package iot {
   }
 
   object PolicyVersionIdentifier {
-    def apply(policyName: js.UndefOr[PolicyName] = js.undefined,
-              policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined): PolicyVersionIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)]("policyName" -> policyName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "policyVersionId" -> policyVersionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policyName: js.UndefOr[PolicyName] = js.undefined,
+        policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
+    ): PolicyVersionIdentifier = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policyName" -> policyName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "policyVersionId" -> policyVersionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyVersionIdentifier]
     }
@@ -8710,13 +9732,18 @@ package iot {
   }
 
   object PresignedUrlConfig {
-    def apply(expiresInSec: js.UndefOr[ExpiresInSec] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined): PresignedUrlConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("expiresInSec" -> expiresInSec.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "roleArn" -> roleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        expiresInSec: js.UndefOr[ExpiresInSec] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): PresignedUrlConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "expiresInSec" -> expiresInSec.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "roleArn" -> roleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PresignedUrlConfig]
     }
@@ -8731,9 +9758,12 @@ package iot {
   }
 
   object PutItemInput {
-    def apply(tableName: TableName): PutItemInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("tableName" -> tableName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tableName: TableName
+    ): PutItemInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tableName" -> tableName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutItemInput]
     }
@@ -8749,8 +9779,10 @@ package iot {
   }
 
   object RateIncreaseCriteria {
-    def apply(numberOfNotifiedThings: js.UndefOr[NumberOfThings] = js.undefined,
-              numberOfSucceededThings: js.UndefOr[NumberOfThings] = js.undefined): RateIncreaseCriteria = {
+    def apply(
+        numberOfNotifiedThings: js.UndefOr[NumberOfThings] = js.undefined,
+        numberOfSucceededThings: js.UndefOr[NumberOfThings] = js.undefined
+    ): RateIncreaseCriteria = {
       val _fields = IndexedSeq[(String, js.Any)](
         "numberOfNotifiedThings" -> numberOfNotifiedThings.map { x =>
           x.asInstanceOf[js.Any]
@@ -8777,11 +9809,13 @@ package iot {
   }
 
   object RegisterCACertificateRequest {
-    def apply(caCertificate: CertificatePem,
-              verificationCertificate: CertificatePem,
-              allowAutoRegistration: js.UndefOr[AllowAutoRegistration] = js.undefined,
-              registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
-              setAsActive: js.UndefOr[SetAsActive] = js.undefined): RegisterCACertificateRequest = {
+    def apply(
+        caCertificate: CertificatePem,
+        verificationCertificate: CertificatePem,
+        allowAutoRegistration: js.UndefOr[AllowAutoRegistration] = js.undefined,
+        registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
+        setAsActive: js.UndefOr[SetAsActive] = js.undefined
+    ): RegisterCACertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "caCertificate"           -> caCertificate.asInstanceOf[js.Any],
         "verificationCertificate" -> verificationCertificate.asInstanceOf[js.Any],
@@ -8810,13 +9844,18 @@ package iot {
   }
 
   object RegisterCACertificateResponse {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined): RegisterCACertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateArn" -> certificateArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "certificateId" -> certificateId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined
+    ): RegisterCACertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateArn" -> certificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "certificateId" -> certificateId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterCACertificateResponse]
     }
@@ -8834,10 +9873,12 @@ package iot {
   }
 
   object RegisterCertificateRequest {
-    def apply(certificatePem: CertificatePem,
-              caCertificatePem: js.UndefOr[CertificatePem] = js.undefined,
-              setAsActive: js.UndefOr[SetAsActiveFlag] = js.undefined,
-              status: js.UndefOr[CertificateStatus] = js.undefined): RegisterCertificateRequest = {
+    def apply(
+        certificatePem: CertificatePem,
+        caCertificatePem: js.UndefOr[CertificatePem] = js.undefined,
+        setAsActive: js.UndefOr[SetAsActiveFlag] = js.undefined,
+        status: js.UndefOr[CertificateStatus] = js.undefined
+    ): RegisterCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificatePem" -> certificatePem.asInstanceOf[js.Any],
         "caCertificatePem" -> caCertificatePem.map { x =>
@@ -8865,13 +9906,18 @@ package iot {
   }
 
   object RegisterCertificateResponse {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificateId: js.UndefOr[CertificateId] = js.undefined): RegisterCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateArn" -> certificateArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "certificateId" -> certificateId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificateId: js.UndefOr[CertificateId] = js.undefined
+    ): RegisterCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateArn" -> certificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "certificateId" -> certificateId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterCertificateResponse]
     }
@@ -8884,7 +9930,10 @@ package iot {
   }
 
   object RegisterThingRequest {
-    def apply(templateBody: TemplateBody, parameters: js.UndefOr[Parameters] = js.undefined): RegisterThingRequest = {
+    def apply(
+        templateBody: TemplateBody,
+        parameters: js.UndefOr[Parameters] = js.undefined
+    ): RegisterThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "templateBody" -> templateBody.asInstanceOf[js.Any],
         "parameters" -> parameters.map { x =>
@@ -8903,13 +9952,18 @@ package iot {
   }
 
   object RegisterThingResponse {
-    def apply(certificatePem: js.UndefOr[CertificatePem] = js.undefined,
-              resourceArns: js.UndefOr[ResourceArns] = js.undefined): RegisterThingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificatePem" -> certificatePem.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "resourceArns" -> resourceArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificatePem: js.UndefOr[CertificatePem] = js.undefined,
+        resourceArns: js.UndefOr[ResourceArns] = js.undefined
+    ): RegisterThingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificatePem" -> certificatePem.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resourceArns" -> resourceArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterThingResponse]
     }
@@ -8925,13 +9979,18 @@ package iot {
   }
 
   object RegistrationConfig {
-    def apply(roleArn: js.UndefOr[RoleArn] = js.undefined,
-              templateBody: js.UndefOr[TemplateBody] = js.undefined): RegistrationConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("roleArn" -> roleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "templateBody" -> templateBody.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        templateBody: js.UndefOr[TemplateBody] = js.undefined
+    ): RegistrationConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleArn" -> roleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "templateBody" -> templateBody.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegistrationConfig]
     }
@@ -8947,8 +10006,10 @@ package iot {
   }
 
   object RejectCertificateTransferRequest {
-    def apply(certificateId: CertificateId,
-              rejectReason: js.UndefOr[Message] = js.undefined): RejectCertificateTransferRequest = {
+    def apply(
+        certificateId: CertificateId,
+        rejectReason: js.UndefOr[Message] = js.undefined
+    ): RejectCertificateTransferRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateId" -> certificateId.asInstanceOf[js.Any],
         "rejectReason" -> rejectReason.map { x =>
@@ -8971,9 +10032,11 @@ package iot {
   }
 
   object RelatedResource {
-    def apply(additionalInfo: js.UndefOr[StringMap] = js.undefined,
-              resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
-              resourceType: js.UndefOr[ResourceType] = js.undefined): RelatedResource = {
+    def apply(
+        additionalInfo: js.UndefOr[StringMap] = js.undefined,
+        resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined
+    ): RelatedResource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "additionalInfo" -> additionalInfo.map { x =>
           x.asInstanceOf[js.Any]
@@ -8999,10 +10062,12 @@ package iot {
   }
 
   object RemoveThingFromBillingGroupRequest {
-    def apply(billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
-              billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
-              thingArn: js.UndefOr[ThingArn] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): RemoveThingFromBillingGroupRequest = {
+    def apply(
+        billingGroupArn: js.UndefOr[BillingGroupArn] = js.undefined,
+        billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): RemoveThingFromBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupArn" -> billingGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -9026,8 +10091,10 @@ package iot {
   trait RemoveThingFromBillingGroupResponse extends js.Object {}
 
   object RemoveThingFromBillingGroupResponse {
-    def apply(): RemoveThingFromBillingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveThingFromBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveThingFromBillingGroupResponse]
     }
@@ -9042,10 +10109,12 @@ package iot {
   }
 
   object RemoveThingFromThingGroupRequest {
-    def apply(thingArn: js.UndefOr[ThingArn] = js.undefined,
-              thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
-              thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): RemoveThingFromThingGroupRequest = {
+    def apply(
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        thingGroupArn: js.UndefOr[ThingGroupArn] = js.undefined,
+        thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): RemoveThingFromThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingArn" -> thingArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -9069,8 +10138,10 @@ package iot {
   trait RemoveThingFromThingGroupResponse extends js.Object {}
 
   object RemoveThingFromThingGroupResponse {
-    def apply(): RemoveThingFromThingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveThingFromThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveThingFromThingGroupResponse]
     }
@@ -9086,7 +10157,10 @@ package iot {
   }
 
   object ReplaceTopicRuleRequest {
-    def apply(ruleName: RuleName, topicRulePayload: TopicRulePayload): ReplaceTopicRuleRequest = {
+    def apply(
+        ruleName: RuleName,
+        topicRulePayload: TopicRulePayload
+    ): ReplaceTopicRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ruleName"         -> ruleName.asInstanceOf[js.Any],
         "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]
@@ -9113,10 +10187,14 @@ package iot {
   }
 
   object RepublishAction {
-    def apply(roleArn: AwsArn, topic: TopicPattern): RepublishAction = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("roleArn" -> roleArn.asInstanceOf[js.Any], "topic" -> topic.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        roleArn: AwsArn,
+        topic: TopicPattern
+    ): RepublishAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "topic"   -> topic.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RepublishAction]
     }
@@ -9136,12 +10214,14 @@ package iot {
   }
 
   object ResourceIdentifier {
-    def apply(account: js.UndefOr[AwsAccountId] = js.undefined,
-              caCertificateId: js.UndefOr[CertificateId] = js.undefined,
-              clientId: js.UndefOr[ClientId] = js.undefined,
-              cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
-              deviceCertificateId: js.UndefOr[CertificateId] = js.undefined,
-              policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier] = js.undefined): ResourceIdentifier = {
+    def apply(
+        account: js.UndefOr[AwsAccountId] = js.undefined,
+        caCertificateId: js.UndefOr[CertificateId] = js.undefined,
+        clientId: js.UndefOr[ClientId] = js.undefined,
+        cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
+        deviceCertificateId: js.UndefOr[CertificateId] = js.undefined,
+        policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier] = js.undefined
+    ): ResourceIdentifier = {
       val _fields = IndexedSeq[(String, js.Any)](
         "account" -> account.map { x =>
           x.asInstanceOf[js.Any]
@@ -9194,13 +10274,15 @@ package iot {
   }
 
   object RoleAliasDescription {
-    def apply(creationDate: js.UndefOr[DateType] = js.undefined,
-              credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
-              lastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              owner: js.UndefOr[AwsAccountId] = js.undefined,
-              roleAlias: js.UndefOr[RoleAlias] = js.undefined,
-              roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined): RoleAliasDescription = {
+    def apply(
+        creationDate: js.UndefOr[DateType] = js.undefined,
+        credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
+        lastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        owner: js.UndefOr[AwsAccountId] = js.undefined,
+        roleAlias: js.UndefOr[RoleAlias] = js.undefined,
+        roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): RoleAliasDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -9241,10 +10323,12 @@ package iot {
   }
 
   object S3Action {
-    def apply(bucketName: BucketName,
-              key: Key,
-              roleArn: AwsArn,
-              cannedAcl: js.UndefOr[CannedAccessControlList] = js.undefined): S3Action = {
+    def apply(
+        bucketName: BucketName,
+        key: Key,
+        roleArn: AwsArn,
+        cannedAcl: js.UndefOr[CannedAccessControlList] = js.undefined
+    ): S3Action = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bucketName" -> bucketName.asInstanceOf[js.Any],
         "key"        -> key.asInstanceOf[js.Any],
@@ -9268,12 +10352,18 @@ package iot {
   }
 
   object S3Destination {
-    def apply(bucket: js.UndefOr[S3Bucket] = js.undefined, prefix: js.UndefOr[Prefix] = js.undefined): S3Destination = {
-      val _fields = IndexedSeq[(String, js.Any)]("bucket" -> bucket.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "prefix" -> prefix.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bucket: js.UndefOr[S3Bucket] = js.undefined,
+        prefix: js.UndefOr[Prefix] = js.undefined
+    ): S3Destination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bucket" -> bucket.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "prefix" -> prefix.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Destination]
     }
@@ -9290,16 +10380,22 @@ package iot {
   }
 
   object S3Location {
-    def apply(bucket: js.UndefOr[S3Bucket] = js.undefined,
-              key: js.UndefOr[S3Key] = js.undefined,
-              version: js.UndefOr[S3Version] = js.undefined): S3Location = {
-      val _fields = IndexedSeq[(String, js.Any)]("bucket" -> bucket.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "key" -> key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "version" -> version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bucket: js.UndefOr[S3Bucket] = js.undefined,
+        key: js.UndefOr[S3Key] = js.undefined,
+        version: js.UndefOr[S3Version] = js.undefined
+    ): S3Location = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bucket" -> bucket.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "key" -> key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
     }
@@ -9315,10 +10411,14 @@ package iot {
   }
 
   object SalesforceAction {
-    def apply(token: SalesforceToken, url: SalesforceEndpoint): SalesforceAction = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("token" -> token.asInstanceOf[js.Any], "url" -> url.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        token: SalesforceToken,
+        url: SalesforceEndpoint
+    ): SalesforceAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "token" -> token.asInstanceOf[js.Any],
+        "url"   -> url.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SalesforceAction]
     }
@@ -9337,11 +10437,13 @@ package iot {
   }
 
   object ScheduledAuditMetadata {
-    def apply(dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
-              dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
-              frequency: js.UndefOr[AuditFrequency] = js.undefined,
-              scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined,
-              scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined): ScheduledAuditMetadata = {
+    def apply(
+        dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+        dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+        frequency: js.UndefOr[AuditFrequency] = js.undefined,
+        scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined,
+        scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined
+    ): ScheduledAuditMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "dayOfMonth" -> dayOfMonth.map { x =>
           x.asInstanceOf[js.Any]
@@ -9374,11 +10476,13 @@ package iot {
   }
 
   object SearchIndexRequest {
-    def apply(queryString: QueryString,
-              indexName: js.UndefOr[IndexName] = js.undefined,
-              maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              queryVersion: js.UndefOr[QueryVersion] = js.undefined): SearchIndexRequest = {
+    def apply(
+        queryString: QueryString,
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined
+    ): SearchIndexRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "queryString" -> queryString.asInstanceOf[js.Any],
         "indexName" -> indexName.map { x =>
@@ -9407,9 +10511,11 @@ package iot {
   }
 
   object SearchIndexResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              thingGroups: js.UndefOr[ThingGroupDocumentList] = js.undefined,
-              things: js.UndefOr[ThingDocumentList] = js.undefined): SearchIndexResponse = {
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        thingGroups: js.UndefOr[ThingGroupDocumentList] = js.undefined,
+        things: js.UndefOr[ThingDocumentList] = js.undefined
+    ): SearchIndexResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "nextToken" -> nextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -9436,9 +10542,14 @@ package iot {
   }
 
   object SecurityProfileIdentifier {
-    def apply(arn: SecurityProfileArn, name: SecurityProfileName): SecurityProfileIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "name" -> name.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: SecurityProfileArn,
+        name: SecurityProfileName
+    ): SecurityProfileIdentifier = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn"  -> arn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityProfileIdentifier]
     }
@@ -9453,9 +10564,12 @@ package iot {
   }
 
   object SecurityProfileTarget {
-    def apply(arn: SecurityProfileTargetArn): SecurityProfileTarget = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: SecurityProfileTargetArn
+    ): SecurityProfileTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityProfileTarget]
     }
@@ -9471,13 +10585,18 @@ package iot {
   }
 
   object SecurityProfileTargetMapping {
-    def apply(securityProfileIdentifier: js.UndefOr[SecurityProfileIdentifier] = js.undefined,
-              target: js.UndefOr[SecurityProfileTarget] = js.undefined): SecurityProfileTargetMapping = {
-      val _fields = IndexedSeq[(String, js.Any)]("securityProfileIdentifier" -> securityProfileIdentifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "target" -> target.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        securityProfileIdentifier: js.UndefOr[SecurityProfileIdentifier] = js.undefined,
+        target: js.UndefOr[SecurityProfileTarget] = js.undefined
+    ): SecurityProfileTargetMapping = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "securityProfileIdentifier" -> securityProfileIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "target" -> target.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityProfileTargetMapping]
     }
@@ -9489,9 +10608,12 @@ package iot {
   }
 
   object SetDefaultAuthorizerRequest {
-    def apply(authorizerName: AuthorizerName): SetDefaultAuthorizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerName" -> authorizerName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerName: AuthorizerName
+    ): SetDefaultAuthorizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerName" -> authorizerName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDefaultAuthorizerRequest]
     }
@@ -9504,13 +10626,18 @@ package iot {
   }
 
   object SetDefaultAuthorizerResponse {
-    def apply(authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
-              authorizerName: js.UndefOr[AuthorizerName] = js.undefined): SetDefaultAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerArn" -> authorizerArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "authorizerName" -> authorizerName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+        authorizerName: js.UndefOr[AuthorizerName] = js.undefined
+    ): SetDefaultAuthorizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerArn" -> authorizerArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "authorizerName" -> authorizerName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDefaultAuthorizerResponse]
     }
@@ -9526,7 +10653,10 @@ package iot {
   }
 
   object SetDefaultPolicyVersionRequest {
-    def apply(policyName: PolicyName, policyVersionId: PolicyVersionId): SetDefaultPolicyVersionRequest = {
+    def apply(
+        policyName: PolicyName,
+        policyVersionId: PolicyVersionId
+    ): SetDefaultPolicyVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyName"      -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
@@ -9545,9 +10675,12 @@ package iot {
   }
 
   object SetLoggingOptionsRequest {
-    def apply(loggingOptionsPayload: LoggingOptionsPayload): SetLoggingOptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("loggingOptionsPayload" -> loggingOptionsPayload.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        loggingOptionsPayload: LoggingOptionsPayload
+    ): SetLoggingOptionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "loggingOptionsPayload" -> loggingOptionsPayload.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetLoggingOptionsRequest]
     }
@@ -9560,7 +10693,10 @@ package iot {
   }
 
   object SetV2LoggingLevelRequest {
-    def apply(logLevel: LogLevel, logTarget: LogTarget): SetV2LoggingLevelRequest = {
+    def apply(
+        logLevel: LogLevel,
+        logTarget: LogTarget
+    ): SetV2LoggingLevelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "logLevel"  -> logLevel.asInstanceOf[js.Any],
         "logTarget" -> logTarget.asInstanceOf[js.Any]
@@ -9578,9 +10714,11 @@ package iot {
   }
 
   object SetV2LoggingOptionsRequest {
-    def apply(defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
-              disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
-              roleArn: js.UndefOr[AwsArn] = js.undefined): SetV2LoggingOptionsRequest = {
+    def apply(
+        defaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
+        disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
+        roleArn: js.UndefOr[AwsArn] = js.undefined
+    ): SetV2LoggingOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "defaultLogLevel" -> defaultLogLevel.map { x =>
           x.asInstanceOf[js.Any]
@@ -9608,9 +10746,11 @@ package iot {
   }
 
   object SigningProfileParameter {
-    def apply(certificateArn: js.UndefOr[CertificateArn] = js.undefined,
-              certificatePathOnDevice: js.UndefOr[CertificatePathOnDevice] = js.undefined,
-              platform: js.UndefOr[Platform] = js.undefined): SigningProfileParameter = {
+    def apply(
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        certificatePathOnDevice: js.UndefOr[CertificatePathOnDevice] = js.undefined,
+        platform: js.UndefOr[Platform] = js.undefined
+    ): SigningProfileParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -9638,9 +10778,11 @@ package iot {
   }
 
   object SnsAction {
-    def apply(roleArn: AwsArn,
-              targetArn: AwsArn,
-              messageFormat: js.UndefOr[MessageFormat] = js.undefined): SnsAction = {
+    def apply(
+        roleArn: AwsArn,
+        targetArn: AwsArn,
+        messageFormat: js.UndefOr[MessageFormat] = js.undefined
+    ): SnsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "roleArn"   -> roleArn.asInstanceOf[js.Any],
         "targetArn" -> targetArn.asInstanceOf[js.Any],
@@ -9664,7 +10806,11 @@ package iot {
   }
 
   object SqsAction {
-    def apply(queueUrl: QueueUrl, roleArn: AwsArn, useBase64: js.UndefOr[UseBase64] = js.undefined): SqsAction = {
+    def apply(
+        queueUrl: QueueUrl,
+        roleArn: AwsArn,
+        useBase64: js.UndefOr[UseBase64] = js.undefined
+    ): SqsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "queueUrl" -> queueUrl.asInstanceOf[js.Any],
         "roleArn"  -> roleArn.asInstanceOf[js.Any],
@@ -9683,9 +10829,12 @@ package iot {
   }
 
   object StartOnDemandAuditTaskRequest {
-    def apply(targetCheckNames: TargetAuditCheckNames): StartOnDemandAuditTaskRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("targetCheckNames" -> targetCheckNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        targetCheckNames: TargetAuditCheckNames
+    ): StartOnDemandAuditTaskRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "targetCheckNames" -> targetCheckNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartOnDemandAuditTaskRequest]
     }
@@ -9697,10 +10846,14 @@ package iot {
   }
 
   object StartOnDemandAuditTaskResponse {
-    def apply(taskId: js.UndefOr[AuditTaskId] = js.undefined): StartOnDemandAuditTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("taskId" -> taskId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        taskId: js.UndefOr[AuditTaskId] = js.undefined
+    ): StartOnDemandAuditTaskResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "taskId" -> taskId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartOnDemandAuditTaskResponse]
     }
@@ -9717,9 +10870,11 @@ package iot {
   }
 
   object StartSigningJobParameter {
-    def apply(destination: js.UndefOr[Destination] = js.undefined,
-              signingProfileName: js.UndefOr[SigningProfileName] = js.undefined,
-              signingProfileParameter: js.UndefOr[SigningProfileParameter] = js.undefined): StartSigningJobParameter = {
+    def apply(
+        destination: js.UndefOr[Destination] = js.undefined,
+        signingProfileName: js.UndefOr[SigningProfileName] = js.undefined,
+        signingProfileParameter: js.UndefOr[SigningProfileParameter] = js.undefined
+    ): StartSigningJobParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destination" -> destination.map { x =>
           x.asInstanceOf[js.Any]
@@ -9745,10 +10900,12 @@ package iot {
   }
 
   object StartThingRegistrationTaskRequest {
-    def apply(inputFileBucket: RegistryS3BucketName,
-              inputFileKey: RegistryS3KeyName,
-              roleArn: RoleArn,
-              templateBody: TemplateBody): StartThingRegistrationTaskRequest = {
+    def apply(
+        inputFileBucket: RegistryS3BucketName,
+        inputFileKey: RegistryS3KeyName,
+        roleArn: RoleArn,
+        templateBody: TemplateBody
+    ): StartThingRegistrationTaskRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "inputFileBucket" -> inputFileBucket.asInstanceOf[js.Any],
         "inputFileKey"    -> inputFileKey.asInstanceOf[js.Any],
@@ -9766,12 +10923,60 @@ package iot {
   }
 
   object StartThingRegistrationTaskResponse {
-    def apply(taskId: js.UndefOr[TaskId] = js.undefined): StartThingRegistrationTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("taskId" -> taskId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        taskId: js.UndefOr[TaskId] = js.undefined
+    ): StartThingRegistrationTaskResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "taskId" -> taskId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartThingRegistrationTaskResponse]
+    }
+  }
+
+  /**
+    * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.
+    */
+  @js.native
+  trait StatisticalThreshold extends js.Object {
+    var statistic: js.UndefOr[EvaluationStatistic]
+  }
+
+  object StatisticalThreshold {
+    def apply(
+        statistic: js.UndefOr[EvaluationStatistic] = js.undefined
+    ): StatisticalThreshold = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "statistic" -> statistic.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StatisticalThreshold]
+    }
+  }
+
+  /**
+    * A map of key-value pairs for all supported statistics. Currently, only count is supported.
+    */
+  @js.native
+  trait Statistics extends js.Object {
+    var count: js.UndefOr[Count]
+  }
+
+  object Statistics {
+    def apply(
+        count: js.UndefOr[Count] = js.undefined
+    ): Statistics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "count" -> count.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Statistics]
     }
   }
 
@@ -9796,9 +11001,11 @@ package iot {
   }
 
   object StepFunctionsAction {
-    def apply(roleArn: AwsArn,
-              stateMachineName: StateMachineName,
-              executionNamePrefix: js.UndefOr[ExecutionNamePrefix] = js.undefined): StepFunctionsAction = {
+    def apply(
+        roleArn: AwsArn,
+        stateMachineName: StateMachineName,
+        executionNamePrefix: js.UndefOr[ExecutionNamePrefix] = js.undefined
+    ): StepFunctionsAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "roleArn"          -> roleArn.asInstanceOf[js.Any],
         "stateMachineName" -> stateMachineName.asInstanceOf[js.Any],
@@ -9817,9 +11024,12 @@ package iot {
   }
 
   object StopThingRegistrationTaskRequest {
-    def apply(taskId: TaskId): StopThingRegistrationTaskRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("taskId" -> taskId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        taskId: TaskId
+    ): StopThingRegistrationTaskRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "taskId" -> taskId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopThingRegistrationTaskRequest]
     }
@@ -9829,8 +11039,10 @@ package iot {
   trait StopThingRegistrationTaskResponse extends js.Object {}
 
   object StopThingRegistrationTaskResponse {
-    def apply(): StopThingRegistrationTaskResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopThingRegistrationTaskResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopThingRegistrationTaskResponse]
     }
@@ -9846,12 +11058,18 @@ package iot {
   }
 
   object Stream {
-    def apply(fileId: js.UndefOr[FileId] = js.undefined, streamId: js.UndefOr[StreamId] = js.undefined): Stream = {
-      val _fields = IndexedSeq[(String, js.Any)]("fileId" -> fileId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "streamId" -> streamId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        fileId: js.UndefOr[FileId] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined
+    ): Stream = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "fileId" -> fileId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "streamId" -> streamId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Stream]
     }
@@ -9867,13 +11085,18 @@ package iot {
   }
 
   object StreamFile {
-    def apply(fileId: js.UndefOr[FileId] = js.undefined,
-              s3Location: js.UndefOr[S3Location] = js.undefined): StreamFile = {
-      val _fields = IndexedSeq[(String, js.Any)]("fileId" -> fileId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "s3Location" -> s3Location.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        fileId: js.UndefOr[FileId] = js.undefined,
+        s3Location: js.UndefOr[S3Location] = js.undefined
+    ): StreamFile = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "fileId" -> fileId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "s3Location" -> s3Location.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamFile]
     }
@@ -9895,14 +11118,16 @@ package iot {
   }
 
   object StreamInfo {
-    def apply(createdAt: js.UndefOr[DateType] = js.undefined,
-              description: js.UndefOr[StreamDescription] = js.undefined,
-              files: js.UndefOr[StreamFiles] = js.undefined,
-              lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined,
-              streamArn: js.UndefOr[StreamArn] = js.undefined,
-              streamId: js.UndefOr[StreamId] = js.undefined,
-              streamVersion: js.UndefOr[StreamVersion] = js.undefined): StreamInfo = {
+    def apply(
+        createdAt: js.UndefOr[DateType] = js.undefined,
+        description: js.UndefOr[StreamDescription] = js.undefined,
+        files: js.UndefOr[StreamFiles] = js.undefined,
+        lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        streamArn: js.UndefOr[StreamArn] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined,
+        streamVersion: js.UndefOr[StreamVersion] = js.undefined
+    ): StreamInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdAt" -> createdAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -9946,10 +11171,12 @@ package iot {
   }
 
   object StreamSummary {
-    def apply(description: js.UndefOr[StreamDescription] = js.undefined,
-              streamArn: js.UndefOr[StreamArn] = js.undefined,
-              streamId: js.UndefOr[StreamId] = js.undefined,
-              streamVersion: js.UndefOr[StreamVersion] = js.undefined): StreamSummary = {
+    def apply(
+        description: js.UndefOr[StreamDescription] = js.undefined,
+        streamArn: js.UndefOr[StreamArn] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined,
+        streamVersion: js.UndefOr[StreamVersion] = js.undefined
+    ): StreamSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -9979,12 +11206,18 @@ package iot {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[TagKey] = js.undefined, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -9997,7 +11230,10 @@ package iot {
   }
 
   object TagResourceRequest {
-    def apply(resourceArn: ResourceArn, tags: TagList): TagResourceRequest = {
+    def apply(
+        resourceArn: ResourceArn,
+        tags: TagList
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
@@ -10011,8 +11247,10 @@ package iot {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -10088,12 +11326,14 @@ package iot {
   }
 
   object TestAuthorizationRequest {
-    def apply(authInfos: AuthInfos,
-              clientId: js.UndefOr[ClientId] = js.undefined,
-              cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
-              policyNamesToAdd: js.UndefOr[PolicyNames] = js.undefined,
-              policyNamesToSkip: js.UndefOr[PolicyNames] = js.undefined,
-              principal: js.UndefOr[Principal] = js.undefined): TestAuthorizationRequest = {
+    def apply(
+        authInfos: AuthInfos,
+        clientId: js.UndefOr[ClientId] = js.undefined,
+        cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
+        policyNamesToAdd: js.UndefOr[PolicyNames] = js.undefined,
+        policyNamesToSkip: js.UndefOr[PolicyNames] = js.undefined,
+        principal: js.UndefOr[Principal] = js.undefined
+    ): TestAuthorizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authInfos" -> authInfos.asInstanceOf[js.Any],
         "clientId" -> clientId.map { x =>
@@ -10123,10 +11363,14 @@ package iot {
   }
 
   object TestAuthorizationResponse {
-    def apply(authResults: js.UndefOr[AuthResults] = js.undefined): TestAuthorizationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authResults" -> authResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authResults: js.UndefOr[AuthResults] = js.undefined
+    ): TestAuthorizationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authResults" -> authResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestAuthorizationResponse]
     }
@@ -10140,9 +11384,11 @@ package iot {
   }
 
   object TestInvokeAuthorizerRequest {
-    def apply(authorizerName: AuthorizerName,
-              token: Token,
-              tokenSignature: TokenSignature): TestInvokeAuthorizerRequest = {
+    def apply(
+        authorizerName: AuthorizerName,
+        token: Token,
+        tokenSignature: TokenSignature
+    ): TestInvokeAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerName" -> authorizerName.asInstanceOf[js.Any],
         "token"          -> token.asInstanceOf[js.Any],
@@ -10163,11 +11409,13 @@ package iot {
   }
 
   object TestInvokeAuthorizerResponse {
-    def apply(disconnectAfterInSeconds: js.UndefOr[Seconds] = js.undefined,
-              isAuthenticated: js.UndefOr[IsAuthenticated] = js.undefined,
-              policyDocuments: js.UndefOr[PolicyDocuments] = js.undefined,
-              principalId: js.UndefOr[PrincipalId] = js.undefined,
-              refreshAfterInSeconds: js.UndefOr[Seconds] = js.undefined): TestInvokeAuthorizerResponse = {
+    def apply(
+        disconnectAfterInSeconds: js.UndefOr[Seconds] = js.undefined,
+        isAuthenticated: js.UndefOr[IsAuthenticated] = js.undefined,
+        policyDocuments: js.UndefOr[PolicyDocuments] = js.undefined,
+        principalId: js.UndefOr[PrincipalId] = js.undefined,
+        refreshAfterInSeconds: js.UndefOr[Seconds] = js.undefined
+    ): TestInvokeAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "disconnectAfterInSeconds" -> disconnectAfterInSeconds.map { x =>
           x.asInstanceOf[js.Any]
@@ -10203,11 +11451,13 @@ package iot {
   }
 
   object ThingAttribute {
-    def apply(attributes: js.UndefOr[Attributes] = js.undefined,
-              thingArn: js.UndefOr[ThingArn] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-              version: js.UndefOr[Version] = js.undefined): ThingAttribute = {
+    def apply(
+        attributes: js.UndefOr[Attributes] = js.undefined,
+        thingArn: js.UndefOr[ThingArn] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+        version: js.UndefOr[Version] = js.undefined
+    ): ThingAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributes" -> attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -10240,13 +11490,18 @@ package iot {
   }
 
   object ThingConnectivity {
-    def apply(connected: js.UndefOr[Boolean] = js.undefined,
-              timestamp: js.UndefOr[ConnectivityTimestamp] = js.undefined): ThingConnectivity = {
-      val _fields = IndexedSeq[(String, js.Any)]("connected" -> connected.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "timestamp" -> timestamp.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connected: js.UndefOr[Boolean] = js.undefined,
+        timestamp: js.UndefOr[ConnectivityTimestamp] = js.undefined
+    ): ThingConnectivity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connected" -> connected.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "timestamp" -> timestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingConnectivity]
     }
@@ -10274,13 +11529,15 @@ package iot {
   }
 
   object ThingDocument {
-    def apply(attributes: js.UndefOr[Attributes] = js.undefined,
-              connectivity: js.UndefOr[ThingConnectivity] = js.undefined,
-              shadow: js.UndefOr[JsonDocument] = js.undefined,
-              thingGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
-              thingId: js.UndefOr[ThingId] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): ThingDocument = {
+    def apply(
+        attributes: js.UndefOr[Attributes] = js.undefined,
+        connectivity: js.UndefOr[ThingConnectivity] = js.undefined,
+        shadow: js.UndefOr[JsonDocument] = js.undefined,
+        thingGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
+        thingId: js.UndefOr[ThingId] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
+    ): ThingDocument = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributes" -> attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -10322,11 +11579,13 @@ package iot {
   }
 
   object ThingGroupDocument {
-    def apply(attributes: js.UndefOr[Attributes] = js.undefined,
-              parentGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
-              thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined,
-              thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
-              thingGroupName: js.UndefOr[ThingGroupName] = js.undefined): ThingGroupDocument = {
+    def apply(
+        attributes: js.UndefOr[Attributes] = js.undefined,
+        parentGroupNames: js.UndefOr[ThingGroupNameList] = js.undefined,
+        thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined,
+        thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
+        thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
+    ): ThingGroupDocument = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributes" -> attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -10358,10 +11617,12 @@ package iot {
   }
 
   object ThingGroupIndexingConfiguration {
-    def apply(thingGroupIndexingMode: ThingGroupIndexingMode): ThingGroupIndexingConfiguration = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("thingGroupIndexingMode" -> thingGroupIndexingMode.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        thingGroupIndexingMode: ThingGroupIndexingMode
+    ): ThingGroupIndexingConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "thingGroupIndexingMode" -> thingGroupIndexingMode.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingGroupIndexingConfiguration]
     }
@@ -10385,9 +11646,11 @@ package iot {
   }
 
   object ThingGroupMetadata {
-    def apply(creationDate: js.UndefOr[CreationDate] = js.undefined,
-              parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
-              rootToParentThingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined): ThingGroupMetadata = {
+    def apply(
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
+        rootToParentThingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
+    ): ThingGroupMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -10414,13 +11677,18 @@ package iot {
   }
 
   object ThingGroupProperties {
-    def apply(attributePayload: js.UndefOr[AttributePayload] = js.undefined,
-              thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined): ThingGroupProperties = {
-      val _fields = IndexedSeq[(String, js.Any)]("attributePayload" -> attributePayload.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "thingGroupDescription" -> thingGroupDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attributePayload: js.UndefOr[AttributePayload] = js.undefined,
+        thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined
+    ): ThingGroupProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attributePayload" -> attributePayload.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "thingGroupDescription" -> thingGroupDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThingGroupProperties]
     }
@@ -10471,10 +11739,12 @@ package iot {
   }
 
   object ThingTypeDefinition {
-    def apply(thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
-              thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
-              thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined): ThingTypeDefinition = {
+    def apply(
+        thingTypeArn: js.UndefOr[ThingTypeArn] = js.undefined,
+        thingTypeMetadata: js.UndefOr[ThingTypeMetadata] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
+        thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined
+    ): ThingTypeDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingTypeArn" -> thingTypeArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -10505,9 +11775,11 @@ package iot {
   }
 
   object ThingTypeMetadata {
-    def apply(creationDate: js.UndefOr[CreationDate] = js.undefined,
-              deprecated: js.UndefOr[Boolean] = js.undefined,
-              deprecationDate: js.UndefOr[DeprecationDate] = js.undefined): ThingTypeMetadata = {
+    def apply(
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        deprecated: js.UndefOr[Boolean] = js.undefined,
+        deprecationDate: js.UndefOr[DeprecationDate] = js.undefined
+    ): ThingTypeMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "creationDate" -> creationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -10534,8 +11806,10 @@ package iot {
   }
 
   object ThingTypeProperties {
-    def apply(searchableAttributes: js.UndefOr[SearchableAttributes] = js.undefined,
-              thingTypeDescription: js.UndefOr[ThingTypeDescription] = js.undefined): ThingTypeProperties = {
+    def apply(
+        searchableAttributes: js.UndefOr[SearchableAttributes] = js.undefined,
+        thingTypeDescription: js.UndefOr[ThingTypeDescription] = js.undefined
+    ): ThingTypeProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
         "searchableAttributes" -> searchableAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -10558,10 +11832,14 @@ package iot {
   }
 
   object TimeoutConfig {
-    def apply(inProgressTimeoutInMinutes: js.UndefOr[InProgressTimeoutInMinutes] = js.undefined): TimeoutConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("inProgressTimeoutInMinutes" -> inProgressTimeoutInMinutes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        inProgressTimeoutInMinutes: js.UndefOr[InProgressTimeoutInMinutes] = js.undefined
+    ): TimeoutConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "inProgressTimeoutInMinutes" -> inProgressTimeoutInMinutes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeoutConfig]
     }
@@ -10583,14 +11861,16 @@ package iot {
   }
 
   object TopicRule {
-    def apply(actions: js.UndefOr[ActionList] = js.undefined,
-              awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion] = js.undefined,
-              createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined,
-              errorAction: js.UndefOr[Action] = js.undefined,
-              ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
-              ruleName: js.UndefOr[RuleName] = js.undefined,
-              sql: js.UndefOr[SQL] = js.undefined): TopicRule = {
+    def apply(
+        actions: js.UndefOr[ActionList] = js.undefined,
+        awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion] = js.undefined,
+        createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        errorAction: js.UndefOr[Action] = js.undefined,
+        ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
+        ruleName: js.UndefOr[RuleName] = js.undefined,
+        sql: js.UndefOr[SQL] = js.undefined
+    ): TopicRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "actions" -> actions.map { x =>
           x.asInstanceOf[js.Any]
@@ -10635,11 +11915,13 @@ package iot {
   }
 
   object TopicRuleListItem {
-    def apply(createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
-              ruleArn: js.UndefOr[RuleArn] = js.undefined,
-              ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
-              ruleName: js.UndefOr[RuleName] = js.undefined,
-              topicPattern: js.UndefOr[TopicPattern] = js.undefined): TopicRuleListItem = {
+    def apply(
+        createdAt: js.UndefOr[CreatedAtDate] = js.undefined,
+        ruleArn: js.UndefOr[RuleArn] = js.undefined,
+        ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
+        ruleName: js.UndefOr[RuleName] = js.undefined,
+        topicPattern: js.UndefOr[TopicPattern] = js.undefined
+    ): TopicRuleListItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdAt" -> createdAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -10676,12 +11958,14 @@ package iot {
   }
 
   object TopicRulePayload {
-    def apply(actions: ActionList,
-              sql: SQL,
-              awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined,
-              errorAction: js.UndefOr[Action] = js.undefined,
-              ruleDisabled: js.UndefOr[IsDisabled] = js.undefined): TopicRulePayload = {
+    def apply(
+        actions: ActionList,
+        sql: SQL,
+        awsIotSqlVersion: js.UndefOr[AwsIotSqlVersion] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        errorAction: js.UndefOr[Action] = js.undefined,
+        ruleDisabled: js.UndefOr[IsDisabled] = js.undefined
+    ): TopicRulePayload = {
       val _fields = IndexedSeq[(String, js.Any)](
         "actions" -> actions.asInstanceOf[js.Any],
         "sql"     -> sql.asInstanceOf[js.Any],
@@ -10714,9 +11998,11 @@ package iot {
   }
 
   object TransferCertificateRequest {
-    def apply(certificateId: CertificateId,
-              targetAwsAccount: AwsAccountId,
-              transferMessage: js.UndefOr[Message] = js.undefined): TransferCertificateRequest = {
+    def apply(
+        certificateId: CertificateId,
+        targetAwsAccount: AwsAccountId,
+        transferMessage: js.UndefOr[Message] = js.undefined
+    ): TransferCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateId"    -> certificateId.asInstanceOf[js.Any],
         "targetAwsAccount" -> targetAwsAccount.asInstanceOf[js.Any],
@@ -10738,10 +12024,14 @@ package iot {
   }
 
   object TransferCertificateResponse {
-    def apply(transferredCertificateArn: js.UndefOr[CertificateArn] = js.undefined): TransferCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("transferredCertificateArn" -> transferredCertificateArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        transferredCertificateArn: js.UndefOr[CertificateArn] = js.undefined
+    ): TransferCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "transferredCertificateArn" -> transferredCertificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransferCertificateResponse]
     }
@@ -10760,11 +12050,13 @@ package iot {
   }
 
   object TransferData {
-    def apply(acceptDate: js.UndefOr[DateType] = js.undefined,
-              rejectDate: js.UndefOr[DateType] = js.undefined,
-              rejectReason: js.UndefOr[Message] = js.undefined,
-              transferDate: js.UndefOr[DateType] = js.undefined,
-              transferMessage: js.UndefOr[Message] = js.undefined): TransferData = {
+    def apply(
+        acceptDate: js.UndefOr[DateType] = js.undefined,
+        rejectDate: js.UndefOr[DateType] = js.undefined,
+        rejectReason: js.UndefOr[Message] = js.undefined,
+        transferDate: js.UndefOr[DateType] = js.undefined,
+        transferMessage: js.UndefOr[Message] = js.undefined
+    ): TransferData = {
       val _fields = IndexedSeq[(String, js.Any)](
         "acceptDate" -> acceptDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -10794,7 +12086,10 @@ package iot {
   }
 
   object UntagResourceRequest {
-    def apply(resourceArn: ResourceArn, tagKeys: TagKeyList): UntagResourceRequest = {
+    def apply(
+        resourceArn: ResourceArn,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
@@ -10808,8 +12103,10 @@ package iot {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
@@ -10823,9 +12120,11 @@ package iot {
   }
 
   object UpdateAccountAuditConfigurationRequest {
-    def apply(auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
-              auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined): UpdateAccountAuditConfigurationRequest = {
+    def apply(
+        auditCheckConfigurations: js.UndefOr[AuditCheckConfigurations] = js.undefined,
+        auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): UpdateAccountAuditConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "auditCheckConfigurations" -> auditCheckConfigurations.map { x =>
           x.asInstanceOf[js.Any]
@@ -10846,8 +12145,10 @@ package iot {
   trait UpdateAccountAuditConfigurationResponse extends js.Object {}
 
   object UpdateAccountAuditConfigurationResponse {
-    def apply(): UpdateAccountAuditConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateAccountAuditConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAccountAuditConfigurationResponse]
     }
@@ -10863,11 +12164,13 @@ package iot {
   }
 
   object UpdateAuthorizerRequest {
-    def apply(authorizerName: AuthorizerName,
-              authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
-              status: js.UndefOr[AuthorizerStatus] = js.undefined,
-              tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
-              tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined): UpdateAuthorizerRequest = {
+    def apply(
+        authorizerName: AuthorizerName,
+        authorizerFunctionArn: js.UndefOr[AuthorizerFunctionArn] = js.undefined,
+        status: js.UndefOr[AuthorizerStatus] = js.undefined,
+        tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
+        tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined
+    ): UpdateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerName" -> authorizerName.asInstanceOf[js.Any],
         "authorizerFunctionArn" -> authorizerFunctionArn.map { x =>
@@ -10895,13 +12198,18 @@ package iot {
   }
 
   object UpdateAuthorizerResponse {
-    def apply(authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
-              authorizerName: js.UndefOr[AuthorizerName] = js.undefined): UpdateAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizerArn" -> authorizerArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "authorizerName" -> authorizerName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
+        authorizerName: js.UndefOr[AuthorizerName] = js.undefined
+    ): UpdateAuthorizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizerArn" -> authorizerArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "authorizerName" -> authorizerName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAuthorizerResponse]
     }
@@ -10915,9 +12223,11 @@ package iot {
   }
 
   object UpdateBillingGroupRequest {
-    def apply(billingGroupName: BillingGroupName,
-              billingGroupProperties: BillingGroupProperties,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): UpdateBillingGroupRequest = {
+    def apply(
+        billingGroupName: BillingGroupName,
+        billingGroupProperties: BillingGroupProperties,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
+    ): UpdateBillingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "billingGroupName"       -> billingGroupName.asInstanceOf[js.Any],
         "billingGroupProperties" -> billingGroupProperties.asInstanceOf[js.Any],
@@ -10936,10 +12246,14 @@ package iot {
   }
 
   object UpdateBillingGroupResponse {
-    def apply(version: js.UndefOr[Version] = js.undefined): UpdateBillingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("version" -> version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        version: js.UndefOr[Version] = js.undefined
+    ): UpdateBillingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBillingGroupResponse]
     }
@@ -10958,11 +12272,13 @@ package iot {
   }
 
   object UpdateCACertificateRequest {
-    def apply(certificateId: CertificateId,
-              newAutoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
-              newStatus: js.UndefOr[CACertificateStatus] = js.undefined,
-              registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
-              removeAutoRegistration: js.UndefOr[RemoveAutoRegistration] = js.undefined): UpdateCACertificateRequest = {
+    def apply(
+        certificateId: CertificateId,
+        newAutoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
+        newStatus: js.UndefOr[CACertificateStatus] = js.undefined,
+        registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
+        removeAutoRegistration: js.UndefOr[RemoveAutoRegistration] = js.undefined
+    ): UpdateCACertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateId" -> certificateId.asInstanceOf[js.Any],
         "newAutoRegistrationStatus" -> newAutoRegistrationStatus.map { x =>
@@ -10993,7 +12309,10 @@ package iot {
   }
 
   object UpdateCertificateRequest {
-    def apply(certificateId: CertificateId, newStatus: CertificateStatus): UpdateCertificateRequest = {
+    def apply(
+        certificateId: CertificateId,
+        newStatus: CertificateStatus
+    ): UpdateCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateId" -> certificateId.asInstanceOf[js.Any],
         "newStatus"     -> newStatus.asInstanceOf[js.Any]
@@ -11014,12 +12333,14 @@ package iot {
   }
 
   object UpdateDynamicThingGroupRequest {
-    def apply(thingGroupName: ThingGroupName,
-              thingGroupProperties: ThingGroupProperties,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
-              indexName: js.UndefOr[IndexName] = js.undefined,
-              queryString: js.UndefOr[QueryString] = js.undefined,
-              queryVersion: js.UndefOr[QueryVersion] = js.undefined): UpdateDynamicThingGroupRequest = {
+    def apply(
+        thingGroupName: ThingGroupName,
+        thingGroupProperties: ThingGroupProperties,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
+        indexName: js.UndefOr[IndexName] = js.undefined,
+        queryString: js.UndefOr[QueryString] = js.undefined,
+        queryVersion: js.UndefOr[QueryVersion] = js.undefined
+    ): UpdateDynamicThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName"       -> thingGroupName.asInstanceOf[js.Any],
         "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any],
@@ -11047,10 +12368,14 @@ package iot {
   }
 
   object UpdateDynamicThingGroupResponse {
-    def apply(version: js.UndefOr[Version] = js.undefined): UpdateDynamicThingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("version" -> version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        version: js.UndefOr[Version] = js.undefined
+    ): UpdateDynamicThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDynamicThingGroupResponse]
     }
@@ -11062,10 +12387,14 @@ package iot {
   }
 
   object UpdateEventConfigurationsRequest {
-    def apply(eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined): UpdateEventConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("eventConfigurations" -> eventConfigurations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined
+    ): UpdateEventConfigurationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "eventConfigurations" -> eventConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEventConfigurationsRequest]
     }
@@ -11075,8 +12404,10 @@ package iot {
   trait UpdateEventConfigurationsResponse extends js.Object {}
 
   object UpdateEventConfigurationsResponse {
-    def apply(): UpdateEventConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateEventConfigurationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEventConfigurationsResponse]
     }
@@ -11110,8 +12441,10 @@ package iot {
   trait UpdateIndexingConfigurationResponse extends js.Object {}
 
   object UpdateIndexingConfigurationResponse {
-    def apply(): UpdateIndexingConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateIndexingConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIndexingConfigurationResponse]
     }
@@ -11128,12 +12461,14 @@ package iot {
   }
 
   object UpdateJobRequest {
-    def apply(jobId: JobId,
-              abortConfig: js.UndefOr[AbortConfig] = js.undefined,
-              description: js.UndefOr[JobDescription] = js.undefined,
-              jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
-              presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
-              timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined): UpdateJobRequest = {
+    def apply(
+        jobId: JobId,
+        abortConfig: js.UndefOr[AbortConfig] = js.undefined,
+        description: js.UndefOr[JobDescription] = js.undefined,
+        jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
+        presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
+        timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
+    ): UpdateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId" -> jobId.asInstanceOf[js.Any],
         "abortConfig" -> abortConfig.map { x =>
@@ -11165,9 +12500,11 @@ package iot {
   }
 
   object UpdateRoleAliasRequest {
-    def apply(roleAlias: RoleAlias,
-              credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined): UpdateRoleAliasRequest = {
+    def apply(
+        roleAlias: RoleAlias,
+        credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): UpdateRoleAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "roleAlias" -> roleAlias.asInstanceOf[js.Any],
         "credentialDurationSeconds" -> credentialDurationSeconds.map { x =>
@@ -11189,13 +12526,18 @@ package iot {
   }
 
   object UpdateRoleAliasResponse {
-    def apply(roleAlias: js.UndefOr[RoleAlias] = js.undefined,
-              roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined): UpdateRoleAliasResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("roleAlias" -> roleAlias.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "roleAliasArn" -> roleAliasArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        roleAlias: js.UndefOr[RoleAlias] = js.undefined,
+        roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined
+    ): UpdateRoleAliasResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "roleAlias" -> roleAlias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "roleAliasArn" -> roleAliasArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRoleAliasResponse]
     }
@@ -11211,11 +12553,13 @@ package iot {
   }
 
   object UpdateScheduledAuditRequest {
-    def apply(scheduledAuditName: ScheduledAuditName,
-              dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
-              dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
-              frequency: js.UndefOr[AuditFrequency] = js.undefined,
-              targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined): UpdateScheduledAuditRequest = {
+    def apply(
+        scheduledAuditName: ScheduledAuditName,
+        dayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+        dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+        frequency: js.UndefOr[AuditFrequency] = js.undefined,
+        targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined
+    ): UpdateScheduledAuditRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any],
         "dayOfMonth" -> dayOfMonth.map { x =>
@@ -11242,10 +12586,14 @@ package iot {
   }
 
   object UpdateScheduledAuditResponse {
-    def apply(scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined): UpdateScheduledAuditResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("scheduledAuditArn" -> scheduledAuditArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined
+    ): UpdateScheduledAuditResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "scheduledAuditArn" -> scheduledAuditArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateScheduledAuditResponse]
     }
@@ -11254,8 +12602,12 @@ package iot {
   @js.native
   trait UpdateSecurityProfileRequest extends js.Object {
     var securityProfileName: SecurityProfileName
+    var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
     var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
+    var deleteAdditionalMetricsToRetain: js.UndefOr[DeleteAdditionalMetricsToRetain]
+    var deleteAlertTargets: js.UndefOr[DeleteAlertTargets]
+    var deleteBehaviors: js.UndefOr[DeleteBehaviors]
     var expectedVersion: js.UndefOr[OptionalVersion]
     var securityProfileDescription: js.UndefOr[SecurityProfileDescription]
   }
@@ -11263,17 +12615,33 @@ package iot {
   object UpdateSecurityProfileRequest {
     def apply(
         securityProfileName: SecurityProfileName,
+        additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
         alertTargets: js.UndefOr[AlertTargets] = js.undefined,
         behaviors: js.UndefOr[Behaviors] = js.undefined,
+        deleteAdditionalMetricsToRetain: js.UndefOr[DeleteAdditionalMetricsToRetain] = js.undefined,
+        deleteAlertTargets: js.UndefOr[DeleteAlertTargets] = js.undefined,
+        deleteBehaviors: js.UndefOr[DeleteBehaviors] = js.undefined,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
         securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined
     ): UpdateSecurityProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any],
+        "additionalMetricsToRetain" -> additionalMetricsToRetain.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "alertTargets" -> alertTargets.map { x =>
           x.asInstanceOf[js.Any]
         },
         "behaviors" -> behaviors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deleteAdditionalMetricsToRetain" -> deleteAdditionalMetricsToRetain.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deleteAlertTargets" -> deleteAlertTargets.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deleteBehaviors" -> deleteBehaviors.map { x =>
           x.asInstanceOf[js.Any]
         },
         "expectedVersion" -> expectedVersion.map { x =>
@@ -11290,6 +12658,7 @@ package iot {
 
   @js.native
   trait UpdateSecurityProfileResponse extends js.Object {
+    var additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList]
     var alertTargets: js.UndefOr[AlertTargets]
     var behaviors: js.UndefOr[Behaviors]
     var creationDate: js.UndefOr[Timestamp]
@@ -11301,15 +12670,21 @@ package iot {
   }
 
   object UpdateSecurityProfileResponse {
-    def apply(alertTargets: js.UndefOr[AlertTargets] = js.undefined,
-              behaviors: js.UndefOr[Behaviors] = js.undefined,
-              creationDate: js.UndefOr[Timestamp] = js.undefined,
-              lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
-              securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
-              securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
-              securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-              version: js.UndefOr[Version] = js.undefined): UpdateSecurityProfileResponse = {
+    def apply(
+        additionalMetricsToRetain: js.UndefOr[AdditionalMetricsToRetainList] = js.undefined,
+        alertTargets: js.UndefOr[AlertTargets] = js.undefined,
+        behaviors: js.UndefOr[Behaviors] = js.undefined,
+        creationDate: js.UndefOr[Timestamp] = js.undefined,
+        lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
+        securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
+        securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        version: js.UndefOr[Version] = js.undefined
+    ): UpdateSecurityProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "additionalMetricsToRetain" -> additionalMetricsToRetain.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "alertTargets" -> alertTargets.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -11349,10 +12724,12 @@ package iot {
   }
 
   object UpdateStreamRequest {
-    def apply(streamId: StreamId,
-              description: js.UndefOr[StreamDescription] = js.undefined,
-              files: js.UndefOr[StreamFiles] = js.undefined,
-              roleArn: js.UndefOr[RoleArn] = js.undefined): UpdateStreamRequest = {
+    def apply(
+        streamId: StreamId,
+        description: js.UndefOr[StreamDescription] = js.undefined,
+        files: js.UndefOr[StreamFiles] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
+    ): UpdateStreamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "streamId" -> streamId.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -11379,10 +12756,12 @@ package iot {
   }
 
   object UpdateStreamResponse {
-    def apply(description: js.UndefOr[StreamDescription] = js.undefined,
-              streamArn: js.UndefOr[StreamArn] = js.undefined,
-              streamId: js.UndefOr[StreamId] = js.undefined,
-              streamVersion: js.UndefOr[StreamVersion] = js.undefined): UpdateStreamResponse = {
+    def apply(
+        description: js.UndefOr[StreamDescription] = js.undefined,
+        streamArn: js.UndefOr[StreamArn] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined,
+        streamVersion: js.UndefOr[StreamVersion] = js.undefined
+    ): UpdateStreamResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -11410,9 +12789,11 @@ package iot {
   }
 
   object UpdateThingGroupRequest {
-    def apply(thingGroupName: ThingGroupName,
-              thingGroupProperties: ThingGroupProperties,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined): UpdateThingGroupRequest = {
+    def apply(
+        thingGroupName: ThingGroupName,
+        thingGroupProperties: ThingGroupProperties,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
+    ): UpdateThingGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingGroupName"       -> thingGroupName.asInstanceOf[js.Any],
         "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any],
@@ -11431,10 +12812,14 @@ package iot {
   }
 
   object UpdateThingGroupResponse {
-    def apply(version: js.UndefOr[Version] = js.undefined): UpdateThingGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("version" -> version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        version: js.UndefOr[Version] = js.undefined
+    ): UpdateThingGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "version" -> version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThingGroupResponse]
     }
@@ -11449,10 +12834,12 @@ package iot {
   }
 
   object UpdateThingGroupsForThingRequest {
-    def apply(overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
-              thingGroupsToAdd: js.UndefOr[ThingGroupList] = js.undefined,
-              thingGroupsToRemove: js.UndefOr[ThingGroupList] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined): UpdateThingGroupsForThingRequest = {
+    def apply(
+        overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined,
+        thingGroupsToAdd: js.UndefOr[ThingGroupList] = js.undefined,
+        thingGroupsToRemove: js.UndefOr[ThingGroupList] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined
+    ): UpdateThingGroupsForThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "overrideDynamicGroups" -> overrideDynamicGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -11476,8 +12863,10 @@ package iot {
   trait UpdateThingGroupsForThingResponse extends js.Object {}
 
   object UpdateThingGroupsForThingResponse {
-    def apply(): UpdateThingGroupsForThingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateThingGroupsForThingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThingGroupsForThingResponse]
     }
@@ -11496,11 +12885,13 @@ package iot {
   }
 
   object UpdateThingRequest {
-    def apply(thingName: ThingName,
-              attributePayload: js.UndefOr[AttributePayload] = js.undefined,
-              expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
-              removeThingType: js.UndefOr[RemoveThingType] = js.undefined,
-              thingTypeName: js.UndefOr[ThingTypeName] = js.undefined): UpdateThingRequest = {
+    def apply(
+        thingName: ThingName,
+        attributePayload: js.UndefOr[AttributePayload] = js.undefined,
+        expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
+        removeThingType: js.UndefOr[RemoveThingType] = js.undefined,
+        thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
+    ): UpdateThingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "thingName" -> thingName.asInstanceOf[js.Any],
         "attributePayload" -> attributePayload.map { x =>
@@ -11528,8 +12919,10 @@ package iot {
   trait UpdateThingResponse extends js.Object {}
 
   object UpdateThingResponse {
-    def apply(): UpdateThingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateThingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThingResponse]
     }
@@ -11541,9 +12934,12 @@ package iot {
   }
 
   object ValidateSecurityProfileBehaviorsRequest {
-    def apply(behaviors: Behaviors): ValidateSecurityProfileBehaviorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("behaviors" -> behaviors.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        behaviors: Behaviors
+    ): ValidateSecurityProfileBehaviorsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "behaviors" -> behaviors.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateSecurityProfileBehaviorsRequest]
     }
@@ -11560,11 +12956,14 @@ package iot {
         valid: js.UndefOr[Valid] = js.undefined,
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined
     ): ValidateSecurityProfileBehaviorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("valid" -> valid.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "validationErrors" -> validationErrors.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "valid" -> valid.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "validationErrors" -> validationErrors.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateSecurityProfileBehaviorsResponse]
     }
@@ -11579,10 +12978,14 @@ package iot {
   }
 
   object ValidationError {
-    def apply(errorMessage: js.UndefOr[ErrorMessage] = js.undefined): ValidationError = {
-      val _fields = IndexedSeq[(String, js.Any)]("errorMessage" -> errorMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined
+    ): ValidationError = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "errorMessage" -> errorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidationError]
     }
@@ -11603,13 +13006,15 @@ package iot {
   }
 
   object ViolationEvent {
-    def apply(behavior: js.UndefOr[Behavior] = js.undefined,
-              metricValue: js.UndefOr[MetricValue] = js.undefined,
-              securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
-              thingName: js.UndefOr[ThingName] = js.undefined,
-              violationEventTime: js.UndefOr[Timestamp] = js.undefined,
-              violationEventType: js.UndefOr[ViolationEventType] = js.undefined,
-              violationId: js.UndefOr[ViolationId] = js.undefined): ViolationEvent = {
+    def apply(
+        behavior: js.UndefOr[Behavior] = js.undefined,
+        metricValue: js.UndefOr[MetricValue] = js.undefined,
+        securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
+        thingName: js.UndefOr[ThingName] = js.undefined,
+        violationEventTime: js.UndefOr[Timestamp] = js.undefined,
+        violationEventType: js.UndefOr[ViolationEventType] = js.undefined,
+        violationId: js.UndefOr[ViolationId] = js.undefined
+    ): ViolationEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
         "behavior" -> behavior.map { x =>
           x.asInstanceOf[js.Any]

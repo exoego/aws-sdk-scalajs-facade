@@ -40,11 +40,13 @@ package marketplaceentitlementservice {
   }
 
   object Entitlement {
-    def apply(CustomerIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
-              Dimension: js.UndefOr[NonEmptyString] = js.undefined,
-              ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
-              ProductCode: js.UndefOr[ProductCode] = js.undefined,
-              Value: js.UndefOr[EntitlementValue] = js.undefined): Entitlement = {
+    def apply(
+        CustomerIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
+        Dimension: js.UndefOr[NonEmptyString] = js.undefined,
+        ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
+        ProductCode: js.UndefOr[ProductCode] = js.undefined,
+        Value: js.UndefOr[EntitlementValue] = js.undefined
+    ): Entitlement = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomerIdentifier" -> CustomerIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -79,10 +81,12 @@ package marketplaceentitlementservice {
   }
 
   object EntitlementValue {
-    def apply(BooleanValue: js.UndefOr[Boolean] = js.undefined,
-              DoubleValue: js.UndefOr[Double] = js.undefined,
-              IntegerValue: js.UndefOr[Int] = js.undefined,
-              StringValue: js.UndefOr[String] = js.undefined): EntitlementValue = {
+    def apply(
+        BooleanValue: js.UndefOr[Boolean] = js.undefined,
+        DoubleValue: js.UndefOr[Double] = js.undefined,
+        IntegerValue: js.UndefOr[Int] = js.undefined,
+        StringValue: js.UndefOr[String] = js.undefined
+    ): EntitlementValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BooleanValue" -> BooleanValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -121,10 +125,12 @@ package marketplaceentitlementservice {
   }
 
   object GetEntitlementsRequest {
-    def apply(ProductCode: ProductCode,
-              Filter: js.UndefOr[GetEntitlementFilters] = js.undefined,
-              MaxResults: js.UndefOr[Int] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined): GetEntitlementsRequest = {
+    def apply(
+        ProductCode: ProductCode,
+        Filter: js.UndefOr[GetEntitlementFilters] = js.undefined,
+        MaxResults: js.UndefOr[Int] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): GetEntitlementsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ProductCode" -> ProductCode.asInstanceOf[js.Any],
         "Filter" -> Filter.map { x =>
@@ -152,13 +158,18 @@ package marketplaceentitlementservice {
   }
 
   object GetEntitlementsResult {
-    def apply(Entitlements: js.UndefOr[EntitlementList] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined): GetEntitlementsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Entitlements" -> Entitlements.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entitlements: js.UndefOr[EntitlementList] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): GetEntitlementsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entitlements" -> Entitlements.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEntitlementsResult]
     }

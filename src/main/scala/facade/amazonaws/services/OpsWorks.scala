@@ -168,13 +168,18 @@ package opsworks {
   }
 
   object AgentVersion {
-    def apply(ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): AgentVersion = {
-      val _fields = IndexedSeq[(String, js.Any)]("ConfigurationManager" -> ConfigurationManager.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): AgentVersion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationManager" -> ConfigurationManager.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AgentVersion]
     }
@@ -202,20 +207,22 @@ package opsworks {
   }
 
   object App {
-    def apply(AppId: js.UndefOr[String] = js.undefined,
-              AppSource: js.UndefOr[Source] = js.undefined,
-              Attributes: js.UndefOr[AppAttributes] = js.undefined,
-              CreatedAt: js.UndefOr[String] = js.undefined,
-              DataSources: js.UndefOr[DataSources] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              Domains: js.UndefOr[Strings] = js.undefined,
-              EnableSsl: js.UndefOr[Boolean] = js.undefined,
-              Environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Shortname: js.UndefOr[String] = js.undefined,
-              SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[AppType] = js.undefined): App = {
+    def apply(
+        AppId: js.UndefOr[String] = js.undefined,
+        AppSource: js.UndefOr[Source] = js.undefined,
+        Attributes: js.UndefOr[AppAttributes] = js.undefined,
+        CreatedAt: js.UndefOr[String] = js.undefined,
+        DataSources: js.UndefOr[DataSources] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        Domains: js.UndefOr[Strings] = js.undefined,
+        EnableSsl: js.UndefOr[Boolean] = js.undefined,
+        Environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Shortname: js.UndefOr[String] = js.undefined,
+        SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[AppType] = js.undefined
+    ): App = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AppId" -> AppId.map { x =>
           x.asInstanceOf[js.Any]
@@ -300,7 +307,10 @@ package opsworks {
   }
 
   object AssignInstanceRequest {
-    def apply(InstanceId: String, LayerIds: Strings): AssignInstanceRequest = {
+    def apply(
+        InstanceId: String,
+        LayerIds: Strings
+    ): AssignInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "LayerIds"   -> LayerIds.asInstanceOf[js.Any]
@@ -317,11 +327,16 @@ package opsworks {
   }
 
   object AssignVolumeRequest {
-    def apply(VolumeId: String, InstanceId: js.UndefOr[String] = js.undefined): AssignVolumeRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("VolumeId" -> VolumeId.asInstanceOf[js.Any], "InstanceId" -> InstanceId.map { x =>
+    def apply(
+        VolumeId: String,
+        InstanceId: js.UndefOr[String] = js.undefined
+    ): AssignVolumeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeId" -> VolumeId.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssignVolumeRequest]
     }
@@ -334,12 +349,16 @@ package opsworks {
   }
 
   object AssociateElasticIpRequest {
-    def apply(ElasticIp: String, InstanceId: js.UndefOr[String] = js.undefined): AssociateElasticIpRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ElasticIp" -> ElasticIp.asInstanceOf[js.Any], "InstanceId" -> InstanceId.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ElasticIp: String,
+        InstanceId: js.UndefOr[String] = js.undefined
+    ): AssociateElasticIpRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticIp" -> ElasticIp.asInstanceOf[js.Any],
+        "InstanceId" -> InstanceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateElasticIpRequest]
     }
@@ -352,7 +371,10 @@ package opsworks {
   }
 
   object AttachElasticLoadBalancerRequest {
-    def apply(ElasticLoadBalancerName: String, LayerId: String): AttachElasticLoadBalancerRequest = {
+    def apply(
+        ElasticLoadBalancerName: String,
+        LayerId: String
+    ): AttachElasticLoadBalancerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ElasticLoadBalancerName" -> ElasticLoadBalancerName.asInstanceOf[js.Any],
         "LayerId"                 -> LayerId.asInstanceOf[js.Any]
@@ -377,13 +399,15 @@ package opsworks {
   }
 
   object AutoScalingThresholds {
-    def apply(Alarms: js.UndefOr[Strings] = js.undefined,
-              CpuThreshold: js.UndefOr[Double] = js.undefined,
-              IgnoreMetricsTime: js.UndefOr[Minute] = js.undefined,
-              InstanceCount: js.UndefOr[Int] = js.undefined,
-              LoadThreshold: js.UndefOr[Double] = js.undefined,
-              MemoryThreshold: js.UndefOr[Double] = js.undefined,
-              ThresholdsWaitTime: js.UndefOr[Minute] = js.undefined): AutoScalingThresholds = {
+    def apply(
+        Alarms: js.UndefOr[Strings] = js.undefined,
+        CpuThreshold: js.UndefOr[Double] = js.undefined,
+        IgnoreMetricsTime: js.UndefOr[Minute] = js.undefined,
+        InstanceCount: js.UndefOr[Int] = js.undefined,
+        LoadThreshold: js.UndefOr[Double] = js.undefined,
+        MemoryThreshold: js.UndefOr[Double] = js.undefined,
+        ThresholdsWaitTime: js.UndefOr[Minute] = js.undefined
+    ): AutoScalingThresholds = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Alarms" -> Alarms.map { x =>
           x.asInstanceOf[js.Any]
@@ -431,10 +455,12 @@ package opsworks {
   }
 
   object BlockDeviceMapping {
-    def apply(DeviceName: js.UndefOr[String] = js.undefined,
-              Ebs: js.UndefOr[EbsBlockDevice] = js.undefined,
-              NoDevice: js.UndefOr[String] = js.undefined,
-              VirtualName: js.UndefOr[String] = js.undefined): BlockDeviceMapping = {
+    def apply(
+        DeviceName: js.UndefOr[String] = js.undefined,
+        Ebs: js.UndefOr[EbsBlockDevice] = js.undefined,
+        NoDevice: js.UndefOr[String] = js.undefined,
+        VirtualName: js.UndefOr[String] = js.undefined
+    ): BlockDeviceMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeviceName" -> DeviceName.map { x =>
           x.asInstanceOf[js.Any]
@@ -464,13 +490,18 @@ package opsworks {
   }
 
   object ChefConfiguration {
-    def apply(BerkshelfVersion: js.UndefOr[String] = js.undefined,
-              ManageBerkshelf: js.UndefOr[Boolean] = js.undefined): ChefConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("BerkshelfVersion" -> BerkshelfVersion.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ManageBerkshelf" -> ManageBerkshelf.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BerkshelfVersion: js.UndefOr[String] = js.undefined,
+        ManageBerkshelf: js.UndefOr[Boolean] = js.undefined
+    ): ChefConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BerkshelfVersion" -> BerkshelfVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ManageBerkshelf" -> ManageBerkshelf.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChefConfiguration]
     }
@@ -503,28 +534,30 @@ package opsworks {
   }
 
   object CloneStackRequest {
-    def apply(ServiceRoleArn: String,
-              SourceStackId: String,
-              AgentVersion: js.UndefOr[String] = js.undefined,
-              Attributes: js.UndefOr[StackAttributes] = js.undefined,
-              ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
-              CloneAppIds: js.UndefOr[Strings] = js.undefined,
-              ClonePermissions: js.UndefOr[Boolean] = js.undefined,
-              ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
-              CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
-              DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
-              DefaultOs: js.UndefOr[String] = js.undefined,
-              DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
-              DefaultSshKeyName: js.UndefOr[String] = js.undefined,
-              DefaultSubnetId: js.UndefOr[String] = js.undefined,
-              HostnameTheme: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Region: js.UndefOr[String] = js.undefined,
-              UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
-              UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): CloneStackRequest = {
+    def apply(
+        ServiceRoleArn: String,
+        SourceStackId: String,
+        AgentVersion: js.UndefOr[String] = js.undefined,
+        Attributes: js.UndefOr[StackAttributes] = js.undefined,
+        ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
+        CloneAppIds: js.UndefOr[Strings] = js.undefined,
+        ClonePermissions: js.UndefOr[Boolean] = js.undefined,
+        ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
+        CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
+        DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
+        DefaultOs: js.UndefOr[String] = js.undefined,
+        DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
+        DefaultSshKeyName: js.UndefOr[String] = js.undefined,
+        DefaultSubnetId: js.UndefOr[String] = js.undefined,
+        HostnameTheme: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined,
+        UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
+        UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): CloneStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServiceRoleArn" -> ServiceRoleArn.asInstanceOf[js.Any],
         "SourceStackId"  -> SourceStackId.asInstanceOf[js.Any],
@@ -603,10 +636,14 @@ package opsworks {
   }
 
   object CloneStackResult {
-    def apply(StackId: js.UndefOr[String] = js.undefined): CloneStackResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: js.UndefOr[String] = js.undefined
+    ): CloneStackResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloneStackResult]
     }
@@ -622,13 +659,18 @@ package opsworks {
   }
 
   object CloudWatchLogsConfiguration {
-    def apply(Enabled: js.UndefOr[Boolean] = js.undefined,
-              LogStreams: js.UndefOr[CloudWatchLogsLogStreams] = js.undefined): CloudWatchLogsConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("Enabled" -> Enabled.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LogStreams" -> LogStreams.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        LogStreams: js.UndefOr[CloudWatchLogsLogStreams] = js.undefined
+    ): CloudWatchLogsConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LogStreams" -> LogStreams.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchLogsConfiguration]
     }
@@ -856,17 +898,19 @@ package opsworks {
   }
 
   object CloudWatchLogsLogStream {
-    def apply(BatchCount: js.UndefOr[Int] = js.undefined,
-              BatchSize: js.UndefOr[Int] = js.undefined,
-              BufferDuration: js.UndefOr[Int] = js.undefined,
-              DatetimeFormat: js.UndefOr[String] = js.undefined,
-              Encoding: js.UndefOr[CloudWatchLogsEncoding] = js.undefined,
-              File: js.UndefOr[String] = js.undefined,
-              FileFingerprintLines: js.UndefOr[String] = js.undefined,
-              InitialPosition: js.UndefOr[CloudWatchLogsInitialPosition] = js.undefined,
-              LogGroupName: js.UndefOr[String] = js.undefined,
-              MultiLineStartPattern: js.UndefOr[String] = js.undefined,
-              TimeZone: js.UndefOr[CloudWatchLogsTimeZone] = js.undefined): CloudWatchLogsLogStream = {
+    def apply(
+        BatchCount: js.UndefOr[Int] = js.undefined,
+        BatchSize: js.UndefOr[Int] = js.undefined,
+        BufferDuration: js.UndefOr[Int] = js.undefined,
+        DatetimeFormat: js.UndefOr[String] = js.undefined,
+        Encoding: js.UndefOr[CloudWatchLogsEncoding] = js.undefined,
+        File: js.UndefOr[String] = js.undefined,
+        FileFingerprintLines: js.UndefOr[String] = js.undefined,
+        InitialPosition: js.UndefOr[CloudWatchLogsInitialPosition] = js.undefined,
+        LogGroupName: js.UndefOr[String] = js.undefined,
+        MultiLineStartPattern: js.UndefOr[String] = js.undefined,
+        TimeZone: js.UndefOr[CloudWatchLogsTimeZone] = js.undefined
+    ): CloudWatchLogsLogStream = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BatchCount" -> BatchCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -935,16 +979,18 @@ package opsworks {
   }
 
   object Command {
-    def apply(AcknowledgedAt: js.UndefOr[DateTime] = js.undefined,
-              CommandId: js.UndefOr[String] = js.undefined,
-              CompletedAt: js.UndefOr[DateTime] = js.undefined,
-              CreatedAt: js.UndefOr[DateTime] = js.undefined,
-              DeploymentId: js.UndefOr[String] = js.undefined,
-              ExitCode: js.UndefOr[Int] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined,
-              LogUrl: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): Command = {
+    def apply(
+        AcknowledgedAt: js.UndefOr[DateTime] = js.undefined,
+        CommandId: js.UndefOr[String] = js.undefined,
+        CompletedAt: js.UndefOr[DateTime] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        DeploymentId: js.UndefOr[String] = js.undefined,
+        ExitCode: js.UndefOr[Int] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        LogUrl: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): Command = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AcknowledgedAt" -> AcknowledgedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -999,18 +1045,20 @@ package opsworks {
   }
 
   object CreateAppRequest {
-    def apply(Name: String,
-              StackId: String,
-              Type: AppType,
-              AppSource: js.UndefOr[Source] = js.undefined,
-              Attributes: js.UndefOr[AppAttributes] = js.undefined,
-              DataSources: js.UndefOr[DataSources] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              Domains: js.UndefOr[Strings] = js.undefined,
-              EnableSsl: js.UndefOr[Boolean] = js.undefined,
-              Environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-              Shortname: js.UndefOr[String] = js.undefined,
-              SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined): CreateAppRequest = {
+    def apply(
+        Name: String,
+        StackId: String,
+        Type: AppType,
+        AppSource: js.UndefOr[Source] = js.undefined,
+        Attributes: js.UndefOr[AppAttributes] = js.undefined,
+        DataSources: js.UndefOr[DataSources] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        Domains: js.UndefOr[Strings] = js.undefined,
+        EnableSsl: js.UndefOr[Boolean] = js.undefined,
+        Environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+        Shortname: js.UndefOr[String] = js.undefined,
+        SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined
+    ): CreateAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"    -> Name.asInstanceOf[js.Any],
         "StackId" -> StackId.asInstanceOf[js.Any],
@@ -1057,10 +1105,14 @@ package opsworks {
   }
 
   object CreateAppResult {
-    def apply(AppId: js.UndefOr[String] = js.undefined): CreateAppResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AppId" -> AppId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AppId: js.UndefOr[String] = js.undefined
+    ): CreateAppResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AppId" -> AppId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppResult]
     }
@@ -1078,13 +1130,15 @@ package opsworks {
   }
 
   object CreateDeploymentRequest {
-    def apply(Command: DeploymentCommand,
-              StackId: String,
-              AppId: js.UndefOr[String] = js.undefined,
-              Comment: js.UndefOr[String] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              InstanceIds: js.UndefOr[Strings] = js.undefined,
-              LayerIds: js.UndefOr[Strings] = js.undefined): CreateDeploymentRequest = {
+    def apply(
+        Command: DeploymentCommand,
+        StackId: String,
+        AppId: js.UndefOr[String] = js.undefined,
+        Comment: js.UndefOr[String] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        InstanceIds: js.UndefOr[Strings] = js.undefined,
+        LayerIds: js.UndefOr[Strings] = js.undefined
+    ): CreateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Command" -> Command.asInstanceOf[js.Any],
         "StackId" -> StackId.asInstanceOf[js.Any],
@@ -1118,10 +1172,14 @@ package opsworks {
   }
 
   object CreateDeploymentResult {
-    def apply(DeploymentId: js.UndefOr[String] = js.undefined): CreateDeploymentResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DeploymentId" -> DeploymentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DeploymentId: js.UndefOr[String] = js.undefined
+    ): CreateDeploymentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeploymentId" -> DeploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentResult]
     }
@@ -1150,24 +1208,26 @@ package opsworks {
   }
 
   object CreateInstanceRequest {
-    def apply(InstanceType: String,
-              LayerIds: Strings,
-              StackId: String,
-              AgentVersion: js.UndefOr[String] = js.undefined,
-              AmiId: js.UndefOr[String] = js.undefined,
-              Architecture: js.UndefOr[Architecture] = js.undefined,
-              AutoScalingType: js.UndefOr[AutoScalingType] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
-              EbsOptimized: js.UndefOr[Boolean] = js.undefined,
-              Hostname: js.UndefOr[String] = js.undefined,
-              InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
-              Os: js.UndefOr[String] = js.undefined,
-              RootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
-              SshKeyName: js.UndefOr[String] = js.undefined,
-              SubnetId: js.UndefOr[String] = js.undefined,
-              Tenancy: js.UndefOr[String] = js.undefined,
-              VirtualizationType: js.UndefOr[String] = js.undefined): CreateInstanceRequest = {
+    def apply(
+        InstanceType: String,
+        LayerIds: Strings,
+        StackId: String,
+        AgentVersion: js.UndefOr[String] = js.undefined,
+        AmiId: js.UndefOr[String] = js.undefined,
+        Architecture: js.UndefOr[Architecture] = js.undefined,
+        AutoScalingType: js.UndefOr[AutoScalingType] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
+        EbsOptimized: js.UndefOr[Boolean] = js.undefined,
+        Hostname: js.UndefOr[String] = js.undefined,
+        InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
+        Os: js.UndefOr[String] = js.undefined,
+        RootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
+        SshKeyName: js.UndefOr[String] = js.undefined,
+        SubnetId: js.UndefOr[String] = js.undefined,
+        Tenancy: js.UndefOr[String] = js.undefined,
+        VirtualizationType: js.UndefOr[String] = js.undefined
+    ): CreateInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "LayerIds"     -> LayerIds.asInstanceOf[js.Any],
@@ -1232,10 +1292,14 @@ package opsworks {
   }
 
   object CreateInstanceResult {
-    def apply(InstanceId: js.UndefOr[String] = js.undefined): CreateInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined
+    ): CreateInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInstanceResult]
     }
@@ -1264,24 +1328,26 @@ package opsworks {
   }
 
   object CreateLayerRequest {
-    def apply(Name: String,
-              Shortname: String,
-              StackId: String,
-              Type: LayerType,
-              Attributes: js.UndefOr[LayerAttributes] = js.undefined,
-              AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
-              AutoAssignPublicIps: js.UndefOr[Boolean] = js.undefined,
-              CloudWatchLogsConfiguration: js.UndefOr[CloudWatchLogsConfiguration] = js.undefined,
-              CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              CustomRecipes: js.UndefOr[Recipes] = js.undefined,
-              CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-              EnableAutoHealing: js.UndefOr[Boolean] = js.undefined,
-              InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
-              LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
-              Packages: js.UndefOr[Strings] = js.undefined,
-              UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
-              VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined): CreateLayerRequest = {
+    def apply(
+        Name: String,
+        Shortname: String,
+        StackId: String,
+        Type: LayerType,
+        Attributes: js.UndefOr[LayerAttributes] = js.undefined,
+        AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
+        AutoAssignPublicIps: js.UndefOr[Boolean] = js.undefined,
+        CloudWatchLogsConfiguration: js.UndefOr[CloudWatchLogsConfiguration] = js.undefined,
+        CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        CustomRecipes: js.UndefOr[Recipes] = js.undefined,
+        CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
+        EnableAutoHealing: js.UndefOr[Boolean] = js.undefined,
+        InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
+        LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
+        Packages: js.UndefOr[Strings] = js.undefined,
+        UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
+        VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined
+    ): CreateLayerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"      -> Name.asInstanceOf[js.Any],
         "Shortname" -> Shortname.asInstanceOf[js.Any],
@@ -1344,10 +1410,14 @@ package opsworks {
   }
 
   object CreateLayerResult {
-    def apply(LayerId: js.UndefOr[String] = js.undefined): CreateLayerResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("LayerId" -> LayerId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LayerId: js.UndefOr[String] = js.undefined
+    ): CreateLayerResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LayerId" -> LayerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLayerResult]
     }
@@ -1377,25 +1447,27 @@ package opsworks {
   }
 
   object CreateStackRequest {
-    def apply(DefaultInstanceProfileArn: String,
-              Name: String,
-              Region: String,
-              ServiceRoleArn: String,
-              AgentVersion: js.UndefOr[String] = js.undefined,
-              Attributes: js.UndefOr[StackAttributes] = js.undefined,
-              ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
-              ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
-              CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
-              DefaultOs: js.UndefOr[String] = js.undefined,
-              DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
-              DefaultSshKeyName: js.UndefOr[String] = js.undefined,
-              DefaultSubnetId: js.UndefOr[String] = js.undefined,
-              HostnameTheme: js.UndefOr[String] = js.undefined,
-              UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
-              UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): CreateStackRequest = {
+    def apply(
+        DefaultInstanceProfileArn: String,
+        Name: String,
+        Region: String,
+        ServiceRoleArn: String,
+        AgentVersion: js.UndefOr[String] = js.undefined,
+        Attributes: js.UndefOr[StackAttributes] = js.undefined,
+        ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
+        ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
+        CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
+        DefaultOs: js.UndefOr[String] = js.undefined,
+        DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
+        DefaultSshKeyName: js.UndefOr[String] = js.undefined,
+        DefaultSubnetId: js.UndefOr[String] = js.undefined,
+        HostnameTheme: js.UndefOr[String] = js.undefined,
+        UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
+        UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): CreateStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultInstanceProfileArn" -> DefaultInstanceProfileArn.asInstanceOf[js.Any],
         "Name"                      -> Name.asInstanceOf[js.Any],
@@ -1461,10 +1533,14 @@ package opsworks {
   }
 
   object CreateStackResult {
-    def apply(StackId: js.UndefOr[String] = js.undefined): CreateStackResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: js.UndefOr[String] = js.undefined
+    ): CreateStackResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStackResult]
     }
@@ -1479,10 +1555,12 @@ package opsworks {
   }
 
   object CreateUserProfileRequest {
-    def apply(IamUserArn: String,
-              AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
-              SshPublicKey: js.UndefOr[String] = js.undefined,
-              SshUsername: js.UndefOr[String] = js.undefined): CreateUserProfileRequest = {
+    def apply(
+        IamUserArn: String,
+        AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
+        SshPublicKey: js.UndefOr[String] = js.undefined,
+        SshUsername: js.UndefOr[String] = js.undefined
+    ): CreateUserProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any],
         "AllowSelfManagement" -> AllowSelfManagement.map { x =>
@@ -1509,10 +1587,14 @@ package opsworks {
   }
 
   object CreateUserProfileResult {
-    def apply(IamUserArn: js.UndefOr[String] = js.undefined): CreateUserProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("IamUserArn" -> IamUserArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IamUserArn: js.UndefOr[String] = js.undefined
+    ): CreateUserProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IamUserArn" -> IamUserArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserProfileResult]
     }
@@ -1529,16 +1611,22 @@ package opsworks {
   }
 
   object DataSource {
-    def apply(Arn: js.UndefOr[String] = js.undefined,
-              DatabaseName: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): DataSource = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "DatabaseName" -> DatabaseName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined,
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): DataSource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DatabaseName" -> DatabaseName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataSource]
     }
@@ -1550,9 +1638,12 @@ package opsworks {
   }
 
   object DeleteAppRequest {
-    def apply(AppId: String): DeleteAppRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("AppId" -> AppId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AppId: String
+    ): DeleteAppRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AppId" -> AppId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppRequest]
     }
@@ -1566,9 +1657,11 @@ package opsworks {
   }
 
   object DeleteInstanceRequest {
-    def apply(InstanceId: String,
-              DeleteElasticIp: js.UndefOr[Boolean] = js.undefined,
-              DeleteVolumes: js.UndefOr[Boolean] = js.undefined): DeleteInstanceRequest = {
+    def apply(
+        InstanceId: String,
+        DeleteElasticIp: js.UndefOr[Boolean] = js.undefined,
+        DeleteVolumes: js.UndefOr[Boolean] = js.undefined
+    ): DeleteInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "DeleteElasticIp" -> DeleteElasticIp.map { x =>
@@ -1589,9 +1682,12 @@ package opsworks {
   }
 
   object DeleteLayerRequest {
-    def apply(LayerId: String): DeleteLayerRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("LayerId" -> LayerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LayerId: String
+    ): DeleteLayerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LayerId" -> LayerId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLayerRequest]
     }
@@ -1603,9 +1699,12 @@ package opsworks {
   }
 
   object DeleteStackRequest {
-    def apply(StackId: String): DeleteStackRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackId" -> StackId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: String
+    ): DeleteStackRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStackRequest]
     }
@@ -1617,9 +1716,12 @@ package opsworks {
   }
 
   object DeleteUserProfileRequest {
-    def apply(IamUserArn: String): DeleteUserProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IamUserArn" -> IamUserArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IamUserArn: String
+    ): DeleteUserProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IamUserArn" -> IamUserArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserProfileRequest]
     }
@@ -1645,18 +1747,20 @@ package opsworks {
   }
 
   object Deployment {
-    def apply(AppId: js.UndefOr[String] = js.undefined,
-              Command: js.UndefOr[DeploymentCommand] = js.undefined,
-              Comment: js.UndefOr[String] = js.undefined,
-              CompletedAt: js.UndefOr[DateTime] = js.undefined,
-              CreatedAt: js.UndefOr[DateTime] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              DeploymentId: js.UndefOr[String] = js.undefined,
-              Duration: js.UndefOr[Int] = js.undefined,
-              IamUserArn: js.UndefOr[String] = js.undefined,
-              InstanceIds: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): Deployment = {
+    def apply(
+        AppId: js.UndefOr[String] = js.undefined,
+        Command: js.UndefOr[DeploymentCommand] = js.undefined,
+        Comment: js.UndefOr[String] = js.undefined,
+        CompletedAt: js.UndefOr[DateTime] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        DeploymentId: js.UndefOr[String] = js.undefined,
+        Duration: js.UndefOr[Int] = js.undefined,
+        IamUserArn: js.UndefOr[String] = js.undefined,
+        InstanceIds: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): Deployment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AppId" -> AppId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1710,11 +1814,16 @@ package opsworks {
   }
 
   object DeploymentCommand {
-    def apply(Name: DeploymentCommandName,
-              Args: js.UndefOr[DeploymentCommandArgs] = js.undefined): DeploymentCommand = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Args" -> Args.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: DeploymentCommandName,
+        Args: js.UndefOr[DeploymentCommandArgs] = js.undefined
+    ): DeploymentCommand = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Args" -> Args.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentCommand]
     }
@@ -1756,9 +1865,12 @@ package opsworks {
   }
 
   object DeregisterEcsClusterRequest {
-    def apply(EcsClusterArn: String): DeregisterEcsClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("EcsClusterArn" -> EcsClusterArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EcsClusterArn: String
+    ): DeregisterEcsClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EcsClusterArn" -> EcsClusterArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterEcsClusterRequest]
     }
@@ -1770,9 +1882,12 @@ package opsworks {
   }
 
   object DeregisterElasticIpRequest {
-    def apply(ElasticIp: String): DeregisterElasticIpRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ElasticIp" -> ElasticIp.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ElasticIp: String
+    ): DeregisterElasticIpRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterElasticIpRequest]
     }
@@ -1784,9 +1899,12 @@ package opsworks {
   }
 
   object DeregisterInstanceRequest {
-    def apply(InstanceId: String): DeregisterInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: String
+    ): DeregisterInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterInstanceRequest]
     }
@@ -1798,9 +1916,12 @@ package opsworks {
   }
 
   object DeregisterRdsDbInstanceRequest {
-    def apply(RdsDbInstanceArn: String): DeregisterRdsDbInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RdsDbInstanceArn: String
+    ): DeregisterRdsDbInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterRdsDbInstanceRequest]
     }
@@ -1812,9 +1933,12 @@ package opsworks {
   }
 
   object DeregisterVolumeRequest {
-    def apply(VolumeId: String): DeregisterVolumeRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("VolumeId" -> VolumeId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeId: String
+    ): DeregisterVolumeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeId" -> VolumeId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterVolumeRequest]
     }
@@ -1827,13 +1951,18 @@ package opsworks {
   }
 
   object DescribeAgentVersionsRequest {
-    def apply(ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeAgentVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ConfigurationManager" -> ConfigurationManager.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeAgentVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationManager" -> ConfigurationManager.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentVersionsRequest]
     }
@@ -1848,10 +1977,14 @@ package opsworks {
   }
 
   object DescribeAgentVersionsResult {
-    def apply(AgentVersions: js.UndefOr[AgentVersions] = js.undefined): DescribeAgentVersionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AgentVersions" -> AgentVersions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AgentVersions: js.UndefOr[AgentVersions] = js.undefined
+    ): DescribeAgentVersionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AgentVersions" -> AgentVersions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAgentVersionsResult]
     }
@@ -1864,13 +1997,18 @@ package opsworks {
   }
 
   object DescribeAppsRequest {
-    def apply(AppIds: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeAppsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AppIds" -> AppIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AppIds: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeAppsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AppIds" -> AppIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAppsRequest]
     }
@@ -1885,10 +2023,14 @@ package opsworks {
   }
 
   object DescribeAppsResult {
-    def apply(Apps: js.UndefOr[Apps] = js.undefined): DescribeAppsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Apps" -> Apps.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Apps: js.UndefOr[Apps] = js.undefined
+    ): DescribeAppsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Apps" -> Apps.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAppsResult]
     }
@@ -1902,9 +2044,11 @@ package opsworks {
   }
 
   object DescribeCommandsRequest {
-    def apply(CommandIds: js.UndefOr[Strings] = js.undefined,
-              DeploymentId: js.UndefOr[String] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined): DescribeCommandsRequest = {
+    def apply(
+        CommandIds: js.UndefOr[Strings] = js.undefined,
+        DeploymentId: js.UndefOr[String] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined
+    ): DescribeCommandsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CommandIds" -> CommandIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -1930,10 +2074,14 @@ package opsworks {
   }
 
   object DescribeCommandsResult {
-    def apply(Commands: js.UndefOr[Commands] = js.undefined): DescribeCommandsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Commands" -> Commands.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Commands: js.UndefOr[Commands] = js.undefined
+    ): DescribeCommandsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Commands" -> Commands.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCommandsResult]
     }
@@ -1947,9 +2095,11 @@ package opsworks {
   }
 
   object DescribeDeploymentsRequest {
-    def apply(AppId: js.UndefOr[String] = js.undefined,
-              DeploymentIds: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeDeploymentsRequest = {
+    def apply(
+        AppId: js.UndefOr[String] = js.undefined,
+        DeploymentIds: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeDeploymentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AppId" -> AppId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1975,10 +2125,14 @@ package opsworks {
   }
 
   object DescribeDeploymentsResult {
-    def apply(Deployments: js.UndefOr[Deployments] = js.undefined): DescribeDeploymentsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Deployments" -> Deployments.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Deployments: js.UndefOr[Deployments] = js.undefined
+    ): DescribeDeploymentsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Deployments" -> Deployments.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDeploymentsResult]
     }
@@ -1993,10 +2147,12 @@ package opsworks {
   }
 
   object DescribeEcsClustersRequest {
-    def apply(EcsClusterArns: js.UndefOr[Strings] = js.undefined,
-              MaxResults: js.UndefOr[Int] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeEcsClustersRequest = {
+    def apply(
+        EcsClusterArns: js.UndefOr[Strings] = js.undefined,
+        MaxResults: js.UndefOr[Int] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeEcsClustersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EcsClusterArns" -> EcsClusterArns.map { x =>
           x.asInstanceOf[js.Any]
@@ -2026,13 +2182,18 @@ package opsworks {
   }
 
   object DescribeEcsClustersResult {
-    def apply(EcsClusters: js.UndefOr[EcsClusters] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): DescribeEcsClustersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EcsClusters" -> EcsClusters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EcsClusters: js.UndefOr[EcsClusters] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEcsClustersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EcsClusters" -> EcsClusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEcsClustersResult]
     }
@@ -2046,16 +2207,22 @@ package opsworks {
   }
 
   object DescribeElasticIpsRequest {
-    def apply(InstanceId: js.UndefOr[String] = js.undefined,
-              Ips: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeElasticIpsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Ips" -> Ips.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined,
+        Ips: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeElasticIpsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Ips" -> Ips.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticIpsRequest]
     }
@@ -2070,10 +2237,14 @@ package opsworks {
   }
 
   object DescribeElasticIpsResult {
-    def apply(ElasticIps: js.UndefOr[ElasticIps] = js.undefined): DescribeElasticIpsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ElasticIps" -> ElasticIps.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ElasticIps: js.UndefOr[ElasticIps] = js.undefined
+    ): DescribeElasticIpsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticIps" -> ElasticIps.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticIpsResult]
     }
@@ -2086,13 +2257,18 @@ package opsworks {
   }
 
   object DescribeElasticLoadBalancersRequest {
-    def apply(LayerIds: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeElasticLoadBalancersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("LayerIds" -> LayerIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LayerIds: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeElasticLoadBalancersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LayerIds" -> LayerIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticLoadBalancersRequest]
     }
@@ -2110,9 +2286,11 @@ package opsworks {
     def apply(
         ElasticLoadBalancers: js.UndefOr[ElasticLoadBalancers] = js.undefined
     ): DescribeElasticLoadBalancersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ElasticLoadBalancers" -> ElasticLoadBalancers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticLoadBalancers" -> ElasticLoadBalancers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeElasticLoadBalancersResult]
     }
@@ -2126,9 +2304,11 @@ package opsworks {
   }
 
   object DescribeInstancesRequest {
-    def apply(InstanceIds: js.UndefOr[Strings] = js.undefined,
-              LayerId: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeInstancesRequest = {
+    def apply(
+        InstanceIds: js.UndefOr[Strings] = js.undefined,
+        LayerId: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceIds" -> InstanceIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -2154,10 +2334,14 @@ package opsworks {
   }
 
   object DescribeInstancesResult {
-    def apply(Instances: js.UndefOr[Instances] = js.undefined): DescribeInstancesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Instances" -> Instances.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Instances: js.UndefOr[Instances] = js.undefined
+    ): DescribeInstancesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Instances" -> Instances.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancesResult]
     }
@@ -2170,13 +2354,18 @@ package opsworks {
   }
 
   object DescribeLayersRequest {
-    def apply(LayerIds: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeLayersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("LayerIds" -> LayerIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LayerIds: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeLayersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LayerIds" -> LayerIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLayersRequest]
     }
@@ -2191,10 +2380,14 @@ package opsworks {
   }
 
   object DescribeLayersResult {
-    def apply(Layers: js.UndefOr[Layers] = js.undefined): DescribeLayersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Layers" -> Layers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Layers: js.UndefOr[Layers] = js.undefined
+    ): DescribeLayersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Layers" -> Layers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLayersResult]
     }
@@ -2206,9 +2399,12 @@ package opsworks {
   }
 
   object DescribeLoadBasedAutoScalingRequest {
-    def apply(LayerIds: Strings): DescribeLoadBasedAutoScalingRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("LayerIds" -> LayerIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LayerIds: Strings
+    ): DescribeLoadBasedAutoScalingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LayerIds" -> LayerIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBasedAutoScalingRequest]
     }
@@ -2226,11 +2422,11 @@ package opsworks {
     def apply(
         LoadBasedAutoScalingConfigurations: js.UndefOr[LoadBasedAutoScalingConfigurations] = js.undefined
     ): DescribeLoadBasedAutoScalingResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("LoadBasedAutoScalingConfigurations" -> LoadBasedAutoScalingConfigurations.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoadBasedAutoScalingConfigurations" -> LoadBasedAutoScalingConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoadBasedAutoScalingResult]
     }
@@ -2245,10 +2441,14 @@ package opsworks {
   }
 
   object DescribeMyUserProfileResult {
-    def apply(UserProfile: js.UndefOr[SelfUserProfile] = js.undefined): DescribeMyUserProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("UserProfile" -> UserProfile.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UserProfile: js.UndefOr[SelfUserProfile] = js.undefined
+    ): DescribeMyUserProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UserProfile" -> UserProfile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMyUserProfileResult]
     }
@@ -2263,10 +2463,14 @@ package opsworks {
   }
 
   object DescribeOperatingSystemsResponse {
-    def apply(OperatingSystems: js.UndefOr[OperatingSystems] = js.undefined): DescribeOperatingSystemsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperatingSystems" -> OperatingSystems.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperatingSystems: js.UndefOr[OperatingSystems] = js.undefined
+    ): DescribeOperatingSystemsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperatingSystems" -> OperatingSystems.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOperatingSystemsResponse]
     }
@@ -2279,13 +2483,18 @@ package opsworks {
   }
 
   object DescribePermissionsRequest {
-    def apply(IamUserArn: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribePermissionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IamUserArn" -> IamUserArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IamUserArn: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribePermissionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IamUserArn" -> IamUserArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePermissionsRequest]
     }
@@ -2300,10 +2509,14 @@ package opsworks {
   }
 
   object DescribePermissionsResult {
-    def apply(Permissions: js.UndefOr[Permissions] = js.undefined): DescribePermissionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Permissions" -> Permissions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Permissions: js.UndefOr[Permissions] = js.undefined
+    ): DescribePermissionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Permissions" -> Permissions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePermissionsResult]
     }
@@ -2317,9 +2530,11 @@ package opsworks {
   }
 
   object DescribeRaidArraysRequest {
-    def apply(InstanceId: js.UndefOr[String] = js.undefined,
-              RaidArrayIds: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeRaidArraysRequest = {
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined,
+        RaidArrayIds: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeRaidArraysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2345,10 +2560,14 @@ package opsworks {
   }
 
   object DescribeRaidArraysResult {
-    def apply(RaidArrays: js.UndefOr[RaidArrays] = js.undefined): DescribeRaidArraysResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("RaidArrays" -> RaidArrays.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RaidArrays: js.UndefOr[RaidArrays] = js.undefined
+    ): DescribeRaidArraysResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RaidArrays" -> RaidArrays.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRaidArraysResult]
     }
@@ -2361,7 +2580,10 @@ package opsworks {
   }
 
   object DescribeRdsDbInstancesRequest {
-    def apply(StackId: String, RdsDbInstanceArns: js.UndefOr[Strings] = js.undefined): DescribeRdsDbInstancesRequest = {
+    def apply(
+        StackId: String,
+        RdsDbInstanceArns: js.UndefOr[Strings] = js.undefined
+    ): DescribeRdsDbInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackId" -> StackId.asInstanceOf[js.Any],
         "RdsDbInstanceArns" -> RdsDbInstanceArns.map { x =>
@@ -2382,10 +2604,14 @@ package opsworks {
   }
 
   object DescribeRdsDbInstancesResult {
-    def apply(RdsDbInstances: js.UndefOr[RdsDbInstances] = js.undefined): DescribeRdsDbInstancesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("RdsDbInstances" -> RdsDbInstances.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RdsDbInstances: js.UndefOr[RdsDbInstances] = js.undefined
+    ): DescribeRdsDbInstancesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RdsDbInstances" -> RdsDbInstances.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRdsDbInstancesResult]
     }
@@ -2399,9 +2625,11 @@ package opsworks {
   }
 
   object DescribeServiceErrorsRequest {
-    def apply(InstanceId: js.UndefOr[String] = js.undefined,
-              ServiceErrorIds: js.UndefOr[Strings] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): DescribeServiceErrorsRequest = {
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined,
+        ServiceErrorIds: js.UndefOr[Strings] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): DescribeServiceErrorsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2427,10 +2655,14 @@ package opsworks {
   }
 
   object DescribeServiceErrorsResult {
-    def apply(ServiceErrors: js.UndefOr[ServiceErrors] = js.undefined): DescribeServiceErrorsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ServiceErrors" -> ServiceErrors.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ServiceErrors: js.UndefOr[ServiceErrors] = js.undefined
+    ): DescribeServiceErrorsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceErrors" -> ServiceErrors.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServiceErrorsResult]
     }
@@ -2442,9 +2674,12 @@ package opsworks {
   }
 
   object DescribeStackProvisioningParametersRequest {
-    def apply(StackId: String): DescribeStackProvisioningParametersRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackId" -> StackId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: String
+    ): DescribeStackProvisioningParametersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -2462,13 +2697,18 @@ package opsworks {
   }
 
   object DescribeStackProvisioningParametersResult {
-    def apply(AgentInstallerUrl: js.UndefOr[String] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined): DescribeStackProvisioningParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AgentInstallerUrl" -> AgentInstallerUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AgentInstallerUrl: js.UndefOr[String] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined
+    ): DescribeStackProvisioningParametersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AgentInstallerUrl" -> AgentInstallerUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackProvisioningParametersResult]
     }
@@ -2480,9 +2720,12 @@ package opsworks {
   }
 
   object DescribeStackSummaryRequest {
-    def apply(StackId: String): DescribeStackSummaryRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackId" -> StackId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: String
+    ): DescribeStackSummaryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackSummaryRequest]
     }
@@ -2497,10 +2740,14 @@ package opsworks {
   }
 
   object DescribeStackSummaryResult {
-    def apply(StackSummary: js.UndefOr[StackSummary] = js.undefined): DescribeStackSummaryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackSummary" -> StackSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackSummary: js.UndefOr[StackSummary] = js.undefined
+    ): DescribeStackSummaryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackSummary" -> StackSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackSummaryResult]
     }
@@ -2512,10 +2759,14 @@ package opsworks {
   }
 
   object DescribeStacksRequest {
-    def apply(StackIds: js.UndefOr[Strings] = js.undefined): DescribeStacksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackIds" -> StackIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackIds: js.UndefOr[Strings] = js.undefined
+    ): DescribeStacksRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackIds" -> StackIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStacksRequest]
     }
@@ -2530,10 +2781,14 @@ package opsworks {
   }
 
   object DescribeStacksResult {
-    def apply(Stacks: js.UndefOr[Stacks] = js.undefined): DescribeStacksResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Stacks" -> Stacks.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Stacks: js.UndefOr[Stacks] = js.undefined
+    ): DescribeStacksResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Stacks" -> Stacks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStacksResult]
     }
@@ -2545,9 +2800,12 @@ package opsworks {
   }
 
   object DescribeTimeBasedAutoScalingRequest {
-    def apply(InstanceIds: Strings): DescribeTimeBasedAutoScalingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceIds" -> InstanceIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceIds: Strings
+    ): DescribeTimeBasedAutoScalingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceIds" -> InstanceIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTimeBasedAutoScalingRequest]
     }
@@ -2565,11 +2823,11 @@ package opsworks {
     def apply(
         TimeBasedAutoScalingConfigurations: js.UndefOr[TimeBasedAutoScalingConfigurations] = js.undefined
     ): DescribeTimeBasedAutoScalingResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TimeBasedAutoScalingConfigurations" -> TimeBasedAutoScalingConfigurations.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TimeBasedAutoScalingConfigurations" -> TimeBasedAutoScalingConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTimeBasedAutoScalingResult]
     }
@@ -2581,10 +2839,14 @@ package opsworks {
   }
 
   object DescribeUserProfilesRequest {
-    def apply(IamUserArns: js.UndefOr[Strings] = js.undefined): DescribeUserProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IamUserArns" -> IamUserArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IamUserArns: js.UndefOr[Strings] = js.undefined
+    ): DescribeUserProfilesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IamUserArns" -> IamUserArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserProfilesRequest]
     }
@@ -2599,10 +2861,14 @@ package opsworks {
   }
 
   object DescribeUserProfilesResult {
-    def apply(UserProfiles: js.UndefOr[UserProfiles] = js.undefined): DescribeUserProfilesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("UserProfiles" -> UserProfiles.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UserProfiles: js.UndefOr[UserProfiles] = js.undefined
+    ): DescribeUserProfilesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UserProfiles" -> UserProfiles.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserProfilesResult]
     }
@@ -2617,10 +2883,12 @@ package opsworks {
   }
 
   object DescribeVolumesRequest {
-    def apply(InstanceId: js.UndefOr[String] = js.undefined,
-              RaidArrayId: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              VolumeIds: js.UndefOr[Strings] = js.undefined): DescribeVolumesRequest = {
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined,
+        RaidArrayId: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        VolumeIds: js.UndefOr[Strings] = js.undefined
+    ): DescribeVolumesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2649,10 +2917,14 @@ package opsworks {
   }
 
   object DescribeVolumesResult {
-    def apply(Volumes: js.UndefOr[Volumes] = js.undefined): DescribeVolumesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Volumes" -> Volumes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Volumes: js.UndefOr[Volumes] = js.undefined
+    ): DescribeVolumesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Volumes" -> Volumes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVolumesResult]
     }
@@ -2665,7 +2937,10 @@ package opsworks {
   }
 
   object DetachElasticLoadBalancerRequest {
-    def apply(ElasticLoadBalancerName: String, LayerId: String): DetachElasticLoadBalancerRequest = {
+    def apply(
+        ElasticLoadBalancerName: String,
+        LayerId: String
+    ): DetachElasticLoadBalancerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ElasticLoadBalancerName" -> ElasticLoadBalancerName.asInstanceOf[js.Any],
         "LayerId"                 -> LayerId.asInstanceOf[js.Any]
@@ -2681,9 +2956,12 @@ package opsworks {
   }
 
   object DisassociateElasticIpRequest {
-    def apply(ElasticIp: String): DisassociateElasticIpRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ElasticIp" -> ElasticIp.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ElasticIp: String
+    ): DisassociateElasticIpRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateElasticIpRequest]
     }
@@ -2702,11 +2980,13 @@ package opsworks {
   }
 
   object EbsBlockDevice {
-    def apply(DeleteOnTermination: js.UndefOr[Boolean] = js.undefined,
-              Iops: js.UndefOr[Int] = js.undefined,
-              SnapshotId: js.UndefOr[String] = js.undefined,
-              VolumeSize: js.UndefOr[Int] = js.undefined,
-              VolumeType: js.UndefOr[VolumeType] = js.undefined): EbsBlockDevice = {
+    def apply(
+        DeleteOnTermination: js.UndefOr[Boolean] = js.undefined,
+        Iops: js.UndefOr[Int] = js.undefined,
+        SnapshotId: js.UndefOr[String] = js.undefined,
+        VolumeSize: js.UndefOr[Int] = js.undefined,
+        VolumeType: js.UndefOr[VolumeType] = js.undefined
+    ): EbsBlockDevice = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeleteOnTermination" -> DeleteOnTermination.map { x =>
           x.asInstanceOf[js.Any]
@@ -2741,10 +3021,12 @@ package opsworks {
   }
 
   object EcsCluster {
-    def apply(EcsClusterArn: js.UndefOr[String] = js.undefined,
-              EcsClusterName: js.UndefOr[String] = js.undefined,
-              RegisteredAt: js.UndefOr[DateTime] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): EcsCluster = {
+    def apply(
+        EcsClusterArn: js.UndefOr[String] = js.undefined,
+        EcsClusterName: js.UndefOr[String] = js.undefined,
+        RegisteredAt: js.UndefOr[DateTime] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): EcsCluster = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EcsClusterArn" -> EcsClusterArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2777,11 +3059,13 @@ package opsworks {
   }
 
   object ElasticIp {
-    def apply(Domain: js.UndefOr[String] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined,
-              Ip: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Region: js.UndefOr[String] = js.undefined): ElasticIp = {
+    def apply(
+        Domain: js.UndefOr[String] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        Ip: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined
+    ): ElasticIp = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Domain" -> Domain.map { x =>
           x.asInstanceOf[js.Any]
@@ -2821,15 +3105,17 @@ package opsworks {
   }
 
   object ElasticLoadBalancer {
-    def apply(AvailabilityZones: js.UndefOr[Strings] = js.undefined,
-              DnsName: js.UndefOr[String] = js.undefined,
-              Ec2InstanceIds: js.UndefOr[Strings] = js.undefined,
-              ElasticLoadBalancerName: js.UndefOr[String] = js.undefined,
-              LayerId: js.UndefOr[String] = js.undefined,
-              Region: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              SubnetIds: js.UndefOr[Strings] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): ElasticLoadBalancer = {
+    def apply(
+        AvailabilityZones: js.UndefOr[Strings] = js.undefined,
+        DnsName: js.UndefOr[String] = js.undefined,
+        Ec2InstanceIds: js.UndefOr[Strings] = js.undefined,
+        ElasticLoadBalancerName: js.UndefOr[String] = js.undefined,
+        LayerId: js.UndefOr[String] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        SubnetIds: js.UndefOr[Strings] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): ElasticLoadBalancer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZones" -> AvailabilityZones.map { x =>
           x.asInstanceOf[js.Any]
@@ -2875,7 +3161,11 @@ package opsworks {
   }
 
   object EnvironmentVariable {
-    def apply(Key: String, Value: String, Secure: js.UndefOr[Boolean] = js.undefined): EnvironmentVariable = {
+    def apply(
+        Key: String,
+        Value: String,
+        Secure: js.UndefOr[Boolean] = js.undefined
+    ): EnvironmentVariable = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any],
@@ -2894,9 +3184,12 @@ package opsworks {
   }
 
   object GetHostnameSuggestionRequest {
-    def apply(LayerId: String): GetHostnameSuggestionRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("LayerId" -> LayerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LayerId: String
+    ): GetHostnameSuggestionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LayerId" -> LayerId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHostnameSuggestionRequest]
     }
@@ -2912,13 +3205,18 @@ package opsworks {
   }
 
   object GetHostnameSuggestionResult {
-    def apply(Hostname: js.UndefOr[String] = js.undefined,
-              LayerId: js.UndefOr[String] = js.undefined): GetHostnameSuggestionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Hostname" -> Hostname.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LayerId" -> LayerId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Hostname: js.UndefOr[String] = js.undefined,
+        LayerId: js.UndefOr[String] = js.undefined
+    ): GetHostnameSuggestionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Hostname" -> Hostname.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LayerId" -> LayerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHostnameSuggestionResult]
     }
@@ -2931,8 +3229,10 @@ package opsworks {
   }
 
   object GrantAccessRequest {
-    def apply(InstanceId: String,
-              ValidForInMinutes: js.UndefOr[ValidForInMinutes] = js.undefined): GrantAccessRequest = {
+    def apply(
+        InstanceId: String,
+        ValidForInMinutes: js.UndefOr[ValidForInMinutes] = js.undefined
+    ): GrantAccessRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ValidForInMinutes" -> ValidForInMinutes.map { x =>
@@ -2953,10 +3253,14 @@ package opsworks {
   }
 
   object GrantAccessResult {
-    def apply(TemporaryCredential: js.UndefOr[TemporaryCredential] = js.undefined): GrantAccessResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("TemporaryCredential" -> TemporaryCredential.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TemporaryCredential: js.UndefOr[TemporaryCredential] = js.undefined
+    ): GrantAccessResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TemporaryCredential" -> TemporaryCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantAccessResult]
     }
@@ -3011,47 +3315,49 @@ package opsworks {
   }
 
   object Instance {
-    def apply(AgentVersion: js.UndefOr[String] = js.undefined,
-              AmiId: js.UndefOr[String] = js.undefined,
-              Architecture: js.UndefOr[Architecture] = js.undefined,
-              Arn: js.UndefOr[String] = js.undefined,
-              AutoScalingType: js.UndefOr[AutoScalingType] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
-              CreatedAt: js.UndefOr[DateTime] = js.undefined,
-              EbsOptimized: js.UndefOr[Boolean] = js.undefined,
-              Ec2InstanceId: js.UndefOr[String] = js.undefined,
-              EcsClusterArn: js.UndefOr[String] = js.undefined,
-              EcsContainerInstanceArn: js.UndefOr[String] = js.undefined,
-              ElasticIp: js.UndefOr[String] = js.undefined,
-              Hostname: js.UndefOr[String] = js.undefined,
-              InfrastructureClass: js.UndefOr[String] = js.undefined,
-              InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined,
-              InstanceProfileArn: js.UndefOr[String] = js.undefined,
-              InstanceType: js.UndefOr[String] = js.undefined,
-              LastServiceErrorId: js.UndefOr[String] = js.undefined,
-              LayerIds: js.UndefOr[Strings] = js.undefined,
-              Os: js.UndefOr[String] = js.undefined,
-              Platform: js.UndefOr[String] = js.undefined,
-              PrivateDns: js.UndefOr[String] = js.undefined,
-              PrivateIp: js.UndefOr[String] = js.undefined,
-              PublicDns: js.UndefOr[String] = js.undefined,
-              PublicIp: js.UndefOr[String] = js.undefined,
-              RegisteredBy: js.UndefOr[String] = js.undefined,
-              ReportedAgentVersion: js.UndefOr[String] = js.undefined,
-              ReportedOs: js.UndefOr[ReportedOs] = js.undefined,
-              RootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
-              RootDeviceVolumeId: js.UndefOr[String] = js.undefined,
-              SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-              SshHostDsaKeyFingerprint: js.UndefOr[String] = js.undefined,
-              SshHostRsaKeyFingerprint: js.UndefOr[String] = js.undefined,
-              SshKeyName: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              SubnetId: js.UndefOr[String] = js.undefined,
-              Tenancy: js.UndefOr[String] = js.undefined,
-              VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined): Instance = {
+    def apply(
+        AgentVersion: js.UndefOr[String] = js.undefined,
+        AmiId: js.UndefOr[String] = js.undefined,
+        Architecture: js.UndefOr[Architecture] = js.undefined,
+        Arn: js.UndefOr[String] = js.undefined,
+        AutoScalingType: js.UndefOr[AutoScalingType] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        BlockDeviceMappings: js.UndefOr[BlockDeviceMappings] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        EbsOptimized: js.UndefOr[Boolean] = js.undefined,
+        Ec2InstanceId: js.UndefOr[String] = js.undefined,
+        EcsClusterArn: js.UndefOr[String] = js.undefined,
+        EcsContainerInstanceArn: js.UndefOr[String] = js.undefined,
+        ElasticIp: js.UndefOr[String] = js.undefined,
+        Hostname: js.UndefOr[String] = js.undefined,
+        InfrastructureClass: js.UndefOr[String] = js.undefined,
+        InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        InstanceProfileArn: js.UndefOr[String] = js.undefined,
+        InstanceType: js.UndefOr[String] = js.undefined,
+        LastServiceErrorId: js.UndefOr[String] = js.undefined,
+        LayerIds: js.UndefOr[Strings] = js.undefined,
+        Os: js.UndefOr[String] = js.undefined,
+        Platform: js.UndefOr[String] = js.undefined,
+        PrivateDns: js.UndefOr[String] = js.undefined,
+        PrivateIp: js.UndefOr[String] = js.undefined,
+        PublicDns: js.UndefOr[String] = js.undefined,
+        PublicIp: js.UndefOr[String] = js.undefined,
+        RegisteredBy: js.UndefOr[String] = js.undefined,
+        ReportedAgentVersion: js.UndefOr[String] = js.undefined,
+        ReportedOs: js.UndefOr[ReportedOs] = js.undefined,
+        RootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
+        RootDeviceVolumeId: js.UndefOr[String] = js.undefined,
+        SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
+        SshHostDsaKeyFingerprint: js.UndefOr[String] = js.undefined,
+        SshHostRsaKeyFingerprint: js.UndefOr[String] = js.undefined,
+        SshKeyName: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        SubnetId: js.UndefOr[String] = js.undefined,
+        Tenancy: js.UndefOr[String] = js.undefined,
+        VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined
+    ): Instance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AgentVersion" -> AgentVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -3192,13 +3498,18 @@ package opsworks {
   }
 
   object InstanceIdentity {
-    def apply(Document: js.UndefOr[String] = js.undefined,
-              Signature: js.UndefOr[String] = js.undefined): InstanceIdentity = {
-      val _fields = IndexedSeq[(String, js.Any)]("Document" -> Document.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Signature" -> Signature.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Document: js.UndefOr[String] = js.undefined,
+        Signature: js.UndefOr[String] = js.undefined
+    ): InstanceIdentity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Document" -> Document.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Signature" -> Signature.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceIdentity]
     }
@@ -3232,26 +3543,28 @@ package opsworks {
   }
 
   object InstancesCount {
-    def apply(Assigning: js.UndefOr[Int] = js.undefined,
-              Booting: js.UndefOr[Int] = js.undefined,
-              ConnectionLost: js.UndefOr[Int] = js.undefined,
-              Deregistering: js.UndefOr[Int] = js.undefined,
-              Online: js.UndefOr[Int] = js.undefined,
-              Pending: js.UndefOr[Int] = js.undefined,
-              Rebooting: js.UndefOr[Int] = js.undefined,
-              Registered: js.UndefOr[Int] = js.undefined,
-              Registering: js.UndefOr[Int] = js.undefined,
-              Requested: js.UndefOr[Int] = js.undefined,
-              RunningSetup: js.UndefOr[Int] = js.undefined,
-              SetupFailed: js.UndefOr[Int] = js.undefined,
-              ShuttingDown: js.UndefOr[Int] = js.undefined,
-              StartFailed: js.UndefOr[Int] = js.undefined,
-              StopFailed: js.UndefOr[Int] = js.undefined,
-              Stopped: js.UndefOr[Int] = js.undefined,
-              Stopping: js.UndefOr[Int] = js.undefined,
-              Terminated: js.UndefOr[Int] = js.undefined,
-              Terminating: js.UndefOr[Int] = js.undefined,
-              Unassigning: js.UndefOr[Int] = js.undefined): InstancesCount = {
+    def apply(
+        Assigning: js.UndefOr[Int] = js.undefined,
+        Booting: js.UndefOr[Int] = js.undefined,
+        ConnectionLost: js.UndefOr[Int] = js.undefined,
+        Deregistering: js.UndefOr[Int] = js.undefined,
+        Online: js.UndefOr[Int] = js.undefined,
+        Pending: js.UndefOr[Int] = js.undefined,
+        Rebooting: js.UndefOr[Int] = js.undefined,
+        Registered: js.UndefOr[Int] = js.undefined,
+        Registering: js.UndefOr[Int] = js.undefined,
+        Requested: js.UndefOr[Int] = js.undefined,
+        RunningSetup: js.UndefOr[Int] = js.undefined,
+        SetupFailed: js.UndefOr[Int] = js.undefined,
+        ShuttingDown: js.UndefOr[Int] = js.undefined,
+        StartFailed: js.UndefOr[Int] = js.undefined,
+        StopFailed: js.UndefOr[Int] = js.undefined,
+        Stopped: js.UndefOr[Int] = js.undefined,
+        Stopping: js.UndefOr[Int] = js.undefined,
+        Terminated: js.UndefOr[Int] = js.undefined,
+        Terminating: js.UndefOr[Int] = js.undefined,
+        Unassigning: js.UndefOr[Int] = js.undefined
+    ): InstancesCount = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Assigning" -> Assigning.map { x =>
           x.asInstanceOf[js.Any]
@@ -3350,29 +3663,31 @@ package opsworks {
   }
 
   object Layer {
-    def apply(Arn: js.UndefOr[String] = js.undefined,
-              Attributes: js.UndefOr[LayerAttributes] = js.undefined,
-              AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
-              AutoAssignPublicIps: js.UndefOr[Boolean] = js.undefined,
-              CloudWatchLogsConfiguration: js.UndefOr[CloudWatchLogsConfiguration] = js.undefined,
-              CreatedAt: js.UndefOr[DateTime] = js.undefined,
-              CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              CustomRecipes: js.UndefOr[Recipes] = js.undefined,
-              CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-              DefaultRecipes: js.UndefOr[Recipes] = js.undefined,
-              DefaultSecurityGroupNames: js.UndefOr[Strings] = js.undefined,
-              EnableAutoHealing: js.UndefOr[Boolean] = js.undefined,
-              InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
-              LayerId: js.UndefOr[String] = js.undefined,
-              LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Packages: js.UndefOr[Strings] = js.undefined,
-              Shortname: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[LayerType] = js.undefined,
-              UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
-              VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined): Layer = {
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined,
+        Attributes: js.UndefOr[LayerAttributes] = js.undefined,
+        AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
+        AutoAssignPublicIps: js.UndefOr[Boolean] = js.undefined,
+        CloudWatchLogsConfiguration: js.UndefOr[CloudWatchLogsConfiguration] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        CustomRecipes: js.UndefOr[Recipes] = js.undefined,
+        CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
+        DefaultRecipes: js.UndefOr[Recipes] = js.undefined,
+        DefaultSecurityGroupNames: js.UndefOr[Strings] = js.undefined,
+        EnableAutoHealing: js.UndefOr[Boolean] = js.undefined,
+        InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
+        LayerId: js.UndefOr[String] = js.undefined,
+        LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Packages: js.UndefOr[Strings] = js.undefined,
+        Shortname: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[LayerType] = js.undefined,
+        UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
+        VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined
+    ): Layer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3544,10 +3859,14 @@ package opsworks {
   }
 
   object LifecycleEventConfiguration {
-    def apply(Shutdown: js.UndefOr[ShutdownEventConfiguration] = js.undefined): LifecycleEventConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("Shutdown" -> Shutdown.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Shutdown: js.UndefOr[ShutdownEventConfiguration] = js.undefined
+    ): LifecycleEventConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Shutdown" -> Shutdown.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecycleEventConfiguration]
     }
@@ -3561,9 +3880,11 @@ package opsworks {
   }
 
   object ListTagsRequest {
-    def apply(ResourceArn: ResourceArn,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsRequest = {
+    def apply(
+        ResourceArn: ResourceArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -3588,13 +3909,18 @@ package opsworks {
   }
 
   object ListTagsResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): ListTagsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResult]
     }
@@ -3612,10 +3938,12 @@ package opsworks {
   }
 
   object LoadBasedAutoScalingConfiguration {
-    def apply(DownScaling: js.UndefOr[AutoScalingThresholds] = js.undefined,
-              Enable: js.UndefOr[Boolean] = js.undefined,
-              LayerId: js.UndefOr[String] = js.undefined,
-              UpScaling: js.UndefOr[AutoScalingThresholds] = js.undefined): LoadBasedAutoScalingConfiguration = {
+    def apply(
+        DownScaling: js.UndefOr[AutoScalingThresholds] = js.undefined,
+        Enable: js.UndefOr[Boolean] = js.undefined,
+        LayerId: js.UndefOr[String] = js.undefined,
+        UpScaling: js.UndefOr[AutoScalingThresholds] = js.undefined
+    ): LoadBasedAutoScalingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DownScaling" -> DownScaling.map { x =>
           x.asInstanceOf[js.Any]
@@ -3650,13 +3978,15 @@ package opsworks {
   }
 
   object OperatingSystem {
-    def apply(ConfigurationManagers: js.UndefOr[OperatingSystemConfigurationManagers] = js.undefined,
-              Id: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              ReportedName: js.UndefOr[String] = js.undefined,
-              ReportedVersion: js.UndefOr[String] = js.undefined,
-              Supported: js.UndefOr[Boolean] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): OperatingSystem = {
+    def apply(
+        ConfigurationManagers: js.UndefOr[OperatingSystemConfigurationManagers] = js.undefined,
+        Id: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        ReportedName: js.UndefOr[String] = js.undefined,
+        ReportedVersion: js.UndefOr[String] = js.undefined,
+        Supported: js.UndefOr[Boolean] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): OperatingSystem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigurationManagers" -> ConfigurationManagers.map { x =>
           x.asInstanceOf[js.Any]
@@ -3695,13 +4025,18 @@ package opsworks {
   }
 
   object OperatingSystemConfigurationManager {
-    def apply(Name: js.UndefOr[String] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): OperatingSystemConfigurationManager = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): OperatingSystemConfigurationManager = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OperatingSystemConfigurationManager]
     }
@@ -3720,11 +4055,13 @@ package opsworks {
   }
 
   object Permission {
-    def apply(AllowSsh: js.UndefOr[Boolean] = js.undefined,
-              AllowSudo: js.UndefOr[Boolean] = js.undefined,
-              IamUserArn: js.UndefOr[String] = js.undefined,
-              Level: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): Permission = {
+    def apply(
+        AllowSsh: js.UndefOr[Boolean] = js.undefined,
+        AllowSudo: js.UndefOr[Boolean] = js.undefined,
+        IamUserArn: js.UndefOr[String] = js.undefined,
+        Level: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): Permission = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowSsh" -> AllowSsh.map { x =>
           x.asInstanceOf[js.Any]
@@ -3768,19 +4105,21 @@ package opsworks {
   }
 
   object RaidArray {
-    def apply(AvailabilityZone: js.UndefOr[String] = js.undefined,
-              CreatedAt: js.UndefOr[DateTime] = js.undefined,
-              Device: js.UndefOr[String] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined,
-              Iops: js.UndefOr[Int] = js.undefined,
-              MountPoint: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              NumberOfDisks: js.UndefOr[Int] = js.undefined,
-              RaidArrayId: js.UndefOr[String] = js.undefined,
-              RaidLevel: js.UndefOr[Int] = js.undefined,
-              Size: js.UndefOr[Int] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              VolumeType: js.UndefOr[String] = js.undefined): RaidArray = {
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        Device: js.UndefOr[String] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        Iops: js.UndefOr[Int] = js.undefined,
+        MountPoint: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        NumberOfDisks: js.UndefOr[Int] = js.undefined,
+        RaidArrayId: js.UndefOr[String] = js.undefined,
+        RaidLevel: js.UndefOr[Int] = js.undefined,
+        Size: js.UndefOr[Int] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        VolumeType: js.UndefOr[String] = js.undefined
+    ): RaidArray = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -3844,15 +4183,17 @@ package opsworks {
   }
 
   object RdsDbInstance {
-    def apply(Address: js.UndefOr[String] = js.undefined,
-              DbInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              DbPassword: js.UndefOr[String] = js.undefined,
-              DbUser: js.UndefOr[String] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              MissingOnRds: js.UndefOr[Boolean] = js.undefined,
-              RdsDbInstanceArn: js.UndefOr[String] = js.undefined,
-              Region: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): RdsDbInstance = {
+    def apply(
+        Address: js.UndefOr[String] = js.undefined,
+        DbInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        DbPassword: js.UndefOr[String] = js.undefined,
+        DbUser: js.UndefOr[String] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        MissingOnRds: js.UndefOr[Boolean] = js.undefined,
+        RdsDbInstanceArn: js.UndefOr[String] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): RdsDbInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Address" -> Address.map { x =>
           x.asInstanceOf[js.Any]
@@ -3893,9 +4234,12 @@ package opsworks {
   }
 
   object RebootInstanceRequest {
-    def apply(InstanceId: String): RebootInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: String
+    ): RebootInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootInstanceRequest]
     }
@@ -3915,11 +4259,13 @@ package opsworks {
   }
 
   object Recipes {
-    def apply(Configure: js.UndefOr[Strings] = js.undefined,
-              Deploy: js.UndefOr[Strings] = js.undefined,
-              Setup: js.UndefOr[Strings] = js.undefined,
-              Shutdown: js.UndefOr[Strings] = js.undefined,
-              Undeploy: js.UndefOr[Strings] = js.undefined): Recipes = {
+    def apply(
+        Configure: js.UndefOr[Strings] = js.undefined,
+        Deploy: js.UndefOr[Strings] = js.undefined,
+        Setup: js.UndefOr[Strings] = js.undefined,
+        Shutdown: js.UndefOr[Strings] = js.undefined,
+        Undeploy: js.UndefOr[Strings] = js.undefined
+    ): Recipes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Configure" -> Configure.map { x =>
           x.asInstanceOf[js.Any]
@@ -3949,7 +4295,10 @@ package opsworks {
   }
 
   object RegisterEcsClusterRequest {
-    def apply(EcsClusterArn: String, StackId: String): RegisterEcsClusterRequest = {
+    def apply(
+        EcsClusterArn: String,
+        StackId: String
+    ): RegisterEcsClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EcsClusterArn" -> EcsClusterArn.asInstanceOf[js.Any],
         "StackId"       -> StackId.asInstanceOf[js.Any]
@@ -3968,10 +4317,14 @@ package opsworks {
   }
 
   object RegisterEcsClusterResult {
-    def apply(EcsClusterArn: js.UndefOr[String] = js.undefined): RegisterEcsClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EcsClusterArn" -> EcsClusterArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EcsClusterArn: js.UndefOr[String] = js.undefined
+    ): RegisterEcsClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EcsClusterArn" -> EcsClusterArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterEcsClusterResult]
     }
@@ -3984,7 +4337,10 @@ package opsworks {
   }
 
   object RegisterElasticIpRequest {
-    def apply(ElasticIp: String, StackId: String): RegisterElasticIpRequest = {
+    def apply(
+        ElasticIp: String,
+        StackId: String
+    ): RegisterElasticIpRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any],
         "StackId"   -> StackId.asInstanceOf[js.Any]
@@ -4003,10 +4359,14 @@ package opsworks {
   }
 
   object RegisterElasticIpResult {
-    def apply(ElasticIp: js.UndefOr[String] = js.undefined): RegisterElasticIpResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ElasticIp" -> ElasticIp.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ElasticIp: js.UndefOr[String] = js.undefined
+    ): RegisterElasticIpResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticIp" -> ElasticIp.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterElasticIpResult]
     }
@@ -4024,13 +4384,15 @@ package opsworks {
   }
 
   object RegisterInstanceRequest {
-    def apply(StackId: String,
-              Hostname: js.UndefOr[String] = js.undefined,
-              InstanceIdentity: js.UndefOr[InstanceIdentity] = js.undefined,
-              PrivateIp: js.UndefOr[String] = js.undefined,
-              PublicIp: js.UndefOr[String] = js.undefined,
-              RsaPublicKey: js.UndefOr[String] = js.undefined,
-              RsaPublicKeyFingerprint: js.UndefOr[String] = js.undefined): RegisterInstanceRequest = {
+    def apply(
+        StackId: String,
+        Hostname: js.UndefOr[String] = js.undefined,
+        InstanceIdentity: js.UndefOr[InstanceIdentity] = js.undefined,
+        PrivateIp: js.UndefOr[String] = js.undefined,
+        PublicIp: js.UndefOr[String] = js.undefined,
+        RsaPublicKey: js.UndefOr[String] = js.undefined,
+        RsaPublicKeyFingerprint: js.UndefOr[String] = js.undefined
+    ): RegisterInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackId" -> StackId.asInstanceOf[js.Any],
         "Hostname" -> Hostname.map { x =>
@@ -4066,10 +4428,14 @@ package opsworks {
   }
 
   object RegisterInstanceResult {
-    def apply(InstanceId: js.UndefOr[String] = js.undefined): RegisterInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined
+    ): RegisterInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterInstanceResult]
     }
@@ -4084,10 +4450,12 @@ package opsworks {
   }
 
   object RegisterRdsDbInstanceRequest {
-    def apply(DbPassword: String,
-              DbUser: String,
-              RdsDbInstanceArn: String,
-              StackId: String): RegisterRdsDbInstanceRequest = {
+    def apply(
+        DbPassword: String,
+        DbUser: String,
+        RdsDbInstanceArn: String,
+        StackId: String
+    ): RegisterRdsDbInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DbPassword"       -> DbPassword.asInstanceOf[js.Any],
         "DbUser"           -> DbUser.asInstanceOf[js.Any],
@@ -4106,11 +4474,16 @@ package opsworks {
   }
 
   object RegisterVolumeRequest {
-    def apply(StackId: String, Ec2VolumeId: js.UndefOr[String] = js.undefined): RegisterVolumeRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackId" -> StackId.asInstanceOf[js.Any], "Ec2VolumeId" -> Ec2VolumeId.map { x =>
+    def apply(
+        StackId: String,
+        Ec2VolumeId: js.UndefOr[String] = js.undefined
+    ): RegisterVolumeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.asInstanceOf[js.Any],
+        "Ec2VolumeId" -> Ec2VolumeId.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterVolumeRequest]
     }
@@ -4125,10 +4498,14 @@ package opsworks {
   }
 
   object RegisterVolumeResult {
-    def apply(VolumeId: js.UndefOr[String] = js.undefined): RegisterVolumeResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeId" -> VolumeId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeId: js.UndefOr[String] = js.undefined
+    ): RegisterVolumeResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeId" -> VolumeId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterVolumeResult]
     }
@@ -4145,16 +4522,22 @@ package opsworks {
   }
 
   object ReportedOs {
-    def apply(Family: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): ReportedOs = {
-      val _fields = IndexedSeq[(String, js.Any)]("Family" -> Family.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Family: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): ReportedOs = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Family" -> Family.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReportedOs]
     }
@@ -4187,10 +4570,12 @@ package opsworks {
   }
 
   object SelfUserProfile {
-    def apply(IamUserArn: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              SshPublicKey: js.UndefOr[String] = js.undefined,
-              SshUsername: js.UndefOr[String] = js.undefined): SelfUserProfile = {
+    def apply(
+        IamUserArn: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        SshPublicKey: js.UndefOr[String] = js.undefined,
+        SshUsername: js.UndefOr[String] = js.undefined
+    ): SelfUserProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamUserArn" -> IamUserArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -4224,12 +4609,14 @@ package opsworks {
   }
 
   object ServiceError {
-    def apply(CreatedAt: js.UndefOr[DateTime] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined,
-              ServiceErrorId: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): ServiceError = {
+    def apply(
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        ServiceErrorId: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): ServiceError = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedAt" -> CreatedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -4264,10 +4651,12 @@ package opsworks {
   }
 
   object SetLoadBasedAutoScalingRequest {
-    def apply(LayerId: String,
-              DownScaling: js.UndefOr[AutoScalingThresholds] = js.undefined,
-              Enable: js.UndefOr[Boolean] = js.undefined,
-              UpScaling: js.UndefOr[AutoScalingThresholds] = js.undefined): SetLoadBasedAutoScalingRequest = {
+    def apply(
+        LayerId: String,
+        DownScaling: js.UndefOr[AutoScalingThresholds] = js.undefined,
+        Enable: js.UndefOr[Boolean] = js.undefined,
+        UpScaling: js.UndefOr[AutoScalingThresholds] = js.undefined
+    ): SetLoadBasedAutoScalingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LayerId" -> LayerId.asInstanceOf[js.Any],
         "DownScaling" -> DownScaling.map { x =>
@@ -4295,11 +4684,13 @@ package opsworks {
   }
 
   object SetPermissionRequest {
-    def apply(IamUserArn: String,
-              StackId: String,
-              AllowSsh: js.UndefOr[Boolean] = js.undefined,
-              AllowSudo: js.UndefOr[Boolean] = js.undefined,
-              Level: js.UndefOr[String] = js.undefined): SetPermissionRequest = {
+    def apply(
+        IamUserArn: String,
+        StackId: String,
+        AllowSsh: js.UndefOr[Boolean] = js.undefined,
+        AllowSudo: js.UndefOr[Boolean] = js.undefined,
+        Level: js.UndefOr[String] = js.undefined
+    ): SetPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any],
         "StackId"    -> StackId.asInstanceOf[js.Any],
@@ -4350,8 +4741,10 @@ package opsworks {
   }
 
   object ShutdownEventConfiguration {
-    def apply(DelayUntilElbConnectionsDrained: js.UndefOr[Boolean] = js.undefined,
-              ExecutionTimeout: js.UndefOr[Int] = js.undefined): ShutdownEventConfiguration = {
+    def apply(
+        DelayUntilElbConnectionsDrained: js.UndefOr[Boolean] = js.undefined,
+        ExecutionTimeout: js.UndefOr[Int] = js.undefined
+    ): ShutdownEventConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DelayUntilElbConnectionsDrained" -> DelayUntilElbConnectionsDrained.map { x =>
           x.asInstanceOf[js.Any]
@@ -4379,12 +4772,14 @@ package opsworks {
   }
 
   object Source {
-    def apply(Password: js.UndefOr[String] = js.undefined,
-              Revision: js.UndefOr[String] = js.undefined,
-              SshKey: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[SourceType] = js.undefined,
-              Url: js.UndefOr[String] = js.undefined,
-              Username: js.UndefOr[String] = js.undefined): Source = {
+    def apply(
+        Password: js.UndefOr[String] = js.undefined,
+        Revision: js.UndefOr[String] = js.undefined,
+        SshKey: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[SourceType] = js.undefined,
+        Url: js.UndefOr[String] = js.undefined,
+        Username: js.UndefOr[String] = js.undefined
+    ): Source = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Password" -> Password.map { x =>
           x.asInstanceOf[js.Any]
@@ -4430,7 +4825,11 @@ package opsworks {
   }
 
   object SslConfiguration {
-    def apply(Certificate: String, PrivateKey: String, Chain: js.UndefOr[String] = js.undefined): SslConfiguration = {
+    def apply(
+        Certificate: String,
+        PrivateKey: String,
+        Chain: js.UndefOr[String] = js.undefined
+    ): SslConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Certificate" -> Certificate.asInstanceOf[js.Any],
         "PrivateKey"  -> PrivateKey.asInstanceOf[js.Any],
@@ -4473,28 +4872,30 @@ package opsworks {
   }
 
   object Stack {
-    def apply(AgentVersion: js.UndefOr[String] = js.undefined,
-              Arn: js.UndefOr[String] = js.undefined,
-              Attributes: js.UndefOr[StackAttributes] = js.undefined,
-              ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
-              ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
-              CreatedAt: js.UndefOr[DateTime] = js.undefined,
-              CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
-              DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
-              DefaultOs: js.UndefOr[String] = js.undefined,
-              DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
-              DefaultSshKeyName: js.UndefOr[String] = js.undefined,
-              DefaultSubnetId: js.UndefOr[String] = js.undefined,
-              HostnameTheme: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Region: js.UndefOr[String] = js.undefined,
-              ServiceRoleArn: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined,
-              UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
-              UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): Stack = {
+    def apply(
+        AgentVersion: js.UndefOr[String] = js.undefined,
+        Arn: js.UndefOr[String] = js.undefined,
+        Attributes: js.UndefOr[StackAttributes] = js.undefined,
+        ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
+        ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
+        DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
+        DefaultOs: js.UndefOr[String] = js.undefined,
+        DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
+        DefaultSshKeyName: js.UndefOr[String] = js.undefined,
+        DefaultSubnetId: js.UndefOr[String] = js.undefined,
+        HostnameTheme: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined,
+        ServiceRoleArn: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined,
+        UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
+        UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): Stack = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AgentVersion" -> AgentVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -4584,13 +4985,18 @@ package opsworks {
   }
 
   object StackConfigurationManager {
-    def apply(Name: js.UndefOr[String] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): StackConfigurationManager = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): StackConfigurationManager = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StackConfigurationManager]
     }
@@ -4610,12 +5016,14 @@ package opsworks {
   }
 
   object StackSummary {
-    def apply(AppsCount: js.UndefOr[Int] = js.undefined,
-              Arn: js.UndefOr[String] = js.undefined,
-              InstancesCount: js.UndefOr[InstancesCount] = js.undefined,
-              LayersCount: js.UndefOr[Int] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              StackId: js.UndefOr[String] = js.undefined): StackSummary = {
+    def apply(
+        AppsCount: js.UndefOr[Int] = js.undefined,
+        Arn: js.UndefOr[String] = js.undefined,
+        InstancesCount: js.UndefOr[InstancesCount] = js.undefined,
+        LayersCount: js.UndefOr[Int] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        StackId: js.UndefOr[String] = js.undefined
+    ): StackSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AppsCount" -> AppsCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -4647,9 +5055,12 @@ package opsworks {
   }
 
   object StartInstanceRequest {
-    def apply(InstanceId: String): StartInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: String
+    ): StartInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartInstanceRequest]
     }
@@ -4661,9 +5072,12 @@ package opsworks {
   }
 
   object StartStackRequest {
-    def apply(StackId: String): StartStackRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackId" -> StackId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: String
+    ): StartStackRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartStackRequest]
     }
@@ -4676,11 +5090,16 @@ package opsworks {
   }
 
   object StopInstanceRequest {
-    def apply(InstanceId: String, Force: js.UndefOr[Boolean] = js.undefined): StopInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any], "Force" -> Force.map {
-        x =>
+    def apply(
+        InstanceId: String,
+        Force: js.UndefOr[Boolean] = js.undefined
+    ): StopInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any],
+        "Force" -> Force.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopInstanceRequest]
     }
@@ -4692,9 +5111,12 @@ package opsworks {
   }
 
   object StopStackRequest {
-    def apply(StackId: String): StopStackRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackId" -> StackId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: String
+    ): StopStackRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopStackRequest]
     }
@@ -4707,7 +5129,10 @@ package opsworks {
   }
 
   object TagResourceRequest {
-    def apply(ResourceArn: ResourceArn, Tags: Tags): TagResourceRequest = {
+    def apply(
+        ResourceArn: ResourceArn,
+        Tags: Tags
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
@@ -4729,10 +5154,12 @@ package opsworks {
   }
 
   object TemporaryCredential {
-    def apply(InstanceId: js.UndefOr[String] = js.undefined,
-              Password: js.UndefOr[String] = js.undefined,
-              Username: js.UndefOr[String] = js.undefined,
-              ValidForInMinutes: js.UndefOr[Int] = js.undefined): TemporaryCredential = {
+    def apply(
+        InstanceId: js.UndefOr[String] = js.undefined,
+        Password: js.UndefOr[String] = js.undefined,
+        Username: js.UndefOr[String] = js.undefined,
+        ValidForInMinutes: js.UndefOr[Int] = js.undefined
+    ): TemporaryCredential = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -4762,13 +5189,18 @@ package opsworks {
   }
 
   object TimeBasedAutoScalingConfiguration {
-    def apply(AutoScalingSchedule: js.UndefOr[WeeklyAutoScalingSchedule] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined): TimeBasedAutoScalingConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("AutoScalingSchedule" -> AutoScalingSchedule.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "InstanceId" -> InstanceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AutoScalingSchedule: js.UndefOr[WeeklyAutoScalingSchedule] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined
+    ): TimeBasedAutoScalingConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AutoScalingSchedule" -> AutoScalingSchedule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceId" -> InstanceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeBasedAutoScalingConfiguration]
     }
@@ -4780,9 +5212,12 @@ package opsworks {
   }
 
   object UnassignInstanceRequest {
-    def apply(InstanceId: String): UnassignInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: String
+    ): UnassignInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnassignInstanceRequest]
     }
@@ -4794,9 +5229,12 @@ package opsworks {
   }
 
   object UnassignVolumeRequest {
-    def apply(VolumeId: String): UnassignVolumeRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("VolumeId" -> VolumeId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeId: String
+    ): UnassignVolumeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeId" -> VolumeId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnassignVolumeRequest]
     }
@@ -4809,7 +5247,10 @@ package opsworks {
   }
 
   object UntagResourceRequest {
-    def apply(ResourceArn: ResourceArn, TagKeys: TagKeys): UntagResourceRequest = {
+    def apply(
+        ResourceArn: ResourceArn,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
@@ -4835,17 +5276,19 @@ package opsworks {
   }
 
   object UpdateAppRequest {
-    def apply(AppId: String,
-              AppSource: js.UndefOr[Source] = js.undefined,
-              Attributes: js.UndefOr[AppAttributes] = js.undefined,
-              DataSources: js.UndefOr[DataSources] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              Domains: js.UndefOr[Strings] = js.undefined,
-              EnableSsl: js.UndefOr[Boolean] = js.undefined,
-              Environment: js.UndefOr[EnvironmentVariables] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined,
-              Type: js.UndefOr[AppType] = js.undefined): UpdateAppRequest = {
+    def apply(
+        AppId: String,
+        AppSource: js.UndefOr[Source] = js.undefined,
+        Attributes: js.UndefOr[AppAttributes] = js.undefined,
+        DataSources: js.UndefOr[DataSources] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        Domains: js.UndefOr[Strings] = js.undefined,
+        EnableSsl: js.UndefOr[Boolean] = js.undefined,
+        Environment: js.UndefOr[EnvironmentVariables] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined,
+        Type: js.UndefOr[AppType] = js.undefined
+    ): UpdateAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AppId" -> AppId.asInstanceOf[js.Any],
         "AppSource" -> AppSource.map { x =>
@@ -4891,11 +5334,16 @@ package opsworks {
   }
 
   object UpdateElasticIpRequest {
-    def apply(ElasticIp: String, Name: js.UndefOr[String] = js.undefined): UpdateElasticIpRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ElasticIp" -> ElasticIp.asInstanceOf[js.Any], "Name" -> Name.map {
-        x =>
+    def apply(
+        ElasticIp: String,
+        Name: js.UndefOr[String] = js.undefined
+    ): UpdateElasticIpRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticIp" -> ElasticIp.asInstanceOf[js.Any],
+        "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateElasticIpRequest]
     }
@@ -4918,18 +5366,20 @@ package opsworks {
   }
 
   object UpdateInstanceRequest {
-    def apply(InstanceId: String,
-              AgentVersion: js.UndefOr[String] = js.undefined,
-              AmiId: js.UndefOr[String] = js.undefined,
-              Architecture: js.UndefOr[Architecture] = js.undefined,
-              AutoScalingType: js.UndefOr[AutoScalingType] = js.undefined,
-              EbsOptimized: js.UndefOr[Boolean] = js.undefined,
-              Hostname: js.UndefOr[String] = js.undefined,
-              InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
-              InstanceType: js.UndefOr[String] = js.undefined,
-              LayerIds: js.UndefOr[Strings] = js.undefined,
-              Os: js.UndefOr[String] = js.undefined,
-              SshKeyName: js.UndefOr[String] = js.undefined): UpdateInstanceRequest = {
+    def apply(
+        InstanceId: String,
+        AgentVersion: js.UndefOr[String] = js.undefined,
+        AmiId: js.UndefOr[String] = js.undefined,
+        Architecture: js.UndefOr[Architecture] = js.undefined,
+        AutoScalingType: js.UndefOr[AutoScalingType] = js.undefined,
+        EbsOptimized: js.UndefOr[Boolean] = js.undefined,
+        Hostname: js.UndefOr[String] = js.undefined,
+        InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
+        InstanceType: js.UndefOr[String] = js.undefined,
+        LayerIds: js.UndefOr[Strings] = js.undefined,
+        Os: js.UndefOr[String] = js.undefined,
+        SshKeyName: js.UndefOr[String] = js.undefined
+    ): UpdateInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "AgentVersion" -> AgentVersion.map { x =>
@@ -4993,23 +5443,25 @@ package opsworks {
   }
 
   object UpdateLayerRequest {
-    def apply(LayerId: String,
-              Attributes: js.UndefOr[LayerAttributes] = js.undefined,
-              AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
-              AutoAssignPublicIps: js.UndefOr[Boolean] = js.undefined,
-              CloudWatchLogsConfiguration: js.UndefOr[CloudWatchLogsConfiguration] = js.undefined,
-              CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              CustomRecipes: js.UndefOr[Recipes] = js.undefined,
-              CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
-              EnableAutoHealing: js.UndefOr[Boolean] = js.undefined,
-              InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
-              LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Packages: js.UndefOr[Strings] = js.undefined,
-              Shortname: js.UndefOr[String] = js.undefined,
-              UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
-              VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined): UpdateLayerRequest = {
+    def apply(
+        LayerId: String,
+        Attributes: js.UndefOr[LayerAttributes] = js.undefined,
+        AutoAssignElasticIps: js.UndefOr[Boolean] = js.undefined,
+        AutoAssignPublicIps: js.UndefOr[Boolean] = js.undefined,
+        CloudWatchLogsConfiguration: js.UndefOr[CloudWatchLogsConfiguration] = js.undefined,
+        CustomInstanceProfileArn: js.UndefOr[String] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        CustomRecipes: js.UndefOr[Recipes] = js.undefined,
+        CustomSecurityGroupIds: js.UndefOr[Strings] = js.undefined,
+        EnableAutoHealing: js.UndefOr[Boolean] = js.undefined,
+        InstallUpdatesOnBoot: js.UndefOr[Boolean] = js.undefined,
+        LifecycleEventConfiguration: js.UndefOr[LifecycleEventConfiguration] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Packages: js.UndefOr[Strings] = js.undefined,
+        Shortname: js.UndefOr[String] = js.undefined,
+        UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
+        VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined
+    ): UpdateLayerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LayerId" -> LayerId.asInstanceOf[js.Any],
         "Attributes" -> Attributes.map { x =>
@@ -5072,10 +5524,14 @@ package opsworks {
   }
 
   object UpdateMyUserProfileRequest {
-    def apply(SshPublicKey: js.UndefOr[String] = js.undefined): UpdateMyUserProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SshPublicKey" -> SshPublicKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SshPublicKey: js.UndefOr[String] = js.undefined
+    ): UpdateMyUserProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SshPublicKey" -> SshPublicKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateMyUserProfileRequest]
     }
@@ -5089,9 +5545,11 @@ package opsworks {
   }
 
   object UpdateRdsDbInstanceRequest {
-    def apply(RdsDbInstanceArn: String,
-              DbPassword: js.UndefOr[String] = js.undefined,
-              DbUser: js.UndefOr[String] = js.undefined): UpdateRdsDbInstanceRequest = {
+    def apply(
+        RdsDbInstanceArn: String,
+        DbPassword: js.UndefOr[String] = js.undefined,
+        DbUser: js.UndefOr[String] = js.undefined
+    ): UpdateRdsDbInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any],
         "DbPassword" -> DbPassword.map { x =>
@@ -5129,24 +5587,26 @@ package opsworks {
   }
 
   object UpdateStackRequest {
-    def apply(StackId: String,
-              AgentVersion: js.UndefOr[String] = js.undefined,
-              Attributes: js.UndefOr[StackAttributes] = js.undefined,
-              ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
-              ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
-              CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
-              CustomJson: js.UndefOr[String] = js.undefined,
-              DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
-              DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
-              DefaultOs: js.UndefOr[String] = js.undefined,
-              DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
-              DefaultSshKeyName: js.UndefOr[String] = js.undefined,
-              DefaultSubnetId: js.UndefOr[String] = js.undefined,
-              HostnameTheme: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              ServiceRoleArn: js.UndefOr[String] = js.undefined,
-              UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
-              UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined): UpdateStackRequest = {
+    def apply(
+        StackId: String,
+        AgentVersion: js.UndefOr[String] = js.undefined,
+        Attributes: js.UndefOr[StackAttributes] = js.undefined,
+        ChefConfiguration: js.UndefOr[ChefConfiguration] = js.undefined,
+        ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
+        CustomCookbooksSource: js.UndefOr[Source] = js.undefined,
+        CustomJson: js.UndefOr[String] = js.undefined,
+        DefaultAvailabilityZone: js.UndefOr[String] = js.undefined,
+        DefaultInstanceProfileArn: js.UndefOr[String] = js.undefined,
+        DefaultOs: js.UndefOr[String] = js.undefined,
+        DefaultRootDeviceType: js.UndefOr[RootDeviceType] = js.undefined,
+        DefaultSshKeyName: js.UndefOr[String] = js.undefined,
+        DefaultSubnetId: js.UndefOr[String] = js.undefined,
+        HostnameTheme: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        ServiceRoleArn: js.UndefOr[String] = js.undefined,
+        UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
+        UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined
+    ): UpdateStackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackId" -> StackId.asInstanceOf[js.Any],
         "AgentVersion" -> AgentVersion.map { x =>
@@ -5215,10 +5675,12 @@ package opsworks {
   }
 
   object UpdateUserProfileRequest {
-    def apply(IamUserArn: String,
-              AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
-              SshPublicKey: js.UndefOr[String] = js.undefined,
-              SshUsername: js.UndefOr[String] = js.undefined): UpdateUserProfileRequest = {
+    def apply(
+        IamUserArn: String,
+        AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
+        SshPublicKey: js.UndefOr[String] = js.undefined,
+        SshUsername: js.UndefOr[String] = js.undefined
+    ): UpdateUserProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any],
         "AllowSelfManagement" -> AllowSelfManagement.map { x =>
@@ -5244,15 +5706,20 @@ package opsworks {
   }
 
   object UpdateVolumeRequest {
-    def apply(VolumeId: String,
-              MountPoint: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined): UpdateVolumeRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("VolumeId" -> VolumeId.asInstanceOf[js.Any], "MountPoint" -> MountPoint.map { x =>
+    def apply(
+        VolumeId: String,
+        MountPoint: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): UpdateVolumeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeId" -> VolumeId.asInstanceOf[js.Any],
+        "MountPoint" -> MountPoint.map { x =>
           x.asInstanceOf[js.Any]
-        }, "Name" -> Name.map { x =>
+        },
+        "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVolumeRequest]
     }
@@ -5271,11 +5738,13 @@ package opsworks {
   }
 
   object UserProfile {
-    def apply(AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
-              IamUserArn: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              SshPublicKey: js.UndefOr[String] = js.undefined,
-              SshUsername: js.UndefOr[String] = js.undefined): UserProfile = {
+    def apply(
+        AllowSelfManagement: js.UndefOr[Boolean] = js.undefined,
+        IamUserArn: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        SshPublicKey: js.UndefOr[String] = js.undefined,
+        SshUsername: js.UndefOr[String] = js.undefined
+    ): UserProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowSelfManagement" -> AllowSelfManagement.map { x =>
           x.asInstanceOf[js.Any]
@@ -5335,20 +5804,22 @@ package opsworks {
   }
 
   object Volume {
-    def apply(AvailabilityZone: js.UndefOr[String] = js.undefined,
-              Device: js.UndefOr[String] = js.undefined,
-              Ec2VolumeId: js.UndefOr[String] = js.undefined,
-              Encrypted: js.UndefOr[Boolean] = js.undefined,
-              InstanceId: js.UndefOr[String] = js.undefined,
-              Iops: js.UndefOr[Int] = js.undefined,
-              MountPoint: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              RaidArrayId: js.UndefOr[String] = js.undefined,
-              Region: js.UndefOr[String] = js.undefined,
-              Size: js.UndefOr[Int] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              VolumeId: js.UndefOr[String] = js.undefined,
-              VolumeType: js.UndefOr[String] = js.undefined): Volume = {
+    def apply(
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        Device: js.UndefOr[String] = js.undefined,
+        Ec2VolumeId: js.UndefOr[String] = js.undefined,
+        Encrypted: js.UndefOr[Boolean] = js.undefined,
+        InstanceId: js.UndefOr[String] = js.undefined,
+        Iops: js.UndefOr[Int] = js.undefined,
+        MountPoint: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        RaidArrayId: js.UndefOr[String] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined,
+        Size: js.UndefOr[Int] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        VolumeId: js.UndefOr[String] = js.undefined,
+        VolumeType: js.UndefOr[String] = js.undefined
+    ): Volume = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -5413,13 +5884,15 @@ package opsworks {
   }
 
   object VolumeConfiguration {
-    def apply(MountPoint: String,
-              NumberOfDisks: Int,
-              Size: Int,
-              Encrypted: js.UndefOr[Boolean] = js.undefined,
-              Iops: js.UndefOr[Int] = js.undefined,
-              RaidLevel: js.UndefOr[Int] = js.undefined,
-              VolumeType: js.UndefOr[String] = js.undefined): VolumeConfiguration = {
+    def apply(
+        MountPoint: String,
+        NumberOfDisks: Int,
+        Size: Int,
+        Encrypted: js.UndefOr[Boolean] = js.undefined,
+        Iops: js.UndefOr[Int] = js.undefined,
+        RaidLevel: js.UndefOr[Int] = js.undefined,
+        VolumeType: js.UndefOr[String] = js.undefined
+    ): VolumeConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MountPoint"    -> MountPoint.asInstanceOf[js.Any],
         "NumberOfDisks" -> NumberOfDisks.asInstanceOf[js.Any],
@@ -5470,13 +5943,15 @@ package opsworks {
   }
 
   object WeeklyAutoScalingSchedule {
-    def apply(Friday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
-              Monday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
-              Saturday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
-              Sunday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
-              Thursday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
-              Tuesday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
-              Wednesday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined): WeeklyAutoScalingSchedule = {
+    def apply(
+        Friday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
+        Monday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
+        Saturday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
+        Sunday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
+        Thursday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
+        Tuesday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
+        Wednesday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined
+    ): WeeklyAutoScalingSchedule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Friday" -> Friday.map { x =>
           x.asInstanceOf[js.Any]

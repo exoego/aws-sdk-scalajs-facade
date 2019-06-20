@@ -75,12 +75,18 @@ package importexport {
   }
 
   object Artifact {
-    def apply(Description: js.UndefOr[Description] = js.undefined, URL: js.UndefOr[URL] = js.undefined): Artifact = {
-      val _fields = IndexedSeq[(String, js.Any)]("Description" -> Description.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "URL" -> URL.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        URL: js.UndefOr[URL] = js.undefined
+    ): Artifact = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "URL" -> URL.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Artifact]
     }
@@ -104,11 +110,16 @@ package importexport {
   }
 
   object CancelJobInput {
-    def apply(JobId: JobId, APIVersion: js.UndefOr[APIVersion] = js.undefined): CancelJobInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any], "APIVersion" -> APIVersion.map {
-        x =>
+    def apply(
+        JobId: JobId,
+        APIVersion: js.UndefOr[APIVersion] = js.undefined
+    ): CancelJobInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "APIVersion" -> APIVersion.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobInput]
     }
@@ -123,10 +134,14 @@ package importexport {
   }
 
   object CancelJobOutput {
-    def apply(Success: js.UndefOr[Success] = js.undefined): CancelJobOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Success" -> Success.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Success: js.UndefOr[Success] = js.undefined
+    ): CancelJobOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Success" -> Success.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobOutput]
     }
@@ -153,11 +168,13 @@ package importexport {
   }
 
   object CreateJobInput {
-    def apply(JobType: JobType,
-              Manifest: Manifest,
-              ValidateOnly: ValidateOnly,
-              APIVersion: js.UndefOr[APIVersion] = js.undefined,
-              ManifestAddendum: js.UndefOr[ManifestAddendum] = js.undefined): CreateJobInput = {
+    def apply(
+        JobType: JobType,
+        Manifest: Manifest,
+        ValidateOnly: ValidateOnly,
+        APIVersion: js.UndefOr[APIVersion] = js.undefined,
+        ManifestAddendum: js.UndefOr[ManifestAddendum] = js.undefined
+    ): CreateJobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobType"      -> JobType.asInstanceOf[js.Any],
         "Manifest"     -> Manifest.asInstanceOf[js.Any],
@@ -188,12 +205,14 @@ package importexport {
   }
 
   object CreateJobOutput {
-    def apply(ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
-              JobId: js.UndefOr[JobId] = js.undefined,
-              JobType: js.UndefOr[JobType] = js.undefined,
-              Signature: js.UndefOr[Signature] = js.undefined,
-              SignatureFileContents: js.UndefOr[SignatureFileContents] = js.undefined,
-              WarningMessage: js.UndefOr[WarningMessage] = js.undefined): CreateJobOutput = {
+    def apply(
+        ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
+        Signature: js.UndefOr[Signature] = js.undefined,
+        SignatureFileContents: js.UndefOr[SignatureFileContents] = js.undefined,
+        WarningMessage: js.UndefOr[WarningMessage] = js.undefined
+    ): CreateJobOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArtifactList" -> ArtifactList.map { x =>
           x.asInstanceOf[js.Any]
@@ -252,18 +271,20 @@ package importexport {
   }
 
   object GetShippingLabelInput {
-    def apply(jobIds: JobIdList,
-              APIVersion: js.UndefOr[APIVersion] = js.undefined,
-              city: js.UndefOr[city] = js.undefined,
-              company: js.UndefOr[company] = js.undefined,
-              country: js.UndefOr[country] = js.undefined,
-              name: js.UndefOr[name] = js.undefined,
-              phoneNumber: js.UndefOr[phoneNumber] = js.undefined,
-              postalCode: js.UndefOr[postalCode] = js.undefined,
-              stateOrProvince: js.UndefOr[stateOrProvince] = js.undefined,
-              street1: js.UndefOr[street1] = js.undefined,
-              street2: js.UndefOr[street2] = js.undefined,
-              street3: js.UndefOr[street3] = js.undefined): GetShippingLabelInput = {
+    def apply(
+        jobIds: JobIdList,
+        APIVersion: js.UndefOr[APIVersion] = js.undefined,
+        city: js.UndefOr[city] = js.undefined,
+        company: js.UndefOr[company] = js.undefined,
+        country: js.UndefOr[country] = js.undefined,
+        name: js.UndefOr[name] = js.undefined,
+        phoneNumber: js.UndefOr[phoneNumber] = js.undefined,
+        postalCode: js.UndefOr[postalCode] = js.undefined,
+        stateOrProvince: js.UndefOr[stateOrProvince] = js.undefined,
+        street1: js.UndefOr[street1] = js.undefined,
+        street2: js.UndefOr[street2] = js.undefined,
+        street3: js.UndefOr[street3] = js.undefined
+    ): GetShippingLabelInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobIds" -> jobIds.asInstanceOf[js.Any],
         "APIVersion" -> APIVersion.map { x =>
@@ -312,13 +333,18 @@ package importexport {
   }
 
   object GetShippingLabelOutput {
-    def apply(ShippingLabelURL: js.UndefOr[GenericString] = js.undefined,
-              Warning: js.UndefOr[GenericString] = js.undefined): GetShippingLabelOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ShippingLabelURL" -> ShippingLabelURL.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Warning" -> Warning.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ShippingLabelURL: js.UndefOr[GenericString] = js.undefined,
+        Warning: js.UndefOr[GenericString] = js.undefined
+    ): GetShippingLabelOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ShippingLabelURL" -> ShippingLabelURL.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Warning" -> Warning.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetShippingLabelOutput]
     }
@@ -334,11 +360,16 @@ package importexport {
   }
 
   object GetStatusInput {
-    def apply(JobId: JobId, APIVersion: js.UndefOr[APIVersion] = js.undefined): GetStatusInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any], "APIVersion" -> APIVersion.map {
-        x =>
+    def apply(
+        JobId: JobId,
+        APIVersion: js.UndefOr[APIVersion] = js.undefined
+    ): GetStatusInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any],
+        "APIVersion" -> APIVersion.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStatusInput]
     }
@@ -368,22 +399,24 @@ package importexport {
   }
 
   object GetStatusOutput {
-    def apply(ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
-              Carrier: js.UndefOr[Carrier] = js.undefined,
-              CreationDate: js.UndefOr[CreationDate] = js.undefined,
-              CurrentManifest: js.UndefOr[CurrentManifest] = js.undefined,
-              ErrorCount: js.UndefOr[ErrorCount] = js.undefined,
-              JobId: js.UndefOr[JobId] = js.undefined,
-              JobType: js.UndefOr[JobType] = js.undefined,
-              LocationCode: js.UndefOr[LocationCode] = js.undefined,
-              LocationMessage: js.UndefOr[LocationMessage] = js.undefined,
-              LogBucket: js.UndefOr[LogBucket] = js.undefined,
-              LogKey: js.UndefOr[LogKey] = js.undefined,
-              ProgressCode: js.UndefOr[ProgressCode] = js.undefined,
-              ProgressMessage: js.UndefOr[ProgressMessage] = js.undefined,
-              Signature: js.UndefOr[Signature] = js.undefined,
-              SignatureFileContents: js.UndefOr[Signature] = js.undefined,
-              TrackingNumber: js.UndefOr[TrackingNumber] = js.undefined): GetStatusOutput = {
+    def apply(
+        ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
+        Carrier: js.UndefOr[Carrier] = js.undefined,
+        CreationDate: js.UndefOr[CreationDate] = js.undefined,
+        CurrentManifest: js.UndefOr[CurrentManifest] = js.undefined,
+        ErrorCount: js.UndefOr[ErrorCount] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
+        LocationCode: js.UndefOr[LocationCode] = js.undefined,
+        LocationMessage: js.UndefOr[LocationMessage] = js.undefined,
+        LogBucket: js.UndefOr[LogBucket] = js.undefined,
+        LogKey: js.UndefOr[LogKey] = js.undefined,
+        ProgressCode: js.UndefOr[ProgressCode] = js.undefined,
+        ProgressMessage: js.UndefOr[ProgressMessage] = js.undefined,
+        Signature: js.UndefOr[Signature] = js.undefined,
+        SignatureFileContents: js.UndefOr[Signature] = js.undefined,
+        TrackingNumber: js.UndefOr[TrackingNumber] = js.undefined
+    ): GetStatusOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArtifactList" -> ArtifactList.map { x =>
           x.asInstanceOf[js.Any]
@@ -515,10 +548,12 @@ package importexport {
   }
 
   object Job {
-    def apply(CreationDate: js.UndefOr[CreationDate] = js.undefined,
-              IsCanceled: js.UndefOr[IsCanceled] = js.undefined,
-              JobId: js.UndefOr[JobId] = js.undefined,
-              JobType: js.UndefOr[JobType] = js.undefined): Job = {
+    def apply(
+        CreationDate: js.UndefOr[CreationDate] = js.undefined,
+        IsCanceled: js.UndefOr[IsCanceled] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined
+    ): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -559,9 +594,11 @@ package importexport {
   }
 
   object ListJobsInput {
-    def apply(APIVersion: js.UndefOr[APIVersion] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              MaxJobs: js.UndefOr[MaxJobs] = js.undefined): ListJobsInput = {
+    def apply(
+        APIVersion: js.UndefOr[APIVersion] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        MaxJobs: js.UndefOr[MaxJobs] = js.undefined
+    ): ListJobsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "APIVersion" -> APIVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -588,13 +625,18 @@ package importexport {
   }
 
   object ListJobsOutput {
-    def apply(IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
-              Jobs: js.UndefOr[JobsList] = js.undefined): ListJobsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("IsTruncated" -> IsTruncated.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Jobs" -> Jobs.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
+        Jobs: js.UndefOr[JobsList] = js.undefined
+    ): ListJobsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IsTruncated" -> IsTruncated.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Jobs" -> Jobs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsOutput]
     }
@@ -677,11 +719,13 @@ package importexport {
   }
 
   object UpdateJobInput {
-    def apply(JobId: JobId,
-              JobType: JobType,
-              Manifest: Manifest,
-              ValidateOnly: ValidateOnly,
-              APIVersion: js.UndefOr[APIVersion] = js.undefined): UpdateJobInput = {
+    def apply(
+        JobId: JobId,
+        JobType: JobType,
+        Manifest: Manifest,
+        ValidateOnly: ValidateOnly,
+        APIVersion: js.UndefOr[APIVersion] = js.undefined
+    ): UpdateJobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobId"        -> JobId.asInstanceOf[js.Any],
         "JobType"      -> JobType.asInstanceOf[js.Any],
@@ -707,9 +751,11 @@ package importexport {
   }
 
   object UpdateJobOutput {
-    def apply(ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
-              Success: js.UndefOr[Success] = js.undefined,
-              WarningMessage: js.UndefOr[WarningMessage] = js.undefined): UpdateJobOutput = {
+    def apply(
+        ArtifactList: js.UndefOr[ArtifactList] = js.undefined,
+        Success: js.UndefOr[Success] = js.undefined,
+        WarningMessage: js.UndefOr[WarningMessage] = js.undefined
+    ): UpdateJobOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArtifactList" -> ArtifactList.map { x =>
           x.asInstanceOf[js.Any]

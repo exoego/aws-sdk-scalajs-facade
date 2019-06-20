@@ -123,16 +123,22 @@ package xray {
   }
 
   object Alias {
-    def apply(Name: js.UndefOr[String] = js.undefined,
-              Names: js.UndefOr[AliasNames] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): Alias = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Names" -> Names.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Names: js.UndefOr[AliasNames] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): Alias = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Names" -> Names.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Alias]
     }
@@ -149,9 +155,11 @@ package xray {
   }
 
   object AnnotationValue {
-    def apply(BooleanValue: js.UndefOr[NullableBoolean] = js.undefined,
-              NumberValue: js.UndefOr[NullableDouble] = js.undefined,
-              StringValue: js.UndefOr[String] = js.undefined): AnnotationValue = {
+    def apply(
+        BooleanValue: js.UndefOr[NullableBoolean] = js.undefined,
+        NumberValue: js.UndefOr[NullableDouble] = js.undefined,
+        StringValue: js.UndefOr[String] = js.undefined
+    ): AnnotationValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BooleanValue" -> BooleanValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -177,10 +185,14 @@ package xray {
   }
 
   object AvailabilityZoneDetail {
-    def apply(Name: js.UndefOr[String] = js.undefined): AvailabilityZoneDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined
+    ): AvailabilityZoneDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZoneDetail]
     }
@@ -200,12 +212,14 @@ package xray {
   }
 
   object BackendConnectionErrors {
-    def apply(ConnectionRefusedCount: js.UndefOr[NullableInteger] = js.undefined,
-              HTTPCode4XXCount: js.UndefOr[NullableInteger] = js.undefined,
-              HTTPCode5XXCount: js.UndefOr[NullableInteger] = js.undefined,
-              OtherCount: js.UndefOr[NullableInteger] = js.undefined,
-              TimeoutCount: js.UndefOr[NullableInteger] = js.undefined,
-              UnknownHostCount: js.UndefOr[NullableInteger] = js.undefined): BackendConnectionErrors = {
+    def apply(
+        ConnectionRefusedCount: js.UndefOr[NullableInteger] = js.undefined,
+        HTTPCode4XXCount: js.UndefOr[NullableInteger] = js.undefined,
+        HTTPCode5XXCount: js.UndefOr[NullableInteger] = js.undefined,
+        OtherCount: js.UndefOr[NullableInteger] = js.undefined,
+        TimeoutCount: js.UndefOr[NullableInteger] = js.undefined,
+        UnknownHostCount: js.UndefOr[NullableInteger] = js.undefined
+    ): BackendConnectionErrors = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionRefusedCount" -> ConnectionRefusedCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -238,11 +252,16 @@ package xray {
   }
 
   object BatchGetTracesRequest {
-    def apply(TraceIds: TraceIdList, NextToken: js.UndefOr[String] = js.undefined): BatchGetTracesRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TraceIds" -> TraceIds.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        TraceIds: TraceIdList,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): BatchGetTracesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TraceIds" -> TraceIds.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetTracesRequest]
     }
@@ -256,9 +275,11 @@ package xray {
   }
 
   object BatchGetTracesResult {
-    def apply(NextToken: js.UndefOr[String] = js.undefined,
-              Traces: js.UndefOr[TraceList] = js.undefined,
-              UnprocessedTraceIds: js.UndefOr[UnprocessedTraceIdList] = js.undefined): BatchGetTracesResult = {
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Traces: js.UndefOr[TraceList] = js.undefined,
+        UnprocessedTraceIds: js.UndefOr[UnprocessedTraceIdList] = js.undefined
+    ): BatchGetTracesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -282,8 +303,10 @@ package xray {
   }
 
   object CreateGroupRequest {
-    def apply(GroupName: GroupName,
-              FilterExpression: js.UndefOr[FilterExpression] = js.undefined): CreateGroupRequest = {
+    def apply(
+        GroupName: GroupName,
+        FilterExpression: js.UndefOr[FilterExpression] = js.undefined
+    ): CreateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "FilterExpression" -> FilterExpression.map { x =>
@@ -301,10 +324,14 @@ package xray {
   }
 
   object CreateGroupResult {
-    def apply(Group: js.UndefOr[Group] = js.undefined): CreateGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Group" -> Group.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Group: js.UndefOr[Group] = js.undefined
+    ): CreateGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Group" -> Group.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGroupResult]
     }
@@ -316,9 +343,12 @@ package xray {
   }
 
   object CreateSamplingRuleRequest {
-    def apply(SamplingRule: SamplingRule): CreateSamplingRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SamplingRule" -> SamplingRule.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SamplingRule: SamplingRule
+    ): CreateSamplingRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SamplingRule" -> SamplingRule.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSamplingRuleRequest]
     }
@@ -330,10 +360,14 @@ package xray {
   }
 
   object CreateSamplingRuleResult {
-    def apply(SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined): CreateSamplingRuleResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SamplingRuleRecord" -> SamplingRuleRecord.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
+    ): CreateSamplingRuleResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SamplingRuleRecord" -> SamplingRuleRecord.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSamplingRuleResult]
     }
@@ -346,13 +380,18 @@ package xray {
   }
 
   object DeleteGroupRequest {
-    def apply(GroupARN: js.UndefOr[GroupARN] = js.undefined,
-              GroupName: js.UndefOr[GroupName] = js.undefined): DeleteGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("GroupARN" -> GroupARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "GroupName" -> GroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
+    ): DeleteGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupARN" -> GroupARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GroupName" -> GroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupRequest]
     }
@@ -362,8 +401,10 @@ package xray {
   trait DeleteGroupResult extends js.Object {}
 
   object DeleteGroupResult {
-    def apply(): DeleteGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGroupResult]
     }
@@ -376,13 +417,18 @@ package xray {
   }
 
   object DeleteSamplingRuleRequest {
-    def apply(RuleARN: js.UndefOr[String] = js.undefined,
-              RuleName: js.UndefOr[String] = js.undefined): DeleteSamplingRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("RuleARN" -> RuleARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RuleName" -> RuleName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleARN: js.UndefOr[String] = js.undefined,
+        RuleName: js.UndefOr[String] = js.undefined
+    ): DeleteSamplingRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleARN" -> RuleARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RuleName" -> RuleName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSamplingRuleRequest]
     }
@@ -394,10 +440,14 @@ package xray {
   }
 
   object DeleteSamplingRuleResult {
-    def apply(SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined): DeleteSamplingRuleResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SamplingRuleRecord" -> SamplingRuleRecord.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
+    ): DeleteSamplingRuleResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SamplingRuleRecord" -> SamplingRuleRecord.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSamplingRuleResult]
     }
@@ -417,12 +467,14 @@ package xray {
   }
 
   object Edge {
-    def apply(Aliases: js.UndefOr[AliasList] = js.undefined,
-              EndTime: js.UndefOr[Timestamp] = js.undefined,
-              ReferenceId: js.UndefOr[NullableInteger] = js.undefined,
-              ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
-              StartTime: js.UndefOr[Timestamp] = js.undefined,
-              SummaryStatistics: js.UndefOr[EdgeStatistics] = js.undefined): Edge = {
+    def apply(
+        Aliases: js.UndefOr[AliasList] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        ReferenceId: js.UndefOr[NullableInteger] = js.undefined,
+        ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        SummaryStatistics: js.UndefOr[EdgeStatistics] = js.undefined
+    ): Edge = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Aliases" -> Aliases.map { x =>
           x.asInstanceOf[js.Any]
@@ -461,11 +513,13 @@ package xray {
   }
 
   object EdgeStatistics {
-    def apply(ErrorStatistics: js.UndefOr[ErrorStatistics] = js.undefined,
-              FaultStatistics: js.UndefOr[FaultStatistics] = js.undefined,
-              OkCount: js.UndefOr[NullableLong] = js.undefined,
-              TotalCount: js.UndefOr[NullableLong] = js.undefined,
-              TotalResponseTime: js.UndefOr[NullableDouble] = js.undefined): EdgeStatistics = {
+    def apply(
+        ErrorStatistics: js.UndefOr[ErrorStatistics] = js.undefined,
+        FaultStatistics: js.UndefOr[FaultStatistics] = js.undefined,
+        OkCount: js.UndefOr[NullableLong] = js.undefined,
+        TotalCount: js.UndefOr[NullableLong] = js.undefined,
+        TotalResponseTime: js.UndefOr[NullableDouble] = js.undefined
+    ): EdgeStatistics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorStatistics" -> ErrorStatistics.map { x =>
           x.asInstanceOf[js.Any]
@@ -499,16 +553,22 @@ package xray {
   }
 
   object EncryptionConfig {
-    def apply(KeyId: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[EncryptionStatus] = js.undefined,
-              Type: js.UndefOr[EncryptionType] = js.undefined): EncryptionConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("KeyId" -> KeyId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        KeyId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[EncryptionStatus] = js.undefined,
+        Type: js.UndefOr[EncryptionType] = js.undefined
+    ): EncryptionConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "KeyId" -> KeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionConfig]
     }
@@ -537,10 +597,14 @@ package xray {
   }
 
   object ErrorRootCause {
-    def apply(Services: js.UndefOr[ErrorRootCauseServices] = js.undefined): ErrorRootCause = {
-      val _fields = IndexedSeq[(String, js.Any)]("Services" -> Services.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Services: js.UndefOr[ErrorRootCauseServices] = js.undefined
+    ): ErrorRootCause = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Services" -> Services.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorRootCause]
     }
@@ -557,16 +621,22 @@ package xray {
   }
 
   object ErrorRootCauseEntity {
-    def apply(Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Remote: js.UndefOr[NullableBoolean] = js.undefined): ErrorRootCauseEntity = {
-      val _fields = IndexedSeq[(String, js.Any)]("Exceptions" -> Exceptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Remote" -> Remote.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Remote: js.UndefOr[NullableBoolean] = js.undefined
+    ): ErrorRootCauseEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Exceptions" -> Exceptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Remote" -> Remote.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorRootCauseEntity]
     }
@@ -586,12 +656,14 @@ package xray {
   }
 
   object ErrorRootCauseService {
-    def apply(AccountId: js.UndefOr[String] = js.undefined,
-              EntityPath: js.UndefOr[ErrorRootCauseEntityPath] = js.undefined,
-              Inferred: js.UndefOr[NullableBoolean] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Names: js.UndefOr[ServiceNames] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): ErrorRootCauseService = {
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        EntityPath: js.UndefOr[ErrorRootCauseEntityPath] = js.undefined,
+        Inferred: js.UndefOr[NullableBoolean] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Names: js.UndefOr[ServiceNames] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): ErrorRootCauseService = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -628,9 +700,11 @@ package xray {
   }
 
   object ErrorStatistics {
-    def apply(OtherCount: js.UndefOr[NullableLong] = js.undefined,
-              ThrottleCount: js.UndefOr[NullableLong] = js.undefined,
-              TotalCount: js.UndefOr[NullableLong] = js.undefined): ErrorStatistics = {
+    def apply(
+        OtherCount: js.UndefOr[NullableLong] = js.undefined,
+        ThrottleCount: js.UndefOr[NullableLong] = js.undefined,
+        TotalCount: js.UndefOr[NullableLong] = js.undefined
+    ): ErrorStatistics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OtherCount" -> OtherCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -656,10 +730,14 @@ package xray {
   }
 
   object FaultRootCause {
-    def apply(Services: js.UndefOr[FaultRootCauseServices] = js.undefined): FaultRootCause = {
-      val _fields = IndexedSeq[(String, js.Any)]("Services" -> Services.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Services: js.UndefOr[FaultRootCauseServices] = js.undefined
+    ): FaultRootCause = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Services" -> Services.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaultRootCause]
     }
@@ -676,16 +754,22 @@ package xray {
   }
 
   object FaultRootCauseEntity {
-    def apply(Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Remote: js.UndefOr[NullableBoolean] = js.undefined): FaultRootCauseEntity = {
-      val _fields = IndexedSeq[(String, js.Any)]("Exceptions" -> Exceptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Remote" -> Remote.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Exceptions: js.UndefOr[RootCauseExceptions] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Remote: js.UndefOr[NullableBoolean] = js.undefined
+    ): FaultRootCauseEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Exceptions" -> Exceptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Remote" -> Remote.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaultRootCauseEntity]
     }
@@ -705,12 +789,14 @@ package xray {
   }
 
   object FaultRootCauseService {
-    def apply(AccountId: js.UndefOr[String] = js.undefined,
-              EntityPath: js.UndefOr[FaultRootCauseEntityPath] = js.undefined,
-              Inferred: js.UndefOr[NullableBoolean] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Names: js.UndefOr[ServiceNames] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): FaultRootCauseService = {
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        EntityPath: js.UndefOr[FaultRootCauseEntityPath] = js.undefined,
+        Inferred: js.UndefOr[NullableBoolean] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Names: js.UndefOr[ServiceNames] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): FaultRootCauseService = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -746,13 +832,18 @@ package xray {
   }
 
   object FaultStatistics {
-    def apply(OtherCount: js.UndefOr[NullableLong] = js.undefined,
-              TotalCount: js.UndefOr[NullableLong] = js.undefined): FaultStatistics = {
-      val _fields = IndexedSeq[(String, js.Any)]("OtherCount" -> OtherCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TotalCount" -> TotalCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OtherCount: js.UndefOr[NullableLong] = js.undefined,
+        TotalCount: js.UndefOr[NullableLong] = js.undefined
+    ): FaultStatistics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OtherCount" -> OtherCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FaultStatistics]
     }
@@ -762,8 +853,10 @@ package xray {
   trait GetEncryptionConfigRequest extends js.Object {}
 
   object GetEncryptionConfigRequest {
-    def apply(): GetEncryptionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetEncryptionConfigRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEncryptionConfigRequest]
     }
@@ -775,10 +868,14 @@ package xray {
   }
 
   object GetEncryptionConfigResult {
-    def apply(EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined): GetEncryptionConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EncryptionConfig" -> EncryptionConfig.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
+    ): GetEncryptionConfigResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EncryptionConfig" -> EncryptionConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEncryptionConfigResult]
     }
@@ -791,13 +888,18 @@ package xray {
   }
 
   object GetGroupRequest {
-    def apply(GroupARN: js.UndefOr[GroupARN] = js.undefined,
-              GroupName: js.UndefOr[GroupName] = js.undefined): GetGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("GroupARN" -> GroupARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "GroupName" -> GroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
+    ): GetGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupARN" -> GroupARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GroupName" -> GroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupRequest]
     }
@@ -809,10 +911,14 @@ package xray {
   }
 
   object GetGroupResult {
-    def apply(Group: js.UndefOr[Group] = js.undefined): GetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Group" -> Group.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Group: js.UndefOr[Group] = js.undefined
+    ): GetGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Group" -> Group.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupResult]
     }
@@ -824,10 +930,14 @@ package xray {
   }
 
   object GetGroupsRequest {
-    def apply(NextToken: js.UndefOr[GetGroupsNextToken] = js.undefined): GetGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[GetGroupsNextToken] = js.undefined
+    ): GetGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupsRequest]
     }
@@ -840,13 +950,18 @@ package xray {
   }
 
   object GetGroupsResult {
-    def apply(Groups: js.UndefOr[GroupSummaryList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): GetGroupsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Groups" -> Groups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Groups: js.UndefOr[GroupSummaryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetGroupsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Groups" -> Groups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGroupsResult]
     }
@@ -858,10 +973,14 @@ package xray {
   }
 
   object GetSamplingRulesRequest {
-    def apply(NextToken: js.UndefOr[String] = js.undefined): GetSamplingRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetSamplingRulesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSamplingRulesRequest]
     }
@@ -874,13 +993,18 @@ package xray {
   }
 
   object GetSamplingRulesResult {
-    def apply(NextToken: js.UndefOr[String] = js.undefined,
-              SamplingRuleRecords: js.UndefOr[SamplingRuleRecordList] = js.undefined): GetSamplingRulesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SamplingRuleRecords" -> SamplingRuleRecords.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        SamplingRuleRecords: js.UndefOr[SamplingRuleRecordList] = js.undefined
+    ): GetSamplingRulesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SamplingRuleRecords" -> SamplingRuleRecords.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSamplingRulesResult]
     }
@@ -892,10 +1016,14 @@ package xray {
   }
 
   object GetSamplingStatisticSummariesRequest {
-    def apply(NextToken: js.UndefOr[String] = js.undefined): GetSamplingStatisticSummariesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetSamplingStatisticSummariesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSamplingStatisticSummariesRequest]
     }
@@ -912,11 +1040,14 @@ package xray {
         NextToken: js.UndefOr[String] = js.undefined,
         SamplingStatisticSummaries: js.UndefOr[SamplingStatisticSummaryList] = js.undefined
     ): GetSamplingStatisticSummariesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SamplingStatisticSummaries" -> SamplingStatisticSummaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SamplingStatisticSummaries" -> SamplingStatisticSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSamplingStatisticSummariesResult]
     }
@@ -928,10 +1059,12 @@ package xray {
   }
 
   object GetSamplingTargetsRequest {
-    def apply(SamplingStatisticsDocuments: SamplingStatisticsDocumentList): GetSamplingTargetsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("SamplingStatisticsDocuments" -> SamplingStatisticsDocuments.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SamplingStatisticsDocuments: SamplingStatisticsDocumentList
+    ): GetSamplingTargetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SamplingStatisticsDocuments" -> SamplingStatisticsDocuments.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSamplingTargetsRequest]
     }
@@ -945,9 +1078,11 @@ package xray {
   }
 
   object GetSamplingTargetsResult {
-    def apply(LastRuleModification: js.UndefOr[Timestamp] = js.undefined,
-              SamplingTargetDocuments: js.UndefOr[SamplingTargetDocumentList] = js.undefined,
-              UnprocessedStatistics: js.UndefOr[UnprocessedStatisticsList] = js.undefined): GetSamplingTargetsResult = {
+    def apply(
+        LastRuleModification: js.UndefOr[Timestamp] = js.undefined,
+        SamplingTargetDocuments: js.UndefOr[SamplingTargetDocumentList] = js.undefined,
+        UnprocessedStatistics: js.UndefOr[UnprocessedStatisticsList] = js.undefined
+    ): GetSamplingTargetsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LastRuleModification" -> LastRuleModification.map { x =>
           x.asInstanceOf[js.Any]
@@ -974,11 +1109,13 @@ package xray {
   }
 
   object GetServiceGraphRequest {
-    def apply(EndTime: Timestamp,
-              StartTime: Timestamp,
-              GroupARN: js.UndefOr[GroupARN] = js.undefined,
-              GroupName: js.UndefOr[GroupName] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): GetServiceGraphRequest = {
+    def apply(
+        EndTime: Timestamp,
+        StartTime: Timestamp,
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetServiceGraphRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any],
@@ -1007,11 +1144,13 @@ package xray {
   }
 
   object GetServiceGraphResult {
-    def apply(ContainsOldGroupVersions: js.UndefOr[Boolean] = js.undefined,
-              EndTime: js.UndefOr[Timestamp] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              Services: js.UndefOr[ServiceList] = js.undefined,
-              StartTime: js.UndefOr[Timestamp] = js.undefined): GetServiceGraphResult = {
+    def apply(
+        ContainsOldGroupVersions: js.UndefOr[Boolean] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        Services: js.UndefOr[ServiceList] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined
+    ): GetServiceGraphResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContainsOldGroupVersions" -> ContainsOldGroupVersions.map { x =>
           x.asInstanceOf[js.Any]
@@ -1041,11 +1180,16 @@ package xray {
   }
 
   object GetTraceGraphRequest {
-    def apply(TraceIds: TraceIdList, NextToken: js.UndefOr[String] = js.undefined): GetTraceGraphRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TraceIds" -> TraceIds.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        TraceIds: TraceIdList,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetTraceGraphRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TraceIds" -> TraceIds.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTraceGraphRequest]
     }
@@ -1058,13 +1202,18 @@ package xray {
   }
 
   object GetTraceGraphResult {
-    def apply(NextToken: js.UndefOr[String] = js.undefined,
-              Services: js.UndefOr[ServiceList] = js.undefined): GetTraceGraphResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Services" -> Services.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Services: js.UndefOr[ServiceList] = js.undefined
+    ): GetTraceGraphResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Services" -> Services.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTraceGraphResult]
     }
@@ -1080,11 +1229,13 @@ package xray {
   }
 
   object GetTraceSummariesRequest {
-    def apply(EndTime: Timestamp,
-              StartTime: Timestamp,
-              FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              Sampling: js.UndefOr[NullableBoolean] = js.undefined): GetTraceSummariesRequest = {
+    def apply(
+        EndTime: Timestamp,
+        StartTime: Timestamp,
+        FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        Sampling: js.UndefOr[NullableBoolean] = js.undefined
+    ): GetTraceSummariesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any],
@@ -1112,10 +1263,12 @@ package xray {
   }
 
   object GetTraceSummariesResult {
-    def apply(ApproximateTime: js.UndefOr[Timestamp] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              TraceSummaries: js.UndefOr[TraceSummaryList] = js.undefined,
-              TracesProcessedCount: js.UndefOr[NullableLong] = js.undefined): GetTraceSummariesResult = {
+    def apply(
+        ApproximateTime: js.UndefOr[Timestamp] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        TraceSummaries: js.UndefOr[TraceSummaryList] = js.undefined,
+        TracesProcessedCount: js.UndefOr[NullableLong] = js.undefined
+    ): GetTraceSummariesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApproximateTime" -> ApproximateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -1146,9 +1299,11 @@ package xray {
   }
 
   object Group {
-    def apply(FilterExpression: js.UndefOr[String] = js.undefined,
-              GroupARN: js.UndefOr[String] = js.undefined,
-              GroupName: js.UndefOr[String] = js.undefined): Group = {
+    def apply(
+        FilterExpression: js.UndefOr[String] = js.undefined,
+        GroupARN: js.UndefOr[String] = js.undefined,
+        GroupName: js.UndefOr[String] = js.undefined
+    ): Group = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FilterExpression" -> FilterExpression.map { x =>
           x.asInstanceOf[js.Any]
@@ -1176,9 +1331,11 @@ package xray {
   }
 
   object GroupSummary {
-    def apply(FilterExpression: js.UndefOr[String] = js.undefined,
-              GroupARN: js.UndefOr[String] = js.undefined,
-              GroupName: js.UndefOr[String] = js.undefined): GroupSummary = {
+    def apply(
+        FilterExpression: js.UndefOr[String] = js.undefined,
+        GroupARN: js.UndefOr[String] = js.undefined,
+        GroupName: js.UndefOr[String] = js.undefined
+    ): GroupSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FilterExpression" -> FilterExpression.map { x =>
           x.asInstanceOf[js.Any]
@@ -1205,12 +1362,18 @@ package xray {
   }
 
   object HistogramEntry {
-    def apply(Count: js.UndefOr[Int] = js.undefined, Value: js.UndefOr[Double] = js.undefined): HistogramEntry = {
-      val _fields = IndexedSeq[(String, js.Any)]("Count" -> Count.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Count: js.UndefOr[Int] = js.undefined,
+        Value: js.UndefOr[Double] = js.undefined
+    ): HistogramEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Count" -> Count.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistogramEntry]
     }
@@ -1229,11 +1392,13 @@ package xray {
   }
 
   object Http {
-    def apply(ClientIp: js.UndefOr[String] = js.undefined,
-              HttpMethod: js.UndefOr[String] = js.undefined,
-              HttpStatus: js.UndefOr[NullableInteger] = js.undefined,
-              HttpURL: js.UndefOr[String] = js.undefined,
-              UserAgent: js.UndefOr[String] = js.undefined): Http = {
+    def apply(
+        ClientIp: js.UndefOr[String] = js.undefined,
+        HttpMethod: js.UndefOr[String] = js.undefined,
+        HttpStatus: js.UndefOr[NullableInteger] = js.undefined,
+        HttpURL: js.UndefOr[String] = js.undefined,
+        UserAgent: js.UndefOr[String] = js.undefined
+    ): Http = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientIp" -> ClientIp.map { x =>
           x.asInstanceOf[js.Any]
@@ -1265,10 +1430,14 @@ package xray {
   }
 
   object InstanceIdDetail {
-    def apply(Id: js.UndefOr[String] = js.undefined): InstanceIdDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: js.UndefOr[String] = js.undefined
+    ): InstanceIdDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceIdDetail]
     }
@@ -1281,10 +1450,16 @@ package xray {
   }
 
   object PutEncryptionConfigRequest {
-    def apply(Type: EncryptionType, KeyId: js.UndefOr[EncryptionKeyId] = js.undefined): PutEncryptionConfigRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any], "KeyId" -> KeyId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Type: EncryptionType,
+        KeyId: js.UndefOr[EncryptionKeyId] = js.undefined
+    ): PutEncryptionConfigRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.asInstanceOf[js.Any],
+        "KeyId" -> KeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEncryptionConfigRequest]
     }
@@ -1296,10 +1471,14 @@ package xray {
   }
 
   object PutEncryptionConfigResult {
-    def apply(EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined): PutEncryptionConfigResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EncryptionConfig" -> EncryptionConfig.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
+    ): PutEncryptionConfigResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EncryptionConfig" -> EncryptionConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEncryptionConfigResult]
     }
@@ -1314,10 +1493,12 @@ package xray {
   }
 
   object PutTelemetryRecordsRequest {
-    def apply(TelemetryRecords: TelemetryRecordList,
-              EC2InstanceId: js.UndefOr[EC2InstanceId] = js.undefined,
-              Hostname: js.UndefOr[Hostname] = js.undefined,
-              ResourceARN: js.UndefOr[ResourceARN] = js.undefined): PutTelemetryRecordsRequest = {
+    def apply(
+        TelemetryRecords: TelemetryRecordList,
+        EC2InstanceId: js.UndefOr[EC2InstanceId] = js.undefined,
+        Hostname: js.UndefOr[Hostname] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined
+    ): PutTelemetryRecordsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TelemetryRecords" -> TelemetryRecords.asInstanceOf[js.Any],
         "EC2InstanceId" -> EC2InstanceId.map { x =>
@@ -1339,8 +1520,10 @@ package xray {
   trait PutTelemetryRecordsResult extends js.Object {}
 
   object PutTelemetryRecordsResult {
-    def apply(): PutTelemetryRecordsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): PutTelemetryRecordsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutTelemetryRecordsResult]
     }
@@ -1352,9 +1535,12 @@ package xray {
   }
 
   object PutTraceSegmentsRequest {
-    def apply(TraceSegmentDocuments: TraceSegmentDocumentList): PutTraceSegmentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("TraceSegmentDocuments" -> TraceSegmentDocuments.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TraceSegmentDocuments: TraceSegmentDocumentList
+    ): PutTraceSegmentsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TraceSegmentDocuments" -> TraceSegmentDocuments.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutTraceSegmentsRequest]
     }
@@ -1369,9 +1555,11 @@ package xray {
     def apply(
         UnprocessedTraceSegments: js.UndefOr[UnprocessedTraceSegmentList] = js.undefined
     ): PutTraceSegmentsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedTraceSegments" -> UnprocessedTraceSegments.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedTraceSegments" -> UnprocessedTraceSegments.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutTraceSegmentsResult]
     }
@@ -1386,10 +1574,14 @@ package xray {
   }
 
   object ResourceARNDetail {
-    def apply(ARN: js.UndefOr[String] = js.undefined): ResourceARNDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("ARN" -> ARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ARN: js.UndefOr[String] = js.undefined
+    ): ResourceARNDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ARN" -> ARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceARNDetail]
     }
@@ -1404,10 +1596,14 @@ package xray {
   }
 
   object ResponseTimeRootCause {
-    def apply(Services: js.UndefOr[ResponseTimeRootCauseServices] = js.undefined): ResponseTimeRootCause = {
-      val _fields = IndexedSeq[(String, js.Any)]("Services" -> Services.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Services: js.UndefOr[ResponseTimeRootCauseServices] = js.undefined
+    ): ResponseTimeRootCause = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Services" -> Services.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponseTimeRootCause]
     }
@@ -1424,16 +1620,22 @@ package xray {
   }
 
   object ResponseTimeRootCauseEntity {
-    def apply(Coverage: js.UndefOr[NullableDouble] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Remote: js.UndefOr[NullableBoolean] = js.undefined): ResponseTimeRootCauseEntity = {
-      val _fields = IndexedSeq[(String, js.Any)]("Coverage" -> Coverage.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Remote" -> Remote.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Coverage: js.UndefOr[NullableDouble] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Remote: js.UndefOr[NullableBoolean] = js.undefined
+    ): ResponseTimeRootCauseEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Coverage" -> Coverage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Remote" -> Remote.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponseTimeRootCauseEntity]
     }
@@ -1453,12 +1655,14 @@ package xray {
   }
 
   object ResponseTimeRootCauseService {
-    def apply(AccountId: js.UndefOr[String] = js.undefined,
-              EntityPath: js.UndefOr[ResponseTimeRootCauseEntityPath] = js.undefined,
-              Inferred: js.UndefOr[NullableBoolean] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Names: js.UndefOr[ServiceNames] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): ResponseTimeRootCauseService = {
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        EntityPath: js.UndefOr[ResponseTimeRootCauseEntityPath] = js.undefined,
+        Inferred: js.UndefOr[NullableBoolean] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Names: js.UndefOr[ServiceNames] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): ResponseTimeRootCauseService = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1494,13 +1698,18 @@ package xray {
   }
 
   object RootCauseException {
-    def apply(Message: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined): RootCauseException = {
-      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Message: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): RootCauseException = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RootCauseException]
     }
@@ -1527,19 +1736,21 @@ package xray {
   }
 
   object SamplingRule {
-    def apply(FixedRate: FixedRate,
-              HTTPMethod: HTTPMethod,
-              Host: Host,
-              Priority: Priority,
-              ReservoirSize: ReservoirSize,
-              ResourceARN: ResourceARN,
-              ServiceName: ServiceName,
-              ServiceType: ServiceType,
-              URLPath: URLPath,
-              Version: Version,
-              Attributes: js.UndefOr[AttributeMap] = js.undefined,
-              RuleARN: js.UndefOr[String] = js.undefined,
-              RuleName: js.UndefOr[RuleName] = js.undefined): SamplingRule = {
+    def apply(
+        FixedRate: FixedRate,
+        HTTPMethod: HTTPMethod,
+        Host: Host,
+        Priority: Priority,
+        ReservoirSize: ReservoirSize,
+        ResourceARN: ResourceARN,
+        ServiceName: ServiceName,
+        ServiceType: ServiceType,
+        URLPath: URLPath,
+        Version: Version,
+        Attributes: js.UndefOr[AttributeMap] = js.undefined,
+        RuleARN: js.UndefOr[String] = js.undefined,
+        RuleName: js.UndefOr[RuleName] = js.undefined
+    ): SamplingRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FixedRate"     -> FixedRate.asInstanceOf[js.Any],
         "HTTPMethod"    -> HTTPMethod.asInstanceOf[js.Any],
@@ -1577,9 +1788,11 @@ package xray {
   }
 
   object SamplingRuleRecord {
-    def apply(CreatedAt: js.UndefOr[Timestamp] = js.undefined,
-              ModifiedAt: js.UndefOr[Timestamp] = js.undefined,
-              SamplingRule: js.UndefOr[SamplingRule] = js.undefined): SamplingRuleRecord = {
+    def apply(
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        ModifiedAt: js.UndefOr[Timestamp] = js.undefined,
+        SamplingRule: js.UndefOr[SamplingRule] = js.undefined
+    ): SamplingRuleRecord = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedAt" -> CreatedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -1616,18 +1829,20 @@ package xray {
   }
 
   object SamplingRuleUpdate {
-    def apply(Attributes: js.UndefOr[AttributeMap] = js.undefined,
-              FixedRate: js.UndefOr[NullableDouble] = js.undefined,
-              HTTPMethod: js.UndefOr[HTTPMethod] = js.undefined,
-              Host: js.UndefOr[Host] = js.undefined,
-              Priority: js.UndefOr[NullableInteger] = js.undefined,
-              ReservoirSize: js.UndefOr[NullableInteger] = js.undefined,
-              ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-              RuleARN: js.UndefOr[String] = js.undefined,
-              RuleName: js.UndefOr[RuleName] = js.undefined,
-              ServiceName: js.UndefOr[ServiceName] = js.undefined,
-              ServiceType: js.UndefOr[ServiceType] = js.undefined,
-              URLPath: js.UndefOr[URLPath] = js.undefined): SamplingRuleUpdate = {
+    def apply(
+        Attributes: js.UndefOr[AttributeMap] = js.undefined,
+        FixedRate: js.UndefOr[NullableDouble] = js.undefined,
+        HTTPMethod: js.UndefOr[HTTPMethod] = js.undefined,
+        Host: js.UndefOr[Host] = js.undefined,
+        Priority: js.UndefOr[NullableInteger] = js.undefined,
+        ReservoirSize: js.UndefOr[NullableInteger] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        RuleARN: js.UndefOr[String] = js.undefined,
+        RuleName: js.UndefOr[RuleName] = js.undefined,
+        ServiceName: js.UndefOr[ServiceName] = js.undefined,
+        ServiceType: js.UndefOr[ServiceType] = js.undefined,
+        URLPath: js.UndefOr[URLPath] = js.undefined
+    ): SamplingRuleUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1684,11 +1899,13 @@ package xray {
   }
 
   object SamplingStatisticSummary {
-    def apply(BorrowCount: js.UndefOr[Int] = js.undefined,
-              RequestCount: js.UndefOr[Int] = js.undefined,
-              RuleName: js.UndefOr[String] = js.undefined,
-              SampledCount: js.UndefOr[Int] = js.undefined,
-              Timestamp: js.UndefOr[Timestamp] = js.undefined): SamplingStatisticSummary = {
+    def apply(
+        BorrowCount: js.UndefOr[Int] = js.undefined,
+        RequestCount: js.UndefOr[Int] = js.undefined,
+        RuleName: js.UndefOr[String] = js.undefined,
+        SampledCount: js.UndefOr[Int] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): SamplingStatisticSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BorrowCount" -> BorrowCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -1725,12 +1942,14 @@ package xray {
   }
 
   object SamplingStatisticsDocument {
-    def apply(ClientID: ClientID,
-              RequestCount: RequestCount,
-              RuleName: RuleName,
-              SampledCount: SampledCount,
-              Timestamp: Timestamp,
-              BorrowCount: js.UndefOr[BorrowCount] = js.undefined): SamplingStatisticsDocument = {
+    def apply(
+        ClientID: ClientID,
+        RequestCount: RequestCount,
+        RuleName: RuleName,
+        SampledCount: SampledCount,
+        Timestamp: Timestamp,
+        BorrowCount: js.UndefOr[BorrowCount] = js.undefined
+    ): SamplingStatisticsDocument = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientID"     -> ClientID.asInstanceOf[js.Any],
         "RequestCount" -> RequestCount.asInstanceOf[js.Any],
@@ -1759,11 +1978,13 @@ package xray {
   }
 
   object SamplingTargetDocument {
-    def apply(FixedRate: js.UndefOr[Double] = js.undefined,
-              Interval: js.UndefOr[NullableInteger] = js.undefined,
-              ReservoirQuota: js.UndefOr[NullableInteger] = js.undefined,
-              ReservoirQuotaTTL: js.UndefOr[Timestamp] = js.undefined,
-              RuleName: js.UndefOr[String] = js.undefined): SamplingTargetDocument = {
+    def apply(
+        FixedRate: js.UndefOr[Double] = js.undefined,
+        Interval: js.UndefOr[NullableInteger] = js.undefined,
+        ReservoirQuota: js.UndefOr[NullableInteger] = js.undefined,
+        ReservoirQuotaTTL: js.UndefOr[Timestamp] = js.undefined,
+        RuleName: js.UndefOr[String] = js.undefined
+    ): SamplingTargetDocument = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FixedRate" -> FixedRate.map { x =>
           x.asInstanceOf[js.Any]
@@ -1797,13 +2018,18 @@ package xray {
   }
 
   object Segment {
-    def apply(Document: js.UndefOr[SegmentDocument] = js.undefined,
-              Id: js.UndefOr[SegmentId] = js.undefined): Segment = {
-      val _fields = IndexedSeq[(String, js.Any)]("Document" -> Document.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Document: js.UndefOr[SegmentDocument] = js.undefined,
+        Id: js.UndefOr[SegmentId] = js.undefined
+    ): Segment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Document" -> Document.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Segment]
     }
@@ -1830,19 +2056,21 @@ package xray {
   }
 
   object Service {
-    def apply(AccountId: js.UndefOr[String] = js.undefined,
-              DurationHistogram: js.UndefOr[Histogram] = js.undefined,
-              Edges: js.UndefOr[EdgeList] = js.undefined,
-              EndTime: js.UndefOr[Timestamp] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Names: js.UndefOr[ServiceNames] = js.undefined,
-              ReferenceId: js.UndefOr[NullableInteger] = js.undefined,
-              ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
-              Root: js.UndefOr[NullableBoolean] = js.undefined,
-              StartTime: js.UndefOr[Timestamp] = js.undefined,
-              State: js.UndefOr[String] = js.undefined,
-              SummaryStatistics: js.UndefOr[ServiceStatistics] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): Service = {
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        DurationHistogram: js.UndefOr[Histogram] = js.undefined,
+        Edges: js.UndefOr[EdgeList] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Names: js.UndefOr[ServiceNames] = js.undefined,
+        ReferenceId: js.UndefOr[NullableInteger] = js.undefined,
+        ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
+        Root: js.UndefOr[NullableBoolean] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        State: js.UndefOr[String] = js.undefined,
+        SummaryStatistics: js.UndefOr[ServiceStatistics] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): Service = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1901,10 +2129,12 @@ package xray {
   }
 
   object ServiceId {
-    def apply(AccountId: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Names: js.UndefOr[ServiceNames] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined): ServiceId = {
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Names: js.UndefOr[ServiceNames] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): ServiceId = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1937,11 +2167,13 @@ package xray {
   }
 
   object ServiceStatistics {
-    def apply(ErrorStatistics: js.UndefOr[ErrorStatistics] = js.undefined,
-              FaultStatistics: js.UndefOr[FaultStatistics] = js.undefined,
-              OkCount: js.UndefOr[NullableLong] = js.undefined,
-              TotalCount: js.UndefOr[NullableLong] = js.undefined,
-              TotalResponseTime: js.UndefOr[NullableDouble] = js.undefined): ServiceStatistics = {
+    def apply(
+        ErrorStatistics: js.UndefOr[ErrorStatistics] = js.undefined,
+        FaultStatistics: js.UndefOr[FaultStatistics] = js.undefined,
+        OkCount: js.UndefOr[NullableLong] = js.undefined,
+        TotalCount: js.UndefOr[NullableLong] = js.undefined,
+        TotalResponseTime: js.UndefOr[NullableDouble] = js.undefined
+    ): ServiceStatistics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorStatistics" -> ErrorStatistics.map { x =>
           x.asInstanceOf[js.Any]
@@ -1978,12 +2210,14 @@ package xray {
   }
 
   object TelemetryRecord {
-    def apply(Timestamp: Timestamp,
-              BackendConnectionErrors: js.UndefOr[BackendConnectionErrors] = js.undefined,
-              SegmentsReceivedCount: js.UndefOr[NullableInteger] = js.undefined,
-              SegmentsRejectedCount: js.UndefOr[NullableInteger] = js.undefined,
-              SegmentsSentCount: js.UndefOr[NullableInteger] = js.undefined,
-              SegmentsSpilloverCount: js.UndefOr[NullableInteger] = js.undefined): TelemetryRecord = {
+    def apply(
+        Timestamp: Timestamp,
+        BackendConnectionErrors: js.UndefOr[BackendConnectionErrors] = js.undefined,
+        SegmentsReceivedCount: js.UndefOr[NullableInteger] = js.undefined,
+        SegmentsRejectedCount: js.UndefOr[NullableInteger] = js.undefined,
+        SegmentsSentCount: js.UndefOr[NullableInteger] = js.undefined,
+        SegmentsSpilloverCount: js.UndefOr[NullableInteger] = js.undefined
+    ): TelemetryRecord = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Timestamp" -> Timestamp.asInstanceOf[js.Any],
         "BackendConnectionErrors" -> BackendConnectionErrors.map { x =>
@@ -2018,16 +2252,22 @@ package xray {
   }
 
   object Trace {
-    def apply(Duration: js.UndefOr[NullableDouble] = js.undefined,
-              Id: js.UndefOr[TraceId] = js.undefined,
-              Segments: js.UndefOr[SegmentList] = js.undefined): Trace = {
-      val _fields = IndexedSeq[(String, js.Any)]("Duration" -> Duration.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Segments" -> Segments.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Duration: js.UndefOr[NullableDouble] = js.undefined,
+        Id: js.UndefOr[TraceId] = js.undefined,
+        Segments: js.UndefOr[SegmentList] = js.undefined
+    ): Trace = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Duration" -> Duration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Segments" -> Segments.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trace]
     }
@@ -2060,25 +2300,27 @@ package xray {
   }
 
   object TraceSummary {
-    def apply(Annotations: js.UndefOr[Annotations] = js.undefined,
-              AvailabilityZones: js.UndefOr[TraceAvailabilityZones] = js.undefined,
-              Duration: js.UndefOr[NullableDouble] = js.undefined,
-              EntryPoint: js.UndefOr[ServiceId] = js.undefined,
-              ErrorRootCauses: js.UndefOr[ErrorRootCauses] = js.undefined,
-              FaultRootCauses: js.UndefOr[FaultRootCauses] = js.undefined,
-              HasError: js.UndefOr[NullableBoolean] = js.undefined,
-              HasFault: js.UndefOr[NullableBoolean] = js.undefined,
-              HasThrottle: js.UndefOr[NullableBoolean] = js.undefined,
-              Http: js.UndefOr[Http] = js.undefined,
-              Id: js.UndefOr[TraceId] = js.undefined,
-              InstanceIds: js.UndefOr[TraceInstanceIds] = js.undefined,
-              IsPartial: js.UndefOr[NullableBoolean] = js.undefined,
-              ResourceARNs: js.UndefOr[TraceResourceARNs] = js.undefined,
-              ResponseTime: js.UndefOr[NullableDouble] = js.undefined,
-              ResponseTimeRootCauses: js.UndefOr[ResponseTimeRootCauses] = js.undefined,
-              Revision: js.UndefOr[Int] = js.undefined,
-              ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
-              Users: js.UndefOr[TraceUsers] = js.undefined): TraceSummary = {
+    def apply(
+        Annotations: js.UndefOr[Annotations] = js.undefined,
+        AvailabilityZones: js.UndefOr[TraceAvailabilityZones] = js.undefined,
+        Duration: js.UndefOr[NullableDouble] = js.undefined,
+        EntryPoint: js.UndefOr[ServiceId] = js.undefined,
+        ErrorRootCauses: js.UndefOr[ErrorRootCauses] = js.undefined,
+        FaultRootCauses: js.UndefOr[FaultRootCauses] = js.undefined,
+        HasError: js.UndefOr[NullableBoolean] = js.undefined,
+        HasFault: js.UndefOr[NullableBoolean] = js.undefined,
+        HasThrottle: js.UndefOr[NullableBoolean] = js.undefined,
+        Http: js.UndefOr[Http] = js.undefined,
+        Id: js.UndefOr[TraceId] = js.undefined,
+        InstanceIds: js.UndefOr[TraceInstanceIds] = js.undefined,
+        IsPartial: js.UndefOr[NullableBoolean] = js.undefined,
+        ResourceARNs: js.UndefOr[TraceResourceARNs] = js.undefined,
+        ResponseTime: js.UndefOr[NullableDouble] = js.undefined,
+        ResponseTimeRootCauses: js.UndefOr[ResponseTimeRootCauses] = js.undefined,
+        Revision: js.UndefOr[Int] = js.undefined,
+        ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
+        Users: js.UndefOr[TraceUsers] = js.undefined
+    ): TraceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Annotations" -> Annotations.map { x =>
           x.asInstanceOf[js.Any]
@@ -2153,13 +2395,18 @@ package xray {
   }
 
   object TraceUser {
-    def apply(ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
-              UserName: js.UndefOr[String] = js.undefined): TraceUser = {
-      val _fields = IndexedSeq[(String, js.Any)]("ServiceIds" -> ServiceIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UserName" -> UserName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
+        UserName: js.UndefOr[String] = js.undefined
+    ): TraceUser = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceIds" -> ServiceIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserName" -> UserName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TraceUser]
     }
@@ -2176,9 +2423,11 @@ package xray {
   }
 
   object UnprocessedStatistics {
-    def apply(ErrorCode: js.UndefOr[String] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined,
-              RuleName: js.UndefOr[String] = js.undefined): UnprocessedStatistics = {
+    def apply(
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        RuleName: js.UndefOr[String] = js.undefined
+    ): UnprocessedStatistics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode" -> ErrorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -2206,16 +2455,22 @@ package xray {
   }
 
   object UnprocessedTraceSegment {
-    def apply(ErrorCode: js.UndefOr[String] = js.undefined,
-              Id: js.UndefOr[String] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined): UnprocessedTraceSegment = {
-      val _fields = IndexedSeq[(String, js.Any)]("ErrorCode" -> ErrorCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        Id: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined
+    ): UnprocessedTraceSegment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ErrorCode" -> ErrorCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnprocessedTraceSegment]
     }
@@ -2229,9 +2484,11 @@ package xray {
   }
 
   object UpdateGroupRequest {
-    def apply(FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
-              GroupARN: js.UndefOr[GroupARN] = js.undefined,
-              GroupName: js.UndefOr[GroupName] = js.undefined): UpdateGroupRequest = {
+    def apply(
+        FilterExpression: js.UndefOr[FilterExpression] = js.undefined,
+        GroupARN: js.UndefOr[GroupARN] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined
+    ): UpdateGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FilterExpression" -> FilterExpression.map { x =>
           x.asInstanceOf[js.Any]
@@ -2254,10 +2511,14 @@ package xray {
   }
 
   object UpdateGroupResult {
-    def apply(Group: js.UndefOr[Group] = js.undefined): UpdateGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Group" -> Group.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Group: js.UndefOr[Group] = js.undefined
+    ): UpdateGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Group" -> Group.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGroupResult]
     }
@@ -2269,9 +2530,12 @@ package xray {
   }
 
   object UpdateSamplingRuleRequest {
-    def apply(SamplingRuleUpdate: SamplingRuleUpdate): UpdateSamplingRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SamplingRuleUpdate" -> SamplingRuleUpdate.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SamplingRuleUpdate: SamplingRuleUpdate
+    ): UpdateSamplingRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SamplingRuleUpdate" -> SamplingRuleUpdate.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSamplingRuleRequest]
     }
@@ -2283,10 +2547,14 @@ package xray {
   }
 
   object UpdateSamplingRuleResult {
-    def apply(SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined): UpdateSamplingRuleResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SamplingRuleRecord" -> SamplingRuleRecord.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
+    ): UpdateSamplingRuleResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SamplingRuleRecord" -> SamplingRuleRecord.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSamplingRuleResult]
     }
@@ -2302,13 +2570,18 @@ package xray {
   }
 
   object ValueWithServiceIds {
-    def apply(AnnotationValue: js.UndefOr[AnnotationValue] = js.undefined,
-              ServiceIds: js.UndefOr[ServiceIds] = js.undefined): ValueWithServiceIds = {
-      val _fields = IndexedSeq[(String, js.Any)]("AnnotationValue" -> AnnotationValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ServiceIds" -> ServiceIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AnnotationValue: js.UndefOr[AnnotationValue] = js.undefined,
+        ServiceIds: js.UndefOr[ServiceIds] = js.undefined
+    ): ValueWithServiceIds = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AnnotationValue" -> AnnotationValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ServiceIds" -> ServiceIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValueWithServiceIds]
     }

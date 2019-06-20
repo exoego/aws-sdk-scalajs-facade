@@ -88,11 +88,13 @@ package codestar {
   }
 
   object AssociateTeamMemberRequest {
-    def apply(projectId: ProjectId,
-              projectRole: Role,
-              userArn: UserArn,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined): AssociateTeamMemberRequest = {
+    def apply(
+        projectId: ProjectId,
+        projectRole: Role,
+        userArn: UserArn,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined
+    ): AssociateTeamMemberRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectId"   -> projectId.asInstanceOf[js.Any],
         "projectRole" -> projectRole.asInstanceOf[js.Any],
@@ -115,10 +117,14 @@ package codestar {
   }
 
   object AssociateTeamMemberResult {
-    def apply(clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined): AssociateTeamMemberResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("clientRequestToken" -> clientRequestToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): AssociateTeamMemberResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "clientRequestToken" -> clientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateTeamMemberResult]
     }
@@ -134,7 +140,10 @@ package codestar {
   }
 
   object Code {
-    def apply(destination: CodeDestination, source: CodeSource): Code = {
+    def apply(
+        destination: CodeDestination,
+        source: CodeSource
+    ): Code = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destination" -> destination.asInstanceOf[js.Any],
         "source"      -> source.asInstanceOf[js.Any]
@@ -153,9 +162,12 @@ package codestar {
   }
 
   object CodeCommitCodeDestination {
-    def apply(name: RepositoryName): CodeCommitCodeDestination = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: RepositoryName
+    ): CodeCommitCodeDestination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeCommitCodeDestination]
     }
@@ -171,13 +183,18 @@ package codestar {
   }
 
   object CodeDestination {
-    def apply(codeCommit: js.UndefOr[CodeCommitCodeDestination] = js.undefined,
-              gitHub: js.UndefOr[GitHubCodeDestination] = js.undefined): CodeDestination = {
-      val _fields = IndexedSeq[(String, js.Any)]("codeCommit" -> codeCommit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "gitHub" -> gitHub.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        codeCommit: js.UndefOr[CodeCommitCodeDestination] = js.undefined,
+        gitHub: js.UndefOr[GitHubCodeDestination] = js.undefined
+    ): CodeDestination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "codeCommit" -> codeCommit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "gitHub" -> gitHub.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeDestination]
     }
@@ -192,8 +209,12 @@ package codestar {
   }
 
   object CodeSource {
-    def apply(s3: S3Location): CodeSource = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3" -> s3.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3: S3Location
+    ): CodeSource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3" -> s3.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeSource]
     }
@@ -211,13 +232,15 @@ package codestar {
   }
 
   object CreateProjectRequest {
-    def apply(id: ProjectId,
-              name: ProjectName,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              description: js.UndefOr[ProjectDescription] = js.undefined,
-              sourceCode: js.UndefOr[SourceCode] = js.undefined,
-              tags: js.UndefOr[Tags] = js.undefined,
-              toolchain: js.UndefOr[Toolchain] = js.undefined): CreateProjectRequest = {
+    def apply(
+        id: ProjectId,
+        name: ProjectName,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        description: js.UndefOr[ProjectDescription] = js.undefined,
+        sourceCode: js.UndefOr[SourceCode] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined,
+        toolchain: js.UndefOr[Toolchain] = js.undefined
+    ): CreateProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "id"   -> id.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any],
@@ -251,10 +274,12 @@ package codestar {
   }
 
   object CreateProjectResult {
-    def apply(arn: ProjectArn,
-              id: ProjectId,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              projectTemplateId: js.UndefOr[ProjectTemplateId] = js.undefined): CreateProjectResult = {
+    def apply(
+        arn: ProjectArn,
+        id: ProjectId,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        projectTemplateId: js.UndefOr[ProjectTemplateId] = js.undefined
+    ): CreateProjectResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.asInstanceOf[js.Any],
         "id"  -> id.asInstanceOf[js.Any],
@@ -279,10 +304,12 @@ package codestar {
   }
 
   object CreateUserProfileRequest {
-    def apply(displayName: UserProfileDisplayName,
-              emailAddress: Email,
-              userArn: UserArn,
-              sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined): CreateUserProfileRequest = {
+    def apply(
+        displayName: UserProfileDisplayName,
+        emailAddress: Email,
+        userArn: UserArn,
+        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
+    ): CreateUserProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "displayName"  -> displayName.asInstanceOf[js.Any],
         "emailAddress" -> emailAddress.asInstanceOf[js.Any],
@@ -307,12 +334,14 @@ package codestar {
   }
 
   object CreateUserProfileResult {
-    def apply(userArn: UserArn,
-              createdTimestamp: js.UndefOr[CreatedTimestamp] = js.undefined,
-              displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
-              emailAddress: js.UndefOr[Email] = js.undefined,
-              lastModifiedTimestamp: js.UndefOr[LastModifiedTimestamp] = js.undefined,
-              sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined): CreateUserProfileResult = {
+    def apply(
+        userArn: UserArn,
+        createdTimestamp: js.UndefOr[CreatedTimestamp] = js.undefined,
+        displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        lastModifiedTimestamp: js.UndefOr[LastModifiedTimestamp] = js.undefined,
+        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
+    ): CreateUserProfileResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "userArn" -> userArn.asInstanceOf[js.Any],
         "createdTimestamp" -> createdTimestamp.map { x =>
@@ -344,9 +373,11 @@ package codestar {
   }
 
   object DeleteProjectRequest {
-    def apply(id: ProjectId,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              deleteStack: js.UndefOr[DeleteStack] = js.undefined): DeleteProjectRequest = {
+    def apply(
+        id: ProjectId,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        deleteStack: js.UndefOr[DeleteStack] = js.undefined
+    ): DeleteProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "id" -> id.asInstanceOf[js.Any],
         "clientRequestToken" -> clientRequestToken.map { x =>
@@ -368,13 +399,18 @@ package codestar {
   }
 
   object DeleteProjectResult {
-    def apply(projectArn: js.UndefOr[ProjectArn] = js.undefined,
-              stackId: js.UndefOr[StackId] = js.undefined): DeleteProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("projectArn" -> projectArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "stackId" -> stackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        projectArn: js.UndefOr[ProjectArn] = js.undefined,
+        stackId: js.UndefOr[StackId] = js.undefined
+    ): DeleteProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projectArn" -> projectArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "stackId" -> stackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectResult]
     }
@@ -386,9 +422,12 @@ package codestar {
   }
 
   object DeleteUserProfileRequest {
-    def apply(userArn: UserArn): DeleteUserProfileRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("userArn" -> userArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        userArn: UserArn
+    ): DeleteUserProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "userArn" -> userArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserProfileRequest]
     }
@@ -400,9 +439,12 @@ package codestar {
   }
 
   object DeleteUserProfileResult {
-    def apply(userArn: UserArn): DeleteUserProfileResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("userArn" -> userArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        userArn: UserArn
+    ): DeleteUserProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "userArn" -> userArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserProfileResult]
     }
@@ -414,8 +456,12 @@ package codestar {
   }
 
   object DescribeProjectRequest {
-    def apply(id: ProjectId): DescribeProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        id: ProjectId
+    ): DescribeProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProjectRequest]
     }
@@ -435,15 +481,17 @@ package codestar {
   }
 
   object DescribeProjectResult {
-    def apply(arn: js.UndefOr[ProjectArn] = js.undefined,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              createdTimeStamp: js.UndefOr[CreatedTimestamp] = js.undefined,
-              description: js.UndefOr[ProjectDescription] = js.undefined,
-              id: js.UndefOr[ProjectId] = js.undefined,
-              name: js.UndefOr[ProjectName] = js.undefined,
-              projectTemplateId: js.UndefOr[ProjectTemplateId] = js.undefined,
-              stackId: js.UndefOr[StackId] = js.undefined,
-              status: js.UndefOr[ProjectStatus] = js.undefined): DescribeProjectResult = {
+    def apply(
+        arn: js.UndefOr[ProjectArn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        createdTimeStamp: js.UndefOr[CreatedTimestamp] = js.undefined,
+        description: js.UndefOr[ProjectDescription] = js.undefined,
+        id: js.UndefOr[ProjectId] = js.undefined,
+        name: js.UndefOr[ProjectName] = js.undefined,
+        projectTemplateId: js.UndefOr[ProjectTemplateId] = js.undefined,
+        stackId: js.UndefOr[StackId] = js.undefined,
+        status: js.UndefOr[ProjectStatus] = js.undefined
+    ): DescribeProjectResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -484,9 +532,12 @@ package codestar {
   }
 
   object DescribeUserProfileRequest {
-    def apply(userArn: UserArn): DescribeUserProfileRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("userArn" -> userArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        userArn: UserArn
+    ): DescribeUserProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "userArn" -> userArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserProfileRequest]
     }
@@ -503,12 +554,14 @@ package codestar {
   }
 
   object DescribeUserProfileResult {
-    def apply(createdTimestamp: CreatedTimestamp,
-              lastModifiedTimestamp: LastModifiedTimestamp,
-              userArn: UserArn,
-              displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
-              emailAddress: js.UndefOr[Email] = js.undefined,
-              sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined): DescribeUserProfileResult = {
+    def apply(
+        createdTimestamp: CreatedTimestamp,
+        lastModifiedTimestamp: LastModifiedTimestamp,
+        userArn: UserArn,
+        displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
+    ): DescribeUserProfileResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdTimestamp"      -> createdTimestamp.asInstanceOf[js.Any],
         "lastModifiedTimestamp" -> lastModifiedTimestamp.asInstanceOf[js.Any],
@@ -535,7 +588,10 @@ package codestar {
   }
 
   object DisassociateTeamMemberRequest {
-    def apply(projectId: ProjectId, userArn: UserArn): DisassociateTeamMemberRequest = {
+    def apply(
+        projectId: ProjectId,
+        userArn: UserArn
+    ): DisassociateTeamMemberRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectId" -> projectId.asInstanceOf[js.Any],
         "userArn"   -> userArn.asInstanceOf[js.Any]
@@ -549,8 +605,10 @@ package codestar {
   trait DisassociateTeamMemberResult extends js.Object {}
 
   object DisassociateTeamMemberResult {
-    def apply(): DisassociateTeamMemberResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateTeamMemberResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateTeamMemberResult]
     }
@@ -571,13 +629,15 @@ package codestar {
   }
 
   object GitHubCodeDestination {
-    def apply(issuesEnabled: RepositoryEnableIssues,
-              name: RepositoryName,
-              owner: RepositoryOwner,
-              privateRepository: RepositoryIsPrivate,
-              token: GitHubPersonalToken,
-              `type`: RepositoryType,
-              description: js.UndefOr[RepositoryDescription] = js.undefined): GitHubCodeDestination = {
+    def apply(
+        issuesEnabled: RepositoryEnableIssues,
+        name: RepositoryName,
+        owner: RepositoryOwner,
+        privateRepository: RepositoryIsPrivate,
+        token: GitHubPersonalToken,
+        `type`: RepositoryType,
+        description: js.UndefOr[RepositoryDescription] = js.undefined
+    ): GitHubCodeDestination = {
       val _fields = IndexedSeq[(String, js.Any)](
         "issuesEnabled"     -> issuesEnabled.asInstanceOf[js.Any],
         "name"              -> name.asInstanceOf[js.Any],
@@ -601,13 +661,18 @@ package codestar {
   }
 
   object ListProjectsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListProjectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListProjectsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsRequest]
     }
@@ -620,11 +685,16 @@ package codestar {
   }
 
   object ListProjectsResult {
-    def apply(projects: ProjectsList, nextToken: js.UndefOr[PaginationToken] = js.undefined): ListProjectsResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("projects" -> projects.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
+    def apply(
+        projects: ProjectsList,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListProjectsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projects" -> projects.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsResult]
     }
@@ -638,9 +708,11 @@ package codestar {
   }
 
   object ListResourcesRequest {
-    def apply(projectId: ProjectId,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListResourcesRequest = {
+    def apply(
+        projectId: ProjectId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectId" -> projectId.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -662,13 +734,18 @@ package codestar {
   }
 
   object ListResourcesResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              resources: js.UndefOr[ResourcesResult] = js.undefined): ListResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "resources" -> resources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        resources: js.UndefOr[ResourcesResult] = js.undefined
+    ): ListResourcesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resources" -> resources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesResult]
     }
@@ -682,14 +759,20 @@ package codestar {
   }
 
   object ListTagsForProjectRequest {
-    def apply(id: ProjectId,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListTagsForProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.asInstanceOf[js.Any], "maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        id: ProjectId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTagsForProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForProjectRequest]
     }
@@ -702,13 +785,18 @@ package codestar {
   }
 
   object ListTagsForProjectResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              tags: js.UndefOr[Tags] = js.undefined): ListTagsForProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "tags" -> tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForProjectResult]
     }
@@ -722,9 +810,11 @@ package codestar {
   }
 
   object ListTeamMembersRequest {
-    def apply(projectId: ProjectId,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListTeamMembersRequest = {
+    def apply(
+        projectId: ProjectId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTeamMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectId" -> projectId.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -746,13 +836,16 @@ package codestar {
   }
 
   object ListTeamMembersResult {
-    def apply(teamMembers: TeamMemberResult,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListTeamMembersResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("teamMembers" -> teamMembers.asInstanceOf[js.Any], "nextToken" -> nextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        teamMembers: TeamMemberResult,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTeamMembersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "teamMembers" -> teamMembers.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTeamMembersResult]
     }
@@ -765,13 +858,18 @@ package codestar {
   }
 
   object ListUserProfilesRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListUserProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListUserProfilesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserProfilesRequest]
     }
@@ -784,13 +882,16 @@ package codestar {
   }
 
   object ListUserProfilesResult {
-    def apply(userProfiles: UserProfilesList,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListUserProfilesResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("userProfiles" -> userProfiles.asInstanceOf[js.Any], "nextToken" -> nextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        userProfiles: UserProfilesList,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListUserProfilesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "userProfiles" -> userProfiles.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserProfilesResult]
     }
@@ -806,10 +907,16 @@ package codestar {
   }
 
   object ProjectStatus {
-    def apply(state: State, reason: js.UndefOr[Reason] = js.undefined): ProjectStatus = {
-      val _fields = IndexedSeq[(String, js.Any)]("state" -> state.asInstanceOf[js.Any], "reason" -> reason.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        state: State,
+        reason: js.UndefOr[Reason] = js.undefined
+    ): ProjectStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "state" -> state.asInstanceOf[js.Any],
+        "reason" -> reason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProjectStatus]
     }
@@ -825,13 +932,18 @@ package codestar {
   }
 
   object ProjectSummary {
-    def apply(projectArn: js.UndefOr[ProjectArn] = js.undefined,
-              projectId: js.UndefOr[ProjectId] = js.undefined): ProjectSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("projectArn" -> projectArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "projectId" -> projectId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        projectArn: js.UndefOr[ProjectArn] = js.undefined,
+        projectId: js.UndefOr[ProjectId] = js.undefined
+    ): ProjectSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projectArn" -> projectArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "projectId" -> projectId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProjectSummary]
     }
@@ -846,8 +958,12 @@ package codestar {
   }
 
   object Resource {
-    def apply(id: ResourceId): Resource = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        id: ResourceId
+    ): Resource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resource]
     }
@@ -863,13 +979,18 @@ package codestar {
   }
 
   object S3Location {
-    def apply(bucketKey: js.UndefOr[BucketKey] = js.undefined,
-              bucketName: js.UndefOr[BucketName] = js.undefined): S3Location = {
-      val _fields = IndexedSeq[(String, js.Any)]("bucketKey" -> bucketKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "bucketName" -> bucketName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bucketKey: js.UndefOr[BucketKey] = js.undefined,
+        bucketName: js.UndefOr[BucketName] = js.undefined
+    ): S3Location = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bucketKey" -> bucketKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "bucketName" -> bucketName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
     }
@@ -882,9 +1003,14 @@ package codestar {
   }
 
   object TagProjectRequest {
-    def apply(id: ProjectId, tags: Tags): TagProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.asInstanceOf[js.Any], "tags" -> tags.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        id: ProjectId,
+        tags: Tags
+    ): TagProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id"   -> id.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagProjectRequest]
     }
@@ -896,10 +1022,14 @@ package codestar {
   }
 
   object TagProjectResult {
-    def apply(tags: js.UndefOr[Tags] = js.undefined): TagProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("tags" -> tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tags: js.UndefOr[Tags] = js.undefined
+    ): TagProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagProjectResult]
     }
@@ -916,9 +1046,11 @@ package codestar {
   }
 
   object TeamMember {
-    def apply(projectRole: Role,
-              userArn: UserArn,
-              remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined): TeamMember = {
+    def apply(
+        projectRole: Role,
+        userArn: UserArn,
+        remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined
+    ): TeamMember = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectRole" -> projectRole.asInstanceOf[js.Any],
         "userArn"     -> userArn.asInstanceOf[js.Any],
@@ -942,9 +1074,11 @@ package codestar {
   }
 
   object Toolchain {
-    def apply(source: ToolchainSource,
-              roleArn: js.UndefOr[RoleArn] = js.undefined,
-              stackParameters: js.UndefOr[TemplateParameterMap] = js.undefined): Toolchain = {
+    def apply(
+        source: ToolchainSource,
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        stackParameters: js.UndefOr[TemplateParameterMap] = js.undefined
+    ): Toolchain = {
       val _fields = IndexedSeq[(String, js.Any)](
         "source" -> source.asInstanceOf[js.Any],
         "roleArn" -> roleArn.map { x =>
@@ -968,8 +1102,12 @@ package codestar {
   }
 
   object ToolchainSource {
-    def apply(s3: S3Location): ToolchainSource = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3" -> s3.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3: S3Location
+    ): ToolchainSource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3" -> s3.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ToolchainSource]
     }
@@ -982,9 +1120,14 @@ package codestar {
   }
 
   object UntagProjectRequest {
-    def apply(id: ProjectId, tags: TagKeys): UntagProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.asInstanceOf[js.Any], "tags" -> tags.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        id: ProjectId,
+        tags: TagKeys
+    ): UntagProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id"   -> id.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagProjectRequest]
     }
@@ -994,8 +1137,10 @@ package codestar {
   trait UntagProjectResult extends js.Object {}
 
   object UntagProjectResult {
-    def apply(): UntagProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagProjectResult]
     }
@@ -1009,15 +1154,20 @@ package codestar {
   }
 
   object UpdateProjectRequest {
-    def apply(id: ProjectId,
-              description: js.UndefOr[ProjectDescription] = js.undefined,
-              name: js.UndefOr[ProjectName] = js.undefined): UpdateProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.asInstanceOf[js.Any], "description" -> description.map {
-        x =>
+    def apply(
+        id: ProjectId,
+        description: js.UndefOr[ProjectDescription] = js.undefined,
+        name: js.UndefOr[ProjectName] = js.undefined
+    ): UpdateProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.asInstanceOf[js.Any],
+        "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
-      }, "name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectRequest]
     }
@@ -1027,8 +1177,10 @@ package codestar {
   trait UpdateProjectResult extends js.Object {}
 
   object UpdateProjectResult {
-    def apply(): UpdateProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectResult]
     }
@@ -1043,10 +1195,12 @@ package codestar {
   }
 
   object UpdateTeamMemberRequest {
-    def apply(projectId: ProjectId,
-              userArn: UserArn,
-              projectRole: js.UndefOr[Role] = js.undefined,
-              remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined): UpdateTeamMemberRequest = {
+    def apply(
+        projectId: ProjectId,
+        userArn: UserArn,
+        projectRole: js.UndefOr[Role] = js.undefined,
+        remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined
+    ): UpdateTeamMemberRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectId" -> projectId.asInstanceOf[js.Any],
         "userArn"   -> userArn.asInstanceOf[js.Any],
@@ -1070,9 +1224,11 @@ package codestar {
   }
 
   object UpdateTeamMemberResult {
-    def apply(projectRole: js.UndefOr[Role] = js.undefined,
-              remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined,
-              userArn: js.UndefOr[UserArn] = js.undefined): UpdateTeamMemberResult = {
+    def apply(
+        projectRole: js.UndefOr[Role] = js.undefined,
+        remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined,
+        userArn: js.UndefOr[UserArn] = js.undefined
+    ): UpdateTeamMemberResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectRole" -> projectRole.map { x =>
           x.asInstanceOf[js.Any]
@@ -1098,10 +1254,12 @@ package codestar {
   }
 
   object UpdateUserProfileRequest {
-    def apply(userArn: UserArn,
-              displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
-              emailAddress: js.UndefOr[Email] = js.undefined,
-              sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined): UpdateUserProfileRequest = {
+    def apply(
+        userArn: UserArn,
+        displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
+    ): UpdateUserProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "userArn" -> userArn.asInstanceOf[js.Any],
         "displayName" -> displayName.map { x =>
@@ -1130,12 +1288,14 @@ package codestar {
   }
 
   object UpdateUserProfileResult {
-    def apply(userArn: UserArn,
-              createdTimestamp: js.UndefOr[CreatedTimestamp] = js.undefined,
-              displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
-              emailAddress: js.UndefOr[Email] = js.undefined,
-              lastModifiedTimestamp: js.UndefOr[LastModifiedTimestamp] = js.undefined,
-              sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined): UpdateUserProfileResult = {
+    def apply(
+        userArn: UserArn,
+        createdTimestamp: js.UndefOr[CreatedTimestamp] = js.undefined,
+        displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        lastModifiedTimestamp: js.UndefOr[LastModifiedTimestamp] = js.undefined,
+        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
+    ): UpdateUserProfileResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "userArn" -> userArn.asInstanceOf[js.Any],
         "createdTimestamp" -> createdTimestamp.map { x =>
@@ -1171,10 +1331,12 @@ package codestar {
   }
 
   object UserProfileSummary {
-    def apply(displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
-              emailAddress: js.UndefOr[Email] = js.undefined,
-              sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined,
-              userArn: js.UndefOr[UserArn] = js.undefined): UserProfileSummary = {
+    def apply(
+        displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined,
+        userArn: js.UndefOr[UserArn] = js.undefined
+    ): UserProfileSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "displayName" -> displayName.map { x =>
           x.asInstanceOf[js.Any]

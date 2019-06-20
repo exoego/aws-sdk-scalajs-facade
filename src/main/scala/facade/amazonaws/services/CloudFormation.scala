@@ -234,13 +234,18 @@ package cloudformation {
   }
 
   object AccountGateResult {
-    def apply(Status: js.UndefOr[AccountGateStatus] = js.undefined,
-              StatusReason: js.UndefOr[AccountGateStatusReason] = js.undefined): AccountGateResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StatusReason" -> StatusReason.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: js.UndefOr[AccountGateStatus] = js.undefined,
+        StatusReason: js.UndefOr[AccountGateStatusReason] = js.undefined
+    ): AccountGateResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusReason" -> StatusReason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountGateResult]
     }
@@ -264,13 +269,18 @@ package cloudformation {
   }
 
   object AccountLimit {
-    def apply(Name: js.UndefOr[LimitName] = js.undefined,
-              Value: js.UndefOr[LimitValue] = js.undefined): AccountLimit = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[LimitName] = js.undefined,
+        Value: js.UndefOr[LimitValue] = js.undefined
+    ): AccountLimit = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountLimit]
     }
@@ -286,8 +296,10 @@ package cloudformation {
   }
 
   object CancelUpdateStackInput {
-    def apply(StackName: StackName,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined): CancelUpdateStackInput = {
+    def apply(
+        StackName: StackName,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): CancelUpdateStackInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x =>
@@ -317,13 +329,18 @@ package cloudformation {
   }
 
   object Change {
-    def apply(ResourceChange: js.UndefOr[ResourceChange] = js.undefined,
-              Type: js.UndefOr[ChangeType] = js.undefined): Change = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceChange" -> ResourceChange.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceChange: js.UndefOr[ResourceChange] = js.undefined,
+        Type: js.UndefOr[ChangeType] = js.undefined
+    ): Change = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceChange" -> ResourceChange.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Change]
     }
@@ -364,15 +381,17 @@ package cloudformation {
   }
 
   object ChangeSetSummary {
-    def apply(ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
-              ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
-              CreationTime: js.UndefOr[CreationTime] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              ExecutionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined,
-              Status: js.UndefOr[ChangeSetStatus] = js.undefined,
-              StatusReason: js.UndefOr[ChangeSetStatusReason] = js.undefined): ChangeSetSummary = {
+    def apply(
+        ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
+        ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
+        CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ExecutionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined,
+        Status: js.UndefOr[ChangeSetStatus] = js.undefined,
+        StatusReason: js.UndefOr[ChangeSetStatusReason] = js.undefined
+    ): ChangeSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeSetId" -> ChangeSetId.map { x =>
           x.asInstanceOf[js.Any]
@@ -442,10 +461,12 @@ package cloudformation {
   }
 
   object ContinueUpdateRollbackInput {
-    def apply(StackName: StackNameOrId,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              ResourcesToSkip: js.UndefOr[ResourcesToSkip] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined): ContinueUpdateRollbackInput = {
+    def apply(
+        StackName: StackNameOrId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        ResourcesToSkip: js.UndefOr[ResourcesToSkip] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined
+    ): ContinueUpdateRollbackInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x =>
@@ -470,8 +491,10 @@ package cloudformation {
   trait ContinueUpdateRollbackOutput extends js.Object {}
 
   object ContinueUpdateRollbackOutput {
-    def apply(): ContinueUpdateRollbackOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ContinueUpdateRollbackOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinueUpdateRollbackOutput]
     }
@@ -500,21 +523,23 @@ package cloudformation {
   }
 
   object CreateChangeSetInput {
-    def apply(ChangeSetName: ChangeSetName,
-              StackName: StackNameOrId,
-              Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              ChangeSetType: js.UndefOr[ChangeSetType] = js.undefined,
-              ClientToken: js.UndefOr[ClientToken] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
-              UsePreviousTemplate: js.UndefOr[UsePreviousTemplate] = js.undefined): CreateChangeSetInput = {
+    def apply(
+        ChangeSetName: ChangeSetName,
+        StackName: StackNameOrId,
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        ChangeSetType: js.UndefOr[ChangeSetType] = js.undefined,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
+        UsePreviousTemplate: js.UndefOr[UsePreviousTemplate] = js.undefined
+    ): CreateChangeSetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeSetName" -> ChangeSetName.asInstanceOf[js.Any],
         "StackName"     -> StackName.asInstanceOf[js.Any],
@@ -573,13 +598,18 @@ package cloudformation {
   }
 
   object CreateChangeSetOutput {
-    def apply(Id: js.UndefOr[ChangeSetId] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined): CreateChangeSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: js.UndefOr[ChangeSetId] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined
+    ): CreateChangeSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateChangeSetOutput]
     }
@@ -610,23 +640,25 @@ package cloudformation {
   }
 
   object CreateStackInput {
-    def apply(StackName: StackName,
-              Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              DisableRollback: js.UndefOr[DisableRollback] = js.undefined,
-              EnableTerminationProtection: js.UndefOr[EnableTerminationProtection] = js.undefined,
-              NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
-              OnFailure: js.UndefOr[OnFailure] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
-              StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined,
-              StackPolicyURL: js.UndefOr[StackPolicyURL] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
-              TimeoutInMinutes: js.UndefOr[TimeoutMinutes] = js.undefined): CreateStackInput = {
+    def apply(
+        StackName: StackName,
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        DisableRollback: js.UndefOr[DisableRollback] = js.undefined,
+        EnableTerminationProtection: js.UndefOr[EnableTerminationProtection] = js.undefined,
+        NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
+        OnFailure: js.UndefOr[OnFailure] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
+        StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined,
+        StackPolicyURL: js.UndefOr[StackPolicyURL] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
+        TimeoutInMinutes: js.UndefOr[TimeoutMinutes] = js.undefined
+    ): CreateStackInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.asInstanceOf[js.Any],
         "Capabilities" -> Capabilities.map { x =>
@@ -694,12 +726,14 @@ package cloudformation {
   }
 
   object CreateStackInstancesInput {
-    def apply(Accounts: AccountList,
-              Regions: RegionList,
-              StackSetName: StackSetName,
-              OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
-              OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
-              ParameterOverrides: js.UndefOr[Parameters] = js.undefined): CreateStackInstancesInput = {
+    def apply(
+        Accounts: AccountList,
+        Regions: RegionList,
+        StackSetName: StackSetName,
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
+        OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
+        ParameterOverrides: js.UndefOr[Parameters] = js.undefined
+    ): CreateStackInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Accounts"     -> Accounts.asInstanceOf[js.Any],
         "Regions"      -> Regions.asInstanceOf[js.Any],
@@ -725,10 +759,14 @@ package cloudformation {
   }
 
   object CreateStackInstancesOutput {
-    def apply(OperationId: js.UndefOr[ClientRequestToken] = js.undefined): CreateStackInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined
+    ): CreateStackInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStackInstancesOutput]
     }
@@ -743,10 +781,14 @@ package cloudformation {
   }
 
   object CreateStackOutput {
-    def apply(StackId: js.UndefOr[StackId] = js.undefined): CreateStackOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: js.UndefOr[StackId] = js.undefined
+    ): CreateStackOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStackOutput]
     }
@@ -767,16 +809,18 @@ package cloudformation {
   }
 
   object CreateStackSetInput {
-    def apply(StackSetName: StackSetName,
-              AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
-              Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined): CreateStackSetInput = {
+    def apply(
+        StackSetName: StackSetName,
+        AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined
+    ): CreateStackSetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackSetName" -> StackSetName.asInstanceOf[js.Any],
         "AdministrationRoleARN" -> AdministrationRoleARN.map { x =>
@@ -818,10 +862,14 @@ package cloudformation {
   }
 
   object CreateStackSetOutput {
-    def apply(StackSetId: js.UndefOr[StackSetId] = js.undefined): CreateStackSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackSetId" -> StackSetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackSetId: js.UndefOr[StackSetId] = js.undefined
+    ): CreateStackSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackSetId" -> StackSetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStackSetOutput]
     }
@@ -837,8 +885,10 @@ package cloudformation {
   }
 
   object DeleteChangeSetInput {
-    def apply(ChangeSetName: ChangeSetNameOrId,
-              StackName: js.UndefOr[StackNameOrId] = js.undefined): DeleteChangeSetInput = {
+    def apply(
+        ChangeSetName: ChangeSetNameOrId,
+        StackName: js.UndefOr[StackNameOrId] = js.undefined
+    ): DeleteChangeSetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeSetName" -> ChangeSetName.asInstanceOf[js.Any],
         "StackName" -> StackName.map { x =>
@@ -857,8 +907,10 @@ package cloudformation {
   trait DeleteChangeSetOutput extends js.Object {}
 
   object DeleteChangeSetOutput {
-    def apply(): DeleteChangeSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteChangeSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteChangeSetOutput]
     }
@@ -876,10 +928,12 @@ package cloudformation {
   }
 
   object DeleteStackInput {
-    def apply(StackName: StackName,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              RetainResources: js.UndefOr[RetainResources] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined): DeleteStackInput = {
+    def apply(
+        StackName: StackName,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        RetainResources: js.UndefOr[RetainResources] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined
+    ): DeleteStackInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x =>
@@ -939,10 +993,14 @@ package cloudformation {
   }
 
   object DeleteStackInstancesOutput {
-    def apply(OperationId: js.UndefOr[ClientRequestToken] = js.undefined): DeleteStackInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined
+    ): DeleteStackInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStackInstancesOutput]
     }
@@ -954,9 +1012,12 @@ package cloudformation {
   }
 
   object DeleteStackSetInput {
-    def apply(StackSetName: StackSetName): DeleteStackSetInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackSetName" -> StackSetName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackSetName: StackSetName
+    ): DeleteStackSetInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackSetName" -> StackSetName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStackSetInput]
     }
@@ -966,8 +1027,10 @@ package cloudformation {
   trait DeleteStackSetOutput extends js.Object {}
 
   object DeleteStackSetOutput {
-    def apply(): DeleteStackSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteStackSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStackSetOutput]
     }
@@ -982,10 +1045,14 @@ package cloudformation {
   }
 
   object DescribeAccountLimitsInput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAccountLimitsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAccountLimitsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountLimitsInput]
     }
@@ -1001,13 +1068,18 @@ package cloudformation {
   }
 
   object DescribeAccountLimitsOutput {
-    def apply(AccountLimits: js.UndefOr[AccountLimitList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAccountLimitsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountLimits" -> AccountLimits.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountLimits: js.UndefOr[AccountLimitList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAccountLimitsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountLimits" -> AccountLimits.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountLimitsOutput]
     }
@@ -1024,9 +1096,11 @@ package cloudformation {
   }
 
   object DescribeChangeSetInput {
-    def apply(ChangeSetName: ChangeSetNameOrId,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackName: js.UndefOr[StackNameOrId] = js.undefined): DescribeChangeSetInput = {
+    def apply(
+        ChangeSetName: ChangeSetNameOrId,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackName: js.UndefOr[StackNameOrId] = js.undefined
+    ): DescribeChangeSetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeSetName" -> ChangeSetName.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x =>
@@ -1065,22 +1139,24 @@ package cloudformation {
   }
 
   object DescribeChangeSetOutput {
-    def apply(Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
-              ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
-              Changes: js.UndefOr[Changes] = js.undefined,
-              CreationTime: js.UndefOr[CreationTime] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              ExecutionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined,
-              Status: js.UndefOr[ChangeSetStatus] = js.undefined,
-              StatusReason: js.UndefOr[ChangeSetStatusReason] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): DescribeChangeSetOutput = {
+    def apply(
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
+        ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
+        Changes: js.UndefOr[Changes] = js.undefined,
+        CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ExecutionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined,
+        Status: js.UndefOr[ChangeSetStatus] = js.undefined,
+        StatusReason: js.UndefOr[ChangeSetStatusReason] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): DescribeChangeSetOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Capabilities" -> Capabilities.map { x =>
           x.asInstanceOf[js.Any]
@@ -1142,9 +1218,12 @@ package cloudformation {
   }
 
   object DescribeStackDriftDetectionStatusInput {
-    def apply(StackDriftDetectionId: StackDriftDetectionId): DescribeStackDriftDetectionStatusInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackDriftDetectionId" -> StackDriftDetectionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackDriftDetectionId: StackDriftDetectionId
+    ): DescribeStackDriftDetectionStatusInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackDriftDetectionId" -> StackDriftDetectionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackDriftDetectionStatusInput]
     }
@@ -1201,13 +1280,18 @@ package cloudformation {
   }
 
   object DescribeStackEventsInput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined): DescribeStackEventsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackName" -> StackName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined
+    ): DescribeStackEventsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackName" -> StackName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackEventsInput]
     }
@@ -1223,13 +1307,18 @@ package cloudformation {
   }
 
   object DescribeStackEventsOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackEvents: js.UndefOr[StackEvents] = js.undefined): DescribeStackEventsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackEvents" -> StackEvents.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackEvents: js.UndefOr[StackEvents] = js.undefined
+    ): DescribeStackEventsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackEvents" -> StackEvents.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackEventsOutput]
     }
@@ -1243,9 +1332,11 @@ package cloudformation {
   }
 
   object DescribeStackInstanceInput {
-    def apply(StackInstanceAccount: Account,
-              StackInstanceRegion: Region,
-              StackSetName: StackSetName): DescribeStackInstanceInput = {
+    def apply(
+        StackInstanceAccount: Account,
+        StackInstanceRegion: Region,
+        StackSetName: StackSetName
+    ): DescribeStackInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackInstanceAccount" -> StackInstanceAccount.asInstanceOf[js.Any],
         "StackInstanceRegion"  -> StackInstanceRegion.asInstanceOf[js.Any],
@@ -1262,10 +1353,14 @@ package cloudformation {
   }
 
   object DescribeStackInstanceOutput {
-    def apply(StackInstance: js.UndefOr[StackInstance] = js.undefined): DescribeStackInstanceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackInstance" -> StackInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackInstance: js.UndefOr[StackInstance] = js.undefined
+    ): DescribeStackInstanceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackInstance" -> StackInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackInstanceOutput]
     }
@@ -1310,8 +1405,10 @@ package cloudformation {
   }
 
   object DescribeStackResourceDriftsOutput {
-    def apply(StackResourceDrifts: StackResourceDrifts,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeStackResourceDriftsOutput = {
+    def apply(
+        StackResourceDrifts: StackResourceDrifts,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeStackResourceDriftsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackResourceDrifts" -> StackResourceDrifts.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x =>
@@ -1333,7 +1430,10 @@ package cloudformation {
   }
 
   object DescribeStackResourceInput {
-    def apply(LogicalResourceId: LogicalResourceId, StackName: StackName): DescribeStackResourceInput = {
+    def apply(
+        LogicalResourceId: LogicalResourceId,
+        StackName: StackName
+    ): DescribeStackResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LogicalResourceId" -> LogicalResourceId.asInstanceOf[js.Any],
         "StackName"         -> StackName.asInstanceOf[js.Any]
@@ -1352,10 +1452,14 @@ package cloudformation {
   }
 
   object DescribeStackResourceOutput {
-    def apply(StackResourceDetail: js.UndefOr[StackResourceDetail] = js.undefined): DescribeStackResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackResourceDetail" -> StackResourceDetail.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackResourceDetail: js.UndefOr[StackResourceDetail] = js.undefined
+    ): DescribeStackResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackResourceDetail" -> StackResourceDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackResourceOutput]
     }
@@ -1372,9 +1476,11 @@ package cloudformation {
   }
 
   object DescribeStackResourcesInput {
-    def apply(LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
-              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined): DescribeStackResourcesInput = {
+    def apply(
+        LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
+        PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined
+    ): DescribeStackResourcesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LogicalResourceId" -> LogicalResourceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1400,10 +1506,14 @@ package cloudformation {
   }
 
   object DescribeStackResourcesOutput {
-    def apply(StackResources: js.UndefOr[StackResources] = js.undefined): DescribeStackResourcesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackResources" -> StackResources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackResources: js.UndefOr[StackResources] = js.undefined
+    ): DescribeStackResourcesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackResources" -> StackResources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackResourcesOutput]
     }
@@ -1415,9 +1525,12 @@ package cloudformation {
   }
 
   object DescribeStackSetInput {
-    def apply(StackSetName: StackSetName): DescribeStackSetInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackSetName" -> StackSetName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackSetName: StackSetName
+    ): DescribeStackSetInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackSetName" -> StackSetName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackSetInput]
     }
@@ -1430,7 +1543,10 @@ package cloudformation {
   }
 
   object DescribeStackSetOperationInput {
-    def apply(OperationId: ClientRequestToken, StackSetName: StackSetName): DescribeStackSetOperationInput = {
+    def apply(
+        OperationId: ClientRequestToken,
+        StackSetName: StackSetName
+    ): DescribeStackSetOperationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OperationId"  -> OperationId.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
@@ -1446,10 +1562,14 @@ package cloudformation {
   }
 
   object DescribeStackSetOperationOutput {
-    def apply(StackSetOperation: js.UndefOr[StackSetOperation] = js.undefined): DescribeStackSetOperationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackSetOperation" -> StackSetOperation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackSetOperation: js.UndefOr[StackSetOperation] = js.undefined
+    ): DescribeStackSetOperationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackSetOperation" -> StackSetOperation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackSetOperationOutput]
     }
@@ -1461,10 +1581,14 @@ package cloudformation {
   }
 
   object DescribeStackSetOutput {
-    def apply(StackSet: js.UndefOr[StackSet] = js.undefined): DescribeStackSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackSet" -> StackSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackSet: js.UndefOr[StackSet] = js.undefined
+    ): DescribeStackSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackSet" -> StackSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStackSetOutput]
     }
@@ -1480,13 +1604,18 @@ package cloudformation {
   }
 
   object DescribeStacksInput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined): DescribeStacksInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackName" -> StackName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined
+    ): DescribeStacksInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackName" -> StackName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStacksInput]
     }
@@ -1502,13 +1631,18 @@ package cloudformation {
   }
 
   object DescribeStacksOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Stacks: js.UndefOr[Stacks] = js.undefined): DescribeStacksOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Stacks" -> Stacks.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Stacks: js.UndefOr[Stacks] = js.undefined
+    ): DescribeStacksOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Stacks" -> Stacks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStacksOutput]
     }
@@ -1521,8 +1655,10 @@ package cloudformation {
   }
 
   object DetectStackDriftInput {
-    def apply(StackName: StackNameOrId,
-              LogicalResourceIds: js.UndefOr[LogicalResourceIds] = js.undefined): DetectStackDriftInput = {
+    def apply(
+        StackName: StackNameOrId,
+        LogicalResourceIds: js.UndefOr[LogicalResourceIds] = js.undefined
+    ): DetectStackDriftInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.asInstanceOf[js.Any],
         "LogicalResourceIds" -> LogicalResourceIds.map { x =>
@@ -1540,9 +1676,12 @@ package cloudformation {
   }
 
   object DetectStackDriftOutput {
-    def apply(StackDriftDetectionId: StackDriftDetectionId): DetectStackDriftOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackDriftDetectionId" -> StackDriftDetectionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackDriftDetectionId: StackDriftDetectionId
+    ): DetectStackDriftOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackDriftDetectionId" -> StackDriftDetectionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectStackDriftOutput]
     }
@@ -1555,7 +1694,10 @@ package cloudformation {
   }
 
   object DetectStackResourceDriftInput {
-    def apply(LogicalResourceId: LogicalResourceId, StackName: StackNameOrId): DetectStackResourceDriftInput = {
+    def apply(
+        LogicalResourceId: LogicalResourceId,
+        StackName: StackNameOrId
+    ): DetectStackResourceDriftInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LogicalResourceId" -> LogicalResourceId.asInstanceOf[js.Any],
         "StackName"         -> StackName.asInstanceOf[js.Any]
@@ -1571,9 +1713,12 @@ package cloudformation {
   }
 
   object DetectStackResourceDriftOutput {
-    def apply(StackResourceDrift: StackResourceDrift): DetectStackResourceDriftOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackResourceDrift" -> StackResourceDrift.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackResourceDrift: StackResourceDrift
+    ): DetectStackResourceDriftOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackResourceDrift" -> StackResourceDrift.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetectStackResourceDriftOutput]
     }
@@ -1598,9 +1743,11 @@ package cloudformation {
   }
 
   object EstimateTemplateCostInput {
-    def apply(Parameters: js.UndefOr[Parameters] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined): EstimateTemplateCostInput = {
+    def apply(
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined
+    ): EstimateTemplateCostInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Parameters" -> Parameters.map { x =>
           x.asInstanceOf[js.Any]
@@ -1626,10 +1773,14 @@ package cloudformation {
   }
 
   object EstimateTemplateCostOutput {
-    def apply(Url: js.UndefOr[Url] = js.undefined): EstimateTemplateCostOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Url" -> Url.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Url: js.UndefOr[Url] = js.undefined
+    ): EstimateTemplateCostOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EstimateTemplateCostOutput]
     }
@@ -1653,9 +1804,11 @@ package cloudformation {
   }
 
   object ExecuteChangeSetInput {
-    def apply(ChangeSetName: ChangeSetNameOrId,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              StackName: js.UndefOr[StackNameOrId] = js.undefined): ExecuteChangeSetInput = {
+    def apply(
+        ChangeSetName: ChangeSetNameOrId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        StackName: js.UndefOr[StackNameOrId] = js.undefined
+    ): ExecuteChangeSetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeSetName" -> ChangeSetName.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x =>
@@ -1677,8 +1830,10 @@ package cloudformation {
   trait ExecuteChangeSetOutput extends js.Object {}
 
   object ExecuteChangeSetOutput {
-    def apply(): ExecuteChangeSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ExecuteChangeSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteChangeSetOutput]
     }
@@ -1706,9 +1861,11 @@ package cloudformation {
   }
 
   object Export {
-    def apply(ExportingStackId: js.UndefOr[StackId] = js.undefined,
-              Name: js.UndefOr[ExportName] = js.undefined,
-              Value: js.UndefOr[ExportValue] = js.undefined): Export = {
+    def apply(
+        ExportingStackId: js.UndefOr[StackId] = js.undefined,
+        Name: js.UndefOr[ExportName] = js.undefined,
+        Value: js.UndefOr[ExportValue] = js.undefined
+    ): Export = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExportingStackId" -> ExportingStackId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1734,9 +1891,12 @@ package cloudformation {
   }
 
   object GetStackPolicyInput {
-    def apply(StackName: StackName): GetStackPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackName" -> StackName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackName: StackName
+    ): GetStackPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStackPolicyInput]
     }
@@ -1751,10 +1911,14 @@ package cloudformation {
   }
 
   object GetStackPolicyOutput {
-    def apply(StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined): GetStackPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackPolicyBody" -> StackPolicyBody.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined
+    ): GetStackPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackPolicyBody" -> StackPolicyBody.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStackPolicyOutput]
     }
@@ -1771,9 +1935,11 @@ package cloudformation {
   }
 
   object GetTemplateInput {
-    def apply(ChangeSetName: js.UndefOr[ChangeSetNameOrId] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined,
-              TemplateStage: js.UndefOr[TemplateStage] = js.undefined): GetTemplateInput = {
+    def apply(
+        ChangeSetName: js.UndefOr[ChangeSetNameOrId] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined,
+        TemplateStage: js.UndefOr[TemplateStage] = js.undefined
+    ): GetTemplateInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeSetName" -> ChangeSetName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1800,13 +1966,18 @@ package cloudformation {
   }
 
   object GetTemplateOutput {
-    def apply(StagesAvailable: js.UndefOr[StageList] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined): GetTemplateOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StagesAvailable" -> StagesAvailable.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TemplateBody" -> TemplateBody.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StagesAvailable: js.UndefOr[StageList] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined
+    ): GetTemplateOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StagesAvailable" -> StagesAvailable.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemplateBody" -> TemplateBody.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTemplateOutput]
     }
@@ -1824,10 +1995,12 @@ package cloudformation {
   }
 
   object GetTemplateSummaryInput {
-    def apply(StackName: js.UndefOr[StackNameOrId] = js.undefined,
-              StackSetName: js.UndefOr[StackSetNameOrId] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined): GetTemplateSummaryInput = {
+    def apply(
+        StackName: js.UndefOr[StackNameOrId] = js.undefined,
+        StackSetName: js.UndefOr[StackSetNameOrId] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined
+    ): GetTemplateSummaryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1863,14 +2036,16 @@ package cloudformation {
   }
 
   object GetTemplateSummaryOutput {
-    def apply(Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              CapabilitiesReason: js.UndefOr[CapabilitiesReason] = js.undefined,
-              DeclaredTransforms: js.UndefOr[TransformsList] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              Metadata: js.UndefOr[Metadata] = js.undefined,
-              Parameters: js.UndefOr[ParameterDeclarations] = js.undefined,
-              ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
-              Version: js.UndefOr[Version] = js.undefined): GetTemplateSummaryOutput = {
+    def apply(
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        CapabilitiesReason: js.UndefOr[CapabilitiesReason] = js.undefined,
+        DeclaredTransforms: js.UndefOr[TransformsList] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Parameters: js.UndefOr[ParameterDeclarations] = js.undefined,
+        ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
+        Version: js.UndefOr[Version] = js.undefined
+    ): GetTemplateSummaryOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Capabilities" -> Capabilities.map { x =>
           x.asInstanceOf[js.Any]
@@ -1912,11 +2087,16 @@ package cloudformation {
   }
 
   object ListChangeSetsInput {
-    def apply(StackName: StackNameOrId, NextToken: js.UndefOr[NextToken] = js.undefined): ListChangeSetsInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackName" -> StackName.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        StackName: StackNameOrId,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListChangeSetsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackName" -> StackName.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChangeSetsInput]
     }
@@ -1932,13 +2112,18 @@ package cloudformation {
   }
 
   object ListChangeSetsOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Summaries: js.UndefOr[ChangeSetSummaries] = js.undefined): ListChangeSetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Summaries" -> Summaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Summaries: js.UndefOr[ChangeSetSummaries] = js.undefined
+    ): ListChangeSetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Summaries" -> Summaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChangeSetsOutput]
     }
@@ -1950,10 +2135,14 @@ package cloudformation {
   }
 
   object ListExportsInput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined): ListExportsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListExportsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListExportsInput]
     }
@@ -1966,13 +2155,18 @@ package cloudformation {
   }
 
   object ListExportsOutput {
-    def apply(Exports: js.UndefOr[Exports] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListExportsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Exports" -> Exports.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Exports: js.UndefOr[Exports] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListExportsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Exports" -> Exports.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListExportsOutput]
     }
@@ -1985,12 +2179,16 @@ package cloudformation {
   }
 
   object ListImportsInput {
-    def apply(ExportName: ExportName, NextToken: js.UndefOr[NextToken] = js.undefined): ListImportsInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ExportName" -> ExportName.asInstanceOf[js.Any], "NextToken" -> NextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ExportName: ExportName,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListImportsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ExportName" -> ExportName.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListImportsInput]
     }
@@ -2003,13 +2201,18 @@ package cloudformation {
   }
 
   object ListImportsOutput {
-    def apply(Imports: js.UndefOr[Imports] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListImportsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Imports" -> Imports.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Imports: js.UndefOr[Imports] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListImportsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Imports" -> Imports.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListImportsOutput]
     }
@@ -2025,11 +2228,13 @@ package cloudformation {
   }
 
   object ListStackInstancesInput {
-    def apply(StackSetName: StackSetName,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackInstanceAccount: js.UndefOr[Account] = js.undefined,
-              StackInstanceRegion: js.UndefOr[Region] = js.undefined): ListStackInstancesInput = {
+    def apply(
+        StackSetName: StackSetName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackInstanceAccount: js.UndefOr[Account] = js.undefined,
+        StackInstanceRegion: js.UndefOr[Region] = js.undefined
+    ): ListStackInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackSetName" -> StackSetName.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -2057,13 +2262,18 @@ package cloudformation {
   }
 
   object ListStackInstancesOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Summaries: js.UndefOr[StackInstanceSummaries] = js.undefined): ListStackInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Summaries" -> Summaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Summaries: js.UndefOr[StackInstanceSummaries] = js.undefined
+    ): ListStackInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Summaries" -> Summaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStackInstancesOutput]
     }
@@ -2079,11 +2289,16 @@ package cloudformation {
   }
 
   object ListStackResourcesInput {
-    def apply(StackName: StackName, NextToken: js.UndefOr[NextToken] = js.undefined): ListStackResourcesInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StackName" -> StackName.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        StackName: StackName,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListStackResourcesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackName" -> StackName.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStackResourcesInput]
     }
@@ -2099,13 +2314,18 @@ package cloudformation {
   }
 
   object ListStackResourcesOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackResourceSummaries: js.UndefOr[StackResourceSummaries] = js.undefined): ListStackResourcesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackResourceSummaries" -> StackResourceSummaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackResourceSummaries: js.UndefOr[StackResourceSummaries] = js.undefined
+    ): ListStackResourcesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackResourceSummaries" -> StackResourceSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStackResourcesOutput]
     }
@@ -2120,10 +2340,12 @@ package cloudformation {
   }
 
   object ListStackSetOperationResultsInput {
-    def apply(OperationId: ClientRequestToken,
-              StackSetName: StackSetName,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListStackSetOperationResultsInput = {
+    def apply(
+        OperationId: ClientRequestToken,
+        StackSetName: StackSetName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListStackSetOperationResultsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OperationId"  -> OperationId.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any],
@@ -2150,11 +2372,14 @@ package cloudformation {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Summaries: js.UndefOr[StackSetOperationResultSummaries] = js.undefined
     ): ListStackSetOperationResultsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Summaries" -> Summaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Summaries" -> Summaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStackSetOperationResultsOutput]
     }
@@ -2168,9 +2393,11 @@ package cloudformation {
   }
 
   object ListStackSetOperationsInput {
-    def apply(StackSetName: StackSetName,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListStackSetOperationsInput = {
+    def apply(
+        StackSetName: StackSetName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListStackSetOperationsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackSetName" -> StackSetName.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -2192,13 +2419,18 @@ package cloudformation {
   }
 
   object ListStackSetOperationsOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Summaries: js.UndefOr[StackSetOperationSummaries] = js.undefined): ListStackSetOperationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Summaries" -> Summaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Summaries: js.UndefOr[StackSetOperationSummaries] = js.undefined
+    ): ListStackSetOperationsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Summaries" -> Summaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStackSetOperationsOutput]
     }
@@ -2212,9 +2444,11 @@ package cloudformation {
   }
 
   object ListStackSetsInput {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              Status: js.UndefOr[StackSetStatus] = js.undefined): ListStackSetsInput = {
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Status: js.UndefOr[StackSetStatus] = js.undefined
+    ): ListStackSetsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -2238,13 +2472,18 @@ package cloudformation {
   }
 
   object ListStackSetsOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Summaries: js.UndefOr[StackSetSummaries] = js.undefined): ListStackSetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Summaries" -> Summaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Summaries: js.UndefOr[StackSetSummaries] = js.undefined
+    ): ListStackSetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Summaries" -> Summaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStackSetsOutput]
     }
@@ -2260,13 +2499,18 @@ package cloudformation {
   }
 
   object ListStacksInput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackStatusFilter: js.UndefOr[StackStatusFilter] = js.undefined): ListStacksInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackStatusFilter" -> StackStatusFilter.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackStatusFilter: js.UndefOr[StackStatusFilter] = js.undefined
+    ): ListStacksInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackStatusFilter" -> StackStatusFilter.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStacksInput]
     }
@@ -2282,13 +2526,18 @@ package cloudformation {
   }
 
   object ListStacksOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StackSummaries: js.UndefOr[StackSummaries] = js.undefined): ListStacksOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StackSummaries" -> StackSummaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StackSummaries: js.UndefOr[StackSummaries] = js.undefined
+    ): ListStacksOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSummaries" -> StackSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStacksOutput]
     }
@@ -2314,10 +2563,12 @@ package cloudformation {
   }
 
   object Output {
-    def apply(Description: js.UndefOr[Description] = js.undefined,
-              ExportName: js.UndefOr[ExportName] = js.undefined,
-              OutputKey: js.UndefOr[OutputKey] = js.undefined,
-              OutputValue: js.UndefOr[OutputValue] = js.undefined): Output = {
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        ExportName: js.UndefOr[ExportName] = js.undefined,
+        OutputKey: js.UndefOr[OutputKey] = js.undefined,
+        OutputValue: js.UndefOr[OutputValue] = js.undefined
+    ): Output = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -2349,10 +2600,12 @@ package cloudformation {
   }
 
   object Parameter {
-    def apply(ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
-              ParameterValue: js.UndefOr[ParameterValue] = js.undefined,
-              ResolvedValue: js.UndefOr[ParameterValue] = js.undefined,
-              UsePreviousValue: js.UndefOr[UsePreviousValue] = js.undefined): Parameter = {
+    def apply(
+        ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
+        ParameterValue: js.UndefOr[ParameterValue] = js.undefined,
+        ResolvedValue: js.UndefOr[ParameterValue] = js.undefined,
+        UsePreviousValue: js.UndefOr[UsePreviousValue] = js.undefined
+    ): Parameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterKey" -> ParameterKey.map { x =>
           x.asInstanceOf[js.Any]
@@ -2381,10 +2634,14 @@ package cloudformation {
   }
 
   object ParameterConstraints {
-    def apply(AllowedValues: js.UndefOr[AllowedValues] = js.undefined): ParameterConstraints = {
-      val _fields = IndexedSeq[(String, js.Any)]("AllowedValues" -> AllowedValues.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AllowedValues: js.UndefOr[AllowedValues] = js.undefined
+    ): ParameterConstraints = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AllowedValues" -> AllowedValues.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterConstraints]
     }
@@ -2404,12 +2661,14 @@ package cloudformation {
   }
 
   object ParameterDeclaration {
-    def apply(DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              NoEcho: js.UndefOr[NoEcho] = js.undefined,
-              ParameterConstraints: js.UndefOr[ParameterConstraints] = js.undefined,
-              ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
-              ParameterType: js.UndefOr[ParameterType] = js.undefined): ParameterDeclaration = {
+    def apply(
+        DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        NoEcho: js.UndefOr[NoEcho] = js.undefined,
+        ParameterConstraints: js.UndefOr[ParameterConstraints] = js.undefined,
+        ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
+        ParameterType: js.UndefOr[ParameterType] = js.undefined
+    ): ParameterDeclaration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultValue" -> DefaultValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -2445,10 +2704,14 @@ package cloudformation {
   }
 
   object PhysicalResourceIdContextKeyValuePair {
-    def apply(Key: Key, Value: Value): PhysicalResourceIdContextKeyValuePair = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: Key,
+        Value: Value
+    ): PhysicalResourceIdContextKeyValuePair = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PhysicalResourceIdContextKeyValuePair]
     }
@@ -2466,10 +2729,12 @@ package cloudformation {
   }
 
   object PropertyDifference {
-    def apply(ActualValue: PropertyValue,
-              DifferenceType: DifferenceType,
-              ExpectedValue: PropertyValue,
-              PropertyPath: PropertyPath): PropertyDifference = {
+    def apply(
+        ActualValue: PropertyValue,
+        DifferenceType: DifferenceType,
+        ExpectedValue: PropertyValue,
+        PropertyPath: PropertyPath
+    ): PropertyDifference = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActualValue"    -> ActualValue.asInstanceOf[js.Any],
         "DifferenceType" -> DifferenceType.asInstanceOf[js.Any],
@@ -2523,13 +2788,15 @@ package cloudformation {
   }
 
   object ResourceChange {
-    def apply(Action: js.UndefOr[ChangeAction] = js.undefined,
-              Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
-              LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
-              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-              Replacement: js.UndefOr[Replacement] = js.undefined,
-              ResourceType: js.UndefOr[ResourceType] = js.undefined,
-              Scope: js.UndefOr[Scope] = js.undefined): ResourceChange = {
+    def apply(
+        Action: js.UndefOr[ChangeAction] = js.undefined,
+        Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
+        LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
+        PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+        Replacement: js.UndefOr[Replacement] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        Scope: js.UndefOr[Scope] = js.undefined
+    ): ResourceChange = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -2570,10 +2837,12 @@ package cloudformation {
   }
 
   object ResourceChangeDetail {
-    def apply(CausingEntity: js.UndefOr[CausingEntity] = js.undefined,
-              ChangeSource: js.UndefOr[ChangeSource] = js.undefined,
-              Evaluation: js.UndefOr[EvaluationType] = js.undefined,
-              Target: js.UndefOr[ResourceTargetDefinition] = js.undefined): ResourceChangeDetail = {
+    def apply(
+        CausingEntity: js.UndefOr[CausingEntity] = js.undefined,
+        ChangeSource: js.UndefOr[ChangeSource] = js.undefined,
+        Evaluation: js.UndefOr[EvaluationType] = js.undefined,
+        Target: js.UndefOr[ResourceTargetDefinition] = js.undefined
+    ): ResourceChangeDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CausingEntity" -> CausingEntity.map { x =>
           x.asInstanceOf[js.Any]
@@ -2637,9 +2906,11 @@ package cloudformation {
   }
 
   object ResourceTargetDefinition {
-    def apply(Attribute: js.UndefOr[ResourceAttribute] = js.undefined,
-              Name: js.UndefOr[PropertyName] = js.undefined,
-              RequiresRecreation: js.UndefOr[RequiresRecreation] = js.undefined): ResourceTargetDefinition = {
+    def apply(
+        Attribute: js.UndefOr[ResourceAttribute] = js.undefined,
+        Name: js.UndefOr[PropertyName] = js.undefined,
+        RequiresRecreation: js.UndefOr[RequiresRecreation] = js.undefined
+    ): ResourceTargetDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attribute" -> Attribute.map { x =>
           x.asInstanceOf[js.Any]
@@ -2667,13 +2938,18 @@ package cloudformation {
   }
 
   object RollbackConfiguration {
-    def apply(MonitoringTimeInMinutes: js.UndefOr[MonitoringTimeInMinutes] = js.undefined,
-              RollbackTriggers: js.UndefOr[RollbackTriggers] = js.undefined): RollbackConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("MonitoringTimeInMinutes" -> MonitoringTimeInMinutes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RollbackTriggers" -> RollbackTriggers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MonitoringTimeInMinutes: js.UndefOr[MonitoringTimeInMinutes] = js.undefined,
+        RollbackTriggers: js.UndefOr[RollbackTriggers] = js.undefined
+    ): RollbackConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MonitoringTimeInMinutes" -> MonitoringTimeInMinutes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RollbackTriggers" -> RollbackTriggers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RollbackConfiguration]
     }
@@ -2689,9 +2965,14 @@ package cloudformation {
   }
 
   object RollbackTrigger {
-    def apply(Arn: Arn, Type: Type): RollbackTrigger = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "Type" -> Type.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: Arn,
+        Type: Type
+    ): RollbackTrigger = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RollbackTrigger]
     }
@@ -2708,9 +2989,11 @@ package cloudformation {
   }
 
   object SetStackPolicyInput {
-    def apply(StackName: StackName,
-              StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined,
-              StackPolicyURL: js.UndefOr[StackPolicyURL] = js.undefined): SetStackPolicyInput = {
+    def apply(
+        StackName: StackName,
+        StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined,
+        StackPolicyURL: js.UndefOr[StackPolicyURL] = js.undefined
+    ): SetStackPolicyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.asInstanceOf[js.Any],
         "StackPolicyBody" -> StackPolicyBody.map { x =>
@@ -2737,10 +3020,12 @@ package cloudformation {
   }
 
   object SignalResourceInput {
-    def apply(LogicalResourceId: LogicalResourceId,
-              StackName: StackNameOrId,
-              Status: ResourceSignalStatus,
-              UniqueId: ResourceSignalUniqueId): SignalResourceInput = {
+    def apply(
+        LogicalResourceId: LogicalResourceId,
+        StackName: StackNameOrId,
+        Status: ResourceSignalStatus,
+        UniqueId: ResourceSignalUniqueId
+    ): SignalResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LogicalResourceId" -> LogicalResourceId.asInstanceOf[js.Any],
         "StackName"         -> StackName.asInstanceOf[js.Any],
@@ -2782,28 +3067,30 @@ package cloudformation {
   }
 
   object Stack {
-    def apply(CreationTime: CreationTime,
-              StackName: StackName,
-              StackStatus: StackStatus,
-              Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
-              DeletionTime: js.UndefOr[DeletionTime] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              DisableRollback: js.UndefOr[DisableRollback] = js.undefined,
-              DriftInformation: js.UndefOr[StackDriftInformation] = js.undefined,
-              EnableTerminationProtection: js.UndefOr[EnableTerminationProtection] = js.undefined,
-              LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
-              NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
-              Outputs: js.UndefOr[Outputs] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ParentId: js.UndefOr[StackId] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
-              RootId: js.UndefOr[StackId] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackStatusReason: js.UndefOr[StackStatusReason] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TimeoutInMinutes: js.UndefOr[TimeoutMinutes] = js.undefined): Stack = {
+    def apply(
+        CreationTime: CreationTime,
+        StackName: StackName,
+        StackStatus: StackStatus,
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
+        DeletionTime: js.UndefOr[DeletionTime] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        DisableRollback: js.UndefOr[DisableRollback] = js.undefined,
+        DriftInformation: js.UndefOr[StackDriftInformation] = js.undefined,
+        EnableTerminationProtection: js.UndefOr[EnableTerminationProtection] = js.undefined,
+        LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
+        NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
+        Outputs: js.UndefOr[Outputs] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ParentId: js.UndefOr[StackId] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
+        RootId: js.UndefOr[StackId] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackStatusReason: js.UndefOr[StackStatusReason] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TimeoutInMinutes: js.UndefOr[TimeoutMinutes] = js.undefined
+    ): Stack = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "StackName"    -> StackName.asInstanceOf[js.Any],
@@ -2889,8 +3176,10 @@ package cloudformation {
   }
 
   object StackDriftInformation {
-    def apply(StackDriftStatus: StackDriftStatus,
-              LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined): StackDriftInformation = {
+    def apply(
+        StackDriftStatus: StackDriftStatus,
+        LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): StackDriftInformation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackDriftStatus" -> StackDriftStatus.asInstanceOf[js.Any],
         "LastCheckTimestamp" -> LastCheckTimestamp.map { x =>
@@ -2912,8 +3201,10 @@ package cloudformation {
   }
 
   object StackDriftInformationSummary {
-    def apply(StackDriftStatus: StackDriftStatus,
-              LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined): StackDriftInformationSummary = {
+    def apply(
+        StackDriftStatus: StackDriftStatus,
+        LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): StackDriftInformationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackDriftStatus" -> StackDriftStatus.asInstanceOf[js.Any],
         "LastCheckTimestamp" -> LastCheckTimestamp.map { x =>
@@ -2953,17 +3244,19 @@ package cloudformation {
   }
 
   object StackEvent {
-    def apply(EventId: EventId,
-              StackId: StackId,
-              StackName: StackName,
-              Timestamp: Timestamp,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
-              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-              ResourceProperties: js.UndefOr[ResourceProperties] = js.undefined,
-              ResourceStatus: js.UndefOr[ResourceStatus] = js.undefined,
-              ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
-              ResourceType: js.UndefOr[ResourceType] = js.undefined): StackEvent = {
+    def apply(
+        EventId: EventId,
+        StackId: StackId,
+        StackName: StackName,
+        Timestamp: Timestamp,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
+        PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+        ResourceProperties: js.UndefOr[ResourceProperties] = js.undefined,
+        ResourceStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined
+    ): StackEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EventId"   -> EventId.asInstanceOf[js.Any],
         "StackId"   -> StackId.asInstanceOf[js.Any],
@@ -2997,7 +3290,7 @@ package cloudformation {
   }
 
   /**
-    * An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack?for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
+    * An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
     */
   @js.native
   trait StackInstance extends js.Object {
@@ -3011,13 +3304,15 @@ package cloudformation {
   }
 
   object StackInstance {
-    def apply(Account: js.UndefOr[Account] = js.undefined,
-              ParameterOverrides: js.UndefOr[Parameters] = js.undefined,
-              Region: js.UndefOr[Region] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackSetId: js.UndefOr[StackSetId] = js.undefined,
-              Status: js.UndefOr[StackInstanceStatus] = js.undefined,
-              StatusReason: js.UndefOr[Reason] = js.undefined): StackInstance = {
+    def apply(
+        Account: js.UndefOr[Account] = js.undefined,
+        ParameterOverrides: js.UndefOr[Parameters] = js.undefined,
+        Region: js.UndefOr[Region] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackSetId: js.UndefOr[StackSetId] = js.undefined,
+        Status: js.UndefOr[StackInstanceStatus] = js.undefined,
+        StatusReason: js.UndefOr[Reason] = js.undefined
+    ): StackInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Account" -> Account.map { x =>
           x.asInstanceOf[js.Any]
@@ -3068,12 +3363,14 @@ package cloudformation {
   }
 
   object StackInstanceSummary {
-    def apply(Account: js.UndefOr[Account] = js.undefined,
-              Region: js.UndefOr[Region] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackSetId: js.UndefOr[StackSetId] = js.undefined,
-              Status: js.UndefOr[StackInstanceStatus] = js.undefined,
-              StatusReason: js.UndefOr[Reason] = js.undefined): StackInstanceSummary = {
+    def apply(
+        Account: js.UndefOr[Account] = js.undefined,
+        Region: js.UndefOr[Region] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackSetId: js.UndefOr[StackSetId] = js.undefined,
+        Status: js.UndefOr[StackInstanceStatus] = js.undefined,
+        StatusReason: js.UndefOr[Reason] = js.undefined
+    ): StackInstanceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Account" -> Account.map { x =>
           x.asInstanceOf[js.Any]
@@ -3117,16 +3414,18 @@ package cloudformation {
   }
 
   object StackResource {
-    def apply(LogicalResourceId: LogicalResourceId,
-              ResourceStatus: ResourceStatus,
-              ResourceType: ResourceType,
-              Timestamp: Timestamp,
-              Description: js.UndefOr[Description] = js.undefined,
-              DriftInformation: js.UndefOr[StackResourceDriftInformation] = js.undefined,
-              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-              ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined): StackResource = {
+    def apply(
+        LogicalResourceId: LogicalResourceId,
+        ResourceStatus: ResourceStatus,
+        ResourceType: ResourceType,
+        Timestamp: Timestamp,
+        Description: js.UndefOr[Description] = js.undefined,
+        DriftInformation: js.UndefOr[StackResourceDriftInformation] = js.undefined,
+        PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+        ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined
+    ): StackResource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LogicalResourceId" -> LogicalResourceId.asInstanceOf[js.Any],
         "ResourceStatus"    -> ResourceStatus.asInstanceOf[js.Any],
@@ -3175,17 +3474,19 @@ package cloudformation {
   }
 
   object StackResourceDetail {
-    def apply(LastUpdatedTimestamp: Timestamp,
-              LogicalResourceId: LogicalResourceId,
-              ResourceStatus: ResourceStatus,
-              ResourceType: ResourceType,
-              Description: js.UndefOr[Description] = js.undefined,
-              DriftInformation: js.UndefOr[StackResourceDriftInformation] = js.undefined,
-              Metadata: js.UndefOr[Metadata] = js.undefined,
-              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-              ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackName: js.UndefOr[StackName] = js.undefined): StackResourceDetail = {
+    def apply(
+        LastUpdatedTimestamp: Timestamp,
+        LogicalResourceId: LogicalResourceId,
+        ResourceStatus: ResourceStatus,
+        ResourceType: ResourceType,
+        Description: js.UndefOr[Description] = js.undefined,
+        DriftInformation: js.UndefOr[StackResourceDriftInformation] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+        ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackName: js.UndefOr[StackName] = js.undefined
+    ): StackResourceDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LastUpdatedTimestamp" -> LastUpdatedTimestamp.asInstanceOf[js.Any],
         "LogicalResourceId"    -> LogicalResourceId.asInstanceOf[js.Any],
@@ -3238,16 +3539,18 @@ package cloudformation {
   }
 
   object StackResourceDrift {
-    def apply(LogicalResourceId: LogicalResourceId,
-              ResourceType: ResourceType,
-              StackId: StackId,
-              StackResourceDriftStatus: StackResourceDriftStatus,
-              Timestamp: Timestamp,
-              ActualProperties: js.UndefOr[Properties] = js.undefined,
-              ExpectedProperties: js.UndefOr[Properties] = js.undefined,
-              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-              PhysicalResourceIdContext: js.UndefOr[PhysicalResourceIdContext] = js.undefined,
-              PropertyDifferences: js.UndefOr[PropertyDifferences] = js.undefined): StackResourceDrift = {
+    def apply(
+        LogicalResourceId: LogicalResourceId,
+        ResourceType: ResourceType,
+        StackId: StackId,
+        StackResourceDriftStatus: StackResourceDriftStatus,
+        Timestamp: Timestamp,
+        ActualProperties: js.UndefOr[Properties] = js.undefined,
+        ExpectedProperties: js.UndefOr[Properties] = js.undefined,
+        PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+        PhysicalResourceIdContext: js.UndefOr[PhysicalResourceIdContext] = js.undefined,
+        PropertyDifferences: js.UndefOr[PropertyDifferences] = js.undefined
+    ): StackResourceDrift = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LogicalResourceId"        -> LogicalResourceId.asInstanceOf[js.Any],
         "ResourceType"             -> ResourceType.asInstanceOf[js.Any],
@@ -3285,8 +3588,10 @@ package cloudformation {
   }
 
   object StackResourceDriftInformation {
-    def apply(StackResourceDriftStatus: StackResourceDriftStatus,
-              LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined): StackResourceDriftInformation = {
+    def apply(
+        StackResourceDriftStatus: StackResourceDriftStatus,
+        LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): StackResourceDriftInformation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackResourceDriftStatus" -> StackResourceDriftStatus.asInstanceOf[js.Any],
         "LastCheckTimestamp" -> LastCheckTimestamp.map { x =>
@@ -3308,8 +3613,10 @@ package cloudformation {
   }
 
   object StackResourceDriftInformationSummary {
-    def apply(StackResourceDriftStatus: StackResourceDriftStatus,
-              LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined): StackResourceDriftInformationSummary = {
+    def apply(
+        StackResourceDriftStatus: StackResourceDriftStatus,
+        LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): StackResourceDriftInformationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackResourceDriftStatus" -> StackResourceDriftStatus.asInstanceOf[js.Any],
         "LastCheckTimestamp" -> LastCheckTimestamp.map { x =>
@@ -3345,13 +3652,15 @@ package cloudformation {
   }
 
   object StackResourceSummary {
-    def apply(LastUpdatedTimestamp: Timestamp,
-              LogicalResourceId: LogicalResourceId,
-              ResourceStatus: ResourceStatus,
-              ResourceType: ResourceType,
-              DriftInformation: js.UndefOr[StackResourceDriftInformationSummary] = js.undefined,
-              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-              ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined): StackResourceSummary = {
+    def apply(
+        LastUpdatedTimestamp: Timestamp,
+        LogicalResourceId: LogicalResourceId,
+        ResourceStatus: ResourceStatus,
+        ResourceType: ResourceType,
+        DriftInformation: js.UndefOr[StackResourceDriftInformationSummary] = js.undefined,
+        PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+        ResourceStatusReason: js.UndefOr[ResourceStatusReason] = js.undefined
+    ): StackResourceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LastUpdatedTimestamp" -> LastUpdatedTimestamp.asInstanceOf[js.Any],
         "LogicalResourceId"    -> LogicalResourceId.asInstanceOf[js.Any],
@@ -3391,17 +3700,19 @@ package cloudformation {
   }
 
   object StackSet {
-    def apply(AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
-              Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              StackSetARN: js.UndefOr[StackSetARN] = js.undefined,
-              StackSetId: js.UndefOr[StackSetId] = js.undefined,
-              StackSetName: js.UndefOr[StackSetName] = js.undefined,
-              Status: js.UndefOr[StackSetStatus] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined): StackSet = {
+    def apply(
+        AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        StackSetARN: js.UndefOr[StackSetARN] = js.undefined,
+        StackSetId: js.UndefOr[StackSetId] = js.undefined,
+        StackSetName: js.UndefOr[StackSetName] = js.undefined,
+        Status: js.UndefOr[StackSetStatus] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined
+    ): StackSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdministrationRoleARN" -> AdministrationRoleARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -3460,16 +3771,18 @@ package cloudformation {
   }
 
   object StackSetOperation {
-    def apply(Action: js.UndefOr[StackSetOperationAction] = js.undefined,
-              AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
-              CreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
-              OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
-              OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
-              RetainStacks: js.UndefOr[RetainStacksNullable] = js.undefined,
-              StackSetId: js.UndefOr[StackSetId] = js.undefined,
-              Status: js.UndefOr[StackSetOperationStatus] = js.undefined): StackSetOperation = {
+    def apply(
+        Action: js.UndefOr[StackSetOperationAction] = js.undefined,
+        AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
+        CreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
+        OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
+        RetainStacks: js.UndefOr[RetainStacksNullable] = js.undefined,
+        StackSetId: js.UndefOr[StackSetId] = js.undefined,
+        Status: js.UndefOr[StackSetOperationStatus] = js.undefined
+    ): StackSetOperation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -3529,11 +3842,13 @@ package cloudformation {
   }
 
   object StackSetOperationPreferences {
-    def apply(FailureToleranceCount: js.UndefOr[FailureToleranceCount] = js.undefined,
-              FailureTolerancePercentage: js.UndefOr[FailureTolerancePercentage] = js.undefined,
-              MaxConcurrentCount: js.UndefOr[MaxConcurrentCount] = js.undefined,
-              MaxConcurrentPercentage: js.UndefOr[MaxConcurrentPercentage] = js.undefined,
-              RegionOrder: js.UndefOr[RegionList] = js.undefined): StackSetOperationPreferences = {
+    def apply(
+        FailureToleranceCount: js.UndefOr[FailureToleranceCount] = js.undefined,
+        FailureTolerancePercentage: js.UndefOr[FailureTolerancePercentage] = js.undefined,
+        MaxConcurrentCount: js.UndefOr[MaxConcurrentCount] = js.undefined,
+        MaxConcurrentPercentage: js.UndefOr[MaxConcurrentPercentage] = js.undefined,
+        RegionOrder: js.UndefOr[RegionList] = js.undefined
+    ): StackSetOperationPreferences = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FailureToleranceCount" -> FailureToleranceCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -3579,11 +3894,13 @@ package cloudformation {
   }
 
   object StackSetOperationResultSummary {
-    def apply(Account: js.UndefOr[Account] = js.undefined,
-              AccountGateResult: js.UndefOr[AccountGateResult] = js.undefined,
-              Region: js.UndefOr[Region] = js.undefined,
-              Status: js.UndefOr[StackSetOperationResultStatus] = js.undefined,
-              StatusReason: js.UndefOr[Reason] = js.undefined): StackSetOperationResultSummary = {
+    def apply(
+        Account: js.UndefOr[Account] = js.undefined,
+        AccountGateResult: js.UndefOr[AccountGateResult] = js.undefined,
+        Region: js.UndefOr[Region] = js.undefined,
+        Status: js.UndefOr[StackSetOperationResultStatus] = js.undefined,
+        StatusReason: js.UndefOr[Reason] = js.undefined
+    ): StackSetOperationResultSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Account" -> Account.map { x =>
           x.asInstanceOf[js.Any]
@@ -3629,11 +3946,13 @@ package cloudformation {
   }
 
   object StackSetOperationSummary {
-    def apply(Action: js.UndefOr[StackSetOperationAction] = js.undefined,
-              CreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
-              Status: js.UndefOr[StackSetOperationStatus] = js.undefined): StackSetOperationSummary = {
+    def apply(
+        Action: js.UndefOr[StackSetOperationAction] = js.undefined,
+        CreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        EndTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
+        Status: js.UndefOr[StackSetOperationStatus] = js.undefined
+    ): StackSetOperationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -3675,10 +3994,12 @@ package cloudformation {
   }
 
   object StackSetSummary {
-    def apply(Description: js.UndefOr[Description] = js.undefined,
-              StackSetId: js.UndefOr[StackSetId] = js.undefined,
-              StackSetName: js.UndefOr[StackSetName] = js.undefined,
-              Status: js.UndefOr[StackSetStatus] = js.undefined): StackSetSummary = {
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        StackSetId: js.UndefOr[StackSetId] = js.undefined,
+        StackSetName: js.UndefOr[StackSetName] = js.undefined,
+        Status: js.UndefOr[StackSetStatus] = js.undefined
+    ): StackSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -3757,17 +4078,19 @@ package cloudformation {
   }
 
   object StackSummary {
-    def apply(CreationTime: CreationTime,
-              StackName: StackName,
-              StackStatus: StackStatus,
-              DeletionTime: js.UndefOr[DeletionTime] = js.undefined,
-              DriftInformation: js.UndefOr[StackDriftInformationSummary] = js.undefined,
-              LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
-              ParentId: js.UndefOr[StackId] = js.undefined,
-              RootId: js.UndefOr[StackId] = js.undefined,
-              StackId: js.UndefOr[StackId] = js.undefined,
-              StackStatusReason: js.UndefOr[StackStatusReason] = js.undefined,
-              TemplateDescription: js.UndefOr[TemplateDescription] = js.undefined): StackSummary = {
+    def apply(
+        CreationTime: CreationTime,
+        StackName: StackName,
+        StackStatus: StackStatus,
+        DeletionTime: js.UndefOr[DeletionTime] = js.undefined,
+        DriftInformation: js.UndefOr[StackDriftInformationSummary] = js.undefined,
+        LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
+        ParentId: js.UndefOr[StackId] = js.undefined,
+        RootId: js.UndefOr[StackId] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
+        StackStatusReason: js.UndefOr[StackStatusReason] = js.undefined,
+        TemplateDescription: js.UndefOr[TemplateDescription] = js.undefined
+    ): StackSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "StackName"    -> StackName.asInstanceOf[js.Any],
@@ -3809,7 +4132,10 @@ package cloudformation {
   }
 
   object StopStackSetOperationInput {
-    def apply(OperationId: ClientRequestToken, StackSetName: StackSetName): StopStackSetOperationInput = {
+    def apply(
+        OperationId: ClientRequestToken,
+        StackSetName: StackSetName
+    ): StopStackSetOperationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OperationId"  -> OperationId.asInstanceOf[js.Any],
         "StackSetName" -> StackSetName.asInstanceOf[js.Any]
@@ -3823,8 +4149,10 @@ package cloudformation {
   trait StopStackSetOperationOutput extends js.Object {}
 
   object StopStackSetOperationOutput {
-    def apply(): StopStackSetOperationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopStackSetOperationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopStackSetOperationOutput]
     }
@@ -3840,10 +4168,14 @@ package cloudformation {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: TagValue): Tag = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -3861,10 +4193,12 @@ package cloudformation {
   }
 
   object TemplateParameter {
-    def apply(DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              NoEcho: js.UndefOr[NoEcho] = js.undefined,
-              ParameterKey: js.UndefOr[ParameterKey] = js.undefined): TemplateParameter = {
+    def apply(
+        DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        NoEcho: js.UndefOr[NoEcho] = js.undefined,
+        ParameterKey: js.UndefOr[ParameterKey] = js.undefined
+    ): TemplateParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultValue" -> DefaultValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -3915,22 +4249,24 @@ package cloudformation {
   }
 
   object UpdateStackInput {
-    def apply(StackName: StackName,
-              Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
-              StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined,
-              StackPolicyDuringUpdateBody: js.UndefOr[StackPolicyDuringUpdateBody] = js.undefined,
-              StackPolicyDuringUpdateURL: js.UndefOr[StackPolicyDuringUpdateURL] = js.undefined,
-              StackPolicyURL: js.UndefOr[StackPolicyURL] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
-              UsePreviousTemplate: js.UndefOr[UsePreviousTemplate] = js.undefined): UpdateStackInput = {
+    def apply(
+        StackName: StackName,
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        RollbackConfiguration: js.UndefOr[RollbackConfiguration] = js.undefined,
+        StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined,
+        StackPolicyDuringUpdateBody: js.UndefOr[StackPolicyDuringUpdateBody] = js.undefined,
+        StackPolicyDuringUpdateURL: js.UndefOr[StackPolicyDuringUpdateURL] = js.undefined,
+        StackPolicyURL: js.UndefOr[StackPolicyURL] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
+        UsePreviousTemplate: js.UndefOr[UsePreviousTemplate] = js.undefined
+    ): UpdateStackInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackName" -> StackName.asInstanceOf[js.Any],
         "Capabilities" -> Capabilities.map { x =>
@@ -3995,12 +4331,14 @@ package cloudformation {
   }
 
   object UpdateStackInstancesInput {
-    def apply(Accounts: AccountList,
-              Regions: RegionList,
-              StackSetName: StackSetNameOrId,
-              OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
-              OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
-              ParameterOverrides: js.UndefOr[Parameters] = js.undefined): UpdateStackInstancesInput = {
+    def apply(
+        Accounts: AccountList,
+        Regions: RegionList,
+        StackSetName: StackSetNameOrId,
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
+        OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
+        ParameterOverrides: js.UndefOr[Parameters] = js.undefined
+    ): UpdateStackInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Accounts"     -> Accounts.asInstanceOf[js.Any],
         "Regions"      -> Regions.asInstanceOf[js.Any],
@@ -4026,10 +4364,14 @@ package cloudformation {
   }
 
   object UpdateStackInstancesOutput {
-    def apply(OperationId: js.UndefOr[ClientRequestToken] = js.undefined): UpdateStackInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined
+    ): UpdateStackInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStackInstancesOutput]
     }
@@ -4044,10 +4386,14 @@ package cloudformation {
   }
 
   object UpdateStackOutput {
-    def apply(StackId: js.UndefOr[StackId] = js.undefined): UpdateStackOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: js.UndefOr[StackId] = js.undefined
+    ): UpdateStackOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStackOutput]
     }
@@ -4072,20 +4418,22 @@ package cloudformation {
   }
 
   object UpdateStackSetInput {
-    def apply(StackSetName: StackSetName,
-              Accounts: js.UndefOr[AccountList] = js.undefined,
-              AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
-              Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
-              OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
-              OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
-              Parameters: js.UndefOr[Parameters] = js.undefined,
-              Regions: js.UndefOr[RegionList] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
-              UsePreviousTemplate: js.UndefOr[UsePreviousTemplate] = js.undefined): UpdateStackSetInput = {
+    def apply(
+        StackSetName: StackSetName,
+        Accounts: js.UndefOr[AccountList] = js.undefined,
+        AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
+        OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
+        Parameters: js.UndefOr[Parameters] = js.undefined,
+        Regions: js.UndefOr[RegionList] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined,
+        UsePreviousTemplate: js.UndefOr[UsePreviousTemplate] = js.undefined
+    ): UpdateStackSetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StackSetName" -> StackSetName.asInstanceOf[js.Any],
         "Accounts" -> Accounts.map { x =>
@@ -4139,10 +4487,14 @@ package cloudformation {
   }
 
   object UpdateStackSetOutput {
-    def apply(OperationId: js.UndefOr[ClientRequestToken] = js.undefined): UpdateStackSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined
+    ): UpdateStackSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStackSetOutput]
     }
@@ -4155,8 +4507,10 @@ package cloudformation {
   }
 
   object UpdateTerminationProtectionInput {
-    def apply(EnableTerminationProtection: EnableTerminationProtection,
-              StackName: StackNameOrId): UpdateTerminationProtectionInput = {
+    def apply(
+        EnableTerminationProtection: EnableTerminationProtection,
+        StackName: StackNameOrId
+    ): UpdateTerminationProtectionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EnableTerminationProtection" -> EnableTerminationProtection.asInstanceOf[js.Any],
         "StackName"                   -> StackName.asInstanceOf[js.Any]
@@ -4172,10 +4526,14 @@ package cloudformation {
   }
 
   object UpdateTerminationProtectionOutput {
-    def apply(StackId: js.UndefOr[StackId] = js.undefined): UpdateTerminationProtectionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StackId" -> StackId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StackId: js.UndefOr[StackId] = js.undefined
+    ): UpdateTerminationProtectionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StackId" -> StackId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTerminationProtectionOutput]
     }
@@ -4191,13 +4549,18 @@ package cloudformation {
   }
 
   object ValidateTemplateInput {
-    def apply(TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-              TemplateURL: js.UndefOr[TemplateURL] = js.undefined): ValidateTemplateInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TemplateBody" -> TemplateBody.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TemplateURL" -> TemplateURL.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
+        TemplateURL: js.UndefOr[TemplateURL] = js.undefined
+    ): ValidateTemplateInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TemplateBody" -> TemplateBody.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemplateURL" -> TemplateURL.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateTemplateInput]
     }
@@ -4216,11 +4579,13 @@ package cloudformation {
   }
 
   object ValidateTemplateOutput {
-    def apply(Capabilities: js.UndefOr[Capabilities] = js.undefined,
-              CapabilitiesReason: js.UndefOr[CapabilitiesReason] = js.undefined,
-              DeclaredTransforms: js.UndefOr[TransformsList] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              Parameters: js.UndefOr[TemplateParameters] = js.undefined): ValidateTemplateOutput = {
+    def apply(
+        Capabilities: js.UndefOr[Capabilities] = js.undefined,
+        CapabilitiesReason: js.UndefOr[CapabilitiesReason] = js.undefined,
+        DeclaredTransforms: js.UndefOr[TransformsList] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        Parameters: js.UndefOr[TemplateParameters] = js.undefined
+    ): ValidateTemplateOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Capabilities" -> Capabilities.map { x =>
           x.asInstanceOf[js.Any]

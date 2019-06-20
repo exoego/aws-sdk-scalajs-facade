@@ -7,6 +7,9 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object athena {
+  type AmazonResourceName              = String
+  type BoxedBoolean                    = Boolean
+  type BytesScannedCutoffValue         = Double
   type ColumnInfoList                  = js.Array[ColumnInfo]
   type ColumnNullable                  = String
   type DatabaseString                  = String
@@ -19,6 +22,8 @@ package object athena {
   type MaxNamedQueriesCount            = Int
   type MaxQueryExecutionsCount         = Int
   type MaxQueryResults                 = Int
+  type MaxTagsCount                    = Int
+  type MaxWorkGroupsCount              = Int
   type NameString                      = String
   type NamedQueryId                    = String
   type NamedQueryIdList                = js.Array[NamedQueryId]
@@ -30,9 +35,17 @@ package object athena {
   type QueryString                     = String
   type RowList                         = js.Array[Row]
   type StatementType                   = String
+  type TagKey                          = String
+  type TagKeyList                      = js.Array[TagKey]
+  type TagList                         = js.Array[Tag]
+  type TagValue                        = String
   type Token                           = String
   type UnprocessedNamedQueryIdList     = js.Array[UnprocessedNamedQueryId]
   type UnprocessedQueryExecutionIdList = js.Array[UnprocessedQueryExecutionId]
+  type WorkGroupDescriptionString      = String
+  type WorkGroupName                   = String
+  type WorkGroupState                  = String
+  type WorkGroupsList                  = js.Array[WorkGroupSummary]
   type datumList                       = js.Array[Datum]
   type datumString                     = String
 }
@@ -46,14 +59,22 @@ package athena {
     def batchGetNamedQuery(params: BatchGetNamedQueryInput): Request[BatchGetNamedQueryOutput]             = js.native
     def batchGetQueryExecution(params: BatchGetQueryExecutionInput): Request[BatchGetQueryExecutionOutput] = js.native
     def createNamedQuery(params: CreateNamedQueryInput): Request[CreateNamedQueryOutput]                   = js.native
+    def createWorkGroup(params: CreateWorkGroupInput): Request[CreateWorkGroupOutput]                      = js.native
     def deleteNamedQuery(params: DeleteNamedQueryInput): Request[DeleteNamedQueryOutput]                   = js.native
+    def deleteWorkGroup(params: DeleteWorkGroupInput): Request[DeleteWorkGroupOutput]                      = js.native
     def getNamedQuery(params: GetNamedQueryInput): Request[GetNamedQueryOutput]                            = js.native
     def getQueryExecution(params: GetQueryExecutionInput): Request[GetQueryExecutionOutput]                = js.native
     def getQueryResults(params: GetQueryResultsInput): Request[GetQueryResultsOutput]                      = js.native
+    def getWorkGroup(params: GetWorkGroupInput): Request[GetWorkGroupOutput]                               = js.native
     def listNamedQueries(params: ListNamedQueriesInput): Request[ListNamedQueriesOutput]                   = js.native
     def listQueryExecutions(params: ListQueryExecutionsInput): Request[ListQueryExecutionsOutput]          = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]          = js.native
+    def listWorkGroups(params: ListWorkGroupsInput): Request[ListWorkGroupsOutput]                         = js.native
     def startQueryExecution(params: StartQueryExecutionInput): Request[StartQueryExecutionOutput]          = js.native
     def stopQueryExecution(params: StopQueryExecutionInput): Request[StopQueryExecutionOutput]             = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                                  = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                            = js.native
+    def updateWorkGroup(params: UpdateWorkGroupInput): Request[UpdateWorkGroupOutput]                      = js.native
   }
 
   @js.native
@@ -62,9 +83,12 @@ package athena {
   }
 
   object BatchGetNamedQueryInput {
-    def apply(NamedQueryIds: NamedQueryIdList): BatchGetNamedQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NamedQueryIds" -> NamedQueryIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NamedQueryIds: NamedQueryIdList
+    ): BatchGetNamedQueryInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NamedQueryIds" -> NamedQueryIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetNamedQueryInput]
     }
@@ -81,11 +105,14 @@ package athena {
         NamedQueries: js.UndefOr[NamedQueryList] = js.undefined,
         UnprocessedNamedQueryIds: js.UndefOr[UnprocessedNamedQueryIdList] = js.undefined
     ): BatchGetNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NamedQueries" -> NamedQueries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UnprocessedNamedQueryIds" -> UnprocessedNamedQueryIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NamedQueries" -> NamedQueries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UnprocessedNamedQueryIds" -> UnprocessedNamedQueryIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetNamedQueryOutput]
     }
@@ -97,9 +124,12 @@ package athena {
   }
 
   object BatchGetQueryExecutionInput {
-    def apply(QueryExecutionIds: QueryExecutionIdList): BatchGetQueryExecutionInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueryExecutionIds" -> QueryExecutionIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueryExecutionIds: QueryExecutionIdList
+    ): BatchGetQueryExecutionInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueryExecutionIds" -> QueryExecutionIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetQueryExecutionInput]
     }
@@ -147,16 +177,18 @@ package athena {
   }
 
   object ColumnInfo {
-    def apply(Name: String,
-              Type: String,
-              CaseSensitive: js.UndefOr[Boolean] = js.undefined,
-              CatalogName: js.UndefOr[String] = js.undefined,
-              Label: js.UndefOr[String] = js.undefined,
-              Nullable: js.UndefOr[ColumnNullable] = js.undefined,
-              Precision: js.UndefOr[Int] = js.undefined,
-              Scale: js.UndefOr[Int] = js.undefined,
-              SchemaName: js.UndefOr[String] = js.undefined,
-              TableName: js.UndefOr[String] = js.undefined): ColumnInfo = {
+    def apply(
+        Name: String,
+        Type: String,
+        CaseSensitive: js.UndefOr[Boolean] = js.undefined,
+        CatalogName: js.UndefOr[String] = js.undefined,
+        Label: js.UndefOr[String] = js.undefined,
+        Nullable: js.UndefOr[ColumnNullable] = js.undefined,
+        Precision: js.UndefOr[Int] = js.undefined,
+        Scale: js.UndefOr[Int] = js.undefined,
+        SchemaName: js.UndefOr[String] = js.undefined,
+        TableName: js.UndefOr[String] = js.undefined
+    ): ColumnInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any],
@@ -205,14 +237,18 @@ package athena {
     var QueryString: QueryString
     var ClientRequestToken: js.UndefOr[IdempotencyToken]
     var Description: js.UndefOr[DescriptionString]
+    var WorkGroup: js.UndefOr[WorkGroupName]
   }
 
   object CreateNamedQueryInput {
-    def apply(Database: DatabaseString,
-              Name: NameString,
-              QueryString: QueryString,
-              ClientRequestToken: js.UndefOr[IdempotencyToken] = js.undefined,
-              Description: js.UndefOr[DescriptionString] = js.undefined): CreateNamedQueryInput = {
+    def apply(
+        Database: DatabaseString,
+        Name: NameString,
+        QueryString: QueryString,
+        ClientRequestToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
+    ): CreateNamedQueryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Database"    -> Database.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
@@ -221,6 +257,9 @@ package athena {
           x.asInstanceOf[js.Any]
         },
         "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkGroup" -> WorkGroup.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -235,12 +274,61 @@ package athena {
   }
 
   object CreateNamedQueryOutput {
-    def apply(NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined): CreateNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NamedQueryId" -> NamedQueryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined
+    ): CreateNamedQueryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NamedQueryId" -> NamedQueryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNamedQueryOutput]
+    }
+  }
+
+  @js.native
+  trait CreateWorkGroupInput extends js.Object {
+    var Name: WorkGroupName
+    var Configuration: js.UndefOr[WorkGroupConfiguration]
+    var Description: js.UndefOr[WorkGroupDescriptionString]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateWorkGroupInput {
+    def apply(
+        Name: WorkGroupName,
+        Configuration: js.UndefOr[WorkGroupConfiguration] = js.undefined,
+        Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateWorkGroupInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Configuration" -> Configuration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkGroupInput]
+    }
+  }
+
+  @js.native
+  trait CreateWorkGroupOutput extends js.Object {}
+
+  object CreateWorkGroupOutput {
+    def apply(
+        ): CreateWorkGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkGroupOutput]
     }
   }
 
@@ -253,10 +341,14 @@ package athena {
   }
 
   object Datum {
-    def apply(VarCharValue: js.UndefOr[datumString] = js.undefined): Datum = {
-      val _fields = IndexedSeq[(String, js.Any)]("VarCharValue" -> VarCharValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VarCharValue: js.UndefOr[datumString] = js.undefined
+    ): Datum = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VarCharValue" -> VarCharValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Datum]
     }
@@ -268,9 +360,12 @@ package athena {
   }
 
   object DeleteNamedQueryInput {
-    def apply(NamedQueryId: NamedQueryId): DeleteNamedQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NamedQueryId: NamedQueryId
+    ): DeleteNamedQueryInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNamedQueryInput]
     }
@@ -280,10 +375,47 @@ package athena {
   trait DeleteNamedQueryOutput extends js.Object {}
 
   object DeleteNamedQueryOutput {
-    def apply(): DeleteNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteNamedQueryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNamedQueryOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkGroupInput extends js.Object {
+    var WorkGroup: WorkGroupName
+    var RecursiveDeleteOption: js.UndefOr[BoxedBoolean]
+  }
+
+  object DeleteWorkGroupInput {
+    def apply(
+        WorkGroup: WorkGroupName,
+        RecursiveDeleteOption: js.UndefOr[BoxedBoolean] = js.undefined
+    ): DeleteWorkGroupInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any],
+        "RecursiveDeleteOption" -> RecursiveDeleteOption.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkGroupInput]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkGroupOutput extends js.Object {}
+
+  object DeleteWorkGroupOutput {
+    def apply(
+        ): DeleteWorkGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkGroupOutput]
     }
   }
 
@@ -297,8 +429,10 @@ package athena {
   }
 
   object EncryptionConfiguration {
-    def apply(EncryptionOption: EncryptionOption,
-              KmsKey: js.UndefOr[String] = js.undefined): EncryptionConfiguration = {
+    def apply(
+        EncryptionOption: EncryptionOption,
+        KmsKey: js.UndefOr[String] = js.undefined
+    ): EncryptionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EncryptionOption" -> EncryptionOption.asInstanceOf[js.Any],
         "KmsKey" -> KmsKey.map { x =>
@@ -324,9 +458,12 @@ package athena {
   }
 
   object GetNamedQueryInput {
-    def apply(NamedQueryId: NamedQueryId): GetNamedQueryInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NamedQueryId: NamedQueryId
+    ): GetNamedQueryInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NamedQueryId" -> NamedQueryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNamedQueryInput]
     }
@@ -338,10 +475,14 @@ package athena {
   }
 
   object GetNamedQueryOutput {
-    def apply(NamedQuery: js.UndefOr[NamedQuery] = js.undefined): GetNamedQueryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NamedQuery" -> NamedQuery.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NamedQuery: js.UndefOr[NamedQuery] = js.undefined
+    ): GetNamedQueryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NamedQuery" -> NamedQuery.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNamedQueryOutput]
     }
@@ -353,9 +494,12 @@ package athena {
   }
 
   object GetQueryExecutionInput {
-    def apply(QueryExecutionId: QueryExecutionId): GetQueryExecutionInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueryExecutionId: QueryExecutionId
+    ): GetQueryExecutionInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryExecutionInput]
     }
@@ -367,10 +511,14 @@ package athena {
   }
 
   object GetQueryExecutionOutput {
-    def apply(QueryExecution: js.UndefOr[QueryExecution] = js.undefined): GetQueryExecutionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueryExecution" -> QueryExecution.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueryExecution: js.UndefOr[QueryExecution] = js.undefined
+    ): GetQueryExecutionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueryExecution" -> QueryExecution.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueryExecutionOutput]
     }
@@ -384,9 +532,11 @@ package athena {
   }
 
   object GetQueryResultsInput {
-    def apply(QueryExecutionId: QueryExecutionId,
-              MaxResults: js.UndefOr[MaxQueryResults] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): GetQueryResultsInput = {
+    def apply(
+        QueryExecutionId: QueryExecutionId,
+        MaxResults: js.UndefOr[MaxQueryResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): GetQueryResultsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -409,9 +559,11 @@ package athena {
   }
 
   object GetQueryResultsOutput {
-    def apply(NextToken: js.UndefOr[Token] = js.undefined,
-              ResultSet: js.UndefOr[ResultSet] = js.undefined,
-              UpdateCount: js.UndefOr[Double] = js.undefined): GetQueryResultsOutput = {
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        ResultSet: js.UndefOr[ResultSet] = js.undefined,
+        UpdateCount: js.UndefOr[Double] = js.undefined
+    ): GetQueryResultsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -429,19 +581,65 @@ package athena {
   }
 
   @js.native
+  trait GetWorkGroupInput extends js.Object {
+    var WorkGroup: WorkGroupName
+  }
+
+  object GetWorkGroupInput {
+    def apply(
+        WorkGroup: WorkGroupName
+    ): GetWorkGroupInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWorkGroupInput]
+    }
+  }
+
+  @js.native
+  trait GetWorkGroupOutput extends js.Object {
+    var WorkGroup: js.UndefOr[WorkGroup]
+  }
+
+  object GetWorkGroupOutput {
+    def apply(
+        WorkGroup: js.UndefOr[WorkGroup] = js.undefined
+    ): GetWorkGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WorkGroup" -> WorkGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWorkGroupOutput]
+    }
+  }
+
+  @js.native
   trait ListNamedQueriesInput extends js.Object {
     var MaxResults: js.UndefOr[MaxNamedQueriesCount]
     var NextToken: js.UndefOr[Token]
+    var WorkGroup: js.UndefOr[WorkGroupName]
   }
 
   object ListNamedQueriesInput {
-    def apply(MaxResults: js.UndefOr[MaxNamedQueriesCount] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): ListNamedQueriesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxNamedQueriesCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
+    ): ListNamedQueriesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkGroup" -> WorkGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNamedQueriesInput]
     }
@@ -454,13 +652,18 @@ package athena {
   }
 
   object ListNamedQueriesOutput {
-    def apply(NamedQueryIds: js.UndefOr[NamedQueryIdList] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): ListNamedQueriesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NamedQueryIds" -> NamedQueryIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NamedQueryIds: js.UndefOr[NamedQueryIdList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListNamedQueriesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NamedQueryIds" -> NamedQueryIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNamedQueriesOutput]
     }
@@ -470,16 +673,26 @@ package athena {
   trait ListQueryExecutionsInput extends js.Object {
     var MaxResults: js.UndefOr[MaxQueryExecutionsCount]
     var NextToken: js.UndefOr[Token]
+    var WorkGroup: js.UndefOr[WorkGroupName]
   }
 
   object ListQueryExecutionsInput {
-    def apply(MaxResults: js.UndefOr[MaxQueryExecutionsCount] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): ListQueryExecutionsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxQueryExecutionsCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
+    ): ListQueryExecutionsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkGroup" -> WorkGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueryExecutionsInput]
     }
@@ -492,20 +705,124 @@ package athena {
   }
 
   object ListQueryExecutionsOutput {
-    def apply(NextToken: js.UndefOr[Token] = js.undefined,
-              QueryExecutionIds: js.UndefOr[QueryExecutionIdList] = js.undefined): ListQueryExecutionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "QueryExecutionIds" -> QueryExecutionIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        QueryExecutionIds: js.UndefOr[QueryExecutionIdList] = js.undefined
+    ): ListQueryExecutionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QueryExecutionIds" -> QueryExecutionIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueryExecutionsOutput]
     }
   }
 
+  @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var MaxResults: js.UndefOr[MaxTagsCount]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+        ResourceARN: AmazonResourceName,
+        MaxResults: js.UndefOr[MaxTagsCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListTagsForResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceOutput {
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
+  @js.native
+  trait ListWorkGroupsInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxWorkGroupsCount]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListWorkGroupsInput {
+    def apply(
+        MaxResults: js.UndefOr[MaxWorkGroupsCount] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListWorkGroupsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkGroupsInput]
+    }
+  }
+
+  @js.native
+  trait ListWorkGroupsOutput extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var WorkGroups: js.UndefOr[WorkGroupsList]
+  }
+
+  object ListWorkGroupsOutput {
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        WorkGroups: js.UndefOr[WorkGroupsList] = js.undefined
+    ): ListWorkGroupsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkGroups" -> WorkGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkGroupsOutput]
+    }
+  }
+
   /**
-    * A query, where <code>QueryString</code> is the SQL query statements that comprise the query.
+    * A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query.
     */
   @js.native
   trait NamedQuery extends js.Object {
@@ -514,14 +831,18 @@ package athena {
     var QueryString: QueryString
     var Description: js.UndefOr[DescriptionString]
     var NamedQueryId: js.UndefOr[NamedQueryId]
+    var WorkGroup: js.UndefOr[WorkGroupName]
   }
 
   object NamedQuery {
-    def apply(Database: DatabaseString,
-              Name: NameString,
-              QueryString: QueryString,
-              Description: js.UndefOr[DescriptionString] = js.undefined,
-              NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined): NamedQuery = {
+    def apply(
+        Database: DatabaseString,
+        Name: NameString,
+        QueryString: QueryString,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined,
+        WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
+    ): NamedQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Database"    -> Database.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
@@ -530,6 +851,9 @@ package athena {
           x.asInstanceOf[js.Any]
         },
         "NamedQueryId" -> NamedQueryId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkGroup" -> WorkGroup.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -550,16 +874,20 @@ package athena {
     var StatementType: js.UndefOr[StatementType]
     var Statistics: js.UndefOr[QueryExecutionStatistics]
     var Status: js.UndefOr[QueryExecutionStatus]
+    var WorkGroup: js.UndefOr[WorkGroupName]
   }
 
   object QueryExecution {
-    def apply(Query: js.UndefOr[QueryString] = js.undefined,
-              QueryExecutionContext: js.UndefOr[QueryExecutionContext] = js.undefined,
-              QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined,
-              ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined,
-              StatementType: js.UndefOr[StatementType] = js.undefined,
-              Statistics: js.UndefOr[QueryExecutionStatistics] = js.undefined,
-              Status: js.UndefOr[QueryExecutionStatus] = js.undefined): QueryExecution = {
+    def apply(
+        Query: js.UndefOr[QueryString] = js.undefined,
+        QueryExecutionContext: js.UndefOr[QueryExecutionContext] = js.undefined,
+        QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined,
+        ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined,
+        StatementType: js.UndefOr[StatementType] = js.undefined,
+        Statistics: js.UndefOr[QueryExecutionStatistics] = js.undefined,
+        Status: js.UndefOr[QueryExecutionStatus] = js.undefined,
+        WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
+    ): QueryExecution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Query" -> Query.map { x =>
           x.asInstanceOf[js.Any]
@@ -581,6 +909,9 @@ package athena {
         },
         "Status" -> Status.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "WorkGroup" -> WorkGroup.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -597,10 +928,14 @@ package athena {
   }
 
   object QueryExecutionContext {
-    def apply(Database: js.UndefOr[DatabaseString] = js.undefined): QueryExecutionContext = {
-      val _fields = IndexedSeq[(String, js.Any)]("Database" -> Database.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Database: js.UndefOr[DatabaseString] = js.undefined
+    ): QueryExecutionContext = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Database" -> Database.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueryExecutionContext]
     }
@@ -626,8 +961,10 @@ package athena {
   }
 
   object QueryExecutionStatistics {
-    def apply(DataScannedInBytes: js.UndefOr[Double] = js.undefined,
-              EngineExecutionTimeInMillis: js.UndefOr[Double] = js.undefined): QueryExecutionStatistics = {
+    def apply(
+        DataScannedInBytes: js.UndefOr[Double] = js.undefined,
+        EngineExecutionTimeInMillis: js.UndefOr[Double] = js.undefined
+    ): QueryExecutionStatistics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataScannedInBytes" -> DataScannedInBytes.map { x =>
           x.asInstanceOf[js.Any]
@@ -653,10 +990,12 @@ package athena {
   }
 
   object QueryExecutionStatus {
-    def apply(CompletionDateTime: js.UndefOr[Date] = js.undefined,
-              State: js.UndefOr[QueryExecutionState] = js.undefined,
-              StateChangeReason: js.UndefOr[String] = js.undefined,
-              SubmissionDateTime: js.UndefOr[Date] = js.undefined): QueryExecutionStatus = {
+    def apply(
+        CompletionDateTime: js.UndefOr[Date] = js.undefined,
+        State: js.UndefOr[QueryExecutionState] = js.undefined,
+        StateChangeReason: js.UndefOr[String] = js.undefined,
+        SubmissionDateTime: js.UndefOr[Date] = js.undefined
+    ): QueryExecutionStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CompletionDateTime" -> CompletionDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -677,25 +1016,66 @@ package athena {
   }
 
   /**
-    * The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results.
+    * The location in Amazon S3 where query results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.
     */
   @js.native
   trait ResultConfiguration extends js.Object {
-    var OutputLocation: String
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var OutputLocation: js.UndefOr[String]
   }
 
   object ResultConfiguration {
-    def apply(OutputLocation: String,
-              EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined): ResultConfiguration = {
+    def apply(
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+        OutputLocation: js.UndefOr[String] = js.undefined
+    ): ResultConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OutputLocation" -> OutputLocation.asInstanceOf[js.Any],
         "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputLocation" -> OutputLocation.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultConfiguration]
+    }
+  }
+
+  /**
+    * The information about the updates in the query results, such as output location and encryption configuration for the query results.
+    */
+  @js.native
+  trait ResultConfigurationUpdates extends js.Object {
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var OutputLocation: js.UndefOr[String]
+    var RemoveEncryptionConfiguration: js.UndefOr[BoxedBoolean]
+    var RemoveOutputLocation: js.UndefOr[BoxedBoolean]
+  }
+
+  object ResultConfigurationUpdates {
+    def apply(
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+        OutputLocation: js.UndefOr[String] = js.undefined,
+        RemoveEncryptionConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
+        RemoveOutputLocation: js.UndefOr[BoxedBoolean] = js.undefined
+    ): ResultConfigurationUpdates = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EncryptionConfiguration" -> EncryptionConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputLocation" -> OutputLocation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RemoveEncryptionConfiguration" -> RemoveEncryptionConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RemoveOutputLocation" -> RemoveOutputLocation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultConfigurationUpdates]
     }
   }
 
@@ -709,13 +1089,18 @@ package athena {
   }
 
   object ResultSet {
-    def apply(ResultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined,
-              Rows: js.UndefOr[RowList] = js.undefined): ResultSet = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResultSetMetadata" -> ResultSetMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Rows" -> Rows.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined,
+        Rows: js.UndefOr[RowList] = js.undefined
+    ): ResultSet = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResultSetMetadata" -> ResultSetMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Rows" -> Rows.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultSet]
     }
@@ -730,10 +1115,14 @@ package athena {
   }
 
   object ResultSetMetadata {
-    def apply(ColumnInfo: js.UndefOr[ColumnInfoList] = js.undefined): ResultSetMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)]("ColumnInfo" -> ColumnInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ColumnInfo: js.UndefOr[ColumnInfoList] = js.undefined
+    ): ResultSetMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ColumnInfo" -> ColumnInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultSetMetadata]
     }
@@ -748,10 +1137,14 @@ package athena {
   }
 
   object Row {
-    def apply(Data: js.UndefOr[datumList] = js.undefined): Row = {
-      val _fields = IndexedSeq[(String, js.Any)]("Data" -> Data.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Data: js.UndefOr[datumList] = js.undefined
+    ): Row = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Row]
     }
@@ -760,23 +1153,32 @@ package athena {
   @js.native
   trait StartQueryExecutionInput extends js.Object {
     var QueryString: QueryString
-    var ResultConfiguration: ResultConfiguration
     var ClientRequestToken: js.UndefOr[IdempotencyToken]
     var QueryExecutionContext: js.UndefOr[QueryExecutionContext]
+    var ResultConfiguration: js.UndefOr[ResultConfiguration]
+    var WorkGroup: js.UndefOr[WorkGroupName]
   }
 
   object StartQueryExecutionInput {
-    def apply(QueryString: QueryString,
-              ResultConfiguration: ResultConfiguration,
-              ClientRequestToken: js.UndefOr[IdempotencyToken] = js.undefined,
-              QueryExecutionContext: js.UndefOr[QueryExecutionContext] = js.undefined): StartQueryExecutionInput = {
+    def apply(
+        QueryString: QueryString,
+        ClientRequestToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        QueryExecutionContext: js.UndefOr[QueryExecutionContext] = js.undefined,
+        ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined,
+        WorkGroup: js.UndefOr[WorkGroupName] = js.undefined
+    ): StartQueryExecutionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "QueryString"         -> QueryString.asInstanceOf[js.Any],
-        "ResultConfiguration" -> ResultConfiguration.asInstanceOf[js.Any],
+        "QueryString" -> QueryString.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x =>
           x.asInstanceOf[js.Any]
         },
         "QueryExecutionContext" -> QueryExecutionContext.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResultConfiguration" -> ResultConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkGroup" -> WorkGroup.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -791,10 +1193,14 @@ package athena {
   }
 
   object StartQueryExecutionOutput {
-    def apply(QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined): StartQueryExecutionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueryExecutionId" -> QueryExecutionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined
+    ): StartQueryExecutionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueryExecutionId" -> QueryExecutionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartQueryExecutionOutput]
     }
@@ -814,9 +1220,12 @@ package athena {
   }
 
   object StopQueryExecutionInput {
-    def apply(QueryExecutionId: QueryExecutionId): StopQueryExecutionInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueryExecutionId: QueryExecutionId
+    ): StopQueryExecutionInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueryExecutionId" -> QueryExecutionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopQueryExecutionInput]
     }
@@ -826,10 +1235,72 @@ package athena {
   trait StopQueryExecutionOutput extends js.Object {}
 
   object StopQueryExecutionOutput {
-    def apply(): StopQueryExecutionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopQueryExecutionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopQueryExecutionOutput]
+    }
+  }
+
+  /**
+    * A tag that you can add to a resource. A tag is a label that you assign to an AWS Athena resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize workgroups in Athena, for example, by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups in your account. The maximum tag key length is 128 Unicode characters in UTF-8. The maximum tag value length is 256 Unicode characters in UTF-8. You can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: js.UndefOr[TagKey]
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object Tag {
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceInput {
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceInput]
+    }
+  }
+
+  @js.native
+  trait TagResourceOutput extends js.Object {}
+
+  object TagResourceOutput {
+    def apply(
+        ): TagResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceOutput]
     }
   }
 
@@ -844,9 +1315,11 @@ package athena {
   }
 
   object UnprocessedNamedQueryId {
-    def apply(ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-              ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-              NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined): UnprocessedNamedQueryId = {
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined
+    ): UnprocessedNamedQueryId = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode" -> ErrorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -874,9 +1347,11 @@ package athena {
   }
 
   object UnprocessedQueryExecutionId {
-    def apply(ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-              ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-              QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined): UnprocessedQueryExecutionId = {
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined
+    ): UnprocessedQueryExecutionId = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode" -> ErrorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -890,6 +1365,247 @@ package athena {
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnprocessedQueryExecutionId]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceInput {
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceOutput extends js.Object {}
+
+  object UntagResourceOutput {
+    def apply(
+        ): UntagResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateWorkGroupInput extends js.Object {
+    var WorkGroup: WorkGroupName
+    var ConfigurationUpdates: js.UndefOr[WorkGroupConfigurationUpdates]
+    var Description: js.UndefOr[WorkGroupDescriptionString]
+    var State: js.UndefOr[WorkGroupState]
+  }
+
+  object UpdateWorkGroupInput {
+    def apply(
+        WorkGroup: WorkGroupName,
+        ConfigurationUpdates: js.UndefOr[WorkGroupConfigurationUpdates] = js.undefined,
+        Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
+        State: js.UndefOr[WorkGroupState] = js.undefined
+    ): UpdateWorkGroupInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WorkGroup" -> WorkGroup.asInstanceOf[js.Any],
+        "ConfigurationUpdates" -> ConfigurationUpdates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWorkGroupInput]
+    }
+  }
+
+  @js.native
+  trait UpdateWorkGroupOutput extends js.Object {}
+
+  object UpdateWorkGroupOutput {
+    def apply(
+        ): UpdateWorkGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWorkGroupOutput]
+    }
+  }
+
+  /**
+    * A workgroup, which contains a name, description, creation time, state, and other configuration, listed under Configuration. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See [[WorkGroupConfiguration.EnforceWorkGroupConfiguration]].
+    */
+  @js.native
+  trait WorkGroup extends js.Object {
+    var Name: WorkGroupName
+    var Configuration: js.UndefOr[WorkGroupConfiguration]
+    var CreationTime: js.UndefOr[Date]
+    var Description: js.UndefOr[WorkGroupDescriptionString]
+    var State: js.UndefOr[WorkGroupState]
+  }
+
+  object WorkGroup {
+    def apply(
+        Name: WorkGroupName,
+        Configuration: js.UndefOr[WorkGroupConfiguration] = js.undefined,
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
+        State: js.UndefOr[WorkGroupState] = js.undefined
+    ): WorkGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Configuration" -> Configuration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroup]
+    }
+  }
+
+  /**
+    * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limit for the amount of data scanned per query, if it is specified. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See EnforceWorkGroupConfiguration.
+    */
+  @js.native
+  trait WorkGroupConfiguration extends js.Object {
+    var BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue]
+    var EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean]
+    var PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean]
+    var ResultConfiguration: js.UndefOr[ResultConfiguration]
+  }
+
+  object WorkGroupConfiguration {
+    def apply(
+        BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue] = js.undefined,
+        EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
+        PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
+        ResultConfiguration: js.UndefOr[ResultConfiguration] = js.undefined
+    ): WorkGroupConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BytesScannedCutoffPerQuery" -> BytesScannedCutoffPerQuery.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnforceWorkGroupConfiguration" -> EnforceWorkGroupConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PublishCloudWatchMetricsEnabled" -> PublishCloudWatchMetricsEnabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResultConfiguration" -> ResultConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroupConfiguration]
+    }
+  }
+
+  /**
+    * The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
+    */
+  @js.native
+  trait WorkGroupConfigurationUpdates extends js.Object {
+    var BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue]
+    var EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean]
+    var PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean]
+    var RemoveBytesScannedCutoffPerQuery: js.UndefOr[BoxedBoolean]
+    var ResultConfigurationUpdates: js.UndefOr[ResultConfigurationUpdates]
+  }
+
+  object WorkGroupConfigurationUpdates {
+    def apply(
+        BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue] = js.undefined,
+        EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
+        PublishCloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
+        RemoveBytesScannedCutoffPerQuery: js.UndefOr[BoxedBoolean] = js.undefined,
+        ResultConfigurationUpdates: js.UndefOr[ResultConfigurationUpdates] = js.undefined
+    ): WorkGroupConfigurationUpdates = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BytesScannedCutoffPerQuery" -> BytesScannedCutoffPerQuery.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnforceWorkGroupConfiguration" -> EnforceWorkGroupConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PublishCloudWatchMetricsEnabled" -> PublishCloudWatchMetricsEnabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RemoveBytesScannedCutoffPerQuery" -> RemoveBytesScannedCutoffPerQuery.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResultConfigurationUpdates" -> ResultConfigurationUpdates.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroupConfigurationUpdates]
+    }
+  }
+
+  object WorkGroupStateEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = IndexedSeq(ENABLED, DISABLED)
+  }
+
+  /**
+    * The summary information for the workgroup, which includes its name, state, description, and the date and time it was created.
+    */
+  @js.native
+  trait WorkGroupSummary extends js.Object {
+    var CreationTime: js.UndefOr[Date]
+    var Description: js.UndefOr[WorkGroupDescriptionString]
+    var Name: js.UndefOr[WorkGroupName]
+    var State: js.UndefOr[WorkGroupState]
+  }
+
+  object WorkGroupSummary {
+    def apply(
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,
+        Name: js.UndefOr[WorkGroupName] = js.undefined,
+        State: js.UndefOr[WorkGroupState] = js.undefined
+    ): WorkGroupSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkGroupSummary]
     }
   }
 }

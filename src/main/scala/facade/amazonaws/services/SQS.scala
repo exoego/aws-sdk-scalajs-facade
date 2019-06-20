@@ -79,10 +79,12 @@ package sqs {
   }
 
   object AddPermissionRequest {
-    def apply(AWSAccountIds: AWSAccountIdList,
-              Actions: ActionNameList,
-              Label: String,
-              QueueUrl: String): AddPermissionRequest = {
+    def apply(
+        AWSAccountIds: AWSAccountIdList,
+        Actions: ActionNameList,
+        Label: String,
+        QueueUrl: String
+    ): AddPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AWSAccountIds" -> AWSAccountIds.asInstanceOf[js.Any],
         "Actions"       -> Actions.asInstanceOf[js.Any],
@@ -106,10 +108,12 @@ package sqs {
   }
 
   object BatchResultErrorEntry {
-    def apply(Code: String,
-              Id: String,
-              SenderFault: Boolean,
-              Message: js.UndefOr[String] = js.undefined): BatchResultErrorEntry = {
+    def apply(
+        Code: String,
+        Id: String,
+        SenderFault: Boolean,
+        Message: js.UndefOr[String] = js.undefined
+    ): BatchResultErrorEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Code"        -> Code.asInstanceOf[js.Any],
         "Id"          -> Id.asInstanceOf[js.Any],
@@ -133,8 +137,10 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchRequest {
-    def apply(Entries: ChangeMessageVisibilityBatchRequestEntryList,
-              QueueUrl: String): ChangeMessageVisibilityBatchRequest = {
+    def apply(
+        Entries: ChangeMessageVisibilityBatchRequestEntryList,
+        QueueUrl: String
+    ): ChangeMessageVisibilityBatchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Entries"  -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
@@ -159,9 +165,11 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchRequestEntry {
-    def apply(Id: String,
-              ReceiptHandle: String,
-              VisibilityTimeout: js.UndefOr[Int] = js.undefined): ChangeMessageVisibilityBatchRequestEntry = {
+    def apply(
+        Id: String,
+        ReceiptHandle: String,
+        VisibilityTimeout: js.UndefOr[Int] = js.undefined
+    ): ChangeMessageVisibilityBatchRequestEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id"            -> Id.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any],
@@ -184,8 +192,10 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchResult {
-    def apply(Failed: BatchResultErrorEntryList,
-              Successful: ChangeMessageVisibilityBatchResultEntryList): ChangeMessageVisibilityBatchResult = {
+    def apply(
+        Failed: BatchResultErrorEntryList,
+        Successful: ChangeMessageVisibilityBatchResultEntryList
+    ): ChangeMessageVisibilityBatchResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Failed"     -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
@@ -204,8 +214,12 @@ package sqs {
   }
 
   object ChangeMessageVisibilityBatchResultEntry {
-    def apply(Id: String): ChangeMessageVisibilityBatchResultEntry = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: String
+    ): ChangeMessageVisibilityBatchResultEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChangeMessageVisibilityBatchResultEntry]
     }
@@ -219,7 +233,11 @@ package sqs {
   }
 
   object ChangeMessageVisibilityRequest {
-    def apply(QueueUrl: String, ReceiptHandle: String, VisibilityTimeout: Int): ChangeMessageVisibilityRequest = {
+    def apply(
+        QueueUrl: String,
+        ReceiptHandle: String,
+        VisibilityTimeout: Int
+    ): ChangeMessageVisibilityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QueueUrl"          -> QueueUrl.asInstanceOf[js.Any],
         "ReceiptHandle"     -> ReceiptHandle.asInstanceOf[js.Any],
@@ -240,12 +258,16 @@ package sqs {
   }
 
   object CreateQueueRequest {
-    def apply(QueueName: String, Attributes: js.UndefOr[QueueAttributeMap] = js.undefined): CreateQueueRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("QueueName" -> QueueName.asInstanceOf[js.Any], "Attributes" -> Attributes.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueName: String,
+        Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
+    ): CreateQueueRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueName" -> QueueName.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQueueRequest]
     }
@@ -260,10 +282,14 @@ package sqs {
   }
 
   object CreateQueueResult {
-    def apply(QueueUrl: js.UndefOr[String] = js.undefined): CreateQueueResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueueUrl" -> QueueUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrl: js.UndefOr[String] = js.undefined
+    ): CreateQueueResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrl" -> QueueUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQueueResult]
     }
@@ -279,7 +305,10 @@ package sqs {
   }
 
   object DeleteMessageBatchRequest {
-    def apply(Entries: DeleteMessageBatchRequestEntryList, QueueUrl: String): DeleteMessageBatchRequest = {
+    def apply(
+        Entries: DeleteMessageBatchRequestEntryList,
+        QueueUrl: String
+    ): DeleteMessageBatchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Entries"  -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
@@ -299,7 +328,10 @@ package sqs {
   }
 
   object DeleteMessageBatchRequestEntry {
-    def apply(Id: String, ReceiptHandle: String): DeleteMessageBatchRequestEntry = {
+    def apply(
+        Id: String,
+        ReceiptHandle: String
+    ): DeleteMessageBatchRequestEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id"            -> Id.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
@@ -319,8 +351,10 @@ package sqs {
   }
 
   object DeleteMessageBatchResult {
-    def apply(Failed: BatchResultErrorEntryList,
-              Successful: DeleteMessageBatchResultEntryList): DeleteMessageBatchResult = {
+    def apply(
+        Failed: BatchResultErrorEntryList,
+        Successful: DeleteMessageBatchResultEntryList
+    ): DeleteMessageBatchResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Failed"     -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
@@ -339,8 +373,12 @@ package sqs {
   }
 
   object DeleteMessageBatchResultEntry {
-    def apply(Id: String): DeleteMessageBatchResultEntry = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: String
+    ): DeleteMessageBatchResultEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMessageBatchResultEntry]
     }
@@ -356,7 +394,10 @@ package sqs {
   }
 
   object DeleteMessageRequest {
-    def apply(QueueUrl: String, ReceiptHandle: String): DeleteMessageRequest = {
+    def apply(
+        QueueUrl: String,
+        ReceiptHandle: String
+    ): DeleteMessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QueueUrl"      -> QueueUrl.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
@@ -375,9 +416,12 @@ package sqs {
   }
 
   object DeleteQueueRequest {
-    def apply(QueueUrl: String): DeleteQueueRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("QueueUrl" -> QueueUrl.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrl: String
+    ): DeleteQueueRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteQueueRequest]
     }
@@ -393,8 +437,10 @@ package sqs {
   }
 
   object GetQueueAttributesRequest {
-    def apply(QueueUrl: String,
-              AttributeNames: js.UndefOr[AttributeNameList] = js.undefined): GetQueueAttributesRequest = {
+    def apply(
+        QueueUrl: String,
+        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
+    ): GetQueueAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "AttributeNames" -> AttributeNames.map { x =>
@@ -415,10 +461,14 @@ package sqs {
   }
 
   object GetQueueAttributesResult {
-    def apply(Attributes: js.UndefOr[QueueAttributeMap] = js.undefined): GetQueueAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
+    ): GetQueueAttributesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueueAttributesResult]
     }
@@ -434,7 +484,10 @@ package sqs {
   }
 
   object GetQueueUrlRequest {
-    def apply(QueueName: String, QueueOwnerAWSAccountId: js.UndefOr[String] = js.undefined): GetQueueUrlRequest = {
+    def apply(
+        QueueName: String,
+        QueueOwnerAWSAccountId: js.UndefOr[String] = js.undefined
+    ): GetQueueUrlRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QueueName" -> QueueName.asInstanceOf[js.Any],
         "QueueOwnerAWSAccountId" -> QueueOwnerAWSAccountId.map { x =>
@@ -455,10 +508,14 @@ package sqs {
   }
 
   object GetQueueUrlResult {
-    def apply(QueueUrl: js.UndefOr[String] = js.undefined): GetQueueUrlResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueueUrl" -> QueueUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrl: js.UndefOr[String] = js.undefined
+    ): GetQueueUrlResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrl" -> QueueUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueueUrlResult]
     }
@@ -473,9 +530,12 @@ package sqs {
   }
 
   object ListDeadLetterSourceQueuesRequest {
-    def apply(QueueUrl: String): ListDeadLetterSourceQueuesRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("QueueUrl" -> QueueUrl.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrl: String
+    ): ListDeadLetterSourceQueuesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeadLetterSourceQueuesRequest]
     }
@@ -490,9 +550,12 @@ package sqs {
   }
 
   object ListDeadLetterSourceQueuesResult {
-    def apply(queueUrls: QueueUrlList): ListDeadLetterSourceQueuesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("queueUrls" -> queueUrls.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        queueUrls: QueueUrlList
+    ): ListDeadLetterSourceQueuesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "queueUrls" -> queueUrls.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeadLetterSourceQueuesResult]
     }
@@ -504,9 +567,12 @@ package sqs {
   }
 
   object ListQueueTagsRequest {
-    def apply(QueueUrl: String): ListQueueTagsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("QueueUrl" -> QueueUrl.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrl: String
+    ): ListQueueTagsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueueTagsRequest]
     }
@@ -518,10 +584,14 @@ package sqs {
   }
 
   object ListQueueTagsResult {
-    def apply(Tags: js.UndefOr[TagMap] = js.undefined): ListQueueTagsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListQueueTagsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueueTagsResult]
     }
@@ -536,10 +606,14 @@ package sqs {
   }
 
   object ListQueuesRequest {
-    def apply(QueueNamePrefix: js.UndefOr[String] = js.undefined): ListQueuesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueueNamePrefix" -> QueueNamePrefix.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueNamePrefix: js.UndefOr[String] = js.undefined
+    ): ListQueuesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueNamePrefix" -> QueueNamePrefix.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueuesRequest]
     }
@@ -554,10 +628,14 @@ package sqs {
   }
 
   object ListQueuesResult {
-    def apply(QueueUrls: js.UndefOr[QueueUrlList] = js.undefined): ListQueuesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("QueueUrls" -> QueueUrls.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrls: js.UndefOr[QueueUrlList] = js.undefined
+    ): ListQueuesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrls" -> QueueUrls.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueuesResult]
     }
@@ -578,13 +656,15 @@ package sqs {
   }
 
   object Message {
-    def apply(Attributes: js.UndefOr[MessageSystemAttributeMap] = js.undefined,
-              Body: js.UndefOr[String] = js.undefined,
-              MD5OfBody: js.UndefOr[String] = js.undefined,
-              MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
-              MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
-              MessageId: js.UndefOr[String] = js.undefined,
-              ReceiptHandle: js.UndefOr[String] = js.undefined): Message = {
+    def apply(
+        Attributes: js.UndefOr[MessageSystemAttributeMap] = js.undefined,
+        Body: js.UndefOr[String] = js.undefined,
+        MD5OfBody: js.UndefOr[String] = js.undefined,
+        MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
+        MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
+        MessageId: js.UndefOr[String] = js.undefined,
+        ReceiptHandle: js.UndefOr[String] = js.undefined
+    ): Message = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -627,11 +707,13 @@ package sqs {
   }
 
   object MessageAttributeValue {
-    def apply(DataType: String,
-              BinaryListValues: js.UndefOr[BinaryList] = js.undefined,
-              BinaryValue: js.UndefOr[Binary] = js.undefined,
-              StringListValues: js.UndefOr[StringList] = js.undefined,
-              StringValue: js.UndefOr[String] = js.undefined): MessageAttributeValue = {
+    def apply(
+        DataType: String,
+        BinaryListValues: js.UndefOr[BinaryList] = js.undefined,
+        BinaryValue: js.UndefOr[Binary] = js.undefined,
+        StringListValues: js.UndefOr[StringList] = js.undefined,
+        StringValue: js.UndefOr[String] = js.undefined
+    ): MessageAttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataType" -> DataType.asInstanceOf[js.Any],
         "BinaryListValues" -> BinaryListValues.map { x =>
@@ -681,9 +763,12 @@ package sqs {
   }
 
   object PurgeQueueRequest {
-    def apply(QueueUrl: String): PurgeQueueRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("QueueUrl" -> QueueUrl.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrl: String
+    ): PurgeQueueRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurgeQueueRequest]
     }
@@ -746,13 +831,15 @@ package sqs {
   }
 
   object ReceiveMessageRequest {
-    def apply(QueueUrl: String,
-              AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
-              MaxNumberOfMessages: js.UndefOr[Int] = js.undefined,
-              MessageAttributeNames: js.UndefOr[MessageAttributeNameList] = js.undefined,
-              ReceiveRequestAttemptId: js.UndefOr[String] = js.undefined,
-              VisibilityTimeout: js.UndefOr[Int] = js.undefined,
-              WaitTimeSeconds: js.UndefOr[Int] = js.undefined): ReceiveMessageRequest = {
+    def apply(
+        QueueUrl: String,
+        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
+        MaxNumberOfMessages: js.UndefOr[Int] = js.undefined,
+        MessageAttributeNames: js.UndefOr[MessageAttributeNameList] = js.undefined,
+        ReceiveRequestAttemptId: js.UndefOr[String] = js.undefined,
+        VisibilityTimeout: js.UndefOr[Int] = js.undefined,
+        WaitTimeSeconds: js.UndefOr[Int] = js.undefined
+    ): ReceiveMessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "AttributeNames" -> AttributeNames.map { x =>
@@ -788,10 +875,14 @@ package sqs {
   }
 
   object ReceiveMessageResult {
-    def apply(Messages: js.UndefOr[MessageList] = js.undefined): ReceiveMessageResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Messages" -> Messages.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Messages: js.UndefOr[MessageList] = js.undefined
+    ): ReceiveMessageResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Messages" -> Messages.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReceiveMessageResult]
     }
@@ -807,10 +898,14 @@ package sqs {
   }
 
   object RemovePermissionRequest {
-    def apply(Label: String, QueueUrl: String): RemovePermissionRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Label" -> Label.asInstanceOf[js.Any], "QueueUrl" -> QueueUrl.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Label: String,
+        QueueUrl: String
+    ): RemovePermissionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Label"    -> Label.asInstanceOf[js.Any],
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemovePermissionRequest]
     }
@@ -826,7 +921,10 @@ package sqs {
   }
 
   object SendMessageBatchRequest {
-    def apply(Entries: SendMessageBatchRequestEntryList, QueueUrl: String): SendMessageBatchRequest = {
+    def apply(
+        Entries: SendMessageBatchRequestEntryList,
+        QueueUrl: String
+    ): SendMessageBatchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Entries"  -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
@@ -850,12 +948,14 @@ package sqs {
   }
 
   object SendMessageBatchRequestEntry {
-    def apply(Id: String,
-              MessageBody: String,
-              DelaySeconds: js.UndefOr[Int] = js.undefined,
-              MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
-              MessageDeduplicationId: js.UndefOr[String] = js.undefined,
-              MessageGroupId: js.UndefOr[String] = js.undefined): SendMessageBatchRequestEntry = {
+    def apply(
+        Id: String,
+        MessageBody: String,
+        DelaySeconds: js.UndefOr[Int] = js.undefined,
+        MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
+        MessageDeduplicationId: js.UndefOr[String] = js.undefined,
+        MessageGroupId: js.UndefOr[String] = js.undefined
+    ): SendMessageBatchRequestEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id"          -> Id.asInstanceOf[js.Any],
         "MessageBody" -> MessageBody.asInstanceOf[js.Any],
@@ -887,8 +987,10 @@ package sqs {
   }
 
   object SendMessageBatchResult {
-    def apply(Failed: BatchResultErrorEntryList,
-              Successful: SendMessageBatchResultEntryList): SendMessageBatchResult = {
+    def apply(
+        Failed: BatchResultErrorEntryList,
+        Successful: SendMessageBatchResultEntryList
+    ): SendMessageBatchResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Failed"     -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
@@ -911,11 +1013,13 @@ package sqs {
   }
 
   object SendMessageBatchResultEntry {
-    def apply(Id: String,
-              MD5OfMessageBody: String,
-              MessageId: String,
-              MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
-              SequenceNumber: js.UndefOr[String] = js.undefined): SendMessageBatchResultEntry = {
+    def apply(
+        Id: String,
+        MD5OfMessageBody: String,
+        MessageId: String,
+        MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
+        SequenceNumber: js.UndefOr[String] = js.undefined
+    ): SendMessageBatchResultEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id"               -> Id.asInstanceOf[js.Any],
         "MD5OfMessageBody" -> MD5OfMessageBody.asInstanceOf[js.Any],
@@ -946,12 +1050,14 @@ package sqs {
   }
 
   object SendMessageRequest {
-    def apply(MessageBody: String,
-              QueueUrl: String,
-              DelaySeconds: js.UndefOr[Int] = js.undefined,
-              MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
-              MessageDeduplicationId: js.UndefOr[String] = js.undefined,
-              MessageGroupId: js.UndefOr[String] = js.undefined): SendMessageRequest = {
+    def apply(
+        MessageBody: String,
+        QueueUrl: String,
+        DelaySeconds: js.UndefOr[Int] = js.undefined,
+        MessageAttributes: js.UndefOr[MessageBodyAttributeMap] = js.undefined,
+        MessageDeduplicationId: js.UndefOr[String] = js.undefined,
+        MessageGroupId: js.UndefOr[String] = js.undefined
+    ): SendMessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MessageBody" -> MessageBody.asInstanceOf[js.Any],
         "QueueUrl"    -> QueueUrl.asInstanceOf[js.Any],
@@ -985,10 +1091,12 @@ package sqs {
   }
 
   object SendMessageResult {
-    def apply(MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
-              MD5OfMessageBody: js.UndefOr[String] = js.undefined,
-              MessageId: js.UndefOr[String] = js.undefined,
-              SequenceNumber: js.UndefOr[String] = js.undefined): SendMessageResult = {
+    def apply(
+        MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
+        MD5OfMessageBody: js.UndefOr[String] = js.undefined,
+        MessageId: js.UndefOr[String] = js.undefined,
+        SequenceNumber: js.UndefOr[String] = js.undefined
+    ): SendMessageResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MD5OfMessageAttributes" -> MD5OfMessageAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1018,7 +1126,10 @@ package sqs {
   }
 
   object SetQueueAttributesRequest {
-    def apply(Attributes: QueueAttributeMap, QueueUrl: String): SetQueueAttributesRequest = {
+    def apply(
+        Attributes: QueueAttributeMap,
+        QueueUrl: String
+    ): SetQueueAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "QueueUrl"   -> QueueUrl.asInstanceOf[js.Any]
@@ -1035,10 +1146,14 @@ package sqs {
   }
 
   object TagQueueRequest {
-    def apply(QueueUrl: String, Tags: TagMap): TagQueueRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("QueueUrl" -> QueueUrl.asInstanceOf[js.Any], "Tags" -> Tags.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        QueueUrl: String,
+        Tags: TagMap
+    ): TagQueueRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
+        "Tags"     -> Tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagQueueRequest]
     }
@@ -1051,7 +1166,10 @@ package sqs {
   }
 
   object UntagQueueRequest {
-    def apply(QueueUrl: String, TagKeys: TagKeyList): UntagQueueRequest = {
+    def apply(
+        QueueUrl: String,
+        TagKeys: TagKeyList
+    ): UntagQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any]

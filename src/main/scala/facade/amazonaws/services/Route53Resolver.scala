@@ -97,7 +97,10 @@ package route53resolver {
   }
 
   object AssociateResolverEndpointIpAddressRequest {
-    def apply(IpAddress: IpAddressUpdate, ResolverEndpointId: ResourceId): AssociateResolverEndpointIpAddressRequest = {
+    def apply(
+        IpAddress: IpAddressUpdate,
+        ResolverEndpointId: ResourceId
+    ): AssociateResolverEndpointIpAddressRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
@@ -116,9 +119,11 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): AssociateResolverEndpointIpAddressResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpoint" -> ResolverEndpoint.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpoint" -> ResolverEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -134,9 +139,11 @@ package route53resolver {
   }
 
   object AssociateResolverRuleRequest {
-    def apply(ResolverRuleId: ResourceId,
-              VPCId: ResourceId,
-              Name: js.UndefOr[Name] = js.undefined): AssociateResolverRuleRequest = {
+    def apply(
+        ResolverRuleId: ResourceId,
+        VPCId: ResourceId,
+        Name: js.UndefOr[Name] = js.undefined
+    ): AssociateResolverRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
         "VPCId"          -> VPCId.asInstanceOf[js.Any],
@@ -158,9 +165,11 @@ package route53resolver {
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): AssociateResolverRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRuleAssociation" -> ResolverRuleAssociation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRuleAssociation" -> ResolverRuleAssociation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateResolverRuleResponse]
     }
@@ -177,12 +186,14 @@ package route53resolver {
   }
 
   object CreateResolverEndpointRequest {
-    def apply(CreatorRequestId: CreatorRequestId,
-              Direction: ResolverEndpointDirection,
-              IpAddresses: IpAddressesRequest,
-              SecurityGroupIds: SecurityGroupIds,
-              Name: js.UndefOr[Name] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateResolverEndpointRequest = {
+    def apply(
+        CreatorRequestId: CreatorRequestId,
+        Direction: ResolverEndpointDirection,
+        IpAddresses: IpAddressesRequest,
+        SecurityGroupIds: SecurityGroupIds,
+        Name: js.UndefOr[Name] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateResolverEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
         "Direction"        -> Direction.asInstanceOf[js.Any],
@@ -206,10 +217,14 @@ package route53resolver {
   }
 
   object CreateResolverEndpointResponse {
-    def apply(ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined): CreateResolverEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpoint" -> ResolverEndpoint.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
+    ): CreateResolverEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpoint" -> ResolverEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResolverEndpointResponse]
     }
@@ -227,13 +242,15 @@ package route53resolver {
   }
 
   object CreateResolverRuleRequest {
-    def apply(CreatorRequestId: CreatorRequestId,
-              DomainName: DomainName,
-              RuleType: RuleTypeOption,
-              Name: js.UndefOr[Name] = js.undefined,
-              ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              TargetIps: js.UndefOr[TargetList] = js.undefined): CreateResolverRuleRequest = {
+    def apply(
+        CreatorRequestId: CreatorRequestId,
+        DomainName: DomainName,
+        RuleType: RuleTypeOption,
+        Name: js.UndefOr[Name] = js.undefined,
+        ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetIps: js.UndefOr[TargetList] = js.undefined
+    ): CreateResolverRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
         "DomainName"       -> DomainName.asInstanceOf[js.Any],
@@ -262,10 +279,14 @@ package route53resolver {
   }
 
   object CreateResolverRuleResponse {
-    def apply(ResolverRule: js.UndefOr[ResolverRule] = js.undefined): CreateResolverRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRule" -> ResolverRule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
+    ): CreateResolverRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRule" -> ResolverRule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateResolverRuleResponse]
     }
@@ -277,9 +298,12 @@ package route53resolver {
   }
 
   object DeleteResolverEndpointRequest {
-    def apply(ResolverEndpointId: ResourceId): DeleteResolverEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverEndpointId: ResourceId
+    ): DeleteResolverEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResolverEndpointRequest]
     }
@@ -291,10 +315,14 @@ package route53resolver {
   }
 
   object DeleteResolverEndpointResponse {
-    def apply(ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined): DeleteResolverEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpoint" -> ResolverEndpoint.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
+    ): DeleteResolverEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpoint" -> ResolverEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResolverEndpointResponse]
     }
@@ -306,9 +334,12 @@ package route53resolver {
   }
 
   object DeleteResolverRuleRequest {
-    def apply(ResolverRuleId: ResourceId): DeleteResolverRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRuleId: ResourceId
+    ): DeleteResolverRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResolverRuleRequest]
     }
@@ -320,10 +351,14 @@ package route53resolver {
   }
 
   object DeleteResolverRuleResponse {
-    def apply(ResolverRule: js.UndefOr[ResolverRule] = js.undefined): DeleteResolverRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRule" -> ResolverRule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
+    ): DeleteResolverRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRule" -> ResolverRule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteResolverRuleResponse]
     }
@@ -336,8 +371,10 @@ package route53resolver {
   }
 
   object DisassociateResolverEndpointIpAddressRequest {
-    def apply(IpAddress: IpAddressUpdate,
-              ResolverEndpointId: ResourceId): DisassociateResolverEndpointIpAddressRequest = {
+    def apply(
+        IpAddress: IpAddressUpdate,
+        ResolverEndpointId: ResourceId
+    ): DisassociateResolverEndpointIpAddressRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
@@ -358,9 +395,11 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): DisassociateResolverEndpointIpAddressResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpoint" -> ResolverEndpoint.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpoint" -> ResolverEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -375,7 +414,10 @@ package route53resolver {
   }
 
   object DisassociateResolverRuleRequest {
-    def apply(ResolverRuleId: ResourceId, VPCId: ResourceId): DisassociateResolverRuleRequest = {
+    def apply(
+        ResolverRuleId: ResourceId,
+        VPCId: ResourceId
+    ): DisassociateResolverRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
         "VPCId"          -> VPCId.asInstanceOf[js.Any]
@@ -394,9 +436,11 @@ package route53resolver {
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): DisassociateResolverRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRuleAssociation" -> ResolverRuleAssociation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRuleAssociation" -> ResolverRuleAssociation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateResolverRuleResponse]
     }
@@ -412,12 +456,18 @@ package route53resolver {
   }
 
   object Filter {
-    def apply(Name: js.UndefOr[FilterName] = js.undefined, Values: js.UndefOr[FilterValues] = js.undefined): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[FilterName] = js.undefined,
+        Values: js.UndefOr[FilterValues] = js.undefined
+    ): Filter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
@@ -429,9 +479,12 @@ package route53resolver {
   }
 
   object GetResolverEndpointRequest {
-    def apply(ResolverEndpointId: ResourceId): GetResolverEndpointRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverEndpointId: ResourceId
+    ): GetResolverEndpointRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverEndpointRequest]
     }
@@ -443,10 +496,14 @@ package route53resolver {
   }
 
   object GetResolverEndpointResponse {
-    def apply(ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined): GetResolverEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpoint" -> ResolverEndpoint.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
+    ): GetResolverEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpoint" -> ResolverEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverEndpointResponse]
     }
@@ -458,10 +515,12 @@ package route53resolver {
   }
 
   object GetResolverRuleAssociationRequest {
-    def apply(ResolverRuleAssociationId: ResourceId): GetResolverRuleAssociationRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ResolverRuleAssociationId" -> ResolverRuleAssociationId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRuleAssociationId: ResourceId
+    ): GetResolverRuleAssociationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRuleAssociationId" -> ResolverRuleAssociationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverRuleAssociationRequest]
     }
@@ -476,9 +535,11 @@ package route53resolver {
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): GetResolverRuleAssociationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRuleAssociation" -> ResolverRuleAssociation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRuleAssociation" -> ResolverRuleAssociation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverRuleAssociationResponse]
     }
@@ -490,9 +551,12 @@ package route53resolver {
   }
 
   object GetResolverRulePolicyRequest {
-    def apply(Arn: Arn): GetResolverRulePolicyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: Arn
+    ): GetResolverRulePolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverRulePolicyRequest]
     }
@@ -504,10 +568,14 @@ package route53resolver {
   }
 
   object GetResolverRulePolicyResponse {
-    def apply(ResolverRulePolicy: js.UndefOr[ResolverRulePolicy] = js.undefined): GetResolverRulePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRulePolicy" -> ResolverRulePolicy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRulePolicy: js.UndefOr[ResolverRulePolicy] = js.undefined
+    ): GetResolverRulePolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRulePolicy" -> ResolverRulePolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverRulePolicyResponse]
     }
@@ -519,9 +587,12 @@ package route53resolver {
   }
 
   object GetResolverRuleRequest {
-    def apply(ResolverRuleId: ResourceId): GetResolverRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRuleId: ResourceId
+    ): GetResolverRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverRuleRequest]
     }
@@ -533,10 +604,14 @@ package route53resolver {
   }
 
   object GetResolverRuleResponse {
-    def apply(ResolverRule: js.UndefOr[ResolverRule] = js.undefined): GetResolverRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRule" -> ResolverRule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
+    ): GetResolverRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRule" -> ResolverRule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResolverRuleResponse]
     }
@@ -552,10 +627,16 @@ package route53resolver {
   }
 
   object IpAddressRequest {
-    def apply(SubnetId: SubnetId, Ip: js.UndefOr[Ip] = js.undefined): IpAddressRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SubnetId" -> SubnetId.asInstanceOf[js.Any], "Ip" -> Ip.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SubnetId: SubnetId,
+        Ip: js.UndefOr[Ip] = js.undefined
+    ): IpAddressRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubnetId" -> SubnetId.asInstanceOf[js.Any],
+        "Ip" -> Ip.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IpAddressRequest]
     }
@@ -576,13 +657,15 @@ package route53resolver {
   }
 
   object IpAddressResponse {
-    def apply(CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-              Ip: js.UndefOr[Ip] = js.undefined,
-              IpId: js.UndefOr[ResourceId] = js.undefined,
-              ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-              Status: js.UndefOr[IpAddressStatus] = js.undefined,
-              StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-              SubnetId: js.UndefOr[SubnetId] = js.undefined): IpAddressResponse = {
+    def apply(
+        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        Ip: js.UndefOr[Ip] = js.undefined,
+        IpId: js.UndefOr[ResourceId] = js.undefined,
+        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        Status: js.UndefOr[IpAddressStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined
+    ): IpAddressResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -648,16 +731,22 @@ package route53resolver {
   }
 
   object IpAddressUpdate {
-    def apply(Ip: js.UndefOr[Ip] = js.undefined,
-              IpId: js.UndefOr[ResourceId] = js.undefined,
-              SubnetId: js.UndefOr[SubnetId] = js.undefined): IpAddressUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)]("Ip" -> Ip.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "IpId" -> IpId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SubnetId" -> SubnetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Ip: js.UndefOr[Ip] = js.undefined,
+        IpId: js.UndefOr[ResourceId] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined
+    ): IpAddressUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Ip" -> Ip.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IpId" -> IpId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubnetId" -> SubnetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IpAddressUpdate]
     }
@@ -671,9 +760,11 @@ package route53resolver {
   }
 
   object ListResolverEndpointIpAddressesRequest {
-    def apply(ResolverEndpointId: ResourceId,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListResolverEndpointIpAddressesRequest = {
+    def apply(
+        ResolverEndpointId: ResourceId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResolverEndpointIpAddressesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -696,9 +787,11 @@ package route53resolver {
   }
 
   object ListResolverEndpointIpAddressesResponse {
-    def apply(IpAddresses: js.UndefOr[IpAddressesResponse] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListResolverEndpointIpAddressesResponse = {
+    def apply(
+        IpAddresses: js.UndefOr[IpAddressesResponse] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResolverEndpointIpAddressesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IpAddresses" -> IpAddresses.map { x =>
           x.asInstanceOf[js.Any]
@@ -723,9 +816,11 @@ package route53resolver {
   }
 
   object ListResolverEndpointsRequest {
-    def apply(Filters: js.UndefOr[Filters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListResolverEndpointsRequest = {
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResolverEndpointsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -750,9 +845,11 @@ package route53resolver {
   }
 
   object ListResolverEndpointsResponse {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ResolverEndpoints: js.UndefOr[ResolverEndpoints] = js.undefined): ListResolverEndpointsResponse = {
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResolverEndpoints: js.UndefOr[ResolverEndpoints] = js.undefined
+    ): ListResolverEndpointsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -777,9 +874,11 @@ package route53resolver {
   }
 
   object ListResolverRuleAssociationsRequest {
-    def apply(Filters: js.UndefOr[Filters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListResolverRuleAssociationsRequest = {
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResolverRuleAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -833,9 +932,11 @@ package route53resolver {
   }
 
   object ListResolverRulesRequest {
-    def apply(Filters: js.UndefOr[Filters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListResolverRulesRequest = {
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResolverRulesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -860,9 +961,11 @@ package route53resolver {
   }
 
   object ListResolverRulesResponse {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ResolverRules: js.UndefOr[ResolverRules] = js.undefined): ListResolverRulesResponse = {
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResolverRules: js.UndefOr[ResolverRules] = js.undefined
+    ): ListResolverRulesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -887,9 +990,11 @@ package route53resolver {
   }
 
   object ListTagsForResourceRequest {
-    def apply(ResourceArn: Arn,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
+    def apply(
+        ResourceArn: Arn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -911,13 +1016,18 @@ package route53resolver {
   }
 
   object ListTagsForResourceResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -930,7 +1040,10 @@ package route53resolver {
   }
 
   object PutResolverRulePolicyRequest {
-    def apply(Arn: Arn, ResolverRulePolicy: ResolverRulePolicy): PutResolverRulePolicyRequest = {
+    def apply(
+        Arn: Arn,
+        ResolverRulePolicy: ResolverRulePolicy
+    ): PutResolverRulePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn"                -> Arn.asInstanceOf[js.Any],
         "ResolverRulePolicy" -> ResolverRulePolicy.asInstanceOf[js.Any]
@@ -949,10 +1062,14 @@ package route53resolver {
   }
 
   object PutResolverRulePolicyResponse {
-    def apply(ReturnValue: js.UndefOr[Boolean] = js.undefined): PutResolverRulePolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ReturnValue" -> ReturnValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ReturnValue: js.UndefOr[Boolean] = js.undefined
+    ): PutResolverRulePolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReturnValue" -> ReturnValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutResolverRulePolicyResponse]
     }
@@ -978,18 +1095,20 @@ package route53resolver {
   }
 
   object ResolverEndpoint {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-              CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
-              Direction: js.UndefOr[ResolverEndpointDirection] = js.undefined,
-              HostVPCId: js.UndefOr[ResourceId] = js.undefined,
-              Id: js.UndefOr[ResourceId] = js.undefined,
-              IpAddressCount: js.UndefOr[IpAddressCount] = js.undefined,
-              ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
-              Name: js.UndefOr[Name] = js.undefined,
-              SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-              Status: js.UndefOr[ResolverEndpointStatus] = js.undefined,
-              StatusMessage: js.UndefOr[StatusMessage] = js.undefined): ResolverEndpoint = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        Direction: js.UndefOr[ResolverEndpointDirection] = js.undefined,
+        HostVPCId: js.UndefOr[ResourceId] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        IpAddressCount: js.UndefOr[IpAddressCount] = js.undefined,
+        ModificationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+        Status: js.UndefOr[ResolverEndpointStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
+    ): ResolverEndpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1071,18 +1190,20 @@ package route53resolver {
   }
 
   object ResolverRule {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
-              DomainName: js.UndefOr[DomainName] = js.undefined,
-              Id: js.UndefOr[ResourceId] = js.undefined,
-              Name: js.UndefOr[Name] = js.undefined,
-              OwnerId: js.UndefOr[AccountId] = js.undefined,
-              ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
-              RuleType: js.UndefOr[RuleTypeOption] = js.undefined,
-              ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
-              Status: js.UndefOr[ResolverRuleStatus] = js.undefined,
-              StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-              TargetIps: js.UndefOr[TargetList] = js.undefined): ResolverRule = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        OwnerId: js.UndefOr[AccountId] = js.undefined,
+        ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
+        RuleType: js.UndefOr[RuleTypeOption] = js.undefined,
+        ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
+        Status: js.UndefOr[ResolverRuleStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        TargetIps: js.UndefOr[TargetList] = js.undefined
+    ): ResolverRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1140,12 +1261,14 @@ package route53resolver {
   }
 
   object ResolverRuleAssociation {
-    def apply(Id: js.UndefOr[ResourceId] = js.undefined,
-              Name: js.UndefOr[Name] = js.undefined,
-              ResolverRuleId: js.UndefOr[ResourceId] = js.undefined,
-              Status: js.UndefOr[ResolverRuleAssociationStatus] = js.undefined,
-              StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-              VPCId: js.UndefOr[ResourceId] = js.undefined): ResolverRuleAssociation = {
+    def apply(
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        ResolverRuleId: js.UndefOr[ResourceId] = js.undefined,
+        Status: js.UndefOr[ResolverRuleAssociationStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        VPCId: js.UndefOr[ResourceId] = js.undefined
+    ): ResolverRuleAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.map { x =>
           x.asInstanceOf[js.Any]
@@ -1192,9 +1315,11 @@ package route53resolver {
   }
 
   object ResolverRuleConfig {
-    def apply(Name: js.UndefOr[Name] = js.undefined,
-              ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
-              TargetIps: js.UndefOr[TargetList] = js.undefined): ResolverRuleConfig = {
+    def apply(
+        Name: js.UndefOr[Name] = js.undefined,
+        ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
+        TargetIps: js.UndefOr[TargetList] = js.undefined
+    ): ResolverRuleConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
@@ -1246,12 +1371,18 @@ package route53resolver {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[TagKey] = js.undefined, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -1264,7 +1395,10 @@ package route53resolver {
   }
 
   object TagResourceRequest {
-    def apply(ResourceArn: Arn, Tags: TagList): TagResourceRequest = {
+    def apply(
+        ResourceArn: Arn,
+        Tags: TagList
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
@@ -1278,8 +1412,10 @@ package route53resolver {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -1295,10 +1431,16 @@ package route53resolver {
   }
 
   object TargetAddress {
-    def apply(Ip: Ip, Port: js.UndefOr[Port] = js.undefined): TargetAddress = {
-      val _fields = IndexedSeq[(String, js.Any)]("Ip" -> Ip.asInstanceOf[js.Any], "Port" -> Port.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Ip: Ip,
+        Port: js.UndefOr[Port] = js.undefined
+    ): TargetAddress = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Ip" -> Ip.asInstanceOf[js.Any],
+        "Port" -> Port.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetAddress]
     }
@@ -1311,7 +1453,10 @@ package route53resolver {
   }
 
   object UntagResourceRequest {
-    def apply(ResourceArn: Arn, TagKeys: TagKeyList): UntagResourceRequest = {
+    def apply(
+        ResourceArn: Arn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
@@ -1325,8 +1470,10 @@ package route53resolver {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
@@ -1339,7 +1486,10 @@ package route53resolver {
   }
 
   object UpdateResolverEndpointRequest {
-    def apply(ResolverEndpointId: ResourceId, Name: js.UndefOr[Name] = js.undefined): UpdateResolverEndpointRequest = {
+    def apply(
+        ResolverEndpointId: ResourceId,
+        Name: js.UndefOr[Name] = js.undefined
+    ): UpdateResolverEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any],
         "Name" -> Name.map { x =>
@@ -1357,10 +1507,14 @@ package route53resolver {
   }
 
   object UpdateResolverEndpointResponse {
-    def apply(ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined): UpdateResolverEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverEndpoint" -> ResolverEndpoint.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
+    ): UpdateResolverEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverEndpoint" -> ResolverEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResolverEndpointResponse]
     }
@@ -1373,7 +1527,10 @@ package route53resolver {
   }
 
   object UpdateResolverRuleRequest {
-    def apply(Config: ResolverRuleConfig, ResolverRuleId: ResourceId): UpdateResolverRuleRequest = {
+    def apply(
+        Config: ResolverRuleConfig,
+        ResolverRuleId: ResourceId
+    ): UpdateResolverRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Config"         -> Config.asInstanceOf[js.Any],
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
@@ -1389,10 +1546,14 @@ package route53resolver {
   }
 
   object UpdateResolverRuleResponse {
-    def apply(ResolverRule: js.UndefOr[ResolverRule] = js.undefined): UpdateResolverRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResolverRule" -> ResolverRule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResolverRule: js.UndefOr[ResolverRule] = js.undefined
+    ): UpdateResolverRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResolverRule" -> ResolverRule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateResolverRuleResponse]
     }

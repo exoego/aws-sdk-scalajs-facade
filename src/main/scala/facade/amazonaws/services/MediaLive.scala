@@ -7,271 +7,280 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object medialive {
-  type AacCodingMode                                = String
-  type AacInputType                                 = String
-  type AacProfile                                   = String
-  type AacRateControlMode                           = String
-  type AacRawFormat                                 = String
-  type AacSpec                                      = String
-  type AacVbrQuality                                = String
-  type Ac3BitstreamMode                             = String
-  type Ac3CodingMode                                = String
-  type Ac3DrcProfile                                = String
-  type Ac3LfeFilter                                 = String
-  type Ac3MetadataControl                           = String
-  type AfdSignaling                                 = String
-  type AudioDescriptionAudioTypeControl             = String
-  type AudioDescriptionLanguageCodeControl          = String
-  type AudioLanguageSelectionPolicy                 = String
-  type AudioNormalizationAlgorithm                  = String
-  type AudioNormalizationAlgorithmControl           = String
-  type AudioOnlyHlsTrackType                        = String
-  type AudioType                                    = String
-  type AuthenticationScheme                         = String
-  type AvailBlankingState                           = String
-  type BlackoutSlateNetworkEndBlackout              = String
-  type BlackoutSlateState                           = String
-  type BurnInAlignment                              = String
-  type BurnInBackgroundColor                        = String
-  type BurnInFontColor                              = String
-  type BurnInOutlineColor                           = String
-  type BurnInShadowColor                            = String
-  type BurnInTeletextGridControl                    = String
-  type ChannelState                                 = String
-  type DvbSdtOutputSdt                              = String
-  type DvbSubDestinationAlignment                   = String
-  type DvbSubDestinationBackgroundColor             = String
-  type DvbSubDestinationFontColor                   = String
-  type DvbSubDestinationOutlineColor                = String
-  type DvbSubDestinationShadowColor                 = String
-  type DvbSubDestinationTeletextGridControl         = String
-  type Eac3AttenuationControl                       = String
-  type Eac3BitstreamMode                            = String
-  type Eac3CodingMode                               = String
-  type Eac3DcFilter                                 = String
-  type Eac3DrcLine                                  = String
-  type Eac3DrcRf                                    = String
-  type Eac3LfeControl                               = String
-  type Eac3LfeFilter                                = String
-  type Eac3MetadataControl                          = String
-  type Eac3PassthroughControl                       = String
-  type Eac3PhaseControl                             = String
-  type Eac3StereoDownmix                            = String
-  type Eac3SurroundExMode                           = String
-  type Eac3SurroundMode                             = String
-  type EmbeddedConvert608To708                      = String
-  type EmbeddedScte20Detection                      = String
-  type FecOutputIncludeFec                          = String
-  type FixedAfd                                     = String
-  type FollowPoint                                  = String
-  type GlobalConfigurationInputEndAction            = String
-  type GlobalConfigurationLowFramerateInputs        = String
-  type GlobalConfigurationOutputTimingSource        = String
-  type H264AdaptiveQuantization                     = String
-  type H264ColorMetadata                            = String
-  type H264EntropyEncoding                          = String
-  type H264FlickerAq                                = String
-  type H264FramerateControl                         = String
-  type H264GopBReference                            = String
-  type H264GopSizeUnits                             = String
-  type H264Level                                    = String
-  type H264LookAheadRateControl                     = String
-  type H264ParControl                               = String
-  type H264Profile                                  = String
-  type H264RateControlMode                          = String
-  type H264ScanType                                 = String
-  type H264SceneChangeDetect                        = String
-  type H264SpatialAq                                = String
-  type H264SubGopLength                             = String
-  type H264Syntax                                   = String
-  type H264TemporalAq                               = String
-  type H264TimecodeInsertionBehavior                = String
-  type HlsAdMarkers                                 = String
-  type HlsAkamaiHttpTransferMode                    = String
-  type HlsCaptionLanguageSetting                    = String
-  type HlsClientCache                               = String
-  type HlsCodecSpecification                        = String
-  type HlsDirectoryStructure                        = String
-  type HlsEncryptionType                            = String
-  type HlsIvInManifest                              = String
-  type HlsIvSource                                  = String
-  type HlsManifestCompression                       = String
-  type HlsManifestDurationFormat                    = String
-  type HlsMediaStoreStorageClass                    = String
-  type HlsMode                                      = String
-  type HlsOutputSelection                           = String
-  type HlsProgramDateTime                           = String
-  type HlsRedundantManifest                         = String
-  type HlsSegmentationMode                          = String
-  type HlsStreamInfResolution                       = String
-  type HlsTimedMetadataId3Frame                     = String
-  type HlsTsFileMode                                = String
-  type HlsWebdavHttpTransferMode                    = String
-  type InputCodec                                   = String
-  type InputDeblockFilter                           = String
-  type InputDenoiseFilter                           = String
-  type InputFilter                                  = String
-  type InputLossActionForHlsOut                     = String
-  type InputLossActionForMsSmoothOut                = String
-  type InputLossActionForRtmpOut                    = String
-  type InputLossActionForUdpOut                     = String
-  type InputLossImageType                           = String
-  type InputMaximumBitrate                          = String
-  type InputResolution                              = String
-  type InputSecurityGroupState                      = String
-  type InputSourceEndBehavior                       = String
-  type InputState                                   = String
-  type InputType                                    = String
-  type LogLevel                                     = String
-  type M2tsAbsentInputAudioBehavior                 = String
-  type M2tsArib                                     = String
-  type M2tsAribCaptionsPidControl                   = String
-  type M2tsAudioBufferModel                         = String
-  type M2tsAudioInterval                            = String
-  type M2tsAudioStreamType                          = String
-  type M2tsBufferModel                              = String
-  type M2tsCcDescriptor                             = String
-  type M2tsEbifControl                              = String
-  type M2tsEbpPlacement                             = String
-  type M2tsEsRateInPes                              = String
-  type M2tsKlv                                      = String
-  type M2tsPcrControl                               = String
-  type M2tsRateMode                                 = String
-  type M2tsScte35Control                            = String
-  type M2tsSegmentationMarkers                      = String
-  type M2tsSegmentationStyle                        = String
-  type M2tsTimedMetadataBehavior                    = String
-  type M3u8PcrControl                               = String
-  type M3u8Scte35Behavior                           = String
-  type M3u8TimedMetadataBehavior                    = String
-  type MaxResults                                   = Int
-  type Mp2CodingMode                                = String
-  type NetworkInputServerValidation                 = String
-  type OfferingDurationUnits                        = String
-  type OfferingType                                 = String
-  type ReservationCodec                             = String
-  type ReservationMaximumBitrate                    = String
-  type ReservationMaximumFramerate                  = String
-  type ReservationResolution                        = String
-  type ReservationResourceType                      = String
-  type ReservationSpecialFeature                    = String
-  type ReservationState                             = String
-  type ReservationVideoQuality                      = String
-  type RtmpCacheFullBehavior                        = String
-  type RtmpCaptionData                              = String
-  type RtmpOutputCertificateMode                    = String
-  type Scte20Convert608To708                        = String
-  type Scte35AposNoRegionalBlackoutBehavior         = String
-  type Scte35AposWebDeliveryAllowedBehavior         = String
-  type Scte35ArchiveAllowedFlag                     = String
-  type Scte35DeviceRestrictions                     = String
-  type Scte35NoRegionalBlackoutFlag                 = String
-  type Scte35SegmentationCancelIndicator            = String
-  type Scte35SpliceInsertNoRegionalBlackoutBehavior = String
-  type Scte35SpliceInsertWebDeliveryAllowedBehavior = String
-  type Scte35WebDeliveryAllowedFlag                 = String
-  type SmoothGroupAudioOnlyTimecodeControl          = String
-  type SmoothGroupCertificateMode                   = String
-  type SmoothGroupEventIdMode                       = String
-  type SmoothGroupEventStopBehavior                 = String
-  type SmoothGroupSegmentationMode                  = String
-  type SmoothGroupSparseTrackType                   = String
-  type SmoothGroupStreamManifestBehavior            = String
-  type SmoothGroupTimestampOffsetMode               = String
-  type TimecodeConfigSource                         = String
-  type TtmlDestinationStyleControl                  = String
-  type UdpTimedMetadataId3Frame                     = String
-  type VideoDescriptionRespondToAfd                 = String
-  type VideoDescriptionScalingBehavior              = String
-  type VideoSelectorColorSpace                      = String
-  type VideoSelectorColorSpaceUsage                 = String
-  type __double                                     = Double
-  type __doubleMin0                                 = Double
-  type __doubleMin1                                 = Double
-  type __doubleMinNegative59Max0                    = Double
-  type __integer                                    = Int
-  type __integerMin0                                = Int
-  type __integerMin0Max10                           = Int
-  type __integerMin0Max100                          = Int
-  type __integerMin0Max1000                         = Int
-  type __integerMin0Max10000                        = Int
-  type __integerMin0Max1000000                      = Int
-  type __integerMin0Max1099511627775                = Double
-  type __integerMin0Max128                          = Int
-  type __integerMin0Max15                           = Int
-  type __integerMin0Max255                          = Int
-  type __integerMin0Max30                           = Int
-  type __integerMin0Max3600                         = Int
-  type __integerMin0Max4294967295                   = Double
-  type __integerMin0Max500                          = Int
-  type __integerMin0Max600                          = Int
-  type __integerMin0Max65535                        = Int
-  type __integerMin0Max65536                        = Int
-  type __integerMin0Max7                            = Int
-  type __integerMin0Max8191                         = Int
-  type __integerMin0Max8589934591                   = Double
-  type __integerMin1                                = Int
-  type __integerMin1000                             = Int
-  type __integerMin1000Max30000                     = Int
-  type __integerMin1Max10                           = Int
-  type __integerMin1Max1000000                      = Int
-  type __integerMin1Max16                           = Int
-  type __integerMin1Max20                           = Int
-  type __integerMin1Max31                           = Int
-  type __integerMin1Max32                           = Int
-  type __integerMin1Max4                            = Int
-  type __integerMin1Max5                            = Int
-  type __integerMin1Max6                            = Int
-  type __integerMin1Max8                            = Int
-  type __integerMin25Max10000                       = Int
-  type __integerMin25Max2000                        = Int
-  type __integerMin3                                = Int
-  type __integerMin30                               = Int
-  type __integerMin4Max20                           = Int
-  type __integerMin96Max600                         = Int
-  type __integerMinNegative1000Max1000              = Int
-  type __integerMinNegative60Max6                   = Int
-  type __integerMinNegative60Max60                  = Int
-  type __listOfAudioChannelMapping                  = js.Array[AudioChannelMapping]
-  type __listOfAudioDescription                     = js.Array[AudioDescription]
-  type __listOfAudioSelector                        = js.Array[AudioSelector]
-  type __listOfCaptionDescription                   = js.Array[CaptionDescription]
-  type __listOfCaptionLanguageMapping               = js.Array[CaptionLanguageMapping]
-  type __listOfCaptionSelector                      = js.Array[CaptionSelector]
-  type __listOfChannelEgressEndpoint                = js.Array[ChannelEgressEndpoint]
-  type __listOfChannelSummary                       = js.Array[ChannelSummary]
-  type __listOfHlsAdMarkers                         = js.Array[HlsAdMarkers]
-  type __listOfInput                                = js.Array[Input]
-  type __listOfInputAttachment                      = js.Array[InputAttachment]
-  type __listOfInputChannelLevel                    = js.Array[InputChannelLevel]
-  type __listOfInputDestination                     = js.Array[InputDestination]
-  type __listOfInputDestinationRequest              = js.Array[InputDestinationRequest]
-  type __listOfInputSecurityGroup                   = js.Array[InputSecurityGroup]
-  type __listOfInputSource                          = js.Array[InputSource]
-  type __listOfInputSourceRequest                   = js.Array[InputSourceRequest]
-  type __listOfInputWhitelistRule                   = js.Array[InputWhitelistRule]
-  type __listOfInputWhitelistRuleCidr               = js.Array[InputWhitelistRuleCidr]
-  type __listOfMediaConnectFlow                     = js.Array[MediaConnectFlow]
-  type __listOfMediaConnectFlowRequest              = js.Array[MediaConnectFlowRequest]
-  type __listOfOffering                             = js.Array[Offering]
-  type __listOfOutput                               = js.Array[Output]
-  type __listOfOutputDestination                    = js.Array[OutputDestination]
-  type __listOfOutputDestinationSettings            = js.Array[OutputDestinationSettings]
-  type __listOfOutputGroup                          = js.Array[OutputGroup]
-  type __listOfReservation                          = js.Array[Reservation]
-  type __listOfScheduleAction                       = js.Array[ScheduleAction]
-  type __listOfScte35Descriptor                     = js.Array[Scte35Descriptor]
-  type __listOfVideoDescription                     = js.Array[VideoDescription]
-  type __listOf__string                             = js.Array[__string]
-  type __string                                     = String
-  type __stringMax32                                = String
-  type __stringMin1                                 = String
-  type __stringMin1Max255                           = String
-  type __stringMin1Max256                           = String
-  type __stringMin32Max32                           = String
-  type __stringMin34Max34                           = String
-  type __stringMin3Max3                             = String
-  type __stringMin6Max6                             = String
+  type AacCodingMode                                 = String
+  type AacInputType                                  = String
+  type AacProfile                                    = String
+  type AacRateControlMode                            = String
+  type AacRawFormat                                  = String
+  type AacSpec                                       = String
+  type AacVbrQuality                                 = String
+  type Ac3BitstreamMode                              = String
+  type Ac3CodingMode                                 = String
+  type Ac3DrcProfile                                 = String
+  type Ac3LfeFilter                                  = String
+  type Ac3MetadataControl                            = String
+  type AfdSignaling                                  = String
+  type AudioDescriptionAudioTypeControl              = String
+  type AudioDescriptionLanguageCodeControl           = String
+  type AudioLanguageSelectionPolicy                  = String
+  type AudioNormalizationAlgorithm                   = String
+  type AudioNormalizationAlgorithmControl            = String
+  type AudioOnlyHlsTrackType                         = String
+  type AudioType                                     = String
+  type AuthenticationScheme                          = String
+  type AvailBlankingState                            = String
+  type BlackoutSlateNetworkEndBlackout               = String
+  type BlackoutSlateState                            = String
+  type BurnInAlignment                               = String
+  type BurnInBackgroundColor                         = String
+  type BurnInFontColor                               = String
+  type BurnInOutlineColor                            = String
+  type BurnInShadowColor                             = String
+  type BurnInTeletextGridControl                     = String
+  type ChannelClass                                  = String
+  type ChannelState                                  = String
+  type DvbSdtOutputSdt                               = String
+  type DvbSubDestinationAlignment                    = String
+  type DvbSubDestinationBackgroundColor              = String
+  type DvbSubDestinationFontColor                    = String
+  type DvbSubDestinationOutlineColor                 = String
+  type DvbSubDestinationShadowColor                  = String
+  type DvbSubDestinationTeletextGridControl          = String
+  type Eac3AttenuationControl                        = String
+  type Eac3BitstreamMode                             = String
+  type Eac3CodingMode                                = String
+  type Eac3DcFilter                                  = String
+  type Eac3DrcLine                                   = String
+  type Eac3DrcRf                                     = String
+  type Eac3LfeControl                                = String
+  type Eac3LfeFilter                                 = String
+  type Eac3MetadataControl                           = String
+  type Eac3PassthroughControl                        = String
+  type Eac3PhaseControl                              = String
+  type Eac3StereoDownmix                             = String
+  type Eac3SurroundExMode                            = String
+  type Eac3SurroundMode                              = String
+  type EmbeddedConvert608To708                       = String
+  type EmbeddedScte20Detection                       = String
+  type FecOutputIncludeFec                           = String
+  type FixedAfd                                      = String
+  type FollowPoint                                   = String
+  type GlobalConfigurationInputEndAction             = String
+  type GlobalConfigurationLowFramerateInputs         = String
+  type GlobalConfigurationOutputLockingMode          = String
+  type GlobalConfigurationOutputTimingSource         = String
+  type H264AdaptiveQuantization                      = String
+  type H264ColorMetadata                             = String
+  type H264EntropyEncoding                           = String
+  type H264FlickerAq                                 = String
+  type H264FramerateControl                          = String
+  type H264GopBReference                             = String
+  type H264GopSizeUnits                              = String
+  type H264Level                                     = String
+  type H264LookAheadRateControl                      = String
+  type H264ParControl                                = String
+  type H264Profile                                   = String
+  type H264RateControlMode                           = String
+  type H264ScanType                                  = String
+  type H264SceneChangeDetect                         = String
+  type H264SpatialAq                                 = String
+  type H264SubGopLength                              = String
+  type H264Syntax                                    = String
+  type H264TemporalAq                                = String
+  type H264TimecodeInsertionBehavior                 = String
+  type HlsAdMarkers                                  = String
+  type HlsAkamaiHttpTransferMode                     = String
+  type HlsCaptionLanguageSetting                     = String
+  type HlsClientCache                                = String
+  type HlsCodecSpecification                         = String
+  type HlsDirectoryStructure                         = String
+  type HlsEncryptionType                             = String
+  type HlsIvInManifest                               = String
+  type HlsIvSource                                   = String
+  type HlsManifestCompression                        = String
+  type HlsManifestDurationFormat                     = String
+  type HlsMediaStoreStorageClass                     = String
+  type HlsMode                                       = String
+  type HlsOutputSelection                            = String
+  type HlsProgramDateTime                            = String
+  type HlsRedundantManifest                          = String
+  type HlsSegmentationMode                           = String
+  type HlsStreamInfResolution                        = String
+  type HlsTimedMetadataId3Frame                      = String
+  type HlsTsFileMode                                 = String
+  type HlsWebdavHttpTransferMode                     = String
+  type IFrameOnlyPlaylistType                        = String
+  type InputClass                                    = String
+  type InputCodec                                    = String
+  type InputDeblockFilter                            = String
+  type InputDenoiseFilter                            = String
+  type InputFilter                                   = String
+  type InputLossActionForHlsOut                      = String
+  type InputLossActionForMsSmoothOut                 = String
+  type InputLossActionForRtmpOut                     = String
+  type InputLossActionForUdpOut                      = String
+  type InputLossImageType                            = String
+  type InputMaximumBitrate                           = String
+  type InputResolution                               = String
+  type InputSecurityGroupState                       = String
+  type InputSourceEndBehavior                        = String
+  type InputState                                    = String
+  type InputType                                     = String
+  type LogLevel                                      = String
+  type M2tsAbsentInputAudioBehavior                  = String
+  type M2tsArib                                      = String
+  type M2tsAribCaptionsPidControl                    = String
+  type M2tsAudioBufferModel                          = String
+  type M2tsAudioInterval                             = String
+  type M2tsAudioStreamType                           = String
+  type M2tsBufferModel                               = String
+  type M2tsCcDescriptor                              = String
+  type M2tsEbifControl                               = String
+  type M2tsEbpPlacement                              = String
+  type M2tsEsRateInPes                               = String
+  type M2tsKlv                                       = String
+  type M2tsPcrControl                                = String
+  type M2tsRateMode                                  = String
+  type M2tsScte35Control                             = String
+  type M2tsSegmentationMarkers                       = String
+  type M2tsSegmentationStyle                         = String
+  type M2tsTimedMetadataBehavior                     = String
+  type M3u8PcrControl                                = String
+  type M3u8Scte35Behavior                            = String
+  type M3u8TimedMetadataBehavior                     = String
+  type MaxResults                                    = Int
+  type Mp2CodingMode                                 = String
+  type NetworkInputServerValidation                  = String
+  type OfferingDurationUnits                         = String
+  type OfferingType                                  = String
+  type PipelineId                                    = String
+  type ReservationCodec                              = String
+  type ReservationMaximumBitrate                     = String
+  type ReservationMaximumFramerate                   = String
+  type ReservationResolution                         = String
+  type ReservationResourceType                       = String
+  type ReservationSpecialFeature                     = String
+  type ReservationState                              = String
+  type ReservationVideoQuality                       = String
+  type RtmpCacheFullBehavior                         = String
+  type RtmpCaptionData                               = String
+  type RtmpOutputCertificateMode                     = String
+  type Scte20Convert608To708                         = String
+  type Scte35AposNoRegionalBlackoutBehavior          = String
+  type Scte35AposWebDeliveryAllowedBehavior          = String
+  type Scte35ArchiveAllowedFlag                      = String
+  type Scte35DeviceRestrictions                      = String
+  type Scte35NoRegionalBlackoutFlag                  = String
+  type Scte35SegmentationCancelIndicator             = String
+  type Scte35SpliceInsertNoRegionalBlackoutBehavior  = String
+  type Scte35SpliceInsertWebDeliveryAllowedBehavior  = String
+  type Scte35WebDeliveryAllowedFlag                  = String
+  type SmoothGroupAudioOnlyTimecodeControl           = String
+  type SmoothGroupCertificateMode                    = String
+  type SmoothGroupEventIdMode                        = String
+  type SmoothGroupEventStopBehavior                  = String
+  type SmoothGroupSegmentationMode                   = String
+  type SmoothGroupSparseTrackType                    = String
+  type SmoothGroupStreamManifestBehavior             = String
+  type SmoothGroupTimestampOffsetMode                = String
+  type Tags                                          = js.Dictionary[__string]
+  type TimecodeConfigSource                          = String
+  type TtmlDestinationStyleControl                   = String
+  type UdpTimedMetadataId3Frame                      = String
+  type VideoDescriptionRespondToAfd                  = String
+  type VideoDescriptionScalingBehavior               = String
+  type VideoSelectorColorSpace                       = String
+  type VideoSelectorColorSpaceUsage                  = String
+  type __double                                      = Double
+  type __doubleMin0                                  = Double
+  type __doubleMin1                                  = Double
+  type __doubleMinNegative59Max0                     = Double
+  type __integer                                     = Int
+  type __integerMin0                                 = Int
+  type __integerMin0Max10                            = Int
+  type __integerMin0Max100                           = Int
+  type __integerMin0Max1000                          = Int
+  type __integerMin0Max10000                         = Int
+  type __integerMin0Max1000000                       = Int
+  type __integerMin0Max1099511627775                 = Double
+  type __integerMin0Max128                           = Int
+  type __integerMin0Max15                            = Int
+  type __integerMin0Max255                           = Int
+  type __integerMin0Max30                            = Int
+  type __integerMin0Max3600                          = Int
+  type __integerMin0Max4294967295                    = Double
+  type __integerMin0Max500                           = Int
+  type __integerMin0Max600                           = Int
+  type __integerMin0Max65535                         = Int
+  type __integerMin0Max65536                         = Int
+  type __integerMin0Max7                             = Int
+  type __integerMin0Max8191                          = Int
+  type __integerMin0Max8589934591                    = Double
+  type __integerMin1                                 = Int
+  type __integerMin1000                              = Int
+  type __integerMin1000Max30000                      = Int
+  type __integerMin1Max10                            = Int
+  type __integerMin1Max1000000                       = Int
+  type __integerMin1Max16                            = Int
+  type __integerMin1Max20                            = Int
+  type __integerMin1Max31                            = Int
+  type __integerMin1Max32                            = Int
+  type __integerMin1Max3600                          = Int
+  type __integerMin1Max4                             = Int
+  type __integerMin1Max5                             = Int
+  type __integerMin1Max6                             = Int
+  type __integerMin1Max8                             = Int
+  type __integerMin25Max10000                        = Int
+  type __integerMin25Max2000                         = Int
+  type __integerMin3                                 = Int
+  type __integerMin30                                = Int
+  type __integerMin4Max20                            = Int
+  type __integerMin96Max600                          = Int
+  type __integerMinNegative1000Max1000               = Int
+  type __integerMinNegative60Max6                    = Int
+  type __integerMinNegative60Max60                   = Int
+  type __listOfAudioChannelMapping                   = js.Array[AudioChannelMapping]
+  type __listOfAudioDescription                      = js.Array[AudioDescription]
+  type __listOfAudioSelector                         = js.Array[AudioSelector]
+  type __listOfCaptionDescription                    = js.Array[CaptionDescription]
+  type __listOfCaptionLanguageMapping                = js.Array[CaptionLanguageMapping]
+  type __listOfCaptionSelector                       = js.Array[CaptionSelector]
+  type __listOfChannelEgressEndpoint                 = js.Array[ChannelEgressEndpoint]
+  type __listOfChannelSummary                        = js.Array[ChannelSummary]
+  type __listOfHlsAdMarkers                          = js.Array[HlsAdMarkers]
+  type __listOfInput                                 = js.Array[Input]
+  type __listOfInputAttachment                       = js.Array[InputAttachment]
+  type __listOfInputChannelLevel                     = js.Array[InputChannelLevel]
+  type __listOfInputDestination                      = js.Array[InputDestination]
+  type __listOfInputDestinationRequest               = js.Array[InputDestinationRequest]
+  type __listOfInputSecurityGroup                    = js.Array[InputSecurityGroup]
+  type __listOfInputSource                           = js.Array[InputSource]
+  type __listOfInputSourceRequest                    = js.Array[InputSourceRequest]
+  type __listOfInputWhitelistRule                    = js.Array[InputWhitelistRule]
+  type __listOfInputWhitelistRuleCidr                = js.Array[InputWhitelistRuleCidr]
+  type __listOfMediaConnectFlow                      = js.Array[MediaConnectFlow]
+  type __listOfMediaConnectFlowRequest               = js.Array[MediaConnectFlowRequest]
+  type __listOfMediaPackageOutputDestinationSettings = js.Array[MediaPackageOutputDestinationSettings]
+  type __listOfOffering                              = js.Array[Offering]
+  type __listOfOutput                                = js.Array[Output]
+  type __listOfOutputDestination                     = js.Array[OutputDestination]
+  type __listOfOutputDestinationSettings             = js.Array[OutputDestinationSettings]
+  type __listOfOutputGroup                           = js.Array[OutputGroup]
+  type __listOfPipelinePauseStateSettings            = js.Array[PipelinePauseStateSettings]
+  type __listOfReservation                           = js.Array[Reservation]
+  type __listOfScheduleAction                        = js.Array[ScheduleAction]
+  type __listOfScte35Descriptor                      = js.Array[Scte35Descriptor]
+  type __listOfVideoDescription                      = js.Array[VideoDescription]
+  type __listOf__string                              = js.Array[__string]
+  type __string                                      = String
+  type __stringMax32                                 = String
+  type __stringMin1                                  = String
+  type __stringMin1Max255                            = String
+  type __stringMin1Max256                            = String
+  type __stringMin32Max32                            = String
+  type __stringMin34Max34                            = String
+  type __stringMin3Max3                              = String
+  type __stringMin6Max6                              = String
 }
 
 package medialive {
@@ -285,11 +294,13 @@ package medialive {
     def createInput(params: CreateInputRequest): Request[CreateInputResponse]                         = js.native
     def createInputSecurityGroup(params: CreateInputSecurityGroupRequest): Request[CreateInputSecurityGroupResponse] =
       js.native
+    def createTags(params: CreateTagsRequest): Request[js.Object]                   = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse] = js.native
     def deleteInput(params: DeleteInputRequest): Request[DeleteInputResponse]       = js.native
     def deleteInputSecurityGroup(params: DeleteInputSecurityGroupRequest): Request[DeleteInputSecurityGroupResponse] =
       js.native
     def deleteReservation(params: DeleteReservationRequest): Request[DeleteReservationResponse] = js.native
+    def deleteTags(params: DeleteTagsRequest): Request[js.Object]                               = js.native
     def describeChannel(params: DescribeChannelRequest): Request[DescribeChannelResponse]       = js.native
     def describeInput(params: DescribeInputRequest): Request[DescribeInputResponse]             = js.native
     def describeInputSecurityGroup(
@@ -301,20 +312,22 @@ package medialive {
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
     def listInputSecurityGroups(params: ListInputSecurityGroupsRequest): Request[ListInputSecurityGroupsResponse] =
       js.native
-    def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                   = js.native
-    def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResponse]          = js.native
-    def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse] = js.native
-    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse] = js.native
-    def startChannel(params: StartChannelRequest): Request[StartChannelResponse]             = js.native
-    def stopChannel(params: StopChannelRequest): Request[StopChannelResponse]                = js.native
-    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]          = js.native
-    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                = js.native
+    def listInputs(params: ListInputsRequest): Request[ListInputsResponse]                            = js.native
+    def listOfferings(params: ListOfferingsRequest): Request[ListOfferingsResponse]                   = js.native
+    def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse]          = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse]          = js.native
+    def startChannel(params: StartChannelRequest): Request[StartChannelResponse]                      = js.native
+    def stopChannel(params: StopChannelRequest): Request[StopChannelResponse]                         = js.native
+    def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                   = js.native
+    def updateInput(params: UpdateInputRequest): Request[UpdateInputResponse]                         = js.native
     def updateInputSecurityGroup(params: UpdateInputSecurityGroupRequest): Request[UpdateInputSecurityGroupResponse] =
       js.native
+    def updateReservation(params: UpdateReservationRequest): Request[UpdateReservationResponse] = js.native
   }
 
   /**
-    * Placeholder documentation for AacCodingMode
+    * Aac Coding Mode
     */
   object AacCodingModeEnum {
     val AD_RECEIVER_MIX = "AD_RECEIVER_MIX"
@@ -327,7 +340,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AacInputType
+    * Aac Input Type
     */
   object AacInputTypeEnum {
     val BROADCASTER_MIXED_AD = "BROADCASTER_MIXED_AD"
@@ -337,7 +350,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AacProfile
+    * Aac Profile
     */
   object AacProfileEnum {
     val HEV1 = "HEV1"
@@ -348,7 +361,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AacRateControlMode
+    * Aac Rate Control Mode
     */
   object AacRateControlModeEnum {
     val CBR = "CBR"
@@ -358,7 +371,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AacRawFormat
+    * Aac Raw Format
     */
   object AacRawFormatEnum {
     val LATM_LOAS = "LATM_LOAS"
@@ -368,7 +381,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AacSettings
+    * Aac Settings
     */
   @js.native
   trait AacSettings extends js.Object {
@@ -384,15 +397,17 @@ package medialive {
   }
 
   object AacSettings {
-    def apply(Bitrate: js.UndefOr[__double] = js.undefined,
-              CodingMode: js.UndefOr[AacCodingMode] = js.undefined,
-              InputType: js.UndefOr[AacInputType] = js.undefined,
-              Profile: js.UndefOr[AacProfile] = js.undefined,
-              RateControlMode: js.UndefOr[AacRateControlMode] = js.undefined,
-              RawFormat: js.UndefOr[AacRawFormat] = js.undefined,
-              SampleRate: js.UndefOr[__double] = js.undefined,
-              Spec: js.UndefOr[AacSpec] = js.undefined,
-              VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined): AacSettings = {
+    def apply(
+        Bitrate: js.UndefOr[__double] = js.undefined,
+        CodingMode: js.UndefOr[AacCodingMode] = js.undefined,
+        InputType: js.UndefOr[AacInputType] = js.undefined,
+        Profile: js.UndefOr[AacProfile] = js.undefined,
+        RateControlMode: js.UndefOr[AacRateControlMode] = js.undefined,
+        RawFormat: js.UndefOr[AacRawFormat] = js.undefined,
+        SampleRate: js.UndefOr[__double] = js.undefined,
+        Spec: js.UndefOr[AacSpec] = js.undefined,
+        VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined
+    ): AacSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bitrate" -> Bitrate.map { x =>
           x.asInstanceOf[js.Any]
@@ -428,7 +443,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AacSpec
+    * Aac Spec
     */
   object AacSpecEnum {
     val MPEG2 = "MPEG2"
@@ -438,7 +453,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AacVbrQuality
+    * Aac Vbr Quality
     */
   object AacVbrQualityEnum {
     val HIGH        = "HIGH"
@@ -450,7 +465,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Ac3BitstreamMode
+    * Ac3 Bitstream Mode
     */
   object Ac3BitstreamModeEnum {
     val COMMENTARY        = "COMMENTARY"
@@ -475,7 +490,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Ac3CodingMode
+    * Ac3 Coding Mode
     */
   object Ac3CodingModeEnum {
     val CODING_MODE_1_0     = "CODING_MODE_1_0"
@@ -487,7 +502,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Ac3DrcProfile
+    * Ac3 Drc Profile
     */
   object Ac3DrcProfileEnum {
     val FILM_STANDARD = "FILM_STANDARD"
@@ -497,7 +512,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Ac3LfeFilter
+    * Ac3 Lfe Filter
     */
   object Ac3LfeFilterEnum {
     val DISABLED = "DISABLED"
@@ -507,7 +522,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Ac3MetadataControl
+    * Ac3 Metadata Control
     */
   object Ac3MetadataControlEnum {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
@@ -517,7 +532,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Ac3Settings
+    * Ac3 Settings
     */
   @js.native
   trait Ac3Settings extends js.Object {
@@ -531,13 +546,15 @@ package medialive {
   }
 
   object Ac3Settings {
-    def apply(Bitrate: js.UndefOr[__double] = js.undefined,
-              BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
-              CodingMode: js.UndefOr[Ac3CodingMode] = js.undefined,
-              Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
-              DrcProfile: js.UndefOr[Ac3DrcProfile] = js.undefined,
-              LfeFilter: js.UndefOr[Ac3LfeFilter] = js.undefined,
-              MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined): Ac3Settings = {
+    def apply(
+        Bitrate: js.UndefOr[__double] = js.undefined,
+        BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
+        CodingMode: js.UndefOr[Ac3CodingMode] = js.undefined,
+        Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
+        DrcProfile: js.UndefOr[Ac3DrcProfile] = js.undefined,
+        LfeFilter: js.UndefOr[Ac3LfeFilter] = js.undefined,
+        MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined
+    ): Ac3Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bitrate" -> Bitrate.map { x =>
           x.asInstanceOf[js.Any]
@@ -567,7 +584,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AfdSignaling
+    * Afd Signaling
     */
   object AfdSignalingEnum {
     val AUTO  = "AUTO"
@@ -578,7 +595,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for ArchiveContainerSettings
+    * Archive Container Settings
     */
   @js.native
   trait ArchiveContainerSettings extends js.Object {
@@ -586,17 +603,21 @@ package medialive {
   }
 
   object ArchiveContainerSettings {
-    def apply(M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined): ArchiveContainerSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("M2tsSettings" -> M2tsSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined
+    ): ArchiveContainerSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "M2tsSettings" -> M2tsSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArchiveContainerSettings]
     }
   }
 
   /**
-    * Placeholder documentation for ArchiveGroupSettings
+    * Archive Group Settings
     */
   @js.native
   trait ArchiveGroupSettings extends js.Object {
@@ -605,8 +626,10 @@ package medialive {
   }
 
   object ArchiveGroupSettings {
-    def apply(Destination: OutputLocationRef,
-              RolloverInterval: js.UndefOr[__integerMin1] = js.undefined): ArchiveGroupSettings = {
+    def apply(
+        Destination: OutputLocationRef,
+        RolloverInterval: js.UndefOr[__integerMin1] = js.undefined
+    ): ArchiveGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destination" -> Destination.asInstanceOf[js.Any],
         "RolloverInterval" -> RolloverInterval.map { x =>
@@ -619,7 +642,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for ArchiveOutputSettings
+    * Archive Output Settings
     */
   @js.native
   trait ArchiveOutputSettings extends js.Object {
@@ -629,9 +652,11 @@ package medialive {
   }
 
   object ArchiveOutputSettings {
-    def apply(ContainerSettings: ArchiveContainerSettings,
-              Extension: js.UndefOr[__string] = js.undefined,
-              NameModifier: js.UndefOr[__string] = js.undefined): ArchiveOutputSettings = {
+    def apply(
+        ContainerSettings: ArchiveContainerSettings,
+        Extension: js.UndefOr[__string] = js.undefined,
+        NameModifier: js.UndefOr[__string] = js.undefined
+    ): ArchiveOutputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContainerSettings" -> ContainerSettings.asInstanceOf[js.Any],
         "Extension" -> Extension.map { x =>
@@ -647,35 +672,39 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AribDestinationSettings
+    * Arib Destination Settings
     */
   @js.native
   trait AribDestinationSettings extends js.Object {}
 
   object AribDestinationSettings {
-    def apply(): AribDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AribDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AribDestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for AribSourceSettings
+    * Arib Source Settings
     */
   @js.native
   trait AribSourceSettings extends js.Object {}
 
   object AribSourceSettings {
-    def apply(): AribSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AribSourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AribSourceSettings]
     }
   }
 
   /**
-    * Placeholder documentation for AudioChannelMapping
+    * Audio Channel Mapping
     */
   @js.native
   trait AudioChannelMapping extends js.Object {
@@ -684,7 +713,10 @@ package medialive {
   }
 
   object AudioChannelMapping {
-    def apply(InputChannelLevels: __listOfInputChannelLevel, OutputChannel: __integerMin0Max7): AudioChannelMapping = {
+    def apply(
+        InputChannelLevels: __listOfInputChannelLevel,
+        OutputChannel: __integerMin0Max7
+    ): AudioChannelMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputChannelLevels" -> InputChannelLevels.asInstanceOf[js.Any],
         "OutputChannel"      -> OutputChannel.asInstanceOf[js.Any]
@@ -695,7 +727,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioCodecSettings
+    * Audio Codec Settings
     */
   @js.native
   trait AudioCodecSettings extends js.Object {
@@ -707,11 +739,13 @@ package medialive {
   }
 
   object AudioCodecSettings {
-    def apply(AacSettings: js.UndefOr[AacSettings] = js.undefined,
-              Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
-              Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
-              Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
-              PassThroughSettings: js.UndefOr[PassThroughSettings] = js.undefined): AudioCodecSettings = {
+    def apply(
+        AacSettings: js.UndefOr[AacSettings] = js.undefined,
+        Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
+        Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
+        Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
+        PassThroughSettings: js.UndefOr[PassThroughSettings] = js.undefined
+    ): AudioCodecSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AacSettings" -> AacSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -735,7 +769,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioDescription
+    * Audio Description
     */
   @js.native
   trait AudioDescription extends js.Object {
@@ -752,16 +786,18 @@ package medialive {
   }
 
   object AudioDescription {
-    def apply(AudioSelectorName: __string,
-              Name: __string,
-              AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
-              AudioType: js.UndefOr[AudioType] = js.undefined,
-              AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl] = js.undefined,
-              CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
-              LanguageCode: js.UndefOr[__stringMin3Max3] = js.undefined,
-              LanguageCodeControl: js.UndefOr[AudioDescriptionLanguageCodeControl] = js.undefined,
-              RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
-              StreamName: js.UndefOr[__string] = js.undefined): AudioDescription = {
+    def apply(
+        AudioSelectorName: __string,
+        Name: __string,
+        AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
+        AudioType: js.UndefOr[AudioType] = js.undefined,
+        AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl] = js.undefined,
+        CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
+        LanguageCode: js.UndefOr[__stringMin3Max3] = js.undefined,
+        LanguageCodeControl: js.UndefOr[AudioDescriptionLanguageCodeControl] = js.undefined,
+        RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
+        StreamName: js.UndefOr[__string] = js.undefined
+    ): AudioDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioSelectorName" -> AudioSelectorName.asInstanceOf[js.Any],
         "Name"              -> Name.asInstanceOf[js.Any],
@@ -796,7 +832,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioDescriptionAudioTypeControl
+    * Audio Description Audio Type Control
     */
   object AudioDescriptionAudioTypeControlEnum {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
@@ -806,7 +842,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioDescriptionLanguageCodeControl
+    * Audio Description Language Code Control
     */
   object AudioDescriptionLanguageCodeControlEnum {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
@@ -816,7 +852,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioLanguageSelection
+    * Audio Language Selection
     */
   @js.native
   trait AudioLanguageSelection extends js.Object {
@@ -841,7 +877,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioLanguageSelectionPolicy
+    * Audio Language Selection Policy
     */
   object AudioLanguageSelectionPolicyEnum {
     val LOOSE  = "LOOSE"
@@ -851,7 +887,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioNormalizationAlgorithm
+    * Audio Normalization Algorithm
     */
   object AudioNormalizationAlgorithmEnum {
     val ITU_1770_1 = "ITU_1770_1"
@@ -861,7 +897,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioNormalizationAlgorithmControl
+    * Audio Normalization Algorithm Control
     */
   object AudioNormalizationAlgorithmControlEnum {
     val CORRECT_AUDIO = "CORRECT_AUDIO"
@@ -870,7 +906,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioNormalizationSettings
+    * Audio Normalization Settings
     */
   @js.native
   trait AudioNormalizationSettings extends js.Object {
@@ -880,9 +916,11 @@ package medialive {
   }
 
   object AudioNormalizationSettings {
-    def apply(Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined,
-              AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
-              TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined): AudioNormalizationSettings = {
+    def apply(
+        Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined,
+        AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
+        TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined
+    ): AudioNormalizationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Algorithm" -> Algorithm.map { x =>
           x.asInstanceOf[js.Any]
@@ -900,7 +938,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioOnlyHlsSettings
+    * Audio Only Hls Settings
     */
   @js.native
   trait AudioOnlyHlsSettings extends js.Object {
@@ -910,9 +948,11 @@ package medialive {
   }
 
   object AudioOnlyHlsSettings {
-    def apply(AudioGroupId: js.UndefOr[__string] = js.undefined,
-              AudioOnlyImage: js.UndefOr[InputLocation] = js.undefined,
-              AudioTrackType: js.UndefOr[AudioOnlyHlsTrackType] = js.undefined): AudioOnlyHlsSettings = {
+    def apply(
+        AudioGroupId: js.UndefOr[__string] = js.undefined,
+        AudioOnlyImage: js.UndefOr[InputLocation] = js.undefined,
+        AudioTrackType: js.UndefOr[AudioOnlyHlsTrackType] = js.undefined
+    ): AudioOnlyHlsSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioGroupId" -> AudioGroupId.map { x =>
           x.asInstanceOf[js.Any]
@@ -930,7 +970,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioOnlyHlsTrackType
+    * Audio Only Hls Track Type
     */
   object AudioOnlyHlsTrackTypeEnum {
     val ALTERNATE_AUDIO_AUTO_SELECT         = "ALTERNATE_AUDIO_AUTO_SELECT"
@@ -947,7 +987,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AudioPidSelection
+    * Audio Pid Selection
     */
   @js.native
   trait AudioPidSelection extends js.Object {
@@ -955,16 +995,19 @@ package medialive {
   }
 
   object AudioPidSelection {
-    def apply(Pid: __integerMin0Max8191): AudioPidSelection = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Pid" -> Pid.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Pid: __integerMin0Max8191
+    ): AudioPidSelection = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pid" -> Pid.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioPidSelection]
     }
   }
 
   /**
-    * Placeholder documentation for AudioSelector
+    * Audio Selector
     */
   @js.native
   trait AudioSelector extends js.Object {
@@ -973,19 +1016,23 @@ package medialive {
   }
 
   object AudioSelector {
-    def apply(Name: __stringMin1, SelectorSettings: js.UndefOr[AudioSelectorSettings] = js.undefined): AudioSelector = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "SelectorSettings" -> SelectorSettings.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: __stringMin1,
+        SelectorSettings: js.UndefOr[AudioSelectorSettings] = js.undefined
+    ): AudioSelector = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SelectorSettings" -> SelectorSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioSelector]
     }
   }
 
   /**
-    * Placeholder documentation for AudioSelectorSettings
+    * Audio Selector Settings
     */
   @js.native
   trait AudioSelectorSettings extends js.Object {
@@ -994,20 +1041,25 @@ package medialive {
   }
 
   object AudioSelectorSettings {
-    def apply(AudioLanguageSelection: js.UndefOr[AudioLanguageSelection] = js.undefined,
-              AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined): AudioSelectorSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("AudioLanguageSelection" -> AudioLanguageSelection.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AudioPidSelection" -> AudioPidSelection.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AudioLanguageSelection: js.UndefOr[AudioLanguageSelection] = js.undefined,
+        AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined
+    ): AudioSelectorSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AudioLanguageSelection" -> AudioLanguageSelection.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AudioPidSelection" -> AudioPidSelection.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioSelectorSettings]
     }
   }
 
   /**
-    * Placeholder documentation for AudioType
+    * Audio Type
     */
   object AudioTypeEnum {
     val CLEAN_EFFECTS              = "CLEAN_EFFECTS"
@@ -1019,7 +1071,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AuthenticationScheme
+    * Authentication Scheme
     */
   object AuthenticationSchemeEnum {
     val AKAMAI = "AKAMAI"
@@ -1029,7 +1081,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AvailBlanking
+    * Avail Blanking
     */
   @js.native
   trait AvailBlanking extends js.Object {
@@ -1038,20 +1090,25 @@ package medialive {
   }
 
   object AvailBlanking {
-    def apply(AvailBlankingImage: js.UndefOr[InputLocation] = js.undefined,
-              State: js.UndefOr[AvailBlankingState] = js.undefined): AvailBlanking = {
-      val _fields = IndexedSeq[(String, js.Any)]("AvailBlankingImage" -> AvailBlankingImage.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "State" -> State.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AvailBlankingImage: js.UndefOr[InputLocation] = js.undefined,
+        State: js.UndefOr[AvailBlankingState] = js.undefined
+    ): AvailBlanking = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AvailBlankingImage" -> AvailBlankingImage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailBlanking]
     }
   }
 
   /**
-    * Placeholder documentation for AvailBlankingState
+    * Avail Blanking State
     */
   object AvailBlankingStateEnum {
     val DISABLED = "DISABLED"
@@ -1061,7 +1118,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for AvailConfiguration
+    * Avail Configuration
     */
   @js.native
   trait AvailConfiguration extends js.Object {
@@ -1069,17 +1126,21 @@ package medialive {
   }
 
   object AvailConfiguration {
-    def apply(AvailSettings: js.UndefOr[AvailSettings] = js.undefined): AvailConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("AvailSettings" -> AvailSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AvailSettings: js.UndefOr[AvailSettings] = js.undefined
+    ): AvailConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AvailSettings" -> AvailSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailConfiguration]
     }
   }
 
   /**
-    * Placeholder documentation for AvailSettings
+    * Avail Settings
     */
   @js.native
   trait AvailSettings extends js.Object {
@@ -1088,13 +1149,18 @@ package medialive {
   }
 
   object AvailSettings {
-    def apply(Scte35SpliceInsert: js.UndefOr[Scte35SpliceInsert] = js.undefined,
-              Scte35TimeSignalApos: js.UndefOr[Scte35TimeSignalApos] = js.undefined): AvailSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Scte35SpliceInsert" -> Scte35SpliceInsert.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Scte35TimeSignalApos" -> Scte35TimeSignalApos.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Scte35SpliceInsert: js.UndefOr[Scte35SpliceInsert] = js.undefined,
+        Scte35TimeSignalApos: js.UndefOr[Scte35TimeSignalApos] = js.undefined
+    ): AvailSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Scte35SpliceInsert" -> Scte35SpliceInsert.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Scte35TimeSignalApos" -> Scte35TimeSignalApos.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailSettings]
     }
@@ -1109,9 +1175,12 @@ package medialive {
   }
 
   object BatchScheduleActionCreateRequest {
-    def apply(ScheduleActions: __listOfScheduleAction): BatchScheduleActionCreateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ScheduleActions: __listOfScheduleAction
+    ): BatchScheduleActionCreateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionCreateRequest]
     }
@@ -1126,9 +1195,12 @@ package medialive {
   }
 
   object BatchScheduleActionCreateResult {
-    def apply(ScheduleActions: __listOfScheduleAction): BatchScheduleActionCreateResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ScheduleActions: __listOfScheduleAction
+    ): BatchScheduleActionCreateResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionCreateResult]
     }
@@ -1143,9 +1215,12 @@ package medialive {
   }
 
   object BatchScheduleActionDeleteRequest {
-    def apply(ActionNames: __listOf__string): BatchScheduleActionDeleteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ActionNames" -> ActionNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ActionNames: __listOf__string
+    ): BatchScheduleActionDeleteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActionNames" -> ActionNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionDeleteRequest]
     }
@@ -1160,9 +1235,12 @@ package medialive {
   }
 
   object BatchScheduleActionDeleteResult {
-    def apply(ScheduleActions: __listOfScheduleAction): BatchScheduleActionDeleteResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ScheduleActions: __listOfScheduleAction
+    ): BatchScheduleActionDeleteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ScheduleActions" -> ScheduleActions.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchScheduleActionDeleteResult]
     }
@@ -1179,15 +1257,20 @@ package medialive {
   }
 
   object BatchUpdateScheduleRequest {
-    def apply(ChannelId: __string,
-              Creates: js.UndefOr[BatchScheduleActionCreateRequest] = js.undefined,
-              Deletes: js.UndefOr[BatchScheduleActionDeleteRequest] = js.undefined): BatchUpdateScheduleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ChannelId" -> ChannelId.asInstanceOf[js.Any], "Creates" -> Creates.map { x =>
+    def apply(
+        ChannelId: __string,
+        Creates: js.UndefOr[BatchScheduleActionCreateRequest] = js.undefined,
+        Deletes: js.UndefOr[BatchScheduleActionDeleteRequest] = js.undefined
+    ): BatchUpdateScheduleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any],
+        "Creates" -> Creates.map { x =>
           x.asInstanceOf[js.Any]
-        }, "Deletes" -> Deletes.map { x =>
+        },
+        "Deletes" -> Deletes.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateScheduleRequest]
     }
@@ -1203,20 +1286,25 @@ package medialive {
   }
 
   object BatchUpdateScheduleResponse {
-    def apply(Creates: js.UndefOr[BatchScheduleActionCreateResult] = js.undefined,
-              Deletes: js.UndefOr[BatchScheduleActionDeleteResult] = js.undefined): BatchUpdateScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Creates" -> Creates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Deletes" -> Deletes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Creates: js.UndefOr[BatchScheduleActionCreateResult] = js.undefined,
+        Deletes: js.UndefOr[BatchScheduleActionDeleteResult] = js.undefined
+    ): BatchUpdateScheduleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Creates" -> Creates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Deletes" -> Deletes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchUpdateScheduleResponse]
     }
   }
 
   /**
-    * Placeholder documentation for BlackoutSlate
+    * Blackout Slate
     */
   @js.native
   trait BlackoutSlate extends js.Object {
@@ -1228,11 +1316,13 @@ package medialive {
   }
 
   object BlackoutSlate {
-    def apply(BlackoutSlateImage: js.UndefOr[InputLocation] = js.undefined,
-              NetworkEndBlackout: js.UndefOr[BlackoutSlateNetworkEndBlackout] = js.undefined,
-              NetworkEndBlackoutImage: js.UndefOr[InputLocation] = js.undefined,
-              NetworkId: js.UndefOr[__stringMin34Max34] = js.undefined,
-              State: js.UndefOr[BlackoutSlateState] = js.undefined): BlackoutSlate = {
+    def apply(
+        BlackoutSlateImage: js.UndefOr[InputLocation] = js.undefined,
+        NetworkEndBlackout: js.UndefOr[BlackoutSlateNetworkEndBlackout] = js.undefined,
+        NetworkEndBlackoutImage: js.UndefOr[InputLocation] = js.undefined,
+        NetworkId: js.UndefOr[__stringMin34Max34] = js.undefined,
+        State: js.UndefOr[BlackoutSlateState] = js.undefined
+    ): BlackoutSlate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BlackoutSlateImage" -> BlackoutSlateImage.map { x =>
           x.asInstanceOf[js.Any]
@@ -1256,7 +1346,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BlackoutSlateNetworkEndBlackout
+    * Blackout Slate Network End Blackout
     */
   object BlackoutSlateNetworkEndBlackoutEnum {
     val DISABLED = "DISABLED"
@@ -1266,7 +1356,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BlackoutSlateState
+    * Blackout Slate State
     */
   object BlackoutSlateStateEnum {
     val DISABLED = "DISABLED"
@@ -1276,7 +1366,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BurnInAlignment
+    * Burn In Alignment
     */
   object BurnInAlignmentEnum {
     val CENTERED = "CENTERED"
@@ -1287,7 +1377,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BurnInBackgroundColor
+    * Burn In Background Color
     */
   object BurnInBackgroundColorEnum {
     val BLACK = "BLACK"
@@ -1298,7 +1388,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BurnInDestinationSettings
+    * Burn In Destination Settings
     */
   @js.native
   trait BurnInDestinationSettings extends js.Object {
@@ -1322,23 +1412,25 @@ package medialive {
   }
 
   object BurnInDestinationSettings {
-    def apply(Alignment: js.UndefOr[BurnInAlignment] = js.undefined,
-              BackgroundColor: js.UndefOr[BurnInBackgroundColor] = js.undefined,
-              BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              Font: js.UndefOr[InputLocation] = js.undefined,
-              FontColor: js.UndefOr[BurnInFontColor] = js.undefined,
-              FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
-              FontSize: js.UndefOr[__string] = js.undefined,
-              OutlineColor: js.UndefOr[BurnInOutlineColor] = js.undefined,
-              OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
-              ShadowColor: js.UndefOr[BurnInShadowColor] = js.undefined,
-              ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              ShadowXOffset: js.UndefOr[__integer] = js.undefined,
-              ShadowYOffset: js.UndefOr[__integer] = js.undefined,
-              TeletextGridControl: js.UndefOr[BurnInTeletextGridControl] = js.undefined,
-              XPosition: js.UndefOr[__integerMin0] = js.undefined,
-              YPosition: js.UndefOr[__integerMin0] = js.undefined): BurnInDestinationSettings = {
+    def apply(
+        Alignment: js.UndefOr[BurnInAlignment] = js.undefined,
+        BackgroundColor: js.UndefOr[BurnInBackgroundColor] = js.undefined,
+        BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        Font: js.UndefOr[InputLocation] = js.undefined,
+        FontColor: js.UndefOr[BurnInFontColor] = js.undefined,
+        FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+        FontSize: js.UndefOr[__string] = js.undefined,
+        OutlineColor: js.UndefOr[BurnInOutlineColor] = js.undefined,
+        OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
+        ShadowColor: js.UndefOr[BurnInShadowColor] = js.undefined,
+        ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        ShadowXOffset: js.UndefOr[__integer] = js.undefined,
+        ShadowYOffset: js.UndefOr[__integer] = js.undefined,
+        TeletextGridControl: js.UndefOr[BurnInTeletextGridControl] = js.undefined,
+        XPosition: js.UndefOr[__integerMin0] = js.undefined,
+        YPosition: js.UndefOr[__integerMin0] = js.undefined
+    ): BurnInDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Alignment" -> Alignment.map { x =>
           x.asInstanceOf[js.Any]
@@ -1398,7 +1490,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BurnInFontColor
+    * Burn In Font Color
     */
   object BurnInFontColorEnum {
     val BLACK  = "BLACK"
@@ -1412,7 +1504,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BurnInOutlineColor
+    * Burn In Outline Color
     */
   object BurnInOutlineColorEnum {
     val BLACK  = "BLACK"
@@ -1426,7 +1518,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BurnInShadowColor
+    * Burn In Shadow Color
     */
   object BurnInShadowColorEnum {
     val BLACK = "BLACK"
@@ -1437,7 +1529,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for BurnInTeletextGridControl
+    * Burn In Teletext Grid Control
     */
   object BurnInTeletextGridControlEnum {
     val FIXED  = "FIXED"
@@ -1459,11 +1551,13 @@ package medialive {
   }
 
   object CaptionDescription {
-    def apply(CaptionSelectorName: __string,
-              Name: __string,
-              DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
-              LanguageCode: js.UndefOr[__string] = js.undefined,
-              LanguageDescription: js.UndefOr[__string] = js.undefined): CaptionDescription = {
+    def apply(
+        CaptionSelectorName: __string,
+        Name: __string,
+        DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
+        LanguageCode: js.UndefOr[__string] = js.undefined,
+        LanguageDescription: js.UndefOr[__string] = js.undefined
+    ): CaptionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CaptionSelectorName" -> CaptionSelectorName.asInstanceOf[js.Any],
         "Name"                -> Name.asInstanceOf[js.Any],
@@ -1483,7 +1577,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for CaptionDestinationSettings
+    * Caption Destination Settings
     */
   @js.native
   trait CaptionDestinationSettings extends js.Object {
@@ -1570,9 +1664,11 @@ package medialive {
   }
 
   object CaptionLanguageMapping {
-    def apply(CaptionChannel: __integerMin1Max4,
-              LanguageCode: __stringMin3Max3,
-              LanguageDescription: __stringMin1): CaptionLanguageMapping = {
+    def apply(
+        CaptionChannel: __integerMin1Max4,
+        LanguageCode: __stringMin3Max3,
+        LanguageDescription: __stringMin1
+    ): CaptionLanguageMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CaptionChannel"      -> CaptionChannel.asInstanceOf[js.Any],
         "LanguageCode"        -> LanguageCode.asInstanceOf[js.Any],
@@ -1594,9 +1690,11 @@ package medialive {
   }
 
   object CaptionSelector {
-    def apply(Name: __stringMin1,
-              LanguageCode: js.UndefOr[__string] = js.undefined,
-              SelectorSettings: js.UndefOr[CaptionSelectorSettings] = js.undefined): CaptionSelector = {
+    def apply(
+        Name: __stringMin1,
+        LanguageCode: js.UndefOr[__string] = js.undefined,
+        SelectorSettings: js.UndefOr[CaptionSelectorSettings] = js.undefined
+    ): CaptionSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "LanguageCode" -> LanguageCode.map { x =>
@@ -1612,7 +1710,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for CaptionSelectorSettings
+    * Caption Selector Settings
     */
   @js.native
   trait CaptionSelectorSettings extends js.Object {
@@ -1625,12 +1723,14 @@ package medialive {
   }
 
   object CaptionSelectorSettings {
-    def apply(AribSourceSettings: js.UndefOr[AribSourceSettings] = js.undefined,
-              DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings] = js.undefined,
-              EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings] = js.undefined,
-              Scte20SourceSettings: js.UndefOr[Scte20SourceSettings] = js.undefined,
-              Scte27SourceSettings: js.UndefOr[Scte27SourceSettings] = js.undefined,
-              TeletextSourceSettings: js.UndefOr[TeletextSourceSettings] = js.undefined): CaptionSelectorSettings = {
+    def apply(
+        AribSourceSettings: js.UndefOr[AribSourceSettings] = js.undefined,
+        DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings] = js.undefined,
+        EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings] = js.undefined,
+        Scte20SourceSettings: js.UndefOr[Scte20SourceSettings] = js.undefined,
+        Scte27SourceSettings: js.UndefOr[Scte27SourceSettings] = js.undefined,
+        TeletextSourceSettings: js.UndefOr[TeletextSourceSettings] = js.undefined
+    ): CaptionSelectorSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AribSourceSettings" -> AribSourceSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -1662,6 +1762,7 @@ package medialive {
   @js.native
   trait Channel extends js.Object {
     var Arn: js.UndefOr[__string]
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Destinations: js.UndefOr[__listOfOutputDestination]
     var EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint]
     var EncoderSettings: js.UndefOr[EncoderSettings]
@@ -1673,23 +1774,31 @@ package medialive {
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
+    var Tags: js.UndefOr[Tags]
   }
 
   object Channel {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
-              EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ChannelState] = js.undefined): Channel = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
+        EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ChannelState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): Channel = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelClass" -> ChannelClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destinations" -> Destinations.map { x =>
@@ -1724,11 +1833,24 @@ package medialive {
         },
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Channel]
     }
+  }
+
+  /**
+    * A standard channel has two encoding pipelines and a single pipeline channel only has one.
+    */
+  object ChannelClassEnum {
+    val STANDARD        = "STANDARD"
+    val SINGLE_PIPELINE = "SINGLE_PIPELINE"
+
+    val values = IndexedSeq(STANDARD, SINGLE_PIPELINE)
   }
 
   /**
@@ -1740,10 +1862,14 @@ package medialive {
   }
 
   object ChannelEgressEndpoint {
-    def apply(SourceIp: js.UndefOr[__string] = js.undefined): ChannelEgressEndpoint = {
-      val _fields = IndexedSeq[(String, js.Any)]("SourceIp" -> SourceIp.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SourceIp: js.UndefOr[__string] = js.undefined
+    ): ChannelEgressEndpoint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceIp" -> SourceIp.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelEgressEndpoint]
     }
@@ -1772,6 +1898,7 @@ package medialive {
   @js.native
   trait ChannelSummary extends js.Object {
     var Arn: js.UndefOr[__string]
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Destinations: js.UndefOr[__listOfOutputDestination]
     var EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint]
     var Id: js.UndefOr[__string]
@@ -1782,22 +1909,30 @@ package medialive {
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
+    var Tags: js.UndefOr[Tags]
   }
 
   object ChannelSummary {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ChannelState] = js.undefined): ChannelSummary = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ChannelState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ChannelSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelClass" -> ChannelClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destinations" -> Destinations.map { x =>
@@ -1829,6 +1964,9 @@ package medialive {
         },
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -1841,6 +1979,7 @@ package medialive {
     */
   @js.native
   trait CreateChannelRequest extends js.Object {
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Destinations: js.UndefOr[__listOfOutputDestination]
     var EncoderSettings: js.UndefOr[EncoderSettings]
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
@@ -1850,19 +1989,27 @@ package medialive {
     var RequestId: js.UndefOr[__string]
     var Reserved: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateChannelRequest {
-    def apply(Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              RequestId: js.UndefOr[__string] = js.undefined,
-              Reserved: js.UndefOr[__string] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined): CreateChannelRequest = {
+    def apply(
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RequestId: js.UndefOr[__string] = js.undefined,
+        Reserved: js.UndefOr[__string] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelClass" -> ChannelClass.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Destinations" -> Destinations.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -1889,6 +2036,9 @@ package medialive {
         },
         "RoleArn" -> RoleArn.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -1905,10 +2055,14 @@ package medialive {
   }
 
   object CreateChannelResponse {
-    def apply(Channel: js.UndefOr[Channel] = js.undefined): CreateChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Channel" -> Channel.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Channel: js.UndefOr[Channel] = js.undefined
+    ): CreateChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Channel" -> Channel.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateChannelResponse]
     }
@@ -1926,18 +2080,24 @@ package medialive {
     var RequestId: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
     var Sources: js.UndefOr[__listOfInputSourceRequest]
+    var Tags: js.UndefOr[Tags]
     var Type: js.UndefOr[InputType]
+    var Vpc: js.UndefOr[InputVpcRequest]
   }
 
   object CreateInputRequest {
-    def apply(Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
-              InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
-              MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              RequestId: js.UndefOr[__string] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              Sources: js.UndefOr[__listOfInputSourceRequest] = js.undefined,
-              Type: js.UndefOr[InputType] = js.undefined): CreateInputRequest = {
+    def apply(
+        Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
+        InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+        MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RequestId: js.UndefOr[__string] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        Sources: js.UndefOr[__listOfInputSourceRequest] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        Type: js.UndefOr[InputType] = js.undefined,
+        Vpc: js.UndefOr[InputVpcRequest] = js.undefined
+    ): CreateInputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destinations" -> Destinations.map { x =>
           x.asInstanceOf[js.Any]
@@ -1960,7 +2120,13 @@ package medialive {
         "Sources" -> Sources.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Vpc" -> Vpc.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1978,10 +2144,14 @@ package medialive {
   }
 
   object CreateInputResponse {
-    def apply(Input: js.UndefOr[Input] = js.undefined): CreateInputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Input" -> Input.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Input: js.UndefOr[Input] = js.undefined
+    ): CreateInputResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Input" -> Input.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInputResponse]
     }
@@ -1992,16 +2162,23 @@ package medialive {
     */
   @js.native
   trait CreateInputSecurityGroupRequest extends js.Object {
+    var Tags: js.UndefOr[Tags]
     var WhitelistRules: js.UndefOr[__listOfInputWhitelistRuleCidr]
   }
 
   object CreateInputSecurityGroupRequest {
     def apply(
+        Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRuleCidr] = js.undefined
     ): CreateInputSecurityGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("WhitelistRules" -> WhitelistRules.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WhitelistRules" -> WhitelistRules.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInputSecurityGroupRequest]
     }
@@ -2016,12 +2193,41 @@ package medialive {
   }
 
   object CreateInputSecurityGroupResponse {
-    def apply(SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined): CreateInputSecurityGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SecurityGroup" -> SecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined
+    ): CreateInputSecurityGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SecurityGroup" -> SecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInputSecurityGroupResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for CreateTagsRequest
+    */
+  @js.native
+  trait CreateTagsRequest extends js.Object {
+    var ResourceArn: __string
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateTagsRequest {
+    def apply(
+        ResourceArn: __string,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateTagsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagsRequest]
     }
   }
 
@@ -2034,9 +2240,12 @@ package medialive {
   }
 
   object DeleteChannelRequest {
-    def apply(ChannelId: __string): DeleteChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChannelId" -> ChannelId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChannelId: __string
+    ): DeleteChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteChannelRequest]
     }
@@ -2048,6 +2257,7 @@ package medialive {
   @js.native
   trait DeleteChannelResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Destinations: js.UndefOr[__listOfOutputDestination]
     var EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint]
     var EncoderSettings: js.UndefOr[EncoderSettings]
@@ -2059,23 +2269,31 @@ package medialive {
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
+    var Tags: js.UndefOr[Tags]
   }
 
   object DeleteChannelResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
-              EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ChannelState] = js.undefined): DeleteChannelResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
+        EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ChannelState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): DeleteChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelClass" -> ChannelClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destinations" -> Destinations.map { x =>
@@ -2110,6 +2328,9 @@ package medialive {
         },
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -2126,9 +2347,12 @@ package medialive {
   }
 
   object DeleteInputRequest {
-    def apply(InputId: __string): DeleteInputRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("InputId" -> InputId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InputId: __string
+    ): DeleteInputRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InputId" -> InputId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputRequest]
     }
@@ -2141,8 +2365,10 @@ package medialive {
   trait DeleteInputResponse extends js.Object {}
 
   object DeleteInputResponse {
-    def apply(): DeleteInputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteInputResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputResponse]
     }
@@ -2157,9 +2383,12 @@ package medialive {
   }
 
   object DeleteInputSecurityGroupRequest {
-    def apply(InputSecurityGroupId: __string): DeleteInputSecurityGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InputSecurityGroupId: __string
+    ): DeleteInputSecurityGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputSecurityGroupRequest]
     }
@@ -2172,8 +2401,10 @@ package medialive {
   trait DeleteInputSecurityGroupResponse extends js.Object {}
 
   object DeleteInputSecurityGroupResponse {
-    def apply(): DeleteInputSecurityGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteInputSecurityGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInputSecurityGroupResponse]
     }
@@ -2188,9 +2419,12 @@ package medialive {
   }
 
   object DeleteReservationRequest {
-    def apply(ReservationId: __string): DeleteReservationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ReservationId" -> ReservationId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ReservationId: __string
+    ): DeleteReservationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReservationId" -> ReservationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReservationRequest]
     }
@@ -2217,27 +2451,31 @@ package medialive {
     var ResourceSpecification: js.UndefOr[ReservationResourceSpecification]
     var Start: js.UndefOr[__string]
     var State: js.UndefOr[ReservationState]
+    var Tags: js.UndefOr[Tags]
     var UsagePrice: js.UndefOr[__double]
   }
 
   object DeleteReservationResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Count: js.UndefOr[__integer] = js.undefined,
-              CurrencyCode: js.UndefOr[__string] = js.undefined,
-              Duration: js.UndefOr[__integer] = js.undefined,
-              DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
-              End: js.UndefOr[__string] = js.undefined,
-              FixedPrice: js.UndefOr[__double] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              OfferingDescription: js.UndefOr[__string] = js.undefined,
-              OfferingId: js.UndefOr[__string] = js.undefined,
-              OfferingType: js.UndefOr[OfferingType] = js.undefined,
-              Region: js.UndefOr[__string] = js.undefined,
-              ReservationId: js.UndefOr[__string] = js.undefined,
-              ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
-              Start: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ReservationState] = js.undefined,
-              UsagePrice: js.UndefOr[__double] = js.undefined): DeleteReservationResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Count: js.UndefOr[__integer] = js.undefined,
+        CurrencyCode: js.UndefOr[__string] = js.undefined,
+        Duration: js.UndefOr[__integer] = js.undefined,
+        DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
+        End: js.UndefOr[__string] = js.undefined,
+        FixedPrice: js.UndefOr[__double] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        OfferingDescription: js.UndefOr[__string] = js.undefined,
+        OfferingId: js.UndefOr[__string] = js.undefined,
+        OfferingType: js.UndefOr[OfferingType] = js.undefined,
+        Region: js.UndefOr[__string] = js.undefined,
+        ReservationId: js.UndefOr[__string] = js.undefined,
+        ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
+        Start: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ReservationState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        UsagePrice: js.UndefOr[__double] = js.undefined
+    ): DeleteReservationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2287,12 +2525,38 @@ package medialive {
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "UsagePrice" -> UsagePrice.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReservationResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for DeleteTagsRequest
+    */
+  @js.native
+  trait DeleteTagsRequest extends js.Object {
+    var ResourceArn: __string
+    var TagKeys: __listOf__string
+  }
+
+  object DeleteTagsRequest {
+    def apply(
+        ResourceArn: __string,
+        TagKeys: __listOf__string
+    ): DeleteTagsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsRequest]
     }
   }
 
@@ -2305,9 +2569,12 @@ package medialive {
   }
 
   object DescribeChannelRequest {
-    def apply(ChannelId: __string): DescribeChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChannelId" -> ChannelId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChannelId: __string
+    ): DescribeChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChannelRequest]
     }
@@ -2319,6 +2586,7 @@ package medialive {
   @js.native
   trait DescribeChannelResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Destinations: js.UndefOr[__listOfOutputDestination]
     var EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint]
     var EncoderSettings: js.UndefOr[EncoderSettings]
@@ -2330,23 +2598,31 @@ package medialive {
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
+    var Tags: js.UndefOr[Tags]
   }
 
   object DescribeChannelResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
-              EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ChannelState] = js.undefined): DescribeChannelResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
+        EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ChannelState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): DescribeChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelClass" -> ChannelClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destinations" -> Destinations.map { x =>
@@ -2381,6 +2657,9 @@ package medialive {
         },
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -2397,9 +2676,12 @@ package medialive {
   }
 
   object DescribeInputRequest {
-    def apply(InputId: __string): DescribeInputRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("InputId" -> InputId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InputId: __string
+    ): DescribeInputRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InputId" -> InputId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInputRequest]
     }
@@ -2414,27 +2696,33 @@ package medialive {
     var AttachedChannels: js.UndefOr[__listOf__string]
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
+    var InputClass: js.UndefOr[InputClass]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
     var SecurityGroups: js.UndefOr[__listOf__string]
     var Sources: js.UndefOr[__listOfInputSource]
     var State: js.UndefOr[InputState]
+    var Tags: js.UndefOr[Tags]
     var Type: js.UndefOr[InputType]
   }
 
   object DescribeInputResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
-              Sources: js.UndefOr[__listOfInputSource] = js.undefined,
-              State: js.UndefOr[InputState] = js.undefined,
-              Type: js.UndefOr[InputType] = js.undefined): DescribeInputResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
+        Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputClass: js.UndefOr[InputClass] = js.undefined,
+        MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+        Sources: js.UndefOr[__listOfInputSource] = js.undefined,
+        State: js.UndefOr[InputState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        Type: js.UndefOr[InputType] = js.undefined
+    ): DescribeInputResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2446,6 +2734,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputClass" -> InputClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "MediaConnectFlows" -> MediaConnectFlows.map { x =>
@@ -2466,6 +2757,9 @@ package medialive {
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Type" -> Type.map { x =>
           x.asInstanceOf[js.Any]
         }
@@ -2484,9 +2778,12 @@ package medialive {
   }
 
   object DescribeInputSecurityGroupRequest {
-    def apply(InputSecurityGroupId: __string): DescribeInputSecurityGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InputSecurityGroupId: __string
+    ): DescribeInputSecurityGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInputSecurityGroupRequest]
     }
@@ -2501,6 +2798,7 @@ package medialive {
     var Id: js.UndefOr[__string]
     var Inputs: js.UndefOr[__listOf__string]
     var State: js.UndefOr[InputSecurityGroupState]
+    var Tags: js.UndefOr[Tags]
     var WhitelistRules: js.UndefOr[__listOfInputWhitelistRule]
   }
 
@@ -2510,6 +2808,7 @@ package medialive {
         Id: js.UndefOr[__string] = js.undefined,
         Inputs: js.UndefOr[__listOf__string] = js.undefined,
         State: js.UndefOr[InputSecurityGroupState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRule] = js.undefined
     ): DescribeInputSecurityGroupResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2523,6 +2822,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "WhitelistRules" -> WhitelistRules.map { x =>
@@ -2543,9 +2845,12 @@ package medialive {
   }
 
   object DescribeOfferingRequest {
-    def apply(OfferingId: __string): DescribeOfferingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("OfferingId" -> OfferingId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OfferingId: __string
+    ): DescribeOfferingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OfferingId" -> OfferingId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeOfferingRequest]
     }
@@ -2570,17 +2875,19 @@ package medialive {
   }
 
   object DescribeOfferingResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              CurrencyCode: js.UndefOr[__string] = js.undefined,
-              Duration: js.UndefOr[__integer] = js.undefined,
-              DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
-              FixedPrice: js.UndefOr[__double] = js.undefined,
-              OfferingDescription: js.UndefOr[__string] = js.undefined,
-              OfferingId: js.UndefOr[__string] = js.undefined,
-              OfferingType: js.UndefOr[OfferingType] = js.undefined,
-              Region: js.UndefOr[__string] = js.undefined,
-              ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
-              UsagePrice: js.UndefOr[__double] = js.undefined): DescribeOfferingResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        CurrencyCode: js.UndefOr[__string] = js.undefined,
+        Duration: js.UndefOr[__integer] = js.undefined,
+        DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
+        FixedPrice: js.UndefOr[__double] = js.undefined,
+        OfferingDescription: js.UndefOr[__string] = js.undefined,
+        OfferingId: js.UndefOr[__string] = js.undefined,
+        OfferingType: js.UndefOr[OfferingType] = js.undefined,
+        Region: js.UndefOr[__string] = js.undefined,
+        ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
+        UsagePrice: js.UndefOr[__double] = js.undefined
+    ): DescribeOfferingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2630,9 +2937,12 @@ package medialive {
   }
 
   object DescribeReservationRequest {
-    def apply(ReservationId: __string): DescribeReservationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ReservationId" -> ReservationId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ReservationId: __string
+    ): DescribeReservationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReservationId" -> ReservationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReservationRequest]
     }
@@ -2659,27 +2969,31 @@ package medialive {
     var ResourceSpecification: js.UndefOr[ReservationResourceSpecification]
     var Start: js.UndefOr[__string]
     var State: js.UndefOr[ReservationState]
+    var Tags: js.UndefOr[Tags]
     var UsagePrice: js.UndefOr[__double]
   }
 
   object DescribeReservationResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Count: js.UndefOr[__integer] = js.undefined,
-              CurrencyCode: js.UndefOr[__string] = js.undefined,
-              Duration: js.UndefOr[__integer] = js.undefined,
-              DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
-              End: js.UndefOr[__string] = js.undefined,
-              FixedPrice: js.UndefOr[__double] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              OfferingDescription: js.UndefOr[__string] = js.undefined,
-              OfferingId: js.UndefOr[__string] = js.undefined,
-              OfferingType: js.UndefOr[OfferingType] = js.undefined,
-              Region: js.UndefOr[__string] = js.undefined,
-              ReservationId: js.UndefOr[__string] = js.undefined,
-              ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
-              Start: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ReservationState] = js.undefined,
-              UsagePrice: js.UndefOr[__double] = js.undefined): DescribeReservationResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Count: js.UndefOr[__integer] = js.undefined,
+        CurrencyCode: js.UndefOr[__string] = js.undefined,
+        Duration: js.UndefOr[__integer] = js.undefined,
+        DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
+        End: js.UndefOr[__string] = js.undefined,
+        FixedPrice: js.UndefOr[__double] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        OfferingDescription: js.UndefOr[__string] = js.undefined,
+        OfferingId: js.UndefOr[__string] = js.undefined,
+        OfferingType: js.UndefOr[OfferingType] = js.undefined,
+        Region: js.UndefOr[__string] = js.undefined,
+        ReservationId: js.UndefOr[__string] = js.undefined,
+        ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
+        Start: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ReservationState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        UsagePrice: js.UndefOr[__double] = js.undefined
+    ): DescribeReservationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2729,6 +3043,9 @@ package medialive {
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "UsagePrice" -> UsagePrice.map { x =>
           x.asInstanceOf[js.Any]
         }
@@ -2749,9 +3066,11 @@ package medialive {
   }
 
   object DescribeScheduleRequest {
-    def apply(ChannelId: __string,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): DescribeScheduleRequest = {
+    def apply(
+        ChannelId: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): DescribeScheduleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChannelId" -> ChannelId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -2776,13 +3095,18 @@ package medialive {
   }
 
   object DescribeScheduleResponse {
-    def apply(NextToken: js.UndefOr[__string] = js.undefined,
-              ScheduleActions: js.UndefOr[__listOfScheduleAction] = js.undefined): DescribeScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ScheduleActions" -> ScheduleActions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        ScheduleActions: js.UndefOr[__listOfScheduleAction] = js.undefined
+    ): DescribeScheduleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduleActions" -> ScheduleActions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScheduleResponse]
     }
@@ -2799,9 +3123,11 @@ package medialive {
   }
 
   object DvbNitSettings {
-    def apply(NetworkId: __integerMin0Max65536,
-              NetworkName: __stringMin1Max256,
-              RepInterval: js.UndefOr[__integerMin25Max10000] = js.undefined): DvbNitSettings = {
+    def apply(
+        NetworkId: __integerMin0Max65536,
+        NetworkName: __stringMin1Max256,
+        RepInterval: js.UndefOr[__integerMin25Max10000] = js.undefined
+    ): DvbNitSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NetworkId"   -> NetworkId.asInstanceOf[js.Any],
         "NetworkName" -> NetworkName.asInstanceOf[js.Any],
@@ -2815,7 +3141,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSdtOutputSdt
+    * Dvb Sdt Output Sdt
     */
   object DvbSdtOutputSdtEnum {
     val SDT_FOLLOW            = "SDT_FOLLOW"
@@ -2838,10 +3164,12 @@ package medialive {
   }
 
   object DvbSdtSettings {
-    def apply(OutputSdt: js.UndefOr[DvbSdtOutputSdt] = js.undefined,
-              RepInterval: js.UndefOr[__integerMin25Max2000] = js.undefined,
-              ServiceName: js.UndefOr[__stringMin1Max256] = js.undefined,
-              ServiceProviderName: js.UndefOr[__stringMin1Max256] = js.undefined): DvbSdtSettings = {
+    def apply(
+        OutputSdt: js.UndefOr[DvbSdtOutputSdt] = js.undefined,
+        RepInterval: js.UndefOr[__integerMin25Max2000] = js.undefined,
+        ServiceName: js.UndefOr[__stringMin1Max256] = js.undefined,
+        ServiceProviderName: js.UndefOr[__stringMin1Max256] = js.undefined
+    ): DvbSdtSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OutputSdt" -> OutputSdt.map { x =>
           x.asInstanceOf[js.Any]
@@ -2862,7 +3190,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubDestinationAlignment
+    * Dvb Sub Destination Alignment
     */
   object DvbSubDestinationAlignmentEnum {
     val CENTERED = "CENTERED"
@@ -2873,7 +3201,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubDestinationBackgroundColor
+    * Dvb Sub Destination Background Color
     */
   object DvbSubDestinationBackgroundColorEnum {
     val BLACK = "BLACK"
@@ -2884,7 +3212,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubDestinationFontColor
+    * Dvb Sub Destination Font Color
     */
   object DvbSubDestinationFontColorEnum {
     val BLACK  = "BLACK"
@@ -2898,7 +3226,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubDestinationOutlineColor
+    * Dvb Sub Destination Outline Color
     */
   object DvbSubDestinationOutlineColorEnum {
     val BLACK  = "BLACK"
@@ -2912,7 +3240,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubDestinationSettings
+    * Dvb Sub Destination Settings
     */
   @js.native
   trait DvbSubDestinationSettings extends js.Object {
@@ -2936,23 +3264,25 @@ package medialive {
   }
 
   object DvbSubDestinationSettings {
-    def apply(Alignment: js.UndefOr[DvbSubDestinationAlignment] = js.undefined,
-              BackgroundColor: js.UndefOr[DvbSubDestinationBackgroundColor] = js.undefined,
-              BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              Font: js.UndefOr[InputLocation] = js.undefined,
-              FontColor: js.UndefOr[DvbSubDestinationFontColor] = js.undefined,
-              FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
-              FontSize: js.UndefOr[__string] = js.undefined,
-              OutlineColor: js.UndefOr[DvbSubDestinationOutlineColor] = js.undefined,
-              OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
-              ShadowColor: js.UndefOr[DvbSubDestinationShadowColor] = js.undefined,
-              ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              ShadowXOffset: js.UndefOr[__integer] = js.undefined,
-              ShadowYOffset: js.UndefOr[__integer] = js.undefined,
-              TeletextGridControl: js.UndefOr[DvbSubDestinationTeletextGridControl] = js.undefined,
-              XPosition: js.UndefOr[__integerMin0] = js.undefined,
-              YPosition: js.UndefOr[__integerMin0] = js.undefined): DvbSubDestinationSettings = {
+    def apply(
+        Alignment: js.UndefOr[DvbSubDestinationAlignment] = js.undefined,
+        BackgroundColor: js.UndefOr[DvbSubDestinationBackgroundColor] = js.undefined,
+        BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        Font: js.UndefOr[InputLocation] = js.undefined,
+        FontColor: js.UndefOr[DvbSubDestinationFontColor] = js.undefined,
+        FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+        FontSize: js.UndefOr[__string] = js.undefined,
+        OutlineColor: js.UndefOr[DvbSubDestinationOutlineColor] = js.undefined,
+        OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
+        ShadowColor: js.UndefOr[DvbSubDestinationShadowColor] = js.undefined,
+        ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        ShadowXOffset: js.UndefOr[__integer] = js.undefined,
+        ShadowYOffset: js.UndefOr[__integer] = js.undefined,
+        TeletextGridControl: js.UndefOr[DvbSubDestinationTeletextGridControl] = js.undefined,
+        XPosition: js.UndefOr[__integerMin0] = js.undefined,
+        YPosition: js.UndefOr[__integerMin0] = js.undefined
+    ): DvbSubDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Alignment" -> Alignment.map { x =>
           x.asInstanceOf[js.Any]
@@ -3012,7 +3342,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubDestinationShadowColor
+    * Dvb Sub Destination Shadow Color
     */
   object DvbSubDestinationShadowColorEnum {
     val BLACK = "BLACK"
@@ -3023,7 +3353,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubDestinationTeletextGridControl
+    * Dvb Sub Destination Teletext Grid Control
     */
   object DvbSubDestinationTeletextGridControlEnum {
     val FIXED  = "FIXED"
@@ -3033,7 +3363,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for DvbSubSourceSettings
+    * Dvb Sub Source Settings
     */
   @js.native
   trait DvbSubSourceSettings extends js.Object {
@@ -3041,10 +3371,14 @@ package medialive {
   }
 
   object DvbSubSourceSettings {
-    def apply(Pid: js.UndefOr[__integerMin1] = js.undefined): DvbSubSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Pid" -> Pid.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Pid: js.UndefOr[__integerMin1] = js.undefined
+    ): DvbSubSourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pid" -> Pid.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbSubSourceSettings]
     }
@@ -3059,17 +3393,21 @@ package medialive {
   }
 
   object DvbTdtSettings {
-    def apply(RepInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined): DvbTdtSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("RepInterval" -> RepInterval.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RepInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined
+    ): DvbTdtSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RepInterval" -> RepInterval.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbTdtSettings]
     }
   }
 
   /**
-    * Placeholder documentation for Eac3AttenuationControl
+    * Eac3 Attenuation Control
     */
   object Eac3AttenuationControlEnum {
     val ATTENUATE_3_DB = "ATTENUATE_3_DB"
@@ -3079,7 +3417,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3BitstreamMode
+    * Eac3 Bitstream Mode
     */
   object Eac3BitstreamModeEnum {
     val COMMENTARY        = "COMMENTARY"
@@ -3092,7 +3430,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3CodingMode
+    * Eac3 Coding Mode
     */
   object Eac3CodingModeEnum {
     val CODING_MODE_1_0 = "CODING_MODE_1_0"
@@ -3103,7 +3441,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3DcFilter
+    * Eac3 Dc Filter
     */
   object Eac3DcFilterEnum {
     val DISABLED = "DISABLED"
@@ -3113,7 +3451,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3DrcLine
+    * Eac3 Drc Line
     */
   object Eac3DrcLineEnum {
     val FILM_LIGHT     = "FILM_LIGHT"
@@ -3127,7 +3465,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3DrcRf
+    * Eac3 Drc Rf
     */
   object Eac3DrcRfEnum {
     val FILM_LIGHT     = "FILM_LIGHT"
@@ -3141,7 +3479,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3LfeControl
+    * Eac3 Lfe Control
     */
   object Eac3LfeControlEnum {
     val LFE    = "LFE"
@@ -3151,7 +3489,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3LfeFilter
+    * Eac3 Lfe Filter
     */
   object Eac3LfeFilterEnum {
     val DISABLED = "DISABLED"
@@ -3161,7 +3499,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3MetadataControl
+    * Eac3 Metadata Control
     */
   object Eac3MetadataControlEnum {
     val FOLLOW_INPUT   = "FOLLOW_INPUT"
@@ -3171,7 +3509,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3PassthroughControl
+    * Eac3 Passthrough Control
     */
   object Eac3PassthroughControlEnum {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
@@ -3181,7 +3519,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3PhaseControl
+    * Eac3 Phase Control
     */
   object Eac3PhaseControlEnum {
     val NO_SHIFT         = "NO_SHIFT"
@@ -3191,7 +3529,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3Settings
+    * Eac3 Settings
     */
   @js.native
   trait Eac3Settings extends js.Object {
@@ -3218,26 +3556,28 @@ package medialive {
   }
 
   object Eac3Settings {
-    def apply(AttenuationControl: js.UndefOr[Eac3AttenuationControl] = js.undefined,
-              Bitrate: js.UndefOr[__double] = js.undefined,
-              BitstreamMode: js.UndefOr[Eac3BitstreamMode] = js.undefined,
-              CodingMode: js.UndefOr[Eac3CodingMode] = js.undefined,
-              DcFilter: js.UndefOr[Eac3DcFilter] = js.undefined,
-              Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
-              DrcLine: js.UndefOr[Eac3DrcLine] = js.undefined,
-              DrcRf: js.UndefOr[Eac3DrcRf] = js.undefined,
-              LfeControl: js.UndefOr[Eac3LfeControl] = js.undefined,
-              LfeFilter: js.UndefOr[Eac3LfeFilter] = js.undefined,
-              LoRoCenterMixLevel: js.UndefOr[__double] = js.undefined,
-              LoRoSurroundMixLevel: js.UndefOr[__double] = js.undefined,
-              LtRtCenterMixLevel: js.UndefOr[__double] = js.undefined,
-              LtRtSurroundMixLevel: js.UndefOr[__double] = js.undefined,
-              MetadataControl: js.UndefOr[Eac3MetadataControl] = js.undefined,
-              PassthroughControl: js.UndefOr[Eac3PassthroughControl] = js.undefined,
-              PhaseControl: js.UndefOr[Eac3PhaseControl] = js.undefined,
-              StereoDownmix: js.UndefOr[Eac3StereoDownmix] = js.undefined,
-              SurroundExMode: js.UndefOr[Eac3SurroundExMode] = js.undefined,
-              SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined): Eac3Settings = {
+    def apply(
+        AttenuationControl: js.UndefOr[Eac3AttenuationControl] = js.undefined,
+        Bitrate: js.UndefOr[__double] = js.undefined,
+        BitstreamMode: js.UndefOr[Eac3BitstreamMode] = js.undefined,
+        CodingMode: js.UndefOr[Eac3CodingMode] = js.undefined,
+        DcFilter: js.UndefOr[Eac3DcFilter] = js.undefined,
+        Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
+        DrcLine: js.UndefOr[Eac3DrcLine] = js.undefined,
+        DrcRf: js.UndefOr[Eac3DrcRf] = js.undefined,
+        LfeControl: js.UndefOr[Eac3LfeControl] = js.undefined,
+        LfeFilter: js.UndefOr[Eac3LfeFilter] = js.undefined,
+        LoRoCenterMixLevel: js.UndefOr[__double] = js.undefined,
+        LoRoSurroundMixLevel: js.UndefOr[__double] = js.undefined,
+        LtRtCenterMixLevel: js.UndefOr[__double] = js.undefined,
+        LtRtSurroundMixLevel: js.UndefOr[__double] = js.undefined,
+        MetadataControl: js.UndefOr[Eac3MetadataControl] = js.undefined,
+        PassthroughControl: js.UndefOr[Eac3PassthroughControl] = js.undefined,
+        PhaseControl: js.UndefOr[Eac3PhaseControl] = js.undefined,
+        StereoDownmix: js.UndefOr[Eac3StereoDownmix] = js.undefined,
+        SurroundExMode: js.UndefOr[Eac3SurroundExMode] = js.undefined,
+        SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined
+    ): Eac3Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttenuationControl" -> AttenuationControl.map { x =>
           x.asInstanceOf[js.Any]
@@ -3306,7 +3646,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3StereoDownmix
+    * Eac3 Stereo Downmix
     */
   object Eac3StereoDownmixEnum {
     val DPL2          = "DPL2"
@@ -3318,7 +3658,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3SurroundExMode
+    * Eac3 Surround Ex Mode
     */
   object Eac3SurroundExModeEnum {
     val DISABLED      = "DISABLED"
@@ -3329,7 +3669,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Eac3SurroundMode
+    * Eac3 Surround Mode
     */
   object Eac3SurroundModeEnum {
     val DISABLED      = "DISABLED"
@@ -3340,7 +3680,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for EmbeddedConvert608To708
+    * Embedded Convert608 To708
     */
   object EmbeddedConvert608To708Enum {
     val DISABLED  = "DISABLED"
@@ -3350,35 +3690,39 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for EmbeddedDestinationSettings
+    * Embedded Destination Settings
     */
   @js.native
   trait EmbeddedDestinationSettings extends js.Object {}
 
   object EmbeddedDestinationSettings {
-    def apply(): EmbeddedDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): EmbeddedDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmbeddedDestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for EmbeddedPlusScte20DestinationSettings
+    * Embedded Plus Scte20 Destination Settings
     */
   @js.native
   trait EmbeddedPlusScte20DestinationSettings extends js.Object {}
 
   object EmbeddedPlusScte20DestinationSettings {
-    def apply(): EmbeddedPlusScte20DestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): EmbeddedPlusScte20DestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmbeddedPlusScte20DestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for EmbeddedScte20Detection
+    * Embedded Scte20 Detection
     */
   object EmbeddedScte20DetectionEnum {
     val AUTO = "AUTO"
@@ -3388,7 +3732,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for EmbeddedSourceSettings
+    * Embedded Source Settings
     */
   @js.native
   trait EmbeddedSourceSettings extends js.Object {
@@ -3399,10 +3743,12 @@ package medialive {
   }
 
   object EmbeddedSourceSettings {
-    def apply(Convert608To708: js.UndefOr[EmbeddedConvert608To708] = js.undefined,
-              Scte20Detection: js.UndefOr[EmbeddedScte20Detection] = js.undefined,
-              Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
-              Source608TrackNumber: js.UndefOr[__integerMin1Max5] = js.undefined): EmbeddedSourceSettings = {
+    def apply(
+        Convert608To708: js.UndefOr[EmbeddedConvert608To708] = js.undefined,
+        Scte20Detection: js.UndefOr[EmbeddedScte20Detection] = js.undefined,
+        Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
+        Source608TrackNumber: js.UndefOr[__integerMin1Max5] = js.undefined
+    ): EmbeddedSourceSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Convert608To708" -> Convert608To708.map { x =>
           x.asInstanceOf[js.Any]
@@ -3423,7 +3769,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for EncoderSettings
+    * Encoder Settings
     */
   @js.native
   trait EncoderSettings extends js.Object {
@@ -3439,15 +3785,17 @@ package medialive {
   }
 
   object EncoderSettings {
-    def apply(AudioDescriptions: __listOfAudioDescription,
-              OutputGroups: __listOfOutputGroup,
-              TimecodeConfig: TimecodeConfig,
-              VideoDescriptions: __listOfVideoDescription,
-              AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
-              AvailConfiguration: js.UndefOr[AvailConfiguration] = js.undefined,
-              BlackoutSlate: js.UndefOr[BlackoutSlate] = js.undefined,
-              CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
-              GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined): EncoderSettings = {
+    def apply(
+        AudioDescriptions: __listOfAudioDescription,
+        OutputGroups: __listOfOutputGroup,
+        TimecodeConfig: TimecodeConfig,
+        VideoDescriptions: __listOfVideoDescription,
+        AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
+        AvailConfiguration: js.UndefOr[AvailConfiguration] = js.undefined,
+        BlackoutSlate: js.UndefOr[BlackoutSlate] = js.undefined,
+        CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
+        GlobalConfiguration: js.UndefOr[GlobalConfiguration] = js.undefined
+    ): EncoderSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioDescriptions" -> AudioDescriptions.asInstanceOf[js.Any],
         "OutputGroups"      -> OutputGroups.asInstanceOf[js.Any],
@@ -3475,7 +3823,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for FecOutputIncludeFec
+    * Fec Output Include Fec
     */
   object FecOutputIncludeFecEnum {
     val COLUMN         = "COLUMN"
@@ -3485,7 +3833,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for FecOutputSettings
+    * Fec Output Settings
     */
   @js.native
   trait FecOutputSettings extends js.Object {
@@ -3495,9 +3843,11 @@ package medialive {
   }
 
   object FecOutputSettings {
-    def apply(ColumnDepth: js.UndefOr[__integerMin4Max20] = js.undefined,
-              IncludeFec: js.UndefOr[FecOutputIncludeFec] = js.undefined,
-              RowLength: js.UndefOr[__integerMin1Max20] = js.undefined): FecOutputSettings = {
+    def apply(
+        ColumnDepth: js.UndefOr[__integerMin4Max20] = js.undefined,
+        IncludeFec: js.UndefOr[FecOutputIncludeFec] = js.undefined,
+        RowLength: js.UndefOr[__integerMin1Max20] = js.undefined
+    ): FecOutputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ColumnDepth" -> ColumnDepth.map { x =>
           x.asInstanceOf[js.Any]
@@ -3515,7 +3865,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for FixedAfd
+    * Fixed Afd
     */
   object FixedAfdEnum {
     val AFD_0000 = "AFD_0000"
@@ -3554,9 +3904,12 @@ package medialive {
   }
 
   object FixedModeScheduleActionStartSettings {
-    def apply(Time: __string): FixedModeScheduleActionStartSettings = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Time" -> Time.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Time: __string
+    ): FixedModeScheduleActionStartSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Time" -> Time.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FixedModeScheduleActionStartSettings]
     }
@@ -3572,7 +3925,10 @@ package medialive {
   }
 
   object FollowModeScheduleActionStartSettings {
-    def apply(FollowPoint: FollowPoint, ReferenceActionName: __string): FollowModeScheduleActionStartSettings = {
+    def apply(
+        FollowPoint: FollowPoint,
+        ReferenceActionName: __string
+    ): FollowModeScheduleActionStartSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FollowPoint"         -> FollowPoint.asInstanceOf[js.Any],
         "ReferenceActionName" -> ReferenceActionName.asInstanceOf[js.Any]
@@ -3593,13 +3949,76 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for GlobalConfiguration
+    * Frame Capture Group Settings
+    */
+  @js.native
+  trait FrameCaptureGroupSettings extends js.Object {
+    var Destination: OutputLocationRef
+  }
+
+  object FrameCaptureGroupSettings {
+    def apply(
+        Destination: OutputLocationRef
+    ): FrameCaptureGroupSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FrameCaptureGroupSettings]
+    }
+  }
+
+  /**
+    * Frame Capture Output Settings
+    */
+  @js.native
+  trait FrameCaptureOutputSettings extends js.Object {
+    var NameModifier: js.UndefOr[__string]
+  }
+
+  object FrameCaptureOutputSettings {
+    def apply(
+        NameModifier: js.UndefOr[__string] = js.undefined
+    ): FrameCaptureOutputSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NameModifier" -> NameModifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FrameCaptureOutputSettings]
+    }
+  }
+
+  /**
+    * Frame Capture Settings
+    */
+  @js.native
+  trait FrameCaptureSettings extends js.Object {
+    var CaptureInterval: __integerMin1Max3600
+  }
+
+  object FrameCaptureSettings {
+    def apply(
+        CaptureInterval: __integerMin1Max3600
+    ): FrameCaptureSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CaptureInterval" -> CaptureInterval.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FrameCaptureSettings]
+    }
+  }
+
+  /**
+    * Global Configuration
     */
   @js.native
   trait GlobalConfiguration extends js.Object {
     var InitialAudioGain: js.UndefOr[__integerMinNegative60Max60]
     var InputEndAction: js.UndefOr[GlobalConfigurationInputEndAction]
     var InputLossBehavior: js.UndefOr[InputLossBehavior]
+    var OutputLockingMode: js.UndefOr[GlobalConfigurationOutputLockingMode]
     var OutputTimingSource: js.UndefOr[GlobalConfigurationOutputTimingSource]
     var SupportLowFramerateInputs: js.UndefOr[GlobalConfigurationLowFramerateInputs]
   }
@@ -3609,6 +4028,7 @@ package medialive {
         InitialAudioGain: js.UndefOr[__integerMinNegative60Max60] = js.undefined,
         InputEndAction: js.UndefOr[GlobalConfigurationInputEndAction] = js.undefined,
         InputLossBehavior: js.UndefOr[InputLossBehavior] = js.undefined,
+        OutputLockingMode: js.UndefOr[GlobalConfigurationOutputLockingMode] = js.undefined,
         OutputTimingSource: js.UndefOr[GlobalConfigurationOutputTimingSource] = js.undefined,
         SupportLowFramerateInputs: js.UndefOr[GlobalConfigurationLowFramerateInputs] = js.undefined
     ): GlobalConfiguration = {
@@ -3620,6 +4040,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "InputLossBehavior" -> InputLossBehavior.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputLockingMode" -> OutputLockingMode.map { x =>
           x.asInstanceOf[js.Any]
         },
         "OutputTimingSource" -> OutputTimingSource.map { x =>
@@ -3635,7 +4058,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for GlobalConfigurationInputEndAction
+    * Global Configuration Input End Action
     */
   object GlobalConfigurationInputEndActionEnum {
     val NONE                   = "NONE"
@@ -3645,7 +4068,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for GlobalConfigurationLowFramerateInputs
+    * Global Configuration Low Framerate Inputs
     */
   object GlobalConfigurationLowFramerateInputsEnum {
     val DISABLED = "DISABLED"
@@ -3655,7 +4078,17 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for GlobalConfigurationOutputTimingSource
+    * Global Configuration Output Locking Mode
+    */
+  object GlobalConfigurationOutputLockingModeEnum {
+    val EPOCH_LOCKING    = "EPOCH_LOCKING"
+    val PIPELINE_LOCKING = "PIPELINE_LOCKING"
+
+    val values = IndexedSeq(EPOCH_LOCKING, PIPELINE_LOCKING)
+  }
+
+  /**
+    * Global Configuration Output Timing Source
     */
   object GlobalConfigurationOutputTimingSourceEnum {
     val INPUT_CLOCK  = "INPUT_CLOCK"
@@ -3665,7 +4098,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264AdaptiveQuantization
+    * H264 Adaptive Quantization
     */
   object H264AdaptiveQuantizationEnum {
     val HIGH   = "HIGH"
@@ -3679,7 +4112,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264ColorMetadata
+    * H264 Color Metadata
     */
   object H264ColorMetadataEnum {
     val IGNORE = "IGNORE"
@@ -3689,7 +4122,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264EntropyEncoding
+    * H264 Entropy Encoding
     */
   object H264EntropyEncodingEnum {
     val CABAC = "CABAC"
@@ -3699,7 +4132,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264FlickerAq
+    * H264 Flicker Aq
     */
   object H264FlickerAqEnum {
     val DISABLED = "DISABLED"
@@ -3709,7 +4142,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264FramerateControl
+    * H264 Framerate Control
     */
   object H264FramerateControlEnum {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
@@ -3719,7 +4152,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264GopBReference
+    * H264 Gop BReference
     */
   object H264GopBReferenceEnum {
     val DISABLED = "DISABLED"
@@ -3729,7 +4162,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264GopSizeUnits
+    * H264 Gop Size Units
     */
   object H264GopSizeUnitsEnum {
     val FRAMES  = "FRAMES"
@@ -3739,7 +4172,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264Level
+    * H264 Level
     */
   object H264LevelEnum {
     val H264_LEVEL_1    = "H264_LEVEL_1"
@@ -3782,7 +4215,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264LookAheadRateControl
+    * H264 Look Ahead Rate Control
     */
   object H264LookAheadRateControlEnum {
     val HIGH   = "HIGH"
@@ -3793,7 +4226,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264ParControl
+    * H264 Par Control
     */
   object H264ParControlEnum {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
@@ -3803,7 +4236,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264Profile
+    * H264 Profile
     */
   object H264ProfileEnum {
     val BASELINE       = "BASELINE"
@@ -3817,7 +4250,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264RateControlMode
+    * H264 Rate Control Mode
     */
   object H264RateControlModeEnum {
     val CBR  = "CBR"
@@ -3828,7 +4261,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264ScanType
+    * H264 Scan Type
     */
   object H264ScanTypeEnum {
     val INTERLACED  = "INTERLACED"
@@ -3838,7 +4271,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264SceneChangeDetect
+    * H264 Scene Change Detect
     */
   object H264SceneChangeDetectEnum {
     val DISABLED = "DISABLED"
@@ -3848,7 +4281,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264Settings
+    * H264 Settings
     */
   @js.native
   trait H264Settings extends js.Object {
@@ -3862,8 +4295,8 @@ package medialive {
     var FixedAfd: js.UndefOr[FixedAfd]
     var FlickerAq: js.UndefOr[H264FlickerAq]
     var FramerateControl: js.UndefOr[H264FramerateControl]
-    var FramerateDenominator: js.UndefOr[__integer]
-    var FramerateNumerator: js.UndefOr[__integer]
+    var FramerateDenominator: js.UndefOr[__integerMin1]
+    var FramerateNumerator: js.UndefOr[__integerMin1]
     var GopBReference: js.UndefOr[H264GopBReference]
     var GopClosedCadence: js.UndefOr[__integerMin0]
     var GopNumBFrames: js.UndefOr[__integerMin0Max7]
@@ -3892,43 +4325,45 @@ package medialive {
   }
 
   object H264Settings {
-    def apply(AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization] = js.undefined,
-              AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
-              Bitrate: js.UndefOr[__integerMin1000] = js.undefined,
-              BufFillPct: js.UndefOr[__integerMin0Max100] = js.undefined,
-              BufSize: js.UndefOr[__integerMin0] = js.undefined,
-              ColorMetadata: js.UndefOr[H264ColorMetadata] = js.undefined,
-              EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
-              FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
-              FlickerAq: js.UndefOr[H264FlickerAq] = js.undefined,
-              FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
-              FramerateDenominator: js.UndefOr[__integer] = js.undefined,
-              FramerateNumerator: js.UndefOr[__integer] = js.undefined,
-              GopBReference: js.UndefOr[H264GopBReference] = js.undefined,
-              GopClosedCadence: js.UndefOr[__integerMin0] = js.undefined,
-              GopNumBFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
-              GopSize: js.UndefOr[__doubleMin1] = js.undefined,
-              GopSizeUnits: js.UndefOr[H264GopSizeUnits] = js.undefined,
-              Level: js.UndefOr[H264Level] = js.undefined,
-              LookAheadRateControl: js.UndefOr[H264LookAheadRateControl] = js.undefined,
-              MaxBitrate: js.UndefOr[__integerMin1000] = js.undefined,
-              MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
-              NumRefFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
-              ParControl: js.UndefOr[H264ParControl] = js.undefined,
-              ParDenominator: js.UndefOr[__integerMin1] = js.undefined,
-              ParNumerator: js.UndefOr[__integer] = js.undefined,
-              Profile: js.UndefOr[H264Profile] = js.undefined,
-              QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
-              RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
-              ScanType: js.UndefOr[H264ScanType] = js.undefined,
-              SceneChangeDetect: js.UndefOr[H264SceneChangeDetect] = js.undefined,
-              Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
-              Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
-              SpatialAq: js.UndefOr[H264SpatialAq] = js.undefined,
-              SubgopLength: js.UndefOr[H264SubGopLength] = js.undefined,
-              Syntax: js.UndefOr[H264Syntax] = js.undefined,
-              TemporalAq: js.UndefOr[H264TemporalAq] = js.undefined,
-              TimecodeInsertion: js.UndefOr[H264TimecodeInsertionBehavior] = js.undefined): H264Settings = {
+    def apply(
+        AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization] = js.undefined,
+        AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin1000] = js.undefined,
+        BufFillPct: js.UndefOr[__integerMin0Max100] = js.undefined,
+        BufSize: js.UndefOr[__integerMin0] = js.undefined,
+        ColorMetadata: js.UndefOr[H264ColorMetadata] = js.undefined,
+        EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
+        FixedAfd: js.UndefOr[FixedAfd] = js.undefined,
+        FlickerAq: js.UndefOr[H264FlickerAq] = js.undefined,
+        FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1] = js.undefined,
+        GopBReference: js.UndefOr[H264GopBReference] = js.undefined,
+        GopClosedCadence: js.UndefOr[__integerMin0] = js.undefined,
+        GopNumBFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin1] = js.undefined,
+        GopSizeUnits: js.UndefOr[H264GopSizeUnits] = js.undefined,
+        Level: js.UndefOr[H264Level] = js.undefined,
+        LookAheadRateControl: js.UndefOr[H264LookAheadRateControl] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000] = js.undefined,
+        MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
+        NumRefFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
+        ParControl: js.UndefOr[H264ParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1] = js.undefined,
+        ParNumerator: js.UndefOr[__integer] = js.undefined,
+        Profile: js.UndefOr[H264Profile] = js.undefined,
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined,
+        RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
+        ScanType: js.UndefOr[H264ScanType] = js.undefined,
+        SceneChangeDetect: js.UndefOr[H264SceneChangeDetect] = js.undefined,
+        Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
+        Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
+        SpatialAq: js.UndefOr[H264SpatialAq] = js.undefined,
+        SubgopLength: js.UndefOr[H264SubGopLength] = js.undefined,
+        Syntax: js.UndefOr[H264Syntax] = js.undefined,
+        TemporalAq: js.UndefOr[H264TemporalAq] = js.undefined,
+        TimecodeInsertion: js.UndefOr[H264TimecodeInsertionBehavior] = js.undefined
+    ): H264Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdaptiveQuantization" -> AdaptiveQuantization.map { x =>
           x.asInstanceOf[js.Any]
@@ -4048,7 +4483,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264SpatialAq
+    * H264 Spatial Aq
     */
   object H264SpatialAqEnum {
     val DISABLED = "DISABLED"
@@ -4058,7 +4493,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264SubGopLength
+    * H264 Sub Gop Length
     */
   object H264SubGopLengthEnum {
     val DYNAMIC = "DYNAMIC"
@@ -4068,7 +4503,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264Syntax
+    * H264 Syntax
     */
   object H264SyntaxEnum {
     val DEFAULT = "DEFAULT"
@@ -4078,7 +4513,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264TemporalAq
+    * H264 Temporal Aq
     */
   object H264TemporalAqEnum {
     val DISABLED = "DISABLED"
@@ -4088,7 +4523,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for H264TimecodeInsertionBehavior
+    * H264 Timecode Insertion Behavior
     */
   object H264TimecodeInsertionBehaviorEnum {
     val DISABLED       = "DISABLED"
@@ -4098,7 +4533,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsAdMarkers
+    * Hls Ad Markers
     */
   object HlsAdMarkersEnum {
     val ADOBE            = "ADOBE"
@@ -4109,7 +4544,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsAkamaiHttpTransferMode
+    * Hls Akamai Http Transfer Mode
     */
   object HlsAkamaiHttpTransferModeEnum {
     val CHUNKED     = "CHUNKED"
@@ -4119,7 +4554,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsAkamaiSettings
+    * Hls Akamai Settings
     */
   @js.native
   trait HlsAkamaiSettings extends js.Object {
@@ -4133,13 +4568,15 @@ package medialive {
   }
 
   object HlsAkamaiSettings {
-    def apply(ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
-              FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
-              HttpTransferMode: js.UndefOr[HlsAkamaiHttpTransferMode] = js.undefined,
-              NumRetries: js.UndefOr[__integerMin0] = js.undefined,
-              RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined,
-              Salt: js.UndefOr[__string] = js.undefined,
-              Token: js.UndefOr[__string] = js.undefined): HlsAkamaiSettings = {
+    def apply(
+        ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
+        FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
+        HttpTransferMode: js.UndefOr[HlsAkamaiHttpTransferMode] = js.undefined,
+        NumRetries: js.UndefOr[__integerMin0] = js.undefined,
+        RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined,
+        Salt: js.UndefOr[__string] = js.undefined,
+        Token: js.UndefOr[__string] = js.undefined
+    ): HlsAkamaiSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
           x.asInstanceOf[js.Any]
@@ -4169,7 +4606,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsBasicPutSettings
+    * Hls Basic Put Settings
     */
   @js.native
   trait HlsBasicPutSettings extends js.Object {
@@ -4180,10 +4617,12 @@ package medialive {
   }
 
   object HlsBasicPutSettings {
-    def apply(ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
-              FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
-              NumRetries: js.UndefOr[__integerMin0] = js.undefined,
-              RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined): HlsBasicPutSettings = {
+    def apply(
+        ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
+        FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
+        NumRetries: js.UndefOr[__integerMin0] = js.undefined,
+        RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined
+    ): HlsBasicPutSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
           x.asInstanceOf[js.Any]
@@ -4204,7 +4643,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsCaptionLanguageSetting
+    * Hls Caption Language Setting
     */
   object HlsCaptionLanguageSettingEnum {
     val INSERT = "INSERT"
@@ -4215,7 +4654,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsCdnSettings
+    * Hls Cdn Settings
     */
   @js.native
   trait HlsCdnSettings extends js.Object {
@@ -4226,10 +4665,12 @@ package medialive {
   }
 
   object HlsCdnSettings {
-    def apply(HlsAkamaiSettings: js.UndefOr[HlsAkamaiSettings] = js.undefined,
-              HlsBasicPutSettings: js.UndefOr[HlsBasicPutSettings] = js.undefined,
-              HlsMediaStoreSettings: js.UndefOr[HlsMediaStoreSettings] = js.undefined,
-              HlsWebdavSettings: js.UndefOr[HlsWebdavSettings] = js.undefined): HlsCdnSettings = {
+    def apply(
+        HlsAkamaiSettings: js.UndefOr[HlsAkamaiSettings] = js.undefined,
+        HlsBasicPutSettings: js.UndefOr[HlsBasicPutSettings] = js.undefined,
+        HlsMediaStoreSettings: js.UndefOr[HlsMediaStoreSettings] = js.undefined,
+        HlsWebdavSettings: js.UndefOr[HlsWebdavSettings] = js.undefined
+    ): HlsCdnSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HlsAkamaiSettings" -> HlsAkamaiSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -4250,7 +4691,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsClientCache
+    * Hls Client Cache
     */
   object HlsClientCacheEnum {
     val DISABLED = "DISABLED"
@@ -4260,7 +4701,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsCodecSpecification
+    * Hls Codec Specification
     */
   object HlsCodecSpecificationEnum {
     val RFC_4281 = "RFC_4281"
@@ -4270,7 +4711,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsDirectoryStructure
+    * Hls Directory Structure
     */
   object HlsDirectoryStructureEnum {
     val SINGLE_DIRECTORY        = "SINGLE_DIRECTORY"
@@ -4280,7 +4721,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsEncryptionType
+    * Hls Encryption Type
     */
   object HlsEncryptionTypeEnum {
     val AES128     = "AES128"
@@ -4290,7 +4731,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsGroupSettings
+    * Hls Group Settings
     */
   @js.native
   trait HlsGroupSettings extends js.Object {
@@ -4306,6 +4747,7 @@ package medialive {
     var DirectoryStructure: js.UndefOr[HlsDirectoryStructure]
     var EncryptionType: js.UndefOr[HlsEncryptionType]
     var HlsCdnSettings: js.UndefOr[HlsCdnSettings]
+    var IFrameOnlyPlaylists: js.UndefOr[IFrameOnlyPlaylistType]
     var IndexNSegments: js.UndefOr[__integerMin3]
     var InputLossAction: js.UndefOr[InputLossActionForHlsOut]
     var IvInManifest: js.UndefOr[HlsIvInManifest]
@@ -4333,42 +4775,45 @@ package medialive {
   }
 
   object HlsGroupSettings {
-    def apply(Destination: OutputLocationRef,
-              AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
-              BaseUrlContent: js.UndefOr[__string] = js.undefined,
-              BaseUrlManifest: js.UndefOr[__string] = js.undefined,
-              CaptionLanguageMappings: js.UndefOr[__listOfCaptionLanguageMapping] = js.undefined,
-              CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
-              ClientCache: js.UndefOr[HlsClientCache] = js.undefined,
-              CodecSpecification: js.UndefOr[HlsCodecSpecification] = js.undefined,
-              ConstantIv: js.UndefOr[__stringMin32Max32] = js.undefined,
-              DirectoryStructure: js.UndefOr[HlsDirectoryStructure] = js.undefined,
-              EncryptionType: js.UndefOr[HlsEncryptionType] = js.undefined,
-              HlsCdnSettings: js.UndefOr[HlsCdnSettings] = js.undefined,
-              IndexNSegments: js.UndefOr[__integerMin3] = js.undefined,
-              InputLossAction: js.UndefOr[InputLossActionForHlsOut] = js.undefined,
-              IvInManifest: js.UndefOr[HlsIvInManifest] = js.undefined,
-              IvSource: js.UndefOr[HlsIvSource] = js.undefined,
-              KeepSegments: js.UndefOr[__integerMin1] = js.undefined,
-              KeyFormat: js.UndefOr[__string] = js.undefined,
-              KeyFormatVersions: js.UndefOr[__string] = js.undefined,
-              KeyProviderSettings: js.UndefOr[KeyProviderSettings] = js.undefined,
-              ManifestCompression: js.UndefOr[HlsManifestCompression] = js.undefined,
-              ManifestDurationFormat: js.UndefOr[HlsManifestDurationFormat] = js.undefined,
-              MinSegmentLength: js.UndefOr[__integerMin0] = js.undefined,
-              Mode: js.UndefOr[HlsMode] = js.undefined,
-              OutputSelection: js.UndefOr[HlsOutputSelection] = js.undefined,
-              ProgramDateTime: js.UndefOr[HlsProgramDateTime] = js.undefined,
-              ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600] = js.undefined,
-              RedundantManifest: js.UndefOr[HlsRedundantManifest] = js.undefined,
-              SegmentLength: js.UndefOr[__integerMin1] = js.undefined,
-              SegmentationMode: js.UndefOr[HlsSegmentationMode] = js.undefined,
-              SegmentsPerSubdirectory: js.UndefOr[__integerMin1] = js.undefined,
-              StreamInfResolution: js.UndefOr[HlsStreamInfResolution] = js.undefined,
-              TimedMetadataId3Frame: js.UndefOr[HlsTimedMetadataId3Frame] = js.undefined,
-              TimedMetadataId3Period: js.UndefOr[__integerMin0] = js.undefined,
-              TimestampDeltaMilliseconds: js.UndefOr[__integerMin0] = js.undefined,
-              TsFileMode: js.UndefOr[HlsTsFileMode] = js.undefined): HlsGroupSettings = {
+    def apply(
+        Destination: OutputLocationRef,
+        AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
+        BaseUrlContent: js.UndefOr[__string] = js.undefined,
+        BaseUrlManifest: js.UndefOr[__string] = js.undefined,
+        CaptionLanguageMappings: js.UndefOr[__listOfCaptionLanguageMapping] = js.undefined,
+        CaptionLanguageSetting: js.UndefOr[HlsCaptionLanguageSetting] = js.undefined,
+        ClientCache: js.UndefOr[HlsClientCache] = js.undefined,
+        CodecSpecification: js.UndefOr[HlsCodecSpecification] = js.undefined,
+        ConstantIv: js.UndefOr[__stringMin32Max32] = js.undefined,
+        DirectoryStructure: js.UndefOr[HlsDirectoryStructure] = js.undefined,
+        EncryptionType: js.UndefOr[HlsEncryptionType] = js.undefined,
+        HlsCdnSettings: js.UndefOr[HlsCdnSettings] = js.undefined,
+        IFrameOnlyPlaylists: js.UndefOr[IFrameOnlyPlaylistType] = js.undefined,
+        IndexNSegments: js.UndefOr[__integerMin3] = js.undefined,
+        InputLossAction: js.UndefOr[InputLossActionForHlsOut] = js.undefined,
+        IvInManifest: js.UndefOr[HlsIvInManifest] = js.undefined,
+        IvSource: js.UndefOr[HlsIvSource] = js.undefined,
+        KeepSegments: js.UndefOr[__integerMin1] = js.undefined,
+        KeyFormat: js.UndefOr[__string] = js.undefined,
+        KeyFormatVersions: js.UndefOr[__string] = js.undefined,
+        KeyProviderSettings: js.UndefOr[KeyProviderSettings] = js.undefined,
+        ManifestCompression: js.UndefOr[HlsManifestCompression] = js.undefined,
+        ManifestDurationFormat: js.UndefOr[HlsManifestDurationFormat] = js.undefined,
+        MinSegmentLength: js.UndefOr[__integerMin0] = js.undefined,
+        Mode: js.UndefOr[HlsMode] = js.undefined,
+        OutputSelection: js.UndefOr[HlsOutputSelection] = js.undefined,
+        ProgramDateTime: js.UndefOr[HlsProgramDateTime] = js.undefined,
+        ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600] = js.undefined,
+        RedundantManifest: js.UndefOr[HlsRedundantManifest] = js.undefined,
+        SegmentLength: js.UndefOr[__integerMin1] = js.undefined,
+        SegmentationMode: js.UndefOr[HlsSegmentationMode] = js.undefined,
+        SegmentsPerSubdirectory: js.UndefOr[__integerMin1] = js.undefined,
+        StreamInfResolution: js.UndefOr[HlsStreamInfResolution] = js.undefined,
+        TimedMetadataId3Frame: js.UndefOr[HlsTimedMetadataId3Frame] = js.undefined,
+        TimedMetadataId3Period: js.UndefOr[__integerMin0] = js.undefined,
+        TimestampDeltaMilliseconds: js.UndefOr[__integerMin0] = js.undefined,
+        TsFileMode: js.UndefOr[HlsTsFileMode] = js.undefined
+    ): HlsGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destination" -> Destination.asInstanceOf[js.Any],
         "AdMarkers" -> AdMarkers.map { x =>
@@ -4402,6 +4847,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "HlsCdnSettings" -> HlsCdnSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IFrameOnlyPlaylists" -> IFrameOnlyPlaylists.map { x =>
           x.asInstanceOf[js.Any]
         },
         "IndexNSegments" -> IndexNSegments.map { x =>
@@ -4483,7 +4931,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsInputSettings
+    * Hls Input Settings
     */
   @js.native
   trait HlsInputSettings extends js.Object {
@@ -4494,10 +4942,12 @@ package medialive {
   }
 
   object HlsInputSettings {
-    def apply(Bandwidth: js.UndefOr[__integerMin0] = js.undefined,
-              BufferSegments: js.UndefOr[__integerMin0] = js.undefined,
-              Retries: js.UndefOr[__integerMin0] = js.undefined,
-              RetryInterval: js.UndefOr[__integerMin0] = js.undefined): HlsInputSettings = {
+    def apply(
+        Bandwidth: js.UndefOr[__integerMin0] = js.undefined,
+        BufferSegments: js.UndefOr[__integerMin0] = js.undefined,
+        Retries: js.UndefOr[__integerMin0] = js.undefined,
+        RetryInterval: js.UndefOr[__integerMin0] = js.undefined
+    ): HlsInputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bandwidth" -> Bandwidth.map { x =>
           x.asInstanceOf[js.Any]
@@ -4518,7 +4968,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsIvInManifest
+    * Hls Iv In Manifest
     */
   object HlsIvInManifestEnum {
     val EXCLUDE = "EXCLUDE"
@@ -4528,7 +4978,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsIvSource
+    * Hls Iv Source
     */
   object HlsIvSourceEnum {
     val EXPLICIT               = "EXPLICIT"
@@ -4538,7 +4988,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsManifestCompression
+    * Hls Manifest Compression
     */
   object HlsManifestCompressionEnum {
     val GZIP = "GZIP"
@@ -4548,7 +4998,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsManifestDurationFormat
+    * Hls Manifest Duration Format
     */
   object HlsManifestDurationFormatEnum {
     val FLOATING_POINT = "FLOATING_POINT"
@@ -4558,7 +5008,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsMediaStoreSettings
+    * Hls Media Store Settings
     */
   @js.native
   trait HlsMediaStoreSettings extends js.Object {
@@ -4570,11 +5020,13 @@ package medialive {
   }
 
   object HlsMediaStoreSettings {
-    def apply(ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
-              FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
-              MediaStoreStorageClass: js.UndefOr[HlsMediaStoreStorageClass] = js.undefined,
-              NumRetries: js.UndefOr[__integerMin0] = js.undefined,
-              RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined): HlsMediaStoreSettings = {
+    def apply(
+        ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
+        FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
+        MediaStoreStorageClass: js.UndefOr[HlsMediaStoreStorageClass] = js.undefined,
+        NumRetries: js.UndefOr[__integerMin0] = js.undefined,
+        RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined
+    ): HlsMediaStoreSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
           x.asInstanceOf[js.Any]
@@ -4598,7 +5050,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsMediaStoreStorageClass
+    * Hls Media Store Storage Class
     */
   object HlsMediaStoreStorageClassEnum {
     val TEMPORAL = "TEMPORAL"
@@ -4607,7 +5059,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsMode
+    * Hls Mode
     */
   object HlsModeEnum {
     val LIVE = "LIVE"
@@ -4617,7 +5069,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsOutputSelection
+    * Hls Output Selection
     */
   object HlsOutputSelectionEnum {
     val MANIFESTS_AND_SEGMENTS = "MANIFESTS_AND_SEGMENTS"
@@ -4627,7 +5079,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsOutputSettings
+    * Hls Output Settings
     */
   @js.native
   trait HlsOutputSettings extends js.Object {
@@ -4637,9 +5089,11 @@ package medialive {
   }
 
   object HlsOutputSettings {
-    def apply(HlsSettings: HlsSettings,
-              NameModifier: js.UndefOr[__stringMin1] = js.undefined,
-              SegmentModifier: js.UndefOr[__string] = js.undefined): HlsOutputSettings = {
+    def apply(
+        HlsSettings: HlsSettings,
+        NameModifier: js.UndefOr[__stringMin1] = js.undefined,
+        SegmentModifier: js.UndefOr[__string] = js.undefined
+    ): HlsOutputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HlsSettings" -> HlsSettings.asInstanceOf[js.Any],
         "NameModifier" -> NameModifier.map { x =>
@@ -4655,7 +5109,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsProgramDateTime
+    * Hls Program Date Time
     */
   object HlsProgramDateTimeEnum {
     val EXCLUDE = "EXCLUDE"
@@ -4665,7 +5119,7 @@ package medialive {
   }
 
   /**
-    * HLS Redundant Manifest
+    * Hls Redundant Manifest
     */
   object HlsRedundantManifestEnum {
     val DISABLED = "DISABLED"
@@ -4675,7 +5129,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsSegmentationMode
+    * Hls Segmentation Mode
     */
   object HlsSegmentationModeEnum {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION"
@@ -4685,7 +5139,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsSettings
+    * Hls Settings
     */
   @js.native
   trait HlsSettings extends js.Object {
@@ -4694,20 +5148,25 @@ package medialive {
   }
 
   object HlsSettings {
-    def apply(AudioOnlyHlsSettings: js.UndefOr[AudioOnlyHlsSettings] = js.undefined,
-              StandardHlsSettings: js.UndefOr[StandardHlsSettings] = js.undefined): HlsSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("AudioOnlyHlsSettings" -> AudioOnlyHlsSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StandardHlsSettings" -> StandardHlsSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AudioOnlyHlsSettings: js.UndefOr[AudioOnlyHlsSettings] = js.undefined,
+        StandardHlsSettings: js.UndefOr[StandardHlsSettings] = js.undefined
+    ): HlsSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AudioOnlyHlsSettings" -> AudioOnlyHlsSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StandardHlsSettings" -> StandardHlsSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsSettings]
     }
   }
 
   /**
-    * Placeholder documentation for HlsStreamInfResolution
+    * Hls Stream Inf Resolution
     */
   object HlsStreamInfResolutionEnum {
     val EXCLUDE = "EXCLUDE"
@@ -4717,7 +5176,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsTimedMetadataId3Frame
+    * Hls Timed Metadata Id3 Frame
     */
   object HlsTimedMetadataId3FrameEnum {
     val NONE = "NONE"
@@ -4736,16 +5195,19 @@ package medialive {
   }
 
   object HlsTimedMetadataScheduleActionSettings {
-    def apply(Id3: __string): HlsTimedMetadataScheduleActionSettings = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Id3" -> Id3.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id3: __string
+    ): HlsTimedMetadataScheduleActionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id3" -> Id3.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HlsTimedMetadataScheduleActionSettings]
     }
   }
 
   /**
-    * Placeholder documentation for HlsTsFileMode
+    * Hls Ts File Mode
     */
   object HlsTsFileModeEnum {
     val SEGMENTED_FILES = "SEGMENTED_FILES"
@@ -4755,7 +5217,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsWebdavHttpTransferMode
+    * Hls Webdav Http Transfer Mode
     */
   object HlsWebdavHttpTransferModeEnum {
     val CHUNKED     = "CHUNKED"
@@ -4765,7 +5227,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for HlsWebdavSettings
+    * Hls Webdav Settings
     */
   @js.native
   trait HlsWebdavSettings extends js.Object {
@@ -4777,11 +5239,13 @@ package medialive {
   }
 
   object HlsWebdavSettings {
-    def apply(ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
-              FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
-              HttpTransferMode: js.UndefOr[HlsWebdavHttpTransferMode] = js.undefined,
-              NumRetries: js.UndefOr[__integerMin0] = js.undefined,
-              RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined): HlsWebdavSettings = {
+    def apply(
+        ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
+        FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
+        HttpTransferMode: js.UndefOr[HlsWebdavHttpTransferMode] = js.undefined,
+        NumRetries: js.UndefOr[__integerMin0] = js.undefined,
+        RestartDelay: js.UndefOr[__integerMin0Max15] = js.undefined
+    ): HlsWebdavSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionRetryInterval" -> ConnectionRetryInterval.map { x =>
           x.asInstanceOf[js.Any]
@@ -4805,6 +5269,16 @@ package medialive {
   }
 
   /**
+    * When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment.
+    */
+  object IFrameOnlyPlaylistTypeEnum {
+    val DISABLED = "DISABLED"
+    val STANDARD = "STANDARD"
+
+    val values = IndexedSeq(DISABLED, STANDARD)
+  }
+
+  /**
     * Placeholder documentation for Input
     */
   @js.native
@@ -4813,27 +5287,33 @@ package medialive {
     var AttachedChannels: js.UndefOr[__listOf__string]
     var Destinations: js.UndefOr[__listOfInputDestination]
     var Id: js.UndefOr[__string]
+    var InputClass: js.UndefOr[InputClass]
     var MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow]
     var Name: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
     var SecurityGroups: js.UndefOr[__listOf__string]
     var Sources: js.UndefOr[__listOfInputSource]
     var State: js.UndefOr[InputState]
+    var Tags: js.UndefOr[Tags]
     var Type: js.UndefOr[InputType]
   }
 
   object Input {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
-              Sources: js.UndefOr[__listOfInputSource] = js.undefined,
-              State: js.UndefOr[InputState] = js.undefined,
-              Type: js.UndefOr[InputType] = js.undefined): Input = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
+        Destinations: js.UndefOr[__listOfInputDestination] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputClass: js.UndefOr[InputClass] = js.undefined,
+        MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlow] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+        Sources: js.UndefOr[__listOfInputSource] = js.undefined,
+        State: js.UndefOr[InputState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        Type: js.UndefOr[InputType] = js.undefined
+    ): Input = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -4845,6 +5325,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputClass" -> InputClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "MediaConnectFlows" -> MediaConnectFlows.map { x =>
@@ -4863,6 +5346,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Type" -> Type.map { x =>
@@ -4885,9 +5371,11 @@ package medialive {
   }
 
   object InputAttachment {
-    def apply(InputAttachmentName: js.UndefOr[__string] = js.undefined,
-              InputId: js.UndefOr[__string] = js.undefined,
-              InputSettings: js.UndefOr[InputSettings] = js.undefined): InputAttachment = {
+    def apply(
+        InputAttachmentName: js.UndefOr[__string] = js.undefined,
+        InputId: js.UndefOr[__string] = js.undefined,
+        InputSettings: js.UndefOr[InputSettings] = js.undefined
+    ): InputAttachment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputAttachmentName" -> InputAttachmentName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4905,7 +5393,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputChannelLevel
+    * Input Channel Level
     */
   @js.native
   trait InputChannelLevel extends js.Object {
@@ -4914,7 +5402,10 @@ package medialive {
   }
 
   object InputChannelLevel {
-    def apply(Gain: __integerMinNegative60Max6, InputChannel: __integerMin0Max15): InputChannelLevel = {
+    def apply(
+        Gain: __integerMinNegative60Max6,
+        InputChannel: __integerMin0Max15
+    ): InputChannelLevel = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Gain"         -> Gain.asInstanceOf[js.Any],
         "InputChannel" -> InputChannel.asInstanceOf[js.Any]
@@ -4922,6 +5413,16 @@ package medialive {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputChannelLevel]
     }
+  }
+
+  /**
+    * A standard input has two sources and a single pipeline input only has one.
+    */
+  object InputClassEnum {
+    val STANDARD        = "STANDARD"
+    val SINGLE_PIPELINE = "SINGLE_PIPELINE"
+
+    val values = IndexedSeq(STANDARD, SINGLE_PIPELINE)
   }
 
   /**
@@ -4936,7 +5437,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputDeblockFilter
+    * Input Deblock Filter
     */
   object InputDeblockFilterEnum {
     val DISABLED = "DISABLED"
@@ -4946,7 +5447,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputDenoiseFilter
+    * Input Denoise Filter
     */
   object InputDenoiseFilterEnum {
     val DISABLED = "DISABLED"
@@ -4963,19 +5464,30 @@ package medialive {
     var Ip: js.UndefOr[__string]
     var Port: js.UndefOr[__string]
     var Url: js.UndefOr[__string]
+    var Vpc: js.UndefOr[InputDestinationVpc]
   }
 
   object InputDestination {
-    def apply(Ip: js.UndefOr[__string] = js.undefined,
-              Port: js.UndefOr[__string] = js.undefined,
-              Url: js.UndefOr[__string] = js.undefined): InputDestination = {
-      val _fields = IndexedSeq[(String, js.Any)]("Ip" -> Ip.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Port" -> Port.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Url" -> Url.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Ip: js.UndefOr[__string] = js.undefined,
+        Port: js.UndefOr[__string] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined,
+        Vpc: js.UndefOr[InputDestinationVpc] = js.undefined
+    ): InputDestination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Ip" -> Ip.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Port" -> Port.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Vpc" -> Vpc.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDestination]
     }
@@ -4990,17 +5502,48 @@ package medialive {
   }
 
   object InputDestinationRequest {
-    def apply(StreamName: js.UndefOr[__string] = js.undefined): InputDestinationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("StreamName" -> StreamName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StreamName: js.UndefOr[__string] = js.undefined
+    ): InputDestinationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StreamName" -> StreamName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDestinationRequest]
     }
   }
 
   /**
-    * Placeholder documentation for InputFilter
+    * The properties for a VPC type input destination.
+    */
+  @js.native
+  trait InputDestinationVpc extends js.Object {
+    var AvailabilityZone: js.UndefOr[__string]
+    var NetworkInterfaceId: js.UndefOr[__string]
+  }
+
+  object InputDestinationVpc {
+    def apply(
+        AvailabilityZone: js.UndefOr[__string] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[__string] = js.undefined
+    ): InputDestinationVpc = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AvailabilityZone" -> AvailabilityZone.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NetworkInterfaceId" -> NetworkInterfaceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputDestinationVpc]
+    }
+  }
+
+  /**
+    * Input Filter
     */
   object InputFilterEnum {
     val AUTO     = "AUTO"
@@ -5011,7 +5554,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputLocation
+    * Input Location
     */
   @js.native
   trait InputLocation extends js.Object {
@@ -5021,22 +5564,27 @@ package medialive {
   }
 
   object InputLocation {
-    def apply(Uri: __string,
-              PasswordParam: js.UndefOr[__string] = js.undefined,
-              Username: js.UndefOr[__string] = js.undefined): InputLocation = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Uri" -> Uri.asInstanceOf[js.Any], "PasswordParam" -> PasswordParam.map { x =>
+    def apply(
+        Uri: __string,
+        PasswordParam: js.UndefOr[__string] = js.undefined,
+        Username: js.UndefOr[__string] = js.undefined
+    ): InputLocation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Uri" -> Uri.asInstanceOf[js.Any],
+        "PasswordParam" -> PasswordParam.map { x =>
           x.asInstanceOf[js.Any]
-        }, "Username" -> Username.map { x =>
+        },
+        "Username" -> Username.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputLocation]
     }
   }
 
   /**
-    * Placeholder documentation for InputLossActionForHlsOut
+    * Input Loss Action For Hls Out
     */
   object InputLossActionForHlsOutEnum {
     val EMIT_OUTPUT  = "EMIT_OUTPUT"
@@ -5046,7 +5594,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputLossActionForMsSmoothOut
+    * Input Loss Action For Ms Smooth Out
     */
   object InputLossActionForMsSmoothOutEnum {
     val EMIT_OUTPUT  = "EMIT_OUTPUT"
@@ -5056,7 +5604,7 @@ package medialive {
   }
 
   /**
-    * Input Loss Action
+    * Input Loss Action For Rtmp Out
     */
   object InputLossActionForRtmpOutEnum {
     val EMIT_OUTPUT  = "EMIT_OUTPUT"
@@ -5066,7 +5614,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputLossActionForUdpOut
+    * Input Loss Action For Udp Out
     */
   object InputLossActionForUdpOutEnum {
     val DROP_PROGRAM = "DROP_PROGRAM"
@@ -5077,7 +5625,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputLossBehavior
+    * Input Loss Behavior
     */
   @js.native
   trait InputLossBehavior extends js.Object {
@@ -5089,11 +5637,13 @@ package medialive {
   }
 
   object InputLossBehavior {
-    def apply(BlackFrameMsec: js.UndefOr[__integerMin0Max1000000] = js.undefined,
-              InputLossImageColor: js.UndefOr[__stringMin6Max6] = js.undefined,
-              InputLossImageSlate: js.UndefOr[InputLocation] = js.undefined,
-              InputLossImageType: js.UndefOr[InputLossImageType] = js.undefined,
-              RepeatFrameMsec: js.UndefOr[__integerMin0Max1000000] = js.undefined): InputLossBehavior = {
+    def apply(
+        BlackFrameMsec: js.UndefOr[__integerMin0Max1000000] = js.undefined,
+        InputLossImageColor: js.UndefOr[__stringMin6Max6] = js.undefined,
+        InputLossImageSlate: js.UndefOr[InputLocation] = js.undefined,
+        InputLossImageType: js.UndefOr[InputLossImageType] = js.undefined,
+        RepeatFrameMsec: js.UndefOr[__integerMin0Max1000000] = js.undefined
+    ): InputLossBehavior = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BlackFrameMsec" -> BlackFrameMsec.map { x =>
           x.asInstanceOf[js.Any]
@@ -5117,7 +5667,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputLossImageType
+    * Input Loss Image Type
     */
   object InputLossImageTypeEnum {
     val COLOR = "COLOR"
@@ -5157,15 +5707,19 @@ package medialive {
     var Id: js.UndefOr[__string]
     var Inputs: js.UndefOr[__listOf__string]
     var State: js.UndefOr[InputSecurityGroupState]
+    var Tags: js.UndefOr[Tags]
     var WhitelistRules: js.UndefOr[__listOfInputWhitelistRule]
   }
 
   object InputSecurityGroup {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              Inputs: js.UndefOr[__listOf__string] = js.undefined,
-              State: js.UndefOr[InputSecurityGroupState] = js.undefined,
-              WhitelistRules: js.UndefOr[__listOfInputWhitelistRule] = js.undefined): InputSecurityGroup = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        Inputs: js.UndefOr[__listOf__string] = js.undefined,
+        State: js.UndefOr[InputSecurityGroupState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        WhitelistRules: js.UndefOr[__listOfInputWhitelistRule] = js.undefined
+    ): InputSecurityGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -5177,6 +5731,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "WhitelistRules" -> WhitelistRules.map { x =>
@@ -5217,15 +5774,17 @@ package medialive {
   }
 
   object InputSettings {
-    def apply(AudioSelectors: js.UndefOr[__listOfAudioSelector] = js.undefined,
-              CaptionSelectors: js.UndefOr[__listOfCaptionSelector] = js.undefined,
-              DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
-              DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
-              FilterStrength: js.UndefOr[__integerMin1Max5] = js.undefined,
-              InputFilter: js.UndefOr[InputFilter] = js.undefined,
-              NetworkInputSettings: js.UndefOr[NetworkInputSettings] = js.undefined,
-              SourceEndBehavior: js.UndefOr[InputSourceEndBehavior] = js.undefined,
-              VideoSelector: js.UndefOr[VideoSelector] = js.undefined): InputSettings = {
+    def apply(
+        AudioSelectors: js.UndefOr[__listOfAudioSelector] = js.undefined,
+        CaptionSelectors: js.UndefOr[__listOfCaptionSelector] = js.undefined,
+        DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
+        DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
+        FilterStrength: js.UndefOr[__integerMin1Max5] = js.undefined,
+        InputFilter: js.UndefOr[InputFilter] = js.undefined,
+        NetworkInputSettings: js.UndefOr[NetworkInputSettings] = js.undefined,
+        SourceEndBehavior: js.UndefOr[InputSourceEndBehavior] = js.undefined,
+        VideoSelector: js.UndefOr[VideoSelector] = js.undefined
+    ): InputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioSelectors" -> AudioSelectors.map { x =>
           x.asInstanceOf[js.Any]
@@ -5271,9 +5830,11 @@ package medialive {
   }
 
   object InputSource {
-    def apply(PasswordParam: js.UndefOr[__string] = js.undefined,
-              Url: js.UndefOr[__string] = js.undefined,
-              Username: js.UndefOr[__string] = js.undefined): InputSource = {
+    def apply(
+        PasswordParam: js.UndefOr[__string] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined,
+        Username: js.UndefOr[__string] = js.undefined
+    ): InputSource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PasswordParam" -> PasswordParam.map { x =>
           x.asInstanceOf[js.Any]
@@ -5291,7 +5852,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for InputSourceEndBehavior
+    * Input Source End Behavior
     */
   object InputSourceEndBehaviorEnum {
     val CONTINUE = "CONTINUE"
@@ -5311,9 +5872,11 @@ package medialive {
   }
 
   object InputSourceRequest {
-    def apply(PasswordParam: js.UndefOr[__string] = js.undefined,
-              Url: js.UndefOr[__string] = js.undefined,
-              Username: js.UndefOr[__string] = js.undefined): InputSourceRequest = {
+    def apply(
+        PasswordParam: js.UndefOr[__string] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined,
+        Username: js.UndefOr[__string] = js.undefined
+    ): InputSourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PasswordParam" -> PasswordParam.map { x =>
           x.asInstanceOf[js.Any]
@@ -5341,9 +5904,11 @@ package medialive {
   }
 
   object InputSpecification {
-    def apply(Codec: js.UndefOr[InputCodec] = js.undefined,
-              MaximumBitrate: js.UndefOr[InputMaximumBitrate] = js.undefined,
-              Resolution: js.UndefOr[InputResolution] = js.undefined): InputSpecification = {
+    def apply(
+        Codec: js.UndefOr[InputCodec] = js.undefined,
+        MaximumBitrate: js.UndefOr[InputMaximumBitrate] = js.undefined,
+        Resolution: js.UndefOr[InputResolution] = js.undefined
+    ): InputSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Codec" -> Codec.map { x =>
           x.asInstanceOf[js.Any]
@@ -5382,7 +5947,9 @@ package medialive {
   }
 
   object InputSwitchScheduleActionSettings {
-    def apply(InputAttachmentNameReference: __string): InputSwitchScheduleActionSettings = {
+    def apply(
+        InputAttachmentNameReference: __string
+    ): InputSwitchScheduleActionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputAttachmentNameReference" -> InputAttachmentNameReference.asInstanceOf[js.Any]
       ).filter(_._2 != (js.undefined: js.Any))
@@ -5407,6 +5974,34 @@ package medialive {
   }
 
   /**
+    * Settings for a private VPC Input.
+    * When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.
+    * This property requires setting the roleArn property on Input creation.
+    * Not compatible with the inputSecurityGroups property.
+    */
+  @js.native
+  trait InputVpcRequest extends js.Object {
+    var SubnetIds: __listOf__string
+    var SecurityGroupIds: js.UndefOr[__listOf__string]
+  }
+
+  object InputVpcRequest {
+    def apply(
+        SubnetIds: __listOf__string,
+        SecurityGroupIds: js.UndefOr[__listOf__string] = js.undefined
+    ): InputVpcRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
+        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputVpcRequest]
+    }
+  }
+
+  /**
     * Whitelist rule
     */
   @js.native
@@ -5415,10 +6010,14 @@ package medialive {
   }
 
   object InputWhitelistRule {
-    def apply(Cidr: js.UndefOr[__string] = js.undefined): InputWhitelistRule = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cidr" -> Cidr.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cidr: js.UndefOr[__string] = js.undefined
+    ): InputWhitelistRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cidr" -> Cidr.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputWhitelistRule]
     }
@@ -5433,17 +6032,21 @@ package medialive {
   }
 
   object InputWhitelistRuleCidr {
-    def apply(Cidr: js.UndefOr[__string] = js.undefined): InputWhitelistRuleCidr = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cidr" -> Cidr.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cidr: js.UndefOr[__string] = js.undefined
+    ): InputWhitelistRuleCidr = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cidr" -> Cidr.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputWhitelistRuleCidr]
     }
   }
 
   /**
-    * Placeholder documentation for KeyProviderSettings
+    * Key Provider Settings
     */
   @js.native
   trait KeyProviderSettings extends js.Object {
@@ -5451,10 +6054,14 @@ package medialive {
   }
 
   object KeyProviderSettings {
-    def apply(StaticKeySettings: js.UndefOr[StaticKeySettings] = js.undefined): KeyProviderSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("StaticKeySettings" -> StaticKeySettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StaticKeySettings: js.UndefOr[StaticKeySettings] = js.undefined
+    ): KeyProviderSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StaticKeySettings" -> StaticKeySettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyProviderSettings]
     }
@@ -5470,13 +6077,18 @@ package medialive {
   }
 
   object ListChannelsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListChannelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListChannelsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChannelsRequest]
     }
@@ -5492,13 +6104,18 @@ package medialive {
   }
 
   object ListChannelsResponse {
-    def apply(Channels: js.UndefOr[__listOfChannelSummary] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Channels" -> Channels.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Channels: js.UndefOr[__listOfChannelSummary] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListChannelsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Channels" -> Channels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListChannelsResponse]
     }
@@ -5514,13 +6131,18 @@ package medialive {
   }
 
   object ListInputSecurityGroupsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListInputSecurityGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputSecurityGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputSecurityGroupsRequest]
     }
@@ -5536,13 +6158,18 @@ package medialive {
   }
 
   object ListInputSecurityGroupsResponse {
-    def apply(InputSecurityGroups: js.UndefOr[__listOfInputSecurityGroup] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListInputSecurityGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("InputSecurityGroups" -> InputSecurityGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InputSecurityGroups: js.UndefOr[__listOfInputSecurityGroup] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputSecurityGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InputSecurityGroups" -> InputSecurityGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputSecurityGroupsResponse]
     }
@@ -5558,13 +6185,18 @@ package medialive {
   }
 
   object ListInputsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListInputsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputsRequest]
     }
@@ -5580,13 +6212,18 @@ package medialive {
   }
 
   object ListInputsResponse {
-    def apply(Inputs: js.UndefOr[__listOfInput] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListInputsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Inputs" -> Inputs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Inputs: js.UndefOr[__listOfInput] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInputsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Inputs" -> Inputs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInputsResponse]
     }
@@ -5597,6 +6234,7 @@ package medialive {
     */
   @js.native
   trait ListOfferingsRequest extends js.Object {
+    var ChannelClass: js.UndefOr[__string]
     var ChannelConfiguration: js.UndefOr[__string]
     var Codec: js.UndefOr[__string]
     var MaxResults: js.UndefOr[MaxResults]
@@ -5610,17 +6248,23 @@ package medialive {
   }
 
   object ListOfferingsRequest {
-    def apply(ChannelConfiguration: js.UndefOr[__string] = js.undefined,
-              Codec: js.UndefOr[__string] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              MaximumBitrate: js.UndefOr[__string] = js.undefined,
-              MaximumFramerate: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined,
-              Resolution: js.UndefOr[__string] = js.undefined,
-              ResourceType: js.UndefOr[__string] = js.undefined,
-              SpecialFeature: js.UndefOr[__string] = js.undefined,
-              VideoQuality: js.UndefOr[__string] = js.undefined): ListOfferingsRequest = {
+    def apply(
+        ChannelClass: js.UndefOr[__string] = js.undefined,
+        ChannelConfiguration: js.UndefOr[__string] = js.undefined,
+        Codec: js.UndefOr[__string] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        MaximumBitrate: js.UndefOr[__string] = js.undefined,
+        MaximumFramerate: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Resolution: js.UndefOr[__string] = js.undefined,
+        ResourceType: js.UndefOr[__string] = js.undefined,
+        SpecialFeature: js.UndefOr[__string] = js.undefined,
+        VideoQuality: js.UndefOr[__string] = js.undefined
+    ): ListOfferingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelClass" -> ChannelClass.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "ChannelConfiguration" -> ChannelConfiguration.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -5667,13 +6311,18 @@ package medialive {
   }
 
   object ListOfferingsResponse {
-    def apply(NextToken: js.UndefOr[__string] = js.undefined,
-              Offerings: js.UndefOr[__listOfOffering] = js.undefined): ListOfferingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Offerings" -> Offerings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Offerings: js.UndefOr[__listOfOffering] = js.undefined
+    ): ListOfferingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Offerings" -> Offerings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingsResponse]
     }
@@ -5684,6 +6333,7 @@ package medialive {
     */
   @js.native
   trait ListReservationsRequest extends js.Object {
+    var ChannelClass: js.UndefOr[__string]
     var Codec: js.UndefOr[__string]
     var MaxResults: js.UndefOr[MaxResults]
     var MaximumBitrate: js.UndefOr[__string]
@@ -5696,16 +6346,22 @@ package medialive {
   }
 
   object ListReservationsRequest {
-    def apply(Codec: js.UndefOr[__string] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              MaximumBitrate: js.UndefOr[__string] = js.undefined,
-              MaximumFramerate: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined,
-              Resolution: js.UndefOr[__string] = js.undefined,
-              ResourceType: js.UndefOr[__string] = js.undefined,
-              SpecialFeature: js.UndefOr[__string] = js.undefined,
-              VideoQuality: js.UndefOr[__string] = js.undefined): ListReservationsRequest = {
+    def apply(
+        ChannelClass: js.UndefOr[__string] = js.undefined,
+        Codec: js.UndefOr[__string] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        MaximumBitrate: js.UndefOr[__string] = js.undefined,
+        MaximumFramerate: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Resolution: js.UndefOr[__string] = js.undefined,
+        ResourceType: js.UndefOr[__string] = js.undefined,
+        SpecialFeature: js.UndefOr[__string] = js.undefined,
+        VideoQuality: js.UndefOr[__string] = js.undefined
+    ): ListReservationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelClass" -> ChannelClass.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Codec" -> Codec.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -5749,15 +6405,62 @@ package medialive {
   }
 
   object ListReservationsResponse {
-    def apply(NextToken: js.UndefOr[__string] = js.undefined,
-              Reservations: js.UndefOr[__listOfReservation] = js.undefined): ListReservationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Reservations" -> Reservations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Reservations: js.UndefOr[__listOfReservation] = js.undefined
+    ): ListReservationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Reservations" -> Reservations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReservationsResponse]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListTagsForResourceRequest
+    */
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: __string
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceArn: __string
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for ListTagsForResourceResponse
+    */
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -5775,7 +6478,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsAbsentInputAudioBehavior
+    * M2ts Absent Input Audio Behavior
     */
   object M2tsAbsentInputAudioBehaviorEnum {
     val DROP           = "DROP"
@@ -5785,7 +6488,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsArib
+    * M2ts Arib
     */
   object M2tsAribEnum {
     val DISABLED = "DISABLED"
@@ -5795,7 +6498,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsAribCaptionsPidControl
+    * M2ts Arib Captions Pid Control
     */
   object M2tsAribCaptionsPidControlEnum {
     val AUTO           = "AUTO"
@@ -5805,7 +6508,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsAudioBufferModel
+    * M2ts Audio Buffer Model
     */
   object M2tsAudioBufferModelEnum {
     val ATSC = "ATSC"
@@ -5815,7 +6518,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsAudioInterval
+    * M2ts Audio Interval
     */
   object M2tsAudioIntervalEnum {
     val VIDEO_AND_FIXED_INTERVALS = "VIDEO_AND_FIXED_INTERVALS"
@@ -5825,7 +6528,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsAudioStreamType
+    * M2ts Audio Stream Type
     */
   object M2tsAudioStreamTypeEnum {
     val ATSC = "ATSC"
@@ -5835,7 +6538,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsBufferModel
+    * M2ts Buffer Model
     */
   object M2tsBufferModelEnum {
     val MULTIPLEX = "MULTIPLEX"
@@ -5845,7 +6548,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsCcDescriptor
+    * M2ts Cc Descriptor
     */
   object M2tsCcDescriptorEnum {
     val DISABLED = "DISABLED"
@@ -5855,7 +6558,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsEbifControl
+    * M2ts Ebif Control
     */
   object M2tsEbifControlEnum {
     val NONE        = "NONE"
@@ -5865,7 +6568,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsEbpPlacement
+    * M2ts Ebp Placement
     */
   object M2tsEbpPlacementEnum {
     val VIDEO_AND_AUDIO_PIDS = "VIDEO_AND_AUDIO_PIDS"
@@ -5875,7 +6578,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsEsRateInPes
+    * M2ts Es Rate In Pes
     */
   object M2tsEsRateInPesEnum {
     val EXCLUDE = "EXCLUDE"
@@ -5885,7 +6588,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsKlv
+    * M2ts Klv
     */
   object M2tsKlvEnum {
     val NONE        = "NONE"
@@ -5895,7 +6598,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsPcrControl
+    * M2ts Pcr Control
     */
   object M2tsPcrControlEnum {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD"
@@ -5905,7 +6608,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsRateMode
+    * M2ts Rate Mode
     */
   object M2tsRateModeEnum {
     val CBR = "CBR"
@@ -5915,7 +6618,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsScte35Control
+    * M2ts Scte35 Control
     */
   object M2tsScte35ControlEnum {
     val NONE        = "NONE"
@@ -5925,7 +6628,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsSegmentationMarkers
+    * M2ts Segmentation Markers
     */
   object M2tsSegmentationMarkersEnum {
     val EBP          = "EBP"
@@ -5939,7 +6642,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsSegmentationStyle
+    * M2ts Segmentation Style
     */
   object M2tsSegmentationStyleEnum {
     val MAINTAIN_CADENCE = "MAINTAIN_CADENCE"
@@ -5949,7 +6652,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsSettings
+    * M2ts Settings
     */
   @js.native
   trait M2tsSettings extends js.Object {
@@ -6002,52 +6705,54 @@ package medialive {
   }
 
   object M2tsSettings {
-    def apply(AbsentInputAudioBehavior: js.UndefOr[M2tsAbsentInputAudioBehavior] = js.undefined,
-              Arib: js.UndefOr[M2tsArib] = js.undefined,
-              AribCaptionsPid: js.UndefOr[__string] = js.undefined,
-              AribCaptionsPidControl: js.UndefOr[M2tsAribCaptionsPidControl] = js.undefined,
-              AudioBufferModel: js.UndefOr[M2tsAudioBufferModel] = js.undefined,
-              AudioFramesPerPes: js.UndefOr[__integerMin0] = js.undefined,
-              AudioPids: js.UndefOr[__string] = js.undefined,
-              AudioStreamType: js.UndefOr[M2tsAudioStreamType] = js.undefined,
-              Bitrate: js.UndefOr[__integerMin0] = js.undefined,
-              BufferModel: js.UndefOr[M2tsBufferModel] = js.undefined,
-              CcDescriptor: js.UndefOr[M2tsCcDescriptor] = js.undefined,
-              DvbNitSettings: js.UndefOr[DvbNitSettings] = js.undefined,
-              DvbSdtSettings: js.UndefOr[DvbSdtSettings] = js.undefined,
-              DvbSubPids: js.UndefOr[__string] = js.undefined,
-              DvbTdtSettings: js.UndefOr[DvbTdtSettings] = js.undefined,
-              DvbTeletextPid: js.UndefOr[__string] = js.undefined,
-              Ebif: js.UndefOr[M2tsEbifControl] = js.undefined,
-              EbpAudioInterval: js.UndefOr[M2tsAudioInterval] = js.undefined,
-              EbpLookaheadMs: js.UndefOr[__integerMin0Max10000] = js.undefined,
-              EbpPlacement: js.UndefOr[M2tsEbpPlacement] = js.undefined,
-              EcmPid: js.UndefOr[__string] = js.undefined,
-              EsRateInPes: js.UndefOr[M2tsEsRateInPes] = js.undefined,
-              EtvPlatformPid: js.UndefOr[__string] = js.undefined,
-              EtvSignalPid: js.UndefOr[__string] = js.undefined,
-              FragmentTime: js.UndefOr[__doubleMin0] = js.undefined,
-              Klv: js.UndefOr[M2tsKlv] = js.undefined,
-              KlvDataPids: js.UndefOr[__string] = js.undefined,
-              NullPacketBitrate: js.UndefOr[__doubleMin0] = js.undefined,
-              PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PcrControl: js.UndefOr[M2tsPcrControl] = js.undefined,
-              PcrPeriod: js.UndefOr[__integerMin0Max500] = js.undefined,
-              PcrPid: js.UndefOr[__string] = js.undefined,
-              PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PmtPid: js.UndefOr[__string] = js.undefined,
-              ProgramNum: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              RateMode: js.UndefOr[M2tsRateMode] = js.undefined,
-              Scte27Pids: js.UndefOr[__string] = js.undefined,
-              Scte35Control: js.UndefOr[M2tsScte35Control] = js.undefined,
-              Scte35Pid: js.UndefOr[__string] = js.undefined,
-              SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers] = js.undefined,
-              SegmentationStyle: js.UndefOr[M2tsSegmentationStyle] = js.undefined,
-              SegmentationTime: js.UndefOr[__doubleMin1] = js.undefined,
-              TimedMetadataBehavior: js.UndefOr[M2tsTimedMetadataBehavior] = js.undefined,
-              TimedMetadataPid: js.UndefOr[__string] = js.undefined,
-              TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              VideoPid: js.UndefOr[__string] = js.undefined): M2tsSettings = {
+    def apply(
+        AbsentInputAudioBehavior: js.UndefOr[M2tsAbsentInputAudioBehavior] = js.undefined,
+        Arib: js.UndefOr[M2tsArib] = js.undefined,
+        AribCaptionsPid: js.UndefOr[__string] = js.undefined,
+        AribCaptionsPidControl: js.UndefOr[M2tsAribCaptionsPidControl] = js.undefined,
+        AudioBufferModel: js.UndefOr[M2tsAudioBufferModel] = js.undefined,
+        AudioFramesPerPes: js.UndefOr[__integerMin0] = js.undefined,
+        AudioPids: js.UndefOr[__string] = js.undefined,
+        AudioStreamType: js.UndefOr[M2tsAudioStreamType] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin0] = js.undefined,
+        BufferModel: js.UndefOr[M2tsBufferModel] = js.undefined,
+        CcDescriptor: js.UndefOr[M2tsCcDescriptor] = js.undefined,
+        DvbNitSettings: js.UndefOr[DvbNitSettings] = js.undefined,
+        DvbSdtSettings: js.UndefOr[DvbSdtSettings] = js.undefined,
+        DvbSubPids: js.UndefOr[__string] = js.undefined,
+        DvbTdtSettings: js.UndefOr[DvbTdtSettings] = js.undefined,
+        DvbTeletextPid: js.UndefOr[__string] = js.undefined,
+        Ebif: js.UndefOr[M2tsEbifControl] = js.undefined,
+        EbpAudioInterval: js.UndefOr[M2tsAudioInterval] = js.undefined,
+        EbpLookaheadMs: js.UndefOr[__integerMin0Max10000] = js.undefined,
+        EbpPlacement: js.UndefOr[M2tsEbpPlacement] = js.undefined,
+        EcmPid: js.UndefOr[__string] = js.undefined,
+        EsRateInPes: js.UndefOr[M2tsEsRateInPes] = js.undefined,
+        EtvPlatformPid: js.UndefOr[__string] = js.undefined,
+        EtvSignalPid: js.UndefOr[__string] = js.undefined,
+        FragmentTime: js.UndefOr[__doubleMin0] = js.undefined,
+        Klv: js.UndefOr[M2tsKlv] = js.undefined,
+        KlvDataPids: js.UndefOr[__string] = js.undefined,
+        NullPacketBitrate: js.UndefOr[__doubleMin0] = js.undefined,
+        PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PcrControl: js.UndefOr[M2tsPcrControl] = js.undefined,
+        PcrPeriod: js.UndefOr[__integerMin0Max500] = js.undefined,
+        PcrPid: js.UndefOr[__string] = js.undefined,
+        PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PmtPid: js.UndefOr[__string] = js.undefined,
+        ProgramNum: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        RateMode: js.UndefOr[M2tsRateMode] = js.undefined,
+        Scte27Pids: js.UndefOr[__string] = js.undefined,
+        Scte35Control: js.UndefOr[M2tsScte35Control] = js.undefined,
+        Scte35Pid: js.UndefOr[__string] = js.undefined,
+        SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers] = js.undefined,
+        SegmentationStyle: js.UndefOr[M2tsSegmentationStyle] = js.undefined,
+        SegmentationTime: js.UndefOr[__doubleMin1] = js.undefined,
+        TimedMetadataBehavior: js.UndefOr[M2tsTimedMetadataBehavior] = js.undefined,
+        TimedMetadataPid: js.UndefOr[__string] = js.undefined,
+        TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        VideoPid: js.UndefOr[__string] = js.undefined
+    ): M2tsSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AbsentInputAudioBehavior" -> AbsentInputAudioBehavior.map { x =>
           x.asInstanceOf[js.Any]
@@ -6194,7 +6899,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M2tsTimedMetadataBehavior
+    * M2ts Timed Metadata Behavior
     */
   object M2tsTimedMetadataBehaviorEnum {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
@@ -6204,7 +6909,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M3u8PcrControl
+    * M3u8 Pcr Control
     */
   object M3u8PcrControlEnum {
     val CONFIGURED_PCR_PERIOD = "CONFIGURED_PCR_PERIOD"
@@ -6214,7 +6919,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M3u8Scte35Behavior
+    * M3u8 Scte35 Behavior
     */
   object M3u8Scte35BehaviorEnum {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
@@ -6247,22 +6952,24 @@ package medialive {
   }
 
   object M3u8Settings {
-    def apply(AudioFramesPerPes: js.UndefOr[__integerMin0] = js.undefined,
-              AudioPids: js.UndefOr[__string] = js.undefined,
-              EcmPid: js.UndefOr[__string] = js.undefined,
-              PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PcrControl: js.UndefOr[M3u8PcrControl] = js.undefined,
-              PcrPeriod: js.UndefOr[__integerMin0Max500] = js.undefined,
-              PcrPid: js.UndefOr[__string] = js.undefined,
-              PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PmtPid: js.UndefOr[__string] = js.undefined,
-              ProgramNum: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              Scte35Behavior: js.UndefOr[M3u8Scte35Behavior] = js.undefined,
-              Scte35Pid: js.UndefOr[__string] = js.undefined,
-              TimedMetadataBehavior: js.UndefOr[M3u8TimedMetadataBehavior] = js.undefined,
-              TimedMetadataPid: js.UndefOr[__string] = js.undefined,
-              TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              VideoPid: js.UndefOr[__string] = js.undefined): M3u8Settings = {
+    def apply(
+        AudioFramesPerPes: js.UndefOr[__integerMin0] = js.undefined,
+        AudioPids: js.UndefOr[__string] = js.undefined,
+        EcmPid: js.UndefOr[__string] = js.undefined,
+        PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PcrControl: js.UndefOr[M3u8PcrControl] = js.undefined,
+        PcrPeriod: js.UndefOr[__integerMin0Max500] = js.undefined,
+        PcrPid: js.UndefOr[__string] = js.undefined,
+        PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PmtPid: js.UndefOr[__string] = js.undefined,
+        ProgramNum: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        Scte35Behavior: js.UndefOr[M3u8Scte35Behavior] = js.undefined,
+        Scte35Pid: js.UndefOr[__string] = js.undefined,
+        TimedMetadataBehavior: js.UndefOr[M3u8TimedMetadataBehavior] = js.undefined,
+        TimedMetadataPid: js.UndefOr[__string] = js.undefined,
+        TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        VideoPid: js.UndefOr[__string] = js.undefined
+    ): M3u8Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioFramesPerPes" -> AudioFramesPerPes.map { x =>
           x.asInstanceOf[js.Any]
@@ -6319,7 +7026,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for M3u8TimedMetadataBehavior
+    * M3u8 Timed Metadata Behavior
     */
   object M3u8TimedMetadataBehaviorEnum {
     val NO_PASSTHROUGH = "NO_PASSTHROUGH"
@@ -6337,10 +7044,14 @@ package medialive {
   }
 
   object MediaConnectFlow {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined): MediaConnectFlow = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined
+    ): MediaConnectFlow = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaConnectFlow]
     }
@@ -6355,17 +7066,79 @@ package medialive {
   }
 
   object MediaConnectFlowRequest {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined): MediaConnectFlowRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined
+    ): MediaConnectFlowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaConnectFlowRequest]
     }
   }
 
   /**
-    * Placeholder documentation for Mp2CodingMode
+    * Media Package Group Settings
+    */
+  @js.native
+  trait MediaPackageGroupSettings extends js.Object {
+    var Destination: OutputLocationRef
+  }
+
+  object MediaPackageGroupSettings {
+    def apply(
+        Destination: OutputLocationRef
+    ): MediaPackageGroupSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Destination" -> Destination.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaPackageGroupSettings]
+    }
+  }
+
+  /**
+    * Media Package Output Destination Settings
+    */
+  @js.native
+  trait MediaPackageOutputDestinationSettings extends js.Object {
+    var ChannelId: js.UndefOr[__stringMin1]
+  }
+
+  object MediaPackageOutputDestinationSettings {
+    def apply(
+        ChannelId: js.UndefOr[__stringMin1] = js.undefined
+    ): MediaPackageOutputDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelId" -> ChannelId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaPackageOutputDestinationSettings]
+    }
+  }
+
+  /**
+    * Media Package Output Settings
+    */
+  @js.native
+  trait MediaPackageOutputSettings extends js.Object {}
+
+  object MediaPackageOutputSettings {
+    def apply(
+        ): MediaPackageOutputSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MediaPackageOutputSettings]
+    }
+  }
+
+  /**
+    * Mp2 Coding Mode
     */
   object Mp2CodingModeEnum {
     val CODING_MODE_1_0 = "CODING_MODE_1_0"
@@ -6375,7 +7148,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Mp2Settings
+    * Mp2 Settings
     */
   @js.native
   trait Mp2Settings extends js.Object {
@@ -6385,9 +7158,11 @@ package medialive {
   }
 
   object Mp2Settings {
-    def apply(Bitrate: js.UndefOr[__double] = js.undefined,
-              CodingMode: js.UndefOr[Mp2CodingMode] = js.undefined,
-              SampleRate: js.UndefOr[__double] = js.undefined): Mp2Settings = {
+    def apply(
+        Bitrate: js.UndefOr[__double] = js.undefined,
+        CodingMode: js.UndefOr[Mp2CodingMode] = js.undefined,
+        SampleRate: js.UndefOr[__double] = js.undefined
+    ): Mp2Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bitrate" -> Bitrate.map { x =>
           x.asInstanceOf[js.Any]
@@ -6405,7 +7180,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for MsSmoothGroupSettings
+    * Ms Smooth Group Settings
     */
   @js.native
   trait MsSmoothGroupSettings extends js.Object {
@@ -6431,25 +7206,27 @@ package medialive {
   }
 
   object MsSmoothGroupSettings {
-    def apply(Destination: OutputLocationRef,
-              AcquisitionPointId: js.UndefOr[__string] = js.undefined,
-              AudioOnlyTimecodeControl: js.UndefOr[SmoothGroupAudioOnlyTimecodeControl] = js.undefined,
-              CertificateMode: js.UndefOr[SmoothGroupCertificateMode] = js.undefined,
-              ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
-              EventId: js.UndefOr[__string] = js.undefined,
-              EventIdMode: js.UndefOr[SmoothGroupEventIdMode] = js.undefined,
-              EventStopBehavior: js.UndefOr[SmoothGroupEventStopBehavior] = js.undefined,
-              FilecacheDuration: js.UndefOr[__integerMin0] = js.undefined,
-              FragmentLength: js.UndefOr[__integerMin1] = js.undefined,
-              InputLossAction: js.UndefOr[InputLossActionForMsSmoothOut] = js.undefined,
-              NumRetries: js.UndefOr[__integerMin0] = js.undefined,
-              RestartDelay: js.UndefOr[__integerMin0] = js.undefined,
-              SegmentationMode: js.UndefOr[SmoothGroupSegmentationMode] = js.undefined,
-              SendDelayMs: js.UndefOr[__integerMin0Max10000] = js.undefined,
-              SparseTrackType: js.UndefOr[SmoothGroupSparseTrackType] = js.undefined,
-              StreamManifestBehavior: js.UndefOr[SmoothGroupStreamManifestBehavior] = js.undefined,
-              TimestampOffset: js.UndefOr[__string] = js.undefined,
-              TimestampOffsetMode: js.UndefOr[SmoothGroupTimestampOffsetMode] = js.undefined): MsSmoothGroupSettings = {
+    def apply(
+        Destination: OutputLocationRef,
+        AcquisitionPointId: js.UndefOr[__string] = js.undefined,
+        AudioOnlyTimecodeControl: js.UndefOr[SmoothGroupAudioOnlyTimecodeControl] = js.undefined,
+        CertificateMode: js.UndefOr[SmoothGroupCertificateMode] = js.undefined,
+        ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
+        EventId: js.UndefOr[__string] = js.undefined,
+        EventIdMode: js.UndefOr[SmoothGroupEventIdMode] = js.undefined,
+        EventStopBehavior: js.UndefOr[SmoothGroupEventStopBehavior] = js.undefined,
+        FilecacheDuration: js.UndefOr[__integerMin0] = js.undefined,
+        FragmentLength: js.UndefOr[__integerMin1] = js.undefined,
+        InputLossAction: js.UndefOr[InputLossActionForMsSmoothOut] = js.undefined,
+        NumRetries: js.UndefOr[__integerMin0] = js.undefined,
+        RestartDelay: js.UndefOr[__integerMin0] = js.undefined,
+        SegmentationMode: js.UndefOr[SmoothGroupSegmentationMode] = js.undefined,
+        SendDelayMs: js.UndefOr[__integerMin0Max10000] = js.undefined,
+        SparseTrackType: js.UndefOr[SmoothGroupSparseTrackType] = js.undefined,
+        StreamManifestBehavior: js.UndefOr[SmoothGroupStreamManifestBehavior] = js.undefined,
+        TimestampOffset: js.UndefOr[__string] = js.undefined,
+        TimestampOffsetMode: js.UndefOr[SmoothGroupTimestampOffsetMode] = js.undefined
+    ): MsSmoothGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destination" -> Destination.asInstanceOf[js.Any],
         "AcquisitionPointId" -> AcquisitionPointId.map { x =>
@@ -6513,7 +7290,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for MsSmoothOutputSettings
+    * Ms Smooth Output Settings
     */
   @js.native
   trait MsSmoothOutputSettings extends js.Object {
@@ -6521,17 +7298,21 @@ package medialive {
   }
 
   object MsSmoothOutputSettings {
-    def apply(NameModifier: js.UndefOr[__string] = js.undefined): MsSmoothOutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("NameModifier" -> NameModifier.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NameModifier: js.UndefOr[__string] = js.undefined
+    ): MsSmoothOutputSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NameModifier" -> NameModifier.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MsSmoothOutputSettings]
     }
   }
 
   /**
-    * Placeholder documentation for NetworkInputServerValidation
+    * Network Input Server Validation
     */
   object NetworkInputServerValidationEnum {
     val CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME = "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME"
@@ -6550,13 +7331,18 @@ package medialive {
   }
 
   object NetworkInputSettings {
-    def apply(HlsInputSettings: js.UndefOr[HlsInputSettings] = js.undefined,
-              ServerValidation: js.UndefOr[NetworkInputServerValidation] = js.undefined): NetworkInputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("HlsInputSettings" -> HlsInputSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ServerValidation" -> ServerValidation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HlsInputSettings: js.UndefOr[HlsInputSettings] = js.undefined,
+        ServerValidation: js.UndefOr[NetworkInputServerValidation] = js.undefined
+    ): NetworkInputSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HlsInputSettings" -> HlsInputSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ServerValidation" -> ServerValidation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkInputSettings]
     }
@@ -6581,17 +7367,19 @@ package medialive {
   }
 
   object Offering {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              CurrencyCode: js.UndefOr[__string] = js.undefined,
-              Duration: js.UndefOr[__integer] = js.undefined,
-              DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
-              FixedPrice: js.UndefOr[__double] = js.undefined,
-              OfferingDescription: js.UndefOr[__string] = js.undefined,
-              OfferingId: js.UndefOr[__string] = js.undefined,
-              OfferingType: js.UndefOr[OfferingType] = js.undefined,
-              Region: js.UndefOr[__string] = js.undefined,
-              ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
-              UsagePrice: js.UndefOr[__double] = js.undefined): Offering = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        CurrencyCode: js.UndefOr[__string] = js.undefined,
+        Duration: js.UndefOr[__integer] = js.undefined,
+        DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
+        FixedPrice: js.UndefOr[__double] = js.undefined,
+        OfferingDescription: js.UndefOr[__string] = js.undefined,
+        OfferingId: js.UndefOr[__string] = js.undefined,
+        OfferingType: js.UndefOr[OfferingType] = js.undefined,
+        Region: js.UndefOr[__string] = js.undefined,
+        ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
+        UsagePrice: js.UndefOr[__double] = js.undefined
+    ): Offering = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -6663,11 +7451,13 @@ package medialive {
   }
 
   object Output {
-    def apply(OutputSettings: OutputSettings,
-              AudioDescriptionNames: js.UndefOr[__listOf__string] = js.undefined,
-              CaptionDescriptionNames: js.UndefOr[__listOf__string] = js.undefined,
-              OutputName: js.UndefOr[__stringMin1Max255] = js.undefined,
-              VideoDescriptionName: js.UndefOr[__string] = js.undefined): Output = {
+    def apply(
+        OutputSettings: OutputSettings,
+        AudioDescriptionNames: js.UndefOr[__listOf__string] = js.undefined,
+        CaptionDescriptionNames: js.UndefOr[__listOf__string] = js.undefined,
+        OutputName: js.UndefOr[__stringMin1Max255] = js.undefined,
+        VideoDescriptionName: js.UndefOr[__string] = js.undefined
+    ): Output = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OutputSettings" -> OutputSettings.asInstanceOf[js.Any],
         "AudioDescriptionNames" -> AudioDescriptionNames.map { x =>
@@ -6694,17 +7484,27 @@ package medialive {
   @js.native
   trait OutputDestination extends js.Object {
     var Id: js.UndefOr[__string]
+    var MediaPackageSettings: js.UndefOr[__listOfMediaPackageOutputDestinationSettings]
     var Settings: js.UndefOr[__listOfOutputDestinationSettings]
   }
 
   object OutputDestination {
-    def apply(Id: js.UndefOr[__string] = js.undefined,
-              Settings: js.UndefOr[__listOfOutputDestinationSettings] = js.undefined): OutputDestination = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Settings" -> Settings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: js.UndefOr[__string] = js.undefined,
+        MediaPackageSettings: js.UndefOr[__listOfMediaPackageOutputDestinationSettings] = js.undefined,
+        Settings: js.UndefOr[__listOfOutputDestinationSettings] = js.undefined
+    ): OutputDestination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MediaPackageSettings" -> MediaPackageSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Settings" -> Settings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputDestination]
     }
@@ -6722,10 +7522,12 @@ package medialive {
   }
 
   object OutputDestinationSettings {
-    def apply(PasswordParam: js.UndefOr[__string] = js.undefined,
-              StreamName: js.UndefOr[__string] = js.undefined,
-              Url: js.UndefOr[__string] = js.undefined,
-              Username: js.UndefOr[__string] = js.undefined): OutputDestinationSettings = {
+    def apply(
+        PasswordParam: js.UndefOr[__string] = js.undefined,
+        StreamName: js.UndefOr[__string] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined,
+        Username: js.UndefOr[__string] = js.undefined
+    ): OutputDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PasswordParam" -> PasswordParam.map { x =>
           x.asInstanceOf[js.Any]
@@ -6756,9 +7558,11 @@ package medialive {
   }
 
   object OutputGroup {
-    def apply(OutputGroupSettings: OutputGroupSettings,
-              Outputs: __listOfOutput,
-              Name: js.UndefOr[__stringMax32] = js.undefined): OutputGroup = {
+    def apply(
+        OutputGroupSettings: OutputGroupSettings,
+        Outputs: __listOfOutput,
+        Name: js.UndefOr[__stringMax32] = js.undefined
+    ): OutputGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OutputGroupSettings" -> OutputGroupSettings.asInstanceOf[js.Any],
         "Outputs"             -> Outputs.asInstanceOf[js.Any],
@@ -6772,28 +7576,40 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for OutputGroupSettings
+    * Output Group Settings
     */
   @js.native
   trait OutputGroupSettings extends js.Object {
     var ArchiveGroupSettings: js.UndefOr[ArchiveGroupSettings]
+    var FrameCaptureGroupSettings: js.UndefOr[FrameCaptureGroupSettings]
     var HlsGroupSettings: js.UndefOr[HlsGroupSettings]
+    var MediaPackageGroupSettings: js.UndefOr[MediaPackageGroupSettings]
     var MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings]
     var RtmpGroupSettings: js.UndefOr[RtmpGroupSettings]
     var UdpGroupSettings: js.UndefOr[UdpGroupSettings]
   }
 
   object OutputGroupSettings {
-    def apply(ArchiveGroupSettings: js.UndefOr[ArchiveGroupSettings] = js.undefined,
-              HlsGroupSettings: js.UndefOr[HlsGroupSettings] = js.undefined,
-              MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings] = js.undefined,
-              RtmpGroupSettings: js.UndefOr[RtmpGroupSettings] = js.undefined,
-              UdpGroupSettings: js.UndefOr[UdpGroupSettings] = js.undefined): OutputGroupSettings = {
+    def apply(
+        ArchiveGroupSettings: js.UndefOr[ArchiveGroupSettings] = js.undefined,
+        FrameCaptureGroupSettings: js.UndefOr[FrameCaptureGroupSettings] = js.undefined,
+        HlsGroupSettings: js.UndefOr[HlsGroupSettings] = js.undefined,
+        MediaPackageGroupSettings: js.UndefOr[MediaPackageGroupSettings] = js.undefined,
+        MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings] = js.undefined,
+        RtmpGroupSettings: js.UndefOr[RtmpGroupSettings] = js.undefined,
+        UdpGroupSettings: js.UndefOr[UdpGroupSettings] = js.undefined
+    ): OutputGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArchiveGroupSettings" -> ArchiveGroupSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "FrameCaptureGroupSettings" -> FrameCaptureGroupSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "HlsGroupSettings" -> HlsGroupSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MediaPackageGroupSettings" -> MediaPackageGroupSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "MsSmoothGroupSettings" -> MsSmoothGroupSettings.map { x =>
@@ -6820,38 +7636,54 @@ package medialive {
   }
 
   object OutputLocationRef {
-    def apply(DestinationRefId: js.UndefOr[__string] = js.undefined): OutputLocationRef = {
-      val _fields = IndexedSeq[(String, js.Any)]("DestinationRefId" -> DestinationRefId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DestinationRefId: js.UndefOr[__string] = js.undefined
+    ): OutputLocationRef = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DestinationRefId" -> DestinationRefId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputLocationRef]
     }
   }
 
   /**
-    * Placeholder documentation for OutputSettings
+    * Output Settings
     */
   @js.native
   trait OutputSettings extends js.Object {
     var ArchiveOutputSettings: js.UndefOr[ArchiveOutputSettings]
+    var FrameCaptureOutputSettings: js.UndefOr[FrameCaptureOutputSettings]
     var HlsOutputSettings: js.UndefOr[HlsOutputSettings]
+    var MediaPackageOutputSettings: js.UndefOr[MediaPackageOutputSettings]
     var MsSmoothOutputSettings: js.UndefOr[MsSmoothOutputSettings]
     var RtmpOutputSettings: js.UndefOr[RtmpOutputSettings]
     var UdpOutputSettings: js.UndefOr[UdpOutputSettings]
   }
 
   object OutputSettings {
-    def apply(ArchiveOutputSettings: js.UndefOr[ArchiveOutputSettings] = js.undefined,
-              HlsOutputSettings: js.UndefOr[HlsOutputSettings] = js.undefined,
-              MsSmoothOutputSettings: js.UndefOr[MsSmoothOutputSettings] = js.undefined,
-              RtmpOutputSettings: js.UndefOr[RtmpOutputSettings] = js.undefined,
-              UdpOutputSettings: js.UndefOr[UdpOutputSettings] = js.undefined): OutputSettings = {
+    def apply(
+        ArchiveOutputSettings: js.UndefOr[ArchiveOutputSettings] = js.undefined,
+        FrameCaptureOutputSettings: js.UndefOr[FrameCaptureOutputSettings] = js.undefined,
+        HlsOutputSettings: js.UndefOr[HlsOutputSettings] = js.undefined,
+        MediaPackageOutputSettings: js.UndefOr[MediaPackageOutputSettings] = js.undefined,
+        MsSmoothOutputSettings: js.UndefOr[MsSmoothOutputSettings] = js.undefined,
+        RtmpOutputSettings: js.UndefOr[RtmpOutputSettings] = js.undefined,
+        UdpOutputSettings: js.UndefOr[UdpOutputSettings] = js.undefined
+    ): OutputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArchiveOutputSettings" -> ArchiveOutputSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "FrameCaptureOutputSettings" -> FrameCaptureOutputSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "HlsOutputSettings" -> HlsOutputSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MediaPackageOutputSettings" -> MediaPackageOutputSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "MsSmoothOutputSettings" -> MsSmoothOutputSettings.map { x =>
@@ -6870,16 +7702,70 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for PassThroughSettings
+    * Pass Through Settings
     */
   @js.native
   trait PassThroughSettings extends js.Object {}
 
   object PassThroughSettings {
-    def apply(): PassThroughSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): PassThroughSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PassThroughSettings]
+    }
+  }
+
+  /**
+    * Settings for the action to set pause state of a channel.
+    */
+  @js.native
+  trait PauseStateScheduleActionSettings extends js.Object {
+    var Pipelines: js.UndefOr[__listOfPipelinePauseStateSettings]
+  }
+
+  object PauseStateScheduleActionSettings {
+    def apply(
+        Pipelines: js.UndefOr[__listOfPipelinePauseStateSettings] = js.undefined
+    ): PauseStateScheduleActionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pipelines" -> Pipelines.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PauseStateScheduleActionSettings]
+    }
+  }
+
+  /**
+    * Pipeline ID
+    */
+  object PipelineIdEnum {
+    val PIPELINE_0 = "PIPELINE_0"
+    val PIPELINE_1 = "PIPELINE_1"
+
+    val values = IndexedSeq(PIPELINE_0, PIPELINE_1)
+  }
+
+  /**
+    * Settings for pausing a pipeline.
+    */
+  @js.native
+  trait PipelinePauseStateSettings extends js.Object {
+    var PipelineId: PipelineId
+  }
+
+  object PipelinePauseStateSettings {
+    def apply(
+        PipelineId: PipelineId
+    ): PipelinePauseStateSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PipelineId" -> PipelineId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PipelinePauseStateSettings]
     }
   }
 
@@ -6893,14 +7779,18 @@ package medialive {
     var Name: js.UndefOr[__string]
     var RequestId: js.UndefOr[__string]
     var Start: js.UndefOr[__string]
+    var Tags: js.UndefOr[Tags]
   }
 
   object PurchaseOfferingRequest {
-    def apply(Count: __integerMin1,
-              OfferingId: __string,
-              Name: js.UndefOr[__string] = js.undefined,
-              RequestId: js.UndefOr[__string] = js.undefined,
-              Start: js.UndefOr[__string] = js.undefined): PurchaseOfferingRequest = {
+    def apply(
+        Count: __integerMin1,
+        OfferingId: __string,
+        Name: js.UndefOr[__string] = js.undefined,
+        RequestId: js.UndefOr[__string] = js.undefined,
+        Start: js.UndefOr[__string] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): PurchaseOfferingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Count"      -> Count.asInstanceOf[js.Any],
         "OfferingId" -> OfferingId.asInstanceOf[js.Any],
@@ -6911,6 +7801,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "Start" -> Start.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -6928,17 +7821,21 @@ package medialive {
   }
 
   object PurchaseOfferingResponse {
-    def apply(Reservation: js.UndefOr[Reservation] = js.undefined): PurchaseOfferingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Reservation" -> Reservation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Reservation: js.UndefOr[Reservation] = js.undefined
+    ): PurchaseOfferingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Reservation" -> Reservation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseOfferingResponse]
     }
   }
 
   /**
-    * Placeholder documentation for RemixSettings
+    * Remix Settings
     */
   @js.native
   trait RemixSettings extends js.Object {
@@ -6948,9 +7845,11 @@ package medialive {
   }
 
   object RemixSettings {
-    def apply(ChannelMappings: __listOfAudioChannelMapping,
-              ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
-              ChannelsOut: js.UndefOr[__integerMin1Max8] = js.undefined): RemixSettings = {
+    def apply(
+        ChannelMappings: __listOfAudioChannelMapping,
+        ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
+        ChannelsOut: js.UndefOr[__integerMin1Max8] = js.undefined
+    ): RemixSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChannelMappings" -> ChannelMappings.asInstanceOf[js.Any],
         "ChannelsIn" -> ChannelsIn.map { x =>
@@ -6986,27 +7885,31 @@ package medialive {
     var ResourceSpecification: js.UndefOr[ReservationResourceSpecification]
     var Start: js.UndefOr[__string]
     var State: js.UndefOr[ReservationState]
+    var Tags: js.UndefOr[Tags]
     var UsagePrice: js.UndefOr[__double]
   }
 
   object Reservation {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Count: js.UndefOr[__integer] = js.undefined,
-              CurrencyCode: js.UndefOr[__string] = js.undefined,
-              Duration: js.UndefOr[__integer] = js.undefined,
-              DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
-              End: js.UndefOr[__string] = js.undefined,
-              FixedPrice: js.UndefOr[__double] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              OfferingDescription: js.UndefOr[__string] = js.undefined,
-              OfferingId: js.UndefOr[__string] = js.undefined,
-              OfferingType: js.UndefOr[OfferingType] = js.undefined,
-              Region: js.UndefOr[__string] = js.undefined,
-              ReservationId: js.UndefOr[__string] = js.undefined,
-              ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
-              Start: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ReservationState] = js.undefined,
-              UsagePrice: js.UndefOr[__double] = js.undefined): Reservation = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Count: js.UndefOr[__integer] = js.undefined,
+        CurrencyCode: js.UndefOr[__string] = js.undefined,
+        Duration: js.UndefOr[__integer] = js.undefined,
+        DurationUnits: js.UndefOr[OfferingDurationUnits] = js.undefined,
+        End: js.UndefOr[__string] = js.undefined,
+        FixedPrice: js.UndefOr[__double] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        OfferingDescription: js.UndefOr[__string] = js.undefined,
+        OfferingId: js.UndefOr[__string] = js.undefined,
+        OfferingType: js.UndefOr[OfferingType] = js.undefined,
+        Region: js.UndefOr[__string] = js.undefined,
+        ReservationId: js.UndefOr[__string] = js.undefined,
+        ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
+        Start: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ReservationState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        UsagePrice: js.UndefOr[__double] = js.undefined
+    ): Reservation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -7054,6 +7957,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "UsagePrice" -> UsagePrice.map { x =>
@@ -7114,6 +8020,7 @@ package medialive {
     */
   @js.native
   trait ReservationResourceSpecification extends js.Object {
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Codec: js.UndefOr[ReservationCodec]
     var MaximumBitrate: js.UndefOr[ReservationMaximumBitrate]
     var MaximumFramerate: js.UndefOr[ReservationMaximumFramerate]
@@ -7124,14 +8031,20 @@ package medialive {
   }
 
   object ReservationResourceSpecification {
-    def apply(Codec: js.UndefOr[ReservationCodec] = js.undefined,
-              MaximumBitrate: js.UndefOr[ReservationMaximumBitrate] = js.undefined,
-              MaximumFramerate: js.UndefOr[ReservationMaximumFramerate] = js.undefined,
-              Resolution: js.UndefOr[ReservationResolution] = js.undefined,
-              ResourceType: js.UndefOr[ReservationResourceType] = js.undefined,
-              SpecialFeature: js.UndefOr[ReservationSpecialFeature] = js.undefined,
-              VideoQuality: js.UndefOr[ReservationVideoQuality] = js.undefined): ReservationResourceSpecification = {
+    def apply(
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Codec: js.UndefOr[ReservationCodec] = js.undefined,
+        MaximumBitrate: js.UndefOr[ReservationMaximumBitrate] = js.undefined,
+        MaximumFramerate: js.UndefOr[ReservationMaximumFramerate] = js.undefined,
+        Resolution: js.UndefOr[ReservationResolution] = js.undefined,
+        ResourceType: js.UndefOr[ReservationResourceType] = js.undefined,
+        SpecialFeature: js.UndefOr[ReservationSpecialFeature] = js.undefined,
+        VideoQuality: js.UndefOr[ReservationVideoQuality] = js.undefined
+    ): ReservationResourceSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelClass" -> ChannelClass.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Codec" -> Codec.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -7204,7 +8117,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for RtmpCacheFullBehavior
+    * Rtmp Cache Full Behavior
     */
   object RtmpCacheFullBehaviorEnum {
     val DISCONNECT_IMMEDIATELY = "DISCONNECT_IMMEDIATELY"
@@ -7214,7 +8127,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for RtmpCaptionData
+    * Rtmp Caption Data
     */
   object RtmpCaptionDataEnum {
     val ALL                   = "ALL"
@@ -7225,21 +8138,23 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for RtmpCaptionInfoDestinationSettings
+    * Rtmp Caption Info Destination Settings
     */
   @js.native
   trait RtmpCaptionInfoDestinationSettings extends js.Object {}
 
   object RtmpCaptionInfoDestinationSettings {
-    def apply(): RtmpCaptionInfoDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RtmpCaptionInfoDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RtmpCaptionInfoDestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for RtmpGroupSettings
+    * Rtmp Group Settings
     */
   @js.native
   trait RtmpGroupSettings extends js.Object {
@@ -7252,12 +8167,14 @@ package medialive {
   }
 
   object RtmpGroupSettings {
-    def apply(AuthenticationScheme: js.UndefOr[AuthenticationScheme] = js.undefined,
-              CacheFullBehavior: js.UndefOr[RtmpCacheFullBehavior] = js.undefined,
-              CacheLength: js.UndefOr[__integerMin30] = js.undefined,
-              CaptionData: js.UndefOr[RtmpCaptionData] = js.undefined,
-              InputLossAction: js.UndefOr[InputLossActionForRtmpOut] = js.undefined,
-              RestartDelay: js.UndefOr[__integerMin0] = js.undefined): RtmpGroupSettings = {
+    def apply(
+        AuthenticationScheme: js.UndefOr[AuthenticationScheme] = js.undefined,
+        CacheFullBehavior: js.UndefOr[RtmpCacheFullBehavior] = js.undefined,
+        CacheLength: js.UndefOr[__integerMin30] = js.undefined,
+        CaptionData: js.UndefOr[RtmpCaptionData] = js.undefined,
+        InputLossAction: js.UndefOr[InputLossActionForRtmpOut] = js.undefined,
+        RestartDelay: js.UndefOr[__integerMin0] = js.undefined
+    ): RtmpGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuthenticationScheme" -> AuthenticationScheme.map { x =>
           x.asInstanceOf[js.Any]
@@ -7284,7 +8201,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for RtmpOutputCertificateMode
+    * Rtmp Output Certificate Mode
     */
   object RtmpOutputCertificateModeEnum {
     val SELF_SIGNED         = "SELF_SIGNED"
@@ -7294,7 +8211,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for RtmpOutputSettings
+    * Rtmp Output Settings
     */
   @js.native
   trait RtmpOutputSettings extends js.Object {
@@ -7305,10 +8222,12 @@ package medialive {
   }
 
   object RtmpOutputSettings {
-    def apply(Destination: OutputLocationRef,
-              CertificateMode: js.UndefOr[RtmpOutputCertificateMode] = js.undefined,
-              ConnectionRetryInterval: js.UndefOr[__integerMin1] = js.undefined,
-              NumRetries: js.UndefOr[__integerMin0] = js.undefined): RtmpOutputSettings = {
+    def apply(
+        Destination: OutputLocationRef,
+        CertificateMode: js.UndefOr[RtmpOutputCertificateMode] = js.undefined,
+        ConnectionRetryInterval: js.UndefOr[__integerMin1] = js.undefined,
+        NumRetries: js.UndefOr[__integerMin0] = js.undefined
+    ): RtmpOutputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destination" -> Destination.asInstanceOf[js.Any],
         "CertificateMode" -> CertificateMode.map { x =>
@@ -7337,9 +8256,11 @@ package medialive {
   }
 
   object ScheduleAction {
-    def apply(ActionName: __string,
-              ScheduleActionSettings: ScheduleActionSettings,
-              ScheduleActionStartSettings: ScheduleActionStartSettings): ScheduleAction = {
+    def apply(
+        ActionName: __string,
+        ScheduleActionSettings: ScheduleActionSettings,
+        ScheduleActionStartSettings: ScheduleActionStartSettings
+    ): ScheduleAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionName"                  -> ActionName.asInstanceOf[js.Any],
         "ScheduleActionSettings"      -> ScheduleActionSettings.asInstanceOf[js.Any],
@@ -7357,6 +8278,7 @@ package medialive {
   trait ScheduleActionSettings extends js.Object {
     var HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings]
     var InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings]
+    var PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings]
     var Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings]
     var Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings]
     var Scte35TimeSignalSettings: js.UndefOr[Scte35TimeSignalScheduleActionSettings]
@@ -7368,6 +8290,7 @@ package medialive {
     def apply(
         HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings] = js.undefined,
         InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings] = js.undefined,
+        PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings] = js.undefined,
         Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings] = js.undefined,
         Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings] = js.undefined,
         Scte35TimeSignalSettings: js.UndefOr[Scte35TimeSignalScheduleActionSettings] = js.undefined,
@@ -7379,6 +8302,9 @@ package medialive {
           x.asInstanceOf[js.Any]
         },
         "InputSwitchSettings" -> InputSwitchSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PauseStateSettings" -> PauseStateSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Scte35ReturnToNetworkSettings" -> Scte35ReturnToNetworkSettings.map { x =>
@@ -7430,7 +8356,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Scte20Convert608To708
+    * Scte20 Convert608 To708
     */
   object Scte20Convert608To708Enum {
     val DISABLED  = "DISABLED"
@@ -7440,21 +8366,23 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Scte20PlusEmbeddedDestinationSettings
+    * Scte20 Plus Embedded Destination Settings
     */
   @js.native
   trait Scte20PlusEmbeddedDestinationSettings extends js.Object {}
 
   object Scte20PlusEmbeddedDestinationSettings {
-    def apply(): Scte20PlusEmbeddedDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): Scte20PlusEmbeddedDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte20PlusEmbeddedDestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for Scte20SourceSettings
+    * Scte20 Source Settings
     */
   @js.native
   trait Scte20SourceSettings extends js.Object {
@@ -7463,34 +8391,41 @@ package medialive {
   }
 
   object Scte20SourceSettings {
-    def apply(Convert608To708: js.UndefOr[Scte20Convert608To708] = js.undefined,
-              Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined): Scte20SourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Convert608To708" -> Convert608To708.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Source608ChannelNumber" -> Source608ChannelNumber.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Convert608To708: js.UndefOr[Scte20Convert608To708] = js.undefined,
+        Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
+    ): Scte20SourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Convert608To708" -> Convert608To708.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Source608ChannelNumber" -> Source608ChannelNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte20SourceSettings]
     }
   }
 
   /**
-    * Placeholder documentation for Scte27DestinationSettings
+    * Scte27 Destination Settings
     */
   @js.native
   trait Scte27DestinationSettings extends js.Object {}
 
   object Scte27DestinationSettings {
-    def apply(): Scte27DestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): Scte27DestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte27DestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for Scte27SourceSettings
+    * Scte27 Source Settings
     */
   @js.native
   trait Scte27SourceSettings extends js.Object {
@@ -7498,17 +8433,21 @@ package medialive {
   }
 
   object Scte27SourceSettings {
-    def apply(Pid: js.UndefOr[__integerMin1] = js.undefined): Scte27SourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Pid" -> Pid.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Pid: js.UndefOr[__integerMin1] = js.undefined
+    ): Scte27SourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pid" -> Pid.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte27SourceSettings]
     }
   }
 
   /**
-    * Placeholder documentation for Scte35AposNoRegionalBlackoutBehavior
+    * Scte35 Apos No Regional Blackout Behavior
     */
   object Scte35AposNoRegionalBlackoutBehaviorEnum {
     val FOLLOW = "FOLLOW"
@@ -7518,7 +8457,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Scte35AposWebDeliveryAllowedBehavior
+    * Scte35 Apos Web Delivery Allowed Behavior
     */
   object Scte35AposWebDeliveryAllowedBehaviorEnum {
     val FOLLOW = "FOLLOW"
@@ -7549,10 +8488,12 @@ package medialive {
   }
 
   object Scte35DeliveryRestrictions {
-    def apply(ArchiveAllowedFlag: Scte35ArchiveAllowedFlag,
-              DeviceRestrictions: Scte35DeviceRestrictions,
-              NoRegionalBlackoutFlag: Scte35NoRegionalBlackoutFlag,
-              WebDeliveryAllowedFlag: Scte35WebDeliveryAllowedFlag): Scte35DeliveryRestrictions = {
+    def apply(
+        ArchiveAllowedFlag: Scte35ArchiveAllowedFlag,
+        DeviceRestrictions: Scte35DeviceRestrictions,
+        NoRegionalBlackoutFlag: Scte35NoRegionalBlackoutFlag,
+        WebDeliveryAllowedFlag: Scte35WebDeliveryAllowedFlag
+    ): Scte35DeliveryRestrictions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArchiveAllowedFlag"     -> ArchiveAllowedFlag.asInstanceOf[js.Any],
         "DeviceRestrictions"     -> DeviceRestrictions.asInstanceOf[js.Any],
@@ -7573,10 +8514,12 @@ package medialive {
   }
 
   object Scte35Descriptor {
-    def apply(Scte35DescriptorSettings: Scte35DescriptorSettings): Scte35Descriptor = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Scte35DescriptorSettings" -> Scte35DescriptorSettings.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Scte35DescriptorSettings: Scte35DescriptorSettings
+    ): Scte35Descriptor = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Scte35DescriptorSettings" -> Scte35DescriptorSettings.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35Descriptor]
     }
@@ -7634,9 +8577,12 @@ package medialive {
   }
 
   object Scte35ReturnToNetworkScheduleActionSettings {
-    def apply(SpliceEventId: __integerMin0Max4294967295): Scte35ReturnToNetworkScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SpliceEventId: __integerMin0Max4294967295
+    ): Scte35ReturnToNetworkScheduleActionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -7673,17 +8619,19 @@ package medialive {
   }
 
   object Scte35SegmentationDescriptor {
-    def apply(SegmentationCancelIndicator: Scte35SegmentationCancelIndicator,
-              SegmentationEventId: __integerMin0Max4294967295,
-              DeliveryRestrictions: js.UndefOr[Scte35DeliveryRestrictions] = js.undefined,
-              SegmentNum: js.UndefOr[__integerMin0Max255] = js.undefined,
-              SegmentationDuration: js.UndefOr[__integerMin0Max1099511627775] = js.undefined,
-              SegmentationTypeId: js.UndefOr[__integerMin0Max255] = js.undefined,
-              SegmentationUpid: js.UndefOr[__string] = js.undefined,
-              SegmentationUpidType: js.UndefOr[__integerMin0Max255] = js.undefined,
-              SegmentsExpected: js.UndefOr[__integerMin0Max255] = js.undefined,
-              SubSegmentNum: js.UndefOr[__integerMin0Max255] = js.undefined,
-              SubSegmentsExpected: js.UndefOr[__integerMin0Max255] = js.undefined): Scte35SegmentationDescriptor = {
+    def apply(
+        SegmentationCancelIndicator: Scte35SegmentationCancelIndicator,
+        SegmentationEventId: __integerMin0Max4294967295,
+        DeliveryRestrictions: js.UndefOr[Scte35DeliveryRestrictions] = js.undefined,
+        SegmentNum: js.UndefOr[__integerMin0Max255] = js.undefined,
+        SegmentationDuration: js.UndefOr[__integerMin0Max1099511627775] = js.undefined,
+        SegmentationTypeId: js.UndefOr[__integerMin0Max255] = js.undefined,
+        SegmentationUpid: js.UndefOr[__string] = js.undefined,
+        SegmentationUpidType: js.UndefOr[__integerMin0Max255] = js.undefined,
+        SegmentsExpected: js.UndefOr[__integerMin0Max255] = js.undefined,
+        SubSegmentNum: js.UndefOr[__integerMin0Max255] = js.undefined,
+        SubSegmentsExpected: js.UndefOr[__integerMin0Max255] = js.undefined
+    ): Scte35SegmentationDescriptor = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SegmentationCancelIndicator" -> SegmentationCancelIndicator.asInstanceOf[js.Any],
         "SegmentationEventId"         -> SegmentationEventId.asInstanceOf[js.Any],
@@ -7721,7 +8669,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Scte35SpliceInsert
+    * Scte35 Splice Insert
     */
   @js.native
   trait Scte35SpliceInsert extends js.Object {
@@ -7753,7 +8701,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Scte35SpliceInsertNoRegionalBlackoutBehavior
+    * Scte35 Splice Insert No Regional Blackout Behavior
     */
   object Scte35SpliceInsertNoRegionalBlackoutBehaviorEnum {
     val FOLLOW = "FOLLOW"
@@ -7776,18 +8724,19 @@ package medialive {
         SpliceEventId: __integerMin0Max4294967295,
         Duration: js.UndefOr[__integerMin0Max8589934591] = js.undefined
     ): Scte35SpliceInsertScheduleActionSettings = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any], "Duration" -> Duration.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SpliceEventId" -> SpliceEventId.asInstanceOf[js.Any],
+        "Duration" -> Duration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35SpliceInsertScheduleActionSettings]
     }
   }
 
   /**
-    * Placeholder documentation for Scte35SpliceInsertWebDeliveryAllowedBehavior
+    * Scte35 Splice Insert Web Delivery Allowed Behavior
     */
   object Scte35SpliceInsertWebDeliveryAllowedBehaviorEnum {
     val FOLLOW = "FOLLOW"
@@ -7797,7 +8746,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for Scte35TimeSignalApos
+    * Scte35 Time Signal Apos
     */
   @js.native
   trait Scte35TimeSignalApos extends js.Object {
@@ -7837,9 +8786,12 @@ package medialive {
   }
 
   object Scte35TimeSignalScheduleActionSettings {
-    def apply(Scte35Descriptors: __listOfScte35Descriptor): Scte35TimeSignalScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Scte35Descriptors" -> Scte35Descriptors.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Scte35Descriptors: __listOfScte35Descriptor
+    ): Scte35TimeSignalScheduleActionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Scte35Descriptors" -> Scte35Descriptors.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Scte35TimeSignalScheduleActionSettings]
     }
@@ -7856,7 +8808,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupAudioOnlyTimecodeControl
+    * Smooth Group Audio Only Timecode Control
     */
   object SmoothGroupAudioOnlyTimecodeControlEnum {
     val PASSTHROUGH          = "PASSTHROUGH"
@@ -7866,7 +8818,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupCertificateMode
+    * Smooth Group Certificate Mode
     */
   object SmoothGroupCertificateModeEnum {
     val SELF_SIGNED         = "SELF_SIGNED"
@@ -7876,7 +8828,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupEventIdMode
+    * Smooth Group Event Id Mode
     */
   object SmoothGroupEventIdModeEnum {
     val NO_EVENT_ID    = "NO_EVENT_ID"
@@ -7887,7 +8839,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupEventStopBehavior
+    * Smooth Group Event Stop Behavior
     */
   object SmoothGroupEventStopBehaviorEnum {
     val NONE     = "NONE"
@@ -7897,7 +8849,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupSegmentationMode
+    * Smooth Group Segmentation Mode
     */
   object SmoothGroupSegmentationModeEnum {
     val USE_INPUT_SEGMENTATION = "USE_INPUT_SEGMENTATION"
@@ -7907,7 +8859,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupSparseTrackType
+    * Smooth Group Sparse Track Type
     */
   object SmoothGroupSparseTrackTypeEnum {
     val NONE    = "NONE"
@@ -7917,7 +8869,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupStreamManifestBehavior
+    * Smooth Group Stream Manifest Behavior
     */
   object SmoothGroupStreamManifestBehaviorEnum {
     val DO_NOT_SEND = "DO_NOT_SEND"
@@ -7927,7 +8879,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmoothGroupTimestampOffsetMode
+    * Smooth Group Timestamp Offset Mode
     */
   object SmoothGroupTimestampOffsetModeEnum {
     val USE_CONFIGURED_OFFSET = "USE_CONFIGURED_OFFSET"
@@ -7937,21 +8889,23 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for SmpteTtDestinationSettings
+    * Smpte Tt Destination Settings
     */
   @js.native
   trait SmpteTtDestinationSettings extends js.Object {}
 
   object SmpteTtDestinationSettings {
-    def apply(): SmpteTtDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): SmpteTtDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SmpteTtDestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for StandardHlsSettings
+    * Standard Hls Settings
     */
   @js.native
   trait StandardHlsSettings extends js.Object {
@@ -7960,8 +8914,10 @@ package medialive {
   }
 
   object StandardHlsSettings {
-    def apply(M3u8Settings: M3u8Settings,
-              AudioRenditionSets: js.UndefOr[__string] = js.undefined): StandardHlsSettings = {
+    def apply(
+        M3u8Settings: M3u8Settings,
+        AudioRenditionSets: js.UndefOr[__string] = js.undefined
+    ): StandardHlsSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "M3u8Settings" -> M3u8Settings.asInstanceOf[js.Any],
         "AudioRenditionSets" -> AudioRenditionSets.map { x =>
@@ -7982,9 +8938,12 @@ package medialive {
   }
 
   object StartChannelRequest {
-    def apply(ChannelId: __string): StartChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChannelId" -> ChannelId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChannelId: __string
+    ): StartChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartChannelRequest]
     }
@@ -7996,6 +8955,7 @@ package medialive {
   @js.native
   trait StartChannelResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Destinations: js.UndefOr[__listOfOutputDestination]
     var EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint]
     var EncoderSettings: js.UndefOr[EncoderSettings]
@@ -8007,23 +8967,31 @@ package medialive {
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
+    var Tags: js.UndefOr[Tags]
   }
 
   object StartChannelResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
-              EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ChannelState] = js.undefined): StartChannelResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
+        EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ChannelState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): StartChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelClass" -> ChannelClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destinations" -> Destinations.map { x =>
@@ -8058,6 +9026,9 @@ package medialive {
         },
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -8083,16 +9054,18 @@ package medialive {
   }
 
   object StaticImageActivateScheduleActionSettings {
-    def apply(Image: InputLocation,
-              Duration: js.UndefOr[__integerMin0] = js.undefined,
-              FadeIn: js.UndefOr[__integerMin0] = js.undefined,
-              FadeOut: js.UndefOr[__integerMin0] = js.undefined,
-              Height: js.UndefOr[__integerMin1] = js.undefined,
-              ImageX: js.UndefOr[__integerMin0] = js.undefined,
-              ImageY: js.UndefOr[__integerMin0] = js.undefined,
-              Layer: js.UndefOr[__integerMin0Max7] = js.undefined,
-              Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
-              Width: js.UndefOr[__integerMin1] = js.undefined): StaticImageActivateScheduleActionSettings = {
+    def apply(
+        Image: InputLocation,
+        Duration: js.UndefOr[__integerMin0] = js.undefined,
+        FadeIn: js.UndefOr[__integerMin0] = js.undefined,
+        FadeOut: js.UndefOr[__integerMin0] = js.undefined,
+        Height: js.UndefOr[__integerMin1] = js.undefined,
+        ImageX: js.UndefOr[__integerMin0] = js.undefined,
+        ImageY: js.UndefOr[__integerMin0] = js.undefined,
+        Layer: js.UndefOr[__integerMin0Max7] = js.undefined,
+        Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
+        Width: js.UndefOr[__integerMin1] = js.undefined
+    ): StaticImageActivateScheduleActionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Image" -> Image.asInstanceOf[js.Any],
         "Duration" -> Duration.map { x =>
@@ -8138,13 +9111,18 @@ package medialive {
   }
 
   object StaticImageDeactivateScheduleActionSettings {
-    def apply(FadeOut: js.UndefOr[__integerMin0] = js.undefined,
-              Layer: js.UndefOr[__integerMin0Max7] = js.undefined): StaticImageDeactivateScheduleActionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("FadeOut" -> FadeOut.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Layer" -> Layer.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FadeOut: js.UndefOr[__integerMin0] = js.undefined,
+        Layer: js.UndefOr[__integerMin0Max7] = js.undefined
+    ): StaticImageDeactivateScheduleActionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FadeOut" -> FadeOut.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Layer" -> Layer.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -8153,7 +9131,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for StaticKeySettings
+    * Static Key Settings
     */
   @js.native
   trait StaticKeySettings extends js.Object {
@@ -8162,8 +9140,10 @@ package medialive {
   }
 
   object StaticKeySettings {
-    def apply(StaticKeyValue: __stringMin32Max32,
-              KeyProviderServer: js.UndefOr[InputLocation] = js.undefined): StaticKeySettings = {
+    def apply(
+        StaticKeyValue: __stringMin32Max32,
+        KeyProviderServer: js.UndefOr[InputLocation] = js.undefined
+    ): StaticKeySettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StaticKeyValue" -> StaticKeyValue.asInstanceOf[js.Any],
         "KeyProviderServer" -> KeyProviderServer.map { x =>
@@ -8184,9 +9164,12 @@ package medialive {
   }
 
   object StopChannelRequest {
-    def apply(ChannelId: __string): StopChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChannelId" -> ChannelId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChannelId: __string
+    ): StopChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChannelId" -> ChannelId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopChannelRequest]
     }
@@ -8198,6 +9181,7 @@ package medialive {
   @js.native
   trait StopChannelResponse extends js.Object {
     var Arn: js.UndefOr[__string]
+    var ChannelClass: js.UndefOr[ChannelClass]
     var Destinations: js.UndefOr[__listOfOutputDestination]
     var EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint]
     var EncoderSettings: js.UndefOr[EncoderSettings]
@@ -8209,23 +9193,31 @@ package medialive {
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
     var State: js.UndefOr[ChannelState]
+    var Tags: js.UndefOr[Tags]
   }
 
   object StopChannelResponse {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
-              EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ChannelState] = js.undefined): StopChannelResponse = {
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EgressEndpoints: js.UndefOr[__listOfChannelEgressEndpoint] = js.undefined,
+        EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ChannelState] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): StopChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelClass" -> ChannelClass.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destinations" -> Destinations.map { x =>
@@ -8260,6 +9252,9 @@ package medialive {
         },
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -8268,21 +9263,23 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for TeletextDestinationSettings
+    * Teletext Destination Settings
     */
   @js.native
   trait TeletextDestinationSettings extends js.Object {}
 
   object TeletextDestinationSettings {
-    def apply(): TeletextDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TeletextDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TeletextDestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for TeletextSourceSettings
+    * Teletext Source Settings
     */
   @js.native
   trait TeletextSourceSettings extends js.Object {
@@ -8290,17 +9287,21 @@ package medialive {
   }
 
   object TeletextSourceSettings {
-    def apply(PageNumber: js.UndefOr[__string] = js.undefined): TeletextSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("PageNumber" -> PageNumber.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PageNumber: js.UndefOr[__string] = js.undefined
+    ): TeletextSourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PageNumber" -> PageNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TeletextSourceSettings]
     }
   }
 
   /**
-    * Placeholder documentation for TimecodeConfig
+    * Timecode Config
     */
   @js.native
   trait TimecodeConfig extends js.Object {
@@ -8309,20 +9310,23 @@ package medialive {
   }
 
   object TimecodeConfig {
-    def apply(Source: TimecodeConfigSource,
-              SyncThreshold: js.UndefOr[__integerMin1Max1000000] = js.undefined): TimecodeConfig = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Source" -> Source.asInstanceOf[js.Any], "SyncThreshold" -> SyncThreshold.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Source: TimecodeConfigSource,
+        SyncThreshold: js.UndefOr[__integerMin1Max1000000] = js.undefined
+    ): TimecodeConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Source" -> Source.asInstanceOf[js.Any],
+        "SyncThreshold" -> SyncThreshold.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimecodeConfig]
     }
   }
 
   /**
-    * Placeholder documentation for TimecodeConfigSource
+    * Timecode Config Source
     */
   object TimecodeConfigSourceEnum {
     val EMBEDDED    = "EMBEDDED"
@@ -8333,7 +9337,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for TtmlDestinationSettings
+    * Ttml Destination Settings
     */
   @js.native
   trait TtmlDestinationSettings extends js.Object {
@@ -8341,17 +9345,21 @@ package medialive {
   }
 
   object TtmlDestinationSettings {
-    def apply(StyleControl: js.UndefOr[TtmlDestinationStyleControl] = js.undefined): TtmlDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("StyleControl" -> StyleControl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StyleControl: js.UndefOr[TtmlDestinationStyleControl] = js.undefined
+    ): TtmlDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StyleControl" -> StyleControl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TtmlDestinationSettings]
     }
   }
 
   /**
-    * Placeholder documentation for TtmlDestinationStyleControl
+    * Ttml Destination Style Control
     */
   object TtmlDestinationStyleControlEnum {
     val PASSTHROUGH    = "PASSTHROUGH"
@@ -8361,7 +9369,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for UdpContainerSettings
+    * Udp Container Settings
     */
   @js.native
   trait UdpContainerSettings extends js.Object {
@@ -8369,17 +9377,21 @@ package medialive {
   }
 
   object UdpContainerSettings {
-    def apply(M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined): UdpContainerSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("M2tsSettings" -> M2tsSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined
+    ): UdpContainerSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "M2tsSettings" -> M2tsSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UdpContainerSettings]
     }
   }
 
   /**
-    * Placeholder documentation for UdpGroupSettings
+    * Udp Group Settings
     */
   @js.native
   trait UdpGroupSettings extends js.Object {
@@ -8389,9 +9401,11 @@ package medialive {
   }
 
   object UdpGroupSettings {
-    def apply(InputLossAction: js.UndefOr[InputLossActionForUdpOut] = js.undefined,
-              TimedMetadataId3Frame: js.UndefOr[UdpTimedMetadataId3Frame] = js.undefined,
-              TimedMetadataId3Period: js.UndefOr[__integerMin0] = js.undefined): UdpGroupSettings = {
+    def apply(
+        InputLossAction: js.UndefOr[InputLossActionForUdpOut] = js.undefined,
+        TimedMetadataId3Frame: js.UndefOr[UdpTimedMetadataId3Frame] = js.undefined,
+        TimedMetadataId3Period: js.UndefOr[__integerMin0] = js.undefined
+    ): UdpGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputLossAction" -> InputLossAction.map { x =>
           x.asInstanceOf[js.Any]
@@ -8409,7 +9423,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for UdpOutputSettings
+    * Udp Output Settings
     */
   @js.native
   trait UdpOutputSettings extends js.Object {
@@ -8420,10 +9434,12 @@ package medialive {
   }
 
   object UdpOutputSettings {
-    def apply(ContainerSettings: UdpContainerSettings,
-              Destination: OutputLocationRef,
-              BufferMsec: js.UndefOr[__integerMin0Max10000] = js.undefined,
-              FecOutputSettings: js.UndefOr[FecOutputSettings] = js.undefined): UdpOutputSettings = {
+    def apply(
+        ContainerSettings: UdpContainerSettings,
+        Destination: OutputLocationRef,
+        BufferMsec: js.UndefOr[__integerMin0Max10000] = js.undefined,
+        FecOutputSettings: js.UndefOr[FecOutputSettings] = js.undefined
+    ): UdpOutputSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContainerSettings" -> ContainerSettings.asInstanceOf[js.Any],
         "Destination"       -> Destination.asInstanceOf[js.Any],
@@ -8440,7 +9456,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for UdpTimedMetadataId3Frame
+    * Udp Timed Metadata Id3 Frame
     */
   object UdpTimedMetadataId3FrameEnum {
     val NONE = "NONE"
@@ -8466,14 +9482,16 @@ package medialive {
   }
 
   object UpdateChannelRequest {
-    def apply(ChannelId: __string,
-              Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
-              EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
-              InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
-              InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
-              LogLevel: js.UndefOr[LogLevel] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined): UpdateChannelRequest = {
+    def apply(
+        ChannelId: __string,
+        Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
+        EncoderSettings: js.UndefOr[EncoderSettings] = js.undefined,
+        InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
+        InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined
+    ): UpdateChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChannelId" -> ChannelId.asInstanceOf[js.Any],
         "Destinations" -> Destinations.map { x =>
@@ -8512,10 +9530,14 @@ package medialive {
   }
 
   object UpdateChannelResponse {
-    def apply(Channel: js.UndefOr[Channel] = js.undefined): UpdateChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Channel" -> Channel.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Channel: js.UndefOr[Channel] = js.undefined
+    ): UpdateChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Channel" -> Channel.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateChannelResponse]
     }
@@ -8536,13 +9558,15 @@ package medialive {
   }
 
   object UpdateInputRequest {
-    def apply(InputId: __string,
-              Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
-              InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
-              MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              Sources: js.UndefOr[__listOfInputSourceRequest] = js.undefined): UpdateInputRequest = {
+    def apply(
+        InputId: __string,
+        Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
+        InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+        MediaConnectFlows: js.UndefOr[__listOfMediaConnectFlowRequest] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        Sources: js.UndefOr[__listOfInputSourceRequest] = js.undefined
+    ): UpdateInputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputId" -> InputId.asInstanceOf[js.Any],
         "Destinations" -> Destinations.map { x =>
@@ -8578,10 +9602,14 @@ package medialive {
   }
 
   object UpdateInputResponse {
-    def apply(Input: js.UndefOr[Input] = js.undefined): UpdateInputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Input" -> Input.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Input: js.UndefOr[Input] = js.undefined
+    ): UpdateInputResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Input" -> Input.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInputResponse]
     }
@@ -8593,16 +9621,21 @@ package medialive {
   @js.native
   trait UpdateInputSecurityGroupRequest extends js.Object {
     var InputSecurityGroupId: __string
+    var Tags: js.UndefOr[Tags]
     var WhitelistRules: js.UndefOr[__listOfInputWhitelistRuleCidr]
   }
 
   object UpdateInputSecurityGroupRequest {
     def apply(
         InputSecurityGroupId: __string,
+        Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRuleCidr] = js.undefined
     ): UpdateInputSecurityGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputSecurityGroupId" -> InputSecurityGroupId.asInstanceOf[js.Any],
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "WhitelistRules" -> WhitelistRules.map { x =>
           x.asInstanceOf[js.Any]
         }
@@ -8621,28 +9654,88 @@ package medialive {
   }
 
   object UpdateInputSecurityGroupResponse {
-    def apply(SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined): UpdateInputSecurityGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SecurityGroup" -> SecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined
+    ): UpdateInputSecurityGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SecurityGroup" -> SecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInputSecurityGroupResponse]
     }
   }
 
   /**
-    * Placeholder documentation for VideoCodecSettings
+    * Request to update a reservation
+    */
+  @js.native
+  trait UpdateReservationRequest extends js.Object {
+    var ReservationId: __string
+    var Name: js.UndefOr[__string]
+  }
+
+  object UpdateReservationRequest {
+    def apply(
+        ReservationId: __string,
+        Name: js.UndefOr[__string] = js.undefined
+    ): UpdateReservationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReservationId" -> ReservationId.asInstanceOf[js.Any],
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateReservationRequest]
+    }
+  }
+
+  /**
+    * Placeholder documentation for UpdateReservationResponse
+    */
+  @js.native
+  trait UpdateReservationResponse extends js.Object {
+    var Reservation: js.UndefOr[Reservation]
+  }
+
+  object UpdateReservationResponse {
+    def apply(
+        Reservation: js.UndefOr[Reservation] = js.undefined
+    ): UpdateReservationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Reservation" -> Reservation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateReservationResponse]
+    }
+  }
+
+  /**
+    * Video Codec Settings
     */
   @js.native
   trait VideoCodecSettings extends js.Object {
+    var FrameCaptureSettings: js.UndefOr[FrameCaptureSettings]
     var H264Settings: js.UndefOr[H264Settings]
   }
 
   object VideoCodecSettings {
-    def apply(H264Settings: js.UndefOr[H264Settings] = js.undefined): VideoCodecSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("H264Settings" -> H264Settings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
+        H264Settings: js.UndefOr[H264Settings] = js.undefined
+    ): VideoCodecSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FrameCaptureSettings" -> FrameCaptureSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "H264Settings" -> H264Settings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoCodecSettings]
     }
@@ -8663,13 +9756,15 @@ package medialive {
   }
 
   object VideoDescription {
-    def apply(Name: __string,
-              CodecSettings: js.UndefOr[VideoCodecSettings] = js.undefined,
-              Height: js.UndefOr[__integer] = js.undefined,
-              RespondToAfd: js.UndefOr[VideoDescriptionRespondToAfd] = js.undefined,
-              ScalingBehavior: js.UndefOr[VideoDescriptionScalingBehavior] = js.undefined,
-              Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
-              Width: js.UndefOr[__integer] = js.undefined): VideoDescription = {
+    def apply(
+        Name: __string,
+        CodecSettings: js.UndefOr[VideoCodecSettings] = js.undefined,
+        Height: js.UndefOr[__integer] = js.undefined,
+        RespondToAfd: js.UndefOr[VideoDescriptionRespondToAfd] = js.undefined,
+        ScalingBehavior: js.UndefOr[VideoDescriptionScalingBehavior] = js.undefined,
+        Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
+        Width: js.UndefOr[__integer] = js.undefined
+    ): VideoDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "CodecSettings" -> CodecSettings.map { x =>
@@ -8697,7 +9792,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for VideoDescriptionRespondToAfd
+    * Video Description Respond To Afd
     */
   object VideoDescriptionRespondToAfdEnum {
     val NONE        = "NONE"
@@ -8708,7 +9803,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for VideoDescriptionScalingBehavior
+    * Video Description Scaling Behavior
     */
   object VideoDescriptionScalingBehaviorEnum {
     val DEFAULT           = "DEFAULT"
@@ -8728,9 +9823,11 @@ package medialive {
   }
 
   object VideoSelector {
-    def apply(ColorSpace: js.UndefOr[VideoSelectorColorSpace] = js.undefined,
-              ColorSpaceUsage: js.UndefOr[VideoSelectorColorSpaceUsage] = js.undefined,
-              SelectorSettings: js.UndefOr[VideoSelectorSettings] = js.undefined): VideoSelector = {
+    def apply(
+        ColorSpace: js.UndefOr[VideoSelectorColorSpace] = js.undefined,
+        ColorSpaceUsage: js.UndefOr[VideoSelectorColorSpaceUsage] = js.undefined,
+        SelectorSettings: js.UndefOr[VideoSelectorSettings] = js.undefined
+    ): VideoSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ColorSpace" -> ColorSpace.map { x =>
           x.asInstanceOf[js.Any]
@@ -8748,7 +9845,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for VideoSelectorColorSpace
+    * Video Selector Color Space
     */
   object VideoSelectorColorSpaceEnum {
     val FOLLOW  = "FOLLOW"
@@ -8759,7 +9856,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for VideoSelectorColorSpaceUsage
+    * Video Selector Color Space Usage
     */
   object VideoSelectorColorSpaceUsageEnum {
     val FALLBACK = "FALLBACK"
@@ -8769,7 +9866,7 @@ package medialive {
   }
 
   /**
-    * Placeholder documentation for VideoSelectorPid
+    * Video Selector Pid
     */
   @js.native
   trait VideoSelectorPid extends js.Object {
@@ -8777,17 +9874,21 @@ package medialive {
   }
 
   object VideoSelectorPid {
-    def apply(Pid: js.UndefOr[__integerMin0Max8191] = js.undefined): VideoSelectorPid = {
-      val _fields = IndexedSeq[(String, js.Any)]("Pid" -> Pid.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Pid: js.UndefOr[__integerMin0Max8191] = js.undefined
+    ): VideoSelectorPid = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pid" -> Pid.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelectorPid]
     }
   }
 
   /**
-    * Placeholder documentation for VideoSelectorProgramId
+    * Video Selector Program Id
     */
   @js.native
   trait VideoSelectorProgramId extends js.Object {
@@ -8795,17 +9896,21 @@ package medialive {
   }
 
   object VideoSelectorProgramId {
-    def apply(ProgramId: js.UndefOr[__integerMin0Max65536] = js.undefined): VideoSelectorProgramId = {
-      val _fields = IndexedSeq[(String, js.Any)]("ProgramId" -> ProgramId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ProgramId: js.UndefOr[__integerMin0Max65536] = js.undefined
+    ): VideoSelectorProgramId = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProgramId" -> ProgramId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelectorProgramId]
     }
   }
 
   /**
-    * Placeholder documentation for VideoSelectorSettings
+    * Video Selector Settings
     */
   @js.native
   trait VideoSelectorSettings extends js.Object {
@@ -8814,27 +9919,34 @@ package medialive {
   }
 
   object VideoSelectorSettings {
-    def apply(VideoSelectorPid: js.UndefOr[VideoSelectorPid] = js.undefined,
-              VideoSelectorProgramId: js.UndefOr[VideoSelectorProgramId] = js.undefined): VideoSelectorSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("VideoSelectorPid" -> VideoSelectorPid.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VideoSelectorProgramId" -> VideoSelectorProgramId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VideoSelectorPid: js.UndefOr[VideoSelectorPid] = js.undefined,
+        VideoSelectorProgramId: js.UndefOr[VideoSelectorProgramId] = js.undefined
+    ): VideoSelectorSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VideoSelectorPid" -> VideoSelectorPid.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VideoSelectorProgramId" -> VideoSelectorProgramId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoSelectorSettings]
     }
   }
 
   /**
-    * Placeholder documentation for WebvttDestinationSettings
+    * Webvtt Destination Settings
     */
   @js.native
   trait WebvttDestinationSettings extends js.Object {}
 
   object WebvttDestinationSettings {
-    def apply(): WebvttDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): WebvttDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebvttDestinationSettings]
     }

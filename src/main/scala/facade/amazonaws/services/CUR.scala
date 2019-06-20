@@ -12,12 +12,13 @@ package object cur {
   type AdditionalArtifactList = js.Array[AdditionalArtifact]
   type CompressionFormat      = String
   type DeleteResponseMessage  = String
-  type ErrorMessage           = String
   type GenericString          = String
   type MaxResults             = Int
+  type RefreshClosedReports   = Boolean
   type ReportDefinitionList   = js.Array[ReportDefinition]
   type ReportFormat           = String
   type ReportName             = String
+  type ReportVersioning       = String
   type S3Bucket               = String
   type S3Prefix               = String
   type SchemaElement          = String
@@ -40,7 +41,7 @@ package cur {
   }
 
   /**
-    * Region of customer S3 bucket.
+    * The region of the S3 bucket that AWS delivers the report into.
     */
   object AWSRegionEnum {
     val `us-east-1`      = "us-east-1"
@@ -51,6 +52,8 @@ package cur {
     val `ap-southeast-1` = "ap-southeast-1"
     val `ap-southeast-2` = "ap-southeast-2"
     val `ap-northeast-1` = "ap-northeast-1"
+    val `eu-north-1`     = "eu-north-1"
+    val `ap-northeast-3` = "ap-northeast-3"
 
     val values = IndexedSeq(
       `us-east-1`,
@@ -60,32 +63,36 @@ package cur {
       `eu-west-1`,
       `ap-southeast-1`,
       `ap-southeast-2`,
-      `ap-northeast-1`
+      `ap-northeast-1`,
+      `eu-north-1`,
+      `ap-northeast-3`
     )
   }
 
   /**
-    * Enable support for Redshift and/or QuickSight.
+    * The types of manifest that you want AWS to create for this report.
     */
   object AdditionalArtifactEnum {
     val REDSHIFT   = "REDSHIFT"
     val QUICKSIGHT = "QUICKSIGHT"
+    val ATHENA     = "ATHENA"
 
-    val values = IndexedSeq(REDSHIFT, QUICKSIGHT)
+    val values = IndexedSeq(REDSHIFT, QUICKSIGHT, ATHENA)
   }
 
   /**
-    * Preferred compression format for report.
+    * The compression format that AWS uses for the report.
     */
   object CompressionFormatEnum {
-    val ZIP  = "ZIP"
-    val GZIP = "GZIP"
+    val ZIP     = "ZIP"
+    val GZIP    = "GZIP"
+    val Parquet = "Parquet"
 
-    val values = IndexedSeq(ZIP, GZIP)
+    val values = IndexedSeq(ZIP, GZIP, Parquet)
   }
 
   /**
-    * Request of DeleteReportDefinition
+    * Deletes the specified report.
     */
   @js.native
   trait DeleteReportDefinitionRequest extends js.Object {
@@ -93,17 +100,21 @@ package cur {
   }
 
   object DeleteReportDefinitionRequest {
-    def apply(ReportName: js.UndefOr[ReportName] = js.undefined): DeleteReportDefinitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ReportName" -> ReportName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ReportName: js.UndefOr[ReportName] = js.undefined
+    ): DeleteReportDefinitionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReportName" -> ReportName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReportDefinitionRequest]
     }
   }
 
   /**
-    * Response of DeleteReportDefinition
+    * If the action is successful, the service sends back an HTTP 200 response.
     */
   @js.native
   trait DeleteReportDefinitionResponse extends js.Object {
@@ -111,17 +122,21 @@ package cur {
   }
 
   object DeleteReportDefinitionResponse {
-    def apply(ResponseMessage: js.UndefOr[DeleteResponseMessage] = js.undefined): DeleteReportDefinitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResponseMessage" -> ResponseMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResponseMessage: js.UndefOr[DeleteResponseMessage] = js.undefined
+    ): DeleteReportDefinitionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResponseMessage" -> ResponseMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReportDefinitionResponse]
     }
   }
 
   /**
-    * Request of DescribeReportDefinitions
+    * Requests a list of AWS Cost and Usage reports owned by the account.
     */
   @js.native
   trait DescribeReportDefinitionsRequest extends js.Object {
@@ -130,20 +145,25 @@ package cur {
   }
 
   object DescribeReportDefinitionsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[GenericString] = js.undefined): DescribeReportDefinitionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeReportDefinitionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReportDefinitionsRequest]
     }
   }
 
   /**
-    * Response of DescribeReportDefinitions
+    * If the action is successful, the service sends back an HTTP 200 response.
     */
   @js.native
   trait DescribeReportDefinitionsResponse extends js.Object {
@@ -152,36 +172,25 @@ package cur {
   }
 
   object DescribeReportDefinitionsResponse {
-    def apply(NextToken: js.UndefOr[GenericString] = js.undefined,
-              ReportDefinitions: js.UndefOr[ReportDefinitionList] = js.undefined): DescribeReportDefinitionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReportDefinitions" -> ReportDefinitions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[GenericString] = js.undefined,
+        ReportDefinitions: js.UndefOr[ReportDefinitionList] = js.undefined
+    ): DescribeReportDefinitionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReportDefinitions" -> ReportDefinitions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeReportDefinitionsResponse]
     }
   }
 
   /**
-    * This exception is thrown when putting a report preference with a name that already exists.
-    */
-  @js.native
-  trait DuplicateReportNameExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * This exception is thrown on a known dependency failure.
-    */
-  @js.native
-  trait InternalErrorExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Request of PutReportDefinition
+    * Creates a Cost and Usage Report.
     */
   @js.native
   trait PutReportDefinitionRequest extends js.Object {
@@ -189,30 +198,35 @@ package cur {
   }
 
   object PutReportDefinitionRequest {
-    def apply(ReportDefinition: ReportDefinition): PutReportDefinitionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ReportDefinition: ReportDefinition
+    ): PutReportDefinitionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutReportDefinitionRequest]
     }
   }
 
   /**
-    * Response of PutReportDefinition
+    * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
     */
   @js.native
   trait PutReportDefinitionResponse extends js.Object {}
 
   object PutReportDefinitionResponse {
-    def apply(): PutReportDefinitionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): PutReportDefinitionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutReportDefinitionResponse]
     }
   }
 
   /**
-    * The definition of AWS Cost and Usage Report. Customer can specify the report name, time unit, report format, compression format, S3 bucket and additional artifacts and schema elements in the definition.
+    * The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.
     */
   @js.native
   trait ReportDefinition extends js.Object {
@@ -225,18 +239,24 @@ package cur {
     var S3Region: AWSRegion
     var TimeUnit: TimeUnit
     var AdditionalArtifacts: js.UndefOr[AdditionalArtifactList]
+    var RefreshClosedReports: js.UndefOr[RefreshClosedReports]
+    var ReportVersioning: js.UndefOr[ReportVersioning]
   }
 
   object ReportDefinition {
-    def apply(AdditionalSchemaElements: SchemaElementList,
-              Compression: CompressionFormat,
-              Format: ReportFormat,
-              ReportName: ReportName,
-              S3Bucket: S3Bucket,
-              S3Prefix: S3Prefix,
-              S3Region: AWSRegion,
-              TimeUnit: TimeUnit,
-              AdditionalArtifacts: js.UndefOr[AdditionalArtifactList] = js.undefined): ReportDefinition = {
+    def apply(
+        AdditionalSchemaElements: SchemaElementList,
+        Compression: CompressionFormat,
+        Format: ReportFormat,
+        ReportName: ReportName,
+        S3Bucket: S3Bucket,
+        S3Prefix: S3Prefix,
+        S3Region: AWSRegion,
+        TimeUnit: TimeUnit,
+        AdditionalArtifacts: js.UndefOr[AdditionalArtifactList] = js.undefined,
+        RefreshClosedReports: js.UndefOr[RefreshClosedReports] = js.undefined,
+        ReportVersioning: js.UndefOr[ReportVersioning] = js.undefined
+    ): ReportDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdditionalSchemaElements" -> AdditionalSchemaElements.asInstanceOf[js.Any],
         "Compression"              -> Compression.asInstanceOf[js.Any],
@@ -248,6 +268,12 @@ package cur {
         "TimeUnit"                 -> TimeUnit.asInstanceOf[js.Any],
         "AdditionalArtifacts" -> AdditionalArtifacts.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "RefreshClosedReports" -> RefreshClosedReports.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReportVersioning" -> ReportVersioning.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -256,24 +282,24 @@ package cur {
   }
 
   /**
-    * Preferred format for report.
+    * The format that AWS saves the report in.
     */
   object ReportFormatEnum {
     val textORcsv = "textORcsv"
+    val Parquet   = "Parquet"
 
-    val values = IndexedSeq(textORcsv)
+    val values = IndexedSeq(textORcsv, Parquet)
+  }
+
+  object ReportVersioningEnum {
+    val CREATE_NEW_REPORT = "CREATE_NEW_REPORT"
+    val OVERWRITE_REPORT  = "OVERWRITE_REPORT"
+
+    val values = IndexedSeq(CREATE_NEW_REPORT, OVERWRITE_REPORT)
   }
 
   /**
-    * This exception is thrown when the number of report preference reaches max limit. The max number is 5.
-    */
-  @js.native
-  trait ReportLimitReachedExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Preference of including Resource IDs. You can include additional details about individual resource IDs in your report.
+    * Whether or not AWS includes resource IDs in the report.
     */
   object SchemaElementEnum {
     val RESOURCES = "RESOURCES"
@@ -282,20 +308,12 @@ package cur {
   }
 
   /**
-    * The frequency on which report data are measured and displayed.
+    * The length of time covered by the report.
     */
   object TimeUnitEnum {
     val HOURLY = "HOURLY"
     val DAILY  = "DAILY"
 
     val values = IndexedSeq(HOURLY, DAILY)
-  }
-
-  /**
-    * This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.
-    */
-  @js.native
-  trait ValidationExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 }

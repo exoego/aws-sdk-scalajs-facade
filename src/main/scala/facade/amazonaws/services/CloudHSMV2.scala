@@ -80,15 +80,17 @@ package cloudhsmv2 {
   }
 
   object Backup {
-    def apply(BackupId: BackupId,
-              BackupState: js.UndefOr[BackupState] = js.undefined,
-              ClusterId: js.UndefOr[ClusterId] = js.undefined,
-              CopyTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              DeleteTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              SourceBackup: js.UndefOr[BackupId] = js.undefined,
-              SourceCluster: js.UndefOr[ClusterId] = js.undefined,
-              SourceRegion: js.UndefOr[Region] = js.undefined): Backup = {
+    def apply(
+        BackupId: BackupId,
+        BackupState: js.UndefOr[BackupState] = js.undefined,
+        ClusterId: js.UndefOr[ClusterId] = js.undefined,
+        CopyTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        DeleteTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        SourceBackup: js.UndefOr[BackupId] = js.undefined,
+        SourceCluster: js.UndefOr[ClusterId] = js.undefined,
+        SourceRegion: js.UndefOr[Region] = js.undefined
+    ): Backup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupId" -> BackupId.asInstanceOf[js.Any],
         "BackupState" -> BackupState.map { x =>
@@ -149,11 +151,13 @@ package cloudhsmv2 {
   }
 
   object Certificates {
-    def apply(AwsHardwareCertificate: js.UndefOr[Cert] = js.undefined,
-              ClusterCertificate: js.UndefOr[Cert] = js.undefined,
-              ClusterCsr: js.UndefOr[Cert] = js.undefined,
-              HsmCertificate: js.UndefOr[Cert] = js.undefined,
-              ManufacturerHardwareCertificate: js.UndefOr[Cert] = js.undefined): Certificates = {
+    def apply(
+        AwsHardwareCertificate: js.UndefOr[Cert] = js.undefined,
+        ClusterCertificate: js.UndefOr[Cert] = js.undefined,
+        ClusterCsr: js.UndefOr[Cert] = js.undefined,
+        HsmCertificate: js.UndefOr[Cert] = js.undefined,
+        ManufacturerHardwareCertificate: js.UndefOr[Cert] = js.undefined
+    ): Certificates = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AwsHardwareCertificate" -> AwsHardwareCertificate.map { x =>
           x.asInstanceOf[js.Any]
@@ -197,19 +201,21 @@ package cloudhsmv2 {
   }
 
   object Cluster {
-    def apply(BackupPolicy: js.UndefOr[BackupPolicy] = js.undefined,
-              Certificates: js.UndefOr[Certificates] = js.undefined,
-              ClusterId: js.UndefOr[ClusterId] = js.undefined,
-              CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              HsmType: js.UndefOr[HsmType] = js.undefined,
-              Hsms: js.UndefOr[Hsms] = js.undefined,
-              PreCoPassword: js.UndefOr[PreCoPassword] = js.undefined,
-              SecurityGroup: js.UndefOr[SecurityGroup] = js.undefined,
-              SourceBackupId: js.UndefOr[BackupId] = js.undefined,
-              State: js.UndefOr[ClusterState] = js.undefined,
-              StateMessage: js.UndefOr[StateMessage] = js.undefined,
-              SubnetMapping: js.UndefOr[ExternalSubnetMapping] = js.undefined,
-              VpcId: js.UndefOr[VpcId] = js.undefined): Cluster = {
+    def apply(
+        BackupPolicy: js.UndefOr[BackupPolicy] = js.undefined,
+        Certificates: js.UndefOr[Certificates] = js.undefined,
+        ClusterId: js.UndefOr[ClusterId] = js.undefined,
+        CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        HsmType: js.UndefOr[HsmType] = js.undefined,
+        Hsms: js.UndefOr[Hsms] = js.undefined,
+        PreCoPassword: js.UndefOr[PreCoPassword] = js.undefined,
+        SecurityGroup: js.UndefOr[SecurityGroup] = js.undefined,
+        SourceBackupId: js.UndefOr[BackupId] = js.undefined,
+        State: js.UndefOr[ClusterState] = js.undefined,
+        StateMessage: js.UndefOr[StateMessage] = js.undefined,
+        SubnetMapping: js.UndefOr[ExternalSubnetMapping] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
+    ): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupPolicy" -> BackupPolicy.map { x =>
           x.asInstanceOf[js.Any]
@@ -287,7 +293,10 @@ package cloudhsmv2 {
   }
 
   object CopyBackupToRegionRequest {
-    def apply(BackupId: BackupId, DestinationRegion: Region): CopyBackupToRegionRequest = {
+    def apply(
+        BackupId: BackupId,
+        DestinationRegion: Region
+    ): CopyBackupToRegionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupId"          -> BackupId.asInstanceOf[js.Any],
         "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any]
@@ -303,10 +312,14 @@ package cloudhsmv2 {
   }
 
   object CopyBackupToRegionResponse {
-    def apply(DestinationBackup: js.UndefOr[DestinationBackup] = js.undefined): CopyBackupToRegionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DestinationBackup" -> DestinationBackup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DestinationBackup: js.UndefOr[DestinationBackup] = js.undefined
+    ): CopyBackupToRegionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DestinationBackup" -> DestinationBackup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyBackupToRegionResponse]
     }
@@ -320,9 +333,11 @@ package cloudhsmv2 {
   }
 
   object CreateClusterRequest {
-    def apply(HsmType: HsmType,
-              SubnetIds: SubnetIds,
-              SourceBackupId: js.UndefOr[BackupId] = js.undefined): CreateClusterRequest = {
+    def apply(
+        HsmType: HsmType,
+        SubnetIds: SubnetIds,
+        SourceBackupId: js.UndefOr[BackupId] = js.undefined
+    ): CreateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmType"   -> HsmType.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
@@ -341,10 +356,14 @@ package cloudhsmv2 {
   }
 
   object CreateClusterResponse {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): CreateClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): CreateClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResponse]
     }
@@ -358,9 +377,11 @@ package cloudhsmv2 {
   }
 
   object CreateHsmRequest {
-    def apply(AvailabilityZone: ExternalAz,
-              ClusterId: ClusterId,
-              IpAddress: js.UndefOr[IpAddress] = js.undefined): CreateHsmRequest = {
+    def apply(
+        AvailabilityZone: ExternalAz,
+        ClusterId: ClusterId,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined
+    ): CreateHsmRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "ClusterId"        -> ClusterId.asInstanceOf[js.Any],
@@ -379,10 +400,14 @@ package cloudhsmv2 {
   }
 
   object CreateHsmResponse {
-    def apply(Hsm: js.UndefOr[Hsm] = js.undefined): CreateHsmResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Hsm" -> Hsm.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Hsm: js.UndefOr[Hsm] = js.undefined
+    ): CreateHsmResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Hsm" -> Hsm.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmResponse]
     }
@@ -394,9 +419,12 @@ package cloudhsmv2 {
   }
 
   object DeleteBackupRequest {
-    def apply(BackupId: BackupId): DeleteBackupRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("BackupId" -> BackupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupId: BackupId
+    ): DeleteBackupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupId" -> BackupId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupRequest]
     }
@@ -408,10 +436,14 @@ package cloudhsmv2 {
   }
 
   object DeleteBackupResponse {
-    def apply(Backup: js.UndefOr[Backup] = js.undefined): DeleteBackupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Backup" -> Backup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Backup: js.UndefOr[Backup] = js.undefined
+    ): DeleteBackupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Backup" -> Backup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupResponse]
     }
@@ -423,9 +455,12 @@ package cloudhsmv2 {
   }
 
   object DeleteClusterRequest {
-    def apply(ClusterId: ClusterId): DeleteClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: ClusterId
+    ): DeleteClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
     }
@@ -437,10 +472,14 @@ package cloudhsmv2 {
   }
 
   object DeleteClusterResponse {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): DeleteClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): DeleteClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResponse]
     }
@@ -455,10 +494,12 @@ package cloudhsmv2 {
   }
 
   object DeleteHsmRequest {
-    def apply(ClusterId: ClusterId,
-              EniId: js.UndefOr[EniId] = js.undefined,
-              EniIp: js.UndefOr[IpAddress] = js.undefined,
-              HsmId: js.UndefOr[HsmId] = js.undefined): DeleteHsmRequest = {
+    def apply(
+        ClusterId: ClusterId,
+        EniId: js.UndefOr[EniId] = js.undefined,
+        EniIp: js.UndefOr[IpAddress] = js.undefined,
+        HsmId: js.UndefOr[HsmId] = js.undefined
+    ): DeleteHsmRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "EniId" -> EniId.map { x =>
@@ -482,10 +523,14 @@ package cloudhsmv2 {
   }
 
   object DeleteHsmResponse {
-    def apply(HsmId: js.UndefOr[HsmId] = js.undefined): DeleteHsmResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmId" -> HsmId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmId: js.UndefOr[HsmId] = js.undefined
+    ): DeleteHsmResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmId" -> HsmId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmResponse]
     }
@@ -500,10 +545,12 @@ package cloudhsmv2 {
   }
 
   object DescribeBackupsRequest {
-    def apply(Filters: js.UndefOr[Filters] = js.undefined,
-              MaxResults: js.UndefOr[MaxSize] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SortAscending: js.UndefOr[Boolean] = js.undefined): DescribeBackupsRequest = {
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxSize] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortAscending: js.UndefOr[Boolean] = js.undefined
+    ): DescribeBackupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -530,13 +577,18 @@ package cloudhsmv2 {
   }
 
   object DescribeBackupsResponse {
-    def apply(Backups: js.UndefOr[Backups] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeBackupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Backups" -> Backups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Backups: js.UndefOr[Backups] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeBackupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Backups" -> Backups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBackupsResponse]
     }
@@ -550,9 +602,11 @@ package cloudhsmv2 {
   }
 
   object DescribeClustersRequest {
-    def apply(Filters: js.UndefOr[Filters] = js.undefined,
-              MaxResults: js.UndefOr[MaxSize] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClustersRequest = {
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxSize] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeClustersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -576,13 +630,18 @@ package cloudhsmv2 {
   }
 
   object DescribeClustersResponse {
-    def apply(Clusters: js.UndefOr[Clusters] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Clusters" -> Clusters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Clusters: js.UndefOr[Clusters] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeClustersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Clusters" -> Clusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClustersResponse]
     }
@@ -597,10 +656,12 @@ package cloudhsmv2 {
   }
 
   object DestinationBackup {
-    def apply(CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              SourceBackup: js.UndefOr[BackupId] = js.undefined,
-              SourceCluster: js.UndefOr[ClusterId] = js.undefined,
-              SourceRegion: js.UndefOr[Region] = js.undefined): DestinationBackup = {
+    def apply(
+        CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        SourceBackup: js.UndefOr[BackupId] = js.undefined,
+        SourceCluster: js.UndefOr[ClusterId] = js.undefined,
+        SourceRegion: js.UndefOr[Region] = js.undefined
+    ): DestinationBackup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreateTimestamp" -> CreateTimestamp.map { x =>
           x.asInstanceOf[js.Any]
@@ -636,14 +697,16 @@ package cloudhsmv2 {
   }
 
   object Hsm {
-    def apply(HsmId: HsmId,
-              AvailabilityZone: js.UndefOr[ExternalAz] = js.undefined,
-              ClusterId: js.UndefOr[ClusterId] = js.undefined,
-              EniId: js.UndefOr[EniId] = js.undefined,
-              EniIp: js.UndefOr[IpAddress] = js.undefined,
-              State: js.UndefOr[HsmState] = js.undefined,
-              StateMessage: js.UndefOr[String] = js.undefined,
-              SubnetId: js.UndefOr[SubnetId] = js.undefined): Hsm = {
+    def apply(
+        HsmId: HsmId,
+        AvailabilityZone: js.UndefOr[ExternalAz] = js.undefined,
+        ClusterId: js.UndefOr[ClusterId] = js.undefined,
+        EniId: js.UndefOr[EniId] = js.undefined,
+        EniIp: js.UndefOr[IpAddress] = js.undefined,
+        State: js.UndefOr[HsmState] = js.undefined,
+        StateMessage: js.UndefOr[String] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined
+    ): Hsm = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmId" -> HsmId.asInstanceOf[js.Any],
         "AvailabilityZone" -> AvailabilityZone.map { x =>
@@ -691,7 +754,11 @@ package cloudhsmv2 {
   }
 
   object InitializeClusterRequest {
-    def apply(ClusterId: ClusterId, SignedCert: Cert, TrustAnchor: Cert): InitializeClusterRequest = {
+    def apply(
+        ClusterId: ClusterId,
+        SignedCert: Cert,
+        TrustAnchor: Cert
+    ): InitializeClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId"   -> ClusterId.asInstanceOf[js.Any],
         "SignedCert"  -> SignedCert.asInstanceOf[js.Any],
@@ -709,13 +776,18 @@ package cloudhsmv2 {
   }
 
   object InitializeClusterResponse {
-    def apply(State: js.UndefOr[ClusterState] = js.undefined,
-              StateMessage: js.UndefOr[StateMessage] = js.undefined): InitializeClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("State" -> State.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StateMessage" -> StateMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        State: js.UndefOr[ClusterState] = js.undefined,
+        StateMessage: js.UndefOr[StateMessage] = js.undefined
+    ): InitializeClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StateMessage" -> StateMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitializeClusterResponse]
     }
@@ -729,9 +801,11 @@ package cloudhsmv2 {
   }
 
   object ListTagsRequest {
-    def apply(ResourceId: ClusterId,
-              MaxResults: js.UndefOr[MaxSize] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsRequest = {
+    def apply(
+        ResourceId: ClusterId,
+        MaxResults: js.UndefOr[MaxSize] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -753,11 +827,16 @@ package cloudhsmv2 {
   }
 
   object ListTagsResponse {
-    def apply(TagList: TagList, NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TagList" -> TagList.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        TagList: TagList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TagList" -> TagList.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
     }
@@ -769,9 +848,12 @@ package cloudhsmv2 {
   }
 
   object RestoreBackupRequest {
-    def apply(BackupId: BackupId): RestoreBackupRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("BackupId" -> BackupId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupId: BackupId
+    ): RestoreBackupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupId" -> BackupId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreBackupRequest]
     }
@@ -783,10 +865,14 @@ package cloudhsmv2 {
   }
 
   object RestoreBackupResponse {
-    def apply(Backup: js.UndefOr[Backup] = js.undefined): RestoreBackupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Backup" -> Backup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Backup: js.UndefOr[Backup] = js.undefined
+    ): RestoreBackupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Backup" -> Backup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreBackupResponse]
     }
@@ -802,10 +888,14 @@ package cloudhsmv2 {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: TagValue): Tag = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -818,7 +908,10 @@ package cloudhsmv2 {
   }
 
   object TagResourceRequest {
-    def apply(ResourceId: ClusterId, TagList: TagList): TagResourceRequest = {
+    def apply(
+        ResourceId: ClusterId,
+        TagList: TagList
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagList"    -> TagList.asInstanceOf[js.Any]
@@ -832,8 +925,10 @@ package cloudhsmv2 {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -846,7 +941,10 @@ package cloudhsmv2 {
   }
 
   object UntagResourceRequest {
-    def apply(ResourceId: ClusterId, TagKeyList: TagKeyList): UntagResourceRequest = {
+    def apply(
+        ResourceId: ClusterId,
+        TagKeyList: TagKeyList
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeyList" -> TagKeyList.asInstanceOf[js.Any]
@@ -860,8 +958,10 @@ package cloudhsmv2 {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }

@@ -47,12 +47,14 @@ package mobileanalytics {
   }
 
   object Event {
-    def apply(eventType: String50Chars,
-              timestamp: ISO8601Timestamp,
-              attributes: js.UndefOr[MapOfStringToString] = js.undefined,
-              metrics: js.UndefOr[MapOfStringToNumber] = js.undefined,
-              session: js.UndefOr[Session] = js.undefined,
-              version: js.UndefOr[String10Chars] = js.undefined): Event = {
+    def apply(
+        eventType: String50Chars,
+        timestamp: ISO8601Timestamp,
+        attributes: js.UndefOr[MapOfStringToString] = js.undefined,
+        metrics: js.UndefOr[MapOfStringToNumber] = js.undefined,
+        session: js.UndefOr[Session] = js.undefined,
+        version: js.UndefOr[String10Chars] = js.undefined
+    ): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
         "eventType" -> eventType.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any],
@@ -85,9 +87,11 @@ package mobileanalytics {
   }
 
   object PutEventsInput {
-    def apply(clientContext: String,
-              events: EventListDefinition,
-              clientContextEncoding: js.UndefOr[String] = js.undefined): PutEventsInput = {
+    def apply(
+        clientContext: String,
+        events: EventListDefinition,
+        clientContextEncoding: js.UndefOr[String] = js.undefined
+    ): PutEventsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "clientContext" -> clientContext.asInstanceOf[js.Any],
         "events"        -> events.asInstanceOf[js.Any],
@@ -112,10 +116,12 @@ package mobileanalytics {
   }
 
   object Session {
-    def apply(duration: js.UndefOr[Double] = js.undefined,
-              id: js.UndefOr[String50Chars] = js.undefined,
-              startTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined,
-              stopTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined): Session = {
+    def apply(
+        duration: js.UndefOr[Double] = js.undefined,
+        id: js.UndefOr[String50Chars] = js.undefined,
+        startTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined,
+        stopTimestamp: js.UndefOr[ISO8601Timestamp] = js.undefined
+    ): Session = {
       val _fields = IndexedSeq[(String, js.Any)](
         "duration" -> duration.map { x =>
           x.asInstanceOf[js.Any]

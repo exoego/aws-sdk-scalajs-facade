@@ -143,7 +143,11 @@ package guardduty {
   }
 
   object AcceptInvitationRequest {
-    def apply(DetectorId: __string, InvitationId: InvitationId, MasterId: MasterId): AcceptInvitationRequest = {
+    def apply(
+        DetectorId: __string,
+        InvitationId: InvitationId,
+        MasterId: MasterId
+    ): AcceptInvitationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId"   -> DetectorId.asInstanceOf[js.Any],
         "InvitationId" -> InvitationId.asInstanceOf[js.Any],
@@ -158,8 +162,10 @@ package guardduty {
   trait AcceptInvitationResponse extends js.Object {}
 
   object AcceptInvitationResponse {
-    def apply(): AcceptInvitationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AcceptInvitationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptInvitationResponse]
     }
@@ -177,10 +183,12 @@ package guardduty {
   }
 
   object AccessKeyDetails {
-    def apply(AccessKeyId: js.UndefOr[__string] = js.undefined,
-              PrincipalId: js.UndefOr[__string] = js.undefined,
-              UserName: js.UndefOr[__string] = js.undefined,
-              UserType: js.UndefOr[__string] = js.undefined): AccessKeyDetails = {
+    def apply(
+        AccessKeyId: js.UndefOr[__string] = js.undefined,
+        PrincipalId: js.UndefOr[__string] = js.undefined,
+        UserName: js.UndefOr[__string] = js.undefined,
+        UserType: js.UndefOr[__string] = js.undefined
+    ): AccessKeyDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessKeyId" -> AccessKeyId.map { x =>
           x.asInstanceOf[js.Any]
@@ -210,7 +218,10 @@ package guardduty {
   }
 
   object AccountDetail {
-    def apply(AccountId: AccountId, Email: Email): AccountDetail = {
+    def apply(
+        AccountId: AccountId,
+        Email: Email
+    ): AccountDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Email"     -> Email.asInstanceOf[js.Any]
@@ -233,11 +244,13 @@ package guardduty {
   }
 
   object Action {
-    def apply(ActionType: js.UndefOr[__string] = js.undefined,
-              AwsApiCallAction: js.UndefOr[AwsApiCallAction] = js.undefined,
-              DnsRequestAction: js.UndefOr[DnsRequestAction] = js.undefined,
-              NetworkConnectionAction: js.UndefOr[NetworkConnectionAction] = js.undefined,
-              PortProbeAction: js.UndefOr[PortProbeAction] = js.undefined): Action = {
+    def apply(
+        ActionType: js.UndefOr[__string] = js.undefined,
+        AwsApiCallAction: js.UndefOr[AwsApiCallAction] = js.undefined,
+        DnsRequestAction: js.UndefOr[DnsRequestAction] = js.undefined,
+        NetworkConnectionAction: js.UndefOr[NetworkConnectionAction] = js.undefined,
+        PortProbeAction: js.UndefOr[PortProbeAction] = js.undefined
+    ): Action = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionType" -> ActionType.map { x =>
           x.asInstanceOf[js.Any]
@@ -270,7 +283,10 @@ package guardduty {
   }
 
   object ArchiveFindingsRequest {
-    def apply(DetectorId: __string, FindingIds: FindingIds): ArchiveFindingsRequest = {
+    def apply(
+        DetectorId: __string,
+        FindingIds: FindingIds
+    ): ArchiveFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
@@ -284,8 +300,10 @@ package guardduty {
   trait ArchiveFindingsResponse extends js.Object {}
 
   object ArchiveFindingsResponse {
-    def apply(): ArchiveFindingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ArchiveFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ArchiveFindingsResponse]
     }
@@ -304,11 +322,13 @@ package guardduty {
   }
 
   object AwsApiCallAction {
-    def apply(Api: js.UndefOr[__string] = js.undefined,
-              CallerType: js.UndefOr[__string] = js.undefined,
-              DomainDetails: js.UndefOr[DomainDetails] = js.undefined,
-              RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
-              ServiceName: js.UndefOr[__string] = js.undefined): AwsApiCallAction = {
+    def apply(
+        Api: js.UndefOr[__string] = js.undefined,
+        CallerType: js.UndefOr[__string] = js.undefined,
+        DomainDetails: js.UndefOr[DomainDetails] = js.undefined,
+        RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
+        ServiceName: js.UndefOr[__string] = js.undefined
+    ): AwsApiCallAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Api" -> Api.map { x =>
           x.asInstanceOf[js.Any]
@@ -340,10 +360,14 @@ package guardduty {
   }
 
   object City {
-    def apply(CityName: js.UndefOr[__string] = js.undefined): City = {
-      val _fields = IndexedSeq[(String, js.Any)]("CityName" -> CityName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CityName: js.UndefOr[__string] = js.undefined
+    ): City = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CityName" -> CityName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[City]
     }
@@ -363,12 +387,14 @@ package guardduty {
   }
 
   object Condition {
-    def apply(Eq: js.UndefOr[Eq] = js.undefined,
-              Gt: js.UndefOr[__integer] = js.undefined,
-              Gte: js.UndefOr[__integer] = js.undefined,
-              Lt: js.UndefOr[__integer] = js.undefined,
-              Lte: js.UndefOr[__integer] = js.undefined,
-              Neq: js.UndefOr[Neq] = js.undefined): Condition = {
+    def apply(
+        Eq: js.UndefOr[Eq] = js.undefined,
+        Gt: js.UndefOr[__integer] = js.undefined,
+        Gte: js.UndefOr[__integer] = js.undefined,
+        Lt: js.UndefOr[__integer] = js.undefined,
+        Lte: js.UndefOr[__integer] = js.undefined,
+        Neq: js.UndefOr[Neq] = js.undefined
+    ): Condition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Eq" -> Eq.map { x =>
           x.asInstanceOf[js.Any]
@@ -404,13 +430,18 @@ package guardduty {
   }
 
   object Country {
-    def apply(CountryCode: js.UndefOr[__string] = js.undefined,
-              CountryName: js.UndefOr[__string] = js.undefined): Country = {
-      val _fields = IndexedSeq[(String, js.Any)]("CountryCode" -> CountryCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "CountryName" -> CountryName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CountryCode: js.UndefOr[__string] = js.undefined,
+        CountryName: js.UndefOr[__string] = js.undefined
+    ): Country = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CountryCode" -> CountryCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CountryName" -> CountryName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Country]
     }
@@ -452,10 +483,14 @@ package guardduty {
   }
 
   object CreateDetectorResponse {
-    def apply(DetectorId: js.UndefOr[DetectorId] = js.undefined): CreateDetectorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetectorId" -> DetectorId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetectorId: js.UndefOr[DetectorId] = js.undefined
+    ): CreateDetectorResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetectorId" -> DetectorId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDetectorResponse]
     }
@@ -476,13 +511,15 @@ package guardduty {
   }
 
   object CreateFilterRequest {
-    def apply(DetectorId: __string,
-              FindingCriteria: FindingCriteria,
-              Name: FilterName,
-              Action: js.UndefOr[FilterAction] = js.undefined,
-              ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined,
-              Description: js.UndefOr[FilterDescription] = js.undefined,
-              Rank: js.UndefOr[FilterRank] = js.undefined): CreateFilterRequest = {
+    def apply(
+        DetectorId: __string,
+        FindingCriteria: FindingCriteria,
+        Name: FilterName,
+        Action: js.UndefOr[FilterAction] = js.undefined,
+        ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined,
+        Description: js.UndefOr[FilterDescription] = js.undefined,
+        Rank: js.UndefOr[FilterRank] = js.undefined
+    ): CreateFilterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId"      -> DetectorId.asInstanceOf[js.Any],
         "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
@@ -511,10 +548,14 @@ package guardduty {
   }
 
   object CreateFilterResponse {
-    def apply(Name: js.UndefOr[FilterName] = js.undefined): CreateFilterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[FilterName] = js.undefined
+    ): CreateFilterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFilterResponse]
     }
@@ -534,12 +575,14 @@ package guardduty {
   }
 
   object CreateIPSetRequest {
-    def apply(Activate: Activate,
-              DetectorId: __string,
-              Format: IpSetFormat,
-              Location: Location,
-              Name: Name,
-              ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined): CreateIPSetRequest = {
+    def apply(
+        Activate: Activate,
+        DetectorId: __string,
+        Format: IpSetFormat,
+        Location: Location,
+        Name: Name,
+        ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined
+    ): CreateIPSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Activate"   -> Activate.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -561,10 +604,14 @@ package guardduty {
   }
 
   object CreateIPSetResponse {
-    def apply(IpSetId: js.UndefOr[IpSetId] = js.undefined): CreateIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IpSetId" -> IpSetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IpSetId: js.UndefOr[IpSetId] = js.undefined
+    ): CreateIPSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IpSetId" -> IpSetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIPSetResponse]
     }
@@ -580,7 +627,10 @@ package guardduty {
   }
 
   object CreateMembersRequest {
-    def apply(AccountDetails: AccountDetails, DetectorId: __string): CreateMembersRequest = {
+    def apply(
+        AccountDetails: AccountDetails,
+        DetectorId: __string
+    ): CreateMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountDetails" -> AccountDetails.asInstanceOf[js.Any],
         "DetectorId"     -> DetectorId.asInstanceOf[js.Any]
@@ -596,10 +646,14 @@ package guardduty {
   }
 
   object CreateMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): CreateMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): CreateMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMembersResponse]
     }
@@ -615,8 +669,10 @@ package guardduty {
   }
 
   object CreateSampleFindingsRequest {
-    def apply(DetectorId: __string,
-              FindingTypes: js.UndefOr[FindingTypes] = js.undefined): CreateSampleFindingsRequest = {
+    def apply(
+        DetectorId: __string,
+        FindingTypes: js.UndefOr[FindingTypes] = js.undefined
+    ): CreateSampleFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingTypes" -> FindingTypes.map { x =>
@@ -632,8 +688,10 @@ package guardduty {
   trait CreateSampleFindingsResponse extends js.Object {}
 
   object CreateSampleFindingsResponse {
-    def apply(): CreateSampleFindingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateSampleFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSampleFindingsResponse]
     }
@@ -653,12 +711,14 @@ package guardduty {
   }
 
   object CreateThreatIntelSetRequest {
-    def apply(Activate: Activate,
-              DetectorId: __string,
-              Format: ThreatIntelSetFormat,
-              Location: Location,
-              Name: Name,
-              ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined): CreateThreatIntelSetRequest = {
+    def apply(
+        Activate: Activate,
+        DetectorId: __string,
+        Format: ThreatIntelSetFormat,
+        Location: Location,
+        Name: Name,
+        ClientToken: js.UndefOr[__stringMin0Max64] = js.undefined
+    ): CreateThreatIntelSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Activate"   -> Activate.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -680,10 +740,14 @@ package guardduty {
   }
 
   object CreateThreatIntelSetResponse {
-    def apply(ThreatIntelSetId: js.UndefOr[ThreatIntelSetId] = js.undefined): CreateThreatIntelSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ThreatIntelSetId" -> ThreatIntelSetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ThreatIntelSetId: js.UndefOr[ThreatIntelSetId] = js.undefined
+    ): CreateThreatIntelSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ThreatIntelSetId" -> ThreatIntelSetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateThreatIntelSetResponse]
     }
@@ -698,9 +762,12 @@ package guardduty {
   }
 
   object DeclineInvitationsRequest {
-    def apply(AccountIds: AccountIds): DeclineInvitationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: AccountIds
+    ): DeclineInvitationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeclineInvitationsRequest]
     }
@@ -712,10 +779,14 @@ package guardduty {
   }
 
   object DeclineInvitationsResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): DeclineInvitationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): DeclineInvitationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeclineInvitationsResponse]
     }
@@ -727,9 +798,12 @@ package guardduty {
   }
 
   object DeleteDetectorRequest {
-    def apply(DetectorId: __string): DeleteDetectorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetectorId" -> DetectorId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetectorId: __string
+    ): DeleteDetectorRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDetectorRequest]
     }
@@ -739,8 +813,10 @@ package guardduty {
   trait DeleteDetectorResponse extends js.Object {}
 
   object DeleteDetectorResponse {
-    def apply(): DeleteDetectorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteDetectorResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDetectorResponse]
     }
@@ -753,7 +829,10 @@ package guardduty {
   }
 
   object DeleteFilterRequest {
-    def apply(DetectorId: __string, FilterName: __string): DeleteFilterRequest = {
+    def apply(
+        DetectorId: __string,
+        FilterName: __string
+    ): DeleteFilterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any]
@@ -767,8 +846,10 @@ package guardduty {
   trait DeleteFilterResponse extends js.Object {}
 
   object DeleteFilterResponse {
-    def apply(): DeleteFilterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteFilterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFilterResponse]
     }
@@ -781,7 +862,10 @@ package guardduty {
   }
 
   object DeleteIPSetRequest {
-    def apply(DetectorId: __string, IpSetId: __string): DeleteIPSetRequest = {
+    def apply(
+        DetectorId: __string,
+        IpSetId: __string
+    ): DeleteIPSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
@@ -795,8 +879,10 @@ package guardduty {
   trait DeleteIPSetResponse extends js.Object {}
 
   object DeleteIPSetResponse {
-    def apply(): DeleteIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteIPSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIPSetResponse]
     }
@@ -811,9 +897,12 @@ package guardduty {
   }
 
   object DeleteInvitationsRequest {
-    def apply(AccountIds: AccountIds): DeleteInvitationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: AccountIds
+    ): DeleteInvitationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInvitationsRequest]
     }
@@ -825,10 +914,14 @@ package guardduty {
   }
 
   object DeleteInvitationsResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): DeleteInvitationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): DeleteInvitationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInvitationsResponse]
     }
@@ -844,7 +937,10 @@ package guardduty {
   }
 
   object DeleteMembersRequest {
-    def apply(AccountIds: AccountIds, DetectorId: __string): DeleteMembersRequest = {
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: __string
+    ): DeleteMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -860,10 +956,14 @@ package guardduty {
   }
 
   object DeleteMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): DeleteMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): DeleteMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMembersResponse]
     }
@@ -876,7 +976,10 @@ package guardduty {
   }
 
   object DeleteThreatIntelSetRequest {
-    def apply(DetectorId: __string, ThreatIntelSetId: __string): DeleteThreatIntelSetRequest = {
+    def apply(
+        DetectorId: __string,
+        ThreatIntelSetId: __string
+    ): DeleteThreatIntelSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
@@ -890,8 +993,10 @@ package guardduty {
   trait DeleteThreatIntelSetResponse extends js.Object {}
 
   object DeleteThreatIntelSetResponse {
-    def apply(): DeleteThreatIntelSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteThreatIntelSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteThreatIntelSetResponse]
     }
@@ -913,9 +1018,12 @@ package guardduty {
   }
 
   object DisassociateFromMasterAccountRequest {
-    def apply(DetectorId: __string): DisassociateFromMasterAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetectorId" -> DetectorId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetectorId: __string
+    ): DisassociateFromMasterAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateFromMasterAccountRequest]
     }
@@ -925,8 +1033,10 @@ package guardduty {
   trait DisassociateFromMasterAccountResponse extends js.Object {}
 
   object DisassociateFromMasterAccountResponse {
-    def apply(): DisassociateFromMasterAccountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateFromMasterAccountResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateFromMasterAccountResponse]
     }
@@ -942,7 +1052,10 @@ package guardduty {
   }
 
   object DisassociateMembersRequest {
-    def apply(AccountIds: AccountIds, DetectorId: __string): DisassociateMembersRequest = {
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: __string
+    ): DisassociateMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -958,10 +1071,14 @@ package guardduty {
   }
 
   object DisassociateMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): DisassociateMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): DisassociateMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateMembersResponse]
     }
@@ -976,10 +1093,14 @@ package guardduty {
   }
 
   object DnsRequestAction {
-    def apply(Domain: js.UndefOr[Domain] = js.undefined): DnsRequestAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("Domain" -> Domain.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Domain: js.UndefOr[Domain] = js.undefined
+    ): DnsRequestAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Domain" -> Domain.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DnsRequestAction]
     }
@@ -992,8 +1113,10 @@ package guardduty {
   trait DomainDetails extends js.Object {}
 
   object DomainDetails {
-    def apply(): DomainDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DomainDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainDetails]
     }
@@ -1042,21 +1165,23 @@ package guardduty {
   }
 
   object Finding {
-    def apply(AccountId: __string,
-              Arn: __string,
-              CreatedAt: CreatedAt,
-              Id: __string,
-              Region: __string,
-              Resource: Resource,
-              SchemaVersion: __string,
-              Severity: __double,
-              Type: __string,
-              UpdatedAt: UpdatedAt,
-              Confidence: js.UndefOr[__double] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              Partition: js.UndefOr[__string] = js.undefined,
-              Service: js.UndefOr[Service] = js.undefined,
-              Title: js.UndefOr[__string] = js.undefined): Finding = {
+    def apply(
+        AccountId: __string,
+        Arn: __string,
+        CreatedAt: CreatedAt,
+        Id: __string,
+        Region: __string,
+        Resource: Resource,
+        SchemaVersion: __string,
+        Severity: __double,
+        Type: __string,
+        UpdatedAt: UpdatedAt,
+        Confidence: js.UndefOr[__double] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Partition: js.UndefOr[__string] = js.undefined,
+        Service: js.UndefOr[Service] = js.undefined,
+        Title: js.UndefOr[__string] = js.undefined
+    ): Finding = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId"     -> AccountId.asInstanceOf[js.Any],
         "Arn"           -> Arn.asInstanceOf[js.Any],
@@ -1098,10 +1223,14 @@ package guardduty {
   }
 
   object FindingCriteria {
-    def apply(Criterion: js.UndefOr[__mapOfCondition] = js.undefined): FindingCriteria = {
-      val _fields = IndexedSeq[(String, js.Any)]("Criterion" -> Criterion.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Criterion: js.UndefOr[__mapOfCondition] = js.undefined
+    ): FindingCriteria = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Criterion" -> Criterion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FindingCriteria]
     }
@@ -1136,10 +1265,14 @@ package guardduty {
   }
 
   object FindingStatistics {
-    def apply(CountBySeverity: js.UndefOr[__mapOfCountBySeverityFindingStatistic] = js.undefined): FindingStatistics = {
-      val _fields = IndexedSeq[(String, js.Any)]("CountBySeverity" -> CountBySeverity.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CountBySeverity: js.UndefOr[__mapOfCountBySeverityFindingStatistic] = js.undefined
+    ): FindingStatistics = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CountBySeverity" -> CountBySeverity.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FindingStatistics]
     }
@@ -1155,12 +1288,18 @@ package guardduty {
   }
 
   object GeoLocation {
-    def apply(Lat: js.UndefOr[__double] = js.undefined, Lon: js.UndefOr[__double] = js.undefined): GeoLocation = {
-      val _fields = IndexedSeq[(String, js.Any)]("Lat" -> Lat.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Lon" -> Lon.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Lat: js.UndefOr[__double] = js.undefined,
+        Lon: js.UndefOr[__double] = js.undefined
+    ): GeoLocation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Lat" -> Lat.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Lon" -> Lon.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GeoLocation]
     }
@@ -1172,9 +1311,12 @@ package guardduty {
   }
 
   object GetDetectorRequest {
-    def apply(DetectorId: __string): GetDetectorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetectorId" -> DetectorId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetectorId: __string
+    ): GetDetectorRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDetectorRequest]
     }
@@ -1190,11 +1332,13 @@ package guardduty {
   }
 
   object GetDetectorResponse {
-    def apply(CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
-              FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
-              ServiceRole: js.UndefOr[ServiceRole] = js.undefined,
-              Status: js.UndefOr[DetectorStatus] = js.undefined,
-              UpdatedAt: js.UndefOr[UpdatedAt] = js.undefined): GetDetectorResponse = {
+    def apply(
+        CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
+        FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
+        ServiceRole: js.UndefOr[ServiceRole] = js.undefined,
+        Status: js.UndefOr[DetectorStatus] = js.undefined,
+        UpdatedAt: js.UndefOr[UpdatedAt] = js.undefined
+    ): GetDetectorResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedAt" -> CreatedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -1224,7 +1368,10 @@ package guardduty {
   }
 
   object GetFilterRequest {
-    def apply(DetectorId: __string, FilterName: __string): GetFilterRequest = {
+    def apply(
+        DetectorId: __string,
+        FilterName: __string
+    ): GetFilterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any]
@@ -1244,11 +1391,13 @@ package guardduty {
   }
 
   object GetFilterResponse {
-    def apply(Action: js.UndefOr[FilterAction] = js.undefined,
-              Description: js.UndefOr[FilterDescription] = js.undefined,
-              FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
-              Name: js.UndefOr[FilterName] = js.undefined,
-              Rank: js.UndefOr[FilterRank] = js.undefined): GetFilterResponse = {
+    def apply(
+        Action: js.UndefOr[FilterAction] = js.undefined,
+        Description: js.UndefOr[FilterDescription] = js.undefined,
+        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
+        Name: js.UndefOr[FilterName] = js.undefined,
+        Rank: js.UndefOr[FilterRank] = js.undefined
+    ): GetFilterResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -1282,9 +1431,11 @@ package guardduty {
   }
 
   object GetFindingsRequest {
-    def apply(DetectorId: __string,
-              FindingIds: FindingIds,
-              SortCriteria: js.UndefOr[SortCriteria] = js.undefined): GetFindingsRequest = {
+    def apply(
+        DetectorId: __string,
+        FindingIds: FindingIds,
+        SortCriteria: js.UndefOr[SortCriteria] = js.undefined
+    ): GetFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any],
@@ -1303,10 +1454,14 @@ package guardduty {
   }
 
   object GetFindingsResponse {
-    def apply(Findings: js.UndefOr[Findings] = js.undefined): GetFindingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Findings" -> Findings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Findings: js.UndefOr[Findings] = js.undefined
+    ): GetFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Findings" -> Findings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFindingsResponse]
     }
@@ -1323,9 +1478,11 @@ package guardduty {
   }
 
   object GetFindingsStatisticsRequest {
-    def apply(DetectorId: __string,
-              FindingStatisticTypes: FindingStatisticTypes,
-              FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined): GetFindingsStatisticsRequest = {
+    def apply(
+        DetectorId: __string,
+        FindingStatisticTypes: FindingStatisticTypes,
+        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined
+    ): GetFindingsStatisticsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId"            -> DetectorId.asInstanceOf[js.Any],
         "FindingStatisticTypes" -> FindingStatisticTypes.asInstanceOf[js.Any],
@@ -1344,10 +1501,14 @@ package guardduty {
   }
 
   object GetFindingsStatisticsResponse {
-    def apply(FindingStatistics: js.UndefOr[FindingStatistics] = js.undefined): GetFindingsStatisticsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FindingStatistics" -> FindingStatistics.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FindingStatistics: js.UndefOr[FindingStatistics] = js.undefined
+    ): GetFindingsStatisticsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FindingStatistics" -> FindingStatistics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFindingsStatisticsResponse]
     }
@@ -1360,7 +1521,10 @@ package guardduty {
   }
 
   object GetIPSetRequest {
-    def apply(DetectorId: __string, IpSetId: __string): GetIPSetRequest = {
+    def apply(
+        DetectorId: __string,
+        IpSetId: __string
+    ): GetIPSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
@@ -1379,10 +1543,12 @@ package guardduty {
   }
 
   object GetIPSetResponse {
-    def apply(Format: js.UndefOr[IpSetFormat] = js.undefined,
-              Location: js.UndefOr[Location] = js.undefined,
-              Name: js.UndefOr[Name] = js.undefined,
-              Status: js.UndefOr[IpSetStatus] = js.undefined): GetIPSetResponse = {
+    def apply(
+        Format: js.UndefOr[IpSetFormat] = js.undefined,
+        Location: js.UndefOr[Location] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Status: js.UndefOr[IpSetStatus] = js.undefined
+    ): GetIPSetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Format" -> Format.map { x =>
           x.asInstanceOf[js.Any]
@@ -1406,8 +1572,10 @@ package guardduty {
   trait GetInvitationsCountRequest extends js.Object {}
 
   object GetInvitationsCountRequest {
-    def apply(): GetInvitationsCountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetInvitationsCountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInvitationsCountRequest]
     }
@@ -1419,10 +1587,14 @@ package guardduty {
   }
 
   object GetInvitationsCountResponse {
-    def apply(InvitationsCount: js.UndefOr[__integer] = js.undefined): GetInvitationsCountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("InvitationsCount" -> InvitationsCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InvitationsCount: js.UndefOr[__integer] = js.undefined
+    ): GetInvitationsCountResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InvitationsCount" -> InvitationsCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInvitationsCountResponse]
     }
@@ -1434,9 +1606,12 @@ package guardduty {
   }
 
   object GetMasterAccountRequest {
-    def apply(DetectorId: __string): GetMasterAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetectorId" -> DetectorId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetectorId: __string
+    ): GetMasterAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMasterAccountRequest]
     }
@@ -1448,10 +1623,14 @@ package guardduty {
   }
 
   object GetMasterAccountResponse {
-    def apply(Master: js.UndefOr[Master] = js.undefined): GetMasterAccountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Master" -> Master.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Master: js.UndefOr[Master] = js.undefined
+    ): GetMasterAccountResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Master" -> Master.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMasterAccountResponse]
     }
@@ -1467,7 +1646,10 @@ package guardduty {
   }
 
   object GetMembersRequest {
-    def apply(AccountIds: AccountIds, DetectorId: __string): GetMembersRequest = {
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: __string
+    ): GetMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -1484,13 +1666,18 @@ package guardduty {
   }
 
   object GetMembersResponse {
-    def apply(Members: js.UndefOr[Members] = js.undefined,
-              UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): GetMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Members" -> Members.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Members: js.UndefOr[Members] = js.undefined,
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): GetMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Members" -> Members.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMembersResponse]
     }
@@ -1503,7 +1690,10 @@ package guardduty {
   }
 
   object GetThreatIntelSetRequest {
-    def apply(DetectorId: __string, ThreatIntelSetId: __string): GetThreatIntelSetRequest = {
+    def apply(
+        DetectorId: __string,
+        ThreatIntelSetId: __string
+    ): GetThreatIntelSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
@@ -1522,10 +1712,12 @@ package guardduty {
   }
 
   object GetThreatIntelSetResponse {
-    def apply(Format: js.UndefOr[ThreatIntelSetFormat] = js.undefined,
-              Location: js.UndefOr[Location] = js.undefined,
-              Name: js.UndefOr[Name] = js.undefined,
-              Status: js.UndefOr[ThreatIntelSetStatus] = js.undefined): GetThreatIntelSetResponse = {
+    def apply(
+        Format: js.UndefOr[ThreatIntelSetFormat] = js.undefined,
+        Location: js.UndefOr[Location] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Status: js.UndefOr[ThreatIntelSetStatus] = js.undefined
+    ): GetThreatIntelSetResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Format" -> Format.map { x =>
           x.asInstanceOf[js.Any]
@@ -1555,12 +1747,18 @@ package guardduty {
   }
 
   object IamInstanceProfile {
-    def apply(Arn: js.UndefOr[__string] = js.undefined, Id: js.UndefOr[__string] = js.undefined): IamInstanceProfile = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined
+    ): IamInstanceProfile = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IamInstanceProfile]
     }
@@ -1586,18 +1784,20 @@ package guardduty {
   }
 
   object InstanceDetails {
-    def apply(AvailabilityZone: js.UndefOr[__string] = js.undefined,
-              IamInstanceProfile: js.UndefOr[IamInstanceProfile] = js.undefined,
-              ImageDescription: js.UndefOr[__string] = js.undefined,
-              ImageId: js.UndefOr[__string] = js.undefined,
-              InstanceId: js.UndefOr[__string] = js.undefined,
-              InstanceState: js.UndefOr[__string] = js.undefined,
-              InstanceType: js.UndefOr[__string] = js.undefined,
-              LaunchTime: js.UndefOr[__string] = js.undefined,
-              NetworkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
-              Platform: js.UndefOr[__string] = js.undefined,
-              ProductCodes: js.UndefOr[ProductCodes] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): InstanceDetails = {
+    def apply(
+        AvailabilityZone: js.UndefOr[__string] = js.undefined,
+        IamInstanceProfile: js.UndefOr[IamInstanceProfile] = js.undefined,
+        ImageDescription: js.UndefOr[__string] = js.undefined,
+        ImageId: js.UndefOr[__string] = js.undefined,
+        InstanceId: js.UndefOr[__string] = js.undefined,
+        InstanceState: js.UndefOr[__string] = js.undefined,
+        InstanceType: js.UndefOr[__string] = js.undefined,
+        LaunchTime: js.UndefOr[__string] = js.undefined,
+        NetworkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
+        Platform: js.UndefOr[__string] = js.undefined,
+        ProductCodes: js.UndefOr[ProductCodes] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): InstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -1653,10 +1853,12 @@ package guardduty {
   }
 
   object Invitation {
-    def apply(AccountId: js.UndefOr[__string] = js.undefined,
-              InvitationId: js.UndefOr[InvitationId] = js.undefined,
-              InvitedAt: js.UndefOr[InvitedAt] = js.undefined,
-              RelationshipStatus: js.UndefOr[__string] = js.undefined): Invitation = {
+    def apply(
+        AccountId: js.UndefOr[__string] = js.undefined,
+        InvitationId: js.UndefOr[InvitationId] = js.undefined,
+        InvitedAt: js.UndefOr[InvitedAt] = js.undefined,
+        RelationshipStatus: js.UndefOr[__string] = js.undefined
+    ): Invitation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1688,10 +1890,12 @@ package guardduty {
   }
 
   object InviteMembersRequest {
-    def apply(AccountIds: AccountIds,
-              DetectorId: __string,
-              DisableEmailNotification: js.UndefOr[__boolean] = js.undefined,
-              Message: js.UndefOr[Message] = js.undefined): InviteMembersRequest = {
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: __string,
+        DisableEmailNotification: js.UndefOr[__boolean] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined
+    ): InviteMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
@@ -1713,10 +1917,14 @@ package guardduty {
   }
 
   object InviteMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): InviteMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): InviteMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InviteMembersResponse]
     }
@@ -1758,13 +1966,18 @@ package guardduty {
   }
 
   object ListDetectorsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListDetectorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListDetectorsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDetectorsRequest]
     }
@@ -1777,13 +1990,18 @@ package guardduty {
   }
 
   object ListDetectorsResponse {
-    def apply(DetectorIds: js.UndefOr[DetectorIds] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDetectorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DetectorIds" -> DetectorIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DetectorIds: js.UndefOr[DetectorIds] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDetectorsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DetectorIds" -> DetectorIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDetectorsResponse]
     }
@@ -1797,9 +2015,11 @@ package guardduty {
   }
 
   object ListFiltersRequest {
-    def apply(DetectorId: __string,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListFiltersRequest = {
+    def apply(
+        DetectorId: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListFiltersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1821,13 +2041,18 @@ package guardduty {
   }
 
   object ListFiltersResponse {
-    def apply(FilterNames: js.UndefOr[FilterNames] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListFiltersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FilterNames" -> FilterNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FilterNames: js.UndefOr[FilterNames] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFiltersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FilterNames" -> FilterNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFiltersResponse]
     }
@@ -1846,11 +2071,13 @@ package guardduty {
   }
 
   object ListFindingsRequest {
-    def apply(DetectorId: __string,
-              FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SortCriteria: js.UndefOr[SortCriteria] = js.undefined): ListFindingsRequest = {
+    def apply(
+        DetectorId: __string,
+        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortCriteria: js.UndefOr[SortCriteria] = js.undefined
+    ): ListFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingCriteria" -> FindingCriteria.map { x =>
@@ -1878,13 +2105,18 @@ package guardduty {
   }
 
   object ListFindingsResponse {
-    def apply(FindingIds: js.UndefOr[FindingIds] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListFindingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FindingIds" -> FindingIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FindingIds: js.UndefOr[FindingIds] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FindingIds" -> FindingIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFindingsResponse]
     }
@@ -1898,9 +2130,11 @@ package guardduty {
   }
 
   object ListIPSetsRequest {
-    def apply(DetectorId: __string,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListIPSetsRequest = {
+    def apply(
+        DetectorId: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListIPSetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1922,13 +2156,18 @@ package guardduty {
   }
 
   object ListIPSetsResponse {
-    def apply(IpSetIds: js.UndefOr[IpSetIds] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListIPSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IpSetIds" -> IpSetIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IpSetIds: js.UndefOr[IpSetIds] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIPSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IpSetIds" -> IpSetIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIPSetsResponse]
     }
@@ -1941,13 +2180,18 @@ package guardduty {
   }
 
   object ListInvitationsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListInvitationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListInvitationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInvitationsRequest]
     }
@@ -1960,13 +2204,18 @@ package guardduty {
   }
 
   object ListInvitationsResponse {
-    def apply(Invitations: js.UndefOr[Invitations] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListInvitationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Invitations" -> Invitations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Invitations: js.UndefOr[Invitations] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInvitationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Invitations" -> Invitations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInvitationsResponse]
     }
@@ -1981,10 +2230,12 @@ package guardduty {
   }
 
   object ListMembersRequest {
-    def apply(DetectorId: __string,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined,
-              OnlyAssociated: js.UndefOr[__string] = js.undefined): ListMembersRequest = {
+    def apply(
+        DetectorId: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        OnlyAssociated: js.UndefOr[__string] = js.undefined
+    ): ListMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -2009,13 +2260,18 @@ package guardduty {
   }
 
   object ListMembersResponse {
-    def apply(Members: js.UndefOr[Members] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Members" -> Members.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Members: js.UndefOr[Members] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Members" -> Members.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMembersResponse]
     }
@@ -2029,9 +2285,11 @@ package guardduty {
   }
 
   object ListThreatIntelSetsRequest {
-    def apply(DetectorId: __string,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListThreatIntelSetsRequest = {
+    def apply(
+        DetectorId: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListThreatIntelSetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -2053,13 +2311,18 @@ package guardduty {
   }
 
   object ListThreatIntelSetsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              ThreatIntelSetIds: js.UndefOr[ThreatIntelSetIds] = js.undefined): ListThreatIntelSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ThreatIntelSetIds" -> ThreatIntelSetIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ThreatIntelSetIds: js.UndefOr[ThreatIntelSetIds] = js.undefined
+    ): ListThreatIntelSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ThreatIntelSetIds" -> ThreatIntelSetIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListThreatIntelSetsResponse]
     }
@@ -2075,13 +2338,18 @@ package guardduty {
   }
 
   object LocalPortDetails {
-    def apply(Port: js.UndefOr[__integer] = js.undefined,
-              PortName: js.UndefOr[__string] = js.undefined): LocalPortDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("Port" -> Port.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PortName" -> PortName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Port: js.UndefOr[__integer] = js.undefined,
+        PortName: js.UndefOr[__string] = js.undefined
+    ): LocalPortDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Port" -> Port.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortName" -> PortName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LocalPortDetails]
     }
@@ -2099,10 +2367,12 @@ package guardduty {
   }
 
   object Master {
-    def apply(AccountId: js.UndefOr[__string] = js.undefined,
-              InvitationId: js.UndefOr[InvitationId] = js.undefined,
-              InvitedAt: js.UndefOr[InvitedAt] = js.undefined,
-              RelationshipStatus: js.UndefOr[__string] = js.undefined): Master = {
+    def apply(
+        AccountId: js.UndefOr[__string] = js.undefined,
+        InvitationId: js.UndefOr[InvitationId] = js.undefined,
+        InvitedAt: js.UndefOr[InvitedAt] = js.undefined,
+        RelationshipStatus: js.UndefOr[__string] = js.undefined
+    ): Master = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2137,13 +2407,15 @@ package guardduty {
   }
 
   object Member {
-    def apply(AccountId: AccountId,
-              Email: Email,
-              MasterId: MasterId,
-              RelationshipStatus: __string,
-              UpdatedAt: UpdatedAt,
-              DetectorId: js.UndefOr[DetectorId] = js.undefined,
-              InvitedAt: js.UndefOr[InvitedAt] = js.undefined): Member = {
+    def apply(
+        AccountId: AccountId,
+        Email: Email,
+        MasterId: MasterId,
+        RelationshipStatus: __string,
+        UpdatedAt: UpdatedAt,
+        DetectorId: js.UndefOr[DetectorId] = js.undefined,
+        InvitedAt: js.UndefOr[InvitedAt] = js.undefined
+    ): Member = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId"          -> AccountId.asInstanceOf[js.Any],
         "Email"              -> Email.asInstanceOf[js.Any],
@@ -2176,12 +2448,14 @@ package guardduty {
   }
 
   object NetworkConnectionAction {
-    def apply(Blocked: js.UndefOr[__boolean] = js.undefined,
-              ConnectionDirection: js.UndefOr[__string] = js.undefined,
-              LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
-              Protocol: js.UndefOr[__string] = js.undefined,
-              RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
-              RemotePortDetails: js.UndefOr[RemotePortDetails] = js.undefined): NetworkConnectionAction = {
+    def apply(
+        Blocked: js.UndefOr[__boolean] = js.undefined,
+        ConnectionDirection: js.UndefOr[__string] = js.undefined,
+        LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
+        Protocol: js.UndefOr[__string] = js.undefined,
+        RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
+        RemotePortDetails: js.UndefOr[RemotePortDetails] = js.undefined
+    ): NetworkConnectionAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Blocked" -> Blocked.map { x =>
           x.asInstanceOf[js.Any]
@@ -2225,16 +2499,18 @@ package guardduty {
   }
 
   object NetworkInterface {
-    def apply(Ipv6Addresses: js.UndefOr[Ipv6Addresses] = js.undefined,
-              NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-              PrivateDnsName: js.UndefOr[PrivateDnsName] = js.undefined,
-              PrivateIpAddress: js.UndefOr[PrivateIpAddress] = js.undefined,
-              PrivateIpAddresses: js.UndefOr[PrivateIpAddresses] = js.undefined,
-              PublicDnsName: js.UndefOr[__string] = js.undefined,
-              PublicIp: js.UndefOr[__string] = js.undefined,
-              SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
-              SubnetId: js.UndefOr[__string] = js.undefined,
-              VpcId: js.UndefOr[__string] = js.undefined): NetworkInterface = {
+    def apply(
+        Ipv6Addresses: js.UndefOr[Ipv6Addresses] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
+        PrivateDnsName: js.UndefOr[PrivateDnsName] = js.undefined,
+        PrivateIpAddress: js.UndefOr[PrivateIpAddress] = js.undefined,
+        PrivateIpAddresses: js.UndefOr[PrivateIpAddresses] = js.undefined,
+        PublicDnsName: js.UndefOr[__string] = js.undefined,
+        PublicIp: js.UndefOr[__string] = js.undefined,
+        SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined,
+        SubnetId: js.UndefOr[__string] = js.undefined,
+        VpcId: js.UndefOr[__string] = js.undefined
+    ): NetworkInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Ipv6Addresses" -> Ipv6Addresses.map { x =>
           x.asInstanceOf[js.Any]
@@ -2291,10 +2567,12 @@ package guardduty {
   }
 
   object Organization {
-    def apply(Asn: js.UndefOr[__string] = js.undefined,
-              AsnOrg: js.UndefOr[__string] = js.undefined,
-              Isp: js.UndefOr[__string] = js.undefined,
-              Org: js.UndefOr[__string] = js.undefined): Organization = {
+    def apply(
+        Asn: js.UndefOr[__string] = js.undefined,
+        AsnOrg: js.UndefOr[__string] = js.undefined,
+        Isp: js.UndefOr[__string] = js.undefined,
+        Org: js.UndefOr[__string] = js.undefined
+    ): Organization = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Asn" -> Asn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2324,13 +2602,18 @@ package guardduty {
   }
 
   object PortProbeAction {
-    def apply(Blocked: js.UndefOr[__boolean] = js.undefined,
-              PortProbeDetails: js.UndefOr[__listOfPortProbeDetail] = js.undefined): PortProbeAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("Blocked" -> Blocked.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PortProbeDetails" -> PortProbeDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Blocked: js.UndefOr[__boolean] = js.undefined,
+        PortProbeDetails: js.UndefOr[__listOfPortProbeDetail] = js.undefined
+    ): PortProbeAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Blocked" -> Blocked.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortProbeDetails" -> PortProbeDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PortProbeAction]
     }
@@ -2346,13 +2629,18 @@ package guardduty {
   }
 
   object PortProbeDetail {
-    def apply(LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
-              RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined): PortProbeDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("LocalPortDetails" -> LocalPortDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RemoteIpDetails" -> RemoteIpDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
+        RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined
+    ): PortProbeDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LocalPortDetails" -> LocalPortDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RemoteIpDetails" -> RemoteIpDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PortProbeDetail]
     }
@@ -2368,13 +2656,18 @@ package guardduty {
   }
 
   object PrivateIpAddressDetails {
-    def apply(PrivateDnsName: js.UndefOr[PrivateDnsName] = js.undefined,
-              PrivateIpAddress: js.UndefOr[PrivateIpAddress] = js.undefined): PrivateIpAddressDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("PrivateDnsName" -> PrivateDnsName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PrivateIpAddress" -> PrivateIpAddress.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PrivateDnsName: js.UndefOr[PrivateDnsName] = js.undefined,
+        PrivateIpAddress: js.UndefOr[PrivateIpAddress] = js.undefined
+    ): PrivateIpAddressDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PrivateDnsName" -> PrivateDnsName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrivateIpAddress" -> PrivateIpAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PrivateIpAddressDetails]
     }
@@ -2390,13 +2683,18 @@ package guardduty {
   }
 
   object ProductCode {
-    def apply(Code: js.UndefOr[__string] = js.undefined,
-              ProductType: js.UndefOr[__string] = js.undefined): ProductCode = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ProductType" -> ProductType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[__string] = js.undefined,
+        ProductType: js.UndefOr[__string] = js.undefined
+    ): ProductCode = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductType" -> ProductType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProductCode]
     }
@@ -2415,11 +2713,13 @@ package guardduty {
   }
 
   object RemoteIpDetails {
-    def apply(City: js.UndefOr[City] = js.undefined,
-              Country: js.UndefOr[Country] = js.undefined,
-              GeoLocation: js.UndefOr[GeoLocation] = js.undefined,
-              IpAddressV4: js.UndefOr[__string] = js.undefined,
-              Organization: js.UndefOr[Organization] = js.undefined): RemoteIpDetails = {
+    def apply(
+        City: js.UndefOr[City] = js.undefined,
+        Country: js.UndefOr[Country] = js.undefined,
+        GeoLocation: js.UndefOr[GeoLocation] = js.undefined,
+        IpAddressV4: js.UndefOr[__string] = js.undefined,
+        Organization: js.UndefOr[Organization] = js.undefined
+    ): RemoteIpDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "City" -> City.map { x =>
           x.asInstanceOf[js.Any]
@@ -2452,13 +2752,18 @@ package guardduty {
   }
 
   object RemotePortDetails {
-    def apply(Port: js.UndefOr[__integer] = js.undefined,
-              PortName: js.UndefOr[__string] = js.undefined): RemotePortDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("Port" -> Port.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PortName" -> PortName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Port: js.UndefOr[__integer] = js.undefined,
+        PortName: js.UndefOr[__string] = js.undefined
+    ): RemotePortDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Port" -> Port.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortName" -> PortName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemotePortDetails]
     }
@@ -2475,9 +2780,11 @@ package guardduty {
   }
 
   object Resource {
-    def apply(AccessKeyDetails: js.UndefOr[AccessKeyDetails] = js.undefined,
-              InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
-              ResourceType: js.UndefOr[__string] = js.undefined): Resource = {
+    def apply(
+        AccessKeyDetails: js.UndefOr[AccessKeyDetails] = js.undefined,
+        InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
+        ResourceType: js.UndefOr[__string] = js.undefined
+    ): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessKeyDetails" -> AccessKeyDetails.map { x =>
           x.asInstanceOf[js.Any]
@@ -2504,13 +2811,18 @@ package guardduty {
   }
 
   object SecurityGroup {
-    def apply(GroupId: js.UndefOr[__string] = js.undefined,
-              GroupName: js.UndefOr[__string] = js.undefined): SecurityGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("GroupId" -> GroupId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "GroupName" -> GroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GroupId: js.UndefOr[__string] = js.undefined,
+        GroupName: js.UndefOr[__string] = js.undefined
+    ): SecurityGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GroupId" -> GroupId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GroupName" -> GroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityGroup]
     }
@@ -2533,15 +2845,17 @@ package guardduty {
   }
 
   object Service {
-    def apply(Action: js.UndefOr[Action] = js.undefined,
-              Archived: js.UndefOr[__boolean] = js.undefined,
-              Count: js.UndefOr[__integer] = js.undefined,
-              DetectorId: js.UndefOr[DetectorId] = js.undefined,
-              EventFirstSeen: js.UndefOr[__string] = js.undefined,
-              EventLastSeen: js.UndefOr[__string] = js.undefined,
-              ResourceRole: js.UndefOr[__string] = js.undefined,
-              ServiceName: js.UndefOr[__string] = js.undefined,
-              UserFeedback: js.UndefOr[__string] = js.undefined): Service = {
+    def apply(
+        Action: js.UndefOr[Action] = js.undefined,
+        Archived: js.UndefOr[__boolean] = js.undefined,
+        Count: js.UndefOr[__integer] = js.undefined,
+        DetectorId: js.UndefOr[DetectorId] = js.undefined,
+        EventFirstSeen: js.UndefOr[__string] = js.undefined,
+        EventLastSeen: js.UndefOr[__string] = js.undefined,
+        ResourceRole: js.UndefOr[__string] = js.undefined,
+        ServiceName: js.UndefOr[__string] = js.undefined,
+        UserFeedback: js.UndefOr[__string] = js.undefined
+    ): Service = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -2586,13 +2900,18 @@ package guardduty {
   }
 
   object SortCriteria {
-    def apply(AttributeName: js.UndefOr[__string] = js.undefined,
-              OrderBy: js.UndefOr[OrderBy] = js.undefined): SortCriteria = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeName" -> AttributeName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OrderBy" -> OrderBy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeName: js.UndefOr[__string] = js.undefined,
+        OrderBy: js.UndefOr[OrderBy] = js.undefined
+    ): SortCriteria = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeName" -> AttributeName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrderBy" -> OrderBy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SortCriteria]
     }
@@ -2608,7 +2927,10 @@ package guardduty {
   }
 
   object StartMonitoringMembersRequest {
-    def apply(AccountIds: AccountIds, DetectorId: __string): StartMonitoringMembersRequest = {
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: __string
+    ): StartMonitoringMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -2624,10 +2946,14 @@ package guardduty {
   }
 
   object StartMonitoringMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): StartMonitoringMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): StartMonitoringMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartMonitoringMembersResponse]
     }
@@ -2643,7 +2969,10 @@ package guardduty {
   }
 
   object StopMonitoringMembersRequest {
-    def apply(AccountIds: AccountIds, DetectorId: __string): StopMonitoringMembersRequest = {
+    def apply(
+        AccountIds: AccountIds,
+        DetectorId: __string
+    ): StopMonitoringMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
@@ -2659,10 +2988,14 @@ package guardduty {
   }
 
   object StopMonitoringMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined): StopMonitoringMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): StopMonitoringMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopMonitoringMembersResponse]
     }
@@ -2678,12 +3011,18 @@ package guardduty {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[__string] = js.undefined, Value: js.UndefOr[__string] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[__string] = js.undefined,
+        Value: js.UndefOr[__string] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -2728,7 +3067,10 @@ package guardduty {
   }
 
   object UnarchiveFindingsRequest {
-    def apply(DetectorId: __string, FindingIds: FindingIds): UnarchiveFindingsRequest = {
+    def apply(
+        DetectorId: __string,
+        FindingIds: FindingIds
+    ): UnarchiveFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
@@ -2742,8 +3084,10 @@ package guardduty {
   trait UnarchiveFindingsResponse extends js.Object {}
 
   object UnarchiveFindingsResponse {
-    def apply(): UnarchiveFindingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UnarchiveFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnarchiveFindingsResponse]
     }
@@ -2759,7 +3103,10 @@ package guardduty {
   }
 
   object UnprocessedAccount {
-    def apply(AccountId: __string, Result: __string): UnprocessedAccount = {
+    def apply(
+        AccountId: __string,
+        Result: __string
+    ): UnprocessedAccount = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Result"    -> Result.asInstanceOf[js.Any]
@@ -2803,8 +3150,10 @@ package guardduty {
   trait UpdateDetectorResponse extends js.Object {}
 
   object UpdateDetectorResponse {
-    def apply(): UpdateDetectorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateDetectorResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDetectorResponse]
     }
@@ -2824,12 +3173,14 @@ package guardduty {
   }
 
   object UpdateFilterRequest {
-    def apply(DetectorId: __string,
-              FilterName: __string,
-              Action: js.UndefOr[FilterAction] = js.undefined,
-              Description: js.UndefOr[FilterDescription] = js.undefined,
-              FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
-              Rank: js.UndefOr[FilterRank] = js.undefined): UpdateFilterRequest = {
+    def apply(
+        DetectorId: __string,
+        FilterName: __string,
+        Action: js.UndefOr[FilterAction] = js.undefined,
+        Description: js.UndefOr[FilterDescription] = js.undefined,
+        FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
+        Rank: js.UndefOr[FilterRank] = js.undefined
+    ): UpdateFilterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any],
@@ -2857,10 +3208,14 @@ package guardduty {
   }
 
   object UpdateFilterResponse {
-    def apply(Name: js.UndefOr[FilterName] = js.undefined): UpdateFilterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[FilterName] = js.undefined
+    ): UpdateFilterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFilterResponse]
     }
@@ -2878,10 +3233,12 @@ package guardduty {
   }
 
   object UpdateFindingsFeedbackRequest {
-    def apply(DetectorId: __string,
-              Feedback: Feedback,
-              FindingIds: FindingIds,
-              Comments: js.UndefOr[Comments] = js.undefined): UpdateFindingsFeedbackRequest = {
+    def apply(
+        DetectorId: __string,
+        Feedback: Feedback,
+        FindingIds: FindingIds,
+        Comments: js.UndefOr[Comments] = js.undefined
+    ): UpdateFindingsFeedbackRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "Feedback"   -> Feedback.asInstanceOf[js.Any],
@@ -2899,8 +3256,10 @@ package guardduty {
   trait UpdateFindingsFeedbackResponse extends js.Object {}
 
   object UpdateFindingsFeedbackResponse {
-    def apply(): UpdateFindingsFeedbackResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateFindingsFeedbackResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFindingsFeedbackResponse]
     }
@@ -2919,11 +3278,13 @@ package guardduty {
   }
 
   object UpdateIPSetRequest {
-    def apply(DetectorId: __string,
-              IpSetId: __string,
-              Activate: js.UndefOr[Activate] = js.undefined,
-              Location: js.UndefOr[Location] = js.undefined,
-              Name: js.UndefOr[Name] = js.undefined): UpdateIPSetRequest = {
+    def apply(
+        DetectorId: __string,
+        IpSetId: __string,
+        Activate: js.UndefOr[Activate] = js.undefined,
+        Location: js.UndefOr[Location] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined
+    ): UpdateIPSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId"    -> IpSetId.asInstanceOf[js.Any],
@@ -2946,8 +3307,10 @@ package guardduty {
   trait UpdateIPSetResponse extends js.Object {}
 
   object UpdateIPSetResponse {
-    def apply(): UpdateIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateIPSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIPSetResponse]
     }
@@ -2966,11 +3329,13 @@ package guardduty {
   }
 
   object UpdateThreatIntelSetRequest {
-    def apply(DetectorId: __string,
-              ThreatIntelSetId: __string,
-              Activate: js.UndefOr[Activate] = js.undefined,
-              Location: js.UndefOr[Location] = js.undefined,
-              Name: js.UndefOr[Name] = js.undefined): UpdateThreatIntelSetRequest = {
+    def apply(
+        DetectorId: __string,
+        ThreatIntelSetId: __string,
+        Activate: js.UndefOr[Activate] = js.undefined,
+        Location: js.UndefOr[Location] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined
+    ): UpdateThreatIntelSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any],
@@ -2993,8 +3358,10 @@ package guardduty {
   trait UpdateThreatIntelSetResponse extends js.Object {}
 
   object UpdateThreatIntelSetResponse {
-    def apply(): UpdateThreatIntelSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateThreatIntelSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateThreatIntelSetResponse]
     }

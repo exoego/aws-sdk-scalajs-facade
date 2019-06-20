@@ -96,9 +96,11 @@ package servicediscovery {
   }
 
   object CreateHttpNamespaceRequest {
-    def apply(Name: NamespaceName,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined): CreateHttpNamespaceRequest = {
+    def apply(
+        Name: NamespaceName,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined
+    ): CreateHttpNamespaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "CreatorRequestId" -> CreatorRequestId.map { x =>
@@ -119,10 +121,14 @@ package servicediscovery {
   }
 
   object CreateHttpNamespaceResponse {
-    def apply(OperationId: js.UndefOr[OperationId] = js.undefined): CreateHttpNamespaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): CreateHttpNamespaceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHttpNamespaceResponse]
     }
@@ -137,10 +143,12 @@ package servicediscovery {
   }
 
   object CreatePrivateDnsNamespaceRequest {
-    def apply(Name: NamespaceName,
-              Vpc: ResourceId,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined): CreatePrivateDnsNamespaceRequest = {
+    def apply(
+        Name: NamespaceName,
+        Vpc: ResourceId,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined
+    ): CreatePrivateDnsNamespaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Vpc"  -> Vpc.asInstanceOf[js.Any],
@@ -162,10 +170,14 @@ package servicediscovery {
   }
 
   object CreatePrivateDnsNamespaceResponse {
-    def apply(OperationId: js.UndefOr[OperationId] = js.undefined): CreatePrivateDnsNamespaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): CreatePrivateDnsNamespaceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePrivateDnsNamespaceResponse]
     }
@@ -179,9 +191,11 @@ package servicediscovery {
   }
 
   object CreatePublicDnsNamespaceRequest {
-    def apply(Name: NamespaceName,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined): CreatePublicDnsNamespaceRequest = {
+    def apply(
+        Name: NamespaceName,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined
+    ): CreatePublicDnsNamespaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "CreatorRequestId" -> CreatorRequestId.map { x =>
@@ -202,10 +216,14 @@ package servicediscovery {
   }
 
   object CreatePublicDnsNamespaceResponse {
-    def apply(OperationId: js.UndefOr[OperationId] = js.undefined): CreatePublicDnsNamespaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): CreatePublicDnsNamespaceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePublicDnsNamespaceResponse]
     }
@@ -223,13 +241,15 @@ package servicediscovery {
   }
 
   object CreateServiceRequest {
-    def apply(Name: ServiceName,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined,
-              DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
-              HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
-              HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
-              NamespaceId: js.UndefOr[ResourceId] = js.undefined): CreateServiceRequest = {
+    def apply(
+        Name: ServiceName,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
+        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
+        HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
+        NamespaceId: js.UndefOr[ResourceId] = js.undefined
+    ): CreateServiceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "CreatorRequestId" -> CreatorRequestId.map { x =>
@@ -262,10 +282,14 @@ package servicediscovery {
   }
 
   object CreateServiceResponse {
-    def apply(Service: js.UndefOr[Service] = js.undefined): CreateServiceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Service" -> Service.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Service: js.UndefOr[Service] = js.undefined
+    ): CreateServiceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Service" -> Service.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceResponse]
     }
@@ -284,8 +308,12 @@ package servicediscovery {
   }
 
   object DeleteNamespaceRequest {
-    def apply(Id: ResourceId): DeleteNamespaceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: ResourceId
+    ): DeleteNamespaceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNamespaceRequest]
     }
@@ -297,10 +325,14 @@ package servicediscovery {
   }
 
   object DeleteNamespaceResponse {
-    def apply(OperationId: js.UndefOr[OperationId] = js.undefined): DeleteNamespaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): DeleteNamespaceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNamespaceResponse]
     }
@@ -312,8 +344,12 @@ package servicediscovery {
   }
 
   object DeleteServiceRequest {
-    def apply(Id: ResourceId): DeleteServiceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: ResourceId
+    ): DeleteServiceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceRequest]
     }
@@ -323,8 +359,10 @@ package servicediscovery {
   trait DeleteServiceResponse extends js.Object {}
 
   object DeleteServiceResponse {
-    def apply(): DeleteServiceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteServiceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceResponse]
     }
@@ -337,7 +375,10 @@ package servicediscovery {
   }
 
   object DeregisterInstanceRequest {
-    def apply(InstanceId: ResourceId, ServiceId: ResourceId): DeregisterInstanceRequest = {
+    def apply(
+        InstanceId: ResourceId,
+        ServiceId: ResourceId
+    ): DeregisterInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
@@ -353,10 +394,14 @@ package servicediscovery {
   }
 
   object DeregisterInstanceResponse {
-    def apply(OperationId: js.UndefOr[OperationId] = js.undefined): DeregisterInstanceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): DeregisterInstanceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterInstanceResponse]
     }
@@ -372,11 +417,13 @@ package servicediscovery {
   }
 
   object DiscoverInstancesRequest {
-    def apply(NamespaceName: NamespaceName,
-              ServiceName: ServiceName,
-              HealthStatus: js.UndefOr[HealthStatusFilter] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              QueryParameters: js.UndefOr[Attributes] = js.undefined): DiscoverInstancesRequest = {
+    def apply(
+        NamespaceName: NamespaceName,
+        ServiceName: ServiceName,
+        HealthStatus: js.UndefOr[HealthStatusFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        QueryParameters: js.UndefOr[Attributes] = js.undefined
+    ): DiscoverInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NamespaceName" -> NamespaceName.asInstanceOf[js.Any],
         "ServiceName"   -> ServiceName.asInstanceOf[js.Any],
@@ -401,10 +448,14 @@ package servicediscovery {
   }
 
   object DiscoverInstancesResponse {
-    def apply(Instances: js.UndefOr[HttpInstanceSummaryList] = js.undefined): DiscoverInstancesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Instances" -> Instances.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Instances: js.UndefOr[HttpInstanceSummaryList] = js.undefined
+    ): DiscoverInstancesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Instances" -> Instances.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DiscoverInstancesResponse]
     }
@@ -421,9 +472,11 @@ package servicediscovery {
   }
 
   object DnsConfig {
-    def apply(DnsRecords: DnsRecordList,
-              NamespaceId: js.UndefOr[ResourceId] = js.undefined,
-              RoutingPolicy: js.UndefOr[RoutingPolicy] = js.undefined): DnsConfig = {
+    def apply(
+        DnsRecords: DnsRecordList,
+        NamespaceId: js.UndefOr[ResourceId] = js.undefined,
+        RoutingPolicy: js.UndefOr[RoutingPolicy] = js.undefined
+    ): DnsConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DnsRecords" -> DnsRecords.asInstanceOf[js.Any],
         "NamespaceId" -> NamespaceId.map { x =>
@@ -447,9 +500,12 @@ package servicediscovery {
   }
 
   object DnsConfigChange {
-    def apply(DnsRecords: DnsRecordList): DnsConfigChange = {
-      val _fields = IndexedSeq[(String, js.Any)]("DnsRecords" -> DnsRecords.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DnsRecords: DnsRecordList
+    ): DnsConfigChange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DnsRecords" -> DnsRecords.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DnsConfigChange]
     }
@@ -464,10 +520,14 @@ package servicediscovery {
   }
 
   object DnsProperties {
-    def apply(HostedZoneId: js.UndefOr[ResourceId] = js.undefined): DnsProperties = {
-      val _fields = IndexedSeq[(String, js.Any)]("HostedZoneId" -> HostedZoneId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HostedZoneId: js.UndefOr[ResourceId] = js.undefined
+    ): DnsProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HostedZoneId" -> HostedZoneId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DnsProperties]
     }
@@ -483,9 +543,14 @@ package servicediscovery {
   }
 
   object DnsRecord {
-    def apply(TTL: RecordTTL, Type: RecordType): DnsRecord = {
-      val _fields = IndexedSeq[(String, js.Any)]("TTL" -> TTL.asInstanceOf[js.Any], "Type" -> Type.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TTL: RecordTTL,
+        Type: RecordType
+    ): DnsRecord = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TTL"  -> TTL.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DnsRecord]
     }
@@ -506,7 +571,10 @@ package servicediscovery {
   }
 
   object GetInstanceRequest {
-    def apply(InstanceId: ResourceId, ServiceId: ResourceId): GetInstanceRequest = {
+    def apply(
+        InstanceId: ResourceId,
+        ServiceId: ResourceId
+    ): GetInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
@@ -522,10 +590,14 @@ package servicediscovery {
   }
 
   object GetInstanceResponse {
-    def apply(Instance: js.UndefOr[Instance] = js.undefined): GetInstanceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Instance" -> Instance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Instance: js.UndefOr[Instance] = js.undefined
+    ): GetInstanceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Instance" -> Instance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceResponse]
     }
@@ -540,10 +612,12 @@ package servicediscovery {
   }
 
   object GetInstancesHealthStatusRequest {
-    def apply(ServiceId: ResourceId,
-              Instances: js.UndefOr[InstanceIdList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetInstancesHealthStatusRequest = {
+    def apply(
+        ServiceId: ResourceId,
+        Instances: js.UndefOr[InstanceIdList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetInstancesHealthStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServiceId" -> ServiceId.asInstanceOf[js.Any],
         "Instances" -> Instances.map { x =>
@@ -568,13 +642,18 @@ package servicediscovery {
   }
 
   object GetInstancesHealthStatusResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Status: js.UndefOr[InstanceHealthStatusMap] = js.undefined): GetInstancesHealthStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Status: js.UndefOr[InstanceHealthStatusMap] = js.undefined
+    ): GetInstancesHealthStatusResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstancesHealthStatusResponse]
     }
@@ -586,8 +665,12 @@ package servicediscovery {
   }
 
   object GetNamespaceRequest {
-    def apply(Id: ResourceId): GetNamespaceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: ResourceId
+    ): GetNamespaceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNamespaceRequest]
     }
@@ -599,10 +682,14 @@ package servicediscovery {
   }
 
   object GetNamespaceResponse {
-    def apply(Namespace: js.UndefOr[Namespace] = js.undefined): GetNamespaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Namespace" -> Namespace.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Namespace: js.UndefOr[Namespace] = js.undefined
+    ): GetNamespaceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Namespace" -> Namespace.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNamespaceResponse]
     }
@@ -614,9 +701,12 @@ package servicediscovery {
   }
 
   object GetOperationRequest {
-    def apply(OperationId: ResourceId): GetOperationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: ResourceId
+    ): GetOperationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOperationRequest]
     }
@@ -628,10 +718,14 @@ package servicediscovery {
   }
 
   object GetOperationResponse {
-    def apply(Operation: js.UndefOr[Operation] = js.undefined): GetOperationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Operation" -> Operation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Operation: js.UndefOr[Operation] = js.undefined
+    ): GetOperationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Operation" -> Operation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOperationResponse]
     }
@@ -643,8 +737,12 @@ package servicediscovery {
   }
 
   object GetServiceRequest {
-    def apply(Id: ResourceId): GetServiceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: ResourceId
+    ): GetServiceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceRequest]
     }
@@ -656,10 +754,14 @@ package servicediscovery {
   }
 
   object GetServiceResponse {
-    def apply(Service: js.UndefOr[Service] = js.undefined): GetServiceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Service" -> Service.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Service: js.UndefOr[Service] = js.undefined
+    ): GetServiceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Service" -> Service.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetServiceResponse]
     }
@@ -693,9 +795,11 @@ package servicediscovery {
   }
 
   object HealthCheckConfig {
-    def apply(Type: HealthCheckType,
-              FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined,
-              ResourcePath: js.UndefOr[ResourcePath] = js.undefined): HealthCheckConfig = {
+    def apply(
+        Type: HealthCheckType,
+        FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined,
+        ResourcePath: js.UndefOr[ResourcePath] = js.undefined
+    ): HealthCheckConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Type" -> Type.asInstanceOf[js.Any],
         "FailureThreshold" -> FailureThreshold.map { x =>
@@ -735,10 +839,14 @@ package servicediscovery {
   }
 
   object HealthCheckCustomConfig {
-    def apply(FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined): HealthCheckCustomConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("FailureThreshold" -> FailureThreshold.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined
+    ): HealthCheckCustomConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FailureThreshold" -> FailureThreshold.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HealthCheckCustomConfig]
     }
@@ -781,11 +889,13 @@ package servicediscovery {
   }
 
   object HttpInstanceSummary {
-    def apply(Attributes: js.UndefOr[Attributes] = js.undefined,
-              HealthStatus: js.UndefOr[HealthStatus] = js.undefined,
-              InstanceId: js.UndefOr[ResourceId] = js.undefined,
-              NamespaceName: js.UndefOr[NamespaceName] = js.undefined,
-              ServiceName: js.UndefOr[ServiceName] = js.undefined): HttpInstanceSummary = {
+    def apply(
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        HealthStatus: js.UndefOr[HealthStatus] = js.undefined,
+        InstanceId: js.UndefOr[ResourceId] = js.undefined,
+        NamespaceName: js.UndefOr[NamespaceName] = js.undefined,
+        ServiceName: js.UndefOr[ServiceName] = js.undefined
+    ): HttpInstanceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -817,10 +927,14 @@ package servicediscovery {
   }
 
   object HttpProperties {
-    def apply(HttpName: js.UndefOr[NamespaceName] = js.undefined): HttpProperties = {
-      val _fields = IndexedSeq[(String, js.Any)]("HttpName" -> HttpName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HttpName: js.UndefOr[NamespaceName] = js.undefined
+    ): HttpProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HttpName" -> HttpName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HttpProperties]
     }
@@ -837,9 +951,11 @@ package servicediscovery {
   }
 
   object Instance {
-    def apply(Id: ResourceId,
-              Attributes: js.UndefOr[Attributes] = js.undefined,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined): Instance = {
+    def apply(
+        Id: ResourceId,
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined
+    ): Instance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
         "Attributes" -> Attributes.map { x =>
@@ -864,13 +980,18 @@ package servicediscovery {
   }
 
   object InstanceSummary {
-    def apply(Attributes: js.UndefOr[Attributes] = js.undefined,
-              Id: js.UndefOr[ResourceId] = js.undefined): InstanceSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined
+    ): InstanceSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceSummary]
     }
@@ -884,9 +1005,11 @@ package servicediscovery {
   }
 
   object ListInstancesRequest {
-    def apply(ServiceId: ResourceId,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListInstancesRequest = {
+    def apply(
+        ServiceId: ResourceId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInstancesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServiceId" -> ServiceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -908,13 +1031,18 @@ package servicediscovery {
   }
 
   object ListInstancesResponse {
-    def apply(Instances: js.UndefOr[InstanceSummaryList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListInstancesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Instances" -> Instances.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Instances: js.UndefOr[InstanceSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInstancesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Instances" -> Instances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstancesResponse]
     }
@@ -928,9 +1056,11 @@ package servicediscovery {
   }
 
   object ListNamespacesRequest {
-    def apply(Filters: js.UndefOr[NamespaceFilters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListNamespacesRequest = {
+    def apply(
+        Filters: js.UndefOr[NamespaceFilters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListNamespacesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -954,13 +1084,18 @@ package servicediscovery {
   }
 
   object ListNamespacesResponse {
-    def apply(Namespaces: js.UndefOr[NamespaceSummariesList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListNamespacesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Namespaces" -> Namespaces.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Namespaces: js.UndefOr[NamespaceSummariesList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListNamespacesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Namespaces" -> Namespaces.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNamespacesResponse]
     }
@@ -974,9 +1109,11 @@ package servicediscovery {
   }
 
   object ListOperationsRequest {
-    def apply(Filters: js.UndefOr[OperationFilters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListOperationsRequest = {
+    def apply(
+        Filters: js.UndefOr[OperationFilters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListOperationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -1000,13 +1137,18 @@ package servicediscovery {
   }
 
   object ListOperationsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Operations: js.UndefOr[OperationSummaryList] = js.undefined): ListOperationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Operations" -> Operations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Operations: js.UndefOr[OperationSummaryList] = js.undefined
+    ): ListOperationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Operations" -> Operations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOperationsResponse]
     }
@@ -1020,9 +1162,11 @@ package servicediscovery {
   }
 
   object ListServicesRequest {
-    def apply(Filters: js.UndefOr[ServiceFilters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListServicesRequest = {
+    def apply(
+        Filters: js.UndefOr[ServiceFilters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListServicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -1046,13 +1190,18 @@ package servicediscovery {
   }
 
   object ListServicesResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Services: js.UndefOr[ServiceSummariesList] = js.undefined): ListServicesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Services" -> Services.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Services: js.UndefOr[ServiceSummariesList] = js.undefined
+    ): ListServicesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Services" -> Services.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServicesResponse]
     }
@@ -1075,15 +1224,17 @@ package servicediscovery {
   }
 
   object Namespace {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              CreateDate: js.UndefOr[Timestamp] = js.undefined,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined,
-              Id: js.UndefOr[ResourceId] = js.undefined,
-              Name: js.UndefOr[NamespaceName] = js.undefined,
-              Properties: js.UndefOr[NamespaceProperties] = js.undefined,
-              ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
-              Type: js.UndefOr[NamespaceType] = js.undefined): Namespace = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreateDate: js.UndefOr[Timestamp] = js.undefined,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        Name: js.UndefOr[NamespaceName] = js.undefined,
+        Properties: js.UndefOr[NamespaceProperties] = js.undefined,
+        ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
+        Type: js.UndefOr[NamespaceType] = js.undefined
+    ): Namespace = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1129,9 +1280,11 @@ package servicediscovery {
   }
 
   object NamespaceFilter {
-    def apply(Name: NamespaceFilterName,
-              Values: FilterValues,
-              Condition: js.UndefOr[FilterCondition] = js.undefined): NamespaceFilter = {
+    def apply(
+        Name: NamespaceFilterName,
+        Values: FilterValues,
+        Condition: js.UndefOr[FilterCondition] = js.undefined
+    ): NamespaceFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any],
@@ -1160,13 +1313,18 @@ package servicediscovery {
   }
 
   object NamespaceProperties {
-    def apply(DnsProperties: js.UndefOr[DnsProperties] = js.undefined,
-              HttpProperties: js.UndefOr[HttpProperties] = js.undefined): NamespaceProperties = {
-      val _fields = IndexedSeq[(String, js.Any)]("DnsProperties" -> DnsProperties.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "HttpProperties" -> HttpProperties.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DnsProperties: js.UndefOr[DnsProperties] = js.undefined,
+        HttpProperties: js.UndefOr[HttpProperties] = js.undefined
+    ): NamespaceProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DnsProperties" -> DnsProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HttpProperties" -> HttpProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NamespaceProperties]
     }
@@ -1188,14 +1346,16 @@ package servicediscovery {
   }
 
   object NamespaceSummary {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              CreateDate: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined,
-              Id: js.UndefOr[ResourceId] = js.undefined,
-              Name: js.UndefOr[NamespaceName] = js.undefined,
-              Properties: js.UndefOr[NamespaceProperties] = js.undefined,
-              ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
-              Type: js.UndefOr[NamespaceType] = js.undefined): NamespaceSummary = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreateDate: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        Name: js.UndefOr[NamespaceName] = js.undefined,
+        Properties: js.UndefOr[NamespaceProperties] = js.undefined,
+        ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
+        Type: js.UndefOr[NamespaceType] = js.undefined
+    ): NamespaceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1251,14 +1411,16 @@ package servicediscovery {
   }
 
   object Operation {
-    def apply(CreateDate: js.UndefOr[Timestamp] = js.undefined,
-              ErrorCode: js.UndefOr[Code] = js.undefined,
-              ErrorMessage: js.UndefOr[Message] = js.undefined,
-              Id: js.UndefOr[OperationId] = js.undefined,
-              Status: js.UndefOr[OperationStatus] = js.undefined,
-              Targets: js.UndefOr[OperationTargetsMap] = js.undefined,
-              Type: js.UndefOr[OperationType] = js.undefined,
-              UpdateDate: js.UndefOr[Timestamp] = js.undefined): Operation = {
+    def apply(
+        CreateDate: js.UndefOr[Timestamp] = js.undefined,
+        ErrorCode: js.UndefOr[Code] = js.undefined,
+        ErrorMessage: js.UndefOr[Message] = js.undefined,
+        Id: js.UndefOr[OperationId] = js.undefined,
+        Status: js.UndefOr[OperationStatus] = js.undefined,
+        Targets: js.UndefOr[OperationTargetsMap] = js.undefined,
+        Type: js.UndefOr[OperationType] = js.undefined,
+        UpdateDate: js.UndefOr[Timestamp] = js.undefined
+    ): Operation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreateDate" -> CreateDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -1301,9 +1463,11 @@ package servicediscovery {
   }
 
   object OperationFilter {
-    def apply(Name: OperationFilterName,
-              Values: FilterValues,
-              Condition: js.UndefOr[FilterCondition] = js.undefined): OperationFilter = {
+    def apply(
+        Name: OperationFilterName,
+        Values: FilterValues,
+        Condition: js.UndefOr[FilterCondition] = js.undefined
+    ): OperationFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any],
@@ -1345,13 +1509,18 @@ package servicediscovery {
   }
 
   object OperationSummary {
-    def apply(Id: js.UndefOr[OperationId] = js.undefined,
-              Status: js.UndefOr[OperationStatus] = js.undefined): OperationSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: js.UndefOr[OperationId] = js.undefined,
+        Status: js.UndefOr[OperationStatus] = js.undefined
+    ): OperationSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OperationSummary]
     }
@@ -1393,10 +1562,12 @@ package servicediscovery {
   }
 
   object RegisterInstanceRequest {
-    def apply(Attributes: Attributes,
-              InstanceId: ResourceId,
-              ServiceId: ResourceId,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined): RegisterInstanceRequest = {
+    def apply(
+        Attributes: Attributes,
+        InstanceId: ResourceId,
+        ServiceId: ResourceId,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined
+    ): RegisterInstanceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
@@ -1416,10 +1587,14 @@ package servicediscovery {
   }
 
   object RegisterInstanceResponse {
-    def apply(OperationId: js.UndefOr[OperationId] = js.undefined): RegisterInstanceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): RegisterInstanceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterInstanceResponse]
     }
@@ -1451,17 +1626,19 @@ package servicediscovery {
   }
 
   object Service {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              CreateDate: js.UndefOr[Timestamp] = js.undefined,
-              CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined,
-              DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
-              HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
-              HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
-              Id: js.UndefOr[ResourceId] = js.undefined,
-              InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
-              Name: js.UndefOr[ServiceName] = js.undefined,
-              NamespaceId: js.UndefOr[ResourceId] = js.undefined): Service = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreateDate: js.UndefOr[Timestamp] = js.undefined,
+        CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
+        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
+        HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
+        Name: js.UndefOr[ServiceName] = js.undefined,
+        NamespaceId: js.UndefOr[ResourceId] = js.undefined
+    ): Service = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1513,9 +1690,11 @@ package servicediscovery {
   }
 
   object ServiceChange {
-    def apply(DnsConfig: DnsConfigChange,
-              Description: js.UndefOr[ResourceDescription] = js.undefined,
-              HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined): ServiceChange = {
+    def apply(
+        DnsConfig: DnsConfigChange,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined
+    ): ServiceChange = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DnsConfig" -> DnsConfig.asInstanceOf[js.Any],
         "Description" -> Description.map { x =>
@@ -1541,9 +1720,11 @@ package servicediscovery {
   }
 
   object ServiceFilter {
-    def apply(Name: ServiceFilterName,
-              Values: FilterValues,
-              Condition: js.UndefOr[FilterCondition] = js.undefined): ServiceFilter = {
+    def apply(
+        Name: ServiceFilterName,
+        Values: FilterValues,
+        Condition: js.UndefOr[FilterCondition] = js.undefined
+    ): ServiceFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any],
@@ -1579,15 +1760,17 @@ package servicediscovery {
   }
 
   object ServiceSummary {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              CreateDate: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[ResourceDescription] = js.undefined,
-              DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
-              HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
-              HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
-              Id: js.UndefOr[ResourceId] = js.undefined,
-              InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
-              Name: js.UndefOr[ServiceName] = js.undefined): ServiceSummary = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreateDate: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        DnsConfig: js.UndefOr[DnsConfig] = js.undefined,
+        HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined,
+        HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
+        Name: js.UndefOr[ServiceName] = js.undefined
+    ): ServiceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1630,9 +1813,11 @@ package servicediscovery {
   }
 
   object UpdateInstanceCustomHealthStatusRequest {
-    def apply(InstanceId: ResourceId,
-              ServiceId: ResourceId,
-              Status: CustomHealthStatus): UpdateInstanceCustomHealthStatusRequest = {
+    def apply(
+        InstanceId: ResourceId,
+        ServiceId: ResourceId,
+        Status: CustomHealthStatus
+    ): UpdateInstanceCustomHealthStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId"  -> ServiceId.asInstanceOf[js.Any],
@@ -1650,10 +1835,14 @@ package servicediscovery {
   }
 
   object UpdateServiceRequest {
-    def apply(Id: ResourceId, Service: ServiceChange): UpdateServiceRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "Service" -> Service.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: ResourceId,
+        Service: ServiceChange
+    ): UpdateServiceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id"      -> Id.asInstanceOf[js.Any],
+        "Service" -> Service.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceRequest]
     }
@@ -1665,10 +1854,14 @@ package servicediscovery {
   }
 
   object UpdateServiceResponse {
-    def apply(OperationId: js.UndefOr[OperationId] = js.undefined): UpdateServiceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationId" -> OperationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): UpdateServiceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationId" -> OperationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceResponse]
     }

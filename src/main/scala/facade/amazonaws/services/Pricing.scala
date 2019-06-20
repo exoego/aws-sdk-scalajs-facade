@@ -38,10 +38,14 @@ package pricing {
   }
 
   object AttributeValue {
-    def apply(Value: js.UndefOr[String] = js.undefined): AttributeValue = {
-      val _fields = IndexedSeq[(String, js.Any)]("Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Value: js.UndefOr[String] = js.undefined
+    ): AttributeValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeValue]
     }
@@ -56,10 +60,12 @@ package pricing {
   }
 
   object DescribeServicesRequest {
-    def apply(FormatVersion: js.UndefOr[String] = js.undefined,
-              MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              ServiceCode: js.UndefOr[String] = js.undefined): DescribeServicesRequest = {
+    def apply(
+        FormatVersion: js.UndefOr[String] = js.undefined,
+        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        ServiceCode: js.UndefOr[String] = js.undefined
+    ): DescribeServicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FormatVersion" -> FormatVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -87,9 +93,11 @@ package pricing {
   }
 
   object DescribeServicesResponse {
-    def apply(FormatVersion: js.UndefOr[String] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              Services: js.UndefOr[ServiceList] = js.undefined): DescribeServicesResponse = {
+    def apply(
+        FormatVersion: js.UndefOr[String] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        Services: js.UndefOr[ServiceList] = js.undefined
+    ): DescribeServicesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FormatVersion" -> FormatVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -125,7 +133,11 @@ package pricing {
   }
 
   object Filter {
-    def apply(Field: String, Type: FilterType, Value: String): Filter = {
+    def apply(
+        Field: String,
+        Type: FilterType,
+        Value: String
+    ): Filter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Field" -> Field.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
@@ -151,10 +163,12 @@ package pricing {
   }
 
   object GetAttributeValuesRequest {
-    def apply(AttributeName: String,
-              ServiceCode: String,
-              MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): GetAttributeValuesRequest = {
+    def apply(
+        AttributeName: String,
+        ServiceCode: String,
+        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetAttributeValuesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "ServiceCode"   -> ServiceCode.asInstanceOf[js.Any],
@@ -177,13 +191,18 @@ package pricing {
   }
 
   object GetAttributeValuesResponse {
-    def apply(AttributeValues: js.UndefOr[AttributeValueList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): GetAttributeValuesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeValues" -> AttributeValues.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeValues: js.UndefOr[AttributeValueList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetAttributeValuesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeValues" -> AttributeValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAttributeValuesResponse]
     }
@@ -199,11 +218,13 @@ package pricing {
   }
 
   object GetProductsRequest {
-    def apply(Filters: js.UndefOr[Filters] = js.undefined,
-              FormatVersion: js.UndefOr[String] = js.undefined,
-              MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              ServiceCode: js.UndefOr[String] = js.undefined): GetProductsRequest = {
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        FormatVersion: js.UndefOr[String] = js.undefined,
+        MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        ServiceCode: js.UndefOr[String] = js.undefined
+    ): GetProductsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -234,9 +255,11 @@ package pricing {
   }
 
   object GetProductsResponse {
-    def apply(FormatVersion: js.UndefOr[String] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              PriceList: js.UndefOr[PriceList] = js.undefined): GetProductsResponse = {
+    def apply(
+        FormatVersion: js.UndefOr[String] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        PriceList: js.UndefOr[PriceList] = js.undefined
+    ): GetProductsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FormatVersion" -> FormatVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -295,13 +318,18 @@ package pricing {
   }
 
   object Service {
-    def apply(AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
-              ServiceCode: js.UndefOr[String] = js.undefined): Service = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeNames" -> AttributeNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ServiceCode" -> ServiceCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
+        ServiceCode: js.UndefOr[String] = js.undefined
+    ): Service = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeNames" -> AttributeNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ServiceCode" -> ServiceCode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Service]
     }

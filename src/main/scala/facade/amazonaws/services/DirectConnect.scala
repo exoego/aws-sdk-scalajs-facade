@@ -7,43 +7,52 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object directconnect {
-  type ASN                                  = Int
-  type AddressFamily                        = String
-  type AmazonAddress                        = String
-  type AwsDevice                            = String
-  type AwsDeviceV2                          = String
-  type BGPAuthKey                           = String
-  type BGPPeerId                            = String
-  type BGPPeerList                          = js.Array[BGPPeer]
-  type BGPPeerState                         = String
-  type BGPStatus                            = String
-  type Bandwidth                            = String
-  type BooleanFlag                          = Boolean
-  type CIDR                                 = String
-  type ConnectionId                         = String
-  type ConnectionList                       = js.Array[Connection]
-  type ConnectionName                       = String
-  type ConnectionState                      = String
-  type Count                                = Int
-  type CustomerAddress                      = String
-  type DirectConnectGatewayAssociationList  = js.Array[DirectConnectGatewayAssociation]
-  type DirectConnectGatewayAssociationState = String
-  type DirectConnectGatewayAttachmentList   = js.Array[DirectConnectGatewayAttachment]
-  type DirectConnectGatewayAttachmentState  = String
-  type DirectConnectGatewayId               = String
-  type DirectConnectGatewayList             = js.Array[DirectConnectGateway]
-  type DirectConnectGatewayName             = String
-  type DirectConnectGatewayState            = String
-  type HasLogicalRedundancy                 = String
-  type InterconnectId                       = String
-  type InterconnectList                     = js.Array[Interconnect]
-  type InterconnectName                     = String
-  type InterconnectState                    = String
-  type JumboFrameCapable                    = Boolean
-  type LagId                                = String
-  type LagList                              = js.Array[Lag]
-  type LagName                              = String
-  type LagState                             = String
+  type ASN                                          = Int
+  type AddressFamily                                = String
+  type AmazonAddress                                = String
+  type AssociatedGatewayId                          = String
+  type AvailablePortSpeeds                          = js.Array[PortSpeed]
+  type AwsDevice                                    = String
+  type AwsDeviceV2                                  = String
+  type BGPAuthKey                                   = String
+  type BGPPeerId                                    = String
+  type BGPPeerList                                  = js.Array[BGPPeer]
+  type BGPPeerState                                 = String
+  type BGPStatus                                    = String
+  type Bandwidth                                    = String
+  type BooleanFlag                                  = Boolean
+  type CIDR                                         = String
+  type ConnectionId                                 = String
+  type ConnectionList                               = js.Array[Connection]
+  type ConnectionName                               = String
+  type ConnectionState                              = String
+  type Count                                        = Int
+  type CustomerAddress                              = String
+  type DirectConnectGatewayAssociationId            = String
+  type DirectConnectGatewayAssociationList          = js.Array[DirectConnectGatewayAssociation]
+  type DirectConnectGatewayAssociationProposalId    = String
+  type DirectConnectGatewayAssociationProposalList  = js.Array[DirectConnectGatewayAssociationProposal]
+  type DirectConnectGatewayAssociationProposalState = String
+  type DirectConnectGatewayAssociationState         = String
+  type DirectConnectGatewayAttachmentList           = js.Array[DirectConnectGatewayAttachment]
+  type DirectConnectGatewayAttachmentState          = String
+  type DirectConnectGatewayId                       = String
+  type DirectConnectGatewayList                     = js.Array[DirectConnectGateway]
+  type DirectConnectGatewayName                     = String
+  type DirectConnectGatewayState                    = String
+  type GatewayIdToAssociate                         = String
+  type GatewayIdentifier                            = String
+  type GatewayType                                  = String
+  type HasLogicalRedundancy                         = String
+  type InterconnectId                               = String
+  type InterconnectList                             = js.Array[Interconnect]
+  type InterconnectName                             = String
+  type InterconnectState                            = String
+  type JumboFrameCapable                            = Boolean
+  type LagId                                        = String
+  type LagList                                      = js.Array[Lag]
+  type LagName                                      = String
+  type LagState                                     = String
   type LoaContent =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type LoaContentType         = String
@@ -57,6 +66,7 @@ package object directconnect {
   type OwnerAccount           = String
   type PaginationToken        = String
   type PartnerName            = String
+  type PortSpeed              = String
   type ProviderName           = String
   type Region                 = String
   type ResourceArn            = String
@@ -88,6 +98,9 @@ package directconnect {
   class DirectConnect() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def acceptDirectConnectGatewayAssociationProposal(
+        params: AcceptDirectConnectGatewayAssociationProposalRequest
+    ): Request[AcceptDirectConnectGatewayAssociationProposalResult] = js.native
     def allocateConnectionOnInterconnect(params: AllocateConnectionOnInterconnectRequest): Request[Connection] =
       js.native
     def allocateHostedConnection(params: AllocateHostedConnectionRequest): Request[Connection] = js.native
@@ -112,7 +125,10 @@ package directconnect {
     ): Request[CreateDirectConnectGatewayResult] = js.native
     def createDirectConnectGatewayAssociation(
         params: CreateDirectConnectGatewayAssociationRequest
-    ): Request[CreateDirectConnectGatewayAssociationResult]                          = js.native
+    ): Request[CreateDirectConnectGatewayAssociationResult] = js.native
+    def createDirectConnectGatewayAssociationProposal(
+        params: CreateDirectConnectGatewayAssociationProposalRequest
+    ): Request[CreateDirectConnectGatewayAssociationProposalResult]                  = js.native
     def createInterconnect(params: CreateInterconnectRequest): Request[Interconnect] = js.native
     def createLag(params: CreateLagRequest): Request[Lag]                            = js.native
     def createPrivateVirtualInterface(params: CreatePrivateVirtualInterfaceRequest): Request[VirtualInterface] =
@@ -125,7 +141,10 @@ package directconnect {
     ): Request[DeleteDirectConnectGatewayResult] = js.native
     def deleteDirectConnectGatewayAssociation(
         params: DeleteDirectConnectGatewayAssociationRequest
-    ): Request[DeleteDirectConnectGatewayAssociationResult]                                        = js.native
+    ): Request[DeleteDirectConnectGatewayAssociationResult] = js.native
+    def deleteDirectConnectGatewayAssociationProposal(
+        params: DeleteDirectConnectGatewayAssociationProposalRequest
+    ): Request[DeleteDirectConnectGatewayAssociationProposalResult]                                = js.native
     def deleteInterconnect(params: DeleteInterconnectRequest): Request[DeleteInterconnectResponse] = js.native
     def deleteLag(params: DeleteLagRequest): Request[Lag]                                          = js.native
     def deleteVirtualInterface(params: DeleteVirtualInterfaceRequest): Request[DeleteVirtualInterfaceResponse] =
@@ -134,6 +153,9 @@ package directconnect {
     def describeConnections(params: DescribeConnectionsRequest): Request[Connections]                       = js.native
     def describeConnectionsOnInterconnect(params: DescribeConnectionsOnInterconnectRequest): Request[Connections] =
       js.native
+    def describeDirectConnectGatewayAssociationProposals(
+        params: DescribeDirectConnectGatewayAssociationProposalsRequest
+    ): Request[DescribeDirectConnectGatewayAssociationProposalsResult] = js.native
     def describeDirectConnectGatewayAssociations(
         params: DescribeDirectConnectGatewayAssociationsRequest
     ): Request[DescribeDirectConnectGatewayAssociationsResult] = js.native
@@ -156,9 +178,63 @@ package directconnect {
     def disassociateConnectionFromLag(params: DisassociateConnectionFromLagRequest): Request[Connection] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                            = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                      = js.native
-    def updateLag(params: UpdateLagRequest): Request[Lag]                                                = js.native
+    def updateDirectConnectGatewayAssociation(
+        params: UpdateDirectConnectGatewayAssociationRequest
+    ): Request[UpdateDirectConnectGatewayAssociationResult] = js.native
+    def updateLag(params: UpdateLagRequest): Request[Lag]   = js.native
     def updateVirtualInterfaceAttributes(params: UpdateVirtualInterfaceAttributesRequest): Request[VirtualInterface] =
       js.native
+  }
+
+  @js.native
+  trait AcceptDirectConnectGatewayAssociationProposalRequest extends js.Object {
+    var associatedGatewayOwnerAccount: OwnerAccount
+    var directConnectGatewayId: DirectConnectGatewayId
+    var proposalId: DirectConnectGatewayAssociationProposalId
+    var overrideAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+  }
+
+  object AcceptDirectConnectGatewayAssociationProposalRequest {
+    def apply(
+        associatedGatewayOwnerAccount: OwnerAccount,
+        directConnectGatewayId: DirectConnectGatewayId,
+        proposalId: DirectConnectGatewayAssociationProposalId,
+        overrideAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
+    ): AcceptDirectConnectGatewayAssociationProposalRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "associatedGatewayOwnerAccount" -> associatedGatewayOwnerAccount.asInstanceOf[js.Any],
+        "directConnectGatewayId"        -> directConnectGatewayId.asInstanceOf[js.Any],
+        "proposalId"                    -> proposalId.asInstanceOf[js.Any],
+        "overrideAllowedPrefixesToDirectConnectGateway" -> overrideAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[AcceptDirectConnectGatewayAssociationProposalRequest]
+    }
+  }
+
+  @js.native
+  trait AcceptDirectConnectGatewayAssociationProposalResult extends js.Object {
+    var directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation]
+  }
+
+  object AcceptDirectConnectGatewayAssociationProposalResult {
+    def apply(
+        directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
+    ): AcceptDirectConnectGatewayAssociationProposalResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayAssociation" -> directConnectGatewayAssociation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[AcceptDirectConnectGatewayAssociationProposalResult]
+    }
   }
 
   object AddressFamilyEnum {
@@ -178,11 +254,13 @@ package directconnect {
   }
 
   object AllocateConnectionOnInterconnectRequest {
-    def apply(bandwidth: Bandwidth,
-              connectionName: ConnectionName,
-              interconnectId: InterconnectId,
-              ownerAccount: OwnerAccount,
-              vlan: VLAN): AllocateConnectionOnInterconnectRequest = {
+    def apply(
+        bandwidth: Bandwidth,
+        connectionName: ConnectionName,
+        interconnectId: InterconnectId,
+        ownerAccount: OwnerAccount,
+        vlan: VLAN
+    ): AllocateConnectionOnInterconnectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bandwidth"      -> bandwidth.asInstanceOf[js.Any],
         "connectionName" -> connectionName.asInstanceOf[js.Any],
@@ -205,11 +283,13 @@ package directconnect {
   }
 
   object AllocateHostedConnectionRequest {
-    def apply(bandwidth: Bandwidth,
-              connectionId: ConnectionId,
-              connectionName: ConnectionName,
-              ownerAccount: OwnerAccount,
-              vlan: VLAN): AllocateHostedConnectionRequest = {
+    def apply(
+        bandwidth: Bandwidth,
+        connectionId: ConnectionId,
+        connectionName: ConnectionName,
+        ownerAccount: OwnerAccount,
+        vlan: VLAN
+    ): AllocateHostedConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bandwidth"      -> bandwidth.asInstanceOf[js.Any],
         "connectionId"   -> connectionId.asInstanceOf[js.Any],
@@ -230,9 +310,11 @@ package directconnect {
   }
 
   object AllocatePrivateVirtualInterfaceRequest {
-    def apply(connectionId: ConnectionId,
-              newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation,
-              ownerAccount: OwnerAccount): AllocatePrivateVirtualInterfaceRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation,
+        ownerAccount: OwnerAccount
+    ): AllocatePrivateVirtualInterfaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId"                         -> connectionId.asInstanceOf[js.Any],
         "newPrivateVirtualInterfaceAllocation" -> newPrivateVirtualInterfaceAllocation.asInstanceOf[js.Any],
@@ -251,9 +333,11 @@ package directconnect {
   }
 
   object AllocatePublicVirtualInterfaceRequest {
-    def apply(connectionId: ConnectionId,
-              newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation,
-              ownerAccount: OwnerAccount): AllocatePublicVirtualInterfaceRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation,
+        ownerAccount: OwnerAccount
+    ): AllocatePublicVirtualInterfaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId"                        -> connectionId.asInstanceOf[js.Any],
         "newPublicVirtualInterfaceAllocation" -> newPublicVirtualInterfaceAllocation.asInstanceOf[js.Any],
@@ -271,7 +355,10 @@ package directconnect {
   }
 
   object AssociateConnectionWithLagRequest {
-    def apply(connectionId: ConnectionId, lagId: LagId): AssociateConnectionWithLagRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        lagId: LagId
+    ): AssociateConnectionWithLagRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "lagId"        -> lagId.asInstanceOf[js.Any]
@@ -288,7 +375,10 @@ package directconnect {
   }
 
   object AssociateHostedConnectionRequest {
-    def apply(connectionId: ConnectionId, parentConnectionId: ConnectionId): AssociateHostedConnectionRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        parentConnectionId: ConnectionId
+    ): AssociateHostedConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId"       -> connectionId.asInstanceOf[js.Any],
         "parentConnectionId" -> parentConnectionId.asInstanceOf[js.Any]
@@ -305,13 +395,53 @@ package directconnect {
   }
 
   object AssociateVirtualInterfaceRequest {
-    def apply(connectionId: ConnectionId, virtualInterfaceId: VirtualInterfaceId): AssociateVirtualInterfaceRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        virtualInterfaceId: VirtualInterfaceId
+    ): AssociateVirtualInterfaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId"       -> connectionId.asInstanceOf[js.Any],
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateVirtualInterfaceRequest]
+    }
+  }
+
+  /**
+    * Information about the associated gateway.
+    */
+  @js.native
+  trait AssociatedGateway extends js.Object {
+    var id: js.UndefOr[GatewayIdentifier]
+    var ownerAccount: js.UndefOr[OwnerAccount]
+    var region: js.UndefOr[Region]
+    var `type`: js.UndefOr[GatewayType]
+  }
+
+  object AssociatedGateway {
+    def apply(
+        id: js.UndefOr[GatewayIdentifier] = js.undefined,
+        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        region: js.UndefOr[Region] = js.undefined,
+        `type`: js.UndefOr[GatewayType] = js.undefined
+    ): AssociatedGateway = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ownerAccount" -> ownerAccount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "region" -> region.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociatedGateway]
     }
   }
 
@@ -332,15 +462,17 @@ package directconnect {
   }
 
   object BGPPeer {
-    def apply(addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-              amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-              asn: js.UndefOr[ASN] = js.undefined,
-              authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-              awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-              bgpPeerId: js.UndefOr[BGPPeerId] = js.undefined,
-              bgpPeerState: js.UndefOr[BGPPeerState] = js.undefined,
-              bgpStatus: js.UndefOr[BGPStatus] = js.undefined,
-              customerAddress: js.UndefOr[CustomerAddress] = js.undefined): BGPPeer = {
+    def apply(
+        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
+        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
+        asn: js.UndefOr[ASN] = js.undefined,
+        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
+        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        bgpPeerId: js.UndefOr[BGPPeerId] = js.undefined,
+        bgpPeerState: js.UndefOr[BGPPeerState] = js.undefined,
+        bgpStatus: js.UndefOr[BGPStatus] = js.undefined,
+        customerAddress: js.UndefOr[CustomerAddress] = js.undefined
+    ): BGPPeer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "addressFamily" -> addressFamily.map { x =>
           x.asInstanceOf[js.Any]
@@ -386,10 +518,11 @@ package directconnect {
   }
 
   object BGPStatusEnum {
-    val up   = "up"
-    val down = "down"
+    val up      = "up"
+    val down    = "down"
+    val unknown = "unknown"
 
-    val values = IndexedSeq(up, down)
+    val values = IndexedSeq(up, down, unknown)
   }
 
   @js.native
@@ -398,9 +531,12 @@ package directconnect {
   }
 
   object ConfirmConnectionRequest {
-    def apply(connectionId: ConnectionId): ConfirmConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectionId" -> connectionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectionId: ConnectionId
+    ): ConfirmConnectionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectionId" -> connectionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmConnectionRequest]
     }
@@ -412,10 +548,14 @@ package directconnect {
   }
 
   object ConfirmConnectionResponse {
-    def apply(connectionState: js.UndefOr[ConnectionState] = js.undefined): ConfirmConnectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectionState" -> connectionState.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectionState: js.UndefOr[ConnectionState] = js.undefined
+    ): ConfirmConnectionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectionState" -> connectionState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmConnectionResponse]
     }
@@ -429,9 +569,11 @@ package directconnect {
   }
 
   object ConfirmPrivateVirtualInterfaceRequest {
-    def apply(virtualInterfaceId: VirtualInterfaceId,
-              directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-              virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined): ConfirmPrivateVirtualInterfaceRequest = {
+    def apply(
+        virtualInterfaceId: VirtualInterfaceId,
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
+    ): ConfirmPrivateVirtualInterfaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any],
         "directConnectGatewayId" -> directConnectGatewayId.map { x =>
@@ -455,9 +597,11 @@ package directconnect {
     def apply(
         virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined
     ): ConfirmPrivateVirtualInterfaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterfaceState" -> virtualInterfaceState.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterfaceState" -> virtualInterfaceState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmPrivateVirtualInterfaceResponse]
     }
@@ -469,9 +613,12 @@ package directconnect {
   }
 
   object ConfirmPublicVirtualInterfaceRequest {
-    def apply(virtualInterfaceId: VirtualInterfaceId): ConfirmPublicVirtualInterfaceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualInterfaceId: VirtualInterfaceId
+    ): ConfirmPublicVirtualInterfaceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmPublicVirtualInterfaceRequest]
     }
@@ -486,9 +633,11 @@ package directconnect {
     def apply(
         virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined
     ): ConfirmPublicVirtualInterfaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterfaceState" -> virtualInterfaceState.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterfaceState" -> virtualInterfaceState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmPublicVirtualInterfaceResponse]
     }
@@ -517,21 +666,23 @@ package directconnect {
   }
 
   object Connection {
-    def apply(awsDevice: js.UndefOr[AwsDevice] = js.undefined,
-              awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-              bandwidth: js.UndefOr[Bandwidth] = js.undefined,
-              connectionId: js.UndefOr[ConnectionId] = js.undefined,
-              connectionName: js.UndefOr[ConnectionName] = js.undefined,
-              connectionState: js.UndefOr[ConnectionState] = js.undefined,
-              hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
-              jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-              lagId: js.UndefOr[LagId] = js.undefined,
-              loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
-              location: js.UndefOr[LocationCode] = js.undefined,
-              ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-              partnerName: js.UndefOr[PartnerName] = js.undefined,
-              region: js.UndefOr[Region] = js.undefined,
-              vlan: js.UndefOr[VLAN] = js.undefined): Connection = {
+    def apply(
+        awsDevice: js.UndefOr[AwsDevice] = js.undefined,
+        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        bandwidth: js.UndefOr[Bandwidth] = js.undefined,
+        connectionId: js.UndefOr[ConnectionId] = js.undefined,
+        connectionName: js.UndefOr[ConnectionName] = js.undefined,
+        connectionState: js.UndefOr[ConnectionState] = js.undefined,
+        hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
+        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
+        lagId: js.UndefOr[LagId] = js.undefined,
+        loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
+        location: js.UndefOr[LocationCode] = js.undefined,
+        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        partnerName: js.UndefOr[PartnerName] = js.undefined,
+        region: js.UndefOr[Region] = js.undefined,
+        vlan: js.UndefOr[VLAN] = js.undefined
+    ): Connection = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsDevice" -> awsDevice.map { x =>
           x.asInstanceOf[js.Any]
@@ -593,8 +744,9 @@ package directconnect {
     val deleting  = "deleting"
     val deleted   = "deleted"
     val rejected  = "rejected"
+    val unknown   = "unknown"
 
-    val values = IndexedSeq(ordering, requested, pending, available, down, deleting, deleted, rejected)
+    val values = IndexedSeq(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown)
   }
 
   @js.native
@@ -603,10 +755,14 @@ package directconnect {
   }
 
   object Connections {
-    def apply(connections: js.UndefOr[ConnectionList] = js.undefined): Connections = {
-      val _fields = IndexedSeq[(String, js.Any)]("connections" -> connections.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connections: js.UndefOr[ConnectionList] = js.undefined
+    ): Connections = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connections" -> connections.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Connections]
     }
@@ -619,13 +775,18 @@ package directconnect {
   }
 
   object CreateBGPPeerRequest {
-    def apply(newBGPPeer: js.UndefOr[NewBGPPeer] = js.undefined,
-              virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined): CreateBGPPeerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("newBGPPeer" -> newBGPPeer.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "virtualInterfaceId" -> virtualInterfaceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        newBGPPeer: js.UndefOr[NewBGPPeer] = js.undefined,
+        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
+    ): CreateBGPPeerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "newBGPPeer" -> newBGPPeer.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "virtualInterfaceId" -> virtualInterfaceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBGPPeerRequest]
     }
@@ -637,10 +798,14 @@ package directconnect {
   }
 
   object CreateBGPPeerResponse {
-    def apply(virtualInterface: js.UndefOr[VirtualInterface] = js.undefined): CreateBGPPeerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterface" -> virtualInterface.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualInterface: js.UndefOr[VirtualInterface] = js.undefined
+    ): CreateBGPPeerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterface" -> virtualInterface.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBGPPeerResponse]
     }
@@ -655,10 +820,12 @@ package directconnect {
   }
 
   object CreateConnectionRequest {
-    def apply(bandwidth: Bandwidth,
-              connectionName: ConnectionName,
-              location: LocationCode,
-              lagId: js.UndefOr[LagId] = js.undefined): CreateConnectionRequest = {
+    def apply(
+        bandwidth: Bandwidth,
+        connectionName: ConnectionName,
+        location: LocationCode,
+        lagId: js.UndefOr[LagId] = js.undefined
+    ): CreateConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bandwidth"      -> bandwidth.asInstanceOf[js.Any],
         "connectionName" -> connectionName.asInstanceOf[js.Any],
@@ -673,17 +840,87 @@ package directconnect {
   }
 
   @js.native
+  trait CreateDirectConnectGatewayAssociationProposalRequest extends js.Object {
+    var directConnectGatewayId: DirectConnectGatewayId
+    var directConnectGatewayOwnerAccount: OwnerAccount
+    var gatewayId: GatewayIdToAssociate
+    var addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+    var removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+  }
+
+  object CreateDirectConnectGatewayAssociationProposalRequest {
+    def apply(
+        directConnectGatewayId: DirectConnectGatewayId,
+        directConnectGatewayOwnerAccount: OwnerAccount,
+        gatewayId: GatewayIdToAssociate,
+        addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
+        removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
+    ): CreateDirectConnectGatewayAssociationProposalRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayId"           -> directConnectGatewayId.asInstanceOf[js.Any],
+        "directConnectGatewayOwnerAccount" -> directConnectGatewayOwnerAccount.asInstanceOf[js.Any],
+        "gatewayId"                        -> gatewayId.asInstanceOf[js.Any],
+        "addAllowedPrefixesToDirectConnectGateway" -> addAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "removeAllowedPrefixesToDirectConnectGateway" -> removeAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[CreateDirectConnectGatewayAssociationProposalRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDirectConnectGatewayAssociationProposalResult extends js.Object {
+    var directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal]
+  }
+
+  object CreateDirectConnectGatewayAssociationProposalResult {
+    def apply(
+        directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
+    ): CreateDirectConnectGatewayAssociationProposalResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayAssociationProposal" -> directConnectGatewayAssociationProposal.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[CreateDirectConnectGatewayAssociationProposalResult]
+    }
+  }
+
+  @js.native
   trait CreateDirectConnectGatewayAssociationRequest extends js.Object {
     var directConnectGatewayId: DirectConnectGatewayId
-    var virtualGatewayId: VirtualGatewayId
+    var addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+    var gatewayId: js.UndefOr[GatewayIdToAssociate]
+    var virtualGatewayId: js.UndefOr[VirtualGatewayId]
   }
 
   object CreateDirectConnectGatewayAssociationRequest {
-    def apply(directConnectGatewayId: DirectConnectGatewayId,
-              virtualGatewayId: VirtualGatewayId): CreateDirectConnectGatewayAssociationRequest = {
+    def apply(
+        directConnectGatewayId: DirectConnectGatewayId,
+        addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
+        gatewayId: js.UndefOr[GatewayIdToAssociate] = js.undefined,
+        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
+    ): CreateDirectConnectGatewayAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any],
-        "virtualGatewayId"       -> virtualGatewayId.asInstanceOf[js.Any]
+        "addAllowedPrefixesToDirectConnectGateway" -> addAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "gatewayId" -> gatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "virtualGatewayId" -> virtualGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
@@ -701,10 +938,11 @@ package directconnect {
     def apply(
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): CreateDirectConnectGatewayAssociationResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("directConnectGatewayAssociation" -> directConnectGatewayAssociation.map { x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayAssociation" -> directConnectGatewayAssociation.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -719,8 +957,10 @@ package directconnect {
   }
 
   object CreateDirectConnectGatewayRequest {
-    def apply(directConnectGatewayName: DirectConnectGatewayName,
-              amazonSideAsn: js.UndefOr[LongAsn] = js.undefined): CreateDirectConnectGatewayRequest = {
+    def apply(
+        directConnectGatewayName: DirectConnectGatewayName,
+        amazonSideAsn: js.UndefOr[LongAsn] = js.undefined
+    ): CreateDirectConnectGatewayRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "directConnectGatewayName" -> directConnectGatewayName.asInstanceOf[js.Any],
         "amazonSideAsn" -> amazonSideAsn.map { x =>
@@ -741,9 +981,11 @@ package directconnect {
     def apply(
         directConnectGateway: js.UndefOr[DirectConnectGateway] = js.undefined
     ): CreateDirectConnectGatewayResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("directConnectGateway" -> directConnectGateway.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGateway" -> directConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDirectConnectGatewayResult]
     }
@@ -758,10 +1000,12 @@ package directconnect {
   }
 
   object CreateInterconnectRequest {
-    def apply(bandwidth: Bandwidth,
-              interconnectName: InterconnectName,
-              location: LocationCode,
-              lagId: js.UndefOr[LagId] = js.undefined): CreateInterconnectRequest = {
+    def apply(
+        bandwidth: Bandwidth,
+        interconnectName: InterconnectName,
+        location: LocationCode,
+        lagId: js.UndefOr[LagId] = js.undefined
+    ): CreateInterconnectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bandwidth"        -> bandwidth.asInstanceOf[js.Any],
         "interconnectName" -> interconnectName.asInstanceOf[js.Any],
@@ -785,11 +1029,13 @@ package directconnect {
   }
 
   object CreateLagRequest {
-    def apply(connectionsBandwidth: Bandwidth,
-              lagName: LagName,
-              location: LocationCode,
-              numberOfConnections: Count,
-              connectionId: js.UndefOr[ConnectionId] = js.undefined): CreateLagRequest = {
+    def apply(
+        connectionsBandwidth: Bandwidth,
+        lagName: LagName,
+        location: LocationCode,
+        numberOfConnections: Count,
+        connectionId: js.UndefOr[ConnectionId] = js.undefined
+    ): CreateLagRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionsBandwidth" -> connectionsBandwidth.asInstanceOf[js.Any],
         "lagName"              -> lagName.asInstanceOf[js.Any],
@@ -811,8 +1057,10 @@ package directconnect {
   }
 
   object CreatePrivateVirtualInterfaceRequest {
-    def apply(connectionId: ConnectionId,
-              newPrivateVirtualInterface: NewPrivateVirtualInterface): CreatePrivateVirtualInterfaceRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        newPrivateVirtualInterface: NewPrivateVirtualInterface
+    ): CreatePrivateVirtualInterfaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId"               -> connectionId.asInstanceOf[js.Any],
         "newPrivateVirtualInterface" -> newPrivateVirtualInterface.asInstanceOf[js.Any]
@@ -829,8 +1077,10 @@ package directconnect {
   }
 
   object CreatePublicVirtualInterfaceRequest {
-    def apply(connectionId: ConnectionId,
-              newPublicVirtualInterface: NewPublicVirtualInterface): CreatePublicVirtualInterfaceRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        newPublicVirtualInterface: NewPublicVirtualInterface
+    ): CreatePublicVirtualInterfaceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId"              -> connectionId.asInstanceOf[js.Any],
         "newPublicVirtualInterface" -> newPublicVirtualInterface.asInstanceOf[js.Any]
@@ -849,10 +1099,12 @@ package directconnect {
   }
 
   object DeleteBGPPeerRequest {
-    def apply(asn: js.UndefOr[ASN] = js.undefined,
-              bgpPeerId: js.UndefOr[BGPPeerId] = js.undefined,
-              customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-              virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined): DeleteBGPPeerRequest = {
+    def apply(
+        asn: js.UndefOr[ASN] = js.undefined,
+        bgpPeerId: js.UndefOr[BGPPeerId] = js.undefined,
+        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
+        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
+    ): DeleteBGPPeerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "asn" -> asn.map { x =>
           x.asInstanceOf[js.Any]
@@ -878,10 +1130,14 @@ package directconnect {
   }
 
   object DeleteBGPPeerResponse {
-    def apply(virtualInterface: js.UndefOr[VirtualInterface] = js.undefined): DeleteBGPPeerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterface" -> virtualInterface.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualInterface: js.UndefOr[VirtualInterface] = js.undefined
+    ): DeleteBGPPeerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterface" -> virtualInterface.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBGPPeerResponse]
     }
@@ -893,26 +1149,80 @@ package directconnect {
   }
 
   object DeleteConnectionRequest {
-    def apply(connectionId: ConnectionId): DeleteConnectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectionId" -> connectionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectionId: ConnectionId
+    ): DeleteConnectionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectionId" -> connectionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConnectionRequest]
     }
   }
 
   @js.native
+  trait DeleteDirectConnectGatewayAssociationProposalRequest extends js.Object {
+    var proposalId: DirectConnectGatewayAssociationProposalId
+  }
+
+  object DeleteDirectConnectGatewayAssociationProposalRequest {
+    def apply(
+        proposalId: DirectConnectGatewayAssociationProposalId
+    ): DeleteDirectConnectGatewayAssociationProposalRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "proposalId" -> proposalId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DeleteDirectConnectGatewayAssociationProposalRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDirectConnectGatewayAssociationProposalResult extends js.Object {
+    var directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal]
+  }
+
+  object DeleteDirectConnectGatewayAssociationProposalResult {
+    def apply(
+        directConnectGatewayAssociationProposal: js.UndefOr[DirectConnectGatewayAssociationProposal] = js.undefined
+    ): DeleteDirectConnectGatewayAssociationProposalResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayAssociationProposal" -> directConnectGatewayAssociationProposal.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DeleteDirectConnectGatewayAssociationProposalResult]
+    }
+  }
+
+  @js.native
   trait DeleteDirectConnectGatewayAssociationRequest extends js.Object {
-    var directConnectGatewayId: DirectConnectGatewayId
-    var virtualGatewayId: VirtualGatewayId
+    var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
+    var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
+    var virtualGatewayId: js.UndefOr[VirtualGatewayId]
   }
 
   object DeleteDirectConnectGatewayAssociationRequest {
-    def apply(directConnectGatewayId: DirectConnectGatewayId,
-              virtualGatewayId: VirtualGatewayId): DeleteDirectConnectGatewayAssociationRequest = {
+    def apply(
+        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
+    ): DeleteDirectConnectGatewayAssociationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any],
-        "virtualGatewayId"       -> virtualGatewayId.asInstanceOf[js.Any]
+        "associationId" -> associationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "directConnectGatewayId" -> directConnectGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "virtualGatewayId" -> virtualGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
@@ -930,10 +1240,11 @@ package directconnect {
     def apply(
         directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
     ): DeleteDirectConnectGatewayAssociationResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("directConnectGatewayAssociation" -> directConnectGatewayAssociation.map { x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayAssociation" -> directConnectGatewayAssociation.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -947,10 +1258,12 @@ package directconnect {
   }
 
   object DeleteDirectConnectGatewayRequest {
-    def apply(directConnectGatewayId: DirectConnectGatewayId): DeleteDirectConnectGatewayRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        directConnectGatewayId: DirectConnectGatewayId
+    ): DeleteDirectConnectGatewayRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectConnectGatewayRequest]
     }
@@ -965,9 +1278,11 @@ package directconnect {
     def apply(
         directConnectGateway: js.UndefOr[DirectConnectGateway] = js.undefined
     ): DeleteDirectConnectGatewayResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("directConnectGateway" -> directConnectGateway.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGateway" -> directConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectConnectGatewayResult]
     }
@@ -979,9 +1294,12 @@ package directconnect {
   }
 
   object DeleteInterconnectRequest {
-    def apply(interconnectId: InterconnectId): DeleteInterconnectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("interconnectId" -> interconnectId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        interconnectId: InterconnectId
+    ): DeleteInterconnectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "interconnectId" -> interconnectId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInterconnectRequest]
     }
@@ -993,10 +1311,14 @@ package directconnect {
   }
 
   object DeleteInterconnectResponse {
-    def apply(interconnectState: js.UndefOr[InterconnectState] = js.undefined): DeleteInterconnectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("interconnectState" -> interconnectState.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        interconnectState: js.UndefOr[InterconnectState] = js.undefined
+    ): DeleteInterconnectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "interconnectState" -> interconnectState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInterconnectResponse]
     }
@@ -1008,9 +1330,12 @@ package directconnect {
   }
 
   object DeleteLagRequest {
-    def apply(lagId: LagId): DeleteLagRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("lagId" -> lagId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        lagId: LagId
+    ): DeleteLagRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "lagId" -> lagId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLagRequest]
     }
@@ -1022,9 +1347,12 @@ package directconnect {
   }
 
   object DeleteVirtualInterfaceRequest {
-    def apply(virtualInterfaceId: VirtualInterfaceId): DeleteVirtualInterfaceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualInterfaceId: VirtualInterfaceId
+    ): DeleteVirtualInterfaceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVirtualInterfaceRequest]
     }
@@ -1039,9 +1367,11 @@ package directconnect {
     def apply(
         virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined
     ): DeleteVirtualInterfaceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterfaceState" -> virtualInterfaceState.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterfaceState" -> virtualInterfaceState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVirtualInterfaceResponse]
     }
@@ -1055,9 +1385,11 @@ package directconnect {
   }
 
   object DescribeConnectionLoaRequest {
-    def apply(connectionId: ConnectionId,
-              loaContentType: js.UndefOr[LoaContentType] = js.undefined,
-              providerName: js.UndefOr[ProviderName] = js.undefined): DescribeConnectionLoaRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        loaContentType: js.UndefOr[LoaContentType] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined
+    ): DescribeConnectionLoaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "loaContentType" -> loaContentType.map { x =>
@@ -1078,10 +1410,14 @@ package directconnect {
   }
 
   object DescribeConnectionLoaResponse {
-    def apply(loa: js.UndefOr[Loa] = js.undefined): DescribeConnectionLoaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("loa" -> loa.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        loa: js.UndefOr[Loa] = js.undefined
+    ): DescribeConnectionLoaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "loa" -> loa.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConnectionLoaResponse]
     }
@@ -1093,9 +1429,12 @@ package directconnect {
   }
 
   object DescribeConnectionsOnInterconnectRequest {
-    def apply(interconnectId: InterconnectId): DescribeConnectionsOnInterconnectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("interconnectId" -> interconnectId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        interconnectId: InterconnectId
+    ): DescribeConnectionsOnInterconnectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "interconnectId" -> interconnectId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConnectionsOnInterconnectRequest]
     }
@@ -1107,17 +1446,90 @@ package directconnect {
   }
 
   object DescribeConnectionsRequest {
-    def apply(connectionId: js.UndefOr[ConnectionId] = js.undefined): DescribeConnectionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectionId" -> connectionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectionId: js.UndefOr[ConnectionId] = js.undefined
+    ): DescribeConnectionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectionId" -> connectionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConnectionsRequest]
     }
   }
 
   @js.native
+  trait DescribeDirectConnectGatewayAssociationProposalsRequest extends js.Object {
+    var associatedGatewayId: js.UndefOr[AssociatedGatewayId]
+    var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
+    var maxResults: js.UndefOr[MaxResultSetSize]
+    var nextToken: js.UndefOr[PaginationToken]
+    var proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId]
+  }
+
+  object DescribeDirectConnectGatewayAssociationProposalsRequest {
+    def apply(
+        associatedGatewayId: js.UndefOr[AssociatedGatewayId] = js.undefined,
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId] = js.undefined
+    ): DescribeDirectConnectGatewayAssociationProposalsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "associatedGatewayId" -> associatedGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "directConnectGatewayId" -> directConnectGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "proposalId" -> proposalId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DescribeDirectConnectGatewayAssociationProposalsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDirectConnectGatewayAssociationProposalsResult extends js.Object {
+    var directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeDirectConnectGatewayAssociationProposalsResult {
+    def apply(
+        directConnectGatewayAssociationProposals: js.UndefOr[DirectConnectGatewayAssociationProposalList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeDirectConnectGatewayAssociationProposalsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayAssociationProposals" -> directConnectGatewayAssociationProposals.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DescribeDirectConnectGatewayAssociationProposalsResult]
+    }
+  }
+
+  @js.native
   trait DescribeDirectConnectGatewayAssociationsRequest extends js.Object {
+    var associatedGatewayId: js.UndefOr[AssociatedGatewayId]
+    var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
     var maxResults: js.UndefOr[MaxResultSetSize]
     var nextToken: js.UndefOr[PaginationToken]
@@ -1126,12 +1538,20 @@ package directconnect {
 
   object DescribeDirectConnectGatewayAssociationsRequest {
     def apply(
+        associatedGatewayId: js.UndefOr[AssociatedGatewayId] = js.undefined,
+        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
         directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
         maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
     ): DescribeDirectConnectGatewayAssociationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "associatedGatewayId" -> associatedGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "associationId" -> associationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "directConnectGatewayId" -> directConnectGatewayId.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -1159,8 +1579,10 @@ package directconnect {
   }
 
   object DescribeDirectConnectGatewayAssociationsResult {
-    def apply(directConnectGatewayAssociations: js.UndefOr[DirectConnectGatewayAssociationList] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeDirectConnectGatewayAssociationsResult = {
+    def apply(
+        directConnectGatewayAssociations: js.UndefOr[DirectConnectGatewayAssociationList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeDirectConnectGatewayAssociationsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "directConnectGatewayAssociations" -> directConnectGatewayAssociations.map { x =>
           x.asInstanceOf[js.Any]
@@ -1219,8 +1641,10 @@ package directconnect {
   }
 
   object DescribeDirectConnectGatewayAttachmentsResult {
-    def apply(directConnectGatewayAttachments: js.UndefOr[DirectConnectGatewayAttachmentList] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeDirectConnectGatewayAttachmentsResult = {
+    def apply(
+        directConnectGatewayAttachments: js.UndefOr[DirectConnectGatewayAttachmentList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeDirectConnectGatewayAttachmentsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "directConnectGatewayAttachments" -> directConnectGatewayAttachments.map { x =>
           x.asInstanceOf[js.Any]
@@ -1244,9 +1668,11 @@ package directconnect {
   }
 
   object DescribeDirectConnectGatewaysRequest {
-    def apply(directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-              maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeDirectConnectGatewaysRequest = {
+    def apply(
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        maxResults: js.UndefOr[MaxResultSetSize] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeDirectConnectGatewaysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "directConnectGatewayId" -> directConnectGatewayId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1270,13 +1696,18 @@ package directconnect {
   }
 
   object DescribeDirectConnectGatewaysResult {
-    def apply(directConnectGateways: js.UndefOr[DirectConnectGatewayList] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): DescribeDirectConnectGatewaysResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("directConnectGateways" -> directConnectGateways.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        directConnectGateways: js.UndefOr[DirectConnectGatewayList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeDirectConnectGatewaysResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGateways" -> directConnectGateways.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDirectConnectGatewaysResult]
     }
@@ -1288,9 +1719,12 @@ package directconnect {
   }
 
   object DescribeHostedConnectionsRequest {
-    def apply(connectionId: ConnectionId): DescribeHostedConnectionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectionId" -> connectionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectionId: ConnectionId
+    ): DescribeHostedConnectionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectionId" -> connectionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHostedConnectionsRequest]
     }
@@ -1304,9 +1738,11 @@ package directconnect {
   }
 
   object DescribeInterconnectLoaRequest {
-    def apply(interconnectId: InterconnectId,
-              loaContentType: js.UndefOr[LoaContentType] = js.undefined,
-              providerName: js.UndefOr[ProviderName] = js.undefined): DescribeInterconnectLoaRequest = {
+    def apply(
+        interconnectId: InterconnectId,
+        loaContentType: js.UndefOr[LoaContentType] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined
+    ): DescribeInterconnectLoaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "interconnectId" -> interconnectId.asInstanceOf[js.Any],
         "loaContentType" -> loaContentType.map { x =>
@@ -1327,10 +1763,14 @@ package directconnect {
   }
 
   object DescribeInterconnectLoaResponse {
-    def apply(loa: js.UndefOr[Loa] = js.undefined): DescribeInterconnectLoaResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("loa" -> loa.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        loa: js.UndefOr[Loa] = js.undefined
+    ): DescribeInterconnectLoaResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "loa" -> loa.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInterconnectLoaResponse]
     }
@@ -1342,10 +1782,14 @@ package directconnect {
   }
 
   object DescribeInterconnectsRequest {
-    def apply(interconnectId: js.UndefOr[InterconnectId] = js.undefined): DescribeInterconnectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("interconnectId" -> interconnectId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        interconnectId: js.UndefOr[InterconnectId] = js.undefined
+    ): DescribeInterconnectsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "interconnectId" -> interconnectId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInterconnectsRequest]
     }
@@ -1357,10 +1801,14 @@ package directconnect {
   }
 
   object DescribeLagsRequest {
-    def apply(lagId: js.UndefOr[LagId] = js.undefined): DescribeLagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("lagId" -> lagId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        lagId: js.UndefOr[LagId] = js.undefined
+    ): DescribeLagsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "lagId" -> lagId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLagsRequest]
     }
@@ -1374,9 +1822,11 @@ package directconnect {
   }
 
   object DescribeLoaRequest {
-    def apply(connectionId: ConnectionId,
-              loaContentType: js.UndefOr[LoaContentType] = js.undefined,
-              providerName: js.UndefOr[ProviderName] = js.undefined): DescribeLoaRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        loaContentType: js.UndefOr[LoaContentType] = js.undefined,
+        providerName: js.UndefOr[ProviderName] = js.undefined
+    ): DescribeLoaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "loaContentType" -> loaContentType.map { x =>
@@ -1397,9 +1847,12 @@ package directconnect {
   }
 
   object DescribeTagsRequest {
-    def apply(resourceArns: ResourceArnList): DescribeTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("resourceArns" -> resourceArns.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        resourceArns: ResourceArnList
+    ): DescribeTagsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArns" -> resourceArns.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsRequest]
     }
@@ -1411,10 +1864,14 @@ package directconnect {
   }
 
   object DescribeTagsResponse {
-    def apply(resourceTags: js.UndefOr[ResourceTagList] = js.undefined): DescribeTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("resourceTags" -> resourceTags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        resourceTags: js.UndefOr[ResourceTagList] = js.undefined
+    ): DescribeTagsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceTags" -> resourceTags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagsResponse]
     }
@@ -1427,13 +1884,18 @@ package directconnect {
   }
 
   object DescribeVirtualInterfacesRequest {
-    def apply(connectionId: js.UndefOr[ConnectionId] = js.undefined,
-              virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined): DescribeVirtualInterfacesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectionId" -> connectionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "virtualInterfaceId" -> virtualInterfaceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectionId: js.UndefOr[ConnectionId] = js.undefined,
+        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined
+    ): DescribeVirtualInterfacesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectionId" -> connectionId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "virtualInterfaceId" -> virtualInterfaceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVirtualInterfacesRequest]
     }
@@ -1453,12 +1915,14 @@ package directconnect {
   }
 
   object DirectConnectGateway {
-    def apply(amazonSideAsn: js.UndefOr[LongAsn] = js.undefined,
-              directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-              directConnectGatewayName: js.UndefOr[DirectConnectGatewayName] = js.undefined,
-              directConnectGatewayState: js.UndefOr[DirectConnectGatewayState] = js.undefined,
-              ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-              stateChangeError: js.UndefOr[StateChangeError] = js.undefined): DirectConnectGateway = {
+    def apply(
+        amazonSideAsn: js.UndefOr[LongAsn] = js.undefined,
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        directConnectGatewayName: js.UndefOr[DirectConnectGatewayName] = js.undefined,
+        directConnectGatewayState: js.UndefOr[DirectConnectGatewayState] = js.undefined,
+        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        stateChangeError: js.UndefOr[StateChangeError] = js.undefined
+    ): DirectConnectGateway = {
       val _fields = IndexedSeq[(String, js.Any)](
         "amazonSideAsn" -> amazonSideAsn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1489,8 +1953,12 @@ package directconnect {
     */
   @js.native
   trait DirectConnectGatewayAssociation extends js.Object {
+    var allowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+    var associatedGateway: js.UndefOr[AssociatedGateway]
+    var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
     var associationState: js.UndefOr[DirectConnectGatewayAssociationState]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
+    var directConnectGatewayOwnerAccount: js.UndefOr[OwnerAccount]
     var stateChangeError: js.UndefOr[StateChangeError]
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
     var virtualGatewayOwnerAccount: js.UndefOr[OwnerAccount]
@@ -1499,18 +1967,34 @@ package directconnect {
 
   object DirectConnectGatewayAssociation {
     def apply(
+        allowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
+        associatedGateway: js.UndefOr[AssociatedGateway] = js.undefined,
+        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
         associationState: js.UndefOr[DirectConnectGatewayAssociationState] = js.undefined,
         directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        directConnectGatewayOwnerAccount: js.UndefOr[OwnerAccount] = js.undefined,
         stateChangeError: js.UndefOr[StateChangeError] = js.undefined,
         virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
         virtualGatewayOwnerAccount: js.UndefOr[OwnerAccount] = js.undefined,
         virtualGatewayRegion: js.UndefOr[VirtualGatewayRegion] = js.undefined
     ): DirectConnectGatewayAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "allowedPrefixesToDirectConnectGateway" -> allowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "associatedGateway" -> associatedGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "associationId" -> associationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "associationState" -> associationState.map { x =>
           x.asInstanceOf[js.Any]
         },
         "directConnectGatewayId" -> directConnectGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "directConnectGatewayOwnerAccount" -> directConnectGatewayOwnerAccount.map { x =>
           x.asInstanceOf[js.Any]
         },
         "stateChangeError" -> stateChangeError.map { x =>
@@ -1531,13 +2015,74 @@ package directconnect {
     }
   }
 
+  /**
+    * Information about the proposal request to attach a virtual private gateway to a DDirect Connect gateway.
+    */
+  @js.native
+  trait DirectConnectGatewayAssociationProposal extends js.Object {
+    var associatedGateway: js.UndefOr[AssociatedGateway]
+    var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
+    var directConnectGatewayOwnerAccount: js.UndefOr[OwnerAccount]
+    var existingAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+    var proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId]
+    var proposalState: js.UndefOr[DirectConnectGatewayAssociationProposalState]
+    var requestedAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+  }
+
+  object DirectConnectGatewayAssociationProposal {
+    def apply(
+        associatedGateway: js.UndefOr[AssociatedGateway] = js.undefined,
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        directConnectGatewayOwnerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        existingAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
+        proposalId: js.UndefOr[DirectConnectGatewayAssociationProposalId] = js.undefined,
+        proposalState: js.UndefOr[DirectConnectGatewayAssociationProposalState] = js.undefined,
+        requestedAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
+    ): DirectConnectGatewayAssociationProposal = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "associatedGateway" -> associatedGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "directConnectGatewayId" -> directConnectGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "directConnectGatewayOwnerAccount" -> directConnectGatewayOwnerAccount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "existingAllowedPrefixesToDirectConnectGateway" -> existingAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "proposalId" -> proposalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "proposalState" -> proposalState.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "requestedAllowedPrefixesToDirectConnectGateway" -> requestedAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DirectConnectGatewayAssociationProposal]
+    }
+  }
+
+  object DirectConnectGatewayAssociationProposalStateEnum {
+    val requested = "requested"
+    val accepted  = "accepted"
+    val deleted   = "deleted"
+
+    val values = IndexedSeq(requested, accepted, deleted)
+  }
+
   object DirectConnectGatewayAssociationStateEnum {
     val associating    = "associating"
     val associated     = "associated"
     val disassociating = "disassociating"
     val disassociated  = "disassociated"
+    val updating       = "updating"
 
-    val values = IndexedSeq(associating, associated, disassociating, disassociated)
+    val values = IndexedSeq(associating, associated, disassociating, disassociated, updating)
   }
 
   /**
@@ -1612,7 +2157,10 @@ package directconnect {
   }
 
   object DisassociateConnectionFromLagRequest {
-    def apply(connectionId: ConnectionId, lagId: LagId): DisassociateConnectionFromLagRequest = {
+    def apply(
+        connectionId: ConnectionId,
+        lagId: LagId
+    ): DisassociateConnectionFromLagRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "connectionId" -> connectionId.asInstanceOf[js.Any],
         "lagId"        -> lagId.asInstanceOf[js.Any]
@@ -1620,6 +2168,12 @@ package directconnect {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateConnectionFromLagRequest]
     }
+  }
+
+  object GatewayTypeEnum {
+    val virtualPrivateGateway = "virtualPrivateGateway"
+
+    val values = IndexedSeq(virtualPrivateGateway)
   }
 
   object HasLogicalRedundancyEnum {
@@ -1650,18 +2204,20 @@ package directconnect {
   }
 
   object Interconnect {
-    def apply(awsDevice: js.UndefOr[AwsDevice] = js.undefined,
-              awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-              bandwidth: js.UndefOr[Bandwidth] = js.undefined,
-              hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
-              interconnectId: js.UndefOr[InterconnectId] = js.undefined,
-              interconnectName: js.UndefOr[InterconnectName] = js.undefined,
-              interconnectState: js.UndefOr[InterconnectState] = js.undefined,
-              jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-              lagId: js.UndefOr[LagId] = js.undefined,
-              loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
-              location: js.UndefOr[LocationCode] = js.undefined,
-              region: js.UndefOr[Region] = js.undefined): Interconnect = {
+    def apply(
+        awsDevice: js.UndefOr[AwsDevice] = js.undefined,
+        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        bandwidth: js.UndefOr[Bandwidth] = js.undefined,
+        hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
+        interconnectId: js.UndefOr[InterconnectId] = js.undefined,
+        interconnectName: js.UndefOr[InterconnectName] = js.undefined,
+        interconnectState: js.UndefOr[InterconnectState] = js.undefined,
+        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
+        lagId: js.UndefOr[LagId] = js.undefined,
+        loaIssueTime: js.UndefOr[LoaIssueTime] = js.undefined,
+        location: js.UndefOr[LocationCode] = js.undefined,
+        region: js.UndefOr[Region] = js.undefined
+    ): Interconnect = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsDevice" -> awsDevice.map { x =>
           x.asInstanceOf[js.Any]
@@ -1712,8 +2268,9 @@ package directconnect {
     val down      = "down"
     val deleting  = "deleting"
     val deleted   = "deleted"
+    val unknown   = "unknown"
 
-    val values = IndexedSeq(requested, pending, available, down, deleting, deleted)
+    val values = IndexedSeq(requested, pending, available, down, deleting, deleted, unknown)
   }
 
   @js.native
@@ -1722,10 +2279,14 @@ package directconnect {
   }
 
   object Interconnects {
-    def apply(interconnects: js.UndefOr[InterconnectList] = js.undefined): Interconnects = {
-      val _fields = IndexedSeq[(String, js.Any)]("interconnects" -> interconnects.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        interconnects: js.UndefOr[InterconnectList] = js.undefined
+    ): Interconnects = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "interconnects" -> interconnects.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Interconnects]
     }
@@ -1754,21 +2315,23 @@ package directconnect {
   }
 
   object Lag {
-    def apply(allowsHostedConnections: js.UndefOr[BooleanFlag] = js.undefined,
-              awsDevice: js.UndefOr[AwsDevice] = js.undefined,
-              awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-              connections: js.UndefOr[ConnectionList] = js.undefined,
-              connectionsBandwidth: js.UndefOr[Bandwidth] = js.undefined,
-              hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
-              jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-              lagId: js.UndefOr[LagId] = js.undefined,
-              lagName: js.UndefOr[LagName] = js.undefined,
-              lagState: js.UndefOr[LagState] = js.undefined,
-              location: js.UndefOr[LocationCode] = js.undefined,
-              minimumLinks: js.UndefOr[Count] = js.undefined,
-              numberOfConnections: js.UndefOr[Count] = js.undefined,
-              ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-              region: js.UndefOr[Region] = js.undefined): Lag = {
+    def apply(
+        allowsHostedConnections: js.UndefOr[BooleanFlag] = js.undefined,
+        awsDevice: js.UndefOr[AwsDevice] = js.undefined,
+        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        connections: js.UndefOr[ConnectionList] = js.undefined,
+        connectionsBandwidth: js.UndefOr[Bandwidth] = js.undefined,
+        hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
+        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
+        lagId: js.UndefOr[LagId] = js.undefined,
+        lagName: js.UndefOr[LagName] = js.undefined,
+        lagState: js.UndefOr[LagState] = js.undefined,
+        location: js.UndefOr[LocationCode] = js.undefined,
+        minimumLinks: js.UndefOr[Count] = js.undefined,
+        numberOfConnections: js.UndefOr[Count] = js.undefined,
+        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        region: js.UndefOr[Region] = js.undefined
+    ): Lag = {
       val _fields = IndexedSeq[(String, js.Any)](
         "allowsHostedConnections" -> allowsHostedConnections.map { x =>
           x.asInstanceOf[js.Any]
@@ -1828,8 +2391,9 @@ package directconnect {
     val down      = "down"
     val deleting  = "deleting"
     val deleted   = "deleted"
+    val unknown   = "unknown"
 
-    val values = IndexedSeq(requested, pending, available, down, deleting, deleted)
+    val values = IndexedSeq(requested, pending, available, down, deleting, deleted, unknown)
   }
 
   @js.native
@@ -1838,10 +2402,14 @@ package directconnect {
   }
 
   object Lags {
-    def apply(lags: js.UndefOr[LagList] = js.undefined): Lags = {
-      val _fields = IndexedSeq[(String, js.Any)]("lags" -> lags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        lags: js.UndefOr[LagList] = js.undefined
+    ): Lags = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "lags" -> lags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Lags]
     }
@@ -1857,13 +2425,18 @@ package directconnect {
   }
 
   object Loa {
-    def apply(loaContent: js.UndefOr[LoaContent] = js.undefined,
-              loaContentType: js.UndefOr[LoaContentType] = js.undefined): Loa = {
-      val _fields = IndexedSeq[(String, js.Any)]("loaContent" -> loaContent.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "loaContentType" -> loaContentType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        loaContent: js.UndefOr[LoaContent] = js.undefined,
+        loaContentType: js.UndefOr[LoaContentType] = js.undefined
+    ): Loa = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "loaContent" -> loaContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "loaContentType" -> loaContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Loa]
     }
@@ -1880,16 +2453,23 @@ package directconnect {
     */
   @js.native
   trait Location extends js.Object {
+    var availablePortSpeeds: js.UndefOr[AvailablePortSpeeds]
     var locationCode: js.UndefOr[LocationCode]
     var locationName: js.UndefOr[LocationName]
     var region: js.UndefOr[Region]
   }
 
   object Location {
-    def apply(locationCode: js.UndefOr[LocationCode] = js.undefined,
-              locationName: js.UndefOr[LocationName] = js.undefined,
-              region: js.UndefOr[Region] = js.undefined): Location = {
+    def apply(
+        availablePortSpeeds: js.UndefOr[AvailablePortSpeeds] = js.undefined,
+        locationCode: js.UndefOr[LocationCode] = js.undefined,
+        locationName: js.UndefOr[LocationName] = js.undefined,
+        region: js.UndefOr[Region] = js.undefined
+    ): Location = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "availablePortSpeeds" -> availablePortSpeeds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "locationCode" -> locationCode.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -1911,10 +2491,14 @@ package directconnect {
   }
 
   object Locations {
-    def apply(locations: js.UndefOr[LocationList] = js.undefined): Locations = {
-      val _fields = IndexedSeq[(String, js.Any)]("locations" -> locations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        locations: js.UndefOr[LocationList] = js.undefined
+    ): Locations = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "locations" -> locations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Locations]
     }
@@ -1933,11 +2517,13 @@ package directconnect {
   }
 
   object NewBGPPeer {
-    def apply(addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-              amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-              asn: js.UndefOr[ASN] = js.undefined,
-              authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-              customerAddress: js.UndefOr[CustomerAddress] = js.undefined): NewBGPPeer = {
+    def apply(
+        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
+        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
+        asn: js.UndefOr[ASN] = js.undefined,
+        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
+        customerAddress: js.UndefOr[CustomerAddress] = js.undefined
+    ): NewBGPPeer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "addressFamily" -> addressFamily.map { x =>
           x.asInstanceOf[js.Any]
@@ -1978,16 +2564,18 @@ package directconnect {
   }
 
   object NewPrivateVirtualInterface {
-    def apply(asn: ASN,
-              virtualInterfaceName: VirtualInterfaceName,
-              vlan: VLAN,
-              addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-              amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-              authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-              customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-              directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-              mtu: js.UndefOr[MTU] = js.undefined,
-              virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined): NewPrivateVirtualInterface = {
+    def apply(
+        asn: ASN,
+        virtualInterfaceName: VirtualInterfaceName,
+        vlan: VLAN,
+        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
+        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
+        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
+        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        mtu: js.UndefOr[MTU] = js.undefined,
+        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
+    ): NewPrivateVirtualInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
         "asn"                  -> asn.asInstanceOf[js.Any],
         "virtualInterfaceName" -> virtualInterfaceName.asInstanceOf[js.Any],
@@ -2035,14 +2623,16 @@ package directconnect {
   }
 
   object NewPrivateVirtualInterfaceAllocation {
-    def apply(asn: ASN,
-              virtualInterfaceName: VirtualInterfaceName,
-              vlan: VLAN,
-              addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-              amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-              authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-              customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-              mtu: js.UndefOr[MTU] = js.undefined): NewPrivateVirtualInterfaceAllocation = {
+    def apply(
+        asn: ASN,
+        virtualInterfaceName: VirtualInterfaceName,
+        vlan: VLAN,
+        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
+        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
+        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
+        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
+        mtu: js.UndefOr[MTU] = js.undefined
+    ): NewPrivateVirtualInterfaceAllocation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "asn"                  -> asn.asInstanceOf[js.Any],
         "virtualInterfaceName" -> virtualInterfaceName.asInstanceOf[js.Any],
@@ -2084,14 +2674,16 @@ package directconnect {
   }
 
   object NewPublicVirtualInterface {
-    def apply(asn: ASN,
-              virtualInterfaceName: VirtualInterfaceName,
-              vlan: VLAN,
-              addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-              amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-              authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-              customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-              routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined): NewPublicVirtualInterface = {
+    def apply(
+        asn: ASN,
+        virtualInterfaceName: VirtualInterfaceName,
+        vlan: VLAN,
+        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
+        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
+        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
+        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
+        routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined
+    ): NewPublicVirtualInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
         "asn"                  -> asn.asInstanceOf[js.Any],
         "virtualInterfaceName" -> virtualInterfaceName.asInstanceOf[js.Any],
@@ -2178,13 +2770,18 @@ package directconnect {
   }
 
   object ResourceTag {
-    def apply(resourceArn: js.UndefOr[ResourceArn] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined): ResourceTag = {
-      val _fields = IndexedSeq[(String, js.Any)]("resourceArn" -> resourceArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "tags" -> tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        resourceArn: js.UndefOr[ResourceArn] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): ResourceTag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTag]
     }
@@ -2199,10 +2796,14 @@ package directconnect {
   }
 
   object RouteFilterPrefix {
-    def apply(cidr: js.UndefOr[CIDR] = js.undefined): RouteFilterPrefix = {
-      val _fields = IndexedSeq[(String, js.Any)]("cidr" -> cidr.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        cidr: js.UndefOr[CIDR] = js.undefined
+    ): RouteFilterPrefix = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cidr" -> cidr.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RouteFilterPrefix]
     }
@@ -2218,10 +2819,16 @@ package directconnect {
   }
 
   object Tag {
-    def apply(key: TagKey, value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("key" -> key.asInstanceOf[js.Any], "value" -> value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        key: TagKey,
+        value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -2234,7 +2841,10 @@ package directconnect {
   }
 
   object TagResourceRequest {
-    def apply(resourceArn: ResourceArn, tags: TagList): TagResourceRequest = {
+    def apply(
+        resourceArn: ResourceArn,
+        tags: TagList
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
@@ -2248,8 +2858,10 @@ package directconnect {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -2262,7 +2874,10 @@ package directconnect {
   }
 
   object UntagResourceRequest {
-    def apply(resourceArn: ResourceArn, tagKeys: TagKeyList): UntagResourceRequest = {
+    def apply(
+        resourceArn: ResourceArn,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
@@ -2276,10 +2891,64 @@ package directconnect {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateDirectConnectGatewayAssociationRequest extends js.Object {
+    var addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+    var associationId: js.UndefOr[DirectConnectGatewayAssociationId]
+    var removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList]
+  }
+
+  object UpdateDirectConnectGatewayAssociationRequest {
+    def apply(
+        addAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined,
+        associationId: js.UndefOr[DirectConnectGatewayAssociationId] = js.undefined,
+        removeAllowedPrefixesToDirectConnectGateway: js.UndefOr[RouteFilterPrefixList] = js.undefined
+    ): UpdateDirectConnectGatewayAssociationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "addAllowedPrefixesToDirectConnectGateway" -> addAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "associationId" -> associationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "removeAllowedPrefixesToDirectConnectGateway" -> removeAllowedPrefixesToDirectConnectGateway.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[UpdateDirectConnectGatewayAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDirectConnectGatewayAssociationResult extends js.Object {
+    var directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation]
+  }
+
+  object UpdateDirectConnectGatewayAssociationResult {
+    def apply(
+        directConnectGatewayAssociation: js.UndefOr[DirectConnectGatewayAssociation] = js.undefined
+    ): UpdateDirectConnectGatewayAssociationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "directConnectGatewayAssociation" -> directConnectGatewayAssociation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[UpdateDirectConnectGatewayAssociationResult]
     }
   }
 
@@ -2291,14 +2960,20 @@ package directconnect {
   }
 
   object UpdateLagRequest {
-    def apply(lagId: LagId,
-              lagName: js.UndefOr[LagName] = js.undefined,
-              minimumLinks: js.UndefOr[Count] = js.undefined): UpdateLagRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("lagId" -> lagId.asInstanceOf[js.Any], "lagName" -> lagName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "minimumLinks" -> minimumLinks.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        lagId: LagId,
+        lagName: js.UndefOr[LagName] = js.undefined,
+        minimumLinks: js.UndefOr[Count] = js.undefined
+    ): UpdateLagRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "lagId" -> lagId.asInstanceOf[js.Any],
+        "lagName" -> lagName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "minimumLinks" -> minimumLinks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateLagRequest]
     }
@@ -2311,13 +2986,16 @@ package directconnect {
   }
 
   object UpdateVirtualInterfaceAttributesRequest {
-    def apply(virtualInterfaceId: VirtualInterfaceId,
-              mtu: js.UndefOr[MTU] = js.undefined): UpdateVirtualInterfaceAttributesRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any], "mtu" -> mtu.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualInterfaceId: VirtualInterfaceId,
+        mtu: js.UndefOr[MTU] = js.undefined
+    ): UpdateVirtualInterfaceAttributesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any],
+        "mtu" -> mtu.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVirtualInterfaceAttributesRequest]
     }
@@ -2333,13 +3011,18 @@ package directconnect {
   }
 
   object VirtualGateway {
-    def apply(virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
-              virtualGatewayState: js.UndefOr[VirtualGatewayState] = js.undefined): VirtualGateway = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualGatewayId" -> virtualGatewayId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "virtualGatewayState" -> virtualGatewayState.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
+        virtualGatewayState: js.UndefOr[VirtualGatewayState] = js.undefined
+    ): VirtualGateway = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualGatewayId" -> virtualGatewayId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "virtualGatewayState" -> virtualGatewayState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VirtualGateway]
     }
@@ -2351,10 +3034,14 @@ package directconnect {
   }
 
   object VirtualGateways {
-    def apply(virtualGateways: js.UndefOr[VirtualGatewayList] = js.undefined): VirtualGateways = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualGateways" -> virtualGateways.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualGateways: js.UndefOr[VirtualGatewayList] = js.undefined
+    ): VirtualGateways = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualGateways" -> virtualGateways.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VirtualGateways]
     }
@@ -2391,29 +3078,31 @@ package directconnect {
   }
 
   object VirtualInterface {
-    def apply(addressFamily: js.UndefOr[AddressFamily] = js.undefined,
-              amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
-              amazonSideAsn: js.UndefOr[LongAsn] = js.undefined,
-              asn: js.UndefOr[ASN] = js.undefined,
-              authKey: js.UndefOr[BGPAuthKey] = js.undefined,
-              awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
-              bgpPeers: js.UndefOr[BGPPeerList] = js.undefined,
-              connectionId: js.UndefOr[ConnectionId] = js.undefined,
-              customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
-              customerRouterConfig: js.UndefOr[RouterConfig] = js.undefined,
-              directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
-              jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
-              location: js.UndefOr[LocationCode] = js.undefined,
-              mtu: js.UndefOr[MTU] = js.undefined,
-              ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
-              region: js.UndefOr[Region] = js.undefined,
-              routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined,
-              virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
-              virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined,
-              virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined,
-              virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined,
-              virtualInterfaceType: js.UndefOr[VirtualInterfaceType] = js.undefined,
-              vlan: js.UndefOr[VLAN] = js.undefined): VirtualInterface = {
+    def apply(
+        addressFamily: js.UndefOr[AddressFamily] = js.undefined,
+        amazonAddress: js.UndefOr[AmazonAddress] = js.undefined,
+        amazonSideAsn: js.UndefOr[LongAsn] = js.undefined,
+        asn: js.UndefOr[ASN] = js.undefined,
+        authKey: js.UndefOr[BGPAuthKey] = js.undefined,
+        awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        bgpPeers: js.UndefOr[BGPPeerList] = js.undefined,
+        connectionId: js.UndefOr[ConnectionId] = js.undefined,
+        customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
+        customerRouterConfig: js.UndefOr[RouterConfig] = js.undefined,
+        directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        jumboFrameCapable: js.UndefOr[JumboFrameCapable] = js.undefined,
+        location: js.UndefOr[LocationCode] = js.undefined,
+        mtu: js.UndefOr[MTU] = js.undefined,
+        ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
+        region: js.UndefOr[Region] = js.undefined,
+        routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined,
+        virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
+        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined,
+        virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined,
+        virtualInterfaceState: js.UndefOr[VirtualInterfaceState] = js.undefined,
+        virtualInterfaceType: js.UndefOr[VirtualInterfaceType] = js.undefined,
+        vlan: js.UndefOr[VLAN] = js.undefined
+    ): VirtualInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
         "addressFamily" -> addressFamily.map { x =>
           x.asInstanceOf[js.Any]
@@ -2499,8 +3188,9 @@ package directconnect {
     val deleting   = "deleting"
     val deleted    = "deleted"
     val rejected   = "rejected"
+    val unknown    = "unknown"
 
-    val values = IndexedSeq(confirming, verifying, pending, available, down, deleting, deleted, rejected)
+    val values = IndexedSeq(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
   }
 
   @js.native
@@ -2509,10 +3199,14 @@ package directconnect {
   }
 
   object VirtualInterfaces {
-    def apply(virtualInterfaces: js.UndefOr[VirtualInterfaceList] = js.undefined): VirtualInterfaces = {
-      val _fields = IndexedSeq[(String, js.Any)]("virtualInterfaces" -> virtualInterfaces.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        virtualInterfaces: js.UndefOr[VirtualInterfaceList] = js.undefined
+    ): VirtualInterfaces = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "virtualInterfaces" -> virtualInterfaces.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VirtualInterfaces]
     }

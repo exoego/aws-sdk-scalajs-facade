@@ -101,10 +101,12 @@ package sns {
   }
 
   object AddPermissionInput {
-    def apply(AWSAccountId: DelegatesList,
-              ActionName: ActionsList,
-              Label: label,
-              TopicArn: topicARN): AddPermissionInput = {
+    def apply(
+        AWSAccountId: DelegatesList,
+        ActionName: ActionsList,
+        Label: label,
+        TopicArn: topicARN
+    ): AddPermissionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AWSAccountId" -> AWSAccountId.asInstanceOf[js.Any],
         "ActionName"   -> ActionName.asInstanceOf[js.Any],
@@ -125,9 +127,12 @@ package sns {
   }
 
   object CheckIfPhoneNumberIsOptedOutInput {
-    def apply(phoneNumber: PhoneNumber): CheckIfPhoneNumberIsOptedOutInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("phoneNumber" -> phoneNumber.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        phoneNumber: PhoneNumber
+    ): CheckIfPhoneNumberIsOptedOutInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckIfPhoneNumberIsOptedOutInput]
     }
@@ -142,10 +147,14 @@ package sns {
   }
 
   object CheckIfPhoneNumberIsOptedOutResponse {
-    def apply(isOptedOut: js.UndefOr[boolean] = js.undefined): CheckIfPhoneNumberIsOptedOutResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("isOptedOut" -> isOptedOut.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        isOptedOut: js.UndefOr[boolean] = js.undefined
+    ): CheckIfPhoneNumberIsOptedOutResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "isOptedOut" -> isOptedOut.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckIfPhoneNumberIsOptedOutResponse]
     }
@@ -188,10 +197,14 @@ package sns {
   }
 
   object ConfirmSubscriptionResponse {
-    def apply(SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined): ConfirmSubscriptionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SubscriptionArn" -> SubscriptionArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined
+    ): ConfirmSubscriptionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionArn" -> SubscriptionArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfirmSubscriptionResponse]
     }
@@ -206,10 +219,14 @@ package sns {
   }
 
   object CreateEndpointResponse {
-    def apply(EndpointArn: js.UndefOr[String] = js.undefined): CreateEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("EndpointArn" -> EndpointArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EndpointArn: js.UndefOr[String] = js.undefined
+    ): CreateEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EndpointArn" -> EndpointArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointResponse]
     }
@@ -226,7 +243,11 @@ package sns {
   }
 
   object CreatePlatformApplicationInput {
-    def apply(Attributes: MapStringToString, Name: String, Platform: String): CreatePlatformApplicationInput = {
+    def apply(
+        Attributes: MapStringToString,
+        Name: String,
+        Platform: String
+    ): CreatePlatformApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "Name"       -> Name.asInstanceOf[js.Any],
@@ -246,10 +267,14 @@ package sns {
   }
 
   object CreatePlatformApplicationResponse {
-    def apply(PlatformApplicationArn: js.UndefOr[String] = js.undefined): CreatePlatformApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlatformApplicationArn" -> PlatformApplicationArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlatformApplicationArn: js.UndefOr[String] = js.undefined
+    ): CreatePlatformApplicationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformApplicationArn" -> PlatformApplicationArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformApplicationResponse]
     }
@@ -267,10 +292,12 @@ package sns {
   }
 
   object CreatePlatformEndpointInput {
-    def apply(PlatformApplicationArn: String,
-              Token: String,
-              Attributes: js.UndefOr[MapStringToString] = js.undefined,
-              CustomUserData: js.UndefOr[String] = js.undefined): CreatePlatformEndpointInput = {
+    def apply(
+        PlatformApplicationArn: String,
+        Token: String,
+        Attributes: js.UndefOr[MapStringToString] = js.undefined,
+        CustomUserData: js.UndefOr[String] = js.undefined
+    ): CreatePlatformEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any],
         "Token"                  -> Token.asInstanceOf[js.Any],
@@ -296,11 +323,16 @@ package sns {
   }
 
   object CreateTopicInput {
-    def apply(Name: topicName, Attributes: js.UndefOr[TopicAttributesMap] = js.undefined): CreateTopicInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Attributes" -> Attributes.map {
-        x =>
+    def apply(
+        Name: topicName,
+        Attributes: js.UndefOr[TopicAttributesMap] = js.undefined
+    ): CreateTopicInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTopicInput]
     }
@@ -315,10 +347,14 @@ package sns {
   }
 
   object CreateTopicResponse {
-    def apply(TopicArn: js.UndefOr[topicARN] = js.undefined): CreateTopicResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("TopicArn" -> TopicArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TopicArn: js.UndefOr[topicARN] = js.undefined
+    ): CreateTopicResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TopicArn" -> TopicArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTopicResponse]
     }
@@ -333,9 +369,12 @@ package sns {
   }
 
   object DeleteEndpointInput {
-    def apply(EndpointArn: String): DeleteEndpointInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("EndpointArn" -> EndpointArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EndpointArn: String
+    ): DeleteEndpointInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointInput]
     }
@@ -350,10 +389,12 @@ package sns {
   }
 
   object DeletePlatformApplicationInput {
-    def apply(PlatformApplicationArn: String): DeletePlatformApplicationInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlatformApplicationArn: String
+    ): DeletePlatformApplicationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformApplicationInput]
     }
@@ -365,9 +406,12 @@ package sns {
   }
 
   object DeleteTopicInput {
-    def apply(TopicArn: topicARN): DeleteTopicInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TopicArn" -> TopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TopicArn: topicARN
+    ): DeleteTopicInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTopicInput]
     }
@@ -383,13 +427,18 @@ package sns {
   }
 
   object Endpoint {
-    def apply(Attributes: js.UndefOr[MapStringToString] = js.undefined,
-              EndpointArn: js.UndefOr[String] = js.undefined): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EndpointArn" -> EndpointArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[MapStringToString] = js.undefined,
+        EndpointArn: js.UndefOr[String] = js.undefined
+    ): Endpoint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndpointArn" -> EndpointArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
     }
@@ -404,9 +453,12 @@ package sns {
   }
 
   object GetEndpointAttributesInput {
-    def apply(EndpointArn: String): GetEndpointAttributesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("EndpointArn" -> EndpointArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EndpointArn: String
+    ): GetEndpointAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEndpointAttributesInput]
     }
@@ -421,10 +473,14 @@ package sns {
   }
 
   object GetEndpointAttributesResponse {
-    def apply(Attributes: js.UndefOr[MapStringToString] = js.undefined): GetEndpointAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[MapStringToString] = js.undefined
+    ): GetEndpointAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEndpointAttributesResponse]
     }
@@ -439,10 +495,12 @@ package sns {
   }
 
   object GetPlatformApplicationAttributesInput {
-    def apply(PlatformApplicationArn: String): GetPlatformApplicationAttributesInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlatformApplicationArn: String
+    ): GetPlatformApplicationAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlatformApplicationAttributesInput]
     }
@@ -457,10 +515,14 @@ package sns {
   }
 
   object GetPlatformApplicationAttributesResponse {
-    def apply(Attributes: js.UndefOr[MapStringToString] = js.undefined): GetPlatformApplicationAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[MapStringToString] = js.undefined
+    ): GetPlatformApplicationAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPlatformApplicationAttributesResponse]
     }
@@ -475,10 +537,14 @@ package sns {
   }
 
   object GetSMSAttributesInput {
-    def apply(attributes: js.UndefOr[ListString] = js.undefined): GetSMSAttributesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("attributes" -> attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attributes: js.UndefOr[ListString] = js.undefined
+    ): GetSMSAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attributes" -> attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSMSAttributesInput]
     }
@@ -493,10 +559,14 @@ package sns {
   }
 
   object GetSMSAttributesResponse {
-    def apply(attributes: js.UndefOr[MapStringToString] = js.undefined): GetSMSAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("attributes" -> attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attributes: js.UndefOr[MapStringToString] = js.undefined
+    ): GetSMSAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attributes" -> attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSMSAttributesResponse]
     }
@@ -511,9 +581,12 @@ package sns {
   }
 
   object GetSubscriptionAttributesInput {
-    def apply(SubscriptionArn: subscriptionARN): GetSubscriptionAttributesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SubscriptionArn: subscriptionARN
+    ): GetSubscriptionAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionAttributesInput]
     }
@@ -528,10 +601,14 @@ package sns {
   }
 
   object GetSubscriptionAttributesResponse {
-    def apply(Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined): GetSubscriptionAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined
+    ): GetSubscriptionAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionAttributesResponse]
     }
@@ -546,9 +623,12 @@ package sns {
   }
 
   object GetTopicAttributesInput {
-    def apply(TopicArn: topicARN): GetTopicAttributesInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TopicArn" -> TopicArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TopicArn: topicARN
+    ): GetTopicAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTopicAttributesInput]
     }
@@ -563,10 +643,14 @@ package sns {
   }
 
   object GetTopicAttributesResponse {
-    def apply(Attributes: js.UndefOr[TopicAttributesMap] = js.undefined): GetTopicAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[TopicAttributesMap] = js.undefined
+    ): GetTopicAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTopicAttributesResponse]
     }
@@ -582,8 +666,10 @@ package sns {
   }
 
   object ListEndpointsByPlatformApplicationInput {
-    def apply(PlatformApplicationArn: String,
-              NextToken: js.UndefOr[String] = js.undefined): ListEndpointsByPlatformApplicationInput = {
+    def apply(
+        PlatformApplicationArn: String,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEndpointsByPlatformApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any],
         "NextToken" -> NextToken.map { x =>
@@ -605,13 +691,18 @@ package sns {
   }
 
   object ListEndpointsByPlatformApplicationResponse {
-    def apply(Endpoints: js.UndefOr[ListOfEndpoints] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListEndpointsByPlatformApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Endpoints" -> Endpoints.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Endpoints: js.UndefOr[ListOfEndpoints] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEndpointsByPlatformApplicationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Endpoints" -> Endpoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -628,10 +719,14 @@ package sns {
   }
 
   object ListPhoneNumbersOptedOutInput {
-    def apply(nextToken: js.UndefOr[string] = js.undefined): ListPhoneNumbersOptedOutInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[string] = js.undefined
+    ): ListPhoneNumbersOptedOutInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPhoneNumbersOptedOutInput]
     }
@@ -647,13 +742,18 @@ package sns {
   }
 
   object ListPhoneNumbersOptedOutResponse {
-    def apply(nextToken: js.UndefOr[string] = js.undefined,
-              phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined): ListPhoneNumbersOptedOutResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "phoneNumbers" -> phoneNumbers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[string] = js.undefined,
+        phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined
+    ): ListPhoneNumbersOptedOutResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "phoneNumbers" -> phoneNumbers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPhoneNumbersOptedOutResponse]
     }
@@ -668,10 +768,14 @@ package sns {
   }
 
   object ListPlatformApplicationsInput {
-    def apply(NextToken: js.UndefOr[String] = js.undefined): ListPlatformApplicationsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListPlatformApplicationsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformApplicationsInput]
     }
@@ -691,11 +795,14 @@ package sns {
         NextToken: js.UndefOr[String] = js.undefined,
         PlatformApplications: js.UndefOr[ListOfPlatformApplications] = js.undefined
     ): ListPlatformApplicationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlatformApplications" -> PlatformApplications.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlatformApplications" -> PlatformApplications.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformApplicationsResponse]
     }
@@ -711,11 +818,16 @@ package sns {
   }
 
   object ListSubscriptionsByTopicInput {
-    def apply(TopicArn: topicARN, NextToken: js.UndefOr[nextToken] = js.undefined): ListSubscriptionsByTopicInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TopicArn" -> TopicArn.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        TopicArn: topicARN,
+        NextToken: js.UndefOr[nextToken] = js.undefined
+    ): ListSubscriptionsByTopicInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionsByTopicInput]
     }
@@ -731,13 +843,18 @@ package sns {
   }
 
   object ListSubscriptionsByTopicResponse {
-    def apply(NextToken: js.UndefOr[nextToken] = js.undefined,
-              Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined): ListSubscriptionsByTopicResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Subscriptions" -> Subscriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[nextToken] = js.undefined,
+        Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined
+    ): ListSubscriptionsByTopicResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Subscriptions" -> Subscriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionsByTopicResponse]
     }
@@ -752,10 +869,14 @@ package sns {
   }
 
   object ListSubscriptionsInput {
-    def apply(NextToken: js.UndefOr[nextToken] = js.undefined): ListSubscriptionsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[nextToken] = js.undefined
+    ): ListSubscriptionsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionsInput]
     }
@@ -771,13 +892,18 @@ package sns {
   }
 
   object ListSubscriptionsResponse {
-    def apply(NextToken: js.UndefOr[nextToken] = js.undefined,
-              Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined): ListSubscriptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Subscriptions" -> Subscriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[nextToken] = js.undefined,
+        Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined
+    ): ListSubscriptionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Subscriptions" -> Subscriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscriptionsResponse]
     }
@@ -789,10 +915,14 @@ package sns {
   }
 
   object ListTopicsInput {
-    def apply(NextToken: js.UndefOr[nextToken] = js.undefined): ListTopicsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[nextToken] = js.undefined
+    ): ListTopicsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicsInput]
     }
@@ -808,13 +938,18 @@ package sns {
   }
 
   object ListTopicsResponse {
-    def apply(NextToken: js.UndefOr[nextToken] = js.undefined,
-              Topics: js.UndefOr[TopicsList] = js.undefined): ListTopicsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Topics" -> Topics.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[nextToken] = js.undefined,
+        Topics: js.UndefOr[TopicsList] = js.undefined
+    ): ListTopicsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Topics" -> Topics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTopicsResponse]
     }
@@ -832,9 +967,11 @@ package sns {
   }
 
   object MessageAttributeValue {
-    def apply(DataType: String,
-              BinaryValue: js.UndefOr[Binary] = js.undefined,
-              StringValue: js.UndefOr[String] = js.undefined): MessageAttributeValue = {
+    def apply(
+        DataType: String,
+        BinaryValue: js.UndefOr[Binary] = js.undefined,
+        StringValue: js.UndefOr[String] = js.undefined
+    ): MessageAttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataType" -> DataType.asInstanceOf[js.Any],
         "BinaryValue" -> BinaryValue.map { x =>
@@ -858,9 +995,12 @@ package sns {
   }
 
   object OptInPhoneNumberInput {
-    def apply(phoneNumber: PhoneNumber): OptInPhoneNumberInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("phoneNumber" -> phoneNumber.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        phoneNumber: PhoneNumber
+    ): OptInPhoneNumberInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptInPhoneNumberInput]
     }
@@ -873,8 +1013,10 @@ package sns {
   trait OptInPhoneNumberResponse extends js.Object {}
 
   object OptInPhoneNumberResponse {
-    def apply(): OptInPhoneNumberResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): OptInPhoneNumberResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptInPhoneNumberResponse]
     }
@@ -890,13 +1032,18 @@ package sns {
   }
 
   object PlatformApplication {
-    def apply(Attributes: js.UndefOr[MapStringToString] = js.undefined,
-              PlatformApplicationArn: js.UndefOr[String] = js.undefined): PlatformApplication = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlatformApplicationArn" -> PlatformApplicationArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[MapStringToString] = js.undefined,
+        PlatformApplicationArn: js.UndefOr[String] = js.undefined
+    ): PlatformApplication = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlatformApplicationArn" -> PlatformApplicationArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformApplication]
     }
@@ -917,13 +1064,15 @@ package sns {
   }
 
   object PublishInput {
-    def apply(Message: message,
-              MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
-              MessageStructure: js.UndefOr[messageStructure] = js.undefined,
-              PhoneNumber: js.UndefOr[String] = js.undefined,
-              Subject: js.UndefOr[subject] = js.undefined,
-              TargetArn: js.UndefOr[String] = js.undefined,
-              TopicArn: js.UndefOr[topicARN] = js.undefined): PublishInput = {
+    def apply(
+        Message: message,
+        MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
+        MessageStructure: js.UndefOr[messageStructure] = js.undefined,
+        PhoneNumber: js.UndefOr[String] = js.undefined,
+        Subject: js.UndefOr[subject] = js.undefined,
+        TargetArn: js.UndefOr[String] = js.undefined,
+        TopicArn: js.UndefOr[topicARN] = js.undefined
+    ): PublishInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Message" -> Message.asInstanceOf[js.Any],
         "MessageAttributes" -> MessageAttributes.map { x =>
@@ -959,10 +1108,14 @@ package sns {
   }
 
   object PublishResponse {
-    def apply(MessageId: js.UndefOr[messageId] = js.undefined): PublishResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("MessageId" -> MessageId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MessageId: js.UndefOr[messageId] = js.undefined
+    ): PublishResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MessageId" -> MessageId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublishResponse]
     }
@@ -978,10 +1131,14 @@ package sns {
   }
 
   object RemovePermissionInput {
-    def apply(Label: label, TopicArn: topicARN): RemovePermissionInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Label" -> Label.asInstanceOf[js.Any], "TopicArn" -> TopicArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Label: label,
+        TopicArn: topicARN
+    ): RemovePermissionInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Label"    -> Label.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemovePermissionInput]
     }
@@ -997,7 +1154,10 @@ package sns {
   }
 
   object SetEndpointAttributesInput {
-    def apply(Attributes: MapStringToString, EndpointArn: String): SetEndpointAttributesInput = {
+    def apply(
+        Attributes: MapStringToString,
+        EndpointArn: String
+    ): SetEndpointAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes"  -> Attributes.asInstanceOf[js.Any],
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
@@ -1017,7 +1177,10 @@ package sns {
   }
 
   object SetPlatformApplicationAttributesInput {
-    def apply(Attributes: MapStringToString, PlatformApplicationArn: String): SetPlatformApplicationAttributesInput = {
+    def apply(
+        Attributes: MapStringToString,
+        PlatformApplicationArn: String
+    ): SetPlatformApplicationAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes"             -> Attributes.asInstanceOf[js.Any],
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
@@ -1036,9 +1199,12 @@ package sns {
   }
 
   object SetSMSAttributesInput {
-    def apply(attributes: MapStringToString): SetSMSAttributesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("attributes" -> attributes.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attributes: MapStringToString
+    ): SetSMSAttributesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attributes" -> attributes.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSMSAttributesInput]
     }
@@ -1051,8 +1217,10 @@ package sns {
   trait SetSMSAttributesResponse extends js.Object {}
 
   object SetSMSAttributesResponse {
-    def apply(): SetSMSAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): SetSMSAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSMSAttributesResponse]
     }
@@ -1069,9 +1237,11 @@ package sns {
   }
 
   object SetSubscriptionAttributesInput {
-    def apply(AttributeName: attributeName,
-              SubscriptionArn: subscriptionARN,
-              AttributeValue: js.UndefOr[attributeValue] = js.undefined): SetSubscriptionAttributesInput = {
+    def apply(
+        AttributeName: attributeName,
+        SubscriptionArn: subscriptionARN,
+        AttributeValue: js.UndefOr[attributeValue] = js.undefined
+    ): SetSubscriptionAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName"   -> AttributeName.asInstanceOf[js.Any],
         "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any],
@@ -1095,9 +1265,11 @@ package sns {
   }
 
   object SetTopicAttributesInput {
-    def apply(AttributeName: attributeName,
-              TopicArn: topicARN,
-              AttributeValue: js.UndefOr[attributeValue] = js.undefined): SetTopicAttributesInput = {
+    def apply(
+        AttributeName: attributeName,
+        TopicArn: topicARN,
+        AttributeValue: js.UndefOr[attributeValue] = js.undefined
+    ): SetTopicAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "TopicArn"      -> TopicArn.asInstanceOf[js.Any],
@@ -1123,11 +1295,13 @@ package sns {
   }
 
   object SubscribeInput {
-    def apply(Protocol: protocol,
-              TopicArn: topicARN,
-              Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined,
-              Endpoint: js.UndefOr[endpoint] = js.undefined,
-              ReturnSubscriptionArn: js.UndefOr[boolean] = js.undefined): SubscribeInput = {
+    def apply(
+        Protocol: protocol,
+        TopicArn: topicARN,
+        Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined,
+        Endpoint: js.UndefOr[endpoint] = js.undefined,
+        ReturnSubscriptionArn: js.UndefOr[boolean] = js.undefined
+    ): SubscribeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Protocol" -> Protocol.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any],
@@ -1155,10 +1329,14 @@ package sns {
   }
 
   object SubscribeResponse {
-    def apply(SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined): SubscribeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SubscriptionArn" -> SubscriptionArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined
+    ): SubscribeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionArn" -> SubscriptionArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeResponse]
     }
@@ -1177,11 +1355,13 @@ package sns {
   }
 
   object Subscription {
-    def apply(Endpoint: js.UndefOr[endpoint] = js.undefined,
-              Owner: js.UndefOr[account] = js.undefined,
-              Protocol: js.UndefOr[protocol] = js.undefined,
-              SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined,
-              TopicArn: js.UndefOr[topicARN] = js.undefined): Subscription = {
+    def apply(
+        Endpoint: js.UndefOr[endpoint] = js.undefined,
+        Owner: js.UndefOr[account] = js.undefined,
+        Protocol: js.UndefOr[protocol] = js.undefined,
+        SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined,
+        TopicArn: js.UndefOr[topicARN] = js.undefined
+    ): Subscription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Endpoint" -> Endpoint.map { x =>
           x.asInstanceOf[js.Any]
@@ -1213,10 +1393,14 @@ package sns {
   }
 
   object Topic {
-    def apply(TopicArn: js.UndefOr[topicARN] = js.undefined): Topic = {
-      val _fields = IndexedSeq[(String, js.Any)]("TopicArn" -> TopicArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TopicArn: js.UndefOr[topicARN] = js.undefined
+    ): Topic = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TopicArn" -> TopicArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Topic]
     }
@@ -1231,9 +1415,12 @@ package sns {
   }
 
   object UnsubscribeInput {
-    def apply(SubscriptionArn: subscriptionARN): UnsubscribeInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SubscriptionArn: subscriptionARN
+    ): UnsubscribeInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsubscribeInput]
     }

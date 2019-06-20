@@ -86,9 +86,12 @@ package cognitosync {
   }
 
   object BulkPublishRequest {
-    def apply(IdentityPoolId: IdentityPoolId): BulkPublishRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): BulkPublishRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BulkPublishRequest]
     }
@@ -103,10 +106,14 @@ package cognitosync {
   }
 
   object BulkPublishResponse {
-    def apply(IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined): BulkPublishResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined
+    ): BulkPublishResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BulkPublishResponse]
     }
@@ -132,9 +139,11 @@ package cognitosync {
   }
 
   object CognitoStreams {
-    def apply(RoleArn: js.UndefOr[AssumeRoleArn] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined,
-              StreamingStatus: js.UndefOr[StreamingStatus] = js.undefined): CognitoStreams = {
+    def apply(
+        RoleArn: js.UndefOr[AssumeRoleArn] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined,
+        StreamingStatus: js.UndefOr[StreamingStatus] = js.undefined
+    ): CognitoStreams = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RoleArn" -> RoleArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -174,13 +183,15 @@ package cognitosync {
   }
 
   object Dataset {
-    def apply(CreationDate: js.UndefOr[Date] = js.undefined,
-              DataStorage: js.UndefOr[Double] = js.undefined,
-              DatasetName: js.UndefOr[DatasetName] = js.undefined,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              LastModifiedBy: js.UndefOr[String] = js.undefined,
-              LastModifiedDate: js.UndefOr[Date] = js.undefined,
-              NumRecords: js.UndefOr[Double] = js.undefined): Dataset = {
+    def apply(
+        CreationDate: js.UndefOr[Date] = js.undefined,
+        DataStorage: js.UndefOr[Double] = js.undefined,
+        DatasetName: js.UndefOr[DatasetName] = js.undefined,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        LastModifiedBy: js.UndefOr[String] = js.undefined,
+        LastModifiedDate: js.UndefOr[Date] = js.undefined,
+        NumRecords: js.UndefOr[Double] = js.undefined
+    ): Dataset = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -220,9 +231,11 @@ package cognitosync {
   }
 
   object DeleteDatasetRequest {
-    def apply(DatasetName: DatasetName,
-              IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId): DeleteDatasetRequest = {
+    def apply(
+        DatasetName: DatasetName,
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId
+    ): DeleteDatasetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
@@ -242,10 +255,14 @@ package cognitosync {
   }
 
   object DeleteDatasetResponse {
-    def apply(Dataset: js.UndefOr[Dataset] = js.undefined): DeleteDatasetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Dataset" -> Dataset.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Dataset: js.UndefOr[Dataset] = js.undefined
+    ): DeleteDatasetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Dataset" -> Dataset.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDatasetResponse]
     }
@@ -262,9 +279,11 @@ package cognitosync {
   }
 
   object DescribeDatasetRequest {
-    def apply(DatasetName: DatasetName,
-              IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId): DescribeDatasetRequest = {
+    def apply(
+        DatasetName: DatasetName,
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId
+    ): DescribeDatasetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
@@ -284,10 +303,14 @@ package cognitosync {
   }
 
   object DescribeDatasetResponse {
-    def apply(Dataset: js.UndefOr[Dataset] = js.undefined): DescribeDatasetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Dataset" -> Dataset.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Dataset: js.UndefOr[Dataset] = js.undefined
+    ): DescribeDatasetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Dataset" -> Dataset.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDatasetResponse]
     }
@@ -302,9 +325,12 @@ package cognitosync {
   }
 
   object DescribeIdentityPoolUsageRequest {
-    def apply(IdentityPoolId: IdentityPoolId): DescribeIdentityPoolUsageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): DescribeIdentityPoolUsageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityPoolUsageRequest]
     }
@@ -319,10 +345,14 @@ package cognitosync {
   }
 
   object DescribeIdentityPoolUsageResponse {
-    def apply(IdentityPoolUsage: js.UndefOr[IdentityPoolUsage] = js.undefined): DescribeIdentityPoolUsageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolUsage" -> IdentityPoolUsage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolUsage: js.UndefOr[IdentityPoolUsage] = js.undefined
+    ): DescribeIdentityPoolUsageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolUsage" -> IdentityPoolUsage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityPoolUsageResponse]
     }
@@ -338,7 +368,10 @@ package cognitosync {
   }
 
   object DescribeIdentityUsageRequest {
-    def apply(IdentityId: IdentityId, IdentityPoolId: IdentityPoolId): DescribeIdentityUsageRequest = {
+    def apply(
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId
+    ): DescribeIdentityUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
@@ -357,10 +390,14 @@ package cognitosync {
   }
 
   object DescribeIdentityUsageResponse {
-    def apply(IdentityUsage: js.UndefOr[IdentityUsage] = js.undefined): DescribeIdentityUsageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityUsage" -> IdentityUsage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityUsage: js.UndefOr[IdentityUsage] = js.undefined
+    ): DescribeIdentityUsageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityUsage" -> IdentityUsage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityUsageResponse]
     }
@@ -383,9 +420,12 @@ package cognitosync {
   }
 
   object GetBulkPublishDetailsRequest {
-    def apply(IdentityPoolId: IdentityPoolId): GetBulkPublishDetailsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): GetBulkPublishDetailsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBulkPublishDetailsRequest]
     }
@@ -404,11 +444,13 @@ package cognitosync {
   }
 
   object GetBulkPublishDetailsResponse {
-    def apply(BulkPublishCompleteTime: js.UndefOr[Date] = js.undefined,
-              BulkPublishStartTime: js.UndefOr[Date] = js.undefined,
-              BulkPublishStatus: js.UndefOr[BulkPublishStatus] = js.undefined,
-              FailureMessage: js.UndefOr[String] = js.undefined,
-              IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined): GetBulkPublishDetailsResponse = {
+    def apply(
+        BulkPublishCompleteTime: js.UndefOr[Date] = js.undefined,
+        BulkPublishStartTime: js.UndefOr[Date] = js.undefined,
+        BulkPublishStatus: js.UndefOr[BulkPublishStatus] = js.undefined,
+        FailureMessage: js.UndefOr[String] = js.undefined,
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined
+    ): GetBulkPublishDetailsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BulkPublishCompleteTime" -> BulkPublishCompleteTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -440,9 +482,12 @@ package cognitosync {
   }
 
   object GetCognitoEventsRequest {
-    def apply(IdentityPoolId: IdentityPoolId): GetCognitoEventsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): GetCognitoEventsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCognitoEventsRequest]
     }
@@ -457,10 +502,14 @@ package cognitosync {
   }
 
   object GetCognitoEventsResponse {
-    def apply(Events: js.UndefOr[Events] = js.undefined): GetCognitoEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Events" -> Events.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Events: js.UndefOr[Events] = js.undefined
+    ): GetCognitoEventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCognitoEventsResponse]
     }
@@ -475,9 +524,12 @@ package cognitosync {
   }
 
   object GetIdentityPoolConfigurationRequest {
-    def apply(IdentityPoolId: IdentityPoolId): GetIdentityPoolConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): GetIdentityPoolConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIdentityPoolConfigurationRequest]
     }
@@ -494,9 +546,11 @@ package cognitosync {
   }
 
   object GetIdentityPoolConfigurationResponse {
-    def apply(CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
-              IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-              PushSync: js.UndefOr[PushSync] = js.undefined): GetIdentityPoolConfigurationResponse = {
+    def apply(
+        CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        PushSync: js.UndefOr[PushSync] = js.undefined
+    ): GetIdentityPoolConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CognitoStreams" -> CognitoStreams.map { x =>
           x.asInstanceOf[js.Any]
@@ -525,10 +579,12 @@ package cognitosync {
   }
 
   object IdentityPoolUsage {
-    def apply(DataStorage: js.UndefOr[Double] = js.undefined,
-              IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-              LastModifiedDate: js.UndefOr[Date] = js.undefined,
-              SyncSessionsCount: js.UndefOr[Double] = js.undefined): IdentityPoolUsage = {
+    def apply(
+        DataStorage: js.UndefOr[Double] = js.undefined,
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        LastModifiedDate: js.UndefOr[Date] = js.undefined,
+        SyncSessionsCount: js.UndefOr[Double] = js.undefined
+    ): IdentityPoolUsage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataStorage" -> DataStorage.map { x =>
           x.asInstanceOf[js.Any]
@@ -561,11 +617,13 @@ package cognitosync {
   }
 
   object IdentityUsage {
-    def apply(DataStorage: js.UndefOr[Double] = js.undefined,
-              DatasetCount: js.UndefOr[Int] = js.undefined,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-              LastModifiedDate: js.UndefOr[Date] = js.undefined): IdentityUsage = {
+    def apply(
+        DataStorage: js.UndefOr[Double] = js.undefined,
+        DatasetCount: js.UndefOr[Int] = js.undefined,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        LastModifiedDate: js.UndefOr[Date] = js.undefined
+    ): IdentityUsage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataStorage" -> DataStorage.map { x =>
           x.asInstanceOf[js.Any]
@@ -645,10 +703,12 @@ package cognitosync {
   }
 
   object ListDatasetsRequest {
-    def apply(IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId,
-              MaxResults: js.UndefOr[IntegerString] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListDatasetsRequest = {
+    def apply(
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId,
+        MaxResults: js.UndefOr[IntegerString] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListDatasetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
@@ -675,9 +735,11 @@ package cognitosync {
   }
 
   object ListDatasetsResponse {
-    def apply(Count: js.UndefOr[Int] = js.undefined,
-              Datasets: js.UndefOr[DatasetList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListDatasetsResponse = {
+    def apply(
+        Count: js.UndefOr[Int] = js.undefined,
+        Datasets: js.UndefOr[DatasetList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListDatasetsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Count" -> Count.map { x =>
           x.asInstanceOf[js.Any]
@@ -704,13 +766,18 @@ package cognitosync {
   }
 
   object ListIdentityPoolUsageRequest {
-    def apply(MaxResults: js.UndefOr[IntegerString] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListIdentityPoolUsageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[IntegerString] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListIdentityPoolUsageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIdentityPoolUsageRequest]
     }
@@ -728,10 +795,12 @@ package cognitosync {
   }
 
   object ListIdentityPoolUsageResponse {
-    def apply(Count: js.UndefOr[Int] = js.undefined,
-              IdentityPoolUsages: js.UndefOr[IdentityPoolUsageList] = js.undefined,
-              MaxResults: js.UndefOr[Int] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListIdentityPoolUsageResponse = {
+    def apply(
+        Count: js.UndefOr[Int] = js.undefined,
+        IdentityPoolUsages: js.UndefOr[IdentityPoolUsageList] = js.undefined,
+        MaxResults: js.UndefOr[Int] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListIdentityPoolUsageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Count" -> Count.map { x =>
           x.asInstanceOf[js.Any]
@@ -766,13 +835,15 @@ package cognitosync {
   }
 
   object ListRecordsRequest {
-    def apply(DatasetName: DatasetName,
-              IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId,
-              LastSyncCount: js.UndefOr[Double] = js.undefined,
-              MaxResults: js.UndefOr[IntegerString] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              SyncSessionToken: js.UndefOr[SyncSessionToken] = js.undefined): ListRecordsRequest = {
+    def apply(
+        DatasetName: DatasetName,
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId,
+        LastSyncCount: js.UndefOr[Double] = js.undefined,
+        MaxResults: js.UndefOr[IntegerString] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        SyncSessionToken: js.UndefOr[SyncSessionToken] = js.undefined
+    ): ListRecordsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
@@ -812,15 +883,17 @@ package cognitosync {
   }
 
   object ListRecordsResponse {
-    def apply(Count: js.UndefOr[Int] = js.undefined,
-              DatasetDeletedAfterRequestedSyncCount: js.UndefOr[Boolean] = js.undefined,
-              DatasetExists: js.UndefOr[Boolean] = js.undefined,
-              DatasetSyncCount: js.UndefOr[Double] = js.undefined,
-              LastModifiedBy: js.UndefOr[String] = js.undefined,
-              MergedDatasetNames: js.UndefOr[MergedDatasetNameList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              Records: js.UndefOr[RecordList] = js.undefined,
-              SyncSessionToken: js.UndefOr[String] = js.undefined): ListRecordsResponse = {
+    def apply(
+        Count: js.UndefOr[Int] = js.undefined,
+        DatasetDeletedAfterRequestedSyncCount: js.UndefOr[Boolean] = js.undefined,
+        DatasetExists: js.UndefOr[Boolean] = js.undefined,
+        DatasetSyncCount: js.UndefOr[Double] = js.undefined,
+        LastModifiedBy: js.UndefOr[String] = js.undefined,
+        MergedDatasetNames: js.UndefOr[MergedDatasetNameList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        Records: js.UndefOr[RecordList] = js.undefined,
+        SyncSessionToken: js.UndefOr[String] = js.undefined
+    ): ListRecordsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Count" -> Count.map { x =>
           x.asInstanceOf[js.Any]
@@ -889,13 +962,18 @@ package cognitosync {
   }
 
   object PushSync {
-    def apply(ApplicationArns: js.UndefOr[ApplicationArnList] = js.undefined,
-              RoleArn: js.UndefOr[AssumeRoleArn] = js.undefined): PushSync = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApplicationArns" -> ApplicationArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RoleArn" -> RoleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApplicationArns: js.UndefOr[ApplicationArnList] = js.undefined,
+        RoleArn: js.UndefOr[AssumeRoleArn] = js.undefined
+    ): PushSync = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationArns" -> ApplicationArns.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PushSync]
     }
@@ -915,12 +993,14 @@ package cognitosync {
   }
 
   object Record {
-    def apply(DeviceLastModifiedDate: js.UndefOr[Date] = js.undefined,
-              Key: js.UndefOr[RecordKey] = js.undefined,
-              LastModifiedBy: js.UndefOr[String] = js.undefined,
-              LastModifiedDate: js.UndefOr[Date] = js.undefined,
-              SyncCount: js.UndefOr[Double] = js.undefined,
-              Value: js.UndefOr[RecordValue] = js.undefined): Record = {
+    def apply(
+        DeviceLastModifiedDate: js.UndefOr[Date] = js.undefined,
+        Key: js.UndefOr[RecordKey] = js.undefined,
+        LastModifiedBy: js.UndefOr[String] = js.undefined,
+        LastModifiedDate: js.UndefOr[Date] = js.undefined,
+        SyncCount: js.UndefOr[Double] = js.undefined,
+        Value: js.UndefOr[RecordValue] = js.undefined
+    ): Record = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeviceLastModifiedDate" -> DeviceLastModifiedDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -959,11 +1039,13 @@ package cognitosync {
   }
 
   object RecordPatch {
-    def apply(Key: RecordKey,
-              Op: Operation,
-              SyncCount: Double,
-              DeviceLastModifiedDate: js.UndefOr[Date] = js.undefined,
-              Value: js.UndefOr[RecordValue] = js.undefined): RecordPatch = {
+    def apply(
+        Key: RecordKey,
+        Op: Operation,
+        SyncCount: Double,
+        DeviceLastModifiedDate: js.UndefOr[Date] = js.undefined,
+        Value: js.UndefOr[RecordValue] = js.undefined
+    ): RecordPatch = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"       -> Key.asInstanceOf[js.Any],
         "Op"        -> Op.asInstanceOf[js.Any],
@@ -992,10 +1074,12 @@ package cognitosync {
   }
 
   object RegisterDeviceRequest {
-    def apply(IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId,
-              Platform: Platform,
-              Token: PushToken): RegisterDeviceRequest = {
+    def apply(
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId,
+        Platform: Platform,
+        Token: PushToken
+    ): RegisterDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
@@ -1016,10 +1100,14 @@ package cognitosync {
   }
 
   object RegisterDeviceResponse {
-    def apply(DeviceId: js.UndefOr[DeviceId] = js.undefined): RegisterDeviceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DeviceId" -> DeviceId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DeviceId: js.UndefOr[DeviceId] = js.undefined
+    ): RegisterDeviceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeviceId" -> DeviceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterDeviceResponse]
     }
@@ -1052,7 +1140,10 @@ package cognitosync {
   }
 
   object SetCognitoEventsRequest {
-    def apply(Events: Events, IdentityPoolId: IdentityPoolId): SetCognitoEventsRequest = {
+    def apply(
+        Events: Events,
+        IdentityPoolId: IdentityPoolId
+    ): SetCognitoEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Events"         -> Events.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
@@ -1073,9 +1164,11 @@ package cognitosync {
   }
 
   object SetIdentityPoolConfigurationRequest {
-    def apply(IdentityPoolId: IdentityPoolId,
-              CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
-              PushSync: js.UndefOr[PushSync] = js.undefined): SetIdentityPoolConfigurationRequest = {
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
+        PushSync: js.UndefOr[PushSync] = js.undefined
+    ): SetIdentityPoolConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "CognitoStreams" -> CognitoStreams.map { x =>
@@ -1101,9 +1194,11 @@ package cognitosync {
   }
 
   object SetIdentityPoolConfigurationResponse {
-    def apply(CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
-              IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-              PushSync: js.UndefOr[PushSync] = js.undefined): SetIdentityPoolConfigurationResponse = {
+    def apply(
+        CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        PushSync: js.UndefOr[PushSync] = js.undefined
+    ): SetIdentityPoolConfigurationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CognitoStreams" -> CognitoStreams.map { x =>
           x.asInstanceOf[js.Any]
@@ -1139,10 +1234,12 @@ package cognitosync {
   }
 
   object SubscribeToDatasetRequest {
-    def apply(DatasetName: DatasetName,
-              DeviceId: DeviceId,
-              IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId): SubscribeToDatasetRequest = {
+    def apply(
+        DatasetName: DatasetName,
+        DeviceId: DeviceId,
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId
+    ): SubscribeToDatasetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "DeviceId"       -> DeviceId.asInstanceOf[js.Any],
@@ -1161,8 +1258,10 @@ package cognitosync {
   trait SubscribeToDatasetResponse extends js.Object {}
 
   object SubscribeToDatasetResponse {
-    def apply(): SubscribeToDatasetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): SubscribeToDatasetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribeToDatasetResponse]
     }
@@ -1188,10 +1287,12 @@ package cognitosync {
   }
 
   object UnsubscribeFromDatasetRequest {
-    def apply(DatasetName: DatasetName,
-              DeviceId: DeviceId,
-              IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId): UnsubscribeFromDatasetRequest = {
+    def apply(
+        DatasetName: DatasetName,
+        DeviceId: DeviceId,
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId
+    ): UnsubscribeFromDatasetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "DeviceId"       -> DeviceId.asInstanceOf[js.Any],
@@ -1210,8 +1311,10 @@ package cognitosync {
   trait UnsubscribeFromDatasetResponse extends js.Object {}
 
   object UnsubscribeFromDatasetResponse {
-    def apply(): UnsubscribeFromDatasetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UnsubscribeFromDatasetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnsubscribeFromDatasetResponse]
     }
@@ -1232,13 +1335,15 @@ package cognitosync {
   }
 
   object UpdateRecordsRequest {
-    def apply(DatasetName: DatasetName,
-              IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId,
-              SyncSessionToken: SyncSessionToken,
-              ClientContext: js.UndefOr[ClientContext] = js.undefined,
-              DeviceId: js.UndefOr[DeviceId] = js.undefined,
-              RecordPatches: js.UndefOr[RecordPatchList] = js.undefined): UpdateRecordsRequest = {
+    def apply(
+        DatasetName: DatasetName,
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId,
+        SyncSessionToken: SyncSessionToken,
+        ClientContext: js.UndefOr[ClientContext] = js.undefined,
+        DeviceId: js.UndefOr[DeviceId] = js.undefined,
+        RecordPatches: js.UndefOr[RecordPatchList] = js.undefined
+    ): UpdateRecordsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatasetName"      -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"       -> IdentityId.asInstanceOf[js.Any],
@@ -1268,10 +1373,14 @@ package cognitosync {
   }
 
   object UpdateRecordsResponse {
-    def apply(Records: js.UndefOr[RecordList] = js.undefined): UpdateRecordsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Records" -> Records.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Records: js.UndefOr[RecordList] = js.undefined
+    ): UpdateRecordsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Records" -> Records.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRecordsResponse]
     }

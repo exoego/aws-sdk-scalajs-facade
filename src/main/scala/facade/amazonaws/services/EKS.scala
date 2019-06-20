@@ -7,12 +7,16 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object eks {
+  type BoxedBoolean                  = Boolean
   type ClusterName                   = String
   type ClusterStatus                 = String
   type ErrorCode                     = String
   type ErrorDetails                  = js.Array[ErrorDetail]
   type ListClustersRequestMaxResults = Int
   type ListUpdatesRequestMaxResults  = Int
+  type LogSetups                     = js.Array[LogSetup]
+  type LogType                       = String
+  type LogTypes                      = js.Array[LogType]
   type StringList                    = js.Array[String]
   type Timestamp                     = js.Date
   type UpdateParamType               = String
@@ -33,6 +37,7 @@ package eks {
     def describeUpdate(params: DescribeUpdateRequest): Request[DescribeUpdateResponse]                   = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse]                         = js.native
     def listUpdates(params: ListUpdatesRequest): Request[ListUpdatesResponse]                            = js.native
+    def updateClusterConfig(params: UpdateClusterConfigRequest): Request[UpdateClusterConfigResponse]    = js.native
     def updateClusterVersion(params: UpdateClusterVersionRequest): Request[UpdateClusterVersionResponse] = js.native
   }
 
@@ -45,10 +50,14 @@ package eks {
   }
 
   object Certificate {
-    def apply(data: js.UndefOr[String] = js.undefined): Certificate = {
-      val _fields = IndexedSeq[(String, js.Any)]("data" -> data.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        data: js.UndefOr[String] = js.undefined
+    ): Certificate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "data" -> data.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Certificate]
     }
@@ -64,6 +73,7 @@ package eks {
     var clientRequestToken: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
     var endpoint: js.UndefOr[String]
+    var logging: js.UndefOr[Logging]
     var name: js.UndefOr[String]
     var platformVersion: js.UndefOr[String]
     var resourcesVpcConfig: js.UndefOr[VpcConfigResponse]
@@ -73,17 +83,20 @@ package eks {
   }
 
   object Cluster {
-    def apply(arn: js.UndefOr[String] = js.undefined,
-              certificateAuthority: js.UndefOr[Certificate] = js.undefined,
-              clientRequestToken: js.UndefOr[String] = js.undefined,
-              createdAt: js.UndefOr[Timestamp] = js.undefined,
-              endpoint: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              platformVersion: js.UndefOr[String] = js.undefined,
-              resourcesVpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined,
-              roleArn: js.UndefOr[String] = js.undefined,
-              status: js.UndefOr[ClusterStatus] = js.undefined,
-              version: js.UndefOr[String] = js.undefined): Cluster = {
+    def apply(
+        arn: js.UndefOr[String] = js.undefined,
+        certificateAuthority: js.UndefOr[Certificate] = js.undefined,
+        clientRequestToken: js.UndefOr[String] = js.undefined,
+        createdAt: js.UndefOr[Timestamp] = js.undefined,
+        endpoint: js.UndefOr[String] = js.undefined,
+        logging: js.UndefOr[Logging] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        platformVersion: js.UndefOr[String] = js.undefined,
+        resourcesVpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined,
+        roleArn: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[ClusterStatus] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -98,6 +111,9 @@ package eks {
           x.asInstanceOf[js.Any]
         },
         "endpoint" -> endpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "logging" -> logging.map { x =>
           x.asInstanceOf[js.Any]
         },
         "name" -> name.map { x =>
@@ -139,20 +155,27 @@ package eks {
     var resourcesVpcConfig: VpcConfigRequest
     var roleArn: String
     var clientRequestToken: js.UndefOr[String]
+    var logging: js.UndefOr[Logging]
     var version: js.UndefOr[String]
   }
 
   object CreateClusterRequest {
-    def apply(name: ClusterName,
-              resourcesVpcConfig: VpcConfigRequest,
-              roleArn: String,
-              clientRequestToken: js.UndefOr[String] = js.undefined,
-              version: js.UndefOr[String] = js.undefined): CreateClusterRequest = {
+    def apply(
+        name: ClusterName,
+        resourcesVpcConfig: VpcConfigRequest,
+        roleArn: String,
+        clientRequestToken: js.UndefOr[String] = js.undefined,
+        logging: js.UndefOr[Logging] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): CreateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name"               -> name.asInstanceOf[js.Any],
         "resourcesVpcConfig" -> resourcesVpcConfig.asInstanceOf[js.Any],
         "roleArn"            -> roleArn.asInstanceOf[js.Any],
         "clientRequestToken" -> clientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "logging" -> logging.map { x =>
           x.asInstanceOf[js.Any]
         },
         "version" -> version.map { x =>
@@ -170,10 +193,14 @@ package eks {
   }
 
   object CreateClusterResponse {
-    def apply(cluster: js.UndefOr[Cluster] = js.undefined): CreateClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("cluster" -> cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        cluster: js.UndefOr[Cluster] = js.undefined
+    ): CreateClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cluster" -> cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResponse]
     }
@@ -185,9 +212,12 @@ package eks {
   }
 
   object DeleteClusterRequest {
-    def apply(name: String): DeleteClusterRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: String
+    ): DeleteClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterRequest]
     }
@@ -199,10 +229,14 @@ package eks {
   }
 
   object DeleteClusterResponse {
-    def apply(cluster: js.UndefOr[Cluster] = js.undefined): DeleteClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("cluster" -> cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        cluster: js.UndefOr[Cluster] = js.undefined
+    ): DeleteClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cluster" -> cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResponse]
     }
@@ -214,9 +248,12 @@ package eks {
   }
 
   object DescribeClusterRequest {
-    def apply(name: String): DescribeClusterRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: String
+    ): DescribeClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterRequest]
     }
@@ -228,10 +265,14 @@ package eks {
   }
 
   object DescribeClusterResponse {
-    def apply(cluster: js.UndefOr[Cluster] = js.undefined): DescribeClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("cluster" -> cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        cluster: js.UndefOr[Cluster] = js.undefined
+    ): DescribeClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cluster" -> cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterResponse]
     }
@@ -244,10 +285,14 @@ package eks {
   }
 
   object DescribeUpdateRequest {
-    def apply(name: String, updateId: String): DescribeUpdateRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "updateId" -> updateId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: String,
+        updateId: String
+    ): DescribeUpdateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name"     -> name.asInstanceOf[js.Any],
+        "updateId" -> updateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUpdateRequest]
     }
@@ -259,10 +304,14 @@ package eks {
   }
 
   object DescribeUpdateResponse {
-    def apply(update: js.UndefOr[Update] = js.undefined): DescribeUpdateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("update" -> update.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        update: js.UndefOr[Update] = js.undefined
+    ): DescribeUpdateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "update" -> update.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUpdateResponse]
     }
@@ -301,9 +350,11 @@ package eks {
   }
 
   object ErrorDetail {
-    def apply(errorCode: js.UndefOr[ErrorCode] = js.undefined,
-              errorMessage: js.UndefOr[String] = js.undefined,
-              resourceIds: js.UndefOr[StringList] = js.undefined): ErrorDetail = {
+    def apply(
+        errorCode: js.UndefOr[ErrorCode] = js.undefined,
+        errorMessage: js.UndefOr[String] = js.undefined,
+        resourceIds: js.UndefOr[StringList] = js.undefined
+    ): ErrorDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "errorCode" -> errorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -327,13 +378,18 @@ package eks {
   }
 
   object ListClustersRequest {
-    def apply(maxResults: js.UndefOr[ListClustersRequestMaxResults] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined): ListClustersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[ListClustersRequestMaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListClustersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersRequest]
     }
@@ -346,13 +402,18 @@ package eks {
   }
 
   object ListClustersResponse {
-    def apply(clusters: js.UndefOr[StringList] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined): ListClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("clusters" -> clusters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        clusters: js.UndefOr[StringList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListClustersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "clusters" -> clusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersResponse]
     }
@@ -366,15 +427,20 @@ package eks {
   }
 
   object ListUpdatesRequest {
-    def apply(name: String,
-              maxResults: js.UndefOr[ListUpdatesRequestMaxResults] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined): ListUpdatesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.asInstanceOf[js.Any], "maxResults" -> maxResults.map {
-        x =>
+    def apply(
+        name: String,
+        maxResults: js.UndefOr[ListUpdatesRequestMaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListUpdatesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.asInstanceOf[js.Any],
+        "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUpdatesRequest]
     }
@@ -387,15 +453,79 @@ package eks {
   }
 
   object ListUpdatesResponse {
-    def apply(nextToken: js.UndefOr[String] = js.undefined,
-              updateIds: js.UndefOr[StringList] = js.undefined): ListUpdatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "updateIds" -> updateIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        updateIds: js.UndefOr[StringList] = js.undefined
+    ): ListUpdatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "updateIds" -> updateIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUpdatesResponse]
+    }
+  }
+
+  /**
+    * An object representing the enabled or disabled Kubernetes control plane logs for your cluster.
+    */
+  @js.native
+  trait LogSetup extends js.Object {
+    var enabled: js.UndefOr[BoxedBoolean]
+    var types: js.UndefOr[LogTypes]
+  }
+
+  object LogSetup {
+    def apply(
+        enabled: js.UndefOr[BoxedBoolean] = js.undefined,
+        types: js.UndefOr[LogTypes] = js.undefined
+    ): LogSetup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "enabled" -> enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "types" -> types.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LogSetup]
+    }
+  }
+
+  object LogTypeEnum {
+    val api               = "api"
+    val audit             = "audit"
+    val authenticator     = "authenticator"
+    val controllerManager = "controllerManager"
+    val scheduler         = "scheduler"
+
+    val values = IndexedSeq(api, audit, authenticator, controllerManager, scheduler)
+  }
+
+  /**
+    * An object representing the logging configuration for resources in your cluster.
+    */
+  @js.native
+  trait Logging extends js.Object {
+    var clusterLogging: js.UndefOr[LogSetups]
+  }
+
+  object Logging {
+    def apply(
+        clusterLogging: js.UndefOr[LogSetups] = js.undefined
+    ): Logging = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "clusterLogging" -> clusterLogging.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Logging]
     }
   }
 
@@ -413,12 +543,14 @@ package eks {
   }
 
   object Update {
-    def apply(createdAt: js.UndefOr[Timestamp] = js.undefined,
-              errors: js.UndefOr[ErrorDetails] = js.undefined,
-              id: js.UndefOr[String] = js.undefined,
-              params: js.UndefOr[UpdateParams] = js.undefined,
-              status: js.UndefOr[UpdateStatus] = js.undefined,
-              `type`: js.UndefOr[UpdateType] = js.undefined): Update = {
+    def apply(
+        createdAt: js.UndefOr[Timestamp] = js.undefined,
+        errors: js.UndefOr[ErrorDetails] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        params: js.UndefOr[UpdateParams] = js.undefined,
+        status: js.UndefOr[UpdateStatus] = js.undefined,
+        `type`: js.UndefOr[UpdateType] = js.undefined
+    ): Update = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdAt" -> createdAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -445,6 +577,57 @@ package eks {
   }
 
   @js.native
+  trait UpdateClusterConfigRequest extends js.Object {
+    var name: String
+    var clientRequestToken: js.UndefOr[String]
+    var logging: js.UndefOr[Logging]
+    var resourcesVpcConfig: js.UndefOr[VpcConfigRequest]
+  }
+
+  object UpdateClusterConfigRequest {
+    def apply(
+        name: String,
+        clientRequestToken: js.UndefOr[String] = js.undefined,
+        logging: js.UndefOr[Logging] = js.undefined,
+        resourcesVpcConfig: js.UndefOr[VpcConfigRequest] = js.undefined
+    ): UpdateClusterConfigRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.asInstanceOf[js.Any],
+        "clientRequestToken" -> clientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "logging" -> logging.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resourcesVpcConfig" -> resourcesVpcConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateClusterConfigResponse extends js.Object {
+    var update: js.UndefOr[Update]
+  }
+
+  object UpdateClusterConfigResponse {
+    def apply(
+        update: js.UndefOr[Update] = js.undefined
+    ): UpdateClusterConfigResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "update" -> update.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterConfigResponse]
+    }
+  }
+
+  @js.native
   trait UpdateClusterVersionRequest extends js.Object {
     var name: String
     var version: String
@@ -452,9 +635,11 @@ package eks {
   }
 
   object UpdateClusterVersionRequest {
-    def apply(name: String,
-              version: String,
-              clientRequestToken: js.UndefOr[String] = js.undefined): UpdateClusterVersionRequest = {
+    def apply(
+        name: String,
+        version: String,
+        clientRequestToken: js.UndefOr[String] = js.undefined
+    ): UpdateClusterVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any],
@@ -473,10 +658,14 @@ package eks {
   }
 
   object UpdateClusterVersionResponse {
-    def apply(update: js.UndefOr[Update] = js.undefined): UpdateClusterVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("update" -> update.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        update: js.UndefOr[Update] = js.undefined
+    ): UpdateClusterVersionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "update" -> update.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterVersionResponse]
     }
@@ -492,23 +681,31 @@ package eks {
   }
 
   object UpdateParam {
-    def apply(`type`: js.UndefOr[UpdateParamType] = js.undefined,
-              value: js.UndefOr[String] = js.undefined): UpdateParam = {
-      val _fields = IndexedSeq[(String, js.Any)]("`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "value" -> value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        `type`: js.UndefOr[UpdateParamType] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): UpdateParam = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "value" -> value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateParam]
     }
   }
 
   object UpdateParamTypeEnum {
-    val Version         = "Version"
-    val PlatformVersion = "PlatformVersion"
+    val Version               = "Version"
+    val PlatformVersion       = "PlatformVersion"
+    val EndpointPrivateAccess = "EndpointPrivateAccess"
+    val EndpointPublicAccess  = "EndpointPublicAccess"
+    val ClusterLogging        = "ClusterLogging"
 
-    val values = IndexedSeq(Version, PlatformVersion)
+    val values = IndexedSeq(Version, PlatformVersion, EndpointPrivateAccess, EndpointPublicAccess, ClusterLogging)
   }
 
   object UpdateStatusEnum {
@@ -521,25 +718,42 @@ package eks {
   }
 
   object UpdateTypeEnum {
-    val VersionUpdate = "VersionUpdate"
+    val VersionUpdate        = "VersionUpdate"
+    val EndpointAccessUpdate = "EndpointAccessUpdate"
+    val LoggingUpdate        = "LoggingUpdate"
 
-    val values = IndexedSeq(VersionUpdate)
+    val values = IndexedSeq(VersionUpdate, EndpointAccessUpdate, LoggingUpdate)
   }
 
   /**
-    * An object representing an Amazon EKS cluster VPC configuration request.
+    * An object representing the VPC configuration to use for an Amazon EKS cluster.
     */
   @js.native
   trait VpcConfigRequest extends js.Object {
-    var subnetIds: StringList
+    var endpointPrivateAccess: js.UndefOr[BoxedBoolean]
+    var endpointPublicAccess: js.UndefOr[BoxedBoolean]
     var securityGroupIds: js.UndefOr[StringList]
+    var subnetIds: js.UndefOr[StringList]
   }
 
   object VpcConfigRequest {
-    def apply(subnetIds: StringList, securityGroupIds: js.UndefOr[StringList] = js.undefined): VpcConfigRequest = {
+    def apply(
+        endpointPrivateAccess: js.UndefOr[BoxedBoolean] = js.undefined,
+        endpointPublicAccess: js.UndefOr[BoxedBoolean] = js.undefined,
+        securityGroupIds: js.UndefOr[StringList] = js.undefined,
+        subnetIds: js.UndefOr[StringList] = js.undefined
+    ): VpcConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "subnetIds" -> subnetIds.asInstanceOf[js.Any],
+        "endpointPrivateAccess" -> endpointPrivateAccess.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "endpointPublicAccess" -> endpointPublicAccess.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "securityGroupIds" -> securityGroupIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "subnetIds" -> subnetIds.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -553,16 +767,28 @@ package eks {
     */
   @js.native
   trait VpcConfigResponse extends js.Object {
+    var endpointPrivateAccess: js.UndefOr[Boolean]
+    var endpointPublicAccess: js.UndefOr[Boolean]
     var securityGroupIds: js.UndefOr[StringList]
     var subnetIds: js.UndefOr[StringList]
     var vpcId: js.UndefOr[String]
   }
 
   object VpcConfigResponse {
-    def apply(securityGroupIds: js.UndefOr[StringList] = js.undefined,
-              subnetIds: js.UndefOr[StringList] = js.undefined,
-              vpcId: js.UndefOr[String] = js.undefined): VpcConfigResponse = {
+    def apply(
+        endpointPrivateAccess: js.UndefOr[Boolean] = js.undefined,
+        endpointPublicAccess: js.UndefOr[Boolean] = js.undefined,
+        securityGroupIds: js.UndefOr[StringList] = js.undefined,
+        subnetIds: js.UndefOr[StringList] = js.undefined,
+        vpcId: js.UndefOr[String] = js.undefined
+    ): VpcConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "endpointPrivateAccess" -> endpointPrivateAccess.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "endpointPublicAccess" -> endpointPublicAccess.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "securityGroupIds" -> securityGroupIds.map { x =>
           x.asInstanceOf[js.Any]
         },

@@ -50,6 +50,8 @@ package object storagegateway {
   type GatewayTimezone            = String
   type GatewayType                = String
   type Gateways                   = js.Array[GatewayInfo]
+  type Host                       = String
+  type Hosts                      = js.Array[Host]
   type HourOfDay                  = Int
   type IPV4AddressCIDR            = String
   type Initiator                  = String
@@ -68,9 +70,11 @@ package object storagegateway {
   type NotificationId             = String
   type NumTapesToCreate           = Int
   type ObjectACL                  = String
+  type OrganizationalUnit         = String
   type Path                       = String
   type PermissionId               = Double
   type PermissionMode             = String
+  type PoolId                     = String
   type PositiveIntObject          = Int
   type RecurrenceInHours          = Int
   type RegionId                   = String
@@ -112,6 +116,7 @@ package object storagegateway {
   type VTLDevices                 = js.Array[VTLDevice]
   type VolumeARN                  = String
   type VolumeARNs                 = js.Array[VolumeARN]
+  type VolumeAttachmentStatus     = String
   type VolumeId                   = String
   type VolumeInfos                = js.Array[VolumeInfo]
   type VolumeRecoveryPointInfos   = js.Array[VolumeRecoveryPointInfo]
@@ -136,6 +141,7 @@ package storagegateway {
     def addTagsToResource(params: AddTagsToResourceInput): Request[AddTagsToResourceOutput] = js.native
     def addUploadBuffer(params: AddUploadBufferInput): Request[AddUploadBufferOutput]       = js.native
     def addWorkingStorage(params: AddWorkingStorageInput): Request[AddWorkingStorageOutput] = js.native
+    def attachVolume(params: AttachVolumeInput): Request[AttachVolumeOutput]                = js.native
     def cancelArchival(params: CancelArchivalInput): Request[CancelArchivalOutput]          = js.native
     def cancelRetrieval(params: CancelRetrievalInput): Request[CancelRetrievalOutput]       = js.native
     def createCachediSCSIVolume(params: CreateCachediSCSIVolumeInput): Request[CreateCachediSCSIVolumeOutput] =
@@ -185,6 +191,7 @@ package storagegateway {
     def describeUploadBuffer(params: DescribeUploadBufferInput): Request[DescribeUploadBufferOutput]       = js.native
     def describeVTLDevices(params: DescribeVTLDevicesInput): Request[DescribeVTLDevicesOutput]             = js.native
     def describeWorkingStorage(params: DescribeWorkingStorageInput): Request[DescribeWorkingStorageOutput] = js.native
+    def detachVolume(params: DetachVolumeInput): Request[DetachVolumeOutput]                               = js.native
     def disableGateway(params: DisableGatewayInput): Request[DisableGatewayOutput]                         = js.native
     def joinDomain(params: JoinDomainInput): Request[JoinDomainOutput]                                     = js.native
     def listFileShares(params: ListFileSharesInput): Request[ListFileSharesOutput]                         = js.native
@@ -241,17 +248,21 @@ package storagegateway {
     var GatewayTimezone: GatewayTimezone
     var GatewayType: js.UndefOr[GatewayType]
     var MediumChangerType: js.UndefOr[MediumChangerType]
+    var Tags: js.UndefOr[Tags]
     var TapeDriveType: js.UndefOr[TapeDriveType]
   }
 
   object ActivateGatewayInput {
-    def apply(ActivationKey: ActivationKey,
-              GatewayName: GatewayName,
-              GatewayRegion: RegionId,
-              GatewayTimezone: GatewayTimezone,
-              GatewayType: js.UndefOr[GatewayType] = js.undefined,
-              MediumChangerType: js.UndefOr[MediumChangerType] = js.undefined,
-              TapeDriveType: js.UndefOr[TapeDriveType] = js.undefined): ActivateGatewayInput = {
+    def apply(
+        ActivationKey: ActivationKey,
+        GatewayName: GatewayName,
+        GatewayRegion: RegionId,
+        GatewayTimezone: GatewayTimezone,
+        GatewayType: js.UndefOr[GatewayType] = js.undefined,
+        MediumChangerType: js.UndefOr[MediumChangerType] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TapeDriveType: js.UndefOr[TapeDriveType] = js.undefined
+    ): ActivateGatewayInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActivationKey"   -> ActivationKey.asInstanceOf[js.Any],
         "GatewayName"     -> GatewayName.asInstanceOf[js.Any],
@@ -261,6 +272,9 @@ package storagegateway {
           x.asInstanceOf[js.Any]
         },
         "MediumChangerType" -> MediumChangerType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "TapeDriveType" -> TapeDriveType.map { x =>
@@ -283,10 +297,14 @@ package storagegateway {
   }
 
   object ActivateGatewayOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): ActivateGatewayOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): ActivateGatewayOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivateGatewayOutput]
     }
@@ -299,7 +317,10 @@ package storagegateway {
   }
 
   object AddCacheInput {
-    def apply(DiskIds: DiskIds, GatewayARN: GatewayARN): AddCacheInput = {
+    def apply(
+        DiskIds: DiskIds,
+        GatewayARN: GatewayARN
+    ): AddCacheInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
@@ -315,10 +336,14 @@ package storagegateway {
   }
 
   object AddCacheOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): AddCacheOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): AddCacheOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddCacheOutput]
     }
@@ -331,7 +356,10 @@ package storagegateway {
   }
 
   object AddTagsToResourceInput {
-    def apply(ResourceARN: ResourceARN, Tags: Tags): AddTagsToResourceInput = {
+    def apply(
+        ResourceARN: ResourceARN,
+        Tags: Tags
+    ): AddTagsToResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
@@ -347,10 +375,14 @@ package storagegateway {
   }
 
   object AddTagsToResourceOutput {
-    def apply(ResourceARN: js.UndefOr[ResourceARN] = js.undefined): AddTagsToResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceARN" -> ResourceARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined
+    ): AddTagsToResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceOutput]
     }
@@ -363,7 +395,10 @@ package storagegateway {
   }
 
   object AddUploadBufferInput {
-    def apply(DiskIds: DiskIds, GatewayARN: GatewayARN): AddUploadBufferInput = {
+    def apply(
+        DiskIds: DiskIds,
+        GatewayARN: GatewayARN
+    ): AddUploadBufferInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
@@ -379,10 +414,14 @@ package storagegateway {
   }
 
   object AddUploadBufferOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): AddUploadBufferOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): AddUploadBufferOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddUploadBufferOutput]
     }
@@ -399,7 +438,10 @@ package storagegateway {
   }
 
   object AddWorkingStorageInput {
-    def apply(DiskIds: DiskIds, GatewayARN: GatewayARN): AddWorkingStorageInput = {
+    def apply(
+        DiskIds: DiskIds,
+        GatewayARN: GatewayARN
+    ): AddWorkingStorageInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
@@ -418,12 +460,73 @@ package storagegateway {
   }
 
   object AddWorkingStorageOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): AddWorkingStorageOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): AddWorkingStorageOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddWorkingStorageOutput]
+    }
+  }
+
+  @js.native
+  trait AttachVolumeInput extends js.Object {
+    var GatewayARN: GatewayARN
+    var NetworkInterfaceId: NetworkInterfaceId
+    var VolumeARN: VolumeARN
+    var DiskId: js.UndefOr[DiskId]
+    var TargetName: js.UndefOr[TargetName]
+  }
+
+  object AttachVolumeInput {
+    def apply(
+        GatewayARN: GatewayARN,
+        NetworkInterfaceId: NetworkInterfaceId,
+        VolumeARN: VolumeARN,
+        DiskId: js.UndefOr[DiskId] = js.undefined,
+        TargetName: js.UndefOr[TargetName] = js.undefined
+    ): AttachVolumeInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN"         -> GatewayARN.asInstanceOf[js.Any],
+        "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
+        "VolumeARN"          -> VolumeARN.asInstanceOf[js.Any],
+        "DiskId" -> DiskId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetName" -> TargetName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachVolumeInput]
+    }
+  }
+
+  @js.native
+  trait AttachVolumeOutput extends js.Object {
+    var TargetARN: js.UndefOr[TargetARN]
+    var VolumeARN: js.UndefOr[VolumeARN]
+  }
+
+  object AttachVolumeOutput {
+    def apply(
+        TargetARN: js.UndefOr[TargetARN] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): AttachVolumeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TargetARN" -> TargetARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttachVolumeOutput]
     }
   }
 
@@ -435,7 +538,9 @@ package storagegateway {
     var CreatedDate: js.UndefOr[CreatedDate]
     var KMSKey: js.UndefOr[KMSKey]
     var SourceSnapshotId: js.UndefOr[SnapshotId]
+    var TargetName: js.UndefOr[TargetName]
     var VolumeARN: js.UndefOr[VolumeARN]
+    var VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus]
     var VolumeId: js.UndefOr[VolumeId]
     var VolumeProgress: js.UndefOr[DoubleObject]
     var VolumeSizeInBytes: js.UndefOr[long]
@@ -446,17 +551,21 @@ package storagegateway {
   }
 
   object CachediSCSIVolume {
-    def apply(CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              SourceSnapshotId: js.UndefOr[SnapshotId] = js.undefined,
-              VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-              VolumeId: js.UndefOr[VolumeId] = js.undefined,
-              VolumeProgress: js.UndefOr[DoubleObject] = js.undefined,
-              VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
-              VolumeStatus: js.UndefOr[VolumeStatus] = js.undefined,
-              VolumeType: js.UndefOr[VolumeType] = js.undefined,
-              VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
-              VolumeiSCSIAttributes: js.UndefOr[VolumeiSCSIAttributes] = js.undefined): CachediSCSIVolume = {
+    def apply(
+        CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        SourceSnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        TargetName: js.UndefOr[TargetName] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
+        VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus] = js.undefined,
+        VolumeId: js.UndefOr[VolumeId] = js.undefined,
+        VolumeProgress: js.UndefOr[DoubleObject] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
+        VolumeStatus: js.UndefOr[VolumeStatus] = js.undefined,
+        VolumeType: js.UndefOr[VolumeType] = js.undefined,
+        VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
+        VolumeiSCSIAttributes: js.UndefOr[VolumeiSCSIAttributes] = js.undefined
+    ): CachediSCSIVolume = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDate" -> CreatedDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -467,7 +576,13 @@ package storagegateway {
         "SourceSnapshotId" -> SourceSnapshotId.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "TargetName" -> TargetName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeAttachmentStatus" -> VolumeAttachmentStatus.map { x =>
           x.asInstanceOf[js.Any]
         },
         "VolumeId" -> VolumeId.map { x =>
@@ -504,7 +619,10 @@ package storagegateway {
   }
 
   object CancelArchivalInput {
-    def apply(GatewayARN: GatewayARN, TapeARN: TapeARN): CancelArchivalInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        TapeARN: TapeARN
+    ): CancelArchivalInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
@@ -520,10 +638,14 @@ package storagegateway {
   }
 
   object CancelArchivalOutput {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined): CancelArchivalOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): CancelArchivalOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelArchivalOutput]
     }
@@ -536,7 +658,10 @@ package storagegateway {
   }
 
   object CancelRetrievalInput {
-    def apply(GatewayARN: GatewayARN, TapeARN: TapeARN): CancelRetrievalInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        TapeARN: TapeARN
+    ): CancelRetrievalInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
@@ -552,10 +677,14 @@ package storagegateway {
   }
 
   object CancelRetrievalOutput {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined): CancelRetrievalOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): CancelRetrievalOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelRetrievalOutput]
     }
@@ -573,10 +702,12 @@ package storagegateway {
   }
 
   object ChapInfo {
-    def apply(InitiatorName: js.UndefOr[IqnName] = js.undefined,
-              SecretToAuthenticateInitiator: js.UndefOr[ChapSecret] = js.undefined,
-              SecretToAuthenticateTarget: js.UndefOr[ChapSecret] = js.undefined,
-              TargetARN: js.UndefOr[TargetARN] = js.undefined): ChapInfo = {
+    def apply(
+        InitiatorName: js.UndefOr[IqnName] = js.undefined,
+        SecretToAuthenticateInitiator: js.UndefOr[ChapSecret] = js.undefined,
+        SecretToAuthenticateTarget: js.UndefOr[ChapSecret] = js.undefined,
+        TargetARN: js.UndefOr[TargetARN] = js.undefined
+    ): ChapInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InitiatorName" -> InitiatorName.map { x =>
           x.asInstanceOf[js.Any]
@@ -610,15 +741,17 @@ package storagegateway {
   }
 
   object CreateCachediSCSIVolumeInput {
-    def apply(ClientToken: ClientToken,
-              GatewayARN: GatewayARN,
-              NetworkInterfaceId: NetworkInterfaceId,
-              TargetName: TargetName,
-              VolumeSizeInBytes: long,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
-              SourceVolumeARN: js.UndefOr[VolumeARN] = js.undefined): CreateCachediSCSIVolumeInput = {
+    def apply(
+        ClientToken: ClientToken,
+        GatewayARN: GatewayARN,
+        NetworkInterfaceId: NetworkInterfaceId,
+        TargetName: TargetName,
+        VolumeSizeInBytes: long,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        SourceVolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): CreateCachediSCSIVolumeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientToken"        -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"         -> GatewayARN.asInstanceOf[js.Any],
@@ -650,13 +783,18 @@ package storagegateway {
   }
 
   object CreateCachediSCSIVolumeOutput {
-    def apply(TargetARN: js.UndefOr[TargetARN] = js.undefined,
-              VolumeARN: js.UndefOr[VolumeARN] = js.undefined): CreateCachediSCSIVolumeOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TargetARN" -> TargetARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VolumeARN" -> VolumeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TargetARN: js.UndefOr[TargetARN] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): CreateCachediSCSIVolumeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TargetARN" -> TargetARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCachediSCSIVolumeOutput]
     }
@@ -678,23 +816,27 @@ package storagegateway {
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
     var Squash: js.UndefOr[Squash]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateNFSFileShareInput {
-    def apply(ClientToken: ClientToken,
-              GatewayARN: GatewayARN,
-              LocationARN: LocationARN,
-              Role: Role,
-              ClientList: js.UndefOr[FileShareClientList] = js.undefined,
-              DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
-              GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
-              ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
-              ReadOnly: js.UndefOr[Boolean] = js.undefined,
-              RequesterPays: js.UndefOr[Boolean] = js.undefined,
-              Squash: js.UndefOr[Squash] = js.undefined): CreateNFSFileShareInput = {
+    def apply(
+        ClientToken: ClientToken,
+        GatewayARN: GatewayARN,
+        LocationARN: LocationARN,
+        Role: Role,
+        ClientList: js.UndefOr[FileShareClientList] = js.undefined,
+        DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
+        ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        ReadOnly: js.UndefOr[Boolean] = js.undefined,
+        RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        Squash: js.UndefOr[Squash] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateNFSFileShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"  -> GatewayARN.asInstanceOf[js.Any],
@@ -729,6 +871,9 @@ package storagegateway {
         },
         "Squash" -> Squash.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -742,10 +887,14 @@ package storagegateway {
   }
 
   object CreateNFSFileShareOutput {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined): CreateNFSFileShareOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined
+    ): CreateNFSFileShareOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNFSFileShareOutput]
     }
@@ -766,24 +915,28 @@ package storagegateway {
     var ObjectACL: js.UndefOr[ObjectACL]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
+    var Tags: js.UndefOr[Tags]
     var ValidUserList: js.UndefOr[FileShareUserList]
   }
 
   object CreateSMBFileShareInput {
-    def apply(ClientToken: ClientToken,
-              GatewayARN: GatewayARN,
-              LocationARN: LocationARN,
-              Role: Role,
-              Authentication: js.UndefOr[Authentication] = js.undefined,
-              DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
-              GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-              InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
-              ReadOnly: js.UndefOr[Boolean] = js.undefined,
-              RequesterPays: js.UndefOr[Boolean] = js.undefined,
-              ValidUserList: js.UndefOr[FileShareUserList] = js.undefined): CreateSMBFileShareInput = {
+    def apply(
+        ClientToken: ClientToken,
+        GatewayARN: GatewayARN,
+        LocationARN: LocationARN,
+        Role: Role,
+        Authentication: js.UndefOr[Authentication] = js.undefined,
+        DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
+        InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        ReadOnly: js.UndefOr[Boolean] = js.undefined,
+        RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
+    ): CreateSMBFileShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"  -> GatewayARN.asInstanceOf[js.Any],
@@ -816,6 +969,9 @@ package storagegateway {
         "RequesterPays" -> RequesterPays.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "ValidUserList" -> ValidUserList.map { x =>
           x.asInstanceOf[js.Any]
         }
@@ -831,10 +987,14 @@ package storagegateway {
   }
 
   object CreateSMBFileShareOutput {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined): CreateSMBFileShareOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined
+    ): CreateSMBFileShareOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSMBFileShareOutput]
     }
@@ -847,8 +1007,10 @@ package storagegateway {
   }
 
   object CreateSnapshotFromVolumeRecoveryPointInput {
-    def apply(SnapshotDescription: SnapshotDescription,
-              VolumeARN: VolumeARN): CreateSnapshotFromVolumeRecoveryPointInput = {
+    def apply(
+        SnapshotDescription: SnapshotDescription,
+        VolumeARN: VolumeARN
+    ): CreateSnapshotFromVolumeRecoveryPointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
         "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
@@ -903,7 +1065,10 @@ package storagegateway {
   }
 
   object CreateSnapshotInput {
-    def apply(SnapshotDescription: SnapshotDescription, VolumeARN: VolumeARN): CreateSnapshotInput = {
+    def apply(
+        SnapshotDescription: SnapshotDescription,
+        VolumeARN: VolumeARN
+    ): CreateSnapshotInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
         "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
@@ -923,13 +1088,18 @@ package storagegateway {
   }
 
   object CreateSnapshotOutput {
-    def apply(SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
-              VolumeARN: js.UndefOr[VolumeARN] = js.undefined): CreateSnapshotOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotId" -> SnapshotId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VolumeARN" -> VolumeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): CreateSnapshotOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotId" -> SnapshotId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotOutput]
     }
@@ -956,14 +1126,16 @@ package storagegateway {
   }
 
   object CreateStorediSCSIVolumeInput {
-    def apply(DiskId: DiskId,
-              GatewayARN: GatewayARN,
-              NetworkInterfaceId: NetworkInterfaceId,
-              PreserveExistingData: boolean,
-              TargetName: TargetName,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              SnapshotId: js.UndefOr[SnapshotId] = js.undefined): CreateStorediSCSIVolumeInput = {
+    def apply(
+        DiskId: DiskId,
+        GatewayARN: GatewayARN,
+        NetworkInterfaceId: NetworkInterfaceId,
+        PreserveExistingData: boolean,
+        TargetName: TargetName,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined
+    ): CreateStorediSCSIVolumeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskId"               -> DiskId.asInstanceOf[js.Any],
         "GatewayARN"           -> GatewayARN.asInstanceOf[js.Any],
@@ -996,9 +1168,11 @@ package storagegateway {
   }
 
   object CreateStorediSCSIVolumeOutput {
-    def apply(TargetARN: js.UndefOr[TargetARN] = js.undefined,
-              VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-              VolumeSizeInBytes: js.UndefOr[long] = js.undefined): CreateStorediSCSIVolumeOutput = {
+    def apply(
+        TargetARN: js.UndefOr[TargetARN] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[long] = js.undefined
+    ): CreateStorediSCSIVolumeOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetARN" -> TargetARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -1022,14 +1196,18 @@ package storagegateway {
     var TapeSizeInBytes: TapeSize
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
+    var PoolId: js.UndefOr[PoolId]
   }
 
   object CreateTapeWithBarcodeInput {
-    def apply(GatewayARN: GatewayARN,
-              TapeBarcode: TapeBarcode,
-              TapeSizeInBytes: TapeSize,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined): CreateTapeWithBarcodeInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        TapeBarcode: TapeBarcode,
+        TapeSizeInBytes: TapeSize,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        PoolId: js.UndefOr[PoolId] = js.undefined
+    ): CreateTapeWithBarcodeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN"      -> GatewayARN.asInstanceOf[js.Any],
         "TapeBarcode"     -> TapeBarcode.asInstanceOf[js.Any],
@@ -1038,6 +1216,9 @@ package storagegateway {
           x.asInstanceOf[js.Any]
         },
         "KMSKey" -> KMSKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PoolId" -> PoolId.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1055,10 +1236,14 @@ package storagegateway {
   }
 
   object CreateTapeWithBarcodeOutput {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined): CreateTapeWithBarcodeOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): CreateTapeWithBarcodeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTapeWithBarcodeOutput]
     }
@@ -1073,16 +1258,20 @@ package storagegateway {
     var TapeSizeInBytes: TapeSize
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
+    var PoolId: js.UndefOr[PoolId]
   }
 
   object CreateTapesInput {
-    def apply(ClientToken: ClientToken,
-              GatewayARN: GatewayARN,
-              NumTapesToCreate: NumTapesToCreate,
-              TapeBarcodePrefix: TapeBarcodePrefix,
-              TapeSizeInBytes: TapeSize,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined): CreateTapesInput = {
+    def apply(
+        ClientToken: ClientToken,
+        GatewayARN: GatewayARN,
+        NumTapesToCreate: NumTapesToCreate,
+        TapeBarcodePrefix: TapeBarcodePrefix,
+        TapeSizeInBytes: TapeSize,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        PoolId: js.UndefOr[PoolId] = js.undefined
+    ): CreateTapesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientToken"       -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"        -> GatewayARN.asInstanceOf[js.Any],
@@ -1093,6 +1282,9 @@ package storagegateway {
           x.asInstanceOf[js.Any]
         },
         "KMSKey" -> KMSKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PoolId" -> PoolId.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1110,10 +1302,14 @@ package storagegateway {
   }
 
   object CreateTapesOutput {
-    def apply(TapeARNs: js.UndefOr[TapeARNs] = js.undefined): CreateTapesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARNs" -> TapeARNs.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARNs: js.UndefOr[TapeARNs] = js.undefined
+    ): CreateTapesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARNs" -> TapeARNs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTapesOutput]
     }
@@ -1130,7 +1326,10 @@ package storagegateway {
   }
 
   object DeleteBandwidthRateLimitInput {
-    def apply(BandwidthType: BandwidthType, GatewayARN: GatewayARN): DeleteBandwidthRateLimitInput = {
+    def apply(
+        BandwidthType: BandwidthType,
+        GatewayARN: GatewayARN
+    ): DeleteBandwidthRateLimitInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BandwidthType" -> BandwidthType.asInstanceOf[js.Any],
         "GatewayARN"    -> GatewayARN.asInstanceOf[js.Any]
@@ -1149,10 +1348,14 @@ package storagegateway {
   }
 
   object DeleteBandwidthRateLimitOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): DeleteBandwidthRateLimitOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): DeleteBandwidthRateLimitOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBandwidthRateLimitOutput]
     }
@@ -1170,7 +1373,10 @@ package storagegateway {
   }
 
   object DeleteChapCredentialsInput {
-    def apply(InitiatorName: IqnName, TargetARN: TargetARN): DeleteChapCredentialsInput = {
+    def apply(
+        InitiatorName: IqnName,
+        TargetARN: TargetARN
+    ): DeleteChapCredentialsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InitiatorName" -> InitiatorName.asInstanceOf[js.Any],
         "TargetARN"     -> TargetARN.asInstanceOf[js.Any]
@@ -1190,13 +1396,18 @@ package storagegateway {
   }
 
   object DeleteChapCredentialsOutput {
-    def apply(InitiatorName: js.UndefOr[IqnName] = js.undefined,
-              TargetARN: js.UndefOr[TargetARN] = js.undefined): DeleteChapCredentialsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("InitiatorName" -> InitiatorName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TargetARN" -> TargetARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InitiatorName: js.UndefOr[IqnName] = js.undefined,
+        TargetARN: js.UndefOr[TargetARN] = js.undefined
+    ): DeleteChapCredentialsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InitiatorName" -> InitiatorName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetARN" -> TargetARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteChapCredentialsOutput]
     }
@@ -1209,7 +1420,10 @@ package storagegateway {
   }
 
   object DeleteFileShareInput {
-    def apply(FileShareARN: FileShareARN, ForceDelete: js.UndefOr[boolean] = js.undefined): DeleteFileShareInput = {
+    def apply(
+        FileShareARN: FileShareARN,
+        ForceDelete: js.UndefOr[boolean] = js.undefined
+    ): DeleteFileShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any],
         "ForceDelete" -> ForceDelete.map { x =>
@@ -1227,10 +1441,14 @@ package storagegateway {
   }
 
   object DeleteFileShareOutput {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined): DeleteFileShareOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined
+    ): DeleteFileShareOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFileShareOutput]
     }
@@ -1245,9 +1463,12 @@ package storagegateway {
   }
 
   object DeleteGatewayInput {
-    def apply(GatewayARN: GatewayARN): DeleteGatewayInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DeleteGatewayInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGatewayInput]
     }
@@ -1262,10 +1483,14 @@ package storagegateway {
   }
 
   object DeleteGatewayOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): DeleteGatewayOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): DeleteGatewayOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGatewayOutput]
     }
@@ -1277,9 +1502,12 @@ package storagegateway {
   }
 
   object DeleteSnapshotScheduleInput {
-    def apply(VolumeARN: VolumeARN): DeleteSnapshotScheduleInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARN" -> VolumeARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARN: VolumeARN
+    ): DeleteSnapshotScheduleInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotScheduleInput]
     }
@@ -1291,10 +1519,14 @@ package storagegateway {
   }
 
   object DeleteSnapshotScheduleOutput {
-    def apply(VolumeARN: js.UndefOr[VolumeARN] = js.undefined): DeleteSnapshotScheduleOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARN" -> VolumeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): DeleteSnapshotScheduleOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotScheduleOutput]
     }
@@ -1306,9 +1538,12 @@ package storagegateway {
   }
 
   object DeleteTapeArchiveInput {
-    def apply(TapeARN: TapeARN): DeleteTapeArchiveInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: TapeARN
+    ): DeleteTapeArchiveInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTapeArchiveInput]
     }
@@ -1320,10 +1555,14 @@ package storagegateway {
   }
 
   object DeleteTapeArchiveOutput {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined): DeleteTapeArchiveOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): DeleteTapeArchiveOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTapeArchiveOutput]
     }
@@ -1336,7 +1575,10 @@ package storagegateway {
   }
 
   object DeleteTapeInput {
-    def apply(GatewayARN: GatewayARN, TapeARN: TapeARN): DeleteTapeInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        TapeARN: TapeARN
+    ): DeleteTapeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
@@ -1352,10 +1594,14 @@ package storagegateway {
   }
 
   object DeleteTapeOutput {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined): DeleteTapeOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): DeleteTapeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTapeOutput]
     }
@@ -1370,9 +1616,12 @@ package storagegateway {
   }
 
   object DeleteVolumeInput {
-    def apply(VolumeARN: VolumeARN): DeleteVolumeInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARN" -> VolumeARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARN: VolumeARN
+    ): DeleteVolumeInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVolumeInput]
     }
@@ -1387,10 +1636,14 @@ package storagegateway {
   }
 
   object DeleteVolumeOutput {
-    def apply(VolumeARN: js.UndefOr[VolumeARN] = js.undefined): DeleteVolumeOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARN" -> VolumeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): DeleteVolumeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVolumeOutput]
     }
@@ -1405,9 +1658,12 @@ package storagegateway {
   }
 
   object DescribeBandwidthRateLimitInput {
-    def apply(GatewayARN: GatewayARN): DescribeBandwidthRateLimitInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeBandwidthRateLimitInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBandwidthRateLimitInput]
     }
@@ -1424,9 +1680,11 @@ package storagegateway {
   }
 
   object DescribeBandwidthRateLimitOutput {
-    def apply(AverageDownloadRateLimitInBitsPerSec: js.UndefOr[BandwidthDownloadRateLimit] = js.undefined,
-              AverageUploadRateLimitInBitsPerSec: js.UndefOr[BandwidthUploadRateLimit] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined): DescribeBandwidthRateLimitOutput = {
+    def apply(
+        AverageDownloadRateLimitInBitsPerSec: js.UndefOr[BandwidthDownloadRateLimit] = js.undefined,
+        AverageUploadRateLimitInBitsPerSec: js.UndefOr[BandwidthUploadRateLimit] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): DescribeBandwidthRateLimitOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AverageDownloadRateLimitInBitsPerSec" -> AverageDownloadRateLimitInBitsPerSec.map { x =>
           x.asInstanceOf[js.Any]
@@ -1449,9 +1707,12 @@ package storagegateway {
   }
 
   object DescribeCacheInput {
-    def apply(GatewayARN: GatewayARN): DescribeCacheInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeCacheInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCacheInput]
     }
@@ -1469,13 +1730,15 @@ package storagegateway {
   }
 
   object DescribeCacheOutput {
-    def apply(CacheAllocatedInBytes: js.UndefOr[long] = js.undefined,
-              CacheDirtyPercentage: js.UndefOr[double] = js.undefined,
-              CacheHitPercentage: js.UndefOr[double] = js.undefined,
-              CacheMissPercentage: js.UndefOr[double] = js.undefined,
-              CacheUsedPercentage: js.UndefOr[double] = js.undefined,
-              DiskIds: js.UndefOr[DiskIds] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined): DescribeCacheOutput = {
+    def apply(
+        CacheAllocatedInBytes: js.UndefOr[long] = js.undefined,
+        CacheDirtyPercentage: js.UndefOr[double] = js.undefined,
+        CacheHitPercentage: js.UndefOr[double] = js.undefined,
+        CacheMissPercentage: js.UndefOr[double] = js.undefined,
+        CacheUsedPercentage: js.UndefOr[double] = js.undefined,
+        DiskIds: js.UndefOr[DiskIds] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): DescribeCacheOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CacheAllocatedInBytes" -> CacheAllocatedInBytes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1510,9 +1773,12 @@ package storagegateway {
   }
 
   object DescribeCachediSCSIVolumesInput {
-    def apply(VolumeARNs: VolumeARNs): DescribeCachediSCSIVolumesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARNs: VolumeARNs
+    ): DescribeCachediSCSIVolumesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCachediSCSIVolumesInput]
     }
@@ -1527,10 +1793,14 @@ package storagegateway {
   }
 
   object DescribeCachediSCSIVolumesOutput {
-    def apply(CachediSCSIVolumes: js.UndefOr[CachediSCSIVolumes] = js.undefined): DescribeCachediSCSIVolumesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("CachediSCSIVolumes" -> CachediSCSIVolumes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CachediSCSIVolumes: js.UndefOr[CachediSCSIVolumes] = js.undefined
+    ): DescribeCachediSCSIVolumesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CachediSCSIVolumes" -> CachediSCSIVolumes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCachediSCSIVolumesOutput]
     }
@@ -1545,9 +1815,12 @@ package storagegateway {
   }
 
   object DescribeChapCredentialsInput {
-    def apply(TargetARN: TargetARN): DescribeChapCredentialsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TargetARN" -> TargetARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TargetARN: TargetARN
+    ): DescribeChapCredentialsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TargetARN" -> TargetARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChapCredentialsInput]
     }
@@ -1562,10 +1835,14 @@ package storagegateway {
   }
 
   object DescribeChapCredentialsOutput {
-    def apply(ChapCredentials: js.UndefOr[ChapCredentials] = js.undefined): DescribeChapCredentialsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChapCredentials" -> ChapCredentials.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChapCredentials: js.UndefOr[ChapCredentials] = js.undefined
+    ): DescribeChapCredentialsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChapCredentials" -> ChapCredentials.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeChapCredentialsOutput]
     }
@@ -1580,9 +1857,12 @@ package storagegateway {
   }
 
   object DescribeGatewayInformationInput {
-    def apply(GatewayARN: GatewayARN): DescribeGatewayInformationInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeGatewayInformationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGatewayInformationInput]
     }
@@ -1602,6 +1882,7 @@ package storagegateway {
     var GatewayType: js.UndefOr[GatewayType]
     var LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate]
     var NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate]
+    var Tags: js.UndefOr[Tags]
   }
 
   object DescribeGatewayInformationOutput {
@@ -1614,7 +1895,8 @@ package storagegateway {
         GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined,
         GatewayType: js.UndefOr[GatewayType] = js.undefined,
         LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate] = js.undefined,
-        NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate] = js.undefined
+        NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): DescribeGatewayInformationOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.map { x =>
@@ -1643,6 +1925,9 @@ package storagegateway {
         },
         "NextUpdateAvailabilityDate" -> NextUpdateAvailabilityDate.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -1659,9 +1944,12 @@ package storagegateway {
   }
 
   object DescribeMaintenanceStartTimeInput {
-    def apply(GatewayARN: GatewayARN): DescribeMaintenanceStartTimeInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeMaintenanceStartTimeInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMaintenanceStartTimeInput]
     }
@@ -1684,11 +1972,13 @@ package storagegateway {
   }
 
   object DescribeMaintenanceStartTimeOutput {
-    def apply(DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              HourOfDay: js.UndefOr[HourOfDay] = js.undefined,
-              MinuteOfHour: js.UndefOr[MinuteOfHour] = js.undefined,
-              Timezone: js.UndefOr[GatewayTimezone] = js.undefined): DescribeMaintenanceStartTimeOutput = {
+    def apply(
+        DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        HourOfDay: js.UndefOr[HourOfDay] = js.undefined,
+        MinuteOfHour: js.UndefOr[MinuteOfHour] = js.undefined,
+        Timezone: js.UndefOr[GatewayTimezone] = js.undefined
+    ): DescribeMaintenanceStartTimeOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DayOfWeek" -> DayOfWeek.map { x =>
           x.asInstanceOf[js.Any]
@@ -1717,9 +2007,12 @@ package storagegateway {
   }
 
   object DescribeNFSFileSharesInput {
-    def apply(FileShareARNList: FileShareARNList): DescribeNFSFileSharesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARNList: FileShareARNList
+    ): DescribeNFSFileSharesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNFSFileSharesInput]
     }
@@ -1731,10 +2024,14 @@ package storagegateway {
   }
 
   object DescribeNFSFileSharesOutput {
-    def apply(NFSFileShareInfoList: js.UndefOr[NFSFileShareInfoList] = js.undefined): DescribeNFSFileSharesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NFSFileShareInfoList" -> NFSFileShareInfoList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NFSFileShareInfoList: js.UndefOr[NFSFileShareInfoList] = js.undefined
+    ): DescribeNFSFileSharesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NFSFileShareInfoList" -> NFSFileShareInfoList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNFSFileSharesOutput]
     }
@@ -1746,9 +2043,12 @@ package storagegateway {
   }
 
   object DescribeSMBFileSharesInput {
-    def apply(FileShareARNList: FileShareARNList): DescribeSMBFileSharesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARNList: FileShareARNList
+    ): DescribeSMBFileSharesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSMBFileSharesInput]
     }
@@ -1760,10 +2060,14 @@ package storagegateway {
   }
 
   object DescribeSMBFileSharesOutput {
-    def apply(SMBFileShareInfoList: js.UndefOr[SMBFileShareInfoList] = js.undefined): DescribeSMBFileSharesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("SMBFileShareInfoList" -> SMBFileShareInfoList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SMBFileShareInfoList: js.UndefOr[SMBFileShareInfoList] = js.undefined
+    ): DescribeSMBFileSharesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SMBFileShareInfoList" -> SMBFileShareInfoList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSMBFileSharesOutput]
     }
@@ -1775,9 +2079,12 @@ package storagegateway {
   }
 
   object DescribeSMBSettingsInput {
-    def apply(GatewayARN: GatewayARN): DescribeSMBSettingsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeSMBSettingsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSMBSettingsInput]
     }
@@ -1791,9 +2098,11 @@ package storagegateway {
   }
 
   object DescribeSMBSettingsOutput {
-    def apply(DomainName: js.UndefOr[DomainName] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined): DescribeSMBSettingsOutput = {
+    def apply(
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined
+    ): DescribeSMBSettingsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1819,9 +2128,12 @@ package storagegateway {
   }
 
   object DescribeSnapshotScheduleInput {
-    def apply(VolumeARN: VolumeARN): DescribeSnapshotScheduleInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARN" -> VolumeARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARN: VolumeARN
+    ): DescribeSnapshotScheduleInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotScheduleInput]
     }
@@ -1837,11 +2149,13 @@ package storagegateway {
   }
 
   object DescribeSnapshotScheduleOutput {
-    def apply(Description: js.UndefOr[Description] = js.undefined,
-              RecurrenceInHours: js.UndefOr[RecurrenceInHours] = js.undefined,
-              StartAt: js.UndefOr[HourOfDay] = js.undefined,
-              Timezone: js.UndefOr[GatewayTimezone] = js.undefined,
-              VolumeARN: js.UndefOr[VolumeARN] = js.undefined): DescribeSnapshotScheduleOutput = {
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        RecurrenceInHours: js.UndefOr[RecurrenceInHours] = js.undefined,
+        StartAt: js.UndefOr[HourOfDay] = js.undefined,
+        Timezone: js.UndefOr[GatewayTimezone] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): DescribeSnapshotScheduleOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -1873,9 +2187,12 @@ package storagegateway {
   }
 
   object DescribeStorediSCSIVolumesInput {
-    def apply(VolumeARNs: VolumeARNs): DescribeStorediSCSIVolumesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARNs: VolumeARNs
+    ): DescribeStorediSCSIVolumesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStorediSCSIVolumesInput]
     }
@@ -1887,10 +2204,14 @@ package storagegateway {
   }
 
   object DescribeStorediSCSIVolumesOutput {
-    def apply(StorediSCSIVolumes: js.UndefOr[StorediSCSIVolumes] = js.undefined): DescribeStorediSCSIVolumesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StorediSCSIVolumes" -> StorediSCSIVolumes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StorediSCSIVolumes: js.UndefOr[StorediSCSIVolumes] = js.undefined
+    ): DescribeStorediSCSIVolumesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StorediSCSIVolumes" -> StorediSCSIVolumes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStorediSCSIVolumesOutput]
     }
@@ -1904,16 +2225,22 @@ package storagegateway {
   }
 
   object DescribeTapeArchivesInput {
-    def apply(Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              TapeARNs: js.UndefOr[TapeARNs] = js.undefined): DescribeTapeArchivesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TapeARNs" -> TapeARNs.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        TapeARNs: js.UndefOr[TapeARNs] = js.undefined
+    ): DescribeTapeArchivesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TapeARNs" -> TapeARNs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTapeArchivesInput]
     }
@@ -1926,13 +2253,18 @@ package storagegateway {
   }
 
   object DescribeTapeArchivesOutput {
-    def apply(Marker: js.UndefOr[Marker] = js.undefined,
-              TapeArchives: js.UndefOr[TapeArchives] = js.undefined): DescribeTapeArchivesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TapeArchives" -> TapeArchives.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        TapeArchives: js.UndefOr[TapeArchives] = js.undefined
+    ): DescribeTapeArchivesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TapeArchives" -> TapeArchives.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTapeArchivesOutput]
     }
@@ -1946,15 +2278,20 @@ package storagegateway {
   }
 
   object DescribeTapeRecoveryPointsInput {
-    def apply(GatewayARN: GatewayARN,
-              Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): DescribeTapeRecoveryPointsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any], "Limit" -> Limit.map {
-        x =>
+    def apply(
+        GatewayARN: GatewayARN,
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): DescribeTapeRecoveryPointsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTapeRecoveryPointsInput]
     }
@@ -1998,10 +2335,12 @@ package storagegateway {
   }
 
   object DescribeTapesInput {
-    def apply(GatewayARN: GatewayARN,
-              Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              TapeARNs: js.UndefOr[TapeARNs] = js.undefined): DescribeTapesInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        TapeARNs: js.UndefOr[TapeARNs] = js.undefined
+    ): DescribeTapesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x =>
@@ -2026,13 +2365,18 @@ package storagegateway {
   }
 
   object DescribeTapesOutput {
-    def apply(Marker: js.UndefOr[Marker] = js.undefined,
-              Tapes: js.UndefOr[Tapes] = js.undefined): DescribeTapesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tapes" -> Tapes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        Tapes: js.UndefOr[Tapes] = js.undefined
+    ): DescribeTapesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tapes" -> Tapes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTapesOutput]
     }
@@ -2044,9 +2388,12 @@ package storagegateway {
   }
 
   object DescribeUploadBufferInput {
-    def apply(GatewayARN: GatewayARN): DescribeUploadBufferInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeUploadBufferInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUploadBufferInput]
     }
@@ -2061,10 +2408,12 @@ package storagegateway {
   }
 
   object DescribeUploadBufferOutput {
-    def apply(DiskIds: js.UndefOr[DiskIds] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              UploadBufferAllocatedInBytes: js.UndefOr[long] = js.undefined,
-              UploadBufferUsedInBytes: js.UndefOr[long] = js.undefined): DescribeUploadBufferOutput = {
+    def apply(
+        DiskIds: js.UndefOr[DiskIds] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        UploadBufferAllocatedInBytes: js.UndefOr[long] = js.undefined,
+        UploadBufferUsedInBytes: js.UndefOr[long] = js.undefined
+    ): DescribeUploadBufferOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskIds" -> DiskIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -2093,10 +2442,12 @@ package storagegateway {
   }
 
   object DescribeVTLDevicesInput {
-    def apply(GatewayARN: GatewayARN,
-              Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              VTLDeviceARNs: js.UndefOr[VTLDeviceARNs] = js.undefined): DescribeVTLDevicesInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        VTLDeviceARNs: js.UndefOr[VTLDeviceARNs] = js.undefined
+    ): DescribeVTLDevicesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x =>
@@ -2122,9 +2473,11 @@ package storagegateway {
   }
 
   object DescribeVTLDevicesOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              VTLDevices: js.UndefOr[VTLDevices] = js.undefined): DescribeVTLDevicesOutput = {
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        VTLDevices: js.UndefOr[VTLDevices] = js.undefined
+    ): DescribeVTLDevicesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -2150,9 +2503,12 @@ package storagegateway {
   }
 
   object DescribeWorkingStorageInput {
-    def apply(GatewayARN: GatewayARN): DescribeWorkingStorageInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DescribeWorkingStorageInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkingStorageInput]
     }
@@ -2170,10 +2526,12 @@ package storagegateway {
   }
 
   object DescribeWorkingStorageOutput {
-    def apply(DiskIds: js.UndefOr[DiskIds] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              WorkingStorageAllocatedInBytes: js.UndefOr[long] = js.undefined,
-              WorkingStorageUsedInBytes: js.UndefOr[long] = js.undefined): DescribeWorkingStorageOutput = {
+    def apply(
+        DiskIds: js.UndefOr[DiskIds] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        WorkingStorageAllocatedInBytes: js.UndefOr[long] = js.undefined,
+        WorkingStorageUsedInBytes: js.UndefOr[long] = js.undefined
+    ): DescribeWorkingStorageOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskIds" -> DiskIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -2194,6 +2552,53 @@ package storagegateway {
   }
 
   /**
+    * AttachVolumeInput
+    */
+  @js.native
+  trait DetachVolumeInput extends js.Object {
+    var VolumeARN: VolumeARN
+    var ForceDetach: js.UndefOr[Boolean]
+  }
+
+  object DetachVolumeInput {
+    def apply(
+        VolumeARN: VolumeARN,
+        ForceDetach: js.UndefOr[Boolean] = js.undefined
+    ): DetachVolumeInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any],
+        "ForceDetach" -> ForceDetach.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachVolumeInput]
+    }
+  }
+
+  /**
+    * AttachVolumeOutput
+    */
+  @js.native
+  trait DetachVolumeOutput extends js.Object {
+    var VolumeARN: js.UndefOr[VolumeARN]
+  }
+
+  object DetachVolumeOutput {
+    def apply(
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): DetachVolumeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DetachVolumeOutput]
+    }
+  }
+
+  /**
     * Lists iSCSI information about a VTL device.
     */
   @js.native
@@ -2205,10 +2610,12 @@ package storagegateway {
   }
 
   object DeviceiSCSIAttributes {
-    def apply(ChapEnabled: js.UndefOr[boolean] = js.undefined,
-              NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-              NetworkInterfacePort: js.UndefOr[integer] = js.undefined,
-              TargetARN: js.UndefOr[TargetARN] = js.undefined): DeviceiSCSIAttributes = {
+    def apply(
+        ChapEnabled: js.UndefOr[boolean] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
+        NetworkInterfacePort: js.UndefOr[integer] = js.undefined,
+        TargetARN: js.UndefOr[TargetARN] = js.undefined
+    ): DeviceiSCSIAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChapEnabled" -> ChapEnabled.map { x =>
           x.asInstanceOf[js.Any]
@@ -2234,9 +2641,12 @@ package storagegateway {
   }
 
   object DisableGatewayInput {
-    def apply(GatewayARN: GatewayARN): DisableGatewayInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): DisableGatewayInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableGatewayInput]
     }
@@ -2248,10 +2658,14 @@ package storagegateway {
   }
 
   object DisableGatewayOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): DisableGatewayOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): DisableGatewayOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableGatewayOutput]
     }
@@ -2273,14 +2687,16 @@ package storagegateway {
   }
 
   object Disk {
-    def apply(DiskAllocationResource: js.UndefOr[string] = js.undefined,
-              DiskAllocationType: js.UndefOr[DiskAllocationType] = js.undefined,
-              DiskAttributeList: js.UndefOr[DiskAttributeList] = js.undefined,
-              DiskId: js.UndefOr[DiskId] = js.undefined,
-              DiskNode: js.UndefOr[string] = js.undefined,
-              DiskPath: js.UndefOr[string] = js.undefined,
-              DiskSizeInBytes: js.UndefOr[long] = js.undefined,
-              DiskStatus: js.UndefOr[string] = js.undefined): Disk = {
+    def apply(
+        DiskAllocationResource: js.UndefOr[string] = js.undefined,
+        DiskAllocationType: js.UndefOr[DiskAllocationType] = js.undefined,
+        DiskAttributeList: js.UndefOr[DiskAttributeList] = js.undefined,
+        DiskId: js.UndefOr[DiskId] = js.undefined,
+        DiskNode: js.UndefOr[string] = js.undefined,
+        DiskPath: js.UndefOr[string] = js.undefined,
+        DiskSizeInBytes: js.UndefOr[long] = js.undefined,
+        DiskStatus: js.UndefOr[string] = js.undefined
+    ): Disk = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskAllocationResource" -> DiskAllocationResource.map { x =>
           x.asInstanceOf[js.Any]
@@ -2325,11 +2741,13 @@ package storagegateway {
   }
 
   object FileShareInfo {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
-              FileShareId: js.UndefOr[FileShareId] = js.undefined,
-              FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
-              FileShareType: js.UndefOr[FileShareType] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined): FileShareInfo = {
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
+        FileShareId: js.UndefOr[FileShareId] = js.undefined,
+        FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
+        FileShareType: js.UndefOr[FileShareType] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): FileShareInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileShareARN" -> FileShareARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -2375,11 +2793,13 @@ package storagegateway {
   }
 
   object GatewayInfo {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              GatewayId: js.UndefOr[GatewayId] = js.undefined,
-              GatewayName: js.UndefOr[string] = js.undefined,
-              GatewayOperationalState: js.UndefOr[GatewayOperationalState] = js.undefined,
-              GatewayType: js.UndefOr[GatewayType] = js.undefined): GatewayInfo = {
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        GatewayId: js.UndefOr[GatewayId] = js.undefined,
+        GatewayName: js.UndefOr[string] = js.undefined,
+        GatewayOperationalState: js.UndefOr[GatewayOperationalState] = js.undefined,
+        GatewayType: js.UndefOr[GatewayType] = js.undefined
+    ): GatewayInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -2408,18 +2828,30 @@ package storagegateway {
     var GatewayARN: GatewayARN
     var Password: DomainUserPassword
     var UserName: DomainUserName
+    var DomainControllers: js.UndefOr[Hosts]
+    var OrganizationalUnit: js.UndefOr[OrganizationalUnit]
   }
 
   object JoinDomainInput {
-    def apply(DomainName: DomainName,
-              GatewayARN: GatewayARN,
-              Password: DomainUserPassword,
-              UserName: DomainUserName): JoinDomainInput = {
+    def apply(
+        DomainName: DomainName,
+        GatewayARN: GatewayARN,
+        Password: DomainUserPassword,
+        UserName: DomainUserName,
+        DomainControllers: js.UndefOr[Hosts] = js.undefined,
+        OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
+    ): JoinDomainInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "Password"   -> Password.asInstanceOf[js.Any],
-        "UserName"   -> UserName.asInstanceOf[js.Any]
+        "UserName"   -> UserName.asInstanceOf[js.Any],
+        "DomainControllers" -> DomainControllers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationalUnit" -> OrganizationalUnit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JoinDomainInput]
@@ -2432,10 +2864,14 @@ package storagegateway {
   }
 
   object JoinDomainOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): JoinDomainOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): JoinDomainOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[JoinDomainOutput]
     }
@@ -2452,16 +2888,22 @@ package storagegateway {
   }
 
   object ListFileSharesInput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListFileSharesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListFileSharesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFileSharesInput]
     }
@@ -2478,9 +2920,11 @@ package storagegateway {
   }
 
   object ListFileSharesOutput {
-    def apply(FileShareInfoList: js.UndefOr[FileShareInfoList] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              NextMarker: js.UndefOr[Marker] = js.undefined): ListFileSharesOutput = {
+    def apply(
+        FileShareInfoList: js.UndefOr[FileShareInfoList] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        NextMarker: js.UndefOr[Marker] = js.undefined
+    ): ListFileSharesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileShareInfoList" -> FileShareInfoList.map { x =>
           x.asInstanceOf[js.Any]
@@ -2509,13 +2953,18 @@ package storagegateway {
   }
 
   object ListGatewaysInput {
-    def apply(Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListGatewaysInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListGatewaysInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGatewaysInput]
     }
@@ -2528,13 +2977,18 @@ package storagegateway {
   }
 
   object ListGatewaysOutput {
-    def apply(Gateways: js.UndefOr[Gateways] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListGatewaysOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Gateways" -> Gateways.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Gateways: js.UndefOr[Gateways] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListGatewaysOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Gateways" -> Gateways.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGatewaysOutput]
     }
@@ -2549,9 +3003,12 @@ package storagegateway {
   }
 
   object ListLocalDisksInput {
-    def apply(GatewayARN: GatewayARN): ListLocalDisksInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): ListLocalDisksInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLocalDisksInput]
     }
@@ -2564,13 +3021,18 @@ package storagegateway {
   }
 
   object ListLocalDisksOutput {
-    def apply(Disks: js.UndefOr[Disks] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined): ListLocalDisksOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Disks" -> Disks.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Disks: js.UndefOr[Disks] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): ListLocalDisksOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Disks" -> Disks.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLocalDisksOutput]
     }
@@ -2584,15 +3046,20 @@ package storagegateway {
   }
 
   object ListTagsForResourceInput {
-    def apply(ResourceARN: ResourceARN,
-              Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListTagsForResourceInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ResourceARN" -> ResourceARN.asInstanceOf[js.Any], "Limit" -> Limit.map { x =>
+    def apply(
+        ResourceARN: ResourceARN,
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListTagsForResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
-        }, "Marker" -> Marker.map { x =>
+        },
+        "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceInput]
     }
@@ -2606,16 +3073,22 @@ package storagegateway {
   }
 
   object ListTagsForResourceOutput {
-    def apply(Marker: js.UndefOr[Marker] = js.undefined,
-              ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): ListTagsForResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ResourceARN" -> ResourceARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceARN" -> ResourceARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceOutput]
     }
@@ -2635,16 +3108,22 @@ package storagegateway {
   }
 
   object ListTapesInput {
-    def apply(Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              TapeARNs: js.UndefOr[TapeARNs] = js.undefined): ListTapesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TapeARNs" -> TapeARNs.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        TapeARNs: js.UndefOr[TapeARNs] = js.undefined
+    ): ListTapesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TapeARNs" -> TapeARNs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTapesInput]
     }
@@ -2662,13 +3141,18 @@ package storagegateway {
   }
 
   object ListTapesOutput {
-    def apply(Marker: js.UndefOr[Marker] = js.undefined,
-              TapeInfos: js.UndefOr[TapeInfos] = js.undefined): ListTapesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TapeInfos" -> TapeInfos.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[Marker] = js.undefined,
+        TapeInfos: js.UndefOr[TapeInfos] = js.undefined
+    ): ListTapesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TapeInfos" -> TapeInfos.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTapesOutput]
     }
@@ -2680,9 +3164,12 @@ package storagegateway {
   }
 
   object ListVolumeInitiatorsInput {
-    def apply(VolumeARN: VolumeARN): ListVolumeInitiatorsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARN" -> VolumeARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARN: VolumeARN
+    ): ListVolumeInitiatorsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVolumeInitiatorsInput]
     }
@@ -2694,10 +3181,14 @@ package storagegateway {
   }
 
   object ListVolumeInitiatorsOutput {
-    def apply(Initiators: js.UndefOr[Initiators] = js.undefined): ListVolumeInitiatorsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Initiators" -> Initiators.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Initiators: js.UndefOr[Initiators] = js.undefined
+    ): ListVolumeInitiatorsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Initiators" -> Initiators.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVolumeInitiatorsOutput]
     }
@@ -2709,9 +3200,12 @@ package storagegateway {
   }
 
   object ListVolumeRecoveryPointsInput {
-    def apply(GatewayARN: GatewayARN): ListVolumeRecoveryPointsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): ListVolumeRecoveryPointsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVolumeRecoveryPointsInput]
     }
@@ -2728,11 +3222,14 @@ package storagegateway {
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         VolumeRecoveryPointInfos: js.UndefOr[VolumeRecoveryPointInfos] = js.undefined
     ): ListVolumeRecoveryPointsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VolumeRecoveryPointInfos" -> VolumeRecoveryPointInfos.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeRecoveryPointInfos" -> VolumeRecoveryPointInfos.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVolumeRecoveryPointsOutput]
     }
@@ -2751,21 +3248,32 @@ package storagegateway {
   }
 
   object ListVolumesInput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              Limit: js.UndefOr[PositiveIntObject] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined): ListVolumesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        Limit: js.UndefOr[PositiveIntObject] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined
+    ): ListVolumesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVolumesInput]
     }
   }
 
+  /**
+    * A JSON object containing the following fields:
+    * * Marker
+    *  * VolumeInfos
+    */
   @js.native
   trait ListVolumesOutput extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
@@ -2774,9 +3282,11 @@ package storagegateway {
   }
 
   object ListVolumesOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              Marker: js.UndefOr[Marker] = js.undefined,
-              VolumeInfos: js.UndefOr[VolumeInfos] = js.undefined): ListVolumesOutput = {
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        Marker: js.UndefOr[Marker] = js.undefined,
+        VolumeInfos: js.UndefOr[VolumeInfos] = js.undefined
+    ): ListVolumesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -2805,10 +3315,12 @@ package storagegateway {
   }
 
   object NFSFileShareDefaults {
-    def apply(DirectoryMode: js.UndefOr[PermissionMode] = js.undefined,
-              FileMode: js.UndefOr[PermissionMode] = js.undefined,
-              GroupId: js.UndefOr[PermissionId] = js.undefined,
-              OwnerId: js.UndefOr[PermissionId] = js.undefined): NFSFileShareDefaults = {
+    def apply(
+        DirectoryMode: js.UndefOr[PermissionMode] = js.undefined,
+        FileMode: js.UndefOr[PermissionMode] = js.undefined,
+        GroupId: js.UndefOr[PermissionId] = js.undefined,
+        OwnerId: js.UndefOr[PermissionId] = js.undefined
+    ): NFSFileShareDefaults = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryMode" -> DirectoryMode.map { x =>
           x.asInstanceOf[js.Any]
@@ -2850,26 +3362,30 @@ package storagegateway {
     var RequesterPays: js.UndefOr[Boolean]
     var Role: js.UndefOr[Role]
     var Squash: js.UndefOr[Squash]
+    var Tags: js.UndefOr[Tags]
   }
 
   object NFSFileShareInfo {
-    def apply(ClientList: js.UndefOr[FileShareClientList] = js.undefined,
-              DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
-              FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
-              FileShareId: js.UndefOr[FileShareId] = js.undefined,
-              FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-              KMSEncrypted: js.UndefOr[boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              LocationARN: js.UndefOr[LocationARN] = js.undefined,
-              NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
-              ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
-              Path: js.UndefOr[Path] = js.undefined,
-              ReadOnly: js.UndefOr[Boolean] = js.undefined,
-              RequesterPays: js.UndefOr[Boolean] = js.undefined,
-              Role: js.UndefOr[Role] = js.undefined,
-              Squash: js.UndefOr[Squash] = js.undefined): NFSFileShareInfo = {
+    def apply(
+        ClientList: js.UndefOr[FileShareClientList] = js.undefined,
+        DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
+        FileShareId: js.UndefOr[FileShareId] = js.undefined,
+        FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
+        KMSEncrypted: js.UndefOr[boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        LocationARN: js.UndefOr[LocationARN] = js.undefined,
+        NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
+        ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        Path: js.UndefOr[Path] = js.undefined,
+        ReadOnly: js.UndefOr[Boolean] = js.undefined,
+        RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        Role: js.UndefOr[Role] = js.undefined,
+        Squash: js.UndefOr[Squash] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): NFSFileShareInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientList" -> ClientList.map { x =>
           x.asInstanceOf[js.Any]
@@ -2921,6 +3437,9 @@ package storagegateway {
         },
         "Squash" -> Squash.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -2939,9 +3458,11 @@ package storagegateway {
   }
 
   object NetworkInterface {
-    def apply(Ipv4Address: js.UndefOr[string] = js.undefined,
-              Ipv6Address: js.UndefOr[string] = js.undefined,
-              MacAddress: js.UndefOr[string] = js.undefined): NetworkInterface = {
+    def apply(
+        Ipv4Address: js.UndefOr[string] = js.undefined,
+        Ipv6Address: js.UndefOr[string] = js.undefined,
+        MacAddress: js.UndefOr[string] = js.undefined
+    ): NetworkInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Ipv4Address" -> Ipv4Address.map { x =>
           x.asInstanceOf[js.Any]
@@ -2964,9 +3485,12 @@ package storagegateway {
   }
 
   object NotifyWhenUploadedInput {
-    def apply(FileShareARN: FileShareARN): NotifyWhenUploadedInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: FileShareARN
+    ): NotifyWhenUploadedInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWhenUploadedInput]
     }
@@ -2979,13 +3503,18 @@ package storagegateway {
   }
 
   object NotifyWhenUploadedOutput {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
-              NotificationId: js.UndefOr[NotificationId] = js.undefined): NotifyWhenUploadedOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NotificationId" -> NotificationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
+        NotificationId: js.UndefOr[NotificationId] = js.undefined
+    ): NotifyWhenUploadedOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotificationId" -> NotificationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWhenUploadedOutput]
     }
@@ -3022,9 +3551,11 @@ package storagegateway {
   }
 
   object RefreshCacheInput {
-    def apply(FileShareARN: FileShareARN,
-              FolderList: js.UndefOr[FolderList] = js.undefined,
-              Recursive: js.UndefOr[Boolean] = js.undefined): RefreshCacheInput = {
+    def apply(
+        FileShareARN: FileShareARN,
+        FolderList: js.UndefOr[FolderList] = js.undefined,
+        Recursive: js.UndefOr[Boolean] = js.undefined
+    ): RefreshCacheInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any],
         "FolderList" -> FolderList.map { x =>
@@ -3046,13 +3577,18 @@ package storagegateway {
   }
 
   object RefreshCacheOutput {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
-              NotificationId: js.UndefOr[NotificationId] = js.undefined): RefreshCacheOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NotificationId" -> NotificationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
+        NotificationId: js.UndefOr[NotificationId] = js.undefined
+    ): RefreshCacheOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotificationId" -> NotificationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RefreshCacheOutput]
     }
@@ -3065,7 +3601,10 @@ package storagegateway {
   }
 
   object RemoveTagsFromResourceInput {
-    def apply(ResourceARN: ResourceARN, TagKeys: TagKeys): RemoveTagsFromResourceInput = {
+    def apply(
+        ResourceARN: ResourceARN,
+        TagKeys: TagKeys
+    ): RemoveTagsFromResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
@@ -3081,10 +3620,14 @@ package storagegateway {
   }
 
   object RemoveTagsFromResourceOutput {
-    def apply(ResourceARN: js.UndefOr[ResourceARN] = js.undefined): RemoveTagsFromResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceARN" -> ResourceARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined
+    ): RemoveTagsFromResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceOutput]
     }
@@ -3096,9 +3639,12 @@ package storagegateway {
   }
 
   object ResetCacheInput {
-    def apply(GatewayARN: GatewayARN): ResetCacheInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): ResetCacheInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetCacheInput]
     }
@@ -3110,10 +3656,14 @@ package storagegateway {
   }
 
   object ResetCacheOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): ResetCacheOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): ResetCacheOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetCacheOutput]
     }
@@ -3126,7 +3676,10 @@ package storagegateway {
   }
 
   object RetrieveTapeArchiveInput {
-    def apply(GatewayARN: GatewayARN, TapeARN: TapeARN): RetrieveTapeArchiveInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        TapeARN: TapeARN
+    ): RetrieveTapeArchiveInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
@@ -3142,10 +3695,14 @@ package storagegateway {
   }
 
   object RetrieveTapeArchiveOutput {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined): RetrieveTapeArchiveOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): RetrieveTapeArchiveOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveTapeArchiveOutput]
     }
@@ -3158,7 +3715,10 @@ package storagegateway {
   }
 
   object RetrieveTapeRecoveryPointInput {
-    def apply(GatewayARN: GatewayARN, TapeARN: TapeARN): RetrieveTapeRecoveryPointInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        TapeARN: TapeARN
+    ): RetrieveTapeRecoveryPointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
@@ -3174,10 +3734,14 @@ package storagegateway {
   }
 
   object RetrieveTapeRecoveryPointOutput {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined): RetrieveTapeRecoveryPointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TapeARN" -> TapeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined
+    ): RetrieveTapeRecoveryPointOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TapeARN" -> TapeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveTapeRecoveryPointOutput]
     }
@@ -3204,27 +3768,31 @@ package storagegateway {
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
     var Role: js.UndefOr[Role]
+    var Tags: js.UndefOr[Tags]
     var ValidUserList: js.UndefOr[FileShareUserList]
   }
 
   object SMBFileShareInfo {
-    def apply(Authentication: js.UndefOr[Authentication] = js.undefined,
-              DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
-              FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
-              FileShareId: js.UndefOr[FileShareId] = js.undefined,
-              FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
-              GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-              InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
-              KMSEncrypted: js.UndefOr[boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              LocationARN: js.UndefOr[LocationARN] = js.undefined,
-              ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
-              Path: js.UndefOr[Path] = js.undefined,
-              ReadOnly: js.UndefOr[Boolean] = js.undefined,
-              RequesterPays: js.UndefOr[Boolean] = js.undefined,
-              Role: js.UndefOr[Role] = js.undefined,
-              ValidUserList: js.UndefOr[FileShareUserList] = js.undefined): SMBFileShareInfo = {
+    def apply(
+        Authentication: js.UndefOr[Authentication] = js.undefined,
+        DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
+        FileShareId: js.UndefOr[FileShareId] = js.undefined,
+        FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
+        InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        KMSEncrypted: js.UndefOr[boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        LocationARN: js.UndefOr[LocationARN] = js.undefined,
+        ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        Path: js.UndefOr[Path] = js.undefined,
+        ReadOnly: js.UndefOr[Boolean] = js.undefined,
+        RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        Role: js.UndefOr[Role] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
+    ): SMBFileShareInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Authentication" -> Authentication.map { x =>
           x.asInstanceOf[js.Any]
@@ -3274,6 +3842,9 @@ package storagegateway {
         "Role" -> Role.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "ValidUserList" -> ValidUserList.map { x =>
           x.asInstanceOf[js.Any]
         }
@@ -3290,7 +3861,10 @@ package storagegateway {
   }
 
   object SetLocalConsolePasswordInput {
-    def apply(GatewayARN: GatewayARN, LocalConsolePassword: LocalConsolePassword): SetLocalConsolePasswordInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        LocalConsolePassword: LocalConsolePassword
+    ): SetLocalConsolePasswordInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN"           -> GatewayARN.asInstanceOf[js.Any],
         "LocalConsolePassword" -> LocalConsolePassword.asInstanceOf[js.Any]
@@ -3306,10 +3880,14 @@ package storagegateway {
   }
 
   object SetLocalConsolePasswordOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): SetLocalConsolePasswordOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): SetLocalConsolePasswordOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetLocalConsolePasswordOutput]
     }
@@ -3322,7 +3900,10 @@ package storagegateway {
   }
 
   object SetSMBGuestPasswordInput {
-    def apply(GatewayARN: GatewayARN, Password: SMBGuestPassword): SetSMBGuestPasswordInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        Password: SMBGuestPassword
+    ): SetSMBGuestPasswordInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "Password"   -> Password.asInstanceOf[js.Any]
@@ -3338,10 +3919,14 @@ package storagegateway {
   }
 
   object SetSMBGuestPasswordOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): SetSMBGuestPasswordOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): SetSMBGuestPasswordOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetSMBGuestPasswordOutput]
     }
@@ -3356,9 +3941,12 @@ package storagegateway {
   }
 
   object ShutdownGatewayInput {
-    def apply(GatewayARN: GatewayARN): ShutdownGatewayInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): ShutdownGatewayInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShutdownGatewayInput]
     }
@@ -3373,10 +3961,14 @@ package storagegateway {
   }
 
   object ShutdownGatewayOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): ShutdownGatewayOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): ShutdownGatewayOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShutdownGatewayOutput]
     }
@@ -3391,9 +3983,12 @@ package storagegateway {
   }
 
   object StartGatewayInput {
-    def apply(GatewayARN: GatewayARN): StartGatewayInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): StartGatewayInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartGatewayInput]
     }
@@ -3408,10 +4003,14 @@ package storagegateway {
   }
 
   object StartGatewayOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): StartGatewayOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): StartGatewayOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartGatewayOutput]
     }
@@ -3426,7 +4025,9 @@ package storagegateway {
     var KMSKey: js.UndefOr[KMSKey]
     var PreservedExistingData: js.UndefOr[boolean]
     var SourceSnapshotId: js.UndefOr[SnapshotId]
+    var TargetName: js.UndefOr[TargetName]
     var VolumeARN: js.UndefOr[VolumeARN]
+    var VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus]
     var VolumeDiskId: js.UndefOr[DiskId]
     var VolumeId: js.UndefOr[VolumeId]
     var VolumeProgress: js.UndefOr[DoubleObject]
@@ -3438,19 +4039,23 @@ package storagegateway {
   }
 
   object StorediSCSIVolume {
-    def apply(CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              PreservedExistingData: js.UndefOr[boolean] = js.undefined,
-              SourceSnapshotId: js.UndefOr[SnapshotId] = js.undefined,
-              VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-              VolumeDiskId: js.UndefOr[DiskId] = js.undefined,
-              VolumeId: js.UndefOr[VolumeId] = js.undefined,
-              VolumeProgress: js.UndefOr[DoubleObject] = js.undefined,
-              VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
-              VolumeStatus: js.UndefOr[VolumeStatus] = js.undefined,
-              VolumeType: js.UndefOr[VolumeType] = js.undefined,
-              VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
-              VolumeiSCSIAttributes: js.UndefOr[VolumeiSCSIAttributes] = js.undefined): StorediSCSIVolume = {
+    def apply(
+        CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        PreservedExistingData: js.UndefOr[boolean] = js.undefined,
+        SourceSnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        TargetName: js.UndefOr[TargetName] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
+        VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus] = js.undefined,
+        VolumeDiskId: js.UndefOr[DiskId] = js.undefined,
+        VolumeId: js.UndefOr[VolumeId] = js.undefined,
+        VolumeProgress: js.UndefOr[DoubleObject] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
+        VolumeStatus: js.UndefOr[VolumeStatus] = js.undefined,
+        VolumeType: js.UndefOr[VolumeType] = js.undefined,
+        VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
+        VolumeiSCSIAttributes: js.UndefOr[VolumeiSCSIAttributes] = js.undefined
+    ): StorediSCSIVolume = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDate" -> CreatedDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -3464,7 +4069,13 @@ package storagegateway {
         "SourceSnapshotId" -> SourceSnapshotId.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "TargetName" -> TargetName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeAttachmentStatus" -> VolumeAttachmentStatus.map { x =>
           x.asInstanceOf[js.Any]
         },
         "VolumeDiskId" -> VolumeDiskId.map { x =>
@@ -3497,6 +4108,9 @@ package storagegateway {
     }
   }
 
+  /**
+    * A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : /
+    */
   @js.native
   trait Tag extends js.Object {
     var Key: TagKey
@@ -3504,10 +4118,14 @@ package storagegateway {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: TagValue): Tag = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -3519,6 +4137,7 @@ package storagegateway {
   @js.native
   trait Tape extends js.Object {
     var KMSKey: js.UndefOr[KMSKey]
+    var PoolId: js.UndefOr[PoolId]
     var Progress: js.UndefOr[DoubleObject]
     var TapeARN: js.UndefOr[TapeARN]
     var TapeBarcode: js.UndefOr[TapeBarcode]
@@ -3530,17 +4149,23 @@ package storagegateway {
   }
 
   object Tape {
-    def apply(KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              Progress: js.UndefOr[DoubleObject] = js.undefined,
-              TapeARN: js.UndefOr[TapeARN] = js.undefined,
-              TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
-              TapeCreatedDate: js.UndefOr[Time] = js.undefined,
-              TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
-              TapeStatus: js.UndefOr[TapeStatus] = js.undefined,
-              TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined,
-              VTLDevice: js.UndefOr[VTLDeviceARN] = js.undefined): Tape = {
+    def apply(
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        PoolId: js.UndefOr[PoolId] = js.undefined,
+        Progress: js.UndefOr[DoubleObject] = js.undefined,
+        TapeARN: js.UndefOr[TapeARN] = js.undefined,
+        TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
+        TapeCreatedDate: js.UndefOr[Time] = js.undefined,
+        TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
+        TapeStatus: js.UndefOr[TapeStatus] = js.undefined,
+        TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined,
+        VTLDevice: js.UndefOr[VTLDeviceARN] = js.undefined
+    ): Tape = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KMSKey" -> KMSKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PoolId" -> PoolId.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Progress" -> Progress.map { x =>
@@ -3580,6 +4205,7 @@ package storagegateway {
   trait TapeArchive extends js.Object {
     var CompletionTime: js.UndefOr[Time]
     var KMSKey: js.UndefOr[KMSKey]
+    var PoolId: js.UndefOr[PoolId]
     var RetrievedTo: js.UndefOr[GatewayARN]
     var TapeARN: js.UndefOr[TapeARN]
     var TapeBarcode: js.UndefOr[TapeBarcode]
@@ -3590,20 +4216,26 @@ package storagegateway {
   }
 
   object TapeArchive {
-    def apply(CompletionTime: js.UndefOr[Time] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              RetrievedTo: js.UndefOr[GatewayARN] = js.undefined,
-              TapeARN: js.UndefOr[TapeARN] = js.undefined,
-              TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
-              TapeCreatedDate: js.UndefOr[Time] = js.undefined,
-              TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
-              TapeStatus: js.UndefOr[TapeArchiveStatus] = js.undefined,
-              TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined): TapeArchive = {
+    def apply(
+        CompletionTime: js.UndefOr[Time] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        PoolId: js.UndefOr[PoolId] = js.undefined,
+        RetrievedTo: js.UndefOr[GatewayARN] = js.undefined,
+        TapeARN: js.UndefOr[TapeARN] = js.undefined,
+        TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
+        TapeCreatedDate: js.UndefOr[Time] = js.undefined,
+        TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
+        TapeStatus: js.UndefOr[TapeArchiveStatus] = js.undefined,
+        TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined
+    ): TapeArchive = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CompletionTime" -> CompletionTime.map { x =>
           x.asInstanceOf[js.Any]
         },
         "KMSKey" -> KMSKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PoolId" -> PoolId.map { x =>
           x.asInstanceOf[js.Any]
         },
         "RetrievedTo" -> RetrievedTo.map { x =>
@@ -3639,6 +4271,7 @@ package storagegateway {
   @js.native
   trait TapeInfo extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
+    var PoolId: js.UndefOr[PoolId]
     var TapeARN: js.UndefOr[TapeARN]
     var TapeBarcode: js.UndefOr[TapeBarcode]
     var TapeSizeInBytes: js.UndefOr[TapeSize]
@@ -3646,13 +4279,19 @@ package storagegateway {
   }
 
   object TapeInfo {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              TapeARN: js.UndefOr[TapeARN] = js.undefined,
-              TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
-              TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
-              TapeStatus: js.UndefOr[TapeStatus] = js.undefined): TapeInfo = {
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        PoolId: js.UndefOr[PoolId] = js.undefined,
+        TapeARN: js.UndefOr[TapeARN] = js.undefined,
+        TapeBarcode: js.UndefOr[TapeBarcode] = js.undefined,
+        TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
+        TapeStatus: js.UndefOr[TapeStatus] = js.undefined
+    ): TapeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PoolId" -> PoolId.map { x =>
           x.asInstanceOf[js.Any]
         },
         "TapeARN" -> TapeARN.map { x =>
@@ -3685,10 +4324,12 @@ package storagegateway {
   }
 
   object TapeRecoveryPointInfo {
-    def apply(TapeARN: js.UndefOr[TapeARN] = js.undefined,
-              TapeRecoveryPointTime: js.UndefOr[Time] = js.undefined,
-              TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
-              TapeStatus: js.UndefOr[TapeRecoveryPointStatus] = js.undefined): TapeRecoveryPointInfo = {
+    def apply(
+        TapeARN: js.UndefOr[TapeARN] = js.undefined,
+        TapeRecoveryPointTime: js.UndefOr[Time] = js.undefined,
+        TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
+        TapeStatus: js.UndefOr[TapeRecoveryPointStatus] = js.undefined
+    ): TapeRecoveryPointInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TapeARN" -> TapeARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -3749,10 +4390,14 @@ package storagegateway {
   }
 
   object UpdateBandwidthRateLimitOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): UpdateBandwidthRateLimitOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateBandwidthRateLimitOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBandwidthRateLimitOutput]
     }
@@ -3774,10 +4419,12 @@ package storagegateway {
   }
 
   object UpdateChapCredentialsInput {
-    def apply(InitiatorName: IqnName,
-              SecretToAuthenticateInitiator: ChapSecret,
-              TargetARN: TargetARN,
-              SecretToAuthenticateTarget: js.UndefOr[ChapSecret] = js.undefined): UpdateChapCredentialsInput = {
+    def apply(
+        InitiatorName: IqnName,
+        SecretToAuthenticateInitiator: ChapSecret,
+        TargetARN: TargetARN,
+        SecretToAuthenticateTarget: js.UndefOr[ChapSecret] = js.undefined
+    ): UpdateChapCredentialsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InitiatorName"                 -> InitiatorName.asInstanceOf[js.Any],
         "SecretToAuthenticateInitiator" -> SecretToAuthenticateInitiator.asInstanceOf[js.Any],
@@ -3801,13 +4448,18 @@ package storagegateway {
   }
 
   object UpdateChapCredentialsOutput {
-    def apply(InitiatorName: js.UndefOr[IqnName] = js.undefined,
-              TargetARN: js.UndefOr[TargetARN] = js.undefined): UpdateChapCredentialsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("InitiatorName" -> InitiatorName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TargetARN" -> TargetARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InitiatorName: js.UndefOr[IqnName] = js.undefined,
+        TargetARN: js.UndefOr[TargetARN] = js.undefined
+    ): UpdateChapCredentialsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InitiatorName" -> InitiatorName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetARN" -> TargetARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateChapCredentialsOutput]
     }
@@ -3821,9 +4473,11 @@ package storagegateway {
   }
 
   object UpdateGatewayInformationInput {
-    def apply(GatewayARN: GatewayARN,
-              GatewayName: js.UndefOr[GatewayName] = js.undefined,
-              GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined): UpdateGatewayInformationInput = {
+    def apply(
+        GatewayARN: GatewayARN,
+        GatewayName: js.UndefOr[GatewayName] = js.undefined,
+        GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined
+    ): UpdateGatewayInformationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "GatewayName" -> GatewayName.map { x =>
@@ -3848,13 +4502,18 @@ package storagegateway {
   }
 
   object UpdateGatewayInformationOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              GatewayName: js.UndefOr[string] = js.undefined): UpdateGatewayInformationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "GatewayName" -> GatewayName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        GatewayName: js.UndefOr[string] = js.undefined
+    ): UpdateGatewayInformationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GatewayName" -> GatewayName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGatewayInformationOutput]
     }
@@ -3869,9 +4528,12 @@ package storagegateway {
   }
 
   object UpdateGatewaySoftwareNowInput {
-    def apply(GatewayARN: GatewayARN): UpdateGatewaySoftwareNowInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: GatewayARN
+    ): UpdateGatewaySoftwareNowInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGatewaySoftwareNowInput]
     }
@@ -3886,10 +4548,14 @@ package storagegateway {
   }
 
   object UpdateGatewaySoftwareNowOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): UpdateGatewaySoftwareNowOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateGatewaySoftwareNowOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGatewaySoftwareNowOutput]
     }
@@ -3910,10 +4576,12 @@ package storagegateway {
   }
 
   object UpdateMaintenanceStartTimeInput {
-    def apply(DayOfWeek: DayOfWeek,
-              GatewayARN: GatewayARN,
-              HourOfDay: HourOfDay,
-              MinuteOfHour: MinuteOfHour): UpdateMaintenanceStartTimeInput = {
+    def apply(
+        DayOfWeek: DayOfWeek,
+        GatewayARN: GatewayARN,
+        HourOfDay: HourOfDay,
+        MinuteOfHour: MinuteOfHour
+    ): UpdateMaintenanceStartTimeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DayOfWeek"    -> DayOfWeek.asInstanceOf[js.Any],
         "GatewayARN"   -> GatewayARN.asInstanceOf[js.Any],
@@ -3934,10 +4602,14 @@ package storagegateway {
   }
 
   object UpdateMaintenanceStartTimeOutput {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined): UpdateMaintenanceStartTimeOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GatewayARN" -> GatewayARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateMaintenanceStartTimeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GatewayARN" -> GatewayARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateMaintenanceStartTimeOutput]
     }
@@ -3959,17 +4631,19 @@ package storagegateway {
   }
 
   object UpdateNFSFileShareInput {
-    def apply(FileShareARN: FileShareARN,
-              ClientList: js.UndefOr[FileShareClientList] = js.undefined,
-              DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
-              GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
-              ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
-              ReadOnly: js.UndefOr[Boolean] = js.undefined,
-              RequesterPays: js.UndefOr[Boolean] = js.undefined,
-              Squash: js.UndefOr[Squash] = js.undefined): UpdateNFSFileShareInput = {
+    def apply(
+        FileShareARN: FileShareARN,
+        ClientList: js.UndefOr[FileShareClientList] = js.undefined,
+        DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
+        ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        ReadOnly: js.UndefOr[Boolean] = js.undefined,
+        RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        Squash: js.UndefOr[Squash] = js.undefined
+    ): UpdateNFSFileShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any],
         "ClientList" -> ClientList.map { x =>
@@ -4014,10 +4688,14 @@ package storagegateway {
   }
 
   object UpdateNFSFileShareOutput {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined): UpdateNFSFileShareOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined
+    ): UpdateNFSFileShareOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNFSFileShareOutput]
     }
@@ -4038,16 +4716,18 @@ package storagegateway {
   }
 
   object UpdateSMBFileShareInput {
-    def apply(FileShareARN: FileShareARN,
-              DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
-              GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-              InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
-              KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
-              KMSKey: js.UndefOr[KMSKey] = js.undefined,
-              ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
-              ReadOnly: js.UndefOr[Boolean] = js.undefined,
-              RequesterPays: js.UndefOr[Boolean] = js.undefined,
-              ValidUserList: js.UndefOr[FileShareUserList] = js.undefined): UpdateSMBFileShareInput = {
+    def apply(
+        FileShareARN: FileShareARN,
+        DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
+        GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
+        InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
+        KMSKey: js.UndefOr[KMSKey] = js.undefined,
+        ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        ReadOnly: js.UndefOr[Boolean] = js.undefined,
+        RequesterPays: js.UndefOr[Boolean] = js.undefined,
+        ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
+    ): UpdateSMBFileShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any],
         "DefaultStorageClass" -> DefaultStorageClass.map { x =>
@@ -4089,10 +4769,14 @@ package storagegateway {
   }
 
   object UpdateSMBFileShareOutput {
-    def apply(FileShareARN: js.UndefOr[FileShareARN] = js.undefined): UpdateSMBFileShareOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileShareARN" -> FileShareARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileShareARN: js.UndefOr[FileShareARN] = js.undefined
+    ): UpdateSMBFileShareOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileShareARN" -> FileShareARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSMBFileShareOutput]
     }
@@ -4114,10 +4798,12 @@ package storagegateway {
   }
 
   object UpdateSnapshotScheduleInput {
-    def apply(RecurrenceInHours: RecurrenceInHours,
-              StartAt: HourOfDay,
-              VolumeARN: VolumeARN,
-              Description: js.UndefOr[Description] = js.undefined): UpdateSnapshotScheduleInput = {
+    def apply(
+        RecurrenceInHours: RecurrenceInHours,
+        StartAt: HourOfDay,
+        VolumeARN: VolumeARN,
+        Description: js.UndefOr[Description] = js.undefined
+    ): UpdateSnapshotScheduleInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RecurrenceInHours" -> RecurrenceInHours.asInstanceOf[js.Any],
         "StartAt"           -> StartAt.asInstanceOf[js.Any],
@@ -4140,10 +4826,14 @@ package storagegateway {
   }
 
   object UpdateSnapshotScheduleOutput {
-    def apply(VolumeARN: js.UndefOr[VolumeARN] = js.undefined): UpdateSnapshotScheduleOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeARN" -> VolumeARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined
+    ): UpdateSnapshotScheduleOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSnapshotScheduleOutput]
     }
@@ -4156,7 +4846,10 @@ package storagegateway {
   }
 
   object UpdateVTLDeviceTypeInput {
-    def apply(DeviceType: DeviceType, VTLDeviceARN: VTLDeviceARN): UpdateVTLDeviceTypeInput = {
+    def apply(
+        DeviceType: DeviceType,
+        VTLDeviceARN: VTLDeviceARN
+    ): UpdateVTLDeviceTypeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeviceType"   -> DeviceType.asInstanceOf[js.Any],
         "VTLDeviceARN" -> VTLDeviceARN.asInstanceOf[js.Any]
@@ -4172,10 +4865,14 @@ package storagegateway {
   }
 
   object UpdateVTLDeviceTypeOutput {
-    def apply(VTLDeviceARN: js.UndefOr[VTLDeviceARN] = js.undefined): UpdateVTLDeviceTypeOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VTLDeviceARN" -> VTLDeviceARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VTLDeviceARN: js.UndefOr[VTLDeviceARN] = js.undefined
+    ): UpdateVTLDeviceTypeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VTLDeviceARN" -> VTLDeviceARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVTLDeviceTypeOutput]
     }
@@ -4194,11 +4891,13 @@ package storagegateway {
   }
 
   object VTLDevice {
-    def apply(DeviceiSCSIAttributes: js.UndefOr[DeviceiSCSIAttributes] = js.undefined,
-              VTLDeviceARN: js.UndefOr[VTLDeviceARN] = js.undefined,
-              VTLDeviceProductIdentifier: js.UndefOr[VTLDeviceProductIdentifier] = js.undefined,
-              VTLDeviceType: js.UndefOr[VTLDeviceType] = js.undefined,
-              VTLDeviceVendor: js.UndefOr[VTLDeviceVendor] = js.undefined): VTLDevice = {
+    def apply(
+        DeviceiSCSIAttributes: js.UndefOr[DeviceiSCSIAttributes] = js.undefined,
+        VTLDeviceARN: js.UndefOr[VTLDeviceARN] = js.undefined,
+        VTLDeviceProductIdentifier: js.UndefOr[VTLDeviceProductIdentifier] = js.undefined,
+        VTLDeviceType: js.UndefOr[VTLDeviceType] = js.undefined,
+        VTLDeviceVendor: js.UndefOr[VTLDeviceVendor] = js.undefined
+    ): VTLDevice = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeviceiSCSIAttributes" -> DeviceiSCSIAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -4229,18 +4928,22 @@ package storagegateway {
     var GatewayARN: js.UndefOr[GatewayARN]
     var GatewayId: js.UndefOr[GatewayId]
     var VolumeARN: js.UndefOr[VolumeARN]
+    var VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus]
     var VolumeId: js.UndefOr[VolumeId]
     var VolumeSizeInBytes: js.UndefOr[long]
     var VolumeType: js.UndefOr[VolumeType]
   }
 
   object VolumeInfo {
-    def apply(GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-              GatewayId: js.UndefOr[GatewayId] = js.undefined,
-              VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-              VolumeId: js.UndefOr[VolumeId] = js.undefined,
-              VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
-              VolumeType: js.UndefOr[VolumeType] = js.undefined): VolumeInfo = {
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        GatewayId: js.UndefOr[GatewayId] = js.undefined,
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
+        VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus] = js.undefined,
+        VolumeId: js.UndefOr[VolumeId] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
+        VolumeType: js.UndefOr[VolumeType] = js.undefined
+    ): VolumeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -4249,6 +4952,9 @@ package storagegateway {
           x.asInstanceOf[js.Any]
         },
         "VolumeARN" -> VolumeARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeAttachmentStatus" -> VolumeAttachmentStatus.map { x =>
           x.asInstanceOf[js.Any]
         },
         "VolumeId" -> VolumeId.map { x =>
@@ -4266,6 +4972,9 @@ package storagegateway {
     }
   }
 
+  /**
+    * Describes a storage volume recovery point object.
+    */
   @js.native
   trait VolumeRecoveryPointInfo extends js.Object {
     var VolumeARN: js.UndefOr[VolumeARN]
@@ -4275,10 +4984,12 @@ package storagegateway {
   }
 
   object VolumeRecoveryPointInfo {
-    def apply(VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-              VolumeRecoveryPointTime: js.UndefOr[string] = js.undefined,
-              VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
-              VolumeUsageInBytes: js.UndefOr[long] = js.undefined): VolumeRecoveryPointInfo = {
+    def apply(
+        VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
+        VolumeRecoveryPointTime: js.UndefOr[string] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
+        VolumeUsageInBytes: js.UndefOr[long] = js.undefined
+    ): VolumeRecoveryPointInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "VolumeARN" -> VolumeARN.map { x =>
           x.asInstanceOf[js.Any]
@@ -4311,11 +5022,13 @@ package storagegateway {
   }
 
   object VolumeiSCSIAttributes {
-    def apply(ChapEnabled: js.UndefOr[boolean] = js.undefined,
-              LunNumber: js.UndefOr[PositiveIntObject] = js.undefined,
-              NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-              NetworkInterfacePort: js.UndefOr[integer] = js.undefined,
-              TargetARN: js.UndefOr[TargetARN] = js.undefined): VolumeiSCSIAttributes = {
+    def apply(
+        ChapEnabled: js.UndefOr[boolean] = js.undefined,
+        LunNumber: js.UndefOr[PositiveIntObject] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
+        NetworkInterfacePort: js.UndefOr[integer] = js.undefined,
+        TargetARN: js.UndefOr[TargetARN] = js.undefined
+    ): VolumeiSCSIAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChapEnabled" -> ChapEnabled.map { x =>
           x.asInstanceOf[js.Any]

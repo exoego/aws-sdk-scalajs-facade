@@ -203,9 +203,12 @@ package directoryservice {
   }
 
   object AcceptSharedDirectoryRequest {
-    def apply(SharedDirectoryId: DirectoryId): AcceptSharedDirectoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SharedDirectoryId" -> SharedDirectoryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SharedDirectoryId: DirectoryId
+    ): AcceptSharedDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SharedDirectoryId" -> SharedDirectoryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptSharedDirectoryRequest]
     }
@@ -217,10 +220,14 @@ package directoryservice {
   }
 
   object AcceptSharedDirectoryResult {
-    def apply(SharedDirectory: js.UndefOr[SharedDirectory] = js.undefined): AcceptSharedDirectoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SharedDirectory" -> SharedDirectory.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SharedDirectory: js.UndefOr[SharedDirectory] = js.undefined
+    ): AcceptSharedDirectoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SharedDirectory" -> SharedDirectory.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptSharedDirectoryResult]
     }
@@ -234,10 +241,12 @@ package directoryservice {
   }
 
   object AddIpRoutesRequest {
-    def apply(DirectoryId: DirectoryId,
-              IpRoutes: IpRoutes,
-              UpdateSecurityGroupForDirectoryControllers: js.UndefOr[UpdateSecurityGroupForDirectoryControllers] =
-                js.undefined): AddIpRoutesRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        IpRoutes: IpRoutes,
+        UpdateSecurityGroupForDirectoryControllers: js.UndefOr[UpdateSecurityGroupForDirectoryControllers] =
+          js.undefined
+    ): AddIpRoutesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "IpRoutes"    -> IpRoutes.asInstanceOf[js.Any],
@@ -254,8 +263,10 @@ package directoryservice {
   trait AddIpRoutesResult extends js.Object {}
 
   object AddIpRoutesResult {
-    def apply(): AddIpRoutesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AddIpRoutesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddIpRoutesResult]
     }
@@ -268,7 +279,10 @@ package directoryservice {
   }
 
   object AddTagsToResourceRequest {
-    def apply(ResourceId: ResourceId, Tags: Tags): AddTagsToResourceRequest = {
+    def apply(
+        ResourceId: ResourceId,
+        Tags: Tags
+    ): AddTagsToResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags"       -> Tags.asInstanceOf[js.Any]
@@ -282,8 +296,10 @@ package directoryservice {
   trait AddTagsToResourceResult extends js.Object {}
 
   object AddTagsToResourceResult {
-    def apply(): AddTagsToResourceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AddTagsToResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceResult]
     }
@@ -299,13 +315,18 @@ package directoryservice {
   }
 
   object Attribute {
-    def apply(Name: js.UndefOr[AttributeName] = js.undefined,
-              Value: js.UndefOr[AttributeValue] = js.undefined): Attribute = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[AttributeName] = js.undefined,
+        Value: js.UndefOr[AttributeValue] = js.undefined
+    ): Attribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Attribute]
     }
@@ -318,7 +339,10 @@ package directoryservice {
   }
 
   object CancelSchemaExtensionRequest {
-    def apply(DirectoryId: DirectoryId, SchemaExtensionId: SchemaExtensionId): CancelSchemaExtensionRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        SchemaExtensionId: SchemaExtensionId
+    ): CancelSchemaExtensionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"       -> DirectoryId.asInstanceOf[js.Any],
         "SchemaExtensionId" -> SchemaExtensionId.asInstanceOf[js.Any]
@@ -332,8 +356,10 @@ package directoryservice {
   trait CancelSchemaExtensionResult extends js.Object {}
 
   object CancelSchemaExtensionResult {
-    def apply(): CancelSchemaExtensionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CancelSchemaExtensionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSchemaExtensionResult]
     }
@@ -350,9 +376,11 @@ package directoryservice {
   }
 
   object Computer {
-    def apply(ComputerAttributes: js.UndefOr[Attributes] = js.undefined,
-              ComputerId: js.UndefOr[SID] = js.undefined,
-              ComputerName: js.UndefOr[ComputerName] = js.undefined): Computer = {
+    def apply(
+        ComputerAttributes: js.UndefOr[Attributes] = js.undefined,
+        ComputerId: js.UndefOr[SID] = js.undefined,
+        ComputerName: js.UndefOr[ComputerName] = js.undefined
+    ): Computer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComputerAttributes" -> ComputerAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -380,9 +408,11 @@ package directoryservice {
   }
 
   object ConditionalForwarder {
-    def apply(DnsIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
-              RemoteDomainName: js.UndefOr[RemoteDomainName] = js.undefined,
-              ReplicationScope: js.UndefOr[ReplicationScope] = js.undefined): ConditionalForwarder = {
+    def apply(
+        DnsIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
+        RemoteDomainName: js.UndefOr[RemoteDomainName] = js.undefined,
+        ReplicationScope: js.UndefOr[ReplicationScope] = js.undefined
+    ): ConditionalForwarder = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DnsIpAddrs" -> DnsIpAddrs.map { x =>
           x.asInstanceOf[js.Any]
@@ -410,15 +440,19 @@ package directoryservice {
     var Size: DirectorySize
     var Description: js.UndefOr[Description]
     var ShortName: js.UndefOr[DirectoryShortName]
+    var Tags: js.UndefOr[Tags]
   }
 
   object ConnectDirectoryRequest {
-    def apply(ConnectSettings: DirectoryConnectSettings,
-              Name: DirectoryName,
-              Password: ConnectPassword,
-              Size: DirectorySize,
-              Description: js.UndefOr[Description] = js.undefined,
-              ShortName: js.UndefOr[DirectoryShortName] = js.undefined): ConnectDirectoryRequest = {
+    def apply(
+        ConnectSettings: DirectoryConnectSettings,
+        Name: DirectoryName,
+        Password: ConnectPassword,
+        Size: DirectorySize,
+        Description: js.UndefOr[Description] = js.undefined,
+        ShortName: js.UndefOr[DirectoryShortName] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ConnectDirectoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectSettings" -> ConnectSettings.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any],
@@ -428,6 +462,9 @@ package directoryservice {
           x.asInstanceOf[js.Any]
         },
         "ShortName" -> ShortName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -445,10 +482,14 @@ package directoryservice {
   }
 
   object ConnectDirectoryResult {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined): ConnectDirectoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): ConnectDirectoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConnectDirectoryResult]
     }
@@ -464,7 +505,10 @@ package directoryservice {
   }
 
   object CreateAliasRequest {
-    def apply(Alias: AliasName, DirectoryId: DirectoryId): CreateAliasRequest = {
+    def apply(
+        Alias: AliasName,
+        DirectoryId: DirectoryId
+    ): CreateAliasRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Alias"       -> Alias.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
@@ -484,13 +528,18 @@ package directoryservice {
   }
 
   object CreateAliasResult {
-    def apply(Alias: js.UndefOr[AliasName] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined): CreateAliasResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Alias" -> Alias.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "DirectoryId" -> DirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Alias: js.UndefOr[AliasName] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): CreateAliasResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Alias" -> Alias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DirectoryId" -> DirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAliasResult]
     }
@@ -541,10 +590,14 @@ package directoryservice {
   }
 
   object CreateComputerResult {
-    def apply(Computer: js.UndefOr[Computer] = js.undefined): CreateComputerResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Computer" -> Computer.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Computer: js.UndefOr[Computer] = js.undefined
+    ): CreateComputerResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Computer" -> Computer.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateComputerResult]
     }
@@ -561,9 +614,11 @@ package directoryservice {
   }
 
   object CreateConditionalForwarderRequest {
-    def apply(DirectoryId: DirectoryId,
-              DnsIpAddrs: DnsIpAddrs,
-              RemoteDomainName: RemoteDomainName): CreateConditionalForwarderRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        DnsIpAddrs: DnsIpAddrs,
+        RemoteDomainName: RemoteDomainName
+    ): CreateConditionalForwarderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
         "DnsIpAddrs"       -> DnsIpAddrs.asInstanceOf[js.Any],
@@ -581,8 +636,10 @@ package directoryservice {
   trait CreateConditionalForwarderResult extends js.Object {}
 
   object CreateConditionalForwarderResult {
-    def apply(): CreateConditionalForwarderResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateConditionalForwarderResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConditionalForwarderResult]
     }
@@ -598,16 +655,20 @@ package directoryservice {
     var Size: DirectorySize
     var Description: js.UndefOr[Description]
     var ShortName: js.UndefOr[DirectoryShortName]
+    var Tags: js.UndefOr[Tags]
     var VpcSettings: js.UndefOr[DirectoryVpcSettings]
   }
 
   object CreateDirectoryRequest {
-    def apply(Name: DirectoryName,
-              Password: Password,
-              Size: DirectorySize,
-              Description: js.UndefOr[Description] = js.undefined,
-              ShortName: js.UndefOr[DirectoryShortName] = js.undefined,
-              VpcSettings: js.UndefOr[DirectoryVpcSettings] = js.undefined): CreateDirectoryRequest = {
+    def apply(
+        Name: DirectoryName,
+        Password: Password,
+        Size: DirectorySize,
+        Description: js.UndefOr[Description] = js.undefined,
+        ShortName: js.UndefOr[DirectoryShortName] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcSettings: js.UndefOr[DirectoryVpcSettings] = js.undefined
+    ): CreateDirectoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"     -> Name.asInstanceOf[js.Any],
         "Password" -> Password.asInstanceOf[js.Any],
@@ -616,6 +677,9 @@ package directoryservice {
           x.asInstanceOf[js.Any]
         },
         "ShortName" -> ShortName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "VpcSettings" -> VpcSettings.map { x =>
@@ -636,10 +700,14 @@ package directoryservice {
   }
 
   object CreateDirectoryResult {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined): CreateDirectoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): CreateDirectoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDirectoryResult]
     }
@@ -652,7 +720,10 @@ package directoryservice {
   }
 
   object CreateLogSubscriptionRequest {
-    def apply(DirectoryId: DirectoryId, LogGroupName: LogGroupName): CreateLogSubscriptionRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        LogGroupName: LogGroupName
+    ): CreateLogSubscriptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"  -> DirectoryId.asInstanceOf[js.Any],
         "LogGroupName" -> LogGroupName.asInstanceOf[js.Any]
@@ -666,8 +737,10 @@ package directoryservice {
   trait CreateLogSubscriptionResult extends js.Object {}
 
   object CreateLogSubscriptionResult {
-    def apply(): CreateLogSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateLogSubscriptionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLogSubscriptionResult]
     }
@@ -684,15 +757,19 @@ package directoryservice {
     var Description: js.UndefOr[Description]
     var Edition: js.UndefOr[DirectoryEdition]
     var ShortName: js.UndefOr[DirectoryShortName]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateMicrosoftADRequest {
-    def apply(Name: DirectoryName,
-              Password: Password,
-              VpcSettings: DirectoryVpcSettings,
-              Description: js.UndefOr[Description] = js.undefined,
-              Edition: js.UndefOr[DirectoryEdition] = js.undefined,
-              ShortName: js.UndefOr[DirectoryShortName] = js.undefined): CreateMicrosoftADRequest = {
+    def apply(
+        Name: DirectoryName,
+        Password: Password,
+        VpcSettings: DirectoryVpcSettings,
+        Description: js.UndefOr[Description] = js.undefined,
+        Edition: js.UndefOr[DirectoryEdition] = js.undefined,
+        ShortName: js.UndefOr[DirectoryShortName] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateMicrosoftADRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"        -> Name.asInstanceOf[js.Any],
         "Password"    -> Password.asInstanceOf[js.Any],
@@ -704,6 +781,9 @@ package directoryservice {
           x.asInstanceOf[js.Any]
         },
         "ShortName" -> ShortName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -721,10 +801,14 @@ package directoryservice {
   }
 
   object CreateMicrosoftADResult {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined): CreateMicrosoftADResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): CreateMicrosoftADResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMicrosoftADResult]
     }
@@ -740,11 +824,16 @@ package directoryservice {
   }
 
   object CreateSnapshotRequest {
-    def apply(DirectoryId: DirectoryId, Name: js.UndefOr[SnapshotName] = js.undefined): CreateSnapshotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.asInstanceOf[js.Any], "Name" -> Name.map {
-        x =>
+    def apply(
+        DirectoryId: DirectoryId,
+        Name: js.UndefOr[SnapshotName] = js.undefined
+    ): CreateSnapshotRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotRequest]
     }
@@ -759,10 +848,14 @@ package directoryservice {
   }
 
   object CreateSnapshotResult {
-    def apply(SnapshotId: js.UndefOr[SnapshotId] = js.undefined): CreateSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotId" -> SnapshotId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined
+    ): CreateSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotId" -> SnapshotId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotResult]
     }
@@ -784,13 +877,15 @@ package directoryservice {
   }
 
   object CreateTrustRequest {
-    def apply(DirectoryId: DirectoryId,
-              RemoteDomainName: RemoteDomainName,
-              TrustDirection: TrustDirection,
-              TrustPassword: TrustPassword,
-              ConditionalForwarderIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
-              SelectiveAuth: js.UndefOr[SelectiveAuth] = js.undefined,
-              TrustType: js.UndefOr[TrustType] = js.undefined): CreateTrustRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        RemoteDomainName: RemoteDomainName,
+        TrustDirection: TrustDirection,
+        TrustPassword: TrustPassword,
+        ConditionalForwarderIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
+        SelectiveAuth: js.UndefOr[SelectiveAuth] = js.undefined,
+        TrustType: js.UndefOr[TrustType] = js.undefined
+    ): CreateTrustRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any],
@@ -820,10 +915,14 @@ package directoryservice {
   }
 
   object CreateTrustResult {
-    def apply(TrustId: js.UndefOr[TrustId] = js.undefined): CreateTrustResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("TrustId" -> TrustId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TrustId: js.UndefOr[TrustId] = js.undefined
+    ): CreateTrustResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TrustId" -> TrustId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTrustResult]
     }
@@ -839,7 +938,10 @@ package directoryservice {
   }
 
   object DeleteConditionalForwarderRequest {
-    def apply(DirectoryId: DirectoryId, RemoteDomainName: RemoteDomainName): DeleteConditionalForwarderRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        RemoteDomainName: RemoteDomainName
+    ): DeleteConditionalForwarderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
         "RemoteDomainName" -> RemoteDomainName.asInstanceOf[js.Any]
@@ -856,8 +958,10 @@ package directoryservice {
   trait DeleteConditionalForwarderResult extends js.Object {}
 
   object DeleteConditionalForwarderResult {
-    def apply(): DeleteConditionalForwarderResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteConditionalForwarderResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConditionalForwarderResult]
     }
@@ -872,9 +976,12 @@ package directoryservice {
   }
 
   object DeleteDirectoryRequest {
-    def apply(DirectoryId: DirectoryId): DeleteDirectoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: DirectoryId
+    ): DeleteDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectoryRequest]
     }
@@ -889,10 +996,14 @@ package directoryservice {
   }
 
   object DeleteDirectoryResult {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined): DeleteDirectoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): DeleteDirectoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDirectoryResult]
     }
@@ -904,9 +1015,12 @@ package directoryservice {
   }
 
   object DeleteLogSubscriptionRequest {
-    def apply(DirectoryId: DirectoryId): DeleteLogSubscriptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: DirectoryId
+    ): DeleteLogSubscriptionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLogSubscriptionRequest]
     }
@@ -916,8 +1030,10 @@ package directoryservice {
   trait DeleteLogSubscriptionResult extends js.Object {}
 
   object DeleteLogSubscriptionResult {
-    def apply(): DeleteLogSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteLogSubscriptionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLogSubscriptionResult]
     }
@@ -932,9 +1048,12 @@ package directoryservice {
   }
 
   object DeleteSnapshotRequest {
-    def apply(SnapshotId: SnapshotId): DeleteSnapshotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotId" -> SnapshotId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotId: SnapshotId
+    ): DeleteSnapshotRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotRequest]
     }
@@ -949,10 +1068,14 @@ package directoryservice {
   }
 
   object DeleteSnapshotResult {
-    def apply(SnapshotId: js.UndefOr[SnapshotId] = js.undefined): DeleteSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotId" -> SnapshotId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined
+    ): DeleteSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotId" -> SnapshotId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotResult]
     }
@@ -992,10 +1115,14 @@ package directoryservice {
   }
 
   object DeleteTrustResult {
-    def apply(TrustId: js.UndefOr[TrustId] = js.undefined): DeleteTrustResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("TrustId" -> TrustId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TrustId: js.UndefOr[TrustId] = js.undefined
+    ): DeleteTrustResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TrustId" -> TrustId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTrustResult]
     }
@@ -1011,7 +1138,10 @@ package directoryservice {
   }
 
   object DeregisterEventTopicRequest {
-    def apply(DirectoryId: DirectoryId, TopicName: TopicName): DeregisterEventTopicRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        TopicName: TopicName
+    ): DeregisterEventTopicRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "TopicName"   -> TopicName.asInstanceOf[js.Any]
@@ -1028,8 +1158,10 @@ package directoryservice {
   trait DeregisterEventTopicResult extends js.Object {}
 
   object DeregisterEventTopicResult {
-    def apply(): DeregisterEventTopicResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeregisterEventTopicResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterEventTopicResult]
     }
@@ -1045,8 +1177,10 @@ package directoryservice {
   }
 
   object DescribeConditionalForwardersRequest {
-    def apply(DirectoryId: DirectoryId,
-              RemoteDomainNames: js.UndefOr[RemoteDomainNames] = js.undefined): DescribeConditionalForwardersRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        RemoteDomainNames: js.UndefOr[RemoteDomainNames] = js.undefined
+    ): DescribeConditionalForwardersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "RemoteDomainNames" -> RemoteDomainNames.map { x =>
@@ -1070,9 +1204,11 @@ package directoryservice {
     def apply(
         ConditionalForwarders: js.UndefOr[ConditionalForwarders] = js.undefined
     ): DescribeConditionalForwardersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ConditionalForwarders" -> ConditionalForwarders.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConditionalForwarders" -> ConditionalForwarders.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConditionalForwardersResult]
     }
@@ -1089,9 +1225,11 @@ package directoryservice {
   }
 
   object DescribeDirectoriesRequest {
-    def apply(DirectoryIds: js.UndefOr[DirectoryIds] = js.undefined,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeDirectoriesRequest = {
+    def apply(
+        DirectoryIds: js.UndefOr[DirectoryIds] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeDirectoriesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryIds" -> DirectoryIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -1118,13 +1256,18 @@ package directoryservice {
   }
 
   object DescribeDirectoriesResult {
-    def apply(DirectoryDescriptions: js.UndefOr[DirectoryDescriptions] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeDirectoriesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryDescriptions" -> DirectoryDescriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryDescriptions: js.UndefOr[DirectoryDescriptions] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeDirectoriesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryDescriptions" -> DirectoryDescriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDirectoriesResult]
     }
@@ -1139,10 +1282,12 @@ package directoryservice {
   }
 
   object DescribeDomainControllersRequest {
-    def apply(DirectoryId: DirectoryId,
-              DomainControllerIds: js.UndefOr[DomainControllerIds] = js.undefined,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeDomainControllersRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        DomainControllerIds: js.UndefOr[DomainControllerIds] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeDomainControllersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "DomainControllerIds" -> DomainControllerIds.map { x =>
@@ -1167,13 +1312,18 @@ package directoryservice {
   }
 
   object DescribeDomainControllersResult {
-    def apply(DomainControllers: js.UndefOr[DomainControllers] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeDomainControllersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DomainControllers" -> DomainControllers.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DomainControllers: js.UndefOr[DomainControllers] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeDomainControllersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainControllers" -> DomainControllers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDomainControllersResult]
     }
@@ -1189,13 +1339,18 @@ package directoryservice {
   }
 
   object DescribeEventTopicsRequest {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              TopicNames: js.UndefOr[TopicNames] = js.undefined): DescribeEventTopicsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TopicNames" -> TopicNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        TopicNames: js.UndefOr[TopicNames] = js.undefined
+    ): DescribeEventTopicsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TopicNames" -> TopicNames.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventTopicsRequest]
     }
@@ -1210,10 +1365,14 @@ package directoryservice {
   }
 
   object DescribeEventTopicsResult {
-    def apply(EventTopics: js.UndefOr[EventTopics] = js.undefined): DescribeEventTopicsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventTopics" -> EventTopics.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventTopics: js.UndefOr[EventTopics] = js.undefined
+    ): DescribeEventTopicsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventTopics" -> EventTopics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventTopicsResult]
     }
@@ -1228,10 +1387,12 @@ package directoryservice {
   }
 
   object DescribeSharedDirectoriesRequest {
-    def apply(OwnerDirectoryId: DirectoryId,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SharedDirectoryIds: js.UndefOr[DirectoryIds] = js.undefined): DescribeSharedDirectoriesRequest = {
+    def apply(
+        OwnerDirectoryId: DirectoryId,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SharedDirectoryIds: js.UndefOr[DirectoryIds] = js.undefined
+    ): DescribeSharedDirectoriesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OwnerDirectoryId" -> OwnerDirectoryId.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x =>
@@ -1256,13 +1417,18 @@ package directoryservice {
   }
 
   object DescribeSharedDirectoriesResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              SharedDirectories: js.UndefOr[SharedDirectories] = js.undefined): DescribeSharedDirectoriesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SharedDirectories" -> SharedDirectories.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SharedDirectories: js.UndefOr[SharedDirectories] = js.undefined
+    ): DescribeSharedDirectoriesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SharedDirectories" -> SharedDirectories.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSharedDirectoriesResult]
     }
@@ -1280,10 +1446,12 @@ package directoryservice {
   }
 
   object DescribeSnapshotsRequest {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SnapshotIds: js.UndefOr[SnapshotIds] = js.undefined): DescribeSnapshotsRequest = {
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SnapshotIds: js.UndefOr[SnapshotIds] = js.undefined
+    ): DescribeSnapshotsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1313,13 +1481,18 @@ package directoryservice {
   }
 
   object DescribeSnapshotsResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Snapshots: js.UndefOr[Snapshots] = js.undefined): DescribeSnapshotsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Snapshots" -> Snapshots.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Snapshots: js.UndefOr[Snapshots] = js.undefined
+    ): DescribeSnapshotsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Snapshots" -> Snapshots.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotsResult]
     }
@@ -1337,10 +1510,12 @@ package directoryservice {
   }
 
   object DescribeTrustsRequest {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              TrustIds: js.UndefOr[TrustIds] = js.undefined): DescribeTrustsRequest = {
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        TrustIds: js.UndefOr[TrustIds] = js.undefined
+    ): DescribeTrustsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1370,13 +1545,18 @@ package directoryservice {
   }
 
   object DescribeTrustsResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Trusts: js.UndefOr[Trusts] = js.undefined): DescribeTrustsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Trusts" -> Trusts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Trusts: js.UndefOr[Trusts] = js.undefined
+    ): DescribeTrustsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Trusts" -> Trusts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrustsResult]
     }
@@ -1394,10 +1574,12 @@ package directoryservice {
   }
 
   object DirectoryConnectSettings {
-    def apply(CustomerDnsIps: DnsIpAddrs,
-              CustomerUserName: UserName,
-              SubnetIds: SubnetIds,
-              VpcId: VpcId): DirectoryConnectSettings = {
+    def apply(
+        CustomerDnsIps: DnsIpAddrs,
+        CustomerUserName: UserName,
+        SubnetIds: SubnetIds,
+        VpcId: VpcId
+    ): DirectoryConnectSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomerDnsIps"   -> CustomerDnsIps.asInstanceOf[js.Any],
         "CustomerUserName" -> CustomerUserName.asInstanceOf[js.Any],
@@ -1423,12 +1605,14 @@ package directoryservice {
   }
 
   object DirectoryConnectSettingsDescription {
-    def apply(AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-              ConnectIps: js.UndefOr[IpAddrs] = js.undefined,
-              CustomerUserName: js.UndefOr[UserName] = js.undefined,
-              SecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
-              SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
-              VpcId: js.UndefOr[VpcId] = js.undefined): DirectoryConnectSettingsDescription = {
+    def apply(
+        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        ConnectIps: js.UndefOr[IpAddrs] = js.undefined,
+        CustomerUserName: js.UndefOr[UserName] = js.undefined,
+        SecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
+    ): DirectoryConnectSettingsDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZones" -> AvailabilityZones.map { x =>
           x.asInstanceOf[js.Any]
@@ -1486,30 +1670,32 @@ package directoryservice {
   }
 
   object DirectoryDescription {
-    def apply(AccessUrl: js.UndefOr[AccessUrl] = js.undefined,
-              Alias: js.UndefOr[AliasName] = js.undefined,
-              ConnectSettings: js.UndefOr[DirectoryConnectSettingsDescription] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              DesiredNumberOfDomainControllers: js.UndefOr[DesiredNumberOfDomainControllers] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              DnsIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
-              Edition: js.UndefOr[DirectoryEdition] = js.undefined,
-              LaunchTime: js.UndefOr[LaunchTime] = js.undefined,
-              Name: js.UndefOr[DirectoryName] = js.undefined,
-              OwnerDirectoryDescription: js.UndefOr[OwnerDirectoryDescription] = js.undefined,
-              RadiusSettings: js.UndefOr[RadiusSettings] = js.undefined,
-              RadiusStatus: js.UndefOr[RadiusStatus] = js.undefined,
-              ShareMethod: js.UndefOr[ShareMethod] = js.undefined,
-              ShareNotes: js.UndefOr[Notes] = js.undefined,
-              ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
-              ShortName: js.UndefOr[DirectoryShortName] = js.undefined,
-              Size: js.UndefOr[DirectorySize] = js.undefined,
-              SsoEnabled: js.UndefOr[SsoEnabled] = js.undefined,
-              Stage: js.UndefOr[DirectoryStage] = js.undefined,
-              StageLastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
-              StageReason: js.UndefOr[StageReason] = js.undefined,
-              Type: js.UndefOr[DirectoryType] = js.undefined,
-              VpcSettings: js.UndefOr[DirectoryVpcSettingsDescription] = js.undefined): DirectoryDescription = {
+    def apply(
+        AccessUrl: js.UndefOr[AccessUrl] = js.undefined,
+        Alias: js.UndefOr[AliasName] = js.undefined,
+        ConnectSettings: js.UndefOr[DirectoryConnectSettingsDescription] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        DesiredNumberOfDomainControllers: js.UndefOr[DesiredNumberOfDomainControllers] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        DnsIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
+        Edition: js.UndefOr[DirectoryEdition] = js.undefined,
+        LaunchTime: js.UndefOr[LaunchTime] = js.undefined,
+        Name: js.UndefOr[DirectoryName] = js.undefined,
+        OwnerDirectoryDescription: js.UndefOr[OwnerDirectoryDescription] = js.undefined,
+        RadiusSettings: js.UndefOr[RadiusSettings] = js.undefined,
+        RadiusStatus: js.UndefOr[RadiusStatus] = js.undefined,
+        ShareMethod: js.UndefOr[ShareMethod] = js.undefined,
+        ShareNotes: js.UndefOr[Notes] = js.undefined,
+        ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
+        ShortName: js.UndefOr[DirectoryShortName] = js.undefined,
+        Size: js.UndefOr[DirectorySize] = js.undefined,
+        SsoEnabled: js.UndefOr[SsoEnabled] = js.undefined,
+        Stage: js.UndefOr[DirectoryStage] = js.undefined,
+        StageLastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
+        StageReason: js.UndefOr[StageReason] = js.undefined,
+        Type: js.UndefOr[DirectoryType] = js.undefined,
+        VpcSettings: js.UndefOr[DirectoryVpcSettingsDescription] = js.undefined
+    ): DirectoryDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessUrl" -> AccessUrl.map { x =>
           x.asInstanceOf[js.Any]
@@ -1712,7 +1898,10 @@ package directoryservice {
   }
 
   object DirectoryVpcSettings {
-    def apply(SubnetIds: SubnetIds, VpcId: VpcId): DirectoryVpcSettings = {
+    def apply(
+        SubnetIds: SubnetIds,
+        VpcId: VpcId
+    ): DirectoryVpcSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
         "VpcId"     -> VpcId.asInstanceOf[js.Any]
@@ -1734,10 +1923,12 @@ package directoryservice {
   }
 
   object DirectoryVpcSettingsDescription {
-    def apply(AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-              SecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
-              SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
-              VpcId: js.UndefOr[VpcId] = js.undefined): DirectoryVpcSettingsDescription = {
+    def apply(
+        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        SecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
+    ): DirectoryVpcSettingsDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZones" -> AvailabilityZones.map { x =>
           x.asInstanceOf[js.Any]
@@ -1766,9 +1957,12 @@ package directoryservice {
   }
 
   object DisableRadiusRequest {
-    def apply(DirectoryId: DirectoryId): DisableRadiusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: DirectoryId
+    ): DisableRadiusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableRadiusRequest]
     }
@@ -1781,8 +1975,10 @@ package directoryservice {
   trait DisableRadiusResult extends js.Object {}
 
   object DisableRadiusResult {
-    def apply(): DisableRadiusResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisableRadiusResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableRadiusResult]
     }
@@ -1799,9 +1995,11 @@ package directoryservice {
   }
 
   object DisableSsoRequest {
-    def apply(DirectoryId: DirectoryId,
-              Password: js.UndefOr[ConnectPassword] = js.undefined,
-              UserName: js.UndefOr[UserName] = js.undefined): DisableSsoRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        Password: js.UndefOr[ConnectPassword] = js.undefined,
+        UserName: js.UndefOr[UserName] = js.undefined
+    ): DisableSsoRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "Password" -> Password.map { x =>
@@ -1823,8 +2021,10 @@ package directoryservice {
   trait DisableSsoResult extends js.Object {}
 
   object DisableSsoResult {
-    def apply(): DisableSsoResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisableSsoResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableSsoResult]
     }
@@ -1848,16 +2048,18 @@ package directoryservice {
   }
 
   object DomainController {
-    def apply(AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              DnsIpAddr: js.UndefOr[IpAddr] = js.undefined,
-              DomainControllerId: js.UndefOr[DomainControllerId] = js.undefined,
-              LaunchTime: js.UndefOr[LaunchTime] = js.undefined,
-              Status: js.UndefOr[DomainControllerStatus] = js.undefined,
-              StatusLastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
-              StatusReason: js.UndefOr[DomainControllerStatusReason] = js.undefined,
-              SubnetId: js.UndefOr[SubnetId] = js.undefined,
-              VpcId: js.UndefOr[VpcId] = js.undefined): DomainController = {
+    def apply(
+        AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        DnsIpAddr: js.UndefOr[IpAddr] = js.undefined,
+        DomainControllerId: js.UndefOr[DomainControllerId] = js.undefined,
+        LaunchTime: js.UndefOr[LaunchTime] = js.undefined,
+        Status: js.UndefOr[DomainControllerStatus] = js.undefined,
+        StatusLastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
+        StatusReason: js.UndefOr[DomainControllerStatusReason] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
+    ): DomainController = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -1917,7 +2119,10 @@ package directoryservice {
   }
 
   object EnableRadiusRequest {
-    def apply(DirectoryId: DirectoryId, RadiusSettings: RadiusSettings): EnableRadiusRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        RadiusSettings: RadiusSettings
+    ): EnableRadiusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"    -> DirectoryId.asInstanceOf[js.Any],
         "RadiusSettings" -> RadiusSettings.asInstanceOf[js.Any]
@@ -1934,8 +2139,10 @@ package directoryservice {
   trait EnableRadiusResult extends js.Object {}
 
   object EnableRadiusResult {
-    def apply(): EnableRadiusResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): EnableRadiusResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableRadiusResult]
     }
@@ -1952,9 +2159,11 @@ package directoryservice {
   }
 
   object EnableSsoRequest {
-    def apply(DirectoryId: DirectoryId,
-              Password: js.UndefOr[ConnectPassword] = js.undefined,
-              UserName: js.UndefOr[UserName] = js.undefined): EnableSsoRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        Password: js.UndefOr[ConnectPassword] = js.undefined,
+        UserName: js.UndefOr[UserName] = js.undefined
+    ): EnableSsoRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "Password" -> Password.map { x =>
@@ -1976,8 +2185,10 @@ package directoryservice {
   trait EnableSsoResult extends js.Object {}
 
   object EnableSsoResult {
-    def apply(): EnableSsoResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): EnableSsoResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableSsoResult]
     }
@@ -1996,11 +2207,13 @@ package directoryservice {
   }
 
   object EventTopic {
-    def apply(CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              Status: js.UndefOr[TopicStatus] = js.undefined,
-              TopicArn: js.UndefOr[TopicArn] = js.undefined,
-              TopicName: js.UndefOr[TopicName] = js.undefined): EventTopic = {
+    def apply(
+        CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Status: js.UndefOr[TopicStatus] = js.undefined,
+        TopicArn: js.UndefOr[TopicArn] = js.undefined,
+        TopicName: js.UndefOr[TopicName] = js.undefined
+    ): EventTopic = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDateTime" -> CreatedDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2030,8 +2243,10 @@ package directoryservice {
   trait GetDirectoryLimitsRequest extends js.Object {}
 
   object GetDirectoryLimitsRequest {
-    def apply(): GetDirectoryLimitsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetDirectoryLimitsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDirectoryLimitsRequest]
     }
@@ -2046,10 +2261,14 @@ package directoryservice {
   }
 
   object GetDirectoryLimitsResult {
-    def apply(DirectoryLimits: js.UndefOr[DirectoryLimits] = js.undefined): GetDirectoryLimitsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryLimits" -> DirectoryLimits.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryLimits: js.UndefOr[DirectoryLimits] = js.undefined
+    ): GetDirectoryLimitsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryLimits" -> DirectoryLimits.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDirectoryLimitsResult]
     }
@@ -2064,9 +2283,12 @@ package directoryservice {
   }
 
   object GetSnapshotLimitsRequest {
-    def apply(DirectoryId: DirectoryId): GetSnapshotLimitsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DirectoryId: DirectoryId
+    ): GetSnapshotLimitsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSnapshotLimitsRequest]
     }
@@ -2081,10 +2303,14 @@ package directoryservice {
   }
 
   object GetSnapshotLimitsResult {
-    def apply(SnapshotLimits: js.UndefOr[SnapshotLimits] = js.undefined): GetSnapshotLimitsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotLimits" -> SnapshotLimits.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotLimits: js.UndefOr[SnapshotLimits] = js.undefined
+    ): GetSnapshotLimitsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotLimits" -> SnapshotLimits.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSnapshotLimitsResult]
     }
@@ -2100,13 +2326,18 @@ package directoryservice {
   }
 
   object IpRoute {
-    def apply(CidrIp: js.UndefOr[CidrIp] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined): IpRoute = {
-      val _fields = IndexedSeq[(String, js.Any)]("CidrIp" -> CidrIp.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Description" -> Description.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CidrIp: js.UndefOr[CidrIp] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined
+    ): IpRoute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CidrIp" -> CidrIp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IpRoute]
     }
@@ -2126,12 +2357,14 @@ package directoryservice {
   }
 
   object IpRouteInfo {
-    def apply(AddedDateTime: js.UndefOr[AddedDateTime] = js.undefined,
-              CidrIp: js.UndefOr[CidrIp] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              IpRouteStatusMsg: js.UndefOr[IpRouteStatusMsg] = js.undefined,
-              IpRouteStatusReason: js.UndefOr[IpRouteStatusReason] = js.undefined): IpRouteInfo = {
+    def apply(
+        AddedDateTime: js.UndefOr[AddedDateTime] = js.undefined,
+        CidrIp: js.UndefOr[CidrIp] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        IpRouteStatusMsg: js.UndefOr[IpRouteStatusMsg] = js.undefined,
+        IpRouteStatusReason: js.UndefOr[IpRouteStatusReason] = js.undefined
+    ): IpRouteInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddedDateTime" -> AddedDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2176,15 +2409,20 @@ package directoryservice {
   }
 
   object ListIpRoutesRequest {
-    def apply(DirectoryId: DirectoryId,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListIpRoutesRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.asInstanceOf[js.Any], "Limit" -> Limit.map { x =>
+    def apply(
+        DirectoryId: DirectoryId,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIpRoutesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
-        }, "NextToken" -> NextToken.map { x =>
+        },
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIpRoutesRequest]
     }
@@ -2197,13 +2435,18 @@ package directoryservice {
   }
 
   object ListIpRoutesResult {
-    def apply(IpRoutesInfo: js.UndefOr[IpRoutesInfo] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListIpRoutesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("IpRoutesInfo" -> IpRoutesInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IpRoutesInfo: js.UndefOr[IpRoutesInfo] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListIpRoutesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IpRoutesInfo" -> IpRoutesInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIpRoutesResult]
     }
@@ -2217,9 +2460,11 @@ package directoryservice {
   }
 
   object ListLogSubscriptionsRequest {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListLogSubscriptionsRequest = {
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLogSubscriptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2243,13 +2488,18 @@ package directoryservice {
   }
 
   object ListLogSubscriptionsResult {
-    def apply(LogSubscriptions: js.UndefOr[LogSubscriptions] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListLogSubscriptionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("LogSubscriptions" -> LogSubscriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LogSubscriptions: js.UndefOr[LogSubscriptions] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLogSubscriptionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LogSubscriptions" -> LogSubscriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLogSubscriptionsResult]
     }
@@ -2263,15 +2513,20 @@ package directoryservice {
   }
 
   object ListSchemaExtensionsRequest {
-    def apply(DirectoryId: DirectoryId,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListSchemaExtensionsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DirectoryId" -> DirectoryId.asInstanceOf[js.Any], "Limit" -> Limit.map { x =>
+    def apply(
+        DirectoryId: DirectoryId,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSchemaExtensionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
-        }, "NextToken" -> NextToken.map { x =>
+        },
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSchemaExtensionsRequest]
     }
@@ -2284,13 +2539,18 @@ package directoryservice {
   }
 
   object ListSchemaExtensionsResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              SchemaExtensionsInfo: js.UndefOr[SchemaExtensionsInfo] = js.undefined): ListSchemaExtensionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SchemaExtensionsInfo" -> SchemaExtensionsInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SchemaExtensionsInfo: js.UndefOr[SchemaExtensionsInfo] = js.undefined
+    ): ListSchemaExtensionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SchemaExtensionsInfo" -> SchemaExtensionsInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSchemaExtensionsResult]
     }
@@ -2304,15 +2564,20 @@ package directoryservice {
   }
 
   object ListTagsForResourceRequest {
-    def apply(ResourceId: ResourceId,
-              Limit: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceId" -> ResourceId.asInstanceOf[js.Any], "Limit" -> Limit.map {
-        x =>
+    def apply(
+        ResourceId: ResourceId,
+        Limit: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -2325,13 +2590,18 @@ package directoryservice {
   }
 
   object ListTagsForResourceResult {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): ListTagsForResourceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResult]
     }
@@ -2348,9 +2618,11 @@ package directoryservice {
   }
 
   object LogSubscription {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
-              SubscriptionCreatedDateTime: js.UndefOr[SubscriptionCreatedDateTime] = js.undefined): LogSubscription = {
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
+        SubscriptionCreatedDateTime: js.UndefOr[SubscriptionCreatedDateTime] = js.undefined
+    ): LogSubscription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2381,12 +2653,14 @@ package directoryservice {
   }
 
   object OwnerDirectoryDescription {
-    def apply(AccountId: js.UndefOr[CustomerId] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              DnsIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
-              RadiusSettings: js.UndefOr[RadiusSettings] = js.undefined,
-              RadiusStatus: js.UndefOr[RadiusStatus] = js.undefined,
-              VpcSettings: js.UndefOr[DirectoryVpcSettingsDescription] = js.undefined): OwnerDirectoryDescription = {
+    def apply(
+        AccountId: js.UndefOr[CustomerId] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        DnsIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
+        RadiusSettings: js.UndefOr[RadiusSettings] = js.undefined,
+        RadiusStatus: js.UndefOr[RadiusStatus] = js.undefined,
+        VpcSettings: js.UndefOr[DirectoryVpcSettingsDescription] = js.undefined
+    ): OwnerDirectoryDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2437,14 +2711,16 @@ package directoryservice {
   }
 
   object RadiusSettings {
-    def apply(AuthenticationProtocol: js.UndefOr[RadiusAuthenticationProtocol] = js.undefined,
-              DisplayLabel: js.UndefOr[RadiusDisplayLabel] = js.undefined,
-              RadiusPort: js.UndefOr[PortNumber] = js.undefined,
-              RadiusRetries: js.UndefOr[RadiusRetries] = js.undefined,
-              RadiusServers: js.UndefOr[Servers] = js.undefined,
-              RadiusTimeout: js.UndefOr[RadiusTimeout] = js.undefined,
-              SharedSecret: js.UndefOr[RadiusSharedSecret] = js.undefined,
-              UseSameUsername: js.UndefOr[UseSameUsername] = js.undefined): RadiusSettings = {
+    def apply(
+        AuthenticationProtocol: js.UndefOr[RadiusAuthenticationProtocol] = js.undefined,
+        DisplayLabel: js.UndefOr[RadiusDisplayLabel] = js.undefined,
+        RadiusPort: js.UndefOr[PortNumber] = js.undefined,
+        RadiusRetries: js.UndefOr[RadiusRetries] = js.undefined,
+        RadiusServers: js.UndefOr[Servers] = js.undefined,
+        RadiusTimeout: js.UndefOr[RadiusTimeout] = js.undefined,
+        SharedSecret: js.UndefOr[RadiusSharedSecret] = js.undefined,
+        UseSameUsername: js.UndefOr[UseSameUsername] = js.undefined
+    ): RadiusSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuthenticationProtocol" -> AuthenticationProtocol.map { x =>
           x.asInstanceOf[js.Any]
@@ -2494,7 +2770,10 @@ package directoryservice {
   }
 
   object RegisterEventTopicRequest {
-    def apply(DirectoryId: DirectoryId, TopicName: TopicName): RegisterEventTopicRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        TopicName: TopicName
+    ): RegisterEventTopicRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "TopicName"   -> TopicName.asInstanceOf[js.Any]
@@ -2511,8 +2790,10 @@ package directoryservice {
   trait RegisterEventTopicResult extends js.Object {}
 
   object RegisterEventTopicResult {
-    def apply(): RegisterEventTopicResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RegisterEventTopicResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterEventTopicResult]
     }
@@ -2524,9 +2805,12 @@ package directoryservice {
   }
 
   object RejectSharedDirectoryRequest {
-    def apply(SharedDirectoryId: DirectoryId): RejectSharedDirectoryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SharedDirectoryId" -> SharedDirectoryId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SharedDirectoryId: DirectoryId
+    ): RejectSharedDirectoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SharedDirectoryId" -> SharedDirectoryId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectSharedDirectoryRequest]
     }
@@ -2538,10 +2822,14 @@ package directoryservice {
   }
 
   object RejectSharedDirectoryResult {
-    def apply(SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined): RejectSharedDirectoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SharedDirectoryId" -> SharedDirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): RejectSharedDirectoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SharedDirectoryId" -> SharedDirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectSharedDirectoryResult]
     }
@@ -2554,7 +2842,10 @@ package directoryservice {
   }
 
   object RemoveIpRoutesRequest {
-    def apply(CidrIps: CidrIps, DirectoryId: DirectoryId): RemoveIpRoutesRequest = {
+    def apply(
+        CidrIps: CidrIps,
+        DirectoryId: DirectoryId
+    ): RemoveIpRoutesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CidrIps"     -> CidrIps.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
@@ -2568,8 +2859,10 @@ package directoryservice {
   trait RemoveIpRoutesResult extends js.Object {}
 
   object RemoveIpRoutesResult {
-    def apply(): RemoveIpRoutesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveIpRoutesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveIpRoutesResult]
     }
@@ -2582,7 +2875,10 @@ package directoryservice {
   }
 
   object RemoveTagsFromResourceRequest {
-    def apply(ResourceId: ResourceId, TagKeys: TagKeys): RemoveTagsFromResourceRequest = {
+    def apply(
+        ResourceId: ResourceId,
+        TagKeys: TagKeys
+    ): RemoveTagsFromResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
@@ -2596,8 +2892,10 @@ package directoryservice {
   trait RemoveTagsFromResourceResult extends js.Object {}
 
   object RemoveTagsFromResourceResult {
-    def apply(): RemoveTagsFromResourceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RemoveTagsFromResourceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceResult]
     }
@@ -2617,9 +2915,11 @@ package directoryservice {
   }
 
   object ResetUserPasswordRequest {
-    def apply(DirectoryId: DirectoryId,
-              NewPassword: UserPassword,
-              UserName: CustomerUserName): ResetUserPasswordRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        NewPassword: UserPassword,
+        UserName: CustomerUserName
+    ): ResetUserPasswordRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "NewPassword" -> NewPassword.asInstanceOf[js.Any],
@@ -2634,8 +2934,10 @@ package directoryservice {
   trait ResetUserPasswordResult extends js.Object {}
 
   object ResetUserPasswordResult {
-    def apply(): ResetUserPasswordResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ResetUserPasswordResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResetUserPasswordResult]
     }
@@ -2650,9 +2952,12 @@ package directoryservice {
   }
 
   object RestoreFromSnapshotRequest {
-    def apply(SnapshotId: SnapshotId): RestoreFromSnapshotRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotId" -> SnapshotId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotId: SnapshotId
+    ): RestoreFromSnapshotRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreFromSnapshotRequest]
     }
@@ -2665,8 +2970,10 @@ package directoryservice {
   trait RestoreFromSnapshotResult extends js.Object {}
 
   object RestoreFromSnapshotResult {
-    def apply(): RestoreFromSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): RestoreFromSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreFromSnapshotResult]
     }
@@ -2687,13 +2994,15 @@ package directoryservice {
   }
 
   object SchemaExtensionInfo {
-    def apply(Description: js.UndefOr[Description] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              EndDateTime: js.UndefOr[EndDateTime] = js.undefined,
-              SchemaExtensionId: js.UndefOr[SchemaExtensionId] = js.undefined,
-              SchemaExtensionStatus: js.UndefOr[SchemaExtensionStatus] = js.undefined,
-              SchemaExtensionStatusReason: js.UndefOr[SchemaExtensionStatusReason] = js.undefined,
-              StartDateTime: js.UndefOr[StartDateTime] = js.undefined): SchemaExtensionInfo = {
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        EndDateTime: js.UndefOr[EndDateTime] = js.undefined,
+        SchemaExtensionId: js.UndefOr[SchemaExtensionId] = js.undefined,
+        SchemaExtensionStatus: js.UndefOr[SchemaExtensionStatus] = js.undefined,
+        SchemaExtensionStatusReason: js.UndefOr[SchemaExtensionStatusReason] = js.undefined,
+        StartDateTime: js.UndefOr[StartDateTime] = js.undefined
+    ): SchemaExtensionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -2762,10 +3071,12 @@ package directoryservice {
   }
 
   object ShareDirectoryRequest {
-    def apply(DirectoryId: DirectoryId,
-              ShareMethod: ShareMethod,
-              ShareTarget: ShareTarget,
-              ShareNotes: js.UndefOr[Notes] = js.undefined): ShareDirectoryRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        ShareMethod: ShareMethod,
+        ShareTarget: ShareTarget,
+        ShareNotes: js.UndefOr[Notes] = js.undefined
+    ): ShareDirectoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "ShareMethod" -> ShareMethod.asInstanceOf[js.Any],
@@ -2785,10 +3096,14 @@ package directoryservice {
   }
 
   object ShareDirectoryResult {
-    def apply(SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined): ShareDirectoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SharedDirectoryId" -> SharedDirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): ShareDirectoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SharedDirectoryId" -> SharedDirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShareDirectoryResult]
     }
@@ -2826,9 +3141,14 @@ package directoryservice {
   }
 
   object ShareTarget {
-    def apply(Id: TargetId, Type: TargetType): ShareTarget = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "Type" -> Type.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: TargetId,
+        Type: TargetType
+    ): ShareTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id"   -> Id.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShareTarget]
     }
@@ -2851,15 +3171,17 @@ package directoryservice {
   }
 
   object SharedDirectory {
-    def apply(CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
-              LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
-              OwnerAccountId: js.UndefOr[CustomerId] = js.undefined,
-              OwnerDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              ShareMethod: js.UndefOr[ShareMethod] = js.undefined,
-              ShareNotes: js.UndefOr[Notes] = js.undefined,
-              ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
-              SharedAccountId: js.UndefOr[CustomerId] = js.undefined,
-              SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined): SharedDirectory = {
+    def apply(
+        CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
+        LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
+        OwnerAccountId: js.UndefOr[CustomerId] = js.undefined,
+        OwnerDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        ShareMethod: js.UndefOr[ShareMethod] = js.undefined,
+        ShareNotes: js.UndefOr[Notes] = js.undefined,
+        ShareStatus: js.UndefOr[ShareStatus] = js.undefined,
+        SharedAccountId: js.UndefOr[CustomerId] = js.undefined,
+        SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): SharedDirectory = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDateTime" -> CreatedDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2908,12 +3230,14 @@ package directoryservice {
   }
 
   object Snapshot {
-    def apply(DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              Name: js.UndefOr[SnapshotName] = js.undefined,
-              SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
-              StartTime: js.UndefOr[StartTime] = js.undefined,
-              Status: js.UndefOr[SnapshotStatus] = js.undefined,
-              Type: js.UndefOr[SnapshotType] = js.undefined): Snapshot = {
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        Name: js.UndefOr[SnapshotName] = js.undefined,
+        SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
+        StartTime: js.UndefOr[StartTime] = js.undefined,
+        Status: js.UndefOr[SnapshotStatus] = js.undefined,
+        Type: js.UndefOr[SnapshotType] = js.undefined
+    ): Snapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId" -> DirectoryId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2950,9 +3274,11 @@ package directoryservice {
   }
 
   object SnapshotLimits {
-    def apply(ManualSnapshotsCurrentCount: js.UndefOr[Limit] = js.undefined,
-              ManualSnapshotsLimit: js.UndefOr[Limit] = js.undefined,
-              ManualSnapshotsLimitReached: js.UndefOr[ManualSnapshotsLimitReached] = js.undefined): SnapshotLimits = {
+    def apply(
+        ManualSnapshotsCurrentCount: js.UndefOr[Limit] = js.undefined,
+        ManualSnapshotsLimit: js.UndefOr[Limit] = js.undefined,
+        ManualSnapshotsLimitReached: js.UndefOr[ManualSnapshotsLimitReached] = js.undefined
+    ): SnapshotLimits = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ManualSnapshotsCurrentCount" -> ManualSnapshotsCurrentCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -2993,10 +3319,12 @@ package directoryservice {
   }
 
   object StartSchemaExtensionRequest {
-    def apply(CreateSnapshotBeforeSchemaExtension: CreateSnapshotBeforeSchemaExtension,
-              Description: Description,
-              DirectoryId: DirectoryId,
-              LdifContent: LdifContent): StartSchemaExtensionRequest = {
+    def apply(
+        CreateSnapshotBeforeSchemaExtension: CreateSnapshotBeforeSchemaExtension,
+        Description: Description,
+        DirectoryId: DirectoryId,
+        LdifContent: LdifContent
+    ): StartSchemaExtensionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreateSnapshotBeforeSchemaExtension" -> CreateSnapshotBeforeSchemaExtension.asInstanceOf[js.Any],
         "Description"                         -> Description.asInstanceOf[js.Any],
@@ -3014,10 +3342,14 @@ package directoryservice {
   }
 
   object StartSchemaExtensionResult {
-    def apply(SchemaExtensionId: js.UndefOr[SchemaExtensionId] = js.undefined): StartSchemaExtensionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SchemaExtensionId" -> SchemaExtensionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SchemaExtensionId: js.UndefOr[SchemaExtensionId] = js.undefined
+    ): StartSchemaExtensionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SchemaExtensionId" -> SchemaExtensionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSchemaExtensionResult]
     }
@@ -3033,10 +3365,14 @@ package directoryservice {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: TagValue): Tag = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -3076,17 +3412,19 @@ package directoryservice {
   }
 
   object Trust {
-    def apply(CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
-              DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
-              RemoteDomainName: js.UndefOr[RemoteDomainName] = js.undefined,
-              SelectiveAuth: js.UndefOr[SelectiveAuth] = js.undefined,
-              StateLastUpdatedDateTime: js.UndefOr[StateLastUpdatedDateTime] = js.undefined,
-              TrustDirection: js.UndefOr[TrustDirection] = js.undefined,
-              TrustId: js.UndefOr[TrustId] = js.undefined,
-              TrustState: js.UndefOr[TrustState] = js.undefined,
-              TrustStateReason: js.UndefOr[TrustStateReason] = js.undefined,
-              TrustType: js.UndefOr[TrustType] = js.undefined): Trust = {
+    def apply(
+        CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
+        RemoteDomainName: js.UndefOr[RemoteDomainName] = js.undefined,
+        SelectiveAuth: js.UndefOr[SelectiveAuth] = js.undefined,
+        StateLastUpdatedDateTime: js.UndefOr[StateLastUpdatedDateTime] = js.undefined,
+        TrustDirection: js.UndefOr[TrustDirection] = js.undefined,
+        TrustId: js.UndefOr[TrustId] = js.undefined,
+        TrustState: js.UndefOr[TrustState] = js.undefined,
+        TrustStateReason: js.UndefOr[TrustStateReason] = js.undefined,
+        TrustType: js.UndefOr[TrustType] = js.undefined
+    ): Trust = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDateTime" -> CreatedDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -3177,7 +3515,10 @@ package directoryservice {
   }
 
   object UnshareDirectoryRequest {
-    def apply(DirectoryId: DirectoryId, UnshareTarget: UnshareTarget): UnshareDirectoryRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        UnshareTarget: UnshareTarget
+    ): UnshareDirectoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any],
         "UnshareTarget" -> UnshareTarget.asInstanceOf[js.Any]
@@ -3193,10 +3534,14 @@ package directoryservice {
   }
 
   object UnshareDirectoryResult {
-    def apply(SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined): UnshareDirectoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SharedDirectoryId" -> SharedDirectoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): UnshareDirectoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SharedDirectoryId" -> SharedDirectoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnshareDirectoryResult]
     }
@@ -3212,9 +3557,14 @@ package directoryservice {
   }
 
   object UnshareTarget {
-    def apply(Id: TargetId, Type: TargetType): UnshareTarget = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "Type" -> Type.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: TargetId,
+        Type: TargetType
+    ): UnshareTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id"   -> Id.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnshareTarget]
     }
@@ -3231,9 +3581,11 @@ package directoryservice {
   }
 
   object UpdateConditionalForwarderRequest {
-    def apply(DirectoryId: DirectoryId,
-              DnsIpAddrs: DnsIpAddrs,
-              RemoteDomainName: RemoteDomainName): UpdateConditionalForwarderRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        DnsIpAddrs: DnsIpAddrs,
+        RemoteDomainName: RemoteDomainName
+    ): UpdateConditionalForwarderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"      -> DirectoryId.asInstanceOf[js.Any],
         "DnsIpAddrs"       -> DnsIpAddrs.asInstanceOf[js.Any],
@@ -3251,8 +3603,10 @@ package directoryservice {
   trait UpdateConditionalForwarderResult extends js.Object {}
 
   object UpdateConditionalForwarderResult {
-    def apply(): UpdateConditionalForwarderResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateConditionalForwarderResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConditionalForwarderResult]
     }
@@ -3265,8 +3619,10 @@ package directoryservice {
   }
 
   object UpdateNumberOfDomainControllersRequest {
-    def apply(DesiredNumber: DesiredNumberOfDomainControllers,
-              DirectoryId: DirectoryId): UpdateNumberOfDomainControllersRequest = {
+    def apply(
+        DesiredNumber: DesiredNumberOfDomainControllers,
+        DirectoryId: DirectoryId
+    ): UpdateNumberOfDomainControllersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DesiredNumber" -> DesiredNumber.asInstanceOf[js.Any],
         "DirectoryId"   -> DirectoryId.asInstanceOf[js.Any]
@@ -3280,8 +3636,10 @@ package directoryservice {
   trait UpdateNumberOfDomainControllersResult extends js.Object {}
 
   object UpdateNumberOfDomainControllersResult {
-    def apply(): UpdateNumberOfDomainControllersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateNumberOfDomainControllersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNumberOfDomainControllersResult]
     }
@@ -3297,7 +3655,10 @@ package directoryservice {
   }
 
   object UpdateRadiusRequest {
-    def apply(DirectoryId: DirectoryId, RadiusSettings: RadiusSettings): UpdateRadiusRequest = {
+    def apply(
+        DirectoryId: DirectoryId,
+        RadiusSettings: RadiusSettings
+    ): UpdateRadiusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryId"    -> DirectoryId.asInstanceOf[js.Any],
         "RadiusSettings" -> RadiusSettings.asInstanceOf[js.Any]
@@ -3314,8 +3675,10 @@ package directoryservice {
   trait UpdateRadiusResult extends js.Object {}
 
   object UpdateRadiusResult {
-    def apply(): UpdateRadiusResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateRadiusResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRadiusResult]
     }
@@ -3328,12 +3691,16 @@ package directoryservice {
   }
 
   object UpdateTrustRequest {
-    def apply(TrustId: TrustId, SelectiveAuth: js.UndefOr[SelectiveAuth] = js.undefined): UpdateTrustRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TrustId" -> TrustId.asInstanceOf[js.Any], "SelectiveAuth" -> SelectiveAuth.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TrustId: TrustId,
+        SelectiveAuth: js.UndefOr[SelectiveAuth] = js.undefined
+    ): UpdateTrustRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TrustId" -> TrustId.asInstanceOf[js.Any],
+        "SelectiveAuth" -> SelectiveAuth.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTrustRequest]
     }
@@ -3346,13 +3713,18 @@ package directoryservice {
   }
 
   object UpdateTrustResult {
-    def apply(RequestId: js.UndefOr[RequestId] = js.undefined,
-              TrustId: js.UndefOr[TrustId] = js.undefined): UpdateTrustResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("RequestId" -> RequestId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TrustId" -> TrustId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RequestId: js.UndefOr[RequestId] = js.undefined,
+        TrustId: js.UndefOr[TrustId] = js.undefined
+    ): UpdateTrustResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RequestId" -> RequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrustId" -> TrustId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTrustResult]
     }
@@ -3367,9 +3739,12 @@ package directoryservice {
   }
 
   object VerifyTrustRequest {
-    def apply(TrustId: TrustId): VerifyTrustRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TrustId" -> TrustId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TrustId: TrustId
+    ): VerifyTrustRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TrustId" -> TrustId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VerifyTrustRequest]
     }
@@ -3384,10 +3759,14 @@ package directoryservice {
   }
 
   object VerifyTrustResult {
-    def apply(TrustId: js.UndefOr[TrustId] = js.undefined): VerifyTrustResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("TrustId" -> TrustId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TrustId: js.UndefOr[TrustId] = js.undefined
+    ): VerifyTrustResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TrustId" -> TrustId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VerifyTrustResult]
     }

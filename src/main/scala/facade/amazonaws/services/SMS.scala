@@ -246,22 +246,24 @@ package sms {
   }
 
   object AppSummary {
-    def apply(appId: js.UndefOr[AppId] = js.undefined,
-              creationTime: js.UndefOr[Timestamp] = js.undefined,
-              description: js.UndefOr[AppDescription] = js.undefined,
-              lastModified: js.UndefOr[Timestamp] = js.undefined,
-              latestReplicationTime: js.UndefOr[Timestamp] = js.undefined,
-              launchDetails: js.UndefOr[LaunchDetails] = js.undefined,
-              launchStatus: js.UndefOr[AppLaunchStatus] = js.undefined,
-              launchStatusMessage: js.UndefOr[AppLaunchStatusMessage] = js.undefined,
-              name: js.UndefOr[AppName] = js.undefined,
-              replicationStatus: js.UndefOr[AppReplicationStatus] = js.undefined,
-              replicationStatusMessage: js.UndefOr[AppReplicationStatusMessage] = js.undefined,
-              roleName: js.UndefOr[RoleName] = js.undefined,
-              status: js.UndefOr[AppStatus] = js.undefined,
-              statusMessage: js.UndefOr[AppStatusMessage] = js.undefined,
-              totalServerGroups: js.UndefOr[TotalServerGroups] = js.undefined,
-              totalServers: js.UndefOr[TotalServers] = js.undefined): AppSummary = {
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined,
+        creationTime: js.UndefOr[Timestamp] = js.undefined,
+        description: js.UndefOr[AppDescription] = js.undefined,
+        lastModified: js.UndefOr[Timestamp] = js.undefined,
+        latestReplicationTime: js.UndefOr[Timestamp] = js.undefined,
+        launchDetails: js.UndefOr[LaunchDetails] = js.undefined,
+        launchStatus: js.UndefOr[AppLaunchStatus] = js.undefined,
+        launchStatusMessage: js.UndefOr[AppLaunchStatusMessage] = js.undefined,
+        name: js.UndefOr[AppName] = js.undefined,
+        replicationStatus: js.UndefOr[AppReplicationStatus] = js.undefined,
+        replicationStatusMessage: js.UndefOr[AppReplicationStatusMessage] = js.undefined,
+        roleName: js.UndefOr[RoleName] = js.undefined,
+        status: js.UndefOr[AppStatus] = js.undefined,
+        statusMessage: js.UndefOr[AppStatusMessage] = js.undefined,
+        totalServerGroups: js.UndefOr[TotalServerGroups] = js.undefined,
+        totalServers: js.UndefOr[TotalServers] = js.undefined
+    ): AppSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appId" -> appId.map { x =>
           x.asInstanceOf[js.Any]
@@ -335,16 +337,18 @@ package sms {
   }
 
   object Connector {
-    def apply(associatedOn: js.UndefOr[Timestamp] = js.undefined,
-              capabilityList: js.UndefOr[ConnectorCapabilityList] = js.undefined,
-              connectorId: js.UndefOr[ConnectorId] = js.undefined,
-              ipAddress: js.UndefOr[IpAddress] = js.undefined,
-              macAddress: js.UndefOr[MacAddress] = js.undefined,
-              status: js.UndefOr[ConnectorStatus] = js.undefined,
-              version: js.UndefOr[ConnectorVersion] = js.undefined,
-              vmManagerId: js.UndefOr[VmManagerId] = js.undefined,
-              vmManagerName: js.UndefOr[VmManagerName] = js.undefined,
-              vmManagerType: js.UndefOr[VmManagerType] = js.undefined): Connector = {
+    def apply(
+        associatedOn: js.UndefOr[Timestamp] = js.undefined,
+        capabilityList: js.UndefOr[ConnectorCapabilityList] = js.undefined,
+        connectorId: js.UndefOr[ConnectorId] = js.undefined,
+        ipAddress: js.UndefOr[IpAddress] = js.undefined,
+        macAddress: js.UndefOr[MacAddress] = js.undefined,
+        status: js.UndefOr[ConnectorStatus] = js.undefined,
+        version: js.UndefOr[ConnectorVersion] = js.undefined,
+        vmManagerId: js.UndefOr[VmManagerId] = js.undefined,
+        vmManagerName: js.UndefOr[VmManagerName] = js.undefined,
+        vmManagerType: js.UndefOr[VmManagerType] = js.undefined
+    ): Connector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "associatedOn" -> associatedOn.map { x =>
           x.asInstanceOf[js.Any]
@@ -409,12 +413,14 @@ package sms {
   }
 
   object CreateAppRequest {
-    def apply(clientToken: js.UndefOr[ClientToken] = js.undefined,
-              description: js.UndefOr[AppDescription] = js.undefined,
-              name: js.UndefOr[AppName] = js.undefined,
-              roleName: js.UndefOr[RoleName] = js.undefined,
-              serverGroups: js.UndefOr[ServerGroups] = js.undefined,
-              tags: js.UndefOr[Tags] = js.undefined): CreateAppRequest = {
+    def apply(
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        description: js.UndefOr[AppDescription] = js.undefined,
+        name: js.UndefOr[AppName] = js.undefined,
+        roleName: js.UndefOr[RoleName] = js.undefined,
+        serverGroups: js.UndefOr[ServerGroups] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): CreateAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "clientToken" -> clientToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -448,9 +454,11 @@ package sms {
   }
 
   object CreateAppResponse {
-    def apply(appSummary: js.UndefOr[AppSummary] = js.undefined,
-              serverGroups: js.UndefOr[ServerGroups] = js.undefined,
-              tags: js.UndefOr[Tags] = js.undefined): CreateAppResponse = {
+    def apply(
+        appSummary: js.UndefOr[AppSummary] = js.undefined,
+        serverGroups: js.UndefOr[ServerGroups] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): CreateAppResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appSummary" -> appSummary.map { x =>
           x.asInstanceOf[js.Any]
@@ -482,16 +490,18 @@ package sms {
   }
 
   object CreateReplicationJobRequest {
-    def apply(seedReplicationTime: Timestamp,
-              serverId: ServerId,
-              description: js.UndefOr[Description] = js.undefined,
-              encrypted: js.UndefOr[Encrypted] = js.undefined,
-              frequency: js.UndefOr[Frequency] = js.undefined,
-              kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              licenseType: js.UndefOr[LicenseType] = js.undefined,
-              numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
-              roleName: js.UndefOr[RoleName] = js.undefined,
-              runOnce: js.UndefOr[RunOnce] = js.undefined): CreateReplicationJobRequest = {
+    def apply(
+        seedReplicationTime: Timestamp,
+        serverId: ServerId,
+        description: js.UndefOr[Description] = js.undefined,
+        encrypted: js.UndefOr[Encrypted] = js.undefined,
+        frequency: js.UndefOr[Frequency] = js.undefined,
+        kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        licenseType: js.UndefOr[LicenseType] = js.undefined,
+        numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
+        roleName: js.UndefOr[RoleName] = js.undefined,
+        runOnce: js.UndefOr[RunOnce] = js.undefined
+    ): CreateReplicationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "seedReplicationTime" -> seedReplicationTime.asInstanceOf[js.Any],
         "serverId"            -> serverId.asInstanceOf[js.Any],
@@ -531,10 +541,14 @@ package sms {
   }
 
   object CreateReplicationJobResponse {
-    def apply(replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined): CreateReplicationJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("replicationJobId" -> replicationJobId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined
+    ): CreateReplicationJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "replicationJobId" -> replicationJobId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateReplicationJobResponse]
     }
@@ -546,10 +560,14 @@ package sms {
   }
 
   object DeleteAppLaunchConfigurationRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): DeleteAppLaunchConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): DeleteAppLaunchConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppLaunchConfigurationRequest]
     }
@@ -559,8 +577,10 @@ package sms {
   trait DeleteAppLaunchConfigurationResponse extends js.Object {}
 
   object DeleteAppLaunchConfigurationResponse {
-    def apply(): DeleteAppLaunchConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteAppLaunchConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppLaunchConfigurationResponse]
     }
@@ -572,10 +592,14 @@ package sms {
   }
 
   object DeleteAppReplicationConfigurationRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): DeleteAppReplicationConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): DeleteAppReplicationConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppReplicationConfigurationRequest]
     }
@@ -585,8 +609,10 @@ package sms {
   trait DeleteAppReplicationConfigurationResponse extends js.Object {}
 
   object DeleteAppReplicationConfigurationResponse {
-    def apply(): DeleteAppReplicationConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteAppReplicationConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppReplicationConfigurationResponse]
     }
@@ -600,9 +626,11 @@ package sms {
   }
 
   object DeleteAppRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined,
-              forceStopAppReplication: js.UndefOr[ForceStopAppReplication] = js.undefined,
-              forceTerminateApp: js.UndefOr[ForceTerminateApp] = js.undefined): DeleteAppRequest = {
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined,
+        forceStopAppReplication: js.UndefOr[ForceStopAppReplication] = js.undefined,
+        forceTerminateApp: js.UndefOr[ForceTerminateApp] = js.undefined
+    ): DeleteAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appId" -> appId.map { x =>
           x.asInstanceOf[js.Any]
@@ -623,8 +651,10 @@ package sms {
   trait DeleteAppResponse extends js.Object {}
 
   object DeleteAppResponse {
-    def apply(): DeleteAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteAppResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppResponse]
     }
@@ -636,9 +666,12 @@ package sms {
   }
 
   object DeleteReplicationJobRequest {
-    def apply(replicationJobId: ReplicationJobId): DeleteReplicationJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("replicationJobId" -> replicationJobId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        replicationJobId: ReplicationJobId
+    ): DeleteReplicationJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "replicationJobId" -> replicationJobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicationJobRequest]
     }
@@ -648,8 +681,10 @@ package sms {
   trait DeleteReplicationJobResponse extends js.Object {}
 
   object DeleteReplicationJobResponse {
-    def apply(): DeleteReplicationJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteReplicationJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicationJobResponse]
     }
@@ -659,8 +694,10 @@ package sms {
   trait DeleteServerCatalogRequest extends js.Object {}
 
   object DeleteServerCatalogRequest {
-    def apply(): DeleteServerCatalogRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteServerCatalogRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServerCatalogRequest]
     }
@@ -670,8 +707,10 @@ package sms {
   trait DeleteServerCatalogResponse extends js.Object {}
 
   object DeleteServerCatalogResponse {
-    def apply(): DeleteServerCatalogResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteServerCatalogResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServerCatalogResponse]
     }
@@ -683,9 +722,12 @@ package sms {
   }
 
   object DisassociateConnectorRequest {
-    def apply(connectorId: ConnectorId): DisassociateConnectorRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectorId" -> connectorId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectorId: ConnectorId
+    ): DisassociateConnectorRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectorId" -> connectorId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateConnectorRequest]
     }
@@ -695,8 +737,10 @@ package sms {
   trait DisassociateConnectorResponse extends js.Object {}
 
   object DisassociateConnectorResponse {
-    def apply(): DisassociateConnectorResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateConnectorResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateConnectorResponse]
     }
@@ -709,13 +753,18 @@ package sms {
   }
 
   object GenerateChangeSetRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined,
-              changesetFormat: js.UndefOr[OutputFormat] = js.undefined): GenerateChangeSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "changesetFormat" -> changesetFormat.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined,
+        changesetFormat: js.UndefOr[OutputFormat] = js.undefined
+    ): GenerateChangeSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "changesetFormat" -> changesetFormat.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateChangeSetRequest]
     }
@@ -727,10 +776,14 @@ package sms {
   }
 
   object GenerateChangeSetResponse {
-    def apply(s3Location: js.UndefOr[S3Location] = js.undefined): GenerateChangeSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3Location" -> s3Location.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3Location: js.UndefOr[S3Location] = js.undefined
+    ): GenerateChangeSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3Location" -> s3Location.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateChangeSetResponse]
     }
@@ -743,13 +796,18 @@ package sms {
   }
 
   object GenerateTemplateRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined,
-              templateFormat: js.UndefOr[OutputFormat] = js.undefined): GenerateTemplateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "templateFormat" -> templateFormat.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined,
+        templateFormat: js.UndefOr[OutputFormat] = js.undefined
+    ): GenerateTemplateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "templateFormat" -> templateFormat.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateTemplateRequest]
     }
@@ -761,10 +819,14 @@ package sms {
   }
 
   object GenerateTemplateResponse {
-    def apply(s3Location: js.UndefOr[S3Location] = js.undefined): GenerateTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3Location" -> s3Location.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3Location: js.UndefOr[S3Location] = js.undefined
+    ): GenerateTemplateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3Location" -> s3Location.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateTemplateResponse]
     }
@@ -776,10 +838,14 @@ package sms {
   }
 
   object GetAppLaunchConfigurationRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): GetAppLaunchConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): GetAppLaunchConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppLaunchConfigurationRequest]
     }
@@ -820,10 +886,14 @@ package sms {
   }
 
   object GetAppReplicationConfigurationRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): GetAppReplicationConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): GetAppReplicationConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppReplicationConfigurationRequest]
     }
@@ -854,10 +924,14 @@ package sms {
   }
 
   object GetAppRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): GetAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): GetAppRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppRequest]
     }
@@ -871,9 +945,11 @@ package sms {
   }
 
   object GetAppResponse {
-    def apply(appSummary: js.UndefOr[AppSummary] = js.undefined,
-              serverGroups: js.UndefOr[ServerGroups] = js.undefined,
-              tags: js.UndefOr[Tags] = js.undefined): GetAppResponse = {
+    def apply(
+        appSummary: js.UndefOr[AppSummary] = js.undefined,
+        serverGroups: js.UndefOr[ServerGroups] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): GetAppResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appSummary" -> appSummary.map { x =>
           x.asInstanceOf[js.Any]
@@ -897,13 +973,18 @@ package sms {
   }
 
   object GetConnectorsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): GetConnectorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetConnectorsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorsRequest]
     }
@@ -916,13 +997,18 @@ package sms {
   }
 
   object GetConnectorsResponse {
-    def apply(connectorList: js.UndefOr[ConnectorList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): GetConnectorsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("connectorList" -> connectorList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        connectorList: js.UndefOr[ConnectorList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetConnectorsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "connectorList" -> connectorList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConnectorsResponse]
     }
@@ -936,9 +1022,11 @@ package sms {
   }
 
   object GetReplicationJobsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined): GetReplicationJobsRequest = {
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined
+    ): GetReplicationJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -962,13 +1050,18 @@ package sms {
   }
 
   object GetReplicationJobsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              replicationJobList: js.UndefOr[ReplicationJobList] = js.undefined): GetReplicationJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "replicationJobList" -> replicationJobList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        replicationJobList: js.UndefOr[ReplicationJobList] = js.undefined
+    ): GetReplicationJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "replicationJobList" -> replicationJobList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetReplicationJobsResponse]
     }
@@ -982,9 +1075,11 @@ package sms {
   }
 
   object GetReplicationRunsRequest {
-    def apply(replicationJobId: ReplicationJobId,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): GetReplicationRunsRequest = {
+    def apply(
+        replicationJobId: ReplicationJobId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetReplicationRunsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -1007,9 +1102,11 @@ package sms {
   }
 
   object GetReplicationRunsResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              replicationJob: js.UndefOr[ReplicationJob] = js.undefined,
-              replicationRunList: js.UndefOr[ReplicationRunList] = js.undefined): GetReplicationRunsResponse = {
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        replicationJob: js.UndefOr[ReplicationJob] = js.undefined,
+        replicationRunList: js.UndefOr[ReplicationRunList] = js.undefined
+    ): GetReplicationRunsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "nextToken" -> nextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -1034,9 +1131,11 @@ package sms {
   }
 
   object GetServersRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              vmServerAddressList: js.UndefOr[VmServerAddressList] = js.undefined): GetServersRequest = {
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        vmServerAddressList: js.UndefOr[VmServerAddressList] = js.undefined
+    ): GetServersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -1062,10 +1161,12 @@ package sms {
   }
 
   object GetServersResponse {
-    def apply(lastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              serverCatalogStatus: js.UndefOr[ServerCatalogStatus] = js.undefined,
-              serverList: js.UndefOr[ServerList] = js.undefined): GetServersResponse = {
+    def apply(
+        lastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        serverCatalogStatus: js.UndefOr[ServerCatalogStatus] = js.undefined,
+        serverList: js.UndefOr[ServerList] = js.undefined
+    ): GetServersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lastModifiedOn" -> lastModifiedOn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1089,8 +1190,10 @@ package sms {
   trait ImportServerCatalogRequest extends js.Object {}
 
   object ImportServerCatalogRequest {
-    def apply(): ImportServerCatalogRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ImportServerCatalogRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportServerCatalogRequest]
     }
@@ -1100,8 +1203,10 @@ package sms {
   trait ImportServerCatalogResponse extends js.Object {}
 
   object ImportServerCatalogResponse {
-    def apply(): ImportServerCatalogResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ImportServerCatalogResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportServerCatalogResponse]
     }
@@ -1113,10 +1218,14 @@ package sms {
   }
 
   object LaunchAppRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): LaunchAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): LaunchAppRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchAppRequest]
     }
@@ -1126,8 +1235,10 @@ package sms {
   trait LaunchAppResponse extends js.Object {}
 
   object LaunchAppResponse {
-    def apply(): LaunchAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): LaunchAppResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchAppResponse]
     }
@@ -1144,9 +1255,11 @@ package sms {
   }
 
   object LaunchDetails {
-    def apply(latestLaunchTime: js.UndefOr[Timestamp] = js.undefined,
-              stackId: js.UndefOr[StackId] = js.undefined,
-              stackName: js.UndefOr[StackName] = js.undefined): LaunchDetails = {
+    def apply(
+        latestLaunchTime: js.UndefOr[Timestamp] = js.undefined,
+        stackId: js.UndefOr[StackId] = js.undefined,
+        stackName: js.UndefOr[StackName] = js.undefined
+    ): LaunchDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "latestLaunchTime" -> latestLaunchTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -1178,9 +1291,11 @@ package sms {
   }
 
   object ListAppsRequest {
-    def apply(appIds: js.UndefOr[AppIds] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListAppsRequest = {
+    def apply(
+        appIds: js.UndefOr[AppIds] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appIds" -> appIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -1204,13 +1319,18 @@ package sms {
   }
 
   object ListAppsResponse {
-    def apply(apps: js.UndefOr[Apps] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListAppsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("apps" -> apps.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        apps: js.UndefOr[Apps] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAppsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apps" -> apps.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAppsResponse]
     }
@@ -1256,8 +1376,10 @@ package sms {
   trait PutAppLaunchConfigurationResponse extends js.Object {}
 
   object PutAppLaunchConfigurationResponse {
-    def apply(): PutAppLaunchConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): PutAppLaunchConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAppLaunchConfigurationResponse]
     }
@@ -1291,8 +1413,10 @@ package sms {
   trait PutAppReplicationConfigurationResponse extends js.Object {}
 
   object PutAppReplicationConfigurationResponse {
-    def apply(): PutAppReplicationConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): PutAppReplicationConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutAppReplicationConfigurationResponse]
     }
@@ -1324,24 +1448,26 @@ package sms {
   }
 
   object ReplicationJob {
-    def apply(description: js.UndefOr[Description] = js.undefined,
-              encrypted: js.UndefOr[Encrypted] = js.undefined,
-              frequency: js.UndefOr[Frequency] = js.undefined,
-              kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              latestAmiId: js.UndefOr[AmiId] = js.undefined,
-              licenseType: js.UndefOr[LicenseType] = js.undefined,
-              nextReplicationRunStartTime: js.UndefOr[Timestamp] = js.undefined,
-              numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
-              replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined,
-              replicationRunList: js.UndefOr[ReplicationRunList] = js.undefined,
-              roleName: js.UndefOr[RoleName] = js.undefined,
-              runOnce: js.UndefOr[RunOnce] = js.undefined,
-              seedReplicationTime: js.UndefOr[Timestamp] = js.undefined,
-              serverId: js.UndefOr[ServerId] = js.undefined,
-              serverType: js.UndefOr[ServerType] = js.undefined,
-              state: js.UndefOr[ReplicationJobState] = js.undefined,
-              statusMessage: js.UndefOr[ReplicationJobStatusMessage] = js.undefined,
-              vmServer: js.UndefOr[VmServer] = js.undefined): ReplicationJob = {
+    def apply(
+        description: js.UndefOr[Description] = js.undefined,
+        encrypted: js.UndefOr[Encrypted] = js.undefined,
+        frequency: js.UndefOr[Frequency] = js.undefined,
+        kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        latestAmiId: js.UndefOr[AmiId] = js.undefined,
+        licenseType: js.UndefOr[LicenseType] = js.undefined,
+        nextReplicationRunStartTime: js.UndefOr[Timestamp] = js.undefined,
+        numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
+        replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined,
+        replicationRunList: js.UndefOr[ReplicationRunList] = js.undefined,
+        roleName: js.UndefOr[RoleName] = js.undefined,
+        runOnce: js.UndefOr[RunOnce] = js.undefined,
+        seedReplicationTime: js.UndefOr[Timestamp] = js.undefined,
+        serverId: js.UndefOr[ServerId] = js.undefined,
+        serverType: js.UndefOr[ServerType] = js.undefined,
+        state: js.UndefOr[ReplicationJobState] = js.undefined,
+        statusMessage: js.UndefOr[ReplicationJobStatusMessage] = js.undefined,
+        vmServer: js.UndefOr[VmServer] = js.undefined
+    ): ReplicationJob = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -1435,17 +1561,19 @@ package sms {
   }
 
   object ReplicationRun {
-    def apply(amiId: js.UndefOr[AmiId] = js.undefined,
-              completedTime: js.UndefOr[Timestamp] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined,
-              encrypted: js.UndefOr[Encrypted] = js.undefined,
-              kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              replicationRunId: js.UndefOr[ReplicationRunId] = js.undefined,
-              scheduledStartTime: js.UndefOr[Timestamp] = js.undefined,
-              stageDetails: js.UndefOr[ReplicationRunStageDetails] = js.undefined,
-              state: js.UndefOr[ReplicationRunState] = js.undefined,
-              statusMessage: js.UndefOr[ReplicationRunStatusMessage] = js.undefined,
-              `type`: js.UndefOr[ReplicationRunType] = js.undefined): ReplicationRun = {
+    def apply(
+        amiId: js.UndefOr[AmiId] = js.undefined,
+        completedTime: js.UndefOr[Timestamp] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        encrypted: js.UndefOr[Encrypted] = js.undefined,
+        kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        replicationRunId: js.UndefOr[ReplicationRunId] = js.undefined,
+        scheduledStartTime: js.UndefOr[Timestamp] = js.undefined,
+        stageDetails: js.UndefOr[ReplicationRunStageDetails] = js.undefined,
+        state: js.UndefOr[ReplicationRunState] = js.undefined,
+        statusMessage: js.UndefOr[ReplicationRunStatusMessage] = js.undefined,
+        `type`: js.UndefOr[ReplicationRunType] = js.undefined
+    ): ReplicationRun = {
       val _fields = IndexedSeq[(String, js.Any)](
         "amiId" -> amiId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1496,13 +1624,18 @@ package sms {
   }
 
   object ReplicationRunStageDetails {
-    def apply(stage: js.UndefOr[ReplicationRunStage] = js.undefined,
-              stageProgress: js.UndefOr[ReplicationRunStageProgress] = js.undefined): ReplicationRunStageDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("stage" -> stage.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "stageProgress" -> stageProgress.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        stage: js.UndefOr[ReplicationRunStage] = js.undefined,
+        stageProgress: js.UndefOr[ReplicationRunStageProgress] = js.undefined
+    ): ReplicationRunStageDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "stage" -> stage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "stageProgress" -> stageProgress.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicationRunStageDetails]
     }
@@ -1537,12 +1670,18 @@ package sms {
   }
 
   object S3Location {
-    def apply(bucket: js.UndefOr[BucketName] = js.undefined, key: js.UndefOr[KeyName] = js.undefined): S3Location = {
-      val _fields = IndexedSeq[(String, js.Any)]("bucket" -> bucket.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "key" -> key.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bucket: js.UndefOr[BucketName] = js.undefined,
+        key: js.UndefOr[KeyName] = js.undefined
+    ): S3Location = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bucket" -> bucket.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "key" -> key.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
     }
@@ -1561,11 +1700,13 @@ package sms {
   }
 
   object Server {
-    def apply(replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined,
-              replicationJobTerminated: js.UndefOr[ReplicationJobTerminated] = js.undefined,
-              serverId: js.UndefOr[ServerId] = js.undefined,
-              serverType: js.UndefOr[ServerType] = js.undefined,
-              vmServer: js.UndefOr[VmServer] = js.undefined): Server = {
+    def apply(
+        replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined,
+        replicationJobTerminated: js.UndefOr[ReplicationJobTerminated] = js.undefined,
+        serverId: js.UndefOr[ServerId] = js.undefined,
+        serverType: js.UndefOr[ServerType] = js.undefined,
+        vmServer: js.UndefOr[VmServer] = js.undefined
+    ): Server = {
       val _fields = IndexedSeq[(String, js.Any)](
         "replicationJobId" -> replicationJobId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1609,9 +1750,11 @@ package sms {
   }
 
   object ServerGroup {
-    def apply(name: js.UndefOr[ServerGroupName] = js.undefined,
-              serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
-              serverList: js.UndefOr[ServerList] = js.undefined): ServerGroup = {
+    def apply(
+        name: js.UndefOr[ServerGroupName] = js.undefined,
+        serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
+        serverList: js.UndefOr[ServerList] = js.undefined
+    ): ServerGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.map { x =>
           x.asInstanceOf[js.Any]
@@ -1704,15 +1847,17 @@ package sms {
   }
 
   object ServerLaunchConfiguration {
-    def apply(associatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
-              ec2KeyName: js.UndefOr[EC2KeyName] = js.undefined,
-              instanceType: js.UndefOr[InstanceType] = js.undefined,
-              logicalId: js.UndefOr[LogicalId] = js.undefined,
-              securityGroup: js.UndefOr[SecurityGroup] = js.undefined,
-              server: js.UndefOr[Server] = js.undefined,
-              subnet: js.UndefOr[Subnet] = js.undefined,
-              userData: js.UndefOr[UserData] = js.undefined,
-              vpc: js.UndefOr[VPC] = js.undefined): ServerLaunchConfiguration = {
+    def apply(
+        associatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
+        ec2KeyName: js.UndefOr[EC2KeyName] = js.undefined,
+        instanceType: js.UndefOr[InstanceType] = js.undefined,
+        logicalId: js.UndefOr[LogicalId] = js.undefined,
+        securityGroup: js.UndefOr[SecurityGroup] = js.undefined,
+        server: js.UndefOr[Server] = js.undefined,
+        subnet: js.UndefOr[Subnet] = js.undefined,
+        userData: js.UndefOr[UserData] = js.undefined,
+        vpc: js.UndefOr[VPC] = js.undefined
+    ): ServerLaunchConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "associatePublicIpAddress" -> associatePublicIpAddress.map { x =>
           x.asInstanceOf[js.Any]
@@ -1761,11 +1906,14 @@ package sms {
         server: js.UndefOr[Server] = js.undefined,
         serverReplicationParameters: js.UndefOr[ServerReplicationParameters] = js.undefined
     ): ServerReplicationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("server" -> server.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "serverReplicationParameters" -> serverReplicationParameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "server" -> server.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "serverReplicationParameters" -> serverReplicationParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServerReplicationConfiguration]
     }
@@ -1786,13 +1934,15 @@ package sms {
   }
 
   object ServerReplicationParameters {
-    def apply(encrypted: js.UndefOr[Encrypted] = js.undefined,
-              frequency: js.UndefOr[Frequency] = js.undefined,
-              kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              licenseType: js.UndefOr[LicenseType] = js.undefined,
-              numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
-              runOnce: js.UndefOr[RunOnce] = js.undefined,
-              seedTime: js.UndefOr[Timestamp] = js.undefined): ServerReplicationParameters = {
+    def apply(
+        encrypted: js.UndefOr[Encrypted] = js.undefined,
+        frequency: js.UndefOr[Frequency] = js.undefined,
+        kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        licenseType: js.UndefOr[LicenseType] = js.undefined,
+        numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
+        runOnce: js.UndefOr[RunOnce] = js.undefined,
+        seedTime: js.UndefOr[Timestamp] = js.undefined
+    ): ServerReplicationParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "encrypted" -> encrypted.map { x =>
           x.asInstanceOf[js.Any]
@@ -1833,10 +1983,14 @@ package sms {
   }
 
   object StartAppReplicationRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): StartAppReplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): StartAppReplicationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAppReplicationRequest]
     }
@@ -1846,8 +2000,10 @@ package sms {
   trait StartAppReplicationResponse extends js.Object {}
 
   object StartAppReplicationResponse {
-    def apply(): StartAppReplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StartAppReplicationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartAppReplicationResponse]
     }
@@ -1860,8 +2016,10 @@ package sms {
   }
 
   object StartOnDemandReplicationRunRequest {
-    def apply(replicationJobId: ReplicationJobId,
-              description: js.UndefOr[Description] = js.undefined): StartOnDemandReplicationRunRequest = {
+    def apply(
+        replicationJobId: ReplicationJobId,
+        description: js.UndefOr[Description] = js.undefined
+    ): StartOnDemandReplicationRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -1879,10 +2037,14 @@ package sms {
   }
 
   object StartOnDemandReplicationRunResponse {
-    def apply(replicationRunId: js.UndefOr[ReplicationRunId] = js.undefined): StartOnDemandReplicationRunResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("replicationRunId" -> replicationRunId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        replicationRunId: js.UndefOr[ReplicationRunId] = js.undefined
+    ): StartOnDemandReplicationRunResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "replicationRunId" -> replicationRunId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartOnDemandReplicationRunResponse]
     }
@@ -1894,10 +2056,14 @@ package sms {
   }
 
   object StopAppReplicationRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): StopAppReplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): StopAppReplicationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopAppReplicationRequest]
     }
@@ -1907,8 +2073,10 @@ package sms {
   trait StopAppReplicationResponse extends js.Object {}
 
   object StopAppReplicationResponse {
-    def apply(): StopAppReplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopAppReplicationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopAppReplicationResponse]
     }
@@ -1924,12 +2092,18 @@ package sms {
   }
 
   object Tag {
-    def apply(key: js.UndefOr[TagKey] = js.undefined, value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("key" -> key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "value" -> value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        key: js.UndefOr[TagKey] = js.undefined,
+        value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "key" -> key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "value" -> value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -1941,10 +2115,14 @@ package sms {
   }
 
   object TerminateAppRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined): TerminateAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("appId" -> appId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined
+    ): TerminateAppRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appId" -> appId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateAppRequest]
     }
@@ -1954,8 +2132,10 @@ package sms {
   trait TerminateAppResponse extends js.Object {}
 
   object TerminateAppResponse {
-    def apply(): TerminateAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TerminateAppResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateAppResponse]
     }
@@ -1972,12 +2152,14 @@ package sms {
   }
 
   object UpdateAppRequest {
-    def apply(appId: js.UndefOr[AppId] = js.undefined,
-              description: js.UndefOr[AppDescription] = js.undefined,
-              name: js.UndefOr[AppName] = js.undefined,
-              roleName: js.UndefOr[RoleName] = js.undefined,
-              serverGroups: js.UndefOr[ServerGroups] = js.undefined,
-              tags: js.UndefOr[Tags] = js.undefined): UpdateAppRequest = {
+    def apply(
+        appId: js.UndefOr[AppId] = js.undefined,
+        description: js.UndefOr[AppDescription] = js.undefined,
+        name: js.UndefOr[AppName] = js.undefined,
+        roleName: js.UndefOr[RoleName] = js.undefined,
+        serverGroups: js.UndefOr[ServerGroups] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): UpdateAppRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appId" -> appId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2011,9 +2193,11 @@ package sms {
   }
 
   object UpdateAppResponse {
-    def apply(appSummary: js.UndefOr[AppSummary] = js.undefined,
-              serverGroups: js.UndefOr[ServerGroups] = js.undefined,
-              tags: js.UndefOr[Tags] = js.undefined): UpdateAppResponse = {
+    def apply(
+        appSummary: js.UndefOr[AppSummary] = js.undefined,
+        serverGroups: js.UndefOr[ServerGroups] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
+    ): UpdateAppResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appSummary" -> appSummary.map { x =>
           x.asInstanceOf[js.Any]
@@ -2044,15 +2228,17 @@ package sms {
   }
 
   object UpdateReplicationJobRequest {
-    def apply(replicationJobId: ReplicationJobId,
-              description: js.UndefOr[Description] = js.undefined,
-              encrypted: js.UndefOr[Encrypted] = js.undefined,
-              frequency: js.UndefOr[Frequency] = js.undefined,
-              kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              licenseType: js.UndefOr[LicenseType] = js.undefined,
-              nextReplicationRunStartTime: js.UndefOr[Timestamp] = js.undefined,
-              numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
-              roleName: js.UndefOr[RoleName] = js.undefined): UpdateReplicationJobRequest = {
+    def apply(
+        replicationJobId: ReplicationJobId,
+        description: js.UndefOr[Description] = js.undefined,
+        encrypted: js.UndefOr[Encrypted] = js.undefined,
+        frequency: js.UndefOr[Frequency] = js.undefined,
+        kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        licenseType: js.UndefOr[LicenseType] = js.undefined,
+        nextReplicationRunStartTime: js.UndefOr[Timestamp] = js.undefined,
+        numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
+        roleName: js.UndefOr[RoleName] = js.undefined
+    ): UpdateReplicationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -2089,8 +2275,10 @@ package sms {
   trait UpdateReplicationJobResponse extends js.Object {}
 
   object UpdateReplicationJobResponse {
-    def apply(): UpdateReplicationJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateReplicationJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateReplicationJobResponse]
     }
@@ -2105,10 +2293,14 @@ package sms {
   }
 
   object UserData {
-    def apply(s3Location: js.UndefOr[S3Location] = js.undefined): UserData = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3Location" -> s3Location.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3Location: js.UndefOr[S3Location] = js.undefined
+    ): UserData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3Location" -> s3Location.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserData]
     }
@@ -2135,11 +2327,13 @@ package sms {
   }
 
   object VmServer {
-    def apply(vmManagerName: js.UndefOr[VmManagerName] = js.undefined,
-              vmManagerType: js.UndefOr[VmManagerType] = js.undefined,
-              vmName: js.UndefOr[VmName] = js.undefined,
-              vmPath: js.UndefOr[VmPath] = js.undefined,
-              vmServerAddress: js.UndefOr[VmServerAddress] = js.undefined): VmServer = {
+    def apply(
+        vmManagerName: js.UndefOr[VmManagerName] = js.undefined,
+        vmManagerType: js.UndefOr[VmManagerType] = js.undefined,
+        vmName: js.UndefOr[VmName] = js.undefined,
+        vmPath: js.UndefOr[VmPath] = js.undefined,
+        vmServerAddress: js.UndefOr[VmServerAddress] = js.undefined
+    ): VmServer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "vmManagerName" -> vmManagerName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2172,13 +2366,18 @@ package sms {
   }
 
   object VmServerAddress {
-    def apply(vmId: js.UndefOr[VmId] = js.undefined,
-              vmManagerId: js.UndefOr[VmManagerId] = js.undefined): VmServerAddress = {
-      val _fields = IndexedSeq[(String, js.Any)]("vmId" -> vmId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "vmManagerId" -> vmManagerId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        vmId: js.UndefOr[VmId] = js.undefined,
+        vmManagerId: js.UndefOr[VmManagerId] = js.undefined
+    ): VmServerAddress = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "vmId" -> vmId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "vmManagerId" -> vmManagerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VmServerAddress]
     }

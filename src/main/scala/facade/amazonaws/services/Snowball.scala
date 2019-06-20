@@ -83,20 +83,22 @@ package snowball {
   }
 
   object Address {
-    def apply(AddressId: js.UndefOr[AddressId] = js.undefined,
-              City: js.UndefOr[String] = js.undefined,
-              Company: js.UndefOr[String] = js.undefined,
-              Country: js.UndefOr[String] = js.undefined,
-              IsRestricted: js.UndefOr[Boolean] = js.undefined,
-              Landmark: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              PhoneNumber: js.UndefOr[String] = js.undefined,
-              PostalCode: js.UndefOr[String] = js.undefined,
-              PrefectureOrDistrict: js.UndefOr[String] = js.undefined,
-              StateOrProvince: js.UndefOr[String] = js.undefined,
-              Street1: js.UndefOr[String] = js.undefined,
-              Street2: js.UndefOr[String] = js.undefined,
-              Street3: js.UndefOr[String] = js.undefined): Address = {
+    def apply(
+        AddressId: js.UndefOr[AddressId] = js.undefined,
+        City: js.UndefOr[String] = js.undefined,
+        Company: js.UndefOr[String] = js.undefined,
+        Country: js.UndefOr[String] = js.undefined,
+        IsRestricted: js.UndefOr[Boolean] = js.undefined,
+        Landmark: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        PhoneNumber: js.UndefOr[String] = js.undefined,
+        PostalCode: js.UndefOr[String] = js.undefined,
+        PrefectureOrDistrict: js.UndefOr[String] = js.undefined,
+        StateOrProvince: js.UndefOr[String] = js.undefined,
+        Street1: js.UndefOr[String] = js.undefined,
+        Street2: js.UndefOr[String] = js.undefined,
+        Street3: js.UndefOr[String] = js.undefined
+    ): Address = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressId" -> AddressId.map { x =>
           x.asInstanceOf[js.Any]
@@ -152,9 +154,12 @@ package snowball {
   }
 
   object CancelClusterRequest {
-    def apply(ClusterId: ClusterId): CancelClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: ClusterId
+    ): CancelClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelClusterRequest]
     }
@@ -164,8 +169,10 @@ package snowball {
   trait CancelClusterResult extends js.Object {}
 
   object CancelClusterResult {
-    def apply(): CancelClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CancelClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelClusterResult]
     }
@@ -177,9 +184,12 @@ package snowball {
   }
 
   object CancelJobRequest {
-    def apply(JobId: JobId): CancelJobRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobId: JobId
+    ): CancelJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
     }
@@ -189,8 +199,10 @@ package snowball {
   trait CancelJobResult extends js.Object {}
 
   object CancelJobResult {
-    def apply(): CancelJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CancelJobResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobResult]
     }
@@ -208,10 +220,12 @@ package snowball {
   }
 
   object ClusterListEntry {
-    def apply(ClusterId: js.UndefOr[String] = js.undefined,
-              ClusterState: js.UndefOr[ClusterState] = js.undefined,
-              CreationDate: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined): ClusterListEntry = {
+    def apply(
+        ClusterId: js.UndefOr[String] = js.undefined,
+        ClusterState: js.UndefOr[ClusterState] = js.undefined,
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined
+    ): ClusterListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId" -> ClusterId.map { x =>
           x.asInstanceOf[js.Any]
@@ -252,19 +266,21 @@ package snowball {
   }
 
   object ClusterMetadata {
-    def apply(AddressId: js.UndefOr[AddressId] = js.undefined,
-              ClusterId: js.UndefOr[String] = js.undefined,
-              ClusterState: js.UndefOr[ClusterState] = js.undefined,
-              CreationDate: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-              JobType: js.UndefOr[JobType] = js.undefined,
-              KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-              Notification: js.UndefOr[Notification] = js.undefined,
-              Resources: js.UndefOr[JobResource] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-              SnowballType: js.UndefOr[SnowballType] = js.undefined): ClusterMetadata = {
+    def apply(
+        AddressId: js.UndefOr[AddressId] = js.undefined,
+        ClusterId: js.UndefOr[String] = js.undefined,
+        ClusterState: js.UndefOr[ClusterState] = js.undefined,
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
+        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+        Notification: js.UndefOr[Notification] = js.undefined,
+        Resources: js.UndefOr[JobResource] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
+        SnowballType: js.UndefOr[SnowballType] = js.undefined
+    ): ClusterMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressId" -> AddressId.map { x =>
           x.asInstanceOf[js.Any]
@@ -331,12 +347,18 @@ package snowball {
   }
 
   object CompatibleImage {
-    def apply(AmiId: js.UndefOr[String] = js.undefined, Name: js.UndefOr[String] = js.undefined): CompatibleImage = {
-      val _fields = IndexedSeq[(String, js.Any)]("AmiId" -> AmiId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AmiId: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): CompatibleImage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AmiId" -> AmiId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompatibleImage]
     }
@@ -348,9 +370,12 @@ package snowball {
   }
 
   object CreateAddressRequest {
-    def apply(Address: Address): CreateAddressRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Address" -> Address.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Address: Address
+    ): CreateAddressRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Address" -> Address.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAddressRequest]
     }
@@ -362,10 +387,14 @@ package snowball {
   }
 
   object CreateAddressResult {
-    def apply(AddressId: js.UndefOr[String] = js.undefined): CreateAddressResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("AddressId" -> AddressId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AddressId: js.UndefOr[String] = js.undefined
+    ): CreateAddressResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AddressId" -> AddressId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAddressResult]
     }
@@ -386,16 +415,18 @@ package snowball {
   }
 
   object CreateClusterRequest {
-    def apply(AddressId: AddressId,
-              JobType: JobType,
-              Resources: JobResource,
-              RoleARN: RoleARN,
-              ShippingOption: ShippingOption,
-              Description: js.UndefOr[String] = js.undefined,
-              ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-              KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-              Notification: js.UndefOr[Notification] = js.undefined,
-              SnowballType: js.UndefOr[SnowballType] = js.undefined): CreateClusterRequest = {
+    def apply(
+        AddressId: AddressId,
+        JobType: JobType,
+        Resources: JobResource,
+        RoleARN: RoleARN,
+        ShippingOption: ShippingOption,
+        Description: js.UndefOr[String] = js.undefined,
+        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+        Notification: js.UndefOr[Notification] = js.undefined,
+        SnowballType: js.UndefOr[SnowballType] = js.undefined
+    ): CreateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressId"      -> AddressId.asInstanceOf[js.Any],
         "JobType"        -> JobType.asInstanceOf[js.Any],
@@ -429,10 +460,14 @@ package snowball {
   }
 
   object CreateClusterResult {
-    def apply(ClusterId: js.UndefOr[ClusterId] = js.undefined): CreateClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: js.UndefOr[ClusterId] = js.undefined
+    ): CreateClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResult]
     }
@@ -455,18 +490,20 @@ package snowball {
   }
 
   object CreateJobRequest {
-    def apply(AddressId: js.UndefOr[AddressId] = js.undefined,
-              ClusterId: js.UndefOr[ClusterId] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-              JobType: js.UndefOr[JobType] = js.undefined,
-              KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-              Notification: js.UndefOr[Notification] = js.undefined,
-              Resources: js.UndefOr[JobResource] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-              SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
-              SnowballType: js.UndefOr[SnowballType] = js.undefined): CreateJobRequest = {
+    def apply(
+        AddressId: js.UndefOr[AddressId] = js.undefined,
+        ClusterId: js.UndefOr[ClusterId] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
+        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+        Notification: js.UndefOr[Notification] = js.undefined,
+        Resources: js.UndefOr[JobResource] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
+        SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
+        SnowballType: js.UndefOr[SnowballType] = js.undefined
+    ): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressId" -> AddressId.map { x =>
           x.asInstanceOf[js.Any]
@@ -516,10 +553,14 @@ package snowball {
   }
 
   object CreateJobResult {
-    def apply(JobId: js.UndefOr[JobId] = js.undefined): CreateJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobId" -> JobId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): CreateJobResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobResult]
     }
@@ -537,10 +578,12 @@ package snowball {
   }
 
   object DataTransfer {
-    def apply(BytesTransferred: js.UndefOr[Double] = js.undefined,
-              ObjectsTransferred: js.UndefOr[Double] = js.undefined,
-              TotalBytes: js.UndefOr[Double] = js.undefined,
-              TotalObjects: js.UndefOr[Double] = js.undefined): DataTransfer = {
+    def apply(
+        BytesTransferred: js.UndefOr[Double] = js.undefined,
+        ObjectsTransferred: js.UndefOr[Double] = js.undefined,
+        TotalBytes: js.UndefOr[Double] = js.undefined,
+        TotalObjects: js.UndefOr[Double] = js.undefined
+    ): DataTransfer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BytesTransferred" -> BytesTransferred.map { x =>
           x.asInstanceOf[js.Any]
@@ -566,9 +609,12 @@ package snowball {
   }
 
   object DescribeAddressRequest {
-    def apply(AddressId: AddressId): DescribeAddressRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AddressId" -> AddressId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AddressId: AddressId
+    ): DescribeAddressRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AddressId" -> AddressId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAddressRequest]
     }
@@ -580,10 +626,14 @@ package snowball {
   }
 
   object DescribeAddressResult {
-    def apply(Address: js.UndefOr[Address] = js.undefined): DescribeAddressResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Address" -> Address.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Address: js.UndefOr[Address] = js.undefined
+    ): DescribeAddressResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAddressResult]
     }
@@ -596,13 +646,18 @@ package snowball {
   }
 
   object DescribeAddressesRequest {
-    def apply(MaxResults: js.UndefOr[ListLimit] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): DescribeAddressesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[ListLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeAddressesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAddressesRequest]
     }
@@ -615,13 +670,18 @@ package snowball {
   }
 
   object DescribeAddressesResult {
-    def apply(Addresses: js.UndefOr[AddressList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): DescribeAddressesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Addresses" -> Addresses.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Addresses: js.UndefOr[AddressList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeAddressesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Addresses" -> Addresses.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAddressesResult]
     }
@@ -633,9 +693,12 @@ package snowball {
   }
 
   object DescribeClusterRequest {
-    def apply(ClusterId: ClusterId): DescribeClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterId" -> ClusterId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterId: ClusterId
+    ): DescribeClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterRequest]
     }
@@ -647,10 +710,14 @@ package snowball {
   }
 
   object DescribeClusterResult {
-    def apply(ClusterMetadata: js.UndefOr[ClusterMetadata] = js.undefined): DescribeClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterMetadata" -> ClusterMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterMetadata: js.UndefOr[ClusterMetadata] = js.undefined
+    ): DescribeClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterMetadata" -> ClusterMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterResult]
     }
@@ -662,9 +729,12 @@ package snowball {
   }
 
   object DescribeJobRequest {
-    def apply(JobId: JobId): DescribeJobRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobId: JobId
+    ): DescribeJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobRequest]
     }
@@ -677,13 +747,18 @@ package snowball {
   }
 
   object DescribeJobResult {
-    def apply(JobMetadata: js.UndefOr[JobMetadata] = js.undefined,
-              SubJobMetadata: js.UndefOr[JobMetadataList] = js.undefined): DescribeJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobMetadata" -> JobMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SubJobMetadata" -> SubJobMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobMetadata: js.UndefOr[JobMetadata] = js.undefined,
+        SubJobMetadata: js.UndefOr[JobMetadataList] = js.undefined
+    ): DescribeJobResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobMetadata" -> JobMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubJobMetadata" -> SubJobMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeJobResult]
     }
@@ -699,11 +774,16 @@ package snowball {
   }
 
   object Ec2AmiResource {
-    def apply(AmiId: AmiId, SnowballAmiId: js.UndefOr[String] = js.undefined): Ec2AmiResource = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("AmiId" -> AmiId.asInstanceOf[js.Any], "SnowballAmiId" -> SnowballAmiId.map { x =>
+    def apply(
+        AmiId: AmiId,
+        SnowballAmiId: js.UndefOr[String] = js.undefined
+    ): Ec2AmiResource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AmiId" -> AmiId.asInstanceOf[js.Any],
+        "SnowballAmiId" -> SnowballAmiId.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Ec2AmiResource]
     }
@@ -718,10 +798,14 @@ package snowball {
   }
 
   object EventTriggerDefinition {
-    def apply(EventResourceARN: js.UndefOr[ResourceARN] = js.undefined): EventTriggerDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventResourceARN" -> EventResourceARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventResourceARN: js.UndefOr[ResourceARN] = js.undefined
+    ): EventTriggerDefinition = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventResourceARN" -> EventResourceARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventTriggerDefinition]
     }
@@ -733,9 +817,12 @@ package snowball {
   }
 
   object GetJobManifestRequest {
-    def apply(JobId: JobId): GetJobManifestRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobId: JobId
+    ): GetJobManifestRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobManifestRequest]
     }
@@ -747,10 +834,14 @@ package snowball {
   }
 
   object GetJobManifestResult {
-    def apply(ManifestURI: js.UndefOr[String] = js.undefined): GetJobManifestResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ManifestURI" -> ManifestURI.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ManifestURI: js.UndefOr[String] = js.undefined
+    ): GetJobManifestResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ManifestURI" -> ManifestURI.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobManifestResult]
     }
@@ -762,9 +853,12 @@ package snowball {
   }
 
   object GetJobUnlockCodeRequest {
-    def apply(JobId: JobId): GetJobUnlockCodeRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobId: JobId
+    ): GetJobUnlockCodeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobUnlockCodeRequest]
     }
@@ -776,10 +870,14 @@ package snowball {
   }
 
   object GetJobUnlockCodeResult {
-    def apply(UnlockCode: js.UndefOr[String] = js.undefined): GetJobUnlockCodeResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnlockCode" -> UnlockCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnlockCode: js.UndefOr[String] = js.undefined
+    ): GetJobUnlockCodeResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnlockCode" -> UnlockCode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobUnlockCodeResult]
     }
@@ -789,8 +887,10 @@ package snowball {
   trait GetSnowballUsageRequest extends js.Object {}
 
   object GetSnowballUsageRequest {
-    def apply(): GetSnowballUsageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetSnowballUsageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSnowballUsageRequest]
     }
@@ -803,13 +903,18 @@ package snowball {
   }
 
   object GetSnowballUsageResult {
-    def apply(SnowballLimit: js.UndefOr[Int] = js.undefined,
-              SnowballsInUse: js.UndefOr[Int] = js.undefined): GetSnowballUsageResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnowballLimit" -> SnowballLimit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SnowballsInUse" -> SnowballsInUse.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnowballLimit: js.UndefOr[Int] = js.undefined,
+        SnowballsInUse: js.UndefOr[Int] = js.undefined
+    ): GetSnowballUsageResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnowballLimit" -> SnowballLimit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SnowballsInUse" -> SnowballsInUse.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSnowballUsageResult]
     }
@@ -830,13 +935,15 @@ package snowball {
   }
 
   object JobListEntry {
-    def apply(CreationDate: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              IsMaster: js.UndefOr[Boolean] = js.undefined,
-              JobId: js.UndefOr[String] = js.undefined,
-              JobState: js.UndefOr[JobState] = js.undefined,
-              JobType: js.UndefOr[JobType] = js.undefined,
-              SnowballType: js.UndefOr[SnowballType] = js.undefined): JobListEntry = {
+    def apply(
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        IsMaster: js.UndefOr[Boolean] = js.undefined,
+        JobId: js.UndefOr[String] = js.undefined,
+        JobState: js.UndefOr[JobState] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
+        SnowballType: js.UndefOr[SnowballType] = js.undefined
+    ): JobListEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -879,9 +986,11 @@ package snowball {
   }
 
   object JobLogs {
-    def apply(JobCompletionReportURI: js.UndefOr[String] = js.undefined,
-              JobFailureLogURI: js.UndefOr[String] = js.undefined,
-              JobSuccessLogURI: js.UndefOr[String] = js.undefined): JobLogs = {
+    def apply(
+        JobCompletionReportURI: js.UndefOr[String] = js.undefined,
+        JobFailureLogURI: js.UndefOr[String] = js.undefined,
+        JobSuccessLogURI: js.UndefOr[String] = js.undefined
+    ): JobLogs = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobCompletionReportURI" -> JobCompletionReportURI.map { x =>
           x.asInstanceOf[js.Any]
@@ -923,23 +1032,25 @@ package snowball {
   }
 
   object JobMetadata {
-    def apply(AddressId: js.UndefOr[AddressId] = js.undefined,
-              ClusterId: js.UndefOr[String] = js.undefined,
-              CreationDate: js.UndefOr[Timestamp] = js.undefined,
-              DataTransferProgress: js.UndefOr[DataTransfer] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-              JobId: js.UndefOr[String] = js.undefined,
-              JobLogInfo: js.UndefOr[JobLogs] = js.undefined,
-              JobState: js.UndefOr[JobState] = js.undefined,
-              JobType: js.UndefOr[JobType] = js.undefined,
-              KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
-              Notification: js.UndefOr[Notification] = js.undefined,
-              Resources: js.UndefOr[JobResource] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              ShippingDetails: js.UndefOr[ShippingDetails] = js.undefined,
-              SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
-              SnowballType: js.UndefOr[SnowballType] = js.undefined): JobMetadata = {
+    def apply(
+        AddressId: js.UndefOr[AddressId] = js.undefined,
+        ClusterId: js.UndefOr[String] = js.undefined,
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        DataTransferProgress: js.UndefOr[DataTransfer] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+        JobId: js.UndefOr[String] = js.undefined,
+        JobLogInfo: js.UndefOr[JobLogs] = js.undefined,
+        JobState: js.UndefOr[JobState] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
+        KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+        Notification: js.UndefOr[Notification] = js.undefined,
+        Resources: js.UndefOr[JobResource] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        ShippingDetails: js.UndefOr[ShippingDetails] = js.undefined,
+        SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined,
+        SnowballType: js.UndefOr[SnowballType] = js.undefined
+    ): JobMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressId" -> AddressId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1009,9 +1120,11 @@ package snowball {
   }
 
   object JobResource {
-    def apply(Ec2AmiResources: js.UndefOr[Ec2AmiResourceList] = js.undefined,
-              LambdaResources: js.UndefOr[LambdaResourceList] = js.undefined,
-              S3Resources: js.UndefOr[S3ResourceList] = js.undefined): JobResource = {
+    def apply(
+        Ec2AmiResources: js.UndefOr[Ec2AmiResourceList] = js.undefined,
+        LambdaResources: js.UndefOr[LambdaResourceList] = js.undefined,
+        S3Resources: js.UndefOr[S3ResourceList] = js.undefined
+    ): JobResource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Ec2AmiResources" -> Ec2AmiResources.map { x =>
           x.asInstanceOf[js.Any]
@@ -1078,13 +1191,18 @@ package snowball {
   }
 
   object KeyRange {
-    def apply(BeginMarker: js.UndefOr[String] = js.undefined,
-              EndMarker: js.UndefOr[String] = js.undefined): KeyRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("BeginMarker" -> BeginMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EndMarker" -> EndMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BeginMarker: js.UndefOr[String] = js.undefined,
+        EndMarker: js.UndefOr[String] = js.undefined
+    ): KeyRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BeginMarker" -> BeginMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndMarker" -> EndMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyRange]
     }
@@ -1100,13 +1218,18 @@ package snowball {
   }
 
   object LambdaResource {
-    def apply(EventTriggers: js.UndefOr[EventTriggerDefinitionList] = js.undefined,
-              LambdaArn: js.UndefOr[ResourceARN] = js.undefined): LambdaResource = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventTriggers" -> EventTriggers.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LambdaArn" -> LambdaArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventTriggers: js.UndefOr[EventTriggerDefinitionList] = js.undefined,
+        LambdaArn: js.UndefOr[ResourceARN] = js.undefined
+    ): LambdaResource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventTriggers" -> EventTriggers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LambdaArn" -> LambdaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LambdaResource]
     }
@@ -1120,9 +1243,11 @@ package snowball {
   }
 
   object ListClusterJobsRequest {
-    def apply(ClusterId: ClusterId,
-              MaxResults: js.UndefOr[ListLimit] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListClusterJobsRequest = {
+    def apply(
+        ClusterId: ClusterId,
+        MaxResults: js.UndefOr[ListLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListClusterJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1144,13 +1269,18 @@ package snowball {
   }
 
   object ListClusterJobsResult {
-    def apply(JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListClusterJobsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobListEntries" -> JobListEntries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListClusterJobsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobListEntries" -> JobListEntries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClusterJobsResult]
     }
@@ -1163,13 +1293,18 @@ package snowball {
   }
 
   object ListClustersRequest {
-    def apply(MaxResults: js.UndefOr[ListLimit] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListClustersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[ListLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListClustersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersRequest]
     }
@@ -1182,13 +1317,18 @@ package snowball {
   }
 
   object ListClustersResult {
-    def apply(ClusterListEntries: js.UndefOr[ClusterListEntryList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListClustersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterListEntries" -> ClusterListEntries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterListEntries: js.UndefOr[ClusterListEntryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListClustersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterListEntries" -> ClusterListEntries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersResult]
     }
@@ -1201,13 +1341,18 @@ package snowball {
   }
 
   object ListCompatibleImagesRequest {
-    def apply(MaxResults: js.UndefOr[ListLimit] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListCompatibleImagesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[ListLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListCompatibleImagesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCompatibleImagesRequest]
     }
@@ -1220,13 +1365,18 @@ package snowball {
   }
 
   object ListCompatibleImagesResult {
-    def apply(CompatibleImages: js.UndefOr[CompatibleImageList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListCompatibleImagesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("CompatibleImages" -> CompatibleImages.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CompatibleImages: js.UndefOr[CompatibleImageList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListCompatibleImagesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CompatibleImages" -> CompatibleImages.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCompatibleImagesResult]
     }
@@ -1239,13 +1389,18 @@ package snowball {
   }
 
   object ListJobsRequest {
-    def apply(MaxResults: js.UndefOr[ListLimit] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[ListLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListJobsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
     }
@@ -1258,13 +1413,18 @@ package snowball {
   }
 
   object ListJobsResult {
-    def apply(JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListJobsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobListEntries" -> JobListEntries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobListEntries: js.UndefOr[JobListEntryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListJobsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobListEntries" -> JobListEntries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResult]
     }
@@ -1282,9 +1442,11 @@ package snowball {
   }
 
   object Notification {
-    def apply(JobStatesToNotify: js.UndefOr[JobStateList] = js.undefined,
-              NotifyAll: js.UndefOr[Boolean] = js.undefined,
-              SnsTopicARN: js.UndefOr[SnsTopicARN] = js.undefined): Notification = {
+    def apply(
+        JobStatesToNotify: js.UndefOr[JobStateList] = js.undefined,
+        NotifyAll: js.UndefOr[Boolean] = js.undefined,
+        SnsTopicARN: js.UndefOr[SnsTopicARN] = js.undefined
+    ): Notification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobStatesToNotify" -> JobStatesToNotify.map { x =>
           x.asInstanceOf[js.Any]
@@ -1311,13 +1473,18 @@ package snowball {
   }
 
   object S3Resource {
-    def apply(BucketArn: js.UndefOr[ResourceARN] = js.undefined,
-              KeyRange: js.UndefOr[KeyRange] = js.undefined): S3Resource = {
-      val _fields = IndexedSeq[(String, js.Any)]("BucketArn" -> BucketArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "KeyRange" -> KeyRange.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BucketArn: js.UndefOr[ResourceARN] = js.undefined,
+        KeyRange: js.UndefOr[KeyRange] = js.undefined
+    ): S3Resource = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BucketArn" -> BucketArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "KeyRange" -> KeyRange.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Resource]
     }
@@ -1333,13 +1500,18 @@ package snowball {
   }
 
   object Shipment {
-    def apply(Status: js.UndefOr[String] = js.undefined,
-              TrackingNumber: js.UndefOr[String] = js.undefined): Shipment = {
-      val _fields = IndexedSeq[(String, js.Any)]("Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TrackingNumber" -> TrackingNumber.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: js.UndefOr[String] = js.undefined,
+        TrackingNumber: js.UndefOr[String] = js.undefined
+    ): Shipment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrackingNumber" -> TrackingNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Shipment]
     }
@@ -1356,9 +1528,11 @@ package snowball {
   }
 
   object ShippingDetails {
-    def apply(InboundShipment: js.UndefOr[Shipment] = js.undefined,
-              OutboundShipment: js.UndefOr[Shipment] = js.undefined,
-              ShippingOption: js.UndefOr[ShippingOption] = js.undefined): ShippingDetails = {
+    def apply(
+        InboundShipment: js.UndefOr[Shipment] = js.undefined,
+        OutboundShipment: js.UndefOr[Shipment] = js.undefined,
+        ShippingOption: js.UndefOr[ShippingOption] = js.undefined
+    ): ShippingDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InboundShipment" -> InboundShipment.map { x =>
           x.asInstanceOf[js.Any]
@@ -1416,14 +1590,16 @@ package snowball {
   }
 
   object UpdateClusterRequest {
-    def apply(ClusterId: ClusterId,
-              AddressId: js.UndefOr[AddressId] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-              Notification: js.UndefOr[Notification] = js.undefined,
-              Resources: js.UndefOr[JobResource] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              ShippingOption: js.UndefOr[ShippingOption] = js.undefined): UpdateClusterRequest = {
+    def apply(
+        ClusterId: ClusterId,
+        AddressId: js.UndefOr[AddressId] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+        Notification: js.UndefOr[Notification] = js.undefined,
+        Resources: js.UndefOr[JobResource] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        ShippingOption: js.UndefOr[ShippingOption] = js.undefined
+    ): UpdateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "AddressId" -> AddressId.map { x =>
@@ -1457,8 +1633,10 @@ package snowball {
   trait UpdateClusterResult extends js.Object {}
 
   object UpdateClusterResult {
-    def apply(): UpdateClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateClusterResult]
     }
@@ -1478,15 +1656,17 @@ package snowball {
   }
 
   object UpdateJobRequest {
-    def apply(JobId: JobId,
-              AddressId: js.UndefOr[AddressId] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
-              Notification: js.UndefOr[Notification] = js.undefined,
-              Resources: js.UndefOr[JobResource] = js.undefined,
-              RoleARN: js.UndefOr[RoleARN] = js.undefined,
-              ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
-              SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined): UpdateJobRequest = {
+    def apply(
+        JobId: JobId,
+        AddressId: js.UndefOr[AddressId] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
+        Notification: js.UndefOr[Notification] = js.undefined,
+        Resources: js.UndefOr[JobResource] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
+        SnowballCapacityPreference: js.UndefOr[SnowballCapacity] = js.undefined
+    ): UpdateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobId" -> JobId.asInstanceOf[js.Any],
         "AddressId" -> AddressId.map { x =>
@@ -1523,8 +1703,10 @@ package snowball {
   trait UpdateJobResult extends js.Object {}
 
   object UpdateJobResult {
-    def apply(): UpdateJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateJobResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobResult]
     }

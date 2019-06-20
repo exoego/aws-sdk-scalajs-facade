@@ -25,6 +25,7 @@ package object codecommit {
   type Content                       = String
   type CreationDate                  = js.Date
   type Date                          = String
+  type DeleteFileEntries             = js.Array[DeleteFileEntry]
   type Description                   = String
   type DifferenceList                = js.Array[Difference]
   type Email                         = String
@@ -33,10 +34,12 @@ package object codecommit {
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type FileList                                 = js.Array[File]
   type FileModeTypeEnum                         = String
+  type FilesMetadata                            = js.Array[FileMetadata]
   type FolderList                               = js.Array[Folder]
   type IsCommentDeleted                         = Boolean
   type IsMergeable                              = Boolean
   type IsMerged                                 = Boolean
+  type IsMove                                   = Boolean
   type KeepEmptyFolders                         = Boolean
   type LastModifiedDate                         = js.Date
   type Limit                                    = Int
@@ -58,6 +61,7 @@ package object codecommit {
   type PullRequestIdList                        = js.Array[PullRequestId]
   type PullRequestStatusEnum                    = String
   type PullRequestTargetList                    = js.Array[PullRequestTarget]
+  type PutFileEntries                           = js.Array[PutFileEntry]
   type ReferenceName                            = String
   type RelativeFileVersionEnum                  = String
   type RepositoryDescription                    = String
@@ -76,6 +80,7 @@ package object codecommit {
   type RepositoryTriggerNameList                = js.Array[RepositoryTriggerName]
   type RepositoryTriggersConfigurationId        = String
   type RepositoryTriggersList                   = js.Array[RepositoryTrigger]
+  type SetFileModeEntries                       = js.Array[SetFileModeEntry]
   type SortByEnum                               = String
   type SubModuleList                            = js.Array[SubModule]
   type SymbolicLinkList                         = js.Array[SymbolicLink]
@@ -92,6 +97,7 @@ package codecommit {
 
     def batchGetRepositories(params: BatchGetRepositoriesInput): Request[BatchGetRepositoriesOutput] = js.native
     def createBranch(params: CreateBranchInput): Request[js.Object]                                  = js.native
+    def createCommit(params: CreateCommitInput): Request[CreateCommitOutput]                         = js.native
     def createPullRequest(params: CreatePullRequestInput): Request[CreatePullRequestOutput]          = js.native
     def createRepository(params: CreateRepositoryInput): Request[CreateRepositoryOutput]             = js.native
     def deleteBranch(params: DeleteBranchInput): Request[DeleteBranchOutput]                         = js.native
@@ -152,9 +158,12 @@ package codecommit {
   }
 
   object BatchGetRepositoriesInput {
-    def apply(repositoryNames: RepositoryNameList): BatchGetRepositoriesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryNames" -> repositoryNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryNames: RepositoryNameList
+    ): BatchGetRepositoriesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryNames" -> repositoryNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetRepositoriesInput]
     }
@@ -170,13 +179,18 @@ package codecommit {
   }
 
   object BatchGetRepositoriesOutput {
-    def apply(repositories: js.UndefOr[RepositoryMetadataList] = js.undefined,
-              repositoriesNotFound: js.UndefOr[RepositoryNotFoundList] = js.undefined): BatchGetRepositoriesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositories" -> repositories.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "repositoriesNotFound" -> repositoriesNotFound.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositories: js.UndefOr[RepositoryMetadataList] = js.undefined,
+        repositoriesNotFound: js.UndefOr[RepositoryNotFoundList] = js.undefined
+    ): BatchGetRepositoriesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositories" -> repositories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "repositoriesNotFound" -> repositoriesNotFound.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetRepositoriesOutput]
     }
@@ -193,16 +207,22 @@ package codecommit {
   }
 
   object BlobMetadata {
-    def apply(blobId: js.UndefOr[ObjectId] = js.undefined,
-              mode: js.UndefOr[Mode] = js.undefined,
-              path: js.UndefOr[Path] = js.undefined): BlobMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)]("blobId" -> blobId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "mode" -> mode.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "path" -> path.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        blobId: js.UndefOr[ObjectId] = js.undefined,
+        mode: js.UndefOr[Mode] = js.undefined,
+        path: js.UndefOr[Path] = js.undefined
+    ): BlobMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "blobId" -> blobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "mode" -> mode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "path" -> path.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BlobMetadata]
     }
@@ -218,13 +238,18 @@ package codecommit {
   }
 
   object BranchInfo {
-    def apply(branchName: js.UndefOr[BranchName] = js.undefined,
-              commitId: js.UndefOr[CommitId] = js.undefined): BranchInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("branchName" -> branchName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "commitId" -> commitId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        branchName: js.UndefOr[BranchName] = js.undefined,
+        commitId: js.UndefOr[CommitId] = js.undefined
+    ): BranchInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "branchName" -> branchName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "commitId" -> commitId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BranchInfo]
     }
@@ -254,14 +279,16 @@ package codecommit {
   }
 
   object Comment {
-    def apply(authorArn: js.UndefOr[Arn] = js.undefined,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              commentId: js.UndefOr[CommentId] = js.undefined,
-              content: js.UndefOr[Content] = js.undefined,
-              creationDate: js.UndefOr[CreationDate] = js.undefined,
-              deleted: js.UndefOr[IsCommentDeleted] = js.undefined,
-              inReplyTo: js.UndefOr[CommentId] = js.undefined,
-              lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined): Comment = {
+    def apply(
+        authorArn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        commentId: js.UndefOr[CommentId] = js.undefined,
+        content: js.UndefOr[Content] = js.undefined,
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        deleted: js.UndefOr[IsCommentDeleted] = js.undefined,
+        inReplyTo: js.UndefOr[CommentId] = js.undefined,
+        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined
+    ): Comment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorArn" -> authorArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -308,13 +335,15 @@ package codecommit {
   }
 
   object CommentsForComparedCommit {
-    def apply(afterBlobId: js.UndefOr[ObjectId] = js.undefined,
-              afterCommitId: js.UndefOr[CommitId] = js.undefined,
-              beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
-              beforeCommitId: js.UndefOr[CommitId] = js.undefined,
-              comments: js.UndefOr[Comments] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): CommentsForComparedCommit = {
+    def apply(
+        afterBlobId: js.UndefOr[ObjectId] = js.undefined,
+        afterCommitId: js.UndefOr[CommitId] = js.undefined,
+        beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
+        beforeCommitId: js.UndefOr[CommitId] = js.undefined,
+        comments: js.UndefOr[Comments] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): CommentsForComparedCommit = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterBlobId" -> afterBlobId.map { x =>
           x.asInstanceOf[js.Any]
@@ -359,14 +388,16 @@ package codecommit {
   }
 
   object CommentsForPullRequest {
-    def apply(afterBlobId: js.UndefOr[ObjectId] = js.undefined,
-              afterCommitId: js.UndefOr[CommitId] = js.undefined,
-              beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
-              beforeCommitId: js.UndefOr[CommitId] = js.undefined,
-              comments: js.UndefOr[Comments] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined,
-              pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): CommentsForPullRequest = {
+    def apply(
+        afterBlobId: js.UndefOr[ObjectId] = js.undefined,
+        afterCommitId: js.UndefOr[CommitId] = js.undefined,
+        beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
+        beforeCommitId: js.UndefOr[CommitId] = js.undefined,
+        comments: js.UndefOr[Comments] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined,
+        pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): CommentsForPullRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterBlobId" -> afterBlobId.map { x =>
           x.asInstanceOf[js.Any]
@@ -413,13 +444,15 @@ package codecommit {
   }
 
   object Commit {
-    def apply(additionalData: js.UndefOr[AdditionalData] = js.undefined,
-              author: js.UndefOr[UserInfo] = js.undefined,
-              commitId: js.UndefOr[ObjectId] = js.undefined,
-              committer: js.UndefOr[UserInfo] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              parents: js.UndefOr[ParentList] = js.undefined,
-              treeId: js.UndefOr[ObjectId] = js.undefined): Commit = {
+    def apply(
+        additionalData: js.UndefOr[AdditionalData] = js.undefined,
+        author: js.UndefOr[UserInfo] = js.undefined,
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        committer: js.UndefOr[UserInfo] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        parents: js.UndefOr[ParentList] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): Commit = {
       val _fields = IndexedSeq[(String, js.Any)](
         "additionalData" -> additionalData.map { x =>
           x.asInstanceOf[js.Any]
@@ -459,7 +492,11 @@ package codecommit {
   }
 
   object CreateBranchInput {
-    def apply(branchName: BranchName, commitId: CommitId, repositoryName: RepositoryName): CreateBranchInput = {
+    def apply(
+        branchName: BranchName,
+        commitId: CommitId,
+        repositoryName: RepositoryName
+    ): CreateBranchInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "commitId"       -> commitId.asInstanceOf[js.Any],
@@ -467,6 +504,105 @@ package codecommit {
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBranchInput]
+    }
+  }
+
+  @js.native
+  trait CreateCommitInput extends js.Object {
+    var branchName: BranchName
+    var repositoryName: RepositoryName
+    var authorName: js.UndefOr[Name]
+    var commitMessage: js.UndefOr[Message]
+    var deleteFiles: js.UndefOr[DeleteFileEntries]
+    var email: js.UndefOr[Email]
+    var keepEmptyFolders: js.UndefOr[KeepEmptyFolders]
+    var parentCommitId: js.UndefOr[CommitId]
+    var putFiles: js.UndefOr[PutFileEntries]
+    var setFileModes: js.UndefOr[SetFileModeEntries]
+  }
+
+  object CreateCommitInput {
+    def apply(
+        branchName: BranchName,
+        repositoryName: RepositoryName,
+        authorName: js.UndefOr[Name] = js.undefined,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        deleteFiles: js.UndefOr[DeleteFileEntries] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
+        parentCommitId: js.UndefOr[CommitId] = js.undefined,
+        putFiles: js.UndefOr[PutFileEntries] = js.undefined,
+        setFileModes: js.UndefOr[SetFileModeEntries] = js.undefined
+    ): CreateCommitInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "branchName"     -> branchName.asInstanceOf[js.Any],
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "authorName" -> authorName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "commitMessage" -> commitMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deleteFiles" -> deleteFiles.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "email" -> email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "keepEmptyFolders" -> keepEmptyFolders.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "parentCommitId" -> parentCommitId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "putFiles" -> putFiles.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "setFileModes" -> setFileModes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCommitInput]
+    }
+  }
+
+  @js.native
+  trait CreateCommitOutput extends js.Object {
+    var commitId: js.UndefOr[ObjectId]
+    var filesAdded: js.UndefOr[FilesMetadata]
+    var filesDeleted: js.UndefOr[FilesMetadata]
+    var filesUpdated: js.UndefOr[FilesMetadata]
+    var treeId: js.UndefOr[ObjectId]
+  }
+
+  object CreateCommitOutput {
+    def apply(
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        filesAdded: js.UndefOr[FilesMetadata] = js.undefined,
+        filesDeleted: js.UndefOr[FilesMetadata] = js.undefined,
+        filesUpdated: js.UndefOr[FilesMetadata] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): CreateCommitOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "commitId" -> commitId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "filesAdded" -> filesAdded.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "filesDeleted" -> filesDeleted.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "filesUpdated" -> filesUpdated.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "treeId" -> treeId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCommitOutput]
     }
   }
 
@@ -479,10 +615,12 @@ package codecommit {
   }
 
   object CreatePullRequestInput {
-    def apply(targets: TargetList,
-              title: Title,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined): CreatePullRequestInput = {
+    def apply(
+        targets: TargetList,
+        title: Title,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined
+    ): CreatePullRequestInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "targets" -> targets.asInstanceOf[js.Any],
         "title"   -> title.asInstanceOf[js.Any],
@@ -504,9 +642,12 @@ package codecommit {
   }
 
   object CreatePullRequestOutput {
-    def apply(pullRequest: PullRequest): CreatePullRequestOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequest" -> pullRequest.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        pullRequest: PullRequest
+    ): CreatePullRequestOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequest" -> pullRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePullRequestOutput]
     }
@@ -522,8 +663,10 @@ package codecommit {
   }
 
   object CreateRepositoryInput {
-    def apply(repositoryName: RepositoryName,
-              repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined): CreateRepositoryInput = {
+    def apply(
+        repositoryName: RepositoryName,
+        repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined
+    ): CreateRepositoryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "repositoryDescription" -> repositoryDescription.map { x =>
@@ -544,10 +687,14 @@ package codecommit {
   }
 
   object CreateRepositoryOutput {
-    def apply(repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined): CreateRepositoryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryMetadata" -> repositoryMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined
+    ): CreateRepositoryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryMetadata" -> repositoryMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRepositoryOutput]
     }
@@ -563,7 +710,10 @@ package codecommit {
   }
 
   object DeleteBranchInput {
-    def apply(branchName: BranchName, repositoryName: RepositoryName): DeleteBranchInput = {
+    def apply(
+        branchName: BranchName,
+        repositoryName: RepositoryName
+    ): DeleteBranchInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
@@ -582,10 +732,14 @@ package codecommit {
   }
 
   object DeleteBranchOutput {
-    def apply(deletedBranch: js.UndefOr[BranchInfo] = js.undefined): DeleteBranchOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deletedBranch" -> deletedBranch.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deletedBranch: js.UndefOr[BranchInfo] = js.undefined
+    ): DeleteBranchOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deletedBranch" -> deletedBranch.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBranchOutput]
     }
@@ -597,9 +751,12 @@ package codecommit {
   }
 
   object DeleteCommentContentInput {
-    def apply(commentId: CommentId): DeleteCommentContentInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("commentId" -> commentId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        commentId: CommentId
+    ): DeleteCommentContentInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "commentId" -> commentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCommentContentInput]
     }
@@ -611,12 +768,36 @@ package codecommit {
   }
 
   object DeleteCommentContentOutput {
-    def apply(comment: js.UndefOr[Comment] = js.undefined): DeleteCommentContentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("comment" -> comment.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        comment: js.UndefOr[Comment] = js.undefined
+    ): DeleteCommentContentOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "comment" -> comment.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCommentContentOutput]
+    }
+  }
+
+  /**
+    * A file that will be deleted as part of a commit.
+    */
+  @js.native
+  trait DeleteFileEntry extends js.Object {
+    var filePath: Path
+  }
+
+  object DeleteFileEntry {
+    def apply(
+        filePath: Path
+    ): DeleteFileEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "filePath" -> filePath.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFileEntry]
     }
   }
 
@@ -633,14 +814,16 @@ package codecommit {
   }
 
   object DeleteFileInput {
-    def apply(branchName: BranchName,
-              filePath: Path,
-              parentCommitId: CommitId,
-              repositoryName: RepositoryName,
-              commitMessage: js.UndefOr[Message] = js.undefined,
-              email: js.UndefOr[Email] = js.undefined,
-              keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined): DeleteFileInput = {
+    def apply(
+        branchName: BranchName,
+        filePath: Path,
+        parentCommitId: CommitId,
+        repositoryName: RepositoryName,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): DeleteFileInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "filePath"       -> filePath.asInstanceOf[js.Any],
@@ -673,7 +856,12 @@ package codecommit {
   }
 
   object DeleteFileOutput {
-    def apply(blobId: ObjectId, commitId: ObjectId, filePath: Path, treeId: ObjectId): DeleteFileOutput = {
+    def apply(
+        blobId: ObjectId,
+        commitId: ObjectId,
+        filePath: Path,
+        treeId: ObjectId
+    ): DeleteFileOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "blobId"   -> blobId.asInstanceOf[js.Any],
         "commitId" -> commitId.asInstanceOf[js.Any],
@@ -694,9 +882,12 @@ package codecommit {
   }
 
   object DeleteRepositoryInput {
-    def apply(repositoryName: RepositoryName): DeleteRepositoryInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryName" -> repositoryName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryName: RepositoryName
+    ): DeleteRepositoryInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRepositoryInput]
     }
@@ -711,10 +902,14 @@ package codecommit {
   }
 
   object DeleteRepositoryOutput {
-    def apply(repositoryId: js.UndefOr[RepositoryId] = js.undefined): DeleteRepositoryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryId" -> repositoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryId: js.UndefOr[RepositoryId] = js.undefined
+    ): DeleteRepositoryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryId" -> repositoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRepositoryOutput]
     }
@@ -730,11 +925,13 @@ package codecommit {
   }
 
   object DescribePullRequestEventsInput {
-    def apply(pullRequestId: PullRequestId,
-              actorArn: js.UndefOr[Arn] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              pullRequestEventType: js.UndefOr[PullRequestEventType] = js.undefined): DescribePullRequestEventsInput = {
+    def apply(
+        pullRequestId: PullRequestId,
+        actorArn: js.UndefOr[Arn] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        pullRequestEventType: js.UndefOr[PullRequestEventType] = js.undefined
+    ): DescribePullRequestEventsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "actorArn" -> actorArn.map { x =>
@@ -762,8 +959,10 @@ package codecommit {
   }
 
   object DescribePullRequestEventsOutput {
-    def apply(pullRequestEvents: PullRequestEventList,
-              nextToken: js.UndefOr[NextToken] = js.undefined): DescribePullRequestEventsOutput = {
+    def apply(
+        pullRequestEvents: PullRequestEventList,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribePullRequestEventsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pullRequestEvents" -> pullRequestEvents.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x =>
@@ -786,9 +985,11 @@ package codecommit {
   }
 
   object Difference {
-    def apply(afterBlob: js.UndefOr[BlobMetadata] = js.undefined,
-              beforeBlob: js.UndefOr[BlobMetadata] = js.undefined,
-              changeType: js.UndefOr[ChangeTypeEnum] = js.undefined): Difference = {
+    def apply(
+        afterBlob: js.UndefOr[BlobMetadata] = js.undefined,
+        beforeBlob: js.UndefOr[BlobMetadata] = js.undefined,
+        changeType: js.UndefOr[ChangeTypeEnum] = js.undefined
+    ): Difference = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterBlob" -> afterBlob.map { x =>
           x.asInstanceOf[js.Any]
@@ -817,10 +1018,12 @@ package codecommit {
   }
 
   object File {
-    def apply(absolutePath: js.UndefOr[Path] = js.undefined,
-              blobId: js.UndefOr[ObjectId] = js.undefined,
-              fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
-              relativePath: js.UndefOr[Path] = js.undefined): File = {
+    def apply(
+        absolutePath: js.UndefOr[Path] = js.undefined,
+        blobId: js.UndefOr[ObjectId] = js.undefined,
+        fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
+        relativePath: js.UndefOr[Path] = js.undefined
+    ): File = {
       val _fields = IndexedSeq[(String, js.Any)](
         "absolutePath" -> absolutePath.map { x =>
           x.asInstanceOf[js.Any]
@@ -837,6 +1040,38 @@ package codecommit {
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[File]
+    }
+  }
+
+  /**
+    * A file that will be added, updated, or deleted as part of a commit.
+    */
+  @js.native
+  trait FileMetadata extends js.Object {
+    var absolutePath: js.UndefOr[Path]
+    var blobId: js.UndefOr[ObjectId]
+    var fileMode: js.UndefOr[FileModeTypeEnum]
+  }
+
+  object FileMetadata {
+    def apply(
+        absolutePath: js.UndefOr[Path] = js.undefined,
+        blobId: js.UndefOr[ObjectId] = js.undefined,
+        fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined
+    ): FileMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "absolutePath" -> absolutePath.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "blobId" -> blobId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fileMode" -> fileMode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileMetadata]
     }
   }
 
@@ -859,9 +1094,11 @@ package codecommit {
   }
 
   object Folder {
-    def apply(absolutePath: js.UndefOr[Path] = js.undefined,
-              relativePath: js.UndefOr[Path] = js.undefined,
-              treeId: js.UndefOr[ObjectId] = js.undefined): Folder = {
+    def apply(
+        absolutePath: js.UndefOr[Path] = js.undefined,
+        relativePath: js.UndefOr[Path] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): Folder = {
       val _fields = IndexedSeq[(String, js.Any)](
         "absolutePath" -> absolutePath.map { x =>
           x.asInstanceOf[js.Any]
@@ -888,7 +1125,10 @@ package codecommit {
   }
 
   object GetBlobInput {
-    def apply(blobId: ObjectId, repositoryName: RepositoryName): GetBlobInput = {
+    def apply(
+        blobId: ObjectId,
+        repositoryName: RepositoryName
+    ): GetBlobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "blobId"         -> blobId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
@@ -907,9 +1147,12 @@ package codecommit {
   }
 
   object GetBlobOutput {
-    def apply(content: blob): GetBlobOutput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("content" -> content.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        content: blob
+    ): GetBlobOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "content" -> content.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBlobOutput]
     }
@@ -925,13 +1168,18 @@ package codecommit {
   }
 
   object GetBranchInput {
-    def apply(branchName: js.UndefOr[BranchName] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): GetBranchInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("branchName" -> branchName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "repositoryName" -> repositoryName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        branchName: js.UndefOr[BranchName] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): GetBranchInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "branchName" -> branchName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "repositoryName" -> repositoryName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBranchInput]
     }
@@ -946,10 +1194,14 @@ package codecommit {
   }
 
   object GetBranchOutput {
-    def apply(branch: js.UndefOr[BranchInfo] = js.undefined): GetBranchOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("branch" -> branch.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        branch: js.UndefOr[BranchInfo] = js.undefined
+    ): GetBranchOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "branch" -> branch.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBranchOutput]
     }
@@ -961,9 +1213,12 @@ package codecommit {
   }
 
   object GetCommentInput {
-    def apply(commentId: CommentId): GetCommentInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("commentId" -> commentId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        commentId: CommentId
+    ): GetCommentInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "commentId" -> commentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCommentInput]
     }
@@ -975,10 +1230,14 @@ package codecommit {
   }
 
   object GetCommentOutput {
-    def apply(comment: js.UndefOr[Comment] = js.undefined): GetCommentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("comment" -> comment.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        comment: js.UndefOr[Comment] = js.undefined
+    ): GetCommentOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "comment" -> comment.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCommentOutput]
     }
@@ -994,11 +1253,13 @@ package codecommit {
   }
 
   object GetCommentsForComparedCommitInput {
-    def apply(afterCommitId: CommitId,
-              repositoryName: RepositoryName,
-              beforeCommitId: js.UndefOr[CommitId] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): GetCommentsForComparedCommitInput = {
+    def apply(
+        afterCommitId: CommitId,
+        repositoryName: RepositoryName,
+        beforeCommitId: js.UndefOr[CommitId] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCommentsForComparedCommitInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -1024,14 +1285,18 @@ package codecommit {
   }
 
   object GetCommentsForComparedCommitOutput {
-    def apply(commentsForComparedCommitData: js.UndefOr[CommentsForComparedCommitData] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): GetCommentsForComparedCommitOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("commentsForComparedCommitData" -> commentsForComparedCommitData.map {
-        x =>
+    def apply(
+        commentsForComparedCommitData: js.UndefOr[CommentsForComparedCommitData] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCommentsForComparedCommitOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "commentsForComparedCommitData" -> commentsForComparedCommitData.map { x =>
           x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCommentsForComparedCommitOutput]
     }
@@ -1048,12 +1313,14 @@ package codecommit {
   }
 
   object GetCommentsForPullRequestInput {
-    def apply(pullRequestId: PullRequestId,
-              afterCommitId: js.UndefOr[CommitId] = js.undefined,
-              beforeCommitId: js.UndefOr[CommitId] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): GetCommentsForPullRequestInput = {
+    def apply(
+        pullRequestId: PullRequestId,
+        afterCommitId: js.UndefOr[CommitId] = js.undefined,
+        beforeCommitId: js.UndefOr[CommitId] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): GetCommentsForPullRequestInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "afterCommitId" -> afterCommitId.map { x =>
@@ -1084,13 +1351,18 @@ package codecommit {
   }
 
   object GetCommentsForPullRequestOutput {
-    def apply(commentsForPullRequestData: js.UndefOr[CommentsForPullRequestData] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): GetCommentsForPullRequestOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("commentsForPullRequestData" -> commentsForPullRequestData.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        commentsForPullRequestData: js.UndefOr[CommentsForPullRequestData] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCommentsForPullRequestOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "commentsForPullRequestData" -> commentsForPullRequestData.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCommentsForPullRequestOutput]
     }
@@ -1106,7 +1378,10 @@ package codecommit {
   }
 
   object GetCommitInput {
-    def apply(commitId: ObjectId, repositoryName: RepositoryName): GetCommitInput = {
+    def apply(
+        commitId: ObjectId,
+        repositoryName: RepositoryName
+    ): GetCommitInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "commitId"       -> commitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
@@ -1125,9 +1400,12 @@ package codecommit {
   }
 
   object GetCommitOutput {
-    def apply(commit: Commit): GetCommitOutput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("commit" -> commit.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        commit: Commit
+    ): GetCommitOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "commit" -> commit.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCommitOutput]
     }
@@ -1145,13 +1423,15 @@ package codecommit {
   }
 
   object GetDifferencesInput {
-    def apply(afterCommitSpecifier: CommitName,
-              repositoryName: RepositoryName,
-              MaxResults: js.UndefOr[Limit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              afterPath: js.UndefOr[Path] = js.undefined,
-              beforeCommitSpecifier: js.UndefOr[CommitName] = js.undefined,
-              beforePath: js.UndefOr[Path] = js.undefined): GetDifferencesInput = {
+    def apply(
+        afterCommitSpecifier: CommitName,
+        repositoryName: RepositoryName,
+        MaxResults: js.UndefOr[Limit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        afterPath: js.UndefOr[Path] = js.undefined,
+        beforeCommitSpecifier: js.UndefOr[CommitName] = js.undefined,
+        beforePath: js.UndefOr[Path] = js.undefined
+    ): GetDifferencesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterCommitSpecifier" -> afterCommitSpecifier.asInstanceOf[js.Any],
         "repositoryName"       -> repositoryName.asInstanceOf[js.Any],
@@ -1183,13 +1463,18 @@ package codecommit {
   }
 
   object GetDifferencesOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              differences: js.UndefOr[DifferenceList] = js.undefined): GetDifferencesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "differences" -> differences.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        differences: js.UndefOr[DifferenceList] = js.undefined
+    ): GetDifferencesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "differences" -> differences.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDifferencesOutput]
     }
@@ -1203,9 +1488,11 @@ package codecommit {
   }
 
   object GetFileInput {
-    def apply(filePath: Path,
-              repositoryName: RepositoryName,
-              commitSpecifier: js.UndefOr[CommitName] = js.undefined): GetFileInput = {
+    def apply(
+        filePath: Path,
+        repositoryName: RepositoryName,
+        commitSpecifier: js.UndefOr[CommitName] = js.undefined
+    ): GetFileInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filePath"       -> filePath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -1229,12 +1516,14 @@ package codecommit {
   }
 
   object GetFileOutput {
-    def apply(blobId: ObjectId,
-              commitId: ObjectId,
-              fileContent: FileContent,
-              fileMode: FileModeTypeEnum,
-              filePath: Path,
-              fileSize: ObjectSize): GetFileOutput = {
+    def apply(
+        blobId: ObjectId,
+        commitId: ObjectId,
+        fileContent: FileContent,
+        fileMode: FileModeTypeEnum,
+        filePath: Path,
+        fileSize: ObjectSize
+    ): GetFileOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "blobId"      -> blobId.asInstanceOf[js.Any],
         "commitId"    -> commitId.asInstanceOf[js.Any],
@@ -1256,9 +1545,11 @@ package codecommit {
   }
 
   object GetFolderInput {
-    def apply(folderPath: Path,
-              repositoryName: RepositoryName,
-              commitSpecifier: js.UndefOr[CommitName] = js.undefined): GetFolderInput = {
+    def apply(
+        folderPath: Path,
+        repositoryName: RepositoryName,
+        commitSpecifier: js.UndefOr[CommitName] = js.undefined
+    ): GetFolderInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "folderPath"     -> folderPath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -1283,13 +1574,15 @@ package codecommit {
   }
 
   object GetFolderOutput {
-    def apply(commitId: ObjectId,
-              folderPath: Path,
-              files: js.UndefOr[FileList] = js.undefined,
-              subFolders: js.UndefOr[FolderList] = js.undefined,
-              subModules: js.UndefOr[SubModuleList] = js.undefined,
-              symbolicLinks: js.UndefOr[SymbolicLinkList] = js.undefined,
-              treeId: js.UndefOr[ObjectId] = js.undefined): GetFolderOutput = {
+    def apply(
+        commitId: ObjectId,
+        folderPath: Path,
+        files: js.UndefOr[FileList] = js.undefined,
+        subFolders: js.UndefOr[FolderList] = js.undefined,
+        subModules: js.UndefOr[SubModuleList] = js.undefined,
+        symbolicLinks: js.UndefOr[SymbolicLinkList] = js.undefined,
+        treeId: js.UndefOr[ObjectId] = js.undefined
+    ): GetFolderOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "commitId"   -> commitId.asInstanceOf[js.Any],
         "folderPath" -> folderPath.asInstanceOf[js.Any],
@@ -1323,10 +1616,12 @@ package codecommit {
   }
 
   object GetMergeConflictsInput {
-    def apply(destinationCommitSpecifier: CommitName,
-              mergeOption: MergeOptionTypeEnum,
-              repositoryName: RepositoryName,
-              sourceCommitSpecifier: CommitName): GetMergeConflictsInput = {
+    def apply(
+        destinationCommitSpecifier: CommitName,
+        mergeOption: MergeOptionTypeEnum,
+        repositoryName: RepositoryName,
+        sourceCommitSpecifier: CommitName
+    ): GetMergeConflictsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
@@ -1346,9 +1641,11 @@ package codecommit {
   }
 
   object GetMergeConflictsOutput {
-    def apply(destinationCommitId: CommitId,
-              mergeable: IsMergeable,
-              sourceCommitId: CommitId): GetMergeConflictsOutput = {
+    def apply(
+        destinationCommitId: CommitId,
+        mergeable: IsMergeable,
+        sourceCommitId: CommitId
+    ): GetMergeConflictsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
         "mergeable"           -> mergeable.asInstanceOf[js.Any],
@@ -1365,9 +1662,12 @@ package codecommit {
   }
 
   object GetPullRequestInput {
-    def apply(pullRequestId: PullRequestId): GetPullRequestInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequestId" -> pullRequestId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        pullRequestId: PullRequestId
+    ): GetPullRequestInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPullRequestInput]
     }
@@ -1379,9 +1679,12 @@ package codecommit {
   }
 
   object GetPullRequestOutput {
-    def apply(pullRequest: PullRequest): GetPullRequestOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequest" -> pullRequest.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        pullRequest: PullRequest
+    ): GetPullRequestOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequest" -> pullRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPullRequestOutput]
     }
@@ -1396,9 +1699,12 @@ package codecommit {
   }
 
   object GetRepositoryInput {
-    def apply(repositoryName: RepositoryName): GetRepositoryInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryName" -> repositoryName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryName: RepositoryName
+    ): GetRepositoryInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRepositoryInput]
     }
@@ -1413,10 +1719,14 @@ package codecommit {
   }
 
   object GetRepositoryOutput {
-    def apply(repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined): GetRepositoryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryMetadata" -> repositoryMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined
+    ): GetRepositoryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryMetadata" -> repositoryMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRepositoryOutput]
     }
@@ -1431,9 +1741,12 @@ package codecommit {
   }
 
   object GetRepositoryTriggersInput {
-    def apply(repositoryName: RepositoryName): GetRepositoryTriggersInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryName" -> repositoryName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryName: RepositoryName
+    ): GetRepositoryTriggersInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRepositoryTriggersInput]
     }
@@ -1449,13 +1762,18 @@ package codecommit {
   }
 
   object GetRepositoryTriggersOutput {
-    def apply(configurationId: js.UndefOr[RepositoryTriggersConfigurationId] = js.undefined,
-              triggers: js.UndefOr[RepositoryTriggersList] = js.undefined): GetRepositoryTriggersOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("configurationId" -> configurationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "triggers" -> triggers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        configurationId: js.UndefOr[RepositoryTriggersConfigurationId] = js.undefined,
+        triggers: js.UndefOr[RepositoryTriggersList] = js.undefined
+    ): GetRepositoryTriggersOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "configurationId" -> configurationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "triggers" -> triggers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRepositoryTriggersOutput]
     }
@@ -1471,7 +1789,10 @@ package codecommit {
   }
 
   object ListBranchesInput {
-    def apply(repositoryName: RepositoryName, nextToken: js.UndefOr[NextToken] = js.undefined): ListBranchesInput = {
+    def apply(
+        repositoryName: RepositoryName,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBranchesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x =>
@@ -1493,13 +1814,18 @@ package codecommit {
   }
 
   object ListBranchesOutput {
-    def apply(branches: js.UndefOr[BranchNameList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListBranchesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("branches" -> branches.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        branches: js.UndefOr[BranchNameList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBranchesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "branches" -> branches.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBranchesOutput]
     }
@@ -1515,11 +1841,13 @@ package codecommit {
   }
 
   object ListPullRequestsInput {
-    def apply(repositoryName: RepositoryName,
-              authorArn: js.UndefOr[Arn] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined): ListPullRequestsInput = {
+    def apply(
+        repositoryName: RepositoryName,
+        authorArn: js.UndefOr[Arn] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined
+    ): ListPullRequestsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "authorArn" -> authorArn.map { x =>
@@ -1547,8 +1875,10 @@ package codecommit {
   }
 
   object ListPullRequestsOutput {
-    def apply(pullRequestIds: PullRequestIdList,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListPullRequestsOutput = {
+    def apply(
+        pullRequestIds: PullRequestIdList,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPullRequestsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pullRequestIds" -> pullRequestIds.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x =>
@@ -1571,16 +1901,22 @@ package codecommit {
   }
 
   object ListRepositoriesInput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              order: js.UndefOr[OrderEnum] = js.undefined,
-              sortBy: js.UndefOr[SortByEnum] = js.undefined): ListRepositoriesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "order" -> order.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "sortBy" -> sortBy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        order: js.UndefOr[OrderEnum] = js.undefined,
+        sortBy: js.UndefOr[SortByEnum] = js.undefined
+    ): ListRepositoriesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "order" -> order.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sortBy" -> sortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRepositoriesInput]
     }
@@ -1596,13 +1932,18 @@ package codecommit {
   }
 
   object ListRepositoriesOutput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              repositories: js.UndefOr[RepositoryNameIdPairList] = js.undefined): ListRepositoriesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "repositories" -> repositories.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        repositories: js.UndefOr[RepositoryNameIdPairList] = js.undefined
+    ): ListRepositoriesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "repositories" -> repositories.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRepositoriesOutput]
     }
@@ -1619,9 +1960,11 @@ package codecommit {
   }
 
   object Location {
-    def apply(filePath: js.UndefOr[Path] = js.undefined,
-              filePosition: js.UndefOr[Position] = js.undefined,
-              relativeFileVersion: js.UndefOr[RelativeFileVersionEnum] = js.undefined): Location = {
+    def apply(
+        filePath: js.UndefOr[Path] = js.undefined,
+        filePosition: js.UndefOr[Position] = js.undefined,
+        relativeFileVersion: js.UndefOr[RelativeFileVersionEnum] = js.undefined
+    ): Location = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filePath" -> filePath.map { x =>
           x.asInstanceOf[js.Any]
@@ -1648,13 +1991,18 @@ package codecommit {
   }
 
   object MergeMetadata {
-    def apply(isMerged: js.UndefOr[IsMerged] = js.undefined,
-              mergedBy: js.UndefOr[Arn] = js.undefined): MergeMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)]("isMerged" -> isMerged.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "mergedBy" -> mergedBy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        isMerged: js.UndefOr[IsMerged] = js.undefined,
+        mergedBy: js.UndefOr[Arn] = js.undefined
+    ): MergeMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "isMerged" -> isMerged.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "mergedBy" -> mergedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MergeMetadata]
     }
@@ -1674,9 +2022,11 @@ package codecommit {
   }
 
   object MergePullRequestByFastForwardInput {
-    def apply(pullRequestId: PullRequestId,
-              repositoryName: RepositoryName,
-              sourceCommitId: js.UndefOr[CommitId] = js.undefined): MergePullRequestByFastForwardInput = {
+    def apply(
+        pullRequestId: PullRequestId,
+        repositoryName: RepositoryName,
+        sourceCommitId: js.UndefOr[CommitId] = js.undefined
+    ): MergePullRequestByFastForwardInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -1695,10 +2045,14 @@ package codecommit {
   }
 
   object MergePullRequestByFastForwardOutput {
-    def apply(pullRequest: js.UndefOr[PullRequest] = js.undefined): MergePullRequestByFastForwardOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequest" -> pullRequest.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        pullRequest: js.UndefOr[PullRequest] = js.undefined
+    ): MergePullRequestByFastForwardOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequest" -> pullRequest.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MergePullRequestByFastForwardOutput]
     }
@@ -1722,12 +2076,14 @@ package codecommit {
   }
 
   object PostCommentForComparedCommitInput {
-    def apply(afterCommitId: CommitId,
-              content: Content,
-              repositoryName: RepositoryName,
-              beforeCommitId: js.UndefOr[CommitId] = js.undefined,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined): PostCommentForComparedCommitInput = {
+    def apply(
+        afterCommitId: CommitId,
+        content: Content,
+        repositoryName: RepositoryName,
+        beforeCommitId: js.UndefOr[CommitId] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined
+    ): PostCommentForComparedCommitInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
         "content"        -> content.asInstanceOf[js.Any],
@@ -1759,13 +2115,15 @@ package codecommit {
   }
 
   object PostCommentForComparedCommitOutput {
-    def apply(afterBlobId: js.UndefOr[ObjectId] = js.undefined,
-              afterCommitId: js.UndefOr[CommitId] = js.undefined,
-              beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
-              beforeCommitId: js.UndefOr[CommitId] = js.undefined,
-              comment: js.UndefOr[Comment] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): PostCommentForComparedCommitOutput = {
+    def apply(
+        afterBlobId: js.UndefOr[ObjectId] = js.undefined,
+        afterCommitId: js.UndefOr[CommitId] = js.undefined,
+        beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
+        beforeCommitId: js.UndefOr[CommitId] = js.undefined,
+        comment: js.UndefOr[Comment] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): PostCommentForComparedCommitOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterBlobId" -> afterBlobId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1806,13 +2164,15 @@ package codecommit {
   }
 
   object PostCommentForPullRequestInput {
-    def apply(afterCommitId: CommitId,
-              beforeCommitId: CommitId,
-              content: Content,
-              pullRequestId: PullRequestId,
-              repositoryName: RepositoryName,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined): PostCommentForPullRequestInput = {
+    def apply(
+        afterCommitId: CommitId,
+        beforeCommitId: CommitId,
+        content: Content,
+        pullRequestId: PullRequestId,
+        repositoryName: RepositoryName,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined
+    ): PostCommentForPullRequestInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
         "beforeCommitId" -> beforeCommitId.asInstanceOf[js.Any],
@@ -1844,14 +2204,16 @@ package codecommit {
   }
 
   object PostCommentForPullRequestOutput {
-    def apply(afterBlobId: js.UndefOr[ObjectId] = js.undefined,
-              afterCommitId: js.UndefOr[CommitId] = js.undefined,
-              beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
-              beforeCommitId: js.UndefOr[CommitId] = js.undefined,
-              comment: js.UndefOr[Comment] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined,
-              pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): PostCommentForPullRequestOutput = {
+    def apply(
+        afterBlobId: js.UndefOr[ObjectId] = js.undefined,
+        afterCommitId: js.UndefOr[CommitId] = js.undefined,
+        beforeBlobId: js.UndefOr[ObjectId] = js.undefined,
+        beforeCommitId: js.UndefOr[CommitId] = js.undefined,
+        comment: js.UndefOr[Comment] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined,
+        pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): PostCommentForPullRequestOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "afterBlobId" -> afterBlobId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1891,9 +2253,11 @@ package codecommit {
   }
 
   object PostCommentReplyInput {
-    def apply(content: Content,
-              inReplyTo: CommentId,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined): PostCommentReplyInput = {
+    def apply(
+        content: Content,
+        inReplyTo: CommentId,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): PostCommentReplyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "content"   -> content.asInstanceOf[js.Any],
         "inReplyTo" -> inReplyTo.asInstanceOf[js.Any],
@@ -1912,10 +2276,14 @@ package codecommit {
   }
 
   object PostCommentReplyOutput {
-    def apply(comment: js.UndefOr[Comment] = js.undefined): PostCommentReplyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("comment" -> comment.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        comment: js.UndefOr[Comment] = js.undefined
+    ): PostCommentReplyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "comment" -> comment.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PostCommentReplyOutput]
     }
@@ -1938,15 +2306,17 @@ package codecommit {
   }
 
   object PullRequest {
-    def apply(authorArn: js.UndefOr[Arn] = js.undefined,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              creationDate: js.UndefOr[CreationDate] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined,
-              lastActivityDate: js.UndefOr[LastModifiedDate] = js.undefined,
-              pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
-              pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined,
-              pullRequestTargets: js.UndefOr[PullRequestTargetList] = js.undefined,
-              title: js.UndefOr[Title] = js.undefined): PullRequest = {
+    def apply(
+        authorArn: js.UndefOr[Arn] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        lastActivityDate: js.UndefOr[LastModifiedDate] = js.undefined,
+        pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
+        pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined,
+        pullRequestTargets: js.UndefOr[PullRequestTargetList] = js.undefined,
+        title: js.UndefOr[Title] = js.undefined
+    ): PullRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorArn" -> authorArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1993,10 +2363,12 @@ package codecommit {
   }
 
   object PullRequestCreatedEventMetadata {
-    def apply(destinationCommitId: js.UndefOr[CommitId] = js.undefined,
-              mergeBase: js.UndefOr[CommitId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined,
-              sourceCommitId: js.UndefOr[CommitId] = js.undefined): PullRequestCreatedEventMetadata = {
+    def apply(
+        destinationCommitId: js.UndefOr[CommitId] = js.undefined,
+        mergeBase: js.UndefOr[CommitId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined,
+        sourceCommitId: js.UndefOr[CommitId] = js.undefined
+    ): PullRequestCreatedEventMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destinationCommitId" -> destinationCommitId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2100,9 +2472,11 @@ package codecommit {
   }
 
   object PullRequestMergedStateChangedEventMetadata {
-    def apply(destinationReference: js.UndefOr[ReferenceName] = js.undefined,
-              mergeMetadata: js.UndefOr[MergeMetadata] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): PullRequestMergedStateChangedEventMetadata = {
+    def apply(
+        destinationReference: js.UndefOr[ReferenceName] = js.undefined,
+        mergeMetadata: js.UndefOr[MergeMetadata] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): PullRequestMergedStateChangedEventMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destinationReference" -> destinationReference.map { x =>
           x.asInstanceOf[js.Any]
@@ -2172,9 +2546,11 @@ package codecommit {
     def apply(
         pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined
     ): PullRequestStatusChangedEventMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequestStatus" -> pullRequestStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequestStatus" -> pullRequestStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PullRequestStatusChangedEventMetadata]
     }
@@ -2202,13 +2578,15 @@ package codecommit {
   }
 
   object PullRequestTarget {
-    def apply(destinationCommit: js.UndefOr[CommitId] = js.undefined,
-              destinationReference: js.UndefOr[ReferenceName] = js.undefined,
-              mergeBase: js.UndefOr[CommitId] = js.undefined,
-              mergeMetadata: js.UndefOr[MergeMetadata] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined,
-              sourceCommit: js.UndefOr[CommitId] = js.undefined,
-              sourceReference: js.UndefOr[ReferenceName] = js.undefined): PullRequestTarget = {
+    def apply(
+        destinationCommit: js.UndefOr[CommitId] = js.undefined,
+        destinationReference: js.UndefOr[ReferenceName] = js.undefined,
+        mergeBase: js.UndefOr[CommitId] = js.undefined,
+        mergeMetadata: js.UndefOr[MergeMetadata] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined,
+        sourceCommit: js.UndefOr[CommitId] = js.undefined,
+        sourceReference: js.UndefOr[ReferenceName] = js.undefined
+    ): PullRequestTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destinationCommit" -> destinationCommit.map { x =>
           x.asInstanceOf[js.Any]
@@ -2237,6 +2615,41 @@ package codecommit {
     }
   }
 
+  /**
+    * Information about a file that will be added or updated as part of a commit.
+    */
+  @js.native
+  trait PutFileEntry extends js.Object {
+    var filePath: Path
+    var fileContent: js.UndefOr[FileContent]
+    var fileMode: js.UndefOr[FileModeTypeEnum]
+    var sourceFile: js.UndefOr[SourceFileSpecifier]
+  }
+
+  object PutFileEntry {
+    def apply(
+        filePath: Path,
+        fileContent: js.UndefOr[FileContent] = js.undefined,
+        fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
+        sourceFile: js.UndefOr[SourceFileSpecifier] = js.undefined
+    ): PutFileEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "filePath" -> filePath.asInstanceOf[js.Any],
+        "fileContent" -> fileContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "fileMode" -> fileMode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sourceFile" -> sourceFile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutFileEntry]
+    }
+  }
+
   @js.native
   trait PutFileInput extends js.Object {
     var branchName: BranchName
@@ -2251,15 +2664,17 @@ package codecommit {
   }
 
   object PutFileInput {
-    def apply(branchName: BranchName,
-              fileContent: FileContent,
-              filePath: Path,
-              repositoryName: RepositoryName,
-              commitMessage: js.UndefOr[Message] = js.undefined,
-              email: js.UndefOr[Email] = js.undefined,
-              fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              parentCommitId: js.UndefOr[CommitId] = js.undefined): PutFileInput = {
+    def apply(
+        branchName: BranchName,
+        fileContent: FileContent,
+        filePath: Path,
+        repositoryName: RepositoryName,
+        commitMessage: js.UndefOr[Message] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        parentCommitId: js.UndefOr[CommitId] = js.undefined
+    ): PutFileInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "fileContent"    -> fileContent.asInstanceOf[js.Any],
@@ -2294,7 +2709,11 @@ package codecommit {
   }
 
   object PutFileOutput {
-    def apply(blobId: ObjectId, commitId: ObjectId, treeId: ObjectId): PutFileOutput = {
+    def apply(
+        blobId: ObjectId,
+        commitId: ObjectId,
+        treeId: ObjectId
+    ): PutFileOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "blobId"   -> blobId.asInstanceOf[js.Any],
         "commitId" -> commitId.asInstanceOf[js.Any],
@@ -2315,7 +2734,10 @@ package codecommit {
   }
 
   object PutRepositoryTriggersInput {
-    def apply(repositoryName: RepositoryName, triggers: RepositoryTriggersList): PutRepositoryTriggersInput = {
+    def apply(
+        repositoryName: RepositoryName,
+        triggers: RepositoryTriggersList
+    ): PutRepositoryTriggersInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "triggers"       -> triggers.asInstanceOf[js.Any]
@@ -2337,9 +2759,11 @@ package codecommit {
     def apply(
         configurationId: js.UndefOr[RepositoryTriggersConfigurationId] = js.undefined
     ): PutRepositoryTriggersOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("configurationId" -> configurationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "configurationId" -> configurationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRepositoryTriggersOutput]
     }
@@ -2370,16 +2794,18 @@ package codecommit {
   }
 
   object RepositoryMetadata {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              accountId: js.UndefOr[AccountId] = js.undefined,
-              cloneUrlHttp: js.UndefOr[CloneUrlHttp] = js.undefined,
-              cloneUrlSsh: js.UndefOr[CloneUrlSsh] = js.undefined,
-              creationDate: js.UndefOr[CreationDate] = js.undefined,
-              defaultBranch: js.UndefOr[BranchName] = js.undefined,
-              lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
-              repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined,
-              repositoryId: js.UndefOr[RepositoryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): RepositoryMetadata = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        accountId: js.UndefOr[AccountId] = js.undefined,
+        cloneUrlHttp: js.UndefOr[CloneUrlHttp] = js.undefined,
+        cloneUrlSsh: js.UndefOr[CloneUrlSsh] = js.undefined,
+        creationDate: js.UndefOr[CreationDate] = js.undefined,
+        defaultBranch: js.UndefOr[BranchName] = js.undefined,
+        lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined,
+        repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined,
+        repositoryId: js.UndefOr[RepositoryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): RepositoryMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2427,13 +2853,18 @@ package codecommit {
   }
 
   object RepositoryNameIdPair {
-    def apply(repositoryId: js.UndefOr[RepositoryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): RepositoryNameIdPair = {
-      val _fields = IndexedSeq[(String, js.Any)]("repositoryId" -> repositoryId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "repositoryName" -> repositoryName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repositoryId: js.UndefOr[RepositoryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): RepositoryNameIdPair = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryId" -> repositoryId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "repositoryName" -> repositoryName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RepositoryNameIdPair]
     }
@@ -2452,11 +2883,13 @@ package codecommit {
   }
 
   object RepositoryTrigger {
-    def apply(destinationArn: Arn,
-              events: RepositoryTriggerEventList,
-              name: RepositoryTriggerName,
-              branches: js.UndefOr[BranchNameList] = js.undefined,
-              customData: js.UndefOr[RepositoryTriggerCustomData] = js.undefined): RepositoryTrigger = {
+    def apply(
+        destinationArn: Arn,
+        events: RepositoryTriggerEventList,
+        name: RepositoryTriggerName,
+        branches: js.UndefOr[BranchNameList] = js.undefined,
+        customData: js.UndefOr[RepositoryTriggerCustomData] = js.undefined
+    ): RepositoryTrigger = {
       val _fields = IndexedSeq[(String, js.Any)](
         "destinationArn" -> destinationArn.asInstanceOf[js.Any],
         "events"         -> events.asInstanceOf[js.Any],
@@ -2492,15 +2925,43 @@ package codecommit {
   }
 
   object RepositoryTriggerExecutionFailure {
-    def apply(failureMessage: js.UndefOr[RepositoryTriggerExecutionFailureMessage] = js.undefined,
-              trigger: js.UndefOr[RepositoryTriggerName] = js.undefined): RepositoryTriggerExecutionFailure = {
-      val _fields = IndexedSeq[(String, js.Any)]("failureMessage" -> failureMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "trigger" -> trigger.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        failureMessage: js.UndefOr[RepositoryTriggerExecutionFailureMessage] = js.undefined,
+        trigger: js.UndefOr[RepositoryTriggerName] = js.undefined
+    ): RepositoryTriggerExecutionFailure = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failureMessage" -> failureMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "trigger" -> trigger.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RepositoryTriggerExecutionFailure]
+    }
+  }
+
+  /**
+    * Information about the file mode changes.
+    */
+  @js.native
+  trait SetFileModeEntry extends js.Object {
+    var fileMode: FileModeTypeEnum
+    var filePath: Path
+  }
+
+  object SetFileModeEntry {
+    def apply(
+        fileMode: FileModeTypeEnum,
+        filePath: Path
+    ): SetFileModeEntry = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "fileMode" -> fileMode.asInstanceOf[js.Any],
+        "filePath" -> filePath.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetFileModeEntry]
     }
   }
 
@@ -2509,6 +2970,31 @@ package codecommit {
     val lastModifiedDate = "lastModifiedDate"
 
     val values = IndexedSeq(repositoryName, lastModifiedDate)
+  }
+
+  /**
+    * Information about a source file that is part of changes made in a commit.
+    */
+  @js.native
+  trait SourceFileSpecifier extends js.Object {
+    var filePath: Path
+    var isMove: js.UndefOr[IsMove]
+  }
+
+  object SourceFileSpecifier {
+    def apply(
+        filePath: Path,
+        isMove: js.UndefOr[IsMove] = js.undefined
+    ): SourceFileSpecifier = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "filePath" -> filePath.asInstanceOf[js.Any],
+        "isMove" -> isMove.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceFileSpecifier]
+    }
   }
 
   /**
@@ -2522,9 +3008,11 @@ package codecommit {
   }
 
   object SubModule {
-    def apply(absolutePath: js.UndefOr[Path] = js.undefined,
-              commitId: js.UndefOr[ObjectId] = js.undefined,
-              relativePath: js.UndefOr[Path] = js.undefined): SubModule = {
+    def apply(
+        absolutePath: js.UndefOr[Path] = js.undefined,
+        commitId: js.UndefOr[ObjectId] = js.undefined,
+        relativePath: js.UndefOr[Path] = js.undefined
+    ): SubModule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "absolutePath" -> absolutePath.map { x =>
           x.asInstanceOf[js.Any]
@@ -2553,10 +3041,12 @@ package codecommit {
   }
 
   object SymbolicLink {
-    def apply(absolutePath: js.UndefOr[Path] = js.undefined,
-              blobId: js.UndefOr[ObjectId] = js.undefined,
-              fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
-              relativePath: js.UndefOr[Path] = js.undefined): SymbolicLink = {
+    def apply(
+        absolutePath: js.UndefOr[Path] = js.undefined,
+        blobId: js.UndefOr[ObjectId] = js.undefined,
+        fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
+        relativePath: js.UndefOr[Path] = js.undefined
+    ): SymbolicLink = {
       val _fields = IndexedSeq[(String, js.Any)](
         "absolutePath" -> absolutePath.map { x =>
           x.asInstanceOf[js.Any]
@@ -2587,9 +3077,11 @@ package codecommit {
   }
 
   object Target {
-    def apply(repositoryName: RepositoryName,
-              sourceReference: ReferenceName,
-              destinationReference: js.UndefOr[ReferenceName] = js.undefined): Target = {
+    def apply(
+        repositoryName: RepositoryName,
+        sourceReference: ReferenceName,
+        destinationReference: js.UndefOr[ReferenceName] = js.undefined
+    ): Target = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName"  -> repositoryName.asInstanceOf[js.Any],
         "sourceReference" -> sourceReference.asInstanceOf[js.Any],
@@ -2612,7 +3104,10 @@ package codecommit {
   }
 
   object TestRepositoryTriggersInput {
-    def apply(repositoryName: RepositoryName, triggers: RepositoryTriggersList): TestRepositoryTriggersInput = {
+    def apply(
+        repositoryName: RepositoryName,
+        triggers: RepositoryTriggersList
+    ): TestRepositoryTriggersInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "triggers"       -> triggers.asInstanceOf[js.Any]
@@ -2636,11 +3131,14 @@ package codecommit {
         failedExecutions: js.UndefOr[RepositoryTriggerExecutionFailureList] = js.undefined,
         successfulExecutions: js.UndefOr[RepositoryTriggerNameList] = js.undefined
     ): TestRepositoryTriggersOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("failedExecutions" -> failedExecutions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "successfulExecutions" -> successfulExecutions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failedExecutions" -> failedExecutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "successfulExecutions" -> successfulExecutions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestRepositoryTriggersOutput]
     }
@@ -2653,7 +3151,10 @@ package codecommit {
   }
 
   object UpdateCommentInput {
-    def apply(commentId: CommentId, content: Content): UpdateCommentInput = {
+    def apply(
+        commentId: CommentId,
+        content: Content
+    ): UpdateCommentInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "commentId" -> commentId.asInstanceOf[js.Any],
         "content"   -> content.asInstanceOf[js.Any]
@@ -2669,10 +3170,14 @@ package codecommit {
   }
 
   object UpdateCommentOutput {
-    def apply(comment: js.UndefOr[Comment] = js.undefined): UpdateCommentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("comment" -> comment.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        comment: js.UndefOr[Comment] = js.undefined
+    ): UpdateCommentOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "comment" -> comment.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCommentOutput]
     }
@@ -2688,7 +3193,10 @@ package codecommit {
   }
 
   object UpdateDefaultBranchInput {
-    def apply(defaultBranchName: BranchName, repositoryName: RepositoryName): UpdateDefaultBranchInput = {
+    def apply(
+        defaultBranchName: BranchName,
+        repositoryName: RepositoryName
+    ): UpdateDefaultBranchInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "defaultBranchName" -> defaultBranchName.asInstanceOf[js.Any],
         "repositoryName"    -> repositoryName.asInstanceOf[js.Any]
@@ -2705,7 +3213,10 @@ package codecommit {
   }
 
   object UpdatePullRequestDescriptionInput {
-    def apply(description: Description, pullRequestId: PullRequestId): UpdatePullRequestDescriptionInput = {
+    def apply(
+        description: Description,
+        pullRequestId: PullRequestId
+    ): UpdatePullRequestDescriptionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description"   -> description.asInstanceOf[js.Any],
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
@@ -2721,9 +3232,12 @@ package codecommit {
   }
 
   object UpdatePullRequestDescriptionOutput {
-    def apply(pullRequest: PullRequest): UpdatePullRequestDescriptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequest" -> pullRequest.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        pullRequest: PullRequest
+    ): UpdatePullRequestDescriptionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequest" -> pullRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePullRequestDescriptionOutput]
     }
@@ -2736,7 +3250,10 @@ package codecommit {
   }
 
   object UpdatePullRequestStatusInput {
-    def apply(pullRequestId: PullRequestId, pullRequestStatus: PullRequestStatusEnum): UpdatePullRequestStatusInput = {
+    def apply(
+        pullRequestId: PullRequestId,
+        pullRequestStatus: PullRequestStatusEnum
+    ): UpdatePullRequestStatusInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pullRequestId"     -> pullRequestId.asInstanceOf[js.Any],
         "pullRequestStatus" -> pullRequestStatus.asInstanceOf[js.Any]
@@ -2752,9 +3269,12 @@ package codecommit {
   }
 
   object UpdatePullRequestStatusOutput {
-    def apply(pullRequest: PullRequest): UpdatePullRequestStatusOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequest" -> pullRequest.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        pullRequest: PullRequest
+    ): UpdatePullRequestStatusOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequest" -> pullRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePullRequestStatusOutput]
     }
@@ -2767,7 +3287,10 @@ package codecommit {
   }
 
   object UpdatePullRequestTitleInput {
-    def apply(pullRequestId: PullRequestId, title: Title): UpdatePullRequestTitleInput = {
+    def apply(
+        pullRequestId: PullRequestId,
+        title: Title
+    ): UpdatePullRequestTitleInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "title"         -> title.asInstanceOf[js.Any]
@@ -2783,9 +3306,12 @@ package codecommit {
   }
 
   object UpdatePullRequestTitleOutput {
-    def apply(pullRequest: PullRequest): UpdatePullRequestTitleOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("pullRequest" -> pullRequest.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        pullRequest: PullRequest
+    ): UpdatePullRequestTitleOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "pullRequest" -> pullRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePullRequestTitleOutput]
     }
@@ -2826,7 +3352,10 @@ package codecommit {
   }
 
   object UpdateRepositoryNameInput {
-    def apply(newName: RepositoryName, oldName: RepositoryName): UpdateRepositoryNameInput = {
+    def apply(
+        newName: RepositoryName,
+        oldName: RepositoryName
+    ): UpdateRepositoryNameInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "newName" -> newName.asInstanceOf[js.Any],
         "oldName" -> oldName.asInstanceOf[js.Any]
@@ -2847,16 +3376,22 @@ package codecommit {
   }
 
   object UserInfo {
-    def apply(date: js.UndefOr[Date] = js.undefined,
-              email: js.UndefOr[Email] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined): UserInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("date" -> date.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "email" -> email.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        date: js.UndefOr[Date] = js.undefined,
+        email: js.UndefOr[Email] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): UserInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "date" -> date.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "email" -> email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserInfo]
     }

@@ -111,13 +111,18 @@ package securityhub {
   }
 
   object AcceptInvitationRequest {
-    def apply(InvitationId: js.UndefOr[NonEmptyString] = js.undefined,
-              MasterId: js.UndefOr[NonEmptyString] = js.undefined): AcceptInvitationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InvitationId" -> InvitationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "MasterId" -> MasterId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InvitationId: js.UndefOr[NonEmptyString] = js.undefined,
+        MasterId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AcceptInvitationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InvitationId" -> InvitationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MasterId" -> MasterId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptInvitationRequest]
     }
@@ -127,8 +132,10 @@ package securityhub {
   trait AcceptInvitationResponse extends js.Object {}
 
   object AcceptInvitationResponse {
-    def apply(): AcceptInvitationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AcceptInvitationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptInvitationResponse]
     }
@@ -144,13 +151,18 @@ package securityhub {
   }
 
   object AccountDetails {
-    def apply(AccountId: js.UndefOr[AccountId] = js.undefined,
-              Email: js.UndefOr[NonEmptyString] = js.undefined): AccountDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountId" -> AccountId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Email" -> Email.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        Email: js.UndefOr[NonEmptyString] = js.undefined
+    ): AccountDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountId" -> AccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountDetails]
     }
@@ -173,15 +185,17 @@ package securityhub {
   }
 
   object AwsEc2InstanceDetails {
-    def apply(IamInstanceProfileArn: js.UndefOr[NonEmptyString] = js.undefined,
-              ImageId: js.UndefOr[NonEmptyString] = js.undefined,
-              IpV4Addresses: js.UndefOr[StringList] = js.undefined,
-              IpV6Addresses: js.UndefOr[StringList] = js.undefined,
-              KeyName: js.UndefOr[NonEmptyString] = js.undefined,
-              LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
-              SubnetId: js.UndefOr[NonEmptyString] = js.undefined,
-              Type: js.UndefOr[NonEmptyString] = js.undefined,
-              VpcId: js.UndefOr[NonEmptyString] = js.undefined): AwsEc2InstanceDetails = {
+    def apply(
+        IamInstanceProfileArn: js.UndefOr[NonEmptyString] = js.undefined,
+        ImageId: js.UndefOr[NonEmptyString] = js.undefined,
+        IpV4Addresses: js.UndefOr[StringList] = js.undefined,
+        IpV6Addresses: js.UndefOr[StringList] = js.undefined,
+        KeyName: js.UndefOr[NonEmptyString] = js.undefined,
+        LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
+        SubnetId: js.UndefOr[NonEmptyString] = js.undefined,
+        Type: js.UndefOr[NonEmptyString] = js.undefined,
+        VpcId: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsEc2InstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamInstanceProfileArn" -> IamInstanceProfileArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -227,9 +241,11 @@ package securityhub {
   }
 
   object AwsIamAccessKeyDetails {
-    def apply(CreatedAt: js.UndefOr[NonEmptyString] = js.undefined,
-              Status: js.UndefOr[AwsIamAccessKeyStatus] = js.undefined,
-              UserName: js.UndefOr[NonEmptyString] = js.undefined): AwsIamAccessKeyDetails = {
+    def apply(
+        CreatedAt: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[AwsIamAccessKeyStatus] = js.undefined,
+        UserName: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsIamAccessKeyDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedAt" -> CreatedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -263,13 +279,18 @@ package securityhub {
   }
 
   object AwsS3BucketDetails {
-    def apply(OwnerId: js.UndefOr[NonEmptyString] = js.undefined,
-              OwnerName: js.UndefOr[NonEmptyString] = js.undefined): AwsS3BucketDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("OwnerId" -> OwnerId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OwnerName" -> OwnerName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OwnerId: js.UndefOr[NonEmptyString] = js.undefined,
+        OwnerName: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsS3BucketDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OwnerId" -> OwnerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OwnerName" -> OwnerName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AwsS3BucketDetails]
     }
@@ -315,36 +336,38 @@ package securityhub {
   }
 
   object AwsSecurityFinding {
-    def apply(AwsAccountId: NonEmptyString,
-              CreatedAt: NonEmptyString,
-              GeneratorId: NonEmptyString,
-              Id: NonEmptyString,
-              ProductArn: NonEmptyString,
-              Resources: ResourceList,
-              SchemaVersion: NonEmptyString,
-              Severity: Severity,
-              Types: TypeList,
-              UpdatedAt: NonEmptyString,
-              Compliance: js.UndefOr[Compliance] = js.undefined,
-              Confidence: js.UndefOr[Int] = js.undefined,
-              Criticality: js.UndefOr[Int] = js.undefined,
-              Description: js.UndefOr[NonEmptyString] = js.undefined,
-              FirstObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
-              LastObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
-              Malware: js.UndefOr[MalwareList] = js.undefined,
-              Network: js.UndefOr[Network] = js.undefined,
-              Note: js.UndefOr[Note] = js.undefined,
-              Process: js.UndefOr[ProcessDetails] = js.undefined,
-              ProductFields: js.UndefOr[FieldMap] = js.undefined,
-              RecordState: js.UndefOr[RecordState] = js.undefined,
-              RelatedFindings: js.UndefOr[RelatedFindingList] = js.undefined,
-              Remediation: js.UndefOr[Remediation] = js.undefined,
-              SourceUrl: js.UndefOr[NonEmptyString] = js.undefined,
-              ThreatIntelIndicators: js.UndefOr[ThreatIntelIndicatorList] = js.undefined,
-              Title: js.UndefOr[NonEmptyString] = js.undefined,
-              UserDefinedFields: js.UndefOr[FieldMap] = js.undefined,
-              VerificationState: js.UndefOr[VerificationState] = js.undefined,
-              WorkflowState: js.UndefOr[WorkflowState] = js.undefined): AwsSecurityFinding = {
+    def apply(
+        AwsAccountId: NonEmptyString,
+        CreatedAt: NonEmptyString,
+        GeneratorId: NonEmptyString,
+        Id: NonEmptyString,
+        ProductArn: NonEmptyString,
+        Resources: ResourceList,
+        SchemaVersion: NonEmptyString,
+        Severity: Severity,
+        Types: TypeList,
+        UpdatedAt: NonEmptyString,
+        Compliance: js.UndefOr[Compliance] = js.undefined,
+        Confidence: js.UndefOr[Int] = js.undefined,
+        Criticality: js.UndefOr[Int] = js.undefined,
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        FirstObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
+        LastObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
+        Malware: js.UndefOr[MalwareList] = js.undefined,
+        Network: js.UndefOr[Network] = js.undefined,
+        Note: js.UndefOr[Note] = js.undefined,
+        Process: js.UndefOr[ProcessDetails] = js.undefined,
+        ProductFields: js.UndefOr[FieldMap] = js.undefined,
+        RecordState: js.UndefOr[RecordState] = js.undefined,
+        RelatedFindings: js.UndefOr[RelatedFindingList] = js.undefined,
+        Remediation: js.UndefOr[Remediation] = js.undefined,
+        SourceUrl: js.UndefOr[NonEmptyString] = js.undefined,
+        ThreatIntelIndicators: js.UndefOr[ThreatIntelIndicatorList] = js.undefined,
+        Title: js.UndefOr[NonEmptyString] = js.undefined,
+        UserDefinedFields: js.UndefOr[FieldMap] = js.undefined,
+        VerificationState: js.UndefOr[VerificationState] = js.undefined,
+        WorkflowState: js.UndefOr[WorkflowState] = js.undefined
+    ): AwsSecurityFinding = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AwsAccountId"  -> AwsAccountId.asInstanceOf[js.Any],
         "CreatedAt"     -> CreatedAt.asInstanceOf[js.Any],
@@ -513,89 +536,91 @@ package securityhub {
   }
 
   object AwsSecurityFindingFilters {
-    def apply(AwsAccountId: js.UndefOr[StringFilterList] = js.undefined,
-              CompanyName: js.UndefOr[StringFilterList] = js.undefined,
-              ComplianceStatus: js.UndefOr[StringFilterList] = js.undefined,
-              Confidence: js.UndefOr[NumberFilterList] = js.undefined,
-              CreatedAt: js.UndefOr[DateFilterList] = js.undefined,
-              Criticality: js.UndefOr[NumberFilterList] = js.undefined,
-              Description: js.UndefOr[StringFilterList] = js.undefined,
-              FirstObservedAt: js.UndefOr[DateFilterList] = js.undefined,
-              GeneratorId: js.UndefOr[StringFilterList] = js.undefined,
-              Id: js.UndefOr[StringFilterList] = js.undefined,
-              Keyword: js.UndefOr[KeywordFilterList] = js.undefined,
-              LastObservedAt: js.UndefOr[DateFilterList] = js.undefined,
-              MalwareName: js.UndefOr[StringFilterList] = js.undefined,
-              MalwarePath: js.UndefOr[StringFilterList] = js.undefined,
-              MalwareState: js.UndefOr[StringFilterList] = js.undefined,
-              MalwareType: js.UndefOr[StringFilterList] = js.undefined,
-              NetworkDestinationDomain: js.UndefOr[StringFilterList] = js.undefined,
-              NetworkDestinationIpV4: js.UndefOr[IpFilterList] = js.undefined,
-              NetworkDestinationIpV6: js.UndefOr[IpFilterList] = js.undefined,
-              NetworkDestinationPort: js.UndefOr[NumberFilterList] = js.undefined,
-              NetworkDirection: js.UndefOr[StringFilterList] = js.undefined,
-              NetworkProtocol: js.UndefOr[StringFilterList] = js.undefined,
-              NetworkSourceDomain: js.UndefOr[StringFilterList] = js.undefined,
-              NetworkSourceIpV4: js.UndefOr[IpFilterList] = js.undefined,
-              NetworkSourceIpV6: js.UndefOr[IpFilterList] = js.undefined,
-              NetworkSourceMac: js.UndefOr[StringFilterList] = js.undefined,
-              NetworkSourcePort: js.UndefOr[NumberFilterList] = js.undefined,
-              NoteText: js.UndefOr[StringFilterList] = js.undefined,
-              NoteUpdatedAt: js.UndefOr[DateFilterList] = js.undefined,
-              NoteUpdatedBy: js.UndefOr[StringFilterList] = js.undefined,
-              ProcessLaunchedAt: js.UndefOr[DateFilterList] = js.undefined,
-              ProcessName: js.UndefOr[StringFilterList] = js.undefined,
-              ProcessParentPid: js.UndefOr[NumberFilterList] = js.undefined,
-              ProcessPath: js.UndefOr[StringFilterList] = js.undefined,
-              ProcessPid: js.UndefOr[NumberFilterList] = js.undefined,
-              ProcessTerminatedAt: js.UndefOr[DateFilterList] = js.undefined,
-              ProductArn: js.UndefOr[StringFilterList] = js.undefined,
-              ProductFields: js.UndefOr[MapFilterList] = js.undefined,
-              ProductName: js.UndefOr[StringFilterList] = js.undefined,
-              RecommendationText: js.UndefOr[StringFilterList] = js.undefined,
-              RecordState: js.UndefOr[StringFilterList] = js.undefined,
-              RelatedFindingsId: js.UndefOr[StringFilterList] = js.undefined,
-              RelatedFindingsProductArn: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsEc2InstanceIamInstanceProfileArn: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsEc2InstanceImageId: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsEc2InstanceIpV4Addresses: js.UndefOr[IpFilterList] = js.undefined,
-              ResourceAwsEc2InstanceIpV6Addresses: js.UndefOr[IpFilterList] = js.undefined,
-              ResourceAwsEc2InstanceKeyName: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsEc2InstanceLaunchedAt: js.UndefOr[DateFilterList] = js.undefined,
-              ResourceAwsEc2InstanceSubnetId: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsEc2InstanceType: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsEc2InstanceVpcId: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsIamAccessKeyCreatedAt: js.UndefOr[DateFilterList] = js.undefined,
-              ResourceAwsIamAccessKeyStatus: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsIamAccessKeyUserName: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsS3BucketOwnerId: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceAwsS3BucketOwnerName: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceContainerImageId: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceContainerImageName: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceContainerLaunchedAt: js.UndefOr[DateFilterList] = js.undefined,
-              ResourceContainerName: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceDetailsOther: js.UndefOr[MapFilterList] = js.undefined,
-              ResourceId: js.UndefOr[StringFilterList] = js.undefined,
-              ResourcePartition: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceRegion: js.UndefOr[StringFilterList] = js.undefined,
-              ResourceTags: js.UndefOr[MapFilterList] = js.undefined,
-              ResourceType: js.UndefOr[StringFilterList] = js.undefined,
-              SeverityLabel: js.UndefOr[StringFilterList] = js.undefined,
-              SeverityNormalized: js.UndefOr[NumberFilterList] = js.undefined,
-              SeverityProduct: js.UndefOr[NumberFilterList] = js.undefined,
-              SourceUrl: js.UndefOr[StringFilterList] = js.undefined,
-              ThreatIntelIndicatorCategory: js.UndefOr[StringFilterList] = js.undefined,
-              ThreatIntelIndicatorLastObservedAt: js.UndefOr[DateFilterList] = js.undefined,
-              ThreatIntelIndicatorSource: js.UndefOr[StringFilterList] = js.undefined,
-              ThreatIntelIndicatorSourceUrl: js.UndefOr[StringFilterList] = js.undefined,
-              ThreatIntelIndicatorType: js.UndefOr[StringFilterList] = js.undefined,
-              ThreatIntelIndicatorValue: js.UndefOr[StringFilterList] = js.undefined,
-              Title: js.UndefOr[StringFilterList] = js.undefined,
-              Type: js.UndefOr[StringFilterList] = js.undefined,
-              UpdatedAt: js.UndefOr[DateFilterList] = js.undefined,
-              UserDefinedFields: js.UndefOr[MapFilterList] = js.undefined,
-              VerificationState: js.UndefOr[StringFilterList] = js.undefined,
-              WorkflowState: js.UndefOr[StringFilterList] = js.undefined): AwsSecurityFindingFilters = {
+    def apply(
+        AwsAccountId: js.UndefOr[StringFilterList] = js.undefined,
+        CompanyName: js.UndefOr[StringFilterList] = js.undefined,
+        ComplianceStatus: js.UndefOr[StringFilterList] = js.undefined,
+        Confidence: js.UndefOr[NumberFilterList] = js.undefined,
+        CreatedAt: js.UndefOr[DateFilterList] = js.undefined,
+        Criticality: js.UndefOr[NumberFilterList] = js.undefined,
+        Description: js.UndefOr[StringFilterList] = js.undefined,
+        FirstObservedAt: js.UndefOr[DateFilterList] = js.undefined,
+        GeneratorId: js.UndefOr[StringFilterList] = js.undefined,
+        Id: js.UndefOr[StringFilterList] = js.undefined,
+        Keyword: js.UndefOr[KeywordFilterList] = js.undefined,
+        LastObservedAt: js.UndefOr[DateFilterList] = js.undefined,
+        MalwareName: js.UndefOr[StringFilterList] = js.undefined,
+        MalwarePath: js.UndefOr[StringFilterList] = js.undefined,
+        MalwareState: js.UndefOr[StringFilterList] = js.undefined,
+        MalwareType: js.UndefOr[StringFilterList] = js.undefined,
+        NetworkDestinationDomain: js.UndefOr[StringFilterList] = js.undefined,
+        NetworkDestinationIpV4: js.UndefOr[IpFilterList] = js.undefined,
+        NetworkDestinationIpV6: js.UndefOr[IpFilterList] = js.undefined,
+        NetworkDestinationPort: js.UndefOr[NumberFilterList] = js.undefined,
+        NetworkDirection: js.UndefOr[StringFilterList] = js.undefined,
+        NetworkProtocol: js.UndefOr[StringFilterList] = js.undefined,
+        NetworkSourceDomain: js.UndefOr[StringFilterList] = js.undefined,
+        NetworkSourceIpV4: js.UndefOr[IpFilterList] = js.undefined,
+        NetworkSourceIpV6: js.UndefOr[IpFilterList] = js.undefined,
+        NetworkSourceMac: js.UndefOr[StringFilterList] = js.undefined,
+        NetworkSourcePort: js.UndefOr[NumberFilterList] = js.undefined,
+        NoteText: js.UndefOr[StringFilterList] = js.undefined,
+        NoteUpdatedAt: js.UndefOr[DateFilterList] = js.undefined,
+        NoteUpdatedBy: js.UndefOr[StringFilterList] = js.undefined,
+        ProcessLaunchedAt: js.UndefOr[DateFilterList] = js.undefined,
+        ProcessName: js.UndefOr[StringFilterList] = js.undefined,
+        ProcessParentPid: js.UndefOr[NumberFilterList] = js.undefined,
+        ProcessPath: js.UndefOr[StringFilterList] = js.undefined,
+        ProcessPid: js.UndefOr[NumberFilterList] = js.undefined,
+        ProcessTerminatedAt: js.UndefOr[DateFilterList] = js.undefined,
+        ProductArn: js.UndefOr[StringFilterList] = js.undefined,
+        ProductFields: js.UndefOr[MapFilterList] = js.undefined,
+        ProductName: js.UndefOr[StringFilterList] = js.undefined,
+        RecommendationText: js.UndefOr[StringFilterList] = js.undefined,
+        RecordState: js.UndefOr[StringFilterList] = js.undefined,
+        RelatedFindingsId: js.UndefOr[StringFilterList] = js.undefined,
+        RelatedFindingsProductArn: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsEc2InstanceIamInstanceProfileArn: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsEc2InstanceImageId: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsEc2InstanceIpV4Addresses: js.UndefOr[IpFilterList] = js.undefined,
+        ResourceAwsEc2InstanceIpV6Addresses: js.UndefOr[IpFilterList] = js.undefined,
+        ResourceAwsEc2InstanceKeyName: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsEc2InstanceLaunchedAt: js.UndefOr[DateFilterList] = js.undefined,
+        ResourceAwsEc2InstanceSubnetId: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsEc2InstanceType: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsEc2InstanceVpcId: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsIamAccessKeyCreatedAt: js.UndefOr[DateFilterList] = js.undefined,
+        ResourceAwsIamAccessKeyStatus: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsIamAccessKeyUserName: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsS3BucketOwnerId: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceAwsS3BucketOwnerName: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceContainerImageId: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceContainerImageName: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceContainerLaunchedAt: js.UndefOr[DateFilterList] = js.undefined,
+        ResourceContainerName: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceDetailsOther: js.UndefOr[MapFilterList] = js.undefined,
+        ResourceId: js.UndefOr[StringFilterList] = js.undefined,
+        ResourcePartition: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceRegion: js.UndefOr[StringFilterList] = js.undefined,
+        ResourceTags: js.UndefOr[MapFilterList] = js.undefined,
+        ResourceType: js.UndefOr[StringFilterList] = js.undefined,
+        SeverityLabel: js.UndefOr[StringFilterList] = js.undefined,
+        SeverityNormalized: js.UndefOr[NumberFilterList] = js.undefined,
+        SeverityProduct: js.UndefOr[NumberFilterList] = js.undefined,
+        SourceUrl: js.UndefOr[StringFilterList] = js.undefined,
+        ThreatIntelIndicatorCategory: js.UndefOr[StringFilterList] = js.undefined,
+        ThreatIntelIndicatorLastObservedAt: js.UndefOr[DateFilterList] = js.undefined,
+        ThreatIntelIndicatorSource: js.UndefOr[StringFilterList] = js.undefined,
+        ThreatIntelIndicatorSourceUrl: js.UndefOr[StringFilterList] = js.undefined,
+        ThreatIntelIndicatorType: js.UndefOr[StringFilterList] = js.undefined,
+        ThreatIntelIndicatorValue: js.UndefOr[StringFilterList] = js.undefined,
+        Title: js.UndefOr[StringFilterList] = js.undefined,
+        Type: js.UndefOr[StringFilterList] = js.undefined,
+        UpdatedAt: js.UndefOr[DateFilterList] = js.undefined,
+        UserDefinedFields: js.UndefOr[MapFilterList] = js.undefined,
+        VerificationState: js.UndefOr[StringFilterList] = js.undefined,
+        WorkflowState: js.UndefOr[StringFilterList] = js.undefined
+    ): AwsSecurityFindingFilters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AwsAccountId" -> AwsAccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -858,10 +883,12 @@ package securityhub {
   }
 
   object BatchDisableStandardsRequest {
-    def apply(StandardsSubscriptionArns: StandardsSubscriptionArns): BatchDisableStandardsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("StandardsSubscriptionArns" -> StandardsSubscriptionArns.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StandardsSubscriptionArns: StandardsSubscriptionArns
+    ): BatchDisableStandardsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StandardsSubscriptionArns" -> StandardsSubscriptionArns.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDisableStandardsRequest]
     }
@@ -876,9 +903,11 @@ package securityhub {
     def apply(
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): BatchDisableStandardsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("StandardsSubscriptions" -> StandardsSubscriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StandardsSubscriptions" -> StandardsSubscriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDisableStandardsResponse]
     }
@@ -890,7 +919,9 @@ package securityhub {
   }
 
   object BatchEnableStandardsRequest {
-    def apply(StandardsSubscriptionRequests: StandardsSubscriptionRequests): BatchEnableStandardsRequest = {
+    def apply(
+        StandardsSubscriptionRequests: StandardsSubscriptionRequests
+    ): BatchEnableStandardsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StandardsSubscriptionRequests" -> StandardsSubscriptionRequests.asInstanceOf[js.Any]
       ).filter(_._2 != (js.undefined: js.Any))
@@ -908,9 +939,11 @@ package securityhub {
     def apply(
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): BatchEnableStandardsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("StandardsSubscriptions" -> StandardsSubscriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StandardsSubscriptions" -> StandardsSubscriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchEnableStandardsResponse]
     }
@@ -922,9 +955,12 @@ package securityhub {
   }
 
   object BatchImportFindingsRequest {
-    def apply(Findings: AwsSecurityFindingList): BatchImportFindingsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Findings" -> Findings.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Findings: AwsSecurityFindingList
+    ): BatchImportFindingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Findings" -> Findings.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchImportFindingsRequest]
     }
@@ -938,9 +974,11 @@ package securityhub {
   }
 
   object BatchImportFindingsResponse {
-    def apply(FailedCount: Int,
-              SuccessCount: Int,
-              FailedFindings: js.UndefOr[ImportFindingsErrorList] = js.undefined): BatchImportFindingsResponse = {
+    def apply(
+        FailedCount: Int,
+        SuccessCount: Int,
+        FailedFindings: js.UndefOr[ImportFindingsErrorList] = js.undefined
+    ): BatchImportFindingsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FailedCount"  -> FailedCount.asInstanceOf[js.Any],
         "SuccessCount" -> SuccessCount.asInstanceOf[js.Any],
@@ -962,10 +1000,14 @@ package securityhub {
   }
 
   object Compliance {
-    def apply(Status: js.UndefOr[ComplianceStatus] = js.undefined): Compliance = {
-      val _fields = IndexedSeq[(String, js.Any)]("Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: js.UndefOr[ComplianceStatus] = js.undefined
+    ): Compliance = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Compliance]
     }
@@ -992,10 +1034,12 @@ package securityhub {
   }
 
   object ContainerDetails {
-    def apply(ImageId: js.UndefOr[NonEmptyString] = js.undefined,
-              ImageName: js.UndefOr[NonEmptyString] = js.undefined,
-              LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
-              Name: js.UndefOr[NonEmptyString] = js.undefined): ContainerDetails = {
+    def apply(
+        ImageId: js.UndefOr[NonEmptyString] = js.undefined,
+        ImageName: js.UndefOr[NonEmptyString] = js.undefined,
+        LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined
+    ): ContainerDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ImageId" -> ImageId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1023,9 +1067,11 @@ package securityhub {
   }
 
   object CreateInsightRequest {
-    def apply(Filters: AwsSecurityFindingFilters,
-              GroupByAttribute: NonEmptyString,
-              Name: NonEmptyString): CreateInsightRequest = {
+    def apply(
+        Filters: AwsSecurityFindingFilters,
+        GroupByAttribute: NonEmptyString,
+        Name: NonEmptyString
+    ): CreateInsightRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters"          -> Filters.asInstanceOf[js.Any],
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
@@ -1042,9 +1088,12 @@ package securityhub {
   }
 
   object CreateInsightResponse {
-    def apply(InsightArn: NonEmptyString): CreateInsightResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("InsightArn" -> InsightArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InsightArn: NonEmptyString
+    ): CreateInsightResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InsightArn" -> InsightArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInsightResponse]
     }
@@ -1056,10 +1105,14 @@ package securityhub {
   }
 
   object CreateMembersRequest {
-    def apply(AccountDetails: js.UndefOr[AccountDetailsList] = js.undefined): CreateMembersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountDetails" -> AccountDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountDetails: js.UndefOr[AccountDetailsList] = js.undefined
+    ): CreateMembersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountDetails" -> AccountDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMembersRequest]
     }
@@ -1071,10 +1124,14 @@ package securityhub {
   }
 
   object CreateMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined): CreateMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
+    ): CreateMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMembersResponse]
     }
@@ -1091,16 +1148,22 @@ package securityhub {
   }
 
   object DateFilter {
-    def apply(DateRange: js.UndefOr[DateRange] = js.undefined,
-              End: js.UndefOr[NonEmptyString] = js.undefined,
-              Start: js.UndefOr[NonEmptyString] = js.undefined): DateFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("DateRange" -> DateRange.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "End" -> End.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Start" -> Start.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DateRange: js.UndefOr[DateRange] = js.undefined,
+        End: js.UndefOr[NonEmptyString] = js.undefined,
+        Start: js.UndefOr[NonEmptyString] = js.undefined
+    ): DateFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DateRange" -> DateRange.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "End" -> End.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Start" -> Start.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DateFilter]
     }
@@ -1116,12 +1179,18 @@ package securityhub {
   }
 
   object DateRange {
-    def apply(Unit: js.UndefOr[DateRangeUnit] = js.undefined, Value: js.UndefOr[Int] = js.undefined): DateRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("Unit" -> Unit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Unit: js.UndefOr[DateRangeUnit] = js.undefined,
+        Value: js.UndefOr[Int] = js.undefined
+    ): DateRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Unit" -> Unit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DateRange]
     }
@@ -1139,10 +1208,14 @@ package securityhub {
   }
 
   object DeclineInvitationsRequest {
-    def apply(AccountIds: js.UndefOr[AccountIdList] = js.undefined): DeclineInvitationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+    ): DeclineInvitationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeclineInvitationsRequest]
     }
@@ -1154,10 +1227,14 @@ package securityhub {
   }
 
   object DeclineInvitationsResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined): DeclineInvitationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
+    ): DeclineInvitationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeclineInvitationsResponse]
     }
@@ -1169,9 +1246,12 @@ package securityhub {
   }
 
   object DeleteInsightRequest {
-    def apply(InsightArn: NonEmptyString): DeleteInsightRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InsightArn" -> InsightArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InsightArn: NonEmptyString
+    ): DeleteInsightRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InsightArn" -> InsightArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInsightRequest]
     }
@@ -1183,9 +1263,12 @@ package securityhub {
   }
 
   object DeleteInsightResponse {
-    def apply(InsightArn: NonEmptyString): DeleteInsightResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("InsightArn" -> InsightArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InsightArn: NonEmptyString
+    ): DeleteInsightResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InsightArn" -> InsightArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInsightResponse]
     }
@@ -1197,10 +1280,14 @@ package securityhub {
   }
 
   object DeleteInvitationsRequest {
-    def apply(AccountIds: js.UndefOr[AccountIdList] = js.undefined): DeleteInvitationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+    ): DeleteInvitationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInvitationsRequest]
     }
@@ -1212,10 +1299,14 @@ package securityhub {
   }
 
   object DeleteInvitationsResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined): DeleteInvitationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
+    ): DeleteInvitationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInvitationsResponse]
     }
@@ -1227,10 +1318,14 @@ package securityhub {
   }
 
   object DeleteMembersRequest {
-    def apply(AccountIds: js.UndefOr[AccountIdList] = js.undefined): DeleteMembersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+    ): DeleteMembersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMembersRequest]
     }
@@ -1242,10 +1337,14 @@ package securityhub {
   }
 
   object DeleteMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined): DeleteMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
+    ): DeleteMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMembersResponse]
     }
@@ -1257,10 +1356,12 @@ package securityhub {
   }
 
   object DisableImportFindingsForProductRequest {
-    def apply(ProductSubscriptionArn: NonEmptyString): DisableImportFindingsForProductRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ProductSubscriptionArn" -> ProductSubscriptionArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ProductSubscriptionArn: NonEmptyString
+    ): DisableImportFindingsForProductRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProductSubscriptionArn" -> ProductSubscriptionArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableImportFindingsForProductRequest]
     }
@@ -1270,8 +1371,10 @@ package securityhub {
   trait DisableImportFindingsForProductResponse extends js.Object {}
 
   object DisableImportFindingsForProductResponse {
-    def apply(): DisableImportFindingsForProductResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisableImportFindingsForProductResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableImportFindingsForProductResponse]
     }
@@ -1281,8 +1384,10 @@ package securityhub {
   trait DisableSecurityHubRequest extends js.Object {}
 
   object DisableSecurityHubRequest {
-    def apply(): DisableSecurityHubRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisableSecurityHubRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableSecurityHubRequest]
     }
@@ -1292,8 +1397,10 @@ package securityhub {
   trait DisableSecurityHubResponse extends js.Object {}
 
   object DisableSecurityHubResponse {
-    def apply(): DisableSecurityHubResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisableSecurityHubResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableSecurityHubResponse]
     }
@@ -1303,8 +1410,10 @@ package securityhub {
   trait DisassociateFromMasterAccountRequest extends js.Object {}
 
   object DisassociateFromMasterAccountRequest {
-    def apply(): DisassociateFromMasterAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateFromMasterAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateFromMasterAccountRequest]
     }
@@ -1314,8 +1423,10 @@ package securityhub {
   trait DisassociateFromMasterAccountResponse extends js.Object {}
 
   object DisassociateFromMasterAccountResponse {
-    def apply(): DisassociateFromMasterAccountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateFromMasterAccountResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateFromMasterAccountResponse]
     }
@@ -1327,10 +1438,14 @@ package securityhub {
   }
 
   object DisassociateMembersRequest {
-    def apply(AccountIds: js.UndefOr[AccountIdList] = js.undefined): DisassociateMembersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+    ): DisassociateMembersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateMembersRequest]
     }
@@ -1340,8 +1455,10 @@ package securityhub {
   trait DisassociateMembersResponse extends js.Object {}
 
   object DisassociateMembersResponse {
-    def apply(): DisassociateMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateMembersResponse]
     }
@@ -1353,9 +1470,12 @@ package securityhub {
   }
 
   object EnableImportFindingsForProductRequest {
-    def apply(ProductArn: NonEmptyString): EnableImportFindingsForProductRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ProductArn" -> ProductArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ProductArn: NonEmptyString
+    ): EnableImportFindingsForProductRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProductArn" -> ProductArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableImportFindingsForProductRequest]
     }
@@ -1370,9 +1490,11 @@ package securityhub {
     def apply(
         ProductSubscriptionArn: js.UndefOr[NonEmptyString] = js.undefined
     ): EnableImportFindingsForProductResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ProductSubscriptionArn" -> ProductSubscriptionArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProductSubscriptionArn" -> ProductSubscriptionArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableImportFindingsForProductResponse]
     }
@@ -1382,8 +1504,10 @@ package securityhub {
   trait EnableSecurityHubRequest extends js.Object {}
 
   object EnableSecurityHubRequest {
-    def apply(): EnableSecurityHubRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): EnableSecurityHubRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableSecurityHubRequest]
     }
@@ -1393,8 +1517,10 @@ package securityhub {
   trait EnableSecurityHubResponse extends js.Object {}
 
   object EnableSecurityHubResponse {
-    def apply(): EnableSecurityHubResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): EnableSecurityHubResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableSecurityHubResponse]
     }
@@ -1440,11 +1566,14 @@ package securityhub {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): GetEnabledStandardsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StandardsSubscriptions" -> StandardsSubscriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StandardsSubscriptions" -> StandardsSubscriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEnabledStandardsResponse]
     }
@@ -1459,10 +1588,12 @@ package securityhub {
   }
 
   object GetFindingsRequest {
-    def apply(Filters: js.UndefOr[AwsSecurityFindingFilters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              SortCriteria: js.UndefOr[SortCriteria] = js.undefined): GetFindingsRequest = {
+    def apply(
+        Filters: js.UndefOr[AwsSecurityFindingFilters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortCriteria: js.UndefOr[SortCriteria] = js.undefined
+    ): GetFindingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -1489,12 +1620,16 @@ package securityhub {
   }
 
   object GetFindingsResponse {
-    def apply(Findings: AwsSecurityFindingList,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetFindingsResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Findings" -> Findings.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        Findings: AwsSecurityFindingList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Findings" -> Findings.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFindingsResponse]
     }
@@ -1506,9 +1641,12 @@ package securityhub {
   }
 
   object GetInsightResultsRequest {
-    def apply(InsightArn: NonEmptyString): GetInsightResultsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InsightArn" -> InsightArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InsightArn: NonEmptyString
+    ): GetInsightResultsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InsightArn" -> InsightArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInsightResultsRequest]
     }
@@ -1520,9 +1658,12 @@ package securityhub {
   }
 
   object GetInsightResultsResponse {
-    def apply(InsightResults: InsightResults): GetInsightResultsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("InsightResults" -> InsightResults.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InsightResults: InsightResults
+    ): GetInsightResultsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InsightResults" -> InsightResults.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInsightResultsResponse]
     }
@@ -1536,9 +1677,11 @@ package securityhub {
   }
 
   object GetInsightsRequest {
-    def apply(InsightArns: js.UndefOr[ArnList] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetInsightsRequest = {
+    def apply(
+        InsightArns: js.UndefOr[ArnList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetInsightsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InsightArns" -> InsightArns.map { x =>
           x.asInstanceOf[js.Any]
@@ -1562,11 +1705,16 @@ package securityhub {
   }
 
   object GetInsightsResponse {
-    def apply(Insights: InsightList, NextToken: js.UndefOr[NextToken] = js.undefined): GetInsightsResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Insights" -> Insights.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        Insights: InsightList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetInsightsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Insights" -> Insights.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInsightsResponse]
     }
@@ -1576,8 +1724,10 @@ package securityhub {
   trait GetInvitationsCountRequest extends js.Object {}
 
   object GetInvitationsCountRequest {
-    def apply(): GetInvitationsCountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetInvitationsCountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInvitationsCountRequest]
     }
@@ -1589,10 +1739,14 @@ package securityhub {
   }
 
   object GetInvitationsCountResponse {
-    def apply(InvitationsCount: js.UndefOr[Int] = js.undefined): GetInvitationsCountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("InvitationsCount" -> InvitationsCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InvitationsCount: js.UndefOr[Int] = js.undefined
+    ): GetInvitationsCountResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InvitationsCount" -> InvitationsCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInvitationsCountResponse]
     }
@@ -1602,8 +1756,10 @@ package securityhub {
   trait GetMasterAccountRequest extends js.Object {}
 
   object GetMasterAccountRequest {
-    def apply(): GetMasterAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetMasterAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMasterAccountRequest]
     }
@@ -1615,10 +1771,14 @@ package securityhub {
   }
 
   object GetMasterAccountResponse {
-    def apply(Master: js.UndefOr[Invitation] = js.undefined): GetMasterAccountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Master" -> Master.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Master: js.UndefOr[Invitation] = js.undefined
+    ): GetMasterAccountResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Master" -> Master.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMasterAccountResponse]
     }
@@ -1630,9 +1790,12 @@ package securityhub {
   }
 
   object GetMembersRequest {
-    def apply(AccountIds: AccountIdList): GetMembersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: AccountIdList
+    ): GetMembersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMembersRequest]
     }
@@ -1645,13 +1808,18 @@ package securityhub {
   }
 
   object GetMembersResponse {
-    def apply(Members: js.UndefOr[MemberList] = js.undefined,
-              UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined): GetMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Members" -> Members.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Members: js.UndefOr[MemberList] = js.undefined,
+        UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
+    ): GetMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Members" -> Members.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMembersResponse]
     }
@@ -1668,7 +1836,11 @@ package securityhub {
   }
 
   object ImportFindingsError {
-    def apply(ErrorCode: NonEmptyString, ErrorMessage: NonEmptyString, Id: NonEmptyString): ImportFindingsError = {
+    def apply(
+        ErrorCode: NonEmptyString,
+        ErrorMessage: NonEmptyString,
+        Id: NonEmptyString
+    ): ImportFindingsError = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode"    -> ErrorCode.asInstanceOf[js.Any],
         "ErrorMessage" -> ErrorMessage.asInstanceOf[js.Any],
@@ -1691,10 +1863,12 @@ package securityhub {
   }
 
   object Insight {
-    def apply(Filters: AwsSecurityFindingFilters,
-              GroupByAttribute: NonEmptyString,
-              InsightArn: NonEmptyString,
-              Name: NonEmptyString): Insight = {
+    def apply(
+        Filters: AwsSecurityFindingFilters,
+        GroupByAttribute: NonEmptyString,
+        InsightArn: NonEmptyString,
+        Name: NonEmptyString
+    ): Insight = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters"          -> Filters.asInstanceOf[js.Any],
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
@@ -1716,7 +1890,10 @@ package securityhub {
   }
 
   object InsightResultValue {
-    def apply(Count: Int, GroupByAttributeValue: NonEmptyString): InsightResultValue = {
+    def apply(
+        Count: Int,
+        GroupByAttributeValue: NonEmptyString
+    ): InsightResultValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Count"                 -> Count.asInstanceOf[js.Any],
         "GroupByAttributeValue" -> GroupByAttributeValue.asInstanceOf[js.Any]
@@ -1737,9 +1914,11 @@ package securityhub {
   }
 
   object InsightResults {
-    def apply(GroupByAttribute: NonEmptyString,
-              InsightArn: NonEmptyString,
-              ResultValues: InsightResultValueList): InsightResults = {
+    def apply(
+        GroupByAttribute: NonEmptyString,
+        InsightArn: NonEmptyString,
+        ResultValues: InsightResultValueList
+    ): InsightResults = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
         "InsightArn"       -> InsightArn.asInstanceOf[js.Any],
@@ -1762,10 +1941,12 @@ package securityhub {
   }
 
   object Invitation {
-    def apply(AccountId: js.UndefOr[AccountId] = js.undefined,
-              InvitationId: js.UndefOr[NonEmptyString] = js.undefined,
-              InvitedAt: js.UndefOr[Timestamp] = js.undefined,
-              MemberStatus: js.UndefOr[NonEmptyString] = js.undefined): Invitation = {
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        InvitationId: js.UndefOr[NonEmptyString] = js.undefined,
+        InvitedAt: js.UndefOr[Timestamp] = js.undefined,
+        MemberStatus: js.UndefOr[NonEmptyString] = js.undefined
+    ): Invitation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1791,10 +1972,14 @@ package securityhub {
   }
 
   object InviteMembersRequest {
-    def apply(AccountIds: js.UndefOr[AccountIdList] = js.undefined): InviteMembersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountIds: js.UndefOr[AccountIdList] = js.undefined
+    ): InviteMembersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountIds" -> AccountIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InviteMembersRequest]
     }
@@ -1806,10 +1991,14 @@ package securityhub {
   }
 
   object InviteMembersResponse {
-    def apply(UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined): InviteMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
+    ): InviteMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedAccounts" -> UnprocessedAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InviteMembersResponse]
     }
@@ -1824,10 +2013,14 @@ package securityhub {
   }
 
   object IpFilter {
-    def apply(Cidr: js.UndefOr[NonEmptyString] = js.undefined): IpFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cidr" -> Cidr.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cidr: js.UndefOr[NonEmptyString] = js.undefined
+    ): IpFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cidr" -> Cidr.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IpFilter]
     }
@@ -1842,10 +2035,14 @@ package securityhub {
   }
 
   object KeywordFilter {
-    def apply(Value: js.UndefOr[NonEmptyString] = js.undefined): KeywordFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Value: js.UndefOr[NonEmptyString] = js.undefined
+    ): KeywordFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeywordFilter]
     }
@@ -1858,13 +2055,18 @@ package securityhub {
   }
 
   object ListEnabledProductsForImportRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListEnabledProductsForImportRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListEnabledProductsForImportRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEnabledProductsForImportRequest]
     }
@@ -1881,11 +2083,14 @@ package securityhub {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ProductSubscriptions: js.UndefOr[ProductSubscriptionArnList] = js.undefined
     ): ListEnabledProductsForImportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ProductSubscriptions" -> ProductSubscriptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductSubscriptions" -> ProductSubscriptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEnabledProductsForImportResponse]
     }
@@ -1898,13 +2103,18 @@ package securityhub {
   }
 
   object ListInvitationsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListInvitationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInvitationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInvitationsRequest]
     }
@@ -1917,13 +2127,18 @@ package securityhub {
   }
 
   object ListInvitationsResponse {
-    def apply(Invitations: js.UndefOr[InvitationList] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined): ListInvitationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Invitations" -> Invitations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Invitations: js.UndefOr[InvitationList] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): ListInvitationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Invitations" -> Invitations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInvitationsResponse]
     }
@@ -1937,9 +2152,11 @@ package securityhub {
   }
 
   object ListMembersRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              OnlyAssociated: js.UndefOr[Boolean] = js.undefined): ListMembersRequest = {
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        OnlyAssociated: js.UndefOr[Boolean] = js.undefined
+    ): ListMembersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -1963,13 +2180,18 @@ package securityhub {
   }
 
   object ListMembersResponse {
-    def apply(Members: js.UndefOr[MemberList] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined): ListMembersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Members" -> Members.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Members: js.UndefOr[MemberList] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): ListMembersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Members" -> Members.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMembersResponse]
     }
@@ -1987,10 +2209,12 @@ package securityhub {
   }
 
   object Malware {
-    def apply(Name: NonEmptyString,
-              Path: js.UndefOr[NonEmptyString] = js.undefined,
-              State: js.UndefOr[MalwareState] = js.undefined,
-              Type: js.UndefOr[MalwareType] = js.undefined): Malware = {
+    def apply(
+        Name: NonEmptyString,
+        Path: js.UndefOr[NonEmptyString] = js.undefined,
+        State: js.UndefOr[MalwareState] = js.undefined,
+        Type: js.UndefOr[MalwareType] = js.undefined
+    ): Malware = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Path" -> Path.map { x =>
@@ -2063,16 +2287,22 @@ package securityhub {
   }
 
   object MapFilter {
-    def apply(Comparison: js.UndefOr[MapFilterComparison] = js.undefined,
-              Key: js.UndefOr[NonEmptyString] = js.undefined,
-              Value: js.UndefOr[NonEmptyString] = js.undefined): MapFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Comparison" -> Comparison.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Comparison: js.UndefOr[MapFilterComparison] = js.undefined,
+        Key: js.UndefOr[NonEmptyString] = js.undefined,
+        Value: js.UndefOr[NonEmptyString] = js.undefined
+    ): MapFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Comparison" -> Comparison.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MapFilter]
     }
@@ -2098,12 +2328,14 @@ package securityhub {
   }
 
   object Member {
-    def apply(AccountId: js.UndefOr[AccountId] = js.undefined,
-              Email: js.UndefOr[NonEmptyString] = js.undefined,
-              InvitedAt: js.UndefOr[Timestamp] = js.undefined,
-              MasterId: js.UndefOr[NonEmptyString] = js.undefined,
-              MemberStatus: js.UndefOr[NonEmptyString] = js.undefined,
-              UpdatedAt: js.UndefOr[Timestamp] = js.undefined): Member = {
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        Email: js.UndefOr[NonEmptyString] = js.undefined,
+        InvitedAt: js.UndefOr[Timestamp] = js.undefined,
+        MasterId: js.UndefOr[NonEmptyString] = js.undefined,
+        MemberStatus: js.UndefOr[NonEmptyString] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): Member = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2148,17 +2380,19 @@ package securityhub {
   }
 
   object Network {
-    def apply(DestinationDomain: js.UndefOr[NonEmptyString] = js.undefined,
-              DestinationIpV4: js.UndefOr[NonEmptyString] = js.undefined,
-              DestinationIpV6: js.UndefOr[NonEmptyString] = js.undefined,
-              DestinationPort: js.UndefOr[Int] = js.undefined,
-              Direction: js.UndefOr[NetworkDirection] = js.undefined,
-              Protocol: js.UndefOr[NonEmptyString] = js.undefined,
-              SourceDomain: js.UndefOr[NonEmptyString] = js.undefined,
-              SourceIpV4: js.UndefOr[NonEmptyString] = js.undefined,
-              SourceIpV6: js.UndefOr[NonEmptyString] = js.undefined,
-              SourceMac: js.UndefOr[NonEmptyString] = js.undefined,
-              SourcePort: js.UndefOr[Int] = js.undefined): Network = {
+    def apply(
+        DestinationDomain: js.UndefOr[NonEmptyString] = js.undefined,
+        DestinationIpV4: js.UndefOr[NonEmptyString] = js.undefined,
+        DestinationIpV6: js.UndefOr[NonEmptyString] = js.undefined,
+        DestinationPort: js.UndefOr[Int] = js.undefined,
+        Direction: js.UndefOr[NetworkDirection] = js.undefined,
+        Protocol: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceDomain: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceIpV4: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceIpV6: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceMac: js.UndefOr[NonEmptyString] = js.undefined,
+        SourcePort: js.UndefOr[Int] = js.undefined
+    ): Network = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DestinationDomain" -> DestinationDomain.map { x =>
           x.asInstanceOf[js.Any]
@@ -2217,7 +2451,11 @@ package securityhub {
   }
 
   object Note {
-    def apply(Text: NonEmptyString, UpdatedAt: NonEmptyString, UpdatedBy: NonEmptyString): Note = {
+    def apply(
+        Text: NonEmptyString,
+        UpdatedAt: NonEmptyString,
+        UpdatedBy: NonEmptyString
+    ): Note = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Text"      -> Text.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any],
@@ -2238,10 +2476,14 @@ package securityhub {
   }
 
   object NoteUpdate {
-    def apply(Text: NonEmptyString, UpdatedBy: NonEmptyString): NoteUpdate = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Text" -> Text.asInstanceOf[js.Any], "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Text: NonEmptyString,
+        UpdatedBy: NonEmptyString
+    ): NoteUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Text"      -> Text.asInstanceOf[js.Any],
+        "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NoteUpdate]
     }
@@ -2258,16 +2500,22 @@ package securityhub {
   }
 
   object NumberFilter {
-    def apply(Eq: js.UndefOr[Double] = js.undefined,
-              Gte: js.UndefOr[Double] = js.undefined,
-              Lte: js.UndefOr[Double] = js.undefined): NumberFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Eq" -> Eq.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Gte" -> Gte.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Lte" -> Lte.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Eq: js.UndefOr[Double] = js.undefined,
+        Gte: js.UndefOr[Double] = js.undefined,
+        Lte: js.UndefOr[Double] = js.undefined
+    ): NumberFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Eq" -> Eq.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Gte" -> Gte.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Lte" -> Lte.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NumberFilter]
     }
@@ -2295,12 +2543,14 @@ package securityhub {
   }
 
   object ProcessDetails {
-    def apply(LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
-              Name: js.UndefOr[NonEmptyString] = js.undefined,
-              ParentPid: js.UndefOr[Int] = js.undefined,
-              Path: js.UndefOr[NonEmptyString] = js.undefined,
-              Pid: js.UndefOr[Int] = js.undefined,
-              TerminatedAt: js.UndefOr[NonEmptyString] = js.undefined): ProcessDetails = {
+    def apply(
+        LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        ParentPid: js.UndefOr[Int] = js.undefined,
+        Path: js.UndefOr[NonEmptyString] = js.undefined,
+        Pid: js.UndefOr[Int] = js.undefined,
+        TerminatedAt: js.UndefOr[NonEmptyString] = js.undefined
+    ): ProcessDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LaunchedAt" -> LaunchedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -2336,13 +2586,18 @@ package securityhub {
   }
 
   object Recommendation {
-    def apply(Text: js.UndefOr[NonEmptyString] = js.undefined,
-              Url: js.UndefOr[NonEmptyString] = js.undefined): Recommendation = {
-      val _fields = IndexedSeq[(String, js.Any)]("Text" -> Text.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Url" -> Url.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Text: js.UndefOr[NonEmptyString] = js.undefined,
+        Url: js.UndefOr[NonEmptyString] = js.undefined
+    ): Recommendation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Text" -> Text.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Recommendation]
     }
@@ -2365,10 +2620,14 @@ package securityhub {
   }
 
   object RelatedFinding {
-    def apply(Id: NonEmptyString, ProductArn: NonEmptyString): RelatedFinding = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "ProductArn" -> ProductArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: NonEmptyString,
+        ProductArn: NonEmptyString
+    ): RelatedFinding = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id"         -> Id.asInstanceOf[js.Any],
+        "ProductArn" -> ProductArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RelatedFinding]
     }
@@ -2383,10 +2642,14 @@ package securityhub {
   }
 
   object Remediation {
-    def apply(Recommendation: js.UndefOr[Recommendation] = js.undefined): Remediation = {
-      val _fields = IndexedSeq[(String, js.Any)]("Recommendation" -> Recommendation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Recommendation: js.UndefOr[Recommendation] = js.undefined
+    ): Remediation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Recommendation" -> Recommendation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Remediation]
     }
@@ -2406,12 +2669,14 @@ package securityhub {
   }
 
   object Resource {
-    def apply(Id: NonEmptyString,
-              Type: NonEmptyString,
-              Details: js.UndefOr[ResourceDetails] = js.undefined,
-              Partition: js.UndefOr[Partition] = js.undefined,
-              Region: js.UndefOr[NonEmptyString] = js.undefined,
-              Tags: js.UndefOr[FieldMap] = js.undefined): Resource = {
+    def apply(
+        Id: NonEmptyString,
+        Type: NonEmptyString,
+        Details: js.UndefOr[ResourceDetails] = js.undefined,
+        Partition: js.UndefOr[Partition] = js.undefined,
+        Region: js.UndefOr[NonEmptyString] = js.undefined,
+        Tags: js.UndefOr[FieldMap] = js.undefined
+    ): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id"   -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any],
@@ -2446,11 +2711,13 @@ package securityhub {
   }
 
   object ResourceDetails {
-    def apply(AwsEc2Instance: js.UndefOr[AwsEc2InstanceDetails] = js.undefined,
-              AwsIamAccessKey: js.UndefOr[AwsIamAccessKeyDetails] = js.undefined,
-              AwsS3Bucket: js.UndefOr[AwsS3BucketDetails] = js.undefined,
-              Container: js.UndefOr[ContainerDetails] = js.undefined,
-              Other: js.UndefOr[FieldMap] = js.undefined): ResourceDetails = {
+    def apply(
+        AwsEc2Instance: js.UndefOr[AwsEc2InstanceDetails] = js.undefined,
+        AwsIamAccessKey: js.UndefOr[AwsIamAccessKeyDetails] = js.undefined,
+        AwsS3Bucket: js.UndefOr[AwsS3BucketDetails] = js.undefined,
+        Container: js.UndefOr[ContainerDetails] = js.undefined,
+        Other: js.UndefOr[FieldMap] = js.undefined
+    ): ResourceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AwsEc2Instance" -> AwsEc2Instance.map { x =>
           x.asInstanceOf[js.Any]
@@ -2483,13 +2750,18 @@ package securityhub {
   }
 
   object Result {
-    def apply(AccountId: js.UndefOr[AccountId] = js.undefined,
-              ProcessingResult: js.UndefOr[NonEmptyString] = js.undefined): Result = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountId" -> AccountId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ProcessingResult" -> ProcessingResult.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        ProcessingResult: js.UndefOr[NonEmptyString] = js.undefined
+    ): Result = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountId" -> AccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProcessingResult" -> ProcessingResult.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Result]
     }
@@ -2505,11 +2777,16 @@ package securityhub {
   }
 
   object Severity {
-    def apply(Normalized: Int, Product: js.UndefOr[Double] = js.undefined): Severity = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Normalized" -> Normalized.asInstanceOf[js.Any], "Product" -> Product.map { x =>
+    def apply(
+        Normalized: Int,
+        Product: js.UndefOr[Double] = js.undefined
+    ): Severity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Normalized" -> Normalized.asInstanceOf[js.Any],
+        "Product" -> Product.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Severity]
     }
@@ -2525,13 +2802,18 @@ package securityhub {
   }
 
   object SortCriterion {
-    def apply(Field: js.UndefOr[NonEmptyString] = js.undefined,
-              SortOrder: js.UndefOr[SortOrder] = js.undefined): SortCriterion = {
-      val _fields = IndexedSeq[(String, js.Any)]("Field" -> Field.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SortOrder" -> SortOrder.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Field: js.UndefOr[NonEmptyString] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): SortCriterion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Field" -> Field.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SortCriterion]
     }
@@ -2565,10 +2847,12 @@ package securityhub {
   }
 
   object StandardsSubscription {
-    def apply(StandardsArn: NonEmptyString,
-              StandardsInput: StandardsInputParameterMap,
-              StandardsStatus: StandardsStatus,
-              StandardsSubscriptionArn: NonEmptyString): StandardsSubscription = {
+    def apply(
+        StandardsArn: NonEmptyString,
+        StandardsInput: StandardsInputParameterMap,
+        StandardsStatus: StandardsStatus,
+        StandardsSubscriptionArn: NonEmptyString
+    ): StandardsSubscription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StandardsArn"             -> StandardsArn.asInstanceOf[js.Any],
         "StandardsInput"           -> StandardsInput.asInstanceOf[js.Any],
@@ -2590,8 +2874,10 @@ package securityhub {
   }
 
   object StandardsSubscriptionRequest {
-    def apply(StandardsArn: NonEmptyString,
-              StandardsInput: js.UndefOr[StandardsInputParameterMap] = js.undefined): StandardsSubscriptionRequest = {
+    def apply(
+        StandardsArn: NonEmptyString,
+        StandardsInput: js.UndefOr[StandardsInputParameterMap] = js.undefined
+    ): StandardsSubscriptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StandardsArn" -> StandardsArn.asInstanceOf[js.Any],
         "StandardsInput" -> StandardsInput.map { x =>
@@ -2613,13 +2899,18 @@ package securityhub {
   }
 
   object StringFilter {
-    def apply(Comparison: js.UndefOr[StringFilterComparison] = js.undefined,
-              Value: js.UndefOr[NonEmptyString] = js.undefined): StringFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Comparison" -> Comparison.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Comparison: js.UndefOr[StringFilterComparison] = js.undefined,
+        Value: js.UndefOr[NonEmptyString] = js.undefined
+    ): StringFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Comparison" -> Comparison.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StringFilter]
     }
@@ -2647,12 +2938,14 @@ package securityhub {
   }
 
   object ThreatIntelIndicator {
-    def apply(Category: js.UndefOr[ThreatIntelIndicatorCategory] = js.undefined,
-              LastObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
-              Source: js.UndefOr[NonEmptyString] = js.undefined,
-              SourceUrl: js.UndefOr[NonEmptyString] = js.undefined,
-              Type: js.UndefOr[ThreatIntelIndicatorType] = js.undefined,
-              Value: js.UndefOr[NonEmptyString] = js.undefined): ThreatIntelIndicator = {
+    def apply(
+        Category: js.UndefOr[ThreatIntelIndicatorCategory] = js.undefined,
+        LastObservedAt: js.UndefOr[NonEmptyString] = js.undefined,
+        Source: js.UndefOr[NonEmptyString] = js.undefined,
+        SourceUrl: js.UndefOr[NonEmptyString] = js.undefined,
+        Type: js.UndefOr[ThreatIntelIndicatorType] = js.undefined,
+        Value: js.UndefOr[NonEmptyString] = js.undefined
+    ): ThreatIntelIndicator = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Category" -> Category.map { x =>
           x.asInstanceOf[js.Any]
@@ -2725,14 +3018,20 @@ package securityhub {
   }
 
   object UpdateFindingsRequest {
-    def apply(Filters: AwsSecurityFindingFilters,
-              Note: js.UndefOr[NoteUpdate] = js.undefined,
-              RecordState: js.UndefOr[RecordState] = js.undefined): UpdateFindingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Filters" -> Filters.asInstanceOf[js.Any], "Note" -> Note.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RecordState" -> RecordState.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Filters: AwsSecurityFindingFilters,
+        Note: js.UndefOr[NoteUpdate] = js.undefined,
+        RecordState: js.UndefOr[RecordState] = js.undefined
+    ): UpdateFindingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "Note" -> Note.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordState" -> RecordState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFindingsRequest]
     }
@@ -2742,8 +3041,10 @@ package securityhub {
   trait UpdateFindingsResponse extends js.Object {}
 
   object UpdateFindingsResponse {
-    def apply(): UpdateFindingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateFindingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFindingsResponse]
     }
@@ -2758,10 +3059,12 @@ package securityhub {
   }
 
   object UpdateInsightRequest {
-    def apply(InsightArn: NonEmptyString,
-              Filters: js.UndefOr[AwsSecurityFindingFilters] = js.undefined,
-              GroupByAttribute: js.UndefOr[NonEmptyString] = js.undefined,
-              Name: js.UndefOr[NonEmptyString] = js.undefined): UpdateInsightRequest = {
+    def apply(
+        InsightArn: NonEmptyString,
+        Filters: js.UndefOr[AwsSecurityFindingFilters] = js.undefined,
+        GroupByAttribute: js.UndefOr[NonEmptyString] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined
+    ): UpdateInsightRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InsightArn" -> InsightArn.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -2783,8 +3086,10 @@ package securityhub {
   trait UpdateInsightResponse extends js.Object {}
 
   object UpdateInsightResponse {
-    def apply(): UpdateInsightResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateInsightResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInsightResponse]
     }
