@@ -5,7 +5,7 @@ import scala.scalajs.js.annotation.JSImport
 
 @js.native
 @JSImport("aws-sdk", "CloudFront.Signer")
-class Signer protected () extends js.Object {
+class CloudFrontSigner protected () extends js.Object {
   def this(keyPairId: String, privateKey: String) = this()
 
   def getSignedCookie(options: SignerOptionsWithPolicy): CustomPolicy = js.native
@@ -26,6 +26,7 @@ class Signer protected () extends js.Object {
 
   def getSignedUrl(options: SignerOptionsWithoutPolicy, callback: js.Function2[Error, String, Unit]): Unit = js.native
 }
+
 @js.native
 trait SignerOptionsWithPolicy extends js.Object {
   var policy: String = js.native
