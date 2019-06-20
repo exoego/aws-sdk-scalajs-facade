@@ -43,7 +43,6 @@ package object inspector {
   type AutoScalingGroupList                   = js.Array[AutoScalingGroup]
   type BatchDescribeArnList                   = js.Array[Arn]
   type BatchDescribeExclusionsArnList         = js.Array[Arn]
-  type Bool                                   = Boolean
   type EventSubscriptionList                  = js.Array[EventSubscription]
   type ExclusionMap                           = js.Dictionary[Exclusion]
   type ExclusionPreviewList                   = js.Array[ExclusionPreview]
@@ -312,7 +311,7 @@ package inspector {
     var arn: Arn
     var assessmentTemplateArn: Arn
     var createdAt: Timestamp
-    var dataCollected: Bool
+    var dataCollected: Boolean
     var durationInSeconds: AssessmentRunDuration
     var findingCounts: AssessmentRunFindingCounts
     var name: AssessmentRunName
@@ -331,7 +330,7 @@ package inspector {
         arn: Arn,
         assessmentTemplateArn: Arn,
         createdAt: Timestamp,
-        dataCollected: Bool,
+        dataCollected: Boolean,
         durationInSeconds: AssessmentRunDuration,
         findingCounts: AssessmentRunFindingCounts,
         name: AssessmentRunName,
@@ -470,7 +469,7 @@ package inspector {
   @js.native
   trait AssessmentRunNotification extends js.Object {
     var date: Timestamp
-    var error: Bool
+    var error: Boolean
     var event: InspectorEvent
     var message: js.UndefOr[Message]
     var snsPublishStatusCode: js.UndefOr[AssessmentRunNotificationSnsStatusCode]
@@ -480,7 +479,7 @@ package inspector {
   object AssessmentRunNotification {
     def apply(
         date: Timestamp,
-        error: Bool,
+        error: Boolean,
         event: InspectorEvent,
         message: js.UndefOr[Message] = js.undefined,
         snsPublishStatusCode: js.UndefOr[AssessmentRunNotificationSnsStatusCode] = js.undefined,
@@ -1110,14 +1109,14 @@ package inspector {
   trait DescribeCrossAccountAccessRoleResponse extends js.Object {
     var registeredAt: Timestamp
     var roleArn: Arn
-    var valid: Bool
+    var valid: Boolean
   }
 
   object DescribeCrossAccountAccessRoleResponse {
     def apply(
         registeredAt: Timestamp,
         roleArn: Arn,
-        valid: Bool
+        valid: Boolean
     ): DescribeCrossAccountAccessRoleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "registeredAt" -> registeredAt.asInstanceOf[js.Any],
@@ -1419,13 +1418,13 @@ package inspector {
   @js.native
   trait FailedItemDetails extends js.Object {
     var failureCode: FailedItemErrorCode
-    var retryable: Bool
+    var retryable: Boolean
   }
 
   object FailedItemDetails {
     def apply(
         failureCode: FailedItemErrorCode,
-        retryable: Bool
+        retryable: Boolean
     ): FailedItemDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "failureCode" -> failureCode.asInstanceOf[js.Any],
@@ -1463,7 +1462,7 @@ package inspector {
     var confidence: js.UndefOr[IocConfidence]
     var description: js.UndefOr[Text]
     var id: js.UndefOr[FindingId]
-    var indicatorOfCompromise: js.UndefOr[Bool]
+    var indicatorOfCompromise: js.UndefOr[Boolean]
     var numericSeverity: js.UndefOr[NumericSeverity]
     var recommendation: js.UndefOr[Text]
     var schemaVersion: js.UndefOr[NumericVersion]
@@ -1485,7 +1484,7 @@ package inspector {
         confidence: js.UndefOr[IocConfidence] = js.undefined,
         description: js.UndefOr[Text] = js.undefined,
         id: js.UndefOr[FindingId] = js.undefined,
-        indicatorOfCompromise: js.UndefOr[Bool] = js.undefined,
+        indicatorOfCompromise: js.UndefOr[Boolean] = js.undefined,
         numericSeverity: js.UndefOr[NumericSeverity] = js.undefined,
         recommendation: js.UndefOr[Text] = js.undefined,
         schemaVersion: js.UndefOr[NumericVersion] = js.undefined,

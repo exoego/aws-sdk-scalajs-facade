@@ -22,7 +22,6 @@ package object clouddirectory {
   type BatchWriteOperationResponseList = js.Array[BatchWriteOperationResponse]
   type BinaryAttributeValue =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type Bool                              = Boolean
   type BooleanAttributeValue             = Boolean
   type ConsistencyLevel                  = String
   type Date                              = js.Date
@@ -730,7 +729,7 @@ package clouddirectory {
     */
   @js.native
   trait BatchCreateIndex extends js.Object {
-    var IsUnique: Bool
+    var IsUnique: Boolean
     var OrderedIndexedAttributeList: AttributeKeyList
     var BatchReferenceName: js.UndefOr[BatchReferenceName]
     var LinkName: js.UndefOr[LinkName]
@@ -739,7 +738,7 @@ package clouddirectory {
 
   object BatchCreateIndex {
     def apply(
-        IsUnique: Bool,
+        IsUnique: Boolean,
         OrderedIndexedAttributeList: AttributeKeyList,
         BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined,
         LinkName: js.UndefOr[LinkName] = js.undefined,
@@ -2596,7 +2595,7 @@ package clouddirectory {
   @js.native
   trait CreateIndexRequest extends js.Object {
     var DirectoryArn: Arn
-    var IsUnique: Bool
+    var IsUnique: Boolean
     var OrderedIndexedAttributeList: AttributeKeyList
     var LinkName: js.UndefOr[LinkName]
     var ParentReference: js.UndefOr[ObjectReference]
@@ -2605,7 +2604,7 @@ package clouddirectory {
   object CreateIndexRequest {
     def apply(
         DirectoryArn: Arn,
-        IsUnique: Bool,
+        IsUnique: Boolean,
         OrderedIndexedAttributeList: AttributeKeyList,
         LinkName: js.UndefOr[LinkName] = js.undefined,
         ParentReference: js.UndefOr[ObjectReference] = js.undefined
@@ -3264,7 +3263,7 @@ package clouddirectory {
   trait FacetAttributeDefinition extends js.Object {
     var Type: FacetAttributeType
     var DefaultValue: js.UndefOr[TypedAttributeValue]
-    var IsImmutable: js.UndefOr[Bool]
+    var IsImmutable: js.UndefOr[Boolean]
     var Rules: js.UndefOr[RuleMap]
   }
 
@@ -3272,7 +3271,7 @@ package clouddirectory {
     def apply(
         Type: FacetAttributeType,
         DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-        IsImmutable: js.UndefOr[Bool] = js.undefined,
+        IsImmutable: js.UndefOr[Boolean] = js.undefined,
         Rules: js.UndefOr[RuleMap] = js.undefined
     ): FacetAttributeDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4463,7 +4462,7 @@ package clouddirectory {
     var DirectoryArn: Arn
     var ObjectReference: ObjectReference
     var ConsistencyLevel: js.UndefOr[ConsistencyLevel]
-    var IncludeAllLinksToEachParent: js.UndefOr[Bool]
+    var IncludeAllLinksToEachParent: js.UndefOr[Boolean]
     var MaxResults: js.UndefOr[NumberResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -4473,7 +4472,7 @@ package clouddirectory {
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined,
-        IncludeAllLinksToEachParent: js.UndefOr[Bool] = js.undefined,
+        IncludeAllLinksToEachParent: js.UndefOr[Boolean] = js.undefined,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectParentsRequest = {
@@ -5550,7 +5549,7 @@ package clouddirectory {
     var RequiredBehavior: RequiredAttributeBehavior
     var Type: FacetAttributeType
     var DefaultValue: js.UndefOr[TypedAttributeValue]
-    var IsImmutable: js.UndefOr[Bool]
+    var IsImmutable: js.UndefOr[Boolean]
     var Rules: js.UndefOr[RuleMap]
   }
 
@@ -5560,7 +5559,7 @@ package clouddirectory {
         RequiredBehavior: RequiredAttributeBehavior,
         Type: FacetAttributeType,
         DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
-        IsImmutable: js.UndefOr[Bool] = js.undefined,
+        IsImmutable: js.UndefOr[Boolean] = js.undefined,
         Rules: js.UndefOr[RuleMap] = js.undefined
     ): TypedLinkAttributeDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -5951,14 +5950,14 @@ package clouddirectory {
   trait UpgradeAppliedSchemaRequest extends js.Object {
     var DirectoryArn: Arn
     var PublishedSchemaArn: Arn
-    var DryRun: js.UndefOr[Bool]
+    var DryRun: js.UndefOr[Boolean]
   }
 
   object UpgradeAppliedSchemaRequest {
     def apply(
         DirectoryArn: Arn,
         PublishedSchemaArn: Arn,
-        DryRun: js.UndefOr[Bool] = js.undefined
+        DryRun: js.UndefOr[Boolean] = js.undefined
     ): UpgradeAppliedSchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
@@ -6001,7 +6000,7 @@ package clouddirectory {
     var DevelopmentSchemaArn: Arn
     var MinorVersion: Version
     var PublishedSchemaArn: Arn
-    var DryRun: js.UndefOr[Bool]
+    var DryRun: js.UndefOr[Boolean]
   }
 
   object UpgradePublishedSchemaRequest {
@@ -6009,7 +6008,7 @@ package clouddirectory {
         DevelopmentSchemaArn: Arn,
         MinorVersion: Version,
         PublishedSchemaArn: Arn,
-        DryRun: js.UndefOr[Bool] = js.undefined
+        DryRun: js.UndefOr[Boolean] = js.undefined
     ): UpgradePublishedSchemaRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],

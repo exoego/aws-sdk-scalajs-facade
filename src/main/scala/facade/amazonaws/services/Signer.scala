@@ -39,9 +39,7 @@ package object signer {
   type SigningStatus         = String
   type StatusReason          = String
   type Version               = String
-  type bool                  = Boolean
   type key                   = String
-  type string                = String
 }
 
 package signer {
@@ -528,14 +526,14 @@ package signer {
 
   @js.native
   trait ListSigningProfilesRequest extends js.Object {
-    var includeCanceled: js.UndefOr[bool]
+    var includeCanceled: js.UndefOr[Boolean]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
 
   object ListSigningProfilesRequest {
     def apply(
-        includeCanceled: js.UndefOr[bool] = js.undefined,
+        includeCanceled: js.UndefOr[Boolean] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSigningProfilesRequest = {
@@ -614,12 +612,12 @@ package signer {
 
   @js.native
   trait PutSigningProfileResponse extends js.Object {
-    var arn: js.UndefOr[string]
+    var arn: js.UndefOr[String]
   }
 
   object PutSigningProfileResponse {
     def apply(
-        arn: js.UndefOr[string] = js.undefined
+        arn: js.UndefOr[String] = js.undefined
     ): PutSigningProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>

@@ -123,11 +123,7 @@ package object storagegateway {
   type VolumeStatus               = String
   type VolumeType                 = String
   type VolumeUsedInBytes          = Double
-  type boolean                    = Boolean
   type double                     = Double
-  type integer                    = Int
-  type long                       = Double
-  type string                     = String
 }
 
 package storagegateway {
@@ -543,7 +539,7 @@ package storagegateway {
     var VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus]
     var VolumeId: js.UndefOr[VolumeId]
     var VolumeProgress: js.UndefOr[DoubleObject]
-    var VolumeSizeInBytes: js.UndefOr[long]
+    var VolumeSizeInBytes: js.UndefOr[Double]
     var VolumeStatus: js.UndefOr[VolumeStatus]
     var VolumeType: js.UndefOr[VolumeType]
     var VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes]
@@ -560,7 +556,7 @@ package storagegateway {
         VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus] = js.undefined,
         VolumeId: js.UndefOr[VolumeId] = js.undefined,
         VolumeProgress: js.UndefOr[DoubleObject] = js.undefined,
-        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[Double] = js.undefined,
         VolumeStatus: js.UndefOr[VolumeStatus] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined,
         VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
@@ -733,7 +729,7 @@ package storagegateway {
     var GatewayARN: GatewayARN
     var NetworkInterfaceId: NetworkInterfaceId
     var TargetName: TargetName
-    var VolumeSizeInBytes: long
+    var VolumeSizeInBytes: Double
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var SnapshotId: js.UndefOr[SnapshotId]
@@ -746,7 +742,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         NetworkInterfaceId: NetworkInterfaceId,
         TargetName: TargetName,
-        VolumeSizeInBytes: long,
+        VolumeSizeInBytes: Double,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
@@ -1026,14 +1022,14 @@ package storagegateway {
   trait CreateSnapshotFromVolumeRecoveryPointOutput extends js.Object {
     var SnapshotId: js.UndefOr[SnapshotId]
     var VolumeARN: js.UndefOr[VolumeARN]
-    var VolumeRecoveryPointTime: js.UndefOr[string]
+    var VolumeRecoveryPointTime: js.UndefOr[String]
   }
 
   object CreateSnapshotFromVolumeRecoveryPointOutput {
     def apply(
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-        VolumeRecoveryPointTime: js.UndefOr[string] = js.undefined
+        VolumeRecoveryPointTime: js.UndefOr[String] = js.undefined
     ): CreateSnapshotFromVolumeRecoveryPointOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnapshotId" -> SnapshotId.map { x =>
@@ -1118,7 +1114,7 @@ package storagegateway {
     var DiskId: DiskId
     var GatewayARN: GatewayARN
     var NetworkInterfaceId: NetworkInterfaceId
-    var PreserveExistingData: boolean
+    var PreserveExistingData: Boolean
     var TargetName: TargetName
     var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
@@ -1130,7 +1126,7 @@ package storagegateway {
         DiskId: DiskId,
         GatewayARN: GatewayARN,
         NetworkInterfaceId: NetworkInterfaceId,
-        PreserveExistingData: boolean,
+        PreserveExistingData: Boolean,
         TargetName: TargetName,
         KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
@@ -1164,14 +1160,14 @@ package storagegateway {
   trait CreateStorediSCSIVolumeOutput extends js.Object {
     var TargetARN: js.UndefOr[TargetARN]
     var VolumeARN: js.UndefOr[VolumeARN]
-    var VolumeSizeInBytes: js.UndefOr[long]
+    var VolumeSizeInBytes: js.UndefOr[Double]
   }
 
   object CreateStorediSCSIVolumeOutput {
     def apply(
         TargetARN: js.UndefOr[TargetARN] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-        VolumeSizeInBytes: js.UndefOr[long] = js.undefined
+        VolumeSizeInBytes: js.UndefOr[Double] = js.undefined
     ): CreateStorediSCSIVolumeOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetARN" -> TargetARN.map { x =>
@@ -1416,13 +1412,13 @@ package storagegateway {
   @js.native
   trait DeleteFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
-    var ForceDelete: js.UndefOr[boolean]
+    var ForceDelete: js.UndefOr[Boolean]
   }
 
   object DeleteFileShareInput {
     def apply(
         FileShareARN: FileShareARN,
-        ForceDelete: js.UndefOr[boolean] = js.undefined
+        ForceDelete: js.UndefOr[Boolean] = js.undefined
     ): DeleteFileShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any],
@@ -1720,7 +1716,7 @@ package storagegateway {
 
   @js.native
   trait DescribeCacheOutput extends js.Object {
-    var CacheAllocatedInBytes: js.UndefOr[long]
+    var CacheAllocatedInBytes: js.UndefOr[Double]
     var CacheDirtyPercentage: js.UndefOr[double]
     var CacheHitPercentage: js.UndefOr[double]
     var CacheMissPercentage: js.UndefOr[double]
@@ -1731,7 +1727,7 @@ package storagegateway {
 
   object DescribeCacheOutput {
     def apply(
-        CacheAllocatedInBytes: js.UndefOr[long] = js.undefined,
+        CacheAllocatedInBytes: js.UndefOr[Double] = js.undefined,
         CacheDirtyPercentage: js.UndefOr[double] = js.undefined,
         CacheHitPercentage: js.UndefOr[double] = js.undefined,
         CacheMissPercentage: js.UndefOr[double] = js.undefined,
@@ -1875,7 +1871,7 @@ package storagegateway {
   trait DescribeGatewayInformationOutput extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
     var GatewayId: js.UndefOr[GatewayId]
-    var GatewayName: js.UndefOr[string]
+    var GatewayName: js.UndefOr[String]
     var GatewayNetworkInterfaces: js.UndefOr[GatewayNetworkInterfaces]
     var GatewayState: js.UndefOr[GatewayState]
     var GatewayTimezone: js.UndefOr[GatewayTimezone]
@@ -1889,7 +1885,7 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
-        GatewayName: js.UndefOr[string] = js.undefined,
+        GatewayName: js.UndefOr[String] = js.undefined,
         GatewayNetworkInterfaces: js.UndefOr[GatewayNetworkInterfaces] = js.undefined,
         GatewayState: js.UndefOr[GatewayState] = js.undefined,
         GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined,
@@ -2403,16 +2399,16 @@ package storagegateway {
   trait DescribeUploadBufferOutput extends js.Object {
     var DiskIds: js.UndefOr[DiskIds]
     var GatewayARN: js.UndefOr[GatewayARN]
-    var UploadBufferAllocatedInBytes: js.UndefOr[long]
-    var UploadBufferUsedInBytes: js.UndefOr[long]
+    var UploadBufferAllocatedInBytes: js.UndefOr[Double]
+    var UploadBufferUsedInBytes: js.UndefOr[Double]
   }
 
   object DescribeUploadBufferOutput {
     def apply(
         DiskIds: js.UndefOr[DiskIds] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-        UploadBufferAllocatedInBytes: js.UndefOr[long] = js.undefined,
-        UploadBufferUsedInBytes: js.UndefOr[long] = js.undefined
+        UploadBufferAllocatedInBytes: js.UndefOr[Double] = js.undefined,
+        UploadBufferUsedInBytes: js.UndefOr[Double] = js.undefined
     ): DescribeUploadBufferOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskIds" -> DiskIds.map { x =>
@@ -2521,16 +2517,16 @@ package storagegateway {
   trait DescribeWorkingStorageOutput extends js.Object {
     var DiskIds: js.UndefOr[DiskIds]
     var GatewayARN: js.UndefOr[GatewayARN]
-    var WorkingStorageAllocatedInBytes: js.UndefOr[long]
-    var WorkingStorageUsedInBytes: js.UndefOr[long]
+    var WorkingStorageAllocatedInBytes: js.UndefOr[Double]
+    var WorkingStorageUsedInBytes: js.UndefOr[Double]
   }
 
   object DescribeWorkingStorageOutput {
     def apply(
         DiskIds: js.UndefOr[DiskIds] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-        WorkingStorageAllocatedInBytes: js.UndefOr[long] = js.undefined,
-        WorkingStorageUsedInBytes: js.UndefOr[long] = js.undefined
+        WorkingStorageAllocatedInBytes: js.UndefOr[Double] = js.undefined,
+        WorkingStorageUsedInBytes: js.UndefOr[Double] = js.undefined
     ): DescribeWorkingStorageOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskIds" -> DiskIds.map { x =>
@@ -2603,17 +2599,17 @@ package storagegateway {
     */
   @js.native
   trait DeviceiSCSIAttributes extends js.Object {
-    var ChapEnabled: js.UndefOr[boolean]
+    var ChapEnabled: js.UndefOr[Boolean]
     var NetworkInterfaceId: js.UndefOr[NetworkInterfaceId]
-    var NetworkInterfacePort: js.UndefOr[integer]
+    var NetworkInterfacePort: js.UndefOr[Int]
     var TargetARN: js.UndefOr[TargetARN]
   }
 
   object DeviceiSCSIAttributes {
     def apply(
-        ChapEnabled: js.UndefOr[boolean] = js.undefined,
+        ChapEnabled: js.UndefOr[Boolean] = js.undefined,
         NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-        NetworkInterfacePort: js.UndefOr[integer] = js.undefined,
+        NetworkInterfacePort: js.UndefOr[Int] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
     ): DeviceiSCSIAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2676,26 +2672,26 @@ package storagegateway {
     */
   @js.native
   trait Disk extends js.Object {
-    var DiskAllocationResource: js.UndefOr[string]
+    var DiskAllocationResource: js.UndefOr[String]
     var DiskAllocationType: js.UndefOr[DiskAllocationType]
     var DiskAttributeList: js.UndefOr[DiskAttributeList]
     var DiskId: js.UndefOr[DiskId]
-    var DiskNode: js.UndefOr[string]
-    var DiskPath: js.UndefOr[string]
-    var DiskSizeInBytes: js.UndefOr[long]
-    var DiskStatus: js.UndefOr[string]
+    var DiskNode: js.UndefOr[String]
+    var DiskPath: js.UndefOr[String]
+    var DiskSizeInBytes: js.UndefOr[Double]
+    var DiskStatus: js.UndefOr[String]
   }
 
   object Disk {
     def apply(
-        DiskAllocationResource: js.UndefOr[string] = js.undefined,
+        DiskAllocationResource: js.UndefOr[String] = js.undefined,
         DiskAllocationType: js.UndefOr[DiskAllocationType] = js.undefined,
         DiskAttributeList: js.UndefOr[DiskAttributeList] = js.undefined,
         DiskId: js.UndefOr[DiskId] = js.undefined,
-        DiskNode: js.UndefOr[string] = js.undefined,
-        DiskPath: js.UndefOr[string] = js.undefined,
-        DiskSizeInBytes: js.UndefOr[long] = js.undefined,
-        DiskStatus: js.UndefOr[string] = js.undefined
+        DiskNode: js.UndefOr[String] = js.undefined,
+        DiskPath: js.UndefOr[String] = js.undefined,
+        DiskSizeInBytes: js.UndefOr[Double] = js.undefined,
+        DiskStatus: js.UndefOr[String] = js.undefined
     ): Disk = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DiskAllocationResource" -> DiskAllocationResource.map { x =>
@@ -2787,7 +2783,7 @@ package storagegateway {
   trait GatewayInfo extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
     var GatewayId: js.UndefOr[GatewayId]
-    var GatewayName: js.UndefOr[string]
+    var GatewayName: js.UndefOr[String]
     var GatewayOperationalState: js.UndefOr[GatewayOperationalState]
     var GatewayType: js.UndefOr[GatewayType]
   }
@@ -2796,7 +2792,7 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
-        GatewayName: js.UndefOr[string] = js.undefined,
+        GatewayName: js.UndefOr[String] = js.undefined,
         GatewayOperationalState: js.UndefOr[GatewayOperationalState] = js.undefined,
         GatewayType: js.UndefOr[GatewayType] = js.undefined
     ): GatewayInfo = {
@@ -3352,7 +3348,7 @@ package storagegateway {
     var FileShareStatus: js.UndefOr[FileShareStatus]
     var GatewayARN: js.UndefOr[GatewayARN]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
-    var KMSEncrypted: js.UndefOr[boolean]
+    var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var LocationARN: js.UndefOr[LocationARN]
     var NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults]
@@ -3374,7 +3370,7 @@ package storagegateway {
         FileShareStatus: js.UndefOr[FileShareStatus] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
-        KMSEncrypted: js.UndefOr[boolean] = js.undefined,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         LocationARN: js.UndefOr[LocationARN] = js.undefined,
         NFSFileShareDefaults: js.UndefOr[NFSFileShareDefaults] = js.undefined,
@@ -3452,16 +3448,16 @@ package storagegateway {
     */
   @js.native
   trait NetworkInterface extends js.Object {
-    var Ipv4Address: js.UndefOr[string]
-    var Ipv6Address: js.UndefOr[string]
-    var MacAddress: js.UndefOr[string]
+    var Ipv4Address: js.UndefOr[String]
+    var Ipv6Address: js.UndefOr[String]
+    var MacAddress: js.UndefOr[String]
   }
 
   object NetworkInterface {
     def apply(
-        Ipv4Address: js.UndefOr[string] = js.undefined,
-        Ipv6Address: js.UndefOr[string] = js.undefined,
-        MacAddress: js.UndefOr[string] = js.undefined
+        Ipv4Address: js.UndefOr[String] = js.undefined,
+        Ipv6Address: js.UndefOr[String] = js.undefined,
+        MacAddress: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Ipv4Address" -> Ipv4Address.map { x =>
@@ -3760,7 +3756,7 @@ package storagegateway {
     var GatewayARN: js.UndefOr[GatewayARN]
     var GuessMIMETypeEnabled: js.UndefOr[Boolean]
     var InvalidUserList: js.UndefOr[FileShareUserList]
-    var KMSEncrypted: js.UndefOr[boolean]
+    var KMSEncrypted: js.UndefOr[Boolean]
     var KMSKey: js.UndefOr[KMSKey]
     var LocationARN: js.UndefOr[LocationARN]
     var ObjectACL: js.UndefOr[ObjectACL]
@@ -3782,7 +3778,7 @@ package storagegateway {
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GuessMIMETypeEnabled: js.UndefOr[Boolean] = js.undefined,
         InvalidUserList: js.UndefOr[FileShareUserList] = js.undefined,
-        KMSEncrypted: js.UndefOr[boolean] = js.undefined,
+        KMSEncrypted: js.UndefOr[Boolean] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         LocationARN: js.UndefOr[LocationARN] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
@@ -4023,7 +4019,7 @@ package storagegateway {
   trait StorediSCSIVolume extends js.Object {
     var CreatedDate: js.UndefOr[CreatedDate]
     var KMSKey: js.UndefOr[KMSKey]
-    var PreservedExistingData: js.UndefOr[boolean]
+    var PreservedExistingData: js.UndefOr[Boolean]
     var SourceSnapshotId: js.UndefOr[SnapshotId]
     var TargetName: js.UndefOr[TargetName]
     var VolumeARN: js.UndefOr[VolumeARN]
@@ -4031,7 +4027,7 @@ package storagegateway {
     var VolumeDiskId: js.UndefOr[DiskId]
     var VolumeId: js.UndefOr[VolumeId]
     var VolumeProgress: js.UndefOr[DoubleObject]
-    var VolumeSizeInBytes: js.UndefOr[long]
+    var VolumeSizeInBytes: js.UndefOr[Double]
     var VolumeStatus: js.UndefOr[VolumeStatus]
     var VolumeType: js.UndefOr[VolumeType]
     var VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes]
@@ -4042,7 +4038,7 @@ package storagegateway {
     def apply(
         CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
-        PreservedExistingData: js.UndefOr[boolean] = js.undefined,
+        PreservedExistingData: js.UndefOr[Boolean] = js.undefined,
         SourceSnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         TargetName: js.UndefOr[TargetName] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
@@ -4050,7 +4046,7 @@ package storagegateway {
         VolumeDiskId: js.UndefOr[DiskId] = js.undefined,
         VolumeId: js.UndefOr[VolumeId] = js.undefined,
         VolumeProgress: js.UndefOr[DoubleObject] = js.undefined,
-        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[Double] = js.undefined,
         VolumeStatus: js.UndefOr[VolumeStatus] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined,
         VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
@@ -4498,13 +4494,13 @@ package storagegateway {
   @js.native
   trait UpdateGatewayInformationOutput extends js.Object {
     var GatewayARN: js.UndefOr[GatewayARN]
-    var GatewayName: js.UndefOr[string]
+    var GatewayName: js.UndefOr[String]
   }
 
   object UpdateGatewayInformationOutput {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
-        GatewayName: js.UndefOr[string] = js.undefined
+        GatewayName: js.UndefOr[String] = js.undefined
     ): UpdateGatewayInformationOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GatewayARN" -> GatewayARN.map { x =>
@@ -4930,7 +4926,7 @@ package storagegateway {
     var VolumeARN: js.UndefOr[VolumeARN]
     var VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus]
     var VolumeId: js.UndefOr[VolumeId]
-    var VolumeSizeInBytes: js.UndefOr[long]
+    var VolumeSizeInBytes: js.UndefOr[Double]
     var VolumeType: js.UndefOr[VolumeType]
   }
 
@@ -4941,7 +4937,7 @@ package storagegateway {
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
         VolumeAttachmentStatus: js.UndefOr[VolumeAttachmentStatus] = js.undefined,
         VolumeId: js.UndefOr[VolumeId] = js.undefined,
-        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[Double] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined
     ): VolumeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4978,17 +4974,17 @@ package storagegateway {
   @js.native
   trait VolumeRecoveryPointInfo extends js.Object {
     var VolumeARN: js.UndefOr[VolumeARN]
-    var VolumeRecoveryPointTime: js.UndefOr[string]
-    var VolumeSizeInBytes: js.UndefOr[long]
-    var VolumeUsageInBytes: js.UndefOr[long]
+    var VolumeRecoveryPointTime: js.UndefOr[String]
+    var VolumeSizeInBytes: js.UndefOr[Double]
+    var VolumeUsageInBytes: js.UndefOr[Double]
   }
 
   object VolumeRecoveryPointInfo {
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
-        VolumeRecoveryPointTime: js.UndefOr[string] = js.undefined,
-        VolumeSizeInBytes: js.UndefOr[long] = js.undefined,
-        VolumeUsageInBytes: js.UndefOr[long] = js.undefined
+        VolumeRecoveryPointTime: js.UndefOr[String] = js.undefined,
+        VolumeSizeInBytes: js.UndefOr[Double] = js.undefined,
+        VolumeUsageInBytes: js.UndefOr[Double] = js.undefined
     ): VolumeRecoveryPointInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "VolumeARN" -> VolumeARN.map { x =>
@@ -5014,19 +5010,19 @@ package storagegateway {
     */
   @js.native
   trait VolumeiSCSIAttributes extends js.Object {
-    var ChapEnabled: js.UndefOr[boolean]
+    var ChapEnabled: js.UndefOr[Boolean]
     var LunNumber: js.UndefOr[PositiveIntObject]
     var NetworkInterfaceId: js.UndefOr[NetworkInterfaceId]
-    var NetworkInterfacePort: js.UndefOr[integer]
+    var NetworkInterfacePort: js.UndefOr[Int]
     var TargetARN: js.UndefOr[TargetARN]
   }
 
   object VolumeiSCSIAttributes {
     def apply(
-        ChapEnabled: js.UndefOr[boolean] = js.undefined,
+        ChapEnabled: js.UndefOr[Boolean] = js.undefined,
         LunNumber: js.UndefOr[PositiveIntObject] = js.undefined,
         NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-        NetworkInterfacePort: js.UndefOr[integer] = js.undefined,
+        NetworkInterfacePort: js.UndefOr[Int] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
     ): VolumeiSCSIAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](

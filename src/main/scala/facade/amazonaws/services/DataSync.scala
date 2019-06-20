@@ -49,8 +49,6 @@ package object datasync {
   type Time                    = js.Date
   type Uid                     = String
   type VerifyMode              = String
-  type long                    = Double
-  type string                  = String
 }
 
 package datasync {
@@ -738,11 +736,11 @@ package datasync {
 
   @js.native
   trait DescribeTaskExecutionResponse extends js.Object {
-    var BytesTransferred: js.UndefOr[long]
-    var BytesWritten: js.UndefOr[long]
-    var EstimatedBytesToTransfer: js.UndefOr[long]
-    var EstimatedFilesToTransfer: js.UndefOr[long]
-    var FilesTransferred: js.UndefOr[long]
+    var BytesTransferred: js.UndefOr[Double]
+    var BytesWritten: js.UndefOr[Double]
+    var EstimatedBytesToTransfer: js.UndefOr[Double]
+    var EstimatedFilesToTransfer: js.UndefOr[Double]
+    var FilesTransferred: js.UndefOr[Double]
     var Options: js.UndefOr[Options]
     var Result: js.UndefOr[TaskExecutionResultDetail]
     var StartTime: js.UndefOr[Time]
@@ -752,11 +750,11 @@ package datasync {
 
   object DescribeTaskExecutionResponse {
     def apply(
-        BytesTransferred: js.UndefOr[long] = js.undefined,
-        BytesWritten: js.UndefOr[long] = js.undefined,
-        EstimatedBytesToTransfer: js.UndefOr[long] = js.undefined,
-        EstimatedFilesToTransfer: js.UndefOr[long] = js.undefined,
-        FilesTransferred: js.UndefOr[long] = js.undefined,
+        BytesTransferred: js.UndefOr[Double] = js.undefined,
+        BytesWritten: js.UndefOr[Double] = js.undefined,
+        EstimatedBytesToTransfer: js.UndefOr[Double] = js.undefined,
+        EstimatedFilesToTransfer: js.UndefOr[Double] = js.undefined,
+        FilesTransferred: js.UndefOr[Double] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         Result: js.UndefOr[TaskExecutionResultDetail] = js.undefined,
         StartTime: js.UndefOr[Time] = js.undefined,
@@ -823,8 +821,8 @@ package datasync {
     var CreationTime: js.UndefOr[Time]
     var CurrentTaskExecutionArn: js.UndefOr[TaskExecutionArn]
     var DestinationLocationArn: js.UndefOr[LocationArn]
-    var ErrorCode: js.UndefOr[string]
-    var ErrorDetail: js.UndefOr[string]
+    var ErrorCode: js.UndefOr[String]
+    var ErrorDetail: js.UndefOr[String]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var SourceLocationArn: js.UndefOr[LocationArn]
@@ -838,8 +836,8 @@ package datasync {
         CreationTime: js.UndefOr[Time] = js.undefined,
         CurrentTaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined,
         DestinationLocationArn: js.UndefOr[LocationArn] = js.undefined,
-        ErrorCode: js.UndefOr[string] = js.undefined,
-        ErrorDetail: js.UndefOr[string] = js.undefined,
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        ErrorDetail: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         SourceLocationArn: js.UndefOr[LocationArn] = js.undefined,
@@ -1472,8 +1470,8 @@ package datasync {
     */
   @js.native
   trait TaskExecutionResultDetail extends js.Object {
-    var ErrorCode: js.UndefOr[string]
-    var ErrorDetail: js.UndefOr[string]
+    var ErrorCode: js.UndefOr[String]
+    var ErrorDetail: js.UndefOr[String]
     var PrepareDuration: js.UndefOr[Duration]
     var PrepareStatus: js.UndefOr[PhaseStatus]
     var TransferDuration: js.UndefOr[Duration]
@@ -1484,8 +1482,8 @@ package datasync {
 
   object TaskExecutionResultDetail {
     def apply(
-        ErrorCode: js.UndefOr[string] = js.undefined,
-        ErrorDetail: js.UndefOr[string] = js.undefined,
+        ErrorCode: js.UndefOr[String] = js.undefined,
+        ErrorDetail: js.UndefOr[String] = js.undefined,
         PrepareDuration: js.UndefOr[Duration] = js.undefined,
         PrepareStatus: js.UndefOr[PhaseStatus] = js.undefined,
         TransferDuration: js.UndefOr[Duration] = js.undefined,

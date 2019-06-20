@@ -20,7 +20,6 @@ package object datapipeline {
   type ValidationWarnings      = js.Array[ValidationWarning]
   type attributeNameString     = String
   type attributeValueString    = String
-  type boolean                 = Boolean
   type cancelActive            = Boolean
   type errorMessage            = String
   type fieldList               = js.Array[Field]
@@ -30,8 +29,7 @@ package object datapipeline {
   type idList                  = js.Array[id]
   type longString              = String
   type pipelineList            = js.Array[PipelineIdName]
-  type string                  = String
-  type stringList              = js.Array[string]
+  type stringList              = js.Array[String]
   type tagKey                  = String
   type tagList                 = js.Array[Tag]
   type tagValue                = String
@@ -162,7 +160,7 @@ package datapipeline {
   trait CreatePipelineInput extends js.Object {
     var name: id
     var uniqueId: id
-    var description: js.UndefOr[string]
+    var description: js.UndefOr[String]
     var tags: js.UndefOr[tagList]
   }
 
@@ -170,7 +168,7 @@ package datapipeline {
     def apply(
         name: id,
         uniqueId: id,
-        description: js.UndefOr[string] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): CreatePipelineInput = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -276,16 +274,16 @@ package datapipeline {
   trait DescribeObjectsInput extends js.Object {
     var objectIds: idList
     var pipelineId: id
-    var evaluateExpressions: js.UndefOr[boolean]
-    var marker: js.UndefOr[string]
+    var evaluateExpressions: js.UndefOr[Boolean]
+    var marker: js.UndefOr[String]
   }
 
   object DescribeObjectsInput {
     def apply(
         objectIds: idList,
         pipelineId: id,
-        evaluateExpressions: js.UndefOr[boolean] = js.undefined,
-        marker: js.UndefOr[string] = js.undefined
+        evaluateExpressions: js.UndefOr[Boolean] = js.undefined,
+        marker: js.UndefOr[String] = js.undefined
     ): DescribeObjectsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "objectIds"  -> objectIds.asInstanceOf[js.Any],
@@ -308,15 +306,15 @@ package datapipeline {
   @js.native
   trait DescribeObjectsOutput extends js.Object {
     var pipelineObjects: PipelineObjectList
-    var hasMoreResults: js.UndefOr[boolean]
-    var marker: js.UndefOr[string]
+    var hasMoreResults: js.UndefOr[Boolean]
+    var marker: js.UndefOr[String]
   }
 
   object DescribeObjectsOutput {
     def apply(
         pipelineObjects: PipelineObjectList,
-        hasMoreResults: js.UndefOr[boolean] = js.undefined,
-        marker: js.UndefOr[string] = js.undefined
+        hasMoreResults: js.UndefOr[Boolean] = js.undefined,
+        marker: js.UndefOr[String] = js.undefined
     ): DescribeObjectsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any],
@@ -454,13 +452,13 @@ package datapipeline {
   @js.native
   trait GetPipelineDefinitionInput extends js.Object {
     var pipelineId: id
-    var version: js.UndefOr[string]
+    var version: js.UndefOr[String]
   }
 
   object GetPipelineDefinitionInput {
     def apply(
         pipelineId: id,
-        version: js.UndefOr[string] = js.undefined
+        version: js.UndefOr[String] = js.undefined
     ): GetPipelineDefinitionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
@@ -511,14 +509,14 @@ package datapipeline {
     */
   @js.native
   trait InstanceIdentity extends js.Object {
-    var document: js.UndefOr[string]
-    var signature: js.UndefOr[string]
+    var document: js.UndefOr[String]
+    var signature: js.UndefOr[String]
   }
 
   object InstanceIdentity {
     def apply(
-        document: js.UndefOr[string] = js.undefined,
-        signature: js.UndefOr[string] = js.undefined
+        document: js.UndefOr[String] = js.undefined,
+        signature: js.UndefOr[String] = js.undefined
     ): InstanceIdentity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "document" -> document.map { x =>
@@ -554,12 +552,12 @@ package datapipeline {
     */
   @js.native
   trait ListPipelinesInput extends js.Object {
-    var marker: js.UndefOr[string]
+    var marker: js.UndefOr[String]
   }
 
   object ListPipelinesInput {
     def apply(
-        marker: js.UndefOr[string] = js.undefined
+        marker: js.UndefOr[String] = js.undefined
     ): ListPipelinesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "marker" -> marker.map { x =>
@@ -577,15 +575,15 @@ package datapipeline {
   @js.native
   trait ListPipelinesOutput extends js.Object {
     var pipelineIdList: pipelineList
-    var hasMoreResults: js.UndefOr[boolean]
-    var marker: js.UndefOr[string]
+    var hasMoreResults: js.UndefOr[Boolean]
+    var marker: js.UndefOr[String]
   }
 
   object ListPipelinesOutput {
     def apply(
         pipelineIdList: pipelineList,
-        hasMoreResults: js.UndefOr[boolean] = js.undefined,
-        marker: js.UndefOr[string] = js.undefined
+        hasMoreResults: js.UndefOr[Boolean] = js.undefined,
+        marker: js.UndefOr[String] = js.undefined
     ): ListPipelinesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "pipelineIdList" -> pipelineIdList.asInstanceOf[js.Any],
@@ -723,7 +721,7 @@ package datapipeline {
     var fields: fieldList
     var name: id
     var pipelineId: id
-    var description: js.UndefOr[string]
+    var description: js.UndefOr[String]
     var tags: js.UndefOr[tagList]
   }
 
@@ -732,7 +730,7 @@ package datapipeline {
         fields: fieldList,
         name: id,
         pipelineId: id,
-        description: js.UndefOr[string] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): PipelineDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -817,14 +815,14 @@ package datapipeline {
     */
   @js.native
   trait PollForTaskInput extends js.Object {
-    var workerGroup: string
+    var workerGroup: String
     var hostname: js.UndefOr[id]
     var instanceIdentity: js.UndefOr[InstanceIdentity]
   }
 
   object PollForTaskInput {
     def apply(
-        workerGroup: string,
+        workerGroup: String,
         hostname: js.UndefOr[id] = js.undefined,
         instanceIdentity: js.UndefOr[InstanceIdentity] = js.undefined
     ): PollForTaskInput = {
@@ -902,14 +900,14 @@ package datapipeline {
     */
   @js.native
   trait PutPipelineDefinitionOutput extends js.Object {
-    var errored: boolean
+    var errored: Boolean
     var validationErrors: js.UndefOr[ValidationErrors]
     var validationWarnings: js.UndefOr[ValidationWarnings]
   }
 
   object PutPipelineDefinitionOutput {
     def apply(
-        errored: boolean,
+        errored: Boolean,
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
         validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined
     ): PutPipelineDefinitionOutput = {
@@ -955,18 +953,18 @@ package datapipeline {
   @js.native
   trait QueryObjectsInput extends js.Object {
     var pipelineId: id
-    var sphere: string
+    var sphere: String
     var limit: js.UndefOr[Int]
-    var marker: js.UndefOr[string]
+    var marker: js.UndefOr[String]
     var query: js.UndefOr[Query]
   }
 
   object QueryObjectsInput {
     def apply(
         pipelineId: id,
-        sphere: string,
+        sphere: String,
         limit: js.UndefOr[Int] = js.undefined,
-        marker: js.UndefOr[string] = js.undefined,
+        marker: js.UndefOr[String] = js.undefined,
         query: js.UndefOr[Query] = js.undefined
     ): QueryObjectsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -992,16 +990,16 @@ package datapipeline {
     */
   @js.native
   trait QueryObjectsOutput extends js.Object {
-    var hasMoreResults: js.UndefOr[boolean]
+    var hasMoreResults: js.UndefOr[Boolean]
     var ids: js.UndefOr[idList]
-    var marker: js.UndefOr[string]
+    var marker: js.UndefOr[String]
   }
 
   object QueryObjectsOutput {
     def apply(
-        hasMoreResults: js.UndefOr[boolean] = js.undefined,
+        hasMoreResults: js.UndefOr[Boolean] = js.undefined,
         ids: js.UndefOr[idList] = js.undefined,
-        marker: js.UndefOr[string] = js.undefined
+        marker: js.UndefOr[String] = js.undefined
     ): QueryObjectsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "hasMoreResults" -> hasMoreResults.map { x =>
@@ -1088,12 +1086,12 @@ package datapipeline {
     */
   @js.native
   trait ReportTaskProgressOutput extends js.Object {
-    var canceled: boolean
+    var canceled: Boolean
   }
 
   object ReportTaskProgressOutput {
     def apply(
-        canceled: boolean
+        canceled: Boolean
     ): ReportTaskProgressOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "canceled" -> canceled.asInstanceOf[js.Any]
@@ -1110,14 +1108,14 @@ package datapipeline {
   trait ReportTaskRunnerHeartbeatInput extends js.Object {
     var taskrunnerId: id
     var hostname: js.UndefOr[id]
-    var workerGroup: js.UndefOr[string]
+    var workerGroup: js.UndefOr[String]
   }
 
   object ReportTaskRunnerHeartbeatInput {
     def apply(
         taskrunnerId: id,
         hostname: js.UndefOr[id] = js.undefined,
-        workerGroup: js.UndefOr[string] = js.undefined
+        workerGroup: js.UndefOr[String] = js.undefined
     ): ReportTaskRunnerHeartbeatInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "taskrunnerId" -> taskrunnerId.asInstanceOf[js.Any],
@@ -1138,12 +1136,12 @@ package datapipeline {
     */
   @js.native
   trait ReportTaskRunnerHeartbeatOutput extends js.Object {
-    var terminate: boolean
+    var terminate: Boolean
   }
 
   object ReportTaskRunnerHeartbeatOutput {
     def apply(
-        terminate: boolean
+        terminate: Boolean
     ): ReportTaskRunnerHeartbeatOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "terminate" -> terminate.asInstanceOf[js.Any]
@@ -1158,13 +1156,13 @@ package datapipeline {
     */
   @js.native
   trait Selector extends js.Object {
-    var fieldName: js.UndefOr[string]
+    var fieldName: js.UndefOr[String]
     var operator: js.UndefOr[Operator]
   }
 
   object Selector {
     def apply(
-        fieldName: js.UndefOr[string] = js.undefined,
+        fieldName: js.UndefOr[String] = js.undefined,
         operator: js.UndefOr[Operator] = js.undefined
     ): Selector = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1187,14 +1185,14 @@ package datapipeline {
   trait SetStatusInput extends js.Object {
     var objectIds: idList
     var pipelineId: id
-    var status: string
+    var status: String
   }
 
   object SetStatusInput {
     def apply(
         objectIds: idList,
         pipelineId: id,
-        status: string
+        status: String
     ): SetStatusInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "objectIds"  -> objectIds.asInstanceOf[js.Any],
@@ -1213,18 +1211,18 @@ package datapipeline {
   trait SetTaskStatusInput extends js.Object {
     var taskId: taskId
     var taskStatus: TaskStatus
-    var errorId: js.UndefOr[string]
+    var errorId: js.UndefOr[String]
     var errorMessage: js.UndefOr[errorMessage]
-    var errorStackTrace: js.UndefOr[string]
+    var errorStackTrace: js.UndefOr[String]
   }
 
   object SetTaskStatusInput {
     def apply(
         taskId: taskId,
         taskStatus: TaskStatus,
-        errorId: js.UndefOr[string] = js.undefined,
+        errorId: js.UndefOr[String] = js.undefined,
         errorMessage: js.UndefOr[errorMessage] = js.undefined,
-        errorStackTrace: js.UndefOr[string] = js.undefined
+        errorStackTrace: js.UndefOr[String] = js.undefined
     ): SetTaskStatusInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "taskId"     -> taskId.asInstanceOf[js.Any],
@@ -1374,14 +1372,14 @@ package datapipeline {
     */
   @js.native
   trait ValidatePipelineDefinitionOutput extends js.Object {
-    var errored: boolean
+    var errored: Boolean
     var validationErrors: js.UndefOr[ValidationErrors]
     var validationWarnings: js.UndefOr[ValidationWarnings]
   }
 
   object ValidatePipelineDefinitionOutput {
     def apply(
-        errored: boolean,
+        errored: Boolean,
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
         validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined
     ): ValidatePipelineDefinitionOutput = {
