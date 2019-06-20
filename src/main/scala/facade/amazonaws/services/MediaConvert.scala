@@ -19,6 +19,7 @@ package object mediaconvert {
   type Ac3DynamicRangeCompressionProfile           = String
   type Ac3LfeFilter                                = String
   type Ac3MetadataControl                          = String
+  type AccelerationMode                            = String
   type AfdSignaling                                = String
   type AntiAlias                                   = String
   type AudioCodec                                  = String
@@ -88,6 +89,7 @@ package object mediaconvert {
   type EmbeddedConvert608To708                     = String
   type F4vMoovPlacement                            = String
   type FileSourceConvert608To708                   = String
+  type FontScript                                  = String
   type H264AdaptiveQuantization                    = String
   type H264CodecLevel                              = String
   type H264CodecProfile                            = String
@@ -147,6 +149,7 @@ package object mediaconvert {
   type HlsKeyProviderType                          = String
   type HlsManifestCompression                      = String
   type HlsManifestDurationFormat                   = String
+  type HlsOfflineEncrypted                         = String
   type HlsOutputSelection                          = String
   type HlsProgramDateTime                          = String
   type HlsSegmentControl                           = String
@@ -156,7 +159,9 @@ package object mediaconvert {
   type InputDenoiseFilter                          = String
   type InputFilterEnable                           = String
   type InputPsiControl                             = String
+  type InputRotate                                 = String
   type InputTimecodeSource                         = String
+  type JobPhase                                    = String
   type JobStatus                                   = String
   type JobTemplateListBy                           = String
   type LanguageCode                                = String
@@ -165,6 +170,7 @@ package object mediaconvert {
   type M2tsEbpAudioInterval                        = String
   type M2tsEbpPlacement                            = String
   type M2tsEsRateInPes                             = String
+  type M2tsForceTsVideoEbpOrder                    = String
   type M2tsNielsenId3                              = String
   type M2tsPcrControl                              = String
   type M2tsRateMode                                = String
@@ -222,8 +228,10 @@ package object mediaconvert {
   type RenewalType                                 = String
   type ReservationPlanStatus                       = String
   type RespondToAfd                                = String
+  type S3ServerSideEncryptionType                  = String
   type ScalingBehavior                             = String
   type SccDestinationFramerate                     = String
+  type StatusUpdateInterval                        = String
   type TimecodeBurninPosition                      = String
   type TimecodeSource                              = String
   type TimedMetadata                               = String
@@ -251,6 +259,7 @@ package object mediaconvert {
   type __integerMin0Max255                         = Int
   type __integerMin0Max3                           = Int
   type __integerMin0Max30                          = Int
+  type __integerMin0Max30000                       = Int
   type __integerMin0Max3600                        = Int
   type __integerMin0Max47185920                    = Int
   type __integerMin0Max500                         = Int
@@ -333,6 +342,7 @@ package object mediaconvert {
   type __listOf__stringMin1                        = js.Array[__stringMin1]
   type __listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12 =
     js.Array[__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
+  type __listOf__stringPatternS3ASSETMAPXml                              = js.Array[__stringPatternS3ASSETMAPXml]
   type __mapOfAudioSelector                                              = js.Dictionary[AudioSelector]
   type __mapOfAudioSelectorGroup                                         = js.Dictionary[AudioSelectorGroup]
   type __mapOfCaptionSelector                                            = js.Dictionary[CaptionSelector]
@@ -359,17 +369,22 @@ package object mediaconvert {
   type __stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12               = String
   type __stringPatternAZaZ0902                                           = String
   type __stringPatternAZaZ0932                                           = String
-  type __stringPatternArnAwsAcm                                          = String
-  type __stringPatternDD                                                 = String
-  type __stringPatternHttps                                              = String
-  type __stringPatternIdentityAZaZ26AZaZ09163                            = String
-  type __stringPatternS3                                                 = String
-  type __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MM =
+  type __stringPatternArnAwsUsGovAcm                                     = String
+  type __stringPatternArnAwsUsGovKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912 =
     String
+  type __stringPatternDD                      = String
+  type __stringPatternHttps                   = String
+  type __stringPatternIdentityAZaZ26AZaZ09163 = String
+  type __stringPatternS3                      = String
+  type __stringPatternS3ASSETMAPXml           = String
   type __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMAAAACCAAIIFFFFMMPP2AACC3EECC3DDTTSSEE =
     String
-  type __stringPatternWS = String
-  type __timestampUnix   = js.Date
+  type __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL =
+    String
+  type __stringPatternSNManifestConfirmConditionNotificationNS = String
+  type __stringPatternSNSignalProcessingNotificationNS         = String
+  type __stringPatternWS                                       = String
+  type __timestampUnix                                         = js.Date
 }
 
 package mediaconvert {
@@ -477,15 +492,17 @@ package mediaconvert {
   }
 
   object AacSettings {
-    def apply(AudioDescriptionBroadcasterMix: js.UndefOr[AacAudioDescriptionBroadcasterMix] = js.undefined,
-              Bitrate: js.UndefOr[__integerMin6000Max1024000] = js.undefined,
-              CodecProfile: js.UndefOr[AacCodecProfile] = js.undefined,
-              CodingMode: js.UndefOr[AacCodingMode] = js.undefined,
-              RateControlMode: js.UndefOr[AacRateControlMode] = js.undefined,
-              RawFormat: js.UndefOr[AacRawFormat] = js.undefined,
-              SampleRate: js.UndefOr[__integerMin8000Max96000] = js.undefined,
-              Specification: js.UndefOr[AacSpecification] = js.undefined,
-              VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined): AacSettings = {
+    def apply(
+        AudioDescriptionBroadcasterMix: js.UndefOr[AacAudioDescriptionBroadcasterMix] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin6000Max1024000] = js.undefined,
+        CodecProfile: js.UndefOr[AacCodecProfile] = js.undefined,
+        CodingMode: js.UndefOr[AacCodingMode] = js.undefined,
+        RateControlMode: js.UndefOr[AacRateControlMode] = js.undefined,
+        RawFormat: js.UndefOr[AacRawFormat] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin8000Max96000] = js.undefined,
+        Specification: js.UndefOr[AacSpecification] = js.undefined,
+        VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined
+    ): AacSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioDescriptionBroadcasterMix" -> AudioDescriptionBroadcasterMix.map { x =>
           x.asInstanceOf[js.Any]
@@ -625,14 +642,16 @@ package mediaconvert {
   }
 
   object Ac3Settings {
-    def apply(Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
-              BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
-              CodingMode: js.UndefOr[Ac3CodingMode] = js.undefined,
-              Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
-              DynamicRangeCompressionProfile: js.UndefOr[Ac3DynamicRangeCompressionProfile] = js.undefined,
-              LfeFilter: js.UndefOr[Ac3LfeFilter] = js.undefined,
-              MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined,
-              SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined): Ac3Settings = {
+    def apply(
+        Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
+        BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
+        CodingMode: js.UndefOr[Ac3CodingMode] = js.undefined,
+        Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
+        DynamicRangeCompressionProfile: js.UndefOr[Ac3DynamicRangeCompressionProfile] = js.undefined,
+        LfeFilter: js.UndefOr[Ac3LfeFilter] = js.undefined,
+        MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined
+    ): Ac3Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bitrate" -> Bitrate.map { x =>
           x.asInstanceOf[js.Any]
@@ -665,7 +684,37 @@ package mediaconvert {
   }
 
   /**
-    * This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling  (AfdSignaling) to specify whether the service includes AFD values in the output video data  and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
+    * Acceleration configuration for the job.
+    */
+  object AccelerationModeEnum {
+    val DISABLED = "DISABLED"
+    val ENABLED  = "ENABLED"
+
+    val values = IndexedSeq(DISABLED, ENABLED)
+  }
+
+  /**
+    * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+    */
+  @js.native
+  trait AccelerationSettings extends js.Object {
+    var Mode: AccelerationMode
+  }
+
+  object AccelerationSettings {
+    def apply(
+        Mode: AccelerationMode
+    ): AccelerationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Mode" -> Mode.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccelerationSettings]
+    }
+  }
+
+  /**
+    * This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
     */
   object AfdSignalingEnum {
     val NONE  = "NONE"
@@ -686,9 +735,11 @@ package mediaconvert {
   }
 
   object AiffSettings {
-    def apply(BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
-              Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
-              SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined): AiffSettings = {
+    def apply(
+        BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined
+    ): AiffSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BitDepth" -> BitDepth.map { x =>
           x.asInstanceOf[js.Any]
@@ -714,18 +765,21 @@ package mediaconvert {
   }
 
   object AncillarySourceSettings {
-    def apply(SourceAncillaryChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined): AncillarySourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("SourceAncillaryChannelNumber" -> SourceAncillaryChannelNumber.map {
-        x =>
+    def apply(
+        SourceAncillaryChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
+    ): AncillarySourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceAncillaryChannelNumber" -> SourceAncillaryChannelNumber.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AncillarySourceSettings]
     }
   }
 
   /**
-    * Enable Anti-alias (AntiAlias) to enhance sharp edges in video output when your input resolution is much larger than your output resolution. Default is enabled.
+    * The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
     */
   object AntiAliasEnum {
     val DISABLED = "DISABLED"
@@ -740,9 +794,12 @@ package mediaconvert {
   }
 
   object AssociateCertificateRequest {
-    def apply(Arn: __string): AssociateCertificateRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: __string
+    ): AssociateCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateCertificateRequest]
     }
@@ -752,8 +809,10 @@ package mediaconvert {
   trait AssociateCertificateResponse extends js.Object {}
 
   object AssociateCertificateResponse {
-    def apply(): AssociateCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AssociateCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateCertificateResponse]
     }
@@ -789,13 +848,15 @@ package mediaconvert {
   }
 
   object AudioCodecSettings {
-    def apply(AacSettings: js.UndefOr[AacSettings] = js.undefined,
-              Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
-              AiffSettings: js.UndefOr[AiffSettings] = js.undefined,
-              Codec: js.UndefOr[AudioCodec] = js.undefined,
-              Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
-              Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
-              WavSettings: js.UndefOr[WavSettings] = js.undefined): AudioCodecSettings = {
+    def apply(
+        AacSettings: js.UndefOr[AacSettings] = js.undefined,
+        Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
+        AiffSettings: js.UndefOr[AiffSettings] = js.undefined,
+        Codec: js.UndefOr[AudioCodec] = js.undefined,
+        Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
+        Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
+        WavSettings: js.UndefOr[WavSettings] = js.undefined
+    ): AudioCodecSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AacSettings" -> AacSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -852,16 +913,18 @@ package mediaconvert {
   }
 
   object AudioDescription {
-    def apply(AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
-              AudioSourceName: js.UndefOr[__string] = js.undefined,
-              AudioType: js.UndefOr[__integerMin0Max255] = js.undefined,
-              AudioTypeControl: js.UndefOr[AudioTypeControl] = js.undefined,
-              CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
-              CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl] = js.undefined,
-              RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
-              StreamName: js.UndefOr[__stringPatternWS] = js.undefined): AudioDescription = {
+    def apply(
+        AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
+        AudioSourceName: js.UndefOr[__string] = js.undefined,
+        AudioType: js.UndefOr[__integerMin0Max255] = js.undefined,
+        AudioTypeControl: js.UndefOr[AudioTypeControl] = js.undefined,
+        CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
+        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageCodeControl: js.UndefOr[AudioLanguageCodeControl] = js.undefined,
+        RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
+        StreamName: js.UndefOr[__stringPatternWS] = js.undefined
+    ): AudioDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioNormalizationSettings" -> AudioNormalizationSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -963,12 +1026,14 @@ package mediaconvert {
   }
 
   object AudioNormalizationSettings {
-    def apply(Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined,
-              AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
-              CorrectionGateLevel: js.UndefOr[__integerMinNegative70Max0] = js.undefined,
-              LoudnessLogging: js.UndefOr[AudioNormalizationLoudnessLogging] = js.undefined,
-              PeakCalculation: js.UndefOr[AudioNormalizationPeakCalculation] = js.undefined,
-              TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined): AudioNormalizationSettings = {
+    def apply(
+        Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined,
+        AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
+        CorrectionGateLevel: js.UndefOr[__integerMinNegative70Max0] = js.undefined,
+        LoudnessLogging: js.UndefOr[AudioNormalizationLoudnessLogging] = js.undefined,
+        PeakCalculation: js.UndefOr[AudioNormalizationPeakCalculation] = js.undefined,
+        TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined
+    ): AudioNormalizationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Algorithm" -> Algorithm.map { x =>
           x.asInstanceOf[js.Any]
@@ -1074,10 +1139,14 @@ package mediaconvert {
   }
 
   object AudioSelectorGroup {
-    def apply(AudioSelectorNames: js.UndefOr[__listOf__stringMin1] = js.undefined): AudioSelectorGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("AudioSelectorNames" -> AudioSelectorNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AudioSelectorNames: js.UndefOr[__listOf__stringMin1] = js.undefined
+    ): AudioSelectorGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AudioSelectorNames" -> AudioSelectorNames.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AudioSelectorGroup]
     }
@@ -1113,10 +1182,14 @@ package mediaconvert {
   }
 
   object AvailBlanking {
-    def apply(AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNG] = js.undefined): AvailBlanking = {
-      val _fields = IndexedSeq[(String, js.Any)]("AvailBlankingImage" -> AvailBlankingImage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNG] = js.undefined
+    ): AvailBlanking = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AvailBlankingImage" -> AvailBlankingImage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailBlanking]
     }
@@ -1144,6 +1217,7 @@ package mediaconvert {
     var FontColor: js.UndefOr[BurninSubtitleFontColor]
     var FontOpacity: js.UndefOr[__integerMin0Max255]
     var FontResolution: js.UndefOr[__integerMin96Max600]
+    var FontScript: js.UndefOr[FontScript]
     var FontSize: js.UndefOr[__integerMin0Max96]
     var OutlineColor: js.UndefOr[BurninSubtitleOutlineColor]
     var OutlineSize: js.UndefOr[__integerMin0Max10]
@@ -1157,22 +1231,25 @@ package mediaconvert {
   }
 
   object BurninDestinationSettings {
-    def apply(Alignment: js.UndefOr[BurninSubtitleAlignment] = js.undefined,
-              BackgroundColor: js.UndefOr[BurninSubtitleBackgroundColor] = js.undefined,
-              BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              FontColor: js.UndefOr[BurninSubtitleFontColor] = js.undefined,
-              FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
-              FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
-              OutlineColor: js.UndefOr[BurninSubtitleOutlineColor] = js.undefined,
-              OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
-              ShadowColor: js.UndefOr[BurninSubtitleShadowColor] = js.undefined,
-              ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-              ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-              TeletextSpacing: js.UndefOr[BurninSubtitleTeletextSpacing] = js.undefined,
-              XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined): BurninDestinationSettings = {
+    def apply(
+        Alignment: js.UndefOr[BurninSubtitleAlignment] = js.undefined,
+        BackgroundColor: js.UndefOr[BurninSubtitleBackgroundColor] = js.undefined,
+        BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        FontColor: js.UndefOr[BurninSubtitleFontColor] = js.undefined,
+        FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+        FontScript: js.UndefOr[FontScript] = js.undefined,
+        FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
+        OutlineColor: js.UndefOr[BurninSubtitleOutlineColor] = js.undefined,
+        OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
+        ShadowColor: js.UndefOr[BurninSubtitleShadowColor] = js.undefined,
+        ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+        ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+        TeletextSpacing: js.UndefOr[BurninSubtitleTeletextSpacing] = js.undefined,
+        XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined
+    ): BurninDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Alignment" -> Alignment.map { x =>
           x.asInstanceOf[js.Any]
@@ -1190,6 +1267,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "FontResolution" -> FontResolution.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FontScript" -> FontScript.map { x =>
           x.asInstanceOf[js.Any]
         },
         "FontSize" -> FontSize.map { x =>
@@ -1306,8 +1386,12 @@ package mediaconvert {
   }
 
   object CancelJobRequest {
-    def apply(Id: __string): CancelJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: __string
+    ): CancelJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobRequest]
     }
@@ -1317,8 +1401,10 @@ package mediaconvert {
   trait CancelJobResponse extends js.Object {}
 
   object CancelJobResponse {
-    def apply(): CancelJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CancelJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelJobResponse]
     }
@@ -1337,11 +1423,13 @@ package mediaconvert {
   }
 
   object CaptionDescription {
-    def apply(CaptionSelectorName: js.UndefOr[__stringMin1] = js.undefined,
-              CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
-              DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LanguageDescription: js.UndefOr[__string] = js.undefined): CaptionDescription = {
+    def apply(
+        CaptionSelectorName: js.UndefOr[__stringMin1] = js.undefined,
+        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageDescription: js.UndefOr[__string] = js.undefined
+    ): CaptionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CaptionSelectorName" -> CaptionSelectorName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1376,10 +1464,12 @@ package mediaconvert {
   }
 
   object CaptionDescriptionPreset {
-    def apply(CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
-              DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LanguageDescription: js.UndefOr[__string] = js.undefined): CaptionDescriptionPreset = {
+    def apply(
+        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageDescription: js.UndefOr[__string] = js.undefined
+    ): CaptionDescriptionPreset = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomLanguageCode" -> CustomLanguageCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -1407,6 +1497,7 @@ package mediaconvert {
     var BurninDestinationSettings: js.UndefOr[BurninDestinationSettings]
     var DestinationType: js.UndefOr[CaptionDestinationType]
     var DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings]
+    var EmbeddedDestinationSettings: js.UndefOr[EmbeddedDestinationSettings]
     var SccDestinationSettings: js.UndefOr[SccDestinationSettings]
     var TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings]
     var TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings]
@@ -1417,6 +1508,7 @@ package mediaconvert {
         BurninDestinationSettings: js.UndefOr[BurninDestinationSettings] = js.undefined,
         DestinationType: js.UndefOr[CaptionDestinationType] = js.undefined,
         DvbSubDestinationSettings: js.UndefOr[DvbSubDestinationSettings] = js.undefined,
+        EmbeddedDestinationSettings: js.UndefOr[EmbeddedDestinationSettings] = js.undefined,
         SccDestinationSettings: js.UndefOr[SccDestinationSettings] = js.undefined,
         TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings] = js.undefined,
         TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined
@@ -1429,6 +1521,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "DvbSubDestinationSettings" -> DvbSubDestinationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EmbeddedDestinationSettings" -> EmbeddedDestinationSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "SccDestinationSettings" -> SccDestinationSettings.map { x =>
@@ -1447,7 +1542,7 @@ package mediaconvert {
   }
 
   /**
-    * Type of Caption output, including Burn-In, Embedded (with or without SCTE20), SCC, SMI, SRT, TTML, WebVTT, DVB-Sub, Teletext.
+    * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
     */
   object CaptionDestinationTypeEnum {
     val BURN_IN              = "BURN_IN"
@@ -1488,9 +1583,11 @@ package mediaconvert {
   }
 
   object CaptionSelector {
-    def apply(CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              SourceSettings: js.UndefOr[CaptionSourceSettings] = js.undefined): CaptionSelector = {
+    def apply(
+        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        SourceSettings: js.UndefOr[CaptionSourceSettings] = js.undefined
+    ): CaptionSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomLanguageCode" -> CustomLanguageCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -1518,15 +1615,19 @@ package mediaconvert {
     var FileSourceSettings: js.UndefOr[FileSourceSettings]
     var SourceType: js.UndefOr[CaptionSourceType]
     var TeletextSourceSettings: js.UndefOr[TeletextSourceSettings]
+    var TrackSourceSettings: js.UndefOr[TrackSourceSettings]
   }
 
   object CaptionSourceSettings {
-    def apply(AncillarySourceSettings: js.UndefOr[AncillarySourceSettings] = js.undefined,
-              DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings] = js.undefined,
-              EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings] = js.undefined,
-              FileSourceSettings: js.UndefOr[FileSourceSettings] = js.undefined,
-              SourceType: js.UndefOr[CaptionSourceType] = js.undefined,
-              TeletextSourceSettings: js.UndefOr[TeletextSourceSettings] = js.undefined): CaptionSourceSettings = {
+    def apply(
+        AncillarySourceSettings: js.UndefOr[AncillarySourceSettings] = js.undefined,
+        DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings] = js.undefined,
+        EmbeddedSourceSettings: js.UndefOr[EmbeddedSourceSettings] = js.undefined,
+        FileSourceSettings: js.UndefOr[FileSourceSettings] = js.undefined,
+        SourceType: js.UndefOr[CaptionSourceType] = js.undefined,
+        TeletextSourceSettings: js.UndefOr[TeletextSourceSettings] = js.undefined,
+        TrackSourceSettings: js.UndefOr[TrackSourceSettings] = js.undefined
+    ): CaptionSourceSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AncillarySourceSettings" -> AncillarySourceSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -1544,6 +1645,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "TeletextSourceSettings" -> TeletextSourceSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrackSourceSettings" -> TrackSourceSettings.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1567,8 +1671,9 @@ package mediaconvert {
     val SMI         = "SMI"
     val TELETEXT    = "TELETEXT"
     val NULL_SOURCE = "NULL_SOURCE"
+    val IMSC        = "IMSC"
 
-    val values = IndexedSeq(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE)
+    val values = IndexedSeq(ANCILLARY, DVB_SUB, EMBEDDED, SCTE20, SCC, TTML, STL, SRT, SMI, TELETEXT, NULL_SOURCE, IMSC)
   }
 
   /**
@@ -1580,10 +1685,14 @@ package mediaconvert {
   }
 
   object ChannelMapping {
-    def apply(OutputChannels: js.UndefOr[__listOfOutputChannelMapping] = js.undefined): ChannelMapping = {
-      val _fields = IndexedSeq[(String, js.Any)]("OutputChannels" -> OutputChannels.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OutputChannels: js.UndefOr[__listOfOutputChannelMapping] = js.undefined
+    ): ChannelMapping = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OutputChannels" -> OutputChannels.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelMapping]
     }
@@ -1622,11 +1731,13 @@ package mediaconvert {
   }
 
   object CmafEncryptionSettings {
-    def apply(ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
-              EncryptionMethod: js.UndefOr[CmafEncryptionType] = js.undefined,
-              InitializationVectorInManifest: js.UndefOr[CmafInitializationVectorInManifest] = js.undefined,
-              StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
-              Type: js.UndefOr[CmafKeyProviderType] = js.undefined): CmafEncryptionSettings = {
+    def apply(
+        ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
+        EncryptionMethod: js.UndefOr[CmafEncryptionType] = js.undefined,
+        InitializationVectorInManifest: js.UndefOr[CmafInitializationVectorInManifest] = js.undefined,
+        StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
+        Type: js.UndefOr[CmafKeyProviderType] = js.undefined
+    ): CmafEncryptionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConstantInitializationVector" -> ConstantInitializationVector.map { x =>
           x.asInstanceOf[js.Any]
@@ -1667,6 +1778,7 @@ package mediaconvert {
     var ClientCache: js.UndefOr[CmafClientCache]
     var CodecSpecification: js.UndefOr[CmafCodecSpecification]
     var Destination: js.UndefOr[__stringPatternS3]
+    var DestinationSettings: js.UndefOr[DestinationSettings]
     var Encryption: js.UndefOr[CmafEncryptionSettings]
     var FragmentLength: js.UndefOr[__integerMin1Max2147483647]
     var ManifestCompression: js.UndefOr[CmafManifestCompression]
@@ -1681,21 +1793,24 @@ package mediaconvert {
   }
 
   object CmafGroupSettings {
-    def apply(BaseUrl: js.UndefOr[__string] = js.undefined,
-              ClientCache: js.UndefOr[CmafClientCache] = js.undefined,
-              CodecSpecification: js.UndefOr[CmafCodecSpecification] = js.undefined,
-              Destination: js.UndefOr[__stringPatternS3] = js.undefined,
-              Encryption: js.UndefOr[CmafEncryptionSettings] = js.undefined,
-              FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              ManifestCompression: js.UndefOr[CmafManifestCompression] = js.undefined,
-              ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat] = js.undefined,
-              MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
-              SegmentControl: js.UndefOr[CmafSegmentControl] = js.undefined,
-              SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              StreamInfResolution: js.UndefOr[CmafStreamInfResolution] = js.undefined,
-              WriteDashManifest: js.UndefOr[CmafWriteDASHManifest] = js.undefined,
-              WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest] = js.undefined): CmafGroupSettings = {
+    def apply(
+        BaseUrl: js.UndefOr[__string] = js.undefined,
+        ClientCache: js.UndefOr[CmafClientCache] = js.undefined,
+        CodecSpecification: js.UndefOr[CmafCodecSpecification] = js.undefined,
+        Destination: js.UndefOr[__stringPatternS3] = js.undefined,
+        DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined,
+        Encryption: js.UndefOr[CmafEncryptionSettings] = js.undefined,
+        FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ManifestCompression: js.UndefOr[CmafManifestCompression] = js.undefined,
+        ManifestDurationFormat: js.UndefOr[CmafManifestDurationFormat] = js.undefined,
+        MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        MinFinalSegmentLength: js.UndefOr[__doubleMin0Max2147483647] = js.undefined,
+        SegmentControl: js.UndefOr[CmafSegmentControl] = js.undefined,
+        SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        StreamInfResolution: js.UndefOr[CmafStreamInfResolution] = js.undefined,
+        WriteDashManifest: js.UndefOr[CmafWriteDASHManifest] = js.undefined,
+        WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest] = js.undefined
+    ): CmafGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaseUrl" -> BaseUrl.map { x =>
           x.asInstanceOf[js.Any]
@@ -1707,6 +1822,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "Destination" -> Destination.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DestinationSettings" -> DestinationSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Encryption" -> Encryption.map { x =>
@@ -1841,12 +1959,14 @@ package mediaconvert {
   }
 
   object ColorCorrector {
-    def apply(Brightness: js.UndefOr[__integerMin1Max100] = js.undefined,
-              ColorSpaceConversion: js.UndefOr[ColorSpaceConversion] = js.undefined,
-              Contrast: js.UndefOr[__integerMin1Max100] = js.undefined,
-              Hdr10Metadata: js.UndefOr[Hdr10Metadata] = js.undefined,
-              Hue: js.UndefOr[__integerMinNegative180Max180] = js.undefined,
-              Saturation: js.UndefOr[__integerMin1Max100] = js.undefined): ColorCorrector = {
+    def apply(
+        Brightness: js.UndefOr[__integerMin1Max100] = js.undefined,
+        ColorSpaceConversion: js.UndefOr[ColorSpaceConversion] = js.undefined,
+        Contrast: js.UndefOr[__integerMin1Max100] = js.undefined,
+        Hdr10Metadata: js.UndefOr[Hdr10Metadata] = js.undefined,
+        Hue: js.UndefOr[__integerMinNegative180Max180] = js.undefined,
+        Saturation: js.UndefOr[__integerMin1Max100] = js.undefined
+    ): ColorCorrector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Brightness" -> Brightness.map { x =>
           x.asInstanceOf[js.Any]
@@ -1941,12 +2061,14 @@ package mediaconvert {
   }
 
   object ContainerSettings {
-    def apply(Container: js.UndefOr[ContainerType] = js.undefined,
-              F4vSettings: js.UndefOr[F4vSettings] = js.undefined,
-              M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined,
-              M3u8Settings: js.UndefOr[M3u8Settings] = js.undefined,
-              MovSettings: js.UndefOr[MovSettings] = js.undefined,
-              Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined): ContainerSettings = {
+    def apply(
+        Container: js.UndefOr[ContainerType] = js.undefined,
+        F4vSettings: js.UndefOr[F4vSettings] = js.undefined,
+        M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined,
+        M3u8Settings: js.UndefOr[M3u8Settings] = js.undefined,
+        MovSettings: js.UndefOr[MovSettings] = js.undefined,
+        Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined
+    ): ContainerSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Container" -> Container.map { x =>
           x.asInstanceOf[js.Any]
@@ -1994,24 +2116,33 @@ package mediaconvert {
   trait CreateJobRequest extends js.Object {
     var Role: __string
     var Settings: JobSettings
+    var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
     var ClientRequestToken: js.UndefOr[__string]
     var JobTemplate: js.UndefOr[__string]
     var Queue: js.UndefOr[__string]
+    var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var UserMetadata: js.UndefOr[__mapOf__string]
   }
 
   object CreateJobRequest {
-    def apply(Role: __string,
-              Settings: JobSettings,
-              BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
-              ClientRequestToken: js.UndefOr[__string] = js.undefined,
-              JobTemplate: js.UndefOr[__string] = js.undefined,
-              Queue: js.UndefOr[__string] = js.undefined,
-              UserMetadata: js.UndefOr[__mapOf__string] = js.undefined): CreateJobRequest = {
+    def apply(
+        Role: __string,
+        Settings: JobSettings,
+        AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
+        BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
+        ClientRequestToken: js.UndefOr[__string] = js.undefined,
+        JobTemplate: js.UndefOr[__string] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
+        UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
+    ): CreateJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Role"     -> Role.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any],
+        "AccelerationSettings" -> AccelerationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "BillingTagsSource" -> BillingTagsSource.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -2022,6 +2153,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "Queue" -> Queue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusUpdateInterval" -> StatusUpdateInterval.map { x =>
           x.asInstanceOf[js.Any]
         },
         "UserMetadata" -> UserMetadata.map { x =>
@@ -2039,10 +2173,14 @@ package mediaconvert {
   }
 
   object CreateJobResponse {
-    def apply(Job: js.UndefOr[Job] = js.undefined): CreateJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Job" -> Job.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Job: js.UndefOr[Job] = js.undefined
+    ): CreateJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Job" -> Job.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobResponse]
     }
@@ -2052,22 +2190,31 @@ package mediaconvert {
   trait CreateJobTemplateRequest extends js.Object {
     var Name: __string
     var Settings: JobTemplateSettings
+    var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var Queue: js.UndefOr[__string]
+    var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var Tags: js.UndefOr[__mapOf__string]
   }
 
   object CreateJobTemplateRequest {
-    def apply(Name: __string,
-              Settings: JobTemplateSettings,
-              Category: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              Queue: js.UndefOr[__string] = js.undefined,
-              Tags: js.UndefOr[__mapOf__string] = js.undefined): CreateJobTemplateRequest = {
+    def apply(
+        Name: __string,
+        Settings: JobTemplateSettings,
+        AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
+        Category: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
+        Tags: js.UndefOr[__mapOf__string] = js.undefined
+    ): CreateJobTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any],
+        "AccelerationSettings" -> AccelerationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Category" -> Category.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -2075,6 +2222,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "Queue" -> Queue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusUpdateInterval" -> StatusUpdateInterval.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Tags" -> Tags.map { x =>
@@ -2092,10 +2242,14 @@ package mediaconvert {
   }
 
   object CreateJobTemplateResponse {
-    def apply(JobTemplate: js.UndefOr[JobTemplate] = js.undefined): CreateJobTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobTemplate" -> JobTemplate.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobTemplate: js.UndefOr[JobTemplate] = js.undefined
+    ): CreateJobTemplateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobTemplate" -> JobTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateJobTemplateResponse]
     }
@@ -2111,11 +2265,13 @@ package mediaconvert {
   }
 
   object CreatePresetRequest {
-    def apply(Name: __string,
-              Settings: PresetSettings,
-              Category: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              Tags: js.UndefOr[__mapOf__string] = js.undefined): CreatePresetRequest = {
+    def apply(
+        Name: __string,
+        Settings: PresetSettings,
+        Category: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Tags: js.UndefOr[__mapOf__string] = js.undefined
+    ): CreatePresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any],
@@ -2140,10 +2296,14 @@ package mediaconvert {
   }
 
   object CreatePresetResponse {
-    def apply(Preset: js.UndefOr[Preset] = js.undefined): CreatePresetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Preset" -> Preset.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Preset: js.UndefOr[Preset] = js.undefined
+    ): CreatePresetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Preset" -> Preset.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePresetResponse]
     }
@@ -2159,11 +2319,13 @@ package mediaconvert {
   }
 
   object CreateQueueRequest {
-    def apply(Name: __string,
-              Description: js.UndefOr[__string] = js.undefined,
-              PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
-              ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
-              Tags: js.UndefOr[__mapOf__string] = js.undefined): CreateQueueRequest = {
+    def apply(
+        Name: __string,
+        Description: js.UndefOr[__string] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
+        Tags: js.UndefOr[__mapOf__string] = js.undefined
+    ): CreateQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x =>
@@ -2190,10 +2352,14 @@ package mediaconvert {
   }
 
   object CreateQueueResponse {
-    def apply(Queue: js.UndefOr[Queue] = js.undefined): CreateQueueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Queue" -> Queue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Queue: js.UndefOr[Queue] = js.undefined
+    ): CreateQueueResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Queue" -> Queue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQueueResponse]
     }
@@ -2208,10 +2374,14 @@ package mediaconvert {
   }
 
   object DashIsoEncryptionSettings {
-    def apply(SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined): DashIsoEncryptionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("SpekeKeyProvider" -> SpekeKeyProvider.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
+    ): DashIsoEncryptionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SpekeKeyProvider" -> SpekeKeyProvider.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashIsoEncryptionSettings]
     }
@@ -2224,6 +2394,7 @@ package mediaconvert {
   trait DashIsoGroupSettings extends js.Object {
     var BaseUrl: js.UndefOr[__string]
     var Destination: js.UndefOr[__stringPatternS3]
+    var DestinationSettings: js.UndefOr[DestinationSettings]
     var Encryption: js.UndefOr[DashIsoEncryptionSettings]
     var FragmentLength: js.UndefOr[__integerMin1Max2147483647]
     var HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance]
@@ -2234,21 +2405,26 @@ package mediaconvert {
   }
 
   object DashIsoGroupSettings {
-    def apply(BaseUrl: js.UndefOr[__string] = js.undefined,
-              Destination: js.UndefOr[__stringPatternS3] = js.undefined,
-              Encryption: js.UndefOr[DashIsoEncryptionSettings] = js.undefined,
-              FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance] = js.undefined,
-              MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              SegmentControl: js.UndefOr[DashIsoSegmentControl] = js.undefined,
-              SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] =
-                js.undefined): DashIsoGroupSettings = {
+    def apply(
+        BaseUrl: js.UndefOr[__string] = js.undefined,
+        Destination: js.UndefOr[__stringPatternS3] = js.undefined,
+        DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined,
+        Encryption: js.UndefOr[DashIsoEncryptionSettings] = js.undefined,
+        FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        HbbtvCompliance: js.UndefOr[DashIsoHbbtvCompliance] = js.undefined,
+        MinBufferTime: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        SegmentControl: js.UndefOr[DashIsoSegmentControl] = js.undefined,
+        SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] = js.undefined
+    ): DashIsoGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BaseUrl" -> BaseUrl.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destination" -> Destination.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DestinationSettings" -> DestinationSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Encryption" -> Encryption.map { x =>
@@ -2309,7 +2485,7 @@ package mediaconvert {
   }
 
   /**
-    * This specifies how the encrypted file needs to be decrypted.
+    * Specify the encryption mode that you used to encrypt your input files.
     */
   object DecryptionModeEnum {
     val AES_CTR = "AES_CTR"
@@ -2342,16 +2518,22 @@ package mediaconvert {
   }
 
   object Deinterlacer {
-    def apply(Algorithm: js.UndefOr[DeinterlaceAlgorithm] = js.undefined,
-              Control: js.UndefOr[DeinterlacerControl] = js.undefined,
-              Mode: js.UndefOr[DeinterlacerMode] = js.undefined): Deinterlacer = {
-      val _fields = IndexedSeq[(String, js.Any)]("Algorithm" -> Algorithm.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Control" -> Control.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Mode" -> Mode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Algorithm: js.UndefOr[DeinterlaceAlgorithm] = js.undefined,
+        Control: js.UndefOr[DeinterlacerControl] = js.undefined,
+        Mode: js.UndefOr[DeinterlacerMode] = js.undefined
+    ): Deinterlacer = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Algorithm" -> Algorithm.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Control" -> Control.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Mode" -> Mode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deinterlacer]
     }
@@ -2384,9 +2566,12 @@ package mediaconvert {
   }
 
   object DeleteJobTemplateRequest {
-    def apply(Name: __string): DeleteJobTemplateRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: __string
+    ): DeleteJobTemplateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobTemplateRequest]
     }
@@ -2396,8 +2581,10 @@ package mediaconvert {
   trait DeleteJobTemplateResponse extends js.Object {}
 
   object DeleteJobTemplateResponse {
-    def apply(): DeleteJobTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteJobTemplateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteJobTemplateResponse]
     }
@@ -2409,9 +2596,12 @@ package mediaconvert {
   }
 
   object DeletePresetRequest {
-    def apply(Name: __string): DeletePresetRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: __string
+    ): DeletePresetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePresetRequest]
     }
@@ -2421,8 +2611,10 @@ package mediaconvert {
   trait DeletePresetResponse extends js.Object {}
 
   object DeletePresetResponse {
-    def apply(): DeletePresetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeletePresetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePresetResponse]
     }
@@ -2434,9 +2626,12 @@ package mediaconvert {
   }
 
   object DeleteQueueRequest {
-    def apply(Name: __string): DeleteQueueRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: __string
+    ): DeleteQueueRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteQueueRequest]
     }
@@ -2446,8 +2641,10 @@ package mediaconvert {
   trait DeleteQueueResponse extends js.Object {}
 
   object DeleteQueueResponse {
-    def apply(): DeleteQueueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteQueueResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteQueueResponse]
     }
@@ -2474,9 +2671,11 @@ package mediaconvert {
   }
 
   object DescribeEndpointsRequest {
-    def apply(MaxResults: js.UndefOr[__integer] = js.undefined,
-              Mode: js.UndefOr[DescribeEndpointsMode] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): DescribeEndpointsRequest = {
+    def apply(
+        MaxResults: js.UndefOr[__integer] = js.undefined,
+        Mode: js.UndefOr[DescribeEndpointsMode] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): DescribeEndpointsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -2500,15 +2699,42 @@ package mediaconvert {
   }
 
   object DescribeEndpointsResponse {
-    def apply(Endpoints: js.UndefOr[__listOfEndpoint] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): DescribeEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Endpoints" -> Endpoints.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Endpoints: js.UndefOr[__listOfEndpoint] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): DescribeEndpointsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Endpoints" -> Endpoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointsResponse]
+    }
+  }
+
+  /**
+    * Settings associated with the destination. Will vary based on the type of destination
+    */
+  @js.native
+  trait DestinationSettings extends js.Object {
+    var S3Settings: js.UndefOr[S3DestinationSettings]
+  }
+
+  object DestinationSettings {
+    def apply(
+        S3Settings: js.UndefOr[S3DestinationSettings] = js.undefined
+    ): DestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3Settings" -> S3Settings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DestinationSettings]
     }
   }
 
@@ -2518,9 +2744,12 @@ package mediaconvert {
   }
 
   object DisassociateCertificateRequest {
-    def apply(Arn: __string): DisassociateCertificateRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: __string
+    ): DisassociateCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateCertificateRequest]
     }
@@ -2530,8 +2759,10 @@ package mediaconvert {
   trait DisassociateCertificateResponse extends js.Object {}
 
   object DisassociateCertificateResponse {
-    def apply(): DisassociateCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateCertificateResponse]
     }
@@ -2558,9 +2789,11 @@ package mediaconvert {
   }
 
   object DvbNitSettings {
-    def apply(NetworkId: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              NetworkName: js.UndefOr[__stringMin1Max256] = js.undefined,
-              NitInterval: js.UndefOr[__integerMin25Max10000] = js.undefined): DvbNitSettings = {
+    def apply(
+        NetworkId: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        NetworkName: js.UndefOr[__stringMin1Max256] = js.undefined,
+        NitInterval: js.UndefOr[__integerMin25Max10000] = js.undefined
+    ): DvbNitSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NetworkId" -> NetworkId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2589,10 +2822,12 @@ package mediaconvert {
   }
 
   object DvbSdtSettings {
-    def apply(OutputSdt: js.UndefOr[OutputSdt] = js.undefined,
-              SdtInterval: js.UndefOr[__integerMin25Max2000] = js.undefined,
-              ServiceName: js.UndefOr[__stringMin1Max256] = js.undefined,
-              ServiceProviderName: js.UndefOr[__stringMin1Max256] = js.undefined): DvbSdtSettings = {
+    def apply(
+        OutputSdt: js.UndefOr[OutputSdt] = js.undefined,
+        SdtInterval: js.UndefOr[__integerMin25Max2000] = js.undefined,
+        ServiceName: js.UndefOr[__stringMin1Max256] = js.undefined,
+        ServiceProviderName: js.UndefOr[__stringMin1Max256] = js.undefined
+    ): DvbSdtSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OutputSdt" -> OutputSdt.map { x =>
           x.asInstanceOf[js.Any]
@@ -2623,6 +2858,7 @@ package mediaconvert {
     var FontColor: js.UndefOr[DvbSubtitleFontColor]
     var FontOpacity: js.UndefOr[__integerMin0Max255]
     var FontResolution: js.UndefOr[__integerMin96Max600]
+    var FontScript: js.UndefOr[FontScript]
     var FontSize: js.UndefOr[__integerMin0Max96]
     var OutlineColor: js.UndefOr[DvbSubtitleOutlineColor]
     var OutlineSize: js.UndefOr[__integerMin0Max10]
@@ -2636,22 +2872,25 @@ package mediaconvert {
   }
 
   object DvbSubDestinationSettings {
-    def apply(Alignment: js.UndefOr[DvbSubtitleAlignment] = js.undefined,
-              BackgroundColor: js.UndefOr[DvbSubtitleBackgroundColor] = js.undefined,
-              BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              FontColor: js.UndefOr[DvbSubtitleFontColor] = js.undefined,
-              FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
-              FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
-              OutlineColor: js.UndefOr[DvbSubtitleOutlineColor] = js.undefined,
-              OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
-              ShadowColor: js.UndefOr[DvbSubtitleShadowColor] = js.undefined,
-              ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
-              ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-              ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-              TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing] = js.undefined,
-              XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined): DvbSubDestinationSettings = {
+    def apply(
+        Alignment: js.UndefOr[DvbSubtitleAlignment] = js.undefined,
+        BackgroundColor: js.UndefOr[DvbSubtitleBackgroundColor] = js.undefined,
+        BackgroundOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        FontColor: js.UndefOr[DvbSubtitleFontColor] = js.undefined,
+        FontOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        FontResolution: js.UndefOr[__integerMin96Max600] = js.undefined,
+        FontScript: js.UndefOr[FontScript] = js.undefined,
+        FontSize: js.UndefOr[__integerMin0Max96] = js.undefined,
+        OutlineColor: js.UndefOr[DvbSubtitleOutlineColor] = js.undefined,
+        OutlineSize: js.UndefOr[__integerMin0Max10] = js.undefined,
+        ShadowColor: js.UndefOr[DvbSubtitleShadowColor] = js.undefined,
+        ShadowOpacity: js.UndefOr[__integerMin0Max255] = js.undefined,
+        ShadowXOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+        ShadowYOffset: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+        TeletextSpacing: js.UndefOr[DvbSubtitleTeletextSpacing] = js.undefined,
+        XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined
+    ): DvbSubDestinationSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Alignment" -> Alignment.map { x =>
           x.asInstanceOf[js.Any]
@@ -2669,6 +2908,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "FontResolution" -> FontResolution.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FontScript" -> FontScript.map { x =>
           x.asInstanceOf[js.Any]
         },
         "FontSize" -> FontSize.map { x =>
@@ -2716,10 +2958,14 @@ package mediaconvert {
   }
 
   object DvbSubSourceSettings {
-    def apply(Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined): DvbSubSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Pid" -> Pid.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined
+    ): DvbSubSourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Pid" -> Pid.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbSubSourceSettings]
     }
@@ -2806,10 +3052,14 @@ package mediaconvert {
   }
 
   object DvbTdtSettings {
-    def apply(TdtInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined): DvbTdtSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("TdtInterval" -> TdtInterval.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TdtInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined
+    ): DvbTdtSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TdtInterval" -> TdtInterval.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DvbTdtSettings]
     }
@@ -2966,27 +3216,29 @@ package mediaconvert {
   }
 
   object Eac3Settings {
-    def apply(AttenuationControl: js.UndefOr[Eac3AttenuationControl] = js.undefined,
-              Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
-              BitstreamMode: js.UndefOr[Eac3BitstreamMode] = js.undefined,
-              CodingMode: js.UndefOr[Eac3CodingMode] = js.undefined,
-              DcFilter: js.UndefOr[Eac3DcFilter] = js.undefined,
-              Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
-              DynamicRangeCompressionLine: js.UndefOr[Eac3DynamicRangeCompressionLine] = js.undefined,
-              DynamicRangeCompressionRf: js.UndefOr[Eac3DynamicRangeCompressionRf] = js.undefined,
-              LfeControl: js.UndefOr[Eac3LfeControl] = js.undefined,
-              LfeFilter: js.UndefOr[Eac3LfeFilter] = js.undefined,
-              LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
-              LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
-              LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
-              LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
-              MetadataControl: js.UndefOr[Eac3MetadataControl] = js.undefined,
-              PassthroughControl: js.UndefOr[Eac3PassthroughControl] = js.undefined,
-              PhaseControl: js.UndefOr[Eac3PhaseControl] = js.undefined,
-              SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined,
-              StereoDownmix: js.UndefOr[Eac3StereoDownmix] = js.undefined,
-              SurroundExMode: js.UndefOr[Eac3SurroundExMode] = js.undefined,
-              SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined): Eac3Settings = {
+    def apply(
+        AttenuationControl: js.UndefOr[Eac3AttenuationControl] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
+        BitstreamMode: js.UndefOr[Eac3BitstreamMode] = js.undefined,
+        CodingMode: js.UndefOr[Eac3CodingMode] = js.undefined,
+        DcFilter: js.UndefOr[Eac3DcFilter] = js.undefined,
+        Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
+        DynamicRangeCompressionLine: js.UndefOr[Eac3DynamicRangeCompressionLine] = js.undefined,
+        DynamicRangeCompressionRf: js.UndefOr[Eac3DynamicRangeCompressionRf] = js.undefined,
+        LfeControl: js.UndefOr[Eac3LfeControl] = js.undefined,
+        LfeFilter: js.UndefOr[Eac3LfeFilter] = js.undefined,
+        LoRoCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
+        LoRoSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
+        LtRtCenterMixLevel: js.UndefOr[__doubleMinNegative60Max3] = js.undefined,
+        LtRtSurroundMixLevel: js.UndefOr[__doubleMinNegative60MaxNegative1] = js.undefined,
+        MetadataControl: js.UndefOr[Eac3MetadataControl] = js.undefined,
+        PassthroughControl: js.UndefOr[Eac3PassthroughControl] = js.undefined,
+        PhaseControl: js.UndefOr[Eac3PhaseControl] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined,
+        StereoDownmix: js.UndefOr[Eac3StereoDownmix] = js.undefined,
+        SurroundExMode: js.UndefOr[Eac3SurroundExMode] = js.undefined,
+        SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined
+    ): Eac3Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttenuationControl" -> AttenuationControl.map { x =>
           x.asInstanceOf[js.Any]
@@ -3102,6 +3354,28 @@ package mediaconvert {
   }
 
   /**
+    * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+    */
+  @js.native
+  trait EmbeddedDestinationSettings extends js.Object {
+    var Destination608ChannelNumber: js.UndefOr[__integerMin1Max4]
+  }
+
+  object EmbeddedDestinationSettings {
+    def apply(
+        Destination608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
+    ): EmbeddedDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Destination608ChannelNumber" -> Destination608ChannelNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmbeddedDestinationSettings]
+    }
+  }
+
+  /**
     * Settings for embedded captions Source
     */
   @js.native
@@ -3112,9 +3386,11 @@ package mediaconvert {
   }
 
   object EmbeddedSourceSettings {
-    def apply(Convert608To708: js.UndefOr[EmbeddedConvert608To708] = js.undefined,
-              Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
-              Source608TrackNumber: js.UndefOr[__integerMin1Max1] = js.undefined): EmbeddedSourceSettings = {
+    def apply(
+        Convert608To708: js.UndefOr[EmbeddedConvert608To708] = js.undefined,
+        Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
+        Source608TrackNumber: js.UndefOr[__integerMin1Max1] = js.undefined
+    ): EmbeddedSourceSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Convert608To708" -> Convert608To708.map { x =>
           x.asInstanceOf[js.Any]
@@ -3140,12 +3416,92 @@ package mediaconvert {
   }
 
   object Endpoint {
-    def apply(Url: js.UndefOr[__string] = js.undefined): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)]("Url" -> Url.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Url: js.UndefOr[__string] = js.undefined
+    ): Endpoint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
+    }
+  }
+
+  /**
+    * ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025.
+    */
+  @js.native
+  trait EsamManifestConfirmConditionNotification extends js.Object {
+    var MccXml: js.UndefOr[__stringPatternSNManifestConfirmConditionNotificationNS]
+  }
+
+  object EsamManifestConfirmConditionNotification {
+    def apply(
+        MccXml: js.UndefOr[__stringPatternSNManifestConfirmConditionNotificationNS] = js.undefined
+    ): EsamManifestConfirmConditionNotification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MccXml" -> MccXml.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EsamManifestConfirmConditionNotification]
+    }
+  }
+
+  /**
+    * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
+    */
+  @js.native
+  trait EsamSettings extends js.Object {
+    var ManifestConfirmConditionNotification: js.UndefOr[EsamManifestConfirmConditionNotification]
+    var ResponseSignalPreroll: js.UndefOr[__integerMin0Max30000]
+    var SignalProcessingNotification: js.UndefOr[EsamSignalProcessingNotification]
+  }
+
+  object EsamSettings {
+    def apply(
+        ManifestConfirmConditionNotification: js.UndefOr[EsamManifestConfirmConditionNotification] = js.undefined,
+        ResponseSignalPreroll: js.UndefOr[__integerMin0Max30000] = js.undefined,
+        SignalProcessingNotification: js.UndefOr[EsamSignalProcessingNotification] = js.undefined
+    ): EsamSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ManifestConfirmConditionNotification" -> ManifestConfirmConditionNotification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseSignalPreroll" -> ResponseSignalPreroll.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SignalProcessingNotification" -> SignalProcessingNotification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EsamSettings]
+    }
+  }
+
+  /**
+    * ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025.
+    */
+  @js.native
+  trait EsamSignalProcessingNotification extends js.Object {
+    var SccXml: js.UndefOr[__stringPatternSNSignalProcessingNotificationNS]
+  }
+
+  object EsamSignalProcessingNotification {
+    def apply(
+        SccXml: js.UndefOr[__stringPatternSNSignalProcessingNotificationNS] = js.undefined
+    ): EsamSignalProcessingNotification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SccXml" -> SccXml.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EsamSignalProcessingNotification]
     }
   }
 
@@ -3168,10 +3524,14 @@ package mediaconvert {
   }
 
   object F4vSettings {
-    def apply(MoovPlacement: js.UndefOr[F4vMoovPlacement] = js.undefined): F4vSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("MoovPlacement" -> MoovPlacement.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MoovPlacement: js.UndefOr[F4vMoovPlacement] = js.undefined
+    ): F4vSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MoovPlacement" -> MoovPlacement.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[F4vSettings]
     }
@@ -3183,13 +3543,22 @@ package mediaconvert {
   @js.native
   trait FileGroupSettings extends js.Object {
     var Destination: js.UndefOr[__stringPatternS3]
+    var DestinationSettings: js.UndefOr[DestinationSettings]
   }
 
   object FileGroupSettings {
-    def apply(Destination: js.UndefOr[__stringPatternS3] = js.undefined): FileGroupSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Destination" -> Destination.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Destination: js.UndefOr[__stringPatternS3] = js.undefined,
+        DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined
+    ): FileGroupSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Destination" -> Destination.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DestinationSettings" -> DestinationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileGroupSettings]
     }
@@ -3216,9 +3585,11 @@ package mediaconvert {
   }
 
   object FileSourceSettings {
-    def apply(Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
-              SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI] = js.undefined,
-              TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined): FileSourceSettings = {
+    def apply(
+        Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
+        SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI] = js.undefined,
+        TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined
+    ): FileSourceSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Convert608To708" -> Convert608To708.map { x =>
           x.asInstanceOf[js.Any]
@@ -3236,6 +3607,17 @@ package mediaconvert {
   }
 
   /**
+    * Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset.
+    */
+  object FontScriptEnum {
+    val AUTOMATIC = "AUTOMATIC"
+    val HANS      = "HANS"
+    val HANT      = "HANT"
+
+    val values = IndexedSeq(AUTOMATIC, HANS, HANT)
+  }
+
+  /**
     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE.
     */
   @js.native
@@ -3247,10 +3629,12 @@ package mediaconvert {
   }
 
   object FrameCaptureSettings {
-    def apply(FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              MaxCaptures: js.UndefOr[__integerMin1Max10000000] = js.undefined,
-              Quality: js.UndefOr[__integerMin1Max100] = js.undefined): FrameCaptureSettings = {
+    def apply(
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        MaxCaptures: js.UndefOr[__integerMin1Max10000000] = js.undefined,
+        Quality: js.UndefOr[__integerMin1Max100] = js.undefined
+    ): FrameCaptureSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FramerateDenominator" -> FramerateDenominator.map { x =>
           x.asInstanceOf[js.Any]
@@ -3276,8 +3660,12 @@ package mediaconvert {
   }
 
   object GetJobRequest {
-    def apply(Id: __string): GetJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: __string
+    ): GetJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRequest]
     }
@@ -3289,10 +3677,14 @@ package mediaconvert {
   }
 
   object GetJobResponse {
-    def apply(Job: js.UndefOr[Job] = js.undefined): GetJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Job" -> Job.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Job: js.UndefOr[Job] = js.undefined
+    ): GetJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Job" -> Job.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobResponse]
     }
@@ -3304,9 +3696,12 @@ package mediaconvert {
   }
 
   object GetJobTemplateRequest {
-    def apply(Name: __string): GetJobTemplateRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: __string
+    ): GetJobTemplateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobTemplateRequest]
     }
@@ -3318,10 +3713,14 @@ package mediaconvert {
   }
 
   object GetJobTemplateResponse {
-    def apply(JobTemplate: js.UndefOr[JobTemplate] = js.undefined): GetJobTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobTemplate" -> JobTemplate.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobTemplate: js.UndefOr[JobTemplate] = js.undefined
+    ): GetJobTemplateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobTemplate" -> JobTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobTemplateResponse]
     }
@@ -3333,9 +3732,12 @@ package mediaconvert {
   }
 
   object GetPresetRequest {
-    def apply(Name: __string): GetPresetRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: __string
+    ): GetPresetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPresetRequest]
     }
@@ -3347,10 +3749,14 @@ package mediaconvert {
   }
 
   object GetPresetResponse {
-    def apply(Preset: js.UndefOr[Preset] = js.undefined): GetPresetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Preset" -> Preset.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Preset: js.UndefOr[Preset] = js.undefined
+    ): GetPresetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Preset" -> Preset.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPresetResponse]
     }
@@ -3362,9 +3768,12 @@ package mediaconvert {
   }
 
   object GetQueueRequest {
-    def apply(Name: __string): GetQueueRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: __string
+    ): GetQueueRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueueRequest]
     }
@@ -3376,10 +3785,14 @@ package mediaconvert {
   }
 
   object GetQueueResponse {
-    def apply(Queue: js.UndefOr[Queue] = js.undefined): GetQueueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Queue" -> Queue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Queue: js.UndefOr[Queue] = js.undefined
+    ): GetQueueResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Queue" -> Queue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQueueResponse]
     }
@@ -3400,7 +3813,7 @@ package mediaconvert {
   }
 
   /**
-    * H.264 Level.
+    * Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto (AUTO).
     */
   object H264CodecLevelEnum {
     val AUTO      = "AUTO"
@@ -3497,7 +3910,7 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the framerate for this output. If you want to keep the same framerate as the input video, choose Follow source. If you want to do framerate conversion, choose a framerate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your framerate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the framerate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the framerate from the input. Choose SPECIFIED if you want the service to use the framerate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   object H264FramerateControlEnum {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
@@ -3507,7 +3920,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during framerate conversion.
+    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
     */
   object H264FramerateConversionAlgorithmEnum {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
@@ -3582,13 +3995,18 @@ package mediaconvert {
   }
 
   object H264QvbrSettings {
-    def apply(MaxAverageBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
-              QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined): H264QvbrSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxAverageBitrate" -> MaxAverageBitrate.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "QvbrQualityLevel" -> QvbrQualityLevel.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxAverageBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
+    ): H264QvbrSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxAverageBitrate" -> MaxAverageBitrate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QvbrQualityLevel" -> QvbrQualityLevel.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[H264QvbrSettings]
     }
@@ -3672,45 +4090,47 @@ package mediaconvert {
   }
 
   object H264Settings {
-    def apply(AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization] = js.undefined,
-              Bitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
-              CodecLevel: js.UndefOr[H264CodecLevel] = js.undefined,
-              CodecProfile: js.UndefOr[H264CodecProfile] = js.undefined,
-              DynamicSubGop: js.UndefOr[H264DynamicSubGop] = js.undefined,
-              EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
-              FieldEncoding: js.UndefOr[H264FieldEncoding] = js.undefined,
-              FlickerAdaptiveQuantization: js.UndefOr[H264FlickerAdaptiveQuantization] = js.undefined,
-              FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
-              FramerateConversionAlgorithm: js.UndefOr[H264FramerateConversionAlgorithm] = js.undefined,
-              FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              GopBReference: js.UndefOr[H264GopBReference] = js.undefined,
-              GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              GopSize: js.UndefOr[__doubleMin0] = js.undefined,
-              GopSizeUnits: js.UndefOr[H264GopSizeUnits] = js.undefined,
-              HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
-              HrdBufferSize: js.UndefOr[__integerMin0Max1152000000] = js.undefined,
-              InterlaceMode: js.UndefOr[H264InterlaceMode] = js.undefined,
-              MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
-              MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
-              NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
-              NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
-              ParControl: js.UndefOr[H264ParControl] = js.undefined,
-              ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              QualityTuningLevel: js.UndefOr[H264QualityTuningLevel] = js.undefined,
-              QvbrSettings: js.UndefOr[H264QvbrSettings] = js.undefined,
-              RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
-              RepeatPps: js.UndefOr[H264RepeatPps] = js.undefined,
-              SceneChangeDetect: js.UndefOr[H264SceneChangeDetect] = js.undefined,
-              Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
-              SlowPal: js.UndefOr[H264SlowPal] = js.undefined,
-              Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
-              SpatialAdaptiveQuantization: js.UndefOr[H264SpatialAdaptiveQuantization] = js.undefined,
-              Syntax: js.UndefOr[H264Syntax] = js.undefined,
-              Telecine: js.UndefOr[H264Telecine] = js.undefined,
-              TemporalAdaptiveQuantization: js.UndefOr[H264TemporalAdaptiveQuantization] = js.undefined,
-              UnregisteredSeiTimecode: js.UndefOr[H264UnregisteredSeiTimecode] = js.undefined): H264Settings = {
+    def apply(
+        AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        CodecLevel: js.UndefOr[H264CodecLevel] = js.undefined,
+        CodecProfile: js.UndefOr[H264CodecProfile] = js.undefined,
+        DynamicSubGop: js.UndefOr[H264DynamicSubGop] = js.undefined,
+        EntropyEncoding: js.UndefOr[H264EntropyEncoding] = js.undefined,
+        FieldEncoding: js.UndefOr[H264FieldEncoding] = js.undefined,
+        FlickerAdaptiveQuantization: js.UndefOr[H264FlickerAdaptiveQuantization] = js.undefined,
+        FramerateControl: js.UndefOr[H264FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[H264FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopBReference: js.UndefOr[H264GopBReference] = js.undefined,
+        GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        GopSizeUnits: js.UndefOr[H264GopSizeUnits] = js.undefined,
+        HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
+        HrdBufferSize: js.UndefOr[__integerMin0Max1152000000] = js.undefined,
+        InterlaceMode: js.UndefOr[H264InterlaceMode] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
+        MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
+        NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+        NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
+        ParControl: js.UndefOr[H264ParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        QualityTuningLevel: js.UndefOr[H264QualityTuningLevel] = js.undefined,
+        QvbrSettings: js.UndefOr[H264QvbrSettings] = js.undefined,
+        RateControlMode: js.UndefOr[H264RateControlMode] = js.undefined,
+        RepeatPps: js.UndefOr[H264RepeatPps] = js.undefined,
+        SceneChangeDetect: js.UndefOr[H264SceneChangeDetect] = js.undefined,
+        Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
+        SlowPal: js.UndefOr[H264SlowPal] = js.undefined,
+        Softness: js.UndefOr[__integerMin0Max128] = js.undefined,
+        SpatialAdaptiveQuantization: js.UndefOr[H264SpatialAdaptiveQuantization] = js.undefined,
+        Syntax: js.UndefOr[H264Syntax] = js.undefined,
+        Telecine: js.UndefOr[H264Telecine] = js.undefined,
+        TemporalAdaptiveQuantization: js.UndefOr[H264TemporalAdaptiveQuantization] = js.undefined,
+        UnregisteredSeiTimecode: js.UndefOr[H264UnregisteredSeiTimecode] = js.undefined
+    ): H264Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdaptiveQuantization" -> AdaptiveQuantization.map { x =>
           x.asInstanceOf[js.Any]
@@ -4003,7 +4423,7 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the framerate for this output. If you want to keep the same framerate as the input video, choose Follow source. If you want to do framerate conversion, choose a framerate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your framerate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the framerate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the framerate from the input. Choose SPECIFIED if you want the service to use the framerate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   object H265FramerateControlEnum {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
@@ -4013,7 +4433,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during framerate conversion.
+    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
     */
   object H265FramerateConversionAlgorithmEnum {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
@@ -4088,13 +4508,18 @@ package mediaconvert {
   }
 
   object H265QvbrSettings {
-    def apply(MaxAverageBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
-              QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined): H265QvbrSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxAverageBitrate" -> MaxAverageBitrate.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "QvbrQualityLevel" -> QvbrQualityLevel.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxAverageBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
+        QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
+    ): H265QvbrSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxAverageBitrate" -> MaxAverageBitrate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QvbrQualityLevel" -> QvbrQualityLevel.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[H265QvbrSettings]
     }
@@ -4179,45 +4604,47 @@ package mediaconvert {
   }
 
   object H265Settings {
-    def apply(AdaptiveQuantization: js.UndefOr[H265AdaptiveQuantization] = js.undefined,
-              AlternateTransferFunctionSei: js.UndefOr[H265AlternateTransferFunctionSei] = js.undefined,
-              Bitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
-              CodecLevel: js.UndefOr[H265CodecLevel] = js.undefined,
-              CodecProfile: js.UndefOr[H265CodecProfile] = js.undefined,
-              DynamicSubGop: js.UndefOr[H265DynamicSubGop] = js.undefined,
-              FlickerAdaptiveQuantization: js.UndefOr[H265FlickerAdaptiveQuantization] = js.undefined,
-              FramerateControl: js.UndefOr[H265FramerateControl] = js.undefined,
-              FramerateConversionAlgorithm: js.UndefOr[H265FramerateConversionAlgorithm] = js.undefined,
-              FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              GopBReference: js.UndefOr[H265GopBReference] = js.undefined,
-              GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              GopSize: js.UndefOr[__doubleMin0] = js.undefined,
-              GopSizeUnits: js.UndefOr[H265GopSizeUnits] = js.undefined,
-              HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
-              HrdBufferSize: js.UndefOr[__integerMin0Max1466400000] = js.undefined,
-              InterlaceMode: js.UndefOr[H265InterlaceMode] = js.undefined,
-              MaxBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
-              MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
-              NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
-              NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
-              ParControl: js.UndefOr[H265ParControl] = js.undefined,
-              ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              QualityTuningLevel: js.UndefOr[H265QualityTuningLevel] = js.undefined,
-              QvbrSettings: js.UndefOr[H265QvbrSettings] = js.undefined,
-              RateControlMode: js.UndefOr[H265RateControlMode] = js.undefined,
-              SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode] = js.undefined,
-              SceneChangeDetect: js.UndefOr[H265SceneChangeDetect] = js.undefined,
-              Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
-              SlowPal: js.UndefOr[H265SlowPal] = js.undefined,
-              SpatialAdaptiveQuantization: js.UndefOr[H265SpatialAdaptiveQuantization] = js.undefined,
-              Telecine: js.UndefOr[H265Telecine] = js.undefined,
-              TemporalAdaptiveQuantization: js.UndefOr[H265TemporalAdaptiveQuantization] = js.undefined,
-              TemporalIds: js.UndefOr[H265TemporalIds] = js.undefined,
-              Tiles: js.UndefOr[H265Tiles] = js.undefined,
-              UnregisteredSeiTimecode: js.UndefOr[H265UnregisteredSeiTimecode] = js.undefined,
-              WriteMp4PackagingType: js.UndefOr[H265WriteMp4PackagingType] = js.undefined): H265Settings = {
+    def apply(
+        AdaptiveQuantization: js.UndefOr[H265AdaptiveQuantization] = js.undefined,
+        AlternateTransferFunctionSei: js.UndefOr[H265AlternateTransferFunctionSei] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
+        CodecLevel: js.UndefOr[H265CodecLevel] = js.undefined,
+        CodecProfile: js.UndefOr[H265CodecProfile] = js.undefined,
+        DynamicSubGop: js.UndefOr[H265DynamicSubGop] = js.undefined,
+        FlickerAdaptiveQuantization: js.UndefOr[H265FlickerAdaptiveQuantization] = js.undefined,
+        FramerateControl: js.UndefOr[H265FramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[H265FramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        GopBReference: js.UndefOr[H265GopBReference] = js.undefined,
+        GopClosedCadence: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        GopSize: js.UndefOr[__doubleMin0] = js.undefined,
+        GopSizeUnits: js.UndefOr[H265GopSizeUnits] = js.undefined,
+        HrdBufferInitialFillPercentage: js.UndefOr[__integerMin0Max100] = js.undefined,
+        HrdBufferSize: js.UndefOr[__integerMin0Max1466400000] = js.undefined,
+        InterlaceMode: js.UndefOr[H265InterlaceMode] = js.undefined,
+        MaxBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
+        MinIInterval: js.UndefOr[__integerMin0Max30] = js.undefined,
+        NumberBFramesBetweenReferenceFrames: js.UndefOr[__integerMin0Max7] = js.undefined,
+        NumberReferenceFrames: js.UndefOr[__integerMin1Max6] = js.undefined,
+        ParControl: js.UndefOr[H265ParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        QualityTuningLevel: js.UndefOr[H265QualityTuningLevel] = js.undefined,
+        QvbrSettings: js.UndefOr[H265QvbrSettings] = js.undefined,
+        RateControlMode: js.UndefOr[H265RateControlMode] = js.undefined,
+        SampleAdaptiveOffsetFilterMode: js.UndefOr[H265SampleAdaptiveOffsetFilterMode] = js.undefined,
+        SceneChangeDetect: js.UndefOr[H265SceneChangeDetect] = js.undefined,
+        Slices: js.UndefOr[__integerMin1Max32] = js.undefined,
+        SlowPal: js.UndefOr[H265SlowPal] = js.undefined,
+        SpatialAdaptiveQuantization: js.UndefOr[H265SpatialAdaptiveQuantization] = js.undefined,
+        Telecine: js.UndefOr[H265Telecine] = js.undefined,
+        TemporalAdaptiveQuantization: js.UndefOr[H265TemporalAdaptiveQuantization] = js.undefined,
+        TemporalIds: js.UndefOr[H265TemporalIds] = js.undefined,
+        Tiles: js.UndefOr[H265Tiles] = js.undefined,
+        UnregisteredSeiTimecode: js.UndefOr[H265UnregisteredSeiTimecode] = js.undefined,
+        WriteMp4PackagingType: js.UndefOr[H265WriteMp4PackagingType] = js.undefined
+    ): H265Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdaptiveQuantization" -> AdaptiveQuantization.map { x =>
           x.asInstanceOf[js.Any]
@@ -4414,7 +4841,7 @@ package mediaconvert {
   }
 
   /**
-    * If HVC1, output that is H.265 will be marked as HVC1 and adhere to the ISO-IECJTC1-SC29_N13798_Text_ISOIEC_FDIS_14496-15_3rd_E spec which states that parameter set NAL units will be stored in the sample headers but not in the samples directly. If HEV1, then H.265 will be marked as HEV1 and parameter set NAL units will be written into the samples.
+    * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow, ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1. This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
     */
   object H265WriteMp4PackagingTypeEnum {
     val HVC1 = "HVC1"
@@ -4424,7 +4851,7 @@ package mediaconvert {
   }
 
   /**
-    * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple specification, you must use the HVC1 for H.265 setting.
+    * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple specification, you must use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
     */
   @js.native
   trait Hdr10Metadata extends js.Object {
@@ -4443,18 +4870,20 @@ package mediaconvert {
   }
 
   object Hdr10Metadata {
-    def apply(BluePrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
-              BluePrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
-              GreenPrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
-              GreenPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
-              MaxContentLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              MaxFrameAverageLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              MaxLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              MinLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              RedPrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
-              RedPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
-              WhitePointX: js.UndefOr[__integerMin0Max50000] = js.undefined,
-              WhitePointY: js.UndefOr[__integerMin0Max50000] = js.undefined): Hdr10Metadata = {
+    def apply(
+        BluePrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
+        BluePrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
+        GreenPrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
+        GreenPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
+        MaxContentLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        MaxFrameAverageLightLevel: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        MaxLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        MinLuminance: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        RedPrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
+        RedPrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
+        WhitePointX: js.UndefOr[__integerMin0Max50000] = js.undefined,
+        WhitePointY: js.UndefOr[__integerMin0Max50000] = js.undefined
+    ): Hdr10Metadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BluePrimaryX" -> BluePrimaryX.map { x =>
           x.asInstanceOf[js.Any]
@@ -4534,10 +4963,12 @@ package mediaconvert {
   }
 
   object HlsCaptionLanguageMapping {
-    def apply(CaptionChannel: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
-              CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LanguageDescription: js.UndefOr[__string] = js.undefined): HlsCaptionLanguageMapping = {
+    def apply(
+        CaptionChannel: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+        CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageDescription: js.UndefOr[__string] = js.undefined
+    ): HlsCaptionLanguageMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CaptionChannel" -> CaptionChannel.map { x =>
           x.asInstanceOf[js.Any]
@@ -4606,18 +5037,22 @@ package mediaconvert {
     var ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32]
     var EncryptionMethod: js.UndefOr[HlsEncryptionType]
     var InitializationVectorInManifest: js.UndefOr[HlsInitializationVectorInManifest]
+    var OfflineEncrypted: js.UndefOr[HlsOfflineEncrypted]
     var SpekeKeyProvider: js.UndefOr[SpekeKeyProvider]
     var StaticKeyProvider: js.UndefOr[StaticKeyProvider]
     var Type: js.UndefOr[HlsKeyProviderType]
   }
 
   object HlsEncryptionSettings {
-    def apply(ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
-              EncryptionMethod: js.UndefOr[HlsEncryptionType] = js.undefined,
-              InitializationVectorInManifest: js.UndefOr[HlsInitializationVectorInManifest] = js.undefined,
-              SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined,
-              StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
-              Type: js.UndefOr[HlsKeyProviderType] = js.undefined): HlsEncryptionSettings = {
+    def apply(
+        ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
+        EncryptionMethod: js.UndefOr[HlsEncryptionType] = js.undefined,
+        InitializationVectorInManifest: js.UndefOr[HlsInitializationVectorInManifest] = js.undefined,
+        OfflineEncrypted: js.UndefOr[HlsOfflineEncrypted] = js.undefined,
+        SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined,
+        StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
+        Type: js.UndefOr[HlsKeyProviderType] = js.undefined
+    ): HlsEncryptionSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConstantInitializationVector" -> ConstantInitializationVector.map { x =>
           x.asInstanceOf[js.Any]
@@ -4626,6 +5061,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "InitializationVectorInManifest" -> InitializationVectorInManifest.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OfflineEncrypted" -> OfflineEncrypted.map { x =>
           x.asInstanceOf[js.Any]
         },
         "SpekeKeyProvider" -> SpekeKeyProvider.map { x =>
@@ -4665,6 +5103,7 @@ package mediaconvert {
     var ClientCache: js.UndefOr[HlsClientCache]
     var CodecSpecification: js.UndefOr[HlsCodecSpecification]
     var Destination: js.UndefOr[__stringPatternS3]
+    var DestinationSettings: js.UndefOr[DestinationSettings]
     var DirectoryStructure: js.UndefOr[HlsDirectoryStructure]
     var Encryption: js.UndefOr[HlsEncryptionSettings]
     var ManifestCompression: js.UndefOr[HlsManifestCompression]
@@ -4692,6 +5131,7 @@ package mediaconvert {
         ClientCache: js.UndefOr[HlsClientCache] = js.undefined,
         CodecSpecification: js.UndefOr[HlsCodecSpecification] = js.undefined,
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
+        DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined,
         DirectoryStructure: js.UndefOr[HlsDirectoryStructure] = js.undefined,
         Encryption: js.UndefOr[HlsEncryptionSettings] = js.undefined,
         ManifestCompression: js.UndefOr[HlsManifestCompression] = js.undefined,
@@ -4729,6 +5169,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "Destination" -> Destination.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DestinationSettings" -> DestinationSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "DirectoryStructure" -> DirectoryStructure.map { x =>
@@ -4836,6 +5279,16 @@ package mediaconvert {
   }
 
   /**
+    * Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection.
+    */
+  object HlsOfflineEncryptedEnum {
+    val ENABLED  = "ENABLED"
+    val DISABLED = "DISABLED"
+
+    val values = IndexedSeq(ENABLED, DISABLED)
+  }
+
+  /**
     * Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
     */
   object HlsOutputSelectionEnum {
@@ -4878,11 +5331,13 @@ package mediaconvert {
   }
 
   object HlsSettings {
-    def apply(AudioGroupId: js.UndefOr[__string] = js.undefined,
-              AudioRenditionSets: js.UndefOr[__string] = js.undefined,
-              AudioTrackType: js.UndefOr[HlsAudioTrackType] = js.undefined,
-              IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest] = js.undefined,
-              SegmentModifier: js.UndefOr[__string] = js.undefined): HlsSettings = {
+    def apply(
+        AudioGroupId: js.UndefOr[__string] = js.undefined,
+        AudioRenditionSets: js.UndefOr[__string] = js.undefined,
+        AudioTrackType: js.UndefOr[HlsAudioTrackType] = js.undefined,
+        IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest] = js.undefined,
+        SegmentModifier: js.UndefOr[__string] = js.undefined
+    ): HlsSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioGroupId" -> AudioGroupId.map { x =>
           x.asInstanceOf[js.Any]
@@ -4936,20 +5391,25 @@ package mediaconvert {
   }
 
   object Id3Insertion {
-    def apply(Id3: js.UndefOr[__stringPatternAZaZ0902] = js.undefined,
-              Timecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined): Id3Insertion = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id3" -> Id3.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Timecode" -> Timecode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id3: js.UndefOr[__stringPatternAZaZ0902] = js.undefined,
+        Timecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined
+    ): Id3Insertion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id3" -> Id3.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timecode" -> Timecode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Id3Insertion]
     }
   }
 
   /**
-    * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default.
+    * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default.
     */
   @js.native
   trait ImageInserter extends js.Object {
@@ -4957,10 +5417,14 @@ package mediaconvert {
   }
 
   object ImageInserter {
-    def apply(InsertableImages: js.UndefOr[__listOfInsertableImage] = js.undefined): ImageInserter = {
-      val _fields = IndexedSeq[(String, js.Any)]("InsertableImages" -> InsertableImages.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InsertableImages: js.UndefOr[__listOfInsertableImage] = js.undefined
+    ): ImageInserter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InsertableImages" -> InsertableImages.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageInserter]
     }
@@ -4978,7 +5442,7 @@ package mediaconvert {
     var DecryptionSettings: js.UndefOr[InputDecryptionSettings]
     var DenoiseFilter: js.UndefOr[InputDenoiseFilter]
     var FileInput: js.UndefOr[
-      __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MM
+      __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
     ]
     var FilterEnable: js.UndefOr[InputFilterEnable]
     var FilterStrength: js.UndefOr[__integerMinNegative5Max5]
@@ -4986,6 +5450,7 @@ package mediaconvert {
     var InputClippings: js.UndefOr[__listOfInputClipping]
     var ProgramNumber: js.UndefOr[__integerMin1Max2147483647]
     var PsiControl: js.UndefOr[InputPsiControl]
+    var SupplementalImps: js.UndefOr[__listOf__stringPatternS3ASSETMAPXml]
     var TimecodeSource: js.UndefOr[InputTimecodeSource]
     var VideoSelector: js.UndefOr[VideoSelector]
   }
@@ -4999,7 +5464,7 @@ package mediaconvert {
         DecryptionSettings: js.UndefOr[InputDecryptionSettings] = js.undefined,
         DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
         FileInput: js.UndefOr[
-          __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MM
+          __stringPatternS3MM2VVMMPPEEGGAAVVIIMMPP4FFLLVVMMPPTTMMPPGGMM4VVTTRRPPFF4VVMM2TTSSTTSS264HH264MMKKVVMMOOVVMMTTSSMM2TTWWMMVVAASSFFVVOOBB3GGPP3GGPPPPMMXXFFDDIIVVXXXXVVIIDDRRAAWWDDVVGGXXFFMM1VV3GG2VVMMFFMM3UU8LLCCHHGGXXFFMMPPEEGG2MMXXFFMMPPEEGG2MMXXFFHHDDWWAAVVYY4MMXXMMLL
         ] = js.undefined,
         FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
         FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
@@ -5007,6 +5472,7 @@ package mediaconvert {
         InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
         ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
+        SupplementalImps: js.UndefOr[__listOf__stringPatternS3ASSETMAPXml] = js.undefined,
         TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): Input = {
@@ -5050,6 +5516,9 @@ package mediaconvert {
         "PsiControl" -> PsiControl.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "SupplementalImps" -> SupplementalImps.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "TimecodeSource" -> TimecodeSource.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -5072,13 +5541,18 @@ package mediaconvert {
   }
 
   object InputClipping {
-    def apply(EndTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
-              StartTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined): InputClipping = {
-      val _fields = IndexedSeq[(String, js.Any)]("EndTimecode" -> EndTimecode.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StartTimecode" -> StartTimecode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EndTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
+        StartTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined
+    ): InputClipping = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EndTimecode" -> EndTimecode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTimecode" -> StartTimecode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputClipping]
     }
@@ -5095,7 +5569,7 @@ package mediaconvert {
   }
 
   /**
-    * Specify the decryption settings used to decrypt encrypted input
+    * Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
     */
   @js.native
   trait InputDecryptionSettings extends js.Object {
@@ -5163,6 +5637,19 @@ package mediaconvert {
   }
 
   /**
+    * Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
+    */
+  object InputRotateEnum {
+    val DEGREE_0    = "DEGREE_0"
+    val DEGREES_90  = "DEGREES_90"
+    val DEGREES_180 = "DEGREES_180"
+    val DEGREES_270 = "DEGREES_270"
+    val AUTO        = "AUTO"
+
+    val values = IndexedSeq(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO)
+  }
+
+  /**
     * Specified video input in a template.
     */
   @js.native
@@ -5183,19 +5670,21 @@ package mediaconvert {
   }
 
   object InputTemplate {
-    def apply(AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
-              AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
-              CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
-              DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
-              DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
-              FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
-              FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
-              ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
-              InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
-              ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
-              TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
-              VideoSelector: js.UndefOr[VideoSelector] = js.undefined): InputTemplate = {
+    def apply(
+        AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
+        AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
+        CaptionSelectors: js.UndefOr[__mapOfCaptionSelector] = js.undefined,
+        DeblockFilter: js.UndefOr[InputDeblockFilter] = js.undefined,
+        DenoiseFilter: js.UndefOr[InputDenoiseFilter] = js.undefined,
+        FilterEnable: js.UndefOr[InputFilterEnable] = js.undefined,
+        FilterStrength: js.UndefOr[__integerMinNegative5Max5] = js.undefined,
+        ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
+        InputClippings: js.UndefOr[__listOfInputClipping] = js.undefined,
+        ProgramNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        PsiControl: js.UndefOr[InputPsiControl] = js.undefined,
+        TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
+        VideoSelector: js.UndefOr[VideoSelector] = js.undefined
+    ): InputTemplate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioSelectorGroups" -> AudioSelectorGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -5254,7 +5743,7 @@ package mediaconvert {
   }
 
   /**
-    * Settings that specify how your overlay appears.
+    * Settings that specify how your still graphic overlay appears.
     */
   @js.native
   trait InsertableImage extends js.Object {
@@ -5272,17 +5761,19 @@ package mediaconvert {
   }
 
   object InsertableImage {
-    def apply(Duration: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              FadeIn: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              FadeOut: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              Height: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA] = js.undefined,
-              ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              Layer: js.UndefOr[__integerMin0Max99] = js.undefined,
-              Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
-              StartTime: js.UndefOr[__stringPattern01D20305D205D] = js.undefined,
-              Width: js.UndefOr[__integerMin0Max2147483647] = js.undefined): InsertableImage = {
+    def apply(
+        Duration: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        FadeIn: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        FadeOut: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        Height: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        ImageInserterInput: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNGTgaTGA] = js.undefined,
+        ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        Layer: js.UndefOr[__integerMin0Max99] = js.undefined,
+        Opacity: js.UndefOr[__integerMin0Max100] = js.undefined,
+        StartTime: js.UndefOr[__stringPattern01D20305D205D] = js.undefined,
+        Width: js.UndefOr[__integerMin0Max2147483647] = js.undefined
+    ): InsertableImage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Duration" -> Duration.map { x =>
           x.asInstanceOf[js.Any]
@@ -5330,38 +5821,53 @@ package mediaconvert {
   trait Job extends js.Object {
     var Role: __string
     var Settings: JobSettings
+    var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Arn: js.UndefOr[__string]
     var BillingTagsSource: js.UndefOr[BillingTagsSource]
     var CreatedAt: js.UndefOr[__timestampUnix]
+    var CurrentPhase: js.UndefOr[JobPhase]
     var ErrorCode: js.UndefOr[__integer]
     var ErrorMessage: js.UndefOr[__string]
     var Id: js.UndefOr[__string]
+    var JobPercentComplete: js.UndefOr[__integer]
     var JobTemplate: js.UndefOr[__string]
     var OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail]
     var Queue: js.UndefOr[__string]
+    var RetryCount: js.UndefOr[__integer]
     var Status: js.UndefOr[JobStatus]
+    var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var Timing: js.UndefOr[Timing]
     var UserMetadata: js.UndefOr[__mapOf__string]
   }
 
   object Job {
-    def apply(Role: __string,
-              Settings: JobSettings,
-              Arn: js.UndefOr[__string] = js.undefined,
-              BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
-              CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
-              ErrorCode: js.UndefOr[__integer] = js.undefined,
-              ErrorMessage: js.UndefOr[__string] = js.undefined,
-              Id: js.UndefOr[__string] = js.undefined,
-              JobTemplate: js.UndefOr[__string] = js.undefined,
-              OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
-              Queue: js.UndefOr[__string] = js.undefined,
-              Status: js.UndefOr[JobStatus] = js.undefined,
-              Timing: js.UndefOr[Timing] = js.undefined,
-              UserMetadata: js.UndefOr[__mapOf__string] = js.undefined): Job = {
+    def apply(
+        Role: __string,
+        Settings: JobSettings,
+        AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
+        Arn: js.UndefOr[__string] = js.undefined,
+        BillingTagsSource: js.UndefOr[BillingTagsSource] = js.undefined,
+        CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
+        CurrentPhase: js.UndefOr[JobPhase] = js.undefined,
+        ErrorCode: js.UndefOr[__integer] = js.undefined,
+        ErrorMessage: js.UndefOr[__string] = js.undefined,
+        Id: js.UndefOr[__string] = js.undefined,
+        JobPercentComplete: js.UndefOr[__integer] = js.undefined,
+        JobTemplate: js.UndefOr[__string] = js.undefined,
+        OutputGroupDetails: js.UndefOr[__listOfOutputGroupDetail] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        RetryCount: js.UndefOr[__integer] = js.undefined,
+        Status: js.UndefOr[JobStatus] = js.undefined,
+        StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
+        Timing: js.UndefOr[Timing] = js.undefined,
+        UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
+    ): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Role"     -> Role.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any],
+        "AccelerationSettings" -> AccelerationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -5369,6 +5875,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "CreatedAt" -> CreatedAt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CurrentPhase" -> CurrentPhase.map { x =>
           x.asInstanceOf[js.Any]
         },
         "ErrorCode" -> ErrorCode.map { x =>
@@ -5380,6 +5889,9 @@ package mediaconvert {
         "Id" -> Id.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "JobPercentComplete" -> JobPercentComplete.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "JobTemplate" -> JobTemplate.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -5389,7 +5901,13 @@ package mediaconvert {
         "Queue" -> Queue.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "RetryCount" -> RetryCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusUpdateInterval" -> StatusUpdateInterval.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Timing" -> Timing.map { x =>
@@ -5405,12 +5923,24 @@ package mediaconvert {
   }
 
   /**
+    * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+    */
+  object JobPhaseEnum {
+    val PROBING     = "PROBING"
+    val TRANSCODING = "TRANSCODING"
+    val UPLOADING   = "UPLOADING"
+
+    val values = IndexedSeq(PROBING, TRANSCODING, UPLOADING)
+  }
+
+  /**
     * JobSettings contains all the transcode settings for a job.
     */
   @js.native
   trait JobSettings extends js.Object {
     var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
     var AvailBlanking: js.UndefOr[AvailBlanking]
+    var Esam: js.UndefOr[EsamSettings]
     var Inputs: js.UndefOr[__listOfInput]
     var MotionImageInserter: js.UndefOr[MotionImageInserter]
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
@@ -5420,19 +5950,25 @@ package mediaconvert {
   }
 
   object JobSettings {
-    def apply(AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
-              AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
-              Inputs: js.UndefOr[__listOfInput] = js.undefined,
-              MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
-              NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
-              OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
-              TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
-              TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined): JobSettings = {
+    def apply(
+        AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
+        AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
+        Esam: js.UndefOr[EsamSettings] = js.undefined,
+        Inputs: js.UndefOr[__listOfInput] = js.undefined,
+        MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
+        NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
+        OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
+        TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
+        TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined
+    ): JobSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdAvailOffset" -> AdAvailOffset.map { x =>
           x.asInstanceOf[js.Any]
         },
         "AvailBlanking" -> AvailBlanking.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Esam" -> Esam.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Inputs" -> Inputs.map { x =>
@@ -5479,28 +6015,37 @@ package mediaconvert {
   trait JobTemplate extends js.Object {
     var Name: __string
     var Settings: JobTemplateSettings
+    var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Arn: js.UndefOr[__string]
     var Category: js.UndefOr[__string]
     var CreatedAt: js.UndefOr[__timestampUnix]
     var Description: js.UndefOr[__string]
     var LastUpdated: js.UndefOr[__timestampUnix]
     var Queue: js.UndefOr[__string]
+    var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
     var Type: js.UndefOr[Type]
   }
 
   object JobTemplate {
-    def apply(Name: __string,
-              Settings: JobTemplateSettings,
-              Arn: js.UndefOr[__string] = js.undefined,
-              Category: js.UndefOr[__string] = js.undefined,
-              CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
-              Queue: js.UndefOr[__string] = js.undefined,
-              Type: js.UndefOr[Type] = js.undefined): JobTemplate = {
+    def apply(
+        Name: __string,
+        Settings: JobTemplateSettings,
+        AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
+        Arn: js.UndefOr[__string] = js.undefined,
+        Category: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
+        Type: js.UndefOr[Type] = js.undefined
+    ): JobTemplate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any],
+        "AccelerationSettings" -> AccelerationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -5517,6 +6062,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "Queue" -> Queue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusUpdateInterval" -> StatusUpdateInterval.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Type" -> Type.map { x =>
@@ -5546,6 +6094,7 @@ package mediaconvert {
   trait JobTemplateSettings extends js.Object {
     var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
     var AvailBlanking: js.UndefOr[AvailBlanking]
+    var Esam: js.UndefOr[EsamSettings]
     var Inputs: js.UndefOr[__listOfInputTemplate]
     var MotionImageInserter: js.UndefOr[MotionImageInserter]
     var NielsenConfiguration: js.UndefOr[NielsenConfiguration]
@@ -5555,19 +6104,25 @@ package mediaconvert {
   }
 
   object JobTemplateSettings {
-    def apply(AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
-              AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
-              Inputs: js.UndefOr[__listOfInputTemplate] = js.undefined,
-              MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
-              NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
-              OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
-              TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
-              TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined): JobTemplateSettings = {
+    def apply(
+        AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
+        AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
+        Esam: js.UndefOr[EsamSettings] = js.undefined,
+        Inputs: js.UndefOr[__listOfInputTemplate] = js.undefined,
+        MotionImageInserter: js.UndefOr[MotionImageInserter] = js.undefined,
+        NielsenConfiguration: js.UndefOr[NielsenConfiguration] = js.undefined,
+        OutputGroups: js.UndefOr[__listOfOutputGroup] = js.undefined,
+        TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
+        TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined
+    ): JobTemplateSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdAvailOffset" -> AdAvailOffset.map { x =>
           x.asInstanceOf[js.Any]
         },
         "AvailBlanking" -> AvailBlanking.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Esam" -> Esam.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Inputs" -> Inputs.map { x =>
@@ -5995,11 +6550,13 @@ package mediaconvert {
   }
 
   object ListJobTemplatesRequest {
-    def apply(Category: js.UndefOr[__string] = js.undefined,
-              ListBy: js.UndefOr[JobTemplateListBy] = js.undefined,
-              MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined,
-              Order: js.UndefOr[Order] = js.undefined): ListJobTemplatesRequest = {
+    def apply(
+        Category: js.UndefOr[__string] = js.undefined,
+        ListBy: js.UndefOr[JobTemplateListBy] = js.undefined,
+        MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Order: js.UndefOr[Order] = js.undefined
+    ): ListJobTemplatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Category" -> Category.map { x =>
           x.asInstanceOf[js.Any]
@@ -6029,13 +6586,18 @@ package mediaconvert {
   }
 
   object ListJobTemplatesResponse {
-    def apply(JobTemplates: js.UndefOr[__listOfJobTemplate] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListJobTemplatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobTemplates" -> JobTemplates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobTemplates: js.UndefOr[__listOfJobTemplate] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListJobTemplatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobTemplates" -> JobTemplates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobTemplatesResponse]
     }
@@ -6051,11 +6613,13 @@ package mediaconvert {
   }
 
   object ListJobsRequest {
-    def apply(MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined,
-              Order: js.UndefOr[Order] = js.undefined,
-              Queue: js.UndefOr[__string] = js.undefined,
-              Status: js.UndefOr[JobStatus] = js.undefined): ListJobsRequest = {
+    def apply(
+        MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Order: js.UndefOr[Order] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[JobStatus] = js.undefined
+    ): ListJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -6085,13 +6649,18 @@ package mediaconvert {
   }
 
   object ListJobsResponse {
-    def apply(Jobs: js.UndefOr[__listOfJob] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Jobs" -> Jobs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Jobs: js.UndefOr[__listOfJob] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Jobs" -> Jobs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResponse]
     }
@@ -6107,11 +6676,13 @@ package mediaconvert {
   }
 
   object ListPresetsRequest {
-    def apply(Category: js.UndefOr[__string] = js.undefined,
-              ListBy: js.UndefOr[PresetListBy] = js.undefined,
-              MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined,
-              Order: js.UndefOr[Order] = js.undefined): ListPresetsRequest = {
+    def apply(
+        Category: js.UndefOr[__string] = js.undefined,
+        ListBy: js.UndefOr[PresetListBy] = js.undefined,
+        MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Order: js.UndefOr[Order] = js.undefined
+    ): ListPresetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Category" -> Category.map { x =>
           x.asInstanceOf[js.Any]
@@ -6141,13 +6712,18 @@ package mediaconvert {
   }
 
   object ListPresetsResponse {
-    def apply(NextToken: js.UndefOr[__string] = js.undefined,
-              Presets: js.UndefOr[__listOfPreset] = js.undefined): ListPresetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Presets" -> Presets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Presets: js.UndefOr[__listOfPreset] = js.undefined
+    ): ListPresetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Presets" -> Presets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPresetsResponse]
     }
@@ -6162,10 +6738,12 @@ package mediaconvert {
   }
 
   object ListQueuesRequest {
-    def apply(ListBy: js.UndefOr[QueueListBy] = js.undefined,
-              MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined,
-              Order: js.UndefOr[Order] = js.undefined): ListQueuesRequest = {
+    def apply(
+        ListBy: js.UndefOr[QueueListBy] = js.undefined,
+        MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Order: js.UndefOr[Order] = js.undefined
+    ): ListQueuesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ListBy" -> ListBy.map { x =>
           x.asInstanceOf[js.Any]
@@ -6192,13 +6770,18 @@ package mediaconvert {
   }
 
   object ListQueuesResponse {
-    def apply(NextToken: js.UndefOr[__string] = js.undefined,
-              Queues: js.UndefOr[__listOfQueue] = js.undefined): ListQueuesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Queues" -> Queues.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        Queues: js.UndefOr[__listOfQueue] = js.undefined
+    ): ListQueuesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Queues" -> Queues.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQueuesResponse]
     }
@@ -6210,9 +6793,12 @@ package mediaconvert {
   }
 
   object ListTagsForResourceRequest {
-    def apply(Arn: __string): ListTagsForResourceRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: __string
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -6224,10 +6810,14 @@ package mediaconvert {
   }
 
   object ListTagsForResourceResponse {
-    def apply(ResourceTags: js.UndefOr[ResourceTags] = js.undefined): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceTags" -> ResourceTags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceTags: js.UndefOr[ResourceTags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceTags" -> ResourceTags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -6284,6 +6874,16 @@ package mediaconvert {
   }
 
   /**
+    * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force (FORCE).
+    */
+  object M2tsForceTsVideoEbpOrderEnum {
+    val FORCE   = "FORCE"
+    val DEFAULT = "DEFAULT"
+
+    val values = IndexedSeq(FORCE, DEFAULT)
+  }
+
+  /**
     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     */
   object M2tsNielsenId3Enum {
@@ -6311,6 +6911,28 @@ package mediaconvert {
     val CBR = "CBR"
 
     val values = IndexedSeq(VBR, CBR)
+  }
+
+  /**
+    * Settings for SCTE-35 signals from ESAM. Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+    */
+  @js.native
+  trait M2tsScte35Esam extends js.Object {
+    var Scte35EsamPid: js.UndefOr[__integerMin32Max8182]
+  }
+
+  object M2tsScte35Esam {
+    def apply(
+        Scte35EsamPid: js.UndefOr[__integerMin32Max8182] = js.undefined
+    ): M2tsScte35Esam = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Scte35EsamPid" -> Scte35EsamPid.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[M2tsScte35Esam]
+    }
   }
 
   /**
@@ -6348,7 +6970,7 @@ package mediaconvert {
   }
 
   /**
-    * Settings for M2TS Container.
+    * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
     */
   @js.native
   trait M2tsSettings extends js.Object {
@@ -6365,6 +6987,7 @@ package mediaconvert {
     var EbpAudioInterval: js.UndefOr[M2tsEbpAudioInterval]
     var EbpPlacement: js.UndefOr[M2tsEbpPlacement]
     var EsRateInPes: js.UndefOr[M2tsEsRateInPes]
+    var ForceTsVideoEbpOrder: js.UndefOr[M2tsForceTsVideoEbpOrder]
     var FragmentTime: js.UndefOr[__doubleMin0]
     var MaxPcrInterval: js.UndefOr[__integerMin0Max500]
     var MinEbpInterval: js.UndefOr[__integerMin0Max10000]
@@ -6378,6 +7001,7 @@ package mediaconvert {
     var PrivateMetadataPid: js.UndefOr[__integerMin32Max8182]
     var ProgramNumber: js.UndefOr[__integerMin0Max65535]
     var RateMode: js.UndefOr[M2tsRateMode]
+    var Scte35Esam: js.UndefOr[M2tsScte35Esam]
     var Scte35Pid: js.UndefOr[__integerMin32Max8182]
     var Scte35Source: js.UndefOr[M2tsScte35Source]
     var SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers]
@@ -6389,40 +7013,44 @@ package mediaconvert {
   }
 
   object M2tsSettings {
-    def apply(AudioBufferModel: js.UndefOr[M2tsAudioBufferModel] = js.undefined,
-              AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
-              Bitrate: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              BufferModel: js.UndefOr[M2tsBufferModel] = js.undefined,
-              DvbNitSettings: js.UndefOr[DvbNitSettings] = js.undefined,
-              DvbSdtSettings: js.UndefOr[DvbSdtSettings] = js.undefined,
-              DvbSubPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
-              DvbTdtSettings: js.UndefOr[DvbTdtSettings] = js.undefined,
-              DvbTeletextPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              EbpAudioInterval: js.UndefOr[M2tsEbpAudioInterval] = js.undefined,
-              EbpPlacement: js.UndefOr[M2tsEbpPlacement] = js.undefined,
-              EsRateInPes: js.UndefOr[M2tsEsRateInPes] = js.undefined,
-              FragmentTime: js.UndefOr[__doubleMin0] = js.undefined,
-              MaxPcrInterval: js.UndefOr[__integerMin0Max500] = js.undefined,
-              MinEbpInterval: js.UndefOr[__integerMin0Max10000] = js.undefined,
-              NielsenId3: js.UndefOr[M2tsNielsenId3] = js.undefined,
-              NullPacketBitrate: js.UndefOr[__doubleMin0] = js.undefined,
-              PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PcrControl: js.UndefOr[M2tsPcrControl] = js.undefined,
-              PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PmtPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              ProgramNumber: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              RateMode: js.UndefOr[M2tsRateMode] = js.undefined,
-              Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              Scte35Source: js.UndefOr[M2tsScte35Source] = js.undefined,
-              SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers] = js.undefined,
-              SegmentationStyle: js.UndefOr[M2tsSegmentationStyle] = js.undefined,
-              SegmentationTime: js.UndefOr[__doubleMin0] = js.undefined,
-              TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined): M2tsSettings = {
+    def apply(
+        AudioBufferModel: js.UndefOr[M2tsAudioBufferModel] = js.undefined,
+        AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
+        Bitrate: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        BufferModel: js.UndefOr[M2tsBufferModel] = js.undefined,
+        DvbNitSettings: js.UndefOr[DvbNitSettings] = js.undefined,
+        DvbSdtSettings: js.UndefOr[DvbSdtSettings] = js.undefined,
+        DvbSubPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
+        DvbTdtSettings: js.UndefOr[DvbTdtSettings] = js.undefined,
+        DvbTeletextPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        EbpAudioInterval: js.UndefOr[M2tsEbpAudioInterval] = js.undefined,
+        EbpPlacement: js.UndefOr[M2tsEbpPlacement] = js.undefined,
+        EsRateInPes: js.UndefOr[M2tsEsRateInPes] = js.undefined,
+        ForceTsVideoEbpOrder: js.UndefOr[M2tsForceTsVideoEbpOrder] = js.undefined,
+        FragmentTime: js.UndefOr[__doubleMin0] = js.undefined,
+        MaxPcrInterval: js.UndefOr[__integerMin0Max500] = js.undefined,
+        MinEbpInterval: js.UndefOr[__integerMin0Max10000] = js.undefined,
+        NielsenId3: js.UndefOr[M2tsNielsenId3] = js.undefined,
+        NullPacketBitrate: js.UndefOr[__doubleMin0] = js.undefined,
+        PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PcrControl: js.UndefOr[M2tsPcrControl] = js.undefined,
+        PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PmtPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        ProgramNumber: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        RateMode: js.UndefOr[M2tsRateMode] = js.undefined,
+        Scte35Esam: js.UndefOr[M2tsScte35Esam] = js.undefined,
+        Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        Scte35Source: js.UndefOr[M2tsScte35Source] = js.undefined,
+        SegmentationMarkers: js.UndefOr[M2tsSegmentationMarkers] = js.undefined,
+        SegmentationStyle: js.UndefOr[M2tsSegmentationStyle] = js.undefined,
+        SegmentationTime: js.UndefOr[__doubleMin0] = js.undefined,
+        TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined
+    ): M2tsSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioBufferModel" -> AudioBufferModel.map { x =>
           x.asInstanceOf[js.Any]
@@ -6463,6 +7091,9 @@ package mediaconvert {
         "EsRateInPes" -> EsRateInPes.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "ForceTsVideoEbpOrder" -> ForceTsVideoEbpOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "FragmentTime" -> FragmentTime.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -6500,6 +7131,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "RateMode" -> RateMode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Scte35Esam" -> Scte35Esam.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Scte35Pid" -> Scte35Pid.map { x =>
@@ -6586,22 +7220,24 @@ package mediaconvert {
   }
 
   object M3u8Settings {
-    def apply(AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
-              NielsenId3: js.UndefOr[M3u8NielsenId3] = js.undefined,
-              PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PcrControl: js.UndefOr[M3u8PcrControl] = js.undefined,
-              PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
-              PmtPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              ProgramNumber: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              Scte35Source: js.UndefOr[M3u8Scte35Source] = js.undefined,
-              TimedMetadata: js.UndefOr[TimedMetadata] = js.undefined,
-              TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
-              TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
-              VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined): M3u8Settings = {
+    def apply(
+        AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
+        NielsenId3: js.UndefOr[M3u8NielsenId3] = js.undefined,
+        PatInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PcrControl: js.UndefOr[M3u8PcrControl] = js.undefined,
+        PcrPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        PmtInterval: js.UndefOr[__integerMin0Max1000] = js.undefined,
+        PmtPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        PrivateMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        ProgramNumber: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        Scte35Pid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        Scte35Source: js.UndefOr[M3u8Scte35Source] = js.undefined,
+        TimedMetadata: js.UndefOr[TimedMetadata] = js.undefined,
+        TimedMetadataPid: js.UndefOr[__integerMin32Max8182] = js.undefined,
+        TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
+        VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined
+    ): M3u8Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioFramesPerPes" -> AudioFramesPerPes.map { x =>
           x.asInstanceOf[js.Any]
@@ -6671,12 +7307,14 @@ package mediaconvert {
   }
 
   object MotionImageInserter {
-    def apply(Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined,
-              Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png] = js.undefined,
-              InsertionMode: js.UndefOr[MotionImageInsertionMode] = js.undefined,
-              Offset: js.UndefOr[MotionImageInsertionOffset] = js.undefined,
-              Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
-              StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined): MotionImageInserter = {
+    def apply(
+        Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined,
+        Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png] = js.undefined,
+        InsertionMode: js.UndefOr[MotionImageInsertionMode] = js.undefined,
+        Offset: js.UndefOr[MotionImageInsertionOffset] = js.undefined,
+        Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
+        StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined
+    ): MotionImageInserter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Framerate" -> Framerate.map { x =>
           x.asInstanceOf[js.Any]
@@ -6703,7 +7341,7 @@ package mediaconvert {
   }
 
   /**
-    * For motion overlays that don't have a built-in framerate, specify the framerate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay framerate doesn't need to match the framerate of the underlying video.
+    * For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying video.
     */
   @js.native
   trait MotionImageInsertionFramerate extends js.Object {
@@ -6716,11 +7354,14 @@ package mediaconvert {
         FramerateDenominator: js.UndefOr[__integerMin1Max17895697] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin1Max2147483640] = js.undefined
     ): MotionImageInsertionFramerate = {
-      val _fields = IndexedSeq[(String, js.Any)]("FramerateDenominator" -> FramerateDenominator.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FramerateNumerator" -> FramerateNumerator.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FramerateDenominator" -> FramerateDenominator.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FramerateNumerator" -> FramerateNumerator.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MotionImageInsertionFramerate]
     }
@@ -6746,13 +7387,18 @@ package mediaconvert {
   }
 
   object MotionImageInsertionOffset {
-    def apply(ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined): MotionImageInsertionOffset = {
-      val _fields = IndexedSeq[(String, js.Any)]("ImageX" -> ImageX.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ImageY" -> ImageY.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined
+    ): MotionImageInsertionOffset = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ImageX" -> ImageX.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageY" -> ImageY.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MotionImageInsertionOffset]
     }
@@ -6809,7 +7455,7 @@ package mediaconvert {
   }
 
   /**
-    * A value of 'external' creates separate media files and the wrapper file (.mov) contains references to these media files. A value of 'self_contained' creates only a wrapper (.mov) file and this file contains all of the media.
+    * Always keep the default value (SELF_CONTAINED) for this setting.
     */
   object MovReferenceEnum {
     val SELF_CONTAINED = "SELF_CONTAINED"
@@ -6831,11 +7477,13 @@ package mediaconvert {
   }
 
   object MovSettings {
-    def apply(ClapAtom: js.UndefOr[MovClapAtom] = js.undefined,
-              CslgAtom: js.UndefOr[MovCslgAtom] = js.undefined,
-              Mpeg2FourCCControl: js.UndefOr[MovMpeg2FourCCControl] = js.undefined,
-              PaddingControl: js.UndefOr[MovPaddingControl] = js.undefined,
-              Reference: js.UndefOr[MovReference] = js.undefined): MovSettings = {
+    def apply(
+        ClapAtom: js.UndefOr[MovClapAtom] = js.undefined,
+        CslgAtom: js.UndefOr[MovCslgAtom] = js.undefined,
+        Mpeg2FourCCControl: js.UndefOr[MovMpeg2FourCCControl] = js.undefined,
+        PaddingControl: js.UndefOr[MovPaddingControl] = js.undefined,
+        Reference: js.UndefOr[MovReference] = js.undefined
+    ): MovSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClapAtom" -> ClapAtom.map { x =>
           x.asInstanceOf[js.Any]
@@ -6869,9 +7517,11 @@ package mediaconvert {
   }
 
   object Mp2Settings {
-    def apply(Bitrate: js.UndefOr[__integerMin32000Max384000] = js.undefined,
-              Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
-              SampleRate: js.UndefOr[__integerMin32000Max48000] = js.undefined): Mp2Settings = {
+    def apply(
+        Bitrate: js.UndefOr[__integerMin32000Max384000] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin32000Max48000] = js.undefined
+    ): Mp2Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bitrate" -> Bitrate.map { x =>
           x.asInstanceOf[js.Any]
@@ -6930,10 +7580,12 @@ package mediaconvert {
   }
 
   object Mp4Settings {
-    def apply(CslgAtom: js.UndefOr[Mp4CslgAtom] = js.undefined,
-              FreeSpaceBox: js.UndefOr[Mp4FreeSpaceBox] = js.undefined,
-              MoovPlacement: js.UndefOr[Mp4MoovPlacement] = js.undefined,
-              Mp4MajorBrand: js.UndefOr[__string] = js.undefined): Mp4Settings = {
+    def apply(
+        CslgAtom: js.UndefOr[Mp4CslgAtom] = js.undefined,
+        FreeSpaceBox: js.UndefOr[Mp4FreeSpaceBox] = js.undefined,
+        MoovPlacement: js.UndefOr[Mp4MoovPlacement] = js.undefined,
+        Mp4MajorBrand: js.UndefOr[__string] = js.undefined
+    ): Mp4Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CslgAtom" -> CslgAtom.map { x =>
           x.asInstanceOf[js.Any]
@@ -6999,7 +7651,7 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the framerate for this output. If you want to keep the same framerate as the input video, choose Follow source. If you want to do framerate conversion, choose a framerate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your framerate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the framerate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the framerate from the input. Choose SPECIFIED if you want the service to use the framerate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   object Mpeg2FramerateControlEnum {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
@@ -7009,7 +7661,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during framerate conversion.
+    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
     */
   object Mpeg2FramerateConversionAlgorithmEnum {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
@@ -7339,10 +7991,14 @@ package mediaconvert {
   }
 
   object MsSmoothEncryptionSettings {
-    def apply(SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined): MsSmoothEncryptionSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("SpekeKeyProvider" -> SpekeKeyProvider.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
+    ): MsSmoothEncryptionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SpekeKeyProvider" -> SpekeKeyProvider.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MsSmoothEncryptionSettings]
     }
@@ -7355,22 +8011,29 @@ package mediaconvert {
   trait MsSmoothGroupSettings extends js.Object {
     var AudioDeduplication: js.UndefOr[MsSmoothAudioDeduplication]
     var Destination: js.UndefOr[__stringPatternS3]
+    var DestinationSettings: js.UndefOr[DestinationSettings]
     var Encryption: js.UndefOr[MsSmoothEncryptionSettings]
     var FragmentLength: js.UndefOr[__integerMin1Max2147483647]
     var ManifestEncoding: js.UndefOr[MsSmoothManifestEncoding]
   }
 
   object MsSmoothGroupSettings {
-    def apply(AudioDeduplication: js.UndefOr[MsSmoothAudioDeduplication] = js.undefined,
-              Destination: js.UndefOr[__stringPatternS3] = js.undefined,
-              Encryption: js.UndefOr[MsSmoothEncryptionSettings] = js.undefined,
-              FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              ManifestEncoding: js.UndefOr[MsSmoothManifestEncoding] = js.undefined): MsSmoothGroupSettings = {
+    def apply(
+        AudioDeduplication: js.UndefOr[MsSmoothAudioDeduplication] = js.undefined,
+        Destination: js.UndefOr[__stringPatternS3] = js.undefined,
+        DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined,
+        Encryption: js.UndefOr[MsSmoothEncryptionSettings] = js.undefined,
+        FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ManifestEncoding: js.UndefOr[MsSmoothManifestEncoding] = js.undefined
+    ): MsSmoothGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioDeduplication" -> AudioDeduplication.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Destination" -> Destination.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DestinationSettings" -> DestinationSettings.map { x =>
           x.asInstanceOf[js.Any]
         },
         "Encryption" -> Encryption.map { x =>
@@ -7408,13 +8071,18 @@ package mediaconvert {
   }
 
   object NielsenConfiguration {
-    def apply(BreakoutCode: js.UndefOr[__integerMin0Max9] = js.undefined,
-              DistributorId: js.UndefOr[__string] = js.undefined): NielsenConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("BreakoutCode" -> BreakoutCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "DistributorId" -> DistributorId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BreakoutCode: js.UndefOr[__integerMin0Max9] = js.undefined,
+        DistributorId: js.UndefOr[__string] = js.undefined
+    ): NielsenConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BreakoutCode" -> BreakoutCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DistributorId" -> DistributorId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NielsenConfiguration]
     }
@@ -7431,9 +8099,11 @@ package mediaconvert {
   }
 
   object NoiseReducer {
-    def apply(Filter: js.UndefOr[NoiseReducerFilter] = js.undefined,
-              FilterSettings: js.UndefOr[NoiseReducerFilterSettings] = js.undefined,
-              SpatialFilterSettings: js.UndefOr[NoiseReducerSpatialFilterSettings] = js.undefined): NoiseReducer = {
+    def apply(
+        Filter: js.UndefOr[NoiseReducerFilter] = js.undefined,
+        FilterSettings: js.UndefOr[NoiseReducerFilterSettings] = js.undefined,
+        SpatialFilterSettings: js.UndefOr[NoiseReducerSpatialFilterSettings] = js.undefined
+    ): NoiseReducer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filter" -> Filter.map { x =>
           x.asInstanceOf[js.Any]
@@ -7474,10 +8144,14 @@ package mediaconvert {
   }
 
   object NoiseReducerFilterSettings {
-    def apply(Strength: js.UndefOr[__integerMin0Max3] = js.undefined): NoiseReducerFilterSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Strength" -> Strength.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Strength: js.UndefOr[__integerMin0Max3] = js.undefined
+    ): NoiseReducerFilterSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Strength" -> Strength.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NoiseReducerFilterSettings]
     }
@@ -7494,9 +8168,11 @@ package mediaconvert {
   }
 
   object NoiseReducerSpatialFilterSettings {
-    def apply(PostFilterSharpenStrength: js.UndefOr[__integerMin0Max3] = js.undefined,
-              Speed: js.UndefOr[__integerMinNegative2Max3] = js.undefined,
-              Strength: js.UndefOr[__integerMin0Max16] = js.undefined): NoiseReducerSpatialFilterSettings = {
+    def apply(
+        PostFilterSharpenStrength: js.UndefOr[__integerMin0Max3] = js.undefined,
+        Speed: js.UndefOr[__integerMinNegative2Max3] = js.undefined,
+        Strength: js.UndefOr[__integerMin0Max16] = js.undefined
+    ): NoiseReducerSpatialFilterSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PostFilterSharpenStrength" -> PostFilterSharpenStrength.map { x =>
           x.asInstanceOf[js.Any]
@@ -7539,14 +8215,16 @@ package mediaconvert {
   }
 
   object Output {
-    def apply(AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
-              CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
-              ContainerSettings: js.UndefOr[ContainerSettings] = js.undefined,
-              Extension: js.UndefOr[__string] = js.undefined,
-              NameModifier: js.UndefOr[__stringMin1] = js.undefined,
-              OutputSettings: js.UndefOr[OutputSettings] = js.undefined,
-              Preset: js.UndefOr[__stringMin0] = js.undefined,
-              VideoDescription: js.UndefOr[VideoDescription] = js.undefined): Output = {
+    def apply(
+        AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
+        CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
+        ContainerSettings: js.UndefOr[ContainerSettings] = js.undefined,
+        Extension: js.UndefOr[__string] = js.undefined,
+        NameModifier: js.UndefOr[__stringMin1] = js.undefined,
+        OutputSettings: js.UndefOr[OutputSettings] = js.undefined,
+        Preset: js.UndefOr[__stringMin0] = js.undefined,
+        VideoDescription: js.UndefOr[VideoDescription] = js.undefined
+    ): Output = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioDescriptions" -> AudioDescriptions.map { x =>
           x.asInstanceOf[js.Any]
@@ -7587,10 +8265,14 @@ package mediaconvert {
   }
 
   object OutputChannelMapping {
-    def apply(InputChannels: js.UndefOr[__listOf__integerMinNegative60Max6] = js.undefined): OutputChannelMapping = {
-      val _fields = IndexedSeq[(String, js.Any)]("InputChannels" -> InputChannels.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InputChannels: js.UndefOr[__listOf__integerMinNegative60Max6] = js.undefined
+    ): OutputChannelMapping = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InputChannels" -> InputChannels.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputChannelMapping]
     }
@@ -7606,13 +8288,18 @@ package mediaconvert {
   }
 
   object OutputDetail {
-    def apply(DurationInMs: js.UndefOr[__integer] = js.undefined,
-              VideoDetails: js.UndefOr[VideoDetail] = js.undefined): OutputDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("DurationInMs" -> DurationInMs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VideoDetails" -> VideoDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DurationInMs: js.UndefOr[__integer] = js.undefined,
+        VideoDetails: js.UndefOr[VideoDetail] = js.undefined
+    ): OutputDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DurationInMs" -> DurationInMs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VideoDetails" -> VideoDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputDetail]
     }
@@ -7630,10 +8317,12 @@ package mediaconvert {
   }
 
   object OutputGroup {
-    def apply(CustomName: js.UndefOr[__string] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              OutputGroupSettings: js.UndefOr[OutputGroupSettings] = js.undefined,
-              Outputs: js.UndefOr[__listOfOutput] = js.undefined): OutputGroup = {
+    def apply(
+        CustomName: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        OutputGroupSettings: js.UndefOr[OutputGroupSettings] = js.undefined,
+        Outputs: js.UndefOr[__listOfOutput] = js.undefined
+    ): OutputGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomName" -> CustomName.map { x =>
           x.asInstanceOf[js.Any]
@@ -7662,10 +8351,14 @@ package mediaconvert {
   }
 
   object OutputGroupDetail {
-    def apply(OutputDetails: js.UndefOr[__listOfOutputDetail] = js.undefined): OutputGroupDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("OutputDetails" -> OutputDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OutputDetails: js.UndefOr[__listOfOutputDetail] = js.undefined
+    ): OutputGroupDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OutputDetails" -> OutputDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputGroupDetail]
     }
@@ -7685,12 +8378,14 @@ package mediaconvert {
   }
 
   object OutputGroupSettings {
-    def apply(CmafGroupSettings: js.UndefOr[CmafGroupSettings] = js.undefined,
-              DashIsoGroupSettings: js.UndefOr[DashIsoGroupSettings] = js.undefined,
-              FileGroupSettings: js.UndefOr[FileGroupSettings] = js.undefined,
-              HlsGroupSettings: js.UndefOr[HlsGroupSettings] = js.undefined,
-              MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings] = js.undefined,
-              Type: js.UndefOr[OutputGroupType] = js.undefined): OutputGroupSettings = {
+    def apply(
+        CmafGroupSettings: js.UndefOr[CmafGroupSettings] = js.undefined,
+        DashIsoGroupSettings: js.UndefOr[DashIsoGroupSettings] = js.undefined,
+        FileGroupSettings: js.UndefOr[FileGroupSettings] = js.undefined,
+        HlsGroupSettings: js.UndefOr[HlsGroupSettings] = js.undefined,
+        MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings] = js.undefined,
+        Type: js.UndefOr[OutputGroupType] = js.undefined
+    ): OutputGroupSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CmafGroupSettings" -> CmafGroupSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -7756,10 +8451,14 @@ package mediaconvert {
   }
 
   object OutputSettings {
-    def apply(HlsSettings: js.UndefOr[HlsSettings] = js.undefined): OutputSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("HlsSettings" -> HlsSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HlsSettings: js.UndefOr[HlsSettings] = js.undefined
+    ): OutputSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HlsSettings" -> HlsSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputSettings]
     }
@@ -7781,14 +8480,16 @@ package mediaconvert {
   }
 
   object Preset {
-    def apply(Name: __string,
-              Settings: PresetSettings,
-              Arn: js.UndefOr[__string] = js.undefined,
-              Category: js.UndefOr[__string] = js.undefined,
-              CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
-              Type: js.UndefOr[Type] = js.undefined): Preset = {
+    def apply(
+        Name: __string,
+        Settings: PresetSettings,
+        Arn: js.UndefOr[__string] = js.undefined,
+        Category: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
+        Type: js.UndefOr[Type] = js.undefined
+    ): Preset = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any],
@@ -7839,10 +8540,12 @@ package mediaconvert {
   }
 
   object PresetSettings {
-    def apply(AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
-              CaptionDescriptions: js.UndefOr[__listOfCaptionDescriptionPreset] = js.undefined,
-              ContainerSettings: js.UndefOr[ContainerSettings] = js.undefined,
-              VideoDescription: js.UndefOr[VideoDescription] = js.undefined): PresetSettings = {
+    def apply(
+        AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
+        CaptionDescriptions: js.UndefOr[__listOfCaptionDescriptionPreset] = js.undefined,
+        ContainerSettings: js.UndefOr[ContainerSettings] = js.undefined,
+        VideoDescription: js.UndefOr[VideoDescription] = js.undefined
+    ): PresetSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AudioDescriptions" -> AudioDescriptions.map { x =>
           x.asInstanceOf[js.Any]
@@ -7885,7 +8588,7 @@ package mediaconvert {
   }
 
   /**
-    * If you are using the console, use the Framerate setting to specify the framerate for this output. If you want to keep the same framerate as the input video, choose Follow source. If you want to do framerate conversion, choose a framerate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your framerate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the framerate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the framerate from the input. Choose SPECIFIED if you want the service to use the framerate you specify in the settings FramerateNumerator and FramerateDenominator.
+    * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     */
   object ProresFramerateControlEnum {
     val INITIALIZE_FROM_SOURCE = "INITIALIZE_FROM_SOURCE"
@@ -7895,7 +8598,7 @@ package mediaconvert {
   }
 
   /**
-    * When set to INTERPOLATE, produces smoother motion during framerate conversion.
+    * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
     */
   object ProresFramerateConversionAlgorithmEnum {
     val DUPLICATE_DROP = "DUPLICATE_DROP"
@@ -7948,17 +8651,19 @@ package mediaconvert {
   }
 
   object ProresSettings {
-    def apply(CodecProfile: js.UndefOr[ProresCodecProfile] = js.undefined,
-              FramerateControl: js.UndefOr[ProresFramerateControl] = js.undefined,
-              FramerateConversionAlgorithm: js.UndefOr[ProresFramerateConversionAlgorithm] = js.undefined,
-              FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              InterlaceMode: js.UndefOr[ProresInterlaceMode] = js.undefined,
-              ParControl: js.UndefOr[ProresParControl] = js.undefined,
-              ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              SlowPal: js.UndefOr[ProresSlowPal] = js.undefined,
-              Telecine: js.UndefOr[ProresTelecine] = js.undefined): ProresSettings = {
+    def apply(
+        CodecProfile: js.UndefOr[ProresCodecProfile] = js.undefined,
+        FramerateControl: js.UndefOr[ProresFramerateControl] = js.undefined,
+        FramerateConversionAlgorithm: js.UndefOr[ProresFramerateConversionAlgorithm] = js.undefined,
+        FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        InterlaceMode: js.UndefOr[ProresInterlaceMode] = js.undefined,
+        ParControl: js.UndefOr[ProresParControl] = js.undefined,
+        ParDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ParNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        SlowPal: js.UndefOr[ProresSlowPal] = js.undefined,
+        Telecine: js.UndefOr[ProresTelecine] = js.undefined
+    ): ProresSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CodecProfile" -> CodecProfile.map { x =>
           x.asInstanceOf[js.Any]
@@ -8038,17 +8743,19 @@ package mediaconvert {
   }
 
   object Queue {
-    def apply(Name: __string,
-              Arn: js.UndefOr[__string] = js.undefined,
-              CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
-              PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
-              ProgressingJobsCount: js.UndefOr[__integer] = js.undefined,
-              ReservationPlan: js.UndefOr[ReservationPlan] = js.undefined,
-              Status: js.UndefOr[QueueStatus] = js.undefined,
-              SubmittedJobsCount: js.UndefOr[__integer] = js.undefined,
-              Type: js.UndefOr[Type] = js.undefined): Queue = {
+    def apply(
+        Name: __string,
+        Arn: js.UndefOr[__string] = js.undefined,
+        CreatedAt: js.UndefOr[__timestampUnix] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        ProgressingJobsCount: js.UndefOr[__integer] = js.undefined,
+        ReservationPlan: js.UndefOr[ReservationPlan] = js.undefined,
+        Status: js.UndefOr[QueueStatus] = js.undefined,
+        SubmittedJobsCount: js.UndefOr[__integer] = js.undefined,
+        Type: js.UndefOr[Type] = js.undefined
+    ): Queue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Arn" -> Arn.map { x =>
@@ -8119,10 +8826,12 @@ package mediaconvert {
   }
 
   object Rectangle {
-    def apply(Height: js.UndefOr[__integerMin2Max2147483647] = js.undefined,
-              Width: js.UndefOr[__integerMin2Max2147483647] = js.undefined,
-              X: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
-              Y: js.UndefOr[__integerMin0Max2147483647] = js.undefined): Rectangle = {
+    def apply(
+        Height: js.UndefOr[__integerMin2Max2147483647] = js.undefined,
+        Width: js.UndefOr[__integerMin2Max2147483647] = js.undefined,
+        X: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
+        Y: js.UndefOr[__integerMin0Max2147483647] = js.undefined
+    ): Rectangle = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Height" -> Height.map { x =>
           x.asInstanceOf[js.Any]
@@ -8153,9 +8862,11 @@ package mediaconvert {
   }
 
   object RemixSettings {
-    def apply(ChannelMapping: js.UndefOr[ChannelMapping] = js.undefined,
-              ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
-              ChannelsOut: js.UndefOr[__integerMin1Max8] = js.undefined): RemixSettings = {
+    def apply(
+        ChannelMapping: js.UndefOr[ChannelMapping] = js.undefined,
+        ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
+        ChannelsOut: js.UndefOr[__integerMin1Max8] = js.undefined
+    ): RemixSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChannelMapping" -> ChannelMapping.map { x =>
           x.asInstanceOf[js.Any]
@@ -8196,12 +8907,14 @@ package mediaconvert {
   }
 
   object ReservationPlan {
-    def apply(Commitment: js.UndefOr[Commitment] = js.undefined,
-              ExpiresAt: js.UndefOr[__timestampUnix] = js.undefined,
-              PurchasedAt: js.UndefOr[__timestampUnix] = js.undefined,
-              RenewalType: js.UndefOr[RenewalType] = js.undefined,
-              ReservedSlots: js.UndefOr[__integer] = js.undefined,
-              Status: js.UndefOr[ReservationPlanStatus] = js.undefined): ReservationPlan = {
+    def apply(
+        Commitment: js.UndefOr[Commitment] = js.undefined,
+        ExpiresAt: js.UndefOr[__timestampUnix] = js.undefined,
+        PurchasedAt: js.UndefOr[__timestampUnix] = js.undefined,
+        RenewalType: js.UndefOr[RenewalType] = js.undefined,
+        ReservedSlots: js.UndefOr[__integer] = js.undefined,
+        Status: js.UndefOr[ReservationPlanStatus] = js.undefined
+    ): ReservationPlan = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Commitment" -> Commitment.map { x =>
           x.asInstanceOf[js.Any]
@@ -8238,7 +8951,11 @@ package mediaconvert {
   }
 
   object ReservationPlanSettings {
-    def apply(Commitment: Commitment, RenewalType: RenewalType, ReservedSlots: __integer): ReservationPlanSettings = {
+    def apply(
+        Commitment: Commitment,
+        RenewalType: RenewalType,
+        ReservedSlots: __integer
+    ): ReservationPlanSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Commitment"    -> Commitment.asInstanceOf[js.Any],
         "RenewalType"   -> RenewalType.asInstanceOf[js.Any],
@@ -8269,13 +8986,18 @@ package mediaconvert {
   }
 
   object ResourceTags {
-    def apply(Arn: js.UndefOr[__string] = js.undefined,
-              Tags: js.UndefOr[__mapOf__string] = js.undefined): ResourceTags = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Tags: js.UndefOr[__mapOf__string] = js.undefined
+    ): ResourceTags = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTags]
     }
@@ -8293,7 +9015,70 @@ package mediaconvert {
   }
 
   /**
-    * Applies only if your input aspect ratio is different from your output aspect ratio. Enable Stretch to output (StretchToOutput) to have the service stretch your video image to fit. Leave this setting disabled to allow the service to letterbox your video instead. This setting overrides any positioning value you specify elsewhere in the job.
+    * Settings associated with S3 destination
+    */
+  @js.native
+  trait S3DestinationSettings extends js.Object {
+    var Encryption: js.UndefOr[S3EncryptionSettings]
+  }
+
+  object S3DestinationSettings {
+    def apply(
+        Encryption: js.UndefOr[S3EncryptionSettings] = js.undefined
+    ): S3DestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Encryption" -> Encryption.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DestinationSettings]
+    }
+  }
+
+  /**
+    * Settings for how your job outputs are encrypted as they are uploaded to Amazon S3.
+    */
+  @js.native
+  trait S3EncryptionSettings extends js.Object {
+    var EncryptionType: js.UndefOr[S3ServerSideEncryptionType]
+    var KmsKeyArn: js.UndefOr[
+      __stringPatternArnAwsUsGovKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912
+    ]
+  }
+
+  object S3EncryptionSettings {
+    def apply(
+        EncryptionType: js.UndefOr[S3ServerSideEncryptionType] = js.undefined,
+        KmsKeyArn: js.UndefOr[
+          __stringPatternArnAwsUsGovKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912
+        ] = js.undefined
+    ): S3EncryptionSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EncryptionType" -> EncryptionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "KmsKeyArn" -> KmsKeyArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3EncryptionSettings]
+    }
+  }
+
+  /**
+    * Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
+    */
+  object S3ServerSideEncryptionTypeEnum {
+    val SERVER_SIDE_ENCRYPTION_S3  = "SERVER_SIDE_ENCRYPTION_S3"
+    val SERVER_SIDE_ENCRYPTION_KMS = "SERVER_SIDE_ENCRYPTION_KMS"
+
+    val values = IndexedSeq(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS)
+  }
+
+  /**
+    * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox your video instead. This setting overrides any positioning value you specify elsewhere in the job.
     */
   object ScalingBehaviorEnum {
     val DEFAULT           = "DEFAULT"
@@ -8303,7 +9088,7 @@ package mediaconvert {
   }
 
   /**
-    * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a framerate that matches the framerate of the associated video. If the video framerate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+    * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
     */
   object SccDestinationFramerateEnum {
     val FRAMERATE_23_97               = "FRAMERATE_23_97"
@@ -8323,10 +9108,14 @@ package mediaconvert {
   }
 
   object SccDestinationSettings {
-    def apply(Framerate: js.UndefOr[SccDestinationFramerate] = js.undefined): SccDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("Framerate" -> Framerate.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Framerate: js.UndefOr[SccDestinationFramerate] = js.undefined
+    ): SccDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Framerate" -> Framerate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SccDestinationSettings]
     }
@@ -8337,17 +9126,19 @@ package mediaconvert {
     */
   @js.native
   trait SpekeKeyProvider extends js.Object {
-    var CertificateArn: js.UndefOr[__stringPatternArnAwsAcm]
+    var CertificateArn: js.UndefOr[__stringPatternArnAwsUsGovAcm]
     var ResourceId: js.UndefOr[__string]
     var SystemIds: js.UndefOr[__listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12]
     var Url: js.UndefOr[__stringPatternHttps]
   }
 
   object SpekeKeyProvider {
-    def apply(CertificateArn: js.UndefOr[__stringPatternArnAwsAcm] = js.undefined,
-              ResourceId: js.UndefOr[__string] = js.undefined,
-              SystemIds: js.UndefOr[__listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12] = js.undefined,
-              Url: js.UndefOr[__stringPatternHttps] = js.undefined): SpekeKeyProvider = {
+    def apply(
+        CertificateArn: js.UndefOr[__stringPatternArnAwsUsGovAcm] = js.undefined,
+        ResourceId: js.UndefOr[__string] = js.undefined,
+        SystemIds: js.UndefOr[__listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12] = js.undefined,
+        Url: js.UndefOr[__stringPatternHttps] = js.undefined
+    ): SpekeKeyProvider = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn" -> CertificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -8379,10 +9170,12 @@ package mediaconvert {
   }
 
   object StaticKeyProvider {
-    def apply(KeyFormat: js.UndefOr[__stringPatternIdentityAZaZ26AZaZ09163] = js.undefined,
-              KeyFormatVersions: js.UndefOr[__stringPatternDD] = js.undefined,
-              StaticKeyValue: js.UndefOr[__stringPatternAZaZ0932] = js.undefined,
-              Url: js.UndefOr[__string] = js.undefined): StaticKeyProvider = {
+    def apply(
+        KeyFormat: js.UndefOr[__stringPatternIdentityAZaZ26AZaZ09163] = js.undefined,
+        KeyFormatVersions: js.UndefOr[__stringPatternDD] = js.undefined,
+        StaticKeyValue: js.UndefOr[__stringPatternAZaZ0932] = js.undefined,
+        Url: js.UndefOr[__string] = js.undefined
+    ): StaticKeyProvider = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KeyFormat" -> KeyFormat.map { x =>
           x.asInstanceOf[js.Any]
@@ -8402,6 +9195,45 @@ package mediaconvert {
     }
   }
 
+  /**
+    * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    */
+  object StatusUpdateIntervalEnum {
+    val SECONDS_10  = "SECONDS_10"
+    val SECONDS_12  = "SECONDS_12"
+    val SECONDS_15  = "SECONDS_15"
+    val SECONDS_20  = "SECONDS_20"
+    val SECONDS_30  = "SECONDS_30"
+    val SECONDS_60  = "SECONDS_60"
+    val SECONDS_120 = "SECONDS_120"
+    val SECONDS_180 = "SECONDS_180"
+    val SECONDS_240 = "SECONDS_240"
+    val SECONDS_300 = "SECONDS_300"
+    val SECONDS_360 = "SECONDS_360"
+    val SECONDS_420 = "SECONDS_420"
+    val SECONDS_480 = "SECONDS_480"
+    val SECONDS_540 = "SECONDS_540"
+    val SECONDS_600 = "SECONDS_600"
+
+    val values = IndexedSeq(
+      SECONDS_10,
+      SECONDS_12,
+      SECONDS_15,
+      SECONDS_20,
+      SECONDS_30,
+      SECONDS_60,
+      SECONDS_120,
+      SECONDS_180,
+      SECONDS_240,
+      SECONDS_300,
+      SECONDS_360,
+      SECONDS_420,
+      SECONDS_480,
+      SECONDS_540,
+      SECONDS_600
+    )
+  }
+
   @js.native
   trait TagResourceRequest extends js.Object {
     var Arn: __string
@@ -8409,9 +9241,14 @@ package mediaconvert {
   }
 
   object TagResourceRequest {
-    def apply(Arn: __string, Tags: __mapOf__string): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "Tags" -> Tags.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: __string,
+        Tags: __mapOf__string
+    ): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn"  -> Arn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -8421,8 +9258,10 @@ package mediaconvert {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -8440,9 +9279,11 @@ package mediaconvert {
     def apply(
         PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined
     ): TeletextDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("PageNumber" -> PageNumber.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PageNumber" -> PageNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TeletextDestinationSettings]
     }
@@ -8457,10 +9298,14 @@ package mediaconvert {
   }
 
   object TeletextSourceSettings {
-    def apply(PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined): TeletextSourceSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("PageNumber" -> PageNumber.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined
+    ): TeletextSourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PageNumber" -> PageNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TeletextSourceSettings]
     }
@@ -8477,9 +9322,11 @@ package mediaconvert {
   }
 
   object TimecodeBurnin {
-    def apply(FontSize: js.UndefOr[__integerMin10Max48] = js.undefined,
-              Position: js.UndefOr[TimecodeBurninPosition] = js.undefined,
-              Prefix: js.UndefOr[__stringPattern] = js.undefined): TimecodeBurnin = {
+    def apply(
+        FontSize: js.UndefOr[__integerMin10Max48] = js.undefined,
+        Position: js.UndefOr[TimecodeBurninPosition] = js.undefined,
+        Prefix: js.UndefOr[__stringPattern] = js.undefined
+    ): TimecodeBurnin = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FontSize" -> FontSize.map { x =>
           x.asInstanceOf[js.Any]
@@ -8535,10 +9382,12 @@ package mediaconvert {
   }
 
   object TimecodeConfig {
-    def apply(Anchor: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
-              Source: js.UndefOr[TimecodeSource] = js.undefined,
-              Start: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
-              TimestampOffset: js.UndefOr[__stringPattern0940191020191209301] = js.undefined): TimecodeConfig = {
+    def apply(
+        Anchor: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
+        Source: js.UndefOr[TimecodeSource] = js.undefined,
+        Start: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
+        TimestampOffset: js.UndefOr[__stringPattern0940191020191209301] = js.undefined
+    ): TimecodeConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Anchor" -> Anchor.map { x =>
           x.asInstanceOf[js.Any]
@@ -8588,10 +9437,14 @@ package mediaconvert {
   }
 
   object TimedMetadataInsertion {
-    def apply(Id3Insertions: js.UndefOr[__listOfId3Insertion] = js.undefined): TimedMetadataInsertion = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id3Insertions" -> Id3Insertions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id3Insertions: js.UndefOr[__listOfId3Insertion] = js.undefined
+    ): TimedMetadataInsertion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id3Insertions" -> Id3Insertions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimedMetadataInsertion]
     }
@@ -8608,9 +9461,11 @@ package mediaconvert {
   }
 
   object Timing {
-    def apply(FinishTime: js.UndefOr[__timestampUnix] = js.undefined,
-              StartTime: js.UndefOr[__timestampUnix] = js.undefined,
-              SubmitTime: js.UndefOr[__timestampUnix] = js.undefined): Timing = {
+    def apply(
+        FinishTime: js.UndefOr[__timestampUnix] = js.undefined,
+        StartTime: js.UndefOr[__timestampUnix] = js.undefined,
+        SubmitTime: js.UndefOr[__timestampUnix] = js.undefined
+    ): Timing = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FinishTime" -> FinishTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -8628,6 +9483,28 @@ package mediaconvert {
   }
 
   /**
+    * Settings specific to caption sources that are specfied by track number. Sources include IMSC in IMF.
+    */
+  @js.native
+  trait TrackSourceSettings extends js.Object {
+    var TrackNumber: js.UndefOr[__integerMin1Max2147483647]
+  }
+
+  object TrackSourceSettings {
+    def apply(
+        TrackNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined
+    ): TrackSourceSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TrackNumber" -> TrackNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrackSourceSettings]
+    }
+  }
+
+  /**
     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
     */
   @js.native
@@ -8636,10 +9513,14 @@ package mediaconvert {
   }
 
   object TtmlDestinationSettings {
-    def apply(StylePassthrough: js.UndefOr[TtmlStylePassthrough] = js.undefined): TtmlDestinationSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("StylePassthrough" -> StylePassthrough.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StylePassthrough: js.UndefOr[TtmlStylePassthrough] = js.undefined
+    ): TtmlDestinationSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StylePassthrough" -> StylePassthrough.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TtmlDestinationSettings]
     }
@@ -8669,10 +9550,16 @@ package mediaconvert {
   }
 
   object UntagResourceRequest {
-    def apply(Arn: __string, TagKeys: js.UndefOr[__listOf__string] = js.undefined): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "TagKeys" -> TagKeys.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: __string,
+        TagKeys: js.UndefOr[__listOf__string] = js.undefined
+    ): UntagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -8682,8 +9569,10 @@ package mediaconvert {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
@@ -8692,20 +9581,29 @@ package mediaconvert {
   @js.native
   trait UpdateJobTemplateRequest extends js.Object {
     var Name: __string
+    var AccelerationSettings: js.UndefOr[AccelerationSettings]
     var Category: js.UndefOr[__string]
     var Description: js.UndefOr[__string]
     var Queue: js.UndefOr[__string]
     var Settings: js.UndefOr[JobTemplateSettings]
+    var StatusUpdateInterval: js.UndefOr[StatusUpdateInterval]
   }
 
   object UpdateJobTemplateRequest {
-    def apply(Name: __string,
-              Category: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              Queue: js.UndefOr[__string] = js.undefined,
-              Settings: js.UndefOr[JobTemplateSettings] = js.undefined): UpdateJobTemplateRequest = {
+    def apply(
+        Name: __string,
+        AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
+        Category: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Queue: js.UndefOr[__string] = js.undefined,
+        Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
+        StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined
+    ): UpdateJobTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
+        "AccelerationSettings" -> AccelerationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "Category" -> Category.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -8716,6 +9614,9 @@ package mediaconvert {
           x.asInstanceOf[js.Any]
         },
         "Settings" -> Settings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusUpdateInterval" -> StatusUpdateInterval.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -8730,10 +9631,14 @@ package mediaconvert {
   }
 
   object UpdateJobTemplateResponse {
-    def apply(JobTemplate: js.UndefOr[JobTemplate] = js.undefined): UpdateJobTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobTemplate" -> JobTemplate.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobTemplate: js.UndefOr[JobTemplate] = js.undefined
+    ): UpdateJobTemplateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobTemplate" -> JobTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateJobTemplateResponse]
     }
@@ -8748,10 +9653,12 @@ package mediaconvert {
   }
 
   object UpdatePresetRequest {
-    def apply(Name: __string,
-              Category: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              Settings: js.UndefOr[PresetSettings] = js.undefined): UpdatePresetRequest = {
+    def apply(
+        Name: __string,
+        Category: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        Settings: js.UndefOr[PresetSettings] = js.undefined
+    ): UpdatePresetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Category" -> Category.map { x =>
@@ -8775,10 +9682,14 @@ package mediaconvert {
   }
 
   object UpdatePresetResponse {
-    def apply(Preset: js.UndefOr[Preset] = js.undefined): UpdatePresetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Preset" -> Preset.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Preset: js.UndefOr[Preset] = js.undefined
+    ): UpdatePresetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Preset" -> Preset.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePresetResponse]
     }
@@ -8793,10 +9704,12 @@ package mediaconvert {
   }
 
   object UpdateQueueRequest {
-    def apply(Name: __string,
-              Description: js.UndefOr[__string] = js.undefined,
-              ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
-              Status: js.UndefOr[QueueStatus] = js.undefined): UpdateQueueRequest = {
+    def apply(
+        Name: __string,
+        Description: js.UndefOr[__string] = js.undefined,
+        ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
+        Status: js.UndefOr[QueueStatus] = js.undefined
+    ): UpdateQueueRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x =>
@@ -8820,10 +9733,14 @@ package mediaconvert {
   }
 
   object UpdateQueueResponse {
-    def apply(Queue: js.UndefOr[Queue] = js.undefined): UpdateQueueResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Queue" -> Queue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Queue: js.UndefOr[Queue] = js.undefined
+    ): UpdateQueueResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Queue" -> Queue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateQueueResponse]
     }
@@ -8856,12 +9773,14 @@ package mediaconvert {
   }
 
   object VideoCodecSettings {
-    def apply(Codec: js.UndefOr[VideoCodec] = js.undefined,
-              FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
-              H264Settings: js.UndefOr[H264Settings] = js.undefined,
-              H265Settings: js.UndefOr[H265Settings] = js.undefined,
-              Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
-              ProresSettings: js.UndefOr[ProresSettings] = js.undefined): VideoCodecSettings = {
+    def apply(
+        Codec: js.UndefOr[VideoCodec] = js.undefined,
+        FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
+        H264Settings: js.UndefOr[H264Settings] = js.undefined,
+        H265Settings: js.UndefOr[H265Settings] = js.undefined,
+        Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
+        ProresSettings: js.UndefOr[ProresSettings] = js.undefined
+    ): VideoCodecSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Codec" -> Codec.map { x =>
           x.asInstanceOf[js.Any]
@@ -8910,21 +9829,23 @@ package mediaconvert {
   }
 
   object VideoDescription {
-    def apply(AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
-              AntiAlias: js.UndefOr[AntiAlias] = js.undefined,
-              CodecSettings: js.UndefOr[VideoCodecSettings] = js.undefined,
-              ColorMetadata: js.UndefOr[ColorMetadata] = js.undefined,
-              Crop: js.UndefOr[Rectangle] = js.undefined,
-              DropFrameTimecode: js.UndefOr[DropFrameTimecode] = js.undefined,
-              FixedAfd: js.UndefOr[__integerMin0Max15] = js.undefined,
-              Height: js.UndefOr[__integerMin32Max2160] = js.undefined,
-              Position: js.UndefOr[Rectangle] = js.undefined,
-              RespondToAfd: js.UndefOr[RespondToAfd] = js.undefined,
-              ScalingBehavior: js.UndefOr[ScalingBehavior] = js.undefined,
-              Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
-              TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion] = js.undefined,
-              VideoPreprocessors: js.UndefOr[VideoPreprocessor] = js.undefined,
-              Width: js.UndefOr[__integerMin32Max4096] = js.undefined): VideoDescription = {
+    def apply(
+        AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
+        AntiAlias: js.UndefOr[AntiAlias] = js.undefined,
+        CodecSettings: js.UndefOr[VideoCodecSettings] = js.undefined,
+        ColorMetadata: js.UndefOr[ColorMetadata] = js.undefined,
+        Crop: js.UndefOr[Rectangle] = js.undefined,
+        DropFrameTimecode: js.UndefOr[DropFrameTimecode] = js.undefined,
+        FixedAfd: js.UndefOr[__integerMin0Max15] = js.undefined,
+        Height: js.UndefOr[__integerMin32Max2160] = js.undefined,
+        Position: js.UndefOr[Rectangle] = js.undefined,
+        RespondToAfd: js.UndefOr[RespondToAfd] = js.undefined,
+        ScalingBehavior: js.UndefOr[ScalingBehavior] = js.undefined,
+        Sharpness: js.UndefOr[__integerMin0Max100] = js.undefined,
+        TimecodeInsertion: js.UndefOr[VideoTimecodeInsertion] = js.undefined,
+        VideoPreprocessors: js.UndefOr[VideoPreprocessor] = js.undefined,
+        Width: js.UndefOr[__integerMin32Max4096] = js.undefined
+    ): VideoDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AfdSignaling" -> AfdSignaling.map { x =>
           x.asInstanceOf[js.Any]
@@ -8987,13 +9908,18 @@ package mediaconvert {
   }
 
   object VideoDetail {
-    def apply(HeightInPx: js.UndefOr[__integer] = js.undefined,
-              WidthInPx: js.UndefOr[__integer] = js.undefined): VideoDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("HeightInPx" -> HeightInPx.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WidthInPx" -> WidthInPx.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HeightInPx: js.UndefOr[__integer] = js.undefined,
+        WidthInPx: js.UndefOr[__integer] = js.undefined
+    ): VideoDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HeightInPx" -> HeightInPx.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WidthInPx" -> WidthInPx.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VideoDetail]
     }
@@ -9012,11 +9938,13 @@ package mediaconvert {
   }
 
   object VideoPreprocessor {
-    def apply(ColorCorrector: js.UndefOr[ColorCorrector] = js.undefined,
-              Deinterlacer: js.UndefOr[Deinterlacer] = js.undefined,
-              ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
-              NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined,
-              TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined): VideoPreprocessor = {
+    def apply(
+        ColorCorrector: js.UndefOr[ColorCorrector] = js.undefined,
+        Deinterlacer: js.UndefOr[Deinterlacer] = js.undefined,
+        ImageInserter: js.UndefOr[ImageInserter] = js.undefined,
+        NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined,
+        TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined
+    ): VideoPreprocessor = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ColorCorrector" -> ColorCorrector.map { x =>
           x.asInstanceOf[js.Any]
@@ -9049,14 +9977,18 @@ package mediaconvert {
     var Hdr10Metadata: js.UndefOr[Hdr10Metadata]
     var Pid: js.UndefOr[__integerMin1Max2147483647]
     var ProgramNumber: js.UndefOr[__integerMinNegative2147483648Max2147483647]
+    var Rotate: js.UndefOr[InputRotate]
   }
 
   object VideoSelector {
-    def apply(ColorSpace: js.UndefOr[ColorSpace] = js.undefined,
-              ColorSpaceUsage: js.UndefOr[ColorSpaceUsage] = js.undefined,
-              Hdr10Metadata: js.UndefOr[Hdr10Metadata] = js.undefined,
-              Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
-              ProgramNumber: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined): VideoSelector = {
+    def apply(
+        ColorSpace: js.UndefOr[ColorSpace] = js.undefined,
+        ColorSpaceUsage: js.UndefOr[ColorSpaceUsage] = js.undefined,
+        Hdr10Metadata: js.UndefOr[Hdr10Metadata] = js.undefined,
+        Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
+        ProgramNumber: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
+        Rotate: js.UndefOr[InputRotate] = js.undefined
+    ): VideoSelector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ColorSpace" -> ColorSpace.map { x =>
           x.asInstanceOf[js.Any]
@@ -9072,6 +10004,9 @@ package mediaconvert {
         },
         "ProgramNumber" -> ProgramNumber.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Rotate" -> Rotate.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -9080,7 +10015,7 @@ package mediaconvert {
   }
 
   /**
-    * Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input framerate is identical to the output framerate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
+    * Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
     */
   object VideoTimecodeInsertionEnum {
     val DISABLED       = "DISABLED"
@@ -9111,10 +10046,12 @@ package mediaconvert {
   }
 
   object WavSettings {
-    def apply(BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
-              Channels: js.UndefOr[__integerMin1Max8] = js.undefined,
-              Format: js.UndefOr[WavFormat] = js.undefined,
-              SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined): WavSettings = {
+    def apply(
+        BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
+        Channels: js.UndefOr[__integerMin1Max8] = js.undefined,
+        Format: js.UndefOr[WavFormat] = js.undefined,
+        SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined
+    ): WavSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BitDepth" -> BitDepth.map { x =>
           x.asInstanceOf[js.Any]

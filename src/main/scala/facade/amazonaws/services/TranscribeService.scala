@@ -48,16 +48,27 @@ package transcribeservice {
   @js.native
   trait CreateVocabularyRequest extends js.Object {
     var LanguageCode: LanguageCode
-    var Phrases: Phrases
     var VocabularyName: VocabularyName
+    var Phrases: js.UndefOr[Phrases]
+    var VocabularyFileUri: js.UndefOr[Uri]
   }
 
   object CreateVocabularyRequest {
-    def apply(LanguageCode: LanguageCode, Phrases: Phrases, VocabularyName: VocabularyName): CreateVocabularyRequest = {
+    def apply(
+        LanguageCode: LanguageCode,
+        VocabularyName: VocabularyName,
+        Phrases: js.UndefOr[Phrases] = js.undefined,
+        VocabularyFileUri: js.UndefOr[Uri] = js.undefined
+    ): CreateVocabularyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode"   -> LanguageCode.asInstanceOf[js.Any],
-        "Phrases"        -> Phrases.asInstanceOf[js.Any],
-        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any],
+        "Phrases" -> Phrases.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VocabularyFileUri" -> VocabularyFileUri.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVocabularyRequest]
@@ -74,11 +85,13 @@ package transcribeservice {
   }
 
   object CreateVocabularyResponse {
-    def apply(FailureReason: js.UndefOr[FailureReason] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
-              VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-              VocabularyState: js.UndefOr[VocabularyState] = js.undefined): CreateVocabularyResponse = {
+    def apply(
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
+        VocabularyState: js.UndefOr[VocabularyState] = js.undefined
+    ): CreateVocabularyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FailureReason" -> FailureReason.map { x =>
           x.asInstanceOf[js.Any]
@@ -107,9 +120,12 @@ package transcribeservice {
   }
 
   object DeleteTranscriptionJobRequest {
-    def apply(TranscriptionJobName: TranscriptionJobName): DeleteTranscriptionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TranscriptionJobName: TranscriptionJobName
+    ): DeleteTranscriptionJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTranscriptionJobRequest]
     }
@@ -121,9 +137,12 @@ package transcribeservice {
   }
 
   object DeleteVocabularyRequest {
-    def apply(VocabularyName: VocabularyName): DeleteVocabularyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("VocabularyName" -> VocabularyName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VocabularyName: VocabularyName
+    ): DeleteVocabularyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVocabularyRequest]
     }
@@ -135,9 +154,12 @@ package transcribeservice {
   }
 
   object GetTranscriptionJobRequest {
-    def apply(TranscriptionJobName: TranscriptionJobName): GetTranscriptionJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TranscriptionJobName: TranscriptionJobName
+    ): GetTranscriptionJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TranscriptionJobName" -> TranscriptionJobName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTranscriptionJobRequest]
     }
@@ -149,10 +171,14 @@ package transcribeservice {
   }
 
   object GetTranscriptionJobResponse {
-    def apply(TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined): GetTranscriptionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("TranscriptionJob" -> TranscriptionJob.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined
+    ): GetTranscriptionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TranscriptionJob" -> TranscriptionJob.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTranscriptionJobResponse]
     }
@@ -164,9 +190,12 @@ package transcribeservice {
   }
 
   object GetVocabularyRequest {
-    def apply(VocabularyName: VocabularyName): GetVocabularyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("VocabularyName" -> VocabularyName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VocabularyName: VocabularyName
+    ): GetVocabularyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVocabularyRequest]
     }
@@ -183,12 +212,14 @@ package transcribeservice {
   }
 
   object GetVocabularyResponse {
-    def apply(DownloadUri: js.UndefOr[Uri] = js.undefined,
-              FailureReason: js.UndefOr[FailureReason] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
-              VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-              VocabularyState: js.UndefOr[VocabularyState] = js.undefined): GetVocabularyResponse = {
+    def apply(
+        DownloadUri: js.UndefOr[Uri] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
+        VocabularyState: js.UndefOr[VocabularyState] = js.undefined
+    ): GetVocabularyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DownloadUri" -> DownloadUri.map { x =>
           x.asInstanceOf[js.Any]
@@ -224,8 +255,9 @@ package transcribeservice {
     val `pt-BR` = "pt-BR"
     val `fr-FR` = "fr-FR"
     val `it-IT` = "it-IT"
+    val `ko-KR` = "ko-KR"
 
-    val values = IndexedSeq(`en-US`, `es-US`, `en-AU`, `fr-CA`, `en-GB`, `de-DE`, `pt-BR`, `fr-FR`, `it-IT`)
+    val values = IndexedSeq(`en-US`, `es-US`, `en-AU`, `fr-CA`, `en-GB`, `de-DE`, `pt-BR`, `fr-FR`, `it-IT`, `ko-KR`)
   }
 
   @js.native
@@ -237,10 +269,12 @@ package transcribeservice {
   }
 
   object ListTranscriptionJobsRequest {
-    def apply(JobNameContains: js.UndefOr[TranscriptionJobName] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              Status: js.UndefOr[TranscriptionJobStatus] = js.undefined): ListTranscriptionJobsRequest = {
+    def apply(
+        JobNameContains: js.UndefOr[TranscriptionJobName] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Status: js.UndefOr[TranscriptionJobStatus] = js.undefined
+    ): ListTranscriptionJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobNameContains" -> JobNameContains.map { x =>
           x.asInstanceOf[js.Any]
@@ -298,10 +332,12 @@ package transcribeservice {
   }
 
   object ListVocabulariesRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NameContains: js.UndefOr[VocabularyName] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              StateEquals: js.UndefOr[VocabularyState] = js.undefined): ListVocabulariesRequest = {
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[VocabularyName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StateEquals: js.UndefOr[VocabularyState] = js.undefined
+    ): ListVocabulariesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -329,9 +365,11 @@ package transcribeservice {
   }
 
   object ListVocabulariesResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
-              Vocabularies: js.UndefOr[Vocabularies] = js.undefined): ListVocabulariesResponse = {
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
+        Vocabularies: js.UndefOr[Vocabularies] = js.undefined
+    ): ListVocabulariesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -357,10 +395,14 @@ package transcribeservice {
   }
 
   object Media {
-    def apply(MediaFileUri: js.UndefOr[Uri] = js.undefined): Media = {
-      val _fields = IndexedSeq[(String, js.Any)]("MediaFileUri" -> MediaFileUri.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MediaFileUri: js.UndefOr[Uri] = js.undefined
+    ): Media = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MediaFileUri" -> MediaFileUri.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Media]
     }
@@ -394,10 +436,12 @@ package transcribeservice {
   }
 
   object Settings {
-    def apply(ChannelIdentification: js.UndefOr[Boolean] = js.undefined,
-              MaxSpeakerLabels: js.UndefOr[MaxSpeakers] = js.undefined,
-              ShowSpeakerLabels: js.UndefOr[Boolean] = js.undefined,
-              VocabularyName: js.UndefOr[VocabularyName] = js.undefined): Settings = {
+    def apply(
+        ChannelIdentification: js.UndefOr[Boolean] = js.undefined,
+        MaxSpeakerLabels: js.UndefOr[MaxSpeakers] = js.undefined,
+        ShowSpeakerLabels: js.UndefOr[Boolean] = js.undefined,
+        VocabularyName: js.UndefOr[VocabularyName] = js.undefined
+    ): Settings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChannelIdentification" -> ChannelIdentification.map { x =>
           x.asInstanceOf[js.Any]
@@ -429,13 +473,15 @@ package transcribeservice {
   }
 
   object StartTranscriptionJobRequest {
-    def apply(LanguageCode: LanguageCode,
-              Media: Media,
-              MediaFormat: MediaFormat,
-              TranscriptionJobName: TranscriptionJobName,
-              MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
-              OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
-              Settings: js.UndefOr[Settings] = js.undefined): StartTranscriptionJobRequest = {
+    def apply(
+        LanguageCode: LanguageCode,
+        Media: Media,
+        MediaFormat: MediaFormat,
+        TranscriptionJobName: TranscriptionJobName,
+        MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+        OutputBucketName: js.UndefOr[OutputBucketName] = js.undefined,
+        Settings: js.UndefOr[Settings] = js.undefined
+    ): StartTranscriptionJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode"         -> LanguageCode.asInstanceOf[js.Any],
         "Media"                -> Media.asInstanceOf[js.Any],
@@ -462,10 +508,14 @@ package transcribeservice {
   }
 
   object StartTranscriptionJobResponse {
-    def apply(TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined): StartTranscriptionJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("TranscriptionJob" -> TranscriptionJob.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined
+    ): StartTranscriptionJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TranscriptionJob" -> TranscriptionJob.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartTranscriptionJobResponse]
     }
@@ -480,10 +530,14 @@ package transcribeservice {
   }
 
   object Transcript {
-    def apply(TranscriptFileUri: js.UndefOr[Uri] = js.undefined): Transcript = {
-      val _fields = IndexedSeq[(String, js.Any)]("TranscriptFileUri" -> TranscriptFileUri.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TranscriptFileUri: js.UndefOr[Uri] = js.undefined
+    ): Transcript = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TranscriptFileUri" -> TranscriptFileUri.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Transcript]
     }
@@ -508,17 +562,19 @@ package transcribeservice {
   }
 
   object TranscriptionJob {
-    def apply(CompletionTime: js.UndefOr[DateTime] = js.undefined,
-              CreationTime: js.UndefOr[DateTime] = js.undefined,
-              FailureReason: js.UndefOr[FailureReason] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              Media: js.UndefOr[Media] = js.undefined,
-              MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
-              MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
-              Settings: js.UndefOr[Settings] = js.undefined,
-              Transcript: js.UndefOr[Transcript] = js.undefined,
-              TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
-              TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined): TranscriptionJob = {
+    def apply(
+        CompletionTime: js.UndefOr[DateTime] = js.undefined,
+        CreationTime: js.UndefOr[DateTime] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        Media: js.UndefOr[Media] = js.undefined,
+        MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
+        MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+        Settings: js.UndefOr[Settings] = js.undefined,
+        Transcript: js.UndefOr[Transcript] = js.undefined,
+        TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
+        TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined
+    ): TranscriptionJob = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CompletionTime" -> CompletionTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -582,13 +638,15 @@ package transcribeservice {
   }
 
   object TranscriptionJobSummary {
-    def apply(CompletionTime: js.UndefOr[DateTime] = js.undefined,
-              CreationTime: js.UndefOr[DateTime] = js.undefined,
-              FailureReason: js.UndefOr[FailureReason] = js.undefined,
-              LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
-              TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
-              TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined): TranscriptionJobSummary = {
+    def apply(
+        CompletionTime: js.UndefOr[DateTime] = js.undefined,
+        CreationTime: js.UndefOr[DateTime] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
+        TranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
+        TranscriptionJobStatus: js.UndefOr[TranscriptionJobStatus] = js.undefined
+    ): TranscriptionJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CompletionTime" -> CompletionTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -620,16 +678,27 @@ package transcribeservice {
   @js.native
   trait UpdateVocabularyRequest extends js.Object {
     var LanguageCode: LanguageCode
-    var Phrases: Phrases
     var VocabularyName: VocabularyName
+    var Phrases: js.UndefOr[Phrases]
+    var VocabularyFileUri: js.UndefOr[Uri]
   }
 
   object UpdateVocabularyRequest {
-    def apply(LanguageCode: LanguageCode, Phrases: Phrases, VocabularyName: VocabularyName): UpdateVocabularyRequest = {
+    def apply(
+        LanguageCode: LanguageCode,
+        VocabularyName: VocabularyName,
+        Phrases: js.UndefOr[Phrases] = js.undefined,
+        VocabularyFileUri: js.UndefOr[Uri] = js.undefined
+    ): UpdateVocabularyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode"   -> LanguageCode.asInstanceOf[js.Any],
-        "Phrases"        -> Phrases.asInstanceOf[js.Any],
-        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
+        "VocabularyName" -> VocabularyName.asInstanceOf[js.Any],
+        "Phrases" -> Phrases.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VocabularyFileUri" -> VocabularyFileUri.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVocabularyRequest]
@@ -645,10 +714,12 @@ package transcribeservice {
   }
 
   object UpdateVocabularyResponse {
-    def apply(LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
-              VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-              VocabularyState: js.UndefOr[VocabularyState] = js.undefined): UpdateVocabularyResponse = {
+    def apply(
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
+        VocabularyState: js.UndefOr[VocabularyState] = js.undefined
+    ): UpdateVocabularyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -680,10 +751,12 @@ package transcribeservice {
   }
 
   object VocabularyInfo {
-    def apply(LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
-              LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
-              VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
-              VocabularyState: js.UndefOr[VocabularyState] = js.undefined): VocabularyInfo = {
+    def apply(
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        VocabularyName: js.UndefOr[VocabularyName] = js.undefined,
+        VocabularyState: js.UndefOr[VocabularyState] = js.undefined
+    ): VocabularyInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LanguageCode" -> LanguageCode.map { x =>
           x.asInstanceOf[js.Any]

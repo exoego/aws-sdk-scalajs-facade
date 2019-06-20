@@ -7,11 +7,14 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object rdsdataservice {
+  type Arn                 = String
   type ArrayValues         = js.Array[Value]
   type Blob                = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ColumnMetadataList  = js.Array[ColumnMetadata]
+  type DbName              = String
   type Records             = js.Array[Record]
   type Row                 = js.Array[Value]
+  type SqlStatement        = String
   type SqlStatementResults = js.Array[SqlStatementResult]
 }
 
@@ -46,20 +49,22 @@ package rdsdataservice {
   }
 
   object ColumnMetadata {
-    def apply(arrayBaseColumnType: js.UndefOr[Int] = js.undefined,
-              isAutoIncrement: js.UndefOr[Boolean] = js.undefined,
-              isCaseSensitive: js.UndefOr[Boolean] = js.undefined,
-              isCurrency: js.UndefOr[Boolean] = js.undefined,
-              isSigned: js.UndefOr[Boolean] = js.undefined,
-              label: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              nullable: js.UndefOr[Int] = js.undefined,
-              precision: js.UndefOr[Int] = js.undefined,
-              scale: js.UndefOr[Int] = js.undefined,
-              schemaName: js.UndefOr[String] = js.undefined,
-              tableName: js.UndefOr[String] = js.undefined,
-              `type`: js.UndefOr[Int] = js.undefined,
-              typeName: js.UndefOr[String] = js.undefined): ColumnMetadata = {
+    def apply(
+        arrayBaseColumnType: js.UndefOr[Int] = js.undefined,
+        isAutoIncrement: js.UndefOr[Boolean] = js.undefined,
+        isCaseSensitive: js.UndefOr[Boolean] = js.undefined,
+        isCurrency: js.UndefOr[Boolean] = js.undefined,
+        isSigned: js.UndefOr[Boolean] = js.undefined,
+        label: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        nullable: js.UndefOr[Int] = js.undefined,
+        precision: js.UndefOr[Int] = js.undefined,
+        scale: js.UndefOr[Int] = js.undefined,
+        schemaName: js.UndefOr[String] = js.undefined,
+        tableName: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[Int] = js.undefined,
+        typeName: js.UndefOr[String] = js.undefined
+    ): ColumnMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arrayBaseColumnType" -> arrayBaseColumnType.map { x =>
           x.asInstanceOf[js.Any]
@@ -114,19 +119,21 @@ package rdsdataservice {
     */
   @js.native
   trait ExecuteSqlRequest extends js.Object {
-    var awsSecretStoreArn: String
-    var dbClusterOrInstanceArn: String
-    var sqlStatements: String
-    var database: js.UndefOr[String]
-    var schema: js.UndefOr[String]
+    var awsSecretStoreArn: Arn
+    var dbClusterOrInstanceArn: Arn
+    var sqlStatements: SqlStatement
+    var database: js.UndefOr[DbName]
+    var schema: js.UndefOr[DbName]
   }
 
   object ExecuteSqlRequest {
-    def apply(awsSecretStoreArn: String,
-              dbClusterOrInstanceArn: String,
-              sqlStatements: String,
-              database: js.UndefOr[String] = js.undefined,
-              schema: js.UndefOr[String] = js.undefined): ExecuteSqlRequest = {
+    def apply(
+        awsSecretStoreArn: Arn,
+        dbClusterOrInstanceArn: Arn,
+        sqlStatements: SqlStatement,
+        database: js.UndefOr[DbName] = js.undefined,
+        schema: js.UndefOr[DbName] = js.undefined
+    ): ExecuteSqlRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsSecretStoreArn"      -> awsSecretStoreArn.asInstanceOf[js.Any],
         "dbClusterOrInstanceArn" -> dbClusterOrInstanceArn.asInstanceOf[js.Any],
@@ -152,9 +159,12 @@ package rdsdataservice {
   }
 
   object ExecuteSqlResponse {
-    def apply(sqlStatementResults: SqlStatementResults): ExecuteSqlResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("sqlStatementResults" -> sqlStatementResults.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        sqlStatementResults: SqlStatementResults
+    ): ExecuteSqlResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "sqlStatementResults" -> sqlStatementResults.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteSqlResponse]
     }
@@ -169,10 +179,14 @@ package rdsdataservice {
   }
 
   object Record {
-    def apply(values: js.UndefOr[Row] = js.undefined): Record = {
-      val _fields = IndexedSeq[(String, js.Any)]("values" -> values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        values: js.UndefOr[Row] = js.undefined
+    ): Record = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "values" -> values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Record]
     }
@@ -188,13 +202,18 @@ package rdsdataservice {
   }
 
   object ResultFrame {
-    def apply(records: js.UndefOr[Records] = js.undefined,
-              resultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined): ResultFrame = {
-      val _fields = IndexedSeq[(String, js.Any)]("records" -> records.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "resultSetMetadata" -> resultSetMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        records: js.UndefOr[Records] = js.undefined,
+        resultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined
+    ): ResultFrame = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "records" -> records.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resultSetMetadata" -> resultSetMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultFrame]
     }
@@ -210,13 +229,18 @@ package rdsdataservice {
   }
 
   object ResultSetMetadata {
-    def apply(columnCount: js.UndefOr[Double] = js.undefined,
-              columnMetadata: js.UndefOr[ColumnMetadataList] = js.undefined): ResultSetMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)]("columnCount" -> columnCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "columnMetadata" -> columnMetadata.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        columnCount: js.UndefOr[Double] = js.undefined,
+        columnMetadata: js.UndefOr[ColumnMetadataList] = js.undefined
+    ): ResultSetMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "columnCount" -> columnCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "columnMetadata" -> columnMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResultSetMetadata]
     }
@@ -232,13 +256,18 @@ package rdsdataservice {
   }
 
   object SqlStatementResult {
-    def apply(numberOfRecordsUpdated: js.UndefOr[Double] = js.undefined,
-              resultFrame: js.UndefOr[ResultFrame] = js.undefined): SqlStatementResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("numberOfRecordsUpdated" -> numberOfRecordsUpdated.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "resultFrame" -> resultFrame.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        numberOfRecordsUpdated: js.UndefOr[Double] = js.undefined,
+        resultFrame: js.UndefOr[ResultFrame] = js.undefined
+    ): SqlStatementResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "numberOfRecordsUpdated" -> numberOfRecordsUpdated.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "resultFrame" -> resultFrame.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqlStatementResult]
     }
@@ -253,10 +282,14 @@ package rdsdataservice {
   }
 
   object StructValue {
-    def apply(attributes: js.UndefOr[ArrayValues] = js.undefined): StructValue = {
-      val _fields = IndexedSeq[(String, js.Any)]("attributes" -> attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        attributes: js.UndefOr[ArrayValues] = js.undefined
+    ): StructValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "attributes" -> attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StructValue]
     }
@@ -280,16 +313,18 @@ package rdsdataservice {
   }
 
   object Value {
-    def apply(arrayValues: js.UndefOr[ArrayValues] = js.undefined,
-              bigIntValue: js.UndefOr[Double] = js.undefined,
-              bitValue: js.UndefOr[Boolean] = js.undefined,
-              blobValue: js.UndefOr[Blob] = js.undefined,
-              doubleValue: js.UndefOr[Double] = js.undefined,
-              intValue: js.UndefOr[Int] = js.undefined,
-              isNull: js.UndefOr[Boolean] = js.undefined,
-              realValue: js.UndefOr[Float] = js.undefined,
-              stringValue: js.UndefOr[String] = js.undefined,
-              structValue: js.UndefOr[StructValue] = js.undefined): Value = {
+    def apply(
+        arrayValues: js.UndefOr[ArrayValues] = js.undefined,
+        bigIntValue: js.UndefOr[Double] = js.undefined,
+        bitValue: js.UndefOr[Boolean] = js.undefined,
+        blobValue: js.UndefOr[Blob] = js.undefined,
+        doubleValue: js.UndefOr[Double] = js.undefined,
+        intValue: js.UndefOr[Int] = js.undefined,
+        isNull: js.UndefOr[Boolean] = js.undefined,
+        realValue: js.UndefOr[Float] = js.undefined,
+        stringValue: js.UndefOr[String] = js.undefined,
+        structValue: js.UndefOr[StructValue] = js.undefined
+    ): Value = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arrayValues" -> arrayValues.map { x =>
           x.asInstanceOf[js.Any]

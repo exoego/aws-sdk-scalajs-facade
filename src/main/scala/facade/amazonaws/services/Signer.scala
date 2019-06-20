@@ -67,9 +67,12 @@ package signer {
   }
 
   object CancelSigningProfileRequest {
-    def apply(profileName: ProfileName): CancelSigningProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("profileName" -> profileName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        profileName: ProfileName
+    ): CancelSigningProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "profileName" -> profileName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelSigningProfileRequest]
     }
@@ -87,9 +90,12 @@ package signer {
   }
 
   object DescribeSigningJobRequest {
-    def apply(jobId: JobId): DescribeSigningJobRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("jobId" -> jobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobId: JobId
+    ): DescribeSigningJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSigningJobRequest]
     }
@@ -113,19 +119,21 @@ package signer {
   }
 
   object DescribeSigningJobResponse {
-    def apply(completedAt: js.UndefOr[CompletedAt] = js.undefined,
-              createdAt: js.UndefOr[CreatedAt] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined,
-              overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
-              platformId: js.UndefOr[PlatformId] = js.undefined,
-              profileName: js.UndefOr[ProfileName] = js.undefined,
-              requestedBy: js.UndefOr[RequestedBy] = js.undefined,
-              signedObject: js.UndefOr[SignedObject] = js.undefined,
-              signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
-              signingParameters: js.UndefOr[SigningParameters] = js.undefined,
-              source: js.UndefOr[Source] = js.undefined,
-              status: js.UndefOr[SigningStatus] = js.undefined,
-              statusReason: js.UndefOr[StatusReason] = js.undefined): DescribeSigningJobResponse = {
+    def apply(
+        completedAt: js.UndefOr[CompletedAt] = js.undefined,
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined,
+        overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
+        platformId: js.UndefOr[PlatformId] = js.undefined,
+        profileName: js.UndefOr[ProfileName] = js.undefined,
+        requestedBy: js.UndefOr[RequestedBy] = js.undefined,
+        signedObject: js.UndefOr[SignedObject] = js.undefined,
+        signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
+        signingParameters: js.UndefOr[SigningParameters] = js.undefined,
+        source: js.UndefOr[Source] = js.undefined,
+        status: js.UndefOr[SigningStatus] = js.undefined,
+        statusReason: js.UndefOr[StatusReason] = js.undefined
+    ): DescribeSigningJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "completedAt" -> completedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -181,10 +189,14 @@ package signer {
   }
 
   object Destination {
-    def apply(s3: js.UndefOr[S3Destination] = js.undefined): Destination = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3" -> s3.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3: js.UndefOr[S3Destination] = js.undefined
+    ): Destination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3" -> s3.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Destination]
     }
@@ -207,7 +219,10 @@ package signer {
   }
 
   object EncryptionAlgorithmOptions {
-    def apply(allowedValues: EncryptionAlgorithms, defaultValue: EncryptionAlgorithm): EncryptionAlgorithmOptions = {
+    def apply(
+        allowedValues: EncryptionAlgorithms,
+        defaultValue: EncryptionAlgorithm
+    ): EncryptionAlgorithmOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
         "defaultValue"  -> defaultValue.asInstanceOf[js.Any]
@@ -223,9 +238,12 @@ package signer {
   }
 
   object GetSigningPlatformRequest {
-    def apply(platformId: PlatformId): GetSigningPlatformRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("platformId" -> platformId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        platformId: PlatformId
+    ): GetSigningPlatformRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "platformId" -> platformId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSigningPlatformRequest]
     }
@@ -244,14 +262,16 @@ package signer {
   }
 
   object GetSigningPlatformResponse {
-    def apply(category: js.UndefOr[Category] = js.undefined,
-              displayName: js.UndefOr[DisplayName] = js.undefined,
-              maxSizeInMB: js.UndefOr[MaxSizeInMB] = js.undefined,
-              partner: js.UndefOr[String] = js.undefined,
-              platformId: js.UndefOr[PlatformId] = js.undefined,
-              signingConfiguration: js.UndefOr[SigningConfiguration] = js.undefined,
-              signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
-              target: js.UndefOr[String] = js.undefined): GetSigningPlatformResponse = {
+    def apply(
+        category: js.UndefOr[Category] = js.undefined,
+        displayName: js.UndefOr[DisplayName] = js.undefined,
+        maxSizeInMB: js.UndefOr[MaxSizeInMB] = js.undefined,
+        partner: js.UndefOr[String] = js.undefined,
+        platformId: js.UndefOr[PlatformId] = js.undefined,
+        signingConfiguration: js.UndefOr[SigningConfiguration] = js.undefined,
+        signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
+        target: js.UndefOr[String] = js.undefined
+    ): GetSigningPlatformResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "category" -> category.map { x =>
           x.asInstanceOf[js.Any]
@@ -289,9 +309,12 @@ package signer {
   }
 
   object GetSigningProfileRequest {
-    def apply(profileName: ProfileName): GetSigningProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("profileName" -> profileName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        profileName: ProfileName
+    ): GetSigningProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "profileName" -> profileName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSigningProfileRequest]
     }
@@ -308,12 +331,14 @@ package signer {
   }
 
   object GetSigningProfileResponse {
-    def apply(overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
-              platformId: js.UndefOr[PlatformId] = js.undefined,
-              profileName: js.UndefOr[ProfileName] = js.undefined,
-              signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
-              signingParameters: js.UndefOr[SigningParameters] = js.undefined,
-              status: js.UndefOr[SigningProfileStatus] = js.undefined): GetSigningProfileResponse = {
+    def apply(
+        overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
+        platformId: js.UndefOr[PlatformId] = js.undefined,
+        profileName: js.UndefOr[ProfileName] = js.undefined,
+        signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
+        signingParameters: js.UndefOr[SigningParameters] = js.undefined,
+        status: js.UndefOr[SigningProfileStatus] = js.undefined
+    ): GetSigningProfileResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "overrides" -> overrides.map { x =>
           x.asInstanceOf[js.Any]
@@ -356,7 +381,10 @@ package signer {
   }
 
   object HashAlgorithmOptions {
-    def apply(allowedValues: HashAlgorithms, defaultValue: HashAlgorithm): HashAlgorithmOptions = {
+    def apply(
+        allowedValues: HashAlgorithms,
+        defaultValue: HashAlgorithm
+    ): HashAlgorithmOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
         "defaultValue"  -> defaultValue.asInstanceOf[js.Any]
@@ -382,11 +410,13 @@ package signer {
   }
 
   object ListSigningJobsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              platformId: js.UndefOr[PlatformId] = js.undefined,
-              requestedBy: js.UndefOr[RequestedBy] = js.undefined,
-              status: js.UndefOr[SigningStatus] = js.undefined): ListSigningJobsRequest = {
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        platformId: js.UndefOr[PlatformId] = js.undefined,
+        requestedBy: js.UndefOr[RequestedBy] = js.undefined,
+        status: js.UndefOr[SigningStatus] = js.undefined
+    ): ListSigningJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -416,13 +446,18 @@ package signer {
   }
 
   object ListSigningJobsResponse {
-    def apply(jobs: js.UndefOr[SigningJobs] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListSigningJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("jobs" -> jobs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobs: js.UndefOr[SigningJobs] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSigningJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobs" -> jobs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSigningJobsResponse]
     }
@@ -438,11 +473,13 @@ package signer {
   }
 
   object ListSigningPlatformsRequest {
-    def apply(category: js.UndefOr[String] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined,
-              partner: js.UndefOr[String] = js.undefined,
-              target: js.UndefOr[String] = js.undefined): ListSigningPlatformsRequest = {
+    def apply(
+        category: js.UndefOr[String] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        partner: js.UndefOr[String] = js.undefined,
+        target: js.UndefOr[String] = js.undefined
+    ): ListSigningPlatformsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "category" -> category.map { x =>
           x.asInstanceOf[js.Any]
@@ -472,13 +509,18 @@ package signer {
   }
 
   object ListSigningPlatformsResponse {
-    def apply(nextToken: js.UndefOr[String] = js.undefined,
-              platforms: js.UndefOr[SigningPlatforms] = js.undefined): ListSigningPlatformsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "platforms" -> platforms.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        platforms: js.UndefOr[SigningPlatforms] = js.undefined
+    ): ListSigningPlatformsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "platforms" -> platforms.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSigningPlatformsResponse]
     }
@@ -492,9 +534,11 @@ package signer {
   }
 
   object ListSigningProfilesRequest {
-    def apply(includeCanceled: js.UndefOr[bool] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListSigningProfilesRequest = {
+    def apply(
+        includeCanceled: js.UndefOr[bool] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSigningProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "includeCanceled" -> includeCanceled.map { x =>
           x.asInstanceOf[js.Any]
@@ -518,13 +562,18 @@ package signer {
   }
 
   object ListSigningProfilesResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              profiles: js.UndefOr[SigningProfiles] = js.undefined): ListSigningProfilesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "profiles" -> profiles.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        profiles: js.UndefOr[SigningProfiles] = js.undefined
+    ): ListSigningProfilesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "profiles" -> profiles.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSigningProfilesResponse]
     }
@@ -540,11 +589,13 @@ package signer {
   }
 
   object PutSigningProfileRequest {
-    def apply(platformId: PlatformId,
-              profileName: ProfileName,
-              signingMaterial: SigningMaterial,
-              overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
-              signingParameters: js.UndefOr[SigningParameters] = js.undefined): PutSigningProfileRequest = {
+    def apply(
+        platformId: PlatformId,
+        profileName: ProfileName,
+        signingMaterial: SigningMaterial,
+        overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
+        signingParameters: js.UndefOr[SigningParameters] = js.undefined
+    ): PutSigningProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "platformId"      -> platformId.asInstanceOf[js.Any],
         "profileName"     -> profileName.asInstanceOf[js.Any],
@@ -567,10 +618,14 @@ package signer {
   }
 
   object PutSigningProfileResponse {
-    def apply(arn: js.UndefOr[string] = js.undefined): PutSigningProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: js.UndefOr[string] = js.undefined
+    ): PutSigningProfileResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSigningProfileResponse]
     }
@@ -586,13 +641,18 @@ package signer {
   }
 
   object S3Destination {
-    def apply(bucketName: js.UndefOr[BucketName] = js.undefined,
-              prefix: js.UndefOr[Prefix] = js.undefined): S3Destination = {
-      val _fields = IndexedSeq[(String, js.Any)]("bucketName" -> bucketName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "prefix" -> prefix.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bucketName: js.UndefOr[BucketName] = js.undefined,
+        prefix: js.UndefOr[Prefix] = js.undefined
+    ): S3Destination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bucketName" -> bucketName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "prefix" -> prefix.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Destination]
     }
@@ -608,13 +668,18 @@ package signer {
   }
 
   object S3SignedObject {
-    def apply(bucketName: js.UndefOr[BucketName] = js.undefined,
-              key: js.UndefOr[key] = js.undefined): S3SignedObject = {
-      val _fields = IndexedSeq[(String, js.Any)]("bucketName" -> bucketName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "key" -> key.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        bucketName: js.UndefOr[BucketName] = js.undefined,
+        key: js.UndefOr[key] = js.undefined
+    ): S3SignedObject = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "bucketName" -> bucketName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "key" -> key.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3SignedObject]
     }
@@ -631,7 +696,11 @@ package signer {
   }
 
   object S3Source {
-    def apply(bucketName: BucketName, key: Key, version: Version): S3Source = {
+    def apply(
+        bucketName: BucketName,
+        key: Key,
+        version: Version
+    ): S3Source = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bucketName" -> bucketName.asInstanceOf[js.Any],
         "key"        -> key.asInstanceOf[js.Any],
@@ -651,10 +720,14 @@ package signer {
   }
 
   object SignedObject {
-    def apply(s3: js.UndefOr[S3SignedObject] = js.undefined): SignedObject = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3" -> s3.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3: js.UndefOr[S3SignedObject] = js.undefined
+    ): SignedObject = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3" -> s3.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignedObject]
     }
@@ -670,8 +743,10 @@ package signer {
   }
 
   object SigningConfiguration {
-    def apply(encryptionAlgorithmOptions: EncryptionAlgorithmOptions,
-              hashAlgorithmOptions: HashAlgorithmOptions): SigningConfiguration = {
+    def apply(
+        encryptionAlgorithmOptions: EncryptionAlgorithmOptions,
+        hashAlgorithmOptions: HashAlgorithmOptions
+    ): SigningConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "encryptionAlgorithmOptions" -> encryptionAlgorithmOptions.asInstanceOf[js.Any],
         "hashAlgorithmOptions"       -> hashAlgorithmOptions.asInstanceOf[js.Any]
@@ -691,13 +766,18 @@ package signer {
   }
 
   object SigningConfigurationOverrides {
-    def apply(encryptionAlgorithm: js.UndefOr[EncryptionAlgorithm] = js.undefined,
-              hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined): SigningConfigurationOverrides = {
-      val _fields = IndexedSeq[(String, js.Any)]("encryptionAlgorithm" -> encryptionAlgorithm.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "hashAlgorithm" -> hashAlgorithm.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        encryptionAlgorithm: js.UndefOr[EncryptionAlgorithm] = js.undefined,
+        hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined
+    ): SigningConfigurationOverrides = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "encryptionAlgorithm" -> encryptionAlgorithm.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "hashAlgorithm" -> hashAlgorithm.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SigningConfigurationOverrides]
     }
@@ -713,7 +793,10 @@ package signer {
   }
 
   object SigningImageFormat {
-    def apply(defaultFormat: ImageFormat, supportedFormats: ImageFormats): SigningImageFormat = {
+    def apply(
+        defaultFormat: ImageFormat,
+        supportedFormats: ImageFormats
+    ): SigningImageFormat = {
       val _fields = IndexedSeq[(String, js.Any)](
         "defaultFormat"    -> defaultFormat.asInstanceOf[js.Any],
         "supportedFormats" -> supportedFormats.asInstanceOf[js.Any]
@@ -737,12 +820,14 @@ package signer {
   }
 
   object SigningJob {
-    def apply(createdAt: js.UndefOr[CreatedAt] = js.undefined,
-              jobId: js.UndefOr[JobId] = js.undefined,
-              signedObject: js.UndefOr[SignedObject] = js.undefined,
-              signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
-              source: js.UndefOr[Source] = js.undefined,
-              status: js.UndefOr[SigningStatus] = js.undefined): SigningJob = {
+    def apply(
+        createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        jobId: js.UndefOr[JobId] = js.undefined,
+        signedObject: js.UndefOr[SignedObject] = js.undefined,
+        signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
+        source: js.UndefOr[Source] = js.undefined,
+        status: js.UndefOr[SigningStatus] = js.undefined
+    ): SigningJob = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdAt" -> createdAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -777,9 +862,12 @@ package signer {
   }
 
   object SigningMaterial {
-    def apply(certificateArn: CertificateArn): SigningMaterial = {
-      val _fields = IndexedSeq[(String, js.Any)]("certificateArn" -> certificateArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        certificateArn: CertificateArn
+    ): SigningMaterial = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "certificateArn" -> certificateArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SigningMaterial]
     }
@@ -801,14 +889,16 @@ package signer {
   }
 
   object SigningPlatform {
-    def apply(category: js.UndefOr[Category] = js.undefined,
-              displayName: js.UndefOr[String] = js.undefined,
-              maxSizeInMB: js.UndefOr[MaxSizeInMB] = js.undefined,
-              partner: js.UndefOr[String] = js.undefined,
-              platformId: js.UndefOr[String] = js.undefined,
-              signingConfiguration: js.UndefOr[SigningConfiguration] = js.undefined,
-              signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
-              target: js.UndefOr[String] = js.undefined): SigningPlatform = {
+    def apply(
+        category: js.UndefOr[Category] = js.undefined,
+        displayName: js.UndefOr[String] = js.undefined,
+        maxSizeInMB: js.UndefOr[MaxSizeInMB] = js.undefined,
+        partner: js.UndefOr[String] = js.undefined,
+        platformId: js.UndefOr[String] = js.undefined,
+        signingConfiguration: js.UndefOr[SigningConfiguration] = js.undefined,
+        signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
+        target: js.UndefOr[String] = js.undefined
+    ): SigningPlatform = {
       val _fields = IndexedSeq[(String, js.Any)](
         "category" -> category.map { x =>
           x.asInstanceOf[js.Any]
@@ -852,9 +942,11 @@ package signer {
     def apply(
         signingConfiguration: js.UndefOr[SigningConfigurationOverrides] = js.undefined
     ): SigningPlatformOverrides = {
-      val _fields = IndexedSeq[(String, js.Any)]("signingConfiguration" -> signingConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "signingConfiguration" -> signingConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SigningPlatformOverrides]
     }
@@ -873,11 +965,13 @@ package signer {
   }
 
   object SigningProfile {
-    def apply(platformId: js.UndefOr[PlatformId] = js.undefined,
-              profileName: js.UndefOr[ProfileName] = js.undefined,
-              signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
-              signingParameters: js.UndefOr[SigningParameters] = js.undefined,
-              status: js.UndefOr[SigningProfileStatus] = js.undefined): SigningProfile = {
+    def apply(
+        platformId: js.UndefOr[PlatformId] = js.undefined,
+        profileName: js.UndefOr[ProfileName] = js.undefined,
+        signingMaterial: js.UndefOr[SigningMaterial] = js.undefined,
+        signingParameters: js.UndefOr[SigningParameters] = js.undefined,
+        status: js.UndefOr[SigningProfileStatus] = js.undefined
+    ): SigningProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "platformId" -> platformId.map { x =>
           x.asInstanceOf[js.Any]
@@ -924,10 +1018,14 @@ package signer {
   }
 
   object Source {
-    def apply(s3: js.UndefOr[S3Source] = js.undefined): Source = {
-      val _fields = IndexedSeq[(String, js.Any)]("s3" -> s3.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        s3: js.UndefOr[S3Source] = js.undefined
+    ): Source = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "s3" -> s3.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Source]
     }
@@ -942,10 +1040,12 @@ package signer {
   }
 
   object StartSigningJobRequest {
-    def apply(clientRequestToken: ClientRequestToken,
-              destination: Destination,
-              source: Source,
-              profileName: js.UndefOr[ProfileName] = js.undefined): StartSigningJobRequest = {
+    def apply(
+        clientRequestToken: ClientRequestToken,
+        destination: Destination,
+        source: Source,
+        profileName: js.UndefOr[ProfileName] = js.undefined
+    ): StartSigningJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
         "destination"        -> destination.asInstanceOf[js.Any],
@@ -965,10 +1065,14 @@ package signer {
   }
 
   object StartSigningJobResponse {
-    def apply(jobId: js.UndefOr[JobId] = js.undefined): StartSigningJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("jobId" -> jobId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobId: js.UndefOr[JobId] = js.undefined
+    ): StartSigningJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobId" -> jobId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSigningJobResponse]
     }

@@ -80,7 +80,10 @@ package cloudhsm {
   }
 
   object AddTagsToResourceRequest {
-    def apply(ResourceArn: String, TagList: TagList): AddTagsToResourceRequest = {
+    def apply(
+        ResourceArn: String,
+        TagList: TagList
+    ): AddTagsToResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagList"     -> TagList.asInstanceOf[js.Any]
@@ -96,9 +99,12 @@ package cloudhsm {
   }
 
   object AddTagsToResourceResponse {
-    def apply(Status: String): AddTagsToResourceResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: String
+    ): AddTagsToResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsToResourceResponse]
     }
@@ -143,9 +149,12 @@ package cloudhsm {
   }
 
   object CreateHapgRequest {
-    def apply(Label: Label): CreateHapgRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Label" -> Label.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Label: Label
+    ): CreateHapgRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Label" -> Label.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHapgRequest]
     }
@@ -160,10 +169,14 @@ package cloudhsm {
   }
 
   object CreateHapgResponse {
-    def apply(HapgArn: js.UndefOr[HapgArn] = js.undefined): CreateHapgResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HapgArn" -> HapgArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HapgArn: js.UndefOr[HapgArn] = js.undefined
+    ): CreateHapgResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HapgArn" -> HapgArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHapgResponse]
     }
@@ -185,14 +198,16 @@ package cloudhsm {
   }
 
   object CreateHsmRequest {
-    def apply(IamRoleArn: IamRoleArn,
-              SshKey: SshKey,
-              SubnetId: SubnetId,
-              SubscriptionType: SubscriptionType,
-              ClientToken: js.UndefOr[ClientToken] = js.undefined,
-              EniIp: js.UndefOr[IpAddress] = js.undefined,
-              ExternalId: js.UndefOr[ExternalId] = js.undefined,
-              SyslogIp: js.UndefOr[IpAddress] = js.undefined): CreateHsmRequest = {
+    def apply(
+        IamRoleArn: IamRoleArn,
+        SshKey: SshKey,
+        SubnetId: SubnetId,
+        SubscriptionType: SubscriptionType,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        EniIp: js.UndefOr[IpAddress] = js.undefined,
+        ExternalId: js.UndefOr[ExternalId] = js.undefined,
+        SyslogIp: js.UndefOr[IpAddress] = js.undefined
+    ): CreateHsmRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IamRoleArn"       -> IamRoleArn.asInstanceOf[js.Any],
         "SshKey"           -> SshKey.asInstanceOf[js.Any],
@@ -225,10 +240,14 @@ package cloudhsm {
   }
 
   object CreateHsmResponse {
-    def apply(HsmArn: js.UndefOr[HsmArn] = js.undefined): CreateHsmResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmArn" -> HsmArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmArn: js.UndefOr[HsmArn] = js.undefined
+    ): CreateHsmResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmArn" -> HsmArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmResponse]
     }
@@ -244,11 +263,16 @@ package cloudhsm {
   }
 
   object CreateLunaClientRequest {
-    def apply(Certificate: Certificate, Label: js.UndefOr[ClientLabel] = js.undefined): CreateLunaClientRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Certificate" -> Certificate.asInstanceOf[js.Any], "Label" -> Label.map { x =>
+    def apply(
+        Certificate: Certificate,
+        Label: js.UndefOr[ClientLabel] = js.undefined
+    ): CreateLunaClientRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Certificate" -> Certificate.asInstanceOf[js.Any],
+        "Label" -> Label.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLunaClientRequest]
     }
@@ -263,10 +287,14 @@ package cloudhsm {
   }
 
   object CreateLunaClientResponse {
-    def apply(ClientArn: js.UndefOr[ClientArn] = js.undefined): CreateLunaClientResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClientArn" -> ClientArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClientArn: js.UndefOr[ClientArn] = js.undefined
+    ): CreateLunaClientResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientArn" -> ClientArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLunaClientResponse]
     }
@@ -281,9 +309,12 @@ package cloudhsm {
   }
 
   object DeleteHapgRequest {
-    def apply(HapgArn: HapgArn): DeleteHapgRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("HapgArn" -> HapgArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HapgArn: HapgArn
+    ): DeleteHapgRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HapgArn" -> HapgArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHapgRequest]
     }
@@ -298,9 +329,12 @@ package cloudhsm {
   }
 
   object DeleteHapgResponse {
-    def apply(Status: String): DeleteHapgResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: String
+    ): DeleteHapgResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHapgResponse]
     }
@@ -315,9 +349,12 @@ package cloudhsm {
   }
 
   object DeleteHsmRequest {
-    def apply(HsmArn: HsmArn): DeleteHsmRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("HsmArn" -> HsmArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmArn: HsmArn
+    ): DeleteHsmRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmArn" -> HsmArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmRequest]
     }
@@ -332,9 +369,12 @@ package cloudhsm {
   }
 
   object DeleteHsmResponse {
-    def apply(Status: String): DeleteHsmResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: String
+    ): DeleteHsmResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmResponse]
     }
@@ -346,9 +386,12 @@ package cloudhsm {
   }
 
   object DeleteLunaClientRequest {
-    def apply(ClientArn: ClientArn): DeleteLunaClientRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClientArn" -> ClientArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClientArn: ClientArn
+    ): DeleteLunaClientRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientArn" -> ClientArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLunaClientRequest]
     }
@@ -360,9 +403,12 @@ package cloudhsm {
   }
 
   object DeleteLunaClientResponse {
-    def apply(Status: String): DeleteLunaClientResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: String
+    ): DeleteLunaClientResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLunaClientResponse]
     }
@@ -377,9 +423,12 @@ package cloudhsm {
   }
 
   object DescribeHapgRequest {
-    def apply(HapgArn: HapgArn): DescribeHapgRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("HapgArn" -> HapgArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HapgArn: HapgArn
+    ): DescribeHapgRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HapgArn" -> HapgArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHapgRequest]
     }
@@ -402,15 +451,17 @@ package cloudhsm {
   }
 
   object DescribeHapgResponse {
-    def apply(HapgArn: js.UndefOr[HapgArn] = js.undefined,
-              HapgSerial: js.UndefOr[String] = js.undefined,
-              HsmsLastActionFailed: js.UndefOr[HsmList] = js.undefined,
-              HsmsPendingDeletion: js.UndefOr[HsmList] = js.undefined,
-              HsmsPendingRegistration: js.UndefOr[HsmList] = js.undefined,
-              Label: js.UndefOr[Label] = js.undefined,
-              LastModifiedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined,
-              State: js.UndefOr[CloudHsmObjectState] = js.undefined): DescribeHapgResponse = {
+    def apply(
+        HapgArn: js.UndefOr[HapgArn] = js.undefined,
+        HapgSerial: js.UndefOr[String] = js.undefined,
+        HsmsLastActionFailed: js.UndefOr[HsmList] = js.undefined,
+        HsmsPendingDeletion: js.UndefOr[HsmList] = js.undefined,
+        HsmsPendingRegistration: js.UndefOr[HsmList] = js.undefined,
+        Label: js.UndefOr[Label] = js.undefined,
+        LastModifiedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined,
+        State: js.UndefOr[CloudHsmObjectState] = js.undefined
+    ): DescribeHapgResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HapgArn" -> HapgArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -455,13 +506,18 @@ package cloudhsm {
   }
 
   object DescribeHsmRequest {
-    def apply(HsmArn: js.UndefOr[HsmArn] = js.undefined,
-              HsmSerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined): DescribeHsmRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmArn" -> HsmArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "HsmSerialNumber" -> HsmSerialNumber.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmArn: js.UndefOr[HsmArn] = js.undefined,
+        HsmSerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined
+    ): DescribeHsmRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmArn" -> HsmArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HsmSerialNumber" -> HsmSerialNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHsmRequest]
     }
@@ -496,27 +552,29 @@ package cloudhsm {
   }
 
   object DescribeHsmResponse {
-    def apply(AvailabilityZone: js.UndefOr[AZ] = js.undefined,
-              EniId: js.UndefOr[EniId] = js.undefined,
-              EniIp: js.UndefOr[IpAddress] = js.undefined,
-              HsmArn: js.UndefOr[HsmArn] = js.undefined,
-              HsmType: js.UndefOr[String] = js.undefined,
-              IamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-              Partitions: js.UndefOr[PartitionList] = js.undefined,
-              SerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined,
-              ServerCertLastUpdated: js.UndefOr[Timestamp] = js.undefined,
-              ServerCertUri: js.UndefOr[String] = js.undefined,
-              SoftwareVersion: js.UndefOr[String] = js.undefined,
-              SshKeyLastUpdated: js.UndefOr[Timestamp] = js.undefined,
-              SshPublicKey: js.UndefOr[SshKey] = js.undefined,
-              Status: js.UndefOr[HsmStatus] = js.undefined,
-              StatusDetails: js.UndefOr[String] = js.undefined,
-              SubnetId: js.UndefOr[SubnetId] = js.undefined,
-              SubscriptionEndDate: js.UndefOr[Timestamp] = js.undefined,
-              SubscriptionStartDate: js.UndefOr[Timestamp] = js.undefined,
-              SubscriptionType: js.UndefOr[SubscriptionType] = js.undefined,
-              VendorName: js.UndefOr[String] = js.undefined,
-              VpcId: js.UndefOr[VpcId] = js.undefined): DescribeHsmResponse = {
+    def apply(
+        AvailabilityZone: js.UndefOr[AZ] = js.undefined,
+        EniId: js.UndefOr[EniId] = js.undefined,
+        EniIp: js.UndefOr[IpAddress] = js.undefined,
+        HsmArn: js.UndefOr[HsmArn] = js.undefined,
+        HsmType: js.UndefOr[String] = js.undefined,
+        IamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        Partitions: js.UndefOr[PartitionList] = js.undefined,
+        SerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined,
+        ServerCertLastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        ServerCertUri: js.UndefOr[String] = js.undefined,
+        SoftwareVersion: js.UndefOr[String] = js.undefined,
+        SshKeyLastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        SshPublicKey: js.UndefOr[SshKey] = js.undefined,
+        Status: js.UndefOr[HsmStatus] = js.undefined,
+        StatusDetails: js.UndefOr[String] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined,
+        SubscriptionEndDate: js.UndefOr[Timestamp] = js.undefined,
+        SubscriptionStartDate: js.UndefOr[Timestamp] = js.undefined,
+        SubscriptionType: js.UndefOr[SubscriptionType] = js.undefined,
+        VendorName: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
+    ): DescribeHsmResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -594,13 +652,18 @@ package cloudhsm {
   }
 
   object DescribeLunaClientRequest {
-    def apply(CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
-              ClientArn: js.UndefOr[ClientArn] = js.undefined): DescribeLunaClientRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateFingerprint" -> CertificateFingerprint.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ClientArn" -> ClientArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
+        ClientArn: js.UndefOr[ClientArn] = js.undefined
+    ): DescribeLunaClientRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateFingerprint" -> CertificateFingerprint.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ClientArn" -> ClientArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLunaClientRequest]
     }
@@ -616,11 +679,13 @@ package cloudhsm {
   }
 
   object DescribeLunaClientResponse {
-    def apply(Certificate: js.UndefOr[Certificate] = js.undefined,
-              CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
-              ClientArn: js.UndefOr[ClientArn] = js.undefined,
-              Label: js.UndefOr[Label] = js.undefined,
-              LastModifiedTimestamp: js.UndefOr[Timestamp] = js.undefined): DescribeLunaClientResponse = {
+    def apply(
+        Certificate: js.UndefOr[Certificate] = js.undefined,
+        CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
+        ClientArn: js.UndefOr[ClientArn] = js.undefined,
+        Label: js.UndefOr[Label] = js.undefined,
+        LastModifiedTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): DescribeLunaClientResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Certificate" -> Certificate.map { x =>
           x.asInstanceOf[js.Any]
@@ -651,7 +716,11 @@ package cloudhsm {
   }
 
   object GetConfigRequest {
-    def apply(ClientArn: ClientArn, ClientVersion: ClientVersion, HapgList: HapgList): GetConfigRequest = {
+    def apply(
+        ClientArn: ClientArn,
+        ClientVersion: ClientVersion,
+        HapgList: HapgList
+    ): GetConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientArn"     -> ClientArn.asInstanceOf[js.Any],
         "ClientVersion" -> ClientVersion.asInstanceOf[js.Any],
@@ -670,9 +739,11 @@ package cloudhsm {
   }
 
   object GetConfigResponse {
-    def apply(ConfigCred: js.UndefOr[String] = js.undefined,
-              ConfigFile: js.UndefOr[String] = js.undefined,
-              ConfigType: js.UndefOr[String] = js.undefined): GetConfigResponse = {
+    def apply(
+        ConfigCred: js.UndefOr[String] = js.undefined,
+        ConfigFile: js.UndefOr[String] = js.undefined,
+        ConfigType: js.UndefOr[String] = js.undefined
+    ): GetConfigResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigCred" -> ConfigCred.map { x =>
           x.asInstanceOf[js.Any]
@@ -714,8 +785,10 @@ package cloudhsm {
   trait ListAvailableZonesRequest extends js.Object {}
 
   object ListAvailableZonesRequest {
-    def apply(): ListAvailableZonesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): ListAvailableZonesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAvailableZonesRequest]
     }
@@ -727,10 +800,14 @@ package cloudhsm {
   }
 
   object ListAvailableZonesResponse {
-    def apply(AZList: js.UndefOr[AZList] = js.undefined): ListAvailableZonesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AZList" -> AZList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AZList: js.UndefOr[AZList] = js.undefined
+    ): ListAvailableZonesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AZList" -> AZList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAvailableZonesResponse]
     }
@@ -742,10 +819,14 @@ package cloudhsm {
   }
 
   object ListHapgsRequest {
-    def apply(NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHapgsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListHapgsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHapgsRequest]
     }
@@ -758,11 +839,16 @@ package cloudhsm {
   }
 
   object ListHapgsResponse {
-    def apply(HapgList: HapgList, NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHapgsResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("HapgList" -> HapgList.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        HapgList: HapgList,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListHapgsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HapgList" -> HapgList.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHapgsResponse]
     }
@@ -774,10 +860,14 @@ package cloudhsm {
   }
 
   object ListHsmsRequest {
-    def apply(NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHsmsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListHsmsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHsmsRequest]
     }
@@ -793,13 +883,18 @@ package cloudhsm {
   }
 
   object ListHsmsResponse {
-    def apply(HsmList: js.UndefOr[HsmList] = js.undefined,
-              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHsmsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmList" -> HsmList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmList: js.UndefOr[HsmList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListHsmsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmList" -> HsmList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHsmsResponse]
     }
@@ -811,10 +906,14 @@ package cloudhsm {
   }
 
   object ListLunaClientsRequest {
-    def apply(NextToken: js.UndefOr[PaginationToken] = js.undefined): ListLunaClientsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListLunaClientsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLunaClientsRequest]
     }
@@ -827,13 +926,16 @@ package cloudhsm {
   }
 
   object ListLunaClientsResponse {
-    def apply(ClientList: ClientList,
-              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListLunaClientsResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ClientList" -> ClientList.asInstanceOf[js.Any], "NextToken" -> NextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClientList: ClientList,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListLunaClientsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientList" -> ClientList.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLunaClientsResponse]
     }
@@ -845,9 +947,12 @@ package cloudhsm {
   }
 
   object ListTagsForResourceRequest {
-    def apply(ResourceArn: String): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: String
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -859,9 +964,12 @@ package cloudhsm {
   }
 
   object ListTagsForResourceResponse {
-    def apply(TagList: TagList): ListTagsForResourceResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TagList" -> TagList.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TagList: TagList
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TagList" -> TagList.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -875,9 +983,11 @@ package cloudhsm {
   }
 
   object ModifyHapgRequest {
-    def apply(HapgArn: HapgArn,
-              Label: js.UndefOr[Label] = js.undefined,
-              PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined): ModifyHapgRequest = {
+    def apply(
+        HapgArn: HapgArn,
+        Label: js.UndefOr[Label] = js.undefined,
+        PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined
+    ): ModifyHapgRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HapgArn" -> HapgArn.asInstanceOf[js.Any],
         "Label" -> Label.map { x =>
@@ -898,10 +1008,14 @@ package cloudhsm {
   }
 
   object ModifyHapgResponse {
-    def apply(HapgArn: js.UndefOr[HapgArn] = js.undefined): ModifyHapgResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HapgArn" -> HapgArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HapgArn: js.UndefOr[HapgArn] = js.undefined
+    ): ModifyHapgResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HapgArn" -> HapgArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyHapgResponse]
     }
@@ -921,12 +1035,14 @@ package cloudhsm {
   }
 
   object ModifyHsmRequest {
-    def apply(HsmArn: HsmArn,
-              EniIp: js.UndefOr[IpAddress] = js.undefined,
-              ExternalId: js.UndefOr[ExternalId] = js.undefined,
-              IamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
-              SubnetId: js.UndefOr[SubnetId] = js.undefined,
-              SyslogIp: js.UndefOr[IpAddress] = js.undefined): ModifyHsmRequest = {
+    def apply(
+        HsmArn: HsmArn,
+        EniIp: js.UndefOr[IpAddress] = js.undefined,
+        ExternalId: js.UndefOr[ExternalId] = js.undefined,
+        IamRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined,
+        SyslogIp: js.UndefOr[IpAddress] = js.undefined
+    ): ModifyHsmRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmArn" -> HsmArn.asInstanceOf[js.Any],
         "EniIp" -> EniIp.map { x =>
@@ -959,10 +1075,14 @@ package cloudhsm {
   }
 
   object ModifyHsmResponse {
-    def apply(HsmArn: js.UndefOr[HsmArn] = js.undefined): ModifyHsmResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmArn" -> HsmArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmArn: js.UndefOr[HsmArn] = js.undefined
+    ): ModifyHsmResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmArn" -> HsmArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyHsmResponse]
     }
@@ -975,7 +1095,10 @@ package cloudhsm {
   }
 
   object ModifyLunaClientRequest {
-    def apply(Certificate: Certificate, ClientArn: ClientArn): ModifyLunaClientRequest = {
+    def apply(
+        Certificate: Certificate,
+        ClientArn: ClientArn
+    ): ModifyLunaClientRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Certificate" -> Certificate.asInstanceOf[js.Any],
         "ClientArn"   -> ClientArn.asInstanceOf[js.Any]
@@ -991,10 +1114,14 @@ package cloudhsm {
   }
 
   object ModifyLunaClientResponse {
-    def apply(ClientArn: js.UndefOr[ClientArn] = js.undefined): ModifyLunaClientResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClientArn" -> ClientArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClientArn: js.UndefOr[ClientArn] = js.undefined
+    ): ModifyLunaClientResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClientArn" -> ClientArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyLunaClientResponse]
     }
@@ -1007,7 +1134,10 @@ package cloudhsm {
   }
 
   object RemoveTagsFromResourceRequest {
-    def apply(ResourceArn: String, TagKeyList: TagKeyList): RemoveTagsFromResourceRequest = {
+    def apply(
+        ResourceArn: String,
+        TagKeyList: TagKeyList
+    ): RemoveTagsFromResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeyList"  -> TagKeyList.asInstanceOf[js.Any]
@@ -1023,9 +1153,12 @@ package cloudhsm {
   }
 
   object RemoveTagsFromResourceResponse {
-    def apply(Status: String): RemoveTagsFromResourceResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Status" -> Status.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: String
+    ): RemoveTagsFromResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromResourceResponse]
     }
@@ -1052,10 +1185,14 @@ package cloudhsm {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: TagValue): Tag = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }

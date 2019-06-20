@@ -27,7 +27,10 @@ package apigatewaymanagementapi {
   }
 
   object PostToConnectionRequest {
-    def apply(ConnectionId: __string, Data: Data): PostToConnectionRequest = {
+    def apply(
+        ConnectionId: __string,
+        Data: Data
+    ): PostToConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionId" -> ConnectionId.asInstanceOf[js.Any],
         "Data"         -> Data.asInstanceOf[js.Any]

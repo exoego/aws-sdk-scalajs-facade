@@ -97,7 +97,11 @@ package glacier {
   }
 
   object AbortMultipartUploadInput {
-    def apply(accountId: string, uploadId: string, vaultName: string): AbortMultipartUploadInput = {
+    def apply(
+        accountId: string,
+        uploadId: string,
+        vaultName: string
+    ): AbortMultipartUploadInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
@@ -118,7 +122,10 @@ package glacier {
   }
 
   object AbortVaultLockInput {
-    def apply(accountId: string, vaultName: string): AbortVaultLockInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): AbortVaultLockInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -147,7 +154,11 @@ package glacier {
   }
 
   object AddTagsToVaultInput {
-    def apply(accountId: string, vaultName: string, Tags: js.UndefOr[TagMap] = js.undefined): AddTagsToVaultInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): AddTagsToVaultInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -172,9 +183,11 @@ package glacier {
   }
 
   object ArchiveCreationOutput {
-    def apply(archiveId: js.UndefOr[string] = js.undefined,
-              checksum: js.UndefOr[string] = js.undefined,
-              location: js.UndefOr[string] = js.undefined): ArchiveCreationOutput = {
+    def apply(
+        archiveId: js.UndefOr[string] = js.undefined,
+        checksum: js.UndefOr[string] = js.undefined,
+        location: js.UndefOr[string] = js.undefined
+    ): ArchiveCreationOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "archiveId" -> archiveId.map { x =>
           x.asInstanceOf[js.Any]
@@ -205,12 +218,14 @@ package glacier {
   }
 
   object CSVInput {
-    def apply(Comments: js.UndefOr[string] = js.undefined,
-              FieldDelimiter: js.UndefOr[string] = js.undefined,
-              FileHeaderInfo: js.UndefOr[FileHeaderInfo] = js.undefined,
-              QuoteCharacter: js.UndefOr[string] = js.undefined,
-              QuoteEscapeCharacter: js.UndefOr[string] = js.undefined,
-              RecordDelimiter: js.UndefOr[string] = js.undefined): CSVInput = {
+    def apply(
+        Comments: js.UndefOr[string] = js.undefined,
+        FieldDelimiter: js.UndefOr[string] = js.undefined,
+        FileHeaderInfo: js.UndefOr[FileHeaderInfo] = js.undefined,
+        QuoteCharacter: js.UndefOr[string] = js.undefined,
+        QuoteEscapeCharacter: js.UndefOr[string] = js.undefined,
+        RecordDelimiter: js.UndefOr[string] = js.undefined
+    ): CSVInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Comments" -> Comments.map { x =>
           x.asInstanceOf[js.Any]
@@ -249,11 +264,13 @@ package glacier {
   }
 
   object CSVOutput {
-    def apply(FieldDelimiter: js.UndefOr[string] = js.undefined,
-              QuoteCharacter: js.UndefOr[string] = js.undefined,
-              QuoteEscapeCharacter: js.UndefOr[string] = js.undefined,
-              QuoteFields: js.UndefOr[QuoteFields] = js.undefined,
-              RecordDelimiter: js.UndefOr[string] = js.undefined): CSVOutput = {
+    def apply(
+        FieldDelimiter: js.UndefOr[string] = js.undefined,
+        QuoteCharacter: js.UndefOr[string] = js.undefined,
+        QuoteEscapeCharacter: js.UndefOr[string] = js.undefined,
+        QuoteFields: js.UndefOr[QuoteFields] = js.undefined,
+        RecordDelimiter: js.UndefOr[string] = js.undefined
+    ): CSVOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldDelimiter" -> FieldDelimiter.map { x =>
           x.asInstanceOf[js.Any]
@@ -309,11 +326,13 @@ package glacier {
   }
 
   object CompleteMultipartUploadInput {
-    def apply(accountId: string,
-              uploadId: string,
-              vaultName: string,
-              archiveSize: js.UndefOr[string] = js.undefined,
-              checksum: js.UndefOr[string] = js.undefined): CompleteMultipartUploadInput = {
+    def apply(
+        accountId: string,
+        uploadId: string,
+        vaultName: string,
+        archiveSize: js.UndefOr[string] = js.undefined,
+        checksum: js.UndefOr[string] = js.undefined
+    ): CompleteMultipartUploadInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
@@ -341,7 +360,11 @@ package glacier {
   }
 
   object CompleteVaultLockInput {
-    def apply(accountId: string, lockId: string, vaultName: string): CompleteVaultLockInput = {
+    def apply(
+        accountId: string,
+        lockId: string,
+        vaultName: string
+    ): CompleteVaultLockInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "lockId"    -> lockId.asInstanceOf[js.Any],
@@ -362,7 +385,10 @@ package glacier {
   }
 
   object CreateVaultInput {
-    def apply(accountId: string, vaultName: string): CreateVaultInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): CreateVaultInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -381,10 +407,14 @@ package glacier {
   }
 
   object CreateVaultOutput {
-    def apply(location: js.UndefOr[string] = js.undefined): CreateVaultOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("location" -> location.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        location: js.UndefOr[string] = js.undefined
+    ): CreateVaultOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "location" -> location.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVaultOutput]
     }
@@ -399,10 +429,14 @@ package glacier {
   }
 
   object DataRetrievalPolicy {
-    def apply(Rules: js.UndefOr[DataRetrievalRulesList] = js.undefined): DataRetrievalPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)]("Rules" -> Rules.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Rules: js.UndefOr[DataRetrievalRulesList] = js.undefined
+    ): DataRetrievalPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Rules" -> Rules.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataRetrievalPolicy]
     }
@@ -418,13 +452,18 @@ package glacier {
   }
 
   object DataRetrievalRule {
-    def apply(BytesPerHour: js.UndefOr[NullableLong] = js.undefined,
-              Strategy: js.UndefOr[string] = js.undefined): DataRetrievalRule = {
-      val _fields = IndexedSeq[(String, js.Any)]("BytesPerHour" -> BytesPerHour.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Strategy" -> Strategy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BytesPerHour: js.UndefOr[NullableLong] = js.undefined,
+        Strategy: js.UndefOr[string] = js.undefined
+    ): DataRetrievalRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BytesPerHour" -> BytesPerHour.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Strategy" -> Strategy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataRetrievalRule]
     }
@@ -441,7 +480,11 @@ package glacier {
   }
 
   object DeleteArchiveInput {
-    def apply(accountId: string, archiveId: string, vaultName: string): DeleteArchiveInput = {
+    def apply(
+        accountId: string,
+        archiveId: string,
+        vaultName: string
+    ): DeleteArchiveInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "archiveId" -> archiveId.asInstanceOf[js.Any],
@@ -462,7 +505,10 @@ package glacier {
   }
 
   object DeleteVaultAccessPolicyInput {
-    def apply(accountId: string, vaultName: string): DeleteVaultAccessPolicyInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): DeleteVaultAccessPolicyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -482,7 +528,10 @@ package glacier {
   }
 
   object DeleteVaultInput {
-    def apply(accountId: string, vaultName: string): DeleteVaultInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): DeleteVaultInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -502,7 +551,10 @@ package glacier {
   }
 
   object DeleteVaultNotificationsInput {
-    def apply(accountId: string, vaultName: string): DeleteVaultNotificationsInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): DeleteVaultNotificationsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -523,7 +575,11 @@ package glacier {
   }
 
   object DescribeJobInput {
-    def apply(accountId: string, jobId: string, vaultName: string): DescribeJobInput = {
+    def apply(
+        accountId: string,
+        jobId: string,
+        vaultName: string
+    ): DescribeJobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "jobId"     -> jobId.asInstanceOf[js.Any],
@@ -544,7 +600,10 @@ package glacier {
   }
 
   object DescribeVaultInput {
-    def apply(accountId: string, vaultName: string): DescribeVaultInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): DescribeVaultInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -568,12 +627,14 @@ package glacier {
   }
 
   object DescribeVaultOutput {
-    def apply(CreationDate: js.UndefOr[string] = js.undefined,
-              LastInventoryDate: js.UndefOr[string] = js.undefined,
-              NumberOfArchives: js.UndefOr[long] = js.undefined,
-              SizeInBytes: js.UndefOr[long] = js.undefined,
-              VaultARN: js.UndefOr[string] = js.undefined,
-              VaultName: js.UndefOr[string] = js.undefined): DescribeVaultOutput = {
+    def apply(
+        CreationDate: js.UndefOr[string] = js.undefined,
+        LastInventoryDate: js.UndefOr[string] = js.undefined,
+        NumberOfArchives: js.UndefOr[long] = js.undefined,
+        SizeInBytes: js.UndefOr[long] = js.undefined,
+        VaultARN: js.UndefOr[string] = js.undefined,
+        VaultName: js.UndefOr[string] = js.undefined
+    ): DescribeVaultOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -610,9 +671,11 @@ package glacier {
   }
 
   object Encryption {
-    def apply(EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
-              KMSContext: js.UndefOr[string] = js.undefined,
-              KMSKeyId: js.UndefOr[string] = js.undefined): Encryption = {
+    def apply(
+        EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
+        KMSContext: js.UndefOr[string] = js.undefined,
+        KMSKeyId: js.UndefOr[string] = js.undefined
+    ): Encryption = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EncryptionType" -> EncryptionType.map { x =>
           x.asInstanceOf[js.Any]
@@ -659,9 +722,12 @@ package glacier {
   }
 
   object GetDataRetrievalPolicyInput {
-    def apply(accountId: string): GetDataRetrievalPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("accountId" -> accountId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        accountId: string
+    ): GetDataRetrievalPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "accountId" -> accountId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataRetrievalPolicyInput]
     }
@@ -676,10 +742,14 @@ package glacier {
   }
 
   object GetDataRetrievalPolicyOutput {
-    def apply(Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined): GetDataRetrievalPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Policy" -> Policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
+    ): GetDataRetrievalPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataRetrievalPolicyOutput]
     }
@@ -697,10 +767,12 @@ package glacier {
   }
 
   object GetJobOutputInput {
-    def apply(accountId: string,
-              jobId: string,
-              vaultName: string,
-              range: js.UndefOr[string] = js.undefined): GetJobOutputInput = {
+    def apply(
+        accountId: string,
+        jobId: string,
+        vaultName: string,
+        range: js.UndefOr[string] = js.undefined
+    ): GetJobOutputInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "jobId"     -> jobId.asInstanceOf[js.Any],
@@ -729,13 +801,15 @@ package glacier {
   }
 
   object GetJobOutputOutput {
-    def apply(acceptRanges: js.UndefOr[string] = js.undefined,
-              archiveDescription: js.UndefOr[string] = js.undefined,
-              body: js.UndefOr[Stream] = js.undefined,
-              checksum: js.UndefOr[string] = js.undefined,
-              contentRange: js.UndefOr[string] = js.undefined,
-              contentType: js.UndefOr[string] = js.undefined,
-              status: js.UndefOr[httpstatus] = js.undefined): GetJobOutputOutput = {
+    def apply(
+        acceptRanges: js.UndefOr[string] = js.undefined,
+        archiveDescription: js.UndefOr[string] = js.undefined,
+        body: js.UndefOr[Stream] = js.undefined,
+        checksum: js.UndefOr[string] = js.undefined,
+        contentRange: js.UndefOr[string] = js.undefined,
+        contentType: js.UndefOr[string] = js.undefined,
+        status: js.UndefOr[httpstatus] = js.undefined
+    ): GetJobOutputOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "acceptRanges" -> acceptRanges.map { x =>
           x.asInstanceOf[js.Any]
@@ -774,7 +848,10 @@ package glacier {
   }
 
   object GetVaultAccessPolicyInput {
-    def apply(accountId: string, vaultName: string): GetVaultAccessPolicyInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): GetVaultAccessPolicyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -793,10 +870,14 @@ package glacier {
   }
 
   object GetVaultAccessPolicyOutput {
-    def apply(policy: js.UndefOr[VaultAccessPolicy] = js.undefined): GetVaultAccessPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("policy" -> policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        policy: js.UndefOr[VaultAccessPolicy] = js.undefined
+    ): GetVaultAccessPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "policy" -> policy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVaultAccessPolicyOutput]
     }
@@ -812,7 +893,10 @@ package glacier {
   }
 
   object GetVaultLockInput {
-    def apply(accountId: string, vaultName: string): GetVaultLockInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): GetVaultLockInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -834,10 +918,12 @@ package glacier {
   }
 
   object GetVaultLockOutput {
-    def apply(CreationDate: js.UndefOr[string] = js.undefined,
-              ExpirationDate: js.UndefOr[string] = js.undefined,
-              Policy: js.UndefOr[string] = js.undefined,
-              State: js.UndefOr[string] = js.undefined): GetVaultLockOutput = {
+    def apply(
+        CreationDate: js.UndefOr[string] = js.undefined,
+        ExpirationDate: js.UndefOr[string] = js.undefined,
+        Policy: js.UndefOr[string] = js.undefined,
+        State: js.UndefOr[string] = js.undefined
+    ): GetVaultLockOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -867,7 +953,10 @@ package glacier {
   }
 
   object GetVaultNotificationsInput {
-    def apply(accountId: string, vaultName: string): GetVaultNotificationsInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): GetVaultNotificationsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -889,9 +978,11 @@ package glacier {
     def apply(
         vaultNotificationConfig: js.UndefOr[VaultNotificationConfig] = js.undefined
     ): GetVaultNotificationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("vaultNotificationConfig" -> vaultNotificationConfig.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "vaultNotificationConfig" -> vaultNotificationConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVaultNotificationsOutput]
     }
@@ -926,27 +1017,29 @@ package glacier {
   }
 
   object GlacierJobDescription {
-    def apply(Action: js.UndefOr[ActionCode] = js.undefined,
-              ArchiveId: js.UndefOr[string] = js.undefined,
-              ArchiveSHA256TreeHash: js.UndefOr[string] = js.undefined,
-              ArchiveSizeInBytes: js.UndefOr[Size] = js.undefined,
-              Completed: js.UndefOr[boolean] = js.undefined,
-              CompletionDate: js.UndefOr[string] = js.undefined,
-              CreationDate: js.UndefOr[string] = js.undefined,
-              InventoryRetrievalParameters: js.UndefOr[InventoryRetrievalJobDescription] = js.undefined,
-              InventorySizeInBytes: js.UndefOr[Size] = js.undefined,
-              JobDescription: js.UndefOr[string] = js.undefined,
-              JobId: js.UndefOr[string] = js.undefined,
-              JobOutputPath: js.UndefOr[string] = js.undefined,
-              OutputLocation: js.UndefOr[OutputLocation] = js.undefined,
-              RetrievalByteRange: js.UndefOr[string] = js.undefined,
-              SHA256TreeHash: js.UndefOr[string] = js.undefined,
-              SNSTopic: js.UndefOr[string] = js.undefined,
-              SelectParameters: js.UndefOr[SelectParameters] = js.undefined,
-              StatusCode: js.UndefOr[StatusCode] = js.undefined,
-              StatusMessage: js.UndefOr[string] = js.undefined,
-              Tier: js.UndefOr[string] = js.undefined,
-              VaultARN: js.UndefOr[string] = js.undefined): GlacierJobDescription = {
+    def apply(
+        Action: js.UndefOr[ActionCode] = js.undefined,
+        ArchiveId: js.UndefOr[string] = js.undefined,
+        ArchiveSHA256TreeHash: js.UndefOr[string] = js.undefined,
+        ArchiveSizeInBytes: js.UndefOr[Size] = js.undefined,
+        Completed: js.UndefOr[boolean] = js.undefined,
+        CompletionDate: js.UndefOr[string] = js.undefined,
+        CreationDate: js.UndefOr[string] = js.undefined,
+        InventoryRetrievalParameters: js.UndefOr[InventoryRetrievalJobDescription] = js.undefined,
+        InventorySizeInBytes: js.UndefOr[Size] = js.undefined,
+        JobDescription: js.UndefOr[string] = js.undefined,
+        JobId: js.UndefOr[string] = js.undefined,
+        JobOutputPath: js.UndefOr[string] = js.undefined,
+        OutputLocation: js.UndefOr[OutputLocation] = js.undefined,
+        RetrievalByteRange: js.UndefOr[string] = js.undefined,
+        SHA256TreeHash: js.UndefOr[string] = js.undefined,
+        SNSTopic: js.UndefOr[string] = js.undefined,
+        SelectParameters: js.UndefOr[SelectParameters] = js.undefined,
+        StatusCode: js.UndefOr[StatusCode] = js.undefined,
+        StatusMessage: js.UndefOr[string] = js.undefined,
+        Tier: js.UndefOr[string] = js.undefined,
+        VaultARN: js.UndefOr[string] = js.undefined
+    ): GlacierJobDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -1027,12 +1120,18 @@ package glacier {
   }
 
   object Grant {
-    def apply(Grantee: js.UndefOr[Grantee] = js.undefined, Permission: js.UndefOr[Permission] = js.undefined): Grant = {
-      val _fields = IndexedSeq[(String, js.Any)]("Grantee" -> Grantee.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Permission" -> Permission.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Grantee: js.UndefOr[Grantee] = js.undefined,
+        Permission: js.UndefOr[Permission] = js.undefined
+    ): Grant = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Grantee" -> Grantee.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Permission" -> Permission.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Grant]
     }
@@ -1051,11 +1150,13 @@ package glacier {
   }
 
   object Grantee {
-    def apply(Type: Type,
-              DisplayName: js.UndefOr[string] = js.undefined,
-              EmailAddress: js.UndefOr[string] = js.undefined,
-              ID: js.UndefOr[string] = js.undefined,
-              URI: js.UndefOr[string] = js.undefined): Grantee = {
+    def apply(
+        Type: Type,
+        DisplayName: js.UndefOr[string] = js.undefined,
+        EmailAddress: js.UndefOr[string] = js.undefined,
+        ID: js.UndefOr[string] = js.undefined,
+        URI: js.UndefOr[string] = js.undefined
+    ): Grantee = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Type" -> Type.asInstanceOf[js.Any],
         "DisplayName" -> DisplayName.map { x =>
@@ -1087,9 +1188,11 @@ package glacier {
   }
 
   object InitiateJobInput {
-    def apply(accountId: string,
-              vaultName: string,
-              jobParameters: js.UndefOr[JobParameters] = js.undefined): InitiateJobInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        jobParameters: js.UndefOr[JobParameters] = js.undefined
+    ): InitiateJobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -1113,9 +1216,11 @@ package glacier {
   }
 
   object InitiateJobOutput {
-    def apply(jobId: js.UndefOr[string] = js.undefined,
-              jobOutputPath: js.UndefOr[string] = js.undefined,
-              location: js.UndefOr[string] = js.undefined): InitiateJobOutput = {
+    def apply(
+        jobId: js.UndefOr[string] = js.undefined,
+        jobOutputPath: js.UndefOr[string] = js.undefined,
+        location: js.UndefOr[string] = js.undefined
+    ): InitiateJobOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "jobId" -> jobId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1144,10 +1249,12 @@ package glacier {
   }
 
   object InitiateMultipartUploadInput {
-    def apply(accountId: string,
-              vaultName: string,
-              archiveDescription: js.UndefOr[string] = js.undefined,
-              partSize: js.UndefOr[string] = js.undefined): InitiateMultipartUploadInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        archiveDescription: js.UndefOr[string] = js.undefined,
+        partSize: js.UndefOr[string] = js.undefined
+    ): InitiateMultipartUploadInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -1173,13 +1280,18 @@ package glacier {
   }
 
   object InitiateMultipartUploadOutput {
-    def apply(location: js.UndefOr[string] = js.undefined,
-              uploadId: js.UndefOr[string] = js.undefined): InitiateMultipartUploadOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("location" -> location.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "uploadId" -> uploadId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        location: js.UndefOr[string] = js.undefined,
+        uploadId: js.UndefOr[string] = js.undefined
+    ): InitiateMultipartUploadOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "location" -> location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "uploadId" -> uploadId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateMultipartUploadOutput]
     }
@@ -1196,9 +1308,11 @@ package glacier {
   }
 
   object InitiateVaultLockInput {
-    def apply(accountId: string,
-              vaultName: string,
-              policy: js.UndefOr[VaultLockPolicy] = js.undefined): InitiateVaultLockInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        policy: js.UndefOr[VaultLockPolicy] = js.undefined
+    ): InitiateVaultLockInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -1220,10 +1334,14 @@ package glacier {
   }
 
   object InitiateVaultLockOutput {
-    def apply(lockId: js.UndefOr[string] = js.undefined): InitiateVaultLockOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("lockId" -> lockId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        lockId: js.UndefOr[string] = js.undefined
+    ): InitiateVaultLockOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "lockId" -> lockId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateVaultLockOutput]
     }
@@ -1238,10 +1356,14 @@ package glacier {
   }
 
   object InputSerialization {
-    def apply(csv: js.UndefOr[CSVInput] = js.undefined): InputSerialization = {
-      val _fields = IndexedSeq[(String, js.Any)]("csv" -> csv.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        csv: js.UndefOr[CSVInput] = js.undefined
+    ): InputSerialization = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "csv" -> csv.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputSerialization]
     }
@@ -1280,11 +1402,13 @@ package glacier {
   }
 
   object InventoryRetrievalJobDescription {
-    def apply(EndDate: js.UndefOr[DateTime] = js.undefined,
-              Format: js.UndefOr[string] = js.undefined,
-              Limit: js.UndefOr[string] = js.undefined,
-              Marker: js.UndefOr[string] = js.undefined,
-              StartDate: js.UndefOr[DateTime] = js.undefined): InventoryRetrievalJobDescription = {
+    def apply(
+        EndDate: js.UndefOr[DateTime] = js.undefined,
+        Format: js.UndefOr[string] = js.undefined,
+        Limit: js.UndefOr[string] = js.undefined,
+        Marker: js.UndefOr[string] = js.undefined,
+        StartDate: js.UndefOr[DateTime] = js.undefined
+    ): InventoryRetrievalJobDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndDate" -> EndDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -1319,10 +1443,12 @@ package glacier {
   }
 
   object InventoryRetrievalJobInput {
-    def apply(EndDate: js.UndefOr[string] = js.undefined,
-              Limit: js.UndefOr[string] = js.undefined,
-              Marker: js.UndefOr[string] = js.undefined,
-              StartDate: js.UndefOr[string] = js.undefined): InventoryRetrievalJobInput = {
+    def apply(
+        EndDate: js.UndefOr[string] = js.undefined,
+        Limit: js.UndefOr[string] = js.undefined,
+        Marker: js.UndefOr[string] = js.undefined,
+        StartDate: js.UndefOr[string] = js.undefined
+    ): InventoryRetrievalJobInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndDate" -> EndDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -1360,16 +1486,18 @@ package glacier {
   }
 
   object JobParameters {
-    def apply(ArchiveId: js.UndefOr[string] = js.undefined,
-              Description: js.UndefOr[string] = js.undefined,
-              Format: js.UndefOr[string] = js.undefined,
-              InventoryRetrievalParameters: js.UndefOr[InventoryRetrievalJobInput] = js.undefined,
-              OutputLocation: js.UndefOr[OutputLocation] = js.undefined,
-              RetrievalByteRange: js.UndefOr[string] = js.undefined,
-              SNSTopic: js.UndefOr[string] = js.undefined,
-              SelectParameters: js.UndefOr[SelectParameters] = js.undefined,
-              Tier: js.UndefOr[string] = js.undefined,
-              Type: js.UndefOr[string] = js.undefined): JobParameters = {
+    def apply(
+        ArchiveId: js.UndefOr[string] = js.undefined,
+        Description: js.UndefOr[string] = js.undefined,
+        Format: js.UndefOr[string] = js.undefined,
+        InventoryRetrievalParameters: js.UndefOr[InventoryRetrievalJobInput] = js.undefined,
+        OutputLocation: js.UndefOr[OutputLocation] = js.undefined,
+        RetrievalByteRange: js.UndefOr[string] = js.undefined,
+        SNSTopic: js.UndefOr[string] = js.undefined,
+        SelectParameters: js.UndefOr[SelectParameters] = js.undefined,
+        Tier: js.UndefOr[string] = js.undefined,
+        Type: js.UndefOr[string] = js.undefined
+    ): JobParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArchiveId" -> ArchiveId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1431,12 +1559,14 @@ package glacier {
   }
 
   object ListJobsInput {
-    def apply(accountId: string,
-              vaultName: string,
-              completed: js.UndefOr[string] = js.undefined,
-              limit: js.UndefOr[string] = js.undefined,
-              marker: js.UndefOr[string] = js.undefined,
-              statuscode: js.UndefOr[string] = js.undefined): ListJobsInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        completed: js.UndefOr[string] = js.undefined,
+        limit: js.UndefOr[string] = js.undefined,
+        marker: js.UndefOr[string] = js.undefined,
+        statuscode: js.UndefOr[string] = js.undefined
+    ): ListJobsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -1468,13 +1598,18 @@ package glacier {
   }
 
   object ListJobsOutput {
-    def apply(JobList: js.UndefOr[JobList] = js.undefined,
-              Marker: js.UndefOr[string] = js.undefined): ListJobsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("JobList" -> JobList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        JobList: js.UndefOr[JobList] = js.undefined,
+        Marker: js.UndefOr[string] = js.undefined
+    ): ListJobsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "JobList" -> JobList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsOutput]
     }
@@ -1492,10 +1627,12 @@ package glacier {
   }
 
   object ListMultipartUploadsInput {
-    def apply(accountId: string,
-              vaultName: string,
-              limit: js.UndefOr[string] = js.undefined,
-              marker: js.UndefOr[string] = js.undefined): ListMultipartUploadsInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        limit: js.UndefOr[string] = js.undefined,
+        marker: js.UndefOr[string] = js.undefined
+    ): ListMultipartUploadsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -1521,13 +1658,18 @@ package glacier {
   }
 
   object ListMultipartUploadsOutput {
-    def apply(Marker: js.UndefOr[string] = js.undefined,
-              UploadsList: js.UndefOr[UploadsList] = js.undefined): ListMultipartUploadsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UploadsList" -> UploadsList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[string] = js.undefined,
+        UploadsList: js.UndefOr[UploadsList] = js.undefined
+    ): ListMultipartUploadsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UploadsList" -> UploadsList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMultipartUploadsOutput]
     }
@@ -1546,11 +1688,13 @@ package glacier {
   }
 
   object ListPartsInput {
-    def apply(accountId: string,
-              uploadId: string,
-              vaultName: string,
-              limit: js.UndefOr[string] = js.undefined,
-              marker: js.UndefOr[string] = js.undefined): ListPartsInput = {
+    def apply(
+        accountId: string,
+        uploadId: string,
+        vaultName: string,
+        limit: js.UndefOr[string] = js.undefined,
+        marker: js.UndefOr[string] = js.undefined
+    ): ListPartsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
@@ -1582,13 +1726,15 @@ package glacier {
   }
 
   object ListPartsOutput {
-    def apply(ArchiveDescription: js.UndefOr[string] = js.undefined,
-              CreationDate: js.UndefOr[string] = js.undefined,
-              Marker: js.UndefOr[string] = js.undefined,
-              MultipartUploadId: js.UndefOr[string] = js.undefined,
-              PartSizeInBytes: js.UndefOr[long] = js.undefined,
-              Parts: js.UndefOr[PartList] = js.undefined,
-              VaultARN: js.UndefOr[string] = js.undefined): ListPartsOutput = {
+    def apply(
+        ArchiveDescription: js.UndefOr[string] = js.undefined,
+        CreationDate: js.UndefOr[string] = js.undefined,
+        Marker: js.UndefOr[string] = js.undefined,
+        MultipartUploadId: js.UndefOr[string] = js.undefined,
+        PartSizeInBytes: js.UndefOr[long] = js.undefined,
+        Parts: js.UndefOr[PartList] = js.undefined,
+        VaultARN: js.UndefOr[string] = js.undefined
+    ): ListPartsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArchiveDescription" -> ArchiveDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -1623,9 +1769,12 @@ package glacier {
   }
 
   object ListProvisionedCapacityInput {
-    def apply(accountId: string): ListProvisionedCapacityInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("accountId" -> accountId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        accountId: string
+    ): ListProvisionedCapacityInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "accountId" -> accountId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisionedCapacityInput]
     }
@@ -1640,9 +1789,11 @@ package glacier {
     def apply(
         ProvisionedCapacityList: js.UndefOr[ProvisionedCapacityList] = js.undefined
     ): ListProvisionedCapacityOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ProvisionedCapacityList" -> ProvisionedCapacityList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ProvisionedCapacityList" -> ProvisionedCapacityList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisionedCapacityOutput]
     }
@@ -1658,7 +1809,10 @@ package glacier {
   }
 
   object ListTagsForVaultInput {
-    def apply(accountId: string, vaultName: string): ListTagsForVaultInput = {
+    def apply(
+        accountId: string,
+        vaultName: string
+    ): ListTagsForVaultInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -1677,10 +1831,14 @@ package glacier {
   }
 
   object ListTagsForVaultOutput {
-    def apply(Tags: js.UndefOr[TagMap] = js.undefined): ListTagsForVaultOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForVaultOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForVaultOutput]
     }
@@ -1697,15 +1855,20 @@ package glacier {
   }
 
   object ListVaultsInput {
-    def apply(accountId: string,
-              limit: js.UndefOr[string] = js.undefined,
-              marker: js.UndefOr[string] = js.undefined): ListVaultsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("accountId" -> accountId.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        accountId: string,
+        limit: js.UndefOr[string] = js.undefined,
+        marker: js.UndefOr[string] = js.undefined
+    ): ListVaultsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "accountId" -> accountId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "marker" -> marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "marker" -> marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVaultsInput]
     }
@@ -1721,13 +1884,18 @@ package glacier {
   }
 
   object ListVaultsOutput {
-    def apply(Marker: js.UndefOr[string] = js.undefined,
-              VaultList: js.UndefOr[VaultList] = js.undefined): ListVaultsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VaultList" -> VaultList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[string] = js.undefined,
+        VaultList: js.UndefOr[VaultList] = js.undefined
+    ): ListVaultsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VaultList" -> VaultList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVaultsOutput]
     }
@@ -1752,10 +1920,14 @@ package glacier {
   }
 
   object OutputLocation {
-    def apply(S3: js.UndefOr[S3Location] = js.undefined): OutputLocation = {
-      val _fields = IndexedSeq[(String, js.Any)]("S3" -> S3.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        S3: js.UndefOr[S3Location] = js.undefined
+    ): OutputLocation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3" -> S3.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputLocation]
     }
@@ -1770,10 +1942,14 @@ package glacier {
   }
 
   object OutputSerialization {
-    def apply(csv: js.UndefOr[CSVOutput] = js.undefined): OutputSerialization = {
-      val _fields = IndexedSeq[(String, js.Any)]("csv" -> csv.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        csv: js.UndefOr[CSVOutput] = js.undefined
+    ): OutputSerialization = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "csv" -> csv.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputSerialization]
     }
@@ -1789,13 +1965,18 @@ package glacier {
   }
 
   object PartListElement {
-    def apply(RangeInBytes: js.UndefOr[string] = js.undefined,
-              SHA256TreeHash: js.UndefOr[string] = js.undefined): PartListElement = {
-      val _fields = IndexedSeq[(String, js.Any)]("RangeInBytes" -> RangeInBytes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SHA256TreeHash" -> SHA256TreeHash.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RangeInBytes: js.UndefOr[string] = js.undefined,
+        SHA256TreeHash: js.UndefOr[string] = js.undefined
+    ): PartListElement = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RangeInBytes" -> RangeInBytes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SHA256TreeHash" -> SHA256TreeHash.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PartListElement]
     }
@@ -1832,9 +2013,11 @@ package glacier {
   }
 
   object ProvisionedCapacityDescription {
-    def apply(CapacityId: js.UndefOr[string] = js.undefined,
-              ExpirationDate: js.UndefOr[string] = js.undefined,
-              StartDate: js.UndefOr[string] = js.undefined): ProvisionedCapacityDescription = {
+    def apply(
+        CapacityId: js.UndefOr[string] = js.undefined,
+        ExpirationDate: js.UndefOr[string] = js.undefined,
+        StartDate: js.UndefOr[string] = js.undefined
+    ): ProvisionedCapacityDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CapacityId" -> CapacityId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1857,9 +2040,12 @@ package glacier {
   }
 
   object PurchaseProvisionedCapacityInput {
-    def apply(accountId: string): PurchaseProvisionedCapacityInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("accountId" -> accountId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        accountId: string
+    ): PurchaseProvisionedCapacityInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "accountId" -> accountId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseProvisionedCapacityInput]
     }
@@ -1871,10 +2057,14 @@ package glacier {
   }
 
   object PurchaseProvisionedCapacityOutput {
-    def apply(capacityId: js.UndefOr[string] = js.undefined): PurchaseProvisionedCapacityOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("capacityId" -> capacityId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        capacityId: js.UndefOr[string] = js.undefined
+    ): PurchaseProvisionedCapacityOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "capacityId" -> capacityId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseProvisionedCapacityOutput]
     }
@@ -1898,9 +2088,11 @@ package glacier {
   }
 
   object RemoveTagsFromVaultInput {
-    def apply(accountId: string,
-              vaultName: string,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined): RemoveTagsFromVaultInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined
+    ): RemoveTagsFromVaultInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -1949,14 +2141,16 @@ package glacier {
   }
 
   object S3Location {
-    def apply(AccessControlList: js.UndefOr[AccessControlPolicyList] = js.undefined,
-              BucketName: js.UndefOr[string] = js.undefined,
-              CannedACL: js.UndefOr[CannedACL] = js.undefined,
-              Encryption: js.UndefOr[Encryption] = js.undefined,
-              Prefix: js.UndefOr[string] = js.undefined,
-              StorageClass: js.UndefOr[StorageClass] = js.undefined,
-              Tagging: js.UndefOr[hashmap] = js.undefined,
-              UserMetadata: js.UndefOr[hashmap] = js.undefined): S3Location = {
+    def apply(
+        AccessControlList: js.UndefOr[AccessControlPolicyList] = js.undefined,
+        BucketName: js.UndefOr[string] = js.undefined,
+        CannedACL: js.UndefOr[CannedACL] = js.undefined,
+        Encryption: js.UndefOr[Encryption] = js.undefined,
+        Prefix: js.UndefOr[string] = js.undefined,
+        StorageClass: js.UndefOr[StorageClass] = js.undefined,
+        Tagging: js.UndefOr[hashmap] = js.undefined,
+        UserMetadata: js.UndefOr[hashmap] = js.undefined
+    ): S3Location = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessControlList" -> AccessControlList.map { x =>
           x.asInstanceOf[js.Any]
@@ -2000,10 +2194,12 @@ package glacier {
   }
 
   object SelectParameters {
-    def apply(Expression: js.UndefOr[string] = js.undefined,
-              ExpressionType: js.UndefOr[ExpressionType] = js.undefined,
-              InputSerialization: js.UndefOr[InputSerialization] = js.undefined,
-              OutputSerialization: js.UndefOr[OutputSerialization] = js.undefined): SelectParameters = {
+    def apply(
+        Expression: js.UndefOr[string] = js.undefined,
+        ExpressionType: js.UndefOr[ExpressionType] = js.undefined,
+        InputSerialization: js.UndefOr[InputSerialization] = js.undefined,
+        OutputSerialization: js.UndefOr[OutputSerialization] = js.undefined
+    ): SelectParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Expression" -> Expression.map { x =>
           x.asInstanceOf[js.Any]
@@ -2043,12 +2239,16 @@ package glacier {
   }
 
   object SetDataRetrievalPolicyInput {
-    def apply(accountId: string,
-              Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined): SetDataRetrievalPolicyInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("accountId" -> accountId.asInstanceOf[js.Any], "Policy" -> Policy.map {
-        x =>
+    def apply(
+        accountId: string,
+        Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
+    ): SetDataRetrievalPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "accountId" -> accountId.asInstanceOf[js.Any],
+        "Policy" -> Policy.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDataRetrievalPolicyInput]
     }
@@ -2065,9 +2265,11 @@ package glacier {
   }
 
   object SetVaultAccessPolicyInput {
-    def apply(accountId: string,
-              vaultName: string,
-              policy: js.UndefOr[VaultAccessPolicy] = js.undefined): SetVaultAccessPolicyInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        policy: js.UndefOr[VaultAccessPolicy] = js.undefined
+    ): SetVaultAccessPolicyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -2145,11 +2347,13 @@ package glacier {
   }
 
   object UploadArchiveInput {
-    def apply(accountId: string,
-              vaultName: string,
-              archiveDescription: js.UndefOr[string] = js.undefined,
-              body: js.UndefOr[Stream] = js.undefined,
-              checksum: js.UndefOr[string] = js.undefined): UploadArchiveInput = {
+    def apply(
+        accountId: string,
+        vaultName: string,
+        archiveDescription: js.UndefOr[string] = js.undefined,
+        body: js.UndefOr[Stream] = js.undefined,
+        checksum: js.UndefOr[string] = js.undefined
+    ): UploadArchiveInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any],
@@ -2181,11 +2385,13 @@ package glacier {
   }
 
   object UploadListElement {
-    def apply(ArchiveDescription: js.UndefOr[string] = js.undefined,
-              CreationDate: js.UndefOr[string] = js.undefined,
-              MultipartUploadId: js.UndefOr[string] = js.undefined,
-              PartSizeInBytes: js.UndefOr[long] = js.undefined,
-              VaultARN: js.UndefOr[string] = js.undefined): UploadListElement = {
+    def apply(
+        ArchiveDescription: js.UndefOr[string] = js.undefined,
+        CreationDate: js.UndefOr[string] = js.undefined,
+        MultipartUploadId: js.UndefOr[string] = js.undefined,
+        PartSizeInBytes: js.UndefOr[long] = js.undefined,
+        VaultARN: js.UndefOr[string] = js.undefined
+    ): UploadListElement = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ArchiveDescription" -> ArchiveDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -2222,12 +2428,14 @@ package glacier {
   }
 
   object UploadMultipartPartInput {
-    def apply(accountId: string,
-              uploadId: string,
-              vaultName: string,
-              body: js.UndefOr[Stream] = js.undefined,
-              checksum: js.UndefOr[string] = js.undefined,
-              range: js.UndefOr[string] = js.undefined): UploadMultipartPartInput = {
+    def apply(
+        accountId: string,
+        uploadId: string,
+        vaultName: string,
+        body: js.UndefOr[Stream] = js.undefined,
+        checksum: js.UndefOr[string] = js.undefined,
+        range: js.UndefOr[string] = js.undefined
+    ): UploadMultipartPartInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
@@ -2256,10 +2464,14 @@ package glacier {
   }
 
   object UploadMultipartPartOutput {
-    def apply(checksum: js.UndefOr[string] = js.undefined): UploadMultipartPartOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("checksum" -> checksum.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        checksum: js.UndefOr[string] = js.undefined
+    ): UploadMultipartPartOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "checksum" -> checksum.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadMultipartPartOutput]
     }
@@ -2274,10 +2486,14 @@ package glacier {
   }
 
   object VaultAccessPolicy {
-    def apply(Policy: js.UndefOr[string] = js.undefined): VaultAccessPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)]("Policy" -> Policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Policy: js.UndefOr[string] = js.undefined
+    ): VaultAccessPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VaultAccessPolicy]
     }
@@ -2292,10 +2508,14 @@ package glacier {
   }
 
   object VaultLockPolicy {
-    def apply(Policy: js.UndefOr[string] = js.undefined): VaultLockPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)]("Policy" -> Policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Policy: js.UndefOr[string] = js.undefined
+    ): VaultLockPolicy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VaultLockPolicy]
     }
@@ -2311,13 +2531,18 @@ package glacier {
   }
 
   object VaultNotificationConfig {
-    def apply(Events: js.UndefOr[NotificationEventList] = js.undefined,
-              SNSTopic: js.UndefOr[string] = js.undefined): VaultNotificationConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("Events" -> Events.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SNSTopic" -> SNSTopic.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Events: js.UndefOr[NotificationEventList] = js.undefined,
+        SNSTopic: js.UndefOr[string] = js.undefined
+    ): VaultNotificationConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SNSTopic" -> SNSTopic.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VaultNotificationConfig]
     }

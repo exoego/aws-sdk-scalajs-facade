@@ -118,9 +118,11 @@ package ecr {
   }
 
   object AuthorizationData {
-    def apply(authorizationToken: js.UndefOr[Base64] = js.undefined,
-              expiresAt: js.UndefOr[ExpirationTimestamp] = js.undefined,
-              proxyEndpoint: js.UndefOr[ProxyEndpoint] = js.undefined): AuthorizationData = {
+    def apply(
+        authorizationToken: js.UndefOr[Base64] = js.undefined,
+        expiresAt: js.UndefOr[ExpirationTimestamp] = js.undefined,
+        proxyEndpoint: js.UndefOr[ProxyEndpoint] = js.undefined
+    ): AuthorizationData = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizationToken" -> authorizationToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -145,9 +147,11 @@ package ecr {
   }
 
   object BatchCheckLayerAvailabilityRequest {
-    def apply(layerDigests: BatchedOperationLayerDigestList,
-              repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): BatchCheckLayerAvailabilityRequest = {
+    def apply(
+        layerDigests: BatchedOperationLayerDigestList,
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): BatchCheckLayerAvailabilityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "layerDigests"   -> layerDigests.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -167,13 +171,18 @@ package ecr {
   }
 
   object BatchCheckLayerAvailabilityResponse {
-    def apply(failures: js.UndefOr[LayerFailureList] = js.undefined,
-              layers: js.UndefOr[LayerList] = js.undefined): BatchCheckLayerAvailabilityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("failures" -> failures.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "layers" -> layers.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        failures: js.UndefOr[LayerFailureList] = js.undefined,
+        layers: js.UndefOr[LayerList] = js.undefined
+    ): BatchCheckLayerAvailabilityResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failures" -> failures.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "layers" -> layers.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchCheckLayerAvailabilityResponse]
     }
@@ -190,9 +199,11 @@ package ecr {
   }
 
   object BatchDeleteImageRequest {
-    def apply(imageIds: ImageIdentifierList,
-              repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): BatchDeleteImageRequest = {
+    def apply(
+        imageIds: ImageIdentifierList,
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): BatchDeleteImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "imageIds"       -> imageIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -212,13 +223,18 @@ package ecr {
   }
 
   object BatchDeleteImageResponse {
-    def apply(failures: js.UndefOr[ImageFailureList] = js.undefined,
-              imageIds: js.UndefOr[ImageIdentifierList] = js.undefined): BatchDeleteImageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("failures" -> failures.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "imageIds" -> imageIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        failures: js.UndefOr[ImageFailureList] = js.undefined,
+        imageIds: js.UndefOr[ImageIdentifierList] = js.undefined
+    ): BatchDeleteImageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failures" -> failures.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "imageIds" -> imageIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteImageResponse]
     }
@@ -233,10 +249,12 @@ package ecr {
   }
 
   object BatchGetImageRequest {
-    def apply(imageIds: ImageIdentifierList,
-              repositoryName: RepositoryName,
-              acceptedMediaTypes: js.UndefOr[MediaTypeList] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): BatchGetImageRequest = {
+    def apply(
+        imageIds: ImageIdentifierList,
+        repositoryName: RepositoryName,
+        acceptedMediaTypes: js.UndefOr[MediaTypeList] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): BatchGetImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "imageIds"       -> imageIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -259,13 +277,18 @@ package ecr {
   }
 
   object BatchGetImageResponse {
-    def apply(failures: js.UndefOr[ImageFailureList] = js.undefined,
-              images: js.UndefOr[ImageList] = js.undefined): BatchGetImageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("failures" -> failures.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "images" -> images.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        failures: js.UndefOr[ImageFailureList] = js.undefined,
+        images: js.UndefOr[ImageList] = js.undefined
+    ): BatchGetImageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failures" -> failures.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "images" -> images.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetImageResponse]
     }
@@ -280,10 +303,12 @@ package ecr {
   }
 
   object CompleteLayerUploadRequest {
-    def apply(layerDigests: LayerDigestList,
-              repositoryName: RepositoryName,
-              uploadId: UploadId,
-              registryId: js.UndefOr[RegistryId] = js.undefined): CompleteLayerUploadRequest = {
+    def apply(
+        layerDigests: LayerDigestList,
+        repositoryName: RepositoryName,
+        uploadId: UploadId,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): CompleteLayerUploadRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "layerDigests"   -> layerDigests.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -306,10 +331,12 @@ package ecr {
   }
 
   object CompleteLayerUploadResponse {
-    def apply(layerDigest: js.UndefOr[LayerDigest] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined,
-              uploadId: js.UndefOr[UploadId] = js.undefined): CompleteLayerUploadResponse = {
+    def apply(
+        layerDigest: js.UndefOr[LayerDigest] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined,
+        uploadId: js.UndefOr[UploadId] = js.undefined
+    ): CompleteLayerUploadResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "layerDigest" -> layerDigest.map { x =>
           x.asInstanceOf[js.Any]
@@ -336,11 +363,16 @@ package ecr {
   }
 
   object CreateRepositoryRequest {
-    def apply(repositoryName: RepositoryName, tags: js.UndefOr[TagList] = js.undefined): CreateRepositoryRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("repositoryName" -> repositoryName.asInstanceOf[js.Any], "tags" -> tags.map { x =>
+    def apply(
+        repositoryName: RepositoryName,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateRepositoryRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repositoryName" -> repositoryName.asInstanceOf[js.Any],
+        "tags" -> tags.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRepositoryRequest]
     }
@@ -352,10 +384,14 @@ package ecr {
   }
 
   object CreateRepositoryResponse {
-    def apply(repository: js.UndefOr[Repository] = js.undefined): CreateRepositoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("repository" -> repository.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repository: js.UndefOr[Repository] = js.undefined
+    ): CreateRepositoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repository" -> repository.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRepositoryResponse]
     }
@@ -368,8 +404,10 @@ package ecr {
   }
 
   object DeleteLifecyclePolicyRequest {
-    def apply(repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): DeleteLifecyclePolicyRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): DeleteLifecyclePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "registryId" -> registryId.map { x =>
@@ -390,10 +428,12 @@ package ecr {
   }
 
   object DeleteLifecyclePolicyResponse {
-    def apply(lastEvaluatedAt: js.UndefOr[EvaluationTimestamp] = js.undefined,
-              lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): DeleteLifecyclePolicyResponse = {
+    def apply(
+        lastEvaluatedAt: js.UndefOr[EvaluationTimestamp] = js.undefined,
+        lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): DeleteLifecyclePolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lastEvaluatedAt" -> lastEvaluatedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -420,8 +460,10 @@ package ecr {
   }
 
   object DeleteRepositoryPolicyRequest {
-    def apply(repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): DeleteRepositoryPolicyRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): DeleteRepositoryPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "registryId" -> registryId.map { x =>
@@ -441,9 +483,11 @@ package ecr {
   }
 
   object DeleteRepositoryPolicyResponse {
-    def apply(policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): DeleteRepositoryPolicyResponse = {
+    def apply(
+        policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): DeleteRepositoryPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyText" -> policyText.map { x =>
           x.asInstanceOf[js.Any]
@@ -468,9 +512,11 @@ package ecr {
   }
 
   object DeleteRepositoryRequest {
-    def apply(repositoryName: RepositoryName,
-              force: js.UndefOr[ForceFlag] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): DeleteRepositoryRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        force: js.UndefOr[ForceFlag] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): DeleteRepositoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "force" -> force.map { x =>
@@ -491,10 +537,14 @@ package ecr {
   }
 
   object DeleteRepositoryResponse {
-    def apply(repository: js.UndefOr[Repository] = js.undefined): DeleteRepositoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("repository" -> repository.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        repository: js.UndefOr[Repository] = js.undefined
+    ): DeleteRepositoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "repository" -> repository.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRepositoryResponse]
     }
@@ -509,10 +559,14 @@ package ecr {
   }
 
   object DescribeImagesFilter {
-    def apply(tagStatus: js.UndefOr[TagStatus] = js.undefined): DescribeImagesFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("tagStatus" -> tagStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tagStatus: js.UndefOr[TagStatus] = js.undefined
+    ): DescribeImagesFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tagStatus" -> tagStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagesFilter]
     }
@@ -529,12 +583,14 @@ package ecr {
   }
 
   object DescribeImagesRequest {
-    def apply(repositoryName: RepositoryName,
-              filter: js.UndefOr[DescribeImagesFilter] = js.undefined,
-              imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): DescribeImagesRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        filter: js.UndefOr[DescribeImagesFilter] = js.undefined,
+        imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): DescribeImagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "filter" -> filter.map { x =>
@@ -565,13 +621,18 @@ package ecr {
   }
 
   object DescribeImagesResponse {
-    def apply(imageDetails: js.UndefOr[ImageDetailList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): DescribeImagesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("imageDetails" -> imageDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        imageDetails: js.UndefOr[ImageDetailList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeImagesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "imageDetails" -> imageDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeImagesResponse]
     }
@@ -586,10 +647,12 @@ package ecr {
   }
 
   object DescribeRepositoriesRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryNames: js.UndefOr[RepositoryNameList] = js.undefined): DescribeRepositoriesRequest = {
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryNames: js.UndefOr[RepositoryNameList] = js.undefined
+    ): DescribeRepositoriesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "maxResults" -> maxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -616,13 +679,18 @@ package ecr {
   }
 
   object DescribeRepositoriesResponse {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              repositories: js.UndefOr[RepositoryList] = js.undefined): DescribeRepositoriesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "repositories" -> repositories.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        repositories: js.UndefOr[RepositoryList] = js.undefined
+    ): DescribeRepositoriesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "repositories" -> repositories.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRepositoriesResponse]
     }
@@ -637,9 +705,11 @@ package ecr {
     def apply(
         registryIds: js.UndefOr[GetAuthorizationTokenRegistryIdList] = js.undefined
     ): GetAuthorizationTokenRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("registryIds" -> registryIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "registryIds" -> registryIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizationTokenRequest]
     }
@@ -651,10 +721,14 @@ package ecr {
   }
 
   object GetAuthorizationTokenResponse {
-    def apply(authorizationData: js.UndefOr[AuthorizationDataList] = js.undefined): GetAuthorizationTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("authorizationData" -> authorizationData.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        authorizationData: js.UndefOr[AuthorizationDataList] = js.undefined
+    ): GetAuthorizationTokenResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "authorizationData" -> authorizationData.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizationTokenResponse]
     }
@@ -668,9 +742,11 @@ package ecr {
   }
 
   object GetDownloadUrlForLayerRequest {
-    def apply(layerDigest: LayerDigest,
-              repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): GetDownloadUrlForLayerRequest = {
+    def apply(
+        layerDigest: LayerDigest,
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): GetDownloadUrlForLayerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "layerDigest"    -> layerDigest.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -690,13 +766,18 @@ package ecr {
   }
 
   object GetDownloadUrlForLayerResponse {
-    def apply(downloadUrl: js.UndefOr[Url] = js.undefined,
-              layerDigest: js.UndefOr[LayerDigest] = js.undefined): GetDownloadUrlForLayerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("downloadUrl" -> downloadUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "layerDigest" -> layerDigest.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        downloadUrl: js.UndefOr[Url] = js.undefined,
+        layerDigest: js.UndefOr[LayerDigest] = js.undefined
+    ): GetDownloadUrlForLayerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "downloadUrl" -> downloadUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "layerDigest" -> layerDigest.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDownloadUrlForLayerResponse]
     }
@@ -713,12 +794,14 @@ package ecr {
   }
 
   object GetLifecyclePolicyPreviewRequest {
-    def apply(repositoryName: RepositoryName,
-              filter: js.UndefOr[LifecyclePolicyPreviewFilter] = js.undefined,
-              imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
-              maxResults: js.UndefOr[LifecyclePreviewMaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): GetLifecyclePolicyPreviewRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        filter: js.UndefOr[LifecyclePolicyPreviewFilter] = js.undefined,
+        imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
+        maxResults: js.UndefOr[LifecyclePreviewMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): GetLifecyclePolicyPreviewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "filter" -> filter.map { x =>
@@ -754,13 +837,15 @@ package ecr {
   }
 
   object GetLifecyclePolicyPreviewResponse {
-    def apply(lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              previewResults: js.UndefOr[LifecyclePolicyPreviewResultList] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined,
-              status: js.UndefOr[LifecyclePolicyPreviewStatus] = js.undefined,
-              summary: js.UndefOr[LifecyclePolicyPreviewSummary] = js.undefined): GetLifecyclePolicyPreviewResponse = {
+    def apply(
+        lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        previewResults: js.UndefOr[LifecyclePolicyPreviewResultList] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined,
+        status: js.UndefOr[LifecyclePolicyPreviewStatus] = js.undefined,
+        summary: js.UndefOr[LifecyclePolicyPreviewSummary] = js.undefined
+    ): GetLifecyclePolicyPreviewResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lifecyclePolicyText" -> lifecyclePolicyText.map { x =>
           x.asInstanceOf[js.Any]
@@ -796,8 +881,10 @@ package ecr {
   }
 
   object GetLifecyclePolicyRequest {
-    def apply(repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): GetLifecyclePolicyRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): GetLifecyclePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "registryId" -> registryId.map { x =>
@@ -818,10 +905,12 @@ package ecr {
   }
 
   object GetLifecyclePolicyResponse {
-    def apply(lastEvaluatedAt: js.UndefOr[EvaluationTimestamp] = js.undefined,
-              lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): GetLifecyclePolicyResponse = {
+    def apply(
+        lastEvaluatedAt: js.UndefOr[EvaluationTimestamp] = js.undefined,
+        lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): GetLifecyclePolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lastEvaluatedAt" -> lastEvaluatedAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -848,8 +937,10 @@ package ecr {
   }
 
   object GetRepositoryPolicyRequest {
-    def apply(repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): GetRepositoryPolicyRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): GetRepositoryPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "registryId" -> registryId.map { x =>
@@ -869,9 +960,11 @@ package ecr {
   }
 
   object GetRepositoryPolicyResponse {
-    def apply(policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): GetRepositoryPolicyResponse = {
+    def apply(
+        policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): GetRepositoryPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyText" -> policyText.map { x =>
           x.asInstanceOf[js.Any]
@@ -900,10 +993,12 @@ package ecr {
   }
 
   object Image {
-    def apply(imageId: js.UndefOr[ImageIdentifier] = js.undefined,
-              imageManifest: js.UndefOr[ImageManifest] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): Image = {
+    def apply(
+        imageId: js.UndefOr[ImageIdentifier] = js.undefined,
+        imageManifest: js.UndefOr[ImageManifest] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): Image = {
       val _fields = IndexedSeq[(String, js.Any)](
         "imageId" -> imageId.map { x =>
           x.asInstanceOf[js.Any]
@@ -943,12 +1038,14 @@ package ecr {
   }
 
   object ImageDetail {
-    def apply(imageDigest: js.UndefOr[ImageDigest] = js.undefined,
-              imagePushedAt: js.UndefOr[PushTimestamp] = js.undefined,
-              imageSizeInBytes: js.UndefOr[ImageSizeInBytes] = js.undefined,
-              imageTags: js.UndefOr[ImageTagList] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): ImageDetail = {
+    def apply(
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
+        imagePushedAt: js.UndefOr[PushTimestamp] = js.undefined,
+        imageSizeInBytes: js.UndefOr[ImageSizeInBytes] = js.undefined,
+        imageTags: js.UndefOr[ImageTagList] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): ImageDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "imageDigest" -> imageDigest.map { x =>
           x.asInstanceOf[js.Any]
@@ -985,9 +1082,11 @@ package ecr {
   }
 
   object ImageFailure {
-    def apply(failureCode: js.UndefOr[ImageFailureCode] = js.undefined,
-              failureReason: js.UndefOr[ImageFailureReason] = js.undefined,
-              imageId: js.UndefOr[ImageIdentifier] = js.undefined): ImageFailure = {
+    def apply(
+        failureCode: js.UndefOr[ImageFailureCode] = js.undefined,
+        failureReason: js.UndefOr[ImageFailureReason] = js.undefined,
+        imageId: js.UndefOr[ImageIdentifier] = js.undefined
+    ): ImageFailure = {
       val _fields = IndexedSeq[(String, js.Any)](
         "failureCode" -> failureCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -1025,13 +1124,18 @@ package ecr {
   }
 
   object ImageIdentifier {
-    def apply(imageDigest: js.UndefOr[ImageDigest] = js.undefined,
-              imageTag: js.UndefOr[ImageTag] = js.undefined): ImageIdentifier = {
-      val _fields = IndexedSeq[(String, js.Any)]("imageDigest" -> imageDigest.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "imageTag" -> imageTag.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
+        imageTag: js.UndefOr[ImageTag] = js.undefined
+    ): ImageIdentifier = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "imageDigest" -> imageDigest.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "imageTag" -> imageTag.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImageIdentifier]
     }
@@ -1044,8 +1148,10 @@ package ecr {
   }
 
   object InitiateLayerUploadRequest {
-    def apply(repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): InitiateLayerUploadRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): InitiateLayerUploadRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "registryId" -> registryId.map { x =>
@@ -1064,13 +1170,18 @@ package ecr {
   }
 
   object InitiateLayerUploadResponse {
-    def apply(partSize: js.UndefOr[PartSize] = js.undefined,
-              uploadId: js.UndefOr[UploadId] = js.undefined): InitiateLayerUploadResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("partSize" -> partSize.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "uploadId" -> uploadId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        partSize: js.UndefOr[PartSize] = js.undefined,
+        uploadId: js.UndefOr[UploadId] = js.undefined
+    ): InitiateLayerUploadResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "partSize" -> partSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "uploadId" -> uploadId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateLayerUploadResponse]
     }
@@ -1088,10 +1199,12 @@ package ecr {
   }
 
   object Layer {
-    def apply(layerAvailability: js.UndefOr[LayerAvailability] = js.undefined,
-              layerDigest: js.UndefOr[LayerDigest] = js.undefined,
-              layerSize: js.UndefOr[LayerSizeInBytes] = js.undefined,
-              mediaType: js.UndefOr[MediaType] = js.undefined): Layer = {
+    def apply(
+        layerAvailability: js.UndefOr[LayerAvailability] = js.undefined,
+        layerDigest: js.UndefOr[LayerDigest] = js.undefined,
+        layerSize: js.UndefOr[LayerSizeInBytes] = js.undefined,
+        mediaType: js.UndefOr[MediaType] = js.undefined
+    ): Layer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "layerAvailability" -> layerAvailability.map { x =>
           x.asInstanceOf[js.Any]
@@ -1129,9 +1242,11 @@ package ecr {
   }
 
   object LayerFailure {
-    def apply(failureCode: js.UndefOr[LayerFailureCode] = js.undefined,
-              failureReason: js.UndefOr[LayerFailureReason] = js.undefined,
-              layerDigest: js.UndefOr[BatchedOperationLayerDigest] = js.undefined): LayerFailure = {
+    def apply(
+        failureCode: js.UndefOr[LayerFailureCode] = js.undefined,
+        failureReason: js.UndefOr[LayerFailureReason] = js.undefined,
+        layerDigest: js.UndefOr[BatchedOperationLayerDigest] = js.undefined
+    ): LayerFailure = {
       val _fields = IndexedSeq[(String, js.Any)](
         "failureCode" -> failureCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -1164,10 +1279,14 @@ package ecr {
   }
 
   object LifecyclePolicyPreviewFilter {
-    def apply(tagStatus: js.UndefOr[TagStatus] = js.undefined): LifecyclePolicyPreviewFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("tagStatus" -> tagStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tagStatus: js.UndefOr[TagStatus] = js.undefined
+    ): LifecyclePolicyPreviewFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tagStatus" -> tagStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicyPreviewFilter]
     }
@@ -1186,11 +1305,13 @@ package ecr {
   }
 
   object LifecyclePolicyPreviewResult {
-    def apply(action: js.UndefOr[LifecyclePolicyRuleAction] = js.undefined,
-              appliedRulePriority: js.UndefOr[LifecyclePolicyRulePriority] = js.undefined,
-              imageDigest: js.UndefOr[ImageDigest] = js.undefined,
-              imagePushedAt: js.UndefOr[PushTimestamp] = js.undefined,
-              imageTags: js.UndefOr[ImageTagList] = js.undefined): LifecyclePolicyPreviewResult = {
+    def apply(
+        action: js.UndefOr[LifecyclePolicyRuleAction] = js.undefined,
+        appliedRulePriority: js.UndefOr[LifecyclePolicyRulePriority] = js.undefined,
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
+        imagePushedAt: js.UndefOr[PushTimestamp] = js.undefined,
+        imageTags: js.UndefOr[ImageTagList] = js.undefined
+    ): LifecyclePolicyPreviewResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "action" -> action.map { x =>
           x.asInstanceOf[js.Any]
@@ -1231,10 +1352,14 @@ package ecr {
   }
 
   object LifecyclePolicyPreviewSummary {
-    def apply(expiringImageTotalCount: js.UndefOr[ImageCount] = js.undefined): LifecyclePolicyPreviewSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("expiringImageTotalCount" -> expiringImageTotalCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        expiringImageTotalCount: js.UndefOr[ImageCount] = js.undefined
+    ): LifecyclePolicyPreviewSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "expiringImageTotalCount" -> expiringImageTotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicyPreviewSummary]
     }
@@ -1249,10 +1374,14 @@ package ecr {
   }
 
   object LifecyclePolicyRuleAction {
-    def apply(`type`: js.UndefOr[ImageActionType] = js.undefined): LifecyclePolicyRuleAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        `type`: js.UndefOr[ImageActionType] = js.undefined
+    ): LifecyclePolicyRuleAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LifecyclePolicyRuleAction]
     }
@@ -1267,10 +1396,14 @@ package ecr {
   }
 
   object ListImagesFilter {
-    def apply(tagStatus: js.UndefOr[TagStatus] = js.undefined): ListImagesFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("tagStatus" -> tagStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tagStatus: js.UndefOr[TagStatus] = js.undefined
+    ): ListImagesFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tagStatus" -> tagStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListImagesFilter]
     }
@@ -1286,11 +1419,13 @@ package ecr {
   }
 
   object ListImagesRequest {
-    def apply(repositoryName: RepositoryName,
-              filter: js.UndefOr[ListImagesFilter] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): ListImagesRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        filter: js.UndefOr[ListImagesFilter] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): ListImagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "filter" -> filter.map { x =>
@@ -1318,13 +1453,18 @@ package ecr {
   }
 
   object ListImagesResponse {
-    def apply(imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListImagesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("imageIds" -> imageIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListImagesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "imageIds" -> imageIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListImagesResponse]
     }
@@ -1336,9 +1476,12 @@ package ecr {
   }
 
   object ListTagsForResourceRequest {
-    def apply(resourceArn: Arn): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("resourceArn" -> resourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        resourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -1350,10 +1493,14 @@ package ecr {
   }
 
   object ListTagsForResourceResponse {
-    def apply(tags: js.UndefOr[TagList] = js.undefined): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("tags" -> tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -1368,10 +1515,12 @@ package ecr {
   }
 
   object PutImageRequest {
-    def apply(imageManifest: ImageManifest,
-              repositoryName: RepositoryName,
-              imageTag: js.UndefOr[ImageTag] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): PutImageRequest = {
+    def apply(
+        imageManifest: ImageManifest,
+        repositoryName: RepositoryName,
+        imageTag: js.UndefOr[ImageTag] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): PutImageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "imageManifest"  -> imageManifest.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -1393,10 +1542,14 @@ package ecr {
   }
 
   object PutImageResponse {
-    def apply(image: js.UndefOr[Image] = js.undefined): PutImageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("image" -> image.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        image: js.UndefOr[Image] = js.undefined
+    ): PutImageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "image" -> image.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutImageResponse]
     }
@@ -1410,9 +1563,11 @@ package ecr {
   }
 
   object PutLifecyclePolicyRequest {
-    def apply(lifecyclePolicyText: LifecyclePolicyText,
-              repositoryName: RepositoryName,
-              registryId: js.UndefOr[RegistryId] = js.undefined): PutLifecyclePolicyRequest = {
+    def apply(
+        lifecyclePolicyText: LifecyclePolicyText,
+        repositoryName: RepositoryName,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): PutLifecyclePolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lifecyclePolicyText" -> lifecyclePolicyText.asInstanceOf[js.Any],
         "repositoryName"      -> repositoryName.asInstanceOf[js.Any],
@@ -1433,9 +1588,11 @@ package ecr {
   }
 
   object PutLifecyclePolicyResponse {
-    def apply(lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): PutLifecyclePolicyResponse = {
+    def apply(
+        lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): PutLifecyclePolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lifecyclePolicyText" -> lifecyclePolicyText.map { x =>
           x.asInstanceOf[js.Any]
@@ -1465,11 +1622,13 @@ package ecr {
   }
 
   object Repository {
-    def apply(createdAt: js.UndefOr[CreationTimestamp] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryArn: js.UndefOr[Arn] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined,
-              repositoryUri: js.UndefOr[Url] = js.undefined): Repository = {
+    def apply(
+        createdAt: js.UndefOr[CreationTimestamp] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryArn: js.UndefOr[Arn] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined,
+        repositoryUri: js.UndefOr[Url] = js.undefined
+    ): Repository = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdAt" -> createdAt.map { x =>
           x.asInstanceOf[js.Any]
@@ -1501,10 +1660,12 @@ package ecr {
   }
 
   object SetRepositoryPolicyRequest {
-    def apply(policyText: RepositoryPolicyText,
-              repositoryName: RepositoryName,
-              force: js.UndefOr[ForceFlag] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): SetRepositoryPolicyRequest = {
+    def apply(
+        policyText: RepositoryPolicyText,
+        repositoryName: RepositoryName,
+        force: js.UndefOr[ForceFlag] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): SetRepositoryPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyText"     -> policyText.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
@@ -1528,9 +1689,11 @@ package ecr {
   }
 
   object SetRepositoryPolicyResponse {
-    def apply(policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined): SetRepositoryPolicyResponse = {
+    def apply(
+        policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): SetRepositoryPolicyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "policyText" -> policyText.map { x =>
           x.asInstanceOf[js.Any]
@@ -1555,9 +1718,11 @@ package ecr {
   }
 
   object StartLifecyclePolicyPreviewRequest {
-    def apply(repositoryName: RepositoryName,
-              lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined): StartLifecyclePolicyPreviewRequest = {
+    def apply(
+        repositoryName: RepositoryName,
+        lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): StartLifecyclePolicyPreviewRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "lifecyclePolicyText" -> lifecyclePolicyText.map { x =>
@@ -1581,10 +1746,12 @@ package ecr {
   }
 
   object StartLifecyclePolicyPreviewResponse {
-    def apply(lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined,
-              status: js.UndefOr[LifecyclePolicyPreviewStatus] = js.undefined): StartLifecyclePolicyPreviewResponse = {
+    def apply(
+        lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined,
+        status: js.UndefOr[LifecyclePolicyPreviewStatus] = js.undefined
+    ): StartLifecyclePolicyPreviewResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lifecyclePolicyText" -> lifecyclePolicyText.map { x =>
           x.asInstanceOf[js.Any]
@@ -1614,12 +1781,18 @@ package ecr {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[TagKey] = js.undefined, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -1632,7 +1805,10 @@ package ecr {
   }
 
   object TagResourceRequest {
-    def apply(resourceArn: Arn, tags: TagList): TagResourceRequest = {
+    def apply(
+        resourceArn: Arn,
+        tags: TagList
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
@@ -1646,8 +1822,10 @@ package ecr {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -1668,7 +1846,10 @@ package ecr {
   }
 
   object UntagResourceRequest {
-    def apply(resourceArn: Arn, tagKeys: TagKeyList): UntagResourceRequest = {
+    def apply(
+        resourceArn: Arn,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
@@ -1682,8 +1863,10 @@ package ecr {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
@@ -1700,12 +1883,14 @@ package ecr {
   }
 
   object UploadLayerPartRequest {
-    def apply(layerPartBlob: LayerPartBlob,
-              partFirstByte: PartSize,
-              partLastByte: PartSize,
-              repositoryName: RepositoryName,
-              uploadId: UploadId,
-              registryId: js.UndefOr[RegistryId] = js.undefined): UploadLayerPartRequest = {
+    def apply(
+        layerPartBlob: LayerPartBlob,
+        partFirstByte: PartSize,
+        partLastByte: PartSize,
+        repositoryName: RepositoryName,
+        uploadId: UploadId,
+        registryId: js.UndefOr[RegistryId] = js.undefined
+    ): UploadLayerPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "layerPartBlob"  -> layerPartBlob.asInstanceOf[js.Any],
         "partFirstByte"  -> partFirstByte.asInstanceOf[js.Any],
@@ -1730,10 +1915,12 @@ package ecr {
   }
 
   object UploadLayerPartResponse {
-    def apply(lastByteReceived: js.UndefOr[PartSize] = js.undefined,
-              registryId: js.UndefOr[RegistryId] = js.undefined,
-              repositoryName: js.UndefOr[RepositoryName] = js.undefined,
-              uploadId: js.UndefOr[UploadId] = js.undefined): UploadLayerPartResponse = {
+    def apply(
+        lastByteReceived: js.UndefOr[PartSize] = js.undefined,
+        registryId: js.UndefOr[RegistryId] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined,
+        uploadId: js.UndefOr[UploadId] = js.undefined
+    ): UploadLayerPartResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "lastByteReceived" -> lastByteReceived.map { x =>
           x.asInstanceOf[js.Any]

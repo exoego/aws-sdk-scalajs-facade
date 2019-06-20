@@ -70,6 +70,7 @@ package acm {
     def listTagsForCertificate(params: ListTagsForCertificateRequest): Request[ListTagsForCertificateResponse] =
       js.native
     def removeTagsFromCertificate(params: RemoveTagsFromCertificateRequest): Request[js.Object]    = js.native
+    def renewCertificate(params: RenewCertificateRequest): Request[js.Object]                      = js.native
     def requestCertificate(params: RequestCertificateRequest): Request[RequestCertificateResponse] = js.native
     def resendValidationEmail(params: ResendValidationEmailRequest): Request[js.Object]            = js.native
     def updateCertificateOptions(params: UpdateCertificateOptionsRequest): Request[js.Object]      = js.native
@@ -82,7 +83,10 @@ package acm {
   }
 
   object AddTagsToCertificateRequest {
-    def apply(CertificateArn: Arn, Tags: TagList): AddTagsToCertificateRequest = {
+    def apply(
+        CertificateArn: Arn,
+        Tags: TagList
+    ): AddTagsToCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Tags"           -> Tags.asInstanceOf[js.Any]
@@ -126,32 +130,34 @@ package acm {
   }
 
   object CertificateDetail {
-    def apply(CertificateArn: js.UndefOr[Arn] = js.undefined,
-              CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
-              CreatedAt: js.UndefOr[TStamp] = js.undefined,
-              DomainName: js.UndefOr[DomainNameString] = js.undefined,
-              DomainValidationOptions: js.UndefOr[DomainValidationList] = js.undefined,
-              ExtendedKeyUsages: js.UndefOr[ExtendedKeyUsageList] = js.undefined,
-              FailureReason: js.UndefOr[FailureReason] = js.undefined,
-              ImportedAt: js.UndefOr[TStamp] = js.undefined,
-              InUseBy: js.UndefOr[InUseList] = js.undefined,
-              IssuedAt: js.UndefOr[TStamp] = js.undefined,
-              Issuer: js.UndefOr[String] = js.undefined,
-              KeyAlgorithm: js.UndefOr[KeyAlgorithm] = js.undefined,
-              KeyUsages: js.UndefOr[KeyUsageList] = js.undefined,
-              NotAfter: js.UndefOr[TStamp] = js.undefined,
-              NotBefore: js.UndefOr[TStamp] = js.undefined,
-              Options: js.UndefOr[CertificateOptions] = js.undefined,
-              RenewalEligibility: js.UndefOr[RenewalEligibility] = js.undefined,
-              RenewalSummary: js.UndefOr[RenewalSummary] = js.undefined,
-              RevocationReason: js.UndefOr[RevocationReason] = js.undefined,
-              RevokedAt: js.UndefOr[TStamp] = js.undefined,
-              Serial: js.UndefOr[String] = js.undefined,
-              SignatureAlgorithm: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[CertificateStatus] = js.undefined,
-              Subject: js.UndefOr[String] = js.undefined,
-              SubjectAlternativeNames: js.UndefOr[DomainList] = js.undefined,
-              Type: js.UndefOr[CertificateType] = js.undefined): CertificateDetail = {
+    def apply(
+        CertificateArn: js.UndefOr[Arn] = js.undefined,
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        CreatedAt: js.UndefOr[TStamp] = js.undefined,
+        DomainName: js.UndefOr[DomainNameString] = js.undefined,
+        DomainValidationOptions: js.UndefOr[DomainValidationList] = js.undefined,
+        ExtendedKeyUsages: js.UndefOr[ExtendedKeyUsageList] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        ImportedAt: js.UndefOr[TStamp] = js.undefined,
+        InUseBy: js.UndefOr[InUseList] = js.undefined,
+        IssuedAt: js.UndefOr[TStamp] = js.undefined,
+        Issuer: js.UndefOr[String] = js.undefined,
+        KeyAlgorithm: js.UndefOr[KeyAlgorithm] = js.undefined,
+        KeyUsages: js.UndefOr[KeyUsageList] = js.undefined,
+        NotAfter: js.UndefOr[TStamp] = js.undefined,
+        NotBefore: js.UndefOr[TStamp] = js.undefined,
+        Options: js.UndefOr[CertificateOptions] = js.undefined,
+        RenewalEligibility: js.UndefOr[RenewalEligibility] = js.undefined,
+        RenewalSummary: js.UndefOr[RenewalSummary] = js.undefined,
+        RevocationReason: js.UndefOr[RevocationReason] = js.undefined,
+        RevokedAt: js.UndefOr[TStamp] = js.undefined,
+        Serial: js.UndefOr[String] = js.undefined,
+        SignatureAlgorithm: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[CertificateStatus] = js.undefined,
+        Subject: js.UndefOr[String] = js.undefined,
+        SubjectAlternativeNames: js.UndefOr[DomainList] = js.undefined,
+        Type: js.UndefOr[CertificateType] = js.undefined
+    ): CertificateDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn" -> CertificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -238,7 +244,7 @@ package acm {
   }
 
   /**
-    * Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see [[http://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency|Certificate Transparency Logging]].
+    * Structure that contains options for your certificate. Currently, you can use this only to specify whether to opt in to or out of certificate transparency logging. Some browsers require that public certificates issued for your domain be recorded in a log. Certificates that are not logged typically generate a browser error. Transparency makes it possible for you to detect SSL/TLS certificates that have been mistakenly or maliciously issued for your domain. For general information, see [[https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency|Certificate Transparency Logging]].
     */
   @js.native
   trait CertificateOptions extends js.Object {
@@ -281,13 +287,18 @@ package acm {
   }
 
   object CertificateSummary {
-    def apply(CertificateArn: js.UndefOr[Arn] = js.undefined,
-              DomainName: js.UndefOr[DomainNameString] = js.undefined): CertificateSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "DomainName" -> DomainName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: js.UndefOr[Arn] = js.undefined,
+        DomainName: js.UndefOr[DomainNameString] = js.undefined
+    ): CertificateSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DomainName" -> DomainName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateSummary]
     }
@@ -314,9 +325,12 @@ package acm {
   }
 
   object DeleteCertificateRequest {
-    def apply(CertificateArn: Arn): DeleteCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: Arn
+    ): DeleteCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCertificateRequest]
     }
@@ -328,9 +342,12 @@ package acm {
   }
 
   object DescribeCertificateRequest {
-    def apply(CertificateArn: Arn): DescribeCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: Arn
+    ): DescribeCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificateRequest]
     }
@@ -342,10 +359,14 @@ package acm {
   }
 
   object DescribeCertificateResponse {
-    def apply(Certificate: js.UndefOr[CertificateDetail] = js.undefined): DescribeCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Certificate" -> Certificate.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Certificate: js.UndefOr[CertificateDetail] = js.undefined
+    ): DescribeCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificateResponse]
     }
@@ -373,12 +394,14 @@ package acm {
   }
 
   object DomainValidation {
-    def apply(DomainName: DomainNameString,
-              ResourceRecord: js.UndefOr[ResourceRecord] = js.undefined,
-              ValidationDomain: js.UndefOr[DomainNameString] = js.undefined,
-              ValidationEmails: js.UndefOr[ValidationEmailList] = js.undefined,
-              ValidationMethod: js.UndefOr[ValidationMethod] = js.undefined,
-              ValidationStatus: js.UndefOr[DomainStatus] = js.undefined): DomainValidation = {
+    def apply(
+        DomainName: DomainNameString,
+        ResourceRecord: js.UndefOr[ResourceRecord] = js.undefined,
+        ValidationDomain: js.UndefOr[DomainNameString] = js.undefined,
+        ValidationEmails: js.UndefOr[ValidationEmailList] = js.undefined,
+        ValidationMethod: js.UndefOr[ValidationMethod] = js.undefined,
+        ValidationStatus: js.UndefOr[DomainStatus] = js.undefined
+    ): DomainValidation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "ResourceRecord" -> ResourceRecord.map { x =>
@@ -412,7 +435,10 @@ package acm {
   }
 
   object DomainValidationOption {
-    def apply(DomainName: DomainNameString, ValidationDomain: DomainNameString): DomainValidationOption = {
+    def apply(
+        DomainName: DomainNameString,
+        ValidationDomain: DomainNameString
+    ): DomainValidationOption = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName"       -> DomainName.asInstanceOf[js.Any],
         "ValidationDomain" -> ValidationDomain.asInstanceOf[js.Any]
@@ -429,7 +455,10 @@ package acm {
   }
 
   object ExportCertificateRequest {
-    def apply(CertificateArn: Arn, Passphrase: PassphraseBlob): ExportCertificateRequest = {
+    def apply(
+        CertificateArn: Arn,
+        Passphrase: PassphraseBlob
+    ): ExportCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Passphrase"     -> Passphrase.asInstanceOf[js.Any]
@@ -447,9 +476,11 @@ package acm {
   }
 
   object ExportCertificateResponse {
-    def apply(Certificate: js.UndefOr[CertificateBody] = js.undefined,
-              CertificateChain: js.UndefOr[CertificateChain] = js.undefined,
-              PrivateKey: js.UndefOr[PrivateKey] = js.undefined): ExportCertificateResponse = {
+    def apply(
+        Certificate: js.UndefOr[CertificateBody] = js.undefined,
+        CertificateChain: js.UndefOr[CertificateChain] = js.undefined,
+        PrivateKey: js.UndefOr[PrivateKey] = js.undefined
+    ): ExportCertificateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Certificate" -> Certificate.map { x =>
           x.asInstanceOf[js.Any]
@@ -476,13 +507,18 @@ package acm {
   }
 
   object ExtendedKeyUsage {
-    def apply(Name: js.UndefOr[ExtendedKeyUsageName] = js.undefined,
-              OID: js.UndefOr[String] = js.undefined): ExtendedKeyUsage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OID" -> OID.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[ExtendedKeyUsageName] = js.undefined,
+        OID: js.UndefOr[String] = js.undefined
+    ): ExtendedKeyUsage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OID" -> OID.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExtendedKeyUsage]
     }
@@ -523,6 +559,7 @@ package acm {
     val ADDITIONAL_VERIFICATION_REQUIRED = "ADDITIONAL_VERIFICATION_REQUIRED"
     val DOMAIN_NOT_ALLOWED               = "DOMAIN_NOT_ALLOWED"
     val INVALID_PUBLIC_DOMAIN            = "INVALID_PUBLIC_DOMAIN"
+    val DOMAIN_VALIDATION_DENIED         = "DOMAIN_VALIDATION_DENIED"
     val CAA_ERROR                        = "CAA_ERROR"
     val PCA_LIMIT_EXCEEDED               = "PCA_LIMIT_EXCEEDED"
     val PCA_INVALID_ARN                  = "PCA_INVALID_ARN"
@@ -530,6 +567,8 @@ package acm {
     val PCA_REQUEST_FAILED               = "PCA_REQUEST_FAILED"
     val PCA_RESOURCE_NOT_FOUND           = "PCA_RESOURCE_NOT_FOUND"
     val PCA_INVALID_ARGS                 = "PCA_INVALID_ARGS"
+    val PCA_INVALID_DURATION             = "PCA_INVALID_DURATION"
+    val PCA_ACCESS_DENIED                = "PCA_ACCESS_DENIED"
     val OTHER                            = "OTHER"
 
     val values = IndexedSeq(
@@ -537,6 +576,7 @@ package acm {
       ADDITIONAL_VERIFICATION_REQUIRED,
       DOMAIN_NOT_ALLOWED,
       INVALID_PUBLIC_DOMAIN,
+      DOMAIN_VALIDATION_DENIED,
       CAA_ERROR,
       PCA_LIMIT_EXCEEDED,
       PCA_INVALID_ARN,
@@ -544,6 +584,8 @@ package acm {
       PCA_REQUEST_FAILED,
       PCA_RESOURCE_NOT_FOUND,
       PCA_INVALID_ARGS,
+      PCA_INVALID_DURATION,
+      PCA_ACCESS_DENIED,
       OTHER
     )
   }
@@ -559,9 +601,11 @@ package acm {
   }
 
   object Filters {
-    def apply(extendedKeyUsage: js.UndefOr[ExtendedKeyUsageFilterList] = js.undefined,
-              keyTypes: js.UndefOr[KeyAlgorithmList] = js.undefined,
-              keyUsage: js.UndefOr[KeyUsageFilterList] = js.undefined): Filters = {
+    def apply(
+        extendedKeyUsage: js.UndefOr[ExtendedKeyUsageFilterList] = js.undefined,
+        keyTypes: js.UndefOr[KeyAlgorithmList] = js.undefined,
+        keyUsage: js.UndefOr[KeyUsageFilterList] = js.undefined
+    ): Filters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "extendedKeyUsage" -> extendedKeyUsage.map { x =>
           x.asInstanceOf[js.Any]
@@ -584,9 +628,12 @@ package acm {
   }
 
   object GetCertificateRequest {
-    def apply(CertificateArn: Arn): GetCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: Arn
+    ): GetCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCertificateRequest]
     }
@@ -599,13 +646,18 @@ package acm {
   }
 
   object GetCertificateResponse {
-    def apply(Certificate: js.UndefOr[CertificateBody] = js.undefined,
-              CertificateChain: js.UndefOr[CertificateChain] = js.undefined): GetCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Certificate" -> Certificate.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "CertificateChain" -> CertificateChain.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Certificate: js.UndefOr[CertificateBody] = js.undefined,
+        CertificateChain: js.UndefOr[CertificateChain] = js.undefined
+    ): GetCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertificateChain" -> CertificateChain.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCertificateResponse]
     }
@@ -620,10 +672,12 @@ package acm {
   }
 
   object ImportCertificateRequest {
-    def apply(Certificate: CertificateBodyBlob,
-              PrivateKey: PrivateKeyBlob,
-              CertificateArn: js.UndefOr[Arn] = js.undefined,
-              CertificateChain: js.UndefOr[CertificateChainBlob] = js.undefined): ImportCertificateRequest = {
+    def apply(
+        Certificate: CertificateBodyBlob,
+        PrivateKey: PrivateKeyBlob,
+        CertificateArn: js.UndefOr[Arn] = js.undefined,
+        CertificateChain: js.UndefOr[CertificateChainBlob] = js.undefined
+    ): ImportCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Certificate" -> Certificate.asInstanceOf[js.Any],
         "PrivateKey"  -> PrivateKey.asInstanceOf[js.Any],
@@ -645,45 +699,17 @@ package acm {
   }
 
   object ImportCertificateResponse {
-    def apply(CertificateArn: js.UndefOr[Arn] = js.undefined): ImportCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: js.UndefOr[Arn] = js.undefined
+    ): ImportCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportCertificateResponse]
     }
-  }
-
-  /**
-    * The requested Amazon Resource Name (ARN) does not refer to an existing resource.
-    */
-  @js.native
-  trait InvalidArnExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * One or more values in the <a>DomainValidationOption</a> structure is incorrect.
-    */
-  @js.native
-  trait InvalidDomainValidationOptionsExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * Processing has reached an invalid state.
-    */
-  @js.native
-  trait InvalidStateExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.
-    */
-  @js.native
-  trait InvalidTagExceptionException extends js.Object {
-    val message: String
   }
 
   object KeyAlgorithmEnum {
@@ -706,10 +732,14 @@ package acm {
   }
 
   object KeyUsage {
-    def apply(Name: js.UndefOr[KeyUsageName] = js.undefined): KeyUsage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[KeyUsageName] = js.undefined
+    ): KeyUsage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KeyUsage]
     }
@@ -743,14 +773,6 @@ package acm {
     )
   }
 
-  /**
-    * An ACM limit has been exceeded.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: String
-  }
-
   @js.native
   trait ListCertificatesRequest extends js.Object {
     var CertificateStatuses: js.UndefOr[CertificateStatuses]
@@ -760,10 +782,12 @@ package acm {
   }
 
   object ListCertificatesRequest {
-    def apply(CertificateStatuses: js.UndefOr[CertificateStatuses] = js.undefined,
-              Includes: js.UndefOr[Filters] = js.undefined,
-              MaxItems: js.UndefOr[MaxItems] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCertificatesRequest = {
+    def apply(
+        CertificateStatuses: js.UndefOr[CertificateStatuses] = js.undefined,
+        Includes: js.UndefOr[Filters] = js.undefined,
+        MaxItems: js.UndefOr[MaxItems] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCertificatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateStatuses" -> CertificateStatuses.map { x =>
           x.asInstanceOf[js.Any]
@@ -790,13 +814,18 @@ package acm {
   }
 
   object ListCertificatesResponse {
-    def apply(CertificateSummaryList: js.UndefOr[CertificateSummaryList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCertificatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateSummaryList" -> CertificateSummaryList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateSummaryList: js.UndefOr[CertificateSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCertificatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateSummaryList" -> CertificateSummaryList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCertificatesResponse]
     }
@@ -808,9 +837,12 @@ package acm {
   }
 
   object ListTagsForCertificateRequest {
-    def apply(CertificateArn: Arn): ListTagsForCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: Arn
+    ): ListTagsForCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForCertificateRequest]
     }
@@ -822,10 +854,14 @@ package acm {
   }
 
   object ListTagsForCertificateResponse {
-    def apply(Tags: js.UndefOr[TagList] = js.undefined): ListTagsForCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForCertificateResponse]
     }
@@ -844,13 +880,33 @@ package acm {
   }
 
   object RemoveTagsFromCertificateRequest {
-    def apply(CertificateArn: Arn, Tags: TagList): RemoveTagsFromCertificateRequest = {
+    def apply(
+        CertificateArn: Arn,
+        Tags: TagList
+    ): RemoveTagsFromCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Tags"           -> Tags.asInstanceOf[js.Any]
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTagsFromCertificateRequest]
+    }
+  }
+
+  @js.native
+  trait RenewCertificateRequest extends js.Object {
+    var CertificateArn: Arn
+  }
+
+  object RenewCertificateRequest {
+    def apply(
+        CertificateArn: Arn
+    ): RenewCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewCertificateRequest]
     }
   }
 
@@ -871,19 +927,30 @@ package acm {
   }
 
   /**
-    * Contains information about the status of ACM's [[http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html|managed renewal]] for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+    * Contains information about the status of ACM's [[https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html|managed renewal]] for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
     */
   @js.native
   trait RenewalSummary extends js.Object {
     var DomainValidationOptions: DomainValidationList
     var RenewalStatus: RenewalStatus
+    var UpdatedAt: TStamp
+    var RenewalStatusReason: js.UndefOr[FailureReason]
   }
 
   object RenewalSummary {
-    def apply(DomainValidationOptions: DomainValidationList, RenewalStatus: RenewalStatus): RenewalSummary = {
+    def apply(
+        DomainValidationOptions: DomainValidationList,
+        RenewalStatus: RenewalStatus,
+        UpdatedAt: TStamp,
+        RenewalStatusReason: js.UndefOr[FailureReason] = js.undefined
+    ): RenewalSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainValidationOptions" -> DomainValidationOptions.asInstanceOf[js.Any],
-        "RenewalStatus"           -> RenewalStatus.asInstanceOf[js.Any]
+        "RenewalStatus"           -> RenewalStatus.asInstanceOf[js.Any],
+        "UpdatedAt"               -> UpdatedAt.asInstanceOf[js.Any],
+        "RenewalStatusReason" -> RenewalStatusReason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewalSummary]
@@ -902,13 +969,15 @@ package acm {
   }
 
   object RequestCertificateRequest {
-    def apply(DomainName: DomainNameString,
-              CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
-              DomainValidationOptions: js.UndefOr[DomainValidationOptionList] = js.undefined,
-              IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
-              Options: js.UndefOr[CertificateOptions] = js.undefined,
-              SubjectAlternativeNames: js.UndefOr[DomainList] = js.undefined,
-              ValidationMethod: js.UndefOr[ValidationMethod] = js.undefined): RequestCertificateRequest = {
+    def apply(
+        DomainName: DomainNameString,
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        DomainValidationOptions: js.UndefOr[DomainValidationOptionList] = js.undefined,
+        IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        Options: js.UndefOr[CertificateOptions] = js.undefined,
+        SubjectAlternativeNames: js.UndefOr[DomainList] = js.undefined,
+        ValidationMethod: js.UndefOr[ValidationMethod] = js.undefined
+    ): RequestCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.map { x =>
@@ -941,21 +1010,17 @@ package acm {
   }
 
   object RequestCertificateResponse {
-    def apply(CertificateArn: js.UndefOr[Arn] = js.undefined): RequestCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: js.UndefOr[Arn] = js.undefined
+    ): RequestCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestCertificateResponse]
     }
-  }
-
-  /**
-    * The certificate request is in process and the certificate in your account has not yet been issued.
-    */
-  @js.native
-  trait RequestInProgressExceptionException extends js.Object {
-    val message: String
   }
 
   @js.native
@@ -966,9 +1031,11 @@ package acm {
   }
 
   object ResendValidationEmailRequest {
-    def apply(CertificateArn: Arn,
-              Domain: DomainNameString,
-              ValidationDomain: DomainNameString): ResendValidationEmailRequest = {
+    def apply(
+        CertificateArn: Arn,
+        Domain: DomainNameString,
+        ValidationDomain: DomainNameString
+    ): ResendValidationEmailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn"   -> CertificateArn.asInstanceOf[js.Any],
         "Domain"           -> Domain.asInstanceOf[js.Any],
@@ -977,22 +1044,6 @@ package acm {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResendValidationEmailRequest]
     }
-  }
-
-  /**
-    * The certificate is in use by another AWS service in the caller's account. Remove the association and try again.
-    */
-  @js.native
-  trait ResourceInUseExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * The specified certificate cannot be found in the caller's account or the caller's account cannot be found.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: String
   }
 
   /**
@@ -1006,7 +1057,11 @@ package acm {
   }
 
   object ResourceRecord {
-    def apply(Name: String, Type: RecordType, Value: String): ResourceRecord = {
+    def apply(
+        Name: String,
+        Type: RecordType,
+        Value: String
+    ): ResourceRecord = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
@@ -1053,21 +1108,19 @@ package acm {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
-  }
-
-  /**
-    * The request contains too many tags. Try the request again with fewer tags.
-    */
-  @js.native
-  trait TooManyTagsExceptionException extends js.Object {
-    val message: String
   }
 
   @js.native
@@ -1077,7 +1130,10 @@ package acm {
   }
 
   object UpdateCertificateOptionsRequest {
-    def apply(CertificateArn: Arn, Options: CertificateOptions): UpdateCertificateOptionsRequest = {
+    def apply(
+        CertificateArn: Arn,
+        Options: CertificateOptions
+    ): UpdateCertificateOptionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Options"        -> Options.asInstanceOf[js.Any]

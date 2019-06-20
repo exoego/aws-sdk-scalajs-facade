@@ -27,6 +27,7 @@ package object rds {
   type DBEngineVersionList                     = js.Array[DBEngineVersion]
   type DBInstanceAutomatedBackupList           = js.Array[DBInstanceAutomatedBackup]
   type DBInstanceList                          = js.Array[DBInstance]
+  type DBInstanceRoles                         = js.Array[DBInstanceRole]
   type DBInstanceStatusInfoList                = js.Array[DBInstanceStatusInfo]
   type DBParameterGroupList                    = js.Array[DBParameterGroup]
   type DBParameterGroupStatusList              = js.Array[DBParameterGroupStatus]
@@ -46,6 +47,7 @@ package object rds {
   type EventCategoriesMapList                  = js.Array[EventCategoriesMap]
   type EventList                               = js.Array[Event]
   type EventSubscriptionsList                  = js.Array[EventSubscription]
+  type FeatureNameList                         = js.Array[String]
   type FilterList                              = js.Array[Filter]
   type FilterValueList                         = js.Array[String]
   type GlobalClusterList                       = js.Array[GlobalCluster]
@@ -103,7 +105,8 @@ package rds {
   class RDS() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addRoleToDBCluster(params: AddRoleToDBClusterMessage): Request[js.Object] = js.native
+    def addRoleToDBCluster(params: AddRoleToDBClusterMessage): Request[js.Object]   = js.native
+    def addRoleToDBInstance(params: AddRoleToDBInstanceMessage): Request[js.Object] = js.native
     def addSourceIdentifierToSubscription(
         params: AddSourceIdentifierToSubscriptionMessage
     ): Request[AddSourceIdentifierToSubscriptionResult]                         = js.native
@@ -255,7 +258,8 @@ package rds {
     def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
     def removeFromGlobalCluster(params: RemoveFromGlobalClusterMessage): Request[RemoveFromGlobalClusterResult] =
       js.native
-    def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object] = js.native
+    def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object]   = js.native
+    def removeRoleFromDBInstance(params: RemoveRoleFromDBInstanceMessage): Request[js.Object] = js.native
     def removeSourceIdentifierFromSubscription(
         params: RemoveSourceIdentifierFromSubscriptionMessage
     ): Request[RemoveSourceIdentifierFromSubscriptionResult]                              = js.native
@@ -297,10 +301,14 @@ package rds {
   }
 
   object AccountAttributesMessage {
-    def apply(AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined): AccountAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountQuotas" -> AccountQuotas.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined
+    ): AccountAttributesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountQuotas" -> AccountQuotas.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAttributesMessage]
     }
@@ -317,9 +325,11 @@ package rds {
   }
 
   object AccountQuota {
-    def apply(AccountQuotaName: js.UndefOr[String] = js.undefined,
-              Max: js.UndefOr[Double] = js.undefined,
-              Used: js.UndefOr[Double] = js.undefined): AccountQuota = {
+    def apply(
+        AccountQuotaName: js.UndefOr[String] = js.undefined,
+        Max: js.UndefOr[Double] = js.undefined,
+        Used: js.UndefOr[Double] = js.undefined
+    ): AccountQuota = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountQuotaName" -> AccountQuotaName.map { x =>
           x.asInstanceOf[js.Any]
@@ -343,13 +353,39 @@ package rds {
   }
 
   object AddRoleToDBClusterMessage {
-    def apply(DBClusterIdentifier: String, RoleArn: String): AddRoleToDBClusterMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        RoleArn: String
+    ): AddRoleToDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddRoleToDBClusterMessage]
+    }
+  }
+
+  @js.native
+  trait AddRoleToDBInstanceMessage extends js.Object {
+    var DBInstanceIdentifier: String
+    var FeatureName: String
+    var RoleArn: String
+  }
+
+  object AddRoleToDBInstanceMessage {
+    def apply(
+        DBInstanceIdentifier: String,
+        FeatureName: String,
+        RoleArn: String
+    ): AddRoleToDBInstanceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
+        "FeatureName"          -> FeatureName.asInstanceOf[js.Any],
+        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddRoleToDBInstanceMessage]
     }
   }
 
@@ -363,7 +399,10 @@ package rds {
   }
 
   object AddSourceIdentifierToSubscriptionMessage {
-    def apply(SourceIdentifier: String, SubscriptionName: String): AddSourceIdentifierToSubscriptionMessage = {
+    def apply(
+        SourceIdentifier: String,
+        SubscriptionName: String
+    ): AddSourceIdentifierToSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
@@ -382,9 +421,11 @@ package rds {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): AddSourceIdentifierToSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscription" -> EventSubscription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscription" -> EventSubscription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddSourceIdentifierToSubscriptionResult]
     }
@@ -400,7 +441,10 @@ package rds {
   }
 
   object AddTagsToResourceMessage {
-    def apply(ResourceName: String, Tags: TagList): AddTagsToResourceMessage = {
+    def apply(
+        ResourceName: String,
+        Tags: TagList
+    ): AddTagsToResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
@@ -428,9 +472,11 @@ package rds {
   }
 
   object ApplyPendingMaintenanceActionMessage {
-    def apply(ApplyAction: String,
-              OptInType: String,
-              ResourceIdentifier: String): ApplyPendingMaintenanceActionMessage = {
+    def apply(
+        ApplyAction: String,
+        OptInType: String,
+        ResourceIdentifier: String
+    ): ApplyPendingMaintenanceActionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplyAction"        -> ApplyAction.asInstanceOf[js.Any],
         "OptInType"          -> OptInType.asInstanceOf[js.Any],
@@ -450,10 +496,11 @@ package rds {
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ResourcePendingMaintenanceActions" -> ResourcePendingMaintenanceActions.map { x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourcePendingMaintenanceActions" -> ResourcePendingMaintenanceActions.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
@@ -472,11 +519,13 @@ package rds {
   }
 
   object AuthorizeDBSecurityGroupIngressMessage {
-    def apply(DBSecurityGroupName: String,
-              CIDRIP: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupId: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined): AuthorizeDBSecurityGroupIngressMessage = {
+    def apply(
+        DBSecurityGroupName: String,
+        CIDRIP: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupId: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined
+    ): AuthorizeDBSecurityGroupIngressMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any],
         "CIDRIP" -> CIDRIP.map { x =>
@@ -503,10 +552,14 @@ package rds {
   }
 
   object AuthorizeDBSecurityGroupIngressResult {
-    def apply(DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined): AuthorizeDBSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSecurityGroup" -> DBSecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
+    ): AuthorizeDBSecurityGroupIngressResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSecurityGroup" -> DBSecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeDBSecurityGroupIngressResult]
     }
@@ -523,10 +576,14 @@ package rds {
   }
 
   object AvailabilityZone {
-    def apply(Name: js.UndefOr[String] = js.undefined): AvailabilityZone = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined
+    ): AvailabilityZone = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
     }
@@ -534,7 +591,7 @@ package rds {
 
   /**
     * Contains the available processor feature information for the DB instance class of a DB instance.
-    *  For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
     */
   @js.native
   trait AvailableProcessorFeature extends js.Object {
@@ -544,9 +601,11 @@ package rds {
   }
 
   object AvailableProcessorFeature {
-    def apply(AllowedValues: js.UndefOr[String] = js.undefined,
-              DefaultValue: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined): AvailableProcessorFeature = {
+    def apply(
+        AllowedValues: js.UndefOr[String] = js.undefined,
+        DefaultValue: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): AvailableProcessorFeature = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowedValues" -> AllowedValues.map { x =>
           x.asInstanceOf[js.Any]
@@ -610,12 +669,14 @@ package rds {
   }
 
   object Certificate {
-    def apply(CertificateArn: js.UndefOr[String] = js.undefined,
-              CertificateIdentifier: js.UndefOr[String] = js.undefined,
-              CertificateType: js.UndefOr[String] = js.undefined,
-              Thumbprint: js.UndefOr[String] = js.undefined,
-              ValidFrom: js.UndefOr[TStamp] = js.undefined,
-              ValidTill: js.UndefOr[TStamp] = js.undefined): Certificate = {
+    def apply(
+        CertificateArn: js.UndefOr[String] = js.undefined,
+        CertificateIdentifier: js.UndefOr[String] = js.undefined,
+        CertificateType: js.UndefOr[String] = js.undefined,
+        Thumbprint: js.UndefOr[String] = js.undefined,
+        ValidFrom: js.UndefOr[TStamp] = js.undefined,
+        ValidTill: js.UndefOr[TStamp] = js.undefined
+    ): Certificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn" -> CertificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -651,13 +712,18 @@ package rds {
   }
 
   object CertificateMessage {
-    def apply(Certificates: js.UndefOr[CertificateList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): CertificateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Certificates" -> Certificates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Certificates: js.UndefOr[CertificateList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): CertificateMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Certificates" -> Certificates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CertificateMessage]
     }
@@ -673,13 +739,18 @@ package rds {
   }
 
   object CharacterSet {
-    def apply(CharacterSetDescription: js.UndefOr[String] = js.undefined,
-              CharacterSetName: js.UndefOr[String] = js.undefined): CharacterSet = {
-      val _fields = IndexedSeq[(String, js.Any)]("CharacterSetDescription" -> CharacterSetDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "CharacterSetName" -> CharacterSetName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CharacterSetDescription: js.UndefOr[String] = js.undefined,
+        CharacterSetName: js.UndefOr[String] = js.undefined
+    ): CharacterSet = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CharacterSetDescription" -> CharacterSetDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CharacterSetName" -> CharacterSetName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CharacterSet]
     }
@@ -687,7 +758,7 @@ package rds {
 
   /**
     * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
-    *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs ]] in the <i>Amazon RDS User Guide</i>.
+    *  The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch|Publishing Database Logs to Amazon CloudWatch Logs ]] in the <i>Amazon RDS User Guide</i>.
     */
   @js.native
   trait CloudwatchLogsExportConfiguration extends js.Object {
@@ -696,13 +767,18 @@ package rds {
   }
 
   object CloudwatchLogsExportConfiguration {
-    def apply(DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
-              EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined): CloudwatchLogsExportConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("DisableLogTypes" -> DisableLogTypes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EnableLogTypes" -> EnableLogTypes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
+        EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined
+    ): CloudwatchLogsExportConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DisableLogTypes" -> DisableLogTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnableLogTypes" -> EnableLogTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudwatchLogsExportConfiguration]
     }
@@ -717,10 +793,12 @@ package rds {
   }
 
   object CopyDBClusterParameterGroupMessage {
-    def apply(SourceDBClusterParameterGroupIdentifier: String,
-              TargetDBClusterParameterGroupDescription: String,
-              TargetDBClusterParameterGroupIdentifier: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CopyDBClusterParameterGroupMessage = {
+    def apply(
+        SourceDBClusterParameterGroupIdentifier: String,
+        TargetDBClusterParameterGroupDescription: String,
+        TargetDBClusterParameterGroupIdentifier: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CopyDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceDBClusterParameterGroupIdentifier"  -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
@@ -743,9 +821,11 @@ package rds {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CopyDBClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterParameterGroupResult]
     }
@@ -766,13 +846,15 @@ package rds {
   }
 
   object CopyDBClusterSnapshotMessage {
-    def apply(SourceDBClusterSnapshotIdentifier: String,
-              TargetDBClusterSnapshotIdentifier: String,
-              CopyTags: js.UndefOr[BooleanOptional] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              PreSignedUrl: js.UndefOr[String] = js.undefined,
-              SourceRegion: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CopyDBClusterSnapshotMessage = {
+    def apply(
+        SourceDBClusterSnapshotIdentifier: String,
+        TargetDBClusterSnapshotIdentifier: String,
+        CopyTags: js.UndefOr[BooleanOptional] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        PreSignedUrl: js.UndefOr[String] = js.undefined,
+        SourceRegion: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CopyDBClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceDBClusterSnapshotIdentifier" -> SourceDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
@@ -803,10 +885,14 @@ package rds {
   }
 
   object CopyDBClusterSnapshotResult {
-    def apply(DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined): CopyDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
+    ): CopyDBClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBClusterSnapshotResult]
     }
@@ -824,10 +910,12 @@ package rds {
   }
 
   object CopyDBParameterGroupMessage {
-    def apply(SourceDBParameterGroupIdentifier: String,
-              TargetDBParameterGroupDescription: String,
-              TargetDBParameterGroupIdentifier: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CopyDBParameterGroupMessage = {
+    def apply(
+        SourceDBParameterGroupIdentifier: String,
+        TargetDBParameterGroupDescription: String,
+        TargetDBParameterGroupIdentifier: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CopyDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceDBParameterGroupIdentifier"  -> SourceDBParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBParameterGroupDescription" -> TargetDBParameterGroupDescription.asInstanceOf[js.Any],
@@ -847,10 +935,14 @@ package rds {
   }
 
   object CopyDBParameterGroupResult {
-    def apply(DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined): CopyDBParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBParameterGroup" -> DBParameterGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
+    ): CopyDBParameterGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBParameterGroup" -> DBParameterGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBParameterGroupResult]
     }
@@ -872,14 +964,16 @@ package rds {
   }
 
   object CopyDBSnapshotMessage {
-    def apply(SourceDBSnapshotIdentifier: String,
-              TargetDBSnapshotIdentifier: String,
-              CopyTags: js.UndefOr[BooleanOptional] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              PreSignedUrl: js.UndefOr[String] = js.undefined,
-              SourceRegion: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CopyDBSnapshotMessage = {
+    def apply(
+        SourceDBSnapshotIdentifier: String,
+        TargetDBSnapshotIdentifier: String,
+        CopyTags: js.UndefOr[BooleanOptional] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        PreSignedUrl: js.UndefOr[String] = js.undefined,
+        SourceRegion: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CopyDBSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceDBSnapshotIdentifier" -> SourceDBSnapshotIdentifier.asInstanceOf[js.Any],
         "TargetDBSnapshotIdentifier" -> TargetDBSnapshotIdentifier.asInstanceOf[js.Any],
@@ -913,10 +1007,14 @@ package rds {
   }
 
   object CopyDBSnapshotResult {
-    def apply(DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined): CopyDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshot" -> DBSnapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
+    ): CopyDBSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshot" -> DBSnapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyDBSnapshotResult]
     }
@@ -934,10 +1032,12 @@ package rds {
   }
 
   object CopyOptionGroupMessage {
-    def apply(SourceOptionGroupIdentifier: String,
-              TargetOptionGroupDescription: String,
-              TargetOptionGroupIdentifier: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CopyOptionGroupMessage = {
+    def apply(
+        SourceOptionGroupIdentifier: String,
+        TargetOptionGroupDescription: String,
+        TargetOptionGroupIdentifier: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CopyOptionGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceOptionGroupIdentifier"  -> SourceOptionGroupIdentifier.asInstanceOf[js.Any],
         "TargetOptionGroupDescription" -> TargetOptionGroupDescription.asInstanceOf[js.Any],
@@ -957,10 +1057,14 @@ package rds {
   }
 
   object CopyOptionGroupResult {
-    def apply(OptionGroup: js.UndefOr[OptionGroup] = js.undefined): CopyOptionGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("OptionGroup" -> OptionGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OptionGroup: js.UndefOr[OptionGroup] = js.undefined
+    ): CopyOptionGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionGroup" -> OptionGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyOptionGroupResult]
     }
@@ -976,11 +1080,13 @@ package rds {
   }
 
   object CreateDBClusterEndpointMessage {
-    def apply(DBClusterEndpointIdentifier: String,
-              DBClusterIdentifier: String,
-              EndpointType: String,
-              ExcludedMembers: js.UndefOr[StringList] = js.undefined,
-              StaticMembers: js.UndefOr[StringList] = js.undefined): CreateDBClusterEndpointMessage = {
+    def apply(
+        DBClusterEndpointIdentifier: String,
+        DBClusterIdentifier: String,
+        EndpointType: String,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined
+    ): CreateDBClusterEndpointMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any],
         "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
@@ -1008,6 +1114,7 @@ package rds {
     var BacktrackWindow: js.UndefOr[LongOptional]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CharacterSetName: js.UndefOr[String]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
@@ -1034,35 +1141,38 @@ package rds {
   }
 
   object CreateDBClusterMessage {
-    def apply(DBClusterIdentifier: String,
-              Engine: String,
-              AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-              BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              CharacterSetName: js.UndefOr[String] = js.undefined,
-              DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-              DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-              DatabaseName: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
-              EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
-              EngineMode: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              MasterUserPassword: js.UndefOr[String] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              PreSignedUrl: js.UndefOr[String] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
-              ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
-              SourceRegion: js.UndefOr[String] = js.undefined,
-              StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): CreateDBClusterMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        Engine: String,
+        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CharacterSetName: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+        EngineMode: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        PreSignedUrl: js.UndefOr[String] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
+        ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
+        SourceRegion: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): CreateDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Engine"              -> Engine.asInstanceOf[js.Any],
@@ -1076,6 +1186,9 @@ package rds {
           x.asInstanceOf[js.Any]
         },
         "CharacterSetName" -> CharacterSetName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
           x.asInstanceOf[js.Any]
         },
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
@@ -1165,10 +1278,12 @@ package rds {
   }
 
   object CreateDBClusterParameterGroupMessage {
-    def apply(DBClusterParameterGroupName: String,
-              DBParameterGroupFamily: String,
-              Description: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateDBClusterParameterGroupMessage = {
+    def apply(
+        DBClusterParameterGroupName: String,
+        DBParameterGroupFamily: String,
+        Description: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "DBParameterGroupFamily"      -> DBParameterGroupFamily.asInstanceOf[js.Any],
@@ -1191,9 +1306,11 @@ package rds {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CreateDBClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterParameterGroup" -> DBClusterParameterGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterParameterGroupResult]
     }
@@ -1205,10 +1322,14 @@ package rds {
   }
 
   object CreateDBClusterResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): CreateDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): CreateDBClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterResult]
     }
@@ -1225,9 +1346,11 @@ package rds {
   }
 
   object CreateDBClusterSnapshotMessage {
-    def apply(DBClusterIdentifier: String,
-              DBClusterSnapshotIdentifier: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateDBClusterSnapshotMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        DBClusterSnapshotIdentifier: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDBClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any],
@@ -1246,10 +1369,14 @@ package rds {
   }
 
   object CreateDBClusterSnapshotResult {
-    def apply(DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined): CreateDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
+    ): CreateDBClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBClusterSnapshotResult]
     }
@@ -1308,51 +1435,53 @@ package rds {
   }
 
   object CreateDBInstanceMessage {
-    def apply(DBInstanceClass: String,
-              DBInstanceIdentifier: String,
-              Engine: String,
-              AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-              AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              CharacterSetName: js.UndefOr[String] = js.undefined,
-              CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              DBName: js.UndefOr[String] = js.undefined,
-              DBParameterGroupName: js.UndefOr[String] = js.undefined,
-              DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
-              DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              Domain: js.UndefOr[String] = js.undefined,
-              DomainIAMRoleName: js.UndefOr[String] = js.undefined,
-              EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
-              EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
-              EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              Iops: js.UndefOr[IntegerOptional] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              MasterUserPassword: js.UndefOr[String] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
-              MonitoringRoleArn: js.UndefOr[String] = js.undefined,
-              MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
-              PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
-              PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
-              PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
-              StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              TdeCredentialArn: js.UndefOr[String] = js.undefined,
-              TdeCredentialPassword: js.UndefOr[String] = js.undefined,
-              Timezone: js.UndefOr[String] = js.undefined,
-              VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): CreateDBInstanceMessage = {
+    def apply(
+        DBInstanceClass: String,
+        DBInstanceIdentifier: String,
+        Engine: String,
+        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
+        AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CharacterSetName: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        DBName: js.UndefOr[String] = js.undefined,
+        DBParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
+        DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+        EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+        EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        Iops: js.UndefOr[IntegerOptional] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
+        MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
+        PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
+        PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
+        PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TdeCredentialArn: js.UndefOr[String] = js.undefined,
+        TdeCredentialPassword: js.UndefOr[String] = js.undefined,
+        Timezone: js.UndefOr[String] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): CreateDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
@@ -1645,10 +1774,14 @@ package rds {
   }
 
   object CreateDBInstanceReadReplicaResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): CreateDBInstanceReadReplicaResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): CreateDBInstanceReadReplicaResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceReadReplicaResult]
     }
@@ -1660,10 +1793,14 @@ package rds {
   }
 
   object CreateDBInstanceResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): CreateDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): CreateDBInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBInstanceResult]
     }
@@ -1681,10 +1818,12 @@ package rds {
   }
 
   object CreateDBParameterGroupMessage {
-    def apply(DBParameterGroupFamily: String,
-              DBParameterGroupName: String,
-              Description: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateDBParameterGroupMessage = {
+    def apply(
+        DBParameterGroupFamily: String,
+        DBParameterGroupName: String,
+        Description: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "DBParameterGroupName"   -> DBParameterGroupName.asInstanceOf[js.Any],
@@ -1704,10 +1843,14 @@ package rds {
   }
 
   object CreateDBParameterGroupResult {
-    def apply(DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined): CreateDBParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBParameterGroup" -> DBParameterGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
+    ): CreateDBParameterGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBParameterGroup" -> DBParameterGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBParameterGroupResult]
     }
@@ -1724,9 +1867,11 @@ package rds {
   }
 
   object CreateDBSecurityGroupMessage {
-    def apply(DBSecurityGroupDescription: String,
-              DBSecurityGroupName: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateDBSecurityGroupMessage = {
+    def apply(
+        DBSecurityGroupDescription: String,
+        DBSecurityGroupName: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDBSecurityGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSecurityGroupDescription" -> DBSecurityGroupDescription.asInstanceOf[js.Any],
         "DBSecurityGroupName"        -> DBSecurityGroupName.asInstanceOf[js.Any],
@@ -1745,10 +1890,14 @@ package rds {
   }
 
   object CreateDBSecurityGroupResult {
-    def apply(DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined): CreateDBSecurityGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSecurityGroup" -> DBSecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
+    ): CreateDBSecurityGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSecurityGroup" -> DBSecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSecurityGroupResult]
     }
@@ -1765,9 +1914,11 @@ package rds {
   }
 
   object CreateDBSnapshotMessage {
-    def apply(DBInstanceIdentifier: String,
-              DBSnapshotIdentifier: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateDBSnapshotMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        DBSnapshotIdentifier: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDBSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any],
@@ -1786,10 +1937,14 @@ package rds {
   }
 
   object CreateDBSnapshotResult {
-    def apply(DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined): CreateDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshot" -> DBSnapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
+    ): CreateDBSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshot" -> DBSnapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSnapshotResult]
     }
@@ -1807,10 +1962,12 @@ package rds {
   }
 
   object CreateDBSubnetGroupMessage {
-    def apply(DBSubnetGroupDescription: String,
-              DBSubnetGroupName: String,
-              SubnetIds: SubnetIdentifierList,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateDBSubnetGroupMessage = {
+    def apply(
+        DBSubnetGroupDescription: String,
+        DBSubnetGroupName: String,
+        SubnetIds: SubnetIdentifierList,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateDBSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
         "DBSubnetGroupName"        -> DBSubnetGroupName.asInstanceOf[js.Any],
@@ -1830,10 +1987,14 @@ package rds {
   }
 
   object CreateDBSubnetGroupResult {
-    def apply(DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined): CreateDBSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSubnetGroup" -> DBSubnetGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
+    ): CreateDBSubnetGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDBSubnetGroupResult]
     }
@@ -1854,13 +2015,15 @@ package rds {
   }
 
   object CreateEventSubscriptionMessage {
-    def apply(SnsTopicArn: String,
-              SubscriptionName: String,
-              Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-              EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateEventSubscriptionMessage = {
+    def apply(
+        SnsTopicArn: String,
+        SubscriptionName: String,
+        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
@@ -1891,10 +2054,14 @@ package rds {
   }
 
   object CreateEventSubscriptionResult {
-    def apply(EventSubscription: js.UndefOr[EventSubscription] = js.undefined): CreateEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscription" -> EventSubscription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): CreateEventSubscriptionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscription" -> EventSubscription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionResult]
     }
@@ -1912,13 +2079,15 @@ package rds {
   }
 
   object CreateGlobalClusterMessage {
-    def apply(DatabaseName: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
-              SourceDBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined): CreateGlobalClusterMessage = {
+    def apply(
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+        SourceDBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
+    ): CreateGlobalClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatabaseName" -> DatabaseName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1953,10 +2122,14 @@ package rds {
   }
 
   object CreateGlobalClusterResult {
-    def apply(GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): CreateGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalCluster" -> GlobalCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): CreateGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGlobalClusterResult]
     }
@@ -1975,11 +2148,13 @@ package rds {
   }
 
   object CreateOptionGroupMessage {
-    def apply(EngineName: String,
-              MajorEngineVersion: String,
-              OptionGroupDescription: String,
-              OptionGroupName: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateOptionGroupMessage = {
+    def apply(
+        EngineName: String,
+        MajorEngineVersion: String,
+        OptionGroupDescription: String,
+        OptionGroupName: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateOptionGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EngineName"             -> EngineName.asInstanceOf[js.Any],
         "MajorEngineVersion"     -> MajorEngineVersion.asInstanceOf[js.Any],
@@ -2000,10 +2175,14 @@ package rds {
   }
 
   object CreateOptionGroupResult {
-    def apply(OptionGroup: js.UndefOr[OptionGroup] = js.undefined): CreateOptionGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("OptionGroup" -> OptionGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OptionGroup: js.UndefOr[OptionGroup] = js.undefined
+    ): CreateOptionGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionGroup" -> OptionGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateOptionGroupResult]
     }
@@ -2025,6 +2204,7 @@ package rds {
     var CharacterSetName: js.UndefOr[String]
     var CloneGroupId: js.UndefOr[String]
     var ClusterCreateTime: js.UndefOr[TStamp]
+    var CopyTagsToSnapshot: js.UndefOr[Boolean]
     var CustomEndpoints: js.UndefOr[StringList]
     var DBClusterArn: js.UndefOr[String]
     var DBClusterIdentifier: js.UndefOr[String]
@@ -2063,51 +2243,54 @@ package rds {
   }
 
   object DBCluster {
-    def apply(AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-              AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
-              AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-              BacktrackConsumedChangeRecords: js.UndefOr[LongOptional] = js.undefined,
-              BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              Capacity: js.UndefOr[IntegerOptional] = js.undefined,
-              CharacterSetName: js.UndefOr[String] = js.undefined,
-              CloneGroupId: js.UndefOr[String] = js.undefined,
-              ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
-              CustomEndpoints: js.UndefOr[StringList] = js.undefined,
-              DBClusterArn: js.UndefOr[String] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              DBClusterMembers: js.UndefOr[DBClusterMemberList] = js.undefined,
-              DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships] = js.undefined,
-              DBClusterParameterGroup: js.UndefOr[String] = js.undefined,
-              DBSubnetGroup: js.UndefOr[String] = js.undefined,
-              DatabaseName: js.UndefOr[String] = js.undefined,
-              DbClusterResourceId: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[Boolean] = js.undefined,
-              EarliestBacktrackTime: js.UndefOr[TStamp] = js.undefined,
-              EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
-              EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
-              Endpoint: js.UndefOr[String] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineMode: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              HostedZoneId: js.UndefOr[String] = js.undefined,
-              HttpEndpointEnabled: js.UndefOr[Boolean] = js.undefined,
-              IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              MultiAZ: js.UndefOr[Boolean] = js.undefined,
-              PercentProgress: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList] = js.undefined,
-              ReaderEndpoint: js.UndefOr[String] = js.undefined,
-              ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
-              ScalingConfigurationInfo: js.UndefOr[ScalingConfigurationInfo] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
-              VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined): DBCluster = {
+    def apply(
+        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
+        AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
+        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        BacktrackConsumedChangeRecords: js.UndefOr[LongOptional] = js.undefined,
+        BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        Capacity: js.UndefOr[IntegerOptional] = js.undefined,
+        CharacterSetName: js.UndefOr[String] = js.undefined,
+        CloneGroupId: js.UndefOr[String] = js.undefined,
+        ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
+        CustomEndpoints: js.UndefOr[StringList] = js.undefined,
+        DBClusterArn: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterMembers: js.UndefOr[DBClusterMemberList] = js.undefined,
+        DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships] = js.undefined,
+        DBClusterParameterGroup: js.UndefOr[String] = js.undefined,
+        DBSubnetGroup: js.UndefOr[String] = js.undefined,
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        DbClusterResourceId: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[Boolean] = js.undefined,
+        EarliestBacktrackTime: js.UndefOr[TStamp] = js.undefined,
+        EarliestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+        EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        Endpoint: js.UndefOr[String] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineMode: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        HostedZoneId: js.UndefOr[String] = js.undefined,
+        HttpEndpointEnabled: js.UndefOr[Boolean] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        PercentProgress: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList] = js.undefined,
+        ReaderEndpoint: js.UndefOr[String] = js.undefined,
+        ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
+        ScalingConfigurationInfo: js.UndefOr[ScalingConfigurationInfo] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
+    ): DBCluster = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllocatedStorage" -> AllocatedStorage.map { x =>
           x.asInstanceOf[js.Any]
@@ -2137,6 +2320,9 @@ package rds {
           x.asInstanceOf[js.Any]
         },
         "ClusterCreateTime" -> ClusterCreateTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
           x.asInstanceOf[js.Any]
         },
         "CustomEndpoints" -> CustomEndpoints.map { x =>
@@ -2264,12 +2450,14 @@ package rds {
   }
 
   object DBClusterBacktrack {
-    def apply(BacktrackIdentifier: js.UndefOr[String] = js.undefined,
-              BacktrackRequestCreationTime: js.UndefOr[TStamp] = js.undefined,
-              BacktrackTo: js.UndefOr[TStamp] = js.undefined,
-              BacktrackedFrom: js.UndefOr[TStamp] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): DBClusterBacktrack = {
+    def apply(
+        BacktrackIdentifier: js.UndefOr[String] = js.undefined,
+        BacktrackRequestCreationTime: js.UndefOr[TStamp] = js.undefined,
+        BacktrackTo: js.UndefOr[TStamp] = js.undefined,
+        BacktrackedFrom: js.UndefOr[TStamp] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DBClusterBacktrack = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BacktrackIdentifier" -> BacktrackIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -2305,13 +2493,18 @@ package rds {
   }
 
   object DBClusterBacktrackMessage {
-    def apply(DBClusterBacktracks: js.UndefOr[DBClusterBacktrackList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBClusterBacktrackMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterBacktracks" -> DBClusterBacktracks.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterBacktracks: js.UndefOr[DBClusterBacktrackList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBClusterBacktrackMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterBacktracks" -> DBClusterBacktracks.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterBacktrackMessage]
     }
@@ -2327,11 +2520,13 @@ package rds {
   }
 
   object DBClusterCapacityInfo {
-    def apply(CurrentCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              PendingCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-              SecondsBeforeTimeout: js.UndefOr[IntegerOptional] = js.undefined,
-              TimeoutAction: js.UndefOr[String] = js.undefined): DBClusterCapacityInfo = {
+    def apply(
+        CurrentCapacity: js.UndefOr[IntegerOptional] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        PendingCapacity: js.UndefOr[IntegerOptional] = js.undefined,
+        SecondsBeforeTimeout: js.UndefOr[IntegerOptional] = js.undefined,
+        TimeoutAction: js.UndefOr[String] = js.undefined
+    ): DBClusterCapacityInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentCapacity" -> CurrentCapacity.map { x =>
           x.asInstanceOf[js.Any]
@@ -2377,16 +2572,18 @@ package rds {
   }
 
   object DBClusterEndpoint {
-    def apply(CustomEndpointType: js.UndefOr[String] = js.undefined,
-              DBClusterEndpointArn: js.UndefOr[String] = js.undefined,
-              DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
-              DBClusterEndpointResourceIdentifier: js.UndefOr[String] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Endpoint: js.UndefOr[String] = js.undefined,
-              EndpointType: js.UndefOr[String] = js.undefined,
-              ExcludedMembers: js.UndefOr[StringList] = js.undefined,
-              StaticMembers: js.UndefOr[StringList] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): DBClusterEndpoint = {
+    def apply(
+        CustomEndpointType: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointArn: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterEndpointResourceIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Endpoint: js.UndefOr[String] = js.undefined,
+        EndpointType: js.UndefOr[String] = js.undefined,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DBClusterEndpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomEndpointType" -> CustomEndpointType.map { x =>
           x.asInstanceOf[js.Any]
@@ -2431,13 +2628,18 @@ package rds {
   }
 
   object DBClusterEndpointMessage {
-    def apply(DBClusterEndpoints: js.UndefOr[DBClusterEndpointList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBClusterEndpointMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterEndpoints" -> DBClusterEndpoints.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterEndpoints: js.UndefOr[DBClusterEndpointList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBClusterEndpointMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterEndpoints" -> DBClusterEndpoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterEndpointMessage]
     }
@@ -2455,10 +2657,12 @@ package rds {
   }
 
   object DBClusterMember {
-    def apply(DBClusterParameterGroupStatus: js.UndefOr[String] = js.undefined,
-              DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              IsClusterWriter: js.UndefOr[Boolean] = js.undefined,
-              PromotionTier: js.UndefOr[IntegerOptional] = js.undefined): DBClusterMember = {
+    def apply(
+        DBClusterParameterGroupStatus: js.UndefOr[String] = js.undefined,
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        IsClusterWriter: js.UndefOr[Boolean] = js.undefined,
+        PromotionTier: js.UndefOr[IntegerOptional] = js.undefined
+    ): DBClusterMember = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupStatus" -> DBClusterParameterGroupStatus.map { x =>
           x.asInstanceOf[js.Any]
@@ -2488,13 +2692,18 @@ package rds {
   }
 
   object DBClusterMessage {
-    def apply(DBClusters: js.UndefOr[DBClusterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusters" -> DBClusters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusters: js.UndefOr[DBClusterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusters" -> DBClusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterMessage]
     }
@@ -2510,13 +2719,18 @@ package rds {
   }
 
   object DBClusterOptionGroupStatus {
-    def apply(DBClusterOptionGroupName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): DBClusterOptionGroupStatus = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterOptionGroupName" -> DBClusterOptionGroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterOptionGroupName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DBClusterOptionGroupStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterOptionGroupName" -> DBClusterOptionGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterOptionGroupStatus]
     }
@@ -2535,10 +2749,12 @@ package rds {
   }
 
   object DBClusterParameterGroup {
-    def apply(DBClusterParameterGroupArn: js.UndefOr[String] = js.undefined,
-              DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-              DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined): DBClusterParameterGroup = {
+    def apply(
+        DBClusterParameterGroupArn: js.UndefOr[String] = js.undefined,
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined
+    ): DBClusterParameterGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupArn" -> DBClusterParameterGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2568,13 +2784,18 @@ package rds {
   }
 
   object DBClusterParameterGroupDetails {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              Parameters: js.UndefOr[ParametersList] = js.undefined): DBClusterParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        Parameters: js.UndefOr[ParametersList] = js.undefined
+    ): DBClusterParameterGroupDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupDetails]
     }
@@ -2589,10 +2810,14 @@ package rds {
   }
 
   object DBClusterParameterGroupNameMessage {
-    def apply(DBClusterParameterGroupName: js.UndefOr[String] = js.undefined): DBClusterParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
+    ): DBClusterParameterGroupNameMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupNameMessage]
     }
@@ -2608,13 +2833,18 @@ package rds {
   }
 
   object DBClusterParameterGroupsMessage {
-    def apply(DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterParameterGroups" -> DBClusterParameterGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBClusterParameterGroupsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterParameterGroups" -> DBClusterParameterGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterParameterGroupsMessage]
     }
@@ -2631,9 +2861,11 @@ package rds {
   }
 
   object DBClusterRole {
-    def apply(FeatureName: js.UndefOr[String] = js.undefined,
-              RoleArn: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): DBClusterRole = {
+    def apply(
+        FeatureName: js.UndefOr[String] = js.undefined,
+        RoleArn: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DBClusterRole = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FeatureName" -> FeatureName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2679,26 +2911,28 @@ package rds {
   }
 
   object DBClusterSnapshot {
-    def apply(AllocatedStorage: js.UndefOr[Int] = js.undefined,
-              AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-              ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              DBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
-              DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              PercentProgress: js.UndefOr[Int] = js.undefined,
-              Port: js.UndefOr[Int] = js.undefined,
-              SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
-              SnapshotType: js.UndefOr[String] = js.undefined,
-              SourceDBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): DBClusterSnapshot = {
+    def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
+        DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        PercentProgress: js.UndefOr[Int] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
+        SnapshotType: js.UndefOr[String] = js.undefined,
+        SourceDBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): DBClusterSnapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllocatedStorage" -> AllocatedStorage.map { x =>
           x.asInstanceOf[js.Any]
@@ -2777,13 +3011,18 @@ package rds {
   }
 
   object DBClusterSnapshotAttribute {
-    def apply(AttributeName: js.UndefOr[String] = js.undefined,
-              AttributeValues: js.UndefOr[AttributeValueList] = js.undefined): DBClusterSnapshotAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeName" -> AttributeName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AttributeValues" -> AttributeValues.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeName: js.UndefOr[String] = js.undefined,
+        AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
+    ): DBClusterSnapshotAttribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeName" -> AttributeName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttributeValues" -> AttributeValues.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotAttribute]
     }
@@ -2800,8 +3039,10 @@ package rds {
   }
 
   object DBClusterSnapshotAttributesResult {
-    def apply(DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
-              DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined): DBClusterSnapshotAttributesResult = {
+    def apply(
+        DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
+        DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): DBClusterSnapshotAttributesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterSnapshotAttributes" -> DBClusterSnapshotAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -2825,13 +3066,18 @@ package rds {
   }
 
   object DBClusterSnapshotMessage {
-    def apply(DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBClusterSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterSnapshots" -> DBClusterSnapshots.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBClusterSnapshotMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshots" -> DBClusterSnapshots.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBClusterSnapshotMessage]
     }
@@ -2851,6 +3097,7 @@ package rds {
     var ExportableLogTypes: js.UndefOr[LogTypeList]
     var SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList]
     var SupportedEngineModes: js.UndefOr[EngineModeList]
+    var SupportedFeatureNames: js.UndefOr[FeatureNameList]
     var SupportedTimezones: js.UndefOr[SupportedTimezonesList]
     var SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean]
     var SupportsReadReplica: js.UndefOr[Boolean]
@@ -2858,19 +3105,22 @@ package rds {
   }
 
   object DBEngineVersion {
-    def apply(DBEngineDescription: js.UndefOr[String] = js.undefined,
-              DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
-              DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              DefaultCharacterSet: js.UndefOr[CharacterSet] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              ExportableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
-              SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
-              SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
-              SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
-              SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
-              SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
-              ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined): DBEngineVersion = {
+    def apply(
+        DBEngineDescription: js.UndefOr[String] = js.undefined,
+        DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
+        DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        DefaultCharacterSet: js.UndefOr[CharacterSet] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        ExportableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
+        SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
+        SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
+        SupportedFeatureNames: js.UndefOr[FeatureNameList] = js.undefined,
+        SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
+        SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
+        SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
+        ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined
+    ): DBEngineVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBEngineDescription" -> DBEngineDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -2897,6 +3147,9 @@ package rds {
           x.asInstanceOf[js.Any]
         },
         "SupportedEngineModes" -> SupportedEngineModes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportedFeatureNames" -> SupportedFeatureNames.map { x =>
           x.asInstanceOf[js.Any]
         },
         "SupportedTimezones" -> SupportedTimezones.map { x =>
@@ -2927,13 +3180,18 @@ package rds {
   }
 
   object DBEngineVersionMessage {
-    def apply(DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBEngineVersionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBEngineVersions" -> DBEngineVersions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBEngineVersionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBEngineVersions" -> DBEngineVersions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBEngineVersionMessage]
     }
@@ -2946,6 +3204,7 @@ package rds {
   @js.native
   trait DBInstance extends js.Object {
     var AllocatedStorage: js.UndefOr[Int]
+    var AssociatedRoles: js.UndefOr[DBInstanceRoles]
     var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
     var AvailabilityZone: js.UndefOr[String]
     var BackupRetentionPeriod: js.UndefOr[Int]
@@ -3004,64 +3263,70 @@ package rds {
   }
 
   object DBInstance {
-    def apply(AllocatedStorage: js.UndefOr[Int] = js.undefined,
-              AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
-              CACertificateIdentifier: js.UndefOr[String] = js.undefined,
-              CharacterSetName: js.UndefOr[String] = js.undefined,
-              CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              DBInstanceArn: js.UndefOr[String] = js.undefined,
-              DBInstanceClass: js.UndefOr[String] = js.undefined,
-              DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              DBInstanceStatus: js.UndefOr[String] = js.undefined,
-              DBName: js.UndefOr[String] = js.undefined,
-              DBParameterGroups: js.UndefOr[DBParameterGroupStatusList] = js.undefined,
-              DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
-              DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined,
-              DbInstancePort: js.UndefOr[Int] = js.undefined,
-              DbiResourceId: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[Boolean] = js.undefined,
-              DomainMemberships: js.UndefOr[DomainMembershipList] = js.undefined,
-              EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
-              Endpoint: js.UndefOr[Endpoint] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              EnhancedMonitoringResourceArn: js.UndefOr[String] = js.undefined,
-              IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
-              InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
-              Iops: js.UndefOr[IntegerOptional] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              ListenerEndpoint: js.UndefOr[Endpoint] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
-              MonitoringRoleArn: js.UndefOr[String] = js.undefined,
-              MultiAZ: js.UndefOr[Boolean] = js.undefined,
-              OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList] = js.undefined,
-              PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
-              PerformanceInsightsEnabled: js.UndefOr[BooleanOptional] = js.undefined,
-              PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
-              PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
-              PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
-              PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
-              ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList] = js.undefined,
-              ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList] = js.undefined,
-              ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
-              StatusInfos: js.UndefOr[DBInstanceStatusInfoList] = js.undefined,
-              StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined,
-              TdeCredentialArn: js.UndefOr[String] = js.undefined,
-              Timezone: js.UndefOr[String] = js.undefined,
-              VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined): DBInstance = {
+    def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        AssociatedRoles: js.UndefOr[DBInstanceRoles] = js.undefined,
+        AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        CACertificateIdentifier: js.UndefOr[String] = js.undefined,
+        CharacterSetName: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[Boolean] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        DBInstanceArn: js.UndefOr[String] = js.undefined,
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        DBInstanceStatus: js.UndefOr[String] = js.undefined,
+        DBName: js.UndefOr[String] = js.undefined,
+        DBParameterGroups: js.UndefOr[DBParameterGroupStatusList] = js.undefined,
+        DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
+        DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined,
+        DbInstancePort: js.UndefOr[Int] = js.undefined,
+        DbiResourceId: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[Boolean] = js.undefined,
+        DomainMemberships: js.UndefOr[DomainMembershipList] = js.undefined,
+        EnabledCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        Endpoint: js.UndefOr[Endpoint] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        EnhancedMonitoringResourceArn: js.UndefOr[String] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
+        Iops: js.UndefOr[IntegerOptional] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        LatestRestorableTime: js.UndefOr[TStamp] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        ListenerEndpoint: js.UndefOr[Endpoint] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
+        MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+        MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList] = js.undefined,
+        PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
+        PerformanceInsightsEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
+        PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
+        PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
+        PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
+        ReadReplicaDBClusterIdentifiers: js.UndefOr[ReadReplicaDBClusterIdentifierList] = js.undefined,
+        ReadReplicaDBInstanceIdentifiers: js.UndefOr[ReadReplicaDBInstanceIdentifierList] = js.undefined,
+        ReadReplicaSourceDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
+        StatusInfos: js.UndefOr[DBInstanceStatusInfoList] = js.undefined,
+        StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined,
+        TdeCredentialArn: js.UndefOr[String] = js.undefined,
+        Timezone: js.UndefOr[String] = js.undefined,
+        VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
+    ): DBInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllocatedStorage" -> AllocatedStorage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AssociatedRoles" -> AssociatedRoles.map { x =>
           x.asInstanceOf[js.Any]
         },
         "AutoMinorVersionUpgrade" -> AutoMinorVersionUpgrade.map { x =>
@@ -3266,29 +3531,31 @@ package rds {
   }
 
   object DBInstanceAutomatedBackup {
-    def apply(AllocatedStorage: js.UndefOr[Int] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              DBInstanceArn: js.UndefOr[String] = js.undefined,
-              DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              DbiResourceId: js.UndefOr[String] = js.undefined,
-              Encrypted: js.UndefOr[Boolean] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
-              InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
-              Iops: js.UndefOr[IntegerOptional] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[Int] = js.undefined,
-              Region: js.UndefOr[String] = js.undefined,
-              RestoreWindow: js.UndefOr[RestoreWindow] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined,
-              TdeCredentialArn: js.UndefOr[String] = js.undefined,
-              Timezone: js.UndefOr[String] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): DBInstanceAutomatedBackup = {
+    def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        DBInstanceArn: js.UndefOr[String] = js.undefined,
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        DbiResourceId: js.UndefOr[String] = js.undefined,
+        Encrypted: js.UndefOr[Boolean] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
+        Iops: js.UndefOr[IntegerOptional] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        Region: js.UndefOr[String] = js.undefined,
+        RestoreWindow: js.UndefOr[RestoreWindow] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined,
+        TdeCredentialArn: js.UndefOr[String] = js.undefined,
+        Timezone: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): DBInstanceAutomatedBackup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllocatedStorage" -> AllocatedStorage.map { x =>
           x.asInstanceOf[js.Any]
@@ -3375,13 +3642,18 @@ package rds {
   }
 
   object DBInstanceAutomatedBackupMessage {
-    def apply(DBInstanceAutomatedBackups: js.UndefOr[DBInstanceAutomatedBackupList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBInstanceAutomatedBackupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstanceAutomatedBackups" -> DBInstanceAutomatedBackups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstanceAutomatedBackups: js.UndefOr[DBInstanceAutomatedBackupList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBInstanceAutomatedBackupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstanceAutomatedBackups" -> DBInstanceAutomatedBackups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceAutomatedBackupMessage]
     }
@@ -3397,15 +3669,52 @@ package rds {
   }
 
   object DBInstanceMessage {
-    def apply(DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstances" -> DBInstances.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBInstanceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstances" -> DBInstances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceMessage]
+    }
+  }
+
+  /**
+    * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB instance.
+    */
+  @js.native
+  trait DBInstanceRole extends js.Object {
+    var FeatureName: js.UndefOr[String]
+    var RoleArn: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+  }
+
+  object DBInstanceRole {
+    def apply(
+        FeatureName: js.UndefOr[String] = js.undefined,
+        RoleArn: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DBInstanceRole = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FeatureName" -> FeatureName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBInstanceRole]
     }
   }
 
@@ -3421,10 +3730,12 @@ package rds {
   }
 
   object DBInstanceStatusInfo {
-    def apply(Message: js.UndefOr[String] = js.undefined,
-              Normal: js.UndefOr[Boolean] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              StatusType: js.UndefOr[String] = js.undefined): DBInstanceStatusInfo = {
+    def apply(
+        Message: js.UndefOr[String] = js.undefined,
+        Normal: js.UndefOr[Boolean] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StatusType: js.UndefOr[String] = js.undefined
+    ): DBInstanceStatusInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Message" -> Message.map { x =>
           x.asInstanceOf[js.Any]
@@ -3457,10 +3768,12 @@ package rds {
   }
 
   object DBParameterGroup {
-    def apply(DBParameterGroupArn: js.UndefOr[String] = js.undefined,
-              DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              DBParameterGroupName: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined): DBParameterGroup = {
+    def apply(
+        DBParameterGroupArn: js.UndefOr[String] = js.undefined,
+        DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        DBParameterGroupName: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined
+    ): DBParameterGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupArn" -> DBParameterGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3490,13 +3803,18 @@ package rds {
   }
 
   object DBParameterGroupDetails {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              Parameters: js.UndefOr[ParametersList] = js.undefined): DBParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        Parameters: js.UndefOr[ParametersList] = js.undefined
+    ): DBParameterGroupDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupDetails]
     }
@@ -3511,10 +3829,14 @@ package rds {
   }
 
   object DBParameterGroupNameMessage {
-    def apply(DBParameterGroupName: js.UndefOr[String] = js.undefined): DBParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBParameterGroupName" -> DBParameterGroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBParameterGroupName: js.UndefOr[String] = js.undefined
+    ): DBParameterGroupNameMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBParameterGroupName" -> DBParameterGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupNameMessage]
     }
@@ -3537,8 +3859,10 @@ package rds {
   }
 
   object DBParameterGroupStatus {
-    def apply(DBParameterGroupName: js.UndefOr[String] = js.undefined,
-              ParameterApplyStatus: js.UndefOr[String] = js.undefined): DBParameterGroupStatus = {
+    def apply(
+        DBParameterGroupName: js.UndefOr[String] = js.undefined,
+        ParameterApplyStatus: js.UndefOr[String] = js.undefined
+    ): DBParameterGroupStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupName" -> DBParameterGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -3562,13 +3886,18 @@ package rds {
   }
 
   object DBParameterGroupsMessage {
-    def apply(DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBParameterGroups" -> DBParameterGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBParameterGroupsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBParameterGroups" -> DBParameterGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBParameterGroupsMessage]
     }
@@ -3590,13 +3919,15 @@ package rds {
   }
 
   object DBSecurityGroup {
-    def apply(DBSecurityGroupArn: js.UndefOr[String] = js.undefined,
-              DBSecurityGroupDescription: js.UndefOr[String] = js.undefined,
-              DBSecurityGroupName: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroups: js.UndefOr[EC2SecurityGroupList] = js.undefined,
-              IPRanges: js.UndefOr[IPRangeList] = js.undefined,
-              OwnerId: js.UndefOr[String] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): DBSecurityGroup = {
+    def apply(
+        DBSecurityGroupArn: js.UndefOr[String] = js.undefined,
+        DBSecurityGroupDescription: js.UndefOr[String] = js.undefined,
+        DBSecurityGroupName: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroups: js.UndefOr[EC2SecurityGroupList] = js.undefined,
+        IPRanges: js.UndefOr[IPRangeList] = js.undefined,
+        OwnerId: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): DBSecurityGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSecurityGroupArn" -> DBSecurityGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3639,13 +3970,18 @@ package rds {
   }
 
   object DBSecurityGroupMembership {
-    def apply(DBSecurityGroupName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): DBSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSecurityGroupName" -> DBSecurityGroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSecurityGroupName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DBSecurityGroupMembership = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSecurityGroupName" -> DBSecurityGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSecurityGroupMembership]
     }
@@ -3661,13 +3997,18 @@ package rds {
   }
 
   object DBSecurityGroupMessage {
-    def apply(DBSecurityGroups: js.UndefOr[DBSecurityGroups] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSecurityGroups" -> DBSecurityGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSecurityGroups: js.UndefOr[DBSecurityGroups] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBSecurityGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSecurityGroups" -> DBSecurityGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSecurityGroupMessage]
     }
@@ -3710,34 +4051,36 @@ package rds {
   }
 
   object DBSnapshot {
-    def apply(AllocatedStorage: js.UndefOr[Int] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              DBSnapshotArn: js.UndefOr[String] = js.undefined,
-              DBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              DbiResourceId: js.UndefOr[String] = js.undefined,
-              Encrypted: js.UndefOr[Boolean] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
-              InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
-              Iops: js.UndefOr[IntegerOptional] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              PercentProgress: js.UndefOr[Int] = js.undefined,
-              Port: js.UndefOr[Int] = js.undefined,
-              ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
-              SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
-              SnapshotType: js.UndefOr[String] = js.undefined,
-              SourceDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              SourceRegion: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined,
-              TdeCredentialArn: js.UndefOr[String] = js.undefined,
-              Timezone: js.UndefOr[String] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): DBSnapshot = {
+    def apply(
+        AllocatedStorage: js.UndefOr[Int] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        DBSnapshotArn: js.UndefOr[String] = js.undefined,
+        DBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        DbiResourceId: js.UndefOr[String] = js.undefined,
+        Encrypted: js.UndefOr[Boolean] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        IAMDatabaseAuthenticationEnabled: js.UndefOr[Boolean] = js.undefined,
+        InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
+        Iops: js.UndefOr[IntegerOptional] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        PercentProgress: js.UndefOr[Int] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
+        SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
+        SnapshotType: js.UndefOr[String] = js.undefined,
+        SourceDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        SourceRegion: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined,
+        TdeCredentialArn: js.UndefOr[String] = js.undefined,
+        Timezone: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): DBSnapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllocatedStorage" -> AllocatedStorage.map { x =>
           x.asInstanceOf[js.Any]
@@ -3840,13 +4183,18 @@ package rds {
   }
 
   object DBSnapshotAttribute {
-    def apply(AttributeName: js.UndefOr[String] = js.undefined,
-              AttributeValues: js.UndefOr[AttributeValueList] = js.undefined): DBSnapshotAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeName" -> AttributeName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AttributeValues" -> AttributeValues.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeName: js.UndefOr[String] = js.undefined,
+        AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
+    ): DBSnapshotAttribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeName" -> AttributeName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttributeValues" -> AttributeValues.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSnapshotAttribute]
     }
@@ -3863,8 +4211,10 @@ package rds {
   }
 
   object DBSnapshotAttributesResult {
-    def apply(DBSnapshotAttributes: js.UndefOr[DBSnapshotAttributeList] = js.undefined,
-              DBSnapshotIdentifier: js.UndefOr[String] = js.undefined): DBSnapshotAttributesResult = {
+    def apply(
+        DBSnapshotAttributes: js.UndefOr[DBSnapshotAttributeList] = js.undefined,
+        DBSnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): DBSnapshotAttributesResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSnapshotAttributes" -> DBSnapshotAttributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -3888,13 +4238,18 @@ package rds {
   }
 
   object DBSnapshotMessage {
-    def apply(DBSnapshots: js.UndefOr[DBSnapshotList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshots" -> DBSnapshots.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSnapshots: js.UndefOr[DBSnapshotList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBSnapshotMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshots" -> DBSnapshots.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSnapshotMessage]
     }
@@ -3915,12 +4270,14 @@ package rds {
   }
 
   object DBSubnetGroup {
-    def apply(DBSubnetGroupArn: js.UndefOr[String] = js.undefined,
-              DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
-              DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-              SubnetGroupStatus: js.UndefOr[String] = js.undefined,
-              Subnets: js.UndefOr[SubnetList] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): DBSubnetGroup = {
+    def apply(
+        DBSubnetGroupArn: js.UndefOr[String] = js.undefined,
+        DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
+        DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        SubnetGroupStatus: js.UndefOr[String] = js.undefined,
+        Subnets: js.UndefOr[SubnetList] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): DBSubnetGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSubnetGroupArn" -> DBSubnetGroupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3956,13 +4313,18 @@ package rds {
   }
 
   object DBSubnetGroupMessage {
-    def apply(DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSubnetGroups" -> DBSubnetGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DBSubnetGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSubnetGroups" -> DBSubnetGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DBSubnetGroupMessage]
     }
@@ -3974,10 +4336,12 @@ package rds {
   }
 
   object DeleteDBClusterEndpointMessage {
-    def apply(DBClusterEndpointIdentifier: String): DeleteDBClusterEndpointMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterEndpointIdentifier: String
+    ): DeleteDBClusterEndpointMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterEndpointMessage]
     }
@@ -3994,9 +4358,11 @@ package rds {
   }
 
   object DeleteDBClusterMessage {
-    def apply(DBClusterIdentifier: String,
-              FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined): DeleteDBClusterMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
+    ): DeleteDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "FinalDBSnapshotIdentifier" -> FinalDBSnapshotIdentifier.map { x =>
@@ -4020,10 +4386,12 @@ package rds {
   }
 
   object DeleteDBClusterParameterGroupMessage {
-    def apply(DBClusterParameterGroupName: String): DeleteDBClusterParameterGroupMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterParameterGroupName: String
+    ): DeleteDBClusterParameterGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterParameterGroupMessage]
     }
@@ -4035,10 +4403,14 @@ package rds {
   }
 
   object DeleteDBClusterResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): DeleteDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): DeleteDBClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterResult]
     }
@@ -4053,10 +4425,12 @@ package rds {
   }
 
   object DeleteDBClusterSnapshotMessage {
-    def apply(DBClusterSnapshotIdentifier: String): DeleteDBClusterSnapshotMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterSnapshotIdentifier: String
+    ): DeleteDBClusterSnapshotMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterSnapshotMessage]
     }
@@ -4068,10 +4442,14 @@ package rds {
   }
 
   object DeleteDBClusterSnapshotResult {
-    def apply(DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined): DeleteDBClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
+    ): DeleteDBClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshot" -> DBClusterSnapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBClusterSnapshotResult]
     }
@@ -4086,9 +4464,12 @@ package rds {
   }
 
   object DeleteDBInstanceAutomatedBackupMessage {
-    def apply(DbiResourceId: String): DeleteDBInstanceAutomatedBackupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DbiResourceId" -> DbiResourceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DbiResourceId: String
+    ): DeleteDBInstanceAutomatedBackupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DbiResourceId" -> DbiResourceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceAutomatedBackupMessage]
     }
@@ -4103,9 +4484,11 @@ package rds {
     def apply(
         DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup] = js.undefined
     ): DeleteDBInstanceAutomatedBackupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstanceAutomatedBackup" -> DBInstanceAutomatedBackup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstanceAutomatedBackup" -> DBInstanceAutomatedBackup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceAutomatedBackupResult]
     }
@@ -4123,10 +4506,12 @@ package rds {
   }
 
   object DeleteDBInstanceMessage {
-    def apply(DBInstanceIdentifier: String,
-              DeleteAutomatedBackups: js.UndefOr[BooleanOptional] = js.undefined,
-              FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined): DeleteDBInstanceMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        DeleteAutomatedBackups: js.UndefOr[BooleanOptional] = js.undefined,
+        FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
+    ): DeleteDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "DeleteAutomatedBackups" -> DeleteAutomatedBackups.map { x =>
@@ -4150,10 +4535,14 @@ package rds {
   }
 
   object DeleteDBInstanceResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): DeleteDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): DeleteDBInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBInstanceResult]
     }
@@ -4168,9 +4557,12 @@ package rds {
   }
 
   object DeleteDBParameterGroupMessage {
-    def apply(DBParameterGroupName: String): DeleteDBParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBParameterGroupName: String
+    ): DeleteDBParameterGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBParameterGroupMessage]
     }
@@ -4185,9 +4577,12 @@ package rds {
   }
 
   object DeleteDBSecurityGroupMessage {
-    def apply(DBSecurityGroupName: String): DeleteDBSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSecurityGroupName: String
+    ): DeleteDBSecurityGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSecurityGroupMessage]
     }
@@ -4202,9 +4597,12 @@ package rds {
   }
 
   object DeleteDBSnapshotMessage {
-    def apply(DBSnapshotIdentifier: String): DeleteDBSnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSnapshotIdentifier: String
+    ): DeleteDBSnapshotMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSnapshotMessage]
     }
@@ -4216,10 +4614,14 @@ package rds {
   }
 
   object DeleteDBSnapshotResult {
-    def apply(DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined): DeleteDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshot" -> DBSnapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
+    ): DeleteDBSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshot" -> DBSnapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSnapshotResult]
     }
@@ -4234,9 +4636,12 @@ package rds {
   }
 
   object DeleteDBSubnetGroupMessage {
-    def apply(DBSubnetGroupName: String): DeleteDBSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSubnetGroupName: String
+    ): DeleteDBSubnetGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDBSubnetGroupMessage]
     }
@@ -4251,9 +4656,12 @@ package rds {
   }
 
   object DeleteEventSubscriptionMessage {
-    def apply(SubscriptionName: String): DeleteEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SubscriptionName: String
+    ): DeleteEventSubscriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionMessage]
     }
@@ -4265,10 +4673,14 @@ package rds {
   }
 
   object DeleteEventSubscriptionResult {
-    def apply(EventSubscription: js.UndefOr[EventSubscription] = js.undefined): DeleteEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscription" -> EventSubscription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): DeleteEventSubscriptionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscription" -> EventSubscription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionResult]
     }
@@ -4280,10 +4692,12 @@ package rds {
   }
 
   object DeleteGlobalClusterMessage {
-    def apply(GlobalClusterIdentifier: String): DeleteGlobalClusterMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalClusterIdentifier: String
+    ): DeleteGlobalClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGlobalClusterMessage]
     }
@@ -4295,10 +4709,14 @@ package rds {
   }
 
   object DeleteGlobalClusterResult {
-    def apply(GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): DeleteGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalCluster" -> GlobalCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): DeleteGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGlobalClusterResult]
     }
@@ -4313,9 +4731,12 @@ package rds {
   }
 
   object DeleteOptionGroupMessage {
-    def apply(OptionGroupName: String): DeleteOptionGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("OptionGroupName" -> OptionGroupName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OptionGroupName: String
+    ): DeleteOptionGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionGroupName" -> OptionGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteOptionGroupMessage]
     }
@@ -4328,8 +4749,10 @@ package rds {
   trait DescribeAccountAttributesMessage extends js.Object {}
 
   object DescribeAccountAttributesMessage {
-    def apply(): DescribeAccountAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeAccountAttributesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAttributesMessage]
     }
@@ -4347,10 +4770,12 @@ package rds {
   }
 
   object DescribeCertificatesMessage {
-    def apply(CertificateIdentifier: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeCertificatesMessage = {
+    def apply(
+        CertificateIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeCertificatesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateIdentifier" -> CertificateIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -4383,11 +4808,13 @@ package rds {
   }
 
   object DescribeDBClusterBacktracksMessage {
-    def apply(DBClusterIdentifier: String,
-              BacktrackIdentifier: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBClusterBacktracksMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        BacktrackIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBClusterBacktracksMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "BacktrackIdentifier" -> BacktrackIdentifier.map { x =>
@@ -4418,11 +4845,13 @@ package rds {
   }
 
   object DescribeDBClusterEndpointsMessage {
-    def apply(DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
-              DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBClusterEndpointsMessage = {
+    def apply(
+        DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBClusterEndpointsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -4457,10 +4886,12 @@ package rds {
   }
 
   object DescribeDBClusterParameterGroupsMessage {
-    def apply(DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBClusterParameterGroupsMessage = {
+    def apply(
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBClusterParameterGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4493,11 +4924,13 @@ package rds {
   }
 
   object DescribeDBClusterParametersMessage {
-    def apply(DBClusterParameterGroupName: String,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              Source: js.UndefOr[String] = js.undefined): DescribeDBClusterParametersMessage = {
+    def apply(
+        DBClusterParameterGroupName: String,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        Source: js.UndefOr[String] = js.undefined
+    ): DescribeDBClusterParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4527,10 +4960,12 @@ package rds {
   }
 
   object DescribeDBClusterSnapshotAttributesMessage {
-    def apply(DBClusterSnapshotIdentifier: String): DescribeDBClusterSnapshotAttributesMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterSnapshotIdentifier: String
+    ): DescribeDBClusterSnapshotAttributesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -4547,10 +4982,11 @@ package rds {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBClusterSnapshotAttributesResult]
     }
@@ -4572,14 +5008,16 @@ package rds {
   }
 
   object DescribeDBClusterSnapshotsMessage {
-    def apply(DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              IncludePublic: js.UndefOr[Boolean] = js.undefined,
-              IncludeShared: js.UndefOr[Boolean] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              SnapshotType: js.UndefOr[String] = js.undefined): DescribeDBClusterSnapshotsMessage = {
+    def apply(
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        IncludePublic: js.UndefOr[Boolean] = js.undefined,
+        IncludeShared: js.UndefOr[Boolean] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SnapshotType: js.UndefOr[String] = js.undefined
+    ): DescribeDBClusterSnapshotsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -4623,10 +5061,12 @@ package rds {
   }
 
   object DescribeDBClustersMessage {
-    def apply(DBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBClustersMessage = {
+    def apply(
+        DBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBClustersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -4660,15 +5100,17 @@ package rds {
   }
 
   object DescribeDBEngineVersionsMessage {
-    def apply(DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              DefaultOnly: js.UndefOr[Boolean] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              ListSupportedCharacterSets: js.UndefOr[BooleanOptional] = js.undefined,
-              ListSupportedTimezones: js.UndefOr[BooleanOptional] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBEngineVersionsMessage = {
+    def apply(
+        DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        DefaultOnly: js.UndefOr[Boolean] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        ListSupportedCharacterSets: js.UndefOr[BooleanOptional] = js.undefined,
+        ListSupportedTimezones: js.UndefOr[BooleanOptional] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBEngineVersionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
           x.asInstanceOf[js.Any]
@@ -4716,11 +5158,13 @@ package rds {
   }
 
   object DescribeDBInstanceAutomatedBackupsMessage {
-    def apply(DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              DbiResourceId: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBInstanceAutomatedBackupsMessage = {
+    def apply(
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        DbiResourceId: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBInstanceAutomatedBackupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -4755,10 +5199,12 @@ package rds {
   }
 
   object DescribeDBInstancesMessage {
-    def apply(DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBInstancesMessage = {
+    def apply(
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBInstancesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -4789,9 +5235,11 @@ package rds {
   }
 
   object DescribeDBLogFilesDetails {
-    def apply(LastWritten: js.UndefOr[Double] = js.undefined,
-              LogFileName: js.UndefOr[String] = js.undefined,
-              Size: js.UndefOr[Double] = js.undefined): DescribeDBLogFilesDetails = {
+    def apply(
+        LastWritten: js.UndefOr[Double] = js.undefined,
+        LogFileName: js.UndefOr[String] = js.undefined,
+        Size: js.UndefOr[Double] = js.undefined
+    ): DescribeDBLogFilesDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LastWritten" -> LastWritten.map { x =>
           x.asInstanceOf[js.Any]
@@ -4823,13 +5271,15 @@ package rds {
   }
 
   object DescribeDBLogFilesMessage {
-    def apply(DBInstanceIdentifier: String,
-              FileLastWritten: js.UndefOr[Double] = js.undefined,
-              FileSize: js.UndefOr[Double] = js.undefined,
-              FilenameContains: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBLogFilesMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        FileLastWritten: js.UndefOr[Double] = js.undefined,
+        FileSize: js.UndefOr[Double] = js.undefined,
+        FilenameContains: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBLogFilesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "FileLastWritten" -> FileLastWritten.map { x =>
@@ -4866,13 +5316,18 @@ package rds {
   }
 
   object DescribeDBLogFilesResponse {
-    def apply(DescribeDBLogFiles: js.UndefOr[DescribeDBLogFilesList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DescribeDBLogFilesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("DescribeDBLogFiles" -> DescribeDBLogFiles.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DescribeDBLogFiles: js.UndefOr[DescribeDBLogFilesList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DescribeDBLogFilesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DescribeDBLogFiles" -> DescribeDBLogFiles.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBLogFilesResponse]
     }
@@ -4890,10 +5345,12 @@ package rds {
   }
 
   object DescribeDBParameterGroupsMessage {
-    def apply(DBParameterGroupName: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBParameterGroupsMessage = {
+    def apply(
+        DBParameterGroupName: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBParameterGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupName" -> DBParameterGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4923,11 +5380,13 @@ package rds {
   }
 
   object DescribeDBParametersMessage {
-    def apply(DBParameterGroupName: String,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              Source: js.UndefOr[String] = js.undefined): DescribeDBParametersMessage = {
+    def apply(
+        DBParameterGroupName: String,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        Source: js.UndefOr[String] = js.undefined
+    ): DescribeDBParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -4960,10 +5419,12 @@ package rds {
   }
 
   object DescribeDBSecurityGroupsMessage {
-    def apply(DBSecurityGroupName: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBSecurityGroupsMessage = {
+    def apply(
+        DBSecurityGroupName: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBSecurityGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSecurityGroupName" -> DBSecurityGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4992,9 +5453,12 @@ package rds {
   }
 
   object DescribeDBSnapshotAttributesMessage {
-    def apply(DBSnapshotIdentifier: String): DescribeDBSnapshotAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSnapshotIdentifier: String
+    ): DescribeDBSnapshotAttributesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSnapshotAttributesMessage]
     }
@@ -5009,9 +5473,11 @@ package rds {
     def apply(
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): DescribeDBSnapshotAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshotAttributesResult" -> DBSnapshotAttributesResult.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshotAttributesResult" -> DBSnapshotAttributesResult.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDBSnapshotAttributesResult]
     }
@@ -5034,15 +5500,17 @@ package rds {
   }
 
   object DescribeDBSnapshotsMessage {
-    def apply(DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              DBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              DbiResourceId: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              IncludePublic: js.UndefOr[Boolean] = js.undefined,
-              IncludeShared: js.UndefOr[Boolean] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              SnapshotType: js.UndefOr[String] = js.undefined): DescribeDBSnapshotsMessage = {
+    def apply(
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        DBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        DbiResourceId: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        IncludePublic: js.UndefOr[Boolean] = js.undefined,
+        IncludeShared: js.UndefOr[Boolean] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SnapshotType: js.UndefOr[String] = js.undefined
+    ): DescribeDBSnapshotsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -5089,10 +5557,12 @@ package rds {
   }
 
   object DescribeDBSubnetGroupsMessage {
-    def apply(DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDBSubnetGroupsMessage = {
+    def apply(
+        DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDBSubnetGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSubnetGroupName" -> DBSubnetGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -5124,10 +5594,12 @@ package rds {
   }
 
   object DescribeEngineDefaultClusterParametersMessage {
-    def apply(DBParameterGroupFamily: String,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeEngineDefaultClusterParametersMessage = {
+    def apply(
+        DBParameterGroupFamily: String,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeEngineDefaultClusterParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -5156,9 +5628,11 @@ package rds {
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultClusterParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EngineDefaults" -> EngineDefaults.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EngineDefaults" -> EngineDefaults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -5178,10 +5652,12 @@ package rds {
   }
 
   object DescribeEngineDefaultParametersMessage {
-    def apply(DBParameterGroupFamily: String,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeEngineDefaultParametersMessage = {
+    def apply(
+        DBParameterGroupFamily: String,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeEngineDefaultParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -5205,10 +5681,14 @@ package rds {
   }
 
   object DescribeEngineDefaultParametersResult {
-    def apply(EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined): DescribeEngineDefaultParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EngineDefaults" -> EngineDefaults.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
+    ): DescribeEngineDefaultParametersResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EngineDefaults" -> EngineDefaults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEngineDefaultParametersResult]
     }
@@ -5224,13 +5704,18 @@ package rds {
   }
 
   object DescribeEventCategoriesMessage {
-    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined): DescribeEventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Filters" -> Filters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SourceType" -> SourceType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined
+    ): DescribeEventCategoriesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceType" -> SourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventCategoriesMessage]
     }
@@ -5248,10 +5733,12 @@ package rds {
   }
 
   object DescribeEventSubscriptionsMessage {
-    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              SubscriptionName: js.UndefOr[String] = js.undefined): DescribeEventSubscriptionsMessage = {
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SubscriptionName: js.UndefOr[String] = js.undefined
+    ): DescribeEventSubscriptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -5288,15 +5775,17 @@ package rds {
   }
 
   object DescribeEventsMessage {
-    def apply(Duration: js.UndefOr[IntegerOptional] = js.undefined,
-              EndTime: js.UndefOr[TStamp] = js.undefined,
-              EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              SourceIdentifier: js.UndefOr[String] = js.undefined,
-              SourceType: js.UndefOr[SourceType] = js.undefined,
-              StartTime: js.UndefOr[TStamp] = js.undefined): DescribeEventsMessage = {
+    def apply(
+        Duration: js.UndefOr[IntegerOptional] = js.undefined,
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SourceIdentifier: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[SourceType] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined
+    ): DescribeEventsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Duration" -> Duration.map { x =>
           x.asInstanceOf[js.Any]
@@ -5340,10 +5829,12 @@ package rds {
   }
 
   object DescribeGlobalClustersMessage {
-    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
-              GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeGlobalClustersMessage = {
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeGlobalClustersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -5376,11 +5867,13 @@ package rds {
   }
 
   object DescribeOptionGroupOptionsMessage {
-    def apply(EngineName: String,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              MajorEngineVersion: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeOptionGroupOptionsMessage = {
+    def apply(
+        EngineName: String,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MajorEngineVersion: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeOptionGroupOptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EngineName" -> EngineName.asInstanceOf[js.Any],
         "Filters" -> Filters.map { x =>
@@ -5415,12 +5908,14 @@ package rds {
   }
 
   object DescribeOptionGroupsMessage {
-    def apply(EngineName: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              MajorEngineVersion: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined): DescribeOptionGroupsMessage = {
+    def apply(
+        EngineName: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MajorEngineVersion: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined
+    ): DescribeOptionGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EngineName" -> EngineName.map { x =>
           x.asInstanceOf[js.Any]
@@ -5462,14 +5957,16 @@ package rds {
   }
 
   object DescribeOrderableDBInstanceOptionsMessage {
-    def apply(Engine: String,
-              DBInstanceClass: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              Vpc: js.UndefOr[BooleanOptional] = js.undefined): DescribeOrderableDBInstanceOptionsMessage = {
+    def apply(
+        Engine: String,
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        Vpc: js.UndefOr[BooleanOptional] = js.undefined
+    ): DescribeOrderableDBInstanceOptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Engine" -> Engine.asInstanceOf[js.Any],
         "DBInstanceClass" -> DBInstanceClass.map { x =>
@@ -5511,10 +6008,12 @@ package rds {
   }
 
   object DescribePendingMaintenanceActionsMessage {
-    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              ResourceIdentifier: js.UndefOr[String] = js.undefined): DescribePendingMaintenanceActionsMessage = {
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ResourceIdentifier: js.UndefOr[String] = js.undefined
+    ): DescribePendingMaintenanceActionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -5552,16 +6051,18 @@ package rds {
   }
 
   object DescribeReservedDBInstancesMessage {
-    def apply(DBInstanceClass: js.UndefOr[String] = js.undefined,
-              Duration: js.UndefOr[String] = js.undefined,
-              Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-              OfferingType: js.UndefOr[String] = js.undefined,
-              ProductDescription: js.UndefOr[String] = js.undefined,
-              ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
-              ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined): DescribeReservedDBInstancesMessage = {
+    def apply(
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        Duration: js.UndefOr[String] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        OfferingType: js.UndefOr[String] = js.undefined,
+        ProductDescription: js.UndefOr[String] = js.undefined,
+        ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
+        ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined
+    ): DescribeReservedDBInstancesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceClass" -> DBInstanceClass.map { x =>
           x.asInstanceOf[js.Any]
@@ -5675,10 +6176,12 @@ package rds {
   }
 
   object DescribeSourceRegionsMessage {
-    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              RegionName: js.UndefOr[String] = js.undefined): DescribeSourceRegionsMessage = {
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        RegionName: js.UndefOr[String] = js.undefined
+    ): DescribeSourceRegionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -5707,9 +6210,12 @@ package rds {
   }
 
   object DescribeValidDBInstanceModificationsMessage {
-    def apply(DBInstanceIdentifier: String): DescribeValidDBInstanceModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstanceIdentifier: String
+    ): DescribeValidDBInstanceModificationsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -5726,11 +6232,11 @@ package rds {
     def apply(
         ValidDBInstanceModificationsMessage: js.UndefOr[ValidDBInstanceModificationsMessage] = js.undefined
     ): DescribeValidDBInstanceModificationsResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ValidDBInstanceModificationsMessage" -> ValidDBInstanceModificationsMessage.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ValidDBInstanceModificationsMessage" -> ValidDBInstanceModificationsMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -5750,10 +6256,12 @@ package rds {
   }
 
   object DomainMembership {
-    def apply(Domain: js.UndefOr[String] = js.undefined,
-              FQDN: js.UndefOr[String] = js.undefined,
-              IAMRoleName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): DomainMembership = {
+    def apply(
+        Domain: js.UndefOr[String] = js.undefined,
+        FQDN: js.UndefOr[String] = js.undefined,
+        IAMRoleName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): DomainMembership = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Domain" -> Domain.map { x =>
           x.asInstanceOf[js.Any]
@@ -5783,12 +6291,18 @@ package rds {
   }
 
   object DoubleRange {
-    def apply(From: js.UndefOr[Double] = js.undefined, To: js.UndefOr[Double] = js.undefined): DoubleRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("From" -> From.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "To" -> To.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        From: js.UndefOr[Double] = js.undefined,
+        To: js.UndefOr[Double] = js.undefined
+    ): DoubleRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "From" -> From.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "To" -> To.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DoubleRange]
     }
@@ -5805,9 +6319,11 @@ package rds {
   }
 
   object DownloadDBLogFilePortionDetails {
-    def apply(AdditionalDataPending: js.UndefOr[Boolean] = js.undefined,
-              LogFileData: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): DownloadDBLogFilePortionDetails = {
+    def apply(
+        AdditionalDataPending: js.UndefOr[Boolean] = js.undefined,
+        LogFileData: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DownloadDBLogFilePortionDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AdditionalDataPending" -> AdditionalDataPending.map { x =>
           x.asInstanceOf[js.Any]
@@ -5836,10 +6352,12 @@ package rds {
   }
 
   object DownloadDBLogFilePortionMessage {
-    def apply(DBInstanceIdentifier: String,
-              LogFileName: String,
-              Marker: js.UndefOr[String] = js.undefined,
-              NumberOfLines: js.UndefOr[Int] = js.undefined): DownloadDBLogFilePortionMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        LogFileName: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        NumberOfLines: js.UndefOr[Int] = js.undefined
+    ): DownloadDBLogFilePortionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "LogFileName"          -> LogFileName.asInstanceOf[js.Any],
@@ -5870,10 +6388,12 @@ package rds {
   }
 
   object EC2SecurityGroup {
-    def apply(EC2SecurityGroupId: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): EC2SecurityGroup = {
+    def apply(
+        EC2SecurityGroupId: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): EC2SecurityGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EC2SecurityGroupId" -> EC2SecurityGroupId.map { x =>
           x.asInstanceOf[js.Any]
@@ -5908,9 +6428,11 @@ package rds {
   }
 
   object Endpoint {
-    def apply(Address: js.UndefOr[String] = js.undefined,
-              HostedZoneId: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[Int] = js.undefined): Endpoint = {
+    def apply(
+        Address: js.UndefOr[String] = js.undefined,
+        HostedZoneId: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined
+    ): Endpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Address" -> Address.map { x =>
           x.asInstanceOf[js.Any]
@@ -5938,9 +6460,11 @@ package rds {
   }
 
   object EngineDefaults {
-    def apply(DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              Parameters: js.UndefOr[ParametersList] = js.undefined): EngineDefaults = {
+    def apply(
+        DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        Parameters: js.UndefOr[ParametersList] = js.undefined
+    ): EngineDefaults = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupFamily" -> DBParameterGroupFamily.map { x =>
           x.asInstanceOf[js.Any]
@@ -5971,12 +6495,14 @@ package rds {
   }
 
   object Event {
-    def apply(Date: js.UndefOr[TStamp] = js.undefined,
-              EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined,
-              SourceArn: js.UndefOr[String] = js.undefined,
-              SourceIdentifier: js.UndefOr[String] = js.undefined,
-              SourceType: js.UndefOr[SourceType] = js.undefined): Event = {
+    def apply(
+        Date: js.UndefOr[TStamp] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        SourceArn: js.UndefOr[String] = js.undefined,
+        SourceIdentifier: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[SourceType] = js.undefined
+    ): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Date" -> Date.map { x =>
           x.asInstanceOf[js.Any]
@@ -6012,13 +6538,18 @@ package rds {
   }
 
   object EventCategoriesMap {
-    def apply(EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined): EventCategoriesMap = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventCategories" -> EventCategories.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SourceType" -> SourceType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined
+    ): EventCategoriesMap = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventCategories" -> EventCategories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceType" -> SourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMap]
     }
@@ -6033,10 +6564,14 @@ package rds {
   }
 
   object EventCategoriesMessage {
-    def apply(EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined): EventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventCategoriesMapList" -> EventCategoriesMapList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
+    ): EventCategoriesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventCategoriesMapList" -> EventCategoriesMapList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMessage]
     }
@@ -6060,16 +6595,18 @@ package rds {
   }
 
   object EventSubscription {
-    def apply(CustSubscriptionId: js.UndefOr[String] = js.undefined,
-              CustomerAwsId: js.UndefOr[String] = js.undefined,
-              Enabled: js.UndefOr[Boolean] = js.undefined,
-              EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
-              EventSubscriptionArn: js.UndefOr[String] = js.undefined,
-              SnsTopicArn: js.UndefOr[String] = js.undefined,
-              SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              SubscriptionCreationTime: js.UndefOr[String] = js.undefined): EventSubscription = {
+    def apply(
+        CustSubscriptionId: js.UndefOr[String] = js.undefined,
+        CustomerAwsId: js.UndefOr[String] = js.undefined,
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
+        EventSubscriptionArn: js.UndefOr[String] = js.undefined,
+        SnsTopicArn: js.UndefOr[String] = js.undefined,
+        SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        SubscriptionCreationTime: js.UndefOr[String] = js.undefined
+    ): EventSubscription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustSubscriptionId" -> CustSubscriptionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -6117,13 +6654,18 @@ package rds {
   }
 
   object EventSubscriptionsMessage {
-    def apply(EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): EventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscriptionsList" -> EventSubscriptionsList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): EventSubscriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscriptionsList" -> EventSubscriptionsList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscriptionsMessage]
     }
@@ -6139,13 +6681,18 @@ package rds {
   }
 
   object EventsMessage {
-    def apply(Events: js.UndefOr[EventList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): EventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Events" -> Events.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Events: js.UndefOr[EventList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): EventsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsMessage]
     }
@@ -6161,8 +6708,10 @@ package rds {
   }
 
   object FailoverDBClusterMessage {
-    def apply(DBClusterIdentifier: String,
-              TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined): FailoverDBClusterMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined
+    ): FailoverDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "TargetDBInstanceIdentifier" -> TargetDBInstanceIdentifier.map { x =>
@@ -6180,10 +6729,14 @@ package rds {
   }
 
   object FailoverDBClusterResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): FailoverDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): FailoverDBClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailoverDBClusterResult]
     }
@@ -6207,10 +6760,14 @@ package rds {
   }
 
   object Filter {
-    def apply(Name: String, Values: FilterValueList): Filter = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: String,
+        Values: FilterValueList
+    ): Filter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"   -> Name.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
@@ -6234,16 +6791,18 @@ package rds {
   }
 
   object GlobalCluster {
-    def apply(DatabaseName: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              GlobalClusterArn: js.UndefOr[String] = js.undefined,
-              GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
-              GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList] = js.undefined,
-              GlobalClusterResourceId: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined): GlobalCluster = {
+    def apply(
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalClusterArn: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+        GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList] = js.undefined,
+        GlobalClusterResourceId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
+    ): GlobalCluster = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatabaseName" -> DatabaseName.map { x =>
           x.asInstanceOf[js.Any]
@@ -6292,9 +6851,11 @@ package rds {
   }
 
   object GlobalClusterMember {
-    def apply(DBClusterArn: js.UndefOr[String] = js.undefined,
-              IsWriter: js.UndefOr[Boolean] = js.undefined,
-              Readers: js.UndefOr[ReadersArnList] = js.undefined): GlobalClusterMember = {
+    def apply(
+        DBClusterArn: js.UndefOr[String] = js.undefined,
+        IsWriter: js.UndefOr[Boolean] = js.undefined,
+        Readers: js.UndefOr[ReadersArnList] = js.undefined
+    ): GlobalClusterMember = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterArn" -> DBClusterArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -6318,13 +6879,18 @@ package rds {
   }
 
   object GlobalClustersMessage {
-    def apply(GlobalClusters: js.UndefOr[GlobalClusterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): GlobalClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalClusters" -> GlobalClusters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalClusters: js.UndefOr[GlobalClusterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): GlobalClustersMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalClusters" -> GlobalClusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalClustersMessage]
     }
@@ -6340,12 +6906,18 @@ package rds {
   }
 
   object IPRange {
-    def apply(CIDRIP: js.UndefOr[String] = js.undefined, Status: js.UndefOr[String] = js.undefined): IPRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("CIDRIP" -> CIDRIP.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CIDRIP: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): IPRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CIDRIP" -> CIDRIP.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPRange]
     }
@@ -6361,12 +6933,16 @@ package rds {
   }
 
   object ListTagsForResourceMessage {
-    def apply(ResourceName: String, Filters: js.UndefOr[FilterList] = js.undefined): ListTagsForResourceMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ResourceName" -> ResourceName.asInstanceOf[js.Any], "Filters" -> Filters.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceName: String,
+        Filters: js.UndefOr[FilterList] = js.undefined
+    ): ListTagsForResourceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
     }
@@ -6382,13 +6958,18 @@ package rds {
   }
 
   object MinimumEngineVersionPerAllowedValue {
-    def apply(AllowedValue: js.UndefOr[String] = js.undefined,
-              MinimumEngineVersion: js.UndefOr[String] = js.undefined): MinimumEngineVersionPerAllowedValue = {
-      val _fields = IndexedSeq[(String, js.Any)]("AllowedValue" -> AllowedValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AllowedValue: js.UndefOr[String] = js.undefined,
+        MinimumEngineVersion: js.UndefOr[String] = js.undefined
+    ): MinimumEngineVersionPerAllowedValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AllowedValue" -> AllowedValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MinimumEngineVersion" -> MinimumEngineVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MinimumEngineVersionPerAllowedValue]
     }
@@ -6403,10 +6984,12 @@ package rds {
   }
 
   object ModifyCurrentDBClusterCapacityMessage {
-    def apply(DBClusterIdentifier: String,
-              Capacity: js.UndefOr[IntegerOptional] = js.undefined,
-              SecondsBeforeTimeout: js.UndefOr[IntegerOptional] = js.undefined,
-              TimeoutAction: js.UndefOr[String] = js.undefined): ModifyCurrentDBClusterCapacityMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        Capacity: js.UndefOr[IntegerOptional] = js.undefined,
+        SecondsBeforeTimeout: js.UndefOr[IntegerOptional] = js.undefined,
+        TimeoutAction: js.UndefOr[String] = js.undefined
+    ): ModifyCurrentDBClusterCapacityMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Capacity" -> Capacity.map { x =>
@@ -6433,10 +7016,12 @@ package rds {
   }
 
   object ModifyDBClusterEndpointMessage {
-    def apply(DBClusterEndpointIdentifier: String,
-              EndpointType: js.UndefOr[String] = js.undefined,
-              ExcludedMembers: js.UndefOr[StringList] = js.undefined,
-              StaticMembers: js.UndefOr[StringList] = js.undefined): ModifyDBClusterEndpointMessage = {
+    def apply(
+        DBClusterEndpointIdentifier: String,
+        EndpointType: js.UndefOr[String] = js.undefined,
+        ExcludedMembers: js.UndefOr[StringList] = js.undefined,
+        StaticMembers: js.UndefOr[StringList] = js.undefined
+    ): ModifyDBClusterEndpointMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterEndpointIdentifier" -> DBClusterEndpointIdentifier.asInstanceOf[js.Any],
         "EndpointType" -> EndpointType.map { x =>
@@ -6464,6 +7049,7 @@ package rds {
     var BacktrackWindow: js.UndefOr[LongOptional]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableHttpEndpoint: js.UndefOr[BooleanOptional]
@@ -6480,24 +7066,27 @@ package rds {
   }
 
   object ModifyDBClusterMessage {
-    def apply(DBClusterIdentifier: String,
-              ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
-              BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
-              DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
-              EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              MasterUserPassword: js.UndefOr[String] = js.undefined,
-              NewDBClusterIdentifier: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
-              VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): ModifyDBClusterMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
+        BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        EnableHttpEndpoint: js.UndefOr[BooleanOptional] = js.undefined,
+        EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        NewDBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): ModifyDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "ApplyImmediately" -> ApplyImmediately.map { x =>
@@ -6510,6 +7099,9 @@ package rds {
           x.asInstanceOf[js.Any]
         },
         "CloudwatchLogsExportConfiguration" -> CloudwatchLogsExportConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
           x.asInstanceOf[js.Any]
         },
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
@@ -6567,7 +7159,10 @@ package rds {
   }
 
   object ModifyDBClusterParameterGroupMessage {
-    def apply(DBClusterParameterGroupName: String, Parameters: ParametersList): ModifyDBClusterParameterGroupMessage = {
+    def apply(
+        DBClusterParameterGroupName: String,
+        Parameters: ParametersList
+    ): ModifyDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Parameters"                  -> Parameters.asInstanceOf[js.Any]
@@ -6583,10 +7178,14 @@ package rds {
   }
 
   object ModifyDBClusterResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): ModifyDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): ModifyDBClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterResult]
     }
@@ -6634,10 +7233,11 @@ package rds {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterSnapshotAttributesResult" -> DBClusterSnapshotAttributesResult.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBClusterSnapshotAttributeResult]
     }
@@ -6691,46 +7291,48 @@ package rds {
   }
 
   object ModifyDBInstanceMessage {
-    def apply(DBInstanceIdentifier: String,
-              AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-              AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-              ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
-              AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              CACertificateIdentifier: js.UndefOr[String] = js.undefined,
-              CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
-              CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
-              DBInstanceClass: js.UndefOr[String] = js.undefined,
-              DBParameterGroupName: js.UndefOr[String] = js.undefined,
-              DBPortNumber: js.UndefOr[IntegerOptional] = js.undefined,
-              DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
-              DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              Domain: js.UndefOr[String] = js.undefined,
-              DomainIAMRoleName: js.UndefOr[String] = js.undefined,
-              EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
-              EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              Iops: js.UndefOr[IntegerOptional] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              MasterUserPassword: js.UndefOr[String] = js.undefined,
-              MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
-              MonitoringRoleArn: js.UndefOr[String] = js.undefined,
-              MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-              NewDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
-              PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
-              PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
-              PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined,
-              TdeCredentialArn: js.UndefOr[String] = js.undefined,
-              TdeCredentialPassword: js.UndefOr[String] = js.undefined,
-              UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
-              VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): ModifyDBInstanceMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
+        AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
+        AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CACertificateIdentifier: js.UndefOr[String] = js.undefined,
+        CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        DBParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBPortNumber: js.UndefOr[IntegerOptional] = js.undefined,
+        DBSecurityGroups: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
+        DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DomainIAMRoleName: js.UndefOr[String] = js.undefined,
+        EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+        EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        Iops: js.UndefOr[IntegerOptional] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
+        MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NewDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
+        PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
+        PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
+        PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined,
+        TdeCredentialArn: js.UndefOr[String] = js.undefined,
+        TdeCredentialPassword: js.UndefOr[String] = js.undefined,
+        UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): ModifyDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "AllocatedStorage" -> AllocatedStorage.map { x =>
@@ -6862,10 +7464,14 @@ package rds {
   }
 
   object ModifyDBInstanceResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): ModifyDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): ModifyDBInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBInstanceResult]
     }
@@ -6881,7 +7487,10 @@ package rds {
   }
 
   object ModifyDBParameterGroupMessage {
-    def apply(DBParameterGroupName: String, Parameters: ParametersList): ModifyDBParameterGroupMessage = {
+    def apply(
+        DBParameterGroupName: String,
+        Parameters: ParametersList
+    ): ModifyDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
         "Parameters"           -> Parameters.asInstanceOf[js.Any]
@@ -6903,10 +7512,12 @@ package rds {
   }
 
   object ModifyDBSnapshotAttributeMessage {
-    def apply(AttributeName: String,
-              DBSnapshotIdentifier: String,
-              ValuesToAdd: js.UndefOr[AttributeValueList] = js.undefined,
-              ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined): ModifyDBSnapshotAttributeMessage = {
+    def apply(
+        AttributeName: String,
+        DBSnapshotIdentifier: String,
+        ValuesToAdd: js.UndefOr[AttributeValueList] = js.undefined,
+        ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
+    ): ModifyDBSnapshotAttributeMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName"        -> AttributeName.asInstanceOf[js.Any],
         "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any],
@@ -6931,9 +7542,11 @@ package rds {
     def apply(
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): ModifyDBSnapshotAttributeResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshotAttributesResult" -> DBSnapshotAttributesResult.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshotAttributesResult" -> DBSnapshotAttributesResult.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSnapshotAttributeResult]
     }
@@ -6947,9 +7560,11 @@ package rds {
   }
 
   object ModifyDBSnapshotMessage {
-    def apply(DBSnapshotIdentifier: String,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined): ModifyDBSnapshotMessage = {
+    def apply(
+        DBSnapshotIdentifier: String,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined
+    ): ModifyDBSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any],
         "EngineVersion" -> EngineVersion.map { x =>
@@ -6970,10 +7585,14 @@ package rds {
   }
 
   object ModifyDBSnapshotResult {
-    def apply(DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined): ModifyDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSnapshot" -> DBSnapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
+    ): ModifyDBSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSnapshot" -> DBSnapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSnapshotResult]
     }
@@ -6990,9 +7609,11 @@ package rds {
   }
 
   object ModifyDBSubnetGroupMessage {
-    def apply(DBSubnetGroupName: String,
-              SubnetIds: SubnetIdentifierList,
-              DBSubnetGroupDescription: js.UndefOr[String] = js.undefined): ModifyDBSubnetGroupMessage = {
+    def apply(
+        DBSubnetGroupName: String,
+        SubnetIds: SubnetIdentifierList,
+        DBSubnetGroupDescription: js.UndefOr[String] = js.undefined
+    ): ModifyDBSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any],
@@ -7011,10 +7632,14 @@ package rds {
   }
 
   object ModifyDBSubnetGroupResult {
-    def apply(DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined): ModifyDBSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSubnetGroup" -> DBSubnetGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
+    ): ModifyDBSubnetGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSubnetGroup" -> DBSubnetGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyDBSubnetGroupResult]
     }
@@ -7033,11 +7658,13 @@ package rds {
   }
 
   object ModifyEventSubscriptionMessage {
-    def apply(SubscriptionName: String,
-              Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-              EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              SnsTopicArn: js.UndefOr[String] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined): ModifyEventSubscriptionMessage = {
+    def apply(
+        SubscriptionName: String,
+        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        SnsTopicArn: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined
+    ): ModifyEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x =>
@@ -7064,10 +7691,14 @@ package rds {
   }
 
   object ModifyEventSubscriptionResult {
-    def apply(EventSubscription: js.UndefOr[EventSubscription] = js.undefined): ModifyEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscription" -> EventSubscription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): ModifyEventSubscriptionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscription" -> EventSubscription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionResult]
     }
@@ -7081,9 +7712,11 @@ package rds {
   }
 
   object ModifyGlobalClusterMessage {
-    def apply(DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
-              NewGlobalClusterIdentifier: js.UndefOr[String] = js.undefined): ModifyGlobalClusterMessage = {
+    def apply(
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
+        NewGlobalClusterIdentifier: js.UndefOr[String] = js.undefined
+    ): ModifyGlobalClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeletionProtection" -> DeletionProtection.map { x =>
           x.asInstanceOf[js.Any]
@@ -7106,10 +7739,14 @@ package rds {
   }
 
   object ModifyGlobalClusterResult {
-    def apply(GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): ModifyGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalCluster" -> GlobalCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): ModifyGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyGlobalClusterResult]
     }
@@ -7127,10 +7764,12 @@ package rds {
   }
 
   object ModifyOptionGroupMessage {
-    def apply(OptionGroupName: String,
-              ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
-              OptionsToInclude: js.UndefOr[OptionConfigurationList] = js.undefined,
-              OptionsToRemove: js.UndefOr[OptionNamesList] = js.undefined): ModifyOptionGroupMessage = {
+    def apply(
+        OptionGroupName: String,
+        ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
+        OptionsToInclude: js.UndefOr[OptionConfigurationList] = js.undefined,
+        OptionsToRemove: js.UndefOr[OptionNamesList] = js.undefined
+    ): ModifyOptionGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OptionGroupName" -> OptionGroupName.asInstanceOf[js.Any],
         "ApplyImmediately" -> ApplyImmediately.map { x =>
@@ -7154,10 +7793,14 @@ package rds {
   }
 
   object ModifyOptionGroupResult {
-    def apply(OptionGroup: js.UndefOr[OptionGroup] = js.undefined): ModifyOptionGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("OptionGroup" -> OptionGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OptionGroup: js.UndefOr[OptionGroup] = js.undefined
+    ): ModifyOptionGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionGroup" -> OptionGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyOptionGroupResult]
     }
@@ -7180,15 +7823,17 @@ package rds {
   }
 
   object Option {
-    def apply(DBSecurityGroupMemberships: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
-              OptionDescription: js.UndefOr[String] = js.undefined,
-              OptionName: js.UndefOr[String] = js.undefined,
-              OptionSettings: js.UndefOr[OptionSettingConfigurationList] = js.undefined,
-              OptionVersion: js.UndefOr[String] = js.undefined,
-              Permanent: js.UndefOr[Boolean] = js.undefined,
-              Persistent: js.UndefOr[Boolean] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              VpcSecurityGroupMemberships: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined): Option = {
+    def apply(
+        DBSecurityGroupMemberships: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
+        OptionDescription: js.UndefOr[String] = js.undefined,
+        OptionName: js.UndefOr[String] = js.undefined,
+        OptionSettings: js.UndefOr[OptionSettingConfigurationList] = js.undefined,
+        OptionVersion: js.UndefOr[String] = js.undefined,
+        Permanent: js.UndefOr[Boolean] = js.undefined,
+        Persistent: js.UndefOr[Boolean] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        VpcSecurityGroupMemberships: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
+    ): Option = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSecurityGroupMemberships" -> DBSecurityGroupMemberships.map { x =>
           x.asInstanceOf[js.Any]
@@ -7237,12 +7882,14 @@ package rds {
   }
 
   object OptionConfiguration {
-    def apply(OptionName: String,
-              DBSecurityGroupMemberships: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
-              OptionSettings: js.UndefOr[OptionSettingsList] = js.undefined,
-              OptionVersion: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              VpcSecurityGroupMemberships: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): OptionConfiguration = {
+    def apply(
+        OptionName: String,
+        DBSecurityGroupMemberships: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
+        OptionSettings: js.UndefOr[OptionSettingsList] = js.undefined,
+        OptionVersion: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        VpcSecurityGroupMemberships: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): OptionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OptionName" -> OptionName.asInstanceOf[js.Any],
         "DBSecurityGroupMemberships" -> DBSecurityGroupMemberships.map { x =>
@@ -7282,14 +7929,16 @@ package rds {
   }
 
   object OptionGroup {
-    def apply(AllowsVpcAndNonVpcInstanceMemberships: js.UndefOr[Boolean] = js.undefined,
-              EngineName: js.UndefOr[String] = js.undefined,
-              MajorEngineVersion: js.UndefOr[String] = js.undefined,
-              OptionGroupArn: js.UndefOr[String] = js.undefined,
-              OptionGroupDescription: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              Options: js.UndefOr[OptionsList] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): OptionGroup = {
+    def apply(
+        AllowsVpcAndNonVpcInstanceMemberships: js.UndefOr[Boolean] = js.undefined,
+        EngineName: js.UndefOr[String] = js.undefined,
+        MajorEngineVersion: js.UndefOr[String] = js.undefined,
+        OptionGroupArn: js.UndefOr[String] = js.undefined,
+        OptionGroupDescription: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        Options: js.UndefOr[OptionsList] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): OptionGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowsVpcAndNonVpcInstanceMemberships" -> AllowsVpcAndNonVpcInstanceMemberships.map { x =>
           x.asInstanceOf[js.Any]
@@ -7331,13 +7980,18 @@ package rds {
   }
 
   object OptionGroupMembership {
-    def apply(OptionGroupName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): OptionGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)]("OptionGroupName" -> OptionGroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): OptionGroupMembership = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OptionGroupName" -> OptionGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroupMembership]
     }
@@ -7367,22 +8021,24 @@ package rds {
   }
 
   object OptionGroupOption {
-    def apply(DefaultPort: js.UndefOr[IntegerOptional] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              EngineName: js.UndefOr[String] = js.undefined,
-              MajorEngineVersion: js.UndefOr[String] = js.undefined,
-              MinimumRequiredMinorEngineVersion: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              OptionGroupOptionSettings: js.UndefOr[OptionGroupOptionSettingsList] = js.undefined,
-              OptionGroupOptionVersions: js.UndefOr[OptionGroupOptionVersionsList] = js.undefined,
-              OptionsConflictsWith: js.UndefOr[OptionsConflictsWith] = js.undefined,
-              OptionsDependedOn: js.UndefOr[OptionsDependedOn] = js.undefined,
-              Permanent: js.UndefOr[Boolean] = js.undefined,
-              Persistent: js.UndefOr[Boolean] = js.undefined,
-              PortRequired: js.UndefOr[Boolean] = js.undefined,
-              RequiresAutoMinorEngineVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-              SupportsOptionVersionDowngrade: js.UndefOr[BooleanOptional] = js.undefined,
-              VpcOnly: js.UndefOr[Boolean] = js.undefined): OptionGroupOption = {
+    def apply(
+        DefaultPort: js.UndefOr[IntegerOptional] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        EngineName: js.UndefOr[String] = js.undefined,
+        MajorEngineVersion: js.UndefOr[String] = js.undefined,
+        MinimumRequiredMinorEngineVersion: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        OptionGroupOptionSettings: js.UndefOr[OptionGroupOptionSettingsList] = js.undefined,
+        OptionGroupOptionVersions: js.UndefOr[OptionGroupOptionVersionsList] = js.undefined,
+        OptionsConflictsWith: js.UndefOr[OptionsConflictsWith] = js.undefined,
+        OptionsDependedOn: js.UndefOr[OptionsDependedOn] = js.undefined,
+        Permanent: js.UndefOr[Boolean] = js.undefined,
+        Persistent: js.UndefOr[Boolean] = js.undefined,
+        PortRequired: js.UndefOr[Boolean] = js.undefined,
+        RequiresAutoMinorEngineVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        SupportsOptionVersionDowngrade: js.UndefOr[BooleanOptional] = js.undefined,
+        VpcOnly: js.UndefOr[Boolean] = js.undefined
+    ): OptionGroupOption = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultPort" -> DefaultPort.map { x =>
           x.asInstanceOf[js.Any]
@@ -7454,14 +8110,16 @@ package rds {
   }
 
   object OptionGroupOptionSetting {
-    def apply(AllowedValues: js.UndefOr[String] = js.undefined,
-              ApplyType: js.UndefOr[String] = js.undefined,
-              DefaultValue: js.UndefOr[String] = js.undefined,
-              IsModifiable: js.UndefOr[Boolean] = js.undefined,
-              IsRequired: js.UndefOr[Boolean] = js.undefined,
-              MinimumEngineVersionPerAllowedValue: js.UndefOr[MinimumEngineVersionPerAllowedValueList] = js.undefined,
-              SettingDescription: js.UndefOr[String] = js.undefined,
-              SettingName: js.UndefOr[String] = js.undefined): OptionGroupOptionSetting = {
+    def apply(
+        AllowedValues: js.UndefOr[String] = js.undefined,
+        ApplyType: js.UndefOr[String] = js.undefined,
+        DefaultValue: js.UndefOr[String] = js.undefined,
+        IsModifiable: js.UndefOr[Boolean] = js.undefined,
+        IsRequired: js.UndefOr[Boolean] = js.undefined,
+        MinimumEngineVersionPerAllowedValue: js.UndefOr[MinimumEngineVersionPerAllowedValueList] = js.undefined,
+        SettingDescription: js.UndefOr[String] = js.undefined,
+        SettingName: js.UndefOr[String] = js.undefined
+    ): OptionGroupOptionSetting = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowedValues" -> AllowedValues.map { x =>
           x.asInstanceOf[js.Any]
@@ -7503,13 +8161,18 @@ package rds {
   }
 
   object OptionGroupOptionsMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              OptionGroupOptions: js.UndefOr[OptionGroupOptionsList] = js.undefined): OptionGroupOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OptionGroupOptions" -> OptionGroupOptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        OptionGroupOptions: js.UndefOr[OptionGroupOptionsList] = js.undefined
+    ): OptionGroupOptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OptionGroupOptions" -> OptionGroupOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroupOptionsMessage]
     }
@@ -7525,13 +8188,18 @@ package rds {
   }
 
   object OptionGroups {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              OptionGroupsList: js.UndefOr[OptionGroupsList] = js.undefined): OptionGroups = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OptionGroupsList" -> OptionGroupsList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        OptionGroupsList: js.UndefOr[OptionGroupsList] = js.undefined
+    ): OptionGroups = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OptionGroupsList" -> OptionGroupsList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionGroups]
     }
@@ -7554,15 +8222,17 @@ package rds {
   }
 
   object OptionSetting {
-    def apply(AllowedValues: js.UndefOr[String] = js.undefined,
-              ApplyType: js.UndefOr[String] = js.undefined,
-              DataType: js.UndefOr[String] = js.undefined,
-              DefaultValue: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              IsCollection: js.UndefOr[Boolean] = js.undefined,
-              IsModifiable: js.UndefOr[Boolean] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Value: js.UndefOr[String] = js.undefined): OptionSetting = {
+    def apply(
+        AllowedValues: js.UndefOr[String] = js.undefined,
+        ApplyType: js.UndefOr[String] = js.undefined,
+        DataType: js.UndefOr[String] = js.undefined,
+        DefaultValue: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        IsCollection: js.UndefOr[Boolean] = js.undefined,
+        IsModifiable: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): OptionSetting = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowedValues" -> AllowedValues.map { x =>
           x.asInstanceOf[js.Any]
@@ -7607,13 +8277,18 @@ package rds {
   }
 
   object OptionVersion {
-    def apply(IsDefault: js.UndefOr[Boolean] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): OptionVersion = {
-      val _fields = IndexedSeq[(String, js.Any)]("IsDefault" -> IsDefault.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IsDefault: js.UndefOr[Boolean] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): OptionVersion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IsDefault" -> IsDefault.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionVersion]
     }
@@ -7650,28 +8325,30 @@ package rds {
   }
 
   object OrderableDBInstanceOption {
-    def apply(AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
-              AvailableProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList] = js.undefined,
-              DBInstanceClass: js.UndefOr[String] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              MaxIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
-              MaxIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
-              MaxStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
-              MinIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
-              MinIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
-              MinStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
-              MultiAZCapable: js.UndefOr[Boolean] = js.undefined,
-              ReadReplicaCapable: js.UndefOr[Boolean] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined,
-              SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
-              SupportsEnhancedMonitoring: js.UndefOr[Boolean] = js.undefined,
-              SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean] = js.undefined,
-              SupportsIops: js.UndefOr[Boolean] = js.undefined,
-              SupportsPerformanceInsights: js.UndefOr[Boolean] = js.undefined,
-              SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
-              Vpc: js.UndefOr[Boolean] = js.undefined): OrderableDBInstanceOption = {
+    def apply(
+        AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
+        AvailableProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList] = js.undefined,
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        MaxIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
+        MaxIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
+        MaxStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
+        MinIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
+        MinIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
+        MinStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
+        MultiAZCapable: js.UndefOr[Boolean] = js.undefined,
+        ReadReplicaCapable: js.UndefOr[Boolean] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined,
+        SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
+        SupportsEnhancedMonitoring: js.UndefOr[Boolean] = js.undefined,
+        SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean] = js.undefined,
+        SupportsIops: js.UndefOr[Boolean] = js.undefined,
+        SupportsPerformanceInsights: js.UndefOr[Boolean] = js.undefined,
+        SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
+        Vpc: js.UndefOr[Boolean] = js.undefined
+    ): OrderableDBInstanceOption = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZones" -> AvailabilityZones.map { x =>
           x.asInstanceOf[js.Any]
@@ -7759,11 +8436,14 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined
     ): OrderableDBInstanceOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OrderableDBInstanceOptions" -> OrderableDBInstanceOptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrderableDBInstanceOptions" -> OrderableDBInstanceOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableDBInstanceOptionsMessage]
     }
@@ -7789,17 +8469,19 @@ package rds {
   }
 
   object Parameter {
-    def apply(AllowedValues: js.UndefOr[String] = js.undefined,
-              ApplyMethod: js.UndefOr[ApplyMethod] = js.undefined,
-              ApplyType: js.UndefOr[String] = js.undefined,
-              DataType: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              IsModifiable: js.UndefOr[Boolean] = js.undefined,
-              MinimumEngineVersion: js.UndefOr[String] = js.undefined,
-              ParameterName: js.UndefOr[String] = js.undefined,
-              ParameterValue: js.UndefOr[String] = js.undefined,
-              Source: js.UndefOr[String] = js.undefined,
-              SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined): Parameter = {
+    def apply(
+        AllowedValues: js.UndefOr[String] = js.undefined,
+        ApplyMethod: js.UndefOr[ApplyMethod] = js.undefined,
+        ApplyType: js.UndefOr[String] = js.undefined,
+        DataType: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        IsModifiable: js.UndefOr[Boolean] = js.undefined,
+        MinimumEngineVersion: js.UndefOr[String] = js.undefined,
+        ParameterName: js.UndefOr[String] = js.undefined,
+        ParameterValue: js.UndefOr[String] = js.undefined,
+        Source: js.UndefOr[String] = js.undefined,
+        SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined
+    ): Parameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowedValues" -> AllowedValues.map { x =>
           x.asInstanceOf[js.Any]
@@ -7850,13 +8532,18 @@ package rds {
   }
 
   object PendingCloudwatchLogsExports {
-    def apply(LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
-              LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined): PendingCloudwatchLogsExports = {
-      val _fields = IndexedSeq[(String, js.Any)]("LogTypesToDisable" -> LogTypesToDisable.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LogTypesToEnable" -> LogTypesToEnable.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
+        LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined
+    ): PendingCloudwatchLogsExports = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LogTypesToDisable" -> LogTypesToDisable.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LogTypesToEnable" -> LogTypesToEnable.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingCloudwatchLogsExports]
     }
@@ -7876,12 +8563,14 @@ package rds {
   }
 
   object PendingMaintenanceAction {
-    def apply(Action: js.UndefOr[String] = js.undefined,
-              AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
-              CurrentApplyDate: js.UndefOr[TStamp] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
-              OptInStatus: js.UndefOr[String] = js.undefined): PendingMaintenanceAction = {
+    def apply(
+        Action: js.UndefOr[String] = js.undefined,
+        AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
+        CurrentApplyDate: js.UndefOr[TStamp] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
+        OptInStatus: js.UndefOr[String] = js.undefined
+    ): PendingMaintenanceAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action" -> Action.map { x =>
           x.asInstanceOf[js.Any]
@@ -7921,11 +8610,14 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
     ): PendingMaintenanceActionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PendingMaintenanceActions" -> PendingMaintenanceActions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PendingMaintenanceActions" -> PendingMaintenanceActions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PendingMaintenanceActionsMessage]
     }
@@ -7954,21 +8646,23 @@ package rds {
   }
 
   object PendingModifiedValues {
-    def apply(AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              CACertificateIdentifier: js.UndefOr[String] = js.undefined,
-              DBInstanceClass: js.UndefOr[String] = js.undefined,
-              DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
-              DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              Iops: js.UndefOr[IntegerOptional] = js.undefined,
-              LicenseModel: js.UndefOr[String] = js.undefined,
-              MasterUserPassword: js.UndefOr[String] = js.undefined,
-              MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
-              PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined): PendingModifiedValues = {
+    def apply(
+        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CACertificateIdentifier: js.UndefOr[String] = js.undefined,
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        Iops: js.UndefOr[IntegerOptional] = js.undefined,
+        LicenseModel: js.UndefOr[String] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined
+    ): PendingModifiedValues = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllocatedStorage" -> AllocatedStorage.map { x =>
           x.asInstanceOf[js.Any]
@@ -8035,7 +8729,7 @@ package rds {
     * * <a>DescribeDBInstances</a>
     *  * <a>DescribeDBSnapshots</a>
     *  * <a>DescribeValidDBInstanceModifications</a>
-    * For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
+    * For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor|Configuring the Processor of the DB Instance Class]] in the <i>Amazon RDS User Guide. </i>
     */
   @js.native
   trait ProcessorFeature extends js.Object {
@@ -8044,12 +8738,18 @@ package rds {
   }
 
   object ProcessorFeature {
-    def apply(Name: js.UndefOr[String] = js.undefined, Value: js.UndefOr[String] = js.undefined): ProcessorFeature = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): ProcessorFeature = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProcessorFeature]
     }
@@ -8064,9 +8764,12 @@ package rds {
   }
 
   object PromoteReadReplicaDBClusterMessage {
-    def apply(DBClusterIdentifier: String): PromoteReadReplicaDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterIdentifier: String
+    ): PromoteReadReplicaDBClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaDBClusterMessage]
     }
@@ -8078,10 +8781,14 @@ package rds {
   }
 
   object PromoteReadReplicaDBClusterResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): PromoteReadReplicaDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): PromoteReadReplicaDBClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaDBClusterResult]
     }
@@ -8098,9 +8805,11 @@ package rds {
   }
 
   object PromoteReadReplicaMessage {
-    def apply(DBInstanceIdentifier: String,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined): PromoteReadReplicaMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined
+    ): PromoteReadReplicaMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "BackupRetentionPeriod" -> BackupRetentionPeriod.map { x =>
@@ -8121,10 +8830,14 @@ package rds {
   }
 
   object PromoteReadReplicaResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): PromoteReadReplicaResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): PromoteReadReplicaResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PromoteReadReplicaResult]
     }
@@ -8142,10 +8855,12 @@ package rds {
   }
 
   object PurchaseReservedDBInstancesOfferingMessage {
-    def apply(ReservedDBInstancesOfferingId: String,
-              DBInstanceCount: js.UndefOr[IntegerOptional] = js.undefined,
-              ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): PurchaseReservedDBInstancesOfferingMessage = {
+    def apply(
+        ReservedDBInstancesOfferingId: String,
+        DBInstanceCount: js.UndefOr[IntegerOptional] = js.undefined,
+        ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): PurchaseReservedDBInstancesOfferingMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ReservedDBInstancesOfferingId" -> ReservedDBInstancesOfferingId.asInstanceOf[js.Any],
         "DBInstanceCount" -> DBInstanceCount.map { x =>
@@ -8174,9 +8889,11 @@ package rds {
     def apply(
         ReservedDBInstance: js.UndefOr[ReservedDBInstance] = js.undefined
     ): PurchaseReservedDBInstancesOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ReservedDBInstance" -> ReservedDBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReservedDBInstance" -> ReservedDBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedDBInstancesOfferingResult]
     }
@@ -8193,16 +8910,22 @@ package rds {
   }
 
   object Range {
-    def apply(From: js.UndefOr[Int] = js.undefined,
-              Step: js.UndefOr[IntegerOptional] = js.undefined,
-              To: js.UndefOr[Int] = js.undefined): Range = {
-      val _fields = IndexedSeq[(String, js.Any)]("From" -> From.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Step" -> Step.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "To" -> To.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        From: js.UndefOr[Int] = js.undefined,
+        Step: js.UndefOr[IntegerOptional] = js.undefined,
+        To: js.UndefOr[Int] = js.undefined
+    ): Range = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "From" -> From.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Step" -> Step.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "To" -> To.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Range]
     }
@@ -8218,8 +8941,10 @@ package rds {
   }
 
   object RebootDBInstanceMessage {
-    def apply(DBInstanceIdentifier: String,
-              ForceFailover: js.UndefOr[BooleanOptional] = js.undefined): RebootDBInstanceMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
+    ): RebootDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "ForceFailover" -> ForceFailover.map { x =>
@@ -8237,10 +8962,14 @@ package rds {
   }
 
   object RebootDBInstanceResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): RebootDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): RebootDBInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootDBInstanceResult]
     }
@@ -8256,8 +8985,10 @@ package rds {
   }
 
   object RecurringCharge {
-    def apply(RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
-              RecurringChargeFrequency: js.UndefOr[String] = js.undefined): RecurringCharge = {
+    def apply(
+        RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
+        RecurringChargeFrequency: js.UndefOr[String] = js.undefined
+    ): RecurringCharge = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RecurringChargeAmount" -> RecurringChargeAmount.map { x =>
           x.asInstanceOf[js.Any]
@@ -8278,8 +9009,10 @@ package rds {
   }
 
   object RemoveFromGlobalClusterMessage {
-    def apply(DbClusterIdentifier: js.UndefOr[String] = js.undefined,
-              GlobalClusterIdentifier: js.UndefOr[String] = js.undefined): RemoveFromGlobalClusterMessage = {
+    def apply(
+        DbClusterIdentifier: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[String] = js.undefined
+    ): RemoveFromGlobalClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DbClusterIdentifier" -> DbClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -8299,10 +9032,14 @@ package rds {
   }
 
   object RemoveFromGlobalClusterResult {
-    def apply(GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined): RemoveFromGlobalClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalCluster" -> GlobalCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): RemoveFromGlobalClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalCluster" -> GlobalCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFromGlobalClusterResult]
     }
@@ -8315,13 +9052,39 @@ package rds {
   }
 
   object RemoveRoleFromDBClusterMessage {
-    def apply(DBClusterIdentifier: String, RoleArn: String): RemoveRoleFromDBClusterMessage = {
+    def apply(
+        DBClusterIdentifier: String,
+        RoleArn: String
+    ): RemoveRoleFromDBClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "RoleArn"             -> RoleArn.asInstanceOf[js.Any]
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveRoleFromDBClusterMessage]
+    }
+  }
+
+  @js.native
+  trait RemoveRoleFromDBInstanceMessage extends js.Object {
+    var DBInstanceIdentifier: String
+    var FeatureName: String
+    var RoleArn: String
+  }
+
+  object RemoveRoleFromDBInstanceMessage {
+    def apply(
+        DBInstanceIdentifier: String,
+        FeatureName: String,
+        RoleArn: String
+    ): RemoveRoleFromDBInstanceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
+        "FeatureName"          -> FeatureName.asInstanceOf[js.Any],
+        "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveRoleFromDBInstanceMessage]
     }
   }
 
@@ -8335,7 +9098,10 @@ package rds {
   }
 
   object RemoveSourceIdentifierFromSubscriptionMessage {
-    def apply(SourceIdentifier: String, SubscriptionName: String): RemoveSourceIdentifierFromSubscriptionMessage = {
+    def apply(
+        SourceIdentifier: String,
+        SubscriptionName: String
+    ): RemoveSourceIdentifierFromSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
@@ -8356,9 +9122,11 @@ package rds {
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): RemoveSourceIdentifierFromSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscription" -> EventSubscription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscription" -> EventSubscription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -8376,7 +9144,10 @@ package rds {
   }
 
   object RemoveTagsFromResourceMessage {
-    def apply(ResourceName: String, TagKeys: KeyList): RemoveTagsFromResourceMessage = {
+    def apply(
+        ResourceName: String,
+        TagKeys: KeyList
+    ): RemoveTagsFromResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
@@ -8409,21 +9180,23 @@ package rds {
   }
 
   object ReservedDBInstance {
-    def apply(CurrencyCode: js.UndefOr[String] = js.undefined,
-              DBInstanceClass: js.UndefOr[String] = js.undefined,
-              DBInstanceCount: js.UndefOr[Int] = js.undefined,
-              Duration: js.UndefOr[Int] = js.undefined,
-              FixedPrice: js.UndefOr[Double] = js.undefined,
-              MultiAZ: js.UndefOr[Boolean] = js.undefined,
-              OfferingType: js.UndefOr[String] = js.undefined,
-              ProductDescription: js.UndefOr[String] = js.undefined,
-              RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
-              ReservedDBInstanceArn: js.UndefOr[String] = js.undefined,
-              ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
-              ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined,
-              StartTime: js.UndefOr[TStamp] = js.undefined,
-              State: js.UndefOr[String] = js.undefined,
-              UsagePrice: js.UndefOr[Double] = js.undefined): ReservedDBInstance = {
+    def apply(
+        CurrencyCode: js.UndefOr[String] = js.undefined,
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        DBInstanceCount: js.UndefOr[Int] = js.undefined,
+        Duration: js.UndefOr[Int] = js.undefined,
+        FixedPrice: js.UndefOr[Double] = js.undefined,
+        MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        OfferingType: js.UndefOr[String] = js.undefined,
+        ProductDescription: js.UndefOr[String] = js.undefined,
+        RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
+        ReservedDBInstanceArn: js.UndefOr[String] = js.undefined,
+        ReservedDBInstanceId: js.UndefOr[String] = js.undefined,
+        ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined,
+        State: js.UndefOr[String] = js.undefined,
+        UsagePrice: js.UndefOr[Double] = js.undefined
+    ): ReservedDBInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrencyCode" -> CurrencyCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -8486,13 +9259,18 @@ package rds {
   }
 
   object ReservedDBInstanceMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              ReservedDBInstances: js.UndefOr[ReservedDBInstanceList] = js.undefined): ReservedDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReservedDBInstances" -> ReservedDBInstances.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ReservedDBInstances: js.UndefOr[ReservedDBInstanceList] = js.undefined
+    ): ReservedDBInstanceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReservedDBInstances" -> ReservedDBInstances.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedDBInstanceMessage]
     }
@@ -8516,16 +9294,18 @@ package rds {
   }
 
   object ReservedDBInstancesOffering {
-    def apply(CurrencyCode: js.UndefOr[String] = js.undefined,
-              DBInstanceClass: js.UndefOr[String] = js.undefined,
-              Duration: js.UndefOr[Int] = js.undefined,
-              FixedPrice: js.UndefOr[Double] = js.undefined,
-              MultiAZ: js.UndefOr[Boolean] = js.undefined,
-              OfferingType: js.UndefOr[String] = js.undefined,
-              ProductDescription: js.UndefOr[String] = js.undefined,
-              RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
-              ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined,
-              UsagePrice: js.UndefOr[Double] = js.undefined): ReservedDBInstancesOffering = {
+    def apply(
+        CurrencyCode: js.UndefOr[String] = js.undefined,
+        DBInstanceClass: js.UndefOr[String] = js.undefined,
+        Duration: js.UndefOr[Int] = js.undefined,
+        FixedPrice: js.UndefOr[Double] = js.undefined,
+        MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        OfferingType: js.UndefOr[String] = js.undefined,
+        ProductDescription: js.UndefOr[String] = js.undefined,
+        RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
+        ReservedDBInstancesOfferingId: js.UndefOr[String] = js.undefined,
+        UsagePrice: js.UndefOr[Double] = js.undefined
+    ): ReservedDBInstancesOffering = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrencyCode" -> CurrencyCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -8577,11 +9357,14 @@ package rds {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedDBInstancesOfferings: js.UndefOr[ReservedDBInstancesOfferingList] = js.undefined
     ): ReservedDBInstancesOfferingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReservedDBInstancesOfferings" -> ReservedDBInstancesOfferings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReservedDBInstancesOfferings" -> ReservedDBInstancesOfferings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedDBInstancesOfferingMessage]
     }
@@ -8598,9 +9381,11 @@ package rds {
   }
 
   object ResetDBClusterParameterGroupMessage {
-    def apply(DBClusterParameterGroupName: String,
-              Parameters: js.UndefOr[ParametersList] = js.undefined,
-              ResetAllParameters: js.UndefOr[Boolean] = js.undefined): ResetDBClusterParameterGroupMessage = {
+    def apply(
+        DBClusterParameterGroupName: String,
+        Parameters: js.UndefOr[ParametersList] = js.undefined,
+        ResetAllParameters: js.UndefOr[Boolean] = js.undefined
+    ): ResetDBClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Parameters" -> Parameters.map { x =>
@@ -8626,9 +9411,11 @@ package rds {
   }
 
   object ResetDBParameterGroupMessage {
-    def apply(DBParameterGroupName: String,
-              Parameters: js.UndefOr[ParametersList] = js.undefined,
-              ResetAllParameters: js.UndefOr[Boolean] = js.undefined): ResetDBParameterGroupMessage = {
+    def apply(
+        DBParameterGroupName: String,
+        Parameters: js.UndefOr[ParametersList] = js.undefined,
+        ResetAllParameters: js.UndefOr[Boolean] = js.undefined
+    ): ResetDBParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBParameterGroupName" -> DBParameterGroupName.asInstanceOf[js.Any],
         "Parameters" -> Parameters.map { x =>
@@ -8653,8 +9440,10 @@ package rds {
   }
 
   object ResourcePendingMaintenanceActions {
-    def apply(PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
-              ResourceIdentifier: js.UndefOr[String] = js.undefined): ResourcePendingMaintenanceActions = {
+    def apply(
+        PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
+        ResourceIdentifier: js.UndefOr[String] = js.undefined
+    ): ResourcePendingMaintenanceActions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PendingMaintenanceActionDetails" -> PendingMaintenanceActionDetails.map { x =>
           x.asInstanceOf[js.Any]
@@ -8682,6 +9471,7 @@ package rds {
     var BacktrackWindow: js.UndefOr[LongOptional]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CharacterSetName: js.UndefOr[String]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
@@ -8701,34 +9491,37 @@ package rds {
   }
 
   object RestoreDBClusterFromS3Message {
-    def apply(DBClusterIdentifier: String,
-              Engine: String,
-              MasterUserPassword: String,
-              MasterUsername: String,
-              S3BucketName: String,
-              S3IngestionRoleArn: String,
-              SourceEngine: String,
-              SourceEngineVersion: String,
-              AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
-              BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
-              BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              CharacterSetName: js.UndefOr[String] = js.undefined,
-              DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-              DBSubnetGroupName: js.UndefOr[String] = js.undefined,
-              DatabaseName: js.UndefOr[String] = js.undefined,
-              DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
-              EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
-              EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              OptionGroupName: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredBackupWindow: js.UndefOr[String] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              S3Prefix: js.UndefOr[String] = js.undefined,
-              StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): RestoreDBClusterFromS3Message = {
+    def apply(
+        DBClusterIdentifier: String,
+        Engine: String,
+        MasterUserPassword: String,
+        MasterUsername: String,
+        S3BucketName: String,
+        S3IngestionRoleArn: String,
+        SourceEngine: String,
+        SourceEngineVersion: String,
+        AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CharacterSetName: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
+        EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        OptionGroupName: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredBackupWindow: js.UndefOr[String] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        S3Prefix: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): RestoreDBClusterFromS3Message = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Engine"              -> Engine.asInstanceOf[js.Any],
@@ -8748,6 +9541,9 @@ package rds {
           x.asInstanceOf[js.Any]
         },
         "CharacterSetName" -> CharacterSetName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
           x.asInstanceOf[js.Any]
         },
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
@@ -8810,10 +9606,14 @@ package rds {
   }
 
   object RestoreDBClusterFromS3Result {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): RestoreDBClusterFromS3Result = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): RestoreDBClusterFromS3Result = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromS3Result]
     }
@@ -8829,6 +9629,7 @@ package rds {
     var SnapshotIdentifier: String
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var BacktrackWindow: js.UndefOr[LongOptional]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
@@ -8852,6 +9653,7 @@ package rds {
         SnapshotIdentifier: String,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
@@ -8875,6 +9677,9 @@ package rds {
           x.asInstanceOf[js.Any]
         },
         "BacktrackWindow" -> BacktrackWindow.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
           x.asInstanceOf[js.Any]
         },
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
@@ -8931,10 +9736,14 @@ package rds {
   }
 
   object RestoreDBClusterFromSnapshotResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): RestoreDBClusterFromSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): RestoreDBClusterFromSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterFromSnapshotResult]
     }
@@ -8948,6 +9757,7 @@ package rds {
     var DBClusterIdentifier: String
     var SourceDBClusterIdentifier: String
     var BacktrackWindow: js.UndefOr[LongOptional]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
@@ -8968,6 +9778,7 @@ package rds {
         DBClusterIdentifier: String,
         SourceDBClusterIdentifier: String,
         BacktrackWindow: js.UndefOr[LongOptional] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
@@ -8986,6 +9797,9 @@ package rds {
         "DBClusterIdentifier"       -> DBClusterIdentifier.asInstanceOf[js.Any],
         "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any],
         "BacktrackWindow" -> BacktrackWindow.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CopyTagsToSnapshot" -> CopyTagsToSnapshot.map { x =>
           x.asInstanceOf[js.Any]
         },
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.map { x =>
@@ -9039,10 +9853,14 @@ package rds {
   }
 
   object RestoreDBClusterToPointInTimeResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): RestoreDBClusterToPointInTimeResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): RestoreDBClusterToPointInTimeResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBClusterToPointInTimeResult]
     }
@@ -9207,10 +10025,14 @@ package rds {
   }
 
   object RestoreDBInstanceFromDBSnapshotResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): RestoreDBInstanceFromDBSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): RestoreDBInstanceFromDBSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceFromDBSnapshotResult]
     }
@@ -9437,10 +10259,14 @@ package rds {
   }
 
   object RestoreDBInstanceFromS3Result {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): RestoreDBInstanceFromS3Result = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): RestoreDBInstanceFromS3Result = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceFromS3Result]
     }
@@ -9622,10 +10448,14 @@ package rds {
   }
 
   object RestoreDBInstanceToPointInTimeResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): RestoreDBInstanceToPointInTimeResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): RestoreDBInstanceToPointInTimeResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreDBInstanceToPointInTimeResult]
     }
@@ -9641,13 +10471,18 @@ package rds {
   }
 
   object RestoreWindow {
-    def apply(EarliestTime: js.UndefOr[TStamp] = js.undefined,
-              LatestTime: js.UndefOr[TStamp] = js.undefined): RestoreWindow = {
-      val _fields = IndexedSeq[(String, js.Any)]("EarliestTime" -> EarliestTime.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LatestTime" -> LatestTime.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EarliestTime: js.UndefOr[TStamp] = js.undefined,
+        LatestTime: js.UndefOr[TStamp] = js.undefined
+    ): RestoreWindow = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EarliestTime" -> EarliestTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LatestTime" -> LatestTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreWindow]
     }
@@ -9666,11 +10501,13 @@ package rds {
   }
 
   object RevokeDBSecurityGroupIngressMessage {
-    def apply(DBSecurityGroupName: String,
-              CIDRIP: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupId: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined): RevokeDBSecurityGroupIngressMessage = {
+    def apply(
+        DBSecurityGroupName: String,
+        CIDRIP: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupId: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined
+    ): RevokeDBSecurityGroupIngressMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBSecurityGroupName" -> DBSecurityGroupName.asInstanceOf[js.Any],
         "CIDRIP" -> CIDRIP.map { x =>
@@ -9697,10 +10534,14 @@ package rds {
   }
 
   object RevokeDBSecurityGroupIngressResult {
-    def apply(DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined): RevokeDBSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBSecurityGroup" -> DBSecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
+    ): RevokeDBSecurityGroupIngressResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBSecurityGroup" -> DBSecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeDBSecurityGroupIngressResult]
     }
@@ -9708,7 +10549,7 @@ package rds {
 
   /**
     * Contains the scaling configuration of an Aurora Serverless DB cluster.
-    *  For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait ScalingConfiguration extends js.Object {
@@ -9719,10 +10560,12 @@ package rds {
   }
 
   object ScalingConfiguration {
-    def apply(AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
-              MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-              MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-              SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined): ScalingConfiguration = {
+    def apply(
+        AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
+        MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
+        MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
+        SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined
+    ): ScalingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoPause" -> AutoPause.map { x =>
           x.asInstanceOf[js.Any]
@@ -9744,7 +10587,7 @@ package rds {
 
   /**
     * Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.
-    *  For more information, see [[http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
+    *  For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait ScalingConfigurationInfo extends js.Object {
@@ -9755,10 +10598,12 @@ package rds {
   }
 
   object ScalingConfigurationInfo {
-    def apply(AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
-              MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-              MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
-              SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined): ScalingConfigurationInfo = {
+    def apply(
+        AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
+        MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
+        MinCapacity: js.UndefOr[IntegerOptional] = js.undefined,
+        SecondsUntilAutoPause: js.UndefOr[IntegerOptional] = js.undefined
+    ): ScalingConfigurationInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoPause" -> AutoPause.map { x =>
           x.asInstanceOf[js.Any]
@@ -9789,9 +10634,11 @@ package rds {
   }
 
   object SourceRegion {
-    def apply(Endpoint: js.UndefOr[String] = js.undefined,
-              RegionName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): SourceRegion = {
+    def apply(
+        Endpoint: js.UndefOr[String] = js.undefined,
+        RegionName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): SourceRegion = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Endpoint" -> Endpoint.map { x =>
           x.asInstanceOf[js.Any]
@@ -9818,13 +10665,18 @@ package rds {
   }
 
   object SourceRegionMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              SourceRegions: js.UndefOr[SourceRegionList] = js.undefined): SourceRegionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SourceRegions" -> SourceRegions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        SourceRegions: js.UndefOr[SourceRegionList] = js.undefined
+    ): SourceRegionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceRegions" -> SourceRegions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceRegionMessage]
     }
@@ -9854,9 +10706,12 @@ package rds {
   }
 
   object StartDBClusterMessage {
-    def apply(DBClusterIdentifier: String): StartDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterIdentifier: String
+    ): StartDBClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBClusterMessage]
     }
@@ -9868,10 +10723,14 @@ package rds {
   }
 
   object StartDBClusterResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): StartDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): StartDBClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBClusterResult]
     }
@@ -9883,9 +10742,12 @@ package rds {
   }
 
   object StartDBInstanceMessage {
-    def apply(DBInstanceIdentifier: String): StartDBInstanceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstanceIdentifier: String
+    ): StartDBInstanceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBInstanceMessage]
     }
@@ -9897,10 +10759,14 @@ package rds {
   }
 
   object StartDBInstanceResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): StartDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): StartDBInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDBInstanceResult]
     }
@@ -9912,9 +10778,12 @@ package rds {
   }
 
   object StopDBClusterMessage {
-    def apply(DBClusterIdentifier: String): StopDBClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBClusterIdentifier: String
+    ): StopDBClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDBClusterMessage]
     }
@@ -9926,10 +10795,14 @@ package rds {
   }
 
   object StopDBClusterResult {
-    def apply(DBCluster: js.UndefOr[DBCluster] = js.undefined): StopDBClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBCluster" -> DBCluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBCluster: js.UndefOr[DBCluster] = js.undefined
+    ): StopDBClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBCluster" -> DBCluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDBClusterResult]
     }
@@ -9942,8 +10815,10 @@ package rds {
   }
 
   object StopDBInstanceMessage {
-    def apply(DBInstanceIdentifier: String,
-              DBSnapshotIdentifier: js.UndefOr[String] = js.undefined): StopDBInstanceMessage = {
+    def apply(
+        DBInstanceIdentifier: String,
+        DBSnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): StopDBInstanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "DBSnapshotIdentifier" -> DBSnapshotIdentifier.map { x =>
@@ -9961,10 +10836,14 @@ package rds {
   }
 
   object StopDBInstanceResult {
-    def apply(DBInstance: js.UndefOr[DBInstance] = js.undefined): StopDBInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DBInstance" -> DBInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): StopDBInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DBInstance" -> DBInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDBInstanceResult]
     }
@@ -9981,9 +10860,11 @@ package rds {
   }
 
   object Subnet {
-    def apply(SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
-              SubnetIdentifier: js.UndefOr[String] = js.undefined,
-              SubnetStatus: js.UndefOr[String] = js.undefined): Subnet = {
+    def apply(
+        SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
+        SubnetIdentifier: js.UndefOr[String] = js.undefined,
+        SubnetStatus: js.UndefOr[String] = js.undefined
+    ): Subnet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -10010,12 +10891,18 @@ package rds {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[String] = js.undefined, Value: js.UndefOr[String] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -10030,10 +10917,14 @@ package rds {
   }
 
   object TagListMessage {
-    def apply(TagList: js.UndefOr[TagList] = js.undefined): TagListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("TagList" -> TagList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TagList: js.UndefOr[TagList] = js.undefined
+    ): TagListMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TagList" -> TagList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagListMessage]
     }
@@ -10048,10 +10939,14 @@ package rds {
   }
 
   object Timezone {
-    def apply(TimezoneName: js.UndefOr[String] = js.undefined): Timezone = {
-      val _fields = IndexedSeq[(String, js.Any)]("TimezoneName" -> TimezoneName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TimezoneName: js.UndefOr[String] = js.undefined
+    ): Timezone = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TimezoneName" -> TimezoneName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Timezone]
     }
@@ -10070,11 +10965,13 @@ package rds {
   }
 
   object UpgradeTarget {
-    def apply(AutoUpgrade: js.UndefOr[Boolean] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              Engine: js.UndefOr[String] = js.undefined,
-              EngineVersion: js.UndefOr[String] = js.undefined,
-              IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined): UpgradeTarget = {
+    def apply(
+        AutoUpgrade: js.UndefOr[Boolean] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined
+    ): UpgradeTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoUpgrade" -> AutoUpgrade.map { x =>
           x.asInstanceOf[js.Any]
@@ -10111,11 +11008,14 @@ package rds {
         Storage: js.UndefOr[ValidStorageOptionsList] = js.undefined,
         ValidProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList] = js.undefined
     ): ValidDBInstanceModificationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Storage" -> Storage.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ValidProcessorFeatures" -> ValidProcessorFeatures.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Storage" -> Storage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ValidProcessorFeatures" -> ValidProcessorFeatures.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidDBInstanceModificationsMessage]
     }
@@ -10133,10 +11033,12 @@ package rds {
   }
 
   object ValidStorageOptions {
-    def apply(IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined,
-              ProvisionedIops: js.UndefOr[RangeList] = js.undefined,
-              StorageSize: js.UndefOr[RangeList] = js.undefined,
-              StorageType: js.UndefOr[String] = js.undefined): ValidStorageOptions = {
+    def apply(
+        IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined,
+        ProvisionedIops: js.UndefOr[RangeList] = js.undefined,
+        StorageSize: js.UndefOr[RangeList] = js.undefined,
+        StorageType: js.UndefOr[String] = js.undefined
+    ): ValidStorageOptions = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IopsToStorageRatio" -> IopsToStorageRatio.map { x =>
           x.asInstanceOf[js.Any]
@@ -10166,13 +11068,18 @@ package rds {
   }
 
   object VpcSecurityGroupMembership {
-    def apply(Status: js.UndefOr[String] = js.undefined,
-              VpcSecurityGroupId: js.UndefOr[String] = js.undefined): VpcSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)]("Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: js.UndefOr[String] = js.undefined,
+        VpcSecurityGroupId: js.UndefOr[String] = js.undefined
+    ): VpcSecurityGroupMembership = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcSecurityGroupMembership]
     }

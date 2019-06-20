@@ -258,13 +258,18 @@ package elasticbeanstalk {
   }
 
   object AbortEnvironmentUpdateMessage {
-    def apply(EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): AbortEnvironmentUpdateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EnvironmentId" -> EnvironmentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EnvironmentName" -> EnvironmentName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): AbortEnvironmentUpdateMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnvironmentName" -> EnvironmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortEnvironmentUpdateMessage]
     }
@@ -311,14 +316,16 @@ package elasticbeanstalk {
   }
 
   object ApplicationDescription {
-    def apply(ApplicationArn: js.UndefOr[ApplicationArn] = js.undefined,
-              ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              ConfigurationTemplates: js.UndefOr[ConfigurationTemplateNamesList] = js.undefined,
-              DateCreated: js.UndefOr[CreationDate] = js.undefined,
-              DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
-              Versions: js.UndefOr[VersionLabelsList] = js.undefined): ApplicationDescription = {
+    def apply(
+        ApplicationArn: js.UndefOr[ApplicationArn] = js.undefined,
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        ConfigurationTemplates: js.UndefOr[ConfigurationTemplateNamesList] = js.undefined,
+        DateCreated: js.UndefOr[CreationDate] = js.undefined,
+        DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
+        Versions: js.UndefOr[VersionLabelsList] = js.undefined
+    ): ApplicationDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationArn" -> ApplicationArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -359,10 +366,14 @@ package elasticbeanstalk {
   }
 
   object ApplicationDescriptionMessage {
-    def apply(Application: js.UndefOr[ApplicationDescription] = js.undefined): ApplicationDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Application" -> Application.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Application: js.UndefOr[ApplicationDescription] = js.undefined
+    ): ApplicationDescriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Application" -> Application.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescriptionMessage]
     }
@@ -377,10 +388,14 @@ package elasticbeanstalk {
   }
 
   object ApplicationDescriptionsMessage {
-    def apply(Applications: js.UndefOr[ApplicationDescriptionList] = js.undefined): ApplicationDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Applications" -> Applications.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Applications: js.UndefOr[ApplicationDescriptionList] = js.undefined
+    ): ApplicationDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Applications" -> Applications.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationDescriptionsMessage]
     }
@@ -398,10 +413,12 @@ package elasticbeanstalk {
   }
 
   object ApplicationMetrics {
-    def apply(Duration: js.UndefOr[NullableInteger] = js.undefined,
-              Latency: js.UndefOr[Latency] = js.undefined,
-              RequestCount: js.UndefOr[RequestCount] = js.undefined,
-              StatusCodes: js.UndefOr[StatusCodes] = js.undefined): ApplicationMetrics = {
+    def apply(
+        Duration: js.UndefOr[NullableInteger] = js.undefined,
+        Latency: js.UndefOr[Latency] = js.undefined,
+        RequestCount: js.UndefOr[RequestCount] = js.undefined,
+        StatusCodes: js.UndefOr[StatusCodes] = js.undefined
+    ): ApplicationMetrics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Duration" -> Duration.map { x =>
           x.asInstanceOf[js.Any]
@@ -435,11 +452,14 @@ package elasticbeanstalk {
         ServiceRole: js.UndefOr[String] = js.undefined,
         VersionLifecycleConfig: js.UndefOr[ApplicationVersionLifecycleConfig] = js.undefined
     ): ApplicationResourceLifecycleConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("ServiceRole" -> ServiceRole.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VersionLifecycleConfig" -> VersionLifecycleConfig.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ServiceRole" -> ServiceRole.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VersionLifecycleConfig" -> VersionLifecycleConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationResourceLifecycleConfig]
     }
@@ -456,11 +476,14 @@ package elasticbeanstalk {
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined
     ): ApplicationResourceLifecycleDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApplicationName" -> ApplicationName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -486,16 +509,18 @@ package elasticbeanstalk {
   }
 
   object ApplicationVersionDescription {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              ApplicationVersionArn: js.UndefOr[ApplicationVersionArn] = js.undefined,
-              BuildArn: js.UndefOr[String] = js.undefined,
-              DateCreated: js.UndefOr[CreationDate] = js.undefined,
-              DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              SourceBuildInformation: js.UndefOr[SourceBuildInformation] = js.undefined,
-              SourceBundle: js.UndefOr[S3Location] = js.undefined,
-              Status: js.UndefOr[ApplicationVersionStatus] = js.undefined,
-              VersionLabel: js.UndefOr[VersionLabel] = js.undefined): ApplicationVersionDescription = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        ApplicationVersionArn: js.UndefOr[ApplicationVersionArn] = js.undefined,
+        BuildArn: js.UndefOr[String] = js.undefined,
+        DateCreated: js.UndefOr[CreationDate] = js.undefined,
+        DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        SourceBuildInformation: js.UndefOr[SourceBuildInformation] = js.undefined,
+        SourceBundle: js.UndefOr[S3Location] = js.undefined,
+        Status: js.UndefOr[ApplicationVersionStatus] = js.undefined,
+        VersionLabel: js.UndefOr[VersionLabel] = js.undefined
+    ): ApplicationVersionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -545,9 +570,11 @@ package elasticbeanstalk {
     def apply(
         ApplicationVersion: js.UndefOr[ApplicationVersionDescription] = js.undefined
     ): ApplicationVersionDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApplicationVersion" -> ApplicationVersion.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationVersion" -> ApplicationVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescriptionMessage]
     }
@@ -563,13 +590,18 @@ package elasticbeanstalk {
   }
 
   object ApplicationVersionDescriptionsMessage {
-    def apply(ApplicationVersions: js.UndefOr[ApplicationVersionDescriptionList] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): ApplicationVersionDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApplicationVersions" -> ApplicationVersions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApplicationVersions: js.UndefOr[ApplicationVersionDescriptionList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ApplicationVersionDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationVersions" -> ApplicationVersions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionDescriptionsMessage]
     }
@@ -586,13 +618,18 @@ package elasticbeanstalk {
   }
 
   object ApplicationVersionLifecycleConfig {
-    def apply(MaxAgeRule: js.UndefOr[MaxAgeRule] = js.undefined,
-              MaxCountRule: js.UndefOr[MaxCountRule] = js.undefined): ApplicationVersionLifecycleConfig = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxAgeRule" -> MaxAgeRule.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "MaxCountRule" -> MaxCountRule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxAgeRule: js.UndefOr[MaxAgeRule] = js.undefined,
+        MaxCountRule: js.UndefOr[MaxCountRule] = js.undefined
+    ): ApplicationVersionLifecycleConfig = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxAgeRule" -> MaxAgeRule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxCountRule" -> MaxCountRule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationVersionLifecycleConfig]
     }
@@ -619,9 +656,11 @@ package elasticbeanstalk {
   }
 
   object ApplyEnvironmentManagedActionRequest {
-    def apply(ActionId: String,
-              EnvironmentId: js.UndefOr[String] = js.undefined,
-              EnvironmentName: js.UndefOr[String] = js.undefined): ApplyEnvironmentManagedActionRequest = {
+    def apply(
+        ActionId: String,
+        EnvironmentId: js.UndefOr[String] = js.undefined,
+        EnvironmentName: js.UndefOr[String] = js.undefined
+    ): ApplyEnvironmentManagedActionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionId" -> ActionId.asInstanceOf[js.Any],
         "EnvironmentId" -> EnvironmentId.map { x =>
@@ -648,10 +687,12 @@ package elasticbeanstalk {
   }
 
   object ApplyEnvironmentManagedActionResult {
-    def apply(ActionDescription: js.UndefOr[String] = js.undefined,
-              ActionId: js.UndefOr[String] = js.undefined,
-              ActionType: js.UndefOr[ActionType] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): ApplyEnvironmentManagedActionResult = {
+    def apply(
+        ActionDescription: js.UndefOr[String] = js.undefined,
+        ActionId: js.UndefOr[String] = js.undefined,
+        ActionType: js.UndefOr[ActionType] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): ApplyEnvironmentManagedActionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionDescription" -> ActionDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -680,10 +721,14 @@ package elasticbeanstalk {
   }
 
   object AutoScalingGroup {
-    def apply(Name: js.UndefOr[ResourceId] = js.undefined): AutoScalingGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[ResourceId] = js.undefined
+    ): AutoScalingGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroup]
     }
@@ -702,11 +747,13 @@ package elasticbeanstalk {
   }
 
   object BuildConfiguration {
-    def apply(CodeBuildServiceRole: NonEmptyString,
-              Image: NonEmptyString,
-              ArtifactName: js.UndefOr[String] = js.undefined,
-              ComputeType: js.UndefOr[ComputeType] = js.undefined,
-              TimeoutInMinutes: js.UndefOr[BoxedInt] = js.undefined): BuildConfiguration = {
+    def apply(
+        CodeBuildServiceRole: NonEmptyString,
+        Image: NonEmptyString,
+        ArtifactName: js.UndefOr[String] = js.undefined,
+        ComputeType: js.UndefOr[ComputeType] = js.undefined,
+        TimeoutInMinutes: js.UndefOr[BoxedInt] = js.undefined
+    ): BuildConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CodeBuildServiceRole" -> CodeBuildServiceRole.asInstanceOf[js.Any],
         "Image"                -> Image.asInstanceOf[js.Any],
@@ -734,10 +781,14 @@ package elasticbeanstalk {
   }
 
   object Builder {
-    def apply(ARN: js.UndefOr[ARN] = js.undefined): Builder = {
-      val _fields = IndexedSeq[(String, js.Any)]("ARN" -> ARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ARN: js.UndefOr[ARN] = js.undefined
+    ): Builder = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ARN" -> ARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Builder]
     }
@@ -759,14 +810,16 @@ package elasticbeanstalk {
   }
 
   object CPUUtilization {
-    def apply(IOWait: js.UndefOr[NullableDouble] = js.undefined,
-              IRQ: js.UndefOr[NullableDouble] = js.undefined,
-              Idle: js.UndefOr[NullableDouble] = js.undefined,
-              Nice: js.UndefOr[NullableDouble] = js.undefined,
-              Privileged: js.UndefOr[NullableDouble] = js.undefined,
-              SoftIRQ: js.UndefOr[NullableDouble] = js.undefined,
-              System: js.UndefOr[NullableDouble] = js.undefined,
-              User: js.UndefOr[NullableDouble] = js.undefined): CPUUtilization = {
+    def apply(
+        IOWait: js.UndefOr[NullableDouble] = js.undefined,
+        IRQ: js.UndefOr[NullableDouble] = js.undefined,
+        Idle: js.UndefOr[NullableDouble] = js.undefined,
+        Nice: js.UndefOr[NullableDouble] = js.undefined,
+        Privileged: js.UndefOr[NullableDouble] = js.undefined,
+        SoftIRQ: js.UndefOr[NullableDouble] = js.undefined,
+        System: js.UndefOr[NullableDouble] = js.undefined,
+        User: js.UndefOr[NullableDouble] = js.undefined
+    ): CPUUtilization = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IOWait" -> IOWait.map { x =>
           x.asInstanceOf[js.Any]
@@ -807,9 +860,12 @@ package elasticbeanstalk {
   }
 
   object CheckDNSAvailabilityMessage {
-    def apply(CNAMEPrefix: DNSCnamePrefix): CheckDNSAvailabilityMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("CNAMEPrefix" -> CNAMEPrefix.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CNAMEPrefix: DNSCnamePrefix
+    ): CheckDNSAvailabilityMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CNAMEPrefix" -> CNAMEPrefix.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDNSAvailabilityMessage]
     }
@@ -825,13 +881,18 @@ package elasticbeanstalk {
   }
 
   object CheckDNSAvailabilityResultMessage {
-    def apply(Available: js.UndefOr[CnameAvailability] = js.undefined,
-              FullyQualifiedCNAME: js.UndefOr[DNSCname] = js.undefined): CheckDNSAvailabilityResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Available" -> Available.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FullyQualifiedCNAME" -> FullyQualifiedCNAME.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Available: js.UndefOr[CnameAvailability] = js.undefined,
+        FullyQualifiedCNAME: js.UndefOr[DNSCname] = js.undefined
+    ): CheckDNSAvailabilityResultMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Available" -> Available.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FullyQualifiedCNAME" -> FullyQualifiedCNAME.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CheckDNSAvailabilityResultMessage]
     }
@@ -848,9 +909,11 @@ package elasticbeanstalk {
   }
 
   object ComposeEnvironmentsMessage {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              GroupName: js.UndefOr[GroupName] = js.undefined,
-              VersionLabels: js.UndefOr[VersionLabels] = js.undefined): ComposeEnvironmentsMessage = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        VersionLabels: js.UndefOr[VersionLabels] = js.undefined
+    ): ComposeEnvironmentsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -902,17 +965,19 @@ package elasticbeanstalk {
   }
 
   object ConfigurationOptionDescription {
-    def apply(ChangeSeverity: js.UndefOr[ConfigurationOptionSeverity] = js.undefined,
-              DefaultValue: js.UndefOr[ConfigurationOptionDefaultValue] = js.undefined,
-              MaxLength: js.UndefOr[OptionRestrictionMaxLength] = js.undefined,
-              MaxValue: js.UndefOr[OptionRestrictionMaxValue] = js.undefined,
-              MinValue: js.UndefOr[OptionRestrictionMinValue] = js.undefined,
-              Name: js.UndefOr[ConfigurationOptionName] = js.undefined,
-              Namespace: js.UndefOr[OptionNamespace] = js.undefined,
-              Regex: js.UndefOr[OptionRestrictionRegex] = js.undefined,
-              UserDefined: js.UndefOr[UserDefinedOption] = js.undefined,
-              ValueOptions: js.UndefOr[ConfigurationOptionPossibleValues] = js.undefined,
-              ValueType: js.UndefOr[ConfigurationOptionValueType] = js.undefined): ConfigurationOptionDescription = {
+    def apply(
+        ChangeSeverity: js.UndefOr[ConfigurationOptionSeverity] = js.undefined,
+        DefaultValue: js.UndefOr[ConfigurationOptionDefaultValue] = js.undefined,
+        MaxLength: js.UndefOr[OptionRestrictionMaxLength] = js.undefined,
+        MaxValue: js.UndefOr[OptionRestrictionMaxValue] = js.undefined,
+        MinValue: js.UndefOr[OptionRestrictionMinValue] = js.undefined,
+        Name: js.UndefOr[ConfigurationOptionName] = js.undefined,
+        Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+        Regex: js.UndefOr[OptionRestrictionRegex] = js.undefined,
+        UserDefined: js.UndefOr[UserDefinedOption] = js.undefined,
+        ValueOptions: js.UndefOr[ConfigurationOptionPossibleValues] = js.undefined,
+        ValueType: js.UndefOr[ConfigurationOptionValueType] = js.undefined
+    ): ConfigurationOptionDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeSeverity" -> ChangeSeverity.map { x =>
           x.asInstanceOf[js.Any]
@@ -954,7 +1019,7 @@ package elasticbeanstalk {
   }
 
   /**
-    * A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+    * A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html|Option Values]] in the <i>AWS Elastic Beanstalk Developer Guide</i>.
     */
   @js.native
   trait ConfigurationOptionSetting extends js.Object {
@@ -965,10 +1030,12 @@ package elasticbeanstalk {
   }
 
   object ConfigurationOptionSetting {
-    def apply(Namespace: js.UndefOr[OptionNamespace] = js.undefined,
-              OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
-              ResourceName: js.UndefOr[ResourceName] = js.undefined,
-              Value: js.UndefOr[ConfigurationOptionValue] = js.undefined): ConfigurationOptionSetting = {
+    def apply(
+        Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+        OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
+        ResourceName: js.UndefOr[ResourceName] = js.undefined,
+        Value: js.UndefOr[ConfigurationOptionValue] = js.undefined
+    ): ConfigurationOptionSetting = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Namespace" -> Namespace.map { x =>
           x.asInstanceOf[js.Any]
@@ -1006,9 +1073,11 @@ package elasticbeanstalk {
   }
 
   object ConfigurationOptionsDescription {
-    def apply(Options: js.UndefOr[ConfigurationOptionDescriptionsList] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined): ConfigurationOptionsDescription = {
+    def apply(
+        Options: js.UndefOr[ConfigurationOptionDescriptionsList] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined
+    ): ConfigurationOptionsDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Options" -> Options.map { x =>
           x.asInstanceOf[js.Any]
@@ -1043,16 +1112,18 @@ package elasticbeanstalk {
   }
 
   object ConfigurationSettingsDescription {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              DateCreated: js.UndefOr[CreationDate] = js.undefined,
-              DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
-              DeploymentStatus: js.UndefOr[ConfigurationDeploymentStatus] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
-              TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined): ConfigurationSettingsDescription = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        DateCreated: js.UndefOr[CreationDate] = js.undefined,
+        DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+        DeploymentStatus: js.UndefOr[ConfigurationDeploymentStatus] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+        TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
+    ): ConfigurationSettingsDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1102,9 +1173,11 @@ package elasticbeanstalk {
     def apply(
         ConfigurationSettings: js.UndefOr[ConfigurationSettingsDescriptionList] = js.undefined
     ): ConfigurationSettingsDescriptions = {
-      val _fields = IndexedSeq[(String, js.Any)]("ConfigurationSettings" -> ConfigurationSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConfigurationSettings" -> ConfigurationSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsDescriptions]
     }
@@ -1119,10 +1192,14 @@ package elasticbeanstalk {
   }
 
   object ConfigurationSettingsValidationMessages {
-    def apply(Messages: js.UndefOr[ValidationMessagesList] = js.undefined): ConfigurationSettingsValidationMessages = {
-      val _fields = IndexedSeq[(String, js.Any)]("Messages" -> Messages.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Messages: js.UndefOr[ValidationMessagesList] = js.undefined
+    ): ConfigurationSettingsValidationMessages = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Messages" -> Messages.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConfigurationSettingsValidationMessages]
     }
@@ -1136,13 +1213,15 @@ package elasticbeanstalk {
     var ApplicationName: ApplicationName
     var Description: js.UndefOr[Description]
     var ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateApplicationMessage {
     def apply(
         ApplicationName: ApplicationName,
         Description: js.UndefOr[Description] = js.undefined,
-        ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined
+        ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
@@ -1150,6 +1229,9 @@ package elasticbeanstalk {
           x.asInstanceOf[js.Any]
         },
         "ResourceLifecycleConfig" -> ResourceLifecycleConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1171,17 +1253,21 @@ package elasticbeanstalk {
     var Process: js.UndefOr[ApplicationVersionProccess]
     var SourceBuildInformation: js.UndefOr[SourceBuildInformation]
     var SourceBundle: js.UndefOr[S3Location]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateApplicationVersionMessage {
-    def apply(ApplicationName: ApplicationName,
-              VersionLabel: VersionLabel,
-              AutoCreateApplication: js.UndefOr[AutoCreateApplication] = js.undefined,
-              BuildConfiguration: js.UndefOr[BuildConfiguration] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              Process: js.UndefOr[ApplicationVersionProccess] = js.undefined,
-              SourceBuildInformation: js.UndefOr[SourceBuildInformation] = js.undefined,
-              SourceBundle: js.UndefOr[S3Location] = js.undefined): CreateApplicationVersionMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        VersionLabel: VersionLabel,
+        AutoCreateApplication: js.UndefOr[AutoCreateApplication] = js.undefined,
+        BuildConfiguration: js.UndefOr[BuildConfiguration] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        Process: js.UndefOr[ApplicationVersionProccess] = js.undefined,
+        SourceBuildInformation: js.UndefOr[SourceBuildInformation] = js.undefined,
+        SourceBundle: js.UndefOr[S3Location] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateApplicationVersionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any],
@@ -1201,6 +1287,9 @@ package elasticbeanstalk {
           x.asInstanceOf[js.Any]
         },
         "SourceBundle" -> SourceBundle.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1222,6 +1311,7 @@ package elasticbeanstalk {
     var PlatformArn: js.UndefOr[PlatformArn]
     var SolutionStackName: js.UndefOr[SolutionStackName]
     var SourceConfiguration: js.UndefOr[SourceConfiguration]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreateConfigurationTemplateMessage {
@@ -1233,7 +1323,8 @@ package elasticbeanstalk {
         OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
-        SourceConfiguration: js.UndefOr[SourceConfiguration] = js.undefined
+        SourceConfiguration: js.UndefOr[SourceConfiguration] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreateConfigurationTemplateMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
@@ -1254,6 +1345,9 @@ package elasticbeanstalk {
           x.asInstanceOf[js.Any]
         },
         "SourceConfiguration" -> SourceConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1283,19 +1377,21 @@ package elasticbeanstalk {
   }
 
   object CreateEnvironmentMessage {
-    def apply(ApplicationName: ApplicationName,
-              CNAMEPrefix: js.UndefOr[DNSCnamePrefix] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              GroupName: js.UndefOr[GroupName] = js.undefined,
-              OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
-              OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
-              Tier: js.UndefOr[EnvironmentTier] = js.undefined,
-              VersionLabel: js.UndefOr[VersionLabel] = js.undefined): CreateEnvironmentMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        CNAMEPrefix: js.UndefOr[DNSCnamePrefix] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+        OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+        Tier: js.UndefOr[EnvironmentTier] = js.undefined,
+        VersionLabel: js.UndefOr[VersionLabel] = js.undefined
+    ): CreateEnvironmentMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CNAMEPrefix" -> CNAMEPrefix.map { x =>
@@ -1350,6 +1446,7 @@ package elasticbeanstalk {
     var PlatformVersion: PlatformVersion
     var EnvironmentName: js.UndefOr[EnvironmentName]
     var OptionSettings: js.UndefOr[ConfigurationOptionSettingsList]
+    var Tags: js.UndefOr[Tags]
   }
 
   object CreatePlatformVersionRequest {
@@ -1358,7 +1455,8 @@ package elasticbeanstalk {
         PlatformName: PlatformName,
         PlatformVersion: PlatformVersion,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-        OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined
+        OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePlatformVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PlatformDefinitionBundle" -> PlatformDefinitionBundle.asInstanceOf[js.Any],
@@ -1368,6 +1466,9 @@ package elasticbeanstalk {
           x.asInstanceOf[js.Any]
         },
         "OptionSettings" -> OptionSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -1383,13 +1484,18 @@ package elasticbeanstalk {
   }
 
   object CreatePlatformVersionResult {
-    def apply(Builder: js.UndefOr[Builder] = js.undefined,
-              PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined): CreatePlatformVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Builder" -> Builder.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlatformSummary" -> PlatformSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Builder: js.UndefOr[Builder] = js.undefined,
+        PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
+    ): CreatePlatformVersionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Builder" -> Builder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlatformSummary" -> PlatformSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlatformVersionResult]
     }
@@ -1404,10 +1510,14 @@ package elasticbeanstalk {
   }
 
   object CreateStorageLocationResultMessage {
-    def apply(S3Bucket: js.UndefOr[S3Bucket] = js.undefined): CreateStorageLocationResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("S3Bucket" -> S3Bucket.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        S3Bucket: js.UndefOr[S3Bucket] = js.undefined
+    ): CreateStorageLocationResultMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3Bucket" -> S3Bucket.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStorageLocationResultMessage]
     }
@@ -1423,13 +1533,18 @@ package elasticbeanstalk {
   }
 
   object CustomAmi {
-    def apply(ImageId: js.UndefOr[ImageId] = js.undefined,
-              VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined): CustomAmi = {
-      val _fields = IndexedSeq[(String, js.Any)]("ImageId" -> ImageId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VirtualizationType" -> VirtualizationType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ImageId: js.UndefOr[ImageId] = js.undefined,
+        VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined
+    ): CustomAmi = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ImageId" -> ImageId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VirtualizationType" -> VirtualizationType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CustomAmi]
     }
@@ -1445,8 +1560,10 @@ package elasticbeanstalk {
   }
 
   object DeleteApplicationMessage {
-    def apply(ApplicationName: ApplicationName,
-              TerminateEnvByForce: js.UndefOr[TerminateEnvForce] = js.undefined): DeleteApplicationMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        TerminateEnvByForce: js.UndefOr[TerminateEnvForce] = js.undefined
+    ): DeleteApplicationMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TerminateEnvByForce" -> TerminateEnvByForce.map { x =>
@@ -1469,9 +1586,11 @@ package elasticbeanstalk {
   }
 
   object DeleteApplicationVersionMessage {
-    def apply(ApplicationName: ApplicationName,
-              VersionLabel: VersionLabel,
-              DeleteSourceBundle: js.UndefOr[DeleteSourceBundle] = js.undefined): DeleteApplicationVersionMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        VersionLabel: VersionLabel,
+        DeleteSourceBundle: js.UndefOr[DeleteSourceBundle] = js.undefined
+    ): DeleteApplicationVersionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any],
@@ -1494,8 +1613,10 @@ package elasticbeanstalk {
   }
 
   object DeleteConfigurationTemplateMessage {
-    def apply(ApplicationName: ApplicationName,
-              TemplateName: ConfigurationTemplateName): DeleteConfigurationTemplateMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        TemplateName: ConfigurationTemplateName
+    ): DeleteConfigurationTemplateMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TemplateName"    -> TemplateName.asInstanceOf[js.Any]
@@ -1515,8 +1636,10 @@ package elasticbeanstalk {
   }
 
   object DeleteEnvironmentConfigurationMessage {
-    def apply(ApplicationName: ApplicationName,
-              EnvironmentName: EnvironmentName): DeleteEnvironmentConfigurationMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        EnvironmentName: EnvironmentName
+    ): DeleteEnvironmentConfigurationMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any]
@@ -1532,10 +1655,14 @@ package elasticbeanstalk {
   }
 
   object DeletePlatformVersionRequest {
-    def apply(PlatformArn: js.UndefOr[PlatformArn] = js.undefined): DeletePlatformVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlatformArn" -> PlatformArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined
+    ): DeletePlatformVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformArn" -> PlatformArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformVersionRequest]
     }
@@ -1547,10 +1674,14 @@ package elasticbeanstalk {
   }
 
   object DeletePlatformVersionResult {
-    def apply(PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined): DeletePlatformVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlatformSummary" -> PlatformSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
+    ): DeletePlatformVersionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformSummary" -> PlatformSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlatformVersionResult]
     }
@@ -1568,10 +1699,12 @@ package elasticbeanstalk {
   }
 
   object Deployment {
-    def apply(DeploymentId: js.UndefOr[NullableLong] = js.undefined,
-              DeploymentTime: js.UndefOr[DeploymentTimestamp] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              VersionLabel: js.UndefOr[String] = js.undefined): Deployment = {
+    def apply(
+        DeploymentId: js.UndefOr[NullableLong] = js.undefined,
+        DeploymentTime: js.UndefOr[DeploymentTimestamp] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        VersionLabel: js.UndefOr[String] = js.undefined
+    ): Deployment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeploymentId" -> DeploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1597,10 +1730,14 @@ package elasticbeanstalk {
   }
 
   object DescribeAccountAttributesResult {
-    def apply(ResourceQuotas: js.UndefOr[ResourceQuotas] = js.undefined): DescribeAccountAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceQuotas" -> ResourceQuotas.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceQuotas: js.UndefOr[ResourceQuotas] = js.undefined
+    ): DescribeAccountAttributesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceQuotas" -> ResourceQuotas.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAttributesResult]
     }
@@ -1618,10 +1755,12 @@ package elasticbeanstalk {
   }
 
   object DescribeApplicationVersionsMessage {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined,
-              VersionLabels: js.UndefOr[VersionLabelsList] = js.undefined): DescribeApplicationVersionsMessage = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        VersionLabels: js.UndefOr[VersionLabelsList] = js.undefined
+    ): DescribeApplicationVersionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1650,10 +1789,14 @@ package elasticbeanstalk {
   }
 
   object DescribeApplicationsMessage {
-    def apply(ApplicationNames: js.UndefOr[ApplicationNamesList] = js.undefined): DescribeApplicationsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApplicationNames" -> ApplicationNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApplicationNames: js.UndefOr[ApplicationNamesList] = js.undefined
+    ): DescribeApplicationsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationNames" -> ApplicationNames.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeApplicationsMessage]
     }
@@ -1747,9 +1890,11 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentHealthRequest {
-    def apply(AttributeNames: js.UndefOr[EnvironmentHealthAttributes] = js.undefined,
-              EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): DescribeEnvironmentHealthRequest = {
+    def apply(
+        AttributeNames: js.UndefOr[EnvironmentHealthAttributes] = js.undefined,
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): DescribeEnvironmentHealthRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeNames" -> AttributeNames.map { x =>
           x.asInstanceOf[js.Any]
@@ -1782,14 +1927,16 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentHealthResult {
-    def apply(ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
-              Causes: js.UndefOr[Causes] = js.undefined,
-              Color: js.UndefOr[String] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              HealthStatus: js.UndefOr[String] = js.undefined,
-              InstancesHealth: js.UndefOr[InstanceHealthSummary] = js.undefined,
-              RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined,
-              Status: js.UndefOr[EnvironmentHealth] = js.undefined): DescribeEnvironmentHealthResult = {
+    def apply(
+        ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
+        Causes: js.UndefOr[Causes] = js.undefined,
+        Color: js.UndefOr[String] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        HealthStatus: js.UndefOr[String] = js.undefined,
+        InstancesHealth: js.UndefOr[InstanceHealthSummary] = js.undefined,
+        RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined,
+        Status: js.UndefOr[EnvironmentHealth] = js.undefined
+    ): DescribeEnvironmentHealthResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationMetrics" -> ApplicationMetrics.map { x =>
           x.asInstanceOf[js.Any]
@@ -1833,10 +1980,12 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionHistoryRequest {
-    def apply(EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              MaxItems: js.UndefOr[Int] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): DescribeEnvironmentManagedActionHistoryRequest = {
+    def apply(
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        MaxItems: js.UndefOr[Int] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEnvironmentManagedActionHistoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EnvironmentId" -> EnvironmentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1868,13 +2017,18 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionHistoryResult {
-    def apply(ManagedActionHistoryItems: js.UndefOr[ManagedActionHistoryItems] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): DescribeEnvironmentManagedActionHistoryResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ManagedActionHistoryItems" -> ManagedActionHistoryItems.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ManagedActionHistoryItems: js.UndefOr[ManagedActionHistoryItems] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEnvironmentManagedActionHistoryResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ManagedActionHistoryItems" -> ManagedActionHistoryItems.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -1893,9 +2047,11 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionsRequest {
-    def apply(EnvironmentId: js.UndefOr[String] = js.undefined,
-              EnvironmentName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[ActionStatus] = js.undefined): DescribeEnvironmentManagedActionsRequest = {
+    def apply(
+        EnvironmentId: js.UndefOr[String] = js.undefined,
+        EnvironmentName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[ActionStatus] = js.undefined
+    ): DescribeEnvironmentManagedActionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EnvironmentId" -> EnvironmentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1921,10 +2077,14 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentManagedActionsResult {
-    def apply(ManagedActions: js.UndefOr[ManagedActions] = js.undefined): DescribeEnvironmentManagedActionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ManagedActions" -> ManagedActions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ManagedActions: js.UndefOr[ManagedActions] = js.undefined
+    ): DescribeEnvironmentManagedActionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ManagedActions" -> ManagedActions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentManagedActionsResult]
     }
@@ -1940,13 +2100,18 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentResourcesMessage {
-    def apply(EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): DescribeEnvironmentResourcesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EnvironmentId" -> EnvironmentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EnvironmentName" -> EnvironmentName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): DescribeEnvironmentResourcesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnvironmentName" -> EnvironmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentResourcesMessage]
     }
@@ -1968,14 +2133,16 @@ package elasticbeanstalk {
   }
 
   object DescribeEnvironmentsMessage {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              EnvironmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
-              EnvironmentNames: js.UndefOr[EnvironmentNamesList] = js.undefined,
-              IncludeDeleted: js.UndefOr[IncludeDeleted] = js.undefined,
-              IncludedDeletedBackTo: js.UndefOr[IncludeDeletedBackTo] = js.undefined,
-              MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined,
-              VersionLabel: js.UndefOr[VersionLabel] = js.undefined): DescribeEnvironmentsMessage = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        EnvironmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
+        EnvironmentNames: js.UndefOr[EnvironmentNamesList] = js.undefined,
+        IncludeDeleted: js.UndefOr[IncludeDeleted] = js.undefined,
+        IncludedDeletedBackTo: js.UndefOr[IncludeDeletedBackTo] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        VersionLabel: js.UndefOr[VersionLabel] = js.undefined
+    ): DescribeEnvironmentsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2027,18 +2194,20 @@ package elasticbeanstalk {
   }
 
   object DescribeEventsMessage {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              EndTime: js.UndefOr[TimeFilterEnd] = js.undefined,
-              EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              RequestId: js.UndefOr[RequestId] = js.undefined,
-              Severity: js.UndefOr[EventSeverity] = js.undefined,
-              StartTime: js.UndefOr[TimeFilterStart] = js.undefined,
-              TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
-              VersionLabel: js.UndefOr[VersionLabel] = js.undefined): DescribeEventsMessage = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        EndTime: js.UndefOr[TimeFilterEnd] = js.undefined,
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        RequestId: js.UndefOr[RequestId] = js.undefined,
+        Severity: js.UndefOr[EventSeverity] = js.undefined,
+        StartTime: js.UndefOr[TimeFilterStart] = js.undefined,
+        TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+        VersionLabel: js.UndefOr[VersionLabel] = js.undefined
+    ): DescribeEventsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2094,10 +2263,12 @@ package elasticbeanstalk {
   }
 
   object DescribeInstancesHealthRequest {
-    def apply(AttributeNames: js.UndefOr[InstancesHealthAttributes] = js.undefined,
-              EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeInstancesHealthRequest = {
+    def apply(
+        AttributeNames: js.UndefOr[InstancesHealthAttributes] = js.undefined,
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeInstancesHealthRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeNames" -> AttributeNames.map { x =>
           x.asInstanceOf[js.Any]
@@ -2128,9 +2299,11 @@ package elasticbeanstalk {
   }
 
   object DescribeInstancesHealthResult {
-    def apply(InstanceHealthList: js.UndefOr[InstanceHealthList] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined): DescribeInstancesHealthResult = {
+    def apply(
+        InstanceHealthList: js.UndefOr[InstanceHealthList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined
+    ): DescribeInstancesHealthResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceHealthList" -> InstanceHealthList.map { x =>
           x.asInstanceOf[js.Any]
@@ -2153,10 +2326,14 @@ package elasticbeanstalk {
   }
 
   object DescribePlatformVersionRequest {
-    def apply(PlatformArn: js.UndefOr[PlatformArn] = js.undefined): DescribePlatformVersionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlatformArn" -> PlatformArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined
+    ): DescribePlatformVersionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformArn" -> PlatformArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlatformVersionRequest]
     }
@@ -2168,10 +2345,14 @@ package elasticbeanstalk {
   }
 
   object DescribePlatformVersionResult {
-    def apply(PlatformDescription: js.UndefOr[PlatformDescription] = js.undefined): DescribePlatformVersionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlatformDescription" -> PlatformDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlatformDescription: js.UndefOr[PlatformDescription] = js.undefined
+    ): DescribePlatformVersionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlatformDescription" -> PlatformDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlatformVersionResult]
     }
@@ -2205,26 +2386,28 @@ package elasticbeanstalk {
   }
 
   object EnvironmentDescription {
-    def apply(AbortableOperationInProgress: js.UndefOr[AbortableOperationInProgress] = js.undefined,
-              ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              CNAME: js.UndefOr[DNSCname] = js.undefined,
-              DateCreated: js.UndefOr[CreationDate] = js.undefined,
-              DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              EndpointURL: js.UndefOr[EndpointURL] = js.undefined,
-              EnvironmentArn: js.UndefOr[EnvironmentArn] = js.undefined,
-              EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentLinks: js.UndefOr[EnvironmentLinks] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              Health: js.UndefOr[EnvironmentHealth] = js.undefined,
-              HealthStatus: js.UndefOr[EnvironmentHealthStatus] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              Resources: js.UndefOr[EnvironmentResourcesDescription] = js.undefined,
-              SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
-              Status: js.UndefOr[EnvironmentStatus] = js.undefined,
-              TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
-              Tier: js.UndefOr[EnvironmentTier] = js.undefined,
-              VersionLabel: js.UndefOr[VersionLabel] = js.undefined): EnvironmentDescription = {
+    def apply(
+        AbortableOperationInProgress: js.UndefOr[AbortableOperationInProgress] = js.undefined,
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        CNAME: js.UndefOr[DNSCname] = js.undefined,
+        DateCreated: js.UndefOr[CreationDate] = js.undefined,
+        DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        EndpointURL: js.UndefOr[EndpointURL] = js.undefined,
+        EnvironmentArn: js.UndefOr[EnvironmentArn] = js.undefined,
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentLinks: js.UndefOr[EnvironmentLinks] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        Health: js.UndefOr[EnvironmentHealth] = js.undefined,
+        HealthStatus: js.UndefOr[EnvironmentHealthStatus] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        Resources: js.UndefOr[EnvironmentResourcesDescription] = js.undefined,
+        SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+        Status: js.UndefOr[EnvironmentStatus] = js.undefined,
+        TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+        Tier: js.UndefOr[EnvironmentTier] = js.undefined,
+        VersionLabel: js.UndefOr[VersionLabel] = js.undefined
+    ): EnvironmentDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AbortableOperationInProgress" -> AbortableOperationInProgress.map { x =>
           x.asInstanceOf[js.Any]
@@ -2302,13 +2485,18 @@ package elasticbeanstalk {
   }
 
   object EnvironmentDescriptionsMessage {
-    def apply(Environments: js.UndefOr[EnvironmentDescriptionsList] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): EnvironmentDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Environments" -> Environments.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Environments: js.UndefOr[EnvironmentDescriptionsList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): EnvironmentDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Environments" -> Environments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentDescriptionsMessage]
     }
@@ -2362,10 +2550,12 @@ package elasticbeanstalk {
   }
 
   object EnvironmentInfoDescription {
-    def apply(Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
-              InfoType: js.UndefOr[EnvironmentInfoType] = js.undefined,
-              Message: js.UndefOr[Message] = js.undefined,
-              SampleTimestamp: js.UndefOr[SampleTimestamp] = js.undefined): EnvironmentInfoDescription = {
+    def apply(
+        Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
+        InfoType: js.UndefOr[EnvironmentInfoType] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        SampleTimestamp: js.UndefOr[SampleTimestamp] = js.undefined
+    ): EnvironmentInfoDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Ec2InstanceId" -> Ec2InstanceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2393,7 +2583,7 @@ package elasticbeanstalk {
   }
 
   /**
-    * A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html|Environment Manifest (env.yaml)]] for details.
+    * A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html|Environment Manifest (env.yaml)]] for details.
     */
   @js.native
   trait EnvironmentLink extends js.Object {
@@ -2402,13 +2592,18 @@ package elasticbeanstalk {
   }
 
   object EnvironmentLink {
-    def apply(EnvironmentName: js.UndefOr[String] = js.undefined,
-              LinkName: js.UndefOr[String] = js.undefined): EnvironmentLink = {
-      val _fields = IndexedSeq[(String, js.Any)]("EnvironmentName" -> EnvironmentName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LinkName" -> LinkName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EnvironmentName: js.UndefOr[String] = js.undefined,
+        LinkName: js.UndefOr[String] = js.undefined
+    ): EnvironmentLink = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentName" -> EnvironmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LinkName" -> LinkName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentLink]
     }
@@ -2430,14 +2625,16 @@ package elasticbeanstalk {
   }
 
   object EnvironmentResourceDescription {
-    def apply(AutoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              Instances: js.UndefOr[InstanceList] = js.undefined,
-              LaunchConfigurations: js.UndefOr[LaunchConfigurationList] = js.undefined,
-              LaunchTemplates: js.UndefOr[LaunchTemplateList] = js.undefined,
-              LoadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
-              Queues: js.UndefOr[QueueList] = js.undefined,
-              Triggers: js.UndefOr[TriggerList] = js.undefined): EnvironmentResourceDescription = {
+    def apply(
+        AutoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        Instances: js.UndefOr[InstanceList] = js.undefined,
+        LaunchConfigurations: js.UndefOr[LaunchConfigurationList] = js.undefined,
+        LaunchTemplates: js.UndefOr[LaunchTemplateList] = js.undefined,
+        LoadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
+        Queues: js.UndefOr[QueueList] = js.undefined,
+        Triggers: js.UndefOr[TriggerList] = js.undefined
+    ): EnvironmentResourceDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingGroups" -> AutoScalingGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -2481,9 +2678,11 @@ package elasticbeanstalk {
     def apply(
         EnvironmentResources: js.UndefOr[EnvironmentResourceDescription] = js.undefined
     ): EnvironmentResourceDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EnvironmentResources" -> EnvironmentResources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentResources" -> EnvironmentResources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourceDescriptionsMessage]
     }
@@ -2498,10 +2697,14 @@ package elasticbeanstalk {
   }
 
   object EnvironmentResourcesDescription {
-    def apply(LoadBalancer: js.UndefOr[LoadBalancerDescription] = js.undefined): EnvironmentResourcesDescription = {
-      val _fields = IndexedSeq[(String, js.Any)]("LoadBalancer" -> LoadBalancer.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LoadBalancer: js.UndefOr[LoadBalancerDescription] = js.undefined
+    ): EnvironmentResourcesDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoadBalancer" -> LoadBalancer.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentResourcesDescription]
     }
@@ -2528,16 +2731,22 @@ package elasticbeanstalk {
   }
 
   object EnvironmentTier {
-    def apply(Name: js.UndefOr[String] = js.undefined,
-              Type: js.UndefOr[String] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): EnvironmentTier = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): EnvironmentTier = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentTier]
     }
@@ -2560,15 +2769,17 @@ package elasticbeanstalk {
   }
 
   object EventDescription {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              EventDate: js.UndefOr[EventDate] = js.undefined,
-              Message: js.UndefOr[EventMessage] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              RequestId: js.UndefOr[RequestId] = js.undefined,
-              Severity: js.UndefOr[EventSeverity] = js.undefined,
-              TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
-              VersionLabel: js.UndefOr[VersionLabel] = js.undefined): EventDescription = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        EventDate: js.UndefOr[EventDate] = js.undefined,
+        Message: js.UndefOr[EventMessage] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        RequestId: js.UndefOr[RequestId] = js.undefined,
+        Severity: js.UndefOr[EventSeverity] = js.undefined,
+        TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+        VersionLabel: js.UndefOr[VersionLabel] = js.undefined
+    ): EventDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2613,13 +2824,18 @@ package elasticbeanstalk {
   }
 
   object EventDescriptionsMessage {
-    def apply(Events: js.UndefOr[EventDescriptionList] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): EventDescriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Events" -> Events.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Events: js.UndefOr[EventDescriptionList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): EventDescriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDescriptionsMessage]
     }
@@ -2665,17 +2881,21 @@ package elasticbeanstalk {
   }
 
   object Instance {
-    def apply(Id: js.UndefOr[ResourceId] = js.undefined): Instance = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: js.UndefOr[ResourceId] = js.undefined
+    ): Instance = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Instance]
     }
   }
 
   /**
-    * Represents summary information about the health of an instance. For more information, see [[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html|Health Colors and Statuses]].
+    * Represents summary information about the health of an instance. For more information, see [[https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html|Health Colors and Statuses]].
     */
   @js.native
   trait InstanceHealthSummary extends js.Object {
@@ -2690,14 +2910,16 @@ package elasticbeanstalk {
   }
 
   object InstanceHealthSummary {
-    def apply(Degraded: js.UndefOr[NullableInteger] = js.undefined,
-              Info: js.UndefOr[NullableInteger] = js.undefined,
-              NoData: js.UndefOr[NullableInteger] = js.undefined,
-              Ok: js.UndefOr[NullableInteger] = js.undefined,
-              Pending: js.UndefOr[NullableInteger] = js.undefined,
-              Severe: js.UndefOr[NullableInteger] = js.undefined,
-              Unknown: js.UndefOr[NullableInteger] = js.undefined,
-              Warning: js.UndefOr[NullableInteger] = js.undefined): InstanceHealthSummary = {
+    def apply(
+        Degraded: js.UndefOr[NullableInteger] = js.undefined,
+        Info: js.UndefOr[NullableInteger] = js.undefined,
+        NoData: js.UndefOr[NullableInteger] = js.undefined,
+        Ok: js.UndefOr[NullableInteger] = js.undefined,
+        Pending: js.UndefOr[NullableInteger] = js.undefined,
+        Severe: js.UndefOr[NullableInteger] = js.undefined,
+        Unknown: js.UndefOr[NullableInteger] = js.undefined,
+        Warning: js.UndefOr[NullableInteger] = js.undefined
+    ): InstanceHealthSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Degraded" -> Degraded.map { x =>
           x.asInstanceOf[js.Any]
@@ -2773,14 +2995,16 @@ package elasticbeanstalk {
   }
 
   object Latency {
-    def apply(P10: js.UndefOr[NullableDouble] = js.undefined,
-              P50: js.UndefOr[NullableDouble] = js.undefined,
-              P75: js.UndefOr[NullableDouble] = js.undefined,
-              P85: js.UndefOr[NullableDouble] = js.undefined,
-              P90: js.UndefOr[NullableDouble] = js.undefined,
-              P95: js.UndefOr[NullableDouble] = js.undefined,
-              P99: js.UndefOr[NullableDouble] = js.undefined,
-              P999: js.UndefOr[NullableDouble] = js.undefined): Latency = {
+    def apply(
+        P10: js.UndefOr[NullableDouble] = js.undefined,
+        P50: js.UndefOr[NullableDouble] = js.undefined,
+        P75: js.UndefOr[NullableDouble] = js.undefined,
+        P85: js.UndefOr[NullableDouble] = js.undefined,
+        P90: js.UndefOr[NullableDouble] = js.undefined,
+        P95: js.UndefOr[NullableDouble] = js.undefined,
+        P99: js.UndefOr[NullableDouble] = js.undefined,
+        P999: js.UndefOr[NullableDouble] = js.undefined
+    ): Latency = {
       val _fields = IndexedSeq[(String, js.Any)](
         "P10" -> P10.map { x =>
           x.asInstanceOf[js.Any]
@@ -2821,10 +3045,14 @@ package elasticbeanstalk {
   }
 
   object LaunchConfiguration {
-    def apply(Name: js.UndefOr[ResourceId] = js.undefined): LaunchConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[ResourceId] = js.undefined
+    ): LaunchConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchConfiguration]
     }
@@ -2839,10 +3067,14 @@ package elasticbeanstalk {
   }
 
   object LaunchTemplate {
-    def apply(Id: js.UndefOr[ResourceId] = js.undefined): LaunchTemplate = {
-      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Id: js.UndefOr[ResourceId] = js.undefined
+    ): LaunchTemplate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchTemplate]
     }
@@ -2862,11 +3094,14 @@ package elasticbeanstalk {
         SolutionStackDetails: js.UndefOr[AvailableSolutionStackDetailsList] = js.undefined,
         SolutionStacks: js.UndefOr[AvailableSolutionStackNamesList] = js.undefined
     ): ListAvailableSolutionStacksResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("SolutionStackDetails" -> SolutionStackDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SolutionStacks" -> SolutionStacks.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SolutionStackDetails" -> SolutionStackDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SolutionStacks" -> SolutionStacks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAvailableSolutionStacksResultMessage]
     }
@@ -2880,9 +3115,11 @@ package elasticbeanstalk {
   }
 
   object ListPlatformVersionsRequest {
-    def apply(Filters: js.UndefOr[PlatformFilters] = js.undefined,
-              MaxRecords: js.UndefOr[PlatformMaxRecords] = js.undefined,
-              NextToken: js.UndefOr[Token] = js.undefined): ListPlatformVersionsRequest = {
+    def apply(
+        Filters: js.UndefOr[PlatformFilters] = js.undefined,
+        MaxRecords: js.UndefOr[PlatformMaxRecords] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListPlatformVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Filters" -> Filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -2906,13 +3143,18 @@ package elasticbeanstalk {
   }
 
   object ListPlatformVersionsResult {
-    def apply(NextToken: js.UndefOr[Token] = js.undefined,
-              PlatformSummaryList: js.UndefOr[PlatformSummaryList] = js.undefined): ListPlatformVersionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlatformSummaryList" -> PlatformSummaryList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        PlatformSummaryList: js.UndefOr[PlatformSummaryList] = js.undefined
+    ): ListPlatformVersionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlatformSummaryList" -> PlatformSummaryList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlatformVersionsResult]
     }
@@ -2924,9 +3166,12 @@ package elasticbeanstalk {
   }
 
   object ListTagsForResourceMessage {
-    def apply(ResourceArn: ResourceArn): ListTagsForResourceMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArn
+    ): ListTagsForResourceMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceMessage]
     }
@@ -2942,12 +3187,18 @@ package elasticbeanstalk {
   }
 
   object Listener {
-    def apply(Port: js.UndefOr[Int] = js.undefined, Protocol: js.UndefOr[String] = js.undefined): Listener = {
-      val _fields = IndexedSeq[(String, js.Any)]("Port" -> Port.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Protocol" -> Protocol.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Port: js.UndefOr[Int] = js.undefined,
+        Protocol: js.UndefOr[String] = js.undefined
+    ): Listener = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Port" -> Port.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Protocol" -> Protocol.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Listener]
     }
@@ -2962,10 +3213,14 @@ package elasticbeanstalk {
   }
 
   object LoadBalancer {
-    def apply(Name: js.UndefOr[ResourceId] = js.undefined): LoadBalancer = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[ResourceId] = js.undefined
+    ): LoadBalancer = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LoadBalancer]
     }
@@ -2982,9 +3237,11 @@ package elasticbeanstalk {
   }
 
   object LoadBalancerDescription {
-    def apply(Domain: js.UndefOr[String] = js.undefined,
-              Listeners: js.UndefOr[LoadBalancerListenersDescription] = js.undefined,
-              LoadBalancerName: js.UndefOr[String] = js.undefined): LoadBalancerDescription = {
+    def apply(
+        Domain: js.UndefOr[String] = js.undefined,
+        Listeners: js.UndefOr[LoadBalancerListenersDescription] = js.undefined,
+        LoadBalancerName: js.UndefOr[String] = js.undefined
+    ): LoadBalancerDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Domain" -> Domain.map { x =>
           x.asInstanceOf[js.Any]
@@ -3014,11 +3271,13 @@ package elasticbeanstalk {
   }
 
   object ManagedAction {
-    def apply(ActionDescription: js.UndefOr[String] = js.undefined,
-              ActionId: js.UndefOr[String] = js.undefined,
-              ActionType: js.UndefOr[ActionType] = js.undefined,
-              Status: js.UndefOr[ActionStatus] = js.undefined,
-              WindowStartTime: js.UndefOr[Timestamp] = js.undefined): ManagedAction = {
+    def apply(
+        ActionDescription: js.UndefOr[String] = js.undefined,
+        ActionId: js.UndefOr[String] = js.undefined,
+        ActionType: js.UndefOr[ActionType] = js.undefined,
+        Status: js.UndefOr[ActionStatus] = js.undefined,
+        WindowStartTime: js.UndefOr[Timestamp] = js.undefined
+    ): ManagedAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionDescription" -> ActionDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -3057,14 +3316,16 @@ package elasticbeanstalk {
   }
 
   object ManagedActionHistoryItem {
-    def apply(ActionDescription: js.UndefOr[String] = js.undefined,
-              ActionId: js.UndefOr[String] = js.undefined,
-              ActionType: js.UndefOr[ActionType] = js.undefined,
-              ExecutedTime: js.UndefOr[Timestamp] = js.undefined,
-              FailureDescription: js.UndefOr[String] = js.undefined,
-              FailureType: js.UndefOr[FailureType] = js.undefined,
-              FinishedTime: js.UndefOr[Timestamp] = js.undefined,
-              Status: js.UndefOr[ActionHistoryStatus] = js.undefined): ManagedActionHistoryItem = {
+    def apply(
+        ActionDescription: js.UndefOr[String] = js.undefined,
+        ActionId: js.UndefOr[String] = js.undefined,
+        ActionType: js.UndefOr[ActionType] = js.undefined,
+        ExecutedTime: js.UndefOr[Timestamp] = js.undefined,
+        FailureDescription: js.UndefOr[String] = js.undefined,
+        FailureType: js.UndefOr[FailureType] = js.undefined,
+        FinishedTime: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[ActionHistoryStatus] = js.undefined
+    ): ManagedActionHistoryItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionDescription" -> ActionDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -3107,9 +3368,11 @@ package elasticbeanstalk {
   }
 
   object MaxAgeRule {
-    def apply(Enabled: BoxedBoolean,
-              DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
-              MaxAgeInDays: js.UndefOr[BoxedInt] = js.undefined): MaxAgeRule = {
+    def apply(
+        Enabled: BoxedBoolean,
+        DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
+        MaxAgeInDays: js.UndefOr[BoxedInt] = js.undefined
+    ): MaxAgeRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Enabled" -> Enabled.asInstanceOf[js.Any],
         "DeleteSourceFromS3" -> DeleteSourceFromS3.map { x =>
@@ -3135,9 +3398,11 @@ package elasticbeanstalk {
   }
 
   object MaxCountRule {
-    def apply(Enabled: BoxedBoolean,
-              DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
-              MaxCount: js.UndefOr[BoxedInt] = js.undefined): MaxCountRule = {
+    def apply(
+        Enabled: BoxedBoolean,
+        DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
+        MaxCount: js.UndefOr[BoxedInt] = js.undefined
+    ): MaxCountRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Enabled" -> Enabled.asInstanceOf[js.Any],
         "DeleteSourceFromS3" -> DeleteSourceFromS3.map { x =>
@@ -3162,13 +3427,18 @@ package elasticbeanstalk {
   }
 
   object OptionRestrictionRegex {
-    def apply(Label: js.UndefOr[RegexLabel] = js.undefined,
-              Pattern: js.UndefOr[RegexPattern] = js.undefined): OptionRestrictionRegex = {
-      val _fields = IndexedSeq[(String, js.Any)]("Label" -> Label.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Pattern" -> Pattern.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Label: js.UndefOr[RegexLabel] = js.undefined,
+        Pattern: js.UndefOr[RegexPattern] = js.undefined
+    ): OptionRestrictionRegex = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Label" -> Label.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Pattern" -> Pattern.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OptionRestrictionRegex]
     }
@@ -3185,9 +3455,11 @@ package elasticbeanstalk {
   }
 
   object OptionSpecification {
-    def apply(Namespace: js.UndefOr[OptionNamespace] = js.undefined,
-              OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
-              ResourceName: js.UndefOr[ResourceName] = js.undefined): OptionSpecification = {
+    def apply(
+        Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+        OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
+        ResourceName: js.UndefOr[ResourceName] = js.undefined
+    ): OptionSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Namespace" -> Namespace.map { x =>
           x.asInstanceOf[js.Any]
@@ -3230,24 +3502,26 @@ package elasticbeanstalk {
   }
 
   object PlatformDescription {
-    def apply(CustomAmiList: js.UndefOr[CustomAmiList] = js.undefined,
-              DateCreated: js.UndefOr[CreationDate] = js.undefined,
-              DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              Frameworks: js.UndefOr[PlatformFrameworks] = js.undefined,
-              Maintainer: js.UndefOr[Maintainer] = js.undefined,
-              OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
-              OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined,
-              PlatformName: js.UndefOr[PlatformName] = js.undefined,
-              PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
-              PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
-              PlatformVersion: js.UndefOr[PlatformVersion] = js.undefined,
-              ProgrammingLanguages: js.UndefOr[PlatformProgrammingLanguages] = js.undefined,
-              SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
-              SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
-              SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined): PlatformDescription = {
+    def apply(
+        CustomAmiList: js.UndefOr[CustomAmiList] = js.undefined,
+        DateCreated: js.UndefOr[CreationDate] = js.undefined,
+        DateUpdated: js.UndefOr[UpdateDate] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        Frameworks: js.UndefOr[PlatformFrameworks] = js.undefined,
+        Maintainer: js.UndefOr[Maintainer] = js.undefined,
+        OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
+        OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined,
+        PlatformName: js.UndefOr[PlatformName] = js.undefined,
+        PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
+        PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
+        PlatformVersion: js.UndefOr[PlatformVersion] = js.undefined,
+        ProgrammingLanguages: js.UndefOr[PlatformProgrammingLanguages] = js.undefined,
+        SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+        SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
+        SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
+    ): PlatformDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomAmiList" -> CustomAmiList.map { x =>
           x.asInstanceOf[js.Any]
@@ -3322,16 +3596,22 @@ package elasticbeanstalk {
   }
 
   object PlatformFilter {
-    def apply(Operator: js.UndefOr[PlatformFilterOperator] = js.undefined,
-              Type: js.UndefOr[PlatformFilterType] = js.undefined,
-              Values: js.UndefOr[PlatformFilterValueList] = js.undefined): PlatformFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Operator" -> Operator.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Operator: js.UndefOr[PlatformFilterOperator] = js.undefined,
+        Type: js.UndefOr[PlatformFilterType] = js.undefined,
+        Values: js.UndefOr[PlatformFilterValueList] = js.undefined
+    ): PlatformFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Operator" -> Operator.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformFilter]
     }
@@ -3347,13 +3627,18 @@ package elasticbeanstalk {
   }
 
   object PlatformFramework {
-    def apply(Name: js.UndefOr[String] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): PlatformFramework = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): PlatformFramework = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformFramework]
     }
@@ -3369,13 +3654,18 @@ package elasticbeanstalk {
   }
 
   object PlatformProgrammingLanguage {
-    def apply(Name: js.UndefOr[String] = js.undefined,
-              Version: js.UndefOr[String] = js.undefined): PlatformProgrammingLanguage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): PlatformProgrammingLanguage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlatformProgrammingLanguage]
     }
@@ -3407,14 +3697,16 @@ package elasticbeanstalk {
   }
 
   object PlatformSummary {
-    def apply(OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
-              OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined,
-              PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
-              PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
-              SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
-              SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined): PlatformSummary = {
+    def apply(
+        OperatingSystemName: js.UndefOr[OperatingSystemName] = js.undefined,
+        OperatingSystemVersion: js.UndefOr[OperatingSystemVersion] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        PlatformCategory: js.UndefOr[PlatformCategory] = js.undefined,
+        PlatformOwner: js.UndefOr[PlatformOwner] = js.undefined,
+        PlatformStatus: js.UndefOr[PlatformStatus] = js.undefined,
+        SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
+        SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
+    ): PlatformSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OperatingSystemName" -> OperatingSystemName.map { x =>
           x.asInstanceOf[js.Any]
@@ -3456,12 +3748,18 @@ package elasticbeanstalk {
   }
 
   object Queue {
-    def apply(Name: js.UndefOr[String] = js.undefined, URL: js.UndefOr[String] = js.undefined): Queue = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "URL" -> URL.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        URL: js.UndefOr[String] = js.undefined
+    ): Queue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "URL" -> URL.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Queue]
     }
@@ -3477,13 +3775,18 @@ package elasticbeanstalk {
   }
 
   object RebuildEnvironmentMessage {
-    def apply(EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): RebuildEnvironmentMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EnvironmentId" -> EnvironmentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EnvironmentName" -> EnvironmentName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): RebuildEnvironmentMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnvironmentName" -> EnvironmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebuildEnvironmentMessage]
     }
@@ -3500,9 +3803,11 @@ package elasticbeanstalk {
   }
 
   object RequestEnvironmentInfoMessage {
-    def apply(InfoType: EnvironmentInfoType,
-              EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): RequestEnvironmentInfoMessage = {
+    def apply(
+        InfoType: EnvironmentInfoType,
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): RequestEnvironmentInfoMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InfoType" -> InfoType.asInstanceOf[js.Any],
         "EnvironmentId" -> EnvironmentId.map { x =>
@@ -3526,10 +3831,14 @@ package elasticbeanstalk {
   }
 
   object ResourceQuota {
-    def apply(Maximum: js.UndefOr[BoxedInt] = js.undefined): ResourceQuota = {
-      val _fields = IndexedSeq[(String, js.Any)]("Maximum" -> Maximum.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Maximum: js.UndefOr[BoxedInt] = js.undefined
+    ): ResourceQuota = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Maximum" -> Maximum.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceQuota]
     }
@@ -3548,11 +3857,13 @@ package elasticbeanstalk {
   }
 
   object ResourceQuotas {
-    def apply(ApplicationQuota: js.UndefOr[ResourceQuota] = js.undefined,
-              ApplicationVersionQuota: js.UndefOr[ResourceQuota] = js.undefined,
-              ConfigurationTemplateQuota: js.UndefOr[ResourceQuota] = js.undefined,
-              CustomPlatformQuota: js.UndefOr[ResourceQuota] = js.undefined,
-              EnvironmentQuota: js.UndefOr[ResourceQuota] = js.undefined): ResourceQuotas = {
+    def apply(
+        ApplicationQuota: js.UndefOr[ResourceQuota] = js.undefined,
+        ApplicationVersionQuota: js.UndefOr[ResourceQuota] = js.undefined,
+        ConfigurationTemplateQuota: js.UndefOr[ResourceQuota] = js.undefined,
+        CustomPlatformQuota: js.UndefOr[ResourceQuota] = js.undefined,
+        EnvironmentQuota: js.UndefOr[ResourceQuota] = js.undefined
+    ): ResourceQuotas = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationQuota" -> ApplicationQuota.map { x =>
           x.asInstanceOf[js.Any]
@@ -3582,13 +3893,18 @@ package elasticbeanstalk {
   }
 
   object ResourceTagsDescriptionMessage {
-    def apply(ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
-              ResourceTags: js.UndefOr[TagList] = js.undefined): ResourceTagsDescriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ResourceTags" -> ResourceTags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
+        ResourceTags: js.UndefOr[TagList] = js.undefined
+    ): ResourceTagsDescriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceTags" -> ResourceTags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTagsDescriptionMessage]
     }
@@ -3604,13 +3920,18 @@ package elasticbeanstalk {
   }
 
   object RestartAppServerMessage {
-    def apply(EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): RestartAppServerMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EnvironmentId" -> EnvironmentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "EnvironmentName" -> EnvironmentName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): RestartAppServerMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentId" -> EnvironmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnvironmentName" -> EnvironmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestartAppServerMessage]
     }
@@ -3627,9 +3948,11 @@ package elasticbeanstalk {
   }
 
   object RetrieveEnvironmentInfoMessage {
-    def apply(InfoType: EnvironmentInfoType,
-              EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): RetrieveEnvironmentInfoMessage = {
+    def apply(
+        InfoType: EnvironmentInfoType,
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): RetrieveEnvironmentInfoMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InfoType" -> InfoType.asInstanceOf[js.Any],
         "EnvironmentId" -> EnvironmentId.map { x =>
@@ -3656,9 +3979,11 @@ package elasticbeanstalk {
     def apply(
         EnvironmentInfo: js.UndefOr[EnvironmentInfoDescriptionList] = js.undefined
     ): RetrieveEnvironmentInfoResultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EnvironmentInfo" -> EnvironmentInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EnvironmentInfo" -> EnvironmentInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RetrieveEnvironmentInfoResultMessage]
     }
@@ -3674,12 +3999,18 @@ package elasticbeanstalk {
   }
 
   object S3Location {
-    def apply(S3Bucket: js.UndefOr[S3Bucket] = js.undefined, S3Key: js.UndefOr[S3Key] = js.undefined): S3Location = {
-      val _fields = IndexedSeq[(String, js.Any)]("S3Bucket" -> S3Bucket.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "S3Key" -> S3Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+        S3Key: js.UndefOr[S3Key] = js.undefined
+    ): S3Location = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "S3Bucket" -> S3Bucket.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3Key" -> S3Key.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
     }
@@ -3703,16 +4034,18 @@ package elasticbeanstalk {
   }
 
   object SingleInstanceHealth {
-    def apply(ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              Causes: js.UndefOr[Causes] = js.undefined,
-              Color: js.UndefOr[String] = js.undefined,
-              Deployment: js.UndefOr[Deployment] = js.undefined,
-              HealthStatus: js.UndefOr[String] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              InstanceType: js.UndefOr[String] = js.undefined,
-              LaunchedAt: js.UndefOr[LaunchedAt] = js.undefined,
-              System: js.UndefOr[SystemStatus] = js.undefined): SingleInstanceHealth = {
+    def apply(
+        ApplicationMetrics: js.UndefOr[ApplicationMetrics] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        Causes: js.UndefOr[Causes] = js.undefined,
+        Color: js.UndefOr[String] = js.undefined,
+        Deployment: js.UndefOr[Deployment] = js.undefined,
+        HealthStatus: js.UndefOr[String] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        InstanceType: js.UndefOr[String] = js.undefined,
+        LaunchedAt: js.UndefOr[LaunchedAt] = js.undefined,
+        System: js.UndefOr[SystemStatus] = js.undefined
+    ): SingleInstanceHealth = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationMetrics" -> ApplicationMetrics.map { x =>
           x.asInstanceOf[js.Any]
@@ -3760,13 +4093,18 @@ package elasticbeanstalk {
   }
 
   object SolutionStackDescription {
-    def apply(PermittedFileTypes: js.UndefOr[SolutionStackFileTypeList] = js.undefined,
-              SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined): SolutionStackDescription = {
-      val _fields = IndexedSeq[(String, js.Any)]("PermittedFileTypes" -> PermittedFileTypes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SolutionStackName" -> SolutionStackName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PermittedFileTypes: js.UndefOr[SolutionStackFileTypeList] = js.undefined,
+        SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined
+    ): SolutionStackDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PermittedFileTypes" -> PermittedFileTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SolutionStackName" -> SolutionStackName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SolutionStackDescription]
     }
@@ -3783,9 +4121,11 @@ package elasticbeanstalk {
   }
 
   object SourceBuildInformation {
-    def apply(SourceLocation: SourceLocation,
-              SourceRepository: SourceRepository,
-              SourceType: SourceType): SourceBuildInformation = {
+    def apply(
+        SourceLocation: SourceLocation,
+        SourceRepository: SourceRepository,
+        SourceType: SourceType
+    ): SourceBuildInformation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceLocation"   -> SourceLocation.asInstanceOf[js.Any],
         "SourceRepository" -> SourceRepository.asInstanceOf[js.Any],
@@ -3806,13 +4146,18 @@ package elasticbeanstalk {
   }
 
   object SourceConfiguration {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined): SourceConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApplicationName" -> ApplicationName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TemplateName" -> TemplateName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
+    ): SourceConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplicationName" -> ApplicationName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemplateName" -> TemplateName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceConfiguration]
     }
@@ -3844,10 +4189,12 @@ package elasticbeanstalk {
   }
 
   object StatusCodes {
-    def apply(Status2xx: js.UndefOr[NullableInteger] = js.undefined,
-              Status3xx: js.UndefOr[NullableInteger] = js.undefined,
-              Status4xx: js.UndefOr[NullableInteger] = js.undefined,
-              Status5xx: js.UndefOr[NullableInteger] = js.undefined): StatusCodes = {
+    def apply(
+        Status2xx: js.UndefOr[NullableInteger] = js.undefined,
+        Status3xx: js.UndefOr[NullableInteger] = js.undefined,
+        Status4xx: js.UndefOr[NullableInteger] = js.undefined,
+        Status5xx: js.UndefOr[NullableInteger] = js.undefined
+    ): StatusCodes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Status2xx" -> Status2xx.map { x =>
           x.asInstanceOf[js.Any]
@@ -3879,10 +4226,12 @@ package elasticbeanstalk {
   }
 
   object SwapEnvironmentCNAMEsMessage {
-    def apply(DestinationEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              DestinationEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              SourceEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              SourceEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined): SwapEnvironmentCNAMEsMessage = {
+    def apply(
+        DestinationEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        DestinationEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        SourceEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        SourceEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
+    ): SwapEnvironmentCNAMEsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DestinationEnvironmentId" -> DestinationEnvironmentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3912,13 +4261,18 @@ package elasticbeanstalk {
   }
 
   object SystemStatus {
-    def apply(CPUUtilization: js.UndefOr[CPUUtilization] = js.undefined,
-              LoadAverage: js.UndefOr[LoadAverage] = js.undefined): SystemStatus = {
-      val _fields = IndexedSeq[(String, js.Any)]("CPUUtilization" -> CPUUtilization.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LoadAverage" -> LoadAverage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CPUUtilization: js.UndefOr[CPUUtilization] = js.undefined,
+        LoadAverage: js.UndefOr[LoadAverage] = js.undefined
+    ): SystemStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CPUUtilization" -> CPUUtilization.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LoadAverage" -> LoadAverage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SystemStatus]
     }
@@ -3934,12 +4288,18 @@ package elasticbeanstalk {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[TagKey] = js.undefined, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -3991,10 +4351,14 @@ package elasticbeanstalk {
   }
 
   object Trigger {
-    def apply(Name: js.UndefOr[ResourceId] = js.undefined): Trigger = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[ResourceId] = js.undefined
+    ): Trigger = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Trigger]
     }
@@ -4010,8 +4374,10 @@ package elasticbeanstalk {
   }
 
   object UpdateApplicationMessage {
-    def apply(ApplicationName: ApplicationName,
-              Description: js.UndefOr[Description] = js.undefined): UpdateApplicationMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        Description: js.UndefOr[Description] = js.undefined
+    ): UpdateApplicationMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "Description" -> Description.map { x =>
@@ -4054,9 +4420,11 @@ package elasticbeanstalk {
   }
 
   object UpdateApplicationVersionMessage {
-    def apply(ApplicationName: ApplicationName,
-              VersionLabel: VersionLabel,
-              Description: js.UndefOr[Description] = js.undefined): UpdateApplicationVersionMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        VersionLabel: VersionLabel,
+        Description: js.UndefOr[Description] = js.undefined
+    ): UpdateApplicationVersionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any],
@@ -4082,11 +4450,13 @@ package elasticbeanstalk {
   }
 
   object UpdateConfigurationTemplateMessage {
-    def apply(ApplicationName: ApplicationName,
-              TemplateName: ConfigurationTemplateName,
-              Description: js.UndefOr[Description] = js.undefined,
-              OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
-              OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined): UpdateConfigurationTemplateMessage = {
+    def apply(
+        ApplicationName: ApplicationName,
+        TemplateName: ConfigurationTemplateName,
+        Description: js.UndefOr[Description] = js.undefined,
+        OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+        OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined
+    ): UpdateConfigurationTemplateMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TemplateName"    -> TemplateName.asInstanceOf[js.Any],
@@ -4125,18 +4495,20 @@ package elasticbeanstalk {
   }
 
   object UpdateEnvironmentMessage {
-    def apply(ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
-              Description: js.UndefOr[Description] = js.undefined,
-              EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
-              GroupName: js.UndefOr[GroupName] = js.undefined,
-              OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
-              OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
-              PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
-              SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
-              TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
-              Tier: js.UndefOr[EnvironmentTier] = js.undefined,
-              VersionLabel: js.UndefOr[VersionLabel] = js.undefined): UpdateEnvironmentMessage = {
+    def apply(
+        ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
+        GroupName: js.UndefOr[GroupName] = js.undefined,
+        OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
+        OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined,
+        PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
+        SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
+        TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
+        Tier: js.UndefOr[EnvironmentTier] = js.undefined,
+        VersionLabel: js.UndefOr[VersionLabel] = js.undefined
+    ): UpdateEnvironmentMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationName" -> ApplicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4188,9 +4560,11 @@ package elasticbeanstalk {
   }
 
   object UpdateTagsForResourceMessage {
-    def apply(ResourceArn: ResourceArn,
-              TagsToAdd: js.UndefOr[TagList] = js.undefined,
-              TagsToRemove: js.UndefOr[TagKeyList] = js.undefined): UpdateTagsForResourceMessage = {
+    def apply(
+        ResourceArn: ResourceArn,
+        TagsToAdd: js.UndefOr[TagList] = js.undefined,
+        TagsToRemove: js.UndefOr[TagKeyList] = js.undefined
+    ): UpdateTagsForResourceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsToAdd" -> TagsToAdd.map { x =>
@@ -4250,10 +4624,12 @@ package elasticbeanstalk {
   }
 
   object ValidationMessage {
-    def apply(Message: js.UndefOr[ValidationMessageString] = js.undefined,
-              Namespace: js.UndefOr[OptionNamespace] = js.undefined,
-              OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
-              Severity: js.UndefOr[ValidationSeverity] = js.undefined): ValidationMessage = {
+    def apply(
+        Message: js.UndefOr[ValidationMessageString] = js.undefined,
+        Namespace: js.UndefOr[OptionNamespace] = js.undefined,
+        OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
+        Severity: js.UndefOr[ValidationSeverity] = js.undefined
+    ): ValidationMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Message" -> Message.map { x =>
           x.asInstanceOf[js.Any]

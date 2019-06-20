@@ -221,12 +221,14 @@ package wafregional {
   }
 
   object ActivatedRule {
-    def apply(Priority: RulePriority,
-              RuleId: ResourceId,
-              Action: js.UndefOr[WafAction] = js.undefined,
-              ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined,
-              OverrideAction: js.UndefOr[WafOverrideAction] = js.undefined,
-              Type: js.UndefOr[WafRuleType] = js.undefined): ActivatedRule = {
+    def apply(
+        Priority: RulePriority,
+        RuleId: ResourceId,
+        Action: js.UndefOr[WafAction] = js.undefined,
+        ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined,
+        OverrideAction: js.UndefOr[WafOverrideAction] = js.undefined,
+        Type: js.UndefOr[WafRuleType] = js.undefined
+    ): ActivatedRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Priority" -> Priority.asInstanceOf[js.Any],
         "RuleId"   -> RuleId.asInstanceOf[js.Any],
@@ -255,7 +257,10 @@ package wafregional {
   }
 
   object AssociateWebACLRequest {
-    def apply(ResourceArn: ResourceArn, WebACLId: ResourceId): AssociateWebACLRequest = {
+    def apply(
+        ResourceArn: ResourceArn,
+        WebACLId: ResourceId
+    ): AssociateWebACLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
@@ -269,8 +274,10 @@ package wafregional {
   trait AssociateWebACLResponse extends js.Object {}
 
   object AssociateWebACLResponse {
-    def apply(): AssociateWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AssociateWebACLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateWebACLResponse]
     }
@@ -288,9 +295,11 @@ package wafregional {
   }
 
   object ByteMatchSet {
-    def apply(ByteMatchSetId: ResourceId,
-              ByteMatchTuples: ByteMatchTuples,
-              Name: js.UndefOr[ResourceName] = js.undefined): ByteMatchSet = {
+    def apply(
+        ByteMatchSetId: ResourceId,
+        ByteMatchTuples: ByteMatchTuples,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): ByteMatchSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ByteMatchSetId"  -> ByteMatchSetId.asInstanceOf[js.Any],
         "ByteMatchTuples" -> ByteMatchTuples.asInstanceOf[js.Any],
@@ -313,7 +322,10 @@ package wafregional {
   }
 
   object ByteMatchSetSummary {
-    def apply(ByteMatchSetId: ResourceId, Name: ResourceName): ByteMatchSetSummary = {
+    def apply(
+        ByteMatchSetId: ResourceId,
+        Name: ResourceName
+    ): ByteMatchSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any]
@@ -333,7 +345,10 @@ package wafregional {
   }
 
   object ByteMatchSetUpdate {
-    def apply(Action: ChangeAction, ByteMatchTuple: ByteMatchTuple): ByteMatchSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        ByteMatchTuple: ByteMatchTuple
+    ): ByteMatchSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"         -> Action.asInstanceOf[js.Any],
         "ByteMatchTuple" -> ByteMatchTuple.asInstanceOf[js.Any]
@@ -355,10 +370,12 @@ package wafregional {
   }
 
   object ByteMatchTuple {
-    def apply(FieldToMatch: FieldToMatch,
-              PositionalConstraint: PositionalConstraint,
-              TargetString: ByteMatchTargetString,
-              TextTransformation: TextTransformation): ByteMatchTuple = {
+    def apply(
+        FieldToMatch: FieldToMatch,
+        PositionalConstraint: PositionalConstraint,
+        TargetString: ByteMatchTargetString,
+        TextTransformation: TextTransformation
+    ): ByteMatchTuple = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldToMatch"         -> FieldToMatch.asInstanceOf[js.Any],
         "PositionalConstraint" -> PositionalConstraint.asInstanceOf[js.Any],
@@ -403,7 +420,10 @@ package wafregional {
   }
 
   object CreateByteMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateByteMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateByteMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -420,13 +440,18 @@ package wafregional {
   }
 
   object CreateByteMatchSetResponse {
-    def apply(ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined,
-              ChangeToken: js.UndefOr[ChangeToken] = js.undefined): CreateByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ByteMatchSet" -> ByteMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined,
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): CreateByteMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ByteMatchSet" -> ByteMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateByteMatchSetResponse]
     }
@@ -439,7 +464,10 @@ package wafregional {
   }
 
   object CreateGeoMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateGeoMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateGeoMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -456,13 +484,18 @@ package wafregional {
   }
 
   object CreateGeoMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined): CreateGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "GeoMatchSet" -> GeoMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
+    ): CreateGeoMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GeoMatchSet" -> GeoMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGeoMatchSetResponse]
     }
@@ -475,7 +508,10 @@ package wafregional {
   }
 
   object CreateIPSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateIPSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateIPSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -492,13 +528,18 @@ package wafregional {
   }
 
   object CreateIPSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              IPSet: js.UndefOr[IPSet] = js.undefined): CreateIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "IPSet" -> IPSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        IPSet: js.UndefOr[IPSet] = js.undefined
+    ): CreateIPSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IPSet" -> IPSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIPSetResponse]
     }
@@ -514,11 +555,13 @@ package wafregional {
   }
 
   object CreateRateBasedRuleRequest {
-    def apply(ChangeToken: ChangeToken,
-              MetricName: MetricName,
-              Name: ResourceName,
-              RateKey: RateKey,
-              RateLimit: RateLimit): CreateRateBasedRuleRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        MetricName: MetricName,
+        Name: ResourceName,
+        RateKey: RateKey,
+        RateLimit: RateLimit
+    ): CreateRateBasedRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
@@ -538,13 +581,18 @@ package wafregional {
   }
 
   object CreateRateBasedRuleResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              Rule: js.UndefOr[RateBasedRule] = js.undefined): CreateRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Rule" -> Rule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        Rule: js.UndefOr[RateBasedRule] = js.undefined
+    ): CreateRateBasedRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Rule" -> Rule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRateBasedRuleResponse]
     }
@@ -557,7 +605,10 @@ package wafregional {
   }
 
   object CreateRegexMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateRegexMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateRegexMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -574,13 +625,18 @@ package wafregional {
   }
 
   object CreateRegexMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined): CreateRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RegexMatchSet" -> RegexMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
+    ): CreateRegexMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RegexMatchSet" -> RegexMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRegexMatchSetResponse]
     }
@@ -593,7 +649,10 @@ package wafregional {
   }
 
   object CreateRegexPatternSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateRegexPatternSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateRegexPatternSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -610,13 +669,18 @@ package wafregional {
   }
 
   object CreateRegexPatternSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined): CreateRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RegexPatternSet" -> RegexPatternSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
+    ): CreateRegexPatternSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RegexPatternSet" -> RegexPatternSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRegexPatternSetResponse]
     }
@@ -630,7 +694,11 @@ package wafregional {
   }
 
   object CreateRuleGroupRequest {
-    def apply(ChangeToken: ChangeToken, MetricName: MetricName, Name: ResourceName): CreateRuleGroupRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        MetricName: MetricName,
+        Name: ResourceName
+    ): CreateRuleGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
@@ -648,13 +716,18 @@ package wafregional {
   }
 
   object CreateRuleGroupResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              RuleGroup: js.UndefOr[RuleGroup] = js.undefined): CreateRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RuleGroup" -> RuleGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        RuleGroup: js.UndefOr[RuleGroup] = js.undefined
+    ): CreateRuleGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RuleGroup" -> RuleGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRuleGroupResponse]
     }
@@ -668,7 +741,11 @@ package wafregional {
   }
 
   object CreateRuleRequest {
-    def apply(ChangeToken: ChangeToken, MetricName: MetricName, Name: ResourceName): CreateRuleRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        MetricName: MetricName,
+        Name: ResourceName
+    ): CreateRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
@@ -686,13 +763,18 @@ package wafregional {
   }
 
   object CreateRuleResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              Rule: js.UndefOr[Rule] = js.undefined): CreateRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Rule" -> Rule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        Rule: js.UndefOr[Rule] = js.undefined
+    ): CreateRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Rule" -> Rule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRuleResponse]
     }
@@ -705,7 +787,10 @@ package wafregional {
   }
 
   object CreateSizeConstraintSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateSizeConstraintSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateSizeConstraintSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -722,13 +807,18 @@ package wafregional {
   }
 
   object CreateSizeConstraintSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined): CreateSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SizeConstraintSet" -> SizeConstraintSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
+    ): CreateSizeConstraintSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SizeConstraintSet" -> SizeConstraintSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSizeConstraintSetResponse]
     }
@@ -744,7 +834,10 @@ package wafregional {
   }
 
   object CreateSqlInjectionMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateSqlInjectionMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateSqlInjectionMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -768,11 +861,14 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
     ): CreateSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SqlInjectionMatchSet" -> SqlInjectionMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SqlInjectionMatchSet" -> SqlInjectionMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSqlInjectionMatchSetResponse]
     }
@@ -787,10 +883,12 @@ package wafregional {
   }
 
   object CreateWebACLRequest {
-    def apply(ChangeToken: ChangeToken,
-              DefaultAction: WafAction,
-              MetricName: MetricName,
-              Name: ResourceName): CreateWebACLRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        DefaultAction: WafAction,
+        MetricName: MetricName,
+        Name: ResourceName
+    ): CreateWebACLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
@@ -809,13 +907,18 @@ package wafregional {
   }
 
   object CreateWebACLResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              WebACL: js.UndefOr[WebACL] = js.undefined): CreateWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WebACL" -> WebACL.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        WebACL: js.UndefOr[WebACL] = js.undefined
+    ): CreateWebACLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WebACL" -> WebACL.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWebACLResponse]
     }
@@ -831,7 +934,10 @@ package wafregional {
   }
 
   object CreateXssMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, Name: ResourceName): CreateXssMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Name: ResourceName
+    ): CreateXssMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -851,13 +957,18 @@ package wafregional {
   }
 
   object CreateXssMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
-              XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined): CreateXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "XssMatchSet" -> XssMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
+        XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
+    ): CreateXssMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "XssMatchSet" -> XssMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateXssMatchSetResponse]
     }
@@ -870,7 +981,10 @@ package wafregional {
   }
 
   object DeleteByteMatchSetRequest {
-    def apply(ByteMatchSetId: ResourceId, ChangeToken: ChangeToken): DeleteByteMatchSetRequest = {
+    def apply(
+        ByteMatchSetId: ResourceId,
+        ChangeToken: ChangeToken
+    ): DeleteByteMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any]
@@ -886,10 +1000,14 @@ package wafregional {
   }
 
   object DeleteByteMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteByteMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteByteMatchSetResponse]
     }
@@ -902,7 +1020,10 @@ package wafregional {
   }
 
   object DeleteGeoMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, GeoMatchSetId: ResourceId): DeleteGeoMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        GeoMatchSetId: ResourceId
+    ): DeleteGeoMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
@@ -918,10 +1039,14 @@ package wafregional {
   }
 
   object DeleteGeoMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteGeoMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGeoMatchSetResponse]
     }
@@ -934,7 +1059,10 @@ package wafregional {
   }
 
   object DeleteIPSetRequest {
-    def apply(ChangeToken: ChangeToken, IPSetId: ResourceId): DeleteIPSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        IPSetId: ResourceId
+    ): DeleteIPSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "IPSetId"     -> IPSetId.asInstanceOf[js.Any]
@@ -950,10 +1078,14 @@ package wafregional {
   }
 
   object DeleteIPSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteIPSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIPSetResponse]
     }
@@ -965,9 +1097,12 @@ package wafregional {
   }
 
   object DeleteLoggingConfigurationRequest {
-    def apply(ResourceArn: ResourceArn): DeleteLoggingConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArn
+    ): DeleteLoggingConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoggingConfigurationRequest]
     }
@@ -977,8 +1112,10 @@ package wafregional {
   trait DeleteLoggingConfigurationResponse extends js.Object {}
 
   object DeleteLoggingConfigurationResponse {
-    def apply(): DeleteLoggingConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteLoggingConfigurationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLoggingConfigurationResponse]
     }
@@ -990,9 +1127,12 @@ package wafregional {
   }
 
   object DeletePermissionPolicyRequest {
-    def apply(ResourceArn: ResourceArn): DeletePermissionPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArn
+    ): DeletePermissionPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePermissionPolicyRequest]
     }
@@ -1002,8 +1142,10 @@ package wafregional {
   trait DeletePermissionPolicyResponse extends js.Object {}
 
   object DeletePermissionPolicyResponse {
-    def apply(): DeletePermissionPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeletePermissionPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePermissionPolicyResponse]
     }
@@ -1016,7 +1158,10 @@ package wafregional {
   }
 
   object DeleteRateBasedRuleRequest {
-    def apply(ChangeToken: ChangeToken, RuleId: ResourceId): DeleteRateBasedRuleRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RuleId: ResourceId
+    ): DeleteRateBasedRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any]
@@ -1032,10 +1177,14 @@ package wafregional {
   }
 
   object DeleteRateBasedRuleResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteRateBasedRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRateBasedRuleResponse]
     }
@@ -1048,7 +1197,10 @@ package wafregional {
   }
 
   object DeleteRegexMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, RegexMatchSetId: ResourceId): DeleteRegexMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RegexMatchSetId: ResourceId
+    ): DeleteRegexMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
@@ -1064,10 +1216,14 @@ package wafregional {
   }
 
   object DeleteRegexMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteRegexMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegexMatchSetResponse]
     }
@@ -1080,7 +1236,10 @@ package wafregional {
   }
 
   object DeleteRegexPatternSetRequest {
-    def apply(ChangeToken: ChangeToken, RegexPatternSetId: ResourceId): DeleteRegexPatternSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RegexPatternSetId: ResourceId
+    ): DeleteRegexPatternSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
@@ -1096,10 +1255,14 @@ package wafregional {
   }
 
   object DeleteRegexPatternSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteRegexPatternSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRegexPatternSetResponse]
     }
@@ -1112,7 +1275,10 @@ package wafregional {
   }
 
   object DeleteRuleGroupRequest {
-    def apply(ChangeToken: ChangeToken, RuleGroupId: ResourceId): DeleteRuleGroupRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RuleGroupId: ResourceId
+    ): DeleteRuleGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
@@ -1128,10 +1294,14 @@ package wafregional {
   }
 
   object DeleteRuleGroupResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteRuleGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleGroupResponse]
     }
@@ -1144,7 +1314,10 @@ package wafregional {
   }
 
   object DeleteRuleRequest {
-    def apply(ChangeToken: ChangeToken, RuleId: ResourceId): DeleteRuleRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RuleId: ResourceId
+    ): DeleteRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any]
@@ -1160,10 +1333,14 @@ package wafregional {
   }
 
   object DeleteRuleResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleResponse]
     }
@@ -1176,7 +1353,10 @@ package wafregional {
   }
 
   object DeleteSizeConstraintSetRequest {
-    def apply(ChangeToken: ChangeToken, SizeConstraintSetId: ResourceId): DeleteSizeConstraintSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        SizeConstraintSetId: ResourceId
+    ): DeleteSizeConstraintSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
@@ -1192,10 +1372,14 @@ package wafregional {
   }
 
   object DeleteSizeConstraintSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteSizeConstraintSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSizeConstraintSetResponse]
     }
@@ -1211,7 +1395,10 @@ package wafregional {
   }
 
   object DeleteSqlInjectionMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, SqlInjectionMatchSetId: ResourceId): DeleteSqlInjectionMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        SqlInjectionMatchSetId: ResourceId
+    ): DeleteSqlInjectionMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
@@ -1230,10 +1417,14 @@ package wafregional {
   }
 
   object DeleteSqlInjectionMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteSqlInjectionMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSqlInjectionMatchSetResponse]
     }
@@ -1246,7 +1437,10 @@ package wafregional {
   }
 
   object DeleteWebACLRequest {
-    def apply(ChangeToken: ChangeToken, WebACLId: ResourceId): DeleteWebACLRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        WebACLId: ResourceId
+    ): DeleteWebACLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
@@ -1262,10 +1456,14 @@ package wafregional {
   }
 
   object DeleteWebACLResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteWebACLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWebACLResponse]
     }
@@ -1281,7 +1479,10 @@ package wafregional {
   }
 
   object DeleteXssMatchSetRequest {
-    def apply(ChangeToken: ChangeToken, XssMatchSetId: ResourceId): DeleteXssMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        XssMatchSetId: ResourceId
+    ): DeleteXssMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
@@ -1300,10 +1501,14 @@ package wafregional {
   }
 
   object DeleteXssMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): DeleteXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): DeleteXssMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteXssMatchSetResponse]
     }
@@ -1315,9 +1520,12 @@ package wafregional {
   }
 
   object DisassociateWebACLRequest {
-    def apply(ResourceArn: ResourceArn): DisassociateWebACLRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArn
+    ): DisassociateWebACLRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateWebACLRequest]
     }
@@ -1327,8 +1535,10 @@ package wafregional {
   trait DisassociateWebACLResponse extends js.Object {}
 
   object DisassociateWebACLResponse {
-    def apply(): DisassociateWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateWebACLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateWebACLResponse]
     }
@@ -1343,9 +1553,12 @@ package wafregional {
   }
 
   object ExcludedRule {
-    def apply(RuleId: ResourceId): ExcludedRule = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("RuleId" -> RuleId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleId: ResourceId
+    ): ExcludedRule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExcludedRule]
     }
@@ -1361,10 +1574,16 @@ package wafregional {
   }
 
   object FieldToMatch {
-    def apply(Type: MatchFieldType, Data: js.UndefOr[MatchFieldData] = js.undefined): FieldToMatch = {
-      val _fields = IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any], "Data" -> Data.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Type: MatchFieldType,
+        Data: js.UndefOr[MatchFieldData] = js.undefined
+    ): FieldToMatch = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FieldToMatch]
     }
@@ -1380,10 +1599,14 @@ package wafregional {
   }
 
   object GeoMatchConstraint {
-    def apply(Type: GeoMatchConstraintType, Value: GeoMatchConstraintValue): GeoMatchConstraint = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Type: GeoMatchConstraintType,
+        Value: GeoMatchConstraintValue
+    ): GeoMatchConstraint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type"  -> Type.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GeoMatchConstraint]
     }
@@ -1910,9 +2133,11 @@ package wafregional {
   }
 
   object GeoMatchSet {
-    def apply(GeoMatchConstraints: GeoMatchConstraints,
-              GeoMatchSetId: ResourceId,
-              Name: js.UndefOr[ResourceName] = js.undefined): GeoMatchSet = {
+    def apply(
+        GeoMatchConstraints: GeoMatchConstraints,
+        GeoMatchSetId: ResourceId,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): GeoMatchSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GeoMatchConstraints" -> GeoMatchConstraints.asInstanceOf[js.Any],
         "GeoMatchSetId"       -> GeoMatchSetId.asInstanceOf[js.Any],
@@ -1935,7 +2160,10 @@ package wafregional {
   }
 
   object GeoMatchSetSummary {
-    def apply(GeoMatchSetId: ResourceId, Name: ResourceName): GeoMatchSetSummary = {
+    def apply(
+        GeoMatchSetId: ResourceId,
+        Name: ResourceName
+    ): GeoMatchSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any]
@@ -1955,7 +2183,10 @@ package wafregional {
   }
 
   object GeoMatchSetUpdate {
-    def apply(Action: ChangeAction, GeoMatchConstraint: GeoMatchConstraint): GeoMatchSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        GeoMatchConstraint: GeoMatchConstraint
+    ): GeoMatchSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"             -> Action.asInstanceOf[js.Any],
         "GeoMatchConstraint" -> GeoMatchConstraint.asInstanceOf[js.Any]
@@ -1971,9 +2202,12 @@ package wafregional {
   }
 
   object GetByteMatchSetRequest {
-    def apply(ByteMatchSetId: ResourceId): GetByteMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ByteMatchSetId: ResourceId
+    ): GetByteMatchSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetByteMatchSetRequest]
     }
@@ -1985,10 +2219,14 @@ package wafregional {
   }
 
   object GetByteMatchSetResponse {
-    def apply(ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined): GetByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ByteMatchSet" -> ByteMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined
+    ): GetByteMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ByteMatchSet" -> ByteMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetByteMatchSetResponse]
     }
@@ -1998,8 +2236,10 @@ package wafregional {
   trait GetChangeTokenRequest extends js.Object {}
 
   object GetChangeTokenRequest {
-    def apply(): GetChangeTokenRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetChangeTokenRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenRequest]
     }
@@ -2011,10 +2251,14 @@ package wafregional {
   }
 
   object GetChangeTokenResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): GetChangeTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): GetChangeTokenResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenResponse]
     }
@@ -2026,9 +2270,12 @@ package wafregional {
   }
 
   object GetChangeTokenStatusRequest {
-    def apply(ChangeToken: ChangeToken): GetChangeTokenStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: ChangeToken
+    ): GetChangeTokenStatusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenStatusRequest]
     }
@@ -2040,10 +2287,14 @@ package wafregional {
   }
 
   object GetChangeTokenStatusResponse {
-    def apply(ChangeTokenStatus: js.UndefOr[ChangeTokenStatus] = js.undefined): GetChangeTokenStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeTokenStatus" -> ChangeTokenStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeTokenStatus: js.UndefOr[ChangeTokenStatus] = js.undefined
+    ): GetChangeTokenStatusResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeTokenStatus" -> ChangeTokenStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChangeTokenStatusResponse]
     }
@@ -2055,9 +2306,12 @@ package wafregional {
   }
 
   object GetGeoMatchSetRequest {
-    def apply(GeoMatchSetId: ResourceId): GetGeoMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GeoMatchSetId: ResourceId
+    ): GetGeoMatchSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGeoMatchSetRequest]
     }
@@ -2069,10 +2323,14 @@ package wafregional {
   }
 
   object GetGeoMatchSetResponse {
-    def apply(GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined): GetGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("GeoMatchSet" -> GeoMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
+    ): GetGeoMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GeoMatchSet" -> GeoMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGeoMatchSetResponse]
     }
@@ -2084,9 +2342,12 @@ package wafregional {
   }
 
   object GetIPSetRequest {
-    def apply(IPSetId: ResourceId): GetIPSetRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("IPSetId" -> IPSetId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IPSetId: ResourceId
+    ): GetIPSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IPSetId" -> IPSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIPSetRequest]
     }
@@ -2098,10 +2359,14 @@ package wafregional {
   }
 
   object GetIPSetResponse {
-    def apply(IPSet: js.UndefOr[IPSet] = js.undefined): GetIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IPSet" -> IPSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IPSet: js.UndefOr[IPSet] = js.undefined
+    ): GetIPSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IPSet" -> IPSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIPSetResponse]
     }
@@ -2113,9 +2378,12 @@ package wafregional {
   }
 
   object GetLoggingConfigurationRequest {
-    def apply(ResourceArn: ResourceArn): GetLoggingConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArn
+    ): GetLoggingConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggingConfigurationRequest]
     }
@@ -2130,9 +2398,11 @@ package wafregional {
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): GetLoggingConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("LoggingConfiguration" -> LoggingConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoggingConfiguration" -> LoggingConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetLoggingConfigurationResponse]
     }
@@ -2144,9 +2414,12 @@ package wafregional {
   }
 
   object GetPermissionPolicyRequest {
-    def apply(ResourceArn: ResourceArn): GetPermissionPolicyRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArn
+    ): GetPermissionPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPermissionPolicyRequest]
     }
@@ -2158,10 +2431,14 @@ package wafregional {
   }
 
   object GetPermissionPolicyResponse {
-    def apply(Policy: js.UndefOr[PolicyString] = js.undefined): GetPermissionPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Policy" -> Policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Policy: js.UndefOr[PolicyString] = js.undefined
+    ): GetPermissionPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPermissionPolicyResponse]
     }
@@ -2174,12 +2451,16 @@ package wafregional {
   }
 
   object GetRateBasedRuleManagedKeysRequest {
-    def apply(RuleId: ResourceId,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): GetRateBasedRuleManagedKeysRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("RuleId" -> RuleId.asInstanceOf[js.Any], "NextMarker" -> NextMarker.map { x =>
+    def apply(
+        RuleId: ResourceId,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): GetRateBasedRuleManagedKeysRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleId" -> RuleId.asInstanceOf[js.Any],
+        "NextMarker" -> NextMarker.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleManagedKeysRequest]
     }
@@ -2192,13 +2473,18 @@ package wafregional {
   }
 
   object GetRateBasedRuleManagedKeysResponse {
-    def apply(ManagedKeys: js.UndefOr[ManagedKeys] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): GetRateBasedRuleManagedKeysResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ManagedKeys" -> ManagedKeys.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ManagedKeys: js.UndefOr[ManagedKeys] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): GetRateBasedRuleManagedKeysResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ManagedKeys" -> ManagedKeys.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleManagedKeysResponse]
     }
@@ -2210,9 +2496,12 @@ package wafregional {
   }
 
   object GetRateBasedRuleRequest {
-    def apply(RuleId: ResourceId): GetRateBasedRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("RuleId" -> RuleId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleId: ResourceId
+    ): GetRateBasedRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleRequest]
     }
@@ -2224,10 +2513,14 @@ package wafregional {
   }
 
   object GetRateBasedRuleResponse {
-    def apply(Rule: js.UndefOr[RateBasedRule] = js.undefined): GetRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Rule" -> Rule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Rule: js.UndefOr[RateBasedRule] = js.undefined
+    ): GetRateBasedRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Rule" -> Rule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRateBasedRuleResponse]
     }
@@ -2239,9 +2532,12 @@ package wafregional {
   }
 
   object GetRegexMatchSetRequest {
-    def apply(RegexMatchSetId: ResourceId): GetRegexMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegexMatchSetId: ResourceId
+    ): GetRegexMatchSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexMatchSetRequest]
     }
@@ -2253,10 +2549,14 @@ package wafregional {
   }
 
   object GetRegexMatchSetResponse {
-    def apply(RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined): GetRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegexMatchSet" -> RegexMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
+    ): GetRegexMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegexMatchSet" -> RegexMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexMatchSetResponse]
     }
@@ -2268,9 +2568,12 @@ package wafregional {
   }
 
   object GetRegexPatternSetRequest {
-    def apply(RegexPatternSetId: ResourceId): GetRegexPatternSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegexPatternSetId: ResourceId
+    ): GetRegexPatternSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexPatternSetRequest]
     }
@@ -2282,10 +2585,14 @@ package wafregional {
   }
 
   object GetRegexPatternSetResponse {
-    def apply(RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined): GetRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegexPatternSet" -> RegexPatternSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
+    ): GetRegexPatternSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegexPatternSet" -> RegexPatternSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRegexPatternSetResponse]
     }
@@ -2297,9 +2604,12 @@ package wafregional {
   }
 
   object GetRuleGroupRequest {
-    def apply(RuleGroupId: ResourceId): GetRuleGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleGroupId: ResourceId
+    ): GetRuleGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleGroupRequest]
     }
@@ -2311,10 +2621,14 @@ package wafregional {
   }
 
   object GetRuleGroupResponse {
-    def apply(RuleGroup: js.UndefOr[RuleGroup] = js.undefined): GetRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("RuleGroup" -> RuleGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleGroup: js.UndefOr[RuleGroup] = js.undefined
+    ): GetRuleGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleGroup" -> RuleGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleGroupResponse]
     }
@@ -2326,9 +2640,12 @@ package wafregional {
   }
 
   object GetRuleRequest {
-    def apply(RuleId: ResourceId): GetRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("RuleId" -> RuleId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleId: ResourceId
+    ): GetRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleRequest]
     }
@@ -2340,10 +2657,14 @@ package wafregional {
   }
 
   object GetRuleResponse {
-    def apply(Rule: js.UndefOr[Rule] = js.undefined): GetRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Rule" -> Rule.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Rule: js.UndefOr[Rule] = js.undefined
+    ): GetRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Rule" -> Rule.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRuleResponse]
     }
@@ -2358,10 +2679,12 @@ package wafregional {
   }
 
   object GetSampledRequestsRequest {
-    def apply(MaxItems: GetSampledRequestsMaxItems,
-              RuleId: ResourceId,
-              TimeWindow: TimeWindow,
-              WebAclId: ResourceId): GetSampledRequestsRequest = {
+    def apply(
+        MaxItems: GetSampledRequestsMaxItems,
+        RuleId: ResourceId,
+        TimeWindow: TimeWindow,
+        WebAclId: ResourceId
+    ): GetSampledRequestsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxItems"   -> MaxItems.asInstanceOf[js.Any],
         "RuleId"     -> RuleId.asInstanceOf[js.Any],
@@ -2381,9 +2704,11 @@ package wafregional {
   }
 
   object GetSampledRequestsResponse {
-    def apply(PopulationSize: js.UndefOr[PopulationSize] = js.undefined,
-              SampledRequests: js.UndefOr[SampledHTTPRequests] = js.undefined,
-              TimeWindow: js.UndefOr[TimeWindow] = js.undefined): GetSampledRequestsResponse = {
+    def apply(
+        PopulationSize: js.UndefOr[PopulationSize] = js.undefined,
+        SampledRequests: js.UndefOr[SampledHTTPRequests] = js.undefined,
+        TimeWindow: js.UndefOr[TimeWindow] = js.undefined
+    ): GetSampledRequestsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PopulationSize" -> PopulationSize.map { x =>
           x.asInstanceOf[js.Any]
@@ -2406,9 +2731,12 @@ package wafregional {
   }
 
   object GetSizeConstraintSetRequest {
-    def apply(SizeConstraintSetId: ResourceId): GetSizeConstraintSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SizeConstraintSetId: ResourceId
+    ): GetSizeConstraintSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSizeConstraintSetRequest]
     }
@@ -2420,10 +2748,14 @@ package wafregional {
   }
 
   object GetSizeConstraintSetResponse {
-    def apply(SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined): GetSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SizeConstraintSet" -> SizeConstraintSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
+    ): GetSizeConstraintSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SizeConstraintSet" -> SizeConstraintSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSizeConstraintSetResponse]
     }
@@ -2438,10 +2770,12 @@ package wafregional {
   }
 
   object GetSqlInjectionMatchSetRequest {
-    def apply(SqlInjectionMatchSetId: ResourceId): GetSqlInjectionMatchSetRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SqlInjectionMatchSetId: ResourceId
+    ): GetSqlInjectionMatchSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSqlInjectionMatchSetRequest]
     }
@@ -2459,9 +2793,11 @@ package wafregional {
     def apply(
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
     ): GetSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SqlInjectionMatchSet" -> SqlInjectionMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SqlInjectionMatchSet" -> SqlInjectionMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSqlInjectionMatchSetResponse]
     }
@@ -2473,9 +2809,12 @@ package wafregional {
   }
 
   object GetWebACLForResourceRequest {
-    def apply(ResourceArn: ResourceArn): GetWebACLForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArn
+    ): GetWebACLForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWebACLForResourceRequest]
     }
@@ -2487,10 +2826,14 @@ package wafregional {
   }
 
   object GetWebACLForResourceResponse {
-    def apply(WebACLSummary: js.UndefOr[WebACLSummary] = js.undefined): GetWebACLForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("WebACLSummary" -> WebACLSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WebACLSummary: js.UndefOr[WebACLSummary] = js.undefined
+    ): GetWebACLForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WebACLSummary" -> WebACLSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWebACLForResourceResponse]
     }
@@ -2502,9 +2845,12 @@ package wafregional {
   }
 
   object GetWebACLRequest {
-    def apply(WebACLId: ResourceId): GetWebACLRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("WebACLId" -> WebACLId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WebACLId: ResourceId
+    ): GetWebACLRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWebACLRequest]
     }
@@ -2516,10 +2862,14 @@ package wafregional {
   }
 
   object GetWebACLResponse {
-    def apply(WebACL: js.UndefOr[WebACL] = js.undefined): GetWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("WebACL" -> WebACL.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WebACL: js.UndefOr[WebACL] = js.undefined
+    ): GetWebACLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WebACL" -> WebACL.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetWebACLResponse]
     }
@@ -2534,9 +2884,12 @@ package wafregional {
   }
 
   object GetXssMatchSetRequest {
-    def apply(XssMatchSetId: ResourceId): GetXssMatchSetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        XssMatchSetId: ResourceId
+    ): GetXssMatchSetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetXssMatchSetRequest]
     }
@@ -2551,10 +2904,14 @@ package wafregional {
   }
 
   object GetXssMatchSetResponse {
-    def apply(XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined): GetXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("XssMatchSet" -> XssMatchSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
+    ): GetXssMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "XssMatchSet" -> XssMatchSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetXssMatchSetResponse]
     }
@@ -2570,13 +2927,18 @@ package wafregional {
   }
 
   object HTTPHeader {
-    def apply(Name: js.UndefOr[HeaderName] = js.undefined,
-              Value: js.UndefOr[HeaderValue] = js.undefined): HTTPHeader = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[HeaderName] = js.undefined,
+        Value: js.UndefOr[HeaderValue] = js.undefined
+    ): HTTPHeader = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HTTPHeader]
     }
@@ -2596,12 +2958,14 @@ package wafregional {
   }
 
   object HTTPRequest {
-    def apply(ClientIP: js.UndefOr[IPString] = js.undefined,
-              Country: js.UndefOr[Country] = js.undefined,
-              HTTPVersion: js.UndefOr[HTTPVersion] = js.undefined,
-              Headers: js.UndefOr[HTTPHeaders] = js.undefined,
-              Method: js.UndefOr[HTTPMethod] = js.undefined,
-              URI: js.UndefOr[URIString] = js.undefined): HTTPRequest = {
+    def apply(
+        ClientIP: js.UndefOr[IPString] = js.undefined,
+        Country: js.UndefOr[Country] = js.undefined,
+        HTTPVersion: js.UndefOr[HTTPVersion] = js.undefined,
+        Headers: js.UndefOr[HTTPHeaders] = js.undefined,
+        Method: js.UndefOr[HTTPMethod] = js.undefined,
+        URI: js.UndefOr[URIString] = js.undefined
+    ): HTTPRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientIP" -> ClientIP.map { x =>
           x.asInstanceOf[js.Any]
@@ -2628,8 +2992,8 @@ package wafregional {
   }
 
   /**
-    * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128.
-    *  To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/31. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /16, /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]].
+    * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.
+    *  To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/31. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]].
     */
   @js.native
   trait IPSet extends js.Object {
@@ -2639,9 +3003,11 @@ package wafregional {
   }
 
   object IPSet {
-    def apply(IPSetDescriptors: IPSetDescriptors,
-              IPSetId: ResourceId,
-              Name: js.UndefOr[ResourceName] = js.undefined): IPSet = {
+    def apply(
+        IPSetDescriptors: IPSetDescriptors,
+        IPSetId: ResourceId,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): IPSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IPSetDescriptors" -> IPSetDescriptors.asInstanceOf[js.Any],
         "IPSetId"          -> IPSetId.asInstanceOf[js.Any],
@@ -2664,10 +3030,14 @@ package wafregional {
   }
 
   object IPSetDescriptor {
-    def apply(Type: IPSetDescriptorType, Value: IPSetDescriptorValue): IPSetDescriptor = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Type: IPSetDescriptorType,
+        Value: IPSetDescriptorValue
+    ): IPSetDescriptor = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type"  -> Type.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPSetDescriptor]
     }
@@ -2690,10 +3060,14 @@ package wafregional {
   }
 
   object IPSetSummary {
-    def apply(IPSetId: ResourceId, Name: ResourceName): IPSetSummary = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("IPSetId" -> IPSetId.asInstanceOf[js.Any], "Name" -> Name.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IPSetId: ResourceId,
+        Name: ResourceName
+    ): IPSetSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IPSetId" -> IPSetId.asInstanceOf[js.Any],
+        "Name"    -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPSetSummary]
     }
@@ -2709,7 +3083,10 @@ package wafregional {
   }
 
   object IPSetUpdate {
-    def apply(Action: ChangeAction, IPSetDescriptor: IPSetDescriptor): IPSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        IPSetDescriptor: IPSetDescriptor
+    ): IPSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"          -> Action.asInstanceOf[js.Any],
         "IPSetDescriptor" -> IPSetDescriptor.asInstanceOf[js.Any]
@@ -2727,9 +3104,11 @@ package wafregional {
   }
 
   object ListActivatedRulesInRuleGroupRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              RuleGroupId: js.UndefOr[ResourceId] = js.undefined): ListActivatedRulesInRuleGroupRequest = {
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        RuleGroupId: js.UndefOr[ResourceId] = js.undefined
+    ): ListActivatedRulesInRuleGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
@@ -2753,13 +3132,18 @@ package wafregional {
   }
 
   object ListActivatedRulesInRuleGroupResponse {
-    def apply(ActivatedRules: js.UndefOr[ActivatedRules] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListActivatedRulesInRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ActivatedRules" -> ActivatedRules.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ActivatedRules: js.UndefOr[ActivatedRules] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListActivatedRulesInRuleGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ActivatedRules" -> ActivatedRules.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListActivatedRulesInRuleGroupResponse]
     }
@@ -2772,13 +3156,18 @@ package wafregional {
   }
 
   object ListByteMatchSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListByteMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListByteMatchSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListByteMatchSetsRequest]
     }
@@ -2791,13 +3180,18 @@ package wafregional {
   }
 
   object ListByteMatchSetsResponse {
-    def apply(ByteMatchSets: js.UndefOr[ByteMatchSetSummaries] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListByteMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ByteMatchSets" -> ByteMatchSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ByteMatchSets: js.UndefOr[ByteMatchSetSummaries] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListByteMatchSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ByteMatchSets" -> ByteMatchSets.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListByteMatchSetsResponse]
     }
@@ -2810,13 +3204,18 @@ package wafregional {
   }
 
   object ListGeoMatchSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListGeoMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListGeoMatchSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGeoMatchSetsRequest]
     }
@@ -2829,13 +3228,18 @@ package wafregional {
   }
 
   object ListGeoMatchSetsResponse {
-    def apply(GeoMatchSets: js.UndefOr[GeoMatchSetSummaries] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListGeoMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("GeoMatchSets" -> GeoMatchSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GeoMatchSets: js.UndefOr[GeoMatchSetSummaries] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListGeoMatchSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GeoMatchSets" -> GeoMatchSets.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGeoMatchSetsResponse]
     }
@@ -2848,13 +3252,18 @@ package wafregional {
   }
 
   object ListIPSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListIPSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListIPSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIPSetsRequest]
     }
@@ -2867,13 +3276,18 @@ package wafregional {
   }
 
   object ListIPSetsResponse {
-    def apply(IPSets: js.UndefOr[IPSetSummaries] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListIPSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IPSets" -> IPSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IPSets: js.UndefOr[IPSetSummaries] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListIPSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IPSets" -> IPSets.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIPSetsResponse]
     }
@@ -2886,13 +3300,18 @@ package wafregional {
   }
 
   object ListLoggingConfigurationsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListLoggingConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListLoggingConfigurationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLoggingConfigurationsRequest]
     }
@@ -2905,13 +3324,18 @@ package wafregional {
   }
 
   object ListLoggingConfigurationsResponse {
-    def apply(LoggingConfigurations: js.UndefOr[LoggingConfigurations] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListLoggingConfigurationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("LoggingConfigurations" -> LoggingConfigurations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LoggingConfigurations: js.UndefOr[LoggingConfigurations] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListLoggingConfigurationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoggingConfigurations" -> LoggingConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLoggingConfigurationsResponse]
     }
@@ -2924,13 +3348,18 @@ package wafregional {
   }
 
   object ListRateBasedRulesRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListRateBasedRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListRateBasedRulesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRateBasedRulesRequest]
     }
@@ -2943,13 +3372,18 @@ package wafregional {
   }
 
   object ListRateBasedRulesResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              Rules: js.UndefOr[RuleSummaries] = js.undefined): ListRateBasedRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Rules" -> Rules.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        Rules: js.UndefOr[RuleSummaries] = js.undefined
+    ): ListRateBasedRulesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Rules" -> Rules.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRateBasedRulesResponse]
     }
@@ -2962,13 +3396,18 @@ package wafregional {
   }
 
   object ListRegexMatchSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListRegexMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListRegexMatchSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexMatchSetsRequest]
     }
@@ -2981,13 +3420,18 @@ package wafregional {
   }
 
   object ListRegexMatchSetsResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              RegexMatchSets: js.UndefOr[RegexMatchSetSummaries] = js.undefined): ListRegexMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RegexMatchSets" -> RegexMatchSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        RegexMatchSets: js.UndefOr[RegexMatchSetSummaries] = js.undefined
+    ): ListRegexMatchSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RegexMatchSets" -> RegexMatchSets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexMatchSetsResponse]
     }
@@ -3000,13 +3444,18 @@ package wafregional {
   }
 
   object ListRegexPatternSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListRegexPatternSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListRegexPatternSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexPatternSetsRequest]
     }
@@ -3019,13 +3468,18 @@ package wafregional {
   }
 
   object ListRegexPatternSetsResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              RegexPatternSets: js.UndefOr[RegexPatternSetSummaries] = js.undefined): ListRegexPatternSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RegexPatternSets" -> RegexPatternSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        RegexPatternSets: js.UndefOr[RegexPatternSetSummaries] = js.undefined
+    ): ListRegexPatternSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RegexPatternSets" -> RegexPatternSets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRegexPatternSetsResponse]
     }
@@ -3038,13 +3492,16 @@ package wafregional {
   }
 
   object ListResourcesForWebACLRequest {
-    def apply(WebACLId: ResourceId,
-              ResourceType: js.UndefOr[ResourceType] = js.undefined): ListResourcesForWebACLRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("WebACLId" -> WebACLId.asInstanceOf[js.Any], "ResourceType" -> ResourceType.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        WebACLId: ResourceId,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined
+    ): ListResourcesForWebACLRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesForWebACLRequest]
     }
@@ -3056,10 +3513,14 @@ package wafregional {
   }
 
   object ListResourcesForWebACLResponse {
-    def apply(ResourceArns: js.UndefOr[ResourceArns] = js.undefined): ListResourcesForWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ResourceArns" -> ResourceArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArns: js.UndefOr[ResourceArns] = js.undefined
+    ): ListResourcesForWebACLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArns" -> ResourceArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesForWebACLResponse]
     }
@@ -3072,13 +3533,18 @@ package wafregional {
   }
 
   object ListRuleGroupsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListRuleGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListRuleGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRuleGroupsRequest]
     }
@@ -3091,13 +3557,18 @@ package wafregional {
   }
 
   object ListRuleGroupsResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              RuleGroups: js.UndefOr[RuleGroupSummaries] = js.undefined): ListRuleGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RuleGroups" -> RuleGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        RuleGroups: js.UndefOr[RuleGroupSummaries] = js.undefined
+    ): ListRuleGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RuleGroups" -> RuleGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRuleGroupsResponse]
     }
@@ -3110,13 +3581,18 @@ package wafregional {
   }
 
   object ListRulesRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListRulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListRulesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRulesRequest]
     }
@@ -3129,13 +3605,18 @@ package wafregional {
   }
 
   object ListRulesResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              Rules: js.UndefOr[RuleSummaries] = js.undefined): ListRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Rules" -> Rules.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        Rules: js.UndefOr[RuleSummaries] = js.undefined
+    ): ListRulesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Rules" -> Rules.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRulesResponse]
     }
@@ -3148,13 +3629,18 @@ package wafregional {
   }
 
   object ListSizeConstraintSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListSizeConstraintSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListSizeConstraintSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSizeConstraintSetsRequest]
     }
@@ -3171,11 +3657,14 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SizeConstraintSets: js.UndefOr[SizeConstraintSetSummaries] = js.undefined
     ): ListSizeConstraintSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SizeConstraintSets" -> SizeConstraintSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SizeConstraintSets" -> SizeConstraintSets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSizeConstraintSetsResponse]
     }
@@ -3191,13 +3680,18 @@ package wafregional {
   }
 
   object ListSqlInjectionMatchSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListSqlInjectionMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListSqlInjectionMatchSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSqlInjectionMatchSetsRequest]
     }
@@ -3217,11 +3711,14 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SqlInjectionMatchSets: js.UndefOr[SqlInjectionMatchSetSummaries] = js.undefined
     ): ListSqlInjectionMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SqlInjectionMatchSets" -> SqlInjectionMatchSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SqlInjectionMatchSets" -> SqlInjectionMatchSets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSqlInjectionMatchSetsResponse]
     }
@@ -3234,13 +3731,18 @@ package wafregional {
   }
 
   object ListSubscribedRuleGroupsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListSubscribedRuleGroupsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListSubscribedRuleGroupsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscribedRuleGroupsRequest]
     }
@@ -3253,13 +3755,18 @@ package wafregional {
   }
 
   object ListSubscribedRuleGroupsResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              RuleGroups: js.UndefOr[SubscribedRuleGroupSummaries] = js.undefined): ListSubscribedRuleGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RuleGroups" -> RuleGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        RuleGroups: js.UndefOr[SubscribedRuleGroupSummaries] = js.undefined
+    ): ListSubscribedRuleGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RuleGroups" -> RuleGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscribedRuleGroupsResponse]
     }
@@ -3272,13 +3779,18 @@ package wafregional {
   }
 
   object ListWebACLsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListWebACLsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListWebACLsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWebACLsRequest]
     }
@@ -3291,13 +3803,18 @@ package wafregional {
   }
 
   object ListWebACLsResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              WebACLs: js.UndefOr[WebACLSummaries] = js.undefined): ListWebACLsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "WebACLs" -> WebACLs.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        WebACLs: js.UndefOr[WebACLSummaries] = js.undefined
+    ): ListWebACLsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WebACLs" -> WebACLs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWebACLsResponse]
     }
@@ -3313,13 +3830,18 @@ package wafregional {
   }
 
   object ListXssMatchSetsRequest {
-    def apply(Limit: js.UndefOr[PaginationLimit] = js.undefined,
-              NextMarker: js.UndefOr[NextMarker] = js.undefined): ListXssMatchSetsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListXssMatchSetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListXssMatchSetsRequest]
     }
@@ -3335,13 +3857,18 @@ package wafregional {
   }
 
   object ListXssMatchSetsResponse {
-    def apply(NextMarker: js.UndefOr[NextMarker] = js.undefined,
-              XssMatchSets: js.UndefOr[XssMatchSetSummaries] = js.undefined): ListXssMatchSetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextMarker" -> NextMarker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "XssMatchSets" -> XssMatchSets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        XssMatchSets: js.UndefOr[XssMatchSetSummaries] = js.undefined
+    ): ListXssMatchSetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextMarker" -> NextMarker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "XssMatchSets" -> XssMatchSets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListXssMatchSetsResponse]
     }
@@ -3358,9 +3885,11 @@ package wafregional {
   }
 
   object LoggingConfiguration {
-    def apply(LogDestinationConfigs: LogDestinationConfigs,
-              ResourceArn: ResourceArn,
-              RedactedFields: js.UndefOr[RedactedFields] = js.undefined): LoggingConfiguration = {
+    def apply(
+        LogDestinationConfigs: LogDestinationConfigs,
+        ResourceArn: ResourceArn,
+        RedactedFields: js.UndefOr[RedactedFields] = js.undefined
+    ): LoggingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LogDestinationConfigs" -> LogDestinationConfigs.asInstanceOf[js.Any],
         "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any],
@@ -3406,7 +3935,11 @@ package wafregional {
   }
 
   object Predicate {
-    def apply(DataId: ResourceId, Negated: Negated, Type: PredicateType): Predicate = {
+    def apply(
+        DataId: ResourceId,
+        Negated: Negated,
+        Type: PredicateType
+    ): Predicate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataId"  -> DataId.asInstanceOf[js.Any],
         "Negated" -> Negated.asInstanceOf[js.Any],
@@ -3435,9 +3968,12 @@ package wafregional {
   }
 
   object PutLoggingConfigurationRequest {
-    def apply(LoggingConfiguration: LoggingConfiguration): PutLoggingConfigurationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LoggingConfiguration: LoggingConfiguration
+    ): PutLoggingConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLoggingConfigurationRequest]
     }
@@ -3452,9 +3988,11 @@ package wafregional {
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): PutLoggingConfigurationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("LoggingConfiguration" -> LoggingConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LoggingConfiguration" -> LoggingConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutLoggingConfigurationResponse]
     }
@@ -3467,7 +4005,10 @@ package wafregional {
   }
 
   object PutPermissionPolicyRequest {
-    def apply(Policy: PolicyString, ResourceArn: ResourceArn): PutPermissionPolicyRequest = {
+    def apply(
+        Policy: PolicyString,
+        ResourceArn: ResourceArn
+    ): PutPermissionPolicyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Policy"      -> Policy.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
@@ -3481,8 +4022,10 @@ package wafregional {
   trait PutPermissionPolicyResponse extends js.Object {}
 
   object PutPermissionPolicyResponse {
-    def apply(): PutPermissionPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): PutPermissionPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPermissionPolicyResponse]
     }
@@ -3506,12 +4049,14 @@ package wafregional {
   }
 
   object RateBasedRule {
-    def apply(MatchPredicates: Predicates,
-              RateKey: RateKey,
-              RateLimit: RateLimit,
-              RuleId: ResourceId,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Name: js.UndefOr[ResourceName] = js.undefined): RateBasedRule = {
+    def apply(
+        MatchPredicates: Predicates,
+        RateKey: RateKey,
+        RateLimit: RateLimit,
+        RuleId: ResourceId,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): RateBasedRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MatchPredicates" -> MatchPredicates.asInstanceOf[js.Any],
         "RateKey"         -> RateKey.asInstanceOf[js.Any],
@@ -3547,9 +4092,11 @@ package wafregional {
   }
 
   object RegexMatchSet {
-    def apply(Name: js.UndefOr[ResourceName] = js.undefined,
-              RegexMatchSetId: js.UndefOr[ResourceId] = js.undefined,
-              RegexMatchTuples: js.UndefOr[RegexMatchTuples] = js.undefined): RegexMatchSet = {
+    def apply(
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        RegexMatchSetId: js.UndefOr[ResourceId] = js.undefined,
+        RegexMatchTuples: js.UndefOr[RegexMatchTuples] = js.undefined
+    ): RegexMatchSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
@@ -3576,7 +4123,10 @@ package wafregional {
   }
 
   object RegexMatchSetSummary {
-    def apply(Name: ResourceName, RegexMatchSetId: ResourceId): RegexMatchSetSummary = {
+    def apply(
+        Name: ResourceName,
+        RegexMatchSetId: ResourceId
+    ): RegexMatchSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"            -> Name.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
@@ -3596,7 +4146,10 @@ package wafregional {
   }
 
   object RegexMatchSetUpdate {
-    def apply(Action: ChangeAction, RegexMatchTuple: RegexMatchTuple): RegexMatchSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        RegexMatchTuple: RegexMatchTuple
+    ): RegexMatchSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"          -> Action.asInstanceOf[js.Any],
         "RegexMatchTuple" -> RegexMatchTuple.asInstanceOf[js.Any]
@@ -3620,9 +4173,11 @@ package wafregional {
   }
 
   object RegexMatchTuple {
-    def apply(FieldToMatch: FieldToMatch,
-              RegexPatternSetId: ResourceId,
-              TextTransformation: TextTransformation): RegexMatchTuple = {
+    def apply(
+        FieldToMatch: FieldToMatch,
+        RegexPatternSetId: ResourceId,
+        TextTransformation: TextTransformation
+    ): RegexMatchTuple = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "RegexPatternSetId"  -> RegexPatternSetId.asInstanceOf[js.Any],
@@ -3644,9 +4199,11 @@ package wafregional {
   }
 
   object RegexPatternSet {
-    def apply(RegexPatternSetId: ResourceId,
-              RegexPatternStrings: RegexPatternStrings,
-              Name: js.UndefOr[ResourceName] = js.undefined): RegexPatternSet = {
+    def apply(
+        RegexPatternSetId: ResourceId,
+        RegexPatternStrings: RegexPatternStrings,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): RegexPatternSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RegexPatternSetId"   -> RegexPatternSetId.asInstanceOf[js.Any],
         "RegexPatternStrings" -> RegexPatternStrings.asInstanceOf[js.Any],
@@ -3669,7 +4226,10 @@ package wafregional {
   }
 
   object RegexPatternSetSummary {
-    def apply(Name: ResourceName, RegexPatternSetId: ResourceId): RegexPatternSetSummary = {
+    def apply(
+        Name: ResourceName,
+        RegexPatternSetId: ResourceId
+    ): RegexPatternSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"              -> Name.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
@@ -3689,7 +4249,10 @@ package wafregional {
   }
 
   object RegexPatternSetUpdate {
-    def apply(Action: ChangeAction, RegexPatternString: RegexPatternString): RegexPatternSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        RegexPatternString: RegexPatternString
+    ): RegexPatternSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"             -> Action.asInstanceOf[js.Any],
         "RegexPatternString" -> RegexPatternString.asInstanceOf[js.Any]
@@ -3721,10 +4284,12 @@ package wafregional {
   }
 
   object Rule {
-    def apply(Predicates: Predicates,
-              RuleId: ResourceId,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Name: js.UndefOr[ResourceName] = js.undefined): Rule = {
+    def apply(
+        Predicates: Predicates,
+        RuleId: ResourceId,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): Rule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Predicates" -> Predicates.asInstanceOf[js.Any],
         "RuleId"     -> RuleId.asInstanceOf[js.Any],
@@ -3755,16 +4320,20 @@ package wafregional {
   }
 
   object RuleGroup {
-    def apply(RuleGroupId: ResourceId,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Name: js.UndefOr[ResourceName] = js.undefined): RuleGroup = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any], "MetricName" -> MetricName.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }, "Name" -> Name.map { x =>
+    def apply(
+        RuleGroupId: ResourceId,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): RuleGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any],
+        "MetricName" -> MetricName.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleGroup]
     }
@@ -3780,7 +4349,10 @@ package wafregional {
   }
 
   object RuleGroupSummary {
-    def apply(Name: ResourceName, RuleGroupId: ResourceId): RuleGroupSummary = {
+    def apply(
+        Name: ResourceName,
+        RuleGroupId: ResourceId
+    ): RuleGroupSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"        -> Name.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
@@ -3800,7 +4372,10 @@ package wafregional {
   }
 
   object RuleGroupUpdate {
-    def apply(Action: ChangeAction, ActivatedRule: ActivatedRule): RuleGroupUpdate = {
+    def apply(
+        Action: ChangeAction,
+        ActivatedRule: ActivatedRule
+    ): RuleGroupUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"        -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
@@ -3820,10 +4395,14 @@ package wafregional {
   }
 
   object RuleSummary {
-    def apply(Name: ResourceName, RuleId: ResourceId): RuleSummary = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "RuleId" -> RuleId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: ResourceName,
+        RuleId: ResourceId
+    ): RuleSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"   -> Name.asInstanceOf[js.Any],
+        "RuleId" -> RuleId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RuleSummary]
     }
@@ -3839,7 +4418,10 @@ package wafregional {
   }
 
   object RuleUpdate {
-    def apply(Action: ChangeAction, Predicate: Predicate): RuleUpdate = {
+    def apply(
+        Action: ChangeAction,
+        Predicate: Predicate
+    ): RuleUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"    -> Action.asInstanceOf[js.Any],
         "Predicate" -> Predicate.asInstanceOf[js.Any]
@@ -3862,11 +4444,13 @@ package wafregional {
   }
 
   object SampledHTTPRequest {
-    def apply(Request: HTTPRequest,
-              Weight: SampleWeight,
-              Action: js.UndefOr[Action] = js.undefined,
-              RuleWithinRuleGroup: js.UndefOr[ResourceId] = js.undefined,
-              Timestamp: js.UndefOr[Timestamp] = js.undefined): SampledHTTPRequest = {
+    def apply(
+        Request: HTTPRequest,
+        Weight: SampleWeight,
+        Action: js.UndefOr[Action] = js.undefined,
+        RuleWithinRuleGroup: js.UndefOr[ResourceId] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): SampledHTTPRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Request" -> Request.asInstanceOf[js.Any],
         "Weight"  -> Weight.asInstanceOf[js.Any],
@@ -3897,10 +4481,12 @@ package wafregional {
   }
 
   object SizeConstraint {
-    def apply(ComparisonOperator: ComparisonOperator,
-              FieldToMatch: FieldToMatch,
-              Size: Size,
-              TextTransformation: TextTransformation): SizeConstraint = {
+    def apply(
+        ComparisonOperator: ComparisonOperator,
+        FieldToMatch: FieldToMatch,
+        Size: Size,
+        TextTransformation: TextTransformation
+    ): SizeConstraint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
@@ -3923,9 +4509,11 @@ package wafregional {
   }
 
   object SizeConstraintSet {
-    def apply(SizeConstraintSetId: ResourceId,
-              SizeConstraints: SizeConstraints,
-              Name: js.UndefOr[ResourceName] = js.undefined): SizeConstraintSet = {
+    def apply(
+        SizeConstraintSetId: ResourceId,
+        SizeConstraints: SizeConstraints,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): SizeConstraintSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
         "SizeConstraints"     -> SizeConstraints.asInstanceOf[js.Any],
@@ -3948,7 +4536,10 @@ package wafregional {
   }
 
   object SizeConstraintSetSummary {
-    def apply(Name: ResourceName, SizeConstraintSetId: ResourceId): SizeConstraintSetSummary = {
+    def apply(
+        Name: ResourceName,
+        SizeConstraintSetId: ResourceId
+    ): SizeConstraintSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"                -> Name.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
@@ -3968,7 +4559,10 @@ package wafregional {
   }
 
   object SizeConstraintSetUpdate {
-    def apply(Action: ChangeAction, SizeConstraint: SizeConstraint): SizeConstraintSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        SizeConstraint: SizeConstraint
+    ): SizeConstraintSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"         -> Action.asInstanceOf[js.Any],
         "SizeConstraint" -> SizeConstraint.asInstanceOf[js.Any]
@@ -3989,9 +4583,11 @@ package wafregional {
   }
 
   object SqlInjectionMatchSet {
-    def apply(SqlInjectionMatchSetId: ResourceId,
-              SqlInjectionMatchTuples: SqlInjectionMatchTuples,
-              Name: js.UndefOr[ResourceName] = js.undefined): SqlInjectionMatchSet = {
+    def apply(
+        SqlInjectionMatchSetId: ResourceId,
+        SqlInjectionMatchTuples: SqlInjectionMatchTuples,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): SqlInjectionMatchSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SqlInjectionMatchSetId"  -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
         "SqlInjectionMatchTuples" -> SqlInjectionMatchTuples.asInstanceOf[js.Any],
@@ -4014,7 +4610,10 @@ package wafregional {
   }
 
   object SqlInjectionMatchSetSummary {
-    def apply(Name: ResourceName, SqlInjectionMatchSetId: ResourceId): SqlInjectionMatchSetSummary = {
+    def apply(
+        Name: ResourceName,
+        SqlInjectionMatchSetId: ResourceId
+    ): SqlInjectionMatchSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"                   -> Name.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
@@ -4034,7 +4633,10 @@ package wafregional {
   }
 
   object SqlInjectionMatchSetUpdate {
-    def apply(Action: ChangeAction, SqlInjectionMatchTuple: SqlInjectionMatchTuple): SqlInjectionMatchSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        SqlInjectionMatchTuple: SqlInjectionMatchTuple
+    ): SqlInjectionMatchSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"                 -> Action.asInstanceOf[js.Any],
         "SqlInjectionMatchTuple" -> SqlInjectionMatchTuple.asInstanceOf[js.Any]
@@ -4054,7 +4656,10 @@ package wafregional {
   }
 
   object SqlInjectionMatchTuple {
-    def apply(FieldToMatch: FieldToMatch, TextTransformation: TextTransformation): SqlInjectionMatchTuple = {
+    def apply(
+        FieldToMatch: FieldToMatch,
+        TextTransformation: TextTransformation
+    ): SqlInjectionMatchTuple = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
@@ -4075,7 +4680,11 @@ package wafregional {
   }
 
   object SubscribedRuleGroupSummary {
-    def apply(MetricName: MetricName, Name: ResourceName, RuleGroupId: ResourceId): SubscribedRuleGroupSummary = {
+    def apply(
+        MetricName: MetricName,
+        Name: ResourceName,
+        RuleGroupId: ResourceId
+    ): SubscribedRuleGroupSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
@@ -4108,7 +4717,10 @@ package wafregional {
   }
 
   object TimeWindow {
-    def apply(EndTime: Timestamp, StartTime: Timestamp): TimeWindow = {
+    def apply(
+        EndTime: Timestamp,
+        StartTime: Timestamp
+    ): TimeWindow = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
@@ -4126,9 +4738,11 @@ package wafregional {
   }
 
   object UpdateByteMatchSetRequest {
-    def apply(ByteMatchSetId: ResourceId,
-              ChangeToken: ChangeToken,
-              Updates: ByteMatchSetUpdates): UpdateByteMatchSetRequest = {
+    def apply(
+        ByteMatchSetId: ResourceId,
+        ChangeToken: ChangeToken,
+        Updates: ByteMatchSetUpdates
+    ): UpdateByteMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any],
@@ -4145,10 +4759,14 @@ package wafregional {
   }
 
   object UpdateByteMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateByteMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateByteMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateByteMatchSetResponse]
     }
@@ -4162,9 +4780,11 @@ package wafregional {
   }
 
   object UpdateGeoMatchSetRequest {
-    def apply(ChangeToken: ChangeToken,
-              GeoMatchSetId: ResourceId,
-              Updates: GeoMatchSetUpdates): UpdateGeoMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        GeoMatchSetId: ResourceId,
+        Updates: GeoMatchSetUpdates
+    ): UpdateGeoMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
@@ -4181,10 +4801,14 @@ package wafregional {
   }
 
   object UpdateGeoMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateGeoMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateGeoMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGeoMatchSetResponse]
     }
@@ -4198,7 +4822,11 @@ package wafregional {
   }
 
   object UpdateIPSetRequest {
-    def apply(ChangeToken: ChangeToken, IPSetId: ResourceId, Updates: IPSetUpdates): UpdateIPSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        IPSetId: ResourceId,
+        Updates: IPSetUpdates
+    ): UpdateIPSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "IPSetId"     -> IPSetId.asInstanceOf[js.Any],
@@ -4215,10 +4843,14 @@ package wafregional {
   }
 
   object UpdateIPSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateIPSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateIPSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIPSetResponse]
     }
@@ -4233,10 +4865,12 @@ package wafregional {
   }
 
   object UpdateRateBasedRuleRequest {
-    def apply(ChangeToken: ChangeToken,
-              RateLimit: RateLimit,
-              RuleId: ResourceId,
-              Updates: RuleUpdates): UpdateRateBasedRuleRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RateLimit: RateLimit,
+        RuleId: ResourceId,
+        Updates: RuleUpdates
+    ): UpdateRateBasedRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RateLimit"   -> RateLimit.asInstanceOf[js.Any],
@@ -4254,10 +4888,14 @@ package wafregional {
   }
 
   object UpdateRateBasedRuleResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateRateBasedRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateRateBasedRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRateBasedRuleResponse]
     }
@@ -4271,9 +4909,11 @@ package wafregional {
   }
 
   object UpdateRegexMatchSetRequest {
-    def apply(ChangeToken: ChangeToken,
-              RegexMatchSetId: ResourceId,
-              Updates: RegexMatchSetUpdates): UpdateRegexMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RegexMatchSetId: ResourceId,
+        Updates: RegexMatchSetUpdates
+    ): UpdateRegexMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any],
@@ -4290,10 +4930,14 @@ package wafregional {
   }
 
   object UpdateRegexMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateRegexMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateRegexMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRegexMatchSetResponse]
     }
@@ -4307,9 +4951,11 @@ package wafregional {
   }
 
   object UpdateRegexPatternSetRequest {
-    def apply(ChangeToken: ChangeToken,
-              RegexPatternSetId: ResourceId,
-              Updates: RegexPatternSetUpdates): UpdateRegexPatternSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RegexPatternSetId: ResourceId,
+        Updates: RegexPatternSetUpdates
+    ): UpdateRegexPatternSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any],
@@ -4326,10 +4972,14 @@ package wafregional {
   }
 
   object UpdateRegexPatternSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateRegexPatternSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateRegexPatternSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRegexPatternSetResponse]
     }
@@ -4343,7 +4993,11 @@ package wafregional {
   }
 
   object UpdateRuleGroupRequest {
-    def apply(ChangeToken: ChangeToken, RuleGroupId: ResourceId, Updates: RuleGroupUpdates): UpdateRuleGroupRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RuleGroupId: ResourceId,
+        Updates: RuleGroupUpdates
+    ): UpdateRuleGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any],
@@ -4360,10 +5014,14 @@ package wafregional {
   }
 
   object UpdateRuleGroupResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateRuleGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateRuleGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRuleGroupResponse]
     }
@@ -4377,7 +5035,11 @@ package wafregional {
   }
 
   object UpdateRuleRequest {
-    def apply(ChangeToken: ChangeToken, RuleId: ResourceId, Updates: RuleUpdates): UpdateRuleRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        RuleId: ResourceId,
+        Updates: RuleUpdates
+    ): UpdateRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any],
@@ -4394,10 +5056,14 @@ package wafregional {
   }
 
   object UpdateRuleResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRuleResponse]
     }
@@ -4411,9 +5077,11 @@ package wafregional {
   }
 
   object UpdateSizeConstraintSetRequest {
-    def apply(ChangeToken: ChangeToken,
-              SizeConstraintSetId: ResourceId,
-              Updates: SizeConstraintSetUpdates): UpdateSizeConstraintSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        SizeConstraintSetId: ResourceId,
+        Updates: SizeConstraintSetUpdates
+    ): UpdateSizeConstraintSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
@@ -4430,10 +5098,14 @@ package wafregional {
   }
 
   object UpdateSizeConstraintSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateSizeConstraintSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateSizeConstraintSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSizeConstraintSetResponse]
     }
@@ -4450,9 +5122,11 @@ package wafregional {
   }
 
   object UpdateSqlInjectionMatchSetRequest {
-    def apply(ChangeToken: ChangeToken,
-              SqlInjectionMatchSetId: ResourceId,
-              Updates: SqlInjectionMatchSetUpdates): UpdateSqlInjectionMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        SqlInjectionMatchSetId: ResourceId,
+        Updates: SqlInjectionMatchSetUpdates
+    ): UpdateSqlInjectionMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
@@ -4472,10 +5146,14 @@ package wafregional {
   }
 
   object UpdateSqlInjectionMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateSqlInjectionMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateSqlInjectionMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSqlInjectionMatchSetResponse]
     }
@@ -4490,10 +5168,12 @@ package wafregional {
   }
 
   object UpdateWebACLRequest {
-    def apply(ChangeToken: ChangeToken,
-              WebACLId: ResourceId,
-              DefaultAction: js.UndefOr[WafAction] = js.undefined,
-              Updates: js.UndefOr[WebACLUpdates] = js.undefined): UpdateWebACLRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        WebACLId: ResourceId,
+        DefaultAction: js.UndefOr[WafAction] = js.undefined,
+        Updates: js.UndefOr[WebACLUpdates] = js.undefined
+    ): UpdateWebACLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "WebACLId"    -> WebACLId.asInstanceOf[js.Any],
@@ -4515,10 +5195,14 @@ package wafregional {
   }
 
   object UpdateWebACLResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateWebACLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateWebACLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWebACLResponse]
     }
@@ -4535,9 +5219,11 @@ package wafregional {
   }
 
   object UpdateXssMatchSetRequest {
-    def apply(ChangeToken: ChangeToken,
-              Updates: XssMatchSetUpdates,
-              XssMatchSetId: ResourceId): UpdateXssMatchSetRequest = {
+    def apply(
+        ChangeToken: ChangeToken,
+        Updates: XssMatchSetUpdates,
+        XssMatchSetId: ResourceId
+    ): UpdateXssMatchSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "Updates"       -> Updates.asInstanceOf[js.Any],
@@ -4557,10 +5243,14 @@ package wafregional {
   }
 
   object UpdateXssMatchSetResponse {
-    def apply(ChangeToken: js.UndefOr[ChangeToken] = js.undefined): UpdateXssMatchSetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ChangeToken" -> ChangeToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ChangeToken: js.UndefOr[ChangeToken] = js.undefined
+    ): UpdateXssMatchSetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ChangeToken" -> ChangeToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateXssMatchSetResponse]
     }
@@ -4575,9 +5265,12 @@ package wafregional {
   }
 
   object WafAction {
-    def apply(Type: WafActionType): WafAction = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Type: WafActionType
+    ): WafAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WafAction]
     }
@@ -4600,9 +5293,12 @@ package wafregional {
   }
 
   object WafOverrideAction {
-    def apply(Type: WafOverrideActionType): WafOverrideAction = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Type: WafOverrideActionType
+    ): WafOverrideAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WafOverrideAction]
     }
@@ -4637,12 +5333,14 @@ package wafregional {
   }
 
   object WebACL {
-    def apply(DefaultAction: WafAction,
-              Rules: ActivatedRules,
-              WebACLId: ResourceId,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Name: js.UndefOr[ResourceName] = js.undefined,
-              WebACLArn: js.UndefOr[ResourceArn] = js.undefined): WebACL = {
+    def apply(
+        DefaultAction: WafAction,
+        Rules: ActivatedRules,
+        WebACLId: ResourceId,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        WebACLArn: js.UndefOr[ResourceArn] = js.undefined
+    ): WebACL = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
         "Rules"         -> Rules.asInstanceOf[js.Any],
@@ -4672,10 +5370,14 @@ package wafregional {
   }
 
   object WebACLSummary {
-    def apply(Name: ResourceName, WebACLId: ResourceId): WebACLSummary = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "WebACLId" -> WebACLId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: ResourceName,
+        WebACLId: ResourceId
+    ): WebACLSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"     -> Name.asInstanceOf[js.Any],
+        "WebACLId" -> WebACLId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WebACLSummary]
     }
@@ -4691,7 +5393,10 @@ package wafregional {
   }
 
   object WebACLUpdate {
-    def apply(Action: ChangeAction, ActivatedRule: ActivatedRule): WebACLUpdate = {
+    def apply(
+        Action: ChangeAction,
+        ActivatedRule: ActivatedRule
+    ): WebACLUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"        -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
@@ -4712,9 +5417,11 @@ package wafregional {
   }
 
   object XssMatchSet {
-    def apply(XssMatchSetId: ResourceId,
-              XssMatchTuples: XssMatchTuples,
-              Name: js.UndefOr[ResourceName] = js.undefined): XssMatchSet = {
+    def apply(
+        XssMatchSetId: ResourceId,
+        XssMatchTuples: XssMatchTuples,
+        Name: js.UndefOr[ResourceName] = js.undefined
+    ): XssMatchSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "XssMatchSetId"  -> XssMatchSetId.asInstanceOf[js.Any],
         "XssMatchTuples" -> XssMatchTuples.asInstanceOf[js.Any],
@@ -4737,7 +5444,10 @@ package wafregional {
   }
 
   object XssMatchSetSummary {
-    def apply(Name: ResourceName, XssMatchSetId: ResourceId): XssMatchSetSummary = {
+    def apply(
+        Name: ResourceName,
+        XssMatchSetId: ResourceId
+    ): XssMatchSetSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"          -> Name.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
@@ -4757,7 +5467,10 @@ package wafregional {
   }
 
   object XssMatchSetUpdate {
-    def apply(Action: ChangeAction, XssMatchTuple: XssMatchTuple): XssMatchSetUpdate = {
+    def apply(
+        Action: ChangeAction,
+        XssMatchTuple: XssMatchTuple
+    ): XssMatchSetUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"        -> Action.asInstanceOf[js.Any],
         "XssMatchTuple" -> XssMatchTuple.asInstanceOf[js.Any]
@@ -4777,7 +5490,10 @@ package wafregional {
   }
 
   object XssMatchTuple {
-    def apply(FieldToMatch: FieldToMatch, TextTransformation: TextTransformation): XssMatchTuple = {
+    def apply(
+        FieldToMatch: FieldToMatch,
+        TextTransformation: TextTransformation
+    ): XssMatchTuple = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]

@@ -7,6 +7,9 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object acmpca {
+  type AccountId                  = String
+  type ActionList                 = js.Array[ActionType]
+  type ActionType                 = String
   type Arn                        = String
   type AuditReportId              = String
   type AuditReportResponseFormat  = String
@@ -32,7 +35,9 @@ package object acmpca {
   type MaxResults                       = Int
   type NextToken                        = String
   type PermanentDeletionTimeInDays      = Int
+  type PermissionList                   = js.Array[Permission]
   type PositiveLong                     = Double
+  type Principal                        = String
   type RevocationReason                 = String
   type SigningAlgorithm                 = String
   type String128                        = String
@@ -62,7 +67,9 @@ package acmpca {
     def createCertificateAuthorityAuditReport(
         params: CreateCertificateAuthorityAuditReportRequest
     ): Request[CreateCertificateAuthorityAuditReportResponse]                                     = js.native
+    def createPermission(params: CreatePermissionRequest): Request[js.Object]                     = js.native
     def deleteCertificateAuthority(params: DeleteCertificateAuthorityRequest): Request[js.Object] = js.native
+    def deletePermission(params: DeletePermissionRequest): Request[js.Object]                     = js.native
     def describeCertificateAuthority(
         params: DescribeCertificateAuthorityRequest
     ): Request[DescribeCertificateAuthorityResponse] = js.native
@@ -83,6 +90,7 @@ package acmpca {
     def listCertificateAuthorities(
         params: ListCertificateAuthoritiesRequest
     ): Request[ListCertificateAuthoritiesResponse]                                                  = js.native
+    def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse]           = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse]                                = js.native
     def restoreCertificateAuthority(params: RestoreCertificateAuthorityRequest): Request[js.Object] = js.native
     def revokeCertificate(params: RevokeCertificateRequest): Request[js.Object]                     = js.native
@@ -113,20 +121,22 @@ package acmpca {
   }
 
   object ASN1Subject {
-    def apply(CommonName: js.UndefOr[String64] = js.undefined,
-              Country: js.UndefOr[CountryCodeString] = js.undefined,
-              DistinguishedNameQualifier: js.UndefOr[DistinguishedNameQualifierString] = js.undefined,
-              GenerationQualifier: js.UndefOr[String3] = js.undefined,
-              GivenName: js.UndefOr[String16] = js.undefined,
-              Initials: js.UndefOr[String5] = js.undefined,
-              Locality: js.UndefOr[String128] = js.undefined,
-              Organization: js.UndefOr[String64] = js.undefined,
-              OrganizationalUnit: js.UndefOr[String64] = js.undefined,
-              Pseudonym: js.UndefOr[String128] = js.undefined,
-              SerialNumber: js.UndefOr[String64] = js.undefined,
-              State: js.UndefOr[String128] = js.undefined,
-              Surname: js.UndefOr[String40] = js.undefined,
-              Title: js.UndefOr[String64] = js.undefined): ASN1Subject = {
+    def apply(
+        CommonName: js.UndefOr[String64] = js.undefined,
+        Country: js.UndefOr[CountryCodeString] = js.undefined,
+        DistinguishedNameQualifier: js.UndefOr[DistinguishedNameQualifierString] = js.undefined,
+        GenerationQualifier: js.UndefOr[String3] = js.undefined,
+        GivenName: js.UndefOr[String16] = js.undefined,
+        Initials: js.UndefOr[String5] = js.undefined,
+        Locality: js.UndefOr[String128] = js.undefined,
+        Organization: js.UndefOr[String64] = js.undefined,
+        OrganizationalUnit: js.UndefOr[String64] = js.undefined,
+        Pseudonym: js.UndefOr[String128] = js.undefined,
+        SerialNumber: js.UndefOr[String64] = js.undefined,
+        State: js.UndefOr[String128] = js.undefined,
+        Surname: js.UndefOr[String40] = js.undefined,
+        Title: js.UndefOr[String64] = js.undefined
+    ): ASN1Subject = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CommonName" -> CommonName.map { x =>
           x.asInstanceOf[js.Any]
@@ -176,6 +186,14 @@ package acmpca {
     }
   }
 
+  object ActionTypeEnum {
+    val IssueCertificate = "IssueCertificate"
+    val GetCertificate   = "GetCertificate"
+    val ListPermissions  = "ListPermissions"
+
+    val values = IndexedSeq(IssueCertificate, GetCertificate, ListPermissions)
+  }
+
   object AuditReportResponseFormatEnum {
     val JSON = "JSON"
     val CSV  = "CSV"
@@ -211,18 +229,20 @@ package acmpca {
   }
 
   object CertificateAuthority {
-    def apply(Arn: js.UndefOr[Arn] = js.undefined,
-              CertificateAuthorityConfiguration: js.UndefOr[CertificateAuthorityConfiguration] = js.undefined,
-              CreatedAt: js.UndefOr[TStamp] = js.undefined,
-              FailureReason: js.UndefOr[FailureReason] = js.undefined,
-              LastStateChangeAt: js.UndefOr[TStamp] = js.undefined,
-              NotAfter: js.UndefOr[TStamp] = js.undefined,
-              NotBefore: js.UndefOr[TStamp] = js.undefined,
-              RestorableUntil: js.UndefOr[TStamp] = js.undefined,
-              RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
-              Serial: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[CertificateAuthorityStatus] = js.undefined,
-              Type: js.UndefOr[CertificateAuthorityType] = js.undefined): CertificateAuthority = {
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CertificateAuthorityConfiguration: js.UndefOr[CertificateAuthorityConfiguration] = js.undefined,
+        CreatedAt: js.UndefOr[TStamp] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        LastStateChangeAt: js.UndefOr[TStamp] = js.undefined,
+        NotAfter: js.UndefOr[TStamp] = js.undefined,
+        NotBefore: js.UndefOr[TStamp] = js.undefined,
+        RestorableUntil: js.UndefOr[TStamp] = js.undefined,
+        RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
+        Serial: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[CertificateAuthorityStatus] = js.undefined,
+        Type: js.UndefOr[CertificateAuthorityType] = js.undefined
+    ): CertificateAuthority = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -267,7 +287,7 @@ package acmpca {
   }
 
   /**
-    * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate, the signature algorithm it uses used when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> operation.
+    * Contains configuration information for your private certificate authority (CA). This includes information about the class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must specify this information when you call the <a>CreateCertificateAuthority</a> operation.
     */
   @js.native
   trait CertificateAuthorityConfiguration extends js.Object {
@@ -277,9 +297,11 @@ package acmpca {
   }
 
   object CertificateAuthorityConfiguration {
-    def apply(KeyAlgorithm: KeyAlgorithm,
-              SigningAlgorithm: SigningAlgorithm,
-              Subject: ASN1Subject): CertificateAuthorityConfiguration = {
+    def apply(
+        KeyAlgorithm: KeyAlgorithm,
+        SigningAlgorithm: SigningAlgorithm,
+        Subject: ASN1Subject
+    ): CertificateAuthorityConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KeyAlgorithm"     -> KeyAlgorithm.asInstanceOf[js.Any],
         "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any],
@@ -316,9 +338,11 @@ package acmpca {
   }
 
   object CreateCertificateAuthorityAuditReportRequest {
-    def apply(AuditReportResponseFormat: AuditReportResponseFormat,
-              CertificateAuthorityArn: Arn,
-              S3BucketName: String): CreateCertificateAuthorityAuditReportRequest = {
+    def apply(
+        AuditReportResponseFormat: AuditReportResponseFormat,
+        CertificateAuthorityArn: Arn,
+        S3BucketName: String
+    ): CreateCertificateAuthorityAuditReportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuditReportResponseFormat" -> AuditReportResponseFormat.asInstanceOf[js.Any],
         "CertificateAuthorityArn"   -> CertificateAuthorityArn.asInstanceOf[js.Any],
@@ -338,13 +362,18 @@ package acmpca {
   }
 
   object CreateCertificateAuthorityAuditReportResponse {
-    def apply(AuditReportId: js.UndefOr[AuditReportId] = js.undefined,
-              S3Key: js.UndefOr[String] = js.undefined): CreateCertificateAuthorityAuditReportResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AuditReportId" -> AuditReportId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "S3Key" -> S3Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AuditReportId: js.UndefOr[AuditReportId] = js.undefined,
+        S3Key: js.UndefOr[String] = js.undefined
+    ): CreateCertificateAuthorityAuditReportResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AuditReportId" -> AuditReportId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3Key" -> S3Key.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -358,6 +387,7 @@ package acmpca {
     var CertificateAuthorityType: CertificateAuthorityType
     var IdempotencyToken: js.UndefOr[IdempotencyToken]
     var RevocationConfiguration: js.UndefOr[RevocationConfiguration]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateCertificateAuthorityRequest {
@@ -365,7 +395,8 @@ package acmpca {
         CertificateAuthorityConfiguration: CertificateAuthorityConfiguration,
         CertificateAuthorityType: CertificateAuthorityType,
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
-        RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined
+        RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCertificateAuthorityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateAuthorityConfiguration" -> CertificateAuthorityConfiguration.asInstanceOf[js.Any],
@@ -374,6 +405,9 @@ package acmpca {
           x.asInstanceOf[js.Any]
         },
         "RevocationConfiguration" -> RevocationConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -388,12 +422,44 @@ package acmpca {
   }
 
   object CreateCertificateAuthorityResponse {
-    def apply(CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined): CreateCertificateAuthorityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateAuthorityArn" -> CertificateAuthorityArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined
+    ): CreateCertificateAuthorityResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCertificateAuthorityResponse]
+    }
+  }
+
+  @js.native
+  trait CreatePermissionRequest extends js.Object {
+    var Actions: ActionList
+    var CertificateAuthorityArn: Arn
+    var Principal: Principal
+    var SourceAccount: js.UndefOr[AccountId]
+  }
+
+  object CreatePermissionRequest {
+    def apply(
+        Actions: ActionList,
+        CertificateAuthorityArn: Arn,
+        Principal: Principal,
+        SourceAccount: js.UndefOr[AccountId] = js.undefined
+    ): CreatePermissionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Actions"                 -> Actions.asInstanceOf[js.Any],
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
+        "Principal"               -> Principal.asInstanceOf[js.Any],
+        "SourceAccount" -> SourceAccount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePermissionRequest]
     }
   }
 
@@ -428,10 +494,12 @@ package acmpca {
   }
 
   object CrlConfiguration {
-    def apply(Enabled: Boolean,
-              CustomCname: js.UndefOr[String253] = js.undefined,
-              ExpirationInDays: js.UndefOr[Integer1To5000] = js.undefined,
-              S3BucketName: js.UndefOr[String3To255] = js.undefined): CrlConfiguration = {
+    def apply(
+        Enabled: Boolean,
+        CustomCname: js.UndefOr[String253] = js.undefined,
+        ExpirationInDays: js.UndefOr[Integer1To5000] = js.undefined,
+        S3BucketName: js.UndefOr[String3To255] = js.undefined
+    ): CrlConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Enabled" -> Enabled.asInstanceOf[js.Any],
         "CustomCname" -> CustomCname.map { x =>
@@ -472,14 +540,41 @@ package acmpca {
   }
 
   @js.native
+  trait DeletePermissionRequest extends js.Object {
+    var CertificateAuthorityArn: Arn
+    var Principal: Principal
+    var SourceAccount: js.UndefOr[AccountId]
+  }
+
+  object DeletePermissionRequest {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        Principal: Principal,
+        SourceAccount: js.UndefOr[AccountId] = js.undefined
+    ): DeletePermissionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
+        "Principal"               -> Principal.asInstanceOf[js.Any],
+        "SourceAccount" -> SourceAccount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePermissionRequest]
+    }
+  }
+
+  @js.native
   trait DescribeCertificateAuthorityAuditReportRequest extends js.Object {
     var AuditReportId: AuditReportId
     var CertificateAuthorityArn: Arn
   }
 
   object DescribeCertificateAuthorityAuditReportRequest {
-    def apply(AuditReportId: AuditReportId,
-              CertificateAuthorityArn: Arn): DescribeCertificateAuthorityAuditReportRequest = {
+    def apply(
+        AuditReportId: AuditReportId,
+        CertificateAuthorityArn: Arn
+    ): DescribeCertificateAuthorityAuditReportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuditReportId"           -> AuditReportId.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
@@ -500,10 +595,12 @@ package acmpca {
   }
 
   object DescribeCertificateAuthorityAuditReportResponse {
-    def apply(AuditReportStatus: js.UndefOr[AuditReportStatus] = js.undefined,
-              CreatedAt: js.UndefOr[TStamp] = js.undefined,
-              S3BucketName: js.UndefOr[String] = js.undefined,
-              S3Key: js.UndefOr[String] = js.undefined): DescribeCertificateAuthorityAuditReportResponse = {
+    def apply(
+        AuditReportStatus: js.UndefOr[AuditReportStatus] = js.undefined,
+        CreatedAt: js.UndefOr[TStamp] = js.undefined,
+        S3BucketName: js.UndefOr[String] = js.undefined,
+        S3Key: js.UndefOr[String] = js.undefined
+    ): DescribeCertificateAuthorityAuditReportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuditReportStatus" -> AuditReportStatus.map { x =>
           x.asInstanceOf[js.Any]
@@ -531,10 +628,12 @@ package acmpca {
   }
 
   object DescribeCertificateAuthorityRequest {
-    def apply(CertificateAuthorityArn: Arn): DescribeCertificateAuthorityRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateAuthorityArn: Arn
+    ): DescribeCertificateAuthorityRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificateAuthorityRequest]
     }
@@ -549,9 +648,11 @@ package acmpca {
     def apply(
         CertificateAuthority: js.UndefOr[CertificateAuthority] = js.undefined
     ): DescribeCertificateAuthorityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateAuthority" -> CertificateAuthority.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthority" -> CertificateAuthority.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCertificateAuthorityResponse]
     }
@@ -571,10 +672,12 @@ package acmpca {
   }
 
   object GetCertificateAuthorityCertificateRequest {
-    def apply(CertificateAuthorityArn: Arn): GetCertificateAuthorityCertificateRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateAuthorityArn: Arn
+    ): GetCertificateAuthorityCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCertificateAuthorityCertificateRequest]
     }
@@ -591,11 +694,14 @@ package acmpca {
         Certificate: js.UndefOr[CertificateBody] = js.undefined,
         CertificateChain: js.UndefOr[CertificateChain] = js.undefined
     ): GetCertificateAuthorityCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Certificate" -> Certificate.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "CertificateChain" -> CertificateChain.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertificateChain" -> CertificateChain.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -609,10 +715,12 @@ package acmpca {
   }
 
   object GetCertificateAuthorityCsrRequest {
-    def apply(CertificateAuthorityArn: Arn): GetCertificateAuthorityCsrRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateAuthorityArn: Arn
+    ): GetCertificateAuthorityCsrRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCertificateAuthorityCsrRequest]
     }
@@ -624,10 +732,14 @@ package acmpca {
   }
 
   object GetCertificateAuthorityCsrResponse {
-    def apply(Csr: js.UndefOr[CsrBody] = js.undefined): GetCertificateAuthorityCsrResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Csr" -> Csr.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Csr: js.UndefOr[CsrBody] = js.undefined
+    ): GetCertificateAuthorityCsrResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Csr" -> Csr.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCertificateAuthorityCsrResponse]
     }
@@ -640,7 +752,10 @@ package acmpca {
   }
 
   object GetCertificateRequest {
-    def apply(CertificateArn: Arn, CertificateAuthorityArn: Arn): GetCertificateRequest = {
+    def apply(
+        CertificateArn: Arn,
+        CertificateAuthorityArn: Arn
+    ): GetCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateArn"          -> CertificateArn.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
@@ -657,13 +772,18 @@ package acmpca {
   }
 
   object GetCertificateResponse {
-    def apply(Certificate: js.UndefOr[CertificateBody] = js.undefined,
-              CertificateChain: js.UndefOr[CertificateChain] = js.undefined): GetCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Certificate" -> Certificate.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "CertificateChain" -> CertificateChain.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Certificate: js.UndefOr[CertificateBody] = js.undefined,
+        CertificateChain: js.UndefOr[CertificateChain] = js.undefined
+    ): GetCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertificateChain" -> CertificateChain.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCertificateResponse]
     }
@@ -677,9 +797,11 @@ package acmpca {
   }
 
   object ImportCertificateAuthorityCertificateRequest {
-    def apply(Certificate: CertificateBodyBlob,
-              CertificateAuthorityArn: Arn,
-              CertificateChain: CertificateChainBlob): ImportCertificateAuthorityCertificateRequest = {
+    def apply(
+        Certificate: CertificateBodyBlob,
+        CertificateAuthorityArn: Arn,
+        CertificateChain: CertificateChainBlob
+    ): ImportCertificateAuthorityCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Certificate"             -> Certificate.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
@@ -702,11 +824,13 @@ package acmpca {
   }
 
   object IssueCertificateRequest {
-    def apply(CertificateAuthorityArn: Arn,
-              Csr: CsrBlob,
-              SigningAlgorithm: SigningAlgorithm,
-              Validity: Validity,
-              IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined): IssueCertificateRequest = {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        Csr: CsrBlob,
+        SigningAlgorithm: SigningAlgorithm,
+        Validity: Validity,
+        IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined
+    ): IssueCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Csr"                     -> Csr.asInstanceOf[js.Any],
@@ -727,10 +851,14 @@ package acmpca {
   }
 
   object IssueCertificateResponse {
-    def apply(CertificateArn: js.UndefOr[Arn] = js.undefined): IssueCertificateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateArn" -> CertificateArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateArn: js.UndefOr[Arn] = js.undefined
+    ): IssueCertificateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateArn" -> CertificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IssueCertificateResponse]
     }
@@ -752,13 +880,18 @@ package acmpca {
   }
 
   object ListCertificateAuthoritiesRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCertificateAuthoritiesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCertificateAuthoritiesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCertificateAuthoritiesRequest]
     }
@@ -771,15 +904,71 @@ package acmpca {
   }
 
   object ListCertificateAuthoritiesResponse {
-    def apply(CertificateAuthorities: js.UndefOr[CertificateAuthorities] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListCertificateAuthoritiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("CertificateAuthorities" -> CertificateAuthorities.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateAuthorities: js.UndefOr[CertificateAuthorities] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCertificateAuthoritiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorities" -> CertificateAuthorities.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCertificateAuthoritiesResponse]
+    }
+  }
+
+  @js.native
+  trait ListPermissionsRequest extends js.Object {
+    var CertificateAuthorityArn: Arn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListPermissionsRequest {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPermissionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPermissionsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Permissions: js.UndefOr[PermissionList]
+  }
+
+  object ListPermissionsResponse {
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Permissions: js.UndefOr[PermissionList] = js.undefined
+    ): ListPermissionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Permissions" -> Permissions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPermissionsResponse]
     }
   }
 
@@ -791,9 +980,11 @@ package acmpca {
   }
 
   object ListTagsRequest {
-    def apply(CertificateAuthorityArn: Arn,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsRequest = {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -815,15 +1006,67 @@ package acmpca {
   }
 
   object ListTagsResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): ListTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
+    }
+  }
+
+  /**
+    * Permissions designate which private CA operations can be performed by an AWS service or entity. In order for ACM to automatically renew private certificates, you must give the ACM service principal all available permissions (<code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>). Permissions can be assigned with the <a>CreatePermission</a> operation, removed with the <a>DeletePermission</a> operation, and listed with the <a>ListPermissions</a> operation.
+    */
+  @js.native
+  trait Permission extends js.Object {
+    var Actions: js.UndefOr[ActionList]
+    var CertificateAuthorityArn: js.UndefOr[Arn]
+    var CreatedAt: js.UndefOr[TStamp]
+    var Policy: js.UndefOr[String]
+    var Principal: js.UndefOr[String]
+    var SourceAccount: js.UndefOr[String]
+  }
+
+  object Permission {
+    def apply(
+        Actions: js.UndefOr[ActionList] = js.undefined,
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        CreatedAt: js.UndefOr[TStamp] = js.undefined,
+        Policy: js.UndefOr[String] = js.undefined,
+        Principal: js.UndefOr[String] = js.undefined,
+        SourceAccount: js.UndefOr[String] = js.undefined
+    ): Permission = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Actions" -> Actions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedAt" -> CreatedAt.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Principal" -> Principal.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceAccount" -> SourceAccount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Permission]
     }
   }
 
@@ -833,10 +1076,12 @@ package acmpca {
   }
 
   object RestoreCertificateAuthorityRequest {
-    def apply(CertificateAuthorityArn: Arn): RestoreCertificateAuthorityRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CertificateAuthorityArn: Arn
+    ): RestoreCertificateAuthorityRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreCertificateAuthorityRequest]
     }
@@ -851,10 +1096,14 @@ package acmpca {
   }
 
   object RevocationConfiguration {
-    def apply(CrlConfiguration: js.UndefOr[CrlConfiguration] = js.undefined): RevocationConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("CrlConfiguration" -> CrlConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CrlConfiguration: js.UndefOr[CrlConfiguration] = js.undefined
+    ): RevocationConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CrlConfiguration" -> CrlConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevocationConfiguration]
     }
@@ -890,9 +1139,11 @@ package acmpca {
   }
 
   object RevokeCertificateRequest {
-    def apply(CertificateAuthorityArn: Arn,
-              CertificateSerial: String128,
-              RevocationReason: RevocationReason): RevokeCertificateRequest = {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        CertificateSerial: String128,
+        RevocationReason: RevocationReason
+    ): RevokeCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "CertificateSerial"       -> CertificateSerial.asInstanceOf[js.Any],
@@ -925,10 +1176,16 @@ package acmpca {
   }
 
   object Tag {
-    def apply(Key: TagKey, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -941,7 +1198,10 @@ package acmpca {
   }
 
   object TagCertificateAuthorityRequest {
-    def apply(CertificateAuthorityArn: Arn, Tags: TagList): TagCertificateAuthorityRequest = {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        Tags: TagList
+    ): TagCertificateAuthorityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Tags"                    -> Tags.asInstanceOf[js.Any]
@@ -958,7 +1218,10 @@ package acmpca {
   }
 
   object UntagCertificateAuthorityRequest {
-    def apply(CertificateAuthorityArn: Arn, Tags: TagList): UntagCertificateAuthorityRequest = {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        Tags: TagList
+    ): UntagCertificateAuthorityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Tags"                    -> Tags.asInstanceOf[js.Any]
@@ -976,9 +1239,11 @@ package acmpca {
   }
 
   object UpdateCertificateAuthorityRequest {
-    def apply(CertificateAuthorityArn: Arn,
-              RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
-              Status: js.UndefOr[CertificateAuthorityStatus] = js.undefined): UpdateCertificateAuthorityRequest = {
+    def apply(
+        CertificateAuthorityArn: Arn,
+        RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
+        Status: js.UndefOr[CertificateAuthorityStatus] = js.undefined
+    ): UpdateCertificateAuthorityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "RevocationConfiguration" -> RevocationConfiguration.map { x =>
@@ -1003,10 +1268,14 @@ package acmpca {
   }
 
   object Validity {
-    def apply(Type: ValidityPeriodType, Value: PositiveLong): Validity = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Type" -> Type.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Type: ValidityPeriodType,
+        Value: PositiveLong
+    ): Validity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Type"  -> Type.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Validity]
     }

@@ -7,25 +7,26 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object cloud9 {
-  type AutomaticStopTimeMinutes = Int
-  type BoundedEnvironmentIdList = js.Array[EnvironmentId]
-  type ClientRequestToken       = String
-  type EnvironmentDescription   = String
-  type EnvironmentId            = String
-  type EnvironmentIdList        = js.Array[EnvironmentId]
-  type EnvironmentList          = js.Array[Environment]
-  type EnvironmentMembersList   = js.Array[EnvironmentMember]
-  type EnvironmentName          = String
-  type EnvironmentStatus        = String
-  type EnvironmentType          = String
-  type InstanceType             = String
-  type MaxResults               = Int
-  type MemberPermissions        = String
-  type Permissions              = String
-  type PermissionsList          = js.Array[Permissions]
-  type SubnetId                 = String
-  type Timestamp                = js.Date
-  type UserArn                  = String
+  type AutomaticStopTimeMinutes   = Int
+  type BoundedEnvironmentIdList   = js.Array[EnvironmentId]
+  type ClientRequestToken         = String
+  type EnvironmentDescription     = String
+  type EnvironmentId              = String
+  type EnvironmentIdList          = js.Array[EnvironmentId]
+  type EnvironmentLifecycleStatus = String
+  type EnvironmentList            = js.Array[Environment]
+  type EnvironmentMembersList     = js.Array[EnvironmentMember]
+  type EnvironmentName            = String
+  type EnvironmentStatus          = String
+  type EnvironmentType            = String
+  type InstanceType               = String
+  type MaxResults                 = Int
+  type MemberPermissions          = String
+  type Permissions                = String
+  type PermissionsList            = js.Array[Permissions]
+  type SubnetId                   = String
+  type Timestamp                  = js.Date
+  type UserArn                    = String
 }
 
 package cloud9 {
@@ -55,18 +56,6 @@ package cloud9 {
     ): Request[UpdateEnvironmentMembershipResult] = js.native
   }
 
-  /**
-    * The target request is invalid.
-    */
-  @js.native
-  trait BadRequestExceptionException extends js.Object {}
-
-  /**
-    * A conflict occurred.
-    */
-  @js.native
-  trait ConflictExceptionException extends js.Object {}
-
   @js.native
   trait CreateEnvironmentEC2Request extends js.Object {
     var instanceType: InstanceType
@@ -79,13 +68,15 @@ package cloud9 {
   }
 
   object CreateEnvironmentEC2Request {
-    def apply(instanceType: InstanceType,
-              name: EnvironmentName,
-              automaticStopTimeMinutes: js.UndefOr[AutomaticStopTimeMinutes] = js.undefined,
-              clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              description: js.UndefOr[EnvironmentDescription] = js.undefined,
-              ownerArn: js.UndefOr[UserArn] = js.undefined,
-              subnetId: js.UndefOr[SubnetId] = js.undefined): CreateEnvironmentEC2Request = {
+    def apply(
+        instanceType: InstanceType,
+        name: EnvironmentName,
+        automaticStopTimeMinutes: js.UndefOr[AutomaticStopTimeMinutes] = js.undefined,
+        clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        description: js.UndefOr[EnvironmentDescription] = js.undefined,
+        ownerArn: js.UndefOr[UserArn] = js.undefined,
+        subnetId: js.UndefOr[SubnetId] = js.undefined
+    ): CreateEnvironmentEC2Request = {
       val _fields = IndexedSeq[(String, js.Any)](
         "instanceType" -> instanceType.asInstanceOf[js.Any],
         "name"         -> name.asInstanceOf[js.Any],
@@ -116,10 +107,14 @@ package cloud9 {
   }
 
   object CreateEnvironmentEC2Result {
-    def apply(environmentId: js.UndefOr[EnvironmentId] = js.undefined): CreateEnvironmentEC2Result = {
-      val _fields = IndexedSeq[(String, js.Any)]("environmentId" -> environmentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        environmentId: js.UndefOr[EnvironmentId] = js.undefined
+    ): CreateEnvironmentEC2Result = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "environmentId" -> environmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEnvironmentEC2Result]
     }
@@ -133,9 +128,11 @@ package cloud9 {
   }
 
   object CreateEnvironmentMembershipRequest {
-    def apply(environmentId: EnvironmentId,
-              permissions: MemberPermissions,
-              userArn: UserArn): CreateEnvironmentMembershipRequest = {
+    def apply(
+        environmentId: EnvironmentId,
+        permissions: MemberPermissions,
+        userArn: UserArn
+    ): CreateEnvironmentMembershipRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "permissions"   -> permissions.asInstanceOf[js.Any],
@@ -152,10 +149,14 @@ package cloud9 {
   }
 
   object CreateEnvironmentMembershipResult {
-    def apply(membership: js.UndefOr[EnvironmentMember] = js.undefined): CreateEnvironmentMembershipResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("membership" -> membership.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        membership: js.UndefOr[EnvironmentMember] = js.undefined
+    ): CreateEnvironmentMembershipResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "membership" -> membership.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEnvironmentMembershipResult]
     }
@@ -168,7 +169,10 @@ package cloud9 {
   }
 
   object DeleteEnvironmentMembershipRequest {
-    def apply(environmentId: EnvironmentId, userArn: UserArn): DeleteEnvironmentMembershipRequest = {
+    def apply(
+        environmentId: EnvironmentId,
+        userArn: UserArn
+    ): DeleteEnvironmentMembershipRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "userArn"       -> userArn.asInstanceOf[js.Any]
@@ -182,8 +186,10 @@ package cloud9 {
   trait DeleteEnvironmentMembershipResult extends js.Object {}
 
   object DeleteEnvironmentMembershipResult {
-    def apply(): DeleteEnvironmentMembershipResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteEnvironmentMembershipResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEnvironmentMembershipResult]
     }
@@ -195,9 +201,12 @@ package cloud9 {
   }
 
   object DeleteEnvironmentRequest {
-    def apply(environmentId: EnvironmentId): DeleteEnvironmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("environmentId" -> environmentId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        environmentId: EnvironmentId
+    ): DeleteEnvironmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "environmentId" -> environmentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEnvironmentRequest]
     }
@@ -207,8 +216,10 @@ package cloud9 {
   trait DeleteEnvironmentResult extends js.Object {}
 
   object DeleteEnvironmentResult {
-    def apply(): DeleteEnvironmentResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteEnvironmentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEnvironmentResult]
     }
@@ -224,11 +235,13 @@ package cloud9 {
   }
 
   object DescribeEnvironmentMembershipsRequest {
-    def apply(environmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined,
-              permissions: js.UndefOr[PermissionsList] = js.undefined,
-              userArn: js.UndefOr[UserArn] = js.undefined): DescribeEnvironmentMembershipsRequest = {
+    def apply(
+        environmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        permissions: js.UndefOr[PermissionsList] = js.undefined,
+        userArn: js.UndefOr[UserArn] = js.undefined
+    ): DescribeEnvironmentMembershipsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "environmentId" -> environmentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -258,13 +271,18 @@ package cloud9 {
   }
 
   object DescribeEnvironmentMembershipsResult {
-    def apply(memberships: js.UndefOr[EnvironmentMembersList] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined): DescribeEnvironmentMembershipsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("memberships" -> memberships.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        memberships: js.UndefOr[EnvironmentMembersList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEnvironmentMembershipsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "memberships" -> memberships.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentMembershipsResult]
     }
@@ -276,9 +294,12 @@ package cloud9 {
   }
 
   object DescribeEnvironmentStatusRequest {
-    def apply(environmentId: EnvironmentId): DescribeEnvironmentStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("environmentId" -> environmentId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        environmentId: EnvironmentId
+    ): DescribeEnvironmentStatusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "environmentId" -> environmentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentStatusRequest]
     }
@@ -291,13 +312,18 @@ package cloud9 {
   }
 
   object DescribeEnvironmentStatusResult {
-    def apply(message: js.UndefOr[String] = js.undefined,
-              status: js.UndefOr[EnvironmentStatus] = js.undefined): DescribeEnvironmentStatusResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("message" -> message.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "status" -> status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        message: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[EnvironmentStatus] = js.undefined
+    ): DescribeEnvironmentStatusResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "message" -> message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentStatusResult]
     }
@@ -309,9 +335,12 @@ package cloud9 {
   }
 
   object DescribeEnvironmentsRequest {
-    def apply(environmentIds: BoundedEnvironmentIdList): DescribeEnvironmentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("environmentIds" -> environmentIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        environmentIds: BoundedEnvironmentIdList
+    ): DescribeEnvironmentsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "environmentIds" -> environmentIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentsRequest]
     }
@@ -323,10 +352,14 @@ package cloud9 {
   }
 
   object DescribeEnvironmentsResult {
-    def apply(environments: js.UndefOr[EnvironmentList] = js.undefined): DescribeEnvironmentsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("environments" -> environments.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        environments: js.UndefOr[EnvironmentList] = js.undefined
+    ): DescribeEnvironmentsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "environments" -> environments.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEnvironmentsResult]
     }
@@ -340,18 +373,22 @@ package cloud9 {
     var arn: js.UndefOr[String]
     var description: js.UndefOr[EnvironmentDescription]
     var id: js.UndefOr[EnvironmentId]
+    var lifecycle: js.UndefOr[EnvironmentLifecycle]
     var name: js.UndefOr[EnvironmentName]
     var ownerArn: js.UndefOr[String]
     var `type`: js.UndefOr[EnvironmentType]
   }
 
   object Environment {
-    def apply(arn: js.UndefOr[String] = js.undefined,
-              description: js.UndefOr[EnvironmentDescription] = js.undefined,
-              id: js.UndefOr[EnvironmentId] = js.undefined,
-              name: js.UndefOr[EnvironmentName] = js.undefined,
-              ownerArn: js.UndefOr[String] = js.undefined,
-              `type`: js.UndefOr[EnvironmentType] = js.undefined): Environment = {
+    def apply(
+        arn: js.UndefOr[String] = js.undefined,
+        description: js.UndefOr[EnvironmentDescription] = js.undefined,
+        id: js.UndefOr[EnvironmentId] = js.undefined,
+        lifecycle: js.UndefOr[EnvironmentLifecycle] = js.undefined,
+        name: js.UndefOr[EnvironmentName] = js.undefined,
+        ownerArn: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[EnvironmentType] = js.undefined
+    ): Environment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -360,6 +397,9 @@ package cloud9 {
           x.asInstanceOf[js.Any]
         },
         "id" -> id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "lifecycle" -> lifecycle.map { x =>
           x.asInstanceOf[js.Any]
         },
         "name" -> name.map { x =>
@@ -378,6 +418,46 @@ package cloud9 {
   }
 
   /**
+    * Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment.
+    */
+  @js.native
+  trait EnvironmentLifecycle extends js.Object {
+    var failureResource: js.UndefOr[String]
+    var reason: js.UndefOr[String]
+    var status: js.UndefOr[EnvironmentLifecycleStatus]
+  }
+
+  object EnvironmentLifecycle {
+    def apply(
+        failureResource: js.UndefOr[String] = js.undefined,
+        reason: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[EnvironmentLifecycleStatus] = js.undefined
+    ): EnvironmentLifecycle = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failureResource" -> failureResource.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "reason" -> reason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnvironmentLifecycle]
+    }
+  }
+
+  object EnvironmentLifecycleStatusEnum {
+    val CREATED       = "CREATED"
+    val DELETING      = "DELETING"
+    val DELETE_FAILED = "DELETE_FAILED"
+
+    val values = IndexedSeq(CREATED, DELETING, DELETE_FAILED)
+  }
+
+  /**
     * Information about an environment member for an AWS Cloud9 development environment.
     */
   @js.native
@@ -390,11 +470,13 @@ package cloud9 {
   }
 
   object EnvironmentMember {
-    def apply(environmentId: js.UndefOr[EnvironmentId] = js.undefined,
-              lastAccess: js.UndefOr[Timestamp] = js.undefined,
-              permissions: js.UndefOr[Permissions] = js.undefined,
-              userArn: js.UndefOr[UserArn] = js.undefined,
-              userId: js.UndefOr[String] = js.undefined): EnvironmentMember = {
+    def apply(
+        environmentId: js.UndefOr[EnvironmentId] = js.undefined,
+        lastAccess: js.UndefOr[Timestamp] = js.undefined,
+        permissions: js.UndefOr[Permissions] = js.undefined,
+        userArn: js.UndefOr[UserArn] = js.undefined,
+        userId: js.UndefOr[String] = js.undefined
+    ): EnvironmentMember = {
       val _fields = IndexedSeq[(String, js.Any)](
         "environmentId" -> environmentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -436,24 +518,6 @@ package cloud9 {
     val values = IndexedSeq(ssh, ec2)
   }
 
-  /**
-    * An access permissions issue occurred.
-    */
-  @js.native
-  trait ForbiddenExceptionException extends js.Object {}
-
-  /**
-    * An internal server error occurred.
-    */
-  @js.native
-  trait InternalServerErrorExceptionException extends js.Object {}
-
-  /**
-    * A service limit was exceeded.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {}
-
   @js.native
   trait ListEnvironmentsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
@@ -461,13 +525,18 @@ package cloud9 {
   }
 
   object ListEnvironmentsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined): ListEnvironmentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListEnvironmentsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEnvironmentsRequest]
     }
@@ -480,13 +549,18 @@ package cloud9 {
   }
 
   object ListEnvironmentsResult {
-    def apply(environmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
-              nextToken: js.UndefOr[String] = js.undefined): ListEnvironmentsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("environmentIds" -> environmentIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        environmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListEnvironmentsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "environmentIds" -> environmentIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEnvironmentsResult]
     }
@@ -499,12 +573,6 @@ package cloud9 {
     val values = IndexedSeq(`read-write`, `read-only`)
   }
 
-  /**
-    * The target resource cannot be found.
-    */
-  @js.native
-  trait NotFoundExceptionException extends js.Object {}
-
   object PermissionsEnum {
     val owner        = "owner"
     val `read-write` = "read-write"
@@ -512,12 +580,6 @@ package cloud9 {
 
     val values = IndexedSeq(owner, `read-write`, `read-only`)
   }
-
-  /**
-    * Too many service requests were made over the given time period.
-    */
-  @js.native
-  trait TooManyRequestsExceptionException extends js.Object {}
 
   @js.native
   trait UpdateEnvironmentMembershipRequest extends js.Object {
@@ -527,9 +589,11 @@ package cloud9 {
   }
 
   object UpdateEnvironmentMembershipRequest {
-    def apply(environmentId: EnvironmentId,
-              permissions: MemberPermissions,
-              userArn: UserArn): UpdateEnvironmentMembershipRequest = {
+    def apply(
+        environmentId: EnvironmentId,
+        permissions: MemberPermissions,
+        userArn: UserArn
+    ): UpdateEnvironmentMembershipRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "permissions"   -> permissions.asInstanceOf[js.Any],
@@ -546,10 +610,14 @@ package cloud9 {
   }
 
   object UpdateEnvironmentMembershipResult {
-    def apply(membership: js.UndefOr[EnvironmentMember] = js.undefined): UpdateEnvironmentMembershipResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("membership" -> membership.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        membership: js.UndefOr[EnvironmentMember] = js.undefined
+    ): UpdateEnvironmentMembershipResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "membership" -> membership.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEnvironmentMembershipResult]
     }
@@ -563,9 +631,11 @@ package cloud9 {
   }
 
   object UpdateEnvironmentRequest {
-    def apply(environmentId: EnvironmentId,
-              description: js.UndefOr[EnvironmentDescription] = js.undefined,
-              name: js.UndefOr[EnvironmentName] = js.undefined): UpdateEnvironmentRequest = {
+    def apply(
+        environmentId: EnvironmentId,
+        description: js.UndefOr[EnvironmentDescription] = js.undefined,
+        name: js.UndefOr[EnvironmentName] = js.undefined
+    ): UpdateEnvironmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -584,8 +654,10 @@ package cloud9 {
   trait UpdateEnvironmentResult extends js.Object {}
 
   object UpdateEnvironmentResult {
-    def apply(): UpdateEnvironmentResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateEnvironmentResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEnvironmentResult]
     }

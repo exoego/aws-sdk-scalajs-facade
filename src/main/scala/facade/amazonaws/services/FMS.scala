@@ -27,12 +27,14 @@ package object fms {
   type PolicyId                   = String
   type PolicySummaryList          = js.Array[PolicySummary]
   type PolicyUpdateToken          = String
+  type ProtectionData             = String
   type ResourceArn                = String
   type ResourceCount              = Double
   type ResourceId                 = String
   type ResourceName               = String
   type ResourceTags               = js.Array[ResourceTag]
   type ResourceType               = String
+  type ResourceTypeList           = js.Array[ResourceType]
   type SecurityServiceType        = String
   type TagKey                     = String
   type TagValue                   = String
@@ -55,6 +57,7 @@ package fms {
     def getNotificationChannel(params: GetNotificationChannelRequest): Request[GetNotificationChannelResponse] =
       js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                  = js.native
+    def getProtectionStatus(params: GetProtectionStatusRequest): Request[GetProtectionStatusResponse]    = js.native
     def listComplianceStatus(params: ListComplianceStatusRequest): Request[ListComplianceStatusResponse] = js.native
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResponse]       = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse]                         = js.native
@@ -78,9 +81,12 @@ package fms {
   }
 
   object AssociateAdminAccountRequest {
-    def apply(AdminAccount: AWSAccountId): AssociateAdminAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AdminAccount" -> AdminAccount.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AdminAccount: AWSAccountId
+    ): AssociateAdminAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AdminAccount" -> AdminAccount.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateAdminAccountRequest]
     }
@@ -97,9 +103,11 @@ package fms {
   }
 
   object ComplianceViolator {
-    def apply(ResourceId: js.UndefOr[ResourceId] = js.undefined,
-              ResourceType: js.UndefOr[ResourceType] = js.undefined,
-              ViolationReason: js.UndefOr[ViolationReason] = js.undefined): ComplianceViolator = {
+    def apply(
+        ResourceId: js.UndefOr[ResourceId] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        ViolationReason: js.UndefOr[ViolationReason] = js.undefined
+    ): ComplianceViolator = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.map { x =>
           x.asInstanceOf[js.Any]
@@ -126,8 +134,10 @@ package fms {
   trait DeleteNotificationChannelRequest extends js.Object {}
 
   object DeleteNotificationChannelRequest {
-    def apply(): DeleteNotificationChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteNotificationChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotificationChannelRequest]
     }
@@ -136,30 +146,41 @@ package fms {
   @js.native
   trait DeletePolicyRequest extends js.Object {
     var PolicyId: PolicyId
+    var DeleteAllPolicyResources: js.UndefOr[Boolean]
   }
 
   object DeletePolicyRequest {
-    def apply(PolicyId: PolicyId): DeletePolicyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("PolicyId" -> PolicyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PolicyId: PolicyId,
+        DeleteAllPolicyResources: js.UndefOr[Boolean] = js.undefined
+    ): DeletePolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
+        "DeleteAllPolicyResources" -> DeleteAllPolicyResources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePolicyRequest]
     }
   }
 
   object DependentServiceNameEnum {
-    val AWSCONFIG = "AWSCONFIG"
-    val AWSWAF    = "AWSWAF"
+    val AWSCONFIG          = "AWSCONFIG"
+    val AWSWAF             = "AWSWAF"
+    val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED"
 
-    val values = IndexedSeq(AWSCONFIG, AWSWAF)
+    val values = IndexedSeq(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED)
   }
 
   @js.native
   trait DisassociateAdminAccountRequest extends js.Object {}
 
   object DisassociateAdminAccountRequest {
-    def apply(): DisassociateAdminAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateAdminAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateAdminAccountRequest]
     }
@@ -176,9 +197,11 @@ package fms {
   }
 
   object EvaluationResult {
-    def apply(ComplianceStatus: js.UndefOr[PolicyComplianceStatusType] = js.undefined,
-              EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
-              ViolatorCount: js.UndefOr[ResourceCount] = js.undefined): EvaluationResult = {
+    def apply(
+        ComplianceStatus: js.UndefOr[PolicyComplianceStatusType] = js.undefined,
+        EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
+        ViolatorCount: js.UndefOr[ResourceCount] = js.undefined
+    ): EvaluationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComplianceStatus" -> ComplianceStatus.map { x =>
           x.asInstanceOf[js.Any]
@@ -199,8 +222,10 @@ package fms {
   trait GetAdminAccountRequest extends js.Object {}
 
   object GetAdminAccountRequest {
-    def apply(): GetAdminAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetAdminAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdminAccountRequest]
     }
@@ -213,13 +238,18 @@ package fms {
   }
 
   object GetAdminAccountResponse {
-    def apply(AdminAccount: js.UndefOr[AWSAccountId] = js.undefined,
-              RoleStatus: js.UndefOr[AccountRoleStatus] = js.undefined): GetAdminAccountResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("AdminAccount" -> AdminAccount.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RoleStatus" -> RoleStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AdminAccount: js.UndefOr[AWSAccountId] = js.undefined,
+        RoleStatus: js.UndefOr[AccountRoleStatus] = js.undefined
+    ): GetAdminAccountResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AdminAccount" -> AdminAccount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleStatus" -> RoleStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdminAccountResponse]
     }
@@ -232,7 +262,10 @@ package fms {
   }
 
   object GetComplianceDetailRequest {
-    def apply(MemberAccount: AWSAccountId, PolicyId: PolicyId): GetComplianceDetailRequest = {
+    def apply(
+        MemberAccount: AWSAccountId,
+        PolicyId: PolicyId
+    ): GetComplianceDetailRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
         "PolicyId"      -> PolicyId.asInstanceOf[js.Any]
@@ -251,9 +284,11 @@ package fms {
     def apply(
         PolicyComplianceDetail: js.UndefOr[PolicyComplianceDetail] = js.undefined
     ): GetComplianceDetailResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("PolicyComplianceDetail" -> PolicyComplianceDetail.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PolicyComplianceDetail" -> PolicyComplianceDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetComplianceDetailResponse]
     }
@@ -263,8 +298,10 @@ package fms {
   trait GetNotificationChannelRequest extends js.Object {}
 
   object GetNotificationChannelRequest {
-    def apply(): GetNotificationChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetNotificationChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNotificationChannelRequest]
     }
@@ -277,13 +314,18 @@ package fms {
   }
 
   object GetNotificationChannelResponse {
-    def apply(SnsRoleName: js.UndefOr[ResourceArn] = js.undefined,
-              SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined): GetNotificationChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnsRoleName" -> SnsRoleName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SnsTopicArn" -> SnsTopicArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnsRoleName: js.UndefOr[ResourceArn] = js.undefined,
+        SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined
+    ): GetNotificationChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnsRoleName" -> SnsRoleName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SnsTopicArn" -> SnsTopicArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNotificationChannelResponse]
     }
@@ -295,9 +337,12 @@ package fms {
   }
 
   object GetPolicyRequest {
-    def apply(PolicyId: PolicyId): GetPolicyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("PolicyId" -> PolicyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PolicyId: PolicyId
+    ): GetPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyRequest]
     }
@@ -310,15 +355,96 @@ package fms {
   }
 
   object GetPolicyResponse {
-    def apply(Policy: js.UndefOr[Policy] = js.undefined,
-              PolicyArn: js.UndefOr[ResourceArn] = js.undefined): GetPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Policy" -> Policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PolicyArn" -> PolicyArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Policy: js.UndefOr[Policy] = js.undefined,
+        PolicyArn: js.UndefOr[ResourceArn] = js.undefined
+    ): GetPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PolicyArn" -> PolicyArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPolicyResponse]
+    }
+  }
+
+  @js.native
+  trait GetProtectionStatusRequest extends js.Object {
+    var PolicyId: PolicyId
+    var EndTime: js.UndefOr[TimeStamp]
+    var MaxResults: js.UndefOr[PaginationMaxResults]
+    var MemberAccountId: js.UndefOr[AWSAccountId]
+    var NextToken: js.UndefOr[PaginationToken]
+    var StartTime: js.UndefOr[TimeStamp]
+  }
+
+  object GetProtectionStatusRequest {
+    def apply(
+        PolicyId: PolicyId,
+        EndTime: js.UndefOr[TimeStamp] = js.undefined,
+        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        MemberAccountId: js.UndefOr[AWSAccountId] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        StartTime: js.UndefOr[TimeStamp] = js.undefined
+    ): GetProtectionStatusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MemberAccountId" -> MemberAccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTime" -> StartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProtectionStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetProtectionStatusResponse extends js.Object {
+    var AdminAccountId: js.UndefOr[AWSAccountId]
+    var Data: js.UndefOr[ProtectionData]
+    var NextToken: js.UndefOr[PaginationToken]
+    var ServiceType: js.UndefOr[SecurityServiceType]
+  }
+
+  object GetProtectionStatusResponse {
+    def apply(
+        AdminAccountId: js.UndefOr[AWSAccountId] = js.undefined,
+        Data: js.UndefOr[ProtectionData] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        ServiceType: js.UndefOr[SecurityServiceType] = js.undefined
+    ): GetProtectionStatusResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AdminAccountId" -> AdminAccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ServiceType" -> ServiceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProtectionStatusResponse]
     }
   }
 
@@ -330,9 +456,11 @@ package fms {
   }
 
   object ListComplianceStatusRequest {
-    def apply(PolicyId: PolicyId,
-              MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
-              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListComplianceStatusRequest = {
+    def apply(
+        PolicyId: PolicyId,
+        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListComplianceStatusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PolicyId" -> PolicyId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -358,11 +486,14 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList] = js.undefined
     ): ListComplianceStatusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PolicyComplianceStatusList" -> PolicyComplianceStatusList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PolicyComplianceStatusList" -> PolicyComplianceStatusList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListComplianceStatusResponse]
     }
@@ -375,13 +506,18 @@ package fms {
   }
 
   object ListMemberAccountsRequest {
-    def apply(MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
-              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListMemberAccountsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListMemberAccountsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsRequest]
     }
@@ -394,13 +530,18 @@ package fms {
   }
 
   object ListMemberAccountsResponse {
-    def apply(MemberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
-              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListMemberAccountsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("MemberAccounts" -> MemberAccounts.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MemberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListMemberAccountsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MemberAccounts" -> MemberAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsResponse]
     }
@@ -413,13 +554,18 @@ package fms {
   }
 
   object ListPoliciesRequest {
-    def apply(MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
-              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListPoliciesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListPoliciesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesRequest]
     }
@@ -432,13 +578,18 @@ package fms {
   }
 
   object ListPoliciesResponse {
-    def apply(NextToken: js.UndefOr[PaginationToken] = js.undefined,
-              PolicyList: js.UndefOr[PolicySummaryList] = js.undefined): ListPoliciesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PolicyList" -> PolicyList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        PolicyList: js.UndefOr[PolicySummaryList] = js.undefined
+    ): ListPoliciesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PolicyList" -> PolicyList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPoliciesResponse]
     }
@@ -459,19 +610,23 @@ package fms {
     var PolicyId: js.UndefOr[PolicyId]
     var PolicyUpdateToken: js.UndefOr[PolicyUpdateToken]
     var ResourceTags: js.UndefOr[ResourceTags]
+    var ResourceTypeList: js.UndefOr[ResourceTypeList]
   }
 
   object Policy {
-    def apply(ExcludeResourceTags: Boolean,
-              PolicyName: ResourceName,
-              RemediationEnabled: Boolean,
-              ResourceType: ResourceType,
-              SecurityServicePolicyData: SecurityServicePolicyData,
-              ExcludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
-              IncludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
-              PolicyId: js.UndefOr[PolicyId] = js.undefined,
-              PolicyUpdateToken: js.UndefOr[PolicyUpdateToken] = js.undefined,
-              ResourceTags: js.UndefOr[ResourceTags] = js.undefined): Policy = {
+    def apply(
+        ExcludeResourceTags: Boolean,
+        PolicyName: ResourceName,
+        RemediationEnabled: Boolean,
+        ResourceType: ResourceType,
+        SecurityServicePolicyData: SecurityServicePolicyData,
+        ExcludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
+        IncludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
+        PolicyId: js.UndefOr[PolicyId] = js.undefined,
+        PolicyUpdateToken: js.UndefOr[PolicyUpdateToken] = js.undefined,
+        ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
+        ResourceTypeList: js.UndefOr[ResourceTypeList] = js.undefined
+    ): Policy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExcludeResourceTags"       -> ExcludeResourceTags.asInstanceOf[js.Any],
         "PolicyName"                -> PolicyName.asInstanceOf[js.Any],
@@ -491,6 +646,9 @@ package fms {
           x.asInstanceOf[js.Any]
         },
         "ResourceTags" -> ResourceTags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceTypeList" -> ResourceTypeList.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -514,13 +672,15 @@ package fms {
   }
 
   object PolicyComplianceDetail {
-    def apply(EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
-              ExpiredAt: js.UndefOr[TimeStamp] = js.undefined,
-              IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
-              MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
-              PolicyId: js.UndefOr[PolicyId] = js.undefined,
-              PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined,
-              Violators: js.UndefOr[ComplianceViolators] = js.undefined): PolicyComplianceDetail = {
+    def apply(
+        EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
+        ExpiredAt: js.UndefOr[TimeStamp] = js.undefined,
+        IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
+        MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
+        PolicyId: js.UndefOr[PolicyId] = js.undefined,
+        PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined,
+        Violators: js.UndefOr[ComplianceViolators] = js.undefined
+    ): PolicyComplianceDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EvaluationLimitExceeded" -> EvaluationLimitExceeded.map { x =>
           x.asInstanceOf[js.Any]
@@ -564,13 +724,15 @@ package fms {
   }
 
   object PolicyComplianceStatus {
-    def apply(EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
-              IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
-              LastUpdated: js.UndefOr[TimeStamp] = js.undefined,
-              MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
-              PolicyId: js.UndefOr[PolicyId] = js.undefined,
-              PolicyName: js.UndefOr[ResourceName] = js.undefined,
-              PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined): PolicyComplianceStatus = {
+    def apply(
+        EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
+        IssueInfoMap: js.UndefOr[IssueInfoMap] = js.undefined,
+        LastUpdated: js.UndefOr[TimeStamp] = js.undefined,
+        MemberAccount: js.UndefOr[AWSAccountId] = js.undefined,
+        PolicyId: js.UndefOr[PolicyId] = js.undefined,
+        PolicyName: js.UndefOr[ResourceName] = js.undefined,
+        PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined
+    ): PolicyComplianceStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EvaluationResults" -> EvaluationResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -620,12 +782,14 @@ package fms {
   }
 
   object PolicySummary {
-    def apply(PolicyArn: js.UndefOr[ResourceArn] = js.undefined,
-              PolicyId: js.UndefOr[PolicyId] = js.undefined,
-              PolicyName: js.UndefOr[ResourceName] = js.undefined,
-              RemediationEnabled: js.UndefOr[Boolean] = js.undefined,
-              ResourceType: js.UndefOr[ResourceType] = js.undefined,
-              SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined): PolicySummary = {
+    def apply(
+        PolicyArn: js.UndefOr[ResourceArn] = js.undefined,
+        PolicyId: js.UndefOr[PolicyId] = js.undefined,
+        PolicyName: js.UndefOr[ResourceName] = js.undefined,
+        RemediationEnabled: js.UndefOr[Boolean] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined
+    ): PolicySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PolicyArn" -> PolicyArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -658,7 +822,10 @@ package fms {
   }
 
   object PutNotificationChannelRequest {
-    def apply(SnsRoleName: ResourceArn, SnsTopicArn: ResourceArn): PutNotificationChannelRequest = {
+    def apply(
+        SnsRoleName: ResourceArn,
+        SnsTopicArn: ResourceArn
+    ): PutNotificationChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnsRoleName" -> SnsRoleName.asInstanceOf[js.Any],
         "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]
@@ -674,9 +841,12 @@ package fms {
   }
 
   object PutPolicyRequest {
-    def apply(Policy: Policy): PutPolicyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Policy" -> Policy.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Policy: Policy
+    ): PutPolicyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policy" -> Policy.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPolicyRequest]
     }
@@ -689,13 +859,18 @@ package fms {
   }
 
   object PutPolicyResponse {
-    def apply(Policy: js.UndefOr[Policy] = js.undefined,
-              PolicyArn: js.UndefOr[ResourceArn] = js.undefined): PutPolicyResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Policy" -> Policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PolicyArn" -> PolicyArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Policy: js.UndefOr[Policy] = js.undefined,
+        PolicyArn: js.UndefOr[ResourceArn] = js.undefined
+    ): PutPolicyResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PolicyArn" -> PolicyArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutPolicyResponse]
     }
@@ -711,10 +886,16 @@ package fms {
   }
 
   object ResourceTag {
-    def apply(Key: TagKey, Value: js.UndefOr[TagValue] = js.undefined): ResourceTag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKey,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): ResourceTag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTag]
     }
@@ -730,8 +911,10 @@ package fms {
   }
 
   object SecurityServicePolicyData {
-    def apply(Type: SecurityServiceType,
-              ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined): SecurityServicePolicyData = {
+    def apply(
+        Type: SecurityServiceType,
+        ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined
+    ): SecurityServicePolicyData = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Type" -> Type.asInstanceOf[js.Any],
         "ManagedServiceData" -> ManagedServiceData.map { x =>
@@ -744,16 +927,23 @@ package fms {
   }
 
   object SecurityServiceTypeEnum {
-    val WAF = "WAF"
+    val WAF             = "WAF"
+    val SHIELD_ADVANCED = "SHIELD_ADVANCED"
 
-    val values = IndexedSeq(WAF)
+    val values = IndexedSeq(WAF, SHIELD_ADVANCED)
   }
 
   object ViolationReasonEnum {
-    val WEB_ACL_MISSING_RULE_GROUP = "WEB_ACL_MISSING_RULE_GROUP"
-    val RESOURCE_MISSING_WEB_ACL   = "RESOURCE_MISSING_WEB_ACL"
-    val RESOURCE_INCORRECT_WEB_ACL = "RESOURCE_INCORRECT_WEB_ACL"
+    val WEB_ACL_MISSING_RULE_GROUP         = "WEB_ACL_MISSING_RULE_GROUP"
+    val RESOURCE_MISSING_WEB_ACL           = "RESOURCE_MISSING_WEB_ACL"
+    val RESOURCE_INCORRECT_WEB_ACL         = "RESOURCE_INCORRECT_WEB_ACL"
+    val RESOURCE_MISSING_SHIELD_PROTECTION = "RESOURCE_MISSING_SHIELD_PROTECTION"
 
-    val values = IndexedSeq(WEB_ACL_MISSING_RULE_GROUP, RESOURCE_MISSING_WEB_ACL, RESOURCE_INCORRECT_WEB_ACL)
+    val values = IndexedSeq(
+      WEB_ACL_MISSING_RULE_GROUP,
+      RESOURCE_MISSING_WEB_ACL,
+      RESOURCE_INCORRECT_WEB_ACL,
+      RESOURCE_MISSING_SHIELD_PROTECTION
+    )
   }
 }

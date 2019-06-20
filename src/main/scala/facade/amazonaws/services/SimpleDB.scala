@@ -47,10 +47,12 @@ package simpledb {
   }
 
   object Attribute {
-    def apply(Name: String,
-              Value: String,
-              AlternateNameEncoding: js.UndefOr[String] = js.undefined,
-              AlternateValueEncoding: js.UndefOr[String] = js.undefined): Attribute = {
+    def apply(
+        Name: String,
+        Value: String,
+        AlternateNameEncoding: js.UndefOr[String] = js.undefined,
+        AlternateValueEncoding: js.UndefOr[String] = js.undefined
+    ): Attribute = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any],
@@ -81,7 +83,10 @@ package simpledb {
   }
 
   object BatchDeleteAttributesRequest {
-    def apply(DomainName: String, Items: DeletableItemList): BatchDeleteAttributesRequest = {
+    def apply(
+        DomainName: String,
+        Items: DeletableItemList
+    ): BatchDeleteAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Items"      -> Items.asInstanceOf[js.Any]
@@ -98,7 +103,10 @@ package simpledb {
   }
 
   object BatchPutAttributesRequest {
-    def apply(DomainName: String, Items: ReplaceableItemList): BatchPutAttributesRequest = {
+    def apply(
+        DomainName: String,
+        Items: ReplaceableItemList
+    ): BatchPutAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Items"      -> Items.asInstanceOf[js.Any]
@@ -114,9 +122,12 @@ package simpledb {
   }
 
   object CreateDomainRequest {
-    def apply(DomainName: String): CreateDomainRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DomainName" -> DomainName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DomainName: String
+    ): CreateDomainRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDomainRequest]
     }
@@ -132,10 +143,16 @@ package simpledb {
   }
 
   object DeletableAttribute {
-    def apply(Name: String, Value: js.UndefOr[String] = js.undefined): DeletableAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: String,
+        Value: js.UndefOr[String] = js.undefined
+    ): DeletableAttribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletableAttribute]
     }
@@ -148,11 +165,16 @@ package simpledb {
   }
 
   object DeletableItem {
-    def apply(Name: String, Attributes: js.UndefOr[DeletableAttributeList] = js.undefined): DeletableItem = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Attributes" -> Attributes.map {
-        x =>
+    def apply(
+        Name: String,
+        Attributes: js.UndefOr[DeletableAttributeList] = js.undefined
+    ): DeletableItem = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletableItem]
     }
@@ -167,10 +189,12 @@ package simpledb {
   }
 
   object DeleteAttributesRequest {
-    def apply(DomainName: String,
-              ItemName: String,
-              Attributes: js.UndefOr[DeletableAttributeList] = js.undefined,
-              Expected: js.UndefOr[UpdateCondition] = js.undefined): DeleteAttributesRequest = {
+    def apply(
+        DomainName: String,
+        ItemName: String,
+        Attributes: js.UndefOr[DeletableAttributeList] = js.undefined,
+        Expected: js.UndefOr[UpdateCondition] = js.undefined
+    ): DeleteAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "ItemName"   -> ItemName.asInstanceOf[js.Any],
@@ -192,9 +216,12 @@ package simpledb {
   }
 
   object DeleteDomainRequest {
-    def apply(DomainName: String): DeleteDomainRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DomainName" -> DomainName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DomainName: String
+    ): DeleteDomainRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainRequest]
     }
@@ -206,9 +233,12 @@ package simpledb {
   }
 
   object DomainMetadataRequest {
-    def apply(DomainName: String): DomainMetadataRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DomainName" -> DomainName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DomainName: String
+    ): DomainMetadataRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainMetadataRequest]
     }
@@ -226,13 +256,15 @@ package simpledb {
   }
 
   object DomainMetadataResult {
-    def apply(AttributeNameCount: js.UndefOr[Int] = js.undefined,
-              AttributeNamesSizeBytes: js.UndefOr[Double] = js.undefined,
-              AttributeValueCount: js.UndefOr[Int] = js.undefined,
-              AttributeValuesSizeBytes: js.UndefOr[Double] = js.undefined,
-              ItemCount: js.UndefOr[Int] = js.undefined,
-              ItemNamesSizeBytes: js.UndefOr[Double] = js.undefined,
-              Timestamp: js.UndefOr[Int] = js.undefined): DomainMetadataResult = {
+    def apply(
+        AttributeNameCount: js.UndefOr[Int] = js.undefined,
+        AttributeNamesSizeBytes: js.UndefOr[Double] = js.undefined,
+        AttributeValueCount: js.UndefOr[Int] = js.undefined,
+        AttributeValuesSizeBytes: js.UndefOr[Double] = js.undefined,
+        ItemCount: js.UndefOr[Int] = js.undefined,
+        ItemNamesSizeBytes: js.UndefOr[Double] = js.undefined,
+        Timestamp: js.UndefOr[Int] = js.undefined
+    ): DomainMetadataResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeNameCount" -> AttributeNameCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -278,10 +310,12 @@ package simpledb {
   }
 
   object GetAttributesRequest {
-    def apply(DomainName: String,
-              ItemName: String,
-              AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
-              ConsistentRead: js.UndefOr[Boolean] = js.undefined): GetAttributesRequest = {
+    def apply(
+        DomainName: String,
+        ItemName: String,
+        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
+        ConsistentRead: js.UndefOr[Boolean] = js.undefined
+    ): GetAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "ItemName"   -> ItemName.asInstanceOf[js.Any],
@@ -303,10 +337,14 @@ package simpledb {
   }
 
   object GetAttributesResult {
-    def apply(Attributes: js.UndefOr[AttributeList] = js.undefined): GetAttributesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[AttributeList] = js.undefined
+    ): GetAttributesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAttributesResult]
     }
@@ -363,9 +401,11 @@ package simpledb {
   }
 
   object Item {
-    def apply(Attributes: AttributeList,
-              Name: String,
-              AlternateNameEncoding: js.UndefOr[String] = js.undefined): Item = {
+    def apply(
+        Attributes: AttributeList,
+        Name: String,
+        AlternateNameEncoding: js.UndefOr[String] = js.undefined
+    ): Item = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "Name"       -> Name.asInstanceOf[js.Any],
@@ -385,13 +425,18 @@ package simpledb {
   }
 
   object ListDomainsRequest {
-    def apply(MaxNumberOfDomains: js.UndefOr[Int] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListDomainsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxNumberOfDomains" -> MaxNumberOfDomains.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxNumberOfDomains: js.UndefOr[Int] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListDomainsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxNumberOfDomains" -> MaxNumberOfDomains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDomainsRequest]
     }
@@ -404,13 +449,18 @@ package simpledb {
   }
 
   object ListDomainsResult {
-    def apply(DomainNames: js.UndefOr[DomainNameList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): ListDomainsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DomainNames" -> DomainNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DomainNames: js.UndefOr[DomainNameList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListDomainsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainNames" -> DomainNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDomainsResult]
     }
@@ -489,10 +539,12 @@ package simpledb {
   }
 
   object PutAttributesRequest {
-    def apply(Attributes: ReplaceableAttributeList,
-              DomainName: String,
-              ItemName: String,
-              Expected: js.UndefOr[UpdateCondition] = js.undefined): PutAttributesRequest = {
+    def apply(
+        Attributes: ReplaceableAttributeList,
+        DomainName: String,
+        ItemName: String,
+        Expected: js.UndefOr[UpdateCondition] = js.undefined
+    ): PutAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
@@ -517,7 +569,11 @@ package simpledb {
   }
 
   object ReplaceableAttribute {
-    def apply(Name: String, Value: String, Replace: js.UndefOr[Boolean] = js.undefined): ReplaceableAttribute = {
+    def apply(
+        Name: String,
+        Value: String,
+        Replace: js.UndefOr[Boolean] = js.undefined
+    ): ReplaceableAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any],
@@ -540,7 +596,10 @@ package simpledb {
   }
 
   object ReplaceableItem {
-    def apply(Attributes: ReplaceableAttributeList, Name: String): ReplaceableItem = {
+    def apply(
+        Attributes: ReplaceableAttributeList,
+        Name: String
+    ): ReplaceableItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "Name"       -> Name.asInstanceOf[js.Any]
@@ -566,9 +625,11 @@ package simpledb {
   }
 
   object SelectRequest {
-    def apply(SelectExpression: String,
-              ConsistentRead: js.UndefOr[Boolean] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): SelectRequest = {
+    def apply(
+        SelectExpression: String,
+        ConsistentRead: js.UndefOr[Boolean] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SelectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SelectExpression" -> SelectExpression.asInstanceOf[js.Any],
         "ConsistentRead" -> ConsistentRead.map { x =>
@@ -590,13 +651,18 @@ package simpledb {
   }
 
   object SelectResult {
-    def apply(Items: js.UndefOr[ItemList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): SelectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Items: js.UndefOr[ItemList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SelectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SelectResult]
     }
@@ -621,16 +687,22 @@ package simpledb {
   }
 
   object UpdateCondition {
-    def apply(Exists: js.UndefOr[Boolean] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Value: js.UndefOr[String] = js.undefined): UpdateCondition = {
-      val _fields = IndexedSeq[(String, js.Any)]("Exists" -> Exists.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Exists: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): UpdateCondition = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Exists" -> Exists.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCondition]
     }

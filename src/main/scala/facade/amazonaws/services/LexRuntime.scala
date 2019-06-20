@@ -66,10 +66,14 @@ package lexruntime {
   }
 
   object Button {
-    def apply(text: ButtonTextStringWithLength, value: ButtonValueStringWithLength): Button = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("text" -> text.asInstanceOf[js.Any], "value" -> value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        text: ButtonTextStringWithLength,
+        value: ButtonValueStringWithLength
+    ): Button = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "text"  -> text.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Button]
     }
@@ -124,11 +128,13 @@ package lexruntime {
   }
 
   object GenericAttachment {
-    def apply(attachmentLinkUrl: js.UndefOr[StringUrlWithLength] = js.undefined,
-              buttons: js.UndefOr[listOfButtons] = js.undefined,
-              imageUrl: js.UndefOr[StringUrlWithLength] = js.undefined,
-              subTitle: js.UndefOr[StringWithLength] = js.undefined,
-              title: js.UndefOr[StringWithLength] = js.undefined): GenericAttachment = {
+    def apply(
+        attachmentLinkUrl: js.UndefOr[StringUrlWithLength] = js.undefined,
+        buttons: js.UndefOr[listOfButtons] = js.undefined,
+        imageUrl: js.UndefOr[StringUrlWithLength] = js.undefined,
+        subTitle: js.UndefOr[StringWithLength] = js.undefined,
+        title: js.UndefOr[StringWithLength] = js.undefined
+    ): GenericAttachment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attachmentLinkUrl" -> attachmentLinkUrl.map { x =>
           x.asInstanceOf[js.Any]
@@ -214,14 +220,16 @@ package lexruntime {
   }
 
   object PostContentRequest {
-    def apply(botAlias: BotAlias,
-              botName: BotName,
-              contentType: HttpContentType,
-              inputStream: BlobStream,
-              userId: UserId,
-              accept: js.UndefOr[Accept] = js.undefined,
-              requestAttributes: js.UndefOr[AttributesString] = js.undefined,
-              sessionAttributes: js.UndefOr[AttributesString] = js.undefined): PostContentRequest = {
+    def apply(
+        botAlias: BotAlias,
+        botName: BotName,
+        contentType: HttpContentType,
+        inputStream: BlobStream,
+        userId: UserId,
+        accept: js.UndefOr[Accept] = js.undefined,
+        requestAttributes: js.UndefOr[AttributesString] = js.undefined,
+        sessionAttributes: js.UndefOr[AttributesString] = js.undefined
+    ): PostContentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "botAlias"    -> botAlias.asInstanceOf[js.Any],
         "botName"     -> botName.asInstanceOf[js.Any],
@@ -258,16 +266,18 @@ package lexruntime {
   }
 
   object PostContentResponse {
-    def apply(audioStream: js.UndefOr[BlobStream] = js.undefined,
-              contentType: js.UndefOr[HttpContentType] = js.undefined,
-              dialogState: js.UndefOr[DialogState] = js.undefined,
-              inputTranscript: js.UndefOr[String] = js.undefined,
-              intentName: js.UndefOr[IntentName] = js.undefined,
-              message: js.UndefOr[Text] = js.undefined,
-              messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
-              sessionAttributes: js.UndefOr[String] = js.undefined,
-              slotToElicit: js.UndefOr[String] = js.undefined,
-              slots: js.UndefOr[String] = js.undefined): PostContentResponse = {
+    def apply(
+        audioStream: js.UndefOr[BlobStream] = js.undefined,
+        contentType: js.UndefOr[HttpContentType] = js.undefined,
+        dialogState: js.UndefOr[DialogState] = js.undefined,
+        inputTranscript: js.UndefOr[String] = js.undefined,
+        intentName: js.UndefOr[IntentName] = js.undefined,
+        message: js.UndefOr[Text] = js.undefined,
+        messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
+        sessionAttributes: js.UndefOr[String] = js.undefined,
+        slotToElicit: js.UndefOr[String] = js.undefined,
+        slots: js.UndefOr[String] = js.undefined
+    ): PostContentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "audioStream" -> audioStream.map { x =>
           x.asInstanceOf[js.Any]
@@ -316,12 +326,14 @@ package lexruntime {
   }
 
   object PostTextRequest {
-    def apply(botAlias: BotAlias,
-              botName: BotName,
-              inputText: Text,
-              userId: UserId,
-              requestAttributes: js.UndefOr[StringMap] = js.undefined,
-              sessionAttributes: js.UndefOr[StringMap] = js.undefined): PostTextRequest = {
+    def apply(
+        botAlias: BotAlias,
+        botName: BotName,
+        inputText: Text,
+        userId: UserId,
+        requestAttributes: js.UndefOr[StringMap] = js.undefined,
+        sessionAttributes: js.UndefOr[StringMap] = js.undefined
+    ): PostTextRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "botAlias"  -> botAlias.asInstanceOf[js.Any],
         "botName"   -> botName.asInstanceOf[js.Any],
@@ -352,14 +364,16 @@ package lexruntime {
   }
 
   object PostTextResponse {
-    def apply(dialogState: js.UndefOr[DialogState] = js.undefined,
-              intentName: js.UndefOr[IntentName] = js.undefined,
-              message: js.UndefOr[Text] = js.undefined,
-              messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
-              responseCard: js.UndefOr[ResponseCard] = js.undefined,
-              sessionAttributes: js.UndefOr[StringMap] = js.undefined,
-              slotToElicit: js.UndefOr[String] = js.undefined,
-              slots: js.UndefOr[StringMap] = js.undefined): PostTextResponse = {
+    def apply(
+        dialogState: js.UndefOr[DialogState] = js.undefined,
+        intentName: js.UndefOr[IntentName] = js.undefined,
+        message: js.UndefOr[Text] = js.undefined,
+        messageFormat: js.UndefOr[MessageFormatType] = js.undefined,
+        responseCard: js.UndefOr[ResponseCard] = js.undefined,
+        sessionAttributes: js.UndefOr[StringMap] = js.undefined,
+        slotToElicit: js.UndefOr[String] = js.undefined,
+        slots: js.UndefOr[StringMap] = js.undefined
+    ): PostTextResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "dialogState" -> dialogState.map { x =>
           x.asInstanceOf[js.Any]
@@ -410,9 +424,11 @@ package lexruntime {
   }
 
   object ResponseCard {
-    def apply(contentType: js.UndefOr[ContentType] = js.undefined,
-              genericAttachments: js.UndefOr[genericAttachmentList] = js.undefined,
-              version: js.UndefOr[String] = js.undefined): ResponseCard = {
+    def apply(
+        contentType: js.UndefOr[ContentType] = js.undefined,
+        genericAttachments: js.UndefOr[genericAttachmentList] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): ResponseCard = {
       val _fields = IndexedSeq[(String, js.Any)](
         "contentType" -> contentType.map { x =>
           x.asInstanceOf[js.Any]

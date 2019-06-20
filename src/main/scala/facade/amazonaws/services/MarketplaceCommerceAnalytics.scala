@@ -95,13 +95,15 @@ package marketplacecommerceanalytics {
   }
 
   object GenerateDataSetRequest {
-    def apply(dataSetPublicationDate: DataSetPublicationDate,
-              dataSetType: DataSetType,
-              destinationS3BucketName: DestinationS3BucketName,
-              roleNameArn: RoleNameArn,
-              snsTopicArn: SnsTopicArn,
-              customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
-              destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined): GenerateDataSetRequest = {
+    def apply(
+        dataSetPublicationDate: DataSetPublicationDate,
+        dataSetType: DataSetType,
+        destinationS3BucketName: DestinationS3BucketName,
+        roleNameArn: RoleNameArn,
+        snsTopicArn: SnsTopicArn,
+        customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
+        destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined
+    ): GenerateDataSetRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "dataSetPublicationDate"  -> dataSetPublicationDate.asInstanceOf[js.Any],
         "dataSetType"             -> dataSetType.asInstanceOf[js.Any],
@@ -129,10 +131,14 @@ package marketplacecommerceanalytics {
   }
 
   object GenerateDataSetResult {
-    def apply(dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined): GenerateDataSetResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("dataSetRequestId" -> dataSetRequestId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
+    ): GenerateDataSetResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "dataSetRequestId" -> dataSetRequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateDataSetResult]
     }
@@ -161,13 +167,15 @@ package marketplacecommerceanalytics {
   }
 
   object StartSupportDataExportRequest {
-    def apply(dataSetType: SupportDataSetType,
-              destinationS3BucketName: DestinationS3BucketName,
-              fromDate: FromDate,
-              roleNameArn: RoleNameArn,
-              snsTopicArn: SnsTopicArn,
-              customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
-              destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined): StartSupportDataExportRequest = {
+    def apply(
+        dataSetType: SupportDataSetType,
+        destinationS3BucketName: DestinationS3BucketName,
+        fromDate: FromDate,
+        roleNameArn: RoleNameArn,
+        snsTopicArn: SnsTopicArn,
+        customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
+        destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined
+    ): StartSupportDataExportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "dataSetType"             -> dataSetType.asInstanceOf[js.Any],
         "destinationS3BucketName" -> destinationS3BucketName.asInstanceOf[js.Any],
@@ -195,10 +203,14 @@ package marketplacecommerceanalytics {
   }
 
   object StartSupportDataExportResult {
-    def apply(dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined): StartSupportDataExportResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("dataSetRequestId" -> dataSetRequestId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
+    ): StartSupportDataExportResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "dataSetRequestId" -> dataSetRequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSupportDataExportResult]
     }

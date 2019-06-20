@@ -8,6 +8,7 @@ import facade.amazonaws._
 
 package object redshift {
   type AccountsWithRestoreAccessList      = js.Array[AccountWithRestoreAccess]
+  type AssociatedClusterList              = js.Array[ClusterAssociatedToSchedule]
   type AttributeList                      = js.Array[AccountAttribute]
   type AttributeNameList                  = js.Array[String]
   type AttributeValueList                 = js.Array[AttributeValueTarget]
@@ -241,7 +242,10 @@ package redshift {
   }
 
   object AcceptReservedNodeExchangeInputMessage {
-    def apply(ReservedNodeId: String, TargetReservedNodeOfferingId: String): AcceptReservedNodeExchangeInputMessage = {
+    def apply(
+        ReservedNodeId: String,
+        TargetReservedNodeOfferingId: String
+    ): AcceptReservedNodeExchangeInputMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ReservedNodeId"               -> ReservedNodeId.asInstanceOf[js.Any],
         "TargetReservedNodeOfferingId" -> TargetReservedNodeOfferingId.asInstanceOf[js.Any]
@@ -260,9 +264,11 @@ package redshift {
     def apply(
         ExchangedReservedNode: js.UndefOr[ReservedNode] = js.undefined
     ): AcceptReservedNodeExchangeOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ExchangedReservedNode" -> ExchangedReservedNode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ExchangedReservedNode" -> ExchangedReservedNode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptReservedNodeExchangeOutputMessage]
     }
@@ -278,13 +284,18 @@ package redshift {
   }
 
   object AccountAttribute {
-    def apply(AttributeName: js.UndefOr[String] = js.undefined,
-              AttributeValues: js.UndefOr[AttributeValueList] = js.undefined): AccountAttribute = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeName" -> AttributeName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AttributeValues" -> AttributeValues.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeName: js.UndefOr[String] = js.undefined,
+        AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
+    ): AccountAttribute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeName" -> AttributeName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttributeValues" -> AttributeValues.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAttribute]
     }
@@ -296,10 +307,14 @@ package redshift {
   }
 
   object AccountAttributeList {
-    def apply(AccountAttributes: js.UndefOr[AttributeList] = js.undefined): AccountAttributeList = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountAttributes" -> AccountAttributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountAttributes: js.UndefOr[AttributeList] = js.undefined
+    ): AccountAttributeList = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountAttributes" -> AccountAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountAttributeList]
     }
@@ -315,13 +330,18 @@ package redshift {
   }
 
   object AccountWithRestoreAccess {
-    def apply(AccountAlias: js.UndefOr[String] = js.undefined,
-              AccountId: js.UndefOr[String] = js.undefined): AccountWithRestoreAccess = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountAlias" -> AccountAlias.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "AccountId" -> AccountId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountAlias: js.UndefOr[String] = js.undefined,
+        AccountId: js.UndefOr[String] = js.undefined
+    ): AccountWithRestoreAccess = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountAlias" -> AccountAlias.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AccountId" -> AccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccountWithRestoreAccess]
     }
@@ -336,10 +356,14 @@ package redshift {
   }
 
   object AttributeValueTarget {
-    def apply(AttributeValue: js.UndefOr[String] = js.undefined): AttributeValueTarget = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeValue" -> AttributeValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeValue: js.UndefOr[String] = js.undefined
+    ): AttributeValueTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeValue" -> AttributeValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeValueTarget]
     }
@@ -391,9 +415,11 @@ package redshift {
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): AuthorizeClusterSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -412,9 +438,11 @@ package redshift {
   }
 
   object AuthorizeSnapshotAccessMessage {
-    def apply(AccountWithRestoreAccess: String,
-              SnapshotIdentifier: String,
-              SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined): AuthorizeSnapshotAccessMessage = {
+    def apply(
+        AccountWithRestoreAccess: String,
+        SnapshotIdentifier: String,
+        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
+    ): AuthorizeSnapshotAccessMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
         "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any],
@@ -433,10 +461,14 @@ package redshift {
   }
 
   object AuthorizeSnapshotAccessResult {
-    def apply(Snapshot: js.UndefOr[Snapshot] = js.undefined): AuthorizeSnapshotAccessResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Snapshot" -> Snapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Snapshot: js.UndefOr[Snapshot] = js.undefined
+    ): AuthorizeSnapshotAccessResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Snapshot" -> Snapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AuthorizeSnapshotAccessResult]
     }
@@ -452,13 +484,18 @@ package redshift {
   }
 
   object AvailabilityZone {
-    def apply(Name: js.UndefOr[String] = js.undefined,
-              SupportedPlatforms: js.UndefOr[SupportedPlatformsList] = js.undefined): AvailabilityZone = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SupportedPlatforms" -> SupportedPlatforms.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        SupportedPlatforms: js.UndefOr[SupportedPlatformsList] = js.undefined
+    ): AvailabilityZone = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportedPlatforms" -> SupportedPlatforms.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AvailabilityZone]
     }
@@ -470,9 +507,12 @@ package redshift {
   }
 
   object BatchDeleteClusterSnapshotsRequest {
-    def apply(Identifiers: DeleteClusterSnapshotMessageList): BatchDeleteClusterSnapshotsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Identifiers" -> Identifiers.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Identifiers: DeleteClusterSnapshotMessageList
+    ): BatchDeleteClusterSnapshotsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Identifiers" -> Identifiers.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteClusterSnapshotsRequest]
     }
@@ -485,13 +525,18 @@ package redshift {
   }
 
   object BatchDeleteClusterSnapshotsResult {
-    def apply(Errors: js.UndefOr[BatchSnapshotOperationErrorList] = js.undefined,
-              Resources: js.UndefOr[SnapshotIdentifierList] = js.undefined): BatchDeleteClusterSnapshotsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Errors" -> Errors.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Resources" -> Resources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Errors: js.UndefOr[BatchSnapshotOperationErrorList] = js.undefined,
+        Resources: js.UndefOr[SnapshotIdentifierList] = js.undefined
+    ): BatchDeleteClusterSnapshotsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Errors" -> Errors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Resources" -> Resources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDeleteClusterSnapshotsResult]
     }
@@ -535,11 +580,14 @@ package redshift {
         Errors: js.UndefOr[BatchSnapshotOperationErrors] = js.undefined,
         Resources: js.UndefOr[SnapshotIdentifierList] = js.undefined
     ): BatchModifyClusterSnapshotsOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Errors" -> Errors.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Resources" -> Resources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Errors" -> Errors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Resources" -> Resources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchModifyClusterSnapshotsOutputMessage]
     }
@@ -551,9 +599,12 @@ package redshift {
   }
 
   object CancelResizeMessage {
-    def apply(ClusterIdentifier: String): CancelResizeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterIdentifier: String
+    ): CancelResizeMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CancelResizeMessage]
     }
@@ -609,48 +660,50 @@ package redshift {
   }
 
   object Cluster {
-    def apply(AllowVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
-              AutomatedSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
-              ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              ClusterNodes: js.UndefOr[ClusterNodesList] = js.undefined,
-              ClusterParameterGroups: js.UndefOr[ClusterParameterGroupStatusList] = js.undefined,
-              ClusterPublicKey: js.UndefOr[String] = js.undefined,
-              ClusterRevisionNumber: js.UndefOr[String] = js.undefined,
-              ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupMembershipList] = js.undefined,
-              ClusterSnapshotCopyStatus: js.UndefOr[ClusterSnapshotCopyStatus] = js.undefined,
-              ClusterStatus: js.UndefOr[String] = js.undefined,
-              ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              DBName: js.UndefOr[String] = js.undefined,
-              DataTransferProgress: js.UndefOr[DataTransferProgress] = js.undefined,
-              DeferredMaintenanceWindows: js.UndefOr[DeferredMaintenanceWindowsList] = js.undefined,
-              ElasticIpStatus: js.UndefOr[ElasticIpStatus] = js.undefined,
-              ElasticResizeNumberOfNodeOptions: js.UndefOr[String] = js.undefined,
-              Encrypted: js.UndefOr[Boolean] = js.undefined,
-              Endpoint: js.UndefOr[Endpoint] = js.undefined,
-              EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
-              HsmStatus: js.UndefOr[HsmStatus] = js.undefined,
-              IamRoles: js.UndefOr[ClusterIamRoleList] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              ManualSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              ModifyStatus: js.UndefOr[String] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined,
-              NumberOfNodes: js.UndefOr[Int] = js.undefined,
-              PendingActions: js.UndefOr[PendingActionsList] = js.undefined,
-              PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
-              ResizeInfo: js.UndefOr[ResizeInfo] = js.undefined,
-              RestoreStatus: js.UndefOr[RestoreStatus] = js.undefined,
-              SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
-              SnapshotScheduleState: js.UndefOr[ScheduleState] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined,
-              VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined): Cluster = {
+    def apply(
+        AllowVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        AutomatedSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        ClusterNodes: js.UndefOr[ClusterNodesList] = js.undefined,
+        ClusterParameterGroups: js.UndefOr[ClusterParameterGroupStatusList] = js.undefined,
+        ClusterPublicKey: js.UndefOr[String] = js.undefined,
+        ClusterRevisionNumber: js.UndefOr[String] = js.undefined,
+        ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupMembershipList] = js.undefined,
+        ClusterSnapshotCopyStatus: js.UndefOr[ClusterSnapshotCopyStatus] = js.undefined,
+        ClusterStatus: js.UndefOr[String] = js.undefined,
+        ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        DBName: js.UndefOr[String] = js.undefined,
+        DataTransferProgress: js.UndefOr[DataTransferProgress] = js.undefined,
+        DeferredMaintenanceWindows: js.UndefOr[DeferredMaintenanceWindowsList] = js.undefined,
+        ElasticIpStatus: js.UndefOr[ElasticIpStatus] = js.undefined,
+        ElasticResizeNumberOfNodeOptions: js.UndefOr[String] = js.undefined,
+        Encrypted: js.UndefOr[Boolean] = js.undefined,
+        Endpoint: js.UndefOr[Endpoint] = js.undefined,
+        EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
+        HsmStatus: js.UndefOr[HsmStatus] = js.undefined,
+        IamRoles: js.UndefOr[ClusterIamRoleList] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        ManualSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        ModifyStatus: js.UndefOr[String] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined,
+        NumberOfNodes: js.UndefOr[Int] = js.undefined,
+        PendingActions: js.UndefOr[PendingActionsList] = js.undefined,
+        PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
+        ResizeInfo: js.UndefOr[ResizeInfo] = js.undefined,
+        RestoreStatus: js.UndefOr[RestoreStatus] = js.undefined,
+        SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
+        SnapshotScheduleState: js.UndefOr[ScheduleState] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined,
+        VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
+    ): Cluster = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowVersionUpgrade" -> AllowVersionUpgrade.map { x =>
           x.asInstanceOf[js.Any]
@@ -784,6 +837,30 @@ package redshift {
     }
   }
 
+  @js.native
+  trait ClusterAssociatedToSchedule extends js.Object {
+    var ClusterIdentifier: js.UndefOr[String]
+    var ScheduleAssociationState: js.UndefOr[ScheduleState]
+  }
+
+  object ClusterAssociatedToSchedule {
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        ScheduleAssociationState: js.UndefOr[ScheduleState] = js.undefined
+    ): ClusterAssociatedToSchedule = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduleAssociationState" -> ScheduleAssociationState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterAssociatedToSchedule]
+    }
+  }
+
   /**
     * Temporary credentials with authorization to log on to an Amazon Redshift database.
     */
@@ -795,9 +872,11 @@ package redshift {
   }
 
   object ClusterCredentials {
-    def apply(DbPassword: js.UndefOr[SensitiveString] = js.undefined,
-              DbUser: js.UndefOr[String] = js.undefined,
-              Expiration: js.UndefOr[TStamp] = js.undefined): ClusterCredentials = {
+    def apply(
+        DbPassword: js.UndefOr[SensitiveString] = js.undefined,
+        DbUser: js.UndefOr[String] = js.undefined,
+        Expiration: js.UndefOr[TStamp] = js.undefined
+    ): ClusterCredentials = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DbPassword" -> DbPassword.map { x =>
           x.asInstanceOf[js.Any]
@@ -826,10 +905,12 @@ package redshift {
   }
 
   object ClusterDbRevision {
-    def apply(ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              CurrentDatabaseRevision: js.UndefOr[String] = js.undefined,
-              DatabaseRevisionReleaseDate: js.UndefOr[TStamp] = js.undefined,
-              RevisionTargets: js.UndefOr[RevisionTargetsList] = js.undefined): ClusterDbRevision = {
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        CurrentDatabaseRevision: js.UndefOr[String] = js.undefined,
+        DatabaseRevisionReleaseDate: js.UndefOr[TStamp] = js.undefined,
+        RevisionTargets: js.UndefOr[RevisionTargetsList] = js.undefined
+    ): ClusterDbRevision = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -856,13 +937,18 @@ package redshift {
   }
 
   object ClusterDbRevisionsMessage {
-    def apply(ClusterDbRevisions: js.UndefOr[ClusterDbRevisionsList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): ClusterDbRevisionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterDbRevisions" -> ClusterDbRevisions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterDbRevisions: js.UndefOr[ClusterDbRevisionsList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): ClusterDbRevisionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterDbRevisions" -> ClusterDbRevisions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterDbRevisionsMessage]
     }
@@ -878,13 +964,18 @@ package redshift {
   }
 
   object ClusterIamRole {
-    def apply(ApplyStatus: js.UndefOr[String] = js.undefined,
-              IamRoleArn: js.UndefOr[String] = js.undefined): ClusterIamRole = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApplyStatus" -> ApplyStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "IamRoleArn" -> IamRoleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApplyStatus: js.UndefOr[String] = js.undefined,
+        IamRoleArn: js.UndefOr[String] = js.undefined
+    ): ClusterIamRole = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApplyStatus" -> ApplyStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IamRoleArn" -> IamRoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterIamRole]
     }
@@ -901,9 +992,11 @@ package redshift {
   }
 
   object ClusterNode {
-    def apply(NodeRole: js.UndefOr[String] = js.undefined,
-              PrivateIPAddress: js.UndefOr[String] = js.undefined,
-              PublicIPAddress: js.UndefOr[String] = js.undefined): ClusterNode = {
+    def apply(
+        NodeRole: js.UndefOr[String] = js.undefined,
+        PrivateIPAddress: js.UndefOr[String] = js.undefined,
+        PublicIPAddress: js.UndefOr[String] = js.undefined
+    ): ClusterNode = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NodeRole" -> NodeRole.map { x =>
           x.asInstanceOf[js.Any]
@@ -932,10 +1025,12 @@ package redshift {
   }
 
   object ClusterParameterGroup {
-    def apply(Description: js.UndefOr[String] = js.undefined,
-              ParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              ParameterGroupName: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): ClusterParameterGroup = {
+    def apply(
+        Description: js.UndefOr[String] = js.undefined,
+        ParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        ParameterGroupName: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ClusterParameterGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -965,13 +1060,18 @@ package redshift {
   }
 
   object ClusterParameterGroupDetails {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              Parameters: js.UndefOr[ParametersList] = js.undefined): ClusterParameterGroupDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Parameters" -> Parameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        Parameters: js.UndefOr[ParametersList] = js.undefined
+    ): ClusterParameterGroupDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Parameters" -> Parameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupDetails]
     }
@@ -987,13 +1087,18 @@ package redshift {
   }
 
   object ClusterParameterGroupNameMessage {
-    def apply(ParameterGroupName: js.UndefOr[String] = js.undefined,
-              ParameterGroupStatus: js.UndefOr[String] = js.undefined): ClusterParameterGroupNameMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ParameterGroupName" -> ParameterGroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ParameterGroupStatus" -> ParameterGroupStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ParameterGroupName: js.UndefOr[String] = js.undefined,
+        ParameterGroupStatus: js.UndefOr[String] = js.undefined
+    ): ClusterParameterGroupNameMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ParameterGroupName" -> ParameterGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParameterGroupStatus" -> ParameterGroupStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupNameMessage]
     }
@@ -1010,9 +1115,11 @@ package redshift {
   }
 
   object ClusterParameterGroupStatus {
-    def apply(ClusterParameterStatusList: js.UndefOr[ClusterParameterStatusList] = js.undefined,
-              ParameterApplyStatus: js.UndefOr[String] = js.undefined,
-              ParameterGroupName: js.UndefOr[String] = js.undefined): ClusterParameterGroupStatus = {
+    def apply(
+        ClusterParameterStatusList: js.UndefOr[ClusterParameterStatusList] = js.undefined,
+        ParameterApplyStatus: js.UndefOr[String] = js.undefined,
+        ParameterGroupName: js.UndefOr[String] = js.undefined
+    ): ClusterParameterGroupStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterParameterStatusList" -> ClusterParameterStatusList.map { x =>
           x.asInstanceOf[js.Any]
@@ -1039,13 +1146,18 @@ package redshift {
   }
 
   object ClusterParameterGroupsMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              ParameterGroups: js.UndefOr[ParameterGroupList] = js.undefined): ClusterParameterGroupsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ParameterGroups" -> ParameterGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ParameterGroups: js.UndefOr[ParameterGroupList] = js.undefined
+    ): ClusterParameterGroupsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParameterGroups" -> ParameterGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterParameterGroupsMessage]
     }
@@ -1062,9 +1174,11 @@ package redshift {
   }
 
   object ClusterParameterStatus {
-    def apply(ParameterApplyErrorDescription: js.UndefOr[String] = js.undefined,
-              ParameterApplyStatus: js.UndefOr[String] = js.undefined,
-              ParameterName: js.UndefOr[String] = js.undefined): ClusterParameterStatus = {
+    def apply(
+        ParameterApplyErrorDescription: js.UndefOr[String] = js.undefined,
+        ParameterApplyStatus: js.UndefOr[String] = js.undefined,
+        ParameterName: js.UndefOr[String] = js.undefined
+    ): ClusterParameterStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterApplyErrorDescription" -> ParameterApplyErrorDescription.map { x =>
           x.asInstanceOf[js.Any]
@@ -1094,11 +1208,13 @@ package redshift {
   }
 
   object ClusterSecurityGroup {
-    def apply(ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroups: js.UndefOr[EC2SecurityGroupList] = js.undefined,
-              IPRanges: js.UndefOr[IPRangeList] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): ClusterSecurityGroup = {
+    def apply(
+        ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroups: js.UndefOr[EC2SecurityGroupList] = js.undefined,
+        IPRanges: js.UndefOr[IPRangeList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ClusterSecurityGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1131,13 +1247,18 @@ package redshift {
   }
 
   object ClusterSecurityGroupMembership {
-    def apply(ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): ClusterSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSecurityGroupName" -> ClusterSecurityGroupName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): ClusterSecurityGroupMembership = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSecurityGroupMembership]
     }
@@ -1153,13 +1274,18 @@ package redshift {
   }
 
   object ClusterSecurityGroupMessage {
-    def apply(ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroups] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): ClusterSecurityGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSecurityGroups" -> ClusterSecurityGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroups] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): ClusterSecurityGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSecurityGroups" -> ClusterSecurityGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSecurityGroupMessage]
     }
@@ -1177,10 +1303,12 @@ package redshift {
   }
 
   object ClusterSnapshotCopyStatus {
-    def apply(DestinationRegion: js.UndefOr[String] = js.undefined,
-              ManualSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
-              RetentionPeriod: js.UndefOr[Double] = js.undefined,
-              SnapshotCopyGrantName: js.UndefOr[String] = js.undefined): ClusterSnapshotCopyStatus = {
+    def apply(
+        DestinationRegion: js.UndefOr[String] = js.undefined,
+        ManualSnapshotRetentionPeriod: js.UndefOr[Int] = js.undefined,
+        RetentionPeriod: js.UndefOr[Double] = js.undefined,
+        SnapshotCopyGrantName: js.UndefOr[String] = js.undefined
+    ): ClusterSnapshotCopyStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DestinationRegion" -> DestinationRegion.map { x =>
           x.asInstanceOf[js.Any]
@@ -1214,12 +1342,14 @@ package redshift {
   }
 
   object ClusterSubnetGroup {
-    def apply(ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              SubnetGroupStatus: js.UndefOr[String] = js.undefined,
-              Subnets: js.UndefOr[SubnetList] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): ClusterSubnetGroup = {
+    def apply(
+        ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        SubnetGroupStatus: js.UndefOr[String] = js.undefined,
+        Subnets: js.UndefOr[SubnetList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): ClusterSubnetGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -1255,13 +1385,18 @@ package redshift {
   }
 
   object ClusterSubnetGroupMessage {
-    def apply(ClusterSubnetGroups: js.UndefOr[ClusterSubnetGroups] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): ClusterSubnetGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSubnetGroups" -> ClusterSubnetGroups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterSubnetGroups: js.UndefOr[ClusterSubnetGroups] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): ClusterSubnetGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSubnetGroups" -> ClusterSubnetGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterSubnetGroupMessage]
     }
@@ -1278,9 +1413,11 @@ package redshift {
   }
 
   object ClusterVersion {
-    def apply(ClusterParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined): ClusterVersion = {
+    def apply(
+        ClusterParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined
+    ): ClusterVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterParameterGroupFamily" -> ClusterParameterGroupFamily.map { x =>
           x.asInstanceOf[js.Any]
@@ -1307,13 +1444,18 @@ package redshift {
   }
 
   object ClusterVersionsMessage {
-    def apply(ClusterVersions: js.UndefOr[ClusterVersionList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): ClusterVersionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterVersions" -> ClusterVersions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterVersions: js.UndefOr[ClusterVersionList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): ClusterVersionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterVersions" -> ClusterVersions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClusterVersionsMessage]
     }
@@ -1329,13 +1471,18 @@ package redshift {
   }
 
   object ClustersMessage {
-    def apply(Clusters: js.UndefOr[ClusterList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): ClustersMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Clusters" -> Clusters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Clusters: js.UndefOr[ClusterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): ClustersMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Clusters" -> Clusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClustersMessage]
     }
@@ -1353,10 +1500,12 @@ package redshift {
   }
 
   object CopyClusterSnapshotMessage {
-    def apply(SourceSnapshotIdentifier: String,
-              TargetSnapshotIdentifier: String,
-              ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              SourceSnapshotClusterIdentifier: js.UndefOr[String] = js.undefined): CopyClusterSnapshotMessage = {
+    def apply(
+        SourceSnapshotIdentifier: String,
+        TargetSnapshotIdentifier: String,
+        ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        SourceSnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
+    ): CopyClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceSnapshotIdentifier" -> SourceSnapshotIdentifier.asInstanceOf[js.Any],
         "TargetSnapshotIdentifier" -> TargetSnapshotIdentifier.asInstanceOf[js.Any],
@@ -1378,10 +1527,14 @@ package redshift {
   }
 
   object CopyClusterSnapshotResult {
-    def apply(Snapshot: js.UndefOr[Snapshot] = js.undefined): CopyClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Snapshot" -> Snapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Snapshot: js.UndefOr[Snapshot] = js.undefined
+    ): CopyClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Snapshot" -> Snapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyClusterSnapshotResult]
     }
@@ -1425,36 +1578,38 @@ package redshift {
   }
 
   object CreateClusterMessage {
-    def apply(ClusterIdentifier: String,
-              MasterUserPassword: String,
-              MasterUsername: String,
-              NodeType: String,
-              AdditionalInfo: js.UndefOr[String] = js.undefined,
-              AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-              AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-              ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
-              ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
-              ClusterType: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              DBName: js.UndefOr[String] = js.undefined,
-              ElasticIp: js.UndefOr[String] = js.undefined,
-              Encrypted: js.UndefOr[BooleanOptional] = js.undefined,
-              EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
-              HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
-              HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
-              IamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
-              Port: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
-              SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): CreateClusterMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        MasterUserPassword: String,
+        MasterUsername: String,
+        NodeType: String,
+        AdditionalInfo: js.UndefOr[String] = js.undefined,
+        AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
+        ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
+        ClusterType: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        DBName: js.UndefOr[String] = js.undefined,
+        ElasticIp: js.UndefOr[String] = js.undefined,
+        Encrypted: js.UndefOr[BooleanOptional] = js.undefined,
+        EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
+        HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
+        HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
+        IamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
+        Port: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): CreateClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
         "MasterUserPassword" -> MasterUserPassword.asInstanceOf[js.Any],
@@ -1556,10 +1711,12 @@ package redshift {
   }
 
   object CreateClusterParameterGroupMessage {
-    def apply(Description: String,
-              ParameterGroupFamily: String,
-              ParameterGroupName: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateClusterParameterGroupMessage = {
+    def apply(
+        Description: String,
+        ParameterGroupFamily: String,
+        ParameterGroupName: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description"          -> Description.asInstanceOf[js.Any],
         "ParameterGroupFamily" -> ParameterGroupFamily.asInstanceOf[js.Any],
@@ -1582,9 +1739,11 @@ package redshift {
     def apply(
         ClusterParameterGroup: js.UndefOr[ClusterParameterGroup] = js.undefined
     ): CreateClusterParameterGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterParameterGroup" -> ClusterParameterGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterParameterGroup" -> ClusterParameterGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterParameterGroupResult]
     }
@@ -1596,10 +1755,14 @@ package redshift {
   }
 
   object CreateClusterResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): CreateClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): CreateClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterResult]
     }
@@ -1616,9 +1779,11 @@ package redshift {
   }
 
   object CreateClusterSecurityGroupMessage {
-    def apply(ClusterSecurityGroupName: String,
-              Description: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateClusterSecurityGroupMessage = {
+    def apply(
+        ClusterSecurityGroupName: String,
+        Description: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateClusterSecurityGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any],
         "Description"              -> Description.asInstanceOf[js.Any],
@@ -1640,9 +1805,11 @@ package redshift {
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): CreateClusterSecurityGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSecurityGroupResult]
     }
@@ -1660,10 +1827,12 @@ package redshift {
   }
 
   object CreateClusterSnapshotMessage {
-    def apply(ClusterIdentifier: String,
-              SnapshotIdentifier: String,
-              ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateClusterSnapshotMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        SnapshotIdentifier: String,
+        ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
@@ -1685,10 +1854,14 @@ package redshift {
   }
 
   object CreateClusterSnapshotResult {
-    def apply(Snapshot: js.UndefOr[Snapshot] = js.undefined): CreateClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Snapshot" -> Snapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Snapshot: js.UndefOr[Snapshot] = js.undefined
+    ): CreateClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Snapshot" -> Snapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSnapshotResult]
     }
@@ -1706,10 +1879,12 @@ package redshift {
   }
 
   object CreateClusterSubnetGroupMessage {
-    def apply(ClusterSubnetGroupName: String,
-              Description: String,
-              SubnetIds: SubnetIdentifierList,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateClusterSubnetGroupMessage = {
+    def apply(
+        ClusterSubnetGroupName: String,
+        Description: String,
+        SubnetIds: SubnetIdentifierList,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateClusterSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any],
         "Description"            -> Description.asInstanceOf[js.Any],
@@ -1729,10 +1904,14 @@ package redshift {
   }
 
   object CreateClusterSubnetGroupResult {
-    def apply(ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined): CreateClusterSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSubnetGroup" -> ClusterSubnetGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined
+    ): CreateClusterSubnetGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSubnetGroup" -> ClusterSubnetGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateClusterSubnetGroupResult]
     }
@@ -1754,14 +1933,16 @@ package redshift {
   }
 
   object CreateEventSubscriptionMessage {
-    def apply(SnsTopicArn: String,
-              SubscriptionName: String,
-              Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-              EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              Severity: js.UndefOr[String] = js.undefined,
-              SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateEventSubscriptionMessage = {
+    def apply(
+        SnsTopicArn: String,
+        SubscriptionName: String,
+        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        Severity: js.UndefOr[String] = js.undefined,
+        SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnsTopicArn"      -> SnsTopicArn.asInstanceOf[js.Any],
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
@@ -1795,10 +1976,14 @@ package redshift {
   }
 
   object CreateEventSubscriptionResult {
-    def apply(EventSubscription: js.UndefOr[EventSubscription] = js.undefined): CreateEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscription" -> EventSubscription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): CreateEventSubscriptionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscription" -> EventSubscription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEventSubscriptionResult]
     }
@@ -1814,8 +1999,10 @@ package redshift {
   }
 
   object CreateHsmClientCertificateMessage {
-    def apply(HsmClientCertificateIdentifier: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateHsmClientCertificateMessage = {
+    def apply(
+        HsmClientCertificateIdentifier: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateHsmClientCertificateMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.asInstanceOf[js.Any],
         "Tags" -> Tags.map { x =>
@@ -1836,9 +2023,11 @@ package redshift {
     def apply(
         HsmClientCertificate: js.UndefOr[HsmClientCertificate] = js.undefined
     ): CreateHsmClientCertificateResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmClientCertificate" -> HsmClientCertificate.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmClientCertificate" -> HsmClientCertificate.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmClientCertificateResult]
     }
@@ -1859,13 +2048,15 @@ package redshift {
   }
 
   object CreateHsmConfigurationMessage {
-    def apply(Description: String,
-              HsmConfigurationIdentifier: String,
-              HsmIpAddress: String,
-              HsmPartitionName: String,
-              HsmPartitionPassword: String,
-              HsmServerPublicCertificate: String,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateHsmConfigurationMessage = {
+    def apply(
+        Description: String,
+        HsmConfigurationIdentifier: String,
+        HsmIpAddress: String,
+        HsmPartitionName: String,
+        HsmPartitionPassword: String,
+        HsmServerPublicCertificate: String,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateHsmConfigurationMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description"                -> Description.asInstanceOf[js.Any],
         "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.asInstanceOf[js.Any],
@@ -1888,10 +2079,14 @@ package redshift {
   }
 
   object CreateHsmConfigurationResult {
-    def apply(HsmConfiguration: js.UndefOr[HsmConfiguration] = js.undefined): CreateHsmConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmConfiguration" -> HsmConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmConfiguration: js.UndefOr[HsmConfiguration] = js.undefined
+    ): CreateHsmConfigurationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmConfiguration" -> HsmConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHsmConfigurationResult]
     }
@@ -1908,9 +2103,11 @@ package redshift {
   }
 
   object CreateSnapshotCopyGrantMessage {
-    def apply(SnapshotCopyGrantName: String,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateSnapshotCopyGrantMessage = {
+    def apply(
+        SnapshotCopyGrantName: String,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateSnapshotCopyGrantMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnapshotCopyGrantName" -> SnapshotCopyGrantName.asInstanceOf[js.Any],
         "KmsKeyId" -> KmsKeyId.map { x =>
@@ -1931,10 +2128,14 @@ package redshift {
   }
 
   object CreateSnapshotCopyGrantResult {
-    def apply(SnapshotCopyGrant: js.UndefOr[SnapshotCopyGrant] = js.undefined): CreateSnapshotCopyGrantResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotCopyGrant" -> SnapshotCopyGrant.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotCopyGrant: js.UndefOr[SnapshotCopyGrant] = js.undefined
+    ): CreateSnapshotCopyGrantResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotCopyGrant" -> SnapshotCopyGrant.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSnapshotCopyGrantResult]
     }
@@ -1951,12 +2152,14 @@ package redshift {
   }
 
   object CreateSnapshotScheduleMessage {
-    def apply(DryRun: js.UndefOr[BooleanOptional] = js.undefined,
-              NextInvocations: js.UndefOr[IntegerOptional] = js.undefined,
-              ScheduleDefinitions: js.UndefOr[ScheduleDefinitionList] = js.undefined,
-              ScheduleDescription: js.UndefOr[String] = js.undefined,
-              ScheduleIdentifier: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): CreateSnapshotScheduleMessage = {
+    def apply(
+        DryRun: js.UndefOr[BooleanOptional] = js.undefined,
+        NextInvocations: js.UndefOr[IntegerOptional] = js.undefined,
+        ScheduleDefinitions: js.UndefOr[ScheduleDefinitionList] = js.undefined,
+        ScheduleDescription: js.UndefOr[String] = js.undefined,
+        ScheduleIdentifier: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateSnapshotScheduleMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DryRun" -> DryRun.map { x =>
           x.asInstanceOf[js.Any]
@@ -1992,7 +2195,10 @@ package redshift {
   }
 
   object CreateTagsMessage {
-    def apply(ResourceName: String, Tags: TagList): CreateTagsMessage = {
+    def apply(
+        ResourceName: String,
+        Tags: TagList
+    ): CreateTagsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
@@ -2009,8 +2215,10 @@ package redshift {
   }
 
   object CustomerStorageMessage {
-    def apply(TotalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
-              TotalProvisionedStorageInMegaBytes: js.UndefOr[Double] = js.undefined): CustomerStorageMessage = {
+    def apply(
+        TotalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
+        TotalProvisionedStorageInMegaBytes: js.UndefOr[Double] = js.undefined
+    ): CustomerStorageMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TotalBackupSizeInMegaBytes" -> TotalBackupSizeInMegaBytes.map { x =>
           x.asInstanceOf[js.Any]
@@ -2038,12 +2246,14 @@ package redshift {
   }
 
   object DataTransferProgress {
-    def apply(CurrentRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional] = js.undefined,
-              DataTransferredInMegaBytes: js.UndefOr[Double] = js.undefined,
-              ElapsedTimeInSeconds: js.UndefOr[LongOptional] = js.undefined,
-              EstimatedTimeToCompletionInSeconds: js.UndefOr[LongOptional] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              TotalDataInMegaBytes: js.UndefOr[Double] = js.undefined): DataTransferProgress = {
+    def apply(
+        CurrentRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional] = js.undefined,
+        DataTransferredInMegaBytes: js.UndefOr[Double] = js.undefined,
+        ElapsedTimeInSeconds: js.UndefOr[LongOptional] = js.undefined,
+        EstimatedTimeToCompletionInSeconds: js.UndefOr[LongOptional] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        TotalDataInMegaBytes: js.UndefOr[Double] = js.undefined
+    ): DataTransferProgress = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentRateInMegaBytesPerSecond" -> CurrentRateInMegaBytesPerSecond.map { x =>
           x.asInstanceOf[js.Any]
@@ -2080,9 +2290,11 @@ package redshift {
   }
 
   object DefaultClusterParameters {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              ParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              Parameters: js.UndefOr[ParametersList] = js.undefined): DefaultClusterParameters = {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        Parameters: js.UndefOr[ParametersList] = js.undefined
+    ): DefaultClusterParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
@@ -2110,9 +2322,11 @@ package redshift {
   }
 
   object DeferredMaintenanceWindow {
-    def apply(DeferMaintenanceEndTime: js.UndefOr[TStamp] = js.undefined,
-              DeferMaintenanceIdentifier: js.UndefOr[String] = js.undefined,
-              DeferMaintenanceStartTime: js.UndefOr[TStamp] = js.undefined): DeferredMaintenanceWindow = {
+    def apply(
+        DeferMaintenanceEndTime: js.UndefOr[TStamp] = js.undefined,
+        DeferMaintenanceIdentifier: js.UndefOr[String] = js.undefined,
+        DeferMaintenanceStartTime: js.UndefOr[TStamp] = js.undefined
+    ): DeferredMaintenanceWindow = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeferMaintenanceEndTime" -> DeferMaintenanceEndTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2141,10 +2355,12 @@ package redshift {
   }
 
   object DeleteClusterMessage {
-    def apply(ClusterIdentifier: String,
-              FinalClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              FinalClusterSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              SkipFinalClusterSnapshot: js.UndefOr[Boolean] = js.undefined): DeleteClusterMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        FinalClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        FinalClusterSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        SkipFinalClusterSnapshot: js.UndefOr[Boolean] = js.undefined
+    ): DeleteClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "FinalClusterSnapshotIdentifier" -> FinalClusterSnapshotIdentifier.map { x =>
@@ -2171,9 +2387,12 @@ package redshift {
   }
 
   object DeleteClusterParameterGroupMessage {
-    def apply(ParameterGroupName: String): DeleteClusterParameterGroupMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ParameterGroupName: String
+    ): DeleteClusterParameterGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterParameterGroupMessage]
     }
@@ -2185,10 +2404,14 @@ package redshift {
   }
 
   object DeleteClusterResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): DeleteClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): DeleteClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResult]
     }
@@ -2203,10 +2426,12 @@ package redshift {
   }
 
   object DeleteClusterSecurityGroupMessage {
-    def apply(ClusterSecurityGroupName: String): DeleteClusterSecurityGroupMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterSecurityGroupName: String
+    ): DeleteClusterSecurityGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterSecurityGroupMessage]
     }
@@ -2222,8 +2447,10 @@ package redshift {
   }
 
   object DeleteClusterSnapshotMessage {
-    def apply(SnapshotIdentifier: String,
-              SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined): DeleteClusterSnapshotMessage = {
+    def apply(
+        SnapshotIdentifier: String,
+        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
+    ): DeleteClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any],
         "SnapshotClusterIdentifier" -> SnapshotClusterIdentifier.map { x =>
@@ -2241,10 +2468,14 @@ package redshift {
   }
 
   object DeleteClusterSnapshotResult {
-    def apply(Snapshot: js.UndefOr[Snapshot] = js.undefined): DeleteClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Snapshot" -> Snapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Snapshot: js.UndefOr[Snapshot] = js.undefined
+    ): DeleteClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Snapshot" -> Snapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterSnapshotResult]
     }
@@ -2259,10 +2490,12 @@ package redshift {
   }
 
   object DeleteClusterSubnetGroupMessage {
-    def apply(ClusterSubnetGroupName: String): DeleteClusterSubnetGroupMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterSubnetGroupName: String
+    ): DeleteClusterSubnetGroupMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterSubnetGroupMessage]
     }
@@ -2277,9 +2510,12 @@ package redshift {
   }
 
   object DeleteEventSubscriptionMessage {
-    def apply(SubscriptionName: String): DeleteEventSubscriptionMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SubscriptionName: String
+    ): DeleteEventSubscriptionMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventSubscriptionMessage]
     }
@@ -2294,7 +2530,9 @@ package redshift {
   }
 
   object DeleteHsmClientCertificateMessage {
-    def apply(HsmClientCertificateIdentifier: String): DeleteHsmClientCertificateMessage = {
+    def apply(
+        HsmClientCertificateIdentifier: String
+    ): DeleteHsmClientCertificateMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.asInstanceOf[js.Any]
       ).filter(_._2 != (js.undefined: js.Any))
@@ -2312,10 +2550,12 @@ package redshift {
   }
 
   object DeleteHsmConfigurationMessage {
-    def apply(HsmConfigurationIdentifier: String): DeleteHsmConfigurationMessage = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmConfigurationIdentifier: String
+    ): DeleteHsmConfigurationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHsmConfigurationMessage]
     }
@@ -2330,9 +2570,12 @@ package redshift {
   }
 
   object DeleteSnapshotCopyGrantMessage {
-    def apply(SnapshotCopyGrantName: String): DeleteSnapshotCopyGrantMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("SnapshotCopyGrantName" -> SnapshotCopyGrantName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SnapshotCopyGrantName: String
+    ): DeleteSnapshotCopyGrantMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SnapshotCopyGrantName" -> SnapshotCopyGrantName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotCopyGrantMessage]
     }
@@ -2344,9 +2587,12 @@ package redshift {
   }
 
   object DeleteSnapshotScheduleMessage {
-    def apply(ScheduleIdentifier: String): DeleteSnapshotScheduleMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ScheduleIdentifier" -> ScheduleIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ScheduleIdentifier: String
+    ): DeleteSnapshotScheduleMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ScheduleIdentifier" -> ScheduleIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSnapshotScheduleMessage]
     }
@@ -2362,7 +2608,10 @@ package redshift {
   }
 
   object DeleteTagsMessage {
-    def apply(ResourceName: String, TagKeys: TagKeyList): DeleteTagsMessage = {
+    def apply(
+        ResourceName: String,
+        TagKeys: TagKeyList
+    ): DeleteTagsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
@@ -2378,10 +2627,14 @@ package redshift {
   }
 
   object DescribeAccountAttributesMessage {
-    def apply(AttributeNames: js.UndefOr[AttributeNameList] = js.undefined): DescribeAccountAttributesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeNames" -> AttributeNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
+    ): DescribeAccountAttributesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeNames" -> AttributeNames.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAccountAttributesMessage]
     }
@@ -2395,9 +2648,11 @@ package redshift {
   }
 
   object DescribeClusterDbRevisionsMessage {
-    def apply(ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeClusterDbRevisionsMessage = {
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeClusterDbRevisionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -2427,11 +2682,13 @@ package redshift {
   }
 
   object DescribeClusterParameterGroupsMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              ParameterGroupName: js.UndefOr[String] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeClusterParameterGroupsMessage = {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ParameterGroupName: js.UndefOr[String] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeClusterParameterGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
@@ -2466,10 +2723,12 @@ package redshift {
   }
 
   object DescribeClusterParametersMessage {
-    def apply(ParameterGroupName: String,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              Source: js.UndefOr[String] = js.undefined): DescribeClusterParametersMessage = {
+    def apply(
+        ParameterGroupName: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        Source: js.UndefOr[String] = js.undefined
+    ): DescribeClusterParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x =>
@@ -2500,11 +2759,13 @@ package redshift {
   }
 
   object DescribeClusterSecurityGroupsMessage {
-    def apply(ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeClusterSecurityGroupsMessage = {
+    def apply(
+        ClusterSecurityGroupName: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeClusterSecurityGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2547,18 +2808,20 @@ package redshift {
   }
 
   object DescribeClusterSnapshotsMessage {
-    def apply(ClusterExists: js.UndefOr[BooleanOptional] = js.undefined,
-              ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              EndTime: js.UndefOr[TStamp] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              OwnerAccount: js.UndefOr[String] = js.undefined,
-              SnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              SnapshotType: js.UndefOr[String] = js.undefined,
-              SortingEntities: js.UndefOr[SnapshotSortingEntityList] = js.undefined,
-              StartTime: js.UndefOr[TStamp] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeClusterSnapshotsMessage = {
+    def apply(
+        ClusterExists: js.UndefOr[BooleanOptional] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        OwnerAccount: js.UndefOr[String] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        SnapshotType: js.UndefOr[String] = js.undefined,
+        SortingEntities: js.UndefOr[SnapshotSortingEntityList] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeClusterSnapshotsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterExists" -> ClusterExists.map { x =>
           x.asInstanceOf[js.Any]
@@ -2615,11 +2878,13 @@ package redshift {
   }
 
   object DescribeClusterSubnetGroupsMessage {
-    def apply(ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeClusterSubnetGroupsMessage = {
+    def apply(
+        ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeClusterSubnetGroupsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2650,9 +2915,11 @@ package redshift {
   }
 
   object DescribeClusterTracksMessage {
-    def apply(MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeClusterTracksMessage = {
+    def apply(
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeClusterTracksMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaintenanceTrackName" -> MaintenanceTrackName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2681,10 +2948,12 @@ package redshift {
   }
 
   object DescribeClusterVersionsMessage {
-    def apply(ClusterParameterGroupFamily: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeClusterVersionsMessage = {
+    def apply(
+        ClusterParameterGroupFamily: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeClusterVersionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterParameterGroupFamily" -> ClusterParameterGroupFamily.map { x =>
           x.asInstanceOf[js.Any]
@@ -2717,11 +2986,13 @@ package redshift {
   }
 
   object DescribeClustersMessage {
-    def apply(ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeClustersMessage = {
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeClustersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -2755,9 +3026,11 @@ package redshift {
   }
 
   object DescribeDefaultClusterParametersMessage {
-    def apply(ParameterGroupFamily: String,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): DescribeDefaultClusterParametersMessage = {
+    def apply(
+        ParameterGroupFamily: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDefaultClusterParametersMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterGroupFamily" -> ParameterGroupFamily.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x =>
@@ -2781,9 +3054,11 @@ package redshift {
     def apply(
         DefaultClusterParameters: js.UndefOr[DefaultClusterParameters] = js.undefined
     ): DescribeDefaultClusterParametersResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("DefaultClusterParameters" -> DefaultClusterParameters.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DefaultClusterParameters" -> DefaultClusterParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDefaultClusterParametersResult]
     }
@@ -2798,10 +3073,14 @@ package redshift {
   }
 
   object DescribeEventCategoriesMessage {
-    def apply(SourceType: js.UndefOr[String] = js.undefined): DescribeEventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("SourceType" -> SourceType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        SourceType: js.UndefOr[String] = js.undefined
+    ): DescribeEventCategoriesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "SourceType" -> SourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventCategoriesMessage]
     }
@@ -2820,11 +3099,13 @@ package redshift {
   }
 
   object DescribeEventSubscriptionsMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              SubscriptionName: js.UndefOr[String] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeEventSubscriptionsMessage = {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SubscriptionName: js.UndefOr[String] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeEventSubscriptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
@@ -2862,13 +3143,15 @@ package redshift {
   }
 
   object DescribeEventsMessage {
-    def apply(Duration: js.UndefOr[IntegerOptional] = js.undefined,
-              EndTime: js.UndefOr[TStamp] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              SourceIdentifier: js.UndefOr[String] = js.undefined,
-              SourceType: js.UndefOr[SourceType] = js.undefined,
-              StartTime: js.UndefOr[TStamp] = js.undefined): DescribeEventsMessage = {
+    def apply(
+        Duration: js.UndefOr[IntegerOptional] = js.undefined,
+        EndTime: js.UndefOr[TStamp] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SourceIdentifier: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[SourceType] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined
+    ): DescribeEventsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Duration" -> Duration.map { x =>
           x.asInstanceOf[js.Any]
@@ -2910,11 +3193,13 @@ package redshift {
   }
 
   object DescribeHsmClientCertificatesMessage {
-    def apply(HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeHsmClientCertificatesMessage = {
+    def apply(
+        HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeHsmClientCertificatesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -2950,11 +3235,13 @@ package redshift {
   }
 
   object DescribeHsmConfigurationsMessage {
-    def apply(HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeHsmConfigurationsMessage = {
+    def apply(
+        HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeHsmConfigurationsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmConfigurationIdentifier" -> HsmConfigurationIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -2986,9 +3273,12 @@ package redshift {
   }
 
   object DescribeLoggingStatusMessage {
-    def apply(ClusterIdentifier: String): DescribeLoggingStatusMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterIdentifier: String
+    ): DescribeLoggingStatusMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLoggingStatusMessage]
     }
@@ -3006,10 +3296,12 @@ package redshift {
   }
 
   object DescribeOrderableClusterOptionsMessage {
-    def apply(ClusterVersion: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined): DescribeOrderableClusterOptionsMessage = {
+    def apply(
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined
+    ): DescribeOrderableClusterOptionsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterVersion" -> ClusterVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -3040,9 +3332,11 @@ package redshift {
   }
 
   object DescribeReservedNodeOfferingsMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              ReservedNodeOfferingId: js.UndefOr[String] = js.undefined): DescribeReservedNodeOfferingsMessage = {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ReservedNodeOfferingId: js.UndefOr[String] = js.undefined
+    ): DescribeReservedNodeOfferingsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
@@ -3070,9 +3364,11 @@ package redshift {
   }
 
   object DescribeReservedNodesMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              ReservedNodeId: js.UndefOr[String] = js.undefined): DescribeReservedNodesMessage = {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ReservedNodeId: js.UndefOr[String] = js.undefined
+    ): DescribeReservedNodesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
@@ -3098,9 +3394,12 @@ package redshift {
   }
 
   object DescribeResizeMessage {
-    def apply(ClusterIdentifier: String): DescribeResizeMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterIdentifier: String
+    ): DescribeResizeMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResizeMessage]
     }
@@ -3119,11 +3418,13 @@ package redshift {
   }
 
   object DescribeSnapshotCopyGrantsMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeSnapshotCopyGrantsMessage = {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeSnapshotCopyGrantsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
@@ -3157,12 +3458,14 @@ package redshift {
   }
 
   object DescribeSnapshotSchedulesMessage {
-    def apply(ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              ScheduleIdentifier: js.UndefOr[String] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeSnapshotSchedulesMessage = {
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ScheduleIdentifier: js.UndefOr[String] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeSnapshotSchedulesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -3199,11 +3502,14 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         SnapshotSchedules: js.UndefOr[SnapshotScheduleList] = js.undefined
     ): DescribeSnapshotSchedulesOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SnapshotSchedules" -> SnapshotSchedules.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SnapshotSchedules" -> SnapshotSchedules.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSnapshotSchedulesOutputMessage]
     }
@@ -3221,10 +3527,12 @@ package redshift {
   }
 
   object DescribeTableRestoreStatusMessage {
-    def apply(ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              TableRestoreRequestId: js.UndefOr[String] = js.undefined): DescribeTableRestoreStatusMessage = {
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        TableRestoreRequestId: js.UndefOr[String] = js.undefined
+    ): DescribeTableRestoreStatusMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -3258,12 +3566,14 @@ package redshift {
   }
 
   object DescribeTagsMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
-              ResourceName: js.UndefOr[String] = js.undefined,
-              ResourceType: js.UndefOr[String] = js.undefined,
-              TagKeys: js.UndefOr[TagKeyList] = js.undefined,
-              TagValues: js.UndefOr[TagValueList] = js.undefined): DescribeTagsMessage = {
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ResourceName: js.UndefOr[String] = js.undefined,
+        ResourceType: js.UndefOr[String] = js.undefined,
+        TagKeys: js.UndefOr[TagKeyList] = js.undefined,
+        TagValues: js.UndefOr[TagValueList] = js.undefined
+    ): DescribeTagsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
           x.asInstanceOf[js.Any]
@@ -3298,9 +3608,12 @@ package redshift {
   }
 
   object DisableLoggingMessage {
-    def apply(ClusterIdentifier: String): DisableLoggingMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterIdentifier: String
+    ): DisableLoggingMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableLoggingMessage]
     }
@@ -3315,9 +3628,12 @@ package redshift {
   }
 
   object DisableSnapshotCopyMessage {
-    def apply(ClusterIdentifier: String): DisableSnapshotCopyMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterIdentifier: String
+    ): DisableSnapshotCopyMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableSnapshotCopyMessage]
     }
@@ -3329,10 +3645,14 @@ package redshift {
   }
 
   object DisableSnapshotCopyResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): DisableSnapshotCopyResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): DisableSnapshotCopyResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableSnapshotCopyResult]
     }
@@ -3350,10 +3670,12 @@ package redshift {
   }
 
   object EC2SecurityGroup {
-    def apply(EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): EC2SecurityGroup = {
+    def apply(
+        EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): EC2SecurityGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EC2SecurityGroupName" -> EC2SecurityGroupName.map { x =>
           x.asInstanceOf[js.Any]
@@ -3383,13 +3705,18 @@ package redshift {
   }
 
   object ElasticIpStatus {
-    def apply(ElasticIp: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): ElasticIpStatus = {
-      val _fields = IndexedSeq[(String, js.Any)]("ElasticIp" -> ElasticIp.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ElasticIp: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): ElasticIpStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ElasticIp" -> ElasticIp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ElasticIpStatus]
     }
@@ -3406,9 +3733,11 @@ package redshift {
   }
 
   object EnableLoggingMessage {
-    def apply(BucketName: String,
-              ClusterIdentifier: String,
-              S3KeyPrefix: js.UndefOr[String] = js.undefined): EnableLoggingMessage = {
+    def apply(
+        BucketName: String,
+        ClusterIdentifier: String,
+        S3KeyPrefix: js.UndefOr[String] = js.undefined
+    ): EnableLoggingMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BucketName"        -> BucketName.asInstanceOf[js.Any],
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
@@ -3434,11 +3763,13 @@ package redshift {
   }
 
   object EnableSnapshotCopyMessage {
-    def apply(ClusterIdentifier: String,
-              DestinationRegion: String,
-              ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              RetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              SnapshotCopyGrantName: js.UndefOr[String] = js.undefined): EnableSnapshotCopyMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        DestinationRegion: String,
+        ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        RetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        SnapshotCopyGrantName: js.UndefOr[String] = js.undefined
+    ): EnableSnapshotCopyMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any],
@@ -3463,10 +3794,14 @@ package redshift {
   }
 
   object EnableSnapshotCopyResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): EnableSnapshotCopyResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): EnableSnapshotCopyResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableSnapshotCopyResult]
     }
@@ -3482,12 +3817,18 @@ package redshift {
   }
 
   object Endpoint {
-    def apply(Address: js.UndefOr[String] = js.undefined, Port: js.UndefOr[Int] = js.undefined): Endpoint = {
-      val _fields = IndexedSeq[(String, js.Any)]("Address" -> Address.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Port" -> Port.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Address: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined
+    ): Endpoint = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Port" -> Port.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Endpoint]
     }
@@ -3508,13 +3849,15 @@ package redshift {
   }
 
   object Event {
-    def apply(Date: js.UndefOr[TStamp] = js.undefined,
-              EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              EventId: js.UndefOr[String] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined,
-              Severity: js.UndefOr[String] = js.undefined,
-              SourceIdentifier: js.UndefOr[String] = js.undefined,
-              SourceType: js.UndefOr[SourceType] = js.undefined): Event = {
+    def apply(
+        Date: js.UndefOr[TStamp] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        EventId: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        Severity: js.UndefOr[String] = js.undefined,
+        SourceIdentifier: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[SourceType] = js.undefined
+    ): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Date" -> Date.map { x =>
           x.asInstanceOf[js.Any]
@@ -3553,13 +3896,18 @@ package redshift {
   }
 
   object EventCategoriesMap {
-    def apply(Events: js.UndefOr[EventInfoMapList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined): EventCategoriesMap = {
-      val _fields = IndexedSeq[(String, js.Any)]("Events" -> Events.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SourceType" -> SourceType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Events: js.UndefOr[EventInfoMapList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined
+    ): EventCategoriesMap = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceType" -> SourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMap]
     }
@@ -3574,10 +3922,14 @@ package redshift {
   }
 
   object EventCategoriesMessage {
-    def apply(EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined): EventCategoriesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventCategoriesMapList" -> EventCategoriesMapList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
+    ): EventCategoriesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventCategoriesMapList" -> EventCategoriesMapList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventCategoriesMessage]
     }
@@ -3595,10 +3947,12 @@ package redshift {
   }
 
   object EventInfoMap {
-    def apply(EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              EventDescription: js.UndefOr[String] = js.undefined,
-              EventId: js.UndefOr[String] = js.undefined,
-              Severity: js.UndefOr[String] = js.undefined): EventInfoMap = {
+    def apply(
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        EventDescription: js.UndefOr[String] = js.undefined,
+        EventId: js.UndefOr[String] = js.undefined,
+        Severity: js.UndefOr[String] = js.undefined
+    ): EventInfoMap = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EventCategories" -> EventCategories.map { x =>
           x.asInstanceOf[js.Any]
@@ -3637,17 +3991,19 @@ package redshift {
   }
 
   object EventSubscription {
-    def apply(CustSubscriptionId: js.UndefOr[String] = js.undefined,
-              CustomerAwsId: js.UndefOr[String] = js.undefined,
-              Enabled: js.UndefOr[Boolean] = js.undefined,
-              EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
-              Severity: js.UndefOr[String] = js.undefined,
-              SnsTopicArn: js.UndefOr[String] = js.undefined,
-              SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              SubscriptionCreationTime: js.UndefOr[TStamp] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): EventSubscription = {
+    def apply(
+        CustSubscriptionId: js.UndefOr[String] = js.undefined,
+        CustomerAwsId: js.UndefOr[String] = js.undefined,
+        Enabled: js.UndefOr[Boolean] = js.undefined,
+        EventCategoriesList: js.UndefOr[EventCategoriesList] = js.undefined,
+        Severity: js.UndefOr[String] = js.undefined,
+        SnsTopicArn: js.UndefOr[String] = js.undefined,
+        SourceIdsList: js.UndefOr[SourceIdsList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        SubscriptionCreationTime: js.UndefOr[TStamp] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): EventSubscription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustSubscriptionId" -> CustSubscriptionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3698,13 +4054,18 @@ package redshift {
   }
 
   object EventSubscriptionsMessage {
-    def apply(EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): EventSubscriptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscriptionsList" -> EventSubscriptionsList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): EventSubscriptionsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscriptionsList" -> EventSubscriptionsList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventSubscriptionsMessage]
     }
@@ -3720,13 +4081,18 @@ package redshift {
   }
 
   object EventsMessage {
-    def apply(Events: js.UndefOr[EventList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): EventsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Events" -> Events.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Events: js.UndefOr[EventList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): EventsMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsMessage]
     }
@@ -3746,12 +4112,14 @@ package redshift {
   }
 
   object GetClusterCredentialsMessage {
-    def apply(ClusterIdentifier: String,
-              DbUser: String,
-              AutoCreate: js.UndefOr[BooleanOptional] = js.undefined,
-              DbGroups: js.UndefOr[DbGroupList] = js.undefined,
-              DbName: js.UndefOr[String] = js.undefined,
-              DurationSeconds: js.UndefOr[IntegerOptional] = js.undefined): GetClusterCredentialsMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        DbUser: String,
+        AutoCreate: js.UndefOr[BooleanOptional] = js.undefined,
+        DbGroups: js.UndefOr[DbGroupList] = js.undefined,
+        DbName: js.UndefOr[String] = js.undefined,
+        DurationSeconds: js.UndefOr[IntegerOptional] = js.undefined
+    ): GetClusterCredentialsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "DbUser"            -> DbUser.asInstanceOf[js.Any],
@@ -3784,9 +4152,11 @@ package redshift {
   }
 
   object GetReservedNodeExchangeOfferingsInputMessage {
-    def apply(ReservedNodeId: String,
-              Marker: js.UndefOr[String] = js.undefined,
-              MaxRecords: js.UndefOr[IntegerOptional] = js.undefined): GetReservedNodeExchangeOfferingsInputMessage = {
+    def apply(
+        ReservedNodeId: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): GetReservedNodeExchangeOfferingsInputMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ReservedNodeId" -> ReservedNodeId.asInstanceOf[js.Any],
         "Marker" -> Marker.map { x =>
@@ -3814,11 +4184,14 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodeOfferings: js.UndefOr[ReservedNodeOfferingList] = js.undefined
     ): GetReservedNodeExchangeOfferingsOutputMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReservedNodeOfferings" -> ReservedNodeOfferings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReservedNodeOfferings" -> ReservedNodeOfferings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -3837,9 +4210,11 @@ package redshift {
   }
 
   object HsmClientCertificate {
-    def apply(HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
-              HsmClientCertificatePublicKey: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): HsmClientCertificate = {
+    def apply(
+        HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
+        HsmClientCertificatePublicKey: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): HsmClientCertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -3866,13 +4241,18 @@ package redshift {
   }
 
   object HsmClientCertificateMessage {
-    def apply(HsmClientCertificates: js.UndefOr[HsmClientCertificateList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): HsmClientCertificateMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmClientCertificates" -> HsmClientCertificates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmClientCertificates: js.UndefOr[HsmClientCertificateList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): HsmClientCertificateMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmClientCertificates" -> HsmClientCertificates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HsmClientCertificateMessage]
     }
@@ -3891,11 +4271,13 @@ package redshift {
   }
 
   object HsmConfiguration {
-    def apply(Description: js.UndefOr[String] = js.undefined,
-              HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
-              HsmIpAddress: js.UndefOr[String] = js.undefined,
-              HsmPartitionName: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): HsmConfiguration = {
+    def apply(
+        Description: js.UndefOr[String] = js.undefined,
+        HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
+        HsmIpAddress: js.UndefOr[String] = js.undefined,
+        HsmPartitionName: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): HsmConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
@@ -3928,13 +4310,18 @@ package redshift {
   }
 
   object HsmConfigurationMessage {
-    def apply(HsmConfigurations: js.UndefOr[HsmConfigurationList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): HsmConfigurationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("HsmConfigurations" -> HsmConfigurations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HsmConfigurations: js.UndefOr[HsmConfigurationList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): HsmConfigurationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HsmConfigurations" -> HsmConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HsmConfigurationMessage]
     }
@@ -3951,9 +4338,11 @@ package redshift {
   }
 
   object HsmStatus {
-    def apply(HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
-              HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): HsmStatus = {
+    def apply(
+        HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
+        HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): HsmStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HsmClientCertificateIdentifier" -> HsmClientCertificateIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -3981,16 +4370,22 @@ package redshift {
   }
 
   object IPRange {
-    def apply(CIDRIP: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): IPRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("CIDRIP" -> CIDRIP.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        CIDRIP: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): IPRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CIDRIP" -> CIDRIP.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPRange]
     }
@@ -4010,12 +4405,14 @@ package redshift {
   }
 
   object LoggingStatus {
-    def apply(BucketName: js.UndefOr[String] = js.undefined,
-              LastFailureMessage: js.UndefOr[String] = js.undefined,
-              LastFailureTime: js.UndefOr[TStamp] = js.undefined,
-              LastSuccessfulDeliveryTime: js.UndefOr[TStamp] = js.undefined,
-              LoggingEnabled: js.UndefOr[Boolean] = js.undefined,
-              S3KeyPrefix: js.UndefOr[String] = js.undefined): LoggingStatus = {
+    def apply(
+        BucketName: js.UndefOr[String] = js.undefined,
+        LastFailureMessage: js.UndefOr[String] = js.undefined,
+        LastFailureTime: js.UndefOr[TStamp] = js.undefined,
+        LastSuccessfulDeliveryTime: js.UndefOr[TStamp] = js.undefined,
+        LoggingEnabled: js.UndefOr[Boolean] = js.undefined,
+        S3KeyPrefix: js.UndefOr[String] = js.undefined
+    ): LoggingStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BucketName" -> BucketName.map { x =>
           x.asInstanceOf[js.Any]
@@ -4052,9 +4449,11 @@ package redshift {
   }
 
   object MaintenanceTrack {
-    def apply(DatabaseVersion: js.UndefOr[String] = js.undefined,
-              MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              UpdateTargets: js.UndefOr[EligibleTracksToUpdateList] = js.undefined): MaintenanceTrack = {
+    def apply(
+        DatabaseVersion: js.UndefOr[String] = js.undefined,
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        UpdateTargets: js.UndefOr[EligibleTracksToUpdateList] = js.undefined
+    ): MaintenanceTrack = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatabaseVersion" -> DatabaseVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -4078,7 +4477,10 @@ package redshift {
   }
 
   object ModifyClusterDbRevisionMessage {
-    def apply(ClusterIdentifier: String, RevisionTarget: String): ModifyClusterDbRevisionMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        RevisionTarget: String
+    ): ModifyClusterDbRevisionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "RevisionTarget"    -> RevisionTarget.asInstanceOf[js.Any]
@@ -4094,10 +4496,14 @@ package redshift {
   }
 
   object ModifyClusterDbRevisionResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): ModifyClusterDbRevisionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ModifyClusterDbRevisionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterDbRevisionResult]
     }
@@ -4114,9 +4520,11 @@ package redshift {
   }
 
   object ModifyClusterIamRolesMessage {
-    def apply(ClusterIdentifier: String,
-              AddIamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
-              RemoveIamRoles: js.UndefOr[IamRoleArnList] = js.undefined): ModifyClusterIamRolesMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        AddIamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
+        RemoveIamRoles: js.UndefOr[IamRoleArnList] = js.undefined
+    ): ModifyClusterIamRolesMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "AddIamRoles" -> AddIamRoles.map { x =>
@@ -4137,10 +4545,14 @@ package redshift {
   }
 
   object ModifyClusterIamRolesResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): ModifyClusterIamRolesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ModifyClusterIamRolesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterIamRolesResult]
     }
@@ -4157,12 +4569,14 @@ package redshift {
   }
 
   object ModifyClusterMaintenanceMessage {
-    def apply(ClusterIdentifier: String,
-              DeferMaintenance: js.UndefOr[BooleanOptional] = js.undefined,
-              DeferMaintenanceDuration: js.UndefOr[IntegerOptional] = js.undefined,
-              DeferMaintenanceEndTime: js.UndefOr[TStamp] = js.undefined,
-              DeferMaintenanceIdentifier: js.UndefOr[String] = js.undefined,
-              DeferMaintenanceStartTime: js.UndefOr[TStamp] = js.undefined): ModifyClusterMaintenanceMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        DeferMaintenance: js.UndefOr[BooleanOptional] = js.undefined,
+        DeferMaintenanceDuration: js.UndefOr[IntegerOptional] = js.undefined,
+        DeferMaintenanceEndTime: js.UndefOr[TStamp] = js.undefined,
+        DeferMaintenanceIdentifier: js.UndefOr[String] = js.undefined,
+        DeferMaintenanceStartTime: js.UndefOr[TStamp] = js.undefined
+    ): ModifyClusterMaintenanceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "DeferMaintenance" -> DeferMaintenance.map { x =>
@@ -4192,10 +4606,14 @@ package redshift {
   }
 
   object ModifyClusterMaintenanceResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): ModifyClusterMaintenanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ModifyClusterMaintenanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterMaintenanceResult]
     }
@@ -4231,28 +4649,30 @@ package redshift {
   }
 
   object ModifyClusterMessage {
-    def apply(ClusterIdentifier: String,
-              AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
-              AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
-              ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
-              ClusterType: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              ElasticIp: js.UndefOr[String] = js.undefined,
-              Encrypted: js.UndefOr[BooleanOptional] = js.undefined,
-              EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
-              HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
-              HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              MasterUserPassword: js.UndefOr[String] = js.undefined,
-              NewClusterIdentifier: js.UndefOr[String] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined,
-              NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
-              PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
-              PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
-              VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined): ModifyClusterMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
+        ClusterType: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        ElasticIp: js.UndefOr[String] = js.undefined,
+        Encrypted: js.UndefOr[BooleanOptional] = js.undefined,
+        EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
+        HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
+        HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        NewClusterIdentifier: js.UndefOr[String] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined,
+        NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
+        PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
+    ): ModifyClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "AllowVersionUpgrade" -> AllowVersionUpgrade.map { x =>
@@ -4334,7 +4754,10 @@ package redshift {
   }
 
   object ModifyClusterParameterGroupMessage {
-    def apply(ParameterGroupName: String, Parameters: ParametersList): ModifyClusterParameterGroupMessage = {
+    def apply(
+        ParameterGroupName: String,
+        Parameters: ParametersList
+    ): ModifyClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "Parameters"         -> Parameters.asInstanceOf[js.Any]
@@ -4350,10 +4773,14 @@ package redshift {
   }
 
   object ModifyClusterResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): ModifyClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ModifyClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterResult]
     }
@@ -4392,10 +4819,14 @@ package redshift {
   }
 
   object ModifyClusterSnapshotResult {
-    def apply(Snapshot: js.UndefOr[Snapshot] = js.undefined): ModifyClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Snapshot" -> Snapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Snapshot: js.UndefOr[Snapshot] = js.undefined
+    ): ModifyClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Snapshot" -> Snapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterSnapshotResult]
     }
@@ -4409,9 +4840,11 @@ package redshift {
   }
 
   object ModifyClusterSnapshotScheduleMessage {
-    def apply(ClusterIdentifier: String,
-              DisassociateSchedule: js.UndefOr[BooleanOptional] = js.undefined,
-              ScheduleIdentifier: js.UndefOr[String] = js.undefined): ModifyClusterSnapshotScheduleMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        DisassociateSchedule: js.UndefOr[BooleanOptional] = js.undefined,
+        ScheduleIdentifier: js.UndefOr[String] = js.undefined
+    ): ModifyClusterSnapshotScheduleMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "DisassociateSchedule" -> DisassociateSchedule.map { x =>
@@ -4437,9 +4870,11 @@ package redshift {
   }
 
   object ModifyClusterSubnetGroupMessage {
-    def apply(ClusterSubnetGroupName: String,
-              SubnetIds: SubnetIdentifierList,
-              Description: js.UndefOr[String] = js.undefined): ModifyClusterSubnetGroupMessage = {
+    def apply(
+        ClusterSubnetGroupName: String,
+        SubnetIds: SubnetIdentifierList,
+        Description: js.UndefOr[String] = js.undefined
+    ): ModifyClusterSubnetGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSubnetGroupName" -> ClusterSubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds"              -> SubnetIds.asInstanceOf[js.Any],
@@ -4458,10 +4893,14 @@ package redshift {
   }
 
   object ModifyClusterSubnetGroupResult {
-    def apply(ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined): ModifyClusterSubnetGroupResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSubnetGroup" -> ClusterSubnetGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterSubnetGroup: js.UndefOr[ClusterSubnetGroup] = js.undefined
+    ): ModifyClusterSubnetGroupResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSubnetGroup" -> ClusterSubnetGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyClusterSubnetGroupResult]
     }
@@ -4482,13 +4921,15 @@ package redshift {
   }
 
   object ModifyEventSubscriptionMessage {
-    def apply(SubscriptionName: String,
-              Enabled: js.UndefOr[BooleanOptional] = js.undefined,
-              EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
-              Severity: js.UndefOr[String] = js.undefined,
-              SnsTopicArn: js.UndefOr[String] = js.undefined,
-              SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
-              SourceType: js.UndefOr[String] = js.undefined): ModifyEventSubscriptionMessage = {
+    def apply(
+        SubscriptionName: String,
+        Enabled: js.UndefOr[BooleanOptional] = js.undefined,
+        EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
+        Severity: js.UndefOr[String] = js.undefined,
+        SnsTopicArn: js.UndefOr[String] = js.undefined,
+        SourceIds: js.UndefOr[SourceIdsList] = js.undefined,
+        SourceType: js.UndefOr[String] = js.undefined
+    ): ModifyEventSubscriptionMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SubscriptionName" -> SubscriptionName.asInstanceOf[js.Any],
         "Enabled" -> Enabled.map { x =>
@@ -4521,10 +4962,14 @@ package redshift {
   }
 
   object ModifyEventSubscriptionResult {
-    def apply(EventSubscription: js.UndefOr[EventSubscription] = js.undefined): ModifyEventSubscriptionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("EventSubscription" -> EventSubscription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EventSubscription: js.UndefOr[EventSubscription] = js.undefined
+    ): ModifyEventSubscriptionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EventSubscription" -> EventSubscription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifyEventSubscriptionResult]
     }
@@ -4541,9 +4986,11 @@ package redshift {
   }
 
   object ModifySnapshotCopyRetentionPeriodMessage {
-    def apply(ClusterIdentifier: String,
-              RetentionPeriod: Int,
-              Manual: js.UndefOr[Boolean] = js.undefined): ModifySnapshotCopyRetentionPeriodMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        RetentionPeriod: Int,
+        Manual: js.UndefOr[Boolean] = js.undefined
+    ): ModifySnapshotCopyRetentionPeriodMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "RetentionPeriod"   -> RetentionPeriod.asInstanceOf[js.Any],
@@ -4562,10 +5009,14 @@ package redshift {
   }
 
   object ModifySnapshotCopyRetentionPeriodResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): ModifySnapshotCopyRetentionPeriodResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ModifySnapshotCopyRetentionPeriodResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModifySnapshotCopyRetentionPeriodResult]
     }
@@ -4578,8 +5029,10 @@ package redshift {
   }
 
   object ModifySnapshotScheduleMessage {
-    def apply(ScheduleDefinitions: ScheduleDefinitionList,
-              ScheduleIdentifier: String): ModifySnapshotScheduleMessage = {
+    def apply(
+        ScheduleDefinitions: ScheduleDefinitionList,
+        ScheduleIdentifier: String
+    ): ModifySnapshotScheduleMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ScheduleDefinitions" -> ScheduleDefinitions.asInstanceOf[js.Any],
         "ScheduleIdentifier"  -> ScheduleIdentifier.asInstanceOf[js.Any]
@@ -4601,10 +5054,12 @@ package redshift {
   }
 
   object OrderableClusterOption {
-    def apply(AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
-              ClusterType: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined): OrderableClusterOption = {
+    def apply(
+        AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
+        ClusterType: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined
+    ): OrderableClusterOption = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZones" -> AvailabilityZones.map { x =>
           x.asInstanceOf[js.Any]
@@ -4638,11 +5093,14 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         OrderableClusterOptions: js.UndefOr[OrderableClusterOptionsList] = js.undefined
     ): OrderableClusterOptionsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OrderableClusterOptions" -> OrderableClusterOptions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrderableClusterOptions" -> OrderableClusterOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrderableClusterOptionsMessage]
     }
@@ -4665,15 +5123,17 @@ package redshift {
   }
 
   object Parameter {
-    def apply(AllowedValues: js.UndefOr[String] = js.undefined,
-              ApplyType: js.UndefOr[ParameterApplyType] = js.undefined,
-              DataType: js.UndefOr[String] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined,
-              IsModifiable: js.UndefOr[Boolean] = js.undefined,
-              MinimumEngineVersion: js.UndefOr[String] = js.undefined,
-              ParameterName: js.UndefOr[String] = js.undefined,
-              ParameterValue: js.UndefOr[String] = js.undefined,
-              Source: js.UndefOr[String] = js.undefined): Parameter = {
+    def apply(
+        AllowedValues: js.UndefOr[String] = js.undefined,
+        ApplyType: js.UndefOr[ParameterApplyType] = js.undefined,
+        DataType: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        IsModifiable: js.UndefOr[Boolean] = js.undefined,
+        MinimumEngineVersion: js.UndefOr[String] = js.undefined,
+        ParameterName: js.UndefOr[String] = js.undefined,
+        ParameterValue: js.UndefOr[String] = js.undefined,
+        Source: js.UndefOr[String] = js.undefined
+    ): Parameter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowedValues" -> AllowedValues.map { x =>
           x.asInstanceOf[js.Any]
@@ -4734,17 +5194,19 @@ package redshift {
   }
 
   object PendingModifiedValues {
-    def apply(AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              ClusterType: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              EncryptionType: js.UndefOr[String] = js.undefined,
-              EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
-              MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              MasterUserPassword: js.UndefOr[String] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined,
-              NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
-              PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined): PendingModifiedValues = {
+    def apply(
+        AutomatedSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        ClusterType: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        EncryptionType: js.UndefOr[String] = js.undefined,
+        EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined,
+        NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
+        PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined
+    ): PendingModifiedValues = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutomatedSnapshotRetentionPeriod" -> AutomatedSnapshotRetentionPeriod.map { x =>
           x.asInstanceOf[js.Any]
@@ -4795,8 +5257,10 @@ package redshift {
   }
 
   object PurchaseReservedNodeOfferingMessage {
-    def apply(ReservedNodeOfferingId: String,
-              NodeCount: js.UndefOr[IntegerOptional] = js.undefined): PurchaseReservedNodeOfferingMessage = {
+    def apply(
+        ReservedNodeOfferingId: String,
+        NodeCount: js.UndefOr[IntegerOptional] = js.undefined
+    ): PurchaseReservedNodeOfferingMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ReservedNodeOfferingId" -> ReservedNodeOfferingId.asInstanceOf[js.Any],
         "NodeCount" -> NodeCount.map { x =>
@@ -4814,10 +5278,14 @@ package redshift {
   }
 
   object PurchaseReservedNodeOfferingResult {
-    def apply(ReservedNode: js.UndefOr[ReservedNode] = js.undefined): PurchaseReservedNodeOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ReservedNode" -> ReservedNode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ReservedNode: js.UndefOr[ReservedNode] = js.undefined
+    ): PurchaseReservedNodeOfferingResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ReservedNode" -> ReservedNode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseReservedNodeOfferingResult]
     }
@@ -4832,9 +5300,12 @@ package redshift {
   }
 
   object RebootClusterMessage {
-    def apply(ClusterIdentifier: String): RebootClusterMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterIdentifier: String
+    ): RebootClusterMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootClusterMessage]
     }
@@ -4846,10 +5317,14 @@ package redshift {
   }
 
   object RebootClusterResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): RebootClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): RebootClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RebootClusterResult]
     }
@@ -4865,8 +5340,10 @@ package redshift {
   }
 
   object RecurringCharge {
-    def apply(RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
-              RecurringChargeFrequency: js.UndefOr[String] = js.undefined): RecurringCharge = {
+    def apply(
+        RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
+        RecurringChargeFrequency: js.UndefOr[String] = js.undefined
+    ): RecurringCharge = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RecurringChargeAmount" -> RecurringChargeAmount.map { x =>
           x.asInstanceOf[js.Any]
@@ -4901,19 +5378,21 @@ package redshift {
   }
 
   object ReservedNode {
-    def apply(CurrencyCode: js.UndefOr[String] = js.undefined,
-              Duration: js.UndefOr[Int] = js.undefined,
-              FixedPrice: js.UndefOr[Double] = js.undefined,
-              NodeCount: js.UndefOr[Int] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined,
-              OfferingType: js.UndefOr[String] = js.undefined,
-              RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
-              ReservedNodeId: js.UndefOr[String] = js.undefined,
-              ReservedNodeOfferingId: js.UndefOr[String] = js.undefined,
-              ReservedNodeOfferingType: js.UndefOr[ReservedNodeOfferingType] = js.undefined,
-              StartTime: js.UndefOr[TStamp] = js.undefined,
-              State: js.UndefOr[String] = js.undefined,
-              UsagePrice: js.UndefOr[Double] = js.undefined): ReservedNode = {
+    def apply(
+        CurrencyCode: js.UndefOr[String] = js.undefined,
+        Duration: js.UndefOr[Int] = js.undefined,
+        FixedPrice: js.UndefOr[Double] = js.undefined,
+        NodeCount: js.UndefOr[Int] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined,
+        OfferingType: js.UndefOr[String] = js.undefined,
+        RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
+        ReservedNodeId: js.UndefOr[String] = js.undefined,
+        ReservedNodeOfferingId: js.UndefOr[String] = js.undefined,
+        ReservedNodeOfferingType: js.UndefOr[ReservedNodeOfferingType] = js.undefined,
+        StartTime: js.UndefOr[TStamp] = js.undefined,
+        State: js.UndefOr[String] = js.undefined,
+        UsagePrice: js.UndefOr[Double] = js.undefined
+    ): ReservedNode = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrencyCode" -> CurrencyCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -4977,15 +5456,17 @@ package redshift {
   }
 
   object ReservedNodeOffering {
-    def apply(CurrencyCode: js.UndefOr[String] = js.undefined,
-              Duration: js.UndefOr[Int] = js.undefined,
-              FixedPrice: js.UndefOr[Double] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined,
-              OfferingType: js.UndefOr[String] = js.undefined,
-              RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
-              ReservedNodeOfferingId: js.UndefOr[String] = js.undefined,
-              ReservedNodeOfferingType: js.UndefOr[ReservedNodeOfferingType] = js.undefined,
-              UsagePrice: js.UndefOr[Double] = js.undefined): ReservedNodeOffering = {
+    def apply(
+        CurrencyCode: js.UndefOr[String] = js.undefined,
+        Duration: js.UndefOr[Int] = js.undefined,
+        FixedPrice: js.UndefOr[Double] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined,
+        OfferingType: js.UndefOr[String] = js.undefined,
+        RecurringCharges: js.UndefOr[RecurringChargeList] = js.undefined,
+        ReservedNodeOfferingId: js.UndefOr[String] = js.undefined,
+        ReservedNodeOfferingType: js.UndefOr[ReservedNodeOfferingType] = js.undefined,
+        UsagePrice: js.UndefOr[Double] = js.undefined
+    ): ReservedNodeOffering = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrencyCode" -> CurrencyCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -5041,11 +5522,14 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         ReservedNodeOfferings: js.UndefOr[ReservedNodeOfferingList] = js.undefined
     ): ReservedNodeOfferingsMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReservedNodeOfferings" -> ReservedNodeOfferings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReservedNodeOfferings" -> ReservedNodeOfferings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedNodeOfferingsMessage]
     }
@@ -5061,13 +5545,18 @@ package redshift {
   }
 
   object ReservedNodesMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              ReservedNodes: js.UndefOr[ReservedNodeList] = js.undefined): ReservedNodesMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReservedNodes" -> ReservedNodes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ReservedNodes: js.UndefOr[ReservedNodeList] = js.undefined
+    ): ReservedNodesMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReservedNodes" -> ReservedNodes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservedNodesMessage]
     }
@@ -5084,9 +5573,11 @@ package redshift {
   }
 
   object ResetClusterParameterGroupMessage {
-    def apply(ParameterGroupName: String,
-              Parameters: js.UndefOr[ParametersList] = js.undefined,
-              ResetAllParameters: js.UndefOr[Boolean] = js.undefined): ResetClusterParameterGroupMessage = {
+    def apply(
+        ParameterGroupName: String,
+        Parameters: js.UndefOr[ParametersList] = js.undefined,
+        ResetAllParameters: js.UndefOr[Boolean] = js.undefined
+    ): ResetClusterParameterGroupMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any],
         "Parameters" -> Parameters.map { x =>
@@ -5111,11 +5602,13 @@ package redshift {
   }
 
   object ResizeClusterMessage {
-    def apply(ClusterIdentifier: String,
-              NumberOfNodes: Int,
-              Classic: js.UndefOr[BooleanOptional] = js.undefined,
-              ClusterType: js.UndefOr[String] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined): ResizeClusterMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        NumberOfNodes: Int,
+        Classic: js.UndefOr[BooleanOptional] = js.undefined,
+        ClusterType: js.UndefOr[String] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined
+    ): ResizeClusterMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
         "NumberOfNodes"     -> NumberOfNodes.asInstanceOf[js.Any],
@@ -5140,10 +5633,14 @@ package redshift {
   }
 
   object ResizeClusterResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): ResizeClusterResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): ResizeClusterResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResizeClusterResult]
     }
@@ -5159,13 +5656,18 @@ package redshift {
   }
 
   object ResizeInfo {
-    def apply(AllowCancelResize: js.UndefOr[Boolean] = js.undefined,
-              ResizeType: js.UndefOr[String] = js.undefined): ResizeInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("AllowCancelResize" -> AllowCancelResize.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ResizeType" -> ResizeType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AllowCancelResize: js.UndefOr[Boolean] = js.undefined,
+        ResizeType: js.UndefOr[String] = js.undefined
+    ): ResizeInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AllowCancelResize" -> AllowCancelResize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResizeType" -> ResizeType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResizeInfo]
     }
@@ -5194,21 +5696,23 @@ package redshift {
   }
 
   object ResizeProgressMessage {
-    def apply(AvgResizeRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional] = js.undefined,
-              ElapsedTimeInSeconds: js.UndefOr[LongOptional] = js.undefined,
-              EstimatedTimeToCompletionInSeconds: js.UndefOr[LongOptional] = js.undefined,
-              ImportTablesCompleted: js.UndefOr[ImportTablesCompleted] = js.undefined,
-              ImportTablesInProgress: js.UndefOr[ImportTablesInProgress] = js.undefined,
-              ImportTablesNotStarted: js.UndefOr[ImportTablesNotStarted] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined,
-              ProgressInMegaBytes: js.UndefOr[LongOptional] = js.undefined,
-              ResizeType: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              TargetClusterType: js.UndefOr[String] = js.undefined,
-              TargetEncryptionType: js.UndefOr[String] = js.undefined,
-              TargetNodeType: js.UndefOr[String] = js.undefined,
-              TargetNumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
-              TotalResizeDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined): ResizeProgressMessage = {
+    def apply(
+        AvgResizeRateInMegaBytesPerSecond: js.UndefOr[DoubleOptional] = js.undefined,
+        ElapsedTimeInSeconds: js.UndefOr[LongOptional] = js.undefined,
+        EstimatedTimeToCompletionInSeconds: js.UndefOr[LongOptional] = js.undefined,
+        ImportTablesCompleted: js.UndefOr[ImportTablesCompleted] = js.undefined,
+        ImportTablesInProgress: js.UndefOr[ImportTablesInProgress] = js.undefined,
+        ImportTablesNotStarted: js.UndefOr[ImportTablesNotStarted] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        ProgressInMegaBytes: js.UndefOr[LongOptional] = js.undefined,
+        ResizeType: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        TargetClusterType: js.UndefOr[String] = js.undefined,
+        TargetEncryptionType: js.UndefOr[String] = js.undefined,
+        TargetNodeType: js.UndefOr[String] = js.undefined,
+        TargetNumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
+        TotalResizeDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined
+    ): ResizeProgressMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvgResizeRateInMegaBytesPerSecond" -> AvgResizeRateInMegaBytesPerSecond.map { x =>
           x.asInstanceOf[js.Any]
@@ -5405,10 +5909,14 @@ package redshift {
   }
 
   object RestoreFromClusterSnapshotResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): RestoreFromClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): RestoreFromClusterSnapshotResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreFromClusterSnapshotResult]
     }
@@ -5428,12 +5936,14 @@ package redshift {
   }
 
   object RestoreStatus {
-    def apply(CurrentRestoreRateInMegaBytesPerSecond: js.UndefOr[Double] = js.undefined,
-              ElapsedTimeInSeconds: js.UndefOr[Double] = js.undefined,
-              EstimatedTimeToCompletionInSeconds: js.UndefOr[Double] = js.undefined,
-              ProgressInMegaBytes: js.UndefOr[Double] = js.undefined,
-              SnapshotSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined): RestoreStatus = {
+    def apply(
+        CurrentRestoreRateInMegaBytesPerSecond: js.UndefOr[Double] = js.undefined,
+        ElapsedTimeInSeconds: js.UndefOr[Double] = js.undefined,
+        EstimatedTimeToCompletionInSeconds: js.UndefOr[Double] = js.undefined,
+        ProgressInMegaBytes: js.UndefOr[Double] = js.undefined,
+        SnapshotSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): RestoreStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentRestoreRateInMegaBytesPerSecond" -> CurrentRestoreRateInMegaBytesPerSecond.map { x =>
           x.asInstanceOf[js.Any]
@@ -5475,14 +5985,16 @@ package redshift {
   }
 
   object RestoreTableFromClusterSnapshotMessage {
-    def apply(ClusterIdentifier: String,
-              NewTableName: String,
-              SnapshotIdentifier: String,
-              SourceDatabaseName: String,
-              SourceTableName: String,
-              SourceSchemaName: js.UndefOr[String] = js.undefined,
-              TargetDatabaseName: js.UndefOr[String] = js.undefined,
-              TargetSchemaName: js.UndefOr[String] = js.undefined): RestoreTableFromClusterSnapshotMessage = {
+    def apply(
+        ClusterIdentifier: String,
+        NewTableName: String,
+        SnapshotIdentifier: String,
+        SourceDatabaseName: String,
+        SourceTableName: String,
+        SourceSchemaName: js.UndefOr[String] = js.undefined,
+        TargetDatabaseName: js.UndefOr[String] = js.undefined,
+        TargetSchemaName: js.UndefOr[String] = js.undefined
+    ): RestoreTableFromClusterSnapshotMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier"  -> ClusterIdentifier.asInstanceOf[js.Any],
         "NewTableName"       -> NewTableName.asInstanceOf[js.Any],
@@ -5513,9 +6025,11 @@ package redshift {
     def apply(
         TableRestoreStatus: js.UndefOr[TableRestoreStatus] = js.undefined
     ): RestoreTableFromClusterSnapshotResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableRestoreStatus" -> TableRestoreStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableRestoreStatus" -> TableRestoreStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreTableFromClusterSnapshotResult]
     }
@@ -5532,9 +6046,11 @@ package redshift {
   }
 
   object RevisionTarget {
-    def apply(DatabaseRevision: js.UndefOr[String] = js.undefined,
-              DatabaseRevisionReleaseDate: js.UndefOr[TStamp] = js.undefined,
-              Description: js.UndefOr[String] = js.undefined): RevisionTarget = {
+    def apply(
+        DatabaseRevision: js.UndefOr[String] = js.undefined,
+        DatabaseRevisionReleaseDate: js.UndefOr[TStamp] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined
+    ): RevisionTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatabaseRevision" -> DatabaseRevision.map { x =>
           x.asInstanceOf[js.Any]
@@ -5563,10 +6079,12 @@ package redshift {
   }
 
   object RevokeClusterSecurityGroupIngressMessage {
-    def apply(ClusterSecurityGroupName: String,
-              CIDRIP: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
-              EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined): RevokeClusterSecurityGroupIngressMessage = {
+    def apply(
+        ClusterSecurityGroupName: String,
+        CIDRIP: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
+        EC2SecurityGroupOwnerId: js.UndefOr[String] = js.undefined
+    ): RevokeClusterSecurityGroupIngressMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterSecurityGroupName" -> ClusterSecurityGroupName.asInstanceOf[js.Any],
         "CIDRIP" -> CIDRIP.map { x =>
@@ -5593,9 +6111,11 @@ package redshift {
     def apply(
         ClusterSecurityGroup: js.UndefOr[ClusterSecurityGroup] = js.undefined
     ): RevokeClusterSecurityGroupIngressResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterSecurityGroup" -> ClusterSecurityGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeClusterSecurityGroupIngressResult]
     }
@@ -5612,9 +6132,11 @@ package redshift {
   }
 
   object RevokeSnapshotAccessMessage {
-    def apply(AccountWithRestoreAccess: String,
-              SnapshotIdentifier: String,
-              SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined): RevokeSnapshotAccessMessage = {
+    def apply(
+        AccountWithRestoreAccess: String,
+        SnapshotIdentifier: String,
+        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
+    ): RevokeSnapshotAccessMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
         "SnapshotIdentifier"       -> SnapshotIdentifier.asInstanceOf[js.Any],
@@ -5633,10 +6155,14 @@ package redshift {
   }
 
   object RevokeSnapshotAccessResult {
-    def apply(Snapshot: js.UndefOr[Snapshot] = js.undefined): RevokeSnapshotAccessResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Snapshot" -> Snapshot.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Snapshot: js.UndefOr[Snapshot] = js.undefined
+    ): RevokeSnapshotAccessResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Snapshot" -> Snapshot.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeSnapshotAccessResult]
     }
@@ -5651,9 +6177,12 @@ package redshift {
   }
 
   object RotateEncryptionKeyMessage {
-    def apply(ClusterIdentifier: String): RotateEncryptionKeyMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterIdentifier: String
+    ): RotateEncryptionKeyMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateEncryptionKeyMessage]
     }
@@ -5665,10 +6194,14 @@ package redshift {
   }
 
   object RotateEncryptionKeyResult {
-    def apply(Cluster: js.UndefOr[Cluster] = js.undefined): RotateEncryptionKeyResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Cluster" -> Cluster.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Cluster: js.UndefOr[Cluster] = js.undefined
+    ): RotateEncryptionKeyResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Cluster" -> Cluster.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RotateEncryptionKeyResult]
     }
@@ -5723,39 +6256,41 @@ package redshift {
   }
 
   object Snapshot {
-    def apply(AccountsWithRestoreAccess: js.UndefOr[AccountsWithRestoreAccessList] = js.undefined,
-              ActualIncrementalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
-              AvailabilityZone: js.UndefOr[String] = js.undefined,
-              BackupProgressInMegaBytes: js.UndefOr[Double] = js.undefined,
-              ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
-              ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              ClusterVersion: js.UndefOr[String] = js.undefined,
-              CurrentBackupRateInMegaBytesPerSecond: js.UndefOr[Double] = js.undefined,
-              DBName: js.UndefOr[String] = js.undefined,
-              ElapsedTimeInSeconds: js.UndefOr[Double] = js.undefined,
-              Encrypted: js.UndefOr[Boolean] = js.undefined,
-              EncryptedWithHSM: js.UndefOr[Boolean] = js.undefined,
-              EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
-              EstimatedSecondsToCompletion: js.UndefOr[Double] = js.undefined,
-              KmsKeyId: js.UndefOr[String] = js.undefined,
-              MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              ManualSnapshotRemainingDays: js.UndefOr[IntegerOptional] = js.undefined,
-              ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
-              MasterUsername: js.UndefOr[String] = js.undefined,
-              NodeType: js.UndefOr[String] = js.undefined,
-              NumberOfNodes: js.UndefOr[Int] = js.undefined,
-              OwnerAccount: js.UndefOr[String] = js.undefined,
-              Port: js.UndefOr[Int] = js.undefined,
-              RestorableNodeTypes: js.UndefOr[RestorableNodeTypeList] = js.undefined,
-              SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
-              SnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              SnapshotRetentionStartTime: js.UndefOr[TStamp] = js.undefined,
-              SnapshotType: js.UndefOr[String] = js.undefined,
-              SourceRegion: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined,
-              TotalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
-              VpcId: js.UndefOr[String] = js.undefined): Snapshot = {
+    def apply(
+        AccountsWithRestoreAccess: js.UndefOr[AccountsWithRestoreAccessList] = js.undefined,
+        ActualIncrementalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
+        AvailabilityZone: js.UndefOr[String] = js.undefined,
+        BackupProgressInMegaBytes: js.UndefOr[Double] = js.undefined,
+        ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        ClusterVersion: js.UndefOr[String] = js.undefined,
+        CurrentBackupRateInMegaBytesPerSecond: js.UndefOr[Double] = js.undefined,
+        DBName: js.UndefOr[String] = js.undefined,
+        ElapsedTimeInSeconds: js.UndefOr[Double] = js.undefined,
+        Encrypted: js.UndefOr[Boolean] = js.undefined,
+        EncryptedWithHSM: js.UndefOr[Boolean] = js.undefined,
+        EnhancedVpcRouting: js.UndefOr[Boolean] = js.undefined,
+        EstimatedSecondsToCompletion: js.UndefOr[Double] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        ManualSnapshotRemainingDays: js.UndefOr[IntegerOptional] = js.undefined,
+        ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
+        NodeType: js.UndefOr[String] = js.undefined,
+        NumberOfNodes: js.UndefOr[Int] = js.undefined,
+        OwnerAccount: js.UndefOr[String] = js.undefined,
+        Port: js.UndefOr[Int] = js.undefined,
+        RestorableNodeTypes: js.UndefOr[RestorableNodeTypeList] = js.undefined,
+        SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        SnapshotRetentionStartTime: js.UndefOr[TStamp] = js.undefined,
+        SnapshotType: js.UndefOr[String] = js.undefined,
+        SourceRegion: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TotalBackupSizeInMegaBytes: js.UndefOr[Double] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): Snapshot = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountsWithRestoreAccess" -> AccountsWithRestoreAccess.map { x =>
           x.asInstanceOf[js.Any]
@@ -5882,9 +6417,11 @@ package redshift {
   }
 
   object SnapshotCopyGrant {
-    def apply(KmsKeyId: js.UndefOr[String] = js.undefined,
-              SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): SnapshotCopyGrant = {
+    def apply(
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        SnapshotCopyGrantName: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): SnapshotCopyGrant = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KmsKeyId" -> KmsKeyId.map { x =>
           x.asInstanceOf[js.Any]
@@ -5911,13 +6448,18 @@ package redshift {
   }
 
   object SnapshotCopyGrantMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              SnapshotCopyGrants: js.UndefOr[SnapshotCopyGrantList] = js.undefined): SnapshotCopyGrantMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SnapshotCopyGrants" -> SnapshotCopyGrants.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        SnapshotCopyGrants: js.UndefOr[SnapshotCopyGrantList] = js.undefined
+    ): SnapshotCopyGrantMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SnapshotCopyGrants" -> SnapshotCopyGrants.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotCopyGrantMessage]
     }
@@ -5935,10 +6477,12 @@ package redshift {
   }
 
   object SnapshotErrorMessage {
-    def apply(FailureCode: js.UndefOr[String] = js.undefined,
-              FailureReason: js.UndefOr[String] = js.undefined,
-              SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined,
-              SnapshotIdentifier: js.UndefOr[String] = js.undefined): SnapshotErrorMessage = {
+    def apply(
+        FailureCode: js.UndefOr[String] = js.undefined,
+        FailureReason: js.UndefOr[String] = js.undefined,
+        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): SnapshotErrorMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FailureCode" -> FailureCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -5968,13 +6512,18 @@ package redshift {
   }
 
   object SnapshotMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              Snapshots: js.UndefOr[SnapshotList] = js.undefined): SnapshotMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Snapshots" -> Snapshots.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        Snapshots: js.UndefOr[SnapshotList] = js.undefined
+    ): SnapshotMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Snapshots" -> Snapshots.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotMessage]
     }
@@ -5985,6 +6534,8 @@ package redshift {
     */
   @js.native
   trait SnapshotSchedule extends js.Object {
+    var AssociatedClusterCount: js.UndefOr[IntegerOptional]
+    var AssociatedClusters: js.UndefOr[AssociatedClusterList]
     var NextInvocations: js.UndefOr[ScheduledSnapshotTimeList]
     var ScheduleDefinitions: js.UndefOr[ScheduleDefinitionList]
     var ScheduleDescription: js.UndefOr[String]
@@ -5993,12 +6544,22 @@ package redshift {
   }
 
   object SnapshotSchedule {
-    def apply(NextInvocations: js.UndefOr[ScheduledSnapshotTimeList] = js.undefined,
-              ScheduleDefinitions: js.UndefOr[ScheduleDefinitionList] = js.undefined,
-              ScheduleDescription: js.UndefOr[String] = js.undefined,
-              ScheduleIdentifier: js.UndefOr[String] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): SnapshotSchedule = {
+    def apply(
+        AssociatedClusterCount: js.UndefOr[IntegerOptional] = js.undefined,
+        AssociatedClusters: js.UndefOr[AssociatedClusterList] = js.undefined,
+        NextInvocations: js.UndefOr[ScheduledSnapshotTimeList] = js.undefined,
+        ScheduleDefinitions: js.UndefOr[ScheduleDefinitionList] = js.undefined,
+        ScheduleDescription: js.UndefOr[String] = js.undefined,
+        ScheduleIdentifier: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): SnapshotSchedule = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "AssociatedClusterCount" -> AssociatedClusterCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AssociatedClusters" -> AssociatedClusters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "NextInvocations" -> NextInvocations.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -6030,12 +6591,16 @@ package redshift {
   }
 
   object SnapshotSortingEntity {
-    def apply(Attribute: SnapshotAttributeToSortBy,
-              SortOrder: js.UndefOr[SortByOrder] = js.undefined): SnapshotSortingEntity = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Attribute" -> Attribute.asInstanceOf[js.Any], "SortOrder" -> SortOrder.map { x =>
+    def apply(
+        Attribute: SnapshotAttributeToSortBy,
+        SortOrder: js.UndefOr[SortByOrder] = js.undefined
+    ): SnapshotSortingEntity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attribute" -> Attribute.asInstanceOf[js.Any],
+        "SortOrder" -> SortOrder.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SnapshotSortingEntity]
     }
@@ -6068,9 +6633,11 @@ package redshift {
   }
 
   object Subnet {
-    def apply(SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
-              SubnetIdentifier: js.UndefOr[String] = js.undefined,
-              SubnetStatus: js.UndefOr[String] = js.undefined): Subnet = {
+    def apply(
+        SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
+        SubnetIdentifier: js.UndefOr[String] = js.undefined,
+        SubnetStatus: js.UndefOr[String] = js.undefined
+    ): Subnet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SubnetAvailabilityZone" -> SubnetAvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -6096,10 +6663,14 @@ package redshift {
   }
 
   object SupportedOperation {
-    def apply(OperationName: js.UndefOr[String] = js.undefined): SupportedOperation = {
-      val _fields = IndexedSeq[(String, js.Any)]("OperationName" -> OperationName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OperationName: js.UndefOr[String] = js.undefined
+    ): SupportedOperation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OperationName" -> OperationName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SupportedOperation]
     }
@@ -6114,10 +6685,14 @@ package redshift {
   }
 
   object SupportedPlatform {
-    def apply(Name: js.UndefOr[String] = js.undefined): SupportedPlatform = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[String] = js.undefined
+    ): SupportedPlatform = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SupportedPlatform]
     }
@@ -6145,20 +6720,22 @@ package redshift {
   }
 
   object TableRestoreStatus {
-    def apply(ClusterIdentifier: js.UndefOr[String] = js.undefined,
-              Message: js.UndefOr[String] = js.undefined,
-              NewTableName: js.UndefOr[String] = js.undefined,
-              ProgressInMegaBytes: js.UndefOr[LongOptional] = js.undefined,
-              RequestTime: js.UndefOr[TStamp] = js.undefined,
-              SnapshotIdentifier: js.UndefOr[String] = js.undefined,
-              SourceDatabaseName: js.UndefOr[String] = js.undefined,
-              SourceSchemaName: js.UndefOr[String] = js.undefined,
-              SourceTableName: js.UndefOr[String] = js.undefined,
-              Status: js.UndefOr[TableRestoreStatusType] = js.undefined,
-              TableRestoreRequestId: js.UndefOr[String] = js.undefined,
-              TargetDatabaseName: js.UndefOr[String] = js.undefined,
-              TargetSchemaName: js.UndefOr[String] = js.undefined,
-              TotalDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined): TableRestoreStatus = {
+    def apply(
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Message: js.UndefOr[String] = js.undefined,
+        NewTableName: js.UndefOr[String] = js.undefined,
+        ProgressInMegaBytes: js.UndefOr[LongOptional] = js.undefined,
+        RequestTime: js.UndefOr[TStamp] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        SourceDatabaseName: js.UndefOr[String] = js.undefined,
+        SourceSchemaName: js.UndefOr[String] = js.undefined,
+        SourceTableName: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[TableRestoreStatusType] = js.undefined,
+        TableRestoreRequestId: js.UndefOr[String] = js.undefined,
+        TargetDatabaseName: js.UndefOr[String] = js.undefined,
+        TargetSchemaName: js.UndefOr[String] = js.undefined,
+        TotalDataInMegaBytes: js.UndefOr[LongOptional] = js.undefined
+    ): TableRestoreStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterIdentifier" -> ClusterIdentifier.map { x =>
           x.asInstanceOf[js.Any]
@@ -6222,11 +6799,14 @@ package redshift {
         Marker: js.UndefOr[String] = js.undefined,
         TableRestoreStatusDetails: js.UndefOr[TableRestoreStatusList] = js.undefined
     ): TableRestoreStatusMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TableRestoreStatusDetails" -> TableRestoreStatusDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TableRestoreStatusDetails" -> TableRestoreStatusDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TableRestoreStatusMessage]
     }
@@ -6252,12 +6832,18 @@ package redshift {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[String] = js.undefined, Value: js.UndefOr[String] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -6274,9 +6860,11 @@ package redshift {
   }
 
   object TaggedResource {
-    def apply(ResourceName: js.UndefOr[String] = js.undefined,
-              ResourceType: js.UndefOr[String] = js.undefined,
-              Tag: js.UndefOr[Tag] = js.undefined): TaggedResource = {
+    def apply(
+        ResourceName: js.UndefOr[String] = js.undefined,
+        ResourceType: js.UndefOr[String] = js.undefined,
+        Tag: js.UndefOr[Tag] = js.undefined
+    ): TaggedResource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceName" -> ResourceName.map { x =>
           x.asInstanceOf[js.Any]
@@ -6303,13 +6891,18 @@ package redshift {
   }
 
   object TaggedResourceListMessage {
-    def apply(Marker: js.UndefOr[String] = js.undefined,
-              TaggedResources: js.UndefOr[TaggedResourceList] = js.undefined): TaggedResourceListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TaggedResources" -> TaggedResources.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        TaggedResources: js.UndefOr[TaggedResourceList] = js.undefined
+    ): TaggedResourceListMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TaggedResources" -> TaggedResources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TaggedResourceListMessage]
     }
@@ -6322,13 +6915,18 @@ package redshift {
   }
 
   object TrackListMessage {
-    def apply(MaintenanceTracks: js.UndefOr[TrackList] = js.undefined,
-              Marker: js.UndefOr[String] = js.undefined): TrackListMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaintenanceTracks" -> MaintenanceTracks.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Marker" -> Marker.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaintenanceTracks: js.UndefOr[TrackList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): TrackListMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaintenanceTracks" -> MaintenanceTracks.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrackListMessage]
     }
@@ -6345,9 +6943,11 @@ package redshift {
   }
 
   object UpdateTarget {
-    def apply(DatabaseVersion: js.UndefOr[String] = js.undefined,
-              MaintenanceTrackName: js.UndefOr[String] = js.undefined,
-              SupportedOperations: js.UndefOr[SupportedOperationList] = js.undefined): UpdateTarget = {
+    def apply(
+        DatabaseVersion: js.UndefOr[String] = js.undefined,
+        MaintenanceTrackName: js.UndefOr[String] = js.undefined,
+        SupportedOperations: js.UndefOr[SupportedOperationList] = js.undefined
+    ): UpdateTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DatabaseVersion" -> DatabaseVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -6374,13 +6974,18 @@ package redshift {
   }
 
   object VpcSecurityGroupMembership {
-    def apply(Status: js.UndefOr[String] = js.undefined,
-              VpcSecurityGroupId: js.UndefOr[String] = js.undefined): VpcSecurityGroupMembership = {
-      val _fields = IndexedSeq[(String, js.Any)]("Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Status: js.UndefOr[String] = js.undefined,
+        VpcSecurityGroupId: js.UndefOr[String] = js.undefined
+    ): VpcSecurityGroupMembership = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcSecurityGroupId" -> VpcSecurityGroupId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcSecurityGroupMembership]
     }

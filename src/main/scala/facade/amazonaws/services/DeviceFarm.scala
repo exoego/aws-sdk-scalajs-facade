@@ -24,7 +24,6 @@ package object devicefarm {
   type DeviceAttribute                    = String
   type DeviceAvailability                 = String
   type DeviceFilterAttribute              = String
-  type DeviceFilterOperator               = String
   type DeviceFilterValues                 = js.Array[String]
   type DeviceFilters                      = js.Array[DeviceFilter]
   type DeviceFormFactor                   = String
@@ -198,14 +197,16 @@ package devicefarm {
   }
 
   object AccountSettings {
-    def apply(awsAccountNumber: js.UndefOr[AWSAccountNumber] = js.undefined,
-              defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-              maxJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-              maxSlots: js.UndefOr[MaxSlotMap] = js.undefined,
-              skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-              trialMinutes: js.UndefOr[TrialMinutes] = js.undefined,
-              unmeteredDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined,
-              unmeteredRemoteAccessDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined): AccountSettings = {
+    def apply(
+        awsAccountNumber: js.UndefOr[AWSAccountNumber] = js.undefined,
+        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
+        maxJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
+        maxSlots: js.UndefOr[MaxSlotMap] = js.undefined,
+        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
+        trialMinutes: js.UndefOr[TrialMinutes] = js.undefined,
+        unmeteredDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined,
+        unmeteredRemoteAccessDevices: js.UndefOr[PurchasedDevicesMap] = js.undefined
+    ): AccountSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsAccountNumber" -> awsAccountNumber.map { x =>
           x.asInstanceOf[js.Any]
@@ -250,11 +251,13 @@ package devicefarm {
   }
 
   object Artifact {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              extension: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              `type`: js.UndefOr[ArtifactType] = js.undefined,
-              url: js.UndefOr[URL] = js.undefined): Artifact = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        extension: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        `type`: js.UndefOr[ArtifactType] = js.undefined,
+        url: js.UndefOr[URL] = js.undefined
+    ): Artifact = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -366,9 +369,11 @@ package devicefarm {
   }
 
   object CPU {
-    def apply(architecture: js.UndefOr[String] = js.undefined,
-              clock: js.UndefOr[Double] = js.undefined,
-              frequency: js.UndefOr[String] = js.undefined): CPU = {
+    def apply(
+        architecture: js.UndefOr[String] = js.undefined,
+        clock: js.UndefOr[Double] = js.undefined,
+        frequency: js.UndefOr[String] = js.undefined
+    ): CPU = {
       val _fields = IndexedSeq[(String, js.Any)](
         "architecture" -> architecture.map { x =>
           x.asInstanceOf[js.Any]
@@ -400,13 +405,15 @@ package devicefarm {
   }
 
   object Counters {
-    def apply(errored: js.UndefOr[Int] = js.undefined,
-              failed: js.UndefOr[Int] = js.undefined,
-              passed: js.UndefOr[Int] = js.undefined,
-              skipped: js.UndefOr[Int] = js.undefined,
-              stopped: js.UndefOr[Int] = js.undefined,
-              total: js.UndefOr[Int] = js.undefined,
-              warned: js.UndefOr[Int] = js.undefined): Counters = {
+    def apply(
+        errored: js.UndefOr[Int] = js.undefined,
+        failed: js.UndefOr[Int] = js.undefined,
+        passed: js.UndefOr[Int] = js.undefined,
+        skipped: js.UndefOr[Int] = js.undefined,
+        stopped: js.UndefOr[Int] = js.undefined,
+        total: js.UndefOr[Int] = js.undefined,
+        warned: js.UndefOr[Int] = js.undefined
+    ): Counters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "errored" -> errored.map { x =>
           x.asInstanceOf[js.Any]
@@ -444,18 +451,25 @@ package devicefarm {
     var projectArn: AmazonResourceName
     var rules: Rules
     var description: js.UndefOr[Message]
+    var maxDevices: js.UndefOr[Int]
   }
 
   object CreateDevicePoolRequest {
-    def apply(name: Name,
-              projectArn: AmazonResourceName,
-              rules: Rules,
-              description: js.UndefOr[Message] = js.undefined): CreateDevicePoolRequest = {
+    def apply(
+        name: Name,
+        projectArn: AmazonResourceName,
+        rules: Rules,
+        description: js.UndefOr[Message] = js.undefined,
+        maxDevices: js.UndefOr[Int] = js.undefined
+    ): CreateDevicePoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name"       -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
         "rules"      -> rules.asInstanceOf[js.Any],
         "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "maxDevices" -> maxDevices.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -473,10 +487,14 @@ package devicefarm {
   }
 
   object CreateDevicePoolResult {
-    def apply(devicePool: js.UndefOr[DevicePool] = js.undefined): CreateDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("devicePool" -> devicePool.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        devicePool: js.UndefOr[DevicePool] = js.undefined
+    ): CreateDevicePoolResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "devicePool" -> devicePool.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDevicePoolResult]
     }
@@ -492,11 +510,13 @@ package devicefarm {
   }
 
   object CreateInstanceProfileRequest {
-    def apply(name: Name,
-              description: js.UndefOr[Message] = js.undefined,
-              excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
-              packageCleanup: js.UndefOr[Boolean] = js.undefined,
-              rebootAfterUse: js.UndefOr[Boolean] = js.undefined): CreateInstanceProfileRequest = {
+    def apply(
+        name: Name,
+        description: js.UndefOr[Message] = js.undefined,
+        excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
+        packageCleanup: js.UndefOr[Boolean] = js.undefined,
+        rebootAfterUse: js.UndefOr[Boolean] = js.undefined
+    ): CreateInstanceProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -523,10 +543,14 @@ package devicefarm {
   }
 
   object CreateInstanceProfileResult {
-    def apply(instanceProfile: js.UndefOr[InstanceProfile] = js.undefined): CreateInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceProfile" -> instanceProfile.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
+    ): CreateInstanceProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceProfile" -> instanceProfile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateInstanceProfileResult]
     }
@@ -549,18 +573,20 @@ package devicefarm {
   }
 
   object CreateNetworkProfileRequest {
-    def apply(name: Name,
-              projectArn: AmazonResourceName,
-              description: js.UndefOr[Message] = js.undefined,
-              downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-              downlinkDelayMs: js.UndefOr[Double] = js.undefined,
-              downlinkJitterMs: js.UndefOr[Double] = js.undefined,
-              downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
-              `type`: js.UndefOr[NetworkProfileType] = js.undefined,
-              uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-              uplinkDelayMs: js.UndefOr[Double] = js.undefined,
-              uplinkJitterMs: js.UndefOr[Double] = js.undefined,
-              uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined): CreateNetworkProfileRequest = {
+    def apply(
+        name: Name,
+        projectArn: AmazonResourceName,
+        description: js.UndefOr[Message] = js.undefined,
+        downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
+        downlinkDelayMs: js.UndefOr[Double] = js.undefined,
+        downlinkJitterMs: js.UndefOr[Double] = js.undefined,
+        downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
+        `type`: js.UndefOr[NetworkProfileType] = js.undefined,
+        uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
+        uplinkDelayMs: js.UndefOr[Double] = js.undefined,
+        uplinkJitterMs: js.UndefOr[Double] = js.undefined,
+        uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
+    ): CreateNetworkProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name"       -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
@@ -606,10 +632,14 @@ package devicefarm {
   }
 
   object CreateNetworkProfileResult {
-    def apply(networkProfile: js.UndefOr[NetworkProfile] = js.undefined): CreateNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("networkProfile" -> networkProfile.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        networkProfile: js.UndefOr[NetworkProfile] = js.undefined
+    ): CreateNetworkProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "networkProfile" -> networkProfile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNetworkProfileResult]
     }
@@ -625,8 +655,10 @@ package devicefarm {
   }
 
   object CreateProjectRequest {
-    def apply(name: Name,
-              defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined): CreateProjectRequest = {
+    def apply(
+        name: Name,
+        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined
+    ): CreateProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.asInstanceOf[js.Any],
         "defaultJobTimeoutMinutes" -> defaultJobTimeoutMinutes.map { x =>
@@ -647,10 +679,14 @@ package devicefarm {
   }
 
   object CreateProjectResult {
-    def apply(project: js.UndefOr[Project] = js.undefined): CreateProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("project" -> project.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        project: js.UndefOr[Project] = js.undefined
+    ): CreateProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "project" -> project.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProjectResult]
     }
@@ -670,11 +706,14 @@ package devicefarm {
         billingMethod: js.UndefOr[BillingMethod] = js.undefined,
         vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined
     ): CreateRemoteAccessSessionConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("billingMethod" -> billingMethod.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "vpceConfigurationArns" -> vpceConfigurationArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "billingMethod" -> billingMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "vpceConfigurationArns" -> vpceConfigurationArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRemoteAccessSessionConfiguration]
     }
@@ -700,18 +739,20 @@ package devicefarm {
   }
 
   object CreateRemoteAccessSessionRequest {
-    def apply(deviceArn: AmazonResourceName,
-              projectArn: AmazonResourceName,
-              clientId: js.UndefOr[ClientId] = js.undefined,
-              configuration: js.UndefOr[CreateRemoteAccessSessionConfiguration] = js.undefined,
-              instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              interactionMode: js.UndefOr[InteractionMode] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
-              remoteRecordAppArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              remoteRecordEnabled: js.UndefOr[Boolean] = js.undefined,
-              skipAppResign: js.UndefOr[Boolean] = js.undefined,
-              sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined): CreateRemoteAccessSessionRequest = {
+    def apply(
+        deviceArn: AmazonResourceName,
+        projectArn: AmazonResourceName,
+        clientId: js.UndefOr[ClientId] = js.undefined,
+        configuration: js.UndefOr[CreateRemoteAccessSessionConfiguration] = js.undefined,
+        instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        interactionMode: js.UndefOr[InteractionMode] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
+        remoteRecordAppArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        remoteRecordEnabled: js.UndefOr[Boolean] = js.undefined,
+        skipAppResign: js.UndefOr[Boolean] = js.undefined,
+        sshPublicKey: js.UndefOr[SshPublicKey] = js.undefined
+    ): CreateRemoteAccessSessionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deviceArn"  -> deviceArn.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
@@ -760,10 +801,14 @@ package devicefarm {
   }
 
   object CreateRemoteAccessSessionResult {
-    def apply(remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined): CreateRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("remoteAccessSession" -> remoteAccessSession.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
+    ): CreateRemoteAccessSessionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "remoteAccessSession" -> remoteAccessSession.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRemoteAccessSessionResult]
     }
@@ -781,10 +826,12 @@ package devicefarm {
   }
 
   object CreateUploadRequest {
-    def apply(name: Name,
-              projectArn: AmazonResourceName,
-              `type`: UploadType,
-              contentType: js.UndefOr[ContentType] = js.undefined): CreateUploadRequest = {
+    def apply(
+        name: Name,
+        projectArn: AmazonResourceName,
+        `type`: UploadType,
+        contentType: js.UndefOr[ContentType] = js.undefined
+    ): CreateUploadRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name"       -> name.asInstanceOf[js.Any],
         "projectArn" -> projectArn.asInstanceOf[js.Any],
@@ -807,10 +854,14 @@ package devicefarm {
   }
 
   object CreateUploadResult {
-    def apply(upload: js.UndefOr[Upload] = js.undefined): CreateUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("upload" -> upload.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        upload: js.UndefOr[Upload] = js.undefined
+    ): CreateUploadResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "upload" -> upload.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUploadResult]
     }
@@ -850,10 +901,14 @@ package devicefarm {
   }
 
   object CreateVPCEConfigurationResult {
-    def apply(vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined): CreateVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("vpceConfiguration" -> vpceConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
+    ): CreateVPCEConfigurationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "vpceConfiguration" -> vpceConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVPCEConfigurationResult]
     }
@@ -878,9 +933,11 @@ package devicefarm {
   }
 
   object CustomerArtifactPaths {
-    def apply(androidPaths: js.UndefOr[AndroidPaths] = js.undefined,
-              deviceHostPaths: js.UndefOr[DeviceHostPaths] = js.undefined,
-              iosPaths: js.UndefOr[IosPaths] = js.undefined): CustomerArtifactPaths = {
+    def apply(
+        androidPaths: js.UndefOr[AndroidPaths] = js.undefined,
+        deviceHostPaths: js.UndefOr[DeviceHostPaths] = js.undefined,
+        iosPaths: js.UndefOr[IosPaths] = js.undefined
+    ): CustomerArtifactPaths = {
       val _fields = IndexedSeq[(String, js.Any)](
         "androidPaths" -> androidPaths.map { x =>
           x.asInstanceOf[js.Any]
@@ -906,9 +963,12 @@ package devicefarm {
   }
 
   object DeleteDevicePoolRequest {
-    def apply(arn: AmazonResourceName): DeleteDevicePoolRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteDevicePoolRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDevicePoolRequest]
     }
@@ -921,8 +981,10 @@ package devicefarm {
   trait DeleteDevicePoolResult extends js.Object {}
 
   object DeleteDevicePoolResult {
-    def apply(): DeleteDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteDevicePoolResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDevicePoolResult]
     }
@@ -934,9 +996,12 @@ package devicefarm {
   }
 
   object DeleteInstanceProfileRequest {
-    def apply(arn: AmazonResourceName): DeleteInstanceProfileRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteInstanceProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInstanceProfileRequest]
     }
@@ -946,8 +1011,10 @@ package devicefarm {
   trait DeleteInstanceProfileResult extends js.Object {}
 
   object DeleteInstanceProfileResult {
-    def apply(): DeleteInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteInstanceProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteInstanceProfileResult]
     }
@@ -959,9 +1026,12 @@ package devicefarm {
   }
 
   object DeleteNetworkProfileRequest {
-    def apply(arn: AmazonResourceName): DeleteNetworkProfileRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteNetworkProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNetworkProfileRequest]
     }
@@ -971,8 +1041,10 @@ package devicefarm {
   trait DeleteNetworkProfileResult extends js.Object {}
 
   object DeleteNetworkProfileResult {
-    def apply(): DeleteNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteNetworkProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNetworkProfileResult]
     }
@@ -987,9 +1059,12 @@ package devicefarm {
   }
 
   object DeleteProjectRequest {
-    def apply(arn: AmazonResourceName): DeleteProjectRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectRequest]
     }
@@ -1002,8 +1077,10 @@ package devicefarm {
   trait DeleteProjectResult extends js.Object {}
 
   object DeleteProjectResult {
-    def apply(): DeleteProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectResult]
     }
@@ -1018,9 +1095,12 @@ package devicefarm {
   }
 
   object DeleteRemoteAccessSessionRequest {
-    def apply(arn: AmazonResourceName): DeleteRemoteAccessSessionRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteRemoteAccessSessionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRemoteAccessSessionRequest]
     }
@@ -1033,8 +1113,10 @@ package devicefarm {
   trait DeleteRemoteAccessSessionResult extends js.Object {}
 
   object DeleteRemoteAccessSessionResult {
-    def apply(): DeleteRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteRemoteAccessSessionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRemoteAccessSessionResult]
     }
@@ -1049,9 +1131,12 @@ package devicefarm {
   }
 
   object DeleteRunRequest {
-    def apply(arn: AmazonResourceName): DeleteRunRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteRunRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRunRequest]
     }
@@ -1064,8 +1149,10 @@ package devicefarm {
   trait DeleteRunResult extends js.Object {}
 
   object DeleteRunResult {
-    def apply(): DeleteRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteRunResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRunResult]
     }
@@ -1080,9 +1167,12 @@ package devicefarm {
   }
 
   object DeleteUploadRequest {
-    def apply(arn: AmazonResourceName): DeleteUploadRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteUploadRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUploadRequest]
     }
@@ -1095,8 +1185,10 @@ package devicefarm {
   trait DeleteUploadResult extends js.Object {}
 
   object DeleteUploadResult {
-    def apply(): DeleteUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteUploadResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUploadResult]
     }
@@ -1108,9 +1200,12 @@ package devicefarm {
   }
 
   object DeleteVPCEConfigurationRequest {
-    def apply(arn: AmazonResourceName): DeleteVPCEConfigurationRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): DeleteVPCEConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVPCEConfigurationRequest]
     }
@@ -1120,8 +1215,10 @@ package devicefarm {
   trait DeleteVPCEConfigurationResult extends js.Object {}
 
   object DeleteVPCEConfigurationResult {
-    def apply(): DeleteVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteVPCEConfigurationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVPCEConfigurationResult]
     }
@@ -1156,27 +1253,29 @@ package devicefarm {
   }
 
   object Device {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              availability: js.UndefOr[DeviceAvailability] = js.undefined,
-              carrier: js.UndefOr[String] = js.undefined,
-              cpu: js.UndefOr[CPU] = js.undefined,
-              fleetName: js.UndefOr[String] = js.undefined,
-              fleetType: js.UndefOr[String] = js.undefined,
-              formFactor: js.UndefOr[DeviceFormFactor] = js.undefined,
-              heapSize: js.UndefOr[Double] = js.undefined,
-              image: js.UndefOr[String] = js.undefined,
-              instances: js.UndefOr[DeviceInstances] = js.undefined,
-              manufacturer: js.UndefOr[String] = js.undefined,
-              memory: js.UndefOr[Double] = js.undefined,
-              model: js.UndefOr[String] = js.undefined,
-              modelId: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              os: js.UndefOr[String] = js.undefined,
-              platform: js.UndefOr[DevicePlatform] = js.undefined,
-              radio: js.UndefOr[String] = js.undefined,
-              remoteAccessEnabled: js.UndefOr[Boolean] = js.undefined,
-              remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
-              resolution: js.UndefOr[Resolution] = js.undefined): Device = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        availability: js.UndefOr[DeviceAvailability] = js.undefined,
+        carrier: js.UndefOr[String] = js.undefined,
+        cpu: js.UndefOr[CPU] = js.undefined,
+        fleetName: js.UndefOr[String] = js.undefined,
+        fleetType: js.UndefOr[String] = js.undefined,
+        formFactor: js.UndefOr[DeviceFormFactor] = js.undefined,
+        heapSize: js.UndefOr[Double] = js.undefined,
+        image: js.UndefOr[String] = js.undefined,
+        instances: js.UndefOr[DeviceInstances] = js.undefined,
+        manufacturer: js.UndefOr[String] = js.undefined,
+        memory: js.UndefOr[Double] = js.undefined,
+        model: js.UndefOr[String] = js.undefined,
+        modelId: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        os: js.UndefOr[String] = js.undefined,
+        platform: js.UndefOr[DevicePlatform] = js.undefined,
+        radio: js.UndefOr[String] = js.undefined,
+        remoteAccessEnabled: js.UndefOr[Boolean] = js.undefined,
+        remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
+        resolution: js.UndefOr[Resolution] = js.undefined
+    ): Device = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1258,6 +1357,9 @@ package devicefarm {
     val INSTANCE_ARN          = "INSTANCE_ARN"
     val INSTANCE_LABELS       = "INSTANCE_LABELS"
     val FLEET_TYPE            = "FLEET_TYPE"
+    val OS_VERSION            = "OS_VERSION"
+    val MODEL                 = "MODEL"
+    val AVAILABILITY          = "AVAILABILITY"
 
     val values = IndexedSeq(
       ARN,
@@ -1269,7 +1371,10 @@ package devicefarm {
       APPIUM_VERSION,
       INSTANCE_ARN,
       INSTANCE_LABELS,
-      FLEET_TYPE
+      FLEET_TYPE,
+      OS_VERSION,
+      MODEL,
+      AVAILABILITY
     )
   }
 
@@ -1283,20 +1388,22 @@ package devicefarm {
   }
 
   /**
-    * Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the "deviceSelectionConfiguration" parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
-    *  It is also passed in as the "filters" parameter to ListDevices. For an example of the JSON request syntax, see <a>ListDevices</a>.
+    * Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    *  It is also passed in as the <code>filters</code> parameter to ListDevices. For an example of the JSON request syntax, see <a>ListDevices</a>.
     */
   @js.native
   trait DeviceFilter extends js.Object {
     var attribute: js.UndefOr[DeviceFilterAttribute]
-    var operator: js.UndefOr[DeviceFilterOperator]
+    var operator: js.UndefOr[RuleOperator]
     var values: js.UndefOr[DeviceFilterValues]
   }
 
   object DeviceFilter {
-    def apply(attribute: js.UndefOr[DeviceFilterAttribute] = js.undefined,
-              operator: js.UndefOr[DeviceFilterOperator] = js.undefined,
-              values: js.UndefOr[DeviceFilterValues] = js.undefined): DeviceFilter = {
+    def apply(
+        attribute: js.UndefOr[DeviceFilterAttribute] = js.undefined,
+        operator: js.UndefOr[RuleOperator] = js.undefined,
+        values: js.UndefOr[DeviceFilterValues] = js.undefined
+    ): DeviceFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attribute" -> attribute.map { x =>
           x.asInstanceOf[js.Any]
@@ -1343,20 +1450,6 @@ package devicefarm {
     )
   }
 
-  object DeviceFilterOperatorEnum {
-    val EQUALS                 = "EQUALS"
-    val LESS_THAN              = "LESS_THAN"
-    val LESS_THAN_OR_EQUALS    = "LESS_THAN_OR_EQUALS"
-    val GREATER_THAN           = "GREATER_THAN"
-    val GREATER_THAN_OR_EQUALS = "GREATER_THAN_OR_EQUALS"
-    val IN                     = "IN"
-    val NOT_IN                 = "NOT_IN"
-    val CONTAINS               = "CONTAINS"
-
-    val values =
-      IndexedSeq(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
-  }
-
   object DeviceFormFactorEnum {
     val PHONE  = "PHONE"
     val TABLET = "TABLET"
@@ -1378,12 +1471,14 @@ package devicefarm {
   }
 
   object DeviceInstance {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              deviceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              instanceProfile: js.UndefOr[InstanceProfile] = js.undefined,
-              labels: js.UndefOr[InstanceLabels] = js.undefined,
-              status: js.UndefOr[InstanceStatus] = js.undefined,
-              udid: js.UndefOr[String] = js.undefined): DeviceInstance = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        deviceArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined,
+        labels: js.UndefOr[InstanceLabels] = js.undefined,
+        status: js.UndefOr[InstanceStatus] = js.undefined,
+        udid: js.UndefOr[String] = js.undefined
+    ): DeviceInstance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1420,16 +1515,22 @@ package devicefarm {
   }
 
   object DeviceMinutes {
-    def apply(metered: js.UndefOr[Double] = js.undefined,
-              total: js.UndefOr[Double] = js.undefined,
-              unmetered: js.UndefOr[Double] = js.undefined): DeviceMinutes = {
-      val _fields = IndexedSeq[(String, js.Any)]("metered" -> metered.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "total" -> total.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "unmetered" -> unmetered.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        metered: js.UndefOr[Double] = js.undefined,
+        total: js.UndefOr[Double] = js.undefined,
+        unmetered: js.UndefOr[Double] = js.undefined
+    ): DeviceMinutes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "metered" -> metered.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "total" -> total.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "unmetered" -> unmetered.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceMinutes]
     }
@@ -1449,22 +1550,29 @@ package devicefarm {
   trait DevicePool extends js.Object {
     var arn: js.UndefOr[AmazonResourceName]
     var description: js.UndefOr[Message]
+    var maxDevices: js.UndefOr[Int]
     var name: js.UndefOr[Name]
     var rules: js.UndefOr[Rules]
     var `type`: js.UndefOr[DevicePoolType]
   }
 
   object DevicePool {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              description: js.UndefOr[Message] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              rules: js.UndefOr[Rules] = js.undefined,
-              `type`: js.UndefOr[DevicePoolType] = js.undefined): DevicePool = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        description: js.UndefOr[Message] = js.undefined,
+        maxDevices: js.UndefOr[Int] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        rules: js.UndefOr[Rules] = js.undefined,
+        `type`: js.UndefOr[DevicePoolType] = js.undefined
+    ): DevicePool = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
         },
         "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "maxDevices" -> maxDevices.map { x =>
           x.asInstanceOf[js.Any]
         },
         "name" -> name.map { x =>
@@ -1522,7 +1630,7 @@ package devicefarm {
   }
 
   /**
-    * Represents the device filters used in a test run as well as the maximum number of devices to be included in the run. It is passed in as the deviceSelectionConfiguration request parameter in <a>ScheduleRun</a>.
+    * Represents the device filters used in a test run as well as the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.
     */
   @js.native
   trait DeviceSelectionConfiguration extends js.Object {
@@ -1531,7 +1639,10 @@ package devicefarm {
   }
 
   object DeviceSelectionConfiguration {
-    def apply(filters: DeviceFilters, maxDevices: Int): DeviceSelectionConfiguration = {
+    def apply(
+        filters: DeviceFilters,
+        maxDevices: Int
+    ): DeviceSelectionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filters"    -> filters.asInstanceOf[js.Any],
         "maxDevices" -> maxDevices.asInstanceOf[js.Any]
@@ -1552,9 +1663,11 @@ package devicefarm {
   }
 
   object DeviceSelectionResult {
-    def apply(filters: js.UndefOr[DeviceFilters] = js.undefined,
-              matchedDevicesCount: js.UndefOr[Int] = js.undefined,
-              maxDevices: js.UndefOr[Int] = js.undefined): DeviceSelectionResult = {
+    def apply(
+        filters: js.UndefOr[DeviceFilters] = js.undefined,
+        matchedDevicesCount: js.UndefOr[Int] = js.undefined,
+        maxDevices: js.UndefOr[Int] = js.undefined
+    ): DeviceSelectionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filters" -> filters.map { x =>
           x.asInstanceOf[js.Any]
@@ -1584,11 +1697,13 @@ package devicefarm {
   }
 
   object ExecutionConfiguration {
-    def apply(accountsCleanup: js.UndefOr[AccountsCleanup] = js.undefined,
-              appPackagesCleanup: js.UndefOr[AppPackagesCleanup] = js.undefined,
-              jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-              skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-              videoCapture: js.UndefOr[VideoCapture] = js.undefined): ExecutionConfiguration = {
+    def apply(
+        accountsCleanup: js.UndefOr[AccountsCleanup] = js.undefined,
+        appPackagesCleanup: js.UndefOr[AppPackagesCleanup] = js.undefined,
+        jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
+        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
+        videoCapture: js.UndefOr[VideoCapture] = js.undefined
+    ): ExecutionConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accountsCleanup" -> accountsCleanup.map { x =>
           x.asInstanceOf[js.Any]
@@ -1661,8 +1776,10 @@ package devicefarm {
   trait GetAccountSettingsRequest extends js.Object {}
 
   object GetAccountSettingsRequest {
-    def apply(): GetAccountSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetAccountSettingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountSettingsRequest]
     }
@@ -1677,10 +1794,14 @@ package devicefarm {
   }
 
   object GetAccountSettingsResult {
-    def apply(accountSettings: js.UndefOr[AccountSettings] = js.undefined): GetAccountSettingsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("accountSettings" -> accountSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        accountSettings: js.UndefOr[AccountSettings] = js.undefined
+    ): GetAccountSettingsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "accountSettings" -> accountSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountSettingsResult]
     }
@@ -1692,9 +1813,12 @@ package devicefarm {
   }
 
   object GetDeviceInstanceRequest {
-    def apply(arn: AmazonResourceName): GetDeviceInstanceRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetDeviceInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceInstanceRequest]
     }
@@ -1706,10 +1830,14 @@ package devicefarm {
   }
 
   object GetDeviceInstanceResult {
-    def apply(deviceInstance: js.UndefOr[DeviceInstance] = js.undefined): GetDeviceInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("deviceInstance" -> deviceInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
+    ): GetDeviceInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deviceInstance" -> deviceInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceInstanceResult]
     }
@@ -1728,11 +1856,13 @@ package devicefarm {
   }
 
   object GetDevicePoolCompatibilityRequest {
-    def apply(devicePoolArn: AmazonResourceName,
-              appArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              configuration: js.UndefOr[ScheduleRunConfiguration] = js.undefined,
-              test: js.UndefOr[ScheduleRunTest] = js.undefined,
-              testType: js.UndefOr[TestType] = js.undefined): GetDevicePoolCompatibilityRequest = {
+    def apply(
+        devicePoolArn: AmazonResourceName,
+        appArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        configuration: js.UndefOr[ScheduleRunConfiguration] = js.undefined,
+        test: js.UndefOr[ScheduleRunTest] = js.undefined,
+        testType: js.UndefOr[TestType] = js.undefined
+    ): GetDevicePoolCompatibilityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "devicePoolArn" -> devicePoolArn.asInstanceOf[js.Any],
         "appArn" -> appArn.map { x =>
@@ -1767,11 +1897,14 @@ package devicefarm {
         compatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined,
         incompatibleDevices: js.UndefOr[DevicePoolCompatibilityResults] = js.undefined
     ): GetDevicePoolCompatibilityResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("compatibleDevices" -> compatibleDevices.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "incompatibleDevices" -> incompatibleDevices.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "compatibleDevices" -> compatibleDevices.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "incompatibleDevices" -> incompatibleDevices.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicePoolCompatibilityResult]
     }
@@ -1786,9 +1919,12 @@ package devicefarm {
   }
 
   object GetDevicePoolRequest {
-    def apply(arn: AmazonResourceName): GetDevicePoolRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetDevicePoolRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicePoolRequest]
     }
@@ -1803,10 +1939,14 @@ package devicefarm {
   }
 
   object GetDevicePoolResult {
-    def apply(devicePool: js.UndefOr[DevicePool] = js.undefined): GetDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("devicePool" -> devicePool.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        devicePool: js.UndefOr[DevicePool] = js.undefined
+    ): GetDevicePoolResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "devicePool" -> devicePool.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicePoolResult]
     }
@@ -1821,9 +1961,12 @@ package devicefarm {
   }
 
   object GetDeviceRequest {
-    def apply(arn: AmazonResourceName): GetDeviceRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetDeviceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceRequest]
     }
@@ -1838,10 +1981,14 @@ package devicefarm {
   }
 
   object GetDeviceResult {
-    def apply(device: js.UndefOr[Device] = js.undefined): GetDeviceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("device" -> device.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        device: js.UndefOr[Device] = js.undefined
+    ): GetDeviceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "device" -> device.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceResult]
     }
@@ -1853,9 +2000,12 @@ package devicefarm {
   }
 
   object GetInstanceProfileRequest {
-    def apply(arn: AmazonResourceName): GetInstanceProfileRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetInstanceProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceProfileRequest]
     }
@@ -1867,10 +2017,14 @@ package devicefarm {
   }
 
   object GetInstanceProfileResult {
-    def apply(instanceProfile: js.UndefOr[InstanceProfile] = js.undefined): GetInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceProfile" -> instanceProfile.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
+    ): GetInstanceProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceProfile" -> instanceProfile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceProfileResult]
     }
@@ -1885,9 +2039,12 @@ package devicefarm {
   }
 
   object GetJobRequest {
-    def apply(arn: AmazonResourceName): GetJobRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobRequest]
     }
@@ -1902,10 +2059,14 @@ package devicefarm {
   }
 
   object GetJobResult {
-    def apply(job: js.UndefOr[Job] = js.undefined): GetJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("job" -> job.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        job: js.UndefOr[Job] = js.undefined
+    ): GetJobResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "job" -> job.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetJobResult]
     }
@@ -1917,9 +2078,12 @@ package devicefarm {
   }
 
   object GetNetworkProfileRequest {
-    def apply(arn: AmazonResourceName): GetNetworkProfileRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetNetworkProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNetworkProfileRequest]
     }
@@ -1931,10 +2095,14 @@ package devicefarm {
   }
 
   object GetNetworkProfileResult {
-    def apply(networkProfile: js.UndefOr[NetworkProfile] = js.undefined): GetNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("networkProfile" -> networkProfile.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        networkProfile: js.UndefOr[NetworkProfile] = js.undefined
+    ): GetNetworkProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "networkProfile" -> networkProfile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetNetworkProfileResult]
     }
@@ -1949,10 +2117,14 @@ package devicefarm {
   }
 
   object GetOfferingStatusRequest {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined): GetOfferingStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): GetOfferingStatusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOfferingStatusRequest]
     }
@@ -1969,9 +2141,11 @@ package devicefarm {
   }
 
   object GetOfferingStatusResult {
-    def apply(current: js.UndefOr[OfferingStatusMap] = js.undefined,
-              nextPeriod: js.UndefOr[OfferingStatusMap] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): GetOfferingStatusResult = {
+    def apply(
+        current: js.UndefOr[OfferingStatusMap] = js.undefined,
+        nextPeriod: js.UndefOr[OfferingStatusMap] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): GetOfferingStatusResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "current" -> current.map { x =>
           x.asInstanceOf[js.Any]
@@ -1997,9 +2171,12 @@ package devicefarm {
   }
 
   object GetProjectRequest {
-    def apply(arn: AmazonResourceName): GetProjectRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProjectRequest]
     }
@@ -2014,10 +2191,14 @@ package devicefarm {
   }
 
   object GetProjectResult {
-    def apply(project: js.UndefOr[Project] = js.undefined): GetProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("project" -> project.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        project: js.UndefOr[Project] = js.undefined
+    ): GetProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "project" -> project.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProjectResult]
     }
@@ -2032,9 +2213,12 @@ package devicefarm {
   }
 
   object GetRemoteAccessSessionRequest {
-    def apply(arn: AmazonResourceName): GetRemoteAccessSessionRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetRemoteAccessSessionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRemoteAccessSessionRequest]
     }
@@ -2049,10 +2233,14 @@ package devicefarm {
   }
 
   object GetRemoteAccessSessionResult {
-    def apply(remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined): GetRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("remoteAccessSession" -> remoteAccessSession.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
+    ): GetRemoteAccessSessionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "remoteAccessSession" -> remoteAccessSession.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRemoteAccessSessionResult]
     }
@@ -2067,9 +2255,12 @@ package devicefarm {
   }
 
   object GetRunRequest {
-    def apply(arn: AmazonResourceName): GetRunRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetRunRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRunRequest]
     }
@@ -2084,10 +2275,14 @@ package devicefarm {
   }
 
   object GetRunResult {
-    def apply(run: js.UndefOr[Run] = js.undefined): GetRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("run" -> run.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        run: js.UndefOr[Run] = js.undefined
+    ): GetRunResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "run" -> run.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRunResult]
     }
@@ -2102,9 +2297,12 @@ package devicefarm {
   }
 
   object GetSuiteRequest {
-    def apply(arn: AmazonResourceName): GetSuiteRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetSuiteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSuiteRequest]
     }
@@ -2119,10 +2317,14 @@ package devicefarm {
   }
 
   object GetSuiteResult {
-    def apply(suite: js.UndefOr[Suite] = js.undefined): GetSuiteResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("suite" -> suite.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        suite: js.UndefOr[Suite] = js.undefined
+    ): GetSuiteResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "suite" -> suite.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSuiteResult]
     }
@@ -2137,9 +2339,12 @@ package devicefarm {
   }
 
   object GetTestRequest {
-    def apply(arn: AmazonResourceName): GetTestRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetTestRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTestRequest]
     }
@@ -2154,10 +2359,14 @@ package devicefarm {
   }
 
   object GetTestResult {
-    def apply(test: js.UndefOr[Test] = js.undefined): GetTestResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("test" -> test.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        test: js.UndefOr[Test] = js.undefined
+    ): GetTestResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "test" -> test.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTestResult]
     }
@@ -2172,9 +2381,12 @@ package devicefarm {
   }
 
   object GetUploadRequest {
-    def apply(arn: AmazonResourceName): GetUploadRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetUploadRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUploadRequest]
     }
@@ -2189,10 +2401,14 @@ package devicefarm {
   }
 
   object GetUploadResult {
-    def apply(upload: js.UndefOr[Upload] = js.undefined): GetUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("upload" -> upload.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        upload: js.UndefOr[Upload] = js.undefined
+    ): GetUploadResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "upload" -> upload.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUploadResult]
     }
@@ -2204,9 +2420,12 @@ package devicefarm {
   }
 
   object GetVPCEConfigurationRequest {
-    def apply(arn: AmazonResourceName): GetVPCEConfigurationRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): GetVPCEConfigurationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVPCEConfigurationRequest]
     }
@@ -2218,10 +2437,14 @@ package devicefarm {
   }
 
   object GetVPCEConfigurationResult {
-    def apply(vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined): GetVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("vpceConfiguration" -> vpceConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
+    ): GetVPCEConfigurationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "vpceConfiguration" -> vpceConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVPCEConfigurationResult]
     }
@@ -2237,13 +2460,18 @@ package devicefarm {
   }
 
   object IncompatibilityMessage {
-    def apply(message: js.UndefOr[Message] = js.undefined,
-              `type`: js.UndefOr[DeviceAttribute] = js.undefined): IncompatibilityMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("message" -> message.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        message: js.UndefOr[Message] = js.undefined,
+        `type`: js.UndefOr[DeviceAttribute] = js.undefined
+    ): IncompatibilityMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "message" -> message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IncompatibilityMessage]
     }
@@ -2259,8 +2487,10 @@ package devicefarm {
   }
 
   object InstallToRemoteAccessSessionRequest {
-    def apply(appArn: AmazonResourceName,
-              remoteAccessSessionArn: AmazonResourceName): InstallToRemoteAccessSessionRequest = {
+    def apply(
+        appArn: AmazonResourceName,
+        remoteAccessSessionArn: AmazonResourceName
+    ): InstallToRemoteAccessSessionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appArn"                 -> appArn.asInstanceOf[js.Any],
         "remoteAccessSessionArn" -> remoteAccessSessionArn.asInstanceOf[js.Any]
@@ -2279,10 +2509,14 @@ package devicefarm {
   }
 
   object InstallToRemoteAccessSessionResult {
-    def apply(appUpload: js.UndefOr[Upload] = js.undefined): InstallToRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("appUpload" -> appUpload.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        appUpload: js.UndefOr[Upload] = js.undefined
+    ): InstallToRemoteAccessSessionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "appUpload" -> appUpload.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstallToRemoteAccessSessionResult]
     }
@@ -2302,12 +2536,14 @@ package devicefarm {
   }
 
   object InstanceProfile {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              description: js.UndefOr[Message] = js.undefined,
-              excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              packageCleanup: js.UndefOr[Boolean] = js.undefined,
-              rebootAfterUse: js.UndefOr[Boolean] = js.undefined): InstanceProfile = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        description: js.UndefOr[Message] = js.undefined,
+        excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        packageCleanup: js.UndefOr[Boolean] = js.undefined,
+        rebootAfterUse: js.UndefOr[Boolean] = js.undefined
+    ): InstanceProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2373,21 +2609,23 @@ package devicefarm {
   }
 
   object Job {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              counters: js.UndefOr[Counters] = js.undefined,
-              created: js.UndefOr[DateTime] = js.undefined,
-              device: js.UndefOr[Device] = js.undefined,
-              deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-              instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              result: js.UndefOr[ExecutionResult] = js.undefined,
-              started: js.UndefOr[DateTime] = js.undefined,
-              status: js.UndefOr[ExecutionStatus] = js.undefined,
-              stopped: js.UndefOr[DateTime] = js.undefined,
-              `type`: js.UndefOr[TestType] = js.undefined,
-              videoCapture: js.UndefOr[VideoCapture] = js.undefined,
-              videoEndpoint: js.UndefOr[String] = js.undefined): Job = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        counters: js.UndefOr[Counters] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        device: js.UndefOr[Device] = js.undefined,
+        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
+        instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        result: js.UndefOr[ExecutionResult] = js.undefined,
+        started: js.UndefOr[DateTime] = js.undefined,
+        status: js.UndefOr[ExecutionStatus] = js.undefined,
+        stopped: js.UndefOr[DateTime] = js.undefined,
+        `type`: js.UndefOr[TestType] = js.undefined,
+        videoCapture: js.UndefOr[VideoCapture] = js.undefined,
+        videoEndpoint: js.UndefOr[String] = js.undefined
+    ): Job = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2451,9 +2689,11 @@ package devicefarm {
   }
 
   object ListArtifactsRequest {
-    def apply(arn: AmazonResourceName,
-              `type`: ArtifactCategory,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListArtifactsRequest = {
+    def apply(
+        arn: AmazonResourceName,
+        `type`: ArtifactCategory,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListArtifactsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn"    -> arn.asInstanceOf[js.Any],
         "`type`" -> `type`.asInstanceOf[js.Any],
@@ -2476,13 +2716,18 @@ package devicefarm {
   }
 
   object ListArtifactsResult {
-    def apply(artifacts: js.UndefOr[Artifacts] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListArtifactsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("artifacts" -> artifacts.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        artifacts: js.UndefOr[Artifacts] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListArtifactsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "artifacts" -> artifacts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListArtifactsResult]
     }
@@ -2495,13 +2740,18 @@ package devicefarm {
   }
 
   object ListDeviceInstancesRequest {
-    def apply(maxResults: js.UndefOr[Int] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDeviceInstancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[Int] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDeviceInstancesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeviceInstancesRequest]
     }
@@ -2514,13 +2764,18 @@ package devicefarm {
   }
 
   object ListDeviceInstancesResult {
-    def apply(deviceInstances: js.UndefOr[DeviceInstances] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDeviceInstancesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("deviceInstances" -> deviceInstances.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deviceInstances: js.UndefOr[DeviceInstances] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDeviceInstancesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deviceInstances" -> deviceInstances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeviceInstancesResult]
     }
@@ -2537,14 +2792,20 @@ package devicefarm {
   }
 
   object ListDevicePoolsRequest {
-    def apply(arn: AmazonResourceName,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              `type`: js.UndefOr[DevicePoolType] = js.undefined): ListDevicePoolsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        `type`: js.UndefOr[DevicePoolType] = js.undefined
+    ): ListDevicePoolsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicePoolsRequest]
     }
@@ -2560,13 +2821,18 @@ package devicefarm {
   }
 
   object ListDevicePoolsResult {
-    def apply(devicePools: js.UndefOr[DevicePools] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDevicePoolsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("devicePools" -> devicePools.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        devicePools: js.UndefOr[DevicePools] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDevicePoolsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "devicePools" -> devicePools.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicePoolsResult]
     }
@@ -2583,16 +2849,22 @@ package devicefarm {
   }
 
   object ListDevicesRequest {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              filters: js.UndefOr[DeviceFilters] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDevicesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "filters" -> filters.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        filters: js.UndefOr[DeviceFilters] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDevicesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "filters" -> filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicesRequest]
     }
@@ -2608,13 +2880,18 @@ package devicefarm {
   }
 
   object ListDevicesResult {
-    def apply(devices: js.UndefOr[Devices] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListDevicesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("devices" -> devices.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        devices: js.UndefOr[Devices] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDevicesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "devices" -> devices.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDevicesResult]
     }
@@ -2627,13 +2904,18 @@ package devicefarm {
   }
 
   object ListInstanceProfilesRequest {
-    def apply(maxResults: js.UndefOr[Int] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListInstanceProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[Int] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListInstanceProfilesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceProfilesRequest]
     }
@@ -2646,13 +2928,18 @@ package devicefarm {
   }
 
   object ListInstanceProfilesResult {
-    def apply(instanceProfiles: js.UndefOr[InstanceProfiles] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListInstanceProfilesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceProfiles" -> instanceProfiles.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceProfiles: js.UndefOr[InstanceProfiles] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListInstanceProfilesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceProfiles" -> instanceProfiles.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListInstanceProfilesResult]
     }
@@ -2668,10 +2955,16 @@ package devicefarm {
   }
 
   object ListJobsRequest {
-    def apply(arn: AmazonResourceName, nextToken: js.UndefOr[PaginationToken] = js.undefined): ListJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListJobsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsRequest]
     }
@@ -2687,13 +2980,18 @@ package devicefarm {
   }
 
   object ListJobsResult {
-    def apply(jobs: js.UndefOr[Jobs] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListJobsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("jobs" -> jobs.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        jobs: js.UndefOr[Jobs] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListJobsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "jobs" -> jobs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListJobsResult]
     }
@@ -2707,14 +3005,20 @@ package devicefarm {
   }
 
   object ListNetworkProfilesRequest {
-    def apply(arn: AmazonResourceName,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              `type`: js.UndefOr[NetworkProfileType] = js.undefined): ListNetworkProfilesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        `type`: js.UndefOr[NetworkProfileType] = js.undefined
+    ): ListNetworkProfilesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNetworkProfilesRequest]
     }
@@ -2727,13 +3031,18 @@ package devicefarm {
   }
 
   object ListNetworkProfilesResult {
-    def apply(networkProfiles: js.UndefOr[NetworkProfiles] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListNetworkProfilesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("networkProfiles" -> networkProfiles.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        networkProfiles: js.UndefOr[NetworkProfiles] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListNetworkProfilesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "networkProfiles" -> networkProfiles.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNetworkProfilesResult]
     }
@@ -2745,10 +3054,14 @@ package devicefarm {
   }
 
   object ListOfferingPromotionsRequest {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined): ListOfferingPromotionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListOfferingPromotionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingPromotionsRequest]
     }
@@ -2761,13 +3074,18 @@ package devicefarm {
   }
 
   object ListOfferingPromotionsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              offeringPromotions: js.UndefOr[OfferingPromotions] = js.undefined): ListOfferingPromotionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "offeringPromotions" -> offeringPromotions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        offeringPromotions: js.UndefOr[OfferingPromotions] = js.undefined
+    ): ListOfferingPromotionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "offeringPromotions" -> offeringPromotions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingPromotionsResult]
     }
@@ -2782,10 +3100,14 @@ package devicefarm {
   }
 
   object ListOfferingTransactionsRequest {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined): ListOfferingTransactionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListOfferingTransactionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingTransactionsRequest]
     }
@@ -2801,13 +3123,18 @@ package devicefarm {
   }
 
   object ListOfferingTransactionsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              offeringTransactions: js.UndefOr[OfferingTransactions] = js.undefined): ListOfferingTransactionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "offeringTransactions" -> offeringTransactions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        offeringTransactions: js.UndefOr[OfferingTransactions] = js.undefined
+    ): ListOfferingTransactionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "offeringTransactions" -> offeringTransactions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingTransactionsResult]
     }
@@ -2822,10 +3149,14 @@ package devicefarm {
   }
 
   object ListOfferingsRequest {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined): ListOfferingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListOfferingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingsRequest]
     }
@@ -2841,13 +3172,18 @@ package devicefarm {
   }
 
   object ListOfferingsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              offerings: js.UndefOr[Offerings] = js.undefined): ListOfferingsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "offerings" -> offerings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        offerings: js.UndefOr[Offerings] = js.undefined
+    ): ListOfferingsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "offerings" -> offerings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOfferingsResult]
     }
@@ -2863,13 +3199,18 @@ package devicefarm {
   }
 
   object ListProjectsRequest {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListProjectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListProjectsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsRequest]
     }
@@ -2885,13 +3226,18 @@ package devicefarm {
   }
 
   object ListProjectsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              projects: js.UndefOr[Projects] = js.undefined): ListProjectsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "projects" -> projects.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        projects: js.UndefOr[Projects] = js.undefined
+    ): ListProjectsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "projects" -> projects.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsResult]
     }
@@ -2907,11 +3253,16 @@ package devicefarm {
   }
 
   object ListRemoteAccessSessionsRequest {
-    def apply(arn: AmazonResourceName,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListRemoteAccessSessionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListRemoteAccessSessionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRemoteAccessSessionsRequest]
     }
@@ -2927,13 +3278,18 @@ package devicefarm {
   }
 
   object ListRemoteAccessSessionsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              remoteAccessSessions: js.UndefOr[RemoteAccessSessions] = js.undefined): ListRemoteAccessSessionsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "remoteAccessSessions" -> remoteAccessSessions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        remoteAccessSessions: js.UndefOr[RemoteAccessSessions] = js.undefined
+    ): ListRemoteAccessSessionsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "remoteAccessSessions" -> remoteAccessSessions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRemoteAccessSessionsResult]
     }
@@ -2949,10 +3305,16 @@ package devicefarm {
   }
 
   object ListRunsRequest {
-    def apply(arn: AmazonResourceName, nextToken: js.UndefOr[PaginationToken] = js.undefined): ListRunsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListRunsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRunsRequest]
     }
@@ -2968,13 +3330,18 @@ package devicefarm {
   }
 
   object ListRunsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              runs: js.UndefOr[Runs] = js.undefined): ListRunsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "runs" -> runs.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        runs: js.UndefOr[Runs] = js.undefined
+    ): ListRunsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "runs" -> runs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRunsResult]
     }
@@ -2990,10 +3357,16 @@ package devicefarm {
   }
 
   object ListSamplesRequest {
-    def apply(arn: AmazonResourceName, nextToken: js.UndefOr[PaginationToken] = js.undefined): ListSamplesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListSamplesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSamplesRequest]
     }
@@ -3009,13 +3382,18 @@ package devicefarm {
   }
 
   object ListSamplesResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              samples: js.UndefOr[Samples] = js.undefined): ListSamplesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "samples" -> samples.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        samples: js.UndefOr[Samples] = js.undefined
+    ): ListSamplesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "samples" -> samples.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSamplesResult]
     }
@@ -3031,10 +3409,16 @@ package devicefarm {
   }
 
   object ListSuitesRequest {
-    def apply(arn: AmazonResourceName, nextToken: js.UndefOr[PaginationToken] = js.undefined): ListSuitesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListSuitesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSuitesRequest]
     }
@@ -3050,13 +3434,18 @@ package devicefarm {
   }
 
   object ListSuitesResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              suites: js.UndefOr[Suites] = js.undefined): ListSuitesResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "suites" -> suites.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        suites: js.UndefOr[Suites] = js.undefined
+    ): ListSuitesResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "suites" -> suites.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSuitesResult]
     }
@@ -3072,10 +3461,16 @@ package devicefarm {
   }
 
   object ListTestsRequest {
-    def apply(arn: AmazonResourceName, nextToken: js.UndefOr[PaginationToken] = js.undefined): ListTestsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListTestsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTestsRequest]
     }
@@ -3091,13 +3486,18 @@ package devicefarm {
   }
 
   object ListTestsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              tests: js.UndefOr[Tests] = js.undefined): ListTestsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "tests" -> tests.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        tests: js.UndefOr[Tests] = js.undefined
+    ): ListTestsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tests" -> tests.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTestsResult]
     }
@@ -3113,11 +3513,16 @@ package devicefarm {
   }
 
   object ListUniqueProblemsRequest {
-    def apply(arn: AmazonResourceName,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListUniqueProblemsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListUniqueProblemsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUniqueProblemsRequest]
     }
@@ -3137,11 +3542,14 @@ package devicefarm {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         uniqueProblems: js.UndefOr[UniqueProblemsByExecutionResultMap] = js.undefined
     ): ListUniqueProblemsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "uniqueProblems" -> uniqueProblems.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "uniqueProblems" -> uniqueProblems.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUniqueProblemsResult]
     }
@@ -3158,14 +3566,20 @@ package devicefarm {
   }
 
   object ListUploadsRequest {
-    def apply(arn: AmazonResourceName,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              `type`: js.UndefOr[UploadType] = js.undefined): ListUploadsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        `type`: js.UndefOr[UploadType] = js.undefined
+    ): ListUploadsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUploadsRequest]
     }
@@ -3181,13 +3595,18 @@ package devicefarm {
   }
 
   object ListUploadsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              uploads: js.UndefOr[Uploads] = js.undefined): ListUploadsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "uploads" -> uploads.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        uploads: js.UndefOr[Uploads] = js.undefined
+    ): ListUploadsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "uploads" -> uploads.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUploadsResult]
     }
@@ -3200,13 +3619,18 @@ package devicefarm {
   }
 
   object ListVPCEConfigurationsRequest {
-    def apply(maxResults: js.UndefOr[Int] = js.undefined,
-              nextToken: js.UndefOr[PaginationToken] = js.undefined): ListVPCEConfigurationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[Int] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListVPCEConfigurationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVPCEConfigurationsRequest]
     }
@@ -3219,13 +3643,18 @@ package devicefarm {
   }
 
   object ListVPCEConfigurationsResult {
-    def apply(nextToken: js.UndefOr[PaginationToken] = js.undefined,
-              vpceConfigurations: js.UndefOr[VPCEConfigurations] = js.undefined): ListVPCEConfigurationsResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "vpceConfigurations" -> vpceConfigurations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        vpceConfigurations: js.UndefOr[VPCEConfigurations] = js.undefined
+    ): ListVPCEConfigurationsResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "vpceConfigurations" -> vpceConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListVPCEConfigurationsResult]
     }
@@ -3242,7 +3671,10 @@ package devicefarm {
   }
 
   object Location {
-    def apply(latitude: Double, longitude: Double): Location = {
+    def apply(
+        latitude: Double,
+        longitude: Double
+    ): Location = {
       val _fields = IndexedSeq[(String, js.Any)](
         "latitude"  -> latitude.asInstanceOf[js.Any],
         "longitude" -> longitude.asInstanceOf[js.Any]
@@ -3262,13 +3694,18 @@ package devicefarm {
   }
 
   object MonetaryAmount {
-    def apply(amount: js.UndefOr[Double] = js.undefined,
-              currencyCode: js.UndefOr[CurrencyCode] = js.undefined): MonetaryAmount = {
-      val _fields = IndexedSeq[(String, js.Any)]("amount" -> amount.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "currencyCode" -> currencyCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        amount: js.UndefOr[Double] = js.undefined,
+        currencyCode: js.UndefOr[CurrencyCode] = js.undefined
+    ): MonetaryAmount = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "amount" -> amount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "currencyCode" -> currencyCode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MonetaryAmount]
     }
@@ -3294,18 +3731,20 @@ package devicefarm {
   }
 
   object NetworkProfile {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              description: js.UndefOr[Message] = js.undefined,
-              downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-              downlinkDelayMs: js.UndefOr[Double] = js.undefined,
-              downlinkJitterMs: js.UndefOr[Double] = js.undefined,
-              downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              `type`: js.UndefOr[NetworkProfileType] = js.undefined,
-              uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-              uplinkDelayMs: js.UndefOr[Double] = js.undefined,
-              uplinkJitterMs: js.UndefOr[Double] = js.undefined,
-              uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined): NetworkProfile = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        description: js.UndefOr[Message] = js.undefined,
+        downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
+        downlinkDelayMs: js.UndefOr[Double] = js.undefined,
+        downlinkJitterMs: js.UndefOr[Double] = js.undefined,
+        downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        `type`: js.UndefOr[NetworkProfileType] = js.undefined,
+        uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
+        uplinkDelayMs: js.UndefOr[Double] = js.undefined,
+        uplinkJitterMs: js.UndefOr[Double] = js.undefined,
+        uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
+    ): NetworkProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3369,11 +3808,13 @@ package devicefarm {
   }
 
   object Offering {
-    def apply(description: js.UndefOr[Message] = js.undefined,
-              id: js.UndefOr[OfferingIdentifier] = js.undefined,
-              platform: js.UndefOr[DevicePlatform] = js.undefined,
-              recurringCharges: js.UndefOr[RecurringCharges] = js.undefined,
-              `type`: js.UndefOr[OfferingType] = js.undefined): Offering = {
+    def apply(
+        description: js.UndefOr[Message] = js.undefined,
+        id: js.UndefOr[OfferingIdentifier] = js.undefined,
+        platform: js.UndefOr[DevicePlatform] = js.undefined,
+        recurringCharges: js.UndefOr[RecurringCharges] = js.undefined,
+        `type`: js.UndefOr[OfferingType] = js.undefined
+    ): Offering = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -3406,13 +3847,18 @@ package devicefarm {
   }
 
   object OfferingPromotion {
-    def apply(description: js.UndefOr[Message] = js.undefined,
-              id: js.UndefOr[OfferingPromotionIdentifier] = js.undefined): OfferingPromotion = {
-      val _fields = IndexedSeq[(String, js.Any)]("description" -> description.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "id" -> id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        description: js.UndefOr[Message] = js.undefined,
+        id: js.UndefOr[OfferingPromotionIdentifier] = js.undefined
+    ): OfferingPromotion = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "id" -> id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OfferingPromotion]
     }
@@ -3430,10 +3876,12 @@ package devicefarm {
   }
 
   object OfferingStatus {
-    def apply(effectiveOn: js.UndefOr[DateTime] = js.undefined,
-              offering: js.UndefOr[Offering] = js.undefined,
-              quantity: js.UndefOr[Int] = js.undefined,
-              `type`: js.UndefOr[OfferingTransactionType] = js.undefined): OfferingStatus = {
+    def apply(
+        effectiveOn: js.UndefOr[DateTime] = js.undefined,
+        offering: js.UndefOr[Offering] = js.undefined,
+        quantity: js.UndefOr[Int] = js.undefined,
+        `type`: js.UndefOr[OfferingTransactionType] = js.undefined
+    ): OfferingStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
         "effectiveOn" -> effectiveOn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3466,11 +3914,13 @@ package devicefarm {
   }
 
   object OfferingTransaction {
-    def apply(cost: js.UndefOr[MonetaryAmount] = js.undefined,
-              createdOn: js.UndefOr[DateTime] = js.undefined,
-              offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
-              offeringStatus: js.UndefOr[OfferingStatus] = js.undefined,
-              transactionId: js.UndefOr[TransactionIdentifier] = js.undefined): OfferingTransaction = {
+    def apply(
+        cost: js.UndefOr[MonetaryAmount] = js.undefined,
+        createdOn: js.UndefOr[DateTime] = js.undefined,
+        offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
+        offeringStatus: js.UndefOr[OfferingStatus] = js.undefined,
+        transactionId: js.UndefOr[TransactionIdentifier] = js.undefined
+    ): OfferingTransaction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "cost" -> cost.map { x =>
           x.asInstanceOf[js.Any]
@@ -3522,13 +3972,15 @@ package devicefarm {
   }
 
   object Problem {
-    def apply(device: js.UndefOr[Device] = js.undefined,
-              job: js.UndefOr[ProblemDetail] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              result: js.UndefOr[ExecutionResult] = js.undefined,
-              run: js.UndefOr[ProblemDetail] = js.undefined,
-              suite: js.UndefOr[ProblemDetail] = js.undefined,
-              test: js.UndefOr[ProblemDetail] = js.undefined): Problem = {
+    def apply(
+        device: js.UndefOr[Device] = js.undefined,
+        job: js.UndefOr[ProblemDetail] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        result: js.UndefOr[ExecutionResult] = js.undefined,
+        run: js.UndefOr[ProblemDetail] = js.undefined,
+        suite: js.UndefOr[ProblemDetail] = js.undefined,
+        test: js.UndefOr[ProblemDetail] = js.undefined
+    ): Problem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "device" -> device.map { x =>
           x.asInstanceOf[js.Any]
@@ -3567,13 +4019,18 @@ package devicefarm {
   }
 
   object ProblemDetail {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined): ProblemDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): ProblemDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProblemDetail]
     }
@@ -3591,10 +4048,12 @@ package devicefarm {
   }
 
   object Project {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              created: js.UndefOr[DateTime] = js.undefined,
-              defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined): Project = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): Project = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3625,9 +4084,11 @@ package devicefarm {
   }
 
   object PurchaseOfferingRequest {
-    def apply(offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
-              offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
-              quantity: js.UndefOr[Int] = js.undefined): PurchaseOfferingRequest = {
+    def apply(
+        offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
+        offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
+        quantity: js.UndefOr[Int] = js.undefined
+    ): PurchaseOfferingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "offeringId" -> offeringId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3653,10 +4114,14 @@ package devicefarm {
   }
 
   object PurchaseOfferingResult {
-    def apply(offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined): PurchaseOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("offeringTransaction" -> offeringTransaction.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
+    ): PurchaseOfferingResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "offeringTransaction" -> offeringTransaction.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PurchaseOfferingResult]
     }
@@ -3674,10 +4139,12 @@ package devicefarm {
   }
 
   object Radios {
-    def apply(bluetooth: js.UndefOr[Boolean] = js.undefined,
-              gps: js.UndefOr[Boolean] = js.undefined,
-              nfc: js.UndefOr[Boolean] = js.undefined,
-              wifi: js.UndefOr[Boolean] = js.undefined): Radios = {
+    def apply(
+        bluetooth: js.UndefOr[Boolean] = js.undefined,
+        gps: js.UndefOr[Boolean] = js.undefined,
+        nfc: js.UndefOr[Boolean] = js.undefined,
+        wifi: js.UndefOr[Boolean] = js.undefined
+    ): Radios = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bluetooth" -> bluetooth.map { x =>
           x.asInstanceOf[js.Any]
@@ -3707,13 +4174,18 @@ package devicefarm {
   }
 
   object RecurringCharge {
-    def apply(cost: js.UndefOr[MonetaryAmount] = js.undefined,
-              frequency: js.UndefOr[RecurringChargeFrequency] = js.undefined): RecurringCharge = {
-      val _fields = IndexedSeq[(String, js.Any)]("cost" -> cost.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "frequency" -> frequency.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        cost: js.UndefOr[MonetaryAmount] = js.undefined,
+        frequency: js.UndefOr[RecurringChargeFrequency] = js.undefined
+    ): RecurringCharge = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "cost" -> cost.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "frequency" -> frequency.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecurringCharge]
     }
@@ -3754,27 +4226,29 @@ package devicefarm {
   }
 
   object RemoteAccessSession {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              billingMethod: js.UndefOr[BillingMethod] = js.undefined,
-              clientId: js.UndefOr[ClientId] = js.undefined,
-              created: js.UndefOr[DateTime] = js.undefined,
-              device: js.UndefOr[Device] = js.undefined,
-              deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-              deviceUdid: js.UndefOr[String] = js.undefined,
-              endpoint: js.UndefOr[String] = js.undefined,
-              hostAddress: js.UndefOr[HostAddress] = js.undefined,
-              instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              interactionMode: js.UndefOr[InteractionMode] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
-              remoteRecordAppArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              remoteRecordEnabled: js.UndefOr[Boolean] = js.undefined,
-              result: js.UndefOr[ExecutionResult] = js.undefined,
-              skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-              started: js.UndefOr[DateTime] = js.undefined,
-              status: js.UndefOr[ExecutionStatus] = js.undefined,
-              stopped: js.UndefOr[DateTime] = js.undefined): RemoteAccessSession = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        billingMethod: js.UndefOr[BillingMethod] = js.undefined,
+        clientId: js.UndefOr[ClientId] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        device: js.UndefOr[Device] = js.undefined,
+        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
+        deviceUdid: js.UndefOr[String] = js.undefined,
+        endpoint: js.UndefOr[String] = js.undefined,
+        hostAddress: js.UndefOr[HostAddress] = js.undefined,
+        instanceArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        interactionMode: js.UndefOr[InteractionMode] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        remoteDebugEnabled: js.UndefOr[Boolean] = js.undefined,
+        remoteRecordAppArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        remoteRecordEnabled: js.UndefOr[Boolean] = js.undefined,
+        result: js.UndefOr[ExecutionResult] = js.undefined,
+        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
+        started: js.UndefOr[DateTime] = js.undefined,
+        status: js.UndefOr[ExecutionStatus] = js.undefined,
+        stopped: js.UndefOr[DateTime] = js.undefined
+    ): RemoteAccessSession = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3855,13 +4329,18 @@ package devicefarm {
   }
 
   object RenewOfferingRequest {
-    def apply(offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
-              quantity: js.UndefOr[Int] = js.undefined): RenewOfferingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("offeringId" -> offeringId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "quantity" -> quantity.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
+        quantity: js.UndefOr[Int] = js.undefined
+    ): RenewOfferingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "offeringId" -> offeringId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "quantity" -> quantity.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewOfferingRequest]
     }
@@ -3876,10 +4355,14 @@ package devicefarm {
   }
 
   object RenewOfferingResult {
-    def apply(offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined): RenewOfferingResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("offeringTransaction" -> offeringTransaction.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        offeringTransaction: js.UndefOr[OfferingTransaction] = js.undefined
+    ): RenewOfferingResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "offeringTransaction" -> offeringTransaction.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenewOfferingResult]
     }
@@ -3895,19 +4378,25 @@ package devicefarm {
   }
 
   object Resolution {
-    def apply(height: js.UndefOr[Int] = js.undefined, width: js.UndefOr[Int] = js.undefined): Resolution = {
-      val _fields = IndexedSeq[(String, js.Any)]("height" -> height.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "width" -> width.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        height: js.UndefOr[Int] = js.undefined,
+        width: js.UndefOr[Int] = js.undefined
+    ): Resolution = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "height" -> height.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "width" -> width.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resolution]
     }
   }
 
   /**
-    * Represents a condition for a device pool. It is passed in as the <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.
+    * Represents a condition for a device pool.
     */
   @js.native
   trait Rule extends js.Object {
@@ -3917,9 +4406,11 @@ package devicefarm {
   }
 
   object Rule {
-    def apply(attribute: js.UndefOr[DeviceAttribute] = js.undefined,
-              operator: js.UndefOr[RuleOperator] = js.undefined,
-              value: js.UndefOr[String] = js.undefined): Rule = {
+    def apply(
+        attribute: js.UndefOr[DeviceAttribute] = js.undefined,
+        operator: js.UndefOr[RuleOperator] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): Rule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attribute" -> attribute.map { x =>
           x.asInstanceOf[js.Any]
@@ -3937,14 +4428,17 @@ package devicefarm {
   }
 
   object RuleOperatorEnum {
-    val EQUALS       = "EQUALS"
-    val LESS_THAN    = "LESS_THAN"
-    val GREATER_THAN = "GREATER_THAN"
-    val IN           = "IN"
-    val NOT_IN       = "NOT_IN"
-    val CONTAINS     = "CONTAINS"
+    val EQUALS                 = "EQUALS"
+    val LESS_THAN              = "LESS_THAN"
+    val LESS_THAN_OR_EQUALS    = "LESS_THAN_OR_EQUALS"
+    val GREATER_THAN           = "GREATER_THAN"
+    val GREATER_THAN_OR_EQUALS = "GREATER_THAN_OR_EQUALS"
+    val IN                     = "IN"
+    val NOT_IN                 = "NOT_IN"
+    val CONTAINS               = "CONTAINS"
 
-    val values = IndexedSeq(EQUALS, LESS_THAN, GREATER_THAN, IN, NOT_IN, CONTAINS)
+    val values =
+      IndexedSeq(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
   }
 
   /**
@@ -3986,37 +4480,39 @@ package devicefarm {
   }
 
   object Run {
-    def apply(appUpload: js.UndefOr[AmazonResourceName] = js.undefined,
-              arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              billingMethod: js.UndefOr[BillingMethod] = js.undefined,
-              completedJobs: js.UndefOr[Int] = js.undefined,
-              counters: js.UndefOr[Counters] = js.undefined,
-              created: js.UndefOr[DateTime] = js.undefined,
-              customerArtifactPaths: js.UndefOr[CustomerArtifactPaths] = js.undefined,
-              deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-              devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              deviceSelectionResult: js.UndefOr[DeviceSelectionResult] = js.undefined,
-              eventCount: js.UndefOr[Int] = js.undefined,
-              jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-              locale: js.UndefOr[String] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              networkProfile: js.UndefOr[NetworkProfile] = js.undefined,
-              parsingResultUrl: js.UndefOr[String] = js.undefined,
-              platform: js.UndefOr[DevicePlatform] = js.undefined,
-              radios: js.UndefOr[Radios] = js.undefined,
-              result: js.UndefOr[ExecutionResult] = js.undefined,
-              resultCode: js.UndefOr[ExecutionResultCode] = js.undefined,
-              seed: js.UndefOr[Int] = js.undefined,
-              skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
-              started: js.UndefOr[DateTime] = js.undefined,
-              status: js.UndefOr[ExecutionStatus] = js.undefined,
-              stopped: js.UndefOr[DateTime] = js.undefined,
-              testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              totalJobs: js.UndefOr[Int] = js.undefined,
-              `type`: js.UndefOr[TestType] = js.undefined,
-              webUrl: js.UndefOr[String] = js.undefined): Run = {
+    def apply(
+        appUpload: js.UndefOr[AmazonResourceName] = js.undefined,
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        billingMethod: js.UndefOr[BillingMethod] = js.undefined,
+        completedJobs: js.UndefOr[Int] = js.undefined,
+        counters: js.UndefOr[Counters] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        customerArtifactPaths: js.UndefOr[CustomerArtifactPaths] = js.undefined,
+        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
+        devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        deviceSelectionResult: js.UndefOr[DeviceSelectionResult] = js.undefined,
+        eventCount: js.UndefOr[Int] = js.undefined,
+        jobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
+        locale: js.UndefOr[String] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        networkProfile: js.UndefOr[NetworkProfile] = js.undefined,
+        parsingResultUrl: js.UndefOr[String] = js.undefined,
+        platform: js.UndefOr[DevicePlatform] = js.undefined,
+        radios: js.UndefOr[Radios] = js.undefined,
+        result: js.UndefOr[ExecutionResult] = js.undefined,
+        resultCode: js.UndefOr[ExecutionResultCode] = js.undefined,
+        seed: js.UndefOr[Int] = js.undefined,
+        skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
+        started: js.UndefOr[DateTime] = js.undefined,
+        status: js.UndefOr[ExecutionStatus] = js.undefined,
+        stopped: js.UndefOr[DateTime] = js.undefined,
+        testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        totalJobs: js.UndefOr[Int] = js.undefined,
+        `type`: js.UndefOr[TestType] = js.undefined,
+        webUrl: js.UndefOr[String] = js.undefined
+    ): Run = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appUpload" -> appUpload.map { x =>
           x.asInstanceOf[js.Any]
@@ -4128,16 +4624,22 @@ package devicefarm {
   }
 
   object Sample {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              `type`: js.UndefOr[SampleType] = js.undefined,
-              url: js.UndefOr[URL] = js.undefined): Sample = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "url" -> url.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        `type`: js.UndefOr[SampleType] = js.undefined,
+        url: js.UndefOr[URL] = js.undefined
+    ): Sample = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "url" -> url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Sample]
     }
@@ -4200,15 +4702,17 @@ package devicefarm {
   }
 
   object ScheduleRunConfiguration {
-    def apply(auxiliaryApps: js.UndefOr[AmazonResourceNames] = js.undefined,
-              billingMethod: js.UndefOr[BillingMethod] = js.undefined,
-              customerArtifactPaths: js.UndefOr[CustomerArtifactPaths] = js.undefined,
-              extraDataPackageArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              locale: js.UndefOr[String] = js.undefined,
-              location: js.UndefOr[Location] = js.undefined,
-              networkProfileArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              radios: js.UndefOr[Radios] = js.undefined,
-              vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined): ScheduleRunConfiguration = {
+    def apply(
+        auxiliaryApps: js.UndefOr[AmazonResourceNames] = js.undefined,
+        billingMethod: js.UndefOr[BillingMethod] = js.undefined,
+        customerArtifactPaths: js.UndefOr[CustomerArtifactPaths] = js.undefined,
+        extraDataPackageArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        locale: js.UndefOr[String] = js.undefined,
+        location: js.UndefOr[Location] = js.undefined,
+        networkProfileArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        radios: js.UndefOr[Radios] = js.undefined,
+        vpceConfigurationArns: js.UndefOr[AmazonResourceNames] = js.undefined
+    ): ScheduleRunConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "auxiliaryApps" -> auxiliaryApps.map { x =>
           x.asInstanceOf[js.Any]
@@ -4259,14 +4763,16 @@ package devicefarm {
   }
 
   object ScheduleRunRequest {
-    def apply(projectArn: AmazonResourceName,
-              test: ScheduleRunTest,
-              appArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              configuration: js.UndefOr[ScheduleRunConfiguration] = js.undefined,
-              devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              deviceSelectionConfiguration: js.UndefOr[DeviceSelectionConfiguration] = js.undefined,
-              executionConfiguration: js.UndefOr[ExecutionConfiguration] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined): ScheduleRunRequest = {
+    def apply(
+        projectArn: AmazonResourceName,
+        test: ScheduleRunTest,
+        appArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        configuration: js.UndefOr[ScheduleRunConfiguration] = js.undefined,
+        devicePoolArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        deviceSelectionConfiguration: js.UndefOr[DeviceSelectionConfiguration] = js.undefined,
+        executionConfiguration: js.UndefOr[ExecutionConfiguration] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): ScheduleRunRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectArn" -> projectArn.asInstanceOf[js.Any],
         "test"       -> test.asInstanceOf[js.Any],
@@ -4303,10 +4809,14 @@ package devicefarm {
   }
 
   object ScheduleRunResult {
-    def apply(run: js.UndefOr[Run] = js.undefined): ScheduleRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("run" -> run.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        run: js.UndefOr[Run] = js.undefined
+    ): ScheduleRunResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "run" -> run.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScheduleRunResult]
     }
@@ -4325,11 +4835,13 @@ package devicefarm {
   }
 
   object ScheduleRunTest {
-    def apply(`type`: TestType,
-              filter: js.UndefOr[Filter] = js.undefined,
-              parameters: js.UndefOr[TestParameters] = js.undefined,
-              testPackageArn: js.UndefOr[AmazonResourceName] = js.undefined,
-              testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined): ScheduleRunTest = {
+    def apply(
+        `type`: TestType,
+        filter: js.UndefOr[Filter] = js.undefined,
+        parameters: js.UndefOr[TestParameters] = js.undefined,
+        testPackageArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined
+    ): ScheduleRunTest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "`type`" -> `type`.asInstanceOf[js.Any],
         "filter" -> filter.map { x =>
@@ -4356,9 +4868,12 @@ package devicefarm {
   }
 
   object StopJobRequest {
-    def apply(arn: AmazonResourceName): StopJobRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): StopJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopJobRequest]
     }
@@ -4370,10 +4885,14 @@ package devicefarm {
   }
 
   object StopJobResult {
-    def apply(job: js.UndefOr[Job] = js.undefined): StopJobResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("job" -> job.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        job: js.UndefOr[Job] = js.undefined
+    ): StopJobResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "job" -> job.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopJobResult]
     }
@@ -4388,9 +4907,12 @@ package devicefarm {
   }
 
   object StopRemoteAccessSessionRequest {
-    def apply(arn: AmazonResourceName): StopRemoteAccessSessionRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): StopRemoteAccessSessionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRemoteAccessSessionRequest]
     }
@@ -4405,10 +4927,14 @@ package devicefarm {
   }
 
   object StopRemoteAccessSessionResult {
-    def apply(remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined): StopRemoteAccessSessionResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("remoteAccessSession" -> remoteAccessSession.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        remoteAccessSession: js.UndefOr[RemoteAccessSession] = js.undefined
+    ): StopRemoteAccessSessionResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "remoteAccessSession" -> remoteAccessSession.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRemoteAccessSessionResult]
     }
@@ -4423,9 +4949,12 @@ package devicefarm {
   }
 
   object StopRunRequest {
-    def apply(arn: AmazonResourceName): StopRunRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName
+    ): StopRunRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRunRequest]
     }
@@ -4440,10 +4969,14 @@ package devicefarm {
   }
 
   object StopRunResult {
-    def apply(run: js.UndefOr[Run] = js.undefined): StopRunResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("run" -> run.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        run: js.UndefOr[Run] = js.undefined
+    ): StopRunResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "run" -> run.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopRunResult]
     }
@@ -4468,17 +5001,19 @@ package devicefarm {
   }
 
   object Suite {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              counters: js.UndefOr[Counters] = js.undefined,
-              created: js.UndefOr[DateTime] = js.undefined,
-              deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              result: js.UndefOr[ExecutionResult] = js.undefined,
-              started: js.UndefOr[DateTime] = js.undefined,
-              status: js.UndefOr[ExecutionStatus] = js.undefined,
-              stopped: js.UndefOr[DateTime] = js.undefined,
-              `type`: js.UndefOr[TestType] = js.undefined): Suite = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        counters: js.UndefOr[Counters] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        result: js.UndefOr[ExecutionResult] = js.undefined,
+        started: js.UndefOr[DateTime] = js.undefined,
+        status: js.UndefOr[ExecutionStatus] = js.undefined,
+        stopped: js.UndefOr[DateTime] = js.undefined,
+        `type`: js.UndefOr[TestType] = js.undefined
+    ): Suite = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -4538,17 +5073,19 @@ package devicefarm {
   }
 
   object Test {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              counters: js.UndefOr[Counters] = js.undefined,
-              created: js.UndefOr[DateTime] = js.undefined,
-              deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              result: js.UndefOr[ExecutionResult] = js.undefined,
-              started: js.UndefOr[DateTime] = js.undefined,
-              status: js.UndefOr[ExecutionStatus] = js.undefined,
-              stopped: js.UndefOr[DateTime] = js.undefined,
-              `type`: js.UndefOr[TestType] = js.undefined): Test = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        counters: js.UndefOr[Counters] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        deviceMinutes: js.UndefOr[DeviceMinutes] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        result: js.UndefOr[ExecutionResult] = js.undefined,
+        started: js.UndefOr[DateTime] = js.undefined,
+        status: js.UndefOr[ExecutionStatus] = js.undefined,
+        stopped: js.UndefOr[DateTime] = js.undefined,
+        `type`: js.UndefOr[TestType] = js.undefined
+    ): Test = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -4596,9 +5133,13 @@ package devicefarm {
     val APPIUM_JAVA_JUNIT       = "APPIUM_JAVA_JUNIT"
     val APPIUM_JAVA_TESTNG      = "APPIUM_JAVA_TESTNG"
     val APPIUM_PYTHON           = "APPIUM_PYTHON"
+    val APPIUM_NODE             = "APPIUM_NODE"
+    val APPIUM_RUBY             = "APPIUM_RUBY"
     val APPIUM_WEB_JAVA_JUNIT   = "APPIUM_WEB_JAVA_JUNIT"
     val APPIUM_WEB_JAVA_TESTNG  = "APPIUM_WEB_JAVA_TESTNG"
     val APPIUM_WEB_PYTHON       = "APPIUM_WEB_PYTHON"
+    val APPIUM_WEB_NODE         = "APPIUM_WEB_NODE"
+    val APPIUM_WEB_RUBY         = "APPIUM_WEB_RUBY"
     val CALABASH                = "CALABASH"
     val INSTRUMENTATION         = "INSTRUMENTATION"
     val UIAUTOMATION            = "UIAUTOMATION"
@@ -4615,9 +5156,13 @@ package devicefarm {
       APPIUM_JAVA_JUNIT,
       APPIUM_JAVA_TESTNG,
       APPIUM_PYTHON,
+      APPIUM_NODE,
+      APPIUM_RUBY,
       APPIUM_WEB_JAVA_JUNIT,
       APPIUM_WEB_JAVA_TESTNG,
       APPIUM_WEB_PYTHON,
+      APPIUM_WEB_NODE,
+      APPIUM_WEB_RUBY,
       CALABASH,
       INSTRUMENTATION,
       UIAUTOMATION,
@@ -4639,12 +5184,18 @@ package devicefarm {
   }
 
   object TrialMinutes {
-    def apply(remaining: js.UndefOr[Double] = js.undefined, total: js.UndefOr[Double] = js.undefined): TrialMinutes = {
-      val _fields = IndexedSeq[(String, js.Any)]("remaining" -> remaining.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "total" -> total.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        remaining: js.UndefOr[Double] = js.undefined,
+        total: js.UndefOr[Double] = js.undefined
+    ): TrialMinutes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "remaining" -> remaining.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "total" -> total.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrialMinutes]
     }
@@ -4660,13 +5211,18 @@ package devicefarm {
   }
 
   object UniqueProblem {
-    def apply(message: js.UndefOr[Message] = js.undefined,
-              problems: js.UndefOr[Problems] = js.undefined): UniqueProblem = {
-      val _fields = IndexedSeq[(String, js.Any)]("message" -> message.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "problems" -> problems.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        message: js.UndefOr[Message] = js.undefined,
+        problems: js.UndefOr[Problems] = js.undefined
+    ): UniqueProblem = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "message" -> message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "problems" -> problems.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UniqueProblem]
     }
@@ -4680,14 +5236,20 @@ package devicefarm {
   }
 
   object UpdateDeviceInstanceRequest {
-    def apply(arn: AmazonResourceName,
-              labels: js.UndefOr[InstanceLabels] = js.undefined,
-              profileArn: js.UndefOr[AmazonResourceName] = js.undefined): UpdateDeviceInstanceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("arn" -> arn.asInstanceOf[js.Any], "labels" -> labels.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "profileArn" -> profileArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        arn: AmazonResourceName,
+        labels: js.UndefOr[InstanceLabels] = js.undefined,
+        profileArn: js.UndefOr[AmazonResourceName] = js.undefined
+    ): UpdateDeviceInstanceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "arn" -> arn.asInstanceOf[js.Any],
+        "labels" -> labels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "profileArn" -> profileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceInstanceRequest]
     }
@@ -4699,10 +5261,14 @@ package devicefarm {
   }
 
   object UpdateDeviceInstanceResult {
-    def apply(deviceInstance: js.UndefOr[DeviceInstance] = js.undefined): UpdateDeviceInstanceResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("deviceInstance" -> deviceInstance.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deviceInstance: js.UndefOr[DeviceInstance] = js.undefined
+    ): UpdateDeviceInstanceResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deviceInstance" -> deviceInstance.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceInstanceResult]
     }
@@ -4714,19 +5280,31 @@ package devicefarm {
   @js.native
   trait UpdateDevicePoolRequest extends js.Object {
     var arn: AmazonResourceName
+    var clearMaxDevices: js.UndefOr[Boolean]
     var description: js.UndefOr[Message]
+    var maxDevices: js.UndefOr[Int]
     var name: js.UndefOr[Name]
     var rules: js.UndefOr[Rules]
   }
 
   object UpdateDevicePoolRequest {
-    def apply(arn: AmazonResourceName,
-              description: js.UndefOr[Message] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              rules: js.UndefOr[Rules] = js.undefined): UpdateDevicePoolRequest = {
+    def apply(
+        arn: AmazonResourceName,
+        clearMaxDevices: js.UndefOr[Boolean] = js.undefined,
+        description: js.UndefOr[Message] = js.undefined,
+        maxDevices: js.UndefOr[Int] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        rules: js.UndefOr[Rules] = js.undefined
+    ): UpdateDevicePoolRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.asInstanceOf[js.Any],
+        "clearMaxDevices" -> clearMaxDevices.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "maxDevices" -> maxDevices.map { x =>
           x.asInstanceOf[js.Any]
         },
         "name" -> name.map { x =>
@@ -4750,10 +5328,14 @@ package devicefarm {
   }
 
   object UpdateDevicePoolResult {
-    def apply(devicePool: js.UndefOr[DevicePool] = js.undefined): UpdateDevicePoolResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("devicePool" -> devicePool.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        devicePool: js.UndefOr[DevicePool] = js.undefined
+    ): UpdateDevicePoolResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "devicePool" -> devicePool.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDevicePoolResult]
     }
@@ -4770,12 +5352,14 @@ package devicefarm {
   }
 
   object UpdateInstanceProfileRequest {
-    def apply(arn: AmazonResourceName,
-              description: js.UndefOr[Message] = js.undefined,
-              excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              packageCleanup: js.UndefOr[Boolean] = js.undefined,
-              rebootAfterUse: js.UndefOr[Boolean] = js.undefined): UpdateInstanceProfileRequest = {
+    def apply(
+        arn: AmazonResourceName,
+        description: js.UndefOr[Message] = js.undefined,
+        excludeAppPackagesFromCleanup: js.UndefOr[PackageIds] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        packageCleanup: js.UndefOr[Boolean] = js.undefined,
+        rebootAfterUse: js.UndefOr[Boolean] = js.undefined
+    ): UpdateInstanceProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -4805,10 +5389,14 @@ package devicefarm {
   }
 
   object UpdateInstanceProfileResult {
-    def apply(instanceProfile: js.UndefOr[InstanceProfile] = js.undefined): UpdateInstanceProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceProfile" -> instanceProfile.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceProfile: js.UndefOr[InstanceProfile] = js.undefined
+    ): UpdateInstanceProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceProfile" -> instanceProfile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateInstanceProfileResult]
     }
@@ -4831,18 +5419,20 @@ package devicefarm {
   }
 
   object UpdateNetworkProfileRequest {
-    def apply(arn: AmazonResourceName,
-              description: js.UndefOr[Message] = js.undefined,
-              downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-              downlinkDelayMs: js.UndefOr[Double] = js.undefined,
-              downlinkJitterMs: js.UndefOr[Double] = js.undefined,
-              downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              `type`: js.UndefOr[NetworkProfileType] = js.undefined,
-              uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
-              uplinkDelayMs: js.UndefOr[Double] = js.undefined,
-              uplinkJitterMs: js.UndefOr[Double] = js.undefined,
-              uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined): UpdateNetworkProfileRequest = {
+    def apply(
+        arn: AmazonResourceName,
+        description: js.UndefOr[Message] = js.undefined,
+        downlinkBandwidthBits: js.UndefOr[Double] = js.undefined,
+        downlinkDelayMs: js.UndefOr[Double] = js.undefined,
+        downlinkJitterMs: js.UndefOr[Double] = js.undefined,
+        downlinkLossPercent: js.UndefOr[PercentInteger] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        `type`: js.UndefOr[NetworkProfileType] = js.undefined,
+        uplinkBandwidthBits: js.UndefOr[Double] = js.undefined,
+        uplinkDelayMs: js.UndefOr[Double] = js.undefined,
+        uplinkJitterMs: js.UndefOr[Double] = js.undefined,
+        uplinkLossPercent: js.UndefOr[PercentInteger] = js.undefined
+    ): UpdateNetworkProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -4890,10 +5480,14 @@ package devicefarm {
   }
 
   object UpdateNetworkProfileResult {
-    def apply(networkProfile: js.UndefOr[NetworkProfile] = js.undefined): UpdateNetworkProfileResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("networkProfile" -> networkProfile.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        networkProfile: js.UndefOr[NetworkProfile] = js.undefined
+    ): UpdateNetworkProfileResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "networkProfile" -> networkProfile.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNetworkProfileResult]
     }
@@ -4910,9 +5504,11 @@ package devicefarm {
   }
 
   object UpdateProjectRequest {
-    def apply(arn: AmazonResourceName,
-              defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined): UpdateProjectRequest = {
+    def apply(
+        arn: AmazonResourceName,
+        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): UpdateProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.asInstanceOf[js.Any],
         "defaultJobTimeoutMinutes" -> defaultJobTimeoutMinutes.map { x =>
@@ -4936,10 +5532,14 @@ package devicefarm {
   }
 
   object UpdateProjectResult {
-    def apply(project: js.UndefOr[Project] = js.undefined): UpdateProjectResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("project" -> project.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        project: js.UndefOr[Project] = js.undefined
+    ): UpdateProjectResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "project" -> project.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectResult]
     }
@@ -4954,10 +5554,12 @@ package devicefarm {
   }
 
   object UpdateUploadRequest {
-    def apply(arn: AmazonResourceName,
-              contentType: js.UndefOr[ContentType] = js.undefined,
-              editContent: js.UndefOr[Boolean] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined): UpdateUploadRequest = {
+    def apply(
+        arn: AmazonResourceName,
+        contentType: js.UndefOr[ContentType] = js.undefined,
+        editContent: js.UndefOr[Boolean] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): UpdateUploadRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.asInstanceOf[js.Any],
         "contentType" -> contentType.map { x =>
@@ -4981,10 +5583,14 @@ package devicefarm {
   }
 
   object UpdateUploadResult {
-    def apply(upload: js.UndefOr[Upload] = js.undefined): UpdateUploadResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("upload" -> upload.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        upload: js.UndefOr[Upload] = js.undefined
+    ): UpdateUploadResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "upload" -> upload.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUploadResult]
     }
@@ -5000,11 +5606,13 @@ package devicefarm {
   }
 
   object UpdateVPCEConfigurationRequest {
-    def apply(arn: AmazonResourceName,
-              serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,
-              vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined,
-              vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
-              vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined): UpdateVPCEConfigurationRequest = {
+    def apply(
+        arn: AmazonResourceName,
+        serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,
+        vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined,
+        vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
+        vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined
+    ): UpdateVPCEConfigurationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.asInstanceOf[js.Any],
         "serviceDnsName" -> serviceDnsName.map { x =>
@@ -5031,10 +5639,14 @@ package devicefarm {
   }
 
   object UpdateVPCEConfigurationResult {
-    def apply(vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined): UpdateVPCEConfigurationResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("vpceConfiguration" -> vpceConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        vpceConfiguration: js.UndefOr[VPCEConfiguration] = js.undefined
+    ): UpdateVPCEConfigurationResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "vpceConfiguration" -> vpceConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVPCEConfigurationResult]
     }
@@ -5058,16 +5670,18 @@ package devicefarm {
   }
 
   object Upload {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              category: js.UndefOr[UploadCategory] = js.undefined,
-              contentType: js.UndefOr[ContentType] = js.undefined,
-              created: js.UndefOr[DateTime] = js.undefined,
-              message: js.UndefOr[Message] = js.undefined,
-              metadata: js.UndefOr[Metadata] = js.undefined,
-              name: js.UndefOr[Name] = js.undefined,
-              status: js.UndefOr[UploadStatus] = js.undefined,
-              `type`: js.UndefOr[UploadType] = js.undefined,
-              url: js.UndefOr[URL] = js.undefined): Upload = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        category: js.UndefOr[UploadCategory] = js.undefined,
+        contentType: js.UndefOr[ContentType] = js.undefined,
+        created: js.UndefOr[DateTime] = js.undefined,
+        message: js.UndefOr[Message] = js.undefined,
+        metadata: js.UndefOr[Metadata] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        status: js.UndefOr[UploadStatus] = js.undefined,
+        `type`: js.UndefOr[UploadType] = js.undefined,
+        url: js.UndefOr[URL] = js.undefined
+    ): Upload = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -5129,9 +5743,13 @@ package devicefarm {
     val APPIUM_JAVA_JUNIT_TEST_PACKAGE      = "APPIUM_JAVA_JUNIT_TEST_PACKAGE"
     val APPIUM_JAVA_TESTNG_TEST_PACKAGE     = "APPIUM_JAVA_TESTNG_TEST_PACKAGE"
     val APPIUM_PYTHON_TEST_PACKAGE          = "APPIUM_PYTHON_TEST_PACKAGE"
+    val APPIUM_NODE_TEST_PACKAGE            = "APPIUM_NODE_TEST_PACKAGE"
+    val APPIUM_RUBY_TEST_PACKAGE            = "APPIUM_RUBY_TEST_PACKAGE"
     val APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE  = "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE"
     val APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE"
     val APPIUM_WEB_PYTHON_TEST_PACKAGE      = "APPIUM_WEB_PYTHON_TEST_PACKAGE"
+    val APPIUM_WEB_NODE_TEST_PACKAGE        = "APPIUM_WEB_NODE_TEST_PACKAGE"
+    val APPIUM_WEB_RUBY_TEST_PACKAGE        = "APPIUM_WEB_RUBY_TEST_PACKAGE"
     val CALABASH_TEST_PACKAGE               = "CALABASH_TEST_PACKAGE"
     val INSTRUMENTATION_TEST_PACKAGE        = "INSTRUMENTATION_TEST_PACKAGE"
     val UIAUTOMATION_TEST_PACKAGE           = "UIAUTOMATION_TEST_PACKAGE"
@@ -5141,9 +5759,13 @@ package devicefarm {
     val APPIUM_JAVA_JUNIT_TEST_SPEC         = "APPIUM_JAVA_JUNIT_TEST_SPEC"
     val APPIUM_JAVA_TESTNG_TEST_SPEC        = "APPIUM_JAVA_TESTNG_TEST_SPEC"
     val APPIUM_PYTHON_TEST_SPEC             = "APPIUM_PYTHON_TEST_SPEC"
+    val APPIUM_NODE_TEST_SPEC               = "APPIUM_NODE_TEST_SPEC"
+    val APPIUM_RUBY_TEST_SPEC               = "APPIUM_RUBY_TEST_SPEC"
     val APPIUM_WEB_JAVA_JUNIT_TEST_SPEC     = "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC"
     val APPIUM_WEB_JAVA_TESTNG_TEST_SPEC    = "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC"
     val APPIUM_WEB_PYTHON_TEST_SPEC         = "APPIUM_WEB_PYTHON_TEST_SPEC"
+    val APPIUM_WEB_NODE_TEST_SPEC           = "APPIUM_WEB_NODE_TEST_SPEC"
+    val APPIUM_WEB_RUBY_TEST_SPEC           = "APPIUM_WEB_RUBY_TEST_SPEC"
     val INSTRUMENTATION_TEST_SPEC           = "INSTRUMENTATION_TEST_SPEC"
     val XCTEST_UI_TEST_SPEC                 = "XCTEST_UI_TEST_SPEC"
 
@@ -5155,9 +5777,13 @@ package devicefarm {
       APPIUM_JAVA_JUNIT_TEST_PACKAGE,
       APPIUM_JAVA_TESTNG_TEST_PACKAGE,
       APPIUM_PYTHON_TEST_PACKAGE,
+      APPIUM_NODE_TEST_PACKAGE,
+      APPIUM_RUBY_TEST_PACKAGE,
       APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE,
       APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE,
       APPIUM_WEB_PYTHON_TEST_PACKAGE,
+      APPIUM_WEB_NODE_TEST_PACKAGE,
+      APPIUM_WEB_RUBY_TEST_PACKAGE,
       CALABASH_TEST_PACKAGE,
       INSTRUMENTATION_TEST_PACKAGE,
       UIAUTOMATION_TEST_PACKAGE,
@@ -5167,9 +5793,13 @@ package devicefarm {
       APPIUM_JAVA_JUNIT_TEST_SPEC,
       APPIUM_JAVA_TESTNG_TEST_SPEC,
       APPIUM_PYTHON_TEST_SPEC,
+      APPIUM_NODE_TEST_SPEC,
+      APPIUM_RUBY_TEST_SPEC,
       APPIUM_WEB_JAVA_JUNIT_TEST_SPEC,
       APPIUM_WEB_JAVA_TESTNG_TEST_SPEC,
       APPIUM_WEB_PYTHON_TEST_SPEC,
+      APPIUM_WEB_NODE_TEST_SPEC,
+      APPIUM_WEB_RUBY_TEST_SPEC,
       INSTRUMENTATION_TEST_SPEC,
       XCTEST_UI_TEST_SPEC
     )
@@ -5188,11 +5818,13 @@ package devicefarm {
   }
 
   object VPCEConfiguration {
-    def apply(arn: js.UndefOr[AmazonResourceName] = js.undefined,
-              serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,
-              vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined,
-              vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
-              vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined): VPCEConfiguration = {
+    def apply(
+        arn: js.UndefOr[AmazonResourceName] = js.undefined,
+        serviceDnsName: js.UndefOr[ServiceDnsName] = js.undefined,
+        vpceConfigurationDescription: js.UndefOr[VPCEConfigurationDescription] = js.undefined,
+        vpceConfigurationName: js.UndefOr[VPCEConfigurationName] = js.undefined,
+        vpceServiceName: js.UndefOr[VPCEServiceName] = js.undefined
+    ): VPCEConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]

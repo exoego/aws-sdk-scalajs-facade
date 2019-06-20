@@ -47,6 +47,7 @@ package object apigatewayv2 {
   type __double                           = Double
   type __integer                          = Int
   type __listOfApi                        = js.Array[Api]
+  type __listOfApiMapping                 = js.Array[ApiMapping]
   type __listOfAuthorizer                 = js.Array[Authorizer]
   type __listOfDeployment                 = js.Array[Deployment]
   type __listOfDomainName                 = js.Array[DomainName]
@@ -67,17 +68,17 @@ package apigatewayv2 {
   class ApiGatewayV2() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApi(params: CreateApiRequest): Request[CreateApiResponse]                       = js.native
-    def createApiMapping(params: CreateApiMappingRequest): Request[CreateApiMappingResponse]  = js.native
-    def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse]  = js.native
-    def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse]  = js.native
-    def createDomainName(params: CreateDomainNameRequest): Request[CreateDomainNameResponse]  = js.native
-    def createIntegration(params: CreateIntegrationRequest): Request[CreateIntegrationResult] = js.native
+    def createApi(params: CreateApiRequest): Request[CreateApiResponse]                         = js.native
+    def createApiMapping(params: CreateApiMappingRequest): Request[CreateApiMappingResponse]    = js.native
+    def createAuthorizer(params: CreateAuthorizerRequest): Request[CreateAuthorizerResponse]    = js.native
+    def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse]    = js.native
+    def createDomainName(params: CreateDomainNameRequest): Request[CreateDomainNameResponse]    = js.native
+    def createIntegration(params: CreateIntegrationRequest): Request[CreateIntegrationResponse] = js.native
     def createIntegrationResponse(
         params: CreateIntegrationResponseRequest
     ): Request[CreateIntegrationResponseResponse]                                                     = js.native
     def createModel(params: CreateModelRequest): Request[CreateModelResponse]                         = js.native
-    def createRoute(params: CreateRouteRequest): Request[CreateRouteResult]                           = js.native
+    def createRoute(params: CreateRouteRequest): Request[CreateRouteResponse]                         = js.native
     def createRouteResponse(params: CreateRouteResponseRequest): Request[CreateRouteResponseResponse] = js.native
     def createStage(params: CreateStageRequest): Request[CreateStageResponse]                         = js.native
     def deleteApi(params: DeleteApiRequest): Request[js.Object]                                       = js.native
@@ -101,7 +102,7 @@ package apigatewayv2 {
     def getDeployments(params: GetDeploymentsRequest): Request[GetDeploymentsResponse]                = js.native
     def getDomainName(params: GetDomainNameRequest): Request[GetDomainNameResponse]                   = js.native
     def getDomainNames(params: GetDomainNamesRequest): Request[GetDomainNamesResponse]                = js.native
-    def getIntegration(params: GetIntegrationRequest): Request[GetIntegrationResult]                  = js.native
+    def getIntegration(params: GetIntegrationRequest): Request[GetIntegrationResponse]                = js.native
     def getIntegrationResponse(params: GetIntegrationResponseRequest): Request[GetIntegrationResponseResponse] =
       js.native
     def getIntegrationResponses(params: GetIntegrationResponsesRequest): Request[GetIntegrationResponsesResponse] =
@@ -110,7 +111,7 @@ package apigatewayv2 {
     def getModel(params: GetModelRequest): Request[GetModelResponse]                            = js.native
     def getModelTemplate(params: GetModelTemplateRequest): Request[GetModelTemplateResponse]    = js.native
     def getModels(params: GetModelsRequest): Request[GetModelsResponse]                         = js.native
-    def getRoute(params: GetRouteRequest): Request[GetRouteResult]                              = js.native
+    def getRoute(params: GetRouteRequest): Request[GetRouteResponse]                            = js.native
     def getRouteResponse(params: GetRouteResponseRequest): Request[GetRouteResponseResponse]    = js.native
     def getRouteResponses(params: GetRouteResponsesRequest): Request[GetRouteResponsesResponse] = js.native
     def getRoutes(params: GetRoutesRequest): Request[GetRoutesResponse]                         = js.native
@@ -121,12 +122,12 @@ package apigatewayv2 {
     def updateAuthorizer(params: UpdateAuthorizerRequest): Request[UpdateAuthorizerResponse]    = js.native
     def updateDeployment(params: UpdateDeploymentRequest): Request[UpdateDeploymentResponse]    = js.native
     def updateDomainName(params: UpdateDomainNameRequest): Request[UpdateDomainNameResponse]    = js.native
-    def updateIntegration(params: UpdateIntegrationRequest): Request[UpdateIntegrationResult]   = js.native
+    def updateIntegration(params: UpdateIntegrationRequest): Request[UpdateIntegrationResponse] = js.native
     def updateIntegrationResponse(
         params: UpdateIntegrationResponseRequest
     ): Request[UpdateIntegrationResponseResponse]                                                     = js.native
     def updateModel(params: UpdateModelRequest): Request[UpdateModelResponse]                         = js.native
-    def updateRoute(params: UpdateRouteRequest): Request[UpdateRouteResult]                           = js.native
+    def updateRoute(params: UpdateRouteRequest): Request[UpdateRouteResponse]                         = js.native
     def updateRouteResponse(params: UpdateRouteResponseRequest): Request[UpdateRouteResponseResponse] = js.native
     def updateStage(params: UpdateStageRequest): Request[UpdateStageResponse]                         = js.native
   }
@@ -141,13 +142,18 @@ package apigatewayv2 {
   }
 
   object AccessLogSettings {
-    def apply(DestinationArn: js.UndefOr[Arn] = js.undefined,
-              Format: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined): AccessLogSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("DestinationArn" -> DestinationArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Format" -> Format.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DestinationArn: js.UndefOr[Arn] = js.undefined,
+        Format: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined
+    ): AccessLogSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DestinationArn" -> DestinationArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Format" -> Format.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessLogSettings]
     }
@@ -172,17 +178,19 @@ package apigatewayv2 {
   }
 
   object Api {
-    def apply(Name: StringWithLengthBetween1And128,
-              ProtocolType: ProtocolType,
-              RouteSelectionExpression: SelectionExpression,
-              ApiEndpoint: js.UndefOr[__string] = js.undefined,
-              ApiId: js.UndefOr[Id] = js.undefined,
-              ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
-              Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              Warnings: js.UndefOr[__listOf__string] = js.undefined): Api = {
+    def apply(
+        Name: StringWithLengthBetween1And128,
+        ProtocolType: ProtocolType,
+        RouteSelectionExpression: SelectionExpression,
+        ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiId: js.UndefOr[Id] = js.undefined,
+        ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        Warnings: js.UndefOr[__listOf__string] = js.undefined
+    ): Api = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"                     -> Name.asInstanceOf[js.Any],
         "ProtocolType"             -> ProtocolType.asInstanceOf[js.Any],
@@ -218,7 +226,42 @@ package apigatewayv2 {
   }
 
   /**
-    * The authorization type. Valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
+    * Represents an API mapping.
+    */
+  @js.native
+  trait ApiMapping extends js.Object {
+    var ApiId: Id
+    var Stage: StringWithLengthBetween1And128
+    var ApiMappingId: js.UndefOr[Id]
+    var ApiMappingKey: js.UndefOr[SelectionKey]
+  }
+
+  object ApiMapping {
+    def apply(
+        ApiId: Id,
+        Stage: StringWithLengthBetween1And128,
+        ApiMappingId: js.UndefOr[Id] = js.undefined,
+        ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined
+    ): ApiMapping = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "Stage" -> Stage.asInstanceOf[js.Any],
+        "ApiMappingId" -> ApiMappingId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApiMappingKey" -> ApiMappingKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApiMapping]
+    }
+  }
+
+  /**
+    * <p>The authorization type. Valid values are NONE for open access,
+    *  AWS_IAM for using AWS IAM permissions, and CUSTOM for
+    *  using a Lambda authorizer.</p>
     */
   object AuthorizationTypeEnum {
     val NONE    = "NONE"
@@ -245,15 +288,17 @@ package apigatewayv2 {
   }
 
   object Authorizer {
-    def apply(Name: StringWithLengthBetween1And128,
-              AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
-              AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
-              AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-              IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
-              IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              ProviderArns: js.UndefOr[ProviderArnList] = js.undefined): Authorizer = {
+    def apply(
+        Name: StringWithLengthBetween1And128,
+        AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
+        AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
+        AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
+        IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
+    ): Authorizer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "AuthorizerCredentialsArn" -> AuthorizerCredentialsArn.map { x =>
@@ -287,7 +332,8 @@ package apigatewayv2 {
   }
 
   /**
-    * The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request parameters.
+    * <p>The authorizer type. Currently the only valid value is REQUEST, for a
+    *  Lambda function using incoming request parameters.</p>
     */
   object AuthorizerTypeEnum {
     val REQUEST = "REQUEST"
@@ -324,10 +370,12 @@ package apigatewayv2 {
   }
 
   object CreateApiMappingRequest {
-    def apply(ApiId: Id,
-              DomainName: __string,
-              Stage: StringWithLengthBetween1And128,
-              ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined): CreateApiMappingRequest = {
+    def apply(
+        ApiId: Id,
+        DomainName: __string,
+        Stage: StringWithLengthBetween1And128,
+        ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined
+    ): CreateApiMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"      -> ApiId.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
@@ -350,10 +398,12 @@ package apigatewayv2 {
   }
 
   object CreateApiMappingResponse {
-    def apply(ApiId: js.UndefOr[Id] = js.undefined,
-              ApiMappingId: js.UndefOr[Id] = js.undefined,
-              ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
-              Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): CreateApiMappingResponse = {
+    def apply(
+        ApiId: js.UndefOr[Id] = js.undefined,
+        ApiMappingId: js.UndefOr[Id] = js.undefined,
+        ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
+        Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): CreateApiMappingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId" -> ApiId.map { x =>
           x.asInstanceOf[js.Any]
@@ -385,13 +435,15 @@ package apigatewayv2 {
   }
 
   object CreateApiRequest {
-    def apply(Name: StringWithLengthBetween1And128,
-              ProtocolType: ProtocolType,
-              RouteSelectionExpression: SelectionExpression,
-              ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
-              Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined): CreateApiRequest = {
+    def apply(
+        Name: StringWithLengthBetween1And128,
+        ProtocolType: ProtocolType,
+        RouteSelectionExpression: SelectionExpression,
+        ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined
+    ): CreateApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"                     -> Name.asInstanceOf[js.Any],
         "ProtocolType"             -> ProtocolType.asInstanceOf[js.Any],
@@ -430,17 +482,19 @@ package apigatewayv2 {
   }
 
   object CreateApiResponse {
-    def apply(ApiEndpoint: js.UndefOr[__string] = js.undefined,
-              ApiId: js.UndefOr[Id] = js.undefined,
-              ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
-              RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              Warnings: js.UndefOr[__listOf__string] = js.undefined): CreateApiResponse = {
+    def apply(
+        ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiId: js.UndefOr[Id] = js.undefined,
+        ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
+        RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        Warnings: js.UndefOr[__listOf__string] = js.undefined
+    ): CreateApiResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiEndpoint" -> ApiEndpoint.map { x =>
           x.asInstanceOf[js.Any]
@@ -495,15 +549,17 @@ package apigatewayv2 {
   }
 
   object CreateAuthorizerRequest {
-    def apply(ApiId: __string,
-              AuthorizerType: AuthorizerType,
-              AuthorizerUri: UriWithLengthBetween1And2048,
-              IdentitySource: IdentitySourceList,
-              Name: StringWithLengthBetween1And128,
-              AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
-              AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
-              IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              ProviderArns: js.UndefOr[ProviderArnList] = js.undefined): CreateAuthorizerRequest = {
+    def apply(
+        ApiId: __string,
+        AuthorizerType: AuthorizerType,
+        AuthorizerUri: UriWithLengthBetween1And2048,
+        IdentitySource: IdentitySourceList,
+        Name: StringWithLengthBetween1And128,
+        AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
+        IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
+    ): CreateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"          -> ApiId.asInstanceOf[js.Any],
         "AuthorizerType" -> AuthorizerType.asInstanceOf[js.Any],
@@ -542,15 +598,17 @@ package apigatewayv2 {
   }
 
   object CreateAuthorizerResponse {
-    def apply(AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
-              AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
-              AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-              IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
-              IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              ProviderArns: js.UndefOr[ProviderArnList] = js.undefined): CreateAuthorizerResponse = {
+    def apply(
+        AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
+        AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
+        AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
+        IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
+    ): CreateAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuthorizerCredentialsArn" -> AuthorizerCredentialsArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -593,15 +651,20 @@ package apigatewayv2 {
   }
 
   object CreateDeploymentRequest {
-    def apply(ApiId: __string,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): CreateDeploymentRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "Description" -> Description.map { x =>
+    def apply(
+        ApiId: __string,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): CreateDeploymentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "Description" -> Description.map { x =>
           x.asInstanceOf[js.Any]
-        }, "StageName" -> StageName.map { x =>
+        },
+        "StageName" -> StageName.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentRequest]
     }
@@ -617,11 +680,13 @@ package apigatewayv2 {
   }
 
   object CreateDeploymentResponse {
-    def apply(CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
-              DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined): CreateDeploymentResponse = {
+    def apply(
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
+        DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
+    ): CreateDeploymentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDate" -> CreatedDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -698,13 +763,13 @@ package apigatewayv2 {
   @js.native
   trait CreateIntegrationRequest extends js.Object {
     var ApiId: __string
+    var IntegrationType: IntegrationType
     var ConnectionId: js.UndefOr[StringWithLengthBetween1And1024]
     var ConnectionType: js.UndefOr[ConnectionType]
     var ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy]
     var CredentialsArn: js.UndefOr[Arn]
     var Description: js.UndefOr[StringWithLengthBetween0And1024]
     var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
-    var IntegrationType: js.UndefOr[IntegrationType]
     var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
     var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
     var RequestParameters: js.UndefOr[IntegrationParameters]
@@ -716,13 +781,13 @@ package apigatewayv2 {
   object CreateIntegrationRequest {
     def apply(
         ApiId: __string,
+        IntegrationType: IntegrationType,
         ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
         ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
         CredentialsArn: js.UndefOr[Arn] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-        IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
         IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
         PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
         RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
@@ -731,7 +796,8 @@ package apigatewayv2 {
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
     ): CreateIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "ApiId"           -> ApiId.asInstanceOf[js.Any],
+        "IntegrationType" -> IntegrationType.asInstanceOf[js.Any],
         "ConnectionId" -> ConnectionId.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -748,6 +814,92 @@ package apigatewayv2 {
           x.asInstanceOf[js.Any]
         },
         "IntegrationMethod" -> IntegrationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationUri" -> IntegrationUri.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PassthroughBehavior" -> PassthroughBehavior.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestParameters" -> RequestParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestTemplates" -> RequestTemplates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemplateSelectionExpression" -> TemplateSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeoutInMillis" -> TimeoutInMillis.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntegrationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateIntegrationResponse extends js.Object {
+    var ConnectionId: js.UndefOr[StringWithLengthBetween1And1024]
+    var ConnectionType: js.UndefOr[ConnectionType]
+    var ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy]
+    var CredentialsArn: js.UndefOr[Arn]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var IntegrationId: js.UndefOr[Id]
+    var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
+    var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var IntegrationType: js.UndefOr[IntegrationType]
+    var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
+    var RequestParameters: js.UndefOr[IntegrationParameters]
+    var RequestTemplates: js.UndefOr[TemplateMap]
+    var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+  }
+
+  object CreateIntegrationResponse {
+    def apply(
+        ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
+        ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
+        ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        CredentialsArn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        IntegrationId: js.UndefOr[Id] = js.undefined,
+        IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
+        IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
+        RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
+        RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+    ): CreateIntegrationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectionId" -> ConnectionId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConnectionType" -> ConnectionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentHandlingStrategy" -> ContentHandlingStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CredentialsArn" -> CredentialsArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationId" -> IntegrationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationMethod" -> IntegrationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationResponseSelectionExpression" -> IntegrationResponseSelectionExpression.map { x =>
           x.asInstanceOf[js.Any]
         },
         "IntegrationType" -> IntegrationType.map { x =>
@@ -773,7 +925,7 @@ package apigatewayv2 {
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntegrationRequest]
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntegrationResponse]
     }
   }
 
@@ -865,7 +1017,1374 @@ package apigatewayv2 {
   }
 
   @js.native
-  trait CreateIntegrationResult extends js.Object {
+  trait CreateModelRequest extends js.Object {
+    var ApiId: __string
+    var Name: StringWithLengthBetween1And128
+    var Schema: StringWithLengthBetween0And32K
+    var ContentType: js.UndefOr[StringWithLengthBetween1And256]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+  }
+
+  object CreateModelRequest {
+    def apply(
+        ApiId: __string,
+        Name: StringWithLengthBetween1And128,
+        Schema: StringWithLengthBetween0And32K,
+        ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
+    ): CreateModelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"  -> ApiId.asInstanceOf[js.Any],
+        "Name"   -> Name.asInstanceOf[js.Any],
+        "Schema" -> Schema.asInstanceOf[js.Any],
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelRequest]
+    }
+  }
+
+  @js.native
+  trait CreateModelResponse extends js.Object {
+    var ContentType: js.UndefOr[StringWithLengthBetween1And256]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var ModelId: js.UndefOr[Id]
+    var Name: js.UndefOr[StringWithLengthBetween1And128]
+    var Schema: js.UndefOr[StringWithLengthBetween0And32K]
+  }
+
+  object CreateModelResponse {
+    def apply(
+        ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        ModelId: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
+    ): CreateModelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelId" -> ModelId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Schema" -> Schema.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelResponse]
+    }
+  }
+
+  @js.native
+  trait CreateRouteRequest extends js.Object {
+    var ApiId: __string
+    var RouteKey: SelectionKey
+    var ApiKeyRequired: js.UndefOr[__boolean]
+    var AuthorizationScopes: js.UndefOr[AuthorizationScopes]
+    var AuthorizationType: js.UndefOr[AuthorizationType]
+    var AuthorizerId: js.UndefOr[Id]
+    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
+    var OperationName: js.UndefOr[StringWithLengthBetween1And64]
+    var RequestModels: js.UndefOr[RouteModels]
+    var RequestParameters: js.UndefOr[RouteParameters]
+    var RouteResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var Target: js.UndefOr[StringWithLengthBetween1And128]
+  }
+
+  object CreateRouteRequest {
+    def apply(
+        ApiId: __string,
+        RouteKey: SelectionKey,
+        ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
+        AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
+        AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        RequestModels: js.UndefOr[RouteModels] = js.undefined,
+        RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): CreateRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"    -> ApiId.asInstanceOf[js.Any],
+        "RouteKey" -> RouteKey.asInstanceOf[js.Any],
+        "ApiKeyRequired" -> ApiKeyRequired.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizationScopes" -> AuthorizationScopes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizationType" -> AuthorizationType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizerId" -> AuthorizerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OperationName" -> OperationName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestModels" -> RequestModels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestParameters" -> RequestParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseSelectionExpression" -> RouteResponseSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Target" -> Target.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRouteResponse extends js.Object {
+    var ApiKeyRequired: js.UndefOr[__boolean]
+    var AuthorizationScopes: js.UndefOr[AuthorizationScopes]
+    var AuthorizationType: js.UndefOr[AuthorizationType]
+    var AuthorizerId: js.UndefOr[Id]
+    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
+    var OperationName: js.UndefOr[StringWithLengthBetween1And64]
+    var RequestModels: js.UndefOr[RouteModels]
+    var RequestParameters: js.UndefOr[RouteParameters]
+    var RouteId: js.UndefOr[Id]
+    var RouteKey: js.UndefOr[SelectionKey]
+    var RouteResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var Target: js.UndefOr[StringWithLengthBetween1And128]
+  }
+
+  object CreateRouteResponse {
+    def apply(
+        ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
+        AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
+        AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        RequestModels: js.UndefOr[RouteModels] = js.undefined,
+        RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteId: js.UndefOr[Id] = js.undefined,
+        RouteKey: js.UndefOr[SelectionKey] = js.undefined,
+        RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): CreateRouteResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiKeyRequired" -> ApiKeyRequired.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizationScopes" -> AuthorizationScopes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizationType" -> AuthorizationType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizerId" -> AuthorizerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OperationName" -> OperationName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestModels" -> RequestModels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestParameters" -> RequestParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteId" -> RouteId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteKey" -> RouteKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseSelectionExpression" -> RouteResponseSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Target" -> Target.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteResponse]
+    }
+  }
+
+  @js.native
+  trait CreateRouteResponseRequest extends js.Object {
+    var ApiId: __string
+    var RouteId: __string
+    var RouteResponseKey: SelectionKey
+    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
+    var ResponseModels: js.UndefOr[RouteModels]
+    var ResponseParameters: js.UndefOr[RouteParameters]
+  }
+
+  object CreateRouteResponseRequest {
+    def apply(
+        ApiId: __string,
+        RouteId: __string,
+        RouteResponseKey: SelectionKey,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        ResponseModels: js.UndefOr[RouteModels] = js.undefined,
+        ResponseParameters: js.UndefOr[RouteParameters] = js.undefined
+    ): CreateRouteResponseRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"            -> ApiId.asInstanceOf[js.Any],
+        "RouteId"          -> RouteId.asInstanceOf[js.Any],
+        "RouteResponseKey" -> RouteResponseKey.asInstanceOf[js.Any],
+        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseModels" -> ResponseModels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseParameters" -> ResponseParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteResponseRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRouteResponseResponse extends js.Object {
+    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
+    var ResponseModels: js.UndefOr[RouteModels]
+    var ResponseParameters: js.UndefOr[RouteParameters]
+    var RouteResponseId: js.UndefOr[Id]
+    var RouteResponseKey: js.UndefOr[SelectionKey]
+  }
+
+  object CreateRouteResponseResponse {
+    def apply(
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        ResponseModels: js.UndefOr[RouteModels] = js.undefined,
+        ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteResponseId: js.UndefOr[Id] = js.undefined,
+        RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
+    ): CreateRouteResponseResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseModels" -> ResponseModels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseParameters" -> ResponseParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseId" -> RouteResponseId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseKey" -> RouteResponseKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteResponseResponse]
+    }
+  }
+
+  @js.native
+  trait CreateStageRequest extends js.Object {
+    var ApiId: __string
+    var StageName: StringWithLengthBetween1And128
+    var AccessLogSettings: js.UndefOr[AccessLogSettings]
+    var ClientCertificateId: js.UndefOr[Id]
+    var DefaultRouteSettings: js.UndefOr[RouteSettings]
+    var DeploymentId: js.UndefOr[Id]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var RouteSettings: js.UndefOr[RouteSettingsMap]
+    var StageVariables: js.UndefOr[StageVariablesMap]
+  }
+
+  object CreateStageRequest {
+    def apply(
+        ApiId: __string,
+        StageName: StringWithLengthBetween1And128,
+        AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+        ClientCertificateId: js.UndefOr[Id] = js.undefined,
+        DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+    ): CreateStageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "StageName" -> StageName.asInstanceOf[js.Any],
+        "AccessLogSettings" -> AccessLogSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ClientCertificateId" -> ClientCertificateId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultRouteSettings" -> DefaultRouteSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentId" -> DeploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteSettings" -> RouteSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StageVariables" -> StageVariables.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStageRequest]
+    }
+  }
+
+  @js.native
+  trait CreateStageResponse extends js.Object {
+    var AccessLogSettings: js.UndefOr[AccessLogSettings]
+    var ClientCertificateId: js.UndefOr[Id]
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var DefaultRouteSettings: js.UndefOr[RouteSettings]
+    var DeploymentId: js.UndefOr[Id]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var LastUpdatedDate: js.UndefOr[__timestampIso8601]
+    var RouteSettings: js.UndefOr[RouteSettingsMap]
+    var StageName: js.UndefOr[StringWithLengthBetween1And128]
+    var StageVariables: js.UndefOr[StageVariablesMap]
+  }
+
+  object CreateStageResponse {
+    def apply(
+        AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+        ClientCertificateId: js.UndefOr[Id] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
+        StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+    ): CreateStageResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccessLogSettings" -> AccessLogSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ClientCertificateId" -> ClientCertificateId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedDate" -> CreatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultRouteSettings" -> DefaultRouteSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentId" -> DeploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastUpdatedDate" -> LastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteSettings" -> RouteSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StageName" -> StageName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StageVariables" -> StageVariables.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStageResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteApiMappingRequest extends js.Object {
+    var ApiMappingId: __string
+    var DomainName: __string
+  }
+
+  object DeleteApiMappingRequest {
+    def apply(
+        ApiMappingId: __string,
+        DomainName: __string
+    ): DeleteApiMappingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
+        "DomainName"   -> DomainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApiMappingRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteApiRequest extends js.Object {
+    var ApiId: __string
+  }
+
+  object DeleteApiRequest {
+    def apply(
+        ApiId: __string
+    ): DeleteApiRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApiRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAuthorizerRequest extends js.Object {
+    var ApiId: __string
+    var AuthorizerId: __string
+  }
+
+  object DeleteAuthorizerRequest {
+    def apply(
+        ApiId: __string,
+        AuthorizerId: __string
+    ): DeleteAuthorizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAuthorizerRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDeploymentRequest extends js.Object {
+    var ApiId: __string
+    var DeploymentId: __string
+  }
+
+  object DeleteDeploymentRequest {
+    def apply(
+        ApiId: __string,
+        DeploymentId: __string
+    ): DeleteDeploymentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeploymentRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDomainNameRequest extends js.Object {
+    var DomainName: __string
+  }
+
+  object DeleteDomainNameRequest {
+    def apply(
+        DomainName: __string
+    ): DeleteDomainNameRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainNameRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteIntegrationRequest extends js.Object {
+    var ApiId: __string
+    var IntegrationId: __string
+  }
+
+  object DeleteIntegrationRequest {
+    def apply(
+        ApiId: __string,
+        IntegrationId: __string
+    ): DeleteIntegrationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"         -> ApiId.asInstanceOf[js.Any],
+        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntegrationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteIntegrationResponseRequest extends js.Object {
+    var ApiId: __string
+    var IntegrationId: __string
+    var IntegrationResponseId: __string
+  }
+
+  object DeleteIntegrationResponseRequest {
+    def apply(
+        ApiId: __string,
+        IntegrationId: __string,
+        IntegrationResponseId: __string
+    ): DeleteIntegrationResponseRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"                 -> ApiId.asInstanceOf[js.Any],
+        "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
+        "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntegrationResponseRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteModelRequest extends js.Object {
+    var ApiId: __string
+    var ModelId: __string
+  }
+
+  object DeleteModelRequest {
+    def apply(
+        ApiId: __string,
+        ModelId: __string
+    ): DeleteModelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ModelId" -> ModelId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteModelRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRouteRequest extends js.Object {
+    var ApiId: __string
+    var RouteId: __string
+  }
+
+  object DeleteRouteRequest {
+    def apply(
+        ApiId: __string,
+        RouteId: __string
+    ): DeleteRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "RouteId" -> RouteId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRouteRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRouteResponseRequest extends js.Object {
+    var ApiId: __string
+    var RouteId: __string
+    var RouteResponseId: __string
+  }
+
+  object DeleteRouteResponseRequest {
+    def apply(
+        ApiId: __string,
+        RouteId: __string,
+        RouteResponseId: __string
+    ): DeleteRouteResponseRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"           -> ApiId.asInstanceOf[js.Any],
+        "RouteId"         -> RouteId.asInstanceOf[js.Any],
+        "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRouteResponseRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteStageRequest extends js.Object {
+    var ApiId: __string
+    var StageName: __string
+  }
+
+  object DeleteStageRequest {
+    def apply(
+        ApiId: __string,
+        StageName: __string
+    ): DeleteStageRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"     -> ApiId.asInstanceOf[js.Any],
+        "StageName" -> StageName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStageRequest]
+    }
+  }
+
+  /**
+    * <p>An immutable representation of an API that can be called by users. A
+    *  Deployment must be associated with a Stage for it to be
+    *  callable over the internet.</p>
+    */
+  @js.native
+  trait Deployment extends js.Object {
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var DeploymentId: js.UndefOr[Id]
+    var DeploymentStatus: js.UndefOr[DeploymentStatus]
+    var DeploymentStatusMessage: js.UndefOr[__string]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+  }
+
+  object Deployment {
+    def apply(
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
+        DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
+    ): Deployment = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CreatedDate" -> CreatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentId" -> DeploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentStatus" -> DeploymentStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentStatusMessage" -> DeploymentStatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
+    }
+  }
+
+  /**
+    * Represents a deployment status.
+    */
+  object DeploymentStatusEnum {
+    val PENDING  = "PENDING"
+    val FAILED   = "FAILED"
+    val DEPLOYED = "DEPLOYED"
+
+    val values = IndexedSeq(PENDING, FAILED, DEPLOYED)
+  }
+
+  /**
+    * Represents a domain name.
+    */
+  @js.native
+  trait DomainName extends js.Object {
+    var DomainName: StringWithLengthBetween1And512
+    var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
+    var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+  }
+
+  object DomainName {
+    def apply(
+        DomainName: StringWithLengthBetween1And512,
+        ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+    ): DomainName = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "ApiMappingSelectionExpression" -> ApiMappingSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DomainNameConfigurations" -> DomainNameConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainName]
+    }
+  }
+
+  /**
+    * The domain name configuration.
+    */
+  @js.native
+  trait DomainNameConfiguration extends js.Object {
+    var ApiGatewayDomainName: js.UndefOr[__string]
+    var CertificateArn: js.UndefOr[Arn]
+    var CertificateName: js.UndefOr[StringWithLengthBetween1And128]
+    var CertificateUploadDate: js.UndefOr[__timestampIso8601]
+    var EndpointType: js.UndefOr[EndpointType]
+    var HostedZoneId: js.UndefOr[__string]
+  }
+
+  object DomainNameConfiguration {
+    def apply(
+        ApiGatewayDomainName: js.UndefOr[__string] = js.undefined,
+        CertificateArn: js.UndefOr[Arn] = js.undefined,
+        CertificateName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        CertificateUploadDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        EndpointType: js.UndefOr[EndpointType] = js.undefined,
+        HostedZoneId: js.UndefOr[__string] = js.undefined
+    ): DomainNameConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiGatewayDomainName" -> ApiGatewayDomainName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertificateArn" -> CertificateArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertificateName" -> CertificateName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertificateUploadDate" -> CertificateUploadDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndpointType" -> EndpointType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HostedZoneId" -> HostedZoneId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainNameConfiguration]
+    }
+  }
+
+  /**
+    * Represents an endpoint type.
+    */
+  object EndpointTypeEnum {
+    val REGIONAL = "REGIONAL"
+    val EDGE     = "EDGE"
+
+    val values = IndexedSeq(REGIONAL, EDGE)
+  }
+
+  @js.native
+  trait GetApiMappingRequest extends js.Object {
+    var ApiMappingId: __string
+    var DomainName: __string
+  }
+
+  object GetApiMappingRequest {
+    def apply(
+        ApiMappingId: __string,
+        DomainName: __string
+    ): GetApiMappingRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
+        "DomainName"   -> DomainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingRequest]
+    }
+  }
+
+  @js.native
+  trait GetApiMappingResponse extends js.Object {
+    var ApiId: js.UndefOr[Id]
+    var ApiMappingId: js.UndefOr[Id]
+    var ApiMappingKey: js.UndefOr[SelectionKey]
+    var Stage: js.UndefOr[StringWithLengthBetween1And128]
+  }
+
+  object GetApiMappingResponse {
+    def apply(
+        ApiId: js.UndefOr[Id] = js.undefined,
+        ApiMappingId: js.UndefOr[Id] = js.undefined,
+        ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
+        Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): GetApiMappingResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApiMappingId" -> ApiMappingId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApiMappingKey" -> ApiMappingKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Stage" -> Stage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingResponse]
+    }
+  }
+
+  @js.native
+  trait GetApiMappingsRequest extends js.Object {
+    var DomainName: __string
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetApiMappingsRequest {
+    def apply(
+        DomainName: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetApiMappingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingsRequest]
+    }
+  }
+
+  @js.native
+  trait GetApiMappingsResponse extends js.Object {
+    var Items: js.UndefOr[__listOfApiMapping]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetApiMappingsResponse {
+    def apply(
+        Items: js.UndefOr[__listOfApiMapping] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetApiMappingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingsResponse]
+    }
+  }
+
+  @js.native
+  trait GetApiRequest extends js.Object {
+    var ApiId: __string
+  }
+
+  object GetApiRequest {
+    def apply(
+        ApiId: __string
+    ): GetApiRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiRequest]
+    }
+  }
+
+  @js.native
+  trait GetApiResponse extends js.Object {
+    var ApiEndpoint: js.UndefOr[__string]
+    var ApiId: js.UndefOr[Id]
+    var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var DisableSchemaValidation: js.UndefOr[__boolean]
+    var Name: js.UndefOr[StringWithLengthBetween1And128]
+    var ProtocolType: js.UndefOr[ProtocolType]
+    var RouteSelectionExpression: js.UndefOr[SelectionExpression]
+    var Version: js.UndefOr[StringWithLengthBetween1And64]
+    var Warnings: js.UndefOr[__listOf__string]
+  }
+
+  object GetApiResponse {
+    def apply(
+        ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiId: js.UndefOr[Id] = js.undefined,
+        ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
+        RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        Warnings: js.UndefOr[__listOf__string] = js.undefined
+    ): GetApiResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiEndpoint" -> ApiEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApiId" -> ApiId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApiKeySelectionExpression" -> ApiKeySelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedDate" -> CreatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisableSchemaValidation" -> DisableSchemaValidation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProtocolType" -> ProtocolType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteSelectionExpression" -> RouteSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Warnings" -> Warnings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiResponse]
+    }
+  }
+
+  @js.native
+  trait GetApisRequest extends js.Object {
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetApisRequest {
+    def apply(
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetApisRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApisRequest]
+    }
+  }
+
+  @js.native
+  trait GetApisResponse extends js.Object {
+    var Items: js.UndefOr[__listOfApi]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetApisResponse {
+    def apply(
+        Items: js.UndefOr[__listOfApi] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetApisResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApisResponse]
+    }
+  }
+
+  @js.native
+  trait GetAuthorizerRequest extends js.Object {
+    var ApiId: __string
+    var AuthorizerId: __string
+  }
+
+  object GetAuthorizerRequest {
+    def apply(
+        ApiId: __string,
+        AuthorizerId: __string
+    ): GetAuthorizerRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizerRequest]
+    }
+  }
+
+  @js.native
+  trait GetAuthorizerResponse extends js.Object {
+    var AuthorizerCredentialsArn: js.UndefOr[Arn]
+    var AuthorizerId: js.UndefOr[Id]
+    var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
+    var AuthorizerType: js.UndefOr[AuthorizerType]
+    var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var IdentitySource: js.UndefOr[IdentitySourceList]
+    var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
+    var Name: js.UndefOr[StringWithLengthBetween1And128]
+    var ProviderArns: js.UndefOr[ProviderArnList]
+  }
+
+  object GetAuthorizerResponse {
+    def apply(
+        AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
+        AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
+        AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
+        IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
+    ): GetAuthorizerResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AuthorizerCredentialsArn" -> AuthorizerCredentialsArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizerId" -> AuthorizerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizerResultTtlInSeconds" -> AuthorizerResultTtlInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizerType" -> AuthorizerType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthorizerUri" -> AuthorizerUri.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentitySource" -> IdentitySource.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityValidationExpression" -> IdentityValidationExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProviderArns" -> ProviderArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizerResponse]
+    }
+  }
+
+  @js.native
+  trait GetAuthorizersRequest extends js.Object {
+    var ApiId: __string
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetAuthorizersRequest {
+    def apply(
+        ApiId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetAuthorizersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizersRequest]
+    }
+  }
+
+  @js.native
+  trait GetAuthorizersResponse extends js.Object {
+    var Items: js.UndefOr[__listOfAuthorizer]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetAuthorizersResponse {
+    def apply(
+        Items: js.UndefOr[__listOfAuthorizer] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetAuthorizersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizersResponse]
+    }
+  }
+
+  @js.native
+  trait GetDeploymentRequest extends js.Object {
+    var ApiId: __string
+    var DeploymentId: __string
+  }
+
+  object GetDeploymentRequest {
+    def apply(
+        ApiId: __string,
+        DeploymentId: __string
+    ): GetDeploymentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"        -> ApiId.asInstanceOf[js.Any],
+        "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentRequest]
+    }
+  }
+
+  @js.native
+  trait GetDeploymentResponse extends js.Object {
+    var CreatedDate: js.UndefOr[__timestampIso8601]
+    var DeploymentId: js.UndefOr[Id]
+    var DeploymentStatus: js.UndefOr[DeploymentStatus]
+    var DeploymentStatusMessage: js.UndefOr[__string]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+  }
+
+  object GetDeploymentResponse {
+    def apply(
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
+        DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
+    ): GetDeploymentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "CreatedDate" -> CreatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentId" -> DeploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentStatus" -> DeploymentStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeploymentStatusMessage" -> DeploymentStatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentResponse]
+    }
+  }
+
+  @js.native
+  trait GetDeploymentsRequest extends js.Object {
+    var ApiId: __string
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetDeploymentsRequest {
+    def apply(
+        ApiId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetDeploymentsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentsRequest]
+    }
+  }
+
+  @js.native
+  trait GetDeploymentsResponse extends js.Object {
+    var Items: js.UndefOr[__listOfDeployment]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetDeploymentsResponse {
+    def apply(
+        Items: js.UndefOr[__listOfDeployment] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetDeploymentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentsResponse]
+    }
+  }
+
+  @js.native
+  trait GetDomainNameRequest extends js.Object {
+    var DomainName: __string
+  }
+
+  object GetDomainNameRequest {
+    def apply(
+        DomainName: __string
+    ): GetDomainNameRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNameRequest]
+    }
+  }
+
+  @js.native
+  trait GetDomainNameResponse extends js.Object {
+    var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
+    var DomainName: js.UndefOr[StringWithLengthBetween1And512]
+    var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
+  }
+
+  object GetDomainNameResponse {
+    def apply(
+        ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
+        DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
+    ): GetDomainNameResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiMappingSelectionExpression" -> ApiMappingSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DomainName" -> DomainName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DomainNameConfigurations" -> DomainNameConfigurations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNameResponse]
+    }
+  }
+
+  @js.native
+  trait GetDomainNamesRequest extends js.Object {
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetDomainNamesRequest {
+    def apply(
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetDomainNamesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNamesRequest]
+    }
+  }
+
+  @js.native
+  trait GetDomainNamesResponse extends js.Object {
+    var Items: js.UndefOr[__listOfDomainName]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetDomainNamesResponse {
+    def apply(
+        Items: js.UndefOr[__listOfDomainName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetDomainNamesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNamesResponse]
+    }
+  }
+
+  @js.native
+  trait GetIntegrationRequest extends js.Object {
+    var ApiId: __string
+    var IntegrationId: __string
+  }
+
+  object GetIntegrationRequest {
+    def apply(
+        ApiId: __string,
+        IntegrationId: __string
+    ): GetIntegrationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"         -> ApiId.asInstanceOf[js.Any],
+        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationRequest]
+    }
+  }
+
+  @js.native
+  trait GetIntegrationResponse extends js.Object {
     var ConnectionId: js.UndefOr[StringWithLengthBetween1And1024]
     var ConnectionType: js.UndefOr[ConnectionType]
     var ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy]
@@ -883,7 +2402,7 @@ package apigatewayv2 {
     var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
   }
 
-  object CreateIntegrationResult {
+  object GetIntegrationResponse {
     def apply(
         ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
@@ -900,7 +2419,7 @@ package apigatewayv2 {
         RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
-    ): CreateIntegrationResult = {
+    ): GetIntegrationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionId" -> ConnectionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -949,1259 +2468,7 @@ package apigatewayv2 {
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateIntegrationResult]
-    }
-  }
-
-  @js.native
-  trait CreateModelRequest extends js.Object {
-    var ApiId: __string
-    var Name: StringWithLengthBetween1And128
-    var ContentType: js.UndefOr[StringWithLengthBetween1And256]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-    var Schema: js.UndefOr[StringWithLengthBetween0And32K]
-  }
-
-  object CreateModelRequest {
-    def apply(ApiId: __string,
-              Name: StringWithLengthBetween1And128,
-              ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined): CreateModelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId" -> ApiId.asInstanceOf[js.Any],
-        "Name"  -> Name.asInstanceOf[js.Any],
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schema" -> Schema.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelRequest]
-    }
-  }
-
-  @js.native
-  trait CreateModelResponse extends js.Object {
-    var ContentType: js.UndefOr[StringWithLengthBetween1And256]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-    var ModelId: js.UndefOr[Id]
-    var Name: js.UndefOr[StringWithLengthBetween1And128]
-    var Schema: js.UndefOr[StringWithLengthBetween0And32K]
-  }
-
-  object CreateModelResponse {
-    def apply(ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              ModelId: js.UndefOr[Id] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined): CreateModelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContentType" -> ContentType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModelId" -> ModelId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Schema" -> Schema.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelResponse]
-    }
-  }
-
-  @js.native
-  trait CreateRouteRequest extends js.Object {
-    var ApiId: __string
-    var RouteKey: SelectionKey
-    var ApiKeyRequired: js.UndefOr[__boolean]
-    var AuthorizationScopes: js.UndefOr[AuthorizationScopes]
-    var AuthorizationType: js.UndefOr[AuthorizationType]
-    var AuthorizerId: js.UndefOr[Id]
-    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
-    var OperationName: js.UndefOr[StringWithLengthBetween1And64]
-    var RequestModels: js.UndefOr[RouteModels]
-    var RequestParameters: js.UndefOr[RouteParameters]
-    var RouteResponseSelectionExpression: js.UndefOr[SelectionExpression]
-    var Target: js.UndefOr[StringWithLengthBetween1And128]
-  }
-
-  object CreateRouteRequest {
-    def apply(ApiId: __string,
-              RouteKey: SelectionKey,
-              ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
-              AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
-              AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              RequestModels: js.UndefOr[RouteModels] = js.undefined,
-              RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): CreateRouteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"    -> ApiId.asInstanceOf[js.Any],
-        "RouteKey" -> RouteKey.asInstanceOf[js.Any],
-        "ApiKeyRequired" -> ApiKeyRequired.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizationScopes" -> AuthorizationScopes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizationType" -> AuthorizationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizerId" -> AuthorizerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OperationName" -> OperationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestModels" -> RequestModels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestParameters" -> RequestParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseSelectionExpression" -> RouteResponseSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Target" -> Target.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteRequest]
-    }
-  }
-
-  @js.native
-  trait CreateRouteResponseRequest extends js.Object {
-    var ApiId: __string
-    var RouteId: __string
-    var RouteResponseKey: SelectionKey
-    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
-    var ResponseModels: js.UndefOr[RouteModels]
-    var ResponseParameters: js.UndefOr[RouteParameters]
-  }
-
-  object CreateRouteResponseRequest {
-    def apply(ApiId: __string,
-              RouteId: __string,
-              RouteResponseKey: SelectionKey,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              ResponseModels: js.UndefOr[RouteModels] = js.undefined,
-              ResponseParameters: js.UndefOr[RouteParameters] = js.undefined): CreateRouteResponseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"            -> ApiId.asInstanceOf[js.Any],
-        "RouteId"          -> RouteId.asInstanceOf[js.Any],
-        "RouteResponseKey" -> RouteResponseKey.asInstanceOf[js.Any],
-        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseModels" -> ResponseModels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseParameters" -> ResponseParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteResponseRequest]
-    }
-  }
-
-  @js.native
-  trait CreateRouteResponseResponse extends js.Object {
-    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
-    var ResponseModels: js.UndefOr[RouteModels]
-    var ResponseParameters: js.UndefOr[RouteParameters]
-    var RouteResponseId: js.UndefOr[Id]
-    var RouteResponseKey: js.UndefOr[SelectionKey]
-  }
-
-  object CreateRouteResponseResponse {
-    def apply(ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              ResponseModels: js.UndefOr[RouteModels] = js.undefined,
-              ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteResponseId: js.UndefOr[Id] = js.undefined,
-              RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined): CreateRouteResponseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseModels" -> ResponseModels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseParameters" -> ResponseParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseId" -> RouteResponseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseKey" -> RouteResponseKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteResponseResponse]
-    }
-  }
-
-  @js.native
-  trait CreateRouteResult extends js.Object {
-    var ApiKeyRequired: js.UndefOr[__boolean]
-    var AuthorizationScopes: js.UndefOr[AuthorizationScopes]
-    var AuthorizationType: js.UndefOr[AuthorizationType]
-    var AuthorizerId: js.UndefOr[Id]
-    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
-    var OperationName: js.UndefOr[StringWithLengthBetween1And64]
-    var RequestModels: js.UndefOr[RouteModels]
-    var RequestParameters: js.UndefOr[RouteParameters]
-    var RouteId: js.UndefOr[Id]
-    var RouteKey: js.UndefOr[SelectionKey]
-    var RouteResponseSelectionExpression: js.UndefOr[SelectionExpression]
-    var Target: js.UndefOr[StringWithLengthBetween1And128]
-  }
-
-  object CreateRouteResult {
-    def apply(ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
-              AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
-              AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              RequestModels: js.UndefOr[RouteModels] = js.undefined,
-              RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteId: js.UndefOr[Id] = js.undefined,
-              RouteKey: js.UndefOr[SelectionKey] = js.undefined,
-              RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): CreateRouteResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiKeyRequired" -> ApiKeyRequired.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizationScopes" -> AuthorizationScopes.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizationType" -> AuthorizationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizerId" -> AuthorizerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "OperationName" -> OperationName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestModels" -> RequestModels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestParameters" -> RequestParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteId" -> RouteId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteKey" -> RouteKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseSelectionExpression" -> RouteResponseSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Target" -> Target.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRouteResult]
-    }
-  }
-
-  @js.native
-  trait CreateStageRequest extends js.Object {
-    var ApiId: __string
-    var StageName: StringWithLengthBetween1And128
-    var AccessLogSettings: js.UndefOr[AccessLogSettings]
-    var ClientCertificateId: js.UndefOr[Id]
-    var DefaultRouteSettings: js.UndefOr[RouteSettings]
-    var DeploymentId: js.UndefOr[Id]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-    var RouteSettings: js.UndefOr[RouteSettingsMap]
-    var StageVariables: js.UndefOr[StageVariablesMap]
-  }
-
-  object CreateStageRequest {
-    def apply(ApiId: __string,
-              StageName: StringWithLengthBetween1And128,
-              AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-              ClientCertificateId: js.UndefOr[Id] = js.undefined,
-              DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-              StageVariables: js.UndefOr[StageVariablesMap] = js.undefined): CreateStageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
-        "StageName" -> StageName.asInstanceOf[js.Any],
-        "AccessLogSettings" -> AccessLogSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClientCertificateId" -> ClientCertificateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultRouteSettings" -> DefaultRouteSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentId" -> DeploymentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteSettings" -> RouteSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StageVariables" -> StageVariables.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStageRequest]
-    }
-  }
-
-  @js.native
-  trait CreateStageResponse extends js.Object {
-    var AccessLogSettings: js.UndefOr[AccessLogSettings]
-    var ClientCertificateId: js.UndefOr[Id]
-    var CreatedDate: js.UndefOr[__timestampIso8601]
-    var DefaultRouteSettings: js.UndefOr[RouteSettings]
-    var DeploymentId: js.UndefOr[Id]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-    var LastUpdatedDate: js.UndefOr[__timestampIso8601]
-    var RouteSettings: js.UndefOr[RouteSettingsMap]
-    var StageName: js.UndefOr[StringWithLengthBetween1And128]
-    var StageVariables: js.UndefOr[StageVariablesMap]
-  }
-
-  object CreateStageResponse {
-    def apply(AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-              ClientCertificateId: js.UndefOr[Id] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-              StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              StageVariables: js.UndefOr[StageVariablesMap] = js.undefined): CreateStageResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccessLogSettings" -> AccessLogSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ClientCertificateId" -> ClientCertificateId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedDate" -> CreatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DefaultRouteSettings" -> DefaultRouteSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentId" -> DeploymentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "LastUpdatedDate" -> LastUpdatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteSettings" -> RouteSettings.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StageName" -> StageName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "StageVariables" -> StageVariables.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStageResponse]
-    }
-  }
-
-  @js.native
-  trait DeleteApiMappingRequest extends js.Object {
-    var ApiId: __string
-    var ApiMappingId: __string
-    var DomainName: __string
-  }
-
-  object DeleteApiMappingRequest {
-    def apply(ApiId: __string, ApiMappingId: __string, DomainName: __string): DeleteApiMappingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
-        "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
-        "DomainName"   -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApiMappingRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteApiRequest extends js.Object {
-    var ApiId: __string
-  }
-
-  object DeleteApiRequest {
-    def apply(ApiId: __string): DeleteApiRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApiRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteAuthorizerRequest extends js.Object {
-    var ApiId: __string
-    var AuthorizerId: __string
-  }
-
-  object DeleteAuthorizerRequest {
-    def apply(ApiId: __string, AuthorizerId: __string): DeleteAuthorizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
-        "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAuthorizerRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteDeploymentRequest extends js.Object {
-    var ApiId: __string
-    var DeploymentId: __string
-  }
-
-  object DeleteDeploymentRequest {
-    def apply(ApiId: __string, DeploymentId: __string): DeleteDeploymentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
-        "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeploymentRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteDomainNameRequest extends js.Object {
-    var DomainName: __string
-  }
-
-  object DeleteDomainNameRequest {
-    def apply(DomainName: __string): DeleteDomainNameRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DomainName" -> DomainName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainNameRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteIntegrationRequest extends js.Object {
-    var ApiId: __string
-    var IntegrationId: __string
-  }
-
-  object DeleteIntegrationRequest {
-    def apply(ApiId: __string, IntegrationId: __string): DeleteIntegrationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"         -> ApiId.asInstanceOf[js.Any],
-        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntegrationRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteIntegrationResponseRequest extends js.Object {
-    var ApiId: __string
-    var IntegrationId: __string
-    var IntegrationResponseId: __string
-  }
-
-  object DeleteIntegrationResponseRequest {
-    def apply(ApiId: __string,
-              IntegrationId: __string,
-              IntegrationResponseId: __string): DeleteIntegrationResponseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"                 -> ApiId.asInstanceOf[js.Any],
-        "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
-        "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIntegrationResponseRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteModelRequest extends js.Object {
-    var ApiId: __string
-    var ModelId: __string
-  }
-
-  object DeleteModelRequest {
-    def apply(ApiId: __string, ModelId: __string): DeleteModelRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "ModelId" -> ModelId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteModelRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteRouteRequest extends js.Object {
-    var ApiId: __string
-    var RouteId: __string
-  }
-
-  object DeleteRouteRequest {
-    def apply(ApiId: __string, RouteId: __string): DeleteRouteRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "RouteId" -> RouteId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRouteRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteRouteResponseRequest extends js.Object {
-    var ApiId: __string
-    var RouteId: __string
-    var RouteResponseId: __string
-  }
-
-  object DeleteRouteResponseRequest {
-    def apply(ApiId: __string, RouteId: __string, RouteResponseId: __string): DeleteRouteResponseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"           -> ApiId.asInstanceOf[js.Any],
-        "RouteId"         -> RouteId.asInstanceOf[js.Any],
-        "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRouteResponseRequest]
-    }
-  }
-
-  @js.native
-  trait DeleteStageRequest extends js.Object {
-    var ApiId: __string
-    var StageName: __string
-  }
-
-  object DeleteStageRequest {
-    def apply(ApiId: __string, StageName: __string): DeleteStageRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"     -> ApiId.asInstanceOf[js.Any],
-        "StageName" -> StageName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStageRequest]
-    }
-  }
-
-  /**
-    * An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet.
-    */
-  @js.native
-  trait Deployment extends js.Object {
-    var CreatedDate: js.UndefOr[__timestampIso8601]
-    var DeploymentId: js.UndefOr[Id]
-    var DeploymentStatus: js.UndefOr[DeploymentStatus]
-    var DeploymentStatusMessage: js.UndefOr[__string]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-  }
-
-  object Deployment {
-    def apply(CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
-              DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined): Deployment = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedDate" -> CreatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentId" -> DeploymentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentStatus" -> DeploymentStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentStatusMessage" -> DeploymentStatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployment]
-    }
-  }
-
-  /**
-    * Represents a deployment status.
-    */
-  object DeploymentStatusEnum {
-    val PENDING  = "PENDING"
-    val FAILED   = "FAILED"
-    val DEPLOYED = "DEPLOYED"
-
-    val values = IndexedSeq(PENDING, FAILED, DEPLOYED)
-  }
-
-  /**
-    * Represents a domain name.
-    */
-  @js.native
-  trait DomainName extends js.Object {
-    var DomainName: StringWithLengthBetween1And512
-    var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
-    var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
-  }
-
-  object DomainName {
-    def apply(DomainName: StringWithLengthBetween1And512,
-              ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined): DomainName = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "ApiMappingSelectionExpression" -> ApiMappingSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainNameConfigurations" -> DomainNameConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainName]
-    }
-  }
-
-  /**
-    * The domain name configuration.
-    */
-  @js.native
-  trait DomainNameConfiguration extends js.Object {
-    var ApiGatewayDomainName: js.UndefOr[__string]
-    var CertificateArn: js.UndefOr[Arn]
-    var CertificateName: js.UndefOr[StringWithLengthBetween1And128]
-    var CertificateUploadDate: js.UndefOr[__timestampIso8601]
-    var EndpointType: js.UndefOr[EndpointType]
-    var HostedZoneId: js.UndefOr[__string]
-  }
-
-  object DomainNameConfiguration {
-    def apply(ApiGatewayDomainName: js.UndefOr[__string] = js.undefined,
-              CertificateArn: js.UndefOr[Arn] = js.undefined,
-              CertificateName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              CertificateUploadDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              EndpointType: js.UndefOr[EndpointType] = js.undefined,
-              HostedZoneId: js.UndefOr[__string] = js.undefined): DomainNameConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiGatewayDomainName" -> ApiGatewayDomainName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CertificateArn" -> CertificateArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CertificateName" -> CertificateName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CertificateUploadDate" -> CertificateUploadDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "EndpointType" -> EndpointType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "HostedZoneId" -> HostedZoneId.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainNameConfiguration]
-    }
-  }
-
-  /**
-    * Represents an endpoint type.
-    */
-  object EndpointTypeEnum {
-    val REGIONAL = "REGIONAL"
-    val EDGE     = "EDGE"
-
-    val values = IndexedSeq(REGIONAL, EDGE)
-  }
-
-  @js.native
-  trait GetApiMappingRequest extends js.Object {
-    var ApiId: __string
-    var ApiMappingId: __string
-    var DomainName: __string
-  }
-
-  object GetApiMappingRequest {
-    def apply(ApiId: __string, ApiMappingId: __string, DomainName: __string): GetApiMappingRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
-        "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
-        "DomainName"   -> DomainName.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingRequest]
-    }
-  }
-
-  @js.native
-  trait GetApiMappingResponse extends js.Object {
-    var ApiId: js.UndefOr[Id]
-    var ApiMappingId: js.UndefOr[Id]
-    var ApiMappingKey: js.UndefOr[SelectionKey]
-    var Stage: js.UndefOr[StringWithLengthBetween1And128]
-  }
-
-  object GetApiMappingResponse {
-    def apply(ApiId: js.UndefOr[Id] = js.undefined,
-              ApiMappingId: js.UndefOr[Id] = js.undefined,
-              ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
-              Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): GetApiMappingResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId" -> ApiId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApiMappingId" -> ApiMappingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApiMappingKey" -> ApiMappingKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Stage" -> Stage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingResponse]
-    }
-  }
-
-  @js.native
-  trait GetApiMappingsRequest extends js.Object {
-    var DomainName: __string
-    var MaxResults: js.UndefOr[__string]
-    var NextToken: js.UndefOr[__string]
-  }
-
-  object GetApiMappingsRequest {
-    def apply(DomainName: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetApiMappingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingsRequest]
-    }
-  }
-
-  @js.native
-  trait GetApiMappingsResponse extends js.Object {
-    var ApiId: js.UndefOr[Id]
-    var ApiMappingId: js.UndefOr[Id]
-    var ApiMappingKey: js.UndefOr[SelectionKey]
-    var Stage: js.UndefOr[StringWithLengthBetween1And128]
-  }
-
-  object GetApiMappingsResponse {
-    def apply(ApiId: js.UndefOr[Id] = js.undefined,
-              ApiMappingId: js.UndefOr[Id] = js.undefined,
-              ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
-              Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): GetApiMappingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId" -> ApiId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApiMappingId" -> ApiMappingId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApiMappingKey" -> ApiMappingKey.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Stage" -> Stage.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiMappingsResponse]
-    }
-  }
-
-  @js.native
-  trait GetApiRequest extends js.Object {
-    var ApiId: __string
-  }
-
-  object GetApiRequest {
-    def apply(ApiId: __string): GetApiRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiRequest]
-    }
-  }
-
-  @js.native
-  trait GetApiResponse extends js.Object {
-    var ApiEndpoint: js.UndefOr[__string]
-    var ApiId: js.UndefOr[Id]
-    var ApiKeySelectionExpression: js.UndefOr[SelectionExpression]
-    var CreatedDate: js.UndefOr[__timestampIso8601]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-    var DisableSchemaValidation: js.UndefOr[__boolean]
-    var Name: js.UndefOr[StringWithLengthBetween1And128]
-    var ProtocolType: js.UndefOr[ProtocolType]
-    var RouteSelectionExpression: js.UndefOr[SelectionExpression]
-    var Version: js.UndefOr[StringWithLengthBetween1And64]
-    var Warnings: js.UndefOr[__listOf__string]
-  }
-
-  object GetApiResponse {
-    def apply(ApiEndpoint: js.UndefOr[__string] = js.undefined,
-              ApiId: js.UndefOr[Id] = js.undefined,
-              ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
-              RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              Warnings: js.UndefOr[__listOf__string] = js.undefined): GetApiResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiEndpoint" -> ApiEndpoint.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApiId" -> ApiId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ApiKeySelectionExpression" -> ApiKeySelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CreatedDate" -> CreatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DisableSchemaValidation" -> DisableSchemaValidation.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProtocolType" -> ProtocolType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteSelectionExpression" -> RouteSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Version" -> Version.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Warnings" -> Warnings.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiResponse]
-    }
-  }
-
-  @js.native
-  trait GetApisRequest extends js.Object {
-    var MaxResults: js.UndefOr[__string]
-    var NextToken: js.UndefOr[__string]
-  }
-
-  object GetApisRequest {
-    def apply(MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetApisRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApisRequest]
-    }
-  }
-
-  @js.native
-  trait GetApisResponse extends js.Object {
-    var Items: js.UndefOr[__listOfApi]
-    var NextToken: js.UndefOr[NextToken]
-  }
-
-  object GetApisResponse {
-    def apply(Items: js.UndefOr[__listOfApi] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetApisResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApisResponse]
-    }
-  }
-
-  @js.native
-  trait GetAuthorizerRequest extends js.Object {
-    var ApiId: __string
-    var AuthorizerId: __string
-  }
-
-  object GetAuthorizerRequest {
-    def apply(ApiId: __string, AuthorizerId: __string): GetAuthorizerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
-        "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizerRequest]
-    }
-  }
-
-  @js.native
-  trait GetAuthorizerResponse extends js.Object {
-    var AuthorizerCredentialsArn: js.UndefOr[Arn]
-    var AuthorizerId: js.UndefOr[Id]
-    var AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600]
-    var AuthorizerType: js.UndefOr[AuthorizerType]
-    var AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048]
-    var IdentitySource: js.UndefOr[IdentitySourceList]
-    var IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024]
-    var Name: js.UndefOr[StringWithLengthBetween1And128]
-    var ProviderArns: js.UndefOr[ProviderArnList]
-  }
-
-  object GetAuthorizerResponse {
-    def apply(AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
-              AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
-              AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-              IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
-              IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              ProviderArns: js.UndefOr[ProviderArnList] = js.undefined): GetAuthorizerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthorizerCredentialsArn" -> AuthorizerCredentialsArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizerId" -> AuthorizerId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizerResultTtlInSeconds" -> AuthorizerResultTtlInSeconds.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizerType" -> AuthorizerType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "AuthorizerUri" -> AuthorizerUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentitySource" -> IdentitySource.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IdentityValidationExpression" -> IdentityValidationExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Name" -> Name.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ProviderArns" -> ProviderArns.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizerResponse]
-    }
-  }
-
-  @js.native
-  trait GetAuthorizersRequest extends js.Object {
-    var ApiId: __string
-    var MaxResults: js.UndefOr[__string]
-    var NextToken: js.UndefOr[__string]
-  }
-
-  object GetAuthorizersRequest {
-    def apply(ApiId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetAuthorizersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
-        x =>
-          x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizersRequest]
-    }
-  }
-
-  @js.native
-  trait GetAuthorizersResponse extends js.Object {
-    var Items: js.UndefOr[__listOfAuthorizer]
-    var NextToken: js.UndefOr[NextToken]
-  }
-
-  object GetAuthorizersResponse {
-    def apply(Items: js.UndefOr[__listOfAuthorizer] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetAuthorizersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizersResponse]
-    }
-  }
-
-  @js.native
-  trait GetDeploymentRequest extends js.Object {
-    var ApiId: __string
-    var DeploymentId: __string
-  }
-
-  object GetDeploymentRequest {
-    def apply(ApiId: __string, DeploymentId: __string): GetDeploymentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"        -> ApiId.asInstanceOf[js.Any],
-        "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentRequest]
-    }
-  }
-
-  @js.native
-  trait GetDeploymentResponse extends js.Object {
-    var CreatedDate: js.UndefOr[__timestampIso8601]
-    var DeploymentId: js.UndefOr[Id]
-    var DeploymentStatus: js.UndefOr[DeploymentStatus]
-    var DeploymentStatusMessage: js.UndefOr[__string]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-  }
-
-  object GetDeploymentResponse {
-    def apply(CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
-              DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined): GetDeploymentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedDate" -> CreatedDate.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentId" -> DeploymentId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentStatus" -> DeploymentStatus.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DeploymentStatusMessage" -> DeploymentStatusMessage.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentResponse]
-    }
-  }
-
-  @js.native
-  trait GetDeploymentsRequest extends js.Object {
-    var ApiId: __string
-    var MaxResults: js.UndefOr[__string]
-    var NextToken: js.UndefOr[__string]
-  }
-
-  object GetDeploymentsRequest {
-    def apply(ApiId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetDeploymentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
-        x =>
-          x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentsRequest]
-    }
-  }
-
-  @js.native
-  trait GetDeploymentsResponse extends js.Object {
-    var Items: js.UndefOr[__listOfDeployment]
-    var NextToken: js.UndefOr[NextToken]
-  }
-
-  object GetDeploymentsResponse {
-    def apply(Items: js.UndefOr[__listOfDeployment] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetDeploymentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentsResponse]
-    }
-  }
-
-  @js.native
-  trait GetDomainNameRequest extends js.Object {
-    var DomainName: __string
-  }
-
-  object GetDomainNameRequest {
-    def apply(DomainName: __string): GetDomainNameRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DomainName" -> DomainName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNameRequest]
-    }
-  }
-
-  @js.native
-  trait GetDomainNameResponse extends js.Object {
-    var ApiMappingSelectionExpression: js.UndefOr[SelectionExpression]
-    var DomainName: js.UndefOr[StringWithLengthBetween1And512]
-    var DomainNameConfigurations: js.UndefOr[DomainNameConfigurations]
-  }
-
-  object GetDomainNameResponse {
-    def apply(ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
-              DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined): GetDomainNameResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiMappingSelectionExpression" -> ApiMappingSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainName" -> DomainName.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "DomainNameConfigurations" -> DomainNameConfigurations.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNameResponse]
-    }
-  }
-
-  @js.native
-  trait GetDomainNamesRequest extends js.Object {
-    var MaxResults: js.UndefOr[__string]
-    var NextToken: js.UndefOr[__string]
-  }
-
-  object GetDomainNamesRequest {
-    def apply(MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetDomainNamesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNamesRequest]
-    }
-  }
-
-  @js.native
-  trait GetDomainNamesResponse extends js.Object {
-    var Items: js.UndefOr[__listOfDomainName]
-    var NextToken: js.UndefOr[NextToken]
-  }
-
-  object GetDomainNamesResponse {
-    def apply(Items: js.UndefOr[__listOfDomainName] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetDomainNamesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNamesResponse]
-    }
-  }
-
-  @js.native
-  trait GetIntegrationRequest extends js.Object {
-    var ApiId: __string
-    var IntegrationId: __string
-  }
-
-  object GetIntegrationRequest {
-    def apply(ApiId: __string, IntegrationId: __string): GetIntegrationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"         -> ApiId.asInstanceOf[js.Any],
-        "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationRequest]
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationResponse]
     }
   }
 
@@ -2213,9 +2480,11 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponseRequest {
-    def apply(ApiId: __string,
-              IntegrationId: __string,
-              IntegrationResponseId: __string): GetIntegrationResponseRequest = {
+    def apply(
+        ApiId: __string,
+        IntegrationId: __string,
+        IntegrationResponseId: __string
+    ): GetIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"                 -> ApiId.asInstanceOf[js.Any],
         "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
@@ -2279,10 +2548,12 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponsesRequest {
-    def apply(ApiId: __string,
-              IntegrationId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetIntegrationResponsesRequest = {
+    def apply(
+        ApiId: __string,
+        IntegrationId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetIntegrationResponsesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"         -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any],
@@ -2305,102 +2576,20 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponsesResponse {
-    def apply(Items: js.UndefOr[__listOfIntegrationResponse] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetIntegrationResponsesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationResponsesResponse]
-    }
-  }
-
-  @js.native
-  trait GetIntegrationResult extends js.Object {
-    var ConnectionId: js.UndefOr[StringWithLengthBetween1And1024]
-    var ConnectionType: js.UndefOr[ConnectionType]
-    var ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy]
-    var CredentialsArn: js.UndefOr[Arn]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-    var IntegrationId: js.UndefOr[Id]
-    var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
-    var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
-    var IntegrationType: js.UndefOr[IntegrationType]
-    var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
-    var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
-    var RequestParameters: js.UndefOr[IntegrationParameters]
-    var RequestTemplates: js.UndefOr[TemplateMap]
-    var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
-  }
-
-  object GetIntegrationResult {
-    def apply(ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
-              ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
-              ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-              CredentialsArn: js.UndefOr[Arn] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              IntegrationId: js.UndefOr[Id] = js.undefined,
-              IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
-              IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-              PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
-              RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
-              RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
-              TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined): GetIntegrationResult = {
+    def apply(
+        Items: js.UndefOr[__listOfIntegrationResponse] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetIntegrationResponsesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionId" -> ConnectionId.map { x =>
+        "Items" -> Items.map { x =>
           x.asInstanceOf[js.Any]
         },
-        "ConnectionType" -> ConnectionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentHandlingStrategy" -> ContentHandlingStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CredentialsArn" -> CredentialsArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationId" -> IntegrationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationMethod" -> IntegrationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationResponseSelectionExpression" -> IntegrationResponseSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationType" -> IntegrationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationUri" -> IntegrationUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PassthroughBehavior" -> PassthroughBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestParameters" -> RequestParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestTemplates" -> RequestTemplates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateSelectionExpression" -> TemplateSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeoutInMillis" -> TimeoutInMillis.map { x =>
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationResult]
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationResponsesResponse]
     }
   }
 
@@ -2412,15 +2601,20 @@ package apigatewayv2 {
   }
 
   object GetIntegrationsRequest {
-    def apply(ApiId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetIntegrationsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
-        x =>
+    def apply(
+        ApiId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetIntegrationsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationsRequest]
     }
@@ -2433,13 +2627,18 @@ package apigatewayv2 {
   }
 
   object GetIntegrationsResponse {
-    def apply(Items: js.UndefOr[__listOfIntegration] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetIntegrationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Items: js.UndefOr[__listOfIntegration] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetIntegrationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIntegrationsResponse]
     }
@@ -2452,10 +2651,14 @@ package apigatewayv2 {
   }
 
   object GetModelRequest {
-    def apply(ApiId: __string, ModelId: __string): GetModelRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "ModelId" -> ModelId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApiId: __string,
+        ModelId: __string
+    ): GetModelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ModelId" -> ModelId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelRequest]
     }
@@ -2471,11 +2674,13 @@ package apigatewayv2 {
   }
 
   object GetModelResponse {
-    def apply(ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              ModelId: js.UndefOr[Id] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined): GetModelResponse = {
+    def apply(
+        ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        ModelId: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
+    ): GetModelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContentType" -> ContentType.map { x =>
           x.asInstanceOf[js.Any]
@@ -2505,10 +2710,14 @@ package apigatewayv2 {
   }
 
   object GetModelTemplateRequest {
-    def apply(ApiId: __string, ModelId: __string): GetModelTemplateRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "ModelId" -> ModelId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApiId: __string,
+        ModelId: __string
+    ): GetModelTemplateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "ModelId" -> ModelId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelTemplateRequest]
     }
@@ -2520,10 +2729,14 @@ package apigatewayv2 {
   }
 
   object GetModelTemplateResponse {
-    def apply(Value: js.UndefOr[__string] = js.undefined): GetModelTemplateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Value: js.UndefOr[__string] = js.undefined
+    ): GetModelTemplateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelTemplateResponse]
     }
@@ -2537,15 +2750,20 @@ package apigatewayv2 {
   }
 
   object GetModelsRequest {
-    def apply(ApiId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetModelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
-        x =>
+    def apply(
+        ApiId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetModelsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelsRequest]
     }
@@ -2558,13 +2776,18 @@ package apigatewayv2 {
   }
 
   object GetModelsResponse {
-    def apply(Items: js.UndefOr[__listOfModel] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetModelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Items: js.UndefOr[__listOfModel] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetModelsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelsResponse]
     }
@@ -2577,120 +2800,21 @@ package apigatewayv2 {
   }
 
   object GetRouteRequest {
-    def apply(ApiId: __string, RouteId: __string): GetRouteRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "RouteId" -> RouteId.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ApiId: __string,
+        RouteId: __string
+    ): GetRouteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "RouteId" -> RouteId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteRequest]
     }
   }
 
   @js.native
-  trait GetRouteResponseRequest extends js.Object {
-    var ApiId: __string
-    var RouteId: __string
-    var RouteResponseId: __string
-  }
-
-  object GetRouteResponseRequest {
-    def apply(ApiId: __string, RouteId: __string, RouteResponseId: __string): GetRouteResponseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"           -> ApiId.asInstanceOf[js.Any],
-        "RouteId"         -> RouteId.asInstanceOf[js.Any],
-        "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponseRequest]
-    }
-  }
-
-  @js.native
-  trait GetRouteResponseResponse extends js.Object {
-    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
-    var ResponseModels: js.UndefOr[RouteModels]
-    var ResponseParameters: js.UndefOr[RouteParameters]
-    var RouteResponseId: js.UndefOr[Id]
-    var RouteResponseKey: js.UndefOr[SelectionKey]
-  }
-
-  object GetRouteResponseResponse {
-    def apply(ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              ResponseModels: js.UndefOr[RouteModels] = js.undefined,
-              ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteResponseId: js.UndefOr[Id] = js.undefined,
-              RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined): GetRouteResponseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseModels" -> ResponseModels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseParameters" -> ResponseParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseId" -> RouteResponseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseKey" -> RouteResponseKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponseResponse]
-    }
-  }
-
-  @js.native
-  trait GetRouteResponsesRequest extends js.Object {
-    var ApiId: __string
-    var RouteId: __string
-    var MaxResults: js.UndefOr[__string]
-    var NextToken: js.UndefOr[__string]
-  }
-
-  object GetRouteResponsesRequest {
-    def apply(ApiId: __string,
-              RouteId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetRouteResponsesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"   -> ApiId.asInstanceOf[js.Any],
-        "RouteId" -> RouteId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "NextToken" -> NextToken.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponsesRequest]
-    }
-  }
-
-  @js.native
-  trait GetRouteResponsesResponse extends js.Object {
-    var Items: js.UndefOr[__listOfRouteResponse]
-    var NextToken: js.UndefOr[NextToken]
-  }
-
-  object GetRouteResponsesResponse {
-    def apply(Items: js.UndefOr[__listOfRouteResponse] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetRouteResponsesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponsesResponse]
-    }
-  }
-
-  @js.native
-  trait GetRouteResult extends js.Object {
+  trait GetRouteResponse extends js.Object {
     var ApiKeyRequired: js.UndefOr[__boolean]
     var AuthorizationScopes: js.UndefOr[AuthorizationScopes]
     var AuthorizationType: js.UndefOr[AuthorizationType]
@@ -2705,19 +2829,21 @@ package apigatewayv2 {
     var Target: js.UndefOr[StringWithLengthBetween1And128]
   }
 
-  object GetRouteResult {
-    def apply(ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
-              AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
-              AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              RequestModels: js.UndefOr[RouteModels] = js.undefined,
-              RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteId: js.UndefOr[Id] = js.undefined,
-              RouteKey: js.UndefOr[SelectionKey] = js.undefined,
-              RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): GetRouteResult = {
+  object GetRouteResponse {
+    def apply(
+        ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
+        AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
+        AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        RequestModels: js.UndefOr[RouteModels] = js.undefined,
+        RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteId: js.UndefOr[Id] = js.undefined,
+        RouteKey: js.UndefOr[SelectionKey] = js.undefined,
+        RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): GetRouteResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiKeyRequired" -> ApiKeyRequired.map { x =>
           x.asInstanceOf[js.Any]
@@ -2757,7 +2883,123 @@ package apigatewayv2 {
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResult]
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponse]
+    }
+  }
+
+  @js.native
+  trait GetRouteResponseRequest extends js.Object {
+    var ApiId: __string
+    var RouteId: __string
+    var RouteResponseId: __string
+  }
+
+  object GetRouteResponseRequest {
+    def apply(
+        ApiId: __string,
+        RouteId: __string,
+        RouteResponseId: __string
+    ): GetRouteResponseRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"           -> ApiId.asInstanceOf[js.Any],
+        "RouteId"         -> RouteId.asInstanceOf[js.Any],
+        "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponseRequest]
+    }
+  }
+
+  @js.native
+  trait GetRouteResponseResponse extends js.Object {
+    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
+    var ResponseModels: js.UndefOr[RouteModels]
+    var ResponseParameters: js.UndefOr[RouteParameters]
+    var RouteResponseId: js.UndefOr[Id]
+    var RouteResponseKey: js.UndefOr[SelectionKey]
+  }
+
+  object GetRouteResponseResponse {
+    def apply(
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        ResponseModels: js.UndefOr[RouteModels] = js.undefined,
+        ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteResponseId: js.UndefOr[Id] = js.undefined,
+        RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
+    ): GetRouteResponseResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseModels" -> ResponseModels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseParameters" -> ResponseParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseId" -> RouteResponseId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseKey" -> RouteResponseKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponseResponse]
+    }
+  }
+
+  @js.native
+  trait GetRouteResponsesRequest extends js.Object {
+    var ApiId: __string
+    var RouteId: __string
+    var MaxResults: js.UndefOr[__string]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object GetRouteResponsesRequest {
+    def apply(
+        ApiId: __string,
+        RouteId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetRouteResponsesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"   -> ApiId.asInstanceOf[js.Any],
+        "RouteId" -> RouteId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponsesRequest]
+    }
+  }
+
+  @js.native
+  trait GetRouteResponsesResponse extends js.Object {
+    var Items: js.UndefOr[__listOfRouteResponse]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetRouteResponsesResponse {
+    def apply(
+        Items: js.UndefOr[__listOfRouteResponse] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetRouteResponsesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRouteResponsesResponse]
     }
   }
 
@@ -2769,15 +3011,20 @@ package apigatewayv2 {
   }
 
   object GetRoutesRequest {
-    def apply(ApiId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetRoutesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
-        x =>
+    def apply(
+        ApiId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetRoutesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoutesRequest]
     }
@@ -2790,13 +3037,18 @@ package apigatewayv2 {
   }
 
   object GetRoutesResponse {
-    def apply(Items: js.UndefOr[__listOfRoute] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetRoutesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Items: js.UndefOr[__listOfRoute] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetRoutesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoutesResponse]
     }
@@ -2809,7 +3061,10 @@ package apigatewayv2 {
   }
 
   object GetStageRequest {
-    def apply(ApiId: __string, StageName: __string): GetStageRequest = {
+    def apply(
+        ApiId: __string,
+        StageName: __string
+    ): GetStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"     -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
@@ -2834,16 +3089,18 @@ package apigatewayv2 {
   }
 
   object GetStageResponse {
-    def apply(AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-              ClientCertificateId: js.UndefOr[Id] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-              StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              StageVariables: js.UndefOr[StageVariablesMap] = js.undefined): GetStageResponse = {
+    def apply(
+        AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+        ClientCertificateId: js.UndefOr[Id] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
+        StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+    ): GetStageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessLogSettings" -> AccessLogSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -2889,15 +3146,20 @@ package apigatewayv2 {
   }
 
   object GetStagesRequest {
-    def apply(ApiId: __string,
-              MaxResults: js.UndefOr[__string] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): GetStagesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ApiId" -> ApiId.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
-        x =>
+    def apply(
+        ApiId: __string,
+        MaxResults: js.UndefOr[__string] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): GetStagesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStagesRequest]
     }
@@ -2910,13 +3172,18 @@ package apigatewayv2 {
   }
 
   object GetStagesResponse {
-    def apply(Items: js.UndefOr[__listOfStage] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetStagesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Items" -> Items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Items: js.UndefOr[__listOfStage] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetStagesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Items" -> Items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStagesResponse]
     }
@@ -2945,21 +3212,23 @@ package apigatewayv2 {
   }
 
   object Integration {
-    def apply(ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
-              ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
-              ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-              CredentialsArn: js.UndefOr[Arn] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              IntegrationId: js.UndefOr[Id] = js.undefined,
-              IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
-              IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-              PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
-              RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
-              RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
-              TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined): Integration = {
+    def apply(
+        ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
+        ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
+        ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        CredentialsArn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        IntegrationId: js.UndefOr[Id] = js.undefined,
+        IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
+        IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
+        RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
+        RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+    ): Integration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionId" -> ConnectionId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3026,12 +3295,14 @@ package apigatewayv2 {
   }
 
   object IntegrationResponse {
-    def apply(IntegrationResponseKey: SelectionKey,
-              ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-              IntegrationResponseId: js.UndefOr[Id] = js.undefined,
-              ResponseParameters: js.UndefOr[IntegrationParameters] = js.undefined,
-              ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
-              TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined): IntegrationResponse = {
+    def apply(
+        IntegrationResponseKey: SelectionKey,
+        ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        IntegrationResponseId: js.UndefOr[Id] = js.undefined,
+        ResponseParameters: js.UndefOr[IntegrationParameters] = js.undefined,
+        ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
+    ): IntegrationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IntegrationResponseKey" -> IntegrationResponseKey.asInstanceOf[js.Any],
         "ContentHandlingStrategy" -> ContentHandlingStrategy.map { x =>
@@ -3080,7 +3351,8 @@ package apigatewayv2 {
   }
 
   /**
-    * Represents a data model for an API. See [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Create Models and Mapping Templates for Request and Response Mappings]].
+    * <p>Represents a data model for an API. See [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Create Models and Mapping Templates for Request and Response
+    *  Mappings]].</p>
     */
   @js.native
   trait Model extends js.Object {
@@ -3092,11 +3364,13 @@ package apigatewayv2 {
   }
 
   object Model {
-    def apply(Name: StringWithLengthBetween1And128,
-              ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              ModelId: js.UndefOr[Id] = js.undefined,
-              Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined): Model = {
+    def apply(
+        Name: StringWithLengthBetween1And128,
+        ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        ModelId: js.UndefOr[Id] = js.undefined,
+        Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
+    ): Model = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "ContentType" -> ContentType.map { x =>
@@ -3118,7 +3392,8 @@ package apigatewayv2 {
   }
 
   /**
-    * Validation constraints imposed on parameters of a request (path, query string, headers).
+    * <p>Validation constraints imposed on parameters of a request (path, query string,
+    *  headers).</p>
     */
   @js.native
   trait ParameterConstraints extends js.Object {
@@ -3126,10 +3401,14 @@ package apigatewayv2 {
   }
 
   object ParameterConstraints {
-    def apply(Required: js.UndefOr[__boolean] = js.undefined): ParameterConstraints = {
-      val _fields = IndexedSeq[(String, js.Any)]("Required" -> Required.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Required: js.UndefOr[__boolean] = js.undefined
+    ): ParameterConstraints = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Required" -> Required.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterConstraints]
     }
@@ -3175,18 +3454,20 @@ package apigatewayv2 {
   }
 
   object Route {
-    def apply(RouteKey: SelectionKey,
-              ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
-              AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
-              AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              RequestModels: js.UndefOr[RouteModels] = js.undefined,
-              RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteId: js.UndefOr[Id] = js.undefined,
-              RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): Route = {
+    def apply(
+        RouteKey: SelectionKey,
+        ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
+        AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
+        AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        RequestModels: js.UndefOr[RouteModels] = js.undefined,
+        RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteId: js.UndefOr[Id] = js.undefined,
+        RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): Route = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RouteKey" -> RouteKey.asInstanceOf[js.Any],
         "ApiKeyRequired" -> ApiKeyRequired.map { x =>
@@ -3241,11 +3522,13 @@ package apigatewayv2 {
   }
 
   object RouteResponse {
-    def apply(RouteResponseKey: SelectionKey,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              ResponseModels: js.UndefOr[RouteModels] = js.undefined,
-              ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteResponseId: js.UndefOr[Id] = js.undefined): RouteResponse = {
+    def apply(
+        RouteResponseKey: SelectionKey,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        ResponseModels: js.UndefOr[RouteModels] = js.undefined,
+        ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteResponseId: js.UndefOr[Id] = js.undefined
+    ): RouteResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RouteResponseKey" -> RouteResponseKey.asInstanceOf[js.Any],
         "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
@@ -3279,11 +3562,13 @@ package apigatewayv2 {
   }
 
   object RouteSettings {
-    def apply(DataTraceEnabled: js.UndefOr[__boolean] = js.undefined,
-              DetailedMetricsEnabled: js.UndefOr[__boolean] = js.undefined,
-              LoggingLevel: js.UndefOr[LoggingLevel] = js.undefined,
-              ThrottlingBurstLimit: js.UndefOr[__integer] = js.undefined,
-              ThrottlingRateLimit: js.UndefOr[__double] = js.undefined): RouteSettings = {
+    def apply(
+        DataTraceEnabled: js.UndefOr[__boolean] = js.undefined,
+        DetailedMetricsEnabled: js.UndefOr[__boolean] = js.undefined,
+        LoggingLevel: js.UndefOr[LoggingLevel] = js.undefined,
+        ThrottlingBurstLimit: js.UndefOr[__integer] = js.undefined,
+        ThrottlingRateLimit: js.UndefOr[__double] = js.undefined
+    ): RouteSettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataTraceEnabled" -> DataTraceEnabled.map { x =>
           x.asInstanceOf[js.Any]
@@ -3324,16 +3609,18 @@ package apigatewayv2 {
   }
 
   object Stage {
-    def apply(StageName: StringWithLengthBetween1And128,
-              AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-              ClientCertificateId: js.UndefOr[Id] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-              StageVariables: js.UndefOr[StageVariablesMap] = js.undefined): Stage = {
+    def apply(
+        StageName: StringWithLengthBetween1And128,
+        AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+        ClientCertificateId: js.UndefOr[Id] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+    ): Stage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StageName" -> StageName.asInstanceOf[js.Any],
         "AccessLogSettings" -> AccessLogSettings.map { x =>
@@ -3379,11 +3666,13 @@ package apigatewayv2 {
   }
 
   object UpdateApiMappingRequest {
-    def apply(ApiId: Id,
-              ApiMappingId: __string,
-              DomainName: __string,
-              ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
-              Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): UpdateApiMappingRequest = {
+    def apply(
+        ApiId: Id,
+        ApiMappingId: __string,
+        DomainName: __string,
+        ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
+        Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): UpdateApiMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
@@ -3409,10 +3698,12 @@ package apigatewayv2 {
   }
 
   object UpdateApiMappingResponse {
-    def apply(ApiId: js.UndefOr[Id] = js.undefined,
-              ApiMappingId: js.UndefOr[Id] = js.undefined,
-              ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
-              Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): UpdateApiMappingResponse = {
+    def apply(
+        ApiId: js.UndefOr[Id] = js.undefined,
+        ApiMappingId: js.UndefOr[Id] = js.undefined,
+        ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
+        Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): UpdateApiMappingResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId" -> ApiId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3444,13 +3735,15 @@ package apigatewayv2 {
   }
 
   object UpdateApiRequest {
-    def apply(ApiId: __string,
-              ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined): UpdateApiRequest = {
+    def apply(
+        ApiId: __string,
+        ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined
+    ): UpdateApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "ApiKeySelectionExpression" -> ApiKeySelectionExpression.map { x =>
@@ -3493,17 +3786,19 @@ package apigatewayv2 {
   }
 
   object UpdateApiResponse {
-    def apply(ApiEndpoint: js.UndefOr[__string] = js.undefined,
-              ApiId: js.UndefOr[Id] = js.undefined,
-              ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
-              RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              Warnings: js.UndefOr[__listOf__string] = js.undefined): UpdateApiResponse = {
+    def apply(
+        ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiId: js.UndefOr[Id] = js.undefined,
+        ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        DisableSchemaValidation: js.UndefOr[__boolean] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
+        RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        Warnings: js.UndefOr[__listOf__string] = js.undefined
+    ): UpdateApiResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiEndpoint" -> ApiEndpoint.map { x =>
           x.asInstanceOf[js.Any]
@@ -3559,16 +3854,18 @@ package apigatewayv2 {
   }
 
   object UpdateAuthorizerRequest {
-    def apply(ApiId: __string,
-              AuthorizerId: __string,
-              AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
-              AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
-              AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
-              AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-              IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
-              IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              ProviderArns: js.UndefOr[ProviderArnList] = js.undefined): UpdateAuthorizerRequest = {
+    def apply(
+        ApiId: __string,
+        AuthorizerId: __string,
+        AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
+        AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
+        AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
+        IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
+    ): UpdateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any],
@@ -3616,15 +3913,17 @@ package apigatewayv2 {
   }
 
   object UpdateAuthorizerResponse {
-    def apply(AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
-              AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
-              AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-              IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
-              IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              ProviderArns: js.UndefOr[ProviderArnList] = js.undefined): UpdateAuthorizerResponse = {
+    def apply(
+        AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        AuthorizerResultTtlInSeconds: js.UndefOr[IntegerWithLengthBetween0And3600] = js.undefined,
+        AuthorizerType: js.UndefOr[AuthorizerType] = js.undefined,
+        AuthorizerUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        IdentitySource: js.UndefOr[IdentitySourceList] = js.undefined,
+        IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
+    ): UpdateAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuthorizerCredentialsArn" -> AuthorizerCredentialsArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3667,9 +3966,11 @@ package apigatewayv2 {
   }
 
   object UpdateDeploymentRequest {
-    def apply(ApiId: __string,
-              DeploymentId: __string,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined): UpdateDeploymentRequest = {
+    def apply(
+        ApiId: __string,
+        DeploymentId: __string,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
+    ): UpdateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any],
@@ -3692,11 +3993,13 @@ package apigatewayv2 {
   }
 
   object UpdateDeploymentResponse {
-    def apply(CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
-              DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined): UpdateDeploymentResponse = {
+    def apply(
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        DeploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
+        DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
+    ): UpdateDeploymentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedDate" -> CreatedDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -3856,6 +4159,95 @@ package apigatewayv2 {
   }
 
   @js.native
+  trait UpdateIntegrationResponse extends js.Object {
+    var ConnectionId: js.UndefOr[StringWithLengthBetween1And1024]
+    var ConnectionType: js.UndefOr[ConnectionType]
+    var ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy]
+    var CredentialsArn: js.UndefOr[Arn]
+    var Description: js.UndefOr[StringWithLengthBetween0And1024]
+    var IntegrationId: js.UndefOr[Id]
+    var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
+    var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
+    var IntegrationType: js.UndefOr[IntegrationType]
+    var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
+    var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
+    var RequestParameters: js.UndefOr[IntegrationParameters]
+    var RequestTemplates: js.UndefOr[TemplateMap]
+    var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
+    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
+  }
+
+  object UpdateIntegrationResponse {
+    def apply(
+        ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
+        ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
+        ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        CredentialsArn: js.UndefOr[Arn] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        IntegrationId: js.UndefOr[Id] = js.undefined,
+        IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
+        IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
+        PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
+        RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
+        RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
+        TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
+    ): UpdateIntegrationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConnectionId" -> ConnectionId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConnectionType" -> ConnectionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentHandlingStrategy" -> ContentHandlingStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CredentialsArn" -> CredentialsArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationId" -> IntegrationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationMethod" -> IntegrationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationResponseSelectionExpression" -> IntegrationResponseSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationType" -> IntegrationType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegrationUri" -> IntegrationUri.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PassthroughBehavior" -> PassthroughBehavior.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestParameters" -> RequestParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestTemplates" -> RequestTemplates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemplateSelectionExpression" -> TemplateSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeoutInMillis" -> TimeoutInMillis.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIntegrationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateIntegrationResponseRequest extends js.Object {
     var ApiId: __string
     var IntegrationId: __string
@@ -3948,95 +4340,6 @@ package apigatewayv2 {
   }
 
   @js.native
-  trait UpdateIntegrationResult extends js.Object {
-    var ConnectionId: js.UndefOr[StringWithLengthBetween1And1024]
-    var ConnectionType: js.UndefOr[ConnectionType]
-    var ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy]
-    var CredentialsArn: js.UndefOr[Arn]
-    var Description: js.UndefOr[StringWithLengthBetween0And1024]
-    var IntegrationId: js.UndefOr[Id]
-    var IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64]
-    var IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression]
-    var IntegrationType: js.UndefOr[IntegrationType]
-    var IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048]
-    var PassthroughBehavior: js.UndefOr[PassthroughBehavior]
-    var RequestParameters: js.UndefOr[IntegrationParameters]
-    var RequestTemplates: js.UndefOr[TemplateMap]
-    var TemplateSelectionExpression: js.UndefOr[SelectionExpression]
-    var TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000]
-  }
-
-  object UpdateIntegrationResult {
-    def apply(
-        ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
-        ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
-        ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-        CredentialsArn: js.UndefOr[Arn] = js.undefined,
-        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-        IntegrationId: js.UndefOr[Id] = js.undefined,
-        IntegrationMethod: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-        IntegrationResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        IntegrationType: js.UndefOr[IntegrationType] = js.undefined,
-        IntegrationUri: js.UndefOr[UriWithLengthBetween1And2048] = js.undefined,
-        PassthroughBehavior: js.UndefOr[PassthroughBehavior] = js.undefined,
-        RequestParameters: js.UndefOr[IntegrationParameters] = js.undefined,
-        RequestTemplates: js.UndefOr[TemplateMap] = js.undefined,
-        TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-        TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
-    ): UpdateIntegrationResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionId" -> ConnectionId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ConnectionType" -> ConnectionType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ContentHandlingStrategy" -> ContentHandlingStrategy.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "CredentialsArn" -> CredentialsArn.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "Description" -> Description.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationId" -> IntegrationId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationMethod" -> IntegrationMethod.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationResponseSelectionExpression" -> IntegrationResponseSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationType" -> IntegrationType.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "IntegrationUri" -> IntegrationUri.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "PassthroughBehavior" -> PassthroughBehavior.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestParameters" -> RequestParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RequestTemplates" -> RequestTemplates.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TemplateSelectionExpression" -> TemplateSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimeoutInMillis" -> TimeoutInMillis.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateIntegrationResult]
-    }
-  }
-
-  @js.native
   trait UpdateModelRequest extends js.Object {
     var ApiId: __string
     var ModelId: __string
@@ -4047,12 +4350,14 @@ package apigatewayv2 {
   }
 
   object UpdateModelRequest {
-    def apply(ApiId: __string,
-              ModelId: __string,
-              ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined): UpdateModelRequest = {
+    def apply(
+        ApiId: __string,
+        ModelId: __string,
+        ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
+    ): UpdateModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any],
@@ -4084,11 +4389,13 @@ package apigatewayv2 {
   }
 
   object UpdateModelResponse {
-    def apply(ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              ModelId: js.UndefOr[Id] = js.undefined,
-              Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined): UpdateModelResponse = {
+    def apply(
+        ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        ModelId: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
+    ): UpdateModelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContentType" -> ContentType.map { x =>
           x.asInstanceOf[js.Any]
@@ -4129,19 +4436,21 @@ package apigatewayv2 {
   }
 
   object UpdateRouteRequest {
-    def apply(ApiId: __string,
-              RouteId: __string,
-              ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
-              AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
-              AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              RequestModels: js.UndefOr[RouteModels] = js.undefined,
-              RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteKey: js.UndefOr[SelectionKey] = js.undefined,
-              RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): UpdateRouteRequest = {
+    def apply(
+        ApiId: __string,
+        RouteId: __string,
+        ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
+        AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
+        AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        RequestModels: js.UndefOr[RouteModels] = js.undefined,
+        RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteKey: js.UndefOr[SelectionKey] = js.undefined,
+        RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): UpdateRouteRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any],
@@ -4185,85 +4494,7 @@ package apigatewayv2 {
   }
 
   @js.native
-  trait UpdateRouteResponseRequest extends js.Object {
-    var ApiId: __string
-    var RouteId: __string
-    var RouteResponseId: __string
-    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
-    var ResponseModels: js.UndefOr[RouteModels]
-    var ResponseParameters: js.UndefOr[RouteParameters]
-    var RouteResponseKey: js.UndefOr[SelectionKey]
-  }
-
-  object UpdateRouteResponseRequest {
-    def apply(ApiId: __string,
-              RouteId: __string,
-              RouteResponseId: __string,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              ResponseModels: js.UndefOr[RouteModels] = js.undefined,
-              ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined): UpdateRouteResponseRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiId"           -> ApiId.asInstanceOf[js.Any],
-        "RouteId"         -> RouteId.asInstanceOf[js.Any],
-        "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any],
-        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseModels" -> ResponseModels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseParameters" -> ResponseParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseKey" -> RouteResponseKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRouteResponseRequest]
-    }
-  }
-
-  @js.native
-  trait UpdateRouteResponseResponse extends js.Object {
-    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
-    var ResponseModels: js.UndefOr[RouteModels]
-    var ResponseParameters: js.UndefOr[RouteParameters]
-    var RouteResponseId: js.UndefOr[Id]
-    var RouteResponseKey: js.UndefOr[SelectionKey]
-  }
-
-  object UpdateRouteResponseResponse {
-    def apply(ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              ResponseModels: js.UndefOr[RouteModels] = js.undefined,
-              ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteResponseId: js.UndefOr[Id] = js.undefined,
-              RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined): UpdateRouteResponseResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseModels" -> ResponseModels.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "ResponseParameters" -> ResponseParameters.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseId" -> RouteResponseId.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "RouteResponseKey" -> RouteResponseKey.map { x =>
-          x.asInstanceOf[js.Any]
-        }
-      ).filter(_._2 != (js.undefined: js.Any))
-
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRouteResponseResponse]
-    }
-  }
-
-  @js.native
-  trait UpdateRouteResult extends js.Object {
+  trait UpdateRouteResponse extends js.Object {
     var ApiKeyRequired: js.UndefOr[__boolean]
     var AuthorizationScopes: js.UndefOr[AuthorizationScopes]
     var AuthorizationType: js.UndefOr[AuthorizationType]
@@ -4278,19 +4509,21 @@ package apigatewayv2 {
     var Target: js.UndefOr[StringWithLengthBetween1And128]
   }
 
-  object UpdateRouteResult {
-    def apply(ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
-              AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
-              AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
-              AuthorizerId: js.UndefOr[Id] = js.undefined,
-              ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
-              RequestModels: js.UndefOr[RouteModels] = js.undefined,
-              RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
-              RouteId: js.UndefOr[Id] = js.undefined,
-              RouteKey: js.UndefOr[SelectionKey] = js.undefined,
-              RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
-              Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined): UpdateRouteResult = {
+  object UpdateRouteResponse {
+    def apply(
+        ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
+        AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
+        AuthorizationType: js.UndefOr[AuthorizationType] = js.undefined,
+        AuthorizerId: js.UndefOr[Id] = js.undefined,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        OperationName: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
+        RequestModels: js.UndefOr[RouteModels] = js.undefined,
+        RequestParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteId: js.UndefOr[Id] = js.undefined,
+        RouteKey: js.UndefOr[SelectionKey] = js.undefined,
+        RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
+    ): UpdateRouteResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiKeyRequired" -> ApiKeyRequired.map { x =>
           x.asInstanceOf[js.Any]
@@ -4330,7 +4563,89 @@ package apigatewayv2 {
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRouteResult]
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRouteResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateRouteResponseRequest extends js.Object {
+    var ApiId: __string
+    var RouteId: __string
+    var RouteResponseId: __string
+    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
+    var ResponseModels: js.UndefOr[RouteModels]
+    var ResponseParameters: js.UndefOr[RouteParameters]
+    var RouteResponseKey: js.UndefOr[SelectionKey]
+  }
+
+  object UpdateRouteResponseRequest {
+    def apply(
+        ApiId: __string,
+        RouteId: __string,
+        RouteResponseId: __string,
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        ResponseModels: js.UndefOr[RouteModels] = js.undefined,
+        ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
+    ): UpdateRouteResponseRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ApiId"           -> ApiId.asInstanceOf[js.Any],
+        "RouteId"         -> RouteId.asInstanceOf[js.Any],
+        "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any],
+        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseModels" -> ResponseModels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseParameters" -> ResponseParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseKey" -> RouteResponseKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRouteResponseRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRouteResponseResponse extends js.Object {
+    var ModelSelectionExpression: js.UndefOr[SelectionExpression]
+    var ResponseModels: js.UndefOr[RouteModels]
+    var ResponseParameters: js.UndefOr[RouteParameters]
+    var RouteResponseId: js.UndefOr[Id]
+    var RouteResponseKey: js.UndefOr[SelectionKey]
+  }
+
+  object UpdateRouteResponseResponse {
+    def apply(
+        ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
+        ResponseModels: js.UndefOr[RouteModels] = js.undefined,
+        ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
+        RouteResponseId: js.UndefOr[Id] = js.undefined,
+        RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
+    ): UpdateRouteResponseResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ModelSelectionExpression" -> ModelSelectionExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseModels" -> ResponseModels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResponseParameters" -> ResponseParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseId" -> RouteResponseId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RouteResponseKey" -> RouteResponseKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRouteResponseResponse]
     }
   }
 
@@ -4348,15 +4663,17 @@ package apigatewayv2 {
   }
 
   object UpdateStageRequest {
-    def apply(ApiId: __string,
-              StageName: __string,
-              AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-              ClientCertificateId: js.UndefOr[Id] = js.undefined,
-              DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-              StageVariables: js.UndefOr[StageVariablesMap] = js.undefined): UpdateStageRequest = {
+    def apply(
+        ApiId: __string,
+        StageName: __string,
+        AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+        ClientCertificateId: js.UndefOr[Id] = js.undefined,
+        DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+    ): UpdateStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApiId"     -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any],
@@ -4402,16 +4719,18 @@ package apigatewayv2 {
   }
 
   object UpdateStageResponse {
-    def apply(AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-              ClientCertificateId: js.UndefOr[Id] = js.undefined,
-              CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
-              DeploymentId: js.UndefOr[Id] = js.undefined,
-              Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
-              LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
-              RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
-              StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
-              StageVariables: js.UndefOr[StageVariablesMap] = js.undefined): UpdateStageResponse = {
+    def apply(
+        AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+        ClientCertificateId: js.UndefOr[Id] = js.undefined,
+        CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        DefaultRouteSettings: js.UndefOr[RouteSettings] = js.undefined,
+        DeploymentId: js.UndefOr[Id] = js.undefined,
+        Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
+        LastUpdatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
+        RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
+        StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
+        StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
+    ): UpdateStageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessLogSettings" -> AccessLogSettings.map { x =>
           x.asInstanceOf[js.Any]

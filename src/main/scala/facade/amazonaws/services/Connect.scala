@@ -128,15 +128,17 @@ package connect {
   }
 
   object CreateUserRequest {
-    def apply(InstanceId: InstanceId,
-              PhoneConfig: UserPhoneConfig,
-              RoutingProfileId: RoutingProfileId,
-              SecurityProfileIds: SecurityProfileIds,
-              Username: AgentUsername,
-              DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
-              HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
-              IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
-              Password: js.UndefOr[Password] = js.undefined): CreateUserRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        PhoneConfig: UserPhoneConfig,
+        RoutingProfileId: RoutingProfileId,
+        SecurityProfileIds: SecurityProfileIds,
+        Username: AgentUsername,
+        DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
+        HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
+        IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
+        Password: js.UndefOr[Password] = js.undefined
+    ): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
         "PhoneConfig"        -> PhoneConfig.asInstanceOf[js.Any],
@@ -168,13 +170,18 @@ package connect {
   }
 
   object CreateUserResponse {
-    def apply(UserArn: js.UndefOr[ARN] = js.undefined,
-              UserId: js.UndefOr[UserId] = js.undefined): CreateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UserArn" -> UserArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UserId" -> UserId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        UserArn: js.UndefOr[ARN] = js.undefined,
+        UserId: js.UndefOr[UserId] = js.undefined
+    ): CreateUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UserArn" -> UserArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserId" -> UserId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
     }
@@ -192,10 +199,12 @@ package connect {
   }
 
   object Credentials {
-    def apply(AccessToken: js.UndefOr[SecurityToken] = js.undefined,
-              AccessTokenExpiration: js.UndefOr[timestamp] = js.undefined,
-              RefreshToken: js.UndefOr[SecurityToken] = js.undefined,
-              RefreshTokenExpiration: js.UndefOr[timestamp] = js.undefined): Credentials = {
+    def apply(
+        AccessToken: js.UndefOr[SecurityToken] = js.undefined,
+        AccessTokenExpiration: js.UndefOr[timestamp] = js.undefined,
+        RefreshToken: js.UndefOr[SecurityToken] = js.undefined,
+        RefreshTokenExpiration: js.UndefOr[timestamp] = js.undefined
+    ): Credentials = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessToken" -> AccessToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -225,13 +234,18 @@ package connect {
   }
 
   object CurrentMetric {
-    def apply(Name: js.UndefOr[CurrentMetricName] = js.undefined,
-              Unit: js.UndefOr[Unit] = js.undefined): CurrentMetric = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Unit" -> Unit.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[CurrentMetricName] = js.undefined,
+        Unit: js.UndefOr[Unit] = js.undefined
+    ): CurrentMetric = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Unit" -> Unit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CurrentMetric]
     }
@@ -247,13 +261,18 @@ package connect {
   }
 
   object CurrentMetricData {
-    def apply(Metric: js.UndefOr[CurrentMetric] = js.undefined,
-              Value: js.UndefOr[Value] = js.undefined): CurrentMetricData = {
-      val _fields = IndexedSeq[(String, js.Any)]("Metric" -> Metric.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Metric: js.UndefOr[CurrentMetric] = js.undefined,
+        Value: js.UndefOr[Value] = js.undefined
+    ): CurrentMetricData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Metric" -> Metric.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CurrentMetricData]
     }
@@ -298,13 +317,18 @@ package connect {
   }
 
   object CurrentMetricResult {
-    def apply(Collections: js.UndefOr[CurrentMetricDataCollections] = js.undefined,
-              Dimensions: js.UndefOr[Dimensions] = js.undefined): CurrentMetricResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Collections" -> Collections.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Dimensions" -> Dimensions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Collections: js.UndefOr[CurrentMetricDataCollections] = js.undefined,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined
+    ): CurrentMetricResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Collections" -> Collections.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Dimensions" -> Dimensions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CurrentMetricResult]
     }
@@ -317,7 +341,10 @@ package connect {
   }
 
   object DeleteUserRequest {
-    def apply(InstanceId: InstanceId, UserId: UserId): DeleteUserRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        UserId: UserId
+    ): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId"     -> UserId.asInstanceOf[js.Any]
@@ -334,7 +361,10 @@ package connect {
   }
 
   object DescribeUserHierarchyGroupRequest {
-    def apply(HierarchyGroupId: HierarchyGroupId, InstanceId: InstanceId): DescribeUserHierarchyGroupRequest = {
+    def apply(
+        HierarchyGroupId: HierarchyGroupId,
+        InstanceId: InstanceId
+    ): DescribeUserHierarchyGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HierarchyGroupId" -> HierarchyGroupId.asInstanceOf[js.Any],
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
@@ -350,10 +380,14 @@ package connect {
   }
 
   object DescribeUserHierarchyGroupResponse {
-    def apply(HierarchyGroup: js.UndefOr[HierarchyGroup] = js.undefined): DescribeUserHierarchyGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HierarchyGroup" -> HierarchyGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        HierarchyGroup: js.UndefOr[HierarchyGroup] = js.undefined
+    ): DescribeUserHierarchyGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HierarchyGroup" -> HierarchyGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserHierarchyGroupResponse]
     }
@@ -365,9 +399,12 @@ package connect {
   }
 
   object DescribeUserHierarchyStructureRequest {
-    def apply(InstanceId: InstanceId): DescribeUserHierarchyStructureRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: InstanceId
+    ): DescribeUserHierarchyStructureRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserHierarchyStructureRequest]
     }
@@ -382,9 +419,11 @@ package connect {
     def apply(
         HierarchyStructure: js.UndefOr[HierarchyStructure] = js.undefined
     ): DescribeUserHierarchyStructureResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("HierarchyStructure" -> HierarchyStructure.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "HierarchyStructure" -> HierarchyStructure.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserHierarchyStructureResponse]
     }
@@ -397,7 +436,10 @@ package connect {
   }
 
   object DescribeUserRequest {
-    def apply(InstanceId: InstanceId, UserId: UserId): DescribeUserRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        UserId: UserId
+    ): DescribeUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId"     -> UserId.asInstanceOf[js.Any]
@@ -413,10 +455,14 @@ package connect {
   }
 
   object DescribeUserResponse {
-    def apply(User: js.UndefOr[User] = js.undefined): DescribeUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("User" -> User.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        User: js.UndefOr[User] = js.undefined
+    ): DescribeUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "User" -> User.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserResponse]
     }
@@ -432,13 +478,18 @@ package connect {
   }
 
   object Dimensions {
-    def apply(Channel: js.UndefOr[Channel] = js.undefined,
-              Queue: js.UndefOr[QueueReference] = js.undefined): Dimensions = {
-      val _fields = IndexedSeq[(String, js.Any)]("Channel" -> Channel.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Queue" -> Queue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Channel: js.UndefOr[Channel] = js.undefined,
+        Queue: js.UndefOr[QueueReference] = js.undefined
+    ): Dimensions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Channel" -> Channel.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Queue" -> Queue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Dimensions]
     }
@@ -454,12 +505,18 @@ package connect {
   }
 
   object Filters {
-    def apply(Channels: js.UndefOr[Channels] = js.undefined, Queues: js.UndefOr[Queues] = js.undefined): Filters = {
-      val _fields = IndexedSeq[(String, js.Any)]("Channels" -> Channels.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Queues" -> Queues.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Channels: js.UndefOr[Channels] = js.undefined,
+        Queues: js.UndefOr[Queues] = js.undefined
+    ): Filters = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Channels" -> Channels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Queues" -> Queues.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filters]
     }
@@ -472,7 +529,10 @@ package connect {
   }
 
   object GetContactAttributesRequest {
-    def apply(InitialContactId: ContactId, InstanceId: InstanceId): GetContactAttributesRequest = {
+    def apply(
+        InitialContactId: ContactId,
+        InstanceId: InstanceId
+    ): GetContactAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
@@ -488,10 +548,14 @@ package connect {
   }
 
   object GetContactAttributesResponse {
-    def apply(Attributes: js.UndefOr[Attributes] = js.undefined): GetContactAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[Attributes] = js.undefined
+    ): GetContactAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContactAttributesResponse]
     }
@@ -508,12 +572,14 @@ package connect {
   }
 
   object GetCurrentMetricDataRequest {
-    def apply(CurrentMetrics: CurrentMetrics,
-              Filters: Filters,
-              InstanceId: InstanceId,
-              Groupings: js.UndefOr[Groupings] = js.undefined,
-              MaxResults: js.UndefOr[MaxResult100] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetCurrentMetricDataRequest = {
+    def apply(
+        CurrentMetrics: CurrentMetrics,
+        Filters: Filters,
+        InstanceId: InstanceId,
+        Groupings: js.UndefOr[Groupings] = js.undefined,
+        MaxResults: js.UndefOr[MaxResult100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCurrentMetricDataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentMetrics" -> CurrentMetrics.asInstanceOf[js.Any],
         "Filters"        -> Filters.asInstanceOf[js.Any],
@@ -541,9 +607,11 @@ package connect {
   }
 
   object GetCurrentMetricDataResponse {
-    def apply(DataSnapshotTime: js.UndefOr[timestamp] = js.undefined,
-              MetricResults: js.UndefOr[CurrentMetricResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetCurrentMetricDataResponse = {
+    def apply(
+        DataSnapshotTime: js.UndefOr[timestamp] = js.undefined,
+        MetricResults: js.UndefOr[CurrentMetricResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCurrentMetricDataResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataSnapshotTime" -> DataSnapshotTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -566,9 +634,12 @@ package connect {
   }
 
   object GetFederationTokenRequest {
-    def apply(InstanceId: InstanceId): GetFederationTokenRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceId" -> InstanceId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceId: InstanceId
+    ): GetFederationTokenRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceId" -> InstanceId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFederationTokenRequest]
     }
@@ -580,10 +651,14 @@ package connect {
   }
 
   object GetFederationTokenResponse {
-    def apply(Credentials: js.UndefOr[Credentials] = js.undefined): GetFederationTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Credentials" -> Credentials.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Credentials: js.UndefOr[Credentials] = js.undefined
+    ): GetFederationTokenResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Credentials" -> Credentials.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFederationTokenResponse]
     }
@@ -602,14 +677,16 @@ package connect {
   }
 
   object GetMetricDataRequest {
-    def apply(EndTime: timestamp,
-              Filters: Filters,
-              HistoricalMetrics: HistoricalMetrics,
-              InstanceId: InstanceId,
-              StartTime: timestamp,
-              Groupings: js.UndefOr[Groupings] = js.undefined,
-              MaxResults: js.UndefOr[MaxResult100] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetMetricDataRequest = {
+    def apply(
+        EndTime: timestamp,
+        Filters: Filters,
+        HistoricalMetrics: HistoricalMetrics,
+        InstanceId: InstanceId,
+        StartTime: timestamp,
+        Groupings: js.UndefOr[Groupings] = js.undefined,
+        MaxResults: js.UndefOr[MaxResult100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetMetricDataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"           -> EndTime.asInstanceOf[js.Any],
         "Filters"           -> Filters.asInstanceOf[js.Any],
@@ -638,13 +715,18 @@ package connect {
   }
 
   object GetMetricDataResponse {
-    def apply(MetricResults: js.UndefOr[HistoricalMetricResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetMetricDataResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("MetricResults" -> MetricResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MetricResults: js.UndefOr[HistoricalMetricResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetMetricDataResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MetricResults" -> MetricResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMetricDataResponse]
     }
@@ -670,11 +752,13 @@ package connect {
   }
 
   object HierarchyGroup {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined,
-              HierarchyPath: js.UndefOr[HierarchyPath] = js.undefined,
-              Id: js.UndefOr[HierarchyGroupId] = js.undefined,
-              LevelId: js.UndefOr[HierarchyLevelId] = js.undefined,
-              Name: js.UndefOr[HierarchyGroupName] = js.undefined): HierarchyGroup = {
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        HierarchyPath: js.UndefOr[HierarchyPath] = js.undefined,
+        Id: js.UndefOr[HierarchyGroupId] = js.undefined,
+        LevelId: js.UndefOr[HierarchyLevelId] = js.undefined,
+        Name: js.UndefOr[HierarchyGroupName] = js.undefined
+    ): HierarchyGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -708,16 +792,22 @@ package connect {
   }
 
   object HierarchyGroupSummary {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined,
-              Id: js.UndefOr[HierarchyGroupId] = js.undefined,
-              Name: js.UndefOr[HierarchyGroupName] = js.undefined): HierarchyGroupSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[HierarchyGroupId] = js.undefined,
+        Name: js.UndefOr[HierarchyGroupName] = js.undefined
+    ): HierarchyGroupSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HierarchyGroupSummary]
     }
@@ -734,16 +824,22 @@ package connect {
   }
 
   object HierarchyLevel {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined,
-              Id: js.UndefOr[HierarchyLevelId] = js.undefined,
-              Name: js.UndefOr[HierarchyLevelName] = js.undefined): HierarchyLevel = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[HierarchyLevelId] = js.undefined,
+        Name: js.UndefOr[HierarchyLevelName] = js.undefined
+    ): HierarchyLevel = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HierarchyLevel]
     }
@@ -762,11 +858,13 @@ package connect {
   }
 
   object HierarchyPath {
-    def apply(LevelFive: js.UndefOr[HierarchyGroupSummary] = js.undefined,
-              LevelFour: js.UndefOr[HierarchyGroupSummary] = js.undefined,
-              LevelOne: js.UndefOr[HierarchyGroupSummary] = js.undefined,
-              LevelThree: js.UndefOr[HierarchyGroupSummary] = js.undefined,
-              LevelTwo: js.UndefOr[HierarchyGroupSummary] = js.undefined): HierarchyPath = {
+    def apply(
+        LevelFive: js.UndefOr[HierarchyGroupSummary] = js.undefined,
+        LevelFour: js.UndefOr[HierarchyGroupSummary] = js.undefined,
+        LevelOne: js.UndefOr[HierarchyGroupSummary] = js.undefined,
+        LevelThree: js.UndefOr[HierarchyGroupSummary] = js.undefined,
+        LevelTwo: js.UndefOr[HierarchyGroupSummary] = js.undefined
+    ): HierarchyPath = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LevelFive" -> LevelFive.map { x =>
           x.asInstanceOf[js.Any]
@@ -802,11 +900,13 @@ package connect {
   }
 
   object HierarchyStructure {
-    def apply(LevelFive: js.UndefOr[HierarchyLevel] = js.undefined,
-              LevelFour: js.UndefOr[HierarchyLevel] = js.undefined,
-              LevelOne: js.UndefOr[HierarchyLevel] = js.undefined,
-              LevelThree: js.UndefOr[HierarchyLevel] = js.undefined,
-              LevelTwo: js.UndefOr[HierarchyLevel] = js.undefined): HierarchyStructure = {
+    def apply(
+        LevelFive: js.UndefOr[HierarchyLevel] = js.undefined,
+        LevelFour: js.UndefOr[HierarchyLevel] = js.undefined,
+        LevelOne: js.UndefOr[HierarchyLevel] = js.undefined,
+        LevelThree: js.UndefOr[HierarchyLevel] = js.undefined,
+        LevelTwo: js.UndefOr[HierarchyLevel] = js.undefined
+    ): HierarchyStructure = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LevelFive" -> LevelFive.map { x =>
           x.asInstanceOf[js.Any]
@@ -841,10 +941,12 @@ package connect {
   }
 
   object HistoricalMetric {
-    def apply(Name: js.UndefOr[HistoricalMetricName] = js.undefined,
-              Statistic: js.UndefOr[Statistic] = js.undefined,
-              Threshold: js.UndefOr[Threshold] = js.undefined,
-              Unit: js.UndefOr[Unit] = js.undefined): HistoricalMetric = {
+    def apply(
+        Name: js.UndefOr[HistoricalMetricName] = js.undefined,
+        Statistic: js.UndefOr[Statistic] = js.undefined,
+        Threshold: js.UndefOr[Threshold] = js.undefined,
+        Unit: js.UndefOr[Unit] = js.undefined
+    ): HistoricalMetric = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
@@ -874,13 +976,18 @@ package connect {
   }
 
   object HistoricalMetricData {
-    def apply(Metric: js.UndefOr[HistoricalMetric] = js.undefined,
-              Value: js.UndefOr[Value] = js.undefined): HistoricalMetricData = {
-      val _fields = IndexedSeq[(String, js.Any)]("Metric" -> Metric.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Metric: js.UndefOr[HistoricalMetric] = js.undefined,
+        Value: js.UndefOr[Value] = js.undefined
+    ): HistoricalMetricData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Metric" -> Metric.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoricalMetricData]
     }
@@ -955,13 +1062,18 @@ package connect {
   }
 
   object HistoricalMetricResult {
-    def apply(Collections: js.UndefOr[HistoricalMetricDataCollections] = js.undefined,
-              Dimensions: js.UndefOr[Dimensions] = js.undefined): HistoricalMetricResult = {
-      val _fields = IndexedSeq[(String, js.Any)]("Collections" -> Collections.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Dimensions" -> Dimensions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Collections: js.UndefOr[HistoricalMetricDataCollections] = js.undefined,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined
+    ): HistoricalMetricResult = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Collections" -> Collections.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Dimensions" -> Dimensions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HistoricalMetricResult]
     }
@@ -975,9 +1087,11 @@ package connect {
   }
 
   object ListRoutingProfilesRequest {
-    def apply(InstanceId: InstanceId,
-              MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListRoutingProfilesRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRoutingProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1003,11 +1117,14 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RoutingProfileSummaryList: js.UndefOr[RoutingProfileSummaryList] = js.undefined
     ): ListRoutingProfilesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RoutingProfileSummaryList" -> RoutingProfileSummaryList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoutingProfileSummaryList" -> RoutingProfileSummaryList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRoutingProfilesResponse]
     }
@@ -1021,9 +1138,11 @@ package connect {
   }
 
   object ListSecurityProfilesRequest {
-    def apply(InstanceId: InstanceId,
-              MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListSecurityProfilesRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSecurityProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1049,11 +1168,14 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SecurityProfileSummaryList: js.UndefOr[SecurityProfileSummaryList] = js.undefined
     ): ListSecurityProfilesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SecurityProfileSummaryList" -> SecurityProfileSummaryList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecurityProfileSummaryList" -> SecurityProfileSummaryList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSecurityProfilesResponse]
     }
@@ -1067,9 +1189,11 @@ package connect {
   }
 
   object ListUserHierarchyGroupsRequest {
-    def apply(InstanceId: InstanceId,
-              MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListUserHierarchyGroupsRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListUserHierarchyGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1095,11 +1219,14 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         UserHierarchyGroupSummaryList: js.UndefOr[HierarchyGroupSummaryList] = js.undefined
     ): ListUserHierarchyGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UserHierarchyGroupSummaryList" -> UserHierarchyGroupSummaryList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserHierarchyGroupSummaryList" -> UserHierarchyGroupSummaryList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUserHierarchyGroupsResponse]
     }
@@ -1113,9 +1240,11 @@ package connect {
   }
 
   object ListUsersRequest {
-    def apply(InstanceId: InstanceId,
-              MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -1137,13 +1266,18 @@ package connect {
   }
 
   object ListUsersResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              UserSummaryList: js.UndefOr[UserSummaryList] = js.undefined): ListUsersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UserSummaryList" -> UserSummaryList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        UserSummaryList: js.UndefOr[UserSummaryList] = js.undefined
+    ): ListUsersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserSummaryList" -> UserSummaryList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
     }
@@ -1166,12 +1300,18 @@ package connect {
   }
 
   object QueueReference {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined, Id: js.UndefOr[QueueId] = js.undefined): QueueReference = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[QueueId] = js.undefined
+    ): QueueReference = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QueueReference]
     }
@@ -1188,16 +1328,22 @@ package connect {
   }
 
   object RoutingProfileSummary {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined,
-              Id: js.UndefOr[RoutingProfileId] = js.undefined,
-              Name: js.UndefOr[RoutingProfileName] = js.undefined): RoutingProfileSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[RoutingProfileId] = js.undefined,
+        Name: js.UndefOr[RoutingProfileName] = js.undefined
+    ): RoutingProfileSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoutingProfileSummary]
     }
@@ -1214,16 +1360,22 @@ package connect {
   }
 
   object SecurityProfileSummary {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined,
-              Id: js.UndefOr[SecurityProfileId] = js.undefined,
-              Name: js.UndefOr[SecurityProfileName] = js.undefined): SecurityProfileSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[SecurityProfileId] = js.undefined,
+        Name: js.UndefOr[SecurityProfileName] = js.undefined
+    ): SecurityProfileSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecurityProfileSummary]
     }
@@ -1241,13 +1393,15 @@ package connect {
   }
 
   object StartOutboundVoiceContactRequest {
-    def apply(ContactFlowId: ContactFlowId,
-              DestinationPhoneNumber: PhoneNumber,
-              InstanceId: InstanceId,
-              Attributes: js.UndefOr[Attributes] = js.undefined,
-              ClientToken: js.UndefOr[ClientToken] = js.undefined,
-              QueueId: js.UndefOr[QueueId] = js.undefined,
-              SourcePhoneNumber: js.UndefOr[PhoneNumber] = js.undefined): StartOutboundVoiceContactRequest = {
+    def apply(
+        ContactFlowId: ContactFlowId,
+        DestinationPhoneNumber: PhoneNumber,
+        InstanceId: InstanceId,
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        QueueId: js.UndefOr[QueueId] = js.undefined,
+        SourcePhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
+    ): StartOutboundVoiceContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContactFlowId"          -> ContactFlowId.asInstanceOf[js.Any],
         "DestinationPhoneNumber" -> DestinationPhoneNumber.asInstanceOf[js.Any],
@@ -1276,10 +1430,14 @@ package connect {
   }
 
   object StartOutboundVoiceContactResponse {
-    def apply(ContactId: js.UndefOr[ContactId] = js.undefined): StartOutboundVoiceContactResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ContactId" -> ContactId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ContactId: js.UndefOr[ContactId] = js.undefined
+    ): StartOutboundVoiceContactResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContactId" -> ContactId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartOutboundVoiceContactResponse]
     }
@@ -1300,7 +1458,10 @@ package connect {
   }
 
   object StopContactRequest {
-    def apply(ContactId: ContactId, InstanceId: InstanceId): StopContactRequest = {
+    def apply(
+        ContactId: ContactId,
+        InstanceId: InstanceId
+    ): StopContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContactId"  -> ContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
@@ -1314,8 +1475,10 @@ package connect {
   trait StopContactResponse extends js.Object {}
 
   object StopContactResponse {
-    def apply(): StopContactResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopContactResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopContactResponse]
     }
@@ -1331,13 +1494,18 @@ package connect {
   }
 
   object Threshold {
-    def apply(Comparison: js.UndefOr[Comparison] = js.undefined,
-              ThresholdValue: js.UndefOr[ThresholdValue] = js.undefined): Threshold = {
-      val _fields = IndexedSeq[(String, js.Any)]("Comparison" -> Comparison.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ThresholdValue" -> ThresholdValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Comparison: js.UndefOr[Comparison] = js.undefined,
+        ThresholdValue: js.UndefOr[ThresholdValue] = js.undefined
+    ): Threshold = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Comparison" -> Comparison.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ThresholdValue" -> ThresholdValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Threshold]
     }
@@ -1359,9 +1527,11 @@ package connect {
   }
 
   object UpdateContactAttributesRequest {
-    def apply(Attributes: Attributes,
-              InitialContactId: ContactId,
-              InstanceId: InstanceId): UpdateContactAttributesRequest = {
+    def apply(
+        Attributes: Attributes,
+        InitialContactId: ContactId,
+        InstanceId: InstanceId
+    ): UpdateContactAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes"       -> Attributes.asInstanceOf[js.Any],
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
@@ -1376,8 +1546,10 @@ package connect {
   trait UpdateContactAttributesResponse extends js.Object {}
 
   object UpdateContactAttributesResponse {
-    def apply(): UpdateContactAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateContactAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContactAttributesResponse]
     }
@@ -1391,9 +1563,11 @@ package connect {
   }
 
   object UpdateUserHierarchyRequest {
-    def apply(InstanceId: InstanceId,
-              UserId: UserId,
-              HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined): UpdateUserHierarchyRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        UserId: UserId,
+        HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined
+    ): UpdateUserHierarchyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId"     -> UserId.asInstanceOf[js.Any],
@@ -1414,7 +1588,11 @@ package connect {
   }
 
   object UpdateUserIdentityInfoRequest {
-    def apply(IdentityInfo: UserIdentityInfo, InstanceId: InstanceId, UserId: UserId): UpdateUserIdentityInfoRequest = {
+    def apply(
+        IdentityInfo: UserIdentityInfo,
+        InstanceId: InstanceId,
+        UserId: UserId
+    ): UpdateUserIdentityInfoRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityInfo" -> IdentityInfo.asInstanceOf[js.Any],
         "InstanceId"   -> InstanceId.asInstanceOf[js.Any],
@@ -1433,7 +1611,11 @@ package connect {
   }
 
   object UpdateUserPhoneConfigRequest {
-    def apply(InstanceId: InstanceId, PhoneConfig: UserPhoneConfig, UserId: UserId): UpdateUserPhoneConfigRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        PhoneConfig: UserPhoneConfig,
+        UserId: UserId
+    ): UpdateUserPhoneConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId"  -> InstanceId.asInstanceOf[js.Any],
         "PhoneConfig" -> PhoneConfig.asInstanceOf[js.Any],
@@ -1452,9 +1634,11 @@ package connect {
   }
 
   object UpdateUserRoutingProfileRequest {
-    def apply(InstanceId: InstanceId,
-              RoutingProfileId: RoutingProfileId,
-              UserId: UserId): UpdateUserRoutingProfileRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        RoutingProfileId: RoutingProfileId,
+        UserId: UserId
+    ): UpdateUserRoutingProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any],
         "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any],
@@ -1473,9 +1657,11 @@ package connect {
   }
 
   object UpdateUserSecurityProfilesRequest {
-    def apply(InstanceId: InstanceId,
-              SecurityProfileIds: SecurityProfileIds,
-              UserId: UserId): UpdateUserSecurityProfilesRequest = {
+    def apply(
+        InstanceId: InstanceId,
+        SecurityProfileIds: SecurityProfileIds,
+        UserId: UserId
+    ): UpdateUserSecurityProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
         "SecurityProfileIds" -> SecurityProfileIds.asInstanceOf[js.Any],
@@ -1503,15 +1689,17 @@ package connect {
   }
 
   object User {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined,
-              DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
-              HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
-              Id: js.UndefOr[UserId] = js.undefined,
-              IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
-              PhoneConfig: js.UndefOr[UserPhoneConfig] = js.undefined,
-              RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined,
-              SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
-              Username: js.UndefOr[AgentUsername] = js.undefined): User = {
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
+        HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined,
+        Id: js.UndefOr[UserId] = js.undefined,
+        IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
+        PhoneConfig: js.UndefOr[UserPhoneConfig] = js.undefined,
+        RoutingProfileId: js.UndefOr[RoutingProfileId] = js.undefined,
+        SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
+        Username: js.UndefOr[AgentUsername] = js.undefined
+    ): User = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -1557,9 +1745,11 @@ package connect {
   }
 
   object UserIdentityInfo {
-    def apply(Email: js.UndefOr[Email] = js.undefined,
-              FirstName: js.UndefOr[AgentFirstName] = js.undefined,
-              LastName: js.UndefOr[AgentLastName] = js.undefined): UserIdentityInfo = {
+    def apply(
+        Email: js.UndefOr[Email] = js.undefined,
+        FirstName: js.UndefOr[AgentFirstName] = js.undefined,
+        LastName: js.UndefOr[AgentLastName] = js.undefined
+    ): UserIdentityInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Email" -> Email.map { x =>
           x.asInstanceOf[js.Any]
@@ -1588,10 +1778,12 @@ package connect {
   }
 
   object UserPhoneConfig {
-    def apply(PhoneType: PhoneType,
-              AfterContactWorkTimeLimit: js.UndefOr[AfterContactWorkTimeLimit] = js.undefined,
-              AutoAccept: js.UndefOr[AutoAccept] = js.undefined,
-              DeskPhoneNumber: js.UndefOr[PhoneNumber] = js.undefined): UserPhoneConfig = {
+    def apply(
+        PhoneType: PhoneType,
+        AfterContactWorkTimeLimit: js.UndefOr[AfterContactWorkTimeLimit] = js.undefined,
+        AutoAccept: js.UndefOr[AutoAccept] = js.undefined,
+        DeskPhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
+    ): UserPhoneConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PhoneType" -> PhoneType.asInstanceOf[js.Any],
         "AfterContactWorkTimeLimit" -> AfterContactWorkTimeLimit.map { x =>
@@ -1620,16 +1812,22 @@ package connect {
   }
 
   object UserSummary {
-    def apply(Arn: js.UndefOr[ARN] = js.undefined,
-              Id: js.UndefOr[UserId] = js.undefined,
-              Username: js.UndefOr[AgentUsername] = js.undefined): UserSummary = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Id" -> Id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Username" -> Username.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[UserId] = js.undefined,
+        Username: js.UndefOr[AgentUsername] = js.undefined
+    ): UserSummary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Username" -> Username.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserSummary]
     }

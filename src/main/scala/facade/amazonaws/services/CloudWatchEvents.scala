@@ -43,6 +43,10 @@ package object cloudwatchevents {
   type ScheduleExpression           = String
   type StatementId                  = String
   type StringList                   = js.Array[String]
+  type TagKey                       = String
+  type TagKeyList                   = js.Array[TagKey]
+  type TagList                      = js.Array[Tag]
+  type TagValue                     = String
   type TargetArn                    = String
   type TargetId                     = String
   type TargetIdList                 = js.Array[TargetId]
@@ -67,6 +71,7 @@ package cloudwatchevents {
     def enableRule(params: EnableRuleRequest): Request[js.Object]                                           = js.native
     def listRuleNamesByTarget(params: ListRuleNamesByTargetRequest): Request[ListRuleNamesByTargetResponse] = js.native
     def listRules(params: ListRulesRequest): Request[ListRulesResponse]                                     = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def listTargetsByRule(params: ListTargetsByRuleRequest): Request[ListTargetsByRuleResponse]             = js.native
     def putEvents(params: PutEventsRequest): Request[PutEventsResponse]                                     = js.native
     def putPermission(params: PutPermissionRequest): Request[js.Object]                                     = js.native
@@ -74,7 +79,9 @@ package cloudwatchevents {
     def putTargets(params: PutTargetsRequest): Request[PutTargetsResponse]                                  = js.native
     def removePermission(params: RemovePermissionRequest): Request[js.Object]                               = js.native
     def removeTargets(params: RemoveTargetsRequest): Request[RemoveTargetsResponse]                         = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
     def testEventPattern(params: TestEventPatternRequest): Request[TestEventPatternResponse]                = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
   }
 
   object AssignPublicIpEnum {
@@ -95,9 +102,11 @@ package cloudwatchevents {
   }
 
   object AwsVpcConfiguration {
-    def apply(Subnets: StringList,
-              AssignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
-              SecurityGroups: js.UndefOr[StringList] = js.undefined): AwsVpcConfiguration = {
+    def apply(
+        Subnets: StringList,
+        AssignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
+        SecurityGroups: js.UndefOr[StringList] = js.undefined
+    ): AwsVpcConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Subnets" -> Subnets.asInstanceOf[js.Any],
         "AssignPublicIp" -> AssignPublicIp.map { x =>
@@ -121,10 +130,14 @@ package cloudwatchevents {
   }
 
   object BatchArrayProperties {
-    def apply(Size: js.UndefOr[Int] = js.undefined): BatchArrayProperties = {
-      val _fields = IndexedSeq[(String, js.Any)]("Size" -> Size.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Size: js.UndefOr[Int] = js.undefined
+    ): BatchArrayProperties = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Size" -> Size.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchArrayProperties]
     }
@@ -142,10 +155,12 @@ package cloudwatchevents {
   }
 
   object BatchParameters {
-    def apply(JobDefinition: String,
-              JobName: String,
-              ArrayProperties: js.UndefOr[BatchArrayProperties] = js.undefined,
-              RetryStrategy: js.UndefOr[BatchRetryStrategy] = js.undefined): BatchParameters = {
+    def apply(
+        JobDefinition: String,
+        JobName: String,
+        ArrayProperties: js.UndefOr[BatchArrayProperties] = js.undefined,
+        RetryStrategy: js.UndefOr[BatchRetryStrategy] = js.undefined
+    ): BatchParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "JobDefinition" -> JobDefinition.asInstanceOf[js.Any],
         "JobName"       -> JobName.asInstanceOf[js.Any],
@@ -170,10 +185,14 @@ package cloudwatchevents {
   }
 
   object BatchRetryStrategy {
-    def apply(Attempts: js.UndefOr[Int] = js.undefined): BatchRetryStrategy = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attempts" -> Attempts.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attempts: js.UndefOr[Int] = js.undefined
+    ): BatchRetryStrategy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attempts" -> Attempts.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchRetryStrategy]
     }
@@ -191,7 +210,11 @@ package cloudwatchevents {
   }
 
   object Condition {
-    def apply(Key: String, Type: String, Value: String): Condition = {
+    def apply(
+        Key: String,
+        Type: String,
+        Value: String
+    ): Condition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"   -> Key.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
@@ -209,10 +232,16 @@ package cloudwatchevents {
   }
 
   object DeleteRuleRequest {
-    def apply(Name: RuleName, Force: js.UndefOr[Boolean] = js.undefined): DeleteRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Force" -> Force.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: RuleName,
+        Force: js.UndefOr[Boolean] = js.undefined
+    ): DeleteRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Force" -> Force.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRuleRequest]
     }
@@ -222,8 +251,10 @@ package cloudwatchevents {
   trait DescribeEventBusRequest extends js.Object {}
 
   object DescribeEventBusRequest {
-    def apply(): DescribeEventBusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeEventBusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventBusRequest]
     }
@@ -237,16 +268,22 @@ package cloudwatchevents {
   }
 
   object DescribeEventBusResponse {
-    def apply(Arn: js.UndefOr[String] = js.undefined,
-              Name: js.UndefOr[String] = js.undefined,
-              Policy: js.UndefOr[String] = js.undefined): DescribeEventBusResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Policy" -> Policy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Policy: js.UndefOr[String] = js.undefined
+    ): DescribeEventBusResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventBusResponse]
     }
@@ -258,9 +295,12 @@ package cloudwatchevents {
   }
 
   object DescribeRuleRequest {
-    def apply(Name: RuleName): DescribeRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: RuleName
+    ): DescribeRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRuleRequest]
     }
@@ -279,14 +319,16 @@ package cloudwatchevents {
   }
 
   object DescribeRuleResponse {
-    def apply(Arn: js.UndefOr[RuleArn] = js.undefined,
-              Description: js.UndefOr[RuleDescription] = js.undefined,
-              EventPattern: js.UndefOr[EventPattern] = js.undefined,
-              ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
-              Name: js.UndefOr[RuleName] = js.undefined,
-              RoleArn: js.UndefOr[RoleArn] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              State: js.UndefOr[RuleState] = js.undefined): DescribeRuleResponse = {
+    def apply(
+        Arn: js.UndefOr[RuleArn] = js.undefined,
+        Description: js.UndefOr[RuleDescription] = js.undefined,
+        EventPattern: js.UndefOr[EventPattern] = js.undefined,
+        ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
+        Name: js.UndefOr[RuleName] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        State: js.UndefOr[RuleState] = js.undefined
+    ): DescribeRuleResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -324,9 +366,12 @@ package cloudwatchevents {
   }
 
   object DisableRuleRequest {
-    def apply(Name: RuleName): DisableRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: RuleName
+    ): DisableRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableRuleRequest]
     }
@@ -346,12 +391,14 @@ package cloudwatchevents {
   }
 
   object EcsParameters {
-    def apply(TaskDefinitionArn: Arn,
-              Group: js.UndefOr[String] = js.undefined,
-              LaunchType: js.UndefOr[LaunchType] = js.undefined,
-              NetworkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
-              PlatformVersion: js.UndefOr[String] = js.undefined,
-              TaskCount: js.UndefOr[LimitMin1] = js.undefined): EcsParameters = {
+    def apply(
+        TaskDefinitionArn: Arn,
+        Group: js.UndefOr[String] = js.undefined,
+        LaunchType: js.UndefOr[LaunchType] = js.undefined,
+        NetworkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
+        PlatformVersion: js.UndefOr[String] = js.undefined,
+        TaskCount: js.UndefOr[LimitMin1] = js.undefined
+    ): EcsParameters = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TaskDefinitionArn" -> TaskDefinitionArn.asInstanceOf[js.Any],
         "Group" -> Group.map { x =>
@@ -381,9 +428,12 @@ package cloudwatchevents {
   }
 
   object EnableRuleRequest {
-    def apply(Name: RuleName): EnableRuleRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: RuleName
+    ): EnableRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableRuleRequest]
     }
@@ -399,8 +449,10 @@ package cloudwatchevents {
   }
 
   object InputTransformer {
-    def apply(InputTemplate: TransformerInput,
-              InputPathsMap: js.UndefOr[TransformerPaths] = js.undefined): InputTransformer = {
+    def apply(
+        InputTemplate: TransformerInput,
+        InputPathsMap: js.UndefOr[TransformerPaths] = js.undefined
+    ): InputTransformer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InputTemplate" -> InputTemplate.asInstanceOf[js.Any],
         "InputPathsMap" -> InputPathsMap.map { x =>
@@ -421,9 +473,12 @@ package cloudwatchevents {
   }
 
   object KinesisParameters {
-    def apply(PartitionKeyPath: TargetPartitionKeyPath): KinesisParameters = {
-      val _fields = IndexedSeq[(String, js.Any)]("PartitionKeyPath" -> PartitionKeyPath.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PartitionKeyPath: TargetPartitionKeyPath
+    ): KinesisParameters = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PartitionKeyPath" -> PartitionKeyPath.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[KinesisParameters]
     }
@@ -444,15 +499,20 @@ package cloudwatchevents {
   }
 
   object ListRuleNamesByTargetRequest {
-    def apply(TargetArn: TargetArn,
-              Limit: js.UndefOr[LimitMax100] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListRuleNamesByTargetRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("TargetArn" -> TargetArn.asInstanceOf[js.Any], "Limit" -> Limit.map {
-        x =>
+    def apply(
+        TargetArn: TargetArn,
+        Limit: js.UndefOr[LimitMax100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRuleNamesByTargetRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TargetArn" -> TargetArn.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRuleNamesByTargetRequest]
     }
@@ -465,13 +525,18 @@ package cloudwatchevents {
   }
 
   object ListRuleNamesByTargetResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              RuleNames: js.UndefOr[RuleNameList] = js.undefined): ListRuleNamesByTargetResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RuleNames" -> RuleNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RuleNames: js.UndefOr[RuleNameList] = js.undefined
+    ): ListRuleNamesByTargetResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RuleNames" -> RuleNames.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRuleNamesByTargetResponse]
     }
@@ -485,9 +550,11 @@ package cloudwatchevents {
   }
 
   object ListRulesRequest {
-    def apply(Limit: js.UndefOr[LimitMax100] = js.undefined,
-              NamePrefix: js.UndefOr[RuleName] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListRulesRequest = {
+    def apply(
+        Limit: js.UndefOr[LimitMax100] = js.undefined,
+        NamePrefix: js.UndefOr[RuleName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRulesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
@@ -511,15 +578,56 @@ package cloudwatchevents {
   }
 
   object ListRulesResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Rules: js.UndefOr[RuleResponseList] = js.undefined): ListRulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Rules" -> Rules.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Rules: js.UndefOr[RuleResponseList] = js.undefined
+    ): ListRulesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Rules" -> Rules.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRulesResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceARN: Arn
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -531,14 +639,20 @@ package cloudwatchevents {
   }
 
   object ListTargetsByRuleRequest {
-    def apply(Rule: RuleName,
-              Limit: js.UndefOr[LimitMax100] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTargetsByRuleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("Rule" -> Rule.asInstanceOf[js.Any], "Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Rule: RuleName,
+        Limit: js.UndefOr[LimitMax100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTargetsByRuleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Rule" -> Rule.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsByRuleRequest]
     }
@@ -551,13 +665,18 @@ package cloudwatchevents {
   }
 
   object ListTargetsByRuleResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Targets: js.UndefOr[TargetList] = js.undefined): ListTargetsByRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Targets" -> Targets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Targets: js.UndefOr[TargetList] = js.undefined
+    ): ListTargetsByRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Targets" -> Targets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTargetsByRuleResponse]
     }
@@ -572,10 +691,14 @@ package cloudwatchevents {
   }
 
   object NetworkConfiguration {
-    def apply(awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined): NetworkConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("awsvpcConfiguration" -> awsvpcConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
+    ): NetworkConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "awsvpcConfiguration" -> awsvpcConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NetworkConfiguration]
     }
@@ -587,9 +710,12 @@ package cloudwatchevents {
   }
 
   object PutEventsRequest {
-    def apply(Entries: PutEventsRequestEntryList): PutEventsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Entries" -> Entries.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entries: PutEventsRequestEntryList
+    ): PutEventsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entries" -> Entries.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsRequest]
     }
@@ -608,11 +734,13 @@ package cloudwatchevents {
   }
 
   object PutEventsRequestEntry {
-    def apply(Detail: js.UndefOr[String] = js.undefined,
-              DetailType: js.UndefOr[String] = js.undefined,
-              Resources: js.UndefOr[EventResourceList] = js.undefined,
-              Source: js.UndefOr[String] = js.undefined,
-              Time: js.UndefOr[EventTime] = js.undefined): PutEventsRequestEntry = {
+    def apply(
+        Detail: js.UndefOr[String] = js.undefined,
+        DetailType: js.UndefOr[String] = js.undefined,
+        Resources: js.UndefOr[EventResourceList] = js.undefined,
+        Source: js.UndefOr[String] = js.undefined,
+        Time: js.UndefOr[EventTime] = js.undefined
+    ): PutEventsRequestEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Detail" -> Detail.map { x =>
           x.asInstanceOf[js.Any]
@@ -642,13 +770,18 @@ package cloudwatchevents {
   }
 
   object PutEventsResponse {
-    def apply(Entries: js.UndefOr[PutEventsResultEntryList] = js.undefined,
-              FailedEntryCount: js.UndefOr[Int] = js.undefined): PutEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Entries" -> Entries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FailedEntryCount" -> FailedEntryCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entries: js.UndefOr[PutEventsResultEntryList] = js.undefined,
+        FailedEntryCount: js.UndefOr[Int] = js.undefined
+    ): PutEventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entries" -> Entries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailedEntryCount" -> FailedEntryCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsResponse]
     }
@@ -665,9 +798,11 @@ package cloudwatchevents {
   }
 
   object PutEventsResultEntry {
-    def apply(ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-              ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-              EventId: js.UndefOr[EventId] = js.undefined): PutEventsResultEntry = {
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        EventId: js.UndefOr[EventId] = js.undefined
+    ): PutEventsResultEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode" -> ErrorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -693,10 +828,12 @@ package cloudwatchevents {
   }
 
   object PutPermissionRequest {
-    def apply(Action: Action,
-              Principal: Principal,
-              StatementId: StatementId,
-              Condition: js.UndefOr[Condition] = js.undefined): PutPermissionRequest = {
+    def apply(
+        Action: Action,
+        Principal: Principal,
+        StatementId: StatementId,
+        Condition: js.UndefOr[Condition] = js.undefined
+    ): PutPermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Action"      -> Action.asInstanceOf[js.Any],
         "Principal"   -> Principal.asInstanceOf[js.Any],
@@ -718,15 +855,19 @@ package cloudwatchevents {
     var RoleArn: js.UndefOr[RoleArn]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
     var State: js.UndefOr[RuleState]
+    var Tags: js.UndefOr[TagList]
   }
 
   object PutRuleRequest {
-    def apply(Name: RuleName,
-              Description: js.UndefOr[RuleDescription] = js.undefined,
-              EventPattern: js.UndefOr[EventPattern] = js.undefined,
-              RoleArn: js.UndefOr[RoleArn] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              State: js.UndefOr[RuleState] = js.undefined): PutRuleRequest = {
+    def apply(
+        Name: RuleName,
+        Description: js.UndefOr[RuleDescription] = js.undefined,
+        EventPattern: js.UndefOr[EventPattern] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        State: js.UndefOr[RuleState] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): PutRuleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Description" -> Description.map { x =>
@@ -743,6 +884,9 @@ package cloudwatchevents {
         },
         "State" -> State.map { x =>
           x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
 
@@ -756,10 +900,14 @@ package cloudwatchevents {
   }
 
   object PutRuleResponse {
-    def apply(RuleArn: js.UndefOr[RuleArn] = js.undefined): PutRuleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("RuleArn" -> RuleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleArn: js.UndefOr[RuleArn] = js.undefined
+    ): PutRuleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleArn" -> RuleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRuleResponse]
     }
@@ -772,10 +920,14 @@ package cloudwatchevents {
   }
 
   object PutTargetsRequest {
-    def apply(Rule: RuleName, Targets: TargetList): PutTargetsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Rule" -> Rule.asInstanceOf[js.Any], "Targets" -> Targets.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Rule: RuleName,
+        Targets: TargetList
+    ): PutTargetsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Rule"    -> Rule.asInstanceOf[js.Any],
+        "Targets" -> Targets.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutTargetsRequest]
     }
@@ -788,13 +940,18 @@ package cloudwatchevents {
   }
 
   object PutTargetsResponse {
-    def apply(FailedEntries: js.UndefOr[PutTargetsResultEntryList] = js.undefined,
-              FailedEntryCount: js.UndefOr[Int] = js.undefined): PutTargetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FailedEntries" -> FailedEntries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FailedEntryCount" -> FailedEntryCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FailedEntries: js.UndefOr[PutTargetsResultEntryList] = js.undefined,
+        FailedEntryCount: js.UndefOr[Int] = js.undefined
+    ): PutTargetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FailedEntries" -> FailedEntries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailedEntryCount" -> FailedEntryCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutTargetsResponse]
     }
@@ -811,9 +968,11 @@ package cloudwatchevents {
   }
 
   object PutTargetsResultEntry {
-    def apply(ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-              ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-              TargetId: js.UndefOr[TargetId] = js.undefined): PutTargetsResultEntry = {
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        TargetId: js.UndefOr[TargetId] = js.undefined
+    ): PutTargetsResultEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode" -> ErrorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -836,9 +995,12 @@ package cloudwatchevents {
   }
 
   object RemovePermissionRequest {
-    def apply(StatementId: StatementId): RemovePermissionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("StatementId" -> StatementId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StatementId: StatementId
+    ): RemovePermissionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StatementId" -> StatementId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemovePermissionRequest]
     }
@@ -852,7 +1014,11 @@ package cloudwatchevents {
   }
 
   object RemoveTargetsRequest {
-    def apply(Ids: TargetIdList, Rule: RuleName, Force: js.UndefOr[Boolean] = js.undefined): RemoveTargetsRequest = {
+    def apply(
+        Ids: TargetIdList,
+        Rule: RuleName,
+        Force: js.UndefOr[Boolean] = js.undefined
+    ): RemoveTargetsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Ids"  -> Ids.asInstanceOf[js.Any],
         "Rule" -> Rule.asInstanceOf[js.Any],
@@ -872,13 +1038,18 @@ package cloudwatchevents {
   }
 
   object RemoveTargetsResponse {
-    def apply(FailedEntries: js.UndefOr[RemoveTargetsResultEntryList] = js.undefined,
-              FailedEntryCount: js.UndefOr[Int] = js.undefined): RemoveTargetsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FailedEntries" -> FailedEntries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FailedEntryCount" -> FailedEntryCount.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FailedEntries: js.UndefOr[RemoveTargetsResultEntryList] = js.undefined,
+        FailedEntryCount: js.UndefOr[Int] = js.undefined
+    ): RemoveTargetsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FailedEntries" -> FailedEntries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailedEntryCount" -> FailedEntryCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveTargetsResponse]
     }
@@ -895,9 +1066,11 @@ package cloudwatchevents {
   }
 
   object RemoveTargetsResultEntry {
-    def apply(ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-              ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-              TargetId: js.UndefOr[TargetId] = js.undefined): RemoveTargetsResultEntry = {
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        TargetId: js.UndefOr[TargetId] = js.undefined
+    ): RemoveTargetsResultEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode" -> ErrorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -930,14 +1103,16 @@ package cloudwatchevents {
   }
 
   object Rule {
-    def apply(Arn: js.UndefOr[RuleArn] = js.undefined,
-              Description: js.UndefOr[RuleDescription] = js.undefined,
-              EventPattern: js.UndefOr[EventPattern] = js.undefined,
-              ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
-              Name: js.UndefOr[RuleName] = js.undefined,
-              RoleArn: js.UndefOr[RoleArn] = js.undefined,
-              ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
-              State: js.UndefOr[RuleState] = js.undefined): Rule = {
+    def apply(
+        Arn: js.UndefOr[RuleArn] = js.undefined,
+        Description: js.UndefOr[RuleDescription] = js.undefined,
+        EventPattern: js.UndefOr[EventPattern] = js.undefined,
+        ManagedBy: js.UndefOr[ManagedBy] = js.undefined,
+        Name: js.UndefOr[RuleName] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        State: js.UndefOr[RuleState] = js.undefined
+    ): Rule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -985,9 +1160,12 @@ package cloudwatchevents {
   }
 
   object RunCommandParameters {
-    def apply(RunCommandTargets: RunCommandTargets): RunCommandParameters = {
-      val _fields = IndexedSeq[(String, js.Any)]("RunCommandTargets" -> RunCommandTargets.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RunCommandTargets: RunCommandTargets
+    ): RunCommandParameters = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RunCommandTargets" -> RunCommandTargets.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunCommandParameters]
     }
@@ -1003,10 +1181,14 @@ package cloudwatchevents {
   }
 
   object RunCommandTarget {
-    def apply(Key: RunCommandTargetKey, Values: RunCommandTargetValues): RunCommandTarget = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: RunCommandTargetKey,
+        Values: RunCommandTargetValues
+    ): RunCommandTarget = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"    -> Key.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RunCommandTarget]
     }
@@ -1021,18 +1203,78 @@ package cloudwatchevents {
   }
 
   object SqsParameters {
-    def apply(MessageGroupId: js.UndefOr[MessageGroupId] = js.undefined): SqsParameters = {
-      val _fields = IndexedSeq[(String, js.Any)]("MessageGroupId" -> MessageGroupId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MessageGroupId: js.UndefOr[MessageGroupId] = js.undefined
+    ): SqsParameters = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MessageGroupId" -> MessageGroupId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SqsParameters]
     }
   }
 
   /**
+    * A key-value pair associated with an AWS resource. In CloudWatch Events, rules support tagging.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: Arn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceARN: Arn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /**
     * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>.
-    *  If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon CloudWatch Events User Guide</i>.
+    *  If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon CloudWatch Events User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {
@@ -1050,17 +1292,19 @@ package cloudwatchevents {
   }
 
   object Target {
-    def apply(Arn: TargetArn,
-              Id: TargetId,
-              BatchParameters: js.UndefOr[BatchParameters] = js.undefined,
-              EcsParameters: js.UndefOr[EcsParameters] = js.undefined,
-              Input: js.UndefOr[TargetInput] = js.undefined,
-              InputPath: js.UndefOr[TargetInputPath] = js.undefined,
-              InputTransformer: js.UndefOr[InputTransformer] = js.undefined,
-              KinesisParameters: js.UndefOr[KinesisParameters] = js.undefined,
-              RoleArn: js.UndefOr[RoleArn] = js.undefined,
-              RunCommandParameters: js.UndefOr[RunCommandParameters] = js.undefined,
-              SqsParameters: js.UndefOr[SqsParameters] = js.undefined): Target = {
+    def apply(
+        Arn: TargetArn,
+        Id: TargetId,
+        BatchParameters: js.UndefOr[BatchParameters] = js.undefined,
+        EcsParameters: js.UndefOr[EcsParameters] = js.undefined,
+        Input: js.UndefOr[TargetInput] = js.undefined,
+        InputPath: js.UndefOr[TargetInputPath] = js.undefined,
+        InputTransformer: js.UndefOr[InputTransformer] = js.undefined,
+        KinesisParameters: js.UndefOr[KinesisParameters] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        RunCommandParameters: js.UndefOr[RunCommandParameters] = js.undefined,
+        SqsParameters: js.UndefOr[SqsParameters] = js.undefined
+    ): Target = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Id"  -> Id.asInstanceOf[js.Any],
@@ -1104,7 +1348,10 @@ package cloudwatchevents {
   }
 
   object TestEventPatternRequest {
-    def apply(Event: String, EventPattern: EventPattern): TestEventPatternRequest = {
+    def apply(
+        Event: String,
+        EventPattern: EventPattern
+    ): TestEventPatternRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Event"        -> Event.asInstanceOf[js.Any],
         "EventPattern" -> EventPattern.asInstanceOf[js.Any]
@@ -1120,12 +1367,49 @@ package cloudwatchevents {
   }
 
   object TestEventPatternResponse {
-    def apply(Result: js.UndefOr[Boolean] = js.undefined): TestEventPatternResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Result" -> Result.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Result: js.UndefOr[Boolean] = js.undefined
+    ): TestEventPatternResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Result" -> Result.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestEventPatternResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: Arn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceARN: Arn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
   }
 }

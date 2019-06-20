@@ -33,11 +33,13 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointInput {
-    def apply(Body: BodyBlob,
-              EndpointName: EndpointName,
-              Accept: js.UndefOr[Header] = js.undefined,
-              ContentType: js.UndefOr[Header] = js.undefined,
-              CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined): InvokeEndpointInput = {
+    def apply(
+        Body: BodyBlob,
+        EndpointName: EndpointName,
+        Accept: js.UndefOr[Header] = js.undefined,
+        ContentType: js.UndefOr[Header] = js.undefined,
+        CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined
+    ): InvokeEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Body"         -> Body.asInstanceOf[js.Any],
         "EndpointName" -> EndpointName.asInstanceOf[js.Any],
@@ -65,10 +67,12 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointOutput {
-    def apply(Body: BodyBlob,
-              ContentType: js.UndefOr[Header] = js.undefined,
-              CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
-              InvokedProductionVariant: js.UndefOr[Header] = js.undefined): InvokeEndpointOutput = {
+    def apply(
+        Body: BodyBlob,
+        ContentType: js.UndefOr[Header] = js.undefined,
+        CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
+        InvokedProductionVariant: js.UndefOr[Header] = js.undefined
+    ): InvokeEndpointOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Body" -> Body.asInstanceOf[js.Any],
         "ContentType" -> ContentType.map { x =>

@@ -72,16 +72,18 @@ package dynamodbstreams {
   }
 
   object AttributeValue {
-    def apply(B: js.UndefOr[BinaryAttributeValue] = js.undefined,
-              BOOL: js.UndefOr[BooleanAttributeValue] = js.undefined,
-              BS: js.UndefOr[BinarySetAttributeValue] = js.undefined,
-              L: js.UndefOr[ListAttributeValue] = js.undefined,
-              M: js.UndefOr[MapAttributeValue] = js.undefined,
-              N: js.UndefOr[NumberAttributeValue] = js.undefined,
-              NS: js.UndefOr[NumberSetAttributeValue] = js.undefined,
-              NULL: js.UndefOr[NullAttributeValue] = js.undefined,
-              S: js.UndefOr[StringAttributeValue] = js.undefined,
-              SS: js.UndefOr[StringSetAttributeValue] = js.undefined): AttributeValue = {
+    def apply(
+        B: js.UndefOr[BinaryAttributeValue] = js.undefined,
+        BOOL: js.UndefOr[BooleanAttributeValue] = js.undefined,
+        BS: js.UndefOr[BinarySetAttributeValue] = js.undefined,
+        L: js.UndefOr[ListAttributeValue] = js.undefined,
+        M: js.UndefOr[MapAttributeValue] = js.undefined,
+        N: js.UndefOr[NumberAttributeValue] = js.undefined,
+        NS: js.UndefOr[NumberSetAttributeValue] = js.undefined,
+        NULL: js.UndefOr[NullAttributeValue] = js.undefined,
+        S: js.UndefOr[StringAttributeValue] = js.undefined,
+        SS: js.UndefOr[StringSetAttributeValue] = js.undefined
+    ): AttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "B" -> B.map { x =>
           x.asInstanceOf[js.Any]
@@ -130,9 +132,11 @@ package dynamodbstreams {
   }
 
   object DescribeStreamInput {
-    def apply(StreamArn: StreamArn,
-              ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
-              Limit: js.UndefOr[PositiveIntegerObject] = js.undefined): DescribeStreamInput = {
+    def apply(
+        StreamArn: StreamArn,
+        ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
+        Limit: js.UndefOr[PositiveIntegerObject] = js.undefined
+    ): DescribeStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StreamArn" -> StreamArn.asInstanceOf[js.Any],
         "ExclusiveStartShardId" -> ExclusiveStartShardId.map { x =>
@@ -156,10 +160,14 @@ package dynamodbstreams {
   }
 
   object DescribeStreamOutput {
-    def apply(StreamDescription: js.UndefOr[StreamDescription] = js.undefined): DescribeStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StreamDescription" -> StreamDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StreamDescription: js.UndefOr[StreamDescription] = js.undefined
+    ): DescribeStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StreamDescription" -> StreamDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamOutput]
     }
@@ -183,12 +191,16 @@ package dynamodbstreams {
   }
 
   object GetRecordsInput {
-    def apply(ShardIterator: ShardIterator,
-              Limit: js.UndefOr[PositiveIntegerObject] = js.undefined): GetRecordsInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ShardIterator" -> ShardIterator.asInstanceOf[js.Any], "Limit" -> Limit.map { x =>
+    def apply(
+        ShardIterator: ShardIterator,
+        Limit: js.UndefOr[PositiveIntegerObject] = js.undefined
+    ): GetRecordsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ShardIterator" -> ShardIterator.asInstanceOf[js.Any],
+        "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRecordsInput]
     }
@@ -204,13 +216,18 @@ package dynamodbstreams {
   }
 
   object GetRecordsOutput {
-    def apply(NextShardIterator: js.UndefOr[ShardIterator] = js.undefined,
-              Records: js.UndefOr[RecordList] = js.undefined): GetRecordsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextShardIterator" -> NextShardIterator.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Records" -> Records.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextShardIterator: js.UndefOr[ShardIterator] = js.undefined,
+        Records: js.UndefOr[RecordList] = js.undefined
+    ): GetRecordsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextShardIterator" -> NextShardIterator.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Records" -> Records.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRecordsOutput]
     }
@@ -228,10 +245,12 @@ package dynamodbstreams {
   }
 
   object GetShardIteratorInput {
-    def apply(ShardId: ShardId,
-              ShardIteratorType: ShardIteratorType,
-              StreamArn: StreamArn,
-              SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined): GetShardIteratorInput = {
+    def apply(
+        ShardId: ShardId,
+        ShardIteratorType: ShardIteratorType,
+        StreamArn: StreamArn,
+        SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
+    ): GetShardIteratorInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ShardId"           -> ShardId.asInstanceOf[js.Any],
         "ShardIteratorType" -> ShardIteratorType.asInstanceOf[js.Any],
@@ -254,10 +273,14 @@ package dynamodbstreams {
   }
 
   object GetShardIteratorOutput {
-    def apply(ShardIterator: js.UndefOr[ShardIterator] = js.undefined): GetShardIteratorOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ShardIterator" -> ShardIterator.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ShardIterator: js.UndefOr[ShardIterator] = js.undefined
+    ): GetShardIteratorOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ShardIterator" -> ShardIterator.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetShardIteratorOutput]
     }
@@ -273,12 +296,18 @@ package dynamodbstreams {
   }
 
   object Identity {
-    def apply(PrincipalId: js.UndefOr[String] = js.undefined, Type: js.UndefOr[String] = js.undefined): Identity = {
-      val _fields = IndexedSeq[(String, js.Any)]("PrincipalId" -> PrincipalId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PrincipalId: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined
+    ): Identity = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PrincipalId" -> PrincipalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Identity]
     }
@@ -306,7 +335,10 @@ package dynamodbstreams {
   }
 
   object KeySchemaElement {
-    def apply(AttributeName: KeySchemaAttributeName, KeyType: KeyType): KeySchemaElement = {
+    def apply(
+        AttributeName: KeySchemaAttributeName,
+        KeyType: KeyType
+    ): KeySchemaElement = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "KeyType"       -> KeyType.asInstanceOf[js.Any]
@@ -342,9 +374,11 @@ package dynamodbstreams {
   }
 
   object ListStreamsInput {
-    def apply(ExclusiveStartStreamArn: js.UndefOr[StreamArn] = js.undefined,
-              Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
-              TableName: js.UndefOr[TableName] = js.undefined): ListStreamsInput = {
+    def apply(
+        ExclusiveStartStreamArn: js.UndefOr[StreamArn] = js.undefined,
+        Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): ListStreamsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExclusiveStartStreamArn" -> ExclusiveStartStreamArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -371,13 +405,18 @@ package dynamodbstreams {
   }
 
   object ListStreamsOutput {
-    def apply(LastEvaluatedStreamArn: js.UndefOr[StreamArn] = js.undefined,
-              Streams: js.UndefOr[StreamList] = js.undefined): ListStreamsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("LastEvaluatedStreamArn" -> LastEvaluatedStreamArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Streams" -> Streams.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LastEvaluatedStreamArn: js.UndefOr[StreamArn] = js.undefined,
+        Streams: js.UndefOr[StreamList] = js.undefined
+    ): ListStreamsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LastEvaluatedStreamArn" -> LastEvaluatedStreamArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Streams" -> Streams.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsOutput]
     }
@@ -406,13 +445,15 @@ package dynamodbstreams {
   }
 
   object Record {
-    def apply(awsRegion: js.UndefOr[String] = js.undefined,
-              dynamodb: js.UndefOr[StreamRecord] = js.undefined,
-              eventID: js.UndefOr[String] = js.undefined,
-              eventName: js.UndefOr[OperationType] = js.undefined,
-              eventSource: js.UndefOr[String] = js.undefined,
-              eventVersion: js.UndefOr[String] = js.undefined,
-              userIdentity: js.UndefOr[Identity] = js.undefined): Record = {
+    def apply(
+        awsRegion: js.UndefOr[String] = js.undefined,
+        dynamodb: js.UndefOr[StreamRecord] = js.undefined,
+        eventID: js.UndefOr[String] = js.undefined,
+        eventName: js.UndefOr[OperationType] = js.undefined,
+        eventSource: js.UndefOr[String] = js.undefined,
+        eventVersion: js.UndefOr[String] = js.undefined,
+        userIdentity: js.UndefOr[Identity] = js.undefined
+    ): Record = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsRegion" -> awsRegion.map { x =>
           x.asInstanceOf[js.Any]
@@ -459,8 +500,10 @@ package dynamodbstreams {
   }
 
   object SequenceNumberRange {
-    def apply(EndingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
-              StartingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined): SequenceNumberRange = {
+    def apply(
+        EndingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
+        StartingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
+    ): SequenceNumberRange = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndingSequenceNumber" -> EndingSequenceNumber.map { x =>
           x.asInstanceOf[js.Any]
@@ -485,9 +528,11 @@ package dynamodbstreams {
   }
 
   object Shard {
-    def apply(ParentShardId: js.UndefOr[ShardId] = js.undefined,
-              SequenceNumberRange: js.UndefOr[SequenceNumberRange] = js.undefined,
-              ShardId: js.UndefOr[ShardId] = js.undefined): Shard = {
+    def apply(
+        ParentShardId: js.UndefOr[ShardId] = js.undefined,
+        SequenceNumberRange: js.UndefOr[SequenceNumberRange] = js.undefined,
+        ShardId: js.UndefOr[ShardId] = js.undefined
+    ): Shard = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParentShardId" -> ParentShardId.map { x =>
           x.asInstanceOf[js.Any]
@@ -524,9 +569,11 @@ package dynamodbstreams {
   }
 
   object Stream {
-    def apply(StreamArn: js.UndefOr[StreamArn] = js.undefined,
-              StreamLabel: js.UndefOr[String] = js.undefined,
-              TableName: js.UndefOr[TableName] = js.undefined): Stream = {
+    def apply(
+        StreamArn: js.UndefOr[StreamArn] = js.undefined,
+        StreamLabel: js.UndefOr[String] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): Stream = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StreamArn" -> StreamArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -560,15 +607,17 @@ package dynamodbstreams {
   }
 
   object StreamDescription {
-    def apply(CreationRequestDateTime: js.UndefOr[Date] = js.undefined,
-              KeySchema: js.UndefOr[KeySchema] = js.undefined,
-              LastEvaluatedShardId: js.UndefOr[ShardId] = js.undefined,
-              Shards: js.UndefOr[ShardDescriptionList] = js.undefined,
-              StreamArn: js.UndefOr[StreamArn] = js.undefined,
-              StreamLabel: js.UndefOr[String] = js.undefined,
-              StreamStatus: js.UndefOr[StreamStatus] = js.undefined,
-              StreamViewType: js.UndefOr[StreamViewType] = js.undefined,
-              TableName: js.UndefOr[TableName] = js.undefined): StreamDescription = {
+    def apply(
+        CreationRequestDateTime: js.UndefOr[Date] = js.undefined,
+        KeySchema: js.UndefOr[KeySchema] = js.undefined,
+        LastEvaluatedShardId: js.UndefOr[ShardId] = js.undefined,
+        Shards: js.UndefOr[ShardDescriptionList] = js.undefined,
+        StreamArn: js.UndefOr[StreamArn] = js.undefined,
+        StreamLabel: js.UndefOr[String] = js.undefined,
+        StreamStatus: js.UndefOr[StreamStatus] = js.undefined,
+        StreamViewType: js.UndefOr[StreamViewType] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): StreamDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationRequestDateTime" -> CreationRequestDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -618,13 +667,15 @@ package dynamodbstreams {
   }
 
   object StreamRecord {
-    def apply(ApproximateCreationDateTime: js.UndefOr[Date] = js.undefined,
-              Keys: js.UndefOr[AttributeMap] = js.undefined,
-              NewImage: js.UndefOr[AttributeMap] = js.undefined,
-              OldImage: js.UndefOr[AttributeMap] = js.undefined,
-              SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
-              SizeBytes: js.UndefOr[PositiveLongObject] = js.undefined,
-              StreamViewType: js.UndefOr[StreamViewType] = js.undefined): StreamRecord = {
+    def apply(
+        ApproximateCreationDateTime: js.UndefOr[Date] = js.undefined,
+        Keys: js.UndefOr[AttributeMap] = js.undefined,
+        NewImage: js.UndefOr[AttributeMap] = js.undefined,
+        OldImage: js.UndefOr[AttributeMap] = js.undefined,
+        SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
+        SizeBytes: js.UndefOr[PositiveLongObject] = js.undefined,
+        StreamViewType: js.UndefOr[StreamViewType] = js.undefined
+    ): StreamRecord = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApproximateCreationDateTime" -> ApproximateCreationDateTime.map { x =>
           x.asInstanceOf[js.Any]

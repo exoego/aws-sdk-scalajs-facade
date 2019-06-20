@@ -140,7 +140,9 @@ package gamelift {
     def deleteGameSessionQueue(params: DeleteGameSessionQueueInput): Request[DeleteGameSessionQueueOutput] = js.native
     def deleteMatchmakingConfiguration(
         params: DeleteMatchmakingConfigurationInput
-    ): Request[DeleteMatchmakingConfigurationOutput]                              = js.native
+    ): Request[DeleteMatchmakingConfigurationOutput] = js.native
+    def deleteMatchmakingRuleSet(params: DeleteMatchmakingRuleSetInput): Request[DeleteMatchmakingRuleSetOutput] =
+      js.native
     def deleteScalingPolicy(params: DeleteScalingPolicyInput): Request[js.Object] = js.native
     def deleteVpcPeeringAuthorization(
         params: DeleteVpcPeeringAuthorizationInput
@@ -234,9 +236,11 @@ package gamelift {
   }
 
   object AcceptMatchInput {
-    def apply(AcceptanceType: AcceptanceType,
-              PlayerIds: StringList,
-              TicketId: MatchmakingIdStringModel): AcceptMatchInput = {
+    def apply(
+        AcceptanceType: AcceptanceType,
+        PlayerIds: StringList,
+        TicketId: MatchmakingIdStringModel
+    ): AcceptMatchInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AcceptanceType" -> AcceptanceType.asInstanceOf[js.Any],
         "PlayerIds"      -> PlayerIds.asInstanceOf[js.Any],
@@ -251,8 +255,10 @@ package gamelift {
   trait AcceptMatchOutput extends js.Object {}
 
   object AcceptMatchOutput {
-    def apply(): AcceptMatchOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AcceptMatchOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptMatchOutput]
     }
@@ -267,7 +273,6 @@ package gamelift {
 
   /**
     * Properties describing a fleet alias.
-    *  Alias-related operations include:
     * * <a>CreateAlias</a>
     *  * <a>ListAliases</a>
     *  * <a>DescribeAlias</a>
@@ -287,13 +292,15 @@ package gamelift {
   }
 
   object Alias {
-    def apply(AliasArn: js.UndefOr[ArnStringModel] = js.undefined,
-              AliasId: js.UndefOr[AliasId] = js.undefined,
-              CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[FreeText] = js.undefined,
-              LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
-              Name: js.UndefOr[NonBlankAndLengthConstraintString] = js.undefined,
-              RoutingStrategy: js.UndefOr[RoutingStrategy] = js.undefined): Alias = {
+    def apply(
+        AliasArn: js.UndefOr[ArnStringModel] = js.undefined,
+        AliasId: js.UndefOr[AliasId] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[FreeText] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[NonBlankAndLengthConstraintString] = js.undefined,
+        RoutingStrategy: js.UndefOr[RoutingStrategy] = js.undefined
+    ): Alias = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AliasArn" -> AliasArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -334,10 +341,12 @@ package gamelift {
   }
 
   object AttributeValue {
-    def apply(N: js.UndefOr[DoubleObject] = js.undefined,
-              S: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              SDM: js.UndefOr[StringDoubleMap] = js.undefined,
-              SL: js.UndefOr[StringList] = js.undefined): AttributeValue = {
+    def apply(
+        N: js.UndefOr[DoubleObject] = js.undefined,
+        S: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        SDM: js.UndefOr[StringDoubleMap] = js.undefined,
+        SL: js.UndefOr[StringList] = js.undefined
+    ): AttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "N" -> N.map { x =>
           x.asInstanceOf[js.Any]
@@ -368,9 +377,11 @@ package gamelift {
   }
 
   object AwsCredentials {
-    def apply(AccessKeyId: js.UndefOr[NonEmptyString] = js.undefined,
-              SecretAccessKey: js.UndefOr[NonEmptyString] = js.undefined,
-              SessionToken: js.UndefOr[NonEmptyString] = js.undefined): AwsCredentials = {
+    def apply(
+        AccessKeyId: js.UndefOr[NonEmptyString] = js.undefined,
+        SecretAccessKey: js.UndefOr[NonEmptyString] = js.undefined,
+        SessionToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): AwsCredentials = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessKeyId" -> AccessKeyId.map { x =>
           x.asInstanceOf[js.Any]
@@ -389,7 +400,6 @@ package gamelift {
 
   /**
     * Properties describing a game build.
-    *  Build-related operations include:
     * * <a>CreateBuild</a>
     *  * <a>ListBuilds</a>
     *  * <a>DescribeBuild</a>
@@ -408,13 +418,15 @@ package gamelift {
   }
 
   object Build {
-    def apply(BuildId: js.UndefOr[BuildId] = js.undefined,
-              CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              Name: js.UndefOr[FreeText] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              SizeOnDisk: js.UndefOr[PositiveLong] = js.undefined,
-              Status: js.UndefOr[BuildStatus] = js.undefined,
-              Version: js.UndefOr[FreeText] = js.undefined): Build = {
+    def apply(
+        BuildId: js.UndefOr[BuildId] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[FreeText] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        SizeOnDisk: js.UndefOr[PositiveLong] = js.undefined,
+        Status: js.UndefOr[BuildStatus] = js.undefined,
+        Version: js.UndefOr[FreeText] = js.undefined
+    ): Build = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BuildId" -> BuildId.map { x =>
           x.asInstanceOf[js.Any]
@@ -462,14 +474,6 @@ package gamelift {
   }
 
   /**
-    * The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.
-    */
-  @js.native
-  trait ConflictExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
     * Represents the input for a request action.
     */
   @js.native
@@ -480,9 +484,11 @@ package gamelift {
   }
 
   object CreateAliasInput {
-    def apply(Name: NonBlankAndLengthConstraintString,
-              RoutingStrategy: RoutingStrategy,
-              Description: js.UndefOr[NonZeroAndMaxString] = js.undefined): CreateAliasInput = {
+    def apply(
+        Name: NonBlankAndLengthConstraintString,
+        RoutingStrategy: RoutingStrategy,
+        Description: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): CreateAliasInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"            -> Name.asInstanceOf[js.Any],
         "RoutingStrategy" -> RoutingStrategy.asInstanceOf[js.Any],
@@ -504,10 +510,14 @@ package gamelift {
   }
 
   object CreateAliasOutput {
-    def apply(Alias: js.UndefOr[Alias] = js.undefined): CreateAliasOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Alias" -> Alias.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Alias: js.UndefOr[Alias] = js.undefined
+    ): CreateAliasOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Alias" -> Alias.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAliasOutput]
     }
@@ -525,10 +535,12 @@ package gamelift {
   }
 
   object CreateBuildInput {
-    def apply(Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              StorageLocation: js.UndefOr[S3Location] = js.undefined,
-              Version: js.UndefOr[NonZeroAndMaxString] = js.undefined): CreateBuildInput = {
+    def apply(
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        StorageLocation: js.UndefOr[S3Location] = js.undefined,
+        Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): CreateBuildInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.map { x =>
           x.asInstanceOf[js.Any]
@@ -559,9 +571,11 @@ package gamelift {
   }
 
   object CreateBuildOutput {
-    def apply(Build: js.UndefOr[Build] = js.undefined,
-              StorageLocation: js.UndefOr[S3Location] = js.undefined,
-              UploadCredentials: js.UndefOr[AwsCredentials] = js.undefined): CreateBuildOutput = {
+    def apply(
+        Build: js.UndefOr[Build] = js.undefined,
+        StorageLocation: js.UndefOr[S3Location] = js.undefined,
+        UploadCredentials: js.UndefOr[AwsCredentials] = js.undefined
+    ): CreateBuildOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Build" -> Build.map { x =>
           x.asInstanceOf[js.Any]
@@ -589,6 +603,7 @@ package gamelift {
     var Description: js.UndefOr[NonZeroAndMaxString]
     var EC2InboundPermissions: js.UndefOr[IpPermissionsList]
     var FleetType: js.UndefOr[FleetType]
+    var InstanceRoleArn: js.UndefOr[NonEmptyString]
     var LogPaths: js.UndefOr[StringList]
     var MetricGroups: js.UndefOr[MetricGroupList]
     var NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy]
@@ -601,21 +616,24 @@ package gamelift {
   }
 
   object CreateFleetInput {
-    def apply(BuildId: BuildId,
-              EC2InstanceType: EC2InstanceType,
-              Name: NonZeroAndMaxString,
-              Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              EC2InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined,
-              FleetType: js.UndefOr[FleetType] = js.undefined,
-              LogPaths: js.UndefOr[StringList] = js.undefined,
-              MetricGroups: js.UndefOr[MetricGroupList] = js.undefined,
-              NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined,
-              PeerVpcAwsAccountId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
-              RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined,
-              ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined): CreateFleetInput = {
+    def apply(
+        BuildId: BuildId,
+        EC2InstanceType: EC2InstanceType,
+        Name: NonZeroAndMaxString,
+        Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        EC2InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined,
+        FleetType: js.UndefOr[FleetType] = js.undefined,
+        InstanceRoleArn: js.UndefOr[NonEmptyString] = js.undefined,
+        LogPaths: js.UndefOr[StringList] = js.undefined,
+        MetricGroups: js.UndefOr[MetricGroupList] = js.undefined,
+        NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined,
+        PeerVpcAwsAccountId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
+        RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined,
+        ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): CreateFleetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BuildId"         -> BuildId.asInstanceOf[js.Any],
         "EC2InstanceType" -> EC2InstanceType.asInstanceOf[js.Any],
@@ -627,6 +645,9 @@ package gamelift {
           x.asInstanceOf[js.Any]
         },
         "FleetType" -> FleetType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceRoleArn" -> InstanceRoleArn.map { x =>
           x.asInstanceOf[js.Any]
         },
         "LogPaths" -> LogPaths.map { x =>
@@ -671,10 +692,14 @@ package gamelift {
   }
 
   object CreateFleetOutput {
-    def apply(FleetAttributes: js.UndefOr[FleetAttributes] = js.undefined): CreateFleetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetAttributes" -> FleetAttributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetAttributes: js.UndefOr[FleetAttributes] = js.undefined
+    ): CreateFleetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetAttributes" -> FleetAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFleetOutput]
     }
@@ -697,15 +722,17 @@ package gamelift {
   }
 
   object CreateGameSessionInput {
-    def apply(MaximumPlayerSessionCount: WholeNumber,
-              AliasId: js.UndefOr[AliasId] = js.undefined,
-              CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
-              GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
-              GameSessionId: js.UndefOr[IdStringModel] = js.undefined,
-              IdempotencyToken: js.UndefOr[IdStringModel] = js.undefined,
-              Name: js.UndefOr[NonZeroAndMaxString] = js.undefined): CreateGameSessionInput = {
+    def apply(
+        MaximumPlayerSessionCount: WholeNumber,
+        AliasId: js.UndefOr[AliasId] = js.undefined,
+        CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
+        GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        GameSessionId: js.UndefOr[IdStringModel] = js.undefined,
+        IdempotencyToken: js.UndefOr[IdStringModel] = js.undefined,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): CreateGameSessionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaximumPlayerSessionCount" -> MaximumPlayerSessionCount.asInstanceOf[js.Any],
         "AliasId" -> AliasId.map { x =>
@@ -747,10 +774,14 @@ package gamelift {
   }
 
   object CreateGameSessionOutput {
-    def apply(GameSession: js.UndefOr[GameSession] = js.undefined): CreateGameSessionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSession" -> GameSession.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSession: js.UndefOr[GameSession] = js.undefined
+    ): CreateGameSessionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSession" -> GameSession.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGameSessionOutput]
     }
@@ -768,10 +799,12 @@ package gamelift {
   }
 
   object CreateGameSessionQueueInput {
-    def apply(Name: GameSessionQueueName,
-              Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
-              PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
-              TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined): CreateGameSessionQueueInput = {
+    def apply(
+        Name: GameSessionQueueName,
+        Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
+        PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
+        TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
+    ): CreateGameSessionQueueInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Destinations" -> Destinations.map { x =>
@@ -798,10 +831,14 @@ package gamelift {
   }
 
   object CreateGameSessionQueueOutput {
-    def apply(GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined): CreateGameSessionQueueOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionQueue" -> GameSessionQueue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined
+    ): CreateGameSessionQueueOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionQueue" -> GameSessionQueue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGameSessionQueueOutput]
     }
@@ -827,18 +864,20 @@ package gamelift {
   }
 
   object CreateMatchmakingConfigurationInput {
-    def apply(AcceptanceRequired: BooleanModel,
-              GameSessionQueueArns: QueueArnsList,
-              Name: MatchmakingIdStringModel,
-              RequestTimeoutSeconds: MatchmakingRequestTimeoutInteger,
-              RuleSetName: MatchmakingIdStringModel,
-              AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
-              AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
-              CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
-              Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
-              GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
-              NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined): CreateMatchmakingConfigurationInput = {
+    def apply(
+        AcceptanceRequired: BooleanModel,
+        GameSessionQueueArns: QueueArnsList,
+        Name: MatchmakingIdStringModel,
+        RequestTimeoutSeconds: MatchmakingRequestTimeoutInteger,
+        RuleSetName: MatchmakingIdStringModel,
+        AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
+        AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
+        CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
+        Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
+        GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined
+    ): CreateMatchmakingConfigurationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AcceptanceRequired"    -> AcceptanceRequired.asInstanceOf[js.Any],
         "GameSessionQueueArns"  -> GameSessionQueueArns.asInstanceOf[js.Any],
@@ -884,9 +923,11 @@ package gamelift {
     def apply(
         Configuration: js.UndefOr[MatchmakingConfiguration] = js.undefined
     ): CreateMatchmakingConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Configuration" -> Configuration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Configuration" -> Configuration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMatchmakingConfigurationOutput]
     }
@@ -902,7 +943,10 @@ package gamelift {
   }
 
   object CreateMatchmakingRuleSetInput {
-    def apply(Name: MatchmakingIdStringModel, RuleSetBody: RuleSetBody): CreateMatchmakingRuleSetInput = {
+    def apply(
+        Name: MatchmakingIdStringModel,
+        RuleSetBody: RuleSetBody
+    ): CreateMatchmakingRuleSetInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"        -> Name.asInstanceOf[js.Any],
         "RuleSetBody" -> RuleSetBody.asInstanceOf[js.Any]
@@ -921,9 +965,12 @@ package gamelift {
   }
 
   object CreateMatchmakingRuleSetOutput {
-    def apply(RuleSet: MatchmakingRuleSet): CreateMatchmakingRuleSetOutput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("RuleSet" -> RuleSet.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleSet: MatchmakingRuleSet
+    ): CreateMatchmakingRuleSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleSet" -> RuleSet.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateMatchmakingRuleSetOutput]
     }
@@ -940,9 +987,11 @@ package gamelift {
   }
 
   object CreatePlayerSessionInput {
-    def apply(GameSessionId: ArnStringModel,
-              PlayerId: NonZeroAndMaxString,
-              PlayerData: js.UndefOr[PlayerData] = js.undefined): CreatePlayerSessionInput = {
+    def apply(
+        GameSessionId: ArnStringModel,
+        PlayerId: NonZeroAndMaxString,
+        PlayerData: js.UndefOr[PlayerData] = js.undefined
+    ): CreatePlayerSessionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any],
         "PlayerId"      -> PlayerId.asInstanceOf[js.Any],
@@ -964,10 +1013,14 @@ package gamelift {
   }
 
   object CreatePlayerSessionOutput {
-    def apply(PlayerSession: js.UndefOr[PlayerSession] = js.undefined): CreatePlayerSessionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlayerSession" -> PlayerSession.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlayerSession: js.UndefOr[PlayerSession] = js.undefined
+    ): CreatePlayerSessionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlayerSession" -> PlayerSession.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlayerSessionOutput]
     }
@@ -984,9 +1037,11 @@ package gamelift {
   }
 
   object CreatePlayerSessionsInput {
-    def apply(GameSessionId: ArnStringModel,
-              PlayerIds: PlayerIdList,
-              PlayerDataMap: js.UndefOr[PlayerDataMap] = js.undefined): CreatePlayerSessionsInput = {
+    def apply(
+        GameSessionId: ArnStringModel,
+        PlayerIds: PlayerIdList,
+        PlayerDataMap: js.UndefOr[PlayerDataMap] = js.undefined
+    ): CreatePlayerSessionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any],
         "PlayerIds"     -> PlayerIds.asInstanceOf[js.Any],
@@ -1008,10 +1063,14 @@ package gamelift {
   }
 
   object CreatePlayerSessionsOutput {
-    def apply(PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined): CreatePlayerSessionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlayerSessions" -> PlayerSessions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined
+    ): CreatePlayerSessionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlayerSessions" -> PlayerSessions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlayerSessionsOutput]
     }
@@ -1027,8 +1086,10 @@ package gamelift {
   }
 
   object CreateVpcPeeringAuthorizationInput {
-    def apply(GameLiftAwsAccountId: NonZeroAndMaxString,
-              PeerVpcId: NonZeroAndMaxString): CreateVpcPeeringAuthorizationInput = {
+    def apply(
+        GameLiftAwsAccountId: NonZeroAndMaxString,
+        PeerVpcId: NonZeroAndMaxString
+    ): CreateVpcPeeringAuthorizationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameLiftAwsAccountId" -> GameLiftAwsAccountId.asInstanceOf[js.Any],
         "PeerVpcId"            -> PeerVpcId.asInstanceOf[js.Any]
@@ -1050,9 +1111,11 @@ package gamelift {
     def apply(
         VpcPeeringAuthorization: js.UndefOr[VpcPeeringAuthorization] = js.undefined
     ): CreateVpcPeeringAuthorizationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VpcPeeringAuthorization" -> VpcPeeringAuthorization.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VpcPeeringAuthorization" -> VpcPeeringAuthorization.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVpcPeeringAuthorizationOutput]
     }
@@ -1069,9 +1132,11 @@ package gamelift {
   }
 
   object CreateVpcPeeringConnectionInput {
-    def apply(FleetId: FleetId,
-              PeerVpcAwsAccountId: NonZeroAndMaxString,
-              PeerVpcId: NonZeroAndMaxString): CreateVpcPeeringConnectionInput = {
+    def apply(
+        FleetId: FleetId,
+        PeerVpcAwsAccountId: NonZeroAndMaxString,
+        PeerVpcId: NonZeroAndMaxString
+    ): CreateVpcPeeringConnectionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId"             -> FleetId.asInstanceOf[js.Any],
         "PeerVpcAwsAccountId" -> PeerVpcAwsAccountId.asInstanceOf[js.Any],
@@ -1086,8 +1151,10 @@ package gamelift {
   trait CreateVpcPeeringConnectionOutput extends js.Object {}
 
   object CreateVpcPeeringConnectionOutput {
-    def apply(): CreateVpcPeeringConnectionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateVpcPeeringConnectionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateVpcPeeringConnectionOutput]
     }
@@ -1102,9 +1169,12 @@ package gamelift {
   }
 
   object DeleteAliasInput {
-    def apply(AliasId: AliasId): DeleteAliasInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("AliasId" -> AliasId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AliasId: AliasId
+    ): DeleteAliasInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AliasId" -> AliasId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAliasInput]
     }
@@ -1119,9 +1189,12 @@ package gamelift {
   }
 
   object DeleteBuildInput {
-    def apply(BuildId: BuildId): DeleteBuildInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("BuildId" -> BuildId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BuildId: BuildId
+    ): DeleteBuildInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BuildId" -> BuildId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBuildInput]
     }
@@ -1136,9 +1209,12 @@ package gamelift {
   }
 
   object DeleteFleetInput {
-    def apply(FleetId: FleetId): DeleteFleetInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: FleetId
+    ): DeleteFleetInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFleetInput]
     }
@@ -1153,9 +1229,12 @@ package gamelift {
   }
 
   object DeleteGameSessionQueueInput {
-    def apply(Name: GameSessionQueueName): DeleteGameSessionQueueInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: GameSessionQueueName
+    ): DeleteGameSessionQueueInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGameSessionQueueInput]
     }
@@ -1165,8 +1244,10 @@ package gamelift {
   trait DeleteGameSessionQueueOutput extends js.Object {}
 
   object DeleteGameSessionQueueOutput {
-    def apply(): DeleteGameSessionQueueOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteGameSessionQueueOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGameSessionQueueOutput]
     }
@@ -1181,9 +1262,12 @@ package gamelift {
   }
 
   object DeleteMatchmakingConfigurationInput {
-    def apply(Name: MatchmakingIdStringModel): DeleteMatchmakingConfigurationInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: MatchmakingIdStringModel
+    ): DeleteMatchmakingConfigurationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMatchmakingConfigurationInput]
     }
@@ -1193,10 +1277,48 @@ package gamelift {
   trait DeleteMatchmakingConfigurationOutput extends js.Object {}
 
   object DeleteMatchmakingConfigurationOutput {
-    def apply(): DeleteMatchmakingConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteMatchmakingConfigurationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMatchmakingConfigurationOutput]
+    }
+  }
+
+  /**
+    * Represents the input for a request action.
+    */
+  @js.native
+  trait DeleteMatchmakingRuleSetInput extends js.Object {
+    var Name: MatchmakingIdStringModel
+  }
+
+  object DeleteMatchmakingRuleSetInput {
+    def apply(
+        Name: MatchmakingIdStringModel
+    ): DeleteMatchmakingRuleSetInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMatchmakingRuleSetInput]
+    }
+  }
+
+  /**
+    * Represents the returned data in response to a request action.
+    */
+  @js.native
+  trait DeleteMatchmakingRuleSetOutput extends js.Object {}
+
+  object DeleteMatchmakingRuleSetOutput {
+    def apply(
+        ): DeleteMatchmakingRuleSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteMatchmakingRuleSetOutput]
     }
   }
 
@@ -1210,10 +1332,14 @@ package gamelift {
   }
 
   object DeleteScalingPolicyInput {
-    def apply(FleetId: FleetId, Name: NonZeroAndMaxString): DeleteScalingPolicyInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.asInstanceOf[js.Any], "Name" -> Name.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: FleetId,
+        Name: NonZeroAndMaxString
+    ): DeleteScalingPolicyInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.asInstanceOf[js.Any],
+        "Name"    -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteScalingPolicyInput]
     }
@@ -1229,8 +1355,10 @@ package gamelift {
   }
 
   object DeleteVpcPeeringAuthorizationInput {
-    def apply(GameLiftAwsAccountId: NonZeroAndMaxString,
-              PeerVpcId: NonZeroAndMaxString): DeleteVpcPeeringAuthorizationInput = {
+    def apply(
+        GameLiftAwsAccountId: NonZeroAndMaxString,
+        PeerVpcId: NonZeroAndMaxString
+    ): DeleteVpcPeeringAuthorizationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameLiftAwsAccountId" -> GameLiftAwsAccountId.asInstanceOf[js.Any],
         "PeerVpcId"            -> PeerVpcId.asInstanceOf[js.Any]
@@ -1244,8 +1372,10 @@ package gamelift {
   trait DeleteVpcPeeringAuthorizationOutput extends js.Object {}
 
   object DeleteVpcPeeringAuthorizationOutput {
-    def apply(): DeleteVpcPeeringAuthorizationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteVpcPeeringAuthorizationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVpcPeeringAuthorizationOutput]
     }
@@ -1261,7 +1391,10 @@ package gamelift {
   }
 
   object DeleteVpcPeeringConnectionInput {
-    def apply(FleetId: FleetId, VpcPeeringConnectionId: NonZeroAndMaxString): DeleteVpcPeeringConnectionInput = {
+    def apply(
+        FleetId: FleetId,
+        VpcPeeringConnectionId: NonZeroAndMaxString
+    ): DeleteVpcPeeringConnectionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId"                -> FleetId.asInstanceOf[js.Any],
         "VpcPeeringConnectionId" -> VpcPeeringConnectionId.asInstanceOf[js.Any]
@@ -1275,8 +1408,10 @@ package gamelift {
   trait DeleteVpcPeeringConnectionOutput extends js.Object {}
 
   object DeleteVpcPeeringConnectionOutput {
-    def apply(): DeleteVpcPeeringConnectionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteVpcPeeringConnectionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVpcPeeringConnectionOutput]
     }
@@ -1291,9 +1426,12 @@ package gamelift {
   }
 
   object DescribeAliasInput {
-    def apply(AliasId: AliasId): DescribeAliasInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("AliasId" -> AliasId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AliasId: AliasId
+    ): DescribeAliasInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AliasId" -> AliasId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAliasInput]
     }
@@ -1308,10 +1446,14 @@ package gamelift {
   }
 
   object DescribeAliasOutput {
-    def apply(Alias: js.UndefOr[Alias] = js.undefined): DescribeAliasOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Alias" -> Alias.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Alias: js.UndefOr[Alias] = js.undefined
+    ): DescribeAliasOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Alias" -> Alias.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAliasOutput]
     }
@@ -1326,9 +1468,12 @@ package gamelift {
   }
 
   object DescribeBuildInput {
-    def apply(BuildId: BuildId): DescribeBuildInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("BuildId" -> BuildId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BuildId: BuildId
+    ): DescribeBuildInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BuildId" -> BuildId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBuildInput]
     }
@@ -1343,10 +1488,14 @@ package gamelift {
   }
 
   object DescribeBuildOutput {
-    def apply(Build: js.UndefOr[Build] = js.undefined): DescribeBuildOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Build" -> Build.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Build: js.UndefOr[Build] = js.undefined
+    ): DescribeBuildOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Build" -> Build.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBuildOutput]
     }
@@ -1361,10 +1510,14 @@ package gamelift {
   }
 
   object DescribeEC2InstanceLimitsInput {
-    def apply(EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined): DescribeEC2InstanceLimitsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("EC2InstanceType" -> EC2InstanceType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined
+    ): DescribeEC2InstanceLimitsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EC2InstanceType" -> EC2InstanceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEC2InstanceLimitsInput]
     }
@@ -1379,10 +1532,14 @@ package gamelift {
   }
 
   object DescribeEC2InstanceLimitsOutput {
-    def apply(EC2InstanceLimits: js.UndefOr[EC2InstanceLimitList] = js.undefined): DescribeEC2InstanceLimitsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("EC2InstanceLimits" -> EC2InstanceLimits.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EC2InstanceLimits: js.UndefOr[EC2InstanceLimitList] = js.undefined
+    ): DescribeEC2InstanceLimitsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EC2InstanceLimits" -> EC2InstanceLimits.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEC2InstanceLimitsOutput]
     }
@@ -1399,9 +1556,11 @@ package gamelift {
   }
 
   object DescribeFleetAttributesInput {
-    def apply(FleetIds: js.UndefOr[FleetIdList] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeFleetAttributesInput = {
+    def apply(
+        FleetIds: js.UndefOr[FleetIdList] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeFleetAttributesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetIds" -> FleetIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -1428,13 +1587,18 @@ package gamelift {
   }
 
   object DescribeFleetAttributesOutput {
-    def apply(FleetAttributes: js.UndefOr[FleetAttributesList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeFleetAttributesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetAttributes" -> FleetAttributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetAttributes: js.UndefOr[FleetAttributesList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeFleetAttributesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetAttributes" -> FleetAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetAttributesOutput]
     }
@@ -1451,9 +1615,11 @@ package gamelift {
   }
 
   object DescribeFleetCapacityInput {
-    def apply(FleetIds: js.UndefOr[FleetIdList] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeFleetCapacityInput = {
+    def apply(
+        FleetIds: js.UndefOr[FleetIdList] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeFleetCapacityInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetIds" -> FleetIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -1480,13 +1646,18 @@ package gamelift {
   }
 
   object DescribeFleetCapacityOutput {
-    def apply(FleetCapacity: js.UndefOr[FleetCapacityList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeFleetCapacityOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetCapacity" -> FleetCapacity.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetCapacity: js.UndefOr[FleetCapacityList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeFleetCapacityOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetCapacity" -> FleetCapacity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetCapacityOutput]
     }
@@ -1505,11 +1676,13 @@ package gamelift {
   }
 
   object DescribeFleetEventsInput {
-    def apply(FleetId: FleetId,
-              EndTime: js.UndefOr[Timestamp] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              StartTime: js.UndefOr[Timestamp] = js.undefined): DescribeFleetEventsInput = {
+    def apply(
+        FleetId: FleetId,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined
+    ): DescribeFleetEventsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId" -> FleetId.asInstanceOf[js.Any],
         "EndTime" -> EndTime.map { x =>
@@ -1540,13 +1713,18 @@ package gamelift {
   }
 
   object DescribeFleetEventsOutput {
-    def apply(Events: js.UndefOr[EventList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeFleetEventsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Events" -> Events.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Events: js.UndefOr[EventList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeFleetEventsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Events" -> Events.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetEventsOutput]
     }
@@ -1561,9 +1739,12 @@ package gamelift {
   }
 
   object DescribeFleetPortSettingsInput {
-    def apply(FleetId: FleetId): DescribeFleetPortSettingsInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: FleetId
+    ): DescribeFleetPortSettingsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetPortSettingsInput]
     }
@@ -1578,10 +1759,14 @@ package gamelift {
   }
 
   object DescribeFleetPortSettingsOutput {
-    def apply(InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined): DescribeFleetPortSettingsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("InboundPermissions" -> InboundPermissions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined
+    ): DescribeFleetPortSettingsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InboundPermissions" -> InboundPermissions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetPortSettingsOutput]
     }
@@ -1598,9 +1783,11 @@ package gamelift {
   }
 
   object DescribeFleetUtilizationInput {
-    def apply(FleetIds: js.UndefOr[FleetIdList] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeFleetUtilizationInput = {
+    def apply(
+        FleetIds: js.UndefOr[FleetIdList] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeFleetUtilizationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetIds" -> FleetIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -1627,13 +1814,18 @@ package gamelift {
   }
 
   object DescribeFleetUtilizationOutput {
-    def apply(FleetUtilization: js.UndefOr[FleetUtilizationList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeFleetUtilizationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetUtilization" -> FleetUtilization.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetUtilization: js.UndefOr[FleetUtilizationList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeFleetUtilizationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetUtilization" -> FleetUtilization.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFleetUtilizationOutput]
     }
@@ -1653,12 +1845,14 @@ package gamelift {
   }
 
   object DescribeGameSessionDetailsInput {
-    def apply(AliasId: js.UndefOr[AliasId] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              GameSessionId: js.UndefOr[ArnStringModel] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              StatusFilter: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeGameSessionDetailsInput = {
+    def apply(
+        AliasId: js.UndefOr[AliasId] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        GameSessionId: js.UndefOr[ArnStringModel] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        StatusFilter: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameSessionDetailsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AliasId" -> AliasId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1694,13 +1888,18 @@ package gamelift {
   }
 
   object DescribeGameSessionDetailsOutput {
-    def apply(GameSessionDetails: js.UndefOr[GameSessionDetailList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeGameSessionDetailsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionDetails" -> GameSessionDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessionDetails: js.UndefOr[GameSessionDetailList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameSessionDetailsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionDetails" -> GameSessionDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGameSessionDetailsOutput]
     }
@@ -1715,9 +1914,12 @@ package gamelift {
   }
 
   object DescribeGameSessionPlacementInput {
-    def apply(PlacementId: IdStringModel): DescribeGameSessionPlacementInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlacementId" -> PlacementId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlacementId: IdStringModel
+    ): DescribeGameSessionPlacementInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlacementId" -> PlacementId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGameSessionPlacementInput]
     }
@@ -1735,9 +1937,11 @@ package gamelift {
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): DescribeGameSessionPlacementOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionPlacement" -> GameSessionPlacement.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionPlacement" -> GameSessionPlacement.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGameSessionPlacementOutput]
     }
@@ -1754,16 +1958,22 @@ package gamelift {
   }
 
   object DescribeGameSessionQueuesInput {
-    def apply(Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              Names: js.UndefOr[GameSessionQueueNameList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeGameSessionQueuesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Names" -> Names.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        Names: js.UndefOr[GameSessionQueueNameList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameSessionQueuesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Names" -> Names.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGameSessionQueuesInput]
     }
@@ -1779,13 +1989,18 @@ package gamelift {
   }
 
   object DescribeGameSessionQueuesOutput {
-    def apply(GameSessionQueues: js.UndefOr[GameSessionQueueList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeGameSessionQueuesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionQueues" -> GameSessionQueues.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessionQueues: js.UndefOr[GameSessionQueueList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameSessionQueuesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionQueues" -> GameSessionQueues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGameSessionQueuesOutput]
     }
@@ -1805,12 +2020,14 @@ package gamelift {
   }
 
   object DescribeGameSessionsInput {
-    def apply(AliasId: js.UndefOr[AliasId] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              GameSessionId: js.UndefOr[ArnStringModel] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              StatusFilter: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeGameSessionsInput = {
+    def apply(
+        AliasId: js.UndefOr[AliasId] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        GameSessionId: js.UndefOr[ArnStringModel] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        StatusFilter: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameSessionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AliasId" -> AliasId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1846,13 +2063,18 @@ package gamelift {
   }
 
   object DescribeGameSessionsOutput {
-    def apply(GameSessions: js.UndefOr[GameSessionList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeGameSessionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessions" -> GameSessions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessions: js.UndefOr[GameSessionList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeGameSessionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessions" -> GameSessions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGameSessionsOutput]
     }
@@ -1870,10 +2092,12 @@ package gamelift {
   }
 
   object DescribeInstancesInput {
-    def apply(FleetId: FleetId,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeInstancesInput = {
+    def apply(
+        FleetId: FleetId,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId" -> FleetId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.map { x =>
@@ -1901,13 +2125,18 @@ package gamelift {
   }
 
   object DescribeInstancesOutput {
-    def apply(Instances: js.UndefOr[InstanceList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Instances" -> Instances.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Instances: js.UndefOr[InstanceList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Instances" -> Instances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeInstancesOutput]
     }
@@ -1960,13 +2189,18 @@ package gamelift {
   }
 
   object DescribeMatchmakingConfigurationsOutput {
-    def apply(Configurations: js.UndefOr[MatchmakingConfigurationList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeMatchmakingConfigurationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Configurations" -> Configurations.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Configurations: js.UndefOr[MatchmakingConfigurationList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeMatchmakingConfigurationsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Configurations" -> Configurations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMatchmakingConfigurationsOutput]
     }
@@ -1981,9 +2215,12 @@ package gamelift {
   }
 
   object DescribeMatchmakingInput {
-    def apply(TicketIds: MatchmakingIdList): DescribeMatchmakingInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TicketIds" -> TicketIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TicketIds: MatchmakingIdList
+    ): DescribeMatchmakingInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TicketIds" -> TicketIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMatchmakingInput]
     }
@@ -1998,10 +2235,14 @@ package gamelift {
   }
 
   object DescribeMatchmakingOutput {
-    def apply(TicketList: js.UndefOr[MatchmakingTicketList] = js.undefined): DescribeMatchmakingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TicketList" -> TicketList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TicketList: js.UndefOr[MatchmakingTicketList] = js.undefined
+    ): DescribeMatchmakingOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TicketList" -> TicketList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMatchmakingOutput]
     }
@@ -2018,16 +2259,22 @@ package gamelift {
   }
 
   object DescribeMatchmakingRuleSetsInput {
-    def apply(Limit: js.UndefOr[RuleSetLimit] = js.undefined,
-              Names: js.UndefOr[MatchmakingRuleSetNameList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeMatchmakingRuleSetsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Names" -> Names.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[RuleSetLimit] = js.undefined,
+        Names: js.UndefOr[MatchmakingRuleSetNameList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeMatchmakingRuleSetsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Names" -> Names.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMatchmakingRuleSetsInput]
     }
@@ -2043,12 +2290,16 @@ package gamelift {
   }
 
   object DescribeMatchmakingRuleSetsOutput {
-    def apply(RuleSets: MatchmakingRuleSetList,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): DescribeMatchmakingRuleSetsOutput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("RuleSets" -> RuleSets.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+    def apply(
+        RuleSets: MatchmakingRuleSetList,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DescribeMatchmakingRuleSetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleSets" -> RuleSets.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeMatchmakingRuleSetsOutput]
     }
@@ -2111,13 +2362,18 @@ package gamelift {
   }
 
   object DescribePlayerSessionsOutput {
-    def apply(NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined): DescribePlayerSessionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlayerSessions" -> PlayerSessions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined
+    ): DescribePlayerSessionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlayerSessions" -> PlayerSessions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlayerSessionsOutput]
     }
@@ -2132,9 +2388,12 @@ package gamelift {
   }
 
   object DescribeRuntimeConfigurationInput {
-    def apply(FleetId: FleetId): DescribeRuntimeConfigurationInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: FleetId
+    ): DescribeRuntimeConfigurationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRuntimeConfigurationInput]
     }
@@ -2152,9 +2411,11 @@ package gamelift {
     def apply(
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined
     ): DescribeRuntimeConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("RuntimeConfiguration" -> RuntimeConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuntimeConfiguration" -> RuntimeConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRuntimeConfigurationOutput]
     }
@@ -2172,10 +2433,12 @@ package gamelift {
   }
 
   object DescribeScalingPoliciesInput {
-    def apply(FleetId: FleetId,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              StatusFilter: js.UndefOr[ScalingStatusType] = js.undefined): DescribeScalingPoliciesInput = {
+    def apply(
+        FleetId: FleetId,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        StatusFilter: js.UndefOr[ScalingStatusType] = js.undefined
+    ): DescribeScalingPoliciesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId" -> FleetId.asInstanceOf[js.Any],
         "Limit" -> Limit.map { x =>
@@ -2203,13 +2466,18 @@ package gamelift {
   }
 
   object DescribeScalingPoliciesOutput {
-    def apply(NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              ScalingPolicies: js.UndefOr[ScalingPolicyList] = js.undefined): DescribeScalingPoliciesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ScalingPolicies" -> ScalingPolicies.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ScalingPolicies: js.UndefOr[ScalingPolicyList] = js.undefined
+    ): DescribeScalingPoliciesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScalingPolicies" -> ScalingPolicies.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeScalingPoliciesOutput]
     }
@@ -2219,8 +2487,10 @@ package gamelift {
   trait DescribeVpcPeeringAuthorizationsInput extends js.Object {}
 
   object DescribeVpcPeeringAuthorizationsInput {
-    def apply(): DescribeVpcPeeringAuthorizationsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeVpcPeeringAuthorizationsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcPeeringAuthorizationsInput]
     }
@@ -2235,9 +2505,11 @@ package gamelift {
     def apply(
         VpcPeeringAuthorizations: js.UndefOr[VpcPeeringAuthorizationList] = js.undefined
     ): DescribeVpcPeeringAuthorizationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VpcPeeringAuthorizations" -> VpcPeeringAuthorizations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VpcPeeringAuthorizations" -> VpcPeeringAuthorizations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcPeeringAuthorizationsOutput]
     }
@@ -2252,10 +2524,14 @@ package gamelift {
   }
 
   object DescribeVpcPeeringConnectionsInput {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined): DescribeVpcPeeringConnectionsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined
+    ): DescribeVpcPeeringConnectionsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcPeeringConnectionsInput]
     }
@@ -2273,9 +2549,11 @@ package gamelift {
     def apply(
         VpcPeeringConnections: js.UndefOr[VpcPeeringConnectionList] = js.undefined
     ): DescribeVpcPeeringConnectionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("VpcPeeringConnections" -> VpcPeeringConnections.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VpcPeeringConnections" -> VpcPeeringConnections.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeVpcPeeringConnectionsOutput]
     }
@@ -2291,13 +2569,18 @@ package gamelift {
   }
 
   object DesiredPlayerSession {
-    def apply(PlayerData: js.UndefOr[PlayerData] = js.undefined,
-              PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined): DesiredPlayerSession = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlayerData" -> PlayerData.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlayerId" -> PlayerId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlayerData: js.UndefOr[PlayerData] = js.undefined,
+        PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): DesiredPlayerSession = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlayerData" -> PlayerData.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlayerId" -> PlayerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DesiredPlayerSession]
     }
@@ -2305,7 +2588,6 @@ package gamelift {
 
   /**
     * Current status of fleet capacity. The number of active instances should match or be in the process of matching the number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily affected.
-    *  Fleet-related operations include:
     * * <a>CreateFleet</a>
     *  * <a>ListFleets</a>
     *  * <a>DeleteFleet</a>
@@ -2339,13 +2621,15 @@ package gamelift {
   }
 
   object EC2InstanceCounts {
-    def apply(ACTIVE: js.UndefOr[WholeNumber] = js.undefined,
-              DESIRED: js.UndefOr[WholeNumber] = js.undefined,
-              IDLE: js.UndefOr[WholeNumber] = js.undefined,
-              MAXIMUM: js.UndefOr[WholeNumber] = js.undefined,
-              MINIMUM: js.UndefOr[WholeNumber] = js.undefined,
-              PENDING: js.UndefOr[WholeNumber] = js.undefined,
-              TERMINATING: js.UndefOr[WholeNumber] = js.undefined): EC2InstanceCounts = {
+    def apply(
+        ACTIVE: js.UndefOr[WholeNumber] = js.undefined,
+        DESIRED: js.UndefOr[WholeNumber] = js.undefined,
+        IDLE: js.UndefOr[WholeNumber] = js.undefined,
+        MAXIMUM: js.UndefOr[WholeNumber] = js.undefined,
+        MINIMUM: js.UndefOr[WholeNumber] = js.undefined,
+        PENDING: js.UndefOr[WholeNumber] = js.undefined,
+        TERMINATING: js.UndefOr[WholeNumber] = js.undefined
+    ): EC2InstanceCounts = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ACTIVE" -> ACTIVE.map { x =>
           x.asInstanceOf[js.Any]
@@ -2385,9 +2669,11 @@ package gamelift {
   }
 
   object EC2InstanceLimit {
-    def apply(CurrentInstances: js.UndefOr[WholeNumber] = js.undefined,
-              EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined,
-              InstanceLimit: js.UndefOr[WholeNumber] = js.undefined): EC2InstanceLimit = {
+    def apply(
+        CurrentInstances: js.UndefOr[WholeNumber] = js.undefined,
+        EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined,
+        InstanceLimit: js.UndefOr[WholeNumber] = js.undefined
+    ): EC2InstanceLimit = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentInstances" -> CurrentInstances.map { x =>
           x.asInstanceOf[js.Any]
@@ -2492,12 +2778,14 @@ package gamelift {
   }
 
   object Event {
-    def apply(EventCode: js.UndefOr[EventCode] = js.undefined,
-              EventId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              EventTime: js.UndefOr[Timestamp] = js.undefined,
-              Message: js.UndefOr[NonEmptyString] = js.undefined,
-              PreSignedLogUrl: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              ResourceId: js.UndefOr[NonZeroAndMaxString] = js.undefined): Event = {
+    def apply(
+        EventCode: js.UndefOr[EventCode] = js.undefined,
+        EventId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        EventTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[NonEmptyString] = js.undefined,
+        PreSignedLogUrl: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ResourceId: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EventCode" -> EventCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -2603,7 +2891,6 @@ package gamelift {
 
   /**
     * General properties describing a fleet.
-    *  Fleet-related operations include:
     * * <a>CreateFleet</a>
     *  * <a>ListFleets</a>
     *  * <a>DeleteFleet</a>
@@ -2633,6 +2920,7 @@ package gamelift {
     var FleetArn: js.UndefOr[ArnStringModel]
     var FleetId: js.UndefOr[FleetId]
     var FleetType: js.UndefOr[FleetType]
+    var InstanceRoleArn: js.UndefOr[NonEmptyString]
     var InstanceType: js.UndefOr[EC2InstanceType]
     var LogPaths: js.UndefOr[StringList]
     var MetricGroups: js.UndefOr[MetricGroupList]
@@ -2648,24 +2936,27 @@ package gamelift {
   }
 
   object FleetAttributes {
-    def apply(BuildId: js.UndefOr[BuildId] = js.undefined,
-              CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              FleetType: js.UndefOr[FleetType] = js.undefined,
-              InstanceType: js.UndefOr[EC2InstanceType] = js.undefined,
-              LogPaths: js.UndefOr[StringList] = js.undefined,
-              MetricGroups: js.UndefOr[MetricGroupList] = js.undefined,
-              Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
-              ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              Status: js.UndefOr[FleetStatus] = js.undefined,
-              StoppedActions: js.UndefOr[FleetActionList] = js.undefined,
-              TerminationTime: js.UndefOr[Timestamp] = js.undefined): FleetAttributes = {
+    def apply(
+        BuildId: js.UndefOr[BuildId] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        FleetArn: js.UndefOr[ArnStringModel] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        FleetType: js.UndefOr[FleetType] = js.undefined,
+        InstanceRoleArn: js.UndefOr[NonEmptyString] = js.undefined,
+        InstanceType: js.UndefOr[EC2InstanceType] = js.undefined,
+        LogPaths: js.UndefOr[StringList] = js.undefined,
+        MetricGroups: js.UndefOr[MetricGroupList] = js.undefined,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
+        ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        Status: js.UndefOr[FleetStatus] = js.undefined,
+        StoppedActions: js.UndefOr[FleetActionList] = js.undefined,
+        TerminationTime: js.UndefOr[Timestamp] = js.undefined
+    ): FleetAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BuildId" -> BuildId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2683,6 +2974,9 @@ package gamelift {
           x.asInstanceOf[js.Any]
         },
         "FleetType" -> FleetType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceRoleArn" -> InstanceRoleArn.map { x =>
           x.asInstanceOf[js.Any]
         },
         "InstanceType" -> InstanceType.map { x =>
@@ -2729,7 +3023,6 @@ package gamelift {
 
   /**
     * Information about the fleet's capacity. Fleet capacity is measured in EC2 instances. By default, new fleets have a capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by the fleet's instance type.
-    *  Fleet-related operations include:
     * * <a>CreateFleet</a>
     *  * <a>ListFleets</a>
     *  * <a>DeleteFleet</a>
@@ -2759,9 +3052,11 @@ package gamelift {
   }
 
   object FleetCapacity {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined,
-              InstanceCounts: js.UndefOr[EC2InstanceCounts] = js.undefined,
-              InstanceType: js.UndefOr[EC2InstanceType] = js.undefined): FleetCapacity = {
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        InstanceCounts: js.UndefOr[EC2InstanceCounts] = js.undefined,
+        InstanceType: js.UndefOr[EC2InstanceType] = js.undefined
+    ): FleetCapacity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId" -> FleetId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2776,14 +3071,6 @@ package gamelift {
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FleetCapacity]
     }
-  }
-
-  /**
-    * The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.
-    */
-  @js.native
-  trait FleetCapacityExceededExceptionException extends js.Object {
-    val Message: NonEmptyString
   }
 
   object FleetStatusEnum {
@@ -2809,7 +3096,6 @@ package gamelift {
 
   /**
     * Current status of fleet utilization, including the number of game and player sessions being hosted.
-    *  Fleet-related operations include:
     * * <a>CreateFleet</a>
     *  * <a>ListFleets</a>
     *  * <a>DeleteFleet</a>
@@ -2841,11 +3127,13 @@ package gamelift {
   }
 
   object FleetUtilization {
-    def apply(ActiveGameSessionCount: js.UndefOr[WholeNumber] = js.undefined,
-              ActiveServerProcessCount: js.UndefOr[WholeNumber] = js.undefined,
-              CurrentPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined): FleetUtilization = {
+    def apply(
+        ActiveGameSessionCount: js.UndefOr[WholeNumber] = js.undefined,
+        ActiveServerProcessCount: js.UndefOr[WholeNumber] = js.undefined,
+        CurrentPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined
+    ): FleetUtilization = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActiveGameSessionCount" -> ActiveGameSessionCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -2869,7 +3157,7 @@ package gamelift {
   }
 
   /**
-    * Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session, such as to specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session; the server process uses the properties as appropriate. For more information, see the [[http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create| Amazon GameLift Developer Guide]].
+    * Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session, such as to specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session; the server process uses the properties as appropriate. For more information, see the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create| Amazon GameLift Developer Guide]].
     */
   @js.native
   trait GameProperty extends js.Object {
@@ -2878,10 +3166,14 @@ package gamelift {
   }
 
   object GameProperty {
-    def apply(Key: GamePropertyKey, Value: GamePropertyValue): GameProperty = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: GamePropertyKey,
+        Value: GamePropertyValue
+    ): GameProperty = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GameProperty]
     }
@@ -2891,7 +3183,6 @@ package gamelift {
     * Properties describing a game session.
     *  A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>.
     *  Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.
-    *  Game-session-related operations include:
     * * <a>CreateGameSession</a>
     *  * <a>DescribeGameSessions</a>
     *  * <a>DescribeGameSessionDetails</a>
@@ -2925,22 +3216,24 @@ package gamelift {
   }
 
   object GameSession {
-    def apply(CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              CurrentPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
-              GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
-              GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              IpAddress: js.UndefOr[IpAddress] = js.undefined,
-              MatchmakerData: js.UndefOr[MatchmakerData] = js.undefined,
-              MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
-              Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PlayerSessionCreationPolicy: js.UndefOr[PlayerSessionCreationPolicy] = js.undefined,
-              Port: js.UndefOr[PortNumber] = js.undefined,
-              Status: js.UndefOr[GameSessionStatus] = js.undefined,
-              StatusReason: js.UndefOr[GameSessionStatusReason] = js.undefined,
-              TerminationTime: js.UndefOr[Timestamp] = js.undefined): GameSession = {
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        CreatorId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        CurrentPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
+        GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        MatchmakerData: js.UndefOr[MatchmakerData] = js.undefined,
+        MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PlayerSessionCreationPolicy: js.UndefOr[PlayerSessionCreationPolicy] = js.undefined,
+        Port: js.UndefOr[PortNumber] = js.undefined,
+        Status: js.UndefOr[GameSessionStatus] = js.undefined,
+        StatusReason: js.UndefOr[GameSessionStatusReason] = js.undefined,
+        TerminationTime: js.UndefOr[Timestamp] = js.undefined
+    ): GameSession = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -3008,10 +3301,12 @@ package gamelift {
   }
 
   object GameSessionConnectionInfo {
-    def apply(GameSessionArn: js.UndefOr[ArnStringModel] = js.undefined,
-              IpAddress: js.UndefOr[StringModel] = js.undefined,
-              MatchedPlayerSessions: js.UndefOr[MatchedPlayerSessionList] = js.undefined,
-              Port: js.UndefOr[PositiveInteger] = js.undefined): GameSessionConnectionInfo = {
+    def apply(
+        GameSessionArn: js.UndefOr[ArnStringModel] = js.undefined,
+        IpAddress: js.UndefOr[StringModel] = js.undefined,
+        MatchedPlayerSessions: js.UndefOr[MatchedPlayerSessionList] = js.undefined,
+        Port: js.UndefOr[PositiveInteger] = js.undefined
+    ): GameSessionConnectionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameSessionArn" -> GameSessionArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3041,24 +3336,21 @@ package gamelift {
   }
 
   object GameSessionDetail {
-    def apply(GameSession: js.UndefOr[GameSession] = js.undefined,
-              ProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined): GameSessionDetail = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSession" -> GameSession.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ProtectionPolicy" -> ProtectionPolicy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSession: js.UndefOr[GameSession] = js.undefined,
+        ProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined
+    ): GameSessionDetail = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSession" -> GameSession.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProtectionPolicy" -> ProtectionPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GameSessionDetail]
     }
-  }
-
-  /**
-    * The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.
-    */
-  @js.native
-  trait GameSessionFullExceptionException extends js.Object {
-    val Message: NonEmptyString
   }
 
   /**
@@ -3090,23 +3382,25 @@ package gamelift {
   }
 
   object GameSessionPlacement {
-    def apply(EndTime: js.UndefOr[Timestamp] = js.undefined,
-              GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
-              GameSessionArn: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
-              GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              GameSessionName: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              GameSessionQueueName: js.UndefOr[GameSessionQueueName] = js.undefined,
-              GameSessionRegion: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              IpAddress: js.UndefOr[IpAddress] = js.undefined,
-              MatchmakerData: js.UndefOr[MatchmakerData] = js.undefined,
-              MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
-              PlacedPlayerSessions: js.UndefOr[PlacedPlayerSessionList] = js.undefined,
-              PlacementId: js.UndefOr[IdStringModel] = js.undefined,
-              PlayerLatencies: js.UndefOr[PlayerLatencyList] = js.undefined,
-              Port: js.UndefOr[PortNumber] = js.undefined,
-              StartTime: js.UndefOr[Timestamp] = js.undefined,
-              Status: js.UndefOr[GameSessionPlacementState] = js.undefined): GameSessionPlacement = {
+    def apply(
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
+        GameSessionArn: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        GameSessionName: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        GameSessionQueueName: js.UndefOr[GameSessionQueueName] = js.undefined,
+        GameSessionRegion: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        MatchmakerData: js.UndefOr[MatchmakerData] = js.undefined,
+        MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
+        PlacedPlayerSessions: js.UndefOr[PlacedPlayerSessionList] = js.undefined,
+        PlacementId: js.UndefOr[IdStringModel] = js.undefined,
+        PlayerLatencies: js.UndefOr[PlayerLatencyList] = js.undefined,
+        Port: js.UndefOr[PortNumber] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[GameSessionPlacementState] = js.undefined
+    ): GameSessionPlacement = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime" -> EndTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -3179,7 +3473,6 @@ package gamelift {
     * * The destinations where a new game session can potentially be hosted. Amazon GameLift tries these destinations in an order based on either the queue's default order or player latency information, if provided in a placement request. With latency information, Amazon GameLift can place game sessions where the majority of players are reporting the lowest possible latency.
     *  * The length of time that placement requests can wait in the queue before timing out.
     *  * A set of optional latency policies that protect individual players from high latencies, preventing game sessions from being placed where any individual player is reporting latency higher than a policy's maximum.
-    * Queue-related operations include:
     * * <a>CreateGameSessionQueue</a>
     *  * <a>DescribeGameSessionQueues</a>
     *  * <a>UpdateGameSessionQueue</a>
@@ -3195,11 +3488,13 @@ package gamelift {
   }
 
   object GameSessionQueue {
-    def apply(Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
-              GameSessionQueueArn: js.UndefOr[ArnStringModel] = js.undefined,
-              Name: js.UndefOr[GameSessionQueueName] = js.undefined,
-              PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
-              TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined): GameSessionQueue = {
+    def apply(
+        Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
+        GameSessionQueueArn: js.UndefOr[ArnStringModel] = js.undefined,
+        Name: js.UndefOr[GameSessionQueueName] = js.undefined,
+        PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
+        TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
+    ): GameSessionQueue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destinations" -> Destinations.map { x =>
           x.asInstanceOf[js.Any]
@@ -3224,7 +3519,6 @@ package gamelift {
 
   /**
     * Fleet designated in a game session queue. Requests for new game sessions in the queue are fulfilled by starting a new game session on any destination configured for a queue.
-    *  Queue-related operations include:
     * * <a>CreateGameSessionQueue</a>
     *  * <a>DescribeGameSessionQueues</a>
     *  * <a>UpdateGameSessionQueue</a>
@@ -3236,10 +3530,14 @@ package gamelift {
   }
 
   object GameSessionQueueDestination {
-    def apply(DestinationArn: js.UndefOr[ArnStringModel] = js.undefined): GameSessionQueueDestination = {
-      val _fields = IndexedSeq[(String, js.Any)]("DestinationArn" -> DestinationArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DestinationArn: js.UndefOr[ArnStringModel] = js.undefined
+    ): GameSessionQueueDestination = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DestinationArn" -> DestinationArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GameSessionQueueDestination]
     }
@@ -3270,9 +3568,12 @@ package gamelift {
   }
 
   object GetGameSessionLogUrlInput {
-    def apply(GameSessionId: ArnStringModel): GetGameSessionLogUrlInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionId" -> GameSessionId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessionId: ArnStringModel
+    ): GetGameSessionLogUrlInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionId" -> GameSessionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGameSessionLogUrlInput]
     }
@@ -3287,10 +3588,14 @@ package gamelift {
   }
 
   object GetGameSessionLogUrlOutput {
-    def apply(PreSignedUrl: js.UndefOr[NonZeroAndMaxString] = js.undefined): GetGameSessionLogUrlOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("PreSignedUrl" -> PreSignedUrl.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PreSignedUrl: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): GetGameSessionLogUrlOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PreSignedUrl" -> PreSignedUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGameSessionLogUrlOutput]
     }
@@ -3306,7 +3611,10 @@ package gamelift {
   }
 
   object GetInstanceAccessInput {
-    def apply(FleetId: FleetId, InstanceId: InstanceId): GetInstanceAccessInput = {
+    def apply(
+        FleetId: FleetId,
+        InstanceId: InstanceId
+    ): GetInstanceAccessInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId"    -> FleetId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
@@ -3325,21 +3633,17 @@ package gamelift {
   }
 
   object GetInstanceAccessOutput {
-    def apply(InstanceAccess: js.UndefOr[InstanceAccess] = js.undefined): GetInstanceAccessOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("InstanceAccess" -> InstanceAccess.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        InstanceAccess: js.UndefOr[InstanceAccess] = js.undefined
+    ): GetInstanceAccessOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "InstanceAccess" -> InstanceAccess.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetInstanceAccessOutput]
     }
-  }
-
-  /**
-    * A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this request.
-    */
-  @js.native
-  trait IdempotentParameterMismatchExceptionException extends js.Object {
-    val Message: NonEmptyString
   }
 
   /**
@@ -3357,13 +3661,15 @@ package gamelift {
   }
 
   object Instance {
-    def apply(CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              IpAddress: js.UndefOr[IpAddress] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
-              Status: js.UndefOr[InstanceStatus] = js.undefined,
-              Type: js.UndefOr[EC2InstanceType] = js.undefined): Instance = {
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        Status: js.UndefOr[InstanceStatus] = js.undefined,
+        Type: js.UndefOr[EC2InstanceType] = js.undefined
+    ): Instance = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -3405,11 +3711,13 @@ package gamelift {
   }
 
   object InstanceAccess {
-    def apply(Credentials: js.UndefOr[InstanceCredentials] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              InstanceId: js.UndefOr[InstanceId] = js.undefined,
-              IpAddress: js.UndefOr[IpAddress] = js.undefined,
-              OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined): InstanceAccess = {
+    def apply(
+        Credentials: js.UndefOr[InstanceCredentials] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        InstanceId: js.UndefOr[InstanceId] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
+    ): InstanceAccess = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Credentials" -> Credentials.map { x =>
           x.asInstanceOf[js.Any]
@@ -3442,13 +3750,18 @@ package gamelift {
   }
 
   object InstanceCredentials {
-    def apply(Secret: js.UndefOr[NonEmptyString] = js.undefined,
-              UserName: js.UndefOr[NonEmptyString] = js.undefined): InstanceCredentials = {
-      val _fields = IndexedSeq[(String, js.Any)]("Secret" -> Secret.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UserName" -> UserName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Secret: js.UndefOr[NonEmptyString] = js.undefined,
+        UserName: js.UndefOr[NonEmptyString] = js.undefined
+    ): InstanceCredentials = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Secret" -> Secret.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserName" -> UserName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InstanceCredentials]
     }
@@ -3463,38 +3776,6 @@ package gamelift {
   }
 
   /**
-    * The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.
-    */
-  @js.native
-  trait InternalServiceExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
-    * The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.
-    */
-  @js.native
-  trait InvalidFleetStatusExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
-    * The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.
-    */
-  @js.native
-  trait InvalidGameSessionStatusExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
-    * One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.
-    */
-  @js.native
-  trait InvalidRequestExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
     * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon GameLift. Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
     */
   @js.native
@@ -3506,7 +3787,12 @@ package gamelift {
   }
 
   object IpPermission {
-    def apply(FromPort: PortNumber, IpRange: NonBlankString, Protocol: IpProtocol, ToPort: PortNumber): IpPermission = {
+    def apply(
+        FromPort: PortNumber,
+        IpRange: NonBlankString,
+        Protocol: IpProtocol,
+        ToPort: PortNumber
+    ): IpPermission = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FromPort" -> FromPort.asInstanceOf[js.Any],
         "IpRange"  -> IpRange.asInstanceOf[js.Any],
@@ -3526,14 +3812,6 @@ package gamelift {
   }
 
   /**
-    * The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
     * Represents the input for a request action.
     */
   @js.native
@@ -3545,10 +3823,12 @@ package gamelift {
   }
 
   object ListAliasesInput {
-    def apply(Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              Name: js.UndefOr[NonEmptyString] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined,
-              RoutingStrategyType: js.UndefOr[RoutingStrategyType] = js.undefined): ListAliasesInput = {
+    def apply(
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        Name: js.UndefOr[NonEmptyString] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        RoutingStrategyType: js.UndefOr[RoutingStrategyType] = js.undefined
+    ): ListAliasesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Limit" -> Limit.map { x =>
           x.asInstanceOf[js.Any]
@@ -3578,13 +3858,18 @@ package gamelift {
   }
 
   object ListAliasesOutput {
-    def apply(Aliases: js.UndefOr[AliasList] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined): ListAliasesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Aliases" -> Aliases.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Aliases: js.UndefOr[AliasList] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): ListAliasesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Aliases" -> Aliases.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAliasesOutput]
     }
@@ -3601,16 +3886,22 @@ package gamelift {
   }
 
   object ListBuildsInput {
-    def apply(Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined,
-              Status: js.UndefOr[BuildStatus] = js.undefined): ListBuildsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined,
+        Status: js.UndefOr[BuildStatus] = js.undefined
+    ): ListBuildsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBuildsInput]
     }
@@ -3626,13 +3917,18 @@ package gamelift {
   }
 
   object ListBuildsOutput {
-    def apply(Builds: js.UndefOr[BuildList] = js.undefined,
-              NextToken: js.UndefOr[NonEmptyString] = js.undefined): ListBuildsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Builds" -> Builds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Builds: js.UndefOr[BuildList] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyString] = js.undefined
+    ): ListBuildsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Builds" -> Builds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBuildsOutput]
     }
@@ -3649,16 +3945,22 @@ package gamelift {
   }
 
   object ListFleetsInput {
-    def apply(BuildId: js.UndefOr[BuildId] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): ListFleetsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BuildId" -> BuildId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BuildId: js.UndefOr[BuildId] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListFleetsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BuildId" -> BuildId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFleetsInput]
     }
@@ -3674,13 +3976,18 @@ package gamelift {
   }
 
   object ListFleetsOutput {
-    def apply(FleetIds: js.UndefOr[FleetIdList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): ListFleetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetIds" -> FleetIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetIds: js.UndefOr[FleetIdList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListFleetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetIds" -> FleetIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFleetsOutput]
     }
@@ -3697,13 +4004,18 @@ package gamelift {
   }
 
   object MatchedPlayerSession {
-    def apply(PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined): MatchedPlayerSession = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlayerId" -> PlayerId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlayerSessionId" -> PlayerSessionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined
+    ): MatchedPlayerSession = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlayerId" -> PlayerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlayerSessionId" -> PlayerSessionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MatchedPlayerSession]
     }
@@ -3730,19 +4042,21 @@ package gamelift {
   }
 
   object MatchmakingConfiguration {
-    def apply(AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
-              AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
-              AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
-              CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
-              Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
-              GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
-              GameSessionQueueArns: js.UndefOr[QueueArnsList] = js.undefined,
-              Name: js.UndefOr[MatchmakingIdStringModel] = js.undefined,
-              NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined,
-              RequestTimeoutSeconds: js.UndefOr[MatchmakingRequestTimeoutInteger] = js.undefined,
-              RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined): MatchmakingConfiguration = {
+    def apply(
+        AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
+        AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
+        AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
+        Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
+        GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        GameSessionQueueArns: js.UndefOr[QueueArnsList] = js.undefined,
+        Name: js.UndefOr[MatchmakingIdStringModel] = js.undefined,
+        NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined,
+        RequestTimeoutSeconds: js.UndefOr[MatchmakingRequestTimeoutInteger] = js.undefined,
+        RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined
+    ): MatchmakingConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AcceptanceRequired" -> AcceptanceRequired.map { x =>
           x.asInstanceOf[js.Any]
@@ -3804,7 +4118,7 @@ package gamelift {
 
   /**
     * Set of rule statements, used with FlexMatch, that determine how to build a certain kind of player match. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects.
-    *  A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html|Build a FlexMatch Rule Set]].
+    *  A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html|Build a FlexMatch Rule Set]].
     * * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled.
     *  * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level.
     *  * Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role.
@@ -3818,9 +4132,11 @@ package gamelift {
   }
 
   object MatchmakingRuleSet {
-    def apply(RuleSetBody: RuleSetBody,
-              CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined): MatchmakingRuleSet = {
+    def apply(
+        RuleSetBody: RuleSetBody,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined
+    ): MatchmakingRuleSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RuleSetBody" -> RuleSetBody.asInstanceOf[js.Any],
         "CreationTime" -> CreationTime.map { x =>
@@ -3853,16 +4169,18 @@ package gamelift {
   }
 
   object MatchmakingTicket {
-    def apply(ConfigurationName: js.UndefOr[MatchmakingIdStringModel] = js.undefined,
-              EndTime: js.UndefOr[Timestamp] = js.undefined,
-              EstimatedWaitTime: js.UndefOr[WholeNumber] = js.undefined,
-              GameSessionConnectionInfo: js.UndefOr[GameSessionConnectionInfo] = js.undefined,
-              Players: js.UndefOr[PlayerList] = js.undefined,
-              StartTime: js.UndefOr[Timestamp] = js.undefined,
-              Status: js.UndefOr[MatchmakingConfigurationStatus] = js.undefined,
-              StatusMessage: js.UndefOr[StringModel] = js.undefined,
-              StatusReason: js.UndefOr[StringModel] = js.undefined,
-              TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined): MatchmakingTicket = {
+    def apply(
+        ConfigurationName: js.UndefOr[MatchmakingIdStringModel] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        EstimatedWaitTime: js.UndefOr[WholeNumber] = js.undefined,
+        GameSessionConnectionInfo: js.UndefOr[GameSessionConnectionInfo] = js.undefined,
+        Players: js.UndefOr[PlayerList] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[MatchmakingConfigurationStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StringModel] = js.undefined,
+        StatusReason: js.UndefOr[StringModel] = js.undefined,
+        TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined
+    ): MatchmakingTicket = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigurationName" -> ConfigurationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -3928,14 +4246,6 @@ package gamelift {
     )
   }
 
-  /**
-    * A service resource associated with the request could not be found. Clients should not retry such requests.
-    */
-  @js.native
-  trait NotFoundExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
   object OperatingSystemEnum {
     val WINDOWS_2012 = "WINDOWS_2012"
     val AMAZON_LINUX = "AMAZON_LINUX"
@@ -3945,7 +4255,6 @@ package gamelift {
 
   /**
     * Information about a player session that was created as part of a <a>StartGameSessionPlacement</a> request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a>DescribePlayerSessions</a> with the player session ID.
-    *  Player-session-related operations include:
     * * <a>CreatePlayerSession</a>
     *  * <a>CreatePlayerSessions</a>
     *  * <a>DescribePlayerSessions</a>
@@ -3962,13 +4271,18 @@ package gamelift {
   }
 
   object PlacedPlayerSession {
-    def apply(PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined): PlacedPlayerSession = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlayerId" -> PlayerId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PlayerSessionId" -> PlayerSessionId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined
+    ): PlacedPlayerSession = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlayerId" -> PlayerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlayerSessionId" -> PlayerSessionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacedPlayerSession]
     }
@@ -3986,10 +4300,12 @@ package gamelift {
   }
 
   object Player {
-    def apply(LatencyInMs: js.UndefOr[LatencyMap] = js.undefined,
-              PlayerAttributes: js.UndefOr[PlayerAttributeMap] = js.undefined,
-              PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              Team: js.UndefOr[NonZeroAndMaxString] = js.undefined): Player = {
+    def apply(
+        LatencyInMs: js.UndefOr[LatencyMap] = js.undefined,
+        PlayerAttributes: js.UndefOr[PlayerAttributeMap] = js.undefined,
+        PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        Team: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): Player = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LatencyInMs" -> LatencyInMs.map { x =>
           x.asInstanceOf[js.Any]
@@ -4020,9 +4336,11 @@ package gamelift {
   }
 
   object PlayerLatency {
-    def apply(LatencyInMilliseconds: js.UndefOr[Float] = js.undefined,
-              PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              RegionIdentifier: js.UndefOr[NonZeroAndMaxString] = js.undefined): PlayerLatency = {
+    def apply(
+        LatencyInMilliseconds: js.UndefOr[Float] = js.undefined,
+        PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        RegionIdentifier: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): PlayerLatency = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LatencyInMilliseconds" -> LatencyInMilliseconds.map { x =>
           x.asInstanceOf[js.Any]
@@ -4041,7 +4359,6 @@ package gamelift {
 
   /**
     * Queue setting that determines the highest latency allowed for individual players when placing a game session. When a latency policy is in force, a game session cannot be placed at any destination in a region where a player is reporting latency higher than the cap. Latency policies are only enforced when the placement request contains player latency information.
-    *  Queue-related operations include:
     * * <a>CreateGameSessionQueue</a>
     *  * <a>DescribeGameSessionQueues</a>
     *  * <a>UpdateGameSessionQueue</a>
@@ -4054,8 +4371,10 @@ package gamelift {
   }
 
   object PlayerLatencyPolicy {
-    def apply(MaximumIndividualPlayerLatencyMilliseconds: js.UndefOr[WholeNumber] = js.undefined,
-              PolicyDurationSeconds: js.UndefOr[WholeNumber] = js.undefined): PlayerLatencyPolicy = {
+    def apply(
+        MaximumIndividualPlayerLatencyMilliseconds: js.UndefOr[WholeNumber] = js.undefined,
+        PolicyDurationSeconds: js.UndefOr[WholeNumber] = js.undefined
+    ): PlayerLatencyPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaximumIndividualPlayerLatencyMilliseconds" -> MaximumIndividualPlayerLatencyMilliseconds.map { x =>
           x.asInstanceOf[js.Any]
@@ -4072,7 +4391,6 @@ package gamelift {
   /**
     * Properties describing a player session. Player session objects are created either by creating a player session for a specific game session, or as part of a game session placement. A player session represents either a player reservation for a game session (status <code>RESERVED</code>) or actual player activity in a game session (status <code>ACTIVE</code>). A player session object (including player data) is automatically passed to a game session when the player connects to the game session and is validated.
     *  When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the player session object is retained for 30 days and then removed.
-    *  Player-session-related operations include:
     * * <a>CreatePlayerSession</a>
     *  * <a>CreatePlayerSessions</a>
     *  * <a>DescribePlayerSessions</a>
@@ -4097,16 +4415,18 @@ package gamelift {
   }
 
   object PlayerSession {
-    def apply(CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              IpAddress: js.UndefOr[IpAddress] = js.undefined,
-              PlayerData: js.UndefOr[PlayerData] = js.undefined,
-              PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined,
-              Port: js.UndefOr[PortNumber] = js.undefined,
-              Status: js.UndefOr[PlayerSessionStatus] = js.undefined,
-              TerminationTime: js.UndefOr[Timestamp] = js.undefined): PlayerSession = {
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        GameSessionId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        PlayerData: js.UndefOr[PlayerData] = js.undefined,
+        PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined,
+        Port: js.UndefOr[PortNumber] = js.undefined,
+        Status: js.UndefOr[PlayerSessionStatus] = js.undefined,
+        TerminationTime: js.UndefOr[Timestamp] = js.undefined
+    ): PlayerSession = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -4192,16 +4512,18 @@ package gamelift {
   }
 
   object PutScalingPolicyInput {
-    def apply(FleetId: FleetId,
-              MetricName: MetricName,
-              Name: NonZeroAndMaxString,
-              ComparisonOperator: js.UndefOr[ComparisonOperatorType] = js.undefined,
-              EvaluationPeriods: js.UndefOr[PositiveInteger] = js.undefined,
-              PolicyType: js.UndefOr[PolicyType] = js.undefined,
-              ScalingAdjustment: js.UndefOr[Int] = js.undefined,
-              ScalingAdjustmentType: js.UndefOr[ScalingAdjustmentType] = js.undefined,
-              TargetConfiguration: js.UndefOr[TargetConfiguration] = js.undefined,
-              Threshold: js.UndefOr[Double] = js.undefined): PutScalingPolicyInput = {
+    def apply(
+        FleetId: FleetId,
+        MetricName: MetricName,
+        Name: NonZeroAndMaxString,
+        ComparisonOperator: js.UndefOr[ComparisonOperatorType] = js.undefined,
+        EvaluationPeriods: js.UndefOr[PositiveInteger] = js.undefined,
+        PolicyType: js.UndefOr[PolicyType] = js.undefined,
+        ScalingAdjustment: js.UndefOr[Int] = js.undefined,
+        ScalingAdjustmentType: js.UndefOr[ScalingAdjustmentType] = js.undefined,
+        TargetConfiguration: js.UndefOr[TargetConfiguration] = js.undefined,
+        Threshold: js.UndefOr[Double] = js.undefined
+    ): PutScalingPolicyInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId"    -> FleetId.asInstanceOf[js.Any],
         "MetricName" -> MetricName.asInstanceOf[js.Any],
@@ -4242,10 +4564,14 @@ package gamelift {
   }
 
   object PutScalingPolicyOutput {
-    def apply(Name: js.UndefOr[NonZeroAndMaxString] = js.undefined): PutScalingPolicyOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): PutScalingPolicyOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutScalingPolicyOutput]
     }
@@ -4260,9 +4586,12 @@ package gamelift {
   }
 
   object RequestUploadCredentialsInput {
-    def apply(BuildId: BuildId): RequestUploadCredentialsInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("BuildId" -> BuildId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BuildId: BuildId
+    ): RequestUploadCredentialsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BuildId" -> BuildId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestUploadCredentialsInput]
     }
@@ -4278,13 +4607,18 @@ package gamelift {
   }
 
   object RequestUploadCredentialsOutput {
-    def apply(StorageLocation: js.UndefOr[S3Location] = js.undefined,
-              UploadCredentials: js.UndefOr[AwsCredentials] = js.undefined): RequestUploadCredentialsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StorageLocation" -> StorageLocation.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "UploadCredentials" -> UploadCredentials.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StorageLocation: js.UndefOr[S3Location] = js.undefined,
+        UploadCredentials: js.UndefOr[AwsCredentials] = js.undefined
+    ): RequestUploadCredentialsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StorageLocation" -> StorageLocation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UploadCredentials" -> UploadCredentials.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestUploadCredentialsOutput]
     }
@@ -4299,9 +4633,12 @@ package gamelift {
   }
 
   object ResolveAliasInput {
-    def apply(AliasId: AliasId): ResolveAliasInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("AliasId" -> AliasId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AliasId: AliasId
+    ): ResolveAliasInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AliasId" -> AliasId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveAliasInput]
     }
@@ -4316,10 +4653,14 @@ package gamelift {
   }
 
   object ResolveAliasOutput {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined): ResolveAliasOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined
+    ): ResolveAliasOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveAliasOutput]
     }
@@ -4336,8 +4677,10 @@ package gamelift {
   }
 
   object ResourceCreationLimitPolicy {
-    def apply(NewGameSessionsPerCreator: js.UndefOr[WholeNumber] = js.undefined,
-              PolicyPeriodInMinutes: js.UndefOr[WholeNumber] = js.undefined): ResourceCreationLimitPolicy = {
+    def apply(
+        NewGameSessionsPerCreator: js.UndefOr[WholeNumber] = js.undefined,
+        PolicyPeriodInMinutes: js.UndefOr[WholeNumber] = js.undefined
+    ): ResourceCreationLimitPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NewGameSessionsPerCreator" -> NewGameSessionsPerCreator.map { x =>
           x.asInstanceOf[js.Any]
@@ -4353,7 +4696,6 @@ package gamelift {
 
   /**
     * Routing configuration for a fleet alias.
-    *  Fleet-related operations include:
     * * <a>CreateFleet</a>
     *  * <a>ListFleets</a>
     *  * <a>DeleteFleet</a>
@@ -4383,16 +4725,22 @@ package gamelift {
   }
 
   object RoutingStrategy {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined,
-              Message: js.UndefOr[FreeText] = js.undefined,
-              Type: js.UndefOr[RoutingStrategyType] = js.undefined): RoutingStrategy = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        Message: js.UndefOr[FreeText] = js.undefined,
+        Type: js.UndefOr[RoutingStrategyType] = js.undefined
+    ): RoutingStrategy = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoutingStrategy]
     }
@@ -4409,7 +4757,6 @@ package gamelift {
     * A collection of server process configurations that describe what processes to run on each instance in a fleet. All fleets must have a run-time configuration. Each instance in the fleet launches the server processes specified in the run-time configuration and launches new ones as existing processes end. Each instance regularly checks for an updated run-time configuration and follows the new instructions.
     *  The run-time configuration enables the instances in a fleet to run multiple processes simultaneously. Potential scenarios are as follows: (1) Run multiple processes of a single game server executable to maximize usage of your hosting resources. (2) Run one or more processes of different build executables, such as your game server executable and a related program, or two or more different versions of a game server. (3) Run multiple processes of a single game server but with different launch parameters, for example to run one process on each instance in debug mode.
     *  A Amazon GameLift instance is limited to 50 processes running simultaneously. A run-time configuration must specify fewer than this limit. To calculate the total number of processes specified in a run-time configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <code> <a>ServerProcess</a> </code> object in the run-time configuration.
-    *  Fleet-related operations include:
     * * <a>CreateFleet</a>
     *  * <a>ListFleets</a>
     *  * <a>DeleteFleet</a>
@@ -4439,9 +4786,11 @@ package gamelift {
   }
 
   object RuntimeConfiguration {
-    def apply(GameSessionActivationTimeoutSeconds: js.UndefOr[GameSessionActivationTimeoutSeconds] = js.undefined,
-              MaxConcurrentGameSessionActivations: js.UndefOr[MaxConcurrentGameSessionActivations] = js.undefined,
-              ServerProcesses: js.UndefOr[ServerProcessList] = js.undefined): RuntimeConfiguration = {
+    def apply(
+        GameSessionActivationTimeoutSeconds: js.UndefOr[GameSessionActivationTimeoutSeconds] = js.undefined,
+        MaxConcurrentGameSessionActivations: js.UndefOr[MaxConcurrentGameSessionActivations] = js.undefined,
+        ServerProcesses: js.UndefOr[ServerProcessList] = js.undefined
+    ): RuntimeConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameSessionActivationTimeoutSeconds" -> GameSessionActivationTimeoutSeconds.map { x =>
           x.asInstanceOf[js.Any]
@@ -4459,7 +4808,7 @@ package gamelift {
   }
 
   /**
-    * Location in Amazon Simple Storage Service (Amazon S3) where build files can be stored for access by Amazon GameLift. This location is specified in a <a>CreateBuild</a> request. For more details, see the [[http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build|Create a Build with Files in Amazon S3]].
+    * Location in Amazon Simple Storage Service (Amazon S3) where build files can be stored for access by Amazon GameLift. This location is specified in a <a>CreateBuild</a> request. For more details, see the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build|Create a Build with Files in Amazon S3]].
     */
   @js.native
   trait S3Location extends js.Object {
@@ -4469,16 +4818,22 @@ package gamelift {
   }
 
   object S3Location {
-    def apply(Bucket: js.UndefOr[NonEmptyString] = js.undefined,
-              Key: js.UndefOr[NonEmptyString] = js.undefined,
-              RoleArn: js.UndefOr[NonEmptyString] = js.undefined): S3Location = {
-      val _fields = IndexedSeq[(String, js.Any)]("Bucket" -> Bucket.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RoleArn" -> RoleArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Bucket: js.UndefOr[NonEmptyString] = js.undefined,
+        Key: js.UndefOr[NonEmptyString] = js.undefined,
+        RoleArn: js.UndefOr[NonEmptyString] = js.undefined
+    ): S3Location = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Bucket" -> Bucket.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Location]
     }
@@ -4494,7 +4849,6 @@ package gamelift {
 
   /**
     * Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.
-    *  Operations related to fleet capacity scaling include:
     * * <a>DescribeFleetCapacity</a>
     *  * <a>UpdateFleetCapacity</a>
     *  * <a>DescribeEC2InstanceLimits</a>
@@ -4523,17 +4877,19 @@ package gamelift {
   }
 
   object ScalingPolicy {
-    def apply(ComparisonOperator: js.UndefOr[ComparisonOperatorType] = js.undefined,
-              EvaluationPeriods: js.UndefOr[PositiveInteger] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PolicyType: js.UndefOr[PolicyType] = js.undefined,
-              ScalingAdjustment: js.UndefOr[Int] = js.undefined,
-              ScalingAdjustmentType: js.UndefOr[ScalingAdjustmentType] = js.undefined,
-              Status: js.UndefOr[ScalingStatusType] = js.undefined,
-              TargetConfiguration: js.UndefOr[TargetConfiguration] = js.undefined,
-              Threshold: js.UndefOr[Double] = js.undefined): ScalingPolicy = {
+    def apply(
+        ComparisonOperator: js.UndefOr[ComparisonOperatorType] = js.undefined,
+        EvaluationPeriods: js.UndefOr[PositiveInteger] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PolicyType: js.UndefOr[PolicyType] = js.undefined,
+        ScalingAdjustment: js.UndefOr[Int] = js.undefined,
+        ScalingAdjustmentType: js.UndefOr[ScalingAdjustmentType] = js.undefined,
+        Status: js.UndefOr[ScalingStatusType] = js.undefined,
+        TargetConfiguration: js.UndefOr[TargetConfiguration] = js.undefined,
+        Threshold: js.UndefOr[Double] = js.undefined
+    ): ScalingPolicy = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComparisonOperator" -> ComparisonOperator.map { x =>
           x.asInstanceOf[js.Any]
@@ -4600,12 +4956,14 @@ package gamelift {
   }
 
   object SearchGameSessionsInput {
-    def apply(AliasId: js.UndefOr[AliasId] = js.undefined,
-              FilterExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              FleetId: js.UndefOr[FleetId] = js.undefined,
-              Limit: js.UndefOr[PositiveInteger] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              SortExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined): SearchGameSessionsInput = {
+    def apply(
+        AliasId: js.UndefOr[AliasId] = js.undefined,
+        FilterExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        SortExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): SearchGameSessionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AliasId" -> AliasId.map { x =>
           x.asInstanceOf[js.Any]
@@ -4641,13 +4999,18 @@ package gamelift {
   }
 
   object SearchGameSessionsOutput {
-    def apply(GameSessions: js.UndefOr[GameSessionList] = js.undefined,
-              NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined): SearchGameSessionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessions" -> GameSessions.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessions: js.UndefOr[GameSessionList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): SearchGameSessionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessions" -> GameSessions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchGameSessionsOutput]
     }
@@ -4664,9 +5027,11 @@ package gamelift {
   }
 
   object ServerProcess {
-    def apply(ConcurrentExecutions: PositiveInteger,
-              LaunchPath: NonZeroAndMaxString,
-              Parameters: js.UndefOr[NonZeroAndMaxString] = js.undefined): ServerProcess = {
+    def apply(
+        ConcurrentExecutions: PositiveInteger,
+        LaunchPath: NonZeroAndMaxString,
+        Parameters: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ServerProcess = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConcurrentExecutions" -> ConcurrentExecutions.asInstanceOf[js.Any],
         "LaunchPath"           -> LaunchPath.asInstanceOf[js.Any],
@@ -4686,7 +5051,10 @@ package gamelift {
   }
 
   object StartFleetActionsInput {
-    def apply(Actions: FleetActionList, FleetId: FleetId): StartFleetActionsInput = {
+    def apply(
+        Actions: FleetActionList,
+        FleetId: FleetId
+    ): StartFleetActionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Actions" -> Actions.asInstanceOf[js.Any],
         "FleetId" -> FleetId.asInstanceOf[js.Any]
@@ -4700,8 +5068,10 @@ package gamelift {
   trait StartFleetActionsOutput extends js.Object {}
 
   object StartFleetActionsOutput {
-    def apply(): StartFleetActionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StartFleetActionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFleetActionsOutput]
     }
@@ -4723,14 +5093,16 @@ package gamelift {
   }
 
   object StartGameSessionPlacementInput {
-    def apply(GameSessionQueueName: GameSessionQueueName,
-              MaximumPlayerSessionCount: WholeNumber,
-              PlacementId: IdStringModel,
-              DesiredPlayerSessions: js.UndefOr[DesiredPlayerSessionList] = js.undefined,
-              GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
-              GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
-              GameSessionName: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PlayerLatencies: js.UndefOr[PlayerLatencyList] = js.undefined): StartGameSessionPlacementInput = {
+    def apply(
+        GameSessionQueueName: GameSessionQueueName,
+        MaximumPlayerSessionCount: WholeNumber,
+        PlacementId: IdStringModel,
+        DesiredPlayerSessions: js.UndefOr[DesiredPlayerSessionList] = js.undefined,
+        GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
+        GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        GameSessionName: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PlayerLatencies: js.UndefOr[PlayerLatencyList] = js.undefined
+    ): StartGameSessionPlacementInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameSessionQueueName"      -> GameSessionQueueName.asInstanceOf[js.Any],
         "MaximumPlayerSessionCount" -> MaximumPlayerSessionCount.asInstanceOf[js.Any],
@@ -4768,9 +5140,11 @@ package gamelift {
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): StartGameSessionPlacementOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionPlacement" -> GameSessionPlacement.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionPlacement" -> GameSessionPlacement.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartGameSessionPlacementOutput]
     }
@@ -4788,10 +5162,12 @@ package gamelift {
   }
 
   object StartMatchBackfillInput {
-    def apply(ConfigurationName: MatchmakingIdStringModel,
-              GameSessionArn: ArnStringModel,
-              Players: PlayerList,
-              TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined): StartMatchBackfillInput = {
+    def apply(
+        ConfigurationName: MatchmakingIdStringModel,
+        GameSessionArn: ArnStringModel,
+        Players: PlayerList,
+        TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined
+    ): StartMatchBackfillInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigurationName" -> ConfigurationName.asInstanceOf[js.Any],
         "GameSessionArn"    -> GameSessionArn.asInstanceOf[js.Any],
@@ -4814,10 +5190,14 @@ package gamelift {
   }
 
   object StartMatchBackfillOutput {
-    def apply(MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined): StartMatchBackfillOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MatchmakingTicket" -> MatchmakingTicket.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined
+    ): StartMatchBackfillOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MatchmakingTicket" -> MatchmakingTicket.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartMatchBackfillOutput]
     }
@@ -4834,9 +5214,11 @@ package gamelift {
   }
 
   object StartMatchmakingInput {
-    def apply(ConfigurationName: MatchmakingIdStringModel,
-              Players: PlayerList,
-              TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined): StartMatchmakingInput = {
+    def apply(
+        ConfigurationName: MatchmakingIdStringModel,
+        Players: PlayerList,
+        TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined
+    ): StartMatchmakingInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigurationName" -> ConfigurationName.asInstanceOf[js.Any],
         "Players"           -> Players.asInstanceOf[js.Any],
@@ -4858,10 +5240,14 @@ package gamelift {
   }
 
   object StartMatchmakingOutput {
-    def apply(MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined): StartMatchmakingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MatchmakingTicket" -> MatchmakingTicket.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined
+    ): StartMatchmakingOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MatchmakingTicket" -> MatchmakingTicket.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartMatchmakingOutput]
     }
@@ -4874,7 +5260,10 @@ package gamelift {
   }
 
   object StopFleetActionsInput {
-    def apply(Actions: FleetActionList, FleetId: FleetId): StopFleetActionsInput = {
+    def apply(
+        Actions: FleetActionList,
+        FleetId: FleetId
+    ): StopFleetActionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Actions" -> Actions.asInstanceOf[js.Any],
         "FleetId" -> FleetId.asInstanceOf[js.Any]
@@ -4888,8 +5277,10 @@ package gamelift {
   trait StopFleetActionsOutput extends js.Object {}
 
   object StopFleetActionsOutput {
-    def apply(): StopFleetActionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopFleetActionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFleetActionsOutput]
     }
@@ -4904,9 +5295,12 @@ package gamelift {
   }
 
   object StopGameSessionPlacementInput {
-    def apply(PlacementId: IdStringModel): StopGameSessionPlacementInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("PlacementId" -> PlacementId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PlacementId: IdStringModel
+    ): StopGameSessionPlacementInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PlacementId" -> PlacementId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopGameSessionPlacementInput]
     }
@@ -4921,10 +5315,14 @@ package gamelift {
   }
 
   object StopGameSessionPlacementOutput {
-    def apply(GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined): StopGameSessionPlacementOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionPlacement" -> GameSessionPlacement.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
+    ): StopGameSessionPlacementOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionPlacement" -> GameSessionPlacement.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopGameSessionPlacementOutput]
     }
@@ -4939,9 +5337,12 @@ package gamelift {
   }
 
   object StopMatchmakingInput {
-    def apply(TicketId: MatchmakingIdStringModel): StopMatchmakingInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("TicketId" -> TicketId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TicketId: MatchmakingIdStringModel
+    ): StopMatchmakingInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TicketId" -> TicketId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopMatchmakingInput]
     }
@@ -4951,8 +5352,10 @@ package gamelift {
   trait StopMatchmakingOutput extends js.Object {}
 
   object StopMatchmakingOutput {
-    def apply(): StopMatchmakingOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): StopMatchmakingOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopMatchmakingOutput]
     }
@@ -4960,7 +5363,6 @@ package gamelift {
 
   /**
     * Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value.
-    *  Operations related to fleet capacity scaling include:
     * * <a>DescribeFleetCapacity</a>
     *  * <a>UpdateFleetCapacity</a>
     *  * <a>DescribeEC2InstanceLimits</a>
@@ -4979,36 +5381,15 @@ package gamelift {
   }
 
   object TargetConfiguration {
-    def apply(TargetValue: Double): TargetConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("TargetValue" -> TargetValue.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TargetValue: Double
+    ): TargetConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TargetValue" -> TargetValue.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetConfiguration]
     }
-  }
-
-  /**
-    * The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified.
-    */
-  @js.native
-  trait TerminalRoutingStrategyExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
-    * The client failed authentication. Clients should not retry such requests.
-    */
-  @js.native
-  trait UnauthorizedExceptionException extends js.Object {
-    val Message: NonEmptyString
-  }
-
-  /**
-    * The requested operation is not supported in the region specified.
-    */
-  @js.native
-  trait UnsupportedRegionExceptionException extends js.Object {
-    val Message: NonEmptyString
   }
 
   /**
@@ -5023,10 +5404,12 @@ package gamelift {
   }
 
   object UpdateAliasInput {
-    def apply(AliasId: AliasId,
-              Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              Name: js.UndefOr[NonBlankAndLengthConstraintString] = js.undefined,
-              RoutingStrategy: js.UndefOr[RoutingStrategy] = js.undefined): UpdateAliasInput = {
+    def apply(
+        AliasId: AliasId,
+        Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        Name: js.UndefOr[NonBlankAndLengthConstraintString] = js.undefined,
+        RoutingStrategy: js.UndefOr[RoutingStrategy] = js.undefined
+    ): UpdateAliasInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AliasId" -> AliasId.asInstanceOf[js.Any],
         "Description" -> Description.map { x =>
@@ -5053,10 +5436,14 @@ package gamelift {
   }
 
   object UpdateAliasOutput {
-    def apply(Alias: js.UndefOr[Alias] = js.undefined): UpdateAliasOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Alias" -> Alias.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Alias: js.UndefOr[Alias] = js.undefined
+    ): UpdateAliasOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Alias" -> Alias.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAliasOutput]
     }
@@ -5073,14 +5460,20 @@ package gamelift {
   }
 
   object UpdateBuildInput {
-    def apply(BuildId: BuildId,
-              Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              Version: js.UndefOr[NonZeroAndMaxString] = js.undefined): UpdateBuildInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BuildId" -> BuildId.asInstanceOf[js.Any], "Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Version" -> Version.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BuildId: BuildId,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): UpdateBuildInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BuildId" -> BuildId.asInstanceOf[js.Any],
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBuildInput]
     }
@@ -5095,10 +5488,14 @@ package gamelift {
   }
 
   object UpdateBuildOutput {
-    def apply(Build: js.UndefOr[Build] = js.undefined): UpdateBuildOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Build" -> Build.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Build: js.UndefOr[Build] = js.undefined
+    ): UpdateBuildOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Build" -> Build.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBuildOutput]
     }
@@ -5158,10 +5555,14 @@ package gamelift {
   }
 
   object UpdateFleetAttributesOutput {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined): UpdateFleetAttributesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined
+    ): UpdateFleetAttributesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFleetAttributesOutput]
     }
@@ -5179,10 +5580,12 @@ package gamelift {
   }
 
   object UpdateFleetCapacityInput {
-    def apply(FleetId: FleetId,
-              DesiredInstances: js.UndefOr[WholeNumber] = js.undefined,
-              MaxSize: js.UndefOr[WholeNumber] = js.undefined,
-              MinSize: js.UndefOr[WholeNumber] = js.undefined): UpdateFleetCapacityInput = {
+    def apply(
+        FleetId: FleetId,
+        DesiredInstances: js.UndefOr[WholeNumber] = js.undefined,
+        MaxSize: js.UndefOr[WholeNumber] = js.undefined,
+        MinSize: js.UndefOr[WholeNumber] = js.undefined
+    ): UpdateFleetCapacityInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId" -> FleetId.asInstanceOf[js.Any],
         "DesiredInstances" -> DesiredInstances.map { x =>
@@ -5209,10 +5612,14 @@ package gamelift {
   }
 
   object UpdateFleetCapacityOutput {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined): UpdateFleetCapacityOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined
+    ): UpdateFleetCapacityOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFleetCapacityOutput]
     }
@@ -5257,10 +5664,14 @@ package gamelift {
   }
 
   object UpdateFleetPortSettingsOutput {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined): UpdateFleetPortSettingsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("FleetId" -> FleetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined
+    ): UpdateFleetPortSettingsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FleetId" -> FleetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFleetPortSettingsOutput]
     }
@@ -5279,11 +5690,13 @@ package gamelift {
   }
 
   object UpdateGameSessionInput {
-    def apply(GameSessionId: ArnStringModel,
-              MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
-              Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PlayerSessionCreationPolicy: js.UndefOr[PlayerSessionCreationPolicy] = js.undefined,
-              ProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined): UpdateGameSessionInput = {
+    def apply(
+        GameSessionId: ArnStringModel,
+        MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined,
+        Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PlayerSessionCreationPolicy: js.UndefOr[PlayerSessionCreationPolicy] = js.undefined,
+        ProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined
+    ): UpdateGameSessionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any],
         "MaximumPlayerSessionCount" -> MaximumPlayerSessionCount.map { x =>
@@ -5313,10 +5726,14 @@ package gamelift {
   }
 
   object UpdateGameSessionOutput {
-    def apply(GameSession: js.UndefOr[GameSession] = js.undefined): UpdateGameSessionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSession" -> GameSession.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSession: js.UndefOr[GameSession] = js.undefined
+    ): UpdateGameSessionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSession" -> GameSession.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGameSessionOutput]
     }
@@ -5334,10 +5751,12 @@ package gamelift {
   }
 
   object UpdateGameSessionQueueInput {
-    def apply(Name: GameSessionQueueName,
-              Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
-              PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
-              TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined): UpdateGameSessionQueueInput = {
+    def apply(
+        Name: GameSessionQueueName,
+        Destinations: js.UndefOr[GameSessionQueueDestinationList] = js.undefined,
+        PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
+        TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
+    ): UpdateGameSessionQueueInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Destinations" -> Destinations.map { x =>
@@ -5364,10 +5783,14 @@ package gamelift {
   }
 
   object UpdateGameSessionQueueOutput {
-    def apply(GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined): UpdateGameSessionQueueOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GameSessionQueue" -> GameSessionQueue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined
+    ): UpdateGameSessionQueueOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GameSessionQueue" -> GameSessionQueue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGameSessionQueueOutput]
     }
@@ -5393,18 +5816,20 @@ package gamelift {
   }
 
   object UpdateMatchmakingConfigurationInput {
-    def apply(Name: MatchmakingIdStringModel,
-              AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
-              AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
-              AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
-              CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
-              Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
-              GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
-              GameSessionQueueArns: js.UndefOr[QueueArnsList] = js.undefined,
-              NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined,
-              RequestTimeoutSeconds: js.UndefOr[MatchmakingRequestTimeoutInteger] = js.undefined,
-              RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined): UpdateMatchmakingConfigurationInput = {
+    def apply(
+        Name: MatchmakingIdStringModel,
+        AcceptanceRequired: js.UndefOr[BooleanModel] = js.undefined,
+        AcceptanceTimeoutSeconds: js.UndefOr[MatchmakingAcceptanceTimeoutInteger] = js.undefined,
+        AdditionalPlayerCount: js.UndefOr[WholeNumber] = js.undefined,
+        CustomEventData: js.UndefOr[CustomEventData] = js.undefined,
+        Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        GameProperties: js.UndefOr[GamePropertyList] = js.undefined,
+        GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
+        GameSessionQueueArns: js.UndefOr[QueueArnsList] = js.undefined,
+        NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined,
+        RequestTimeoutSeconds: js.UndefOr[MatchmakingRequestTimeoutInteger] = js.undefined,
+        RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined
+    ): UpdateMatchmakingConfigurationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "AcceptanceRequired" -> AcceptanceRequired.map { x =>
@@ -5458,9 +5883,11 @@ package gamelift {
     def apply(
         Configuration: js.UndefOr[MatchmakingConfiguration] = js.undefined
     ): UpdateMatchmakingConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Configuration" -> Configuration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Configuration" -> Configuration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateMatchmakingConfigurationOutput]
     }
@@ -5476,7 +5903,10 @@ package gamelift {
   }
 
   object UpdateRuntimeConfigurationInput {
-    def apply(FleetId: FleetId, RuntimeConfiguration: RuntimeConfiguration): UpdateRuntimeConfigurationInput = {
+    def apply(
+        FleetId: FleetId,
+        RuntimeConfiguration: RuntimeConfiguration
+    ): UpdateRuntimeConfigurationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId"              -> FleetId.asInstanceOf[js.Any],
         "RuntimeConfiguration" -> RuntimeConfiguration.asInstanceOf[js.Any]
@@ -5498,9 +5928,11 @@ package gamelift {
     def apply(
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined
     ): UpdateRuntimeConfigurationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("RuntimeConfiguration" -> RuntimeConfiguration.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuntimeConfiguration" -> RuntimeConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRuntimeConfigurationOutput]
     }
@@ -5515,9 +5947,12 @@ package gamelift {
   }
 
   object ValidateMatchmakingRuleSetInput {
-    def apply(RuleSetBody: RuleSetBody): ValidateMatchmakingRuleSetInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("RuleSetBody" -> RuleSetBody.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RuleSetBody: RuleSetBody
+    ): ValidateMatchmakingRuleSetInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RuleSetBody" -> RuleSetBody.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateMatchmakingRuleSetInput]
     }
@@ -5532,10 +5967,14 @@ package gamelift {
   }
 
   object ValidateMatchmakingRuleSetOutput {
-    def apply(Valid: js.UndefOr[BooleanModel] = js.undefined): ValidateMatchmakingRuleSetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Valid" -> Valid.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Valid: js.UndefOr[BooleanModel] = js.undefined
+    ): ValidateMatchmakingRuleSetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Valid" -> Valid.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ValidateMatchmakingRuleSetOutput]
     }
@@ -5543,7 +5982,6 @@ package gamelift {
 
   /**
     * Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.
-    *  VPC peering connection operations include:
     * * <a>CreateVpcPeeringAuthorization</a>
     *  * <a>DescribeVpcPeeringAuthorizations</a>
     *  * <a>DeleteVpcPeeringAuthorization</a>
@@ -5561,11 +5999,13 @@ package gamelift {
   }
 
   object VpcPeeringAuthorization {
-    def apply(CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              ExpirationTime: js.UndefOr[Timestamp] = js.undefined,
-              GameLiftAwsAccountId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PeerVpcAwsAccountId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined): VpcPeeringAuthorization = {
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        ExpirationTime: js.UndefOr[Timestamp] = js.undefined,
+        GameLiftAwsAccountId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PeerVpcAwsAccountId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): VpcPeeringAuthorization = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -5590,7 +6030,6 @@ package gamelift {
 
   /**
     * Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.
-    *  VPC peering connection operations include:
     * * <a>CreateVpcPeeringAuthorization</a>
     *  * <a>DescribeVpcPeeringAuthorizations</a>
     *  * <a>DeleteVpcPeeringAuthorization</a>
@@ -5609,12 +6048,14 @@ package gamelift {
   }
 
   object VpcPeeringConnection {
-    def apply(FleetId: js.UndefOr[FleetId] = js.undefined,
-              GameLiftVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              IpV4CidrBlock: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              Status: js.UndefOr[VpcPeeringConnectionStatus] = js.undefined,
-              VpcPeeringConnectionId: js.UndefOr[NonZeroAndMaxString] = js.undefined): VpcPeeringConnection = {
+    def apply(
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        GameLiftVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        IpV4CidrBlock: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        Status: js.UndefOr[VpcPeeringConnectionStatus] = js.undefined,
+        VpcPeeringConnectionId: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): VpcPeeringConnection = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FleetId" -> FleetId.map { x =>
           x.asInstanceOf[js.Any]
@@ -5641,7 +6082,7 @@ package gamelift {
   }
 
   /**
-    * Represents status information for a VPC peering connection. Status is associated with a <a>VpcPeeringConnection</a> object. Status codes and messages are provided from EC2 (see [[http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html|VpcPeeringConnectionStateReason]]). Connection status information is also communicated as a fleet <a>Event</a>.
+    * Represents status information for a VPC peering connection. Status is associated with a <a>VpcPeeringConnection</a> object. Status codes and messages are provided from EC2 (see [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html|VpcPeeringConnectionStateReason]]). Connection status information is also communicated as a fleet <a>Event</a>.
     */
   @js.native
   trait VpcPeeringConnectionStatus extends js.Object {
@@ -5650,13 +6091,18 @@ package gamelift {
   }
 
   object VpcPeeringConnectionStatus {
-    def apply(Code: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-              Message: js.UndefOr[NonZeroAndMaxString] = js.undefined): VpcPeeringConnectionStatus = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        Message: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): VpcPeeringConnectionStatus = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcPeeringConnectionStatus]
     }

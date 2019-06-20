@@ -62,11 +62,13 @@ package kafka {
   }
 
   object BrokerNodeGroupInfo {
-    def apply(ClientSubnets: __listOf__string,
-              InstanceType: __stringMin5Max32,
-              BrokerAZDistribution: js.UndefOr[BrokerAZDistribution] = js.undefined,
-              SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
-              StorageInfo: js.UndefOr[StorageInfo] = js.undefined): BrokerNodeGroupInfo = {
+    def apply(
+        ClientSubnets: __listOf__string,
+        InstanceType: __stringMin5Max32,
+        BrokerAZDistribution: js.UndefOr[BrokerAZDistribution] = js.undefined,
+        SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
+        StorageInfo: js.UndefOr[StorageInfo] = js.undefined
+    ): BrokerNodeGroupInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClientSubnets" -> ClientSubnets.asInstanceOf[js.Any],
         "InstanceType"  -> InstanceType.asInstanceOf[js.Any],
@@ -95,11 +97,13 @@ package kafka {
   }
 
   object BrokerNodeInfo {
-    def apply(AttachedENIId: js.UndefOr[__string] = js.undefined,
-              BrokerId: js.UndefOr[__double] = js.undefined,
-              ClientSubnet: js.UndefOr[__string] = js.undefined,
-              ClientVpcIpAddress: js.UndefOr[__string] = js.undefined,
-              CurrentBrokerSoftwareInfo: js.UndefOr[BrokerSoftwareInfo] = js.undefined): BrokerNodeInfo = {
+    def apply(
+        AttachedENIId: js.UndefOr[__string] = js.undefined,
+        BrokerId: js.UndefOr[__double] = js.undefined,
+        ClientSubnet: js.UndefOr[__string] = js.undefined,
+        ClientVpcIpAddress: js.UndefOr[__string] = js.undefined,
+        CurrentBrokerSoftwareInfo: js.UndefOr[BrokerSoftwareInfo] = js.undefined
+    ): BrokerNodeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttachedENIId" -> AttachedENIId.map { x =>
           x.asInstanceOf[js.Any]
@@ -133,9 +137,11 @@ package kafka {
   }
 
   object BrokerSoftwareInfo {
-    def apply(ConfigurationArn: js.UndefOr[__string] = js.undefined,
-              ConfigurationRevision: js.UndefOr[__string] = js.undefined,
-              KafkaVersion: js.UndefOr[__string] = js.undefined): BrokerSoftwareInfo = {
+    def apply(
+        ConfigurationArn: js.UndefOr[__string] = js.undefined,
+        ConfigurationRevision: js.UndefOr[__string] = js.undefined,
+        KafkaVersion: js.UndefOr[__string] = js.undefined
+    ): BrokerSoftwareInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConfigurationArn" -> ConfigurationArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -171,17 +177,19 @@ package kafka {
   }
 
   object ClusterInfo {
-    def apply(BrokerNodeGroupInfo: js.UndefOr[BrokerNodeGroupInfo] = js.undefined,
-              ClusterArn: js.UndefOr[__string] = js.undefined,
-              ClusterName: js.UndefOr[__string] = js.undefined,
-              CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
-              CurrentBrokerSoftwareInfo: js.UndefOr[BrokerSoftwareInfo] = js.undefined,
-              CurrentVersion: js.UndefOr[__string] = js.undefined,
-              EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
-              EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
-              NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
-              State: js.UndefOr[ClusterState] = js.undefined,
-              ZookeeperConnectString: js.UndefOr[__string] = js.undefined): ClusterInfo = {
+    def apply(
+        BrokerNodeGroupInfo: js.UndefOr[BrokerNodeGroupInfo] = js.undefined,
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        ClusterName: js.UndefOr[__string] = js.undefined,
+        CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
+        CurrentBrokerSoftwareInfo: js.UndefOr[BrokerSoftwareInfo] = js.undefined,
+        CurrentVersion: js.UndefOr[__string] = js.undefined,
+        EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
+        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
+        NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
+        State: js.UndefOr[ClusterState] = js.undefined,
+        ZookeeperConnectString: js.UndefOr[__string] = js.undefined
+    ): ClusterInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BrokerNodeGroupInfo" -> BrokerNodeGroupInfo.map { x =>
           x.asInstanceOf[js.Any]
@@ -245,12 +253,14 @@ package kafka {
   }
 
   object CreateClusterRequest {
-    def apply(BrokerNodeGroupInfo: BrokerNodeGroupInfo,
-              ClusterName: __stringMin1Max64,
-              KafkaVersion: __stringMin1Max128,
-              NumberOfBrokerNodes: __integerMin1Max15,
-              EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
-              EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined): CreateClusterRequest = {
+    def apply(
+        BrokerNodeGroupInfo: BrokerNodeGroupInfo,
+        ClusterName: __stringMin1Max64,
+        KafkaVersion: __stringMin1Max128,
+        NumberOfBrokerNodes: __integerMin1Max15,
+        EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
+        EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined
+    ): CreateClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BrokerNodeGroupInfo" -> BrokerNodeGroupInfo.asInstanceOf[js.Any],
         "ClusterName"         -> ClusterName.asInstanceOf[js.Any],
@@ -276,9 +286,11 @@ package kafka {
   }
 
   object CreateClusterResponse {
-    def apply(ClusterArn: js.UndefOr[__string] = js.undefined,
-              ClusterName: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ClusterState] = js.undefined): CreateClusterResponse = {
+    def apply(
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        ClusterName: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ClusterState] = js.undefined
+    ): CreateClusterResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterArn" -> ClusterArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -302,7 +314,10 @@ package kafka {
   }
 
   object DeleteClusterRequest {
-    def apply(ClusterArn: __string, CurrentVersion: js.UndefOr[__string] = js.undefined): DeleteClusterRequest = {
+    def apply(
+        ClusterArn: __string,
+        CurrentVersion: js.UndefOr[__string] = js.undefined
+    ): DeleteClusterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
         "CurrentVersion" -> CurrentVersion.map { x =>
@@ -321,13 +336,18 @@ package kafka {
   }
 
   object DeleteClusterResponse {
-    def apply(ClusterArn: js.UndefOr[__string] = js.undefined,
-              State: js.UndefOr[ClusterState] = js.undefined): DeleteClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterArn" -> ClusterArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "State" -> State.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        State: js.UndefOr[ClusterState] = js.undefined
+    ): DeleteClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterArn" -> ClusterArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClusterResponse]
     }
@@ -339,9 +359,12 @@ package kafka {
   }
 
   object DescribeClusterRequest {
-    def apply(ClusterArn: __string): DescribeClusterRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterArn" -> ClusterArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterArn: __string
+    ): DescribeClusterRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterRequest]
     }
@@ -353,10 +376,14 @@ package kafka {
   }
 
   object DescribeClusterResponse {
-    def apply(ClusterInfo: js.UndefOr[ClusterInfo] = js.undefined): DescribeClusterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterInfo" -> ClusterInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterInfo: js.UndefOr[ClusterInfo] = js.undefined
+    ): DescribeClusterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterInfo" -> ClusterInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeClusterResponse]
     }
@@ -371,10 +398,14 @@ package kafka {
   }
 
   object EBSStorageInfo {
-    def apply(VolumeSize: js.UndefOr[__integerMin1Max16384] = js.undefined): EBSStorageInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("VolumeSize" -> VolumeSize.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        VolumeSize: js.UndefOr[__integerMin1Max16384] = js.undefined
+    ): EBSStorageInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "VolumeSize" -> VolumeSize.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EBSStorageInfo]
     }
@@ -389,9 +420,12 @@ package kafka {
   }
 
   object EncryptionAtRest {
-    def apply(DataVolumeKMSKeyId: __string): EncryptionAtRest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DataVolumeKMSKeyId" -> DataVolumeKMSKeyId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DataVolumeKMSKeyId: __string
+    ): EncryptionAtRest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DataVolumeKMSKeyId" -> DataVolumeKMSKeyId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionAtRest]
     }
@@ -406,10 +440,14 @@ package kafka {
   }
 
   object EncryptionInfo {
-    def apply(EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined): EncryptionInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("EncryptionAtRest" -> EncryptionAtRest.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined
+    ): EncryptionInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EncryptionAtRest" -> EncryptionAtRest.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EncryptionInfo]
     }
@@ -432,9 +470,12 @@ package kafka {
   }
 
   object GetBootstrapBrokersRequest {
-    def apply(ClusterArn: __string): GetBootstrapBrokersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterArn" -> ClusterArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterArn: __string
+    ): GetBootstrapBrokersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBootstrapBrokersRequest]
     }
@@ -446,10 +487,14 @@ package kafka {
   }
 
   object GetBootstrapBrokersResponse {
-    def apply(BootstrapBrokerString: js.UndefOr[__string] = js.undefined): GetBootstrapBrokersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("BootstrapBrokerString" -> BootstrapBrokerString.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BootstrapBrokerString: js.UndefOr[__string] = js.undefined
+    ): GetBootstrapBrokersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BootstrapBrokerString" -> BootstrapBrokerString.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBootstrapBrokersResponse]
     }
@@ -463,9 +508,11 @@ package kafka {
   }
 
   object ListClustersRequest {
-    def apply(ClusterNameFilter: js.UndefOr[__string] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListClustersRequest = {
+    def apply(
+        ClusterNameFilter: js.UndefOr[__string] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListClustersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterNameFilter" -> ClusterNameFilter.map { x =>
           x.asInstanceOf[js.Any]
@@ -489,13 +536,18 @@ package kafka {
   }
 
   object ListClustersResponse {
-    def apply(ClusterInfoList: js.UndefOr[__listOfClusterInfo] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListClustersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ClusterInfoList" -> ClusterInfoList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ClusterInfoList: js.UndefOr[__listOfClusterInfo] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListClustersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ClusterInfoList" -> ClusterInfoList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListClustersResponse]
     }
@@ -509,9 +561,11 @@ package kafka {
   }
 
   object ListNodesRequest {
-    def apply(ClusterArn: __string,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListNodesRequest = {
+    def apply(
+        ClusterArn: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListNodesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -533,13 +587,18 @@ package kafka {
   }
 
   object ListNodesResponse {
-    def apply(NextToken: js.UndefOr[__string] = js.undefined,
-              NodeInfoList: js.UndefOr[__listOfNodeInfo] = js.undefined): ListNodesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NodeInfoList" -> NodeInfoList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined,
+        NodeInfoList: js.UndefOr[__listOfNodeInfo] = js.undefined
+    ): ListNodesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NodeInfoList" -> NodeInfoList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNodesResponse]
     }
@@ -559,12 +618,14 @@ package kafka {
   }
 
   object NodeInfo {
-    def apply(AddedToClusterTime: js.UndefOr[__string] = js.undefined,
-              BrokerNodeInfo: js.UndefOr[BrokerNodeInfo] = js.undefined,
-              InstanceType: js.UndefOr[__string] = js.undefined,
-              NodeARN: js.UndefOr[__string] = js.undefined,
-              NodeType: js.UndefOr[NodeType] = js.undefined,
-              ZookeeperNodeInfo: js.UndefOr[ZookeeperNodeInfo] = js.undefined): NodeInfo = {
+    def apply(
+        AddedToClusterTime: js.UndefOr[__string] = js.undefined,
+        BrokerNodeInfo: js.UndefOr[BrokerNodeInfo] = js.undefined,
+        InstanceType: js.UndefOr[__string] = js.undefined,
+        NodeARN: js.UndefOr[__string] = js.undefined,
+        NodeType: js.UndefOr[NodeType] = js.undefined,
+        ZookeeperNodeInfo: js.UndefOr[ZookeeperNodeInfo] = js.undefined
+    ): NodeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddedToClusterTime" -> AddedToClusterTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -608,10 +669,14 @@ package kafka {
   }
 
   object StorageInfo {
-    def apply(EbsStorageInfo: js.UndefOr[EBSStorageInfo] = js.undefined): StorageInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("EbsStorageInfo" -> EbsStorageInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EbsStorageInfo: js.UndefOr[EBSStorageInfo] = js.undefined
+    ): StorageInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EbsStorageInfo" -> EbsStorageInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageInfo]
     }
@@ -629,10 +694,12 @@ package kafka {
   }
 
   object ZookeeperNodeInfo {
-    def apply(AttachedENIId: js.UndefOr[__string] = js.undefined,
-              ClientVpcIpAddress: js.UndefOr[__string] = js.undefined,
-              ZookeeperId: js.UndefOr[__double] = js.undefined,
-              ZookeeperVersion: js.UndefOr[__string] = js.undefined): ZookeeperNodeInfo = {
+    def apply(
+        AttachedENIId: js.UndefOr[__string] = js.undefined,
+        ClientVpcIpAddress: js.UndefOr[__string] = js.undefined,
+        ZookeeperId: js.UndefOr[__double] = js.undefined,
+        ZookeeperVersion: js.UndefOr[__string] = js.undefined
+    ): ZookeeperNodeInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttachedENIId" -> AttachedENIId.map { x =>
           x.asInstanceOf[js.Any]

@@ -94,16 +94,18 @@ package fsx {
   }
 
   object Backup {
-    def apply(BackupId: BackupId,
-              CreationTime: CreationTime,
-              FileSystem: FileSystem,
-              Lifecycle: BackupLifecycle,
-              Type: BackupType,
-              FailureDetails: js.UndefOr[BackupFailureDetails] = js.undefined,
-              KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
-              ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): Backup = {
+    def apply(
+        BackupId: BackupId,
+        CreationTime: CreationTime,
+        FileSystem: FileSystem,
+        Lifecycle: BackupLifecycle,
+        Type: BackupType,
+        FailureDetails: js.UndefOr[BackupFailureDetails] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): Backup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupId"     -> BackupId.asInstanceOf[js.Any],
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
@@ -140,10 +142,14 @@ package fsx {
   }
 
   object BackupFailureDetails {
-    def apply(Message: js.UndefOr[ErrorMessage] = js.undefined): BackupFailureDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Message: js.UndefOr[ErrorMessage] = js.undefined
+    ): BackupFailureDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BackupFailureDetails]
     }
@@ -182,9 +188,11 @@ package fsx {
   }
 
   object CreateBackupRequest {
-    def apply(FileSystemId: FileSystemId,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): CreateBackupRequest = {
+    def apply(
+        FileSystemId: FileSystemId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateBackupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x =>
@@ -208,10 +216,14 @@ package fsx {
   }
 
   object CreateBackupResponse {
-    def apply(Backup: js.UndefOr[Backup] = js.undefined): CreateBackupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Backup" -> Backup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Backup: js.UndefOr[Backup] = js.undefined
+    ): CreateBackupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Backup" -> Backup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBackupResponse]
     }
@@ -269,10 +281,14 @@ package fsx {
   }
 
   object CreateFileSystemFromBackupResponse {
-    def apply(FileSystem: js.UndefOr[FileSystem] = js.undefined): CreateFileSystemFromBackupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileSystem" -> FileSystem.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileSystem: js.UndefOr[FileSystem] = js.undefined
+    ): CreateFileSystemFromBackupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileSystem" -> FileSystem.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFileSystemFromBackupResponse]
     }
@@ -283,6 +299,7 @@ package fsx {
     */
   @js.native
   trait CreateFileSystemLustreConfiguration extends js.Object {
+    var ExportPath: js.UndefOr[ArchivePath]
     var ImportPath: js.UndefOr[ArchivePath]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
@@ -290,11 +307,15 @@ package fsx {
 
   object CreateFileSystemLustreConfiguration {
     def apply(
+        ExportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): CreateFileSystemLustreConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "ExportPath" -> ExportPath.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "ImportPath" -> ImportPath.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -375,10 +396,14 @@ package fsx {
   }
 
   object CreateFileSystemResponse {
-    def apply(FileSystem: js.UndefOr[FileSystem] = js.undefined): CreateFileSystemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileSystem" -> FileSystem.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileSystem: js.UndefOr[FileSystem] = js.undefined
+    ): CreateFileSystemResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileSystem" -> FileSystem.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFileSystemResponse]
     }
@@ -440,9 +465,11 @@ package fsx {
   }
 
   object DataRepositoryConfiguration {
-    def apply(ExportPath: js.UndefOr[ArchivePath] = js.undefined,
-              ImportPath: js.UndefOr[ArchivePath] = js.undefined,
-              ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined): DataRepositoryConfiguration = {
+    def apply(
+        ExportPath: js.UndefOr[ArchivePath] = js.undefined,
+        ImportPath: js.UndefOr[ArchivePath] = js.undefined,
+        ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined
+    ): DataRepositoryConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExportPath" -> ExportPath.map { x =>
           x.asInstanceOf[js.Any]
@@ -469,8 +496,10 @@ package fsx {
   }
 
   object DeleteBackupRequest {
-    def apply(BackupId: BackupId,
-              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined): DeleteBackupRequest = {
+    def apply(
+        BackupId: BackupId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): DeleteBackupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupId" -> BackupId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.map { x =>
@@ -492,13 +521,18 @@ package fsx {
   }
 
   object DeleteBackupResponse {
-    def apply(BackupId: js.UndefOr[BackupId] = js.undefined,
-              Lifecycle: js.UndefOr[BackupLifecycle] = js.undefined): DeleteBackupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("BackupId" -> BackupId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Lifecycle" -> Lifecycle.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupId: js.UndefOr[BackupId] = js.undefined,
+        Lifecycle: js.UndefOr[BackupLifecycle] = js.undefined
+    ): DeleteBackupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupId" -> BackupId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Lifecycle" -> Lifecycle.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupResponse]
     }
@@ -545,9 +579,11 @@ package fsx {
   }
 
   object DeleteFileSystemResponse {
-    def apply(FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
-              Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
-              WindowsResponse: js.UndefOr[DeleteFileSystemWindowsResponse] = js.undefined): DeleteFileSystemResponse = {
+    def apply(
+        FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
+        Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
+        WindowsResponse: js.UndefOr[DeleteFileSystemWindowsResponse] = js.undefined
+    ): DeleteFileSystemResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileSystemId" -> FileSystemId.map { x =>
           x.asInstanceOf[js.Any]
@@ -574,13 +610,18 @@ package fsx {
   }
 
   object DeleteFileSystemWindowsConfiguration {
-    def apply(FinalBackupTags: js.UndefOr[Tags] = js.undefined,
-              SkipFinalBackup: js.UndefOr[Flag] = js.undefined): DeleteFileSystemWindowsConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("FinalBackupTags" -> FinalBackupTags.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SkipFinalBackup" -> SkipFinalBackup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FinalBackupTags: js.UndefOr[Tags] = js.undefined,
+        SkipFinalBackup: js.UndefOr[Flag] = js.undefined
+    ): DeleteFileSystemWindowsConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FinalBackupTags" -> FinalBackupTags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkipFinalBackup" -> SkipFinalBackup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFileSystemWindowsConfiguration]
     }
@@ -596,13 +637,18 @@ package fsx {
   }
 
   object DeleteFileSystemWindowsResponse {
-    def apply(FinalBackupId: js.UndefOr[BackupId] = js.undefined,
-              FinalBackupTags: js.UndefOr[Tags] = js.undefined): DeleteFileSystemWindowsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FinalBackupId" -> FinalBackupId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FinalBackupTags" -> FinalBackupTags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FinalBackupId: js.UndefOr[BackupId] = js.undefined,
+        FinalBackupTags: js.UndefOr[Tags] = js.undefined
+    ): DeleteFileSystemWindowsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FinalBackupId" -> FinalBackupId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FinalBackupTags" -> FinalBackupTags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFileSystemWindowsResponse]
     }
@@ -620,10 +666,12 @@ package fsx {
   }
 
   object DescribeBackupsRequest {
-    def apply(BackupIds: js.UndefOr[BackupIds] = js.undefined,
-              Filters: js.UndefOr[Filters] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeBackupsRequest = {
+    def apply(
+        BackupIds: js.UndefOr[BackupIds] = js.undefined,
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeBackupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupIds" -> BackupIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -653,13 +701,18 @@ package fsx {
   }
 
   object DescribeBackupsResponse {
-    def apply(Backups: js.UndefOr[Backups] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeBackupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Backups" -> Backups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Backups: js.UndefOr[Backups] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeBackupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Backups" -> Backups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBackupsResponse]
     }
@@ -676,9 +729,11 @@ package fsx {
   }
 
   object DescribeFileSystemsRequest {
-    def apply(FileSystemIds: js.UndefOr[FileSystemIds] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeFileSystemsRequest = {
+    def apply(
+        FileSystemIds: js.UndefOr[FileSystemIds] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFileSystemsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FileSystemIds" -> FileSystemIds.map { x =>
           x.asInstanceOf[js.Any]
@@ -705,13 +760,18 @@ package fsx {
   }
 
   object DescribeFileSystemsResponse {
-    def apply(FileSystems: js.UndefOr[FileSystems] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeFileSystemsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileSystems" -> FileSystems.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileSystems: js.UndefOr[FileSystems] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFileSystemsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileSystems" -> FileSystems.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFileSystemsResponse]
     }
@@ -741,22 +801,24 @@ package fsx {
   }
 
   object FileSystem {
-    def apply(CreationTime: js.UndefOr[CreationTime] = js.undefined,
-              DNSName: js.UndefOr[DNSName] = js.undefined,
-              FailureDetails: js.UndefOr[FileSystemFailureDetails] = js.undefined,
-              FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
-              FileSystemType: js.UndefOr[FileSystemType] = js.undefined,
-              KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
-              LustreConfiguration: js.UndefOr[LustreFileSystemConfiguration] = js.undefined,
-              NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds] = js.undefined,
-              OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
-              ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
-              StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
-              SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined,
-              VpcId: js.UndefOr[VpcId] = js.undefined,
-              WindowsConfiguration: js.UndefOr[WindowsFileSystemConfiguration] = js.undefined): FileSystem = {
+    def apply(
+        CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        DNSName: js.UndefOr[DNSName] = js.undefined,
+        FailureDetails: js.UndefOr[FileSystemFailureDetails] = js.undefined,
+        FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
+        FileSystemType: js.UndefOr[FileSystemType] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
+        LustreConfiguration: js.UndefOr[LustreFileSystemConfiguration] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds] = js.undefined,
+        OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined,
+        WindowsConfiguration: js.UndefOr[WindowsFileSystemConfiguration] = js.undefined
+    ): FileSystem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -821,10 +883,14 @@ package fsx {
   }
 
   object FileSystemFailureDetails {
-    def apply(Message: js.UndefOr[ErrorMessage] = js.undefined): FileSystemFailureDetails = {
-      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Message: js.UndefOr[ErrorMessage] = js.undefined
+    ): FileSystemFailureDetails = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FileSystemFailureDetails]
     }
@@ -872,12 +938,18 @@ package fsx {
   }
 
   object Filter {
-    def apply(Name: js.UndefOr[FilterName] = js.undefined, Values: js.UndefOr[FilterValues] = js.undefined): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: js.UndefOr[FilterName] = js.undefined,
+        Values: js.UndefOr[FilterValues] = js.undefined
+    ): Filter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
@@ -904,9 +976,11 @@ package fsx {
   }
 
   object ListTagsForResourceRequest {
-    def apply(ResourceARN: ResourceARN,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
+    def apply(
+        ResourceARN: ResourceARN,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTagsForResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "MaxResults" -> MaxResults.map { x =>
@@ -931,13 +1005,18 @@ package fsx {
   }
 
   object ListTagsForResourceResponse {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tags: js.UndefOr[Tags] = js.undefined): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -953,8 +1032,10 @@ package fsx {
   }
 
   object LustreFileSystemConfiguration {
-    def apply(DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration] = js.undefined,
-              WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined): LustreFileSystemConfiguration = {
+    def apply(
+        DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration] = js.undefined,
+        WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
+    ): LustreFileSystemConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataRepositoryConfiguration" -> DataRepositoryConfiguration.map { x =>
           x.asInstanceOf[js.Any]
@@ -978,12 +1059,18 @@ package fsx {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[TagKey] = js.undefined, Value: js.UndefOr[TagValue] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -999,7 +1086,10 @@ package fsx {
   }
 
   object TagResourceRequest {
-    def apply(ResourceARN: ResourceARN, Tags: Tags): TagResourceRequest = {
+    def apply(
+        ResourceARN: ResourceARN,
+        Tags: Tags
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
@@ -1016,8 +1106,10 @@ package fsx {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
-    def apply(): TagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
     }
@@ -1033,7 +1125,10 @@ package fsx {
   }
 
   object UntagResourceRequest {
-    def apply(ResourceARN: ResourceARN, TagKeys: TagKeys): UntagResourceRequest = {
+    def apply(
+        ResourceARN: ResourceARN,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
@@ -1050,8 +1145,10 @@ package fsx {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
-    def apply(): UntagResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
@@ -1069,9 +1166,11 @@ package fsx {
     def apply(
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemLustreConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "WeeklyMaintenanceStartTime" -> WeeklyMaintenanceStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFileSystemLustreConfiguration]
     }
@@ -1121,10 +1220,14 @@ package fsx {
   }
 
   object UpdateFileSystemResponse {
-    def apply(FileSystem: js.UndefOr[FileSystem] = js.undefined): UpdateFileSystemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FileSystem" -> FileSystem.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FileSystem: js.UndefOr[FileSystem] = js.undefined
+    ): UpdateFileSystemResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FileSystem" -> FileSystem.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFileSystemResponse]
     }
@@ -1177,13 +1280,15 @@ package fsx {
   }
 
   object WindowsFileSystemConfiguration {
-    def apply(ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
-              AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
-              CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
-              DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
-              MaintenanceOperationsInProgress: js.UndefOr[FileSystemMaintenanceOperations] = js.undefined,
-              ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
-              WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined): WindowsFileSystemConfiguration = {
+    def apply(
+        ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
+        CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
+        DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
+        MaintenanceOperationsInProgress: js.UndefOr[FileSystemMaintenanceOperations] = js.undefined,
+        ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
+        WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
+    ): WindowsFileSystemConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActiveDirectoryId" -> ActiveDirectoryId.map { x =>
           x.asInstanceOf[js.Any]

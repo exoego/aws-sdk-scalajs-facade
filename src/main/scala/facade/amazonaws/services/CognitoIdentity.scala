@@ -28,6 +28,8 @@ package object cognitoidentity {
   type IdentityIdList                    = js.Array[IdentityId]
   type IdentityPoolId                    = String
   type IdentityPoolName                  = String
+  type IdentityPoolTagsListType          = js.Array[TagKeysType]
+  type IdentityPoolTagsType              = js.Dictionary[TagValueType]
   type IdentityPoolUnauthenticated       = Boolean
   type IdentityPoolsList                 = js.Array[IdentityPoolShortDescription]
   type IdentityProviderId                = String
@@ -49,6 +51,8 @@ package object cognitoidentity {
   type SAMLProviderList                  = js.Array[ARNString]
   type SecretKeyString                   = String
   type SessionTokenString                = String
+  type TagKeysType                       = String
+  type TagValueType                      = String
   type TokenDuration                     = Double
   type UnprocessedIdentityIdList         = js.Array[UnprocessedIdentityId]
 }
@@ -71,16 +75,19 @@ package cognitoidentity {
     def getOpenIdToken(params: GetOpenIdTokenInput): Request[GetOpenIdTokenResponse]                   = js.native
     def getOpenIdTokenForDeveloperIdentity(
         params: GetOpenIdTokenForDeveloperIdentityInput
-    ): Request[GetOpenIdTokenForDeveloperIdentityResponse]                                    = js.native
-    def listIdentities(params: ListIdentitiesInput): Request[ListIdentitiesResponse]          = js.native
-    def listIdentityPools(params: ListIdentityPoolsInput): Request[ListIdentityPoolsResponse] = js.native
+    ): Request[GetOpenIdTokenForDeveloperIdentityResponse]                                          = js.native
+    def listIdentities(params: ListIdentitiesInput): Request[ListIdentitiesResponse]                = js.native
+    def listIdentityPools(params: ListIdentityPoolsInput): Request[ListIdentityPoolsResponse]       = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceResponse] = js.native
     def lookupDeveloperIdentity(params: LookupDeveloperIdentityInput): Request[LookupDeveloperIdentityResponse] =
       js.native
     def mergeDeveloperIdentities(params: MergeDeveloperIdentitiesInput): Request[MergeDeveloperIdentitiesResponse] =
       js.native
     def setIdentityPoolRoles(params: SetIdentityPoolRolesInput): Request[js.Object]       = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceResponse]               = js.native
     def unlinkDeveloperIdentity(params: UnlinkDeveloperIdentityInput): Request[js.Object] = js.native
     def unlinkIdentity(params: UnlinkIdentityInput): Request[js.Object]                   = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceResponse]         = js.native
     def updateIdentityPool(params: IdentityPool): Request[IdentityPool]                   = js.native
   }
 
@@ -92,7 +99,7 @@ package cognitoidentity {
   }
 
   /**
-    * A provider representing an Amazon Cognito Identity User Pool and its client ID.
+    * A provider representing an Amazon Cognito user pool and its client ID.
     */
   @js.native
   trait CognitoIdentityProvider extends js.Object {
@@ -124,14 +131,6 @@ package cognitoidentity {
   }
 
   /**
-    * Thrown if there are parallel requests to modify a resource.
-    */
-  @js.native
-  trait ConcurrentModificationExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
     * Input to the CreateIdentityPool action.
     */
   @js.native
@@ -140,19 +139,23 @@ package cognitoidentity {
     var IdentityPoolName: IdentityPoolName
     var CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList]
     var DeveloperProviderName: js.UndefOr[DeveloperProviderName]
+    var IdentityPoolTags: js.UndefOr[IdentityPoolTagsType]
     var OpenIdConnectProviderARNs: js.UndefOr[OIDCProviderList]
     var SamlProviderARNs: js.UndefOr[SAMLProviderList]
     var SupportedLoginProviders: js.UndefOr[IdentityProviders]
   }
 
   object CreateIdentityPoolInput {
-    def apply(AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
-              IdentityPoolName: IdentityPoolName,
-              CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList] = js.undefined,
-              DeveloperProviderName: js.UndefOr[DeveloperProviderName] = js.undefined,
-              OpenIdConnectProviderARNs: js.UndefOr[OIDCProviderList] = js.undefined,
-              SamlProviderARNs: js.UndefOr[SAMLProviderList] = js.undefined,
-              SupportedLoginProviders: js.UndefOr[IdentityProviders] = js.undefined): CreateIdentityPoolInput = {
+    def apply(
+        AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
+        IdentityPoolName: IdentityPoolName,
+        CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList] = js.undefined,
+        DeveloperProviderName: js.UndefOr[DeveloperProviderName] = js.undefined,
+        IdentityPoolTags: js.UndefOr[IdentityPoolTagsType] = js.undefined,
+        OpenIdConnectProviderARNs: js.UndefOr[OIDCProviderList] = js.undefined,
+        SamlProviderARNs: js.UndefOr[SAMLProviderList] = js.undefined,
+        SupportedLoginProviders: js.UndefOr[IdentityProviders] = js.undefined
+    ): CreateIdentityPoolInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowUnauthenticatedIdentities" -> AllowUnauthenticatedIdentities.asInstanceOf[js.Any],
         "IdentityPoolName"               -> IdentityPoolName.asInstanceOf[js.Any],
@@ -160,6 +163,9 @@ package cognitoidentity {
           x.asInstanceOf[js.Any]
         },
         "DeveloperProviderName" -> DeveloperProviderName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityPoolTags" -> IdentityPoolTags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "OpenIdConnectProviderARNs" -> OpenIdConnectProviderARNs.map { x =>
@@ -189,10 +195,12 @@ package cognitoidentity {
   }
 
   object Credentials {
-    def apply(AccessKeyId: js.UndefOr[AccessKeyString] = js.undefined,
-              Expiration: js.UndefOr[DateType] = js.undefined,
-              SecretKey: js.UndefOr[SecretKeyString] = js.undefined,
-              SessionToken: js.UndefOr[SessionTokenString] = js.undefined): Credentials = {
+    def apply(
+        AccessKeyId: js.UndefOr[AccessKeyString] = js.undefined,
+        Expiration: js.UndefOr[DateType] = js.undefined,
+        SecretKey: js.UndefOr[SecretKeyString] = js.undefined,
+        SessionToken: js.UndefOr[SessionTokenString] = js.undefined
+    ): Credentials = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccessKeyId" -> AccessKeyId.map { x =>
           x.asInstanceOf[js.Any]
@@ -221,9 +229,12 @@ package cognitoidentity {
   }
 
   object DeleteIdentitiesInput {
-    def apply(IdentityIdsToDelete: IdentityIdList): DeleteIdentitiesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityIdsToDelete" -> IdentityIdsToDelete.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityIdsToDelete: IdentityIdList
+    ): DeleteIdentitiesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityIdsToDelete" -> IdentityIdsToDelete.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIdentitiesInput]
     }
@@ -241,9 +252,11 @@ package cognitoidentity {
     def apply(
         UnprocessedIdentityIds: js.UndefOr[UnprocessedIdentityIdList] = js.undefined
     ): DeleteIdentitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("UnprocessedIdentityIds" -> UnprocessedIdentityIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "UnprocessedIdentityIds" -> UnprocessedIdentityIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIdentitiesResponse]
     }
@@ -258,9 +271,12 @@ package cognitoidentity {
   }
 
   object DeleteIdentityPoolInput {
-    def apply(IdentityPoolId: IdentityPoolId): DeleteIdentityPoolInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): DeleteIdentityPoolInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteIdentityPoolInput]
     }
@@ -275,9 +291,12 @@ package cognitoidentity {
   }
 
   object DescribeIdentityInput {
-    def apply(IdentityId: IdentityId): DescribeIdentityInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityId" -> IdentityId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityId: IdentityId
+    ): DescribeIdentityInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityInput]
     }
@@ -292,20 +311,15 @@ package cognitoidentity {
   }
 
   object DescribeIdentityPoolInput {
-    def apply(IdentityPoolId: IdentityPoolId): DescribeIdentityPoolInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): DescribeIdentityPoolInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeIdentityPoolInput]
     }
-  }
-
-  /**
-    * The provided developer user identifier is already registered with Cognito under a different identity ID.
-    */
-  @js.native
-  trait DeveloperUserAlreadyRegisteredExceptionException extends js.Object {
-    val message: String
   }
 
   object ErrorCodeEnum {
@@ -313,14 +327,6 @@ package cognitoidentity {
     val InternalServerError = "InternalServerError"
 
     val values = IndexedSeq(AccessDenied, InternalServerError)
-  }
-
-  /**
-    * An exception thrown when a dependent service such as Facebook or Twitter is not responding
-    */
-  @js.native
-  trait ExternalServiceExceptionException extends js.Object {
-    val message: String
   }
 
   /**
@@ -334,9 +340,11 @@ package cognitoidentity {
   }
 
   object GetCredentialsForIdentityInput {
-    def apply(IdentityId: IdentityId,
-              CustomRoleArn: js.UndefOr[ARNString] = js.undefined,
-              Logins: js.UndefOr[LoginsMap] = js.undefined): GetCredentialsForIdentityInput = {
+    def apply(
+        IdentityId: IdentityId,
+        CustomRoleArn: js.UndefOr[ARNString] = js.undefined,
+        Logins: js.UndefOr[LoginsMap] = js.undefined
+    ): GetCredentialsForIdentityInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityId" -> IdentityId.asInstanceOf[js.Any],
         "CustomRoleArn" -> CustomRoleArn.map { x =>
@@ -361,13 +369,18 @@ package cognitoidentity {
   }
 
   object GetCredentialsForIdentityResponse {
-    def apply(Credentials: js.UndefOr[Credentials] = js.undefined,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined): GetCredentialsForIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Credentials" -> Credentials.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "IdentityId" -> IdentityId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Credentials: js.UndefOr[Credentials] = js.undefined,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined
+    ): GetCredentialsForIdentityResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Credentials" -> Credentials.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityId" -> IdentityId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCredentialsForIdentityResponse]
     }
@@ -384,9 +397,11 @@ package cognitoidentity {
   }
 
   object GetIdInput {
-    def apply(IdentityPoolId: IdentityPoolId,
-              AccountId: js.UndefOr[AccountId] = js.undefined,
-              Logins: js.UndefOr[LoginsMap] = js.undefined): GetIdInput = {
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        Logins: js.UndefOr[LoginsMap] = js.undefined
+    ): GetIdInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "AccountId" -> AccountId.map { x =>
@@ -410,10 +425,14 @@ package cognitoidentity {
   }
 
   object GetIdResponse {
-    def apply(IdentityId: js.UndefOr[IdentityId] = js.undefined): GetIdResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityId" -> IdentityId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityId: js.UndefOr[IdentityId] = js.undefined
+    ): GetIdResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityId" -> IdentityId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIdResponse]
     }
@@ -428,9 +447,12 @@ package cognitoidentity {
   }
 
   object GetIdentityPoolRolesInput {
-    def apply(IdentityPoolId: IdentityPoolId): GetIdentityPoolRolesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: IdentityPoolId
+    ): GetIdentityPoolRolesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetIdentityPoolRolesInput]
     }
@@ -447,9 +469,11 @@ package cognitoidentity {
   }
 
   object GetIdentityPoolRolesResponse {
-    def apply(IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-              RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined,
-              Roles: js.UndefOr[RolesMap] = js.undefined): GetIdentityPoolRolesResponse = {
+    def apply(
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined,
+        Roles: js.UndefOr[RolesMap] = js.undefined
+    ): GetIdentityPoolRolesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityPoolId" -> IdentityPoolId.map { x =>
           x.asInstanceOf[js.Any]
@@ -478,10 +502,12 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenForDeveloperIdentityInput {
-    def apply(IdentityPoolId: IdentityPoolId,
-              Logins: LoginsMap,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              TokenDuration: js.UndefOr[TokenDuration] = js.undefined): GetOpenIdTokenForDeveloperIdentityInput = {
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        Logins: LoginsMap,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        TokenDuration: js.UndefOr[TokenDuration] = js.undefined
+    ): GetOpenIdTokenForDeveloperIdentityInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "Logins"         -> Logins.asInstanceOf[js.Any],
@@ -507,13 +533,18 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenForDeveloperIdentityResponse {
-    def apply(IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              Token: js.UndefOr[OIDCToken] = js.undefined): GetOpenIdTokenForDeveloperIdentityResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityId" -> IdentityId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Token" -> Token.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        Token: js.UndefOr[OIDCToken] = js.undefined
+    ): GetOpenIdTokenForDeveloperIdentityResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityId" -> IdentityId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -531,11 +562,16 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenInput {
-    def apply(IdentityId: IdentityId, Logins: js.UndefOr[LoginsMap] = js.undefined): GetOpenIdTokenInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("IdentityId" -> IdentityId.asInstanceOf[js.Any], "Logins" -> Logins.map { x =>
+    def apply(
+        IdentityId: IdentityId,
+        Logins: js.UndefOr[LoginsMap] = js.undefined
+    ): GetOpenIdTokenInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityId" -> IdentityId.asInstanceOf[js.Any],
+        "Logins" -> Logins.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOpenIdTokenInput]
     }
@@ -551,13 +587,18 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenResponse {
-    def apply(IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              Token: js.UndefOr[OIDCToken] = js.undefined): GetOpenIdTokenResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityId" -> IdentityId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Token" -> Token.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        Token: js.UndefOr[OIDCToken] = js.undefined
+    ): GetOpenIdTokenResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityId" -> IdentityId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOpenIdTokenResponse]
     }
@@ -575,10 +616,12 @@ package cognitoidentity {
   }
 
   object IdentityDescription {
-    def apply(CreationDate: js.UndefOr[DateType] = js.undefined,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              LastModifiedDate: js.UndefOr[DateType] = js.undefined,
-              Logins: js.UndefOr[LoginsList] = js.undefined): IdentityDescription = {
+    def apply(
+        CreationDate: js.UndefOr[DateType] = js.undefined,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        LastModifiedDate: js.UndefOr[DateType] = js.undefined,
+        Logins: js.UndefOr[LoginsList] = js.undefined
+    ): IdentityDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDate" -> CreationDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -608,20 +651,24 @@ package cognitoidentity {
     var IdentityPoolName: IdentityPoolName
     var CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList]
     var DeveloperProviderName: js.UndefOr[DeveloperProviderName]
+    var IdentityPoolTags: js.UndefOr[IdentityPoolTagsType]
     var OpenIdConnectProviderARNs: js.UndefOr[OIDCProviderList]
     var SamlProviderARNs: js.UndefOr[SAMLProviderList]
     var SupportedLoginProviders: js.UndefOr[IdentityProviders]
   }
 
   object IdentityPool {
-    def apply(AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
-              IdentityPoolId: IdentityPoolId,
-              IdentityPoolName: IdentityPoolName,
-              CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList] = js.undefined,
-              DeveloperProviderName: js.UndefOr[DeveloperProviderName] = js.undefined,
-              OpenIdConnectProviderARNs: js.UndefOr[OIDCProviderList] = js.undefined,
-              SamlProviderARNs: js.UndefOr[SAMLProviderList] = js.undefined,
-              SupportedLoginProviders: js.UndefOr[IdentityProviders] = js.undefined): IdentityPool = {
+    def apply(
+        AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
+        IdentityPoolId: IdentityPoolId,
+        IdentityPoolName: IdentityPoolName,
+        CognitoIdentityProviders: js.UndefOr[CognitoIdentityProviderList] = js.undefined,
+        DeveloperProviderName: js.UndefOr[DeveloperProviderName] = js.undefined,
+        IdentityPoolTags: js.UndefOr[IdentityPoolTagsType] = js.undefined,
+        OpenIdConnectProviderARNs: js.UndefOr[OIDCProviderList] = js.undefined,
+        SamlProviderARNs: js.UndefOr[SAMLProviderList] = js.undefined,
+        SupportedLoginProviders: js.UndefOr[IdentityProviders] = js.undefined
+    ): IdentityPool = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AllowUnauthenticatedIdentities" -> AllowUnauthenticatedIdentities.asInstanceOf[js.Any],
         "IdentityPoolId"                 -> IdentityPoolId.asInstanceOf[js.Any],
@@ -630,6 +677,9 @@ package cognitoidentity {
           x.asInstanceOf[js.Any]
         },
         "DeveloperProviderName" -> DeveloperProviderName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityPoolTags" -> IdentityPoolTags.map { x =>
           x.asInstanceOf[js.Any]
         },
         "OpenIdConnectProviderARNs" -> OpenIdConnectProviderARNs.map { x =>
@@ -657,48 +707,21 @@ package cognitoidentity {
   }
 
   object IdentityPoolShortDescription {
-    def apply(IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-              IdentityPoolName: js.UndefOr[IdentityPoolName] = js.undefined): IdentityPoolShortDescription = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPoolId" -> IdentityPoolId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "IdentityPoolName" -> IdentityPoolName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        IdentityPoolName: js.UndefOr[IdentityPoolName] = js.undefined
+    ): IdentityPoolShortDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPoolId" -> IdentityPoolId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityPoolName" -> IdentityPoolName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IdentityPoolShortDescription]
     }
-  }
-
-  /**
-    * Thrown when the service encounters an error during processing the request.
-    */
-  @js.native
-  trait InternalErrorExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.
-    */
-  @js.native
-  trait InvalidIdentityPoolConfigurationExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * Thrown for missing or bad input parameter(s).
-    */
-  @js.native
-  trait InvalidParameterExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * Thrown when the total number of user pools has exceeded a preset limit.
-    */
-  @js.native
-  trait LimitExceededExceptionException extends js.Object {
-    val message: String
   }
 
   /**
@@ -713,10 +736,12 @@ package cognitoidentity {
   }
 
   object ListIdentitiesInput {
-    def apply(IdentityPoolId: IdentityPoolId,
-              MaxResults: QueryLimit,
-              HideDisabled: js.UndefOr[HideDisabled] = js.undefined,
-              NextToken: js.UndefOr[PaginationKey] = js.undefined): ListIdentitiesInput = {
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        MaxResults: QueryLimit,
+        HideDisabled: js.UndefOr[HideDisabled] = js.undefined,
+        NextToken: js.UndefOr[PaginationKey] = js.undefined
+    ): ListIdentitiesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "MaxResults"     -> MaxResults.asInstanceOf[js.Any],
@@ -743,9 +768,11 @@ package cognitoidentity {
   }
 
   object ListIdentitiesResponse {
-    def apply(Identities: js.UndefOr[IdentitiesList] = js.undefined,
-              IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
-              NextToken: js.UndefOr[PaginationKey] = js.undefined): ListIdentitiesResponse = {
+    def apply(
+        Identities: js.UndefOr[IdentitiesList] = js.undefined,
+        IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
+        NextToken: js.UndefOr[PaginationKey] = js.undefined
+    ): ListIdentitiesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Identities" -> Identities.map { x =>
           x.asInstanceOf[js.Any]
@@ -772,12 +799,16 @@ package cognitoidentity {
   }
 
   object ListIdentityPoolsInput {
-    def apply(MaxResults: QueryLimit, NextToken: js.UndefOr[PaginationKey] = js.undefined): ListIdentityPoolsInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.asInstanceOf[js.Any], "NextToken" -> NextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: QueryLimit,
+        NextToken: js.UndefOr[PaginationKey] = js.undefined
+    ): ListIdentityPoolsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIdentityPoolsInput]
     }
@@ -793,15 +824,56 @@ package cognitoidentity {
   }
 
   object ListIdentityPoolsResponse {
-    def apply(IdentityPools: js.UndefOr[IdentityPoolsList] = js.undefined,
-              NextToken: js.UndefOr[PaginationKey] = js.undefined): ListIdentityPoolsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityPools" -> IdentityPools.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityPools: js.UndefOr[IdentityPoolsList] = js.undefined,
+        NextToken: js.UndefOr[PaginationKey] = js.undefined
+    ): ListIdentityPoolsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityPools" -> IdentityPools.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListIdentityPoolsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var ResourceArn: ARNString
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+        ResourceArn: ARNString
+    ): ListTagsForResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[IdentityPoolTagsType]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -818,11 +890,13 @@ package cognitoidentity {
   }
 
   object LookupDeveloperIdentityInput {
-    def apply(IdentityPoolId: IdentityPoolId,
-              DeveloperUserIdentifier: js.UndefOr[DeveloperUserIdentifier] = js.undefined,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              MaxResults: js.UndefOr[QueryLimit] = js.undefined,
-              NextToken: js.UndefOr[PaginationKey] = js.undefined): LookupDeveloperIdentityInput = {
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        DeveloperUserIdentifier: js.UndefOr[DeveloperUserIdentifier] = js.undefined,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        MaxResults: js.UndefOr[QueryLimit] = js.undefined,
+        NextToken: js.UndefOr[PaginationKey] = js.undefined
+    ): LookupDeveloperIdentityInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "DeveloperUserIdentifier" -> DeveloperUserIdentifier.map { x =>
@@ -854,9 +928,11 @@ package cognitoidentity {
   }
 
   object LookupDeveloperIdentityResponse {
-    def apply(DeveloperUserIdentifierList: js.UndefOr[DeveloperUserIdentifierList] = js.undefined,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined,
-              NextToken: js.UndefOr[PaginationKey] = js.undefined): LookupDeveloperIdentityResponse = {
+    def apply(
+        DeveloperUserIdentifierList: js.UndefOr[DeveloperUserIdentifierList] = js.undefined,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined,
+        NextToken: js.UndefOr[PaginationKey] = js.undefined
+    ): LookupDeveloperIdentityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeveloperUserIdentifierList" -> DeveloperUserIdentifierList.map { x =>
           x.asInstanceOf[js.Any]
@@ -885,7 +961,12 @@ package cognitoidentity {
   }
 
   object MappingRule {
-    def apply(Claim: ClaimName, MatchType: MappingRuleMatchType, RoleARN: ARNString, Value: ClaimValue): MappingRule = {
+    def apply(
+        Claim: ClaimName,
+        MatchType: MappingRuleMatchType,
+        RoleARN: ARNString,
+        Value: ClaimValue
+    ): MappingRule = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Claim"     -> Claim.asInstanceOf[js.Any],
         "MatchType" -> MatchType.asInstanceOf[js.Any],
@@ -918,10 +999,12 @@ package cognitoidentity {
   }
 
   object MergeDeveloperIdentitiesInput {
-    def apply(DestinationUserIdentifier: DeveloperUserIdentifier,
-              DeveloperProviderName: DeveloperProviderName,
-              IdentityPoolId: IdentityPoolId,
-              SourceUserIdentifier: DeveloperUserIdentifier): MergeDeveloperIdentitiesInput = {
+    def apply(
+        DestinationUserIdentifier: DeveloperUserIdentifier,
+        DeveloperProviderName: DeveloperProviderName,
+        IdentityPoolId: IdentityPoolId,
+        SourceUserIdentifier: DeveloperUserIdentifier
+    ): MergeDeveloperIdentitiesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DestinationUserIdentifier" -> DestinationUserIdentifier.asInstanceOf[js.Any],
         "DeveloperProviderName"     -> DeveloperProviderName.asInstanceOf[js.Any],
@@ -942,37 +1025,17 @@ package cognitoidentity {
   }
 
   object MergeDeveloperIdentitiesResponse {
-    def apply(IdentityId: js.UndefOr[IdentityId] = js.undefined): MergeDeveloperIdentitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("IdentityId" -> IdentityId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IdentityId: js.UndefOr[IdentityId] = js.undefined
+    ): MergeDeveloperIdentitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IdentityId" -> IdentityId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MergeDeveloperIdentitiesResponse]
     }
-  }
-
-  /**
-    * Thrown when a user is not authorized to access the requested resource.
-    */
-  @js.native
-  trait NotAuthorizedExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * Thrown when a user tries to use a login which is already linked to another account.
-    */
-  @js.native
-  trait ResourceConflictExceptionException extends js.Object {
-    val message: String
-  }
-
-  /**
-    * Thrown when the requested resource (for example, a dataset or record) does not exist.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val message: String
   }
 
   /**
@@ -986,9 +1049,11 @@ package cognitoidentity {
   }
 
   object RoleMapping {
-    def apply(Type: RoleMappingType,
-              AmbiguousRoleResolution: js.UndefOr[AmbiguousRoleResolutionType] = js.undefined,
-              RulesConfiguration: js.UndefOr[RulesConfigurationType] = js.undefined): RoleMapping = {
+    def apply(
+        Type: RoleMappingType,
+        AmbiguousRoleResolution: js.UndefOr[AmbiguousRoleResolutionType] = js.undefined,
+        RulesConfiguration: js.UndefOr[RulesConfigurationType] = js.undefined
+    ): RoleMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Type" -> Type.asInstanceOf[js.Any],
         "AmbiguousRoleResolution" -> AmbiguousRoleResolution.map { x =>
@@ -1019,9 +1084,12 @@ package cognitoidentity {
   }
 
   object RulesConfigurationType {
-    def apply(Rules: MappingRulesList): RulesConfigurationType = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Rules" -> Rules.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Rules: MappingRulesList
+    ): RulesConfigurationType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Rules" -> Rules.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RulesConfigurationType]
     }
@@ -1038,9 +1106,11 @@ package cognitoidentity {
   }
 
   object SetIdentityPoolRolesInput {
-    def apply(IdentityPoolId: IdentityPoolId,
-              Roles: RolesMap,
-              RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined): SetIdentityPoolRolesInput = {
+    def apply(
+        IdentityPoolId: IdentityPoolId,
+        Roles: RolesMap,
+        RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined
+    ): SetIdentityPoolRolesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "Roles"          -> Roles.asInstanceOf[js.Any],
@@ -1053,12 +1123,39 @@ package cognitoidentity {
     }
   }
 
-  /**
-    * Thrown when a request is throttled.
-    */
   @js.native
-  trait TooManyRequestsExceptionException extends js.Object {
-    val message: String
+  trait TagResourceInput extends js.Object {
+    var ResourceArn: ARNString
+    var Tags: js.UndefOr[IdentityPoolTagsType]
+  }
+
+  object TagResourceInput {
+    def apply(
+        ResourceArn: ARNString,
+        Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
+    ): TagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceInput]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+    }
   }
 
   /**
@@ -1073,10 +1170,12 @@ package cognitoidentity {
   }
 
   object UnlinkDeveloperIdentityInput {
-    def apply(DeveloperProviderName: DeveloperProviderName,
-              DeveloperUserIdentifier: DeveloperUserIdentifier,
-              IdentityId: IdentityId,
-              IdentityPoolId: IdentityPoolId): UnlinkDeveloperIdentityInput = {
+    def apply(
+        DeveloperProviderName: DeveloperProviderName,
+        DeveloperUserIdentifier: DeveloperUserIdentifier,
+        IdentityId: IdentityId,
+        IdentityPoolId: IdentityPoolId
+    ): UnlinkDeveloperIdentityInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeveloperProviderName"   -> DeveloperProviderName.asInstanceOf[js.Any],
         "DeveloperUserIdentifier" -> DeveloperUserIdentifier.asInstanceOf[js.Any],
@@ -1099,7 +1198,11 @@ package cognitoidentity {
   }
 
   object UnlinkIdentityInput {
-    def apply(IdentityId: IdentityId, Logins: LoginsMap, LoginsToRemove: LoginsList): UnlinkIdentityInput = {
+    def apply(
+        IdentityId: IdentityId,
+        Logins: LoginsMap,
+        LoginsToRemove: LoginsList
+    ): UnlinkIdentityInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "Logins"         -> Logins.asInstanceOf[js.Any],
@@ -1120,15 +1223,55 @@ package cognitoidentity {
   }
 
   object UnprocessedIdentityId {
-    def apply(ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
-              IdentityId: js.UndefOr[IdentityId] = js.undefined): UnprocessedIdentityId = {
-      val _fields = IndexedSeq[(String, js.Any)]("ErrorCode" -> ErrorCode.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "IdentityId" -> IdentityId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        IdentityId: js.UndefOr[IdentityId] = js.undefined
+    ): UnprocessedIdentityId = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ErrorCode" -> ErrorCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityId" -> IdentityId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UnprocessedIdentityId]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var ResourceArn: ARNString
+    var TagKeys: js.UndefOr[IdentityPoolTagsListType]
+  }
+
+  object UntagResourceInput {
+    def apply(
+        ResourceArn: ARNString,
+        TagKeys: js.UndefOr[IdentityPoolTagsListType] = js.undefined
+    ): UntagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
     }
   }
 }

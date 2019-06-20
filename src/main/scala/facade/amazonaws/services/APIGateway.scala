@@ -209,13 +209,18 @@ package apigateway {
   }
 
   object AccessLogSettings {
-    def apply(destinationArn: js.UndefOr[String] = js.undefined,
-              format: js.UndefOr[String] = js.undefined): AccessLogSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("destinationArn" -> destinationArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "format" -> format.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        destinationArn: js.UndefOr[String] = js.undefined,
+        format: js.UndefOr[String] = js.undefined
+    ): AccessLogSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "destinationArn" -> destinationArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "format" -> format.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessLogSettings]
     }
@@ -251,10 +256,12 @@ package apigateway {
   }
 
   object Account {
-    def apply(apiKeyVersion: js.UndefOr[String] = js.undefined,
-              cloudwatchRoleArn: js.UndefOr[String] = js.undefined,
-              features: js.UndefOr[ListOfString] = js.undefined,
-              throttleSettings: js.UndefOr[ThrottleSettings] = js.undefined): Account = {
+    def apply(
+        apiKeyVersion: js.UndefOr[String] = js.undefined,
+        cloudwatchRoleArn: js.UndefOr[String] = js.undefined,
+        features: js.UndefOr[ListOfString] = js.undefined,
+        throttleSettings: js.UndefOr[ThrottleSettings] = js.undefined
+    ): Account = {
       val _fields = IndexedSeq[(String, js.Any)](
         "apiKeyVersion" -> apiKeyVersion.map { x =>
           x.asInstanceOf[js.Any]
@@ -293,15 +300,17 @@ package apigateway {
   }
 
   object ApiKey {
-    def apply(createdDate: js.UndefOr[Timestamp] = js.undefined,
-              customerId: js.UndefOr[String] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              enabled: js.UndefOr[Boolean] = js.undefined,
-              id: js.UndefOr[String] = js.undefined,
-              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              stageKeys: js.UndefOr[ListOfString] = js.undefined,
-              value: js.UndefOr[String] = js.undefined): ApiKey = {
+    def apply(
+        createdDate: js.UndefOr[Timestamp] = js.undefined,
+        customerId: js.UndefOr[String] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        enabled: js.UndefOr[Boolean] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        stageKeys: js.UndefOr[ListOfString] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): ApiKey = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdDate" -> createdDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -346,13 +355,18 @@ package apigateway {
   }
 
   object ApiKeyIds {
-    def apply(ids: js.UndefOr[ListOfString] = js.undefined,
-              warnings: js.UndefOr[ListOfString] = js.undefined): ApiKeyIds = {
-      val _fields = IndexedSeq[(String, js.Any)]("ids" -> ids.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "warnings" -> warnings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ids: js.UndefOr[ListOfString] = js.undefined,
+        warnings: js.UndefOr[ListOfString] = js.undefined
+    ): ApiKeyIds = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ids" -> ids.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "warnings" -> warnings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApiKeyIds]
     }
@@ -378,16 +392,22 @@ package apigateway {
   }
 
   object ApiKeys {
-    def apply(items: js.UndefOr[ListOfApiKey] = js.undefined,
-              position: js.UndefOr[String] = js.undefined,
-              warnings: js.UndefOr[ListOfString] = js.undefined): ApiKeys = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "warnings" -> warnings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfApiKey] = js.undefined,
+        position: js.UndefOr[String] = js.undefined,
+        warnings: js.UndefOr[ListOfString] = js.undefined
+    ): ApiKeys = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "warnings" -> warnings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApiKeys]
     }
@@ -410,16 +430,22 @@ package apigateway {
   }
 
   object ApiStage {
-    def apply(apiId: js.UndefOr[String] = js.undefined,
-              stage: js.UndefOr[String] = js.undefined,
-              throttle: js.UndefOr[MapOfApiStageThrottleSettings] = js.undefined): ApiStage = {
-      val _fields = IndexedSeq[(String, js.Any)]("apiId" -> apiId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "stage" -> stage.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "throttle" -> throttle.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        apiId: js.UndefOr[String] = js.undefined,
+        stage: js.UndefOr[String] = js.undefined,
+        throttle: js.UndefOr[MapOfApiStageThrottleSettings] = js.undefined
+    ): ApiStage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiId" -> apiId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "stage" -> stage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "throttle" -> throttle.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApiStage]
     }
@@ -445,16 +471,18 @@ package apigateway {
   }
 
   object Authorizer {
-    def apply(authType: js.UndefOr[String] = js.undefined,
-              authorizerCredentials: js.UndefOr[String] = js.undefined,
-              authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
-              authorizerUri: js.UndefOr[String] = js.undefined,
-              id: js.UndefOr[String] = js.undefined,
-              identitySource: js.UndefOr[String] = js.undefined,
-              identityValidationExpression: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              providerARNs: js.UndefOr[ListOfARNs] = js.undefined,
-              `type`: js.UndefOr[AuthorizerType] = js.undefined): Authorizer = {
+    def apply(
+        authType: js.UndefOr[String] = js.undefined,
+        authorizerCredentials: js.UndefOr[String] = js.undefined,
+        authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
+        authorizerUri: js.UndefOr[String] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        identitySource: js.UndefOr[String] = js.undefined,
+        identityValidationExpression: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        providerARNs: js.UndefOr[ListOfARNs] = js.undefined,
+        `type`: js.UndefOr[AuthorizerType] = js.undefined
+    ): Authorizer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authType" -> authType.map { x =>
           x.asInstanceOf[js.Any]
@@ -515,13 +543,18 @@ package apigateway {
   }
 
   object Authorizers {
-    def apply(items: js.UndefOr[ListOfAuthorizer] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): Authorizers = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfAuthorizer] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): Authorizers = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Authorizers]
     }
@@ -540,9 +573,11 @@ package apigateway {
   }
 
   object BasePathMapping {
-    def apply(basePath: js.UndefOr[String] = js.undefined,
-              restApiId: js.UndefOr[String] = js.undefined,
-              stage: js.UndefOr[String] = js.undefined): BasePathMapping = {
+    def apply(
+        basePath: js.UndefOr[String] = js.undefined,
+        restApiId: js.UndefOr[String] = js.undefined,
+        stage: js.UndefOr[String] = js.undefined
+    ): BasePathMapping = {
       val _fields = IndexedSeq[(String, js.Any)](
         "basePath" -> basePath.map { x =>
           x.asInstanceOf[js.Any]
@@ -571,13 +606,18 @@ package apigateway {
   }
 
   object BasePathMappings {
-    def apply(items: js.UndefOr[ListOfBasePathMapping] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): BasePathMappings = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfBasePathMapping] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): BasePathMappings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BasePathMappings]
     }
@@ -624,10 +664,12 @@ package apigateway {
   }
 
   object CanarySettings {
-    def apply(deploymentId: js.UndefOr[String] = js.undefined,
-              percentTraffic: js.UndefOr[Double] = js.undefined,
-              stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
-              useStageCache: js.UndefOr[Boolean] = js.undefined): CanarySettings = {
+    def apply(
+        deploymentId: js.UndefOr[String] = js.undefined,
+        percentTraffic: js.UndefOr[Double] = js.undefined,
+        stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
+        useStageCache: js.UndefOr[Boolean] = js.undefined
+    ): CanarySettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -662,11 +704,13 @@ package apigateway {
   }
 
   object ClientCertificate {
-    def apply(clientCertificateId: js.UndefOr[String] = js.undefined,
-              createdDate: js.UndefOr[Timestamp] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              expirationDate: js.UndefOr[Timestamp] = js.undefined,
-              pemEncodedCertificate: js.UndefOr[String] = js.undefined): ClientCertificate = {
+    def apply(
+        clientCertificateId: js.UndefOr[String] = js.undefined,
+        createdDate: js.UndefOr[Timestamp] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        expirationDate: js.UndefOr[Timestamp] = js.undefined,
+        pemEncodedCertificate: js.UndefOr[String] = js.undefined
+    ): ClientCertificate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "clientCertificateId" -> clientCertificateId.map { x =>
           x.asInstanceOf[js.Any]
@@ -701,13 +745,18 @@ package apigateway {
   }
 
   object ClientCertificates {
-    def apply(items: js.UndefOr[ListOfClientCertificate] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): ClientCertificates = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfClientCertificate] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): ClientCertificates = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClientCertificates]
     }
@@ -742,13 +791,15 @@ package apigateway {
   }
 
   object CreateApiKeyRequest {
-    def apply(customerId: js.UndefOr[String] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              enabled: js.UndefOr[Boolean] = js.undefined,
-              generateDistinctId: js.UndefOr[Boolean] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              stageKeys: js.UndefOr[ListOfStageKeys] = js.undefined,
-              value: js.UndefOr[String] = js.undefined): CreateApiKeyRequest = {
+    def apply(
+        customerId: js.UndefOr[String] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        enabled: js.UndefOr[Boolean] = js.undefined,
+        generateDistinctId: js.UndefOr[Boolean] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        stageKeys: js.UndefOr[ListOfStageKeys] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): CreateApiKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "customerId" -> customerId.map { x =>
           x.asInstanceOf[js.Any]
@@ -795,16 +846,18 @@ package apigateway {
   }
 
   object CreateAuthorizerRequest {
-    def apply(name: String,
-              restApiId: String,
-              `type`: AuthorizerType,
-              authType: js.UndefOr[String] = js.undefined,
-              authorizerCredentials: js.UndefOr[String] = js.undefined,
-              authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
-              authorizerUri: js.UndefOr[String] = js.undefined,
-              identitySource: js.UndefOr[String] = js.undefined,
-              identityValidationExpression: js.UndefOr[String] = js.undefined,
-              providerARNs: js.UndefOr[ListOfARNs] = js.undefined): CreateAuthorizerRequest = {
+    def apply(
+        name: String,
+        restApiId: String,
+        `type`: AuthorizerType,
+        authType: js.UndefOr[String] = js.undefined,
+        authorizerCredentials: js.UndefOr[String] = js.undefined,
+        authorizerResultTtlInSeconds: js.UndefOr[NullableInteger] = js.undefined,
+        authorizerUri: js.UndefOr[String] = js.undefined,
+        identitySource: js.UndefOr[String] = js.undefined,
+        identityValidationExpression: js.UndefOr[String] = js.undefined,
+        providerARNs: js.UndefOr[ListOfARNs] = js.undefined
+    ): CreateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name"      -> name.asInstanceOf[js.Any],
         "restApiId" -> restApiId.asInstanceOf[js.Any],
@@ -848,10 +901,12 @@ package apigateway {
   }
 
   object CreateBasePathMappingRequest {
-    def apply(domainName: String,
-              restApiId: String,
-              basePath: js.UndefOr[String] = js.undefined,
-              stage: js.UndefOr[String] = js.undefined): CreateBasePathMappingRequest = {
+    def apply(
+        domainName: String,
+        restApiId: String,
+        basePath: js.UndefOr[String] = js.undefined,
+        stage: js.UndefOr[String] = js.undefined
+    ): CreateBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "domainName" -> domainName.asInstanceOf[js.Any],
         "restApiId"  -> restApiId.asInstanceOf[js.Any],
@@ -884,15 +939,17 @@ package apigateway {
   }
 
   object CreateDeploymentRequest {
-    def apply(restApiId: String,
-              cacheClusterEnabled: js.UndefOr[NullableBoolean] = js.undefined,
-              cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-              canarySettings: js.UndefOr[DeploymentCanarySettings] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              stageDescription: js.UndefOr[String] = js.undefined,
-              stageName: js.UndefOr[String] = js.undefined,
-              tracingEnabled: js.UndefOr[NullableBoolean] = js.undefined,
-              variables: js.UndefOr[MapOfStringToString] = js.undefined): CreateDeploymentRequest = {
+    def apply(
+        restApiId: String,
+        cacheClusterEnabled: js.UndefOr[NullableBoolean] = js.undefined,
+        cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
+        canarySettings: js.UndefOr[DeploymentCanarySettings] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        stageDescription: js.UndefOr[String] = js.undefined,
+        stageName: js.UndefOr[String] = js.undefined,
+        tracingEnabled: js.UndefOr[NullableBoolean] = js.undefined,
+        variables: js.UndefOr[MapOfStringToString] = js.undefined
+    ): CreateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "cacheClusterEnabled" -> cacheClusterEnabled.map { x =>
@@ -936,9 +993,11 @@ package apigateway {
   }
 
   object CreateDocumentationPartRequest {
-    def apply(location: DocumentationPartLocation,
-              properties: String,
-              restApiId: String): CreateDocumentationPartRequest = {
+    def apply(
+        location: DocumentationPartLocation,
+        properties: String,
+        restApiId: String
+    ): CreateDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "location"   -> location.asInstanceOf[js.Any],
         "properties" -> properties.asInstanceOf[js.Any],
@@ -961,10 +1020,12 @@ package apigateway {
   }
 
   object CreateDocumentationVersionRequest {
-    def apply(documentationVersion: String,
-              restApiId: String,
-              description: js.UndefOr[String] = js.undefined,
-              stageName: js.UndefOr[String] = js.undefined): CreateDocumentationVersionRequest = {
+    def apply(
+        documentationVersion: String,
+        restApiId: String,
+        description: js.UndefOr[String] = js.undefined,
+        stageName: js.UndefOr[String] = js.undefined
+    ): CreateDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
         "restApiId"            -> restApiId.asInstanceOf[js.Any],
@@ -997,15 +1058,17 @@ package apigateway {
   }
 
   object CreateDomainNameRequest {
-    def apply(domainName: String,
-              certificateArn: js.UndefOr[String] = js.undefined,
-              certificateBody: js.UndefOr[String] = js.undefined,
-              certificateChain: js.UndefOr[String] = js.undefined,
-              certificateName: js.UndefOr[String] = js.undefined,
-              certificatePrivateKey: js.UndefOr[String] = js.undefined,
-              endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-              regionalCertificateArn: js.UndefOr[String] = js.undefined,
-              regionalCertificateName: js.UndefOr[String] = js.undefined): CreateDomainNameRequest = {
+    def apply(
+        domainName: String,
+        certificateArn: js.UndefOr[String] = js.undefined,
+        certificateBody: js.UndefOr[String] = js.undefined,
+        certificateChain: js.UndefOr[String] = js.undefined,
+        certificateName: js.UndefOr[String] = js.undefined,
+        certificatePrivateKey: js.UndefOr[String] = js.undefined,
+        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
+        regionalCertificateArn: js.UndefOr[String] = js.undefined,
+        regionalCertificateName: js.UndefOr[String] = js.undefined
+    ): CreateDomainNameRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "domainName" -> domainName.asInstanceOf[js.Any],
         "certificateArn" -> certificateArn.map { x =>
@@ -1051,11 +1114,13 @@ package apigateway {
   }
 
   object CreateModelRequest {
-    def apply(contentType: String,
-              name: String,
-              restApiId: String,
-              description: js.UndefOr[String] = js.undefined,
-              schema: js.UndefOr[String] = js.undefined): CreateModelRequest = {
+    def apply(
+        contentType: String,
+        name: String,
+        restApiId: String,
+        description: js.UndefOr[String] = js.undefined,
+        schema: js.UndefOr[String] = js.undefined
+    ): CreateModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "contentType" -> contentType.asInstanceOf[js.Any],
         "name"        -> name.asInstanceOf[js.Any],
@@ -1084,10 +1149,12 @@ package apigateway {
   }
 
   object CreateRequestValidatorRequest {
-    def apply(restApiId: String,
-              name: js.UndefOr[String] = js.undefined,
-              validateRequestBody: js.UndefOr[Boolean] = js.undefined,
-              validateRequestParameters: js.UndefOr[Boolean] = js.undefined): CreateRequestValidatorRequest = {
+    def apply(
+        restApiId: String,
+        name: js.UndefOr[String] = js.undefined,
+        validateRequestBody: js.UndefOr[Boolean] = js.undefined,
+        validateRequestParameters: js.UndefOr[Boolean] = js.undefined
+    ): CreateRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "name" -> name.map { x =>
@@ -1116,7 +1183,11 @@ package apigateway {
   }
 
   object CreateResourceRequest {
-    def apply(parentId: String, pathPart: String, restApiId: String): CreateResourceRequest = {
+    def apply(
+        parentId: String,
+        pathPart: String,
+        restApiId: String
+    ): CreateResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "parentId"  -> parentId.asInstanceOf[js.Any],
         "pathPart"  -> pathPart.asInstanceOf[js.Any],
@@ -1144,15 +1215,17 @@ package apigateway {
   }
 
   object CreateRestApiRequest {
-    def apply(name: String,
-              apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
-              binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
-              cloneFrom: js.UndefOr[String] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-              minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
-              policy: js.UndefOr[String] = js.undefined,
-              version: js.UndefOr[String] = js.undefined): CreateRestApiRequest = {
+    def apply(
+        name: String,
+        apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
+        binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
+        cloneFrom: js.UndefOr[String] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
+        minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
+        policy: js.UndefOr[String] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): CreateRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.asInstanceOf[js.Any],
         "apiKeySource" -> apiKeySource.map { x =>
@@ -1204,17 +1277,19 @@ package apigateway {
   }
 
   object CreateStageRequest {
-    def apply(deploymentId: String,
-              restApiId: String,
-              stageName: String,
-              cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
-              cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-              canarySettings: js.UndefOr[CanarySettings] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              documentationVersion: js.UndefOr[String] = js.undefined,
-              tags: js.UndefOr[MapOfStringToString] = js.undefined,
-              tracingEnabled: js.UndefOr[Boolean] = js.undefined,
-              variables: js.UndefOr[MapOfStringToString] = js.undefined): CreateStageRequest = {
+    def apply(
+        deploymentId: String,
+        restApiId: String,
+        stageName: String,
+        cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
+        cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
+        canarySettings: js.UndefOr[CanarySettings] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        documentationVersion: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
+        tracingEnabled: js.UndefOr[Boolean] = js.undefined,
+        variables: js.UndefOr[MapOfStringToString] = js.undefined
+    ): CreateStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any],
@@ -1260,7 +1335,11 @@ package apigateway {
   }
 
   object CreateUsagePlanKeyRequest {
-    def apply(keyId: String, keyType: String, usagePlanId: String): CreateUsagePlanKeyRequest = {
+    def apply(
+        keyId: String,
+        keyType: String,
+        usagePlanId: String
+    ): CreateUsagePlanKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "keyId"       -> keyId.asInstanceOf[js.Any],
         "keyType"     -> keyType.asInstanceOf[js.Any],
@@ -1284,11 +1363,13 @@ package apigateway {
   }
 
   object CreateUsagePlanRequest {
-    def apply(name: String,
-              apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              quota: js.UndefOr[QuotaSettings] = js.undefined,
-              throttle: js.UndefOr[ThrottleSettings] = js.undefined): CreateUsagePlanRequest = {
+    def apply(
+        name: String,
+        apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        quota: js.UndefOr[QuotaSettings] = js.undefined,
+        throttle: js.UndefOr[ThrottleSettings] = js.undefined
+    ): CreateUsagePlanRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name" -> name.asInstanceOf[js.Any],
         "apiStages" -> apiStages.map { x =>
@@ -1320,9 +1401,11 @@ package apigateway {
   }
 
   object CreateVpcLinkRequest {
-    def apply(name: String,
-              targetArns: ListOfString,
-              description: js.UndefOr[String] = js.undefined): CreateVpcLinkRequest = {
+    def apply(
+        name: String,
+        targetArns: ListOfString,
+        description: js.UndefOr[String] = js.undefined
+    ): CreateVpcLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "name"       -> name.asInstanceOf[js.Any],
         "targetArns" -> targetArns.asInstanceOf[js.Any],
@@ -1344,9 +1427,12 @@ package apigateway {
   }
 
   object DeleteApiKeyRequest {
-    def apply(apiKey: String): DeleteApiKeyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("apiKey" -> apiKey.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        apiKey: String
+    ): DeleteApiKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiKey" -> apiKey.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApiKeyRequest]
     }
@@ -1362,7 +1448,10 @@ package apigateway {
   }
 
   object DeleteAuthorizerRequest {
-    def apply(authorizerId: String, restApiId: String): DeleteAuthorizerRequest = {
+    def apply(
+        authorizerId: String,
+        restApiId: String
+    ): DeleteAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerId" -> authorizerId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any]
@@ -1382,7 +1471,10 @@ package apigateway {
   }
 
   object DeleteBasePathMappingRequest {
-    def apply(basePath: String, domainName: String): DeleteBasePathMappingRequest = {
+    def apply(
+        basePath: String,
+        domainName: String
+    ): DeleteBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "basePath"   -> basePath.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
@@ -1401,9 +1493,12 @@ package apigateway {
   }
 
   object DeleteClientCertificateRequest {
-    def apply(clientCertificateId: String): DeleteClientCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        clientCertificateId: String
+    ): DeleteClientCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteClientCertificateRequest]
     }
@@ -1419,7 +1514,10 @@ package apigateway {
   }
 
   object DeleteDeploymentRequest {
-    def apply(deploymentId: String, restApiId: String): DeleteDeploymentRequest = {
+    def apply(
+        deploymentId: String,
+        restApiId: String
+    ): DeleteDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any]
@@ -1439,7 +1537,10 @@ package apigateway {
   }
 
   object DeleteDocumentationPartRequest {
-    def apply(documentationPartId: String, restApiId: String): DeleteDocumentationPartRequest = {
+    def apply(
+        documentationPartId: String,
+        restApiId: String
+    ): DeleteDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
         "restApiId"           -> restApiId.asInstanceOf[js.Any]
@@ -1459,7 +1560,10 @@ package apigateway {
   }
 
   object DeleteDocumentationVersionRequest {
-    def apply(documentationVersion: String, restApiId: String): DeleteDocumentationVersionRequest = {
+    def apply(
+        documentationVersion: String,
+        restApiId: String
+    ): DeleteDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
         "restApiId"            -> restApiId.asInstanceOf[js.Any]
@@ -1478,9 +1582,12 @@ package apigateway {
   }
 
   object DeleteDomainNameRequest {
-    def apply(domainName: String): DeleteDomainNameRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("domainName" -> domainName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        domainName: String
+    ): DeleteDomainNameRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDomainNameRequest]
     }
@@ -1496,7 +1603,10 @@ package apigateway {
   }
 
   object DeleteGatewayResponseRequest {
-    def apply(responseType: GatewayResponseType, restApiId: String): DeleteGatewayResponseRequest = {
+    def apply(
+        responseType: GatewayResponseType,
+        restApiId: String
+    ): DeleteGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "responseType" -> responseType.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any]
@@ -1517,7 +1627,11 @@ package apigateway {
   }
 
   object DeleteIntegrationRequest {
-    def apply(httpMethod: String, resourceId: String, restApiId: String): DeleteIntegrationRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String
+    ): DeleteIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -1540,10 +1654,12 @@ package apigateway {
   }
 
   object DeleteIntegrationResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode): DeleteIntegrationResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode
+    ): DeleteIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -1566,7 +1682,11 @@ package apigateway {
   }
 
   object DeleteMethodRequest {
-    def apply(httpMethod: String, resourceId: String, restApiId: String): DeleteMethodRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String
+    ): DeleteMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -1589,10 +1709,12 @@ package apigateway {
   }
 
   object DeleteMethodResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode): DeleteMethodResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode
+    ): DeleteMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -1614,7 +1736,10 @@ package apigateway {
   }
 
   object DeleteModelRequest {
-    def apply(modelName: String, restApiId: String): DeleteModelRequest = {
+    def apply(
+        modelName: String,
+        restApiId: String
+    ): DeleteModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "modelName" -> modelName.asInstanceOf[js.Any],
         "restApiId" -> restApiId.asInstanceOf[js.Any]
@@ -1634,7 +1759,10 @@ package apigateway {
   }
 
   object DeleteRequestValidatorRequest {
-    def apply(requestValidatorId: String, restApiId: String): DeleteRequestValidatorRequest = {
+    def apply(
+        requestValidatorId: String,
+        restApiId: String
+    ): DeleteRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
         "restApiId"          -> restApiId.asInstanceOf[js.Any]
@@ -1654,7 +1782,10 @@ package apigateway {
   }
 
   object DeleteResourceRequest {
-    def apply(resourceId: String, restApiId: String): DeleteResourceRequest = {
+    def apply(
+        resourceId: String,
+        restApiId: String
+    ): DeleteResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceId" -> resourceId.asInstanceOf[js.Any],
         "restApiId"  -> restApiId.asInstanceOf[js.Any]
@@ -1673,9 +1804,12 @@ package apigateway {
   }
 
   object DeleteRestApiRequest {
-    def apply(restApiId: String): DeleteRestApiRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        restApiId: String
+    ): DeleteRestApiRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRestApiRequest]
     }
@@ -1691,7 +1825,10 @@ package apigateway {
   }
 
   object DeleteStageRequest {
-    def apply(restApiId: String, stageName: String): DeleteStageRequest = {
+    def apply(
+        restApiId: String,
+        stageName: String
+    ): DeleteStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "stageName" -> stageName.asInstanceOf[js.Any]
@@ -1711,7 +1848,10 @@ package apigateway {
   }
 
   object DeleteUsagePlanKeyRequest {
-    def apply(keyId: String, usagePlanId: String): DeleteUsagePlanKeyRequest = {
+    def apply(
+        keyId: String,
+        usagePlanId: String
+    ): DeleteUsagePlanKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "keyId"       -> keyId.asInstanceOf[js.Any],
         "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
@@ -1730,9 +1870,12 @@ package apigateway {
   }
 
   object DeleteUsagePlanRequest {
-    def apply(usagePlanId: String): DeleteUsagePlanRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("usagePlanId" -> usagePlanId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        usagePlanId: String
+    ): DeleteUsagePlanRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUsagePlanRequest]
     }
@@ -1747,9 +1890,12 @@ package apigateway {
   }
 
   object DeleteVpcLinkRequest {
-    def apply(vpcLinkId: String): DeleteVpcLinkRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        vpcLinkId: String
+    ): DeleteVpcLinkRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVpcLinkRequest]
     }
@@ -1769,10 +1915,12 @@ package apigateway {
   }
 
   object Deployment {
-    def apply(apiSummary: js.UndefOr[PathToMapOfMethodSnapshot] = js.undefined,
-              createdDate: js.UndefOr[Timestamp] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              id: js.UndefOr[String] = js.undefined): Deployment = {
+    def apply(
+        apiSummary: js.UndefOr[PathToMapOfMethodSnapshot] = js.undefined,
+        createdDate: js.UndefOr[Timestamp] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        id: js.UndefOr[String] = js.undefined
+    ): Deployment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "apiSummary" -> apiSummary.map { x =>
           x.asInstanceOf[js.Any]
@@ -1803,9 +1951,11 @@ package apigateway {
   }
 
   object DeploymentCanarySettings {
-    def apply(percentTraffic: js.UndefOr[Double] = js.undefined,
-              stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
-              useStageCache: js.UndefOr[Boolean] = js.undefined): DeploymentCanarySettings = {
+    def apply(
+        percentTraffic: js.UndefOr[Double] = js.undefined,
+        stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
+        useStageCache: js.UndefOr[Boolean] = js.undefined
+    ): DeploymentCanarySettings = {
       val _fields = IndexedSeq[(String, js.Any)](
         "percentTraffic" -> percentTraffic.map { x =>
           x.asInstanceOf[js.Any]
@@ -1834,13 +1984,18 @@ package apigateway {
   }
 
   object Deployments {
-    def apply(items: js.UndefOr[ListOfDeployment] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): Deployments = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfDeployment] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): Deployments = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Deployments]
     }
@@ -1861,16 +2016,22 @@ package apigateway {
   }
 
   object DocumentationPart {
-    def apply(id: js.UndefOr[String] = js.undefined,
-              location: js.UndefOr[DocumentationPartLocation] = js.undefined,
-              properties: js.UndefOr[String] = js.undefined): DocumentationPart = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "location" -> location.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "properties" -> properties.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        id: js.UndefOr[String] = js.undefined,
+        location: js.UndefOr[DocumentationPartLocation] = js.undefined,
+        properties: js.UndefOr[String] = js.undefined
+    ): DocumentationPart = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "location" -> location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "properties" -> properties.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationPart]
     }
@@ -1888,13 +2049,18 @@ package apigateway {
   }
 
   object DocumentationPartIds {
-    def apply(ids: js.UndefOr[ListOfString] = js.undefined,
-              warnings: js.UndefOr[ListOfString] = js.undefined): DocumentationPartIds = {
-      val _fields = IndexedSeq[(String, js.Any)]("ids" -> ids.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "warnings" -> warnings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ids: js.UndefOr[ListOfString] = js.undefined,
+        warnings: js.UndefOr[ListOfString] = js.undefined
+    ): DocumentationPartIds = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ids" -> ids.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "warnings" -> warnings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationPartIds]
     }
@@ -1913,11 +2079,13 @@ package apigateway {
   }
 
   object DocumentationPartLocation {
-    def apply(`type`: DocumentationPartType,
-              method: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              path: js.UndefOr[String] = js.undefined,
-              statusCode: js.UndefOr[DocumentationPartLocationStatusCode] = js.undefined): DocumentationPartLocation = {
+    def apply(
+        `type`: DocumentationPartType,
+        method: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        path: js.UndefOr[String] = js.undefined,
+        statusCode: js.UndefOr[DocumentationPartLocationStatusCode] = js.undefined
+    ): DocumentationPartLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "`type`" -> `type`.asInstanceOf[js.Any],
         "method" -> method.map { x =>
@@ -1980,13 +2148,18 @@ package apigateway {
   }
 
   object DocumentationParts {
-    def apply(items: js.UndefOr[ListOfDocumentationPart] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): DocumentationParts = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfDocumentationPart] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): DocumentationParts = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationParts]
     }
@@ -2006,9 +2179,11 @@ package apigateway {
   }
 
   object DocumentationVersion {
-    def apply(createdDate: js.UndefOr[Timestamp] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              version: js.UndefOr[String] = js.undefined): DocumentationVersion = {
+    def apply(
+        createdDate: js.UndefOr[Timestamp] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): DocumentationVersion = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdDate" -> createdDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -2038,13 +2213,18 @@ package apigateway {
   }
 
   object DocumentationVersions {
-    def apply(items: js.UndefOr[ListOfDocumentationVersion] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): DocumentationVersions = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfDocumentationVersion] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): DocumentationVersions = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentationVersions]
     }
@@ -2072,17 +2252,19 @@ package apigateway {
   }
 
   object DomainName {
-    def apply(certificateArn: js.UndefOr[String] = js.undefined,
-              certificateName: js.UndefOr[String] = js.undefined,
-              certificateUploadDate: js.UndefOr[Timestamp] = js.undefined,
-              distributionDomainName: js.UndefOr[String] = js.undefined,
-              distributionHostedZoneId: js.UndefOr[String] = js.undefined,
-              domainName: js.UndefOr[String] = js.undefined,
-              endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-              regionalCertificateArn: js.UndefOr[String] = js.undefined,
-              regionalCertificateName: js.UndefOr[String] = js.undefined,
-              regionalDomainName: js.UndefOr[String] = js.undefined,
-              regionalHostedZoneId: js.UndefOr[String] = js.undefined): DomainName = {
+    def apply(
+        certificateArn: js.UndefOr[String] = js.undefined,
+        certificateName: js.UndefOr[String] = js.undefined,
+        certificateUploadDate: js.UndefOr[Timestamp] = js.undefined,
+        distributionDomainName: js.UndefOr[String] = js.undefined,
+        distributionHostedZoneId: js.UndefOr[String] = js.undefined,
+        domainName: js.UndefOr[String] = js.undefined,
+        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
+        regionalCertificateArn: js.UndefOr[String] = js.undefined,
+        regionalCertificateName: js.UndefOr[String] = js.undefined,
+        regionalDomainName: js.UndefOr[String] = js.undefined,
+        regionalHostedZoneId: js.UndefOr[String] = js.undefined
+    ): DomainName = {
       val _fields = IndexedSeq[(String, js.Any)](
         "certificateArn" -> certificateArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2135,13 +2317,18 @@ package apigateway {
   }
 
   object DomainNames {
-    def apply(items: js.UndefOr[ListOfDomainName] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): DomainNames = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfDomainName] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): DomainNames = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DomainNames]
     }
@@ -2156,10 +2343,14 @@ package apigateway {
   }
 
   object EndpointConfiguration {
-    def apply(types: js.UndefOr[ListOfEndpointType] = js.undefined): EndpointConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("types" -> types.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        types: js.UndefOr[ListOfEndpointType] = js.undefined
+    ): EndpointConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "types" -> types.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointConfiguration]
     }
@@ -2187,9 +2378,11 @@ package apigateway {
   }
 
   object ExportResponse {
-    def apply(body: js.UndefOr[Blob] = js.undefined,
-              contentDisposition: js.UndefOr[String] = js.undefined,
-              contentType: js.UndefOr[String] = js.undefined): ExportResponse = {
+    def apply(
+        body: js.UndefOr[Blob] = js.undefined,
+        contentDisposition: js.UndefOr[String] = js.undefined,
+        contentType: js.UndefOr[String] = js.undefined
+    ): ExportResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "body" -> body.map { x =>
           x.asInstanceOf[js.Any]
@@ -2216,7 +2409,10 @@ package apigateway {
   }
 
   object FlushStageAuthorizersCacheRequest {
-    def apply(restApiId: String, stageName: String): FlushStageAuthorizersCacheRequest = {
+    def apply(
+        restApiId: String,
+        stageName: String
+    ): FlushStageAuthorizersCacheRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "stageName" -> stageName.asInstanceOf[js.Any]
@@ -2236,7 +2432,10 @@ package apigateway {
   }
 
   object FlushStageCacheRequest {
-    def apply(restApiId: String, stageName: String): FlushStageCacheRequest = {
+    def apply(
+        restApiId: String,
+        stageName: String
+    ): FlushStageCacheRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "stageName" -> stageName.asInstanceOf[js.Any]
@@ -2271,11 +2470,13 @@ package apigateway {
   }
 
   object GatewayResponse {
-    def apply(defaultResponse: js.UndefOr[Boolean] = js.undefined,
-              responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-              responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-              responseType: js.UndefOr[GatewayResponseType] = js.undefined,
-              statusCode: js.UndefOr[StatusCode] = js.undefined): GatewayResponse = {
+    def apply(
+        defaultResponse: js.UndefOr[Boolean] = js.undefined,
+        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+        responseType: js.UndefOr[GatewayResponseType] = js.undefined,
+        statusCode: js.UndefOr[StatusCode] = js.undefined
+    ): GatewayResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "defaultResponse" -> defaultResponse.map { x =>
           x.asInstanceOf[js.Any]
@@ -2366,13 +2567,18 @@ package apigateway {
   }
 
   object GatewayResponses {
-    def apply(items: js.UndefOr[ListOfGatewayResponse] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GatewayResponses = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfGatewayResponse] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GatewayResponses = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GatewayResponses]
     }
@@ -2387,10 +2593,14 @@ package apigateway {
   }
 
   object GenerateClientCertificateRequest {
-    def apply(description: js.UndefOr[String] = js.undefined): GenerateClientCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("description" -> description.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        description: js.UndefOr[String] = js.undefined
+    ): GenerateClientCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "description" -> description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GenerateClientCertificateRequest]
     }
@@ -2403,8 +2613,10 @@ package apigateway {
   trait GetAccountRequest extends js.Object {}
 
   object GetAccountRequest {
-    def apply(): GetAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): GetAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountRequest]
     }
@@ -2420,11 +2632,16 @@ package apigateway {
   }
 
   object GetApiKeyRequest {
-    def apply(apiKey: String, includeValue: js.UndefOr[NullableBoolean] = js.undefined): GetApiKeyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("apiKey" -> apiKey.asInstanceOf[js.Any], "includeValue" -> includeValue.map { x =>
+    def apply(
+        apiKey: String,
+        includeValue: js.UndefOr[NullableBoolean] = js.undefined
+    ): GetApiKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiKey" -> apiKey.asInstanceOf[js.Any],
+        "includeValue" -> includeValue.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApiKeyRequest]
     }
@@ -2443,11 +2660,13 @@ package apigateway {
   }
 
   object GetApiKeysRequest {
-    def apply(customerId: js.UndefOr[String] = js.undefined,
-              includeValues: js.UndefOr[NullableBoolean] = js.undefined,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              nameQuery: js.UndefOr[String] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetApiKeysRequest = {
+    def apply(
+        customerId: js.UndefOr[String] = js.undefined,
+        includeValues: js.UndefOr[NullableBoolean] = js.undefined,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        nameQuery: js.UndefOr[String] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetApiKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "customerId" -> customerId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2480,7 +2699,10 @@ package apigateway {
   }
 
   object GetAuthorizerRequest {
-    def apply(authorizerId: String, restApiId: String): GetAuthorizerRequest = {
+    def apply(
+        authorizerId: String,
+        restApiId: String
+    ): GetAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerId" -> authorizerId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any]
@@ -2501,15 +2723,20 @@ package apigateway {
   }
 
   object GetAuthorizersRequest {
-    def apply(restApiId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetAuthorizersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        restApiId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetAuthorizersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAuthorizersRequest]
     }
@@ -2525,7 +2752,10 @@ package apigateway {
   }
 
   object GetBasePathMappingRequest {
-    def apply(basePath: String, domainName: String): GetBasePathMappingRequest = {
+    def apply(
+        basePath: String,
+        domainName: String
+    ): GetBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "basePath"   -> basePath.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
@@ -2546,15 +2776,20 @@ package apigateway {
   }
 
   object GetBasePathMappingsRequest {
-    def apply(domainName: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetBasePathMappingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("domainName" -> domainName.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        domainName: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetBasePathMappingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "domainName" -> domainName.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBasePathMappingsRequest]
     }
@@ -2569,9 +2804,12 @@ package apigateway {
   }
 
   object GetClientCertificateRequest {
-    def apply(clientCertificateId: String): GetClientCertificateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        clientCertificateId: String
+    ): GetClientCertificateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClientCertificateRequest]
     }
@@ -2587,13 +2825,18 @@ package apigateway {
   }
 
   object GetClientCertificatesRequest {
-    def apply(limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetClientCertificatesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("limit" -> limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetClientCertificatesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "limit" -> limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetClientCertificatesRequest]
     }
@@ -2610,9 +2853,11 @@ package apigateway {
   }
 
   object GetDeploymentRequest {
-    def apply(deploymentId: String,
-              restApiId: String,
-              embed: js.UndefOr[ListOfString] = js.undefined): GetDeploymentRequest = {
+    def apply(
+        deploymentId: String,
+        restApiId: String,
+        embed: js.UndefOr[ListOfString] = js.undefined
+    ): GetDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any],
@@ -2636,15 +2881,20 @@ package apigateway {
   }
 
   object GetDeploymentsRequest {
-    def apply(restApiId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetDeploymentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        restApiId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetDeploymentsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentsRequest]
     }
@@ -2660,7 +2910,10 @@ package apigateway {
   }
 
   object GetDocumentationPartRequest {
-    def apply(documentationPartId: String, restApiId: String): GetDocumentationPartRequest = {
+    def apply(
+        documentationPartId: String,
+        restApiId: String
+    ): GetDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
         "restApiId"           -> restApiId.asInstanceOf[js.Any]
@@ -2685,13 +2938,15 @@ package apigateway {
   }
 
   object GetDocumentationPartsRequest {
-    def apply(restApiId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              locationStatus: js.UndefOr[LocationStatusType] = js.undefined,
-              nameQuery: js.UndefOr[String] = js.undefined,
-              path: js.UndefOr[String] = js.undefined,
-              position: js.UndefOr[String] = js.undefined,
-              `type`: js.UndefOr[DocumentationPartType] = js.undefined): GetDocumentationPartsRequest = {
+    def apply(
+        restApiId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        locationStatus: js.UndefOr[LocationStatusType] = js.undefined,
+        nameQuery: js.UndefOr[String] = js.undefined,
+        path: js.UndefOr[String] = js.undefined,
+        position: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[DocumentationPartType] = js.undefined
+    ): GetDocumentationPartsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "limit" -> limit.map { x =>
@@ -2728,7 +2983,10 @@ package apigateway {
   }
 
   object GetDocumentationVersionRequest {
-    def apply(documentationVersion: String, restApiId: String): GetDocumentationVersionRequest = {
+    def apply(
+        documentationVersion: String,
+        restApiId: String
+    ): GetDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
         "restApiId"            -> restApiId.asInstanceOf[js.Any]
@@ -2749,15 +3007,20 @@ package apigateway {
   }
 
   object GetDocumentationVersionsRequest {
-    def apply(restApiId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetDocumentationVersionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        restApiId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetDocumentationVersionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentationVersionsRequest]
     }
@@ -2772,9 +3035,12 @@ package apigateway {
   }
 
   object GetDomainNameRequest {
-    def apply(domainName: String): GetDomainNameRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("domainName" -> domainName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        domainName: String
+    ): GetDomainNameRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNameRequest]
     }
@@ -2790,13 +3056,18 @@ package apigateway {
   }
 
   object GetDomainNamesRequest {
-    def apply(limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetDomainNamesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("limit" -> limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetDomainNamesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "limit" -> limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDomainNamesRequest]
     }
@@ -2815,11 +3086,13 @@ package apigateway {
   }
 
   object GetExportRequest {
-    def apply(exportType: String,
-              restApiId: String,
-              stageName: String,
-              accepts: js.UndefOr[String] = js.undefined,
-              parameters: js.UndefOr[MapOfStringToString] = js.undefined): GetExportRequest = {
+    def apply(
+        exportType: String,
+        restApiId: String,
+        stageName: String,
+        accepts: js.UndefOr[String] = js.undefined,
+        parameters: js.UndefOr[MapOfStringToString] = js.undefined
+    ): GetExportRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "exportType" -> exportType.asInstanceOf[js.Any],
         "restApiId"  -> restApiId.asInstanceOf[js.Any],
@@ -2846,7 +3119,10 @@ package apigateway {
   }
 
   object GetGatewayResponseRequest {
-    def apply(responseType: GatewayResponseType, restApiId: String): GetGatewayResponseRequest = {
+    def apply(
+        responseType: GatewayResponseType,
+        restApiId: String
+    ): GetGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "responseType" -> responseType.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any]
@@ -2867,15 +3143,20 @@ package apigateway {
   }
 
   object GetGatewayResponsesRequest {
-    def apply(restApiId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetGatewayResponsesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        restApiId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetGatewayResponsesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGatewayResponsesRequest]
     }
@@ -2892,7 +3173,11 @@ package apigateway {
   }
 
   object GetIntegrationRequest {
-    def apply(httpMethod: String, resourceId: String, restApiId: String): GetIntegrationRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String
+    ): GetIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -2915,10 +3200,12 @@ package apigateway {
   }
 
   object GetIntegrationResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode): GetIntegrationResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode
+    ): GetIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -2941,7 +3228,11 @@ package apigateway {
   }
 
   object GetMethodRequest {
-    def apply(httpMethod: String, resourceId: String, restApiId: String): GetMethodRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String
+    ): GetMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -2964,10 +3255,12 @@ package apigateway {
   }
 
   object GetMethodResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode): GetMethodResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode
+    ): GetMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -2990,7 +3283,11 @@ package apigateway {
   }
 
   object GetModelRequest {
-    def apply(modelName: String, restApiId: String, flatten: js.UndefOr[Boolean] = js.undefined): GetModelRequest = {
+    def apply(
+        modelName: String,
+        restApiId: String,
+        flatten: js.UndefOr[Boolean] = js.undefined
+    ): GetModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "modelName" -> modelName.asInstanceOf[js.Any],
         "restApiId" -> restApiId.asInstanceOf[js.Any],
@@ -3013,7 +3310,10 @@ package apigateway {
   }
 
   object GetModelTemplateRequest {
-    def apply(modelName: String, restApiId: String): GetModelTemplateRequest = {
+    def apply(
+        modelName: String,
+        restApiId: String
+    ): GetModelTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "modelName" -> modelName.asInstanceOf[js.Any],
         "restApiId" -> restApiId.asInstanceOf[js.Any]
@@ -3034,15 +3334,20 @@ package apigateway {
   }
 
   object GetModelsRequest {
-    def apply(restApiId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetModelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        restApiId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetModelsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetModelsRequest]
     }
@@ -3058,7 +3363,10 @@ package apigateway {
   }
 
   object GetRequestValidatorRequest {
-    def apply(requestValidatorId: String, restApiId: String): GetRequestValidatorRequest = {
+    def apply(
+        requestValidatorId: String,
+        restApiId: String
+    ): GetRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
         "restApiId"          -> restApiId.asInstanceOf[js.Any]
@@ -3079,15 +3387,20 @@ package apigateway {
   }
 
   object GetRequestValidatorsRequest {
-    def apply(restApiId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetRequestValidatorsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any], "limit" -> limit.map {
-        x =>
+    def apply(
+        restApiId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetRequestValidatorsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRequestValidatorsRequest]
     }
@@ -3104,9 +3417,11 @@ package apigateway {
   }
 
   object GetResourceRequest {
-    def apply(resourceId: String,
-              restApiId: String,
-              embed: js.UndefOr[ListOfString] = js.undefined): GetResourceRequest = {
+    def apply(
+        resourceId: String,
+        restApiId: String,
+        embed: js.UndefOr[ListOfString] = js.undefined
+    ): GetResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceId" -> resourceId.asInstanceOf[js.Any],
         "restApiId"  -> restApiId.asInstanceOf[js.Any],
@@ -3131,10 +3446,12 @@ package apigateway {
   }
 
   object GetResourcesRequest {
-    def apply(restApiId: String,
-              embed: js.UndefOr[ListOfString] = js.undefined,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetResourcesRequest = {
+    def apply(
+        restApiId: String,
+        embed: js.UndefOr[ListOfString] = js.undefined,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "embed" -> embed.map { x =>
@@ -3161,9 +3478,12 @@ package apigateway {
   }
 
   object GetRestApiRequest {
-    def apply(restApiId: String): GetRestApiRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        restApiId: String
+    ): GetRestApiRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRestApiRequest]
     }
@@ -3179,13 +3499,18 @@ package apigateway {
   }
 
   object GetRestApisRequest {
-    def apply(limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetRestApisRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("limit" -> limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetRestApisRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "limit" -> limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRestApisRequest]
     }
@@ -3203,10 +3528,12 @@ package apigateway {
   }
 
   object GetSdkRequest {
-    def apply(restApiId: String,
-              sdkType: String,
-              stageName: String,
-              parameters: js.UndefOr[MapOfStringToString] = js.undefined): GetSdkRequest = {
+    def apply(
+        restApiId: String,
+        sdkType: String,
+        stageName: String,
+        parameters: js.UndefOr[MapOfStringToString] = js.undefined
+    ): GetSdkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "sdkType"   -> sdkType.asInstanceOf[js.Any],
@@ -3229,8 +3556,12 @@ package apigateway {
   }
 
   object GetSdkTypeRequest {
-    def apply(id: String): GetSdkTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("id" -> id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        id: String
+    ): GetSdkTypeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "id" -> id.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSdkTypeRequest]
     }
@@ -3246,13 +3577,18 @@ package apigateway {
   }
 
   object GetSdkTypesRequest {
-    def apply(limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetSdkTypesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("limit" -> limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetSdkTypesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "limit" -> limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSdkTypesRequest]
     }
@@ -3268,7 +3604,10 @@ package apigateway {
   }
 
   object GetStageRequest {
-    def apply(restApiId: String, stageName: String): GetStageRequest = {
+    def apply(
+        restApiId: String,
+        stageName: String
+    ): GetStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "stageName" -> stageName.asInstanceOf[js.Any]
@@ -3288,12 +3627,16 @@ package apigateway {
   }
 
   object GetStagesRequest {
-    def apply(restApiId: String, deploymentId: js.UndefOr[String] = js.undefined): GetStagesRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.asInstanceOf[js.Any], "deploymentId" -> deploymentId.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        restApiId: String,
+        deploymentId: js.UndefOr[String] = js.undefined
+    ): GetStagesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.asInstanceOf[js.Any],
+        "deploymentId" -> deploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetStagesRequest]
     }
@@ -3310,15 +3653,20 @@ package apigateway {
   }
 
   object GetTagsRequest {
-    def apply(resourceArn: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetTagsRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("resourceArn" -> resourceArn.asInstanceOf[js.Any], "limit" -> limit.map { x =>
+    def apply(
+        resourceArn: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetTagsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "limit" -> limit.map { x =>
           x.asInstanceOf[js.Any]
-        }, "position" -> position.map { x =>
+        },
+        "position" -> position.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetTagsRequest]
     }
@@ -3334,7 +3682,10 @@ package apigateway {
   }
 
   object GetUsagePlanKeyRequest {
-    def apply(keyId: String, usagePlanId: String): GetUsagePlanKeyRequest = {
+    def apply(
+        keyId: String,
+        usagePlanId: String
+    ): GetUsagePlanKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "keyId"       -> keyId.asInstanceOf[js.Any],
         "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
@@ -3356,10 +3707,12 @@ package apigateway {
   }
 
   object GetUsagePlanKeysRequest {
-    def apply(usagePlanId: String,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              nameQuery: js.UndefOr[String] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetUsagePlanKeysRequest = {
+    def apply(
+        usagePlanId: String,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        nameQuery: js.UndefOr[String] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetUsagePlanKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "usagePlanId" -> usagePlanId.asInstanceOf[js.Any],
         "limit" -> limit.map { x =>
@@ -3386,9 +3739,12 @@ package apigateway {
   }
 
   object GetUsagePlanRequest {
-    def apply(usagePlanId: String): GetUsagePlanRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("usagePlanId" -> usagePlanId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        usagePlanId: String
+    ): GetUsagePlanRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "usagePlanId" -> usagePlanId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUsagePlanRequest]
     }
@@ -3405,16 +3761,22 @@ package apigateway {
   }
 
   object GetUsagePlansRequest {
-    def apply(keyId: js.UndefOr[String] = js.undefined,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetUsagePlansRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("keyId" -> keyId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "limit" -> limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        keyId: js.UndefOr[String] = js.undefined,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetUsagePlansRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "keyId" -> keyId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "limit" -> limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUsagePlansRequest]
     }
@@ -3434,12 +3796,14 @@ package apigateway {
   }
 
   object GetUsageRequest {
-    def apply(endDate: String,
-              startDate: String,
-              usagePlanId: String,
-              keyId: js.UndefOr[String] = js.undefined,
-              limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetUsageRequest = {
+    def apply(
+        endDate: String,
+        startDate: String,
+        usagePlanId: String,
+        keyId: js.UndefOr[String] = js.undefined,
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "endDate"     -> endDate.asInstanceOf[js.Any],
         "startDate"   -> startDate.asInstanceOf[js.Any],
@@ -3468,9 +3832,12 @@ package apigateway {
   }
 
   object GetVpcLinkRequest {
-    def apply(vpcLinkId: String): GetVpcLinkRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        vpcLinkId: String
+    ): GetVpcLinkRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVpcLinkRequest]
     }
@@ -3486,13 +3853,18 @@ package apigateway {
   }
 
   object GetVpcLinksRequest {
-    def apply(limit: js.UndefOr[NullableInteger] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): GetVpcLinksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("limit" -> limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        limit: js.UndefOr[NullableInteger] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): GetVpcLinksRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "limit" -> limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVpcLinksRequest]
     }
@@ -3509,9 +3881,11 @@ package apigateway {
   }
 
   object ImportApiKeysRequest {
-    def apply(body: Blob,
-              format: ApiKeysFormat,
-              failOnWarnings: js.UndefOr[Boolean] = js.undefined): ImportApiKeysRequest = {
+    def apply(
+        body: Blob,
+        format: ApiKeysFormat,
+        failOnWarnings: js.UndefOr[Boolean] = js.undefined
+    ): ImportApiKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "body"   -> body.asInstanceOf[js.Any],
         "format" -> format.asInstanceOf[js.Any],
@@ -3536,10 +3910,12 @@ package apigateway {
   }
 
   object ImportDocumentationPartsRequest {
-    def apply(body: Blob,
-              restApiId: String,
-              failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-              mode: js.UndefOr[PutMode] = js.undefined): ImportDocumentationPartsRequest = {
+    def apply(
+        body: Blob,
+        restApiId: String,
+        failOnWarnings: js.UndefOr[Boolean] = js.undefined,
+        mode: js.UndefOr[PutMode] = js.undefined
+    ): ImportDocumentationPartsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "body"      -> body.asInstanceOf[js.Any],
         "restApiId" -> restApiId.asInstanceOf[js.Any],
@@ -3566,9 +3942,11 @@ package apigateway {
   }
 
   object ImportRestApiRequest {
-    def apply(body: Blob,
-              failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-              parameters: js.UndefOr[MapOfStringToString] = js.undefined): ImportRestApiRequest = {
+    def apply(
+        body: Blob,
+        failOnWarnings: js.UndefOr[Boolean] = js.undefined,
+        parameters: js.UndefOr[MapOfStringToString] = js.undefined
+    ): ImportRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "body" -> body.asInstanceOf[js.Any],
         "failOnWarnings" -> failOnWarnings.map { x =>
@@ -3607,20 +3985,22 @@ package apigateway {
   }
 
   object Integration {
-    def apply(cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
-              cacheNamespace: js.UndefOr[String] = js.undefined,
-              connectionId: js.UndefOr[String] = js.undefined,
-              connectionType: js.UndefOr[ConnectionType] = js.undefined,
-              contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-              credentials: js.UndefOr[String] = js.undefined,
-              httpMethod: js.UndefOr[String] = js.undefined,
-              integrationResponses: js.UndefOr[MapOfIntegrationResponse] = js.undefined,
-              passthroughBehavior: js.UndefOr[String] = js.undefined,
-              requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-              requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-              timeoutInMillis: js.UndefOr[Int] = js.undefined,
-              `type`: js.UndefOr[IntegrationType] = js.undefined,
-              uri: js.UndefOr[String] = js.undefined): Integration = {
+    def apply(
+        cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
+        cacheNamespace: js.UndefOr[String] = js.undefined,
+        connectionId: js.UndefOr[String] = js.undefined,
+        connectionType: js.UndefOr[ConnectionType] = js.undefined,
+        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        credentials: js.UndefOr[String] = js.undefined,
+        httpMethod: js.UndefOr[String] = js.undefined,
+        integrationResponses: js.UndefOr[MapOfIntegrationResponse] = js.undefined,
+        passthroughBehavior: js.UndefOr[String] = js.undefined,
+        requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+        requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+        timeoutInMillis: js.UndefOr[Int] = js.undefined,
+        `type`: js.UndefOr[IntegrationType] = js.undefined,
+        uri: js.UndefOr[String] = js.undefined
+    ): Integration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "cacheKeyParameters" -> cacheKeyParameters.map { x =>
           x.asInstanceOf[js.Any]
@@ -3685,11 +4065,13 @@ package apigateway {
   }
 
   object IntegrationResponse {
-    def apply(contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-              responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-              responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-              selectionPattern: js.UndefOr[String] = js.undefined,
-              statusCode: js.UndefOr[StatusCode] = js.undefined): IntegrationResponse = {
+    def apply(
+        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+        selectionPattern: js.UndefOr[String] = js.undefined,
+        statusCode: js.UndefOr[StatusCode] = js.undefined
+    ): IntegrationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "contentHandling" -> contentHandling.map { x =>
           x.asInstanceOf[js.Any]
@@ -3762,17 +4144,19 @@ package apigateway {
   }
 
   object Method {
-    def apply(apiKeyRequired: js.UndefOr[NullableBoolean] = js.undefined,
-              authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
-              authorizationType: js.UndefOr[String] = js.undefined,
-              authorizerId: js.UndefOr[String] = js.undefined,
-              httpMethod: js.UndefOr[String] = js.undefined,
-              methodIntegration: js.UndefOr[Integration] = js.undefined,
-              methodResponses: js.UndefOr[MapOfMethodResponse] = js.undefined,
-              operationName: js.UndefOr[String] = js.undefined,
-              requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
-              requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-              requestValidatorId: js.UndefOr[String] = js.undefined): Method = {
+    def apply(
+        apiKeyRequired: js.UndefOr[NullableBoolean] = js.undefined,
+        authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
+        authorizationType: js.UndefOr[String] = js.undefined,
+        authorizerId: js.UndefOr[String] = js.undefined,
+        httpMethod: js.UndefOr[String] = js.undefined,
+        methodIntegration: js.UndefOr[Integration] = js.undefined,
+        methodResponses: js.UndefOr[MapOfMethodResponse] = js.undefined,
+        operationName: js.UndefOr[String] = js.undefined,
+        requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
+        requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
+        requestValidatorId: js.UndefOr[String] = js.undefined
+    ): Method = {
       val _fields = IndexedSeq[(String, js.Any)](
         "apiKeyRequired" -> apiKeyRequired.map { x =>
           x.asInstanceOf[js.Any]
@@ -3834,9 +4218,11 @@ package apigateway {
   }
 
   object MethodResponse {
-    def apply(responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
-              responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-              statusCode: js.UndefOr[StatusCode] = js.undefined): MethodResponse = {
+    def apply(
+        responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
+        responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
+        statusCode: js.UndefOr[StatusCode] = js.undefined
+    ): MethodResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "responseModels" -> responseModels.map { x =>
           x.asInstanceOf[js.Any]
@@ -3930,13 +4316,18 @@ package apigateway {
   }
 
   object MethodSnapshot {
-    def apply(apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
-              authorizationType: js.UndefOr[String] = js.undefined): MethodSnapshot = {
-      val _fields = IndexedSeq[(String, js.Any)]("apiKeyRequired" -> apiKeyRequired.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "authorizationType" -> authorizationType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
+        authorizationType: js.UndefOr[String] = js.undefined
+    ): MethodSnapshot = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiKeyRequired" -> apiKeyRequired.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "authorizationType" -> authorizationType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MethodSnapshot]
     }
@@ -3959,11 +4350,13 @@ package apigateway {
   }
 
   object Model {
-    def apply(contentType: js.UndefOr[String] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              id: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              schema: js.UndefOr[String] = js.undefined): Model = {
+    def apply(
+        contentType: js.UndefOr[String] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        schema: js.UndefOr[String] = js.undefined
+    ): Model = {
       val _fields = IndexedSeq[(String, js.Any)](
         "contentType" -> contentType.map { x =>
           x.asInstanceOf[js.Any]
@@ -3998,12 +4391,18 @@ package apigateway {
   }
 
   object Models {
-    def apply(items: js.UndefOr[ListOfModel] = js.undefined, position: js.UndefOr[String] = js.undefined): Models = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfModel] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): Models = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Models]
     }
@@ -4032,10 +4431,12 @@ package apigateway {
   }
 
   object PatchOperation {
-    def apply(from: js.UndefOr[String] = js.undefined,
-              op: js.UndefOr[Op] = js.undefined,
-              path: js.UndefOr[String] = js.undefined,
-              value: js.UndefOr[String] = js.undefined): PatchOperation = {
+    def apply(
+        from: js.UndefOr[String] = js.undefined,
+        op: js.UndefOr[Op] = js.undefined,
+        path: js.UndefOr[String] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): PatchOperation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "from" -> from.map { x =>
           x.asInstanceOf[js.Any]
@@ -4068,11 +4469,13 @@ package apigateway {
   }
 
   object PutGatewayResponseRequest {
-    def apply(responseType: GatewayResponseType,
-              restApiId: String,
-              responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-              responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-              statusCode: js.UndefOr[StatusCode] = js.undefined): PutGatewayResponseRequest = {
+    def apply(
+        responseType: GatewayResponseType,
+        restApiId: String,
+        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+        statusCode: js.UndefOr[StatusCode] = js.undefined
+    ): PutGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "responseType" -> responseType.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any],
@@ -4115,22 +4518,24 @@ package apigateway {
   }
 
   object PutIntegrationRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              `type`: IntegrationType,
-              cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
-              cacheNamespace: js.UndefOr[String] = js.undefined,
-              connectionId: js.UndefOr[String] = js.undefined,
-              connectionType: js.UndefOr[ConnectionType] = js.undefined,
-              contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-              credentials: js.UndefOr[String] = js.undefined,
-              integrationHttpMethod: js.UndefOr[String] = js.undefined,
-              passthroughBehavior: js.UndefOr[String] = js.undefined,
-              requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-              requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-              timeoutInMillis: js.UndefOr[NullableInteger] = js.undefined,
-              uri: js.UndefOr[String] = js.undefined): PutIntegrationRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        `type`: IntegrationType,
+        cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
+        cacheNamespace: js.UndefOr[String] = js.undefined,
+        connectionId: js.UndefOr[String] = js.undefined,
+        connectionType: js.UndefOr[ConnectionType] = js.undefined,
+        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        credentials: js.UndefOr[String] = js.undefined,
+        integrationHttpMethod: js.UndefOr[String] = js.undefined,
+        passthroughBehavior: js.UndefOr[String] = js.undefined,
+        requestParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+        requestTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+        timeoutInMillis: js.UndefOr[NullableInteger] = js.undefined,
+        uri: js.UndefOr[String] = js.undefined
+    ): PutIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -4194,14 +4599,16 @@ package apigateway {
   }
 
   object PutIntegrationResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode,
-              contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
-              responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
-              responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
-              selectionPattern: js.UndefOr[String] = js.undefined): PutIntegrationResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode,
+        contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
+        responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
+        responseTemplates: js.UndefOr[MapOfStringToString] = js.undefined,
+        selectionPattern: js.UndefOr[String] = js.undefined
+    ): PutIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -4244,17 +4651,19 @@ package apigateway {
   }
 
   object PutMethodRequest {
-    def apply(authorizationType: String,
-              httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
-              authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
-              authorizerId: js.UndefOr[String] = js.undefined,
-              operationName: js.UndefOr[String] = js.undefined,
-              requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
-              requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
-              requestValidatorId: js.UndefOr[String] = js.undefined): PutMethodRequest = {
+    def apply(
+        authorizationType: String,
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
+        authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
+        authorizerId: js.UndefOr[String] = js.undefined,
+        operationName: js.UndefOr[String] = js.undefined,
+        requestModels: js.UndefOr[MapOfStringToString] = js.undefined,
+        requestParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
+        requestValidatorId: js.UndefOr[String] = js.undefined
+    ): PutMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizationType" -> authorizationType.asInstanceOf[js.Any],
         "httpMethod"        -> httpMethod.asInstanceOf[js.Any],
@@ -4301,12 +4710,14 @@ package apigateway {
   }
 
   object PutMethodResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode,
-              responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
-              responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined): PutMethodResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode,
+        responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
+        responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined
+    ): PutMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -4344,11 +4755,13 @@ package apigateway {
   }
 
   object PutRestApiRequest {
-    def apply(body: Blob,
-              restApiId: String,
-              failOnWarnings: js.UndefOr[Boolean] = js.undefined,
-              mode: js.UndefOr[PutMode] = js.undefined,
-              parameters: js.UndefOr[MapOfStringToString] = js.undefined): PutRestApiRequest = {
+    def apply(
+        body: Blob,
+        restApiId: String,
+        failOnWarnings: js.UndefOr[Boolean] = js.undefined,
+        mode: js.UndefOr[PutMode] = js.undefined,
+        parameters: js.UndefOr[MapOfStringToString] = js.undefined
+    ): PutRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "body"      -> body.asInstanceOf[js.Any],
         "restApiId" -> restApiId.asInstanceOf[js.Any],
@@ -4386,16 +4799,22 @@ package apigateway {
   }
 
   object QuotaSettings {
-    def apply(limit: js.UndefOr[Int] = js.undefined,
-              offset: js.UndefOr[Int] = js.undefined,
-              period: js.UndefOr[QuotaPeriodType] = js.undefined): QuotaSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("limit" -> limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "offset" -> offset.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "period" -> period.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        limit: js.UndefOr[Int] = js.undefined,
+        offset: js.UndefOr[Int] = js.undefined,
+        period: js.UndefOr[QuotaPeriodType] = js.undefined
+    ): QuotaSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "limit" -> limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "offset" -> offset.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "period" -> period.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QuotaSettings]
     }
@@ -4416,10 +4835,12 @@ package apigateway {
   }
 
   object RequestValidator {
-    def apply(id: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              validateRequestBody: js.UndefOr[Boolean] = js.undefined,
-              validateRequestParameters: js.UndefOr[Boolean] = js.undefined): RequestValidator = {
+    def apply(
+        id: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        validateRequestBody: js.UndefOr[Boolean] = js.undefined,
+        validateRequestParameters: js.UndefOr[Boolean] = js.undefined
+    ): RequestValidator = {
       val _fields = IndexedSeq[(String, js.Any)](
         "id" -> id.map { x =>
           x.asInstanceOf[js.Any]
@@ -4452,13 +4873,18 @@ package apigateway {
   }
 
   object RequestValidators {
-    def apply(items: js.UndefOr[ListOfRequestValidator] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): RequestValidators = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfRequestValidator] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): RequestValidators = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RequestValidators]
     }
@@ -4479,11 +4905,13 @@ package apigateway {
   }
 
   object Resource {
-    def apply(id: js.UndefOr[String] = js.undefined,
-              parentId: js.UndefOr[String] = js.undefined,
-              path: js.UndefOr[String] = js.undefined,
-              pathPart: js.UndefOr[String] = js.undefined,
-              resourceMethods: js.UndefOr[MapOfMethod] = js.undefined): Resource = {
+    def apply(
+        id: js.UndefOr[String] = js.undefined,
+        parentId: js.UndefOr[String] = js.undefined,
+        path: js.UndefOr[String] = js.undefined,
+        pathPart: js.UndefOr[String] = js.undefined,
+        resourceMethods: js.UndefOr[MapOfMethod] = js.undefined
+    ): Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "id" -> id.map { x =>
           x.asInstanceOf[js.Any]
@@ -4518,13 +4946,18 @@ package apigateway {
   }
 
   object Resources {
-    def apply(items: js.UndefOr[ListOfResource] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): Resources = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfResource] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): Resources = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Resources]
     }
@@ -4551,17 +4984,19 @@ package apigateway {
   }
 
   object RestApi {
-    def apply(apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
-              binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
-              createdDate: js.UndefOr[Timestamp] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
-              id: js.UndefOr[String] = js.undefined,
-              minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              policy: js.UndefOr[String] = js.undefined,
-              version: js.UndefOr[String] = js.undefined,
-              warnings: js.UndefOr[ListOfString] = js.undefined): RestApi = {
+    def apply(
+        apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
+        binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
+        createdDate: js.UndefOr[Timestamp] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        minimumCompressionSize: js.UndefOr[NullableInteger] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        policy: js.UndefOr[String] = js.undefined,
+        version: js.UndefOr[String] = js.undefined,
+        warnings: js.UndefOr[ListOfString] = js.undefined
+    ): RestApi = {
       val _fields = IndexedSeq[(String, js.Any)](
         "apiKeySource" -> apiKeySource.map { x =>
           x.asInstanceOf[js.Any]
@@ -4614,13 +5049,18 @@ package apigateway {
   }
 
   object RestApis {
-    def apply(items: js.UndefOr[ListOfRestApi] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): RestApis = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfRestApi] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): RestApis = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestApis]
     }
@@ -4639,11 +5079,13 @@ package apigateway {
   }
 
   object SdkConfigurationProperty {
-    def apply(defaultValue: js.UndefOr[String] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              friendlyName: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              required: js.UndefOr[Boolean] = js.undefined): SdkConfigurationProperty = {
+    def apply(
+        defaultValue: js.UndefOr[String] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        friendlyName: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        required: js.UndefOr[Boolean] = js.undefined
+    ): SdkConfigurationProperty = {
       val _fields = IndexedSeq[(String, js.Any)](
         "defaultValue" -> defaultValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -4677,9 +5119,11 @@ package apigateway {
   }
 
   object SdkResponse {
-    def apply(body: js.UndefOr[Blob] = js.undefined,
-              contentDisposition: js.UndefOr[String] = js.undefined,
-              contentType: js.UndefOr[String] = js.undefined): SdkResponse = {
+    def apply(
+        body: js.UndefOr[Blob] = js.undefined,
+        contentDisposition: js.UndefOr[String] = js.undefined,
+        contentType: js.UndefOr[String] = js.undefined
+    ): SdkResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "body" -> body.map { x =>
           x.asInstanceOf[js.Any]
@@ -4708,10 +5152,12 @@ package apigateway {
   }
 
   object SdkType {
-    def apply(configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              friendlyName: js.UndefOr[String] = js.undefined,
-              id: js.UndefOr[String] = js.undefined): SdkType = {
+    def apply(
+        configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        friendlyName: js.UndefOr[String] = js.undefined,
+        id: js.UndefOr[String] = js.undefined
+    ): SdkType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "configurationProperties" -> configurationProperties.map { x =>
           x.asInstanceOf[js.Any]
@@ -4741,13 +5187,18 @@ package apigateway {
   }
 
   object SdkTypes {
-    def apply(items: js.UndefOr[ListOfSdkType] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): SdkTypes = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfSdkType] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): SdkTypes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SdkTypes]
     }
@@ -4780,23 +5231,25 @@ package apigateway {
   }
 
   object Stage {
-    def apply(accessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
-              cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
-              cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
-              cacheClusterStatus: js.UndefOr[CacheClusterStatus] = js.undefined,
-              canarySettings: js.UndefOr[CanarySettings] = js.undefined,
-              clientCertificateId: js.UndefOr[String] = js.undefined,
-              createdDate: js.UndefOr[Timestamp] = js.undefined,
-              deploymentId: js.UndefOr[String] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              documentationVersion: js.UndefOr[String] = js.undefined,
-              lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-              methodSettings: js.UndefOr[MapOfMethodSettings] = js.undefined,
-              stageName: js.UndefOr[String] = js.undefined,
-              tags: js.UndefOr[MapOfStringToString] = js.undefined,
-              tracingEnabled: js.UndefOr[Boolean] = js.undefined,
-              variables: js.UndefOr[MapOfStringToString] = js.undefined,
-              webAclArn: js.UndefOr[String] = js.undefined): Stage = {
+    def apply(
+        accessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
+        cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
+        cacheClusterSize: js.UndefOr[CacheClusterSize] = js.undefined,
+        cacheClusterStatus: js.UndefOr[CacheClusterStatus] = js.undefined,
+        canarySettings: js.UndefOr[CanarySettings] = js.undefined,
+        clientCertificateId: js.UndefOr[String] = js.undefined,
+        createdDate: js.UndefOr[Timestamp] = js.undefined,
+        deploymentId: js.UndefOr[String] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        documentationVersion: js.UndefOr[String] = js.undefined,
+        lastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+        methodSettings: js.UndefOr[MapOfMethodSettings] = js.undefined,
+        stageName: js.UndefOr[String] = js.undefined,
+        tags: js.UndefOr[MapOfStringToString] = js.undefined,
+        tracingEnabled: js.UndefOr[Boolean] = js.undefined,
+        variables: js.UndefOr[MapOfStringToString] = js.undefined,
+        webAclArn: js.UndefOr[String] = js.undefined
+    ): Stage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "accessLogSettings" -> accessLogSettings.map { x =>
           x.asInstanceOf[js.Any]
@@ -4865,12 +5318,18 @@ package apigateway {
   }
 
   object StageKey {
-    def apply(restApiId: js.UndefOr[String] = js.undefined, stageName: js.UndefOr[String] = js.undefined): StageKey = {
-      val _fields = IndexedSeq[(String, js.Any)]("restApiId" -> restApiId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "stageName" -> stageName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        restApiId: js.UndefOr[String] = js.undefined,
+        stageName: js.UndefOr[String] = js.undefined
+    ): StageKey = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "restApiId" -> restApiId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "stageName" -> stageName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StageKey]
     }
@@ -4887,10 +5346,14 @@ package apigateway {
   }
 
   object Stages {
-    def apply(item: js.UndefOr[ListOfStage] = js.undefined): Stages = {
-      val _fields = IndexedSeq[(String, js.Any)]("item" -> item.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        item: js.UndefOr[ListOfStage] = js.undefined
+    ): Stages = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "item" -> item.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Stages]
     }
@@ -4906,7 +5369,10 @@ package apigateway {
   }
 
   object TagResourceRequest {
-    def apply(resourceArn: String, tags: MapOfStringToString): TagResourceRequest = {
+    def apply(
+        resourceArn: String,
+        tags: MapOfStringToString
+    ): TagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
@@ -4925,10 +5391,14 @@ package apigateway {
   }
 
   object Tags {
-    def apply(tags: js.UndefOr[MapOfStringToString] = js.undefined): Tags = {
-      val _fields = IndexedSeq[(String, js.Any)]("tags" -> tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tags: js.UndefOr[MapOfStringToString] = js.undefined
+    ): Tags = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tags]
     }
@@ -4945,10 +5415,14 @@ package apigateway {
   }
 
   object Template {
-    def apply(value: js.UndefOr[String] = js.undefined): Template = {
-      val _fields = IndexedSeq[(String, js.Any)]("value" -> value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        value: js.UndefOr[String] = js.undefined
+    ): Template = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "value" -> value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Template]
     }
@@ -4970,14 +5444,16 @@ package apigateway {
   }
 
   object TestInvokeAuthorizerRequest {
-    def apply(authorizerId: String,
-              restApiId: String,
-              additionalContext: js.UndefOr[MapOfStringToString] = js.undefined,
-              body: js.UndefOr[String] = js.undefined,
-              headers: js.UndefOr[MapOfStringToString] = js.undefined,
-              multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
-              pathWithQueryString: js.UndefOr[String] = js.undefined,
-              stageVariables: js.UndefOr[MapOfStringToString] = js.undefined): TestInvokeAuthorizerRequest = {
+    def apply(
+        authorizerId: String,
+        restApiId: String,
+        additionalContext: js.UndefOr[MapOfStringToString] = js.undefined,
+        body: js.UndefOr[String] = js.undefined,
+        headers: js.UndefOr[MapOfStringToString] = js.undefined,
+        multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
+        pathWithQueryString: js.UndefOr[String] = js.undefined,
+        stageVariables: js.UndefOr[MapOfStringToString] = js.undefined
+    ): TestInvokeAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerId" -> authorizerId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any],
@@ -5020,13 +5496,15 @@ package apigateway {
   }
 
   object TestInvokeAuthorizerResponse {
-    def apply(authorization: js.UndefOr[MapOfStringToList] = js.undefined,
-              claims: js.UndefOr[MapOfStringToString] = js.undefined,
-              clientStatus: js.UndefOr[Int] = js.undefined,
-              latency: js.UndefOr[Double] = js.undefined,
-              log: js.UndefOr[String] = js.undefined,
-              policy: js.UndefOr[String] = js.undefined,
-              principalId: js.UndefOr[String] = js.undefined): TestInvokeAuthorizerResponse = {
+    def apply(
+        authorization: js.UndefOr[MapOfStringToList] = js.undefined,
+        claims: js.UndefOr[MapOfStringToString] = js.undefined,
+        clientStatus: js.UndefOr[Int] = js.undefined,
+        latency: js.UndefOr[Double] = js.undefined,
+        log: js.UndefOr[String] = js.undefined,
+        policy: js.UndefOr[String] = js.undefined,
+        principalId: js.UndefOr[String] = js.undefined
+    ): TestInvokeAuthorizerResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorization" -> authorization.map { x =>
           x.asInstanceOf[js.Any]
@@ -5072,15 +5550,17 @@ package apigateway {
   }
 
   object TestInvokeMethodRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              body: js.UndefOr[String] = js.undefined,
-              clientCertificateId: js.UndefOr[String] = js.undefined,
-              headers: js.UndefOr[MapOfStringToString] = js.undefined,
-              multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
-              pathWithQueryString: js.UndefOr[String] = js.undefined,
-              stageVariables: js.UndefOr[MapOfStringToString] = js.undefined): TestInvokeMethodRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        body: js.UndefOr[String] = js.undefined,
+        clientCertificateId: js.UndefOr[String] = js.undefined,
+        headers: js.UndefOr[MapOfStringToString] = js.undefined,
+        multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
+        pathWithQueryString: js.UndefOr[String] = js.undefined,
+        stageVariables: js.UndefOr[MapOfStringToString] = js.undefined
+    ): TestInvokeMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -5125,12 +5605,14 @@ package apigateway {
   }
 
   object TestInvokeMethodResponse {
-    def apply(body: js.UndefOr[String] = js.undefined,
-              headers: js.UndefOr[MapOfStringToString] = js.undefined,
-              latency: js.UndefOr[Double] = js.undefined,
-              log: js.UndefOr[String] = js.undefined,
-              multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
-              status: js.UndefOr[Int] = js.undefined): TestInvokeMethodResponse = {
+    def apply(
+        body: js.UndefOr[String] = js.undefined,
+        headers: js.UndefOr[MapOfStringToString] = js.undefined,
+        latency: js.UndefOr[Double] = js.undefined,
+        log: js.UndefOr[String] = js.undefined,
+        multiValueHeaders: js.UndefOr[MapOfStringToList] = js.undefined,
+        status: js.UndefOr[Int] = js.undefined
+    ): TestInvokeMethodResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "body" -> body.map { x =>
           x.asInstanceOf[js.Any]
@@ -5166,13 +5648,18 @@ package apigateway {
   }
 
   object ThrottleSettings {
-    def apply(burstLimit: js.UndefOr[Int] = js.undefined,
-              rateLimit: js.UndefOr[Double] = js.undefined): ThrottleSettings = {
-      val _fields = IndexedSeq[(String, js.Any)]("burstLimit" -> burstLimit.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "rateLimit" -> rateLimit.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        burstLimit: js.UndefOr[Int] = js.undefined,
+        rateLimit: js.UndefOr[Double] = js.undefined
+    ): ThrottleSettings = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "burstLimit" -> burstLimit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "rateLimit" -> rateLimit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ThrottleSettings]
     }
@@ -5196,7 +5683,10 @@ package apigateway {
   }
 
   object UntagResourceRequest {
-    def apply(resourceArn: String, tagKeys: ListOfString): UntagResourceRequest = {
+    def apply(
+        resourceArn: String,
+        tagKeys: ListOfString
+    ): UntagResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
@@ -5215,10 +5705,14 @@ package apigateway {
   }
 
   object UpdateAccountRequest {
-    def apply(patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("patchOperations" -> patchOperations.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "patchOperations" -> patchOperations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAccountRequest]
     }
@@ -5234,12 +5728,16 @@ package apigateway {
   }
 
   object UpdateApiKeyRequest {
-    def apply(apiKey: String, patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateApiKeyRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("apiKey" -> apiKey.asInstanceOf[js.Any], "patchOperations" -> patchOperations.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        apiKey: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateApiKeyRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "apiKey" -> apiKey.asInstanceOf[js.Any],
+        "patchOperations" -> patchOperations.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApiKeyRequest]
     }
@@ -5256,9 +5754,11 @@ package apigateway {
   }
 
   object UpdateAuthorizerRequest {
-    def apply(authorizerId: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateAuthorizerRequest = {
+    def apply(
+        authorizerId: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateAuthorizerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "authorizerId" -> authorizerId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any],
@@ -5282,9 +5782,11 @@ package apigateway {
   }
 
   object UpdateBasePathMappingRequest {
-    def apply(basePath: String,
-              domainName: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateBasePathMappingRequest = {
+    def apply(
+        basePath: String,
+        domainName: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateBasePathMappingRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "basePath"   -> basePath.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any],
@@ -5307,8 +5809,10 @@ package apigateway {
   }
 
   object UpdateClientCertificateRequest {
-    def apply(clientCertificateId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateClientCertificateRequest = {
+    def apply(
+        clientCertificateId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateClientCertificateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "clientCertificateId" -> clientCertificateId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x =>
@@ -5331,9 +5835,11 @@ package apigateway {
   }
 
   object UpdateDeploymentRequest {
-    def apply(deploymentId: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDeploymentRequest = {
+    def apply(
+        deploymentId: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateDeploymentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any],
@@ -5357,9 +5863,11 @@ package apigateway {
   }
 
   object UpdateDocumentationPartRequest {
-    def apply(documentationPartId: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDocumentationPartRequest = {
+    def apply(
+        documentationPartId: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateDocumentationPartRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "documentationPartId" -> documentationPartId.asInstanceOf[js.Any],
         "restApiId"           -> restApiId.asInstanceOf[js.Any],
@@ -5383,9 +5891,11 @@ package apigateway {
   }
 
   object UpdateDocumentationVersionRequest {
-    def apply(documentationVersion: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDocumentationVersionRequest = {
+    def apply(
+        documentationVersion: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateDocumentationVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "documentationVersion" -> documentationVersion.asInstanceOf[js.Any],
         "restApiId"            -> restApiId.asInstanceOf[js.Any],
@@ -5408,8 +5918,10 @@ package apigateway {
   }
 
   object UpdateDomainNameRequest {
-    def apply(domainName: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateDomainNameRequest = {
+    def apply(
+        domainName: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateDomainNameRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "domainName" -> domainName.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x =>
@@ -5432,9 +5944,11 @@ package apigateway {
   }
 
   object UpdateGatewayResponseRequest {
-    def apply(responseType: GatewayResponseType,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateGatewayResponseRequest = {
+    def apply(
+        responseType: GatewayResponseType,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateGatewayResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "responseType" -> responseType.asInstanceOf[js.Any],
         "restApiId"    -> restApiId.asInstanceOf[js.Any],
@@ -5459,10 +5973,12 @@ package apigateway {
   }
 
   object UpdateIntegrationRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateIntegrationRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateIntegrationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -5489,11 +6005,13 @@ package apigateway {
   }
 
   object UpdateIntegrationResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateIntegrationResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateIntegrationResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -5520,10 +6038,12 @@ package apigateway {
   }
 
   object UpdateMethodRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateMethodRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateMethodRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -5550,11 +6070,13 @@ package apigateway {
   }
 
   object UpdateMethodResponseRequest {
-    def apply(httpMethod: String,
-              resourceId: String,
-              restApiId: String,
-              statusCode: StatusCode,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateMethodResponseRequest = {
+    def apply(
+        httpMethod: String,
+        resourceId: String,
+        restApiId: String,
+        statusCode: StatusCode,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateMethodResponseRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "httpMethod" -> httpMethod.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
@@ -5580,9 +6102,11 @@ package apigateway {
   }
 
   object UpdateModelRequest {
-    def apply(modelName: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateModelRequest = {
+    def apply(
+        modelName: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateModelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "modelName" -> modelName.asInstanceOf[js.Any],
         "restApiId" -> restApiId.asInstanceOf[js.Any],
@@ -5606,9 +6130,11 @@ package apigateway {
   }
 
   object UpdateRequestValidatorRequest {
-    def apply(requestValidatorId: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateRequestValidatorRequest = {
+    def apply(
+        requestValidatorId: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateRequestValidatorRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "requestValidatorId" -> requestValidatorId.asInstanceOf[js.Any],
         "restApiId"          -> restApiId.asInstanceOf[js.Any],
@@ -5632,9 +6158,11 @@ package apigateway {
   }
 
   object UpdateResourceRequest {
-    def apply(resourceId: String,
-              restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateResourceRequest = {
+    def apply(
+        resourceId: String,
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateResourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "resourceId" -> resourceId.asInstanceOf[js.Any],
         "restApiId"  -> restApiId.asInstanceOf[js.Any],
@@ -5657,8 +6185,10 @@ package apigateway {
   }
 
   object UpdateRestApiRequest {
-    def apply(restApiId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateRestApiRequest = {
+    def apply(
+        restApiId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateRestApiRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x =>
@@ -5681,9 +6211,11 @@ package apigateway {
   }
 
   object UpdateStageRequest {
-    def apply(restApiId: String,
-              stageName: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateStageRequest = {
+    def apply(
+        restApiId: String,
+        stageName: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateStageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "restApiId" -> restApiId.asInstanceOf[js.Any],
         "stageName" -> stageName.asInstanceOf[js.Any],
@@ -5706,8 +6238,10 @@ package apigateway {
   }
 
   object UpdateUsagePlanRequest {
-    def apply(usagePlanId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateUsagePlanRequest = {
+    def apply(
+        usagePlanId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateUsagePlanRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "usagePlanId" -> usagePlanId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x =>
@@ -5730,9 +6264,11 @@ package apigateway {
   }
 
   object UpdateUsageRequest {
-    def apply(keyId: String,
-              usagePlanId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateUsageRequest = {
+    def apply(
+        keyId: String,
+        usagePlanId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "keyId"       -> keyId.asInstanceOf[js.Any],
         "usagePlanId" -> usagePlanId.asInstanceOf[js.Any],
@@ -5755,8 +6291,10 @@ package apigateway {
   }
 
   object UpdateVpcLinkRequest {
-    def apply(vpcLinkId: String,
-              patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined): UpdateVpcLinkRequest = {
+    def apply(
+        vpcLinkId: String,
+        patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
+    ): UpdateVpcLinkRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "vpcLinkId" -> vpcLinkId.asInstanceOf[js.Any],
         "patchOperations" -> patchOperations.map { x =>
@@ -5783,11 +6321,13 @@ package apigateway {
   }
 
   object Usage {
-    def apply(endDate: js.UndefOr[String] = js.undefined,
-              items: js.UndefOr[MapOfKeyUsages] = js.undefined,
-              position: js.UndefOr[String] = js.undefined,
-              startDate: js.UndefOr[String] = js.undefined,
-              usagePlanId: js.UndefOr[String] = js.undefined): Usage = {
+    def apply(
+        endDate: js.UndefOr[String] = js.undefined,
+        items: js.UndefOr[MapOfKeyUsages] = js.undefined,
+        position: js.UndefOr[String] = js.undefined,
+        startDate: js.UndefOr[String] = js.undefined,
+        usagePlanId: js.UndefOr[String] = js.undefined
+    ): Usage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "endDate" -> endDate.map { x =>
           x.asInstanceOf[js.Any]
@@ -5828,13 +6368,15 @@ package apigateway {
   }
 
   object UsagePlan {
-    def apply(apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
-              description: js.UndefOr[String] = js.undefined,
-              id: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              productCode: js.UndefOr[String] = js.undefined,
-              quota: js.UndefOr[QuotaSettings] = js.undefined,
-              throttle: js.UndefOr[ThrottleSettings] = js.undefined): UsagePlan = {
+    def apply(
+        apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        productCode: js.UndefOr[String] = js.undefined,
+        quota: js.UndefOr[QuotaSettings] = js.undefined,
+        throttle: js.UndefOr[ThrottleSettings] = js.undefined
+    ): UsagePlan = {
       val _fields = IndexedSeq[(String, js.Any)](
         "apiStages" -> apiStages.map { x =>
           x.asInstanceOf[js.Any]
@@ -5878,10 +6420,12 @@ package apigateway {
   }
 
   object UsagePlanKey {
-    def apply(id: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              `type`: js.UndefOr[String] = js.undefined,
-              value: js.UndefOr[String] = js.undefined): UsagePlanKey = {
+    def apply(
+        id: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[String] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): UsagePlanKey = {
       val _fields = IndexedSeq[(String, js.Any)](
         "id" -> id.map { x =>
           x.asInstanceOf[js.Any]
@@ -5913,13 +6457,18 @@ package apigateway {
   }
 
   object UsagePlanKeys {
-    def apply(items: js.UndefOr[ListOfUsagePlanKey] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): UsagePlanKeys = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfUsagePlanKey] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): UsagePlanKeys = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsagePlanKeys]
     }
@@ -5937,13 +6486,18 @@ package apigateway {
   }
 
   object UsagePlans {
-    def apply(items: js.UndefOr[ListOfUsagePlan] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): UsagePlans = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfUsagePlan] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): UsagePlans = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsagePlans]
     }
@@ -5965,12 +6519,14 @@ package apigateway {
   }
 
   object VpcLink {
-    def apply(description: js.UndefOr[String] = js.undefined,
-              id: js.UndefOr[String] = js.undefined,
-              name: js.UndefOr[String] = js.undefined,
-              status: js.UndefOr[VpcLinkStatus] = js.undefined,
-              statusMessage: js.UndefOr[String] = js.undefined,
-              targetArns: js.UndefOr[ListOfString] = js.undefined): VpcLink = {
+    def apply(
+        description: js.UndefOr[String] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[VpcLinkStatus] = js.undefined,
+        statusMessage: js.UndefOr[String] = js.undefined,
+        targetArns: js.UndefOr[ListOfString] = js.undefined
+    ): VpcLink = {
       val _fields = IndexedSeq[(String, js.Any)](
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
@@ -6017,13 +6573,18 @@ package apigateway {
   }
 
   object VpcLinks {
-    def apply(items: js.UndefOr[ListOfVpcLink] = js.undefined,
-              position: js.UndefOr[String] = js.undefined): VpcLinks = {
-      val _fields = IndexedSeq[(String, js.Any)]("items" -> items.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "position" -> position.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        items: js.UndefOr[ListOfVpcLink] = js.undefined,
+        position: js.UndefOr[String] = js.undefined
+    ): VpcLinks = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "items" -> items.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "position" -> position.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcLinks]
     }

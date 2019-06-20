@@ -42,7 +42,10 @@ package pi {
   }
 
   object DataPoint {
-    def apply(Timestamp: ISOTimestamp, Value: Double): DataPoint = {
+    def apply(
+        Timestamp: ISOTimestamp,
+        Value: Double
+    ): DataPoint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Timestamp" -> Timestamp.asInstanceOf[js.Any],
         "Value"     -> Value.asInstanceOf[js.Any]
@@ -68,17 +71,19 @@ package pi {
   }
 
   object DescribeDimensionKeysRequest {
-    def apply(EndTime: ISOTimestamp,
-              GroupBy: DimensionGroup,
-              Identifier: String,
-              Metric: String,
-              ServiceType: ServiceType,
-              StartTime: ISOTimestamp,
-              Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              PartitionBy: js.UndefOr[DimensionGroup] = js.undefined,
-              PeriodInSeconds: js.UndefOr[Int] = js.undefined): DescribeDimensionKeysRequest = {
+    def apply(
+        EndTime: ISOTimestamp,
+        GroupBy: DimensionGroup,
+        Identifier: String,
+        Metric: String,
+        ServiceType: ServiceType,
+        StartTime: ISOTimestamp,
+        Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        PartitionBy: js.UndefOr[DimensionGroup] = js.undefined,
+        PeriodInSeconds: js.UndefOr[Int] = js.undefined
+    ): DescribeDimensionKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"     -> EndTime.asInstanceOf[js.Any],
         "GroupBy"     -> GroupBy.asInstanceOf[js.Any],
@@ -117,11 +122,13 @@ package pi {
   }
 
   object DescribeDimensionKeysResponse {
-    def apply(AlignedEndTime: js.UndefOr[ISOTimestamp] = js.undefined,
-              AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
-              Keys: js.UndefOr[DimensionKeyDescriptionList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              PartitionKeys: js.UndefOr[ResponsePartitionKeyList] = js.undefined): DescribeDimensionKeysResponse = {
+    def apply(
+        AlignedEndTime: js.UndefOr[ISOTimestamp] = js.undefined,
+        AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
+        Keys: js.UndefOr[DimensionKeyDescriptionList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        PartitionKeys: js.UndefOr[ResponsePartitionKeyList] = js.undefined
+    ): DescribeDimensionKeysResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlignedEndTime" -> AlignedEndTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -155,15 +162,20 @@ package pi {
   }
 
   object DimensionGroup {
-    def apply(Group: String,
-              Dimensions: js.UndefOr[StringList] = js.undefined,
-              Limit: js.UndefOr[Limit] = js.undefined): DimensionGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("Group" -> Group.asInstanceOf[js.Any], "Dimensions" -> Dimensions.map {
-        x =>
+    def apply(
+        Group: String,
+        Dimensions: js.UndefOr[StringList] = js.undefined,
+        Limit: js.UndefOr[Limit] = js.undefined
+    ): DimensionGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Group" -> Group.asInstanceOf[js.Any],
+        "Dimensions" -> Dimensions.map { x =>
           x.asInstanceOf[js.Any]
-      }, "Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DimensionGroup]
     }
@@ -180,9 +192,11 @@ package pi {
   }
 
   object DimensionKeyDescription {
-    def apply(Dimensions: js.UndefOr[DimensionMap] = js.undefined,
-              Partitions: js.UndefOr[MetricValuesList] = js.undefined,
-              Total: js.UndefOr[Double] = js.undefined): DimensionKeyDescription = {
+    def apply(
+        Dimensions: js.UndefOr[DimensionMap] = js.undefined,
+        Partitions: js.UndefOr[MetricValuesList] = js.undefined,
+        Total: js.UndefOr[Double] = js.undefined
+    ): DimensionKeyDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Dimensions" -> Dimensions.map { x =>
           x.asInstanceOf[js.Any]
@@ -212,14 +226,16 @@ package pi {
   }
 
   object GetResourceMetricsRequest {
-    def apply(EndTime: ISOTimestamp,
-              Identifier: String,
-              MetricQueries: MetricQueryList,
-              ServiceType: ServiceType,
-              StartTime: ISOTimestamp,
-              MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined,
-              PeriodInSeconds: js.UndefOr[Int] = js.undefined): GetResourceMetricsRequest = {
+    def apply(
+        EndTime: ISOTimestamp,
+        Identifier: String,
+        MetricQueries: MetricQueryList,
+        ServiceType: ServiceType,
+        StartTime: ISOTimestamp,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        PeriodInSeconds: js.UndefOr[Int] = js.undefined
+    ): GetResourceMetricsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"       -> EndTime.asInstanceOf[js.Any],
         "Identifier"    -> Identifier.asInstanceOf[js.Any],
@@ -251,11 +267,13 @@ package pi {
   }
 
   object GetResourceMetricsResponse {
-    def apply(AlignedEndTime: js.UndefOr[ISOTimestamp] = js.undefined,
-              AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
-              Identifier: js.UndefOr[String] = js.undefined,
-              MetricList: js.UndefOr[MetricKeyDataPointsList] = js.undefined,
-              NextToken: js.UndefOr[String] = js.undefined): GetResourceMetricsResponse = {
+    def apply(
+        AlignedEndTime: js.UndefOr[ISOTimestamp] = js.undefined,
+        AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
+        Identifier: js.UndefOr[String] = js.undefined,
+        MetricList: js.UndefOr[MetricKeyDataPointsList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetResourceMetricsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlignedEndTime" -> AlignedEndTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -304,13 +322,18 @@ package pi {
   }
 
   object MetricKeyDataPoints {
-    def apply(DataPoints: js.UndefOr[DataPointsList] = js.undefined,
-              Key: js.UndefOr[ResponseResourceMetricKey] = js.undefined): MetricKeyDataPoints = {
-      val _fields = IndexedSeq[(String, js.Any)]("DataPoints" -> DataPoints.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DataPoints: js.UndefOr[DataPointsList] = js.undefined,
+        Key: js.UndefOr[ResponseResourceMetricKey] = js.undefined
+    ): MetricKeyDataPoints = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DataPoints" -> DataPoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricKeyDataPoints]
     }
@@ -327,14 +350,20 @@ package pi {
   }
 
   object MetricQuery {
-    def apply(Metric: String,
-              Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
-              GroupBy: js.UndefOr[DimensionGroup] = js.undefined): MetricQuery = {
-      val _fields = IndexedSeq[(String, js.Any)]("Metric" -> Metric.asInstanceOf[js.Any], "Filter" -> Filter.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "GroupBy" -> GroupBy.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Metric: String,
+        Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
+        GroupBy: js.UndefOr[DimensionGroup] = js.undefined
+    ): MetricQuery = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Metric" -> Metric.asInstanceOf[js.Any],
+        "Filter" -> Filter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GroupBy" -> GroupBy.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricQuery]
     }
@@ -357,9 +386,12 @@ package pi {
   }
 
   object ResponsePartitionKey {
-    def apply(Dimensions: DimensionMap): ResponsePartitionKey = {
-      val _fields = IndexedSeq[(String, js.Any)]("Dimensions" -> Dimensions.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Dimensions: DimensionMap
+    ): ResponsePartitionKey = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Dimensions" -> Dimensions.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponsePartitionKey]
     }
@@ -375,11 +407,16 @@ package pi {
   }
 
   object ResponseResourceMetricKey {
-    def apply(Metric: String, Dimensions: js.UndefOr[DimensionMap] = js.undefined): ResponseResourceMetricKey = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Metric" -> Metric.asInstanceOf[js.Any], "Dimensions" -> Dimensions.map { x =>
+    def apply(
+        Metric: String,
+        Dimensions: js.UndefOr[DimensionMap] = js.undefined
+    ): ResponseResourceMetricKey = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Metric" -> Metric.asInstanceOf[js.Any],
+        "Dimensions" -> Dimensions.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResponseResourceMetricKey]
     }

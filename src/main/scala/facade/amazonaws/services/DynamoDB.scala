@@ -216,7 +216,10 @@ package dynamodb {
   }
 
   object AttributeDefinition {
-    def apply(AttributeName: KeySchemaAttributeName, AttributeType: ScalarAttributeType): AttributeDefinition = {
+    def apply(
+        AttributeName: KeySchemaAttributeName,
+        AttributeType: ScalarAttributeType
+    ): AttributeDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "AttributeType" -> AttributeType.asInstanceOf[js.Any]
@@ -246,16 +249,18 @@ package dynamodb {
   }
 
   object AttributeValue {
-    def apply(B: js.UndefOr[BinaryAttributeValue] = js.undefined,
-              BOOL: js.UndefOr[BooleanAttributeValue] = js.undefined,
-              BS: js.UndefOr[BinarySetAttributeValue] = js.undefined,
-              L: js.UndefOr[ListAttributeValue] = js.undefined,
-              M: js.UndefOr[MapAttributeValue] = js.undefined,
-              N: js.UndefOr[NumberAttributeValue] = js.undefined,
-              NS: js.UndefOr[NumberSetAttributeValue] = js.undefined,
-              NULL: js.UndefOr[NullAttributeValue] = js.undefined,
-              S: js.UndefOr[StringAttributeValue] = js.undefined,
-              SS: js.UndefOr[StringSetAttributeValue] = js.undefined): AttributeValue = {
+    def apply(
+        B: js.UndefOr[BinaryAttributeValue] = js.undefined,
+        BOOL: js.UndefOr[BooleanAttributeValue] = js.undefined,
+        BS: js.UndefOr[BinarySetAttributeValue] = js.undefined,
+        L: js.UndefOr[ListAttributeValue] = js.undefined,
+        M: js.UndefOr[MapAttributeValue] = js.undefined,
+        N: js.UndefOr[NumberAttributeValue] = js.undefined,
+        NS: js.UndefOr[NumberSetAttributeValue] = js.undefined,
+        NULL: js.UndefOr[NullAttributeValue] = js.undefined,
+        S: js.UndefOr[StringAttributeValue] = js.undefined,
+        SS: js.UndefOr[StringSetAttributeValue] = js.undefined
+    ): AttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "B" -> B.map { x =>
           x.asInstanceOf[js.Any]
@@ -345,13 +350,18 @@ package dynamodb {
   }
 
   object AttributeValueUpdate {
-    def apply(Action: js.UndefOr[AttributeAction] = js.undefined,
-              Value: js.UndefOr[AttributeValue] = js.undefined): AttributeValueUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)]("Action" -> Action.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Action: js.UndefOr[AttributeAction] = js.undefined,
+        Value: js.UndefOr[AttributeValue] = js.undefined
+    ): AttributeValueUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeValueUpdate]
     }
@@ -369,10 +379,12 @@ package dynamodb {
   }
 
   object AutoScalingPolicyDescription {
-    def apply(PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined,
-              TargetTrackingScalingPolicyConfiguration: js.UndefOr[
-                AutoScalingTargetTrackingScalingPolicyConfigurationDescription
-              ] = js.undefined): AutoScalingPolicyDescription = {
+    def apply(
+        PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined,
+        TargetTrackingScalingPolicyConfiguration: js.UndefOr[
+          AutoScalingTargetTrackingScalingPolicyConfigurationDescription
+        ] = js.undefined
+    ): AutoScalingPolicyDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PolicyName" -> PolicyName.map { x =>
           x.asInstanceOf[js.Any]
@@ -396,8 +408,10 @@ package dynamodb {
   }
 
   object AutoScalingPolicyUpdate {
-    def apply(TargetTrackingScalingPolicyConfiguration: AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
-              PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined): AutoScalingPolicyUpdate = {
+    def apply(
+        TargetTrackingScalingPolicyConfiguration: AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
+        PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined
+    ): AutoScalingPolicyUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TargetTrackingScalingPolicyConfiguration" -> TargetTrackingScalingPolicyConfiguration.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.map { x =>
@@ -464,11 +478,13 @@ package dynamodb {
   }
 
   object AutoScalingSettingsUpdate {
-    def apply(AutoScalingDisabled: js.UndefOr[BooleanObject] = js.undefined,
-              AutoScalingRoleArn: js.UndefOr[AutoScalingRoleArn] = js.undefined,
-              MaximumUnits: js.UndefOr[PositiveLongObject] = js.undefined,
-              MinimumUnits: js.UndefOr[PositiveLongObject] = js.undefined,
-              ScalingPolicyUpdate: js.UndefOr[AutoScalingPolicyUpdate] = js.undefined): AutoScalingSettingsUpdate = {
+    def apply(
+        AutoScalingDisabled: js.UndefOr[BooleanObject] = js.undefined,
+        AutoScalingRoleArn: js.UndefOr[AutoScalingRoleArn] = js.undefined,
+        MaximumUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+        MinimumUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+        ScalingPolicyUpdate: js.UndefOr[AutoScalingPolicyUpdate] = js.undefined
+    ): AutoScalingSettingsUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AutoScalingDisabled" -> AutoScalingDisabled.map { x =>
           x.asInstanceOf[js.Any]
@@ -576,9 +592,11 @@ package dynamodb {
   }
 
   object BackupDescription {
-    def apply(BackupDetails: js.UndefOr[BackupDetails] = js.undefined,
-              SourceTableDetails: js.UndefOr[SourceTableDetails] = js.undefined,
-              SourceTableFeatureDetails: js.UndefOr[SourceTableFeatureDetails] = js.undefined): BackupDescription = {
+    def apply(
+        BackupDetails: js.UndefOr[BackupDetails] = js.undefined,
+        SourceTableDetails: js.UndefOr[SourceTableDetails] = js.undefined,
+        SourceTableFeatureDetails: js.UndefOr[SourceTableFeatureDetails] = js.undefined
+    ): BackupDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupDetails" -> BackupDetails.map { x =>
           x.asInstanceOf[js.Any]
@@ -610,13 +628,15 @@ package dynamodb {
   }
 
   object BackupDetails {
-    def apply(BackupArn: BackupArn,
-              BackupCreationDateTime: BackupCreationDateTime,
-              BackupName: BackupName,
-              BackupStatus: BackupStatus,
-              BackupType: BackupType,
-              BackupExpiryDateTime: js.UndefOr[Date] = js.undefined,
-              BackupSizeBytes: js.UndefOr[BackupSizeBytes] = js.undefined): BackupDetails = {
+    def apply(
+        BackupArn: BackupArn,
+        BackupCreationDateTime: BackupCreationDateTime,
+        BackupName: BackupName,
+        BackupStatus: BackupStatus,
+        BackupType: BackupType,
+        BackupExpiryDateTime: js.UndefOr[Date] = js.undefined,
+        BackupSizeBytes: js.UndefOr[BackupSizeBytes] = js.undefined
+    ): BackupDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupArn"              -> BackupArn.asInstanceOf[js.Any],
         "BackupCreationDateTime" -> BackupCreationDateTime.asInstanceOf[js.Any],
@@ -661,16 +681,18 @@ package dynamodb {
   }
 
   object BackupSummary {
-    def apply(BackupArn: js.UndefOr[BackupArn] = js.undefined,
-              BackupCreationDateTime: js.UndefOr[BackupCreationDateTime] = js.undefined,
-              BackupExpiryDateTime: js.UndefOr[Date] = js.undefined,
-              BackupName: js.UndefOr[BackupName] = js.undefined,
-              BackupSizeBytes: js.UndefOr[BackupSizeBytes] = js.undefined,
-              BackupStatus: js.UndefOr[BackupStatus] = js.undefined,
-              BackupType: js.UndefOr[BackupType] = js.undefined,
-              TableArn: js.UndefOr[TableArn] = js.undefined,
-              TableId: js.UndefOr[TableId] = js.undefined,
-              TableName: js.UndefOr[TableName] = js.undefined): BackupSummary = {
+    def apply(
+        BackupArn: js.UndefOr[BackupArn] = js.undefined,
+        BackupCreationDateTime: js.UndefOr[BackupCreationDateTime] = js.undefined,
+        BackupExpiryDateTime: js.UndefOr[Date] = js.undefined,
+        BackupName: js.UndefOr[BackupName] = js.undefined,
+        BackupSizeBytes: js.UndefOr[BackupSizeBytes] = js.undefined,
+        BackupStatus: js.UndefOr[BackupStatus] = js.undefined,
+        BackupType: js.UndefOr[BackupType] = js.undefined,
+        TableArn: js.UndefOr[TableArn] = js.undefined,
+        TableId: js.UndefOr[TableId] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined
+    ): BackupSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupArn" -> BackupArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -709,18 +731,20 @@ package dynamodb {
   }
 
   object BackupTypeEnum {
-    val USER   = "USER"
-    val SYSTEM = "SYSTEM"
+    val USER       = "USER"
+    val SYSTEM     = "SYSTEM"
+    val AWS_BACKUP = "AWS_BACKUP"
 
-    val values = IndexedSeq(USER, SYSTEM)
+    val values = IndexedSeq(USER, SYSTEM, AWS_BACKUP)
   }
 
   object BackupTypeFilterEnum {
-    val USER   = "USER"
-    val SYSTEM = "SYSTEM"
-    val ALL    = "ALL"
+    val USER       = "USER"
+    val SYSTEM     = "SYSTEM"
+    val AWS_BACKUP = "AWS_BACKUP"
+    val ALL        = "ALL"
 
-    val values = IndexedSeq(USER, SYSTEM, ALL)
+    val values = IndexedSeq(USER, SYSTEM, AWS_BACKUP, ALL)
   }
 
   /**
@@ -733,8 +757,10 @@ package dynamodb {
   }
 
   object BatchGetItemInput {
-    def apply(RequestItems: BatchGetRequestMap,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined): BatchGetItemInput = {
+    def apply(
+        RequestItems: BatchGetRequestMap,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
+    ): BatchGetItemInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RequestItems" -> RequestItems.asInstanceOf[js.Any],
         "ReturnConsumedCapacity" -> ReturnConsumedCapacity.map { x =>
@@ -757,9 +783,11 @@ package dynamodb {
   }
 
   object BatchGetItemOutput {
-    def apply(ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
-              Responses: js.UndefOr[BatchGetResponseMap] = js.undefined,
-              UnprocessedKeys: js.UndefOr[BatchGetRequestMap] = js.undefined): BatchGetItemOutput = {
+    def apply(
+        ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
+        Responses: js.UndefOr[BatchGetResponseMap] = js.undefined,
+        UnprocessedKeys: js.UndefOr[BatchGetRequestMap] = js.undefined
+    ): BatchGetItemOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConsumedCapacity" -> ConsumedCapacity.map { x =>
           x.asInstanceOf[js.Any]
@@ -817,9 +845,11 @@ package dynamodb {
   }
 
   object BatchWriteItemOutput {
-    def apply(ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
-              ItemCollectionMetrics: js.UndefOr[ItemCollectionMetricsPerTable] = js.undefined,
-              UnprocessedItems: js.UndefOr[BatchWriteItemRequestMap] = js.undefined): BatchWriteItemOutput = {
+    def apply(
+        ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
+        ItemCollectionMetrics: js.UndefOr[ItemCollectionMetricsPerTable] = js.undefined,
+        UnprocessedItems: js.UndefOr[BatchWriteItemRequestMap] = js.undefined
+    ): BatchWriteItemOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConsumedCapacity" -> ConsumedCapacity.map { x =>
           x.asInstanceOf[js.Any]
@@ -853,8 +883,10 @@ package dynamodb {
   }
 
   object BillingModeSummary {
-    def apply(BillingMode: js.UndefOr[BillingMode] = js.undefined,
-              LastUpdateToPayPerRequestDateTime: js.UndefOr[Date] = js.undefined): BillingModeSummary = {
+    def apply(
+        BillingMode: js.UndefOr[BillingMode] = js.undefined,
+        LastUpdateToPayPerRequestDateTime: js.UndefOr[Date] = js.undefined
+    ): BillingModeSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BillingMode" -> BillingMode.map { x =>
           x.asInstanceOf[js.Any]
@@ -879,9 +911,11 @@ package dynamodb {
   }
 
   object Capacity {
-    def apply(CapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
-              ReadCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
-              WriteCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined): Capacity = {
+    def apply(
+        CapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
+        ReadCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
+        WriteCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined
+    ): Capacity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CapacityUnits" -> CapacityUnits.map { x =>
           x.asInstanceOf[js.Any]
@@ -930,8 +964,10 @@ package dynamodb {
   }
 
   object Condition {
-    def apply(ComparisonOperator: ComparisonOperator,
-              AttributeValueList: js.UndefOr[AttributeValueList] = js.undefined): Condition = {
+    def apply(
+        ComparisonOperator: ComparisonOperator,
+        AttributeValueList: js.UndefOr[AttributeValueList] = js.undefined
+    ): Condition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "AttributeValueList" -> AttributeValueList.map { x =>
@@ -1006,13 +1042,15 @@ package dynamodb {
   }
 
   object ConsumedCapacity {
-    def apply(CapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
-              GlobalSecondaryIndexes: js.UndefOr[SecondaryIndexesCapacityMap] = js.undefined,
-              LocalSecondaryIndexes: js.UndefOr[SecondaryIndexesCapacityMap] = js.undefined,
-              ReadCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
-              Table: js.UndefOr[Capacity] = js.undefined,
-              TableName: js.UndefOr[TableName] = js.undefined,
-              WriteCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined): ConsumedCapacity = {
+    def apply(
+        CapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
+        GlobalSecondaryIndexes: js.UndefOr[SecondaryIndexesCapacityMap] = js.undefined,
+        LocalSecondaryIndexes: js.UndefOr[SecondaryIndexesCapacityMap] = js.undefined,
+        ReadCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
+        Table: js.UndefOr[Capacity] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined,
+        WriteCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined
+    ): ConsumedCapacity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CapacityUnits" -> CapacityUnits.map { x =>
           x.asInstanceOf[js.Any]
@@ -1080,7 +1118,10 @@ package dynamodb {
   }
 
   object CreateBackupInput {
-    def apply(BackupName: BackupName, TableName: TableName): CreateBackupInput = {
+    def apply(
+        BackupName: BackupName,
+        TableName: TableName
+    ): CreateBackupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupName" -> BackupName.asInstanceOf[js.Any],
         "TableName"  -> TableName.asInstanceOf[js.Any]
@@ -1096,10 +1137,14 @@ package dynamodb {
   }
 
   object CreateBackupOutput {
-    def apply(BackupDetails: js.UndefOr[BackupDetails] = js.undefined): CreateBackupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BackupDetails" -> BackupDetails.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupDetails: js.UndefOr[BackupDetails] = js.undefined
+    ): CreateBackupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupDetails" -> BackupDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBackupOutput]
     }
@@ -1143,7 +1188,10 @@ package dynamodb {
   }
 
   object CreateGlobalTableInput {
-    def apply(GlobalTableName: TableName, ReplicationGroup: ReplicaList): CreateGlobalTableInput = {
+    def apply(
+        GlobalTableName: TableName,
+        ReplicationGroup: ReplicaList
+    ): CreateGlobalTableInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GlobalTableName"  -> GlobalTableName.asInstanceOf[js.Any],
         "ReplicationGroup" -> ReplicationGroup.asInstanceOf[js.Any]
@@ -1159,10 +1207,14 @@ package dynamodb {
   }
 
   object CreateGlobalTableOutput {
-    def apply(GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined): CreateGlobalTableOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableDescription" -> GlobalTableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
+    ): CreateGlobalTableOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableDescription" -> GlobalTableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateGlobalTableOutput]
     }
@@ -1177,9 +1229,12 @@ package dynamodb {
   }
 
   object CreateReplicaAction {
-    def apply(RegionName: RegionName): CreateReplicaAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegionName" -> RegionName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegionName: RegionName
+    ): CreateReplicaAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegionName" -> RegionName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateReplicaAction]
     }
@@ -1202,15 +1257,17 @@ package dynamodb {
   }
 
   object CreateTableInput {
-    def apply(AttributeDefinitions: AttributeDefinitions,
-              KeySchema: KeySchema,
-              TableName: TableName,
-              BillingMode: js.UndefOr[BillingMode] = js.undefined,
-              GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexList] = js.undefined,
-              LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
-              ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
-              SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
-              StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined): CreateTableInput = {
+    def apply(
+        AttributeDefinitions: AttributeDefinitions,
+        KeySchema: KeySchema,
+        TableName: TableName,
+        BillingMode: js.UndefOr[BillingMode] = js.undefined,
+        GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexList] = js.undefined,
+        LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexList] = js.undefined,
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
+        SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
+        StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined
+    ): CreateTableInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeDefinitions" -> AttributeDefinitions.asInstanceOf[js.Any],
         "KeySchema"            -> KeySchema.asInstanceOf[js.Any],
@@ -1248,10 +1305,14 @@ package dynamodb {
   }
 
   object CreateTableOutput {
-    def apply(TableDescription: js.UndefOr[TableDescription] = js.undefined): CreateTableOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableDescription" -> TableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableDescription: js.UndefOr[TableDescription] = js.undefined
+    ): CreateTableOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableDescription" -> TableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTableOutput]
     }
@@ -1306,9 +1367,12 @@ package dynamodb {
   }
 
   object DeleteBackupInput {
-    def apply(BackupArn: BackupArn): DeleteBackupInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BackupArn" -> BackupArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupArn: BackupArn
+    ): DeleteBackupInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupArn" -> BackupArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupInput]
     }
@@ -1320,10 +1384,14 @@ package dynamodb {
   }
 
   object DeleteBackupOutput {
-    def apply(BackupDescription: js.UndefOr[BackupDescription] = js.undefined): DeleteBackupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BackupDescription" -> BackupDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupDescription: js.UndefOr[BackupDescription] = js.undefined
+    ): DeleteBackupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupDescription" -> BackupDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBackupOutput]
     }
@@ -1338,9 +1406,12 @@ package dynamodb {
   }
 
   object DeleteGlobalSecondaryIndexAction {
-    def apply(IndexName: IndexName): DeleteGlobalSecondaryIndexAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("IndexName" -> IndexName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        IndexName: IndexName
+    ): DeleteGlobalSecondaryIndexAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "IndexName" -> IndexName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGlobalSecondaryIndexAction]
     }
@@ -1364,16 +1435,18 @@ package dynamodb {
   }
 
   object DeleteItemInput {
-    def apply(Key: Key,
-              TableName: TableName,
-              ConditionExpression: js.UndefOr[ConditionExpression] = js.undefined,
-              ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
-              Expected: js.UndefOr[ExpectedAttributeMap] = js.undefined,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
-              ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
-              ReturnValues: js.UndefOr[ReturnValue] = js.undefined): DeleteItemInput = {
+    def apply(
+        Key: Key,
+        TableName: TableName,
+        ConditionExpression: js.UndefOr[ConditionExpression] = js.undefined,
+        ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
+        Expected: js.UndefOr[ExpectedAttributeMap] = js.undefined,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
+        ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
+        ReturnValues: js.UndefOr[ReturnValue] = js.undefined
+    ): DeleteItemInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any],
@@ -1418,9 +1491,11 @@ package dynamodb {
   }
 
   object DeleteItemOutput {
-    def apply(Attributes: js.UndefOr[AttributeMap] = js.undefined,
-              ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
-              ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined): DeleteItemOutput = {
+    def apply(
+        Attributes: js.UndefOr[AttributeMap] = js.undefined,
+        ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined
+    ): DeleteItemOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1446,9 +1521,12 @@ package dynamodb {
   }
 
   object DeleteReplicaAction {
-    def apply(RegionName: RegionName): DeleteReplicaAction = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegionName" -> RegionName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegionName: RegionName
+    ): DeleteReplicaAction = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegionName" -> RegionName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteReplicaAction]
     }
@@ -1463,9 +1541,12 @@ package dynamodb {
   }
 
   object DeleteRequest {
-    def apply(Key: Key): DeleteRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: Key
+    ): DeleteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRequest]
     }
@@ -1480,9 +1561,12 @@ package dynamodb {
   }
 
   object DeleteTableInput {
-    def apply(TableName: TableName): DeleteTableInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableName" -> TableName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableName: TableName
+    ): DeleteTableInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableInput]
     }
@@ -1497,10 +1581,14 @@ package dynamodb {
   }
 
   object DeleteTableOutput {
-    def apply(TableDescription: js.UndefOr[TableDescription] = js.undefined): DeleteTableOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableDescription" -> TableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableDescription: js.UndefOr[TableDescription] = js.undefined
+    ): DeleteTableOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableDescription" -> TableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTableOutput]
     }
@@ -1512,9 +1600,12 @@ package dynamodb {
   }
 
   object DescribeBackupInput {
-    def apply(BackupArn: BackupArn): DescribeBackupInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BackupArn" -> BackupArn.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupArn: BackupArn
+    ): DescribeBackupInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupArn" -> BackupArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBackupInput]
     }
@@ -1526,10 +1617,14 @@ package dynamodb {
   }
 
   object DescribeBackupOutput {
-    def apply(BackupDescription: js.UndefOr[BackupDescription] = js.undefined): DescribeBackupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BackupDescription" -> BackupDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupDescription: js.UndefOr[BackupDescription] = js.undefined
+    ): DescribeBackupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupDescription" -> BackupDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeBackupOutput]
     }
@@ -1541,9 +1636,12 @@ package dynamodb {
   }
 
   object DescribeContinuousBackupsInput {
-    def apply(TableName: TableName): DescribeContinuousBackupsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableName" -> TableName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableName: TableName
+    ): DescribeContinuousBackupsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContinuousBackupsInput]
     }
@@ -1558,10 +1656,11 @@ package dynamodb {
     def apply(
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): DescribeContinuousBackupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ContinuousBackupsDescription" -> ContinuousBackupsDescription.map {
-        x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContinuousBackupsDescription" -> ContinuousBackupsDescription.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeContinuousBackupsOutput]
     }
@@ -1571,8 +1670,10 @@ package dynamodb {
   trait DescribeEndpointsRequest extends js.Object {}
 
   object DescribeEndpointsRequest {
-    def apply(): DescribeEndpointsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeEndpointsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointsRequest]
     }
@@ -1584,9 +1685,12 @@ package dynamodb {
   }
 
   object DescribeEndpointsResponse {
-    def apply(Endpoints: Endpoints): DescribeEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Endpoints" -> Endpoints.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Endpoints: Endpoints
+    ): DescribeEndpointsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Endpoints" -> Endpoints.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointsResponse]
     }
@@ -1598,9 +1702,12 @@ package dynamodb {
   }
 
   object DescribeGlobalTableInput {
-    def apply(GlobalTableName: TableName): DescribeGlobalTableInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalTableName: TableName
+    ): DescribeGlobalTableInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGlobalTableInput]
     }
@@ -1612,10 +1719,14 @@ package dynamodb {
   }
 
   object DescribeGlobalTableOutput {
-    def apply(GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined): DescribeGlobalTableOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableDescription" -> GlobalTableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
+    ): DescribeGlobalTableOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableDescription" -> GlobalTableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGlobalTableOutput]
     }
@@ -1627,9 +1738,12 @@ package dynamodb {
   }
 
   object DescribeGlobalTableSettingsInput {
-    def apply(GlobalTableName: TableName): DescribeGlobalTableSettingsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalTableName: TableName
+    ): DescribeGlobalTableSettingsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGlobalTableSettingsInput]
     }
@@ -1646,11 +1760,14 @@ package dynamodb {
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicaSettings: js.UndefOr[ReplicaSettingsDescriptionList] = js.undefined
     ): DescribeGlobalTableSettingsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableName" -> GlobalTableName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReplicaSettings" -> ReplicaSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableName" -> GlobalTableName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReplicaSettings" -> ReplicaSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGlobalTableSettingsOutput]
     }
@@ -1663,8 +1780,10 @@ package dynamodb {
   trait DescribeLimitsInput extends js.Object {}
 
   object DescribeLimitsInput {
-    def apply(): DescribeLimitsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DescribeLimitsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLimitsInput]
     }
@@ -1682,10 +1801,12 @@ package dynamodb {
   }
 
   object DescribeLimitsOutput {
-    def apply(AccountMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
-              AccountMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
-              TableMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
-              TableMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined): DescribeLimitsOutput = {
+    def apply(
+        AccountMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+        AccountMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+        TableMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
+        TableMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
+    ): DescribeLimitsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountMaxReadCapacityUnits" -> AccountMaxReadCapacityUnits.map { x =>
           x.asInstanceOf[js.Any]
@@ -1714,9 +1835,12 @@ package dynamodb {
   }
 
   object DescribeTableInput {
-    def apply(TableName: TableName): DescribeTableInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableName" -> TableName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableName: TableName
+    ): DescribeTableInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTableInput]
     }
@@ -1731,10 +1855,14 @@ package dynamodb {
   }
 
   object DescribeTableOutput {
-    def apply(Table: js.UndefOr[TableDescription] = js.undefined): DescribeTableOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Table" -> Table.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Table: js.UndefOr[TableDescription] = js.undefined
+    ): DescribeTableOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Table" -> Table.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTableOutput]
     }
@@ -1746,9 +1874,12 @@ package dynamodb {
   }
 
   object DescribeTimeToLiveInput {
-    def apply(TableName: TableName): DescribeTimeToLiveInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableName" -> TableName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableName: TableName
+    ): DescribeTimeToLiveInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTimeToLiveInput]
     }
@@ -1760,15 +1891,22 @@ package dynamodb {
   }
 
   object DescribeTimeToLiveOutput {
-    def apply(TimeToLiveDescription: js.UndefOr[TimeToLiveDescription] = js.undefined): DescribeTimeToLiveOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TimeToLiveDescription" -> TimeToLiveDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TimeToLiveDescription: js.UndefOr[TimeToLiveDescription] = js.undefined
+    ): DescribeTimeToLiveOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TimeToLiveDescription" -> TimeToLiveDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTimeToLiveOutput]
     }
   }
 
+  /**
+    * An endpoint information details.
+    */
   @js.native
   trait Endpoint extends js.Object {
     var Address: String
@@ -1776,7 +1914,10 @@ package dynamodb {
   }
 
   object Endpoint {
-    def apply(Address: String, CachePeriodInMinutes: Double): Endpoint = {
+    def apply(
+        Address: String,
+        CachePeriodInMinutes: Double
+    ): Endpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Address"              -> Address.asInstanceOf[js.Any],
         "CachePeriodInMinutes" -> CachePeriodInMinutes.asInstanceOf[js.Any]
@@ -1801,10 +1942,12 @@ package dynamodb {
   }
 
   object ExpectedAttributeValue {
-    def apply(AttributeValueList: js.UndefOr[AttributeValueList] = js.undefined,
-              ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
-              Exists: js.UndefOr[BooleanObject] = js.undefined,
-              Value: js.UndefOr[AttributeValue] = js.undefined): ExpectedAttributeValue = {
+    def apply(
+        AttributeValueList: js.UndefOr[AttributeValueList] = js.undefined,
+        ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
+        Exists: js.UndefOr[BooleanObject] = js.undefined,
+        Value: js.UndefOr[AttributeValue] = js.undefined
+    ): ExpectedAttributeValue = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeValueList" -> AttributeValueList.map { x =>
           x.asInstanceOf[js.Any]
@@ -1836,10 +1979,12 @@ package dynamodb {
   }
 
   object Get {
-    def apply(Key: Key,
-              TableName: TableName,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined): Get = {
+    def apply(
+        Key: Key,
+        TableName: TableName,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined
+    ): Get = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any],
@@ -1870,13 +2015,15 @@ package dynamodb {
   }
 
   object GetItemInput {
-    def apply(Key: Key,
-              TableName: TableName,
-              AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
-              ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined): GetItemInput = {
+    def apply(
+        Key: Key,
+        TableName: TableName,
+        AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
+        ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
+    ): GetItemInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any],
@@ -1911,13 +2058,18 @@ package dynamodb {
   }
 
   object GetItemOutput {
-    def apply(ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
-              Item: js.UndefOr[AttributeMap] = js.undefined): GetItemOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ConsumedCapacity" -> ConsumedCapacity.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Item" -> Item.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        Item: js.UndefOr[AttributeMap] = js.undefined
+    ): GetItemOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConsumedCapacity" -> ConsumedCapacity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Item" -> Item.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetItemOutput]
     }
@@ -1935,10 +2087,12 @@ package dynamodb {
   }
 
   object GlobalSecondaryIndex {
-    def apply(IndexName: IndexName,
-              KeySchema: KeySchema,
-              Projection: Projection,
-              ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined): GlobalSecondaryIndex = {
+    def apply(
+        IndexName: IndexName,
+        KeySchema: KeySchema,
+        Projection: Projection,
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined
+    ): GlobalSecondaryIndex = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexName"  -> IndexName.asInstanceOf[js.Any],
         "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
@@ -2026,10 +2180,12 @@ package dynamodb {
   }
 
   object GlobalSecondaryIndexInfo {
-    def apply(IndexName: js.UndefOr[IndexName] = js.undefined,
-              KeySchema: js.UndefOr[KeySchema] = js.undefined,
-              Projection: js.UndefOr[Projection] = js.undefined,
-              ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined): GlobalSecondaryIndexInfo = {
+    def apply(
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        KeySchema: js.UndefOr[KeySchema] = js.undefined,
+        Projection: js.UndefOr[Projection] = js.undefined,
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined
+    ): GlobalSecondaryIndexInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexName" -> IndexName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2063,16 +2219,22 @@ package dynamodb {
   }
 
   object GlobalSecondaryIndexUpdate {
-    def apply(Create: js.UndefOr[CreateGlobalSecondaryIndexAction] = js.undefined,
-              Delete: js.UndefOr[DeleteGlobalSecondaryIndexAction] = js.undefined,
-              Update: js.UndefOr[UpdateGlobalSecondaryIndexAction] = js.undefined): GlobalSecondaryIndexUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)]("Create" -> Create.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Delete" -> Delete.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Update" -> Update.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Create: js.UndefOr[CreateGlobalSecondaryIndexAction] = js.undefined,
+        Delete: js.UndefOr[DeleteGlobalSecondaryIndexAction] = js.undefined,
+        Update: js.UndefOr[UpdateGlobalSecondaryIndexAction] = js.undefined
+    ): GlobalSecondaryIndexUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Create" -> Create.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Delete" -> Delete.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Update" -> Update.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalSecondaryIndexUpdate]
     }
@@ -2088,13 +2250,18 @@ package dynamodb {
   }
 
   object GlobalTable {
-    def apply(GlobalTableName: js.UndefOr[TableName] = js.undefined,
-              ReplicationGroup: js.UndefOr[ReplicaList] = js.undefined): GlobalTable = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableName" -> GlobalTableName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReplicationGroup" -> ReplicationGroup.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalTableName: js.UndefOr[TableName] = js.undefined,
+        ReplicationGroup: js.UndefOr[ReplicaList] = js.undefined
+    ): GlobalTable = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableName" -> GlobalTableName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReplicationGroup" -> ReplicationGroup.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GlobalTable]
     }
@@ -2113,11 +2280,13 @@ package dynamodb {
   }
 
   object GlobalTableDescription {
-    def apply(CreationDateTime: js.UndefOr[Date] = js.undefined,
-              GlobalTableArn: js.UndefOr[GlobalTableArnString] = js.undefined,
-              GlobalTableName: js.UndefOr[TableName] = js.undefined,
-              GlobalTableStatus: js.UndefOr[GlobalTableStatus] = js.undefined,
-              ReplicationGroup: js.UndefOr[ReplicaDescriptionList] = js.undefined): GlobalTableDescription = {
+    def apply(
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        GlobalTableArn: js.UndefOr[GlobalTableArnString] = js.undefined,
+        GlobalTableName: js.UndefOr[TableName] = js.undefined,
+        GlobalTableStatus: js.UndefOr[GlobalTableStatus] = js.undefined,
+        ReplicationGroup: js.UndefOr[ReplicaDescriptionList] = js.undefined
+    ): GlobalTableDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationDateTime" -> CreationDateTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2205,11 +2374,14 @@ package dynamodb {
         ItemCollectionKey: js.UndefOr[ItemCollectionKeyAttributeMap] = js.undefined,
         SizeEstimateRangeGB: js.UndefOr[ItemCollectionSizeEstimateRange] = js.undefined
     ): ItemCollectionMetrics = {
-      val _fields = IndexedSeq[(String, js.Any)]("ItemCollectionKey" -> ItemCollectionKey.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "SizeEstimateRangeGB" -> SizeEstimateRangeGB.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ItemCollectionKey" -> ItemCollectionKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SizeEstimateRangeGB" -> SizeEstimateRangeGB.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ItemCollectionMetrics]
     }
@@ -2224,10 +2396,14 @@ package dynamodb {
   }
 
   object ItemResponse {
-    def apply(Item: js.UndefOr[AttributeMap] = js.undefined): ItemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Item: js.UndefOr[AttributeMap] = js.undefined
+    ): ItemResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Item" -> Item.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ItemResponse]
     }
@@ -2245,7 +2421,10 @@ package dynamodb {
   }
 
   object KeySchemaElement {
-    def apply(AttributeName: KeySchemaAttributeName, KeyType: KeyType): KeySchemaElement = {
+    def apply(
+        AttributeName: KeySchemaAttributeName,
+        KeyType: KeyType
+    ): KeySchemaElement = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "KeyType"       -> KeyType.asInstanceOf[js.Any]
@@ -2276,11 +2455,13 @@ package dynamodb {
   }
 
   object KeysAndAttributes {
-    def apply(Keys: KeyList,
-              AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
-              ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined): KeysAndAttributes = {
+    def apply(
+        Keys: KeyList,
+        AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
+        ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined
+    ): KeysAndAttributes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Keys" -> Keys.asInstanceOf[js.Any],
         "AttributesToGet" -> AttributesToGet.map { x =>
@@ -2312,12 +2493,14 @@ package dynamodb {
   }
 
   object ListBackupsInput {
-    def apply(BackupType: js.UndefOr[BackupTypeFilter] = js.undefined,
-              ExclusiveStartBackupArn: js.UndefOr[BackupArn] = js.undefined,
-              Limit: js.UndefOr[BackupsInputLimit] = js.undefined,
-              TableName: js.UndefOr[TableName] = js.undefined,
-              TimeRangeLowerBound: js.UndefOr[TimeRangeLowerBound] = js.undefined,
-              TimeRangeUpperBound: js.UndefOr[TimeRangeUpperBound] = js.undefined): ListBackupsInput = {
+    def apply(
+        BackupType: js.UndefOr[BackupTypeFilter] = js.undefined,
+        ExclusiveStartBackupArn: js.UndefOr[BackupArn] = js.undefined,
+        Limit: js.UndefOr[BackupsInputLimit] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined,
+        TimeRangeLowerBound: js.UndefOr[TimeRangeLowerBound] = js.undefined,
+        TimeRangeUpperBound: js.UndefOr[TimeRangeUpperBound] = js.undefined
+    ): ListBackupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupType" -> BackupType.map { x =>
           x.asInstanceOf[js.Any]
@@ -2350,13 +2533,18 @@ package dynamodb {
   }
 
   object ListBackupsOutput {
-    def apply(BackupSummaries: js.UndefOr[BackupSummaries] = js.undefined,
-              LastEvaluatedBackupArn: js.UndefOr[BackupArn] = js.undefined): ListBackupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("BackupSummaries" -> BackupSummaries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "LastEvaluatedBackupArn" -> LastEvaluatedBackupArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        BackupSummaries: js.UndefOr[BackupSummaries] = js.undefined,
+        LastEvaluatedBackupArn: js.UndefOr[BackupArn] = js.undefined
+    ): ListBackupsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "BackupSummaries" -> BackupSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastEvaluatedBackupArn" -> LastEvaluatedBackupArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBackupsOutput]
     }
@@ -2370,9 +2558,11 @@ package dynamodb {
   }
 
   object ListGlobalTablesInput {
-    def apply(ExclusiveStartGlobalTableName: js.UndefOr[TableName] = js.undefined,
-              Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
-              RegionName: js.UndefOr[RegionName] = js.undefined): ListGlobalTablesInput = {
+    def apply(
+        ExclusiveStartGlobalTableName: js.UndefOr[TableName] = js.undefined,
+        Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
+        RegionName: js.UndefOr[RegionName] = js.undefined
+    ): ListGlobalTablesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExclusiveStartGlobalTableName" -> ExclusiveStartGlobalTableName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2396,8 +2586,10 @@ package dynamodb {
   }
 
   object ListGlobalTablesOutput {
-    def apply(GlobalTables: js.UndefOr[GlobalTableList] = js.undefined,
-              LastEvaluatedGlobalTableName: js.UndefOr[TableName] = js.undefined): ListGlobalTablesOutput = {
+    def apply(
+        GlobalTables: js.UndefOr[GlobalTableList] = js.undefined,
+        LastEvaluatedGlobalTableName: js.UndefOr[TableName] = js.undefined
+    ): ListGlobalTablesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GlobalTables" -> GlobalTables.map { x =>
           x.asInstanceOf[js.Any]
@@ -2421,13 +2613,18 @@ package dynamodb {
   }
 
   object ListTablesInput {
-    def apply(ExclusiveStartTableName: js.UndefOr[TableName] = js.undefined,
-              Limit: js.UndefOr[ListTablesInputLimit] = js.undefined): ListTablesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ExclusiveStartTableName" -> ExclusiveStartTableName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Limit" -> Limit.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ExclusiveStartTableName: js.UndefOr[TableName] = js.undefined,
+        Limit: js.UndefOr[ListTablesInputLimit] = js.undefined
+    ): ListTablesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ExclusiveStartTableName" -> ExclusiveStartTableName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTablesInput]
     }
@@ -2443,13 +2640,18 @@ package dynamodb {
   }
 
   object ListTablesOutput {
-    def apply(LastEvaluatedTableName: js.UndefOr[TableName] = js.undefined,
-              TableNames: js.UndefOr[TableNameList] = js.undefined): ListTablesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("LastEvaluatedTableName" -> LastEvaluatedTableName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TableNames" -> TableNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        LastEvaluatedTableName: js.UndefOr[TableName] = js.undefined,
+        TableNames: js.UndefOr[TableNameList] = js.undefined
+    ): ListTablesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "LastEvaluatedTableName" -> LastEvaluatedTableName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TableNames" -> TableNames.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTablesOutput]
     }
@@ -2462,13 +2664,16 @@ package dynamodb {
   }
 
   object ListTagsOfResourceInput {
-    def apply(ResourceArn: ResourceArnString,
-              NextToken: js.UndefOr[NextTokenString] = js.undefined): ListTagsOfResourceInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("ResourceArn" -> ResourceArn.asInstanceOf[js.Any], "NextToken" -> NextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ResourceArn: ResourceArnString,
+        NextToken: js.UndefOr[NextTokenString] = js.undefined
+    ): ListTagsOfResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsOfResourceInput]
     }
@@ -2481,13 +2686,18 @@ package dynamodb {
   }
 
   object ListTagsOfResourceOutput {
-    def apply(NextToken: js.UndefOr[NextTokenString] = js.undefined,
-              Tags: js.UndefOr[TagList] = js.undefined): ListTagsOfResourceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextTokenString] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsOfResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsOfResourceOutput]
     }
@@ -2504,7 +2714,11 @@ package dynamodb {
   }
 
   object LocalSecondaryIndex {
-    def apply(IndexName: IndexName, KeySchema: KeySchema, Projection: Projection): LocalSecondaryIndex = {
+    def apply(
+        IndexName: IndexName,
+        KeySchema: KeySchema,
+        Projection: Projection
+    ): LocalSecondaryIndex = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexName"  -> IndexName.asInstanceOf[js.Any],
         "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
@@ -2529,12 +2743,14 @@ package dynamodb {
   }
 
   object LocalSecondaryIndexDescription {
-    def apply(IndexArn: js.UndefOr[String] = js.undefined,
-              IndexName: js.UndefOr[IndexName] = js.undefined,
-              IndexSizeBytes: js.UndefOr[Double] = js.undefined,
-              ItemCount: js.UndefOr[Double] = js.undefined,
-              KeySchema: js.UndefOr[KeySchema] = js.undefined,
-              Projection: js.UndefOr[Projection] = js.undefined): LocalSecondaryIndexDescription = {
+    def apply(
+        IndexArn: js.UndefOr[String] = js.undefined,
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        IndexSizeBytes: js.UndefOr[Double] = js.undefined,
+        ItemCount: js.UndefOr[Double] = js.undefined,
+        KeySchema: js.UndefOr[KeySchema] = js.undefined,
+        Projection: js.UndefOr[Projection] = js.undefined
+    ): LocalSecondaryIndexDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexArn" -> IndexArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -2571,9 +2787,11 @@ package dynamodb {
   }
 
   object LocalSecondaryIndexInfo {
-    def apply(IndexName: js.UndefOr[IndexName] = js.undefined,
-              KeySchema: js.UndefOr[KeySchema] = js.undefined,
-              Projection: js.UndefOr[Projection] = js.undefined): LocalSecondaryIndexInfo = {
+    def apply(
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        KeySchema: js.UndefOr[KeySchema] = js.undefined,
+        Projection: js.UndefOr[Projection] = js.undefined
+    ): LocalSecondaryIndexInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexName" -> IndexName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2631,10 +2849,12 @@ package dynamodb {
   }
 
   object PointInTimeRecoverySpecification {
-    def apply(PointInTimeRecoveryEnabled: BooleanObject): PointInTimeRecoverySpecification = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("PointInTimeRecoveryEnabled" -> PointInTimeRecoveryEnabled.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        PointInTimeRecoveryEnabled: BooleanObject
+    ): PointInTimeRecoverySpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PointInTimeRecoveryEnabled" -> PointInTimeRecoveryEnabled.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PointInTimeRecoverySpecification]
     }
@@ -2657,13 +2877,18 @@ package dynamodb {
   }
 
   object Projection {
-    def apply(NonKeyAttributes: js.UndefOr[NonKeyAttributeNameList] = js.undefined,
-              ProjectionType: js.UndefOr[ProjectionType] = js.undefined): Projection = {
-      val _fields = IndexedSeq[(String, js.Any)]("NonKeyAttributes" -> NonKeyAttributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ProjectionType" -> ProjectionType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NonKeyAttributes: js.UndefOr[NonKeyAttributeNameList] = js.undefined,
+        ProjectionType: js.UndefOr[ProjectionType] = js.undefined
+    ): Projection = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NonKeyAttributes" -> NonKeyAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProjectionType" -> ProjectionType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Projection]
     }
@@ -2688,7 +2913,10 @@ package dynamodb {
   }
 
   object ProvisionedThroughput {
-    def apply(ReadCapacityUnits: PositiveLongObject, WriteCapacityUnits: PositiveLongObject): ProvisionedThroughput = {
+    def apply(
+        ReadCapacityUnits: PositiveLongObject,
+        WriteCapacityUnits: PositiveLongObject
+    ): ProvisionedThroughput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ReadCapacityUnits"  -> ReadCapacityUnits.asInstanceOf[js.Any],
         "WriteCapacityUnits" -> WriteCapacityUnits.asInstanceOf[js.Any]
@@ -2801,16 +3029,18 @@ package dynamodb {
   }
 
   object PutItemInput {
-    def apply(Item: PutItemInputAttributeMap,
-              TableName: TableName,
-              ConditionExpression: js.UndefOr[ConditionExpression] = js.undefined,
-              ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
-              Expected: js.UndefOr[ExpectedAttributeMap] = js.undefined,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
-              ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
-              ReturnValues: js.UndefOr[ReturnValue] = js.undefined): PutItemInput = {
+    def apply(
+        Item: PutItemInputAttributeMap,
+        TableName: TableName,
+        ConditionExpression: js.UndefOr[ConditionExpression] = js.undefined,
+        ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
+        Expected: js.UndefOr[ExpectedAttributeMap] = js.undefined,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
+        ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
+        ReturnValues: js.UndefOr[ReturnValue] = js.undefined
+    ): PutItemInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Item"      -> Item.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any],
@@ -2855,9 +3085,11 @@ package dynamodb {
   }
 
   object PutItemOutput {
-    def apply(Attributes: js.UndefOr[AttributeMap] = js.undefined,
-              ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
-              ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined): PutItemOutput = {
+    def apply(
+        Attributes: js.UndefOr[AttributeMap] = js.undefined,
+        ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined
+    ): PutItemOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -2883,9 +3115,12 @@ package dynamodb {
   }
 
   object PutRequest {
-    def apply(Item: PutItemInputAttributeMap): PutRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Item" -> Item.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Item: PutItemInputAttributeMap
+    ): PutRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Item" -> Item.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRequest]
     }
@@ -2916,23 +3151,25 @@ package dynamodb {
   }
 
   object QueryInput {
-    def apply(TableName: TableName,
-              AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
-              ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
-              ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
-              ExclusiveStartKey: js.UndefOr[Key] = js.undefined,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
-              FilterExpression: js.UndefOr[ConditionExpression] = js.undefined,
-              IndexName: js.UndefOr[IndexName] = js.undefined,
-              KeyConditionExpression: js.UndefOr[KeyExpression] = js.undefined,
-              KeyConditions: js.UndefOr[KeyConditions] = js.undefined,
-              Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
-              ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
-              QueryFilter: js.UndefOr[FilterConditionMap] = js.undefined,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
-              ScanIndexForward: js.UndefOr[BooleanObject] = js.undefined,
-              Select: js.UndefOr[Select] = js.undefined): QueryInput = {
+    def apply(
+        TableName: TableName,
+        AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
+        ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
+        ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
+        ExclusiveStartKey: js.UndefOr[Key] = js.undefined,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
+        FilterExpression: js.UndefOr[ConditionExpression] = js.undefined,
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        KeyConditionExpression: js.UndefOr[KeyExpression] = js.undefined,
+        KeyConditions: js.UndefOr[KeyConditions] = js.undefined,
+        Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
+        ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
+        QueryFilter: js.UndefOr[FilterConditionMap] = js.undefined,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
+        ScanIndexForward: js.UndefOr[BooleanObject] = js.undefined,
+        Select: js.UndefOr[Select] = js.undefined
+    ): QueryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TableName" -> TableName.asInstanceOf[js.Any],
         "AttributesToGet" -> AttributesToGet.map { x =>
@@ -3002,11 +3239,13 @@ package dynamodb {
   }
 
   object QueryOutput {
-    def apply(ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
-              Count: js.UndefOr[Int] = js.undefined,
-              Items: js.UndefOr[ItemList] = js.undefined,
-              LastEvaluatedKey: js.UndefOr[Key] = js.undefined,
-              ScannedCount: js.UndefOr[Int] = js.undefined): QueryOutput = {
+    def apply(
+        ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        Count: js.UndefOr[Int] = js.undefined,
+        Items: js.UndefOr[ItemList] = js.undefined,
+        LastEvaluatedKey: js.UndefOr[Key] = js.undefined,
+        ScannedCount: js.UndefOr[Int] = js.undefined
+    ): QueryOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConsumedCapacity" -> ConsumedCapacity.map { x =>
           x.asInstanceOf[js.Any]
@@ -3038,10 +3277,14 @@ package dynamodb {
   }
 
   object Replica {
-    def apply(RegionName: js.UndefOr[RegionName] = js.undefined): Replica = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegionName" -> RegionName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegionName: js.UndefOr[RegionName] = js.undefined
+    ): Replica = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegionName" -> RegionName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Replica]
     }
@@ -3056,10 +3299,14 @@ package dynamodb {
   }
 
   object ReplicaDescription {
-    def apply(RegionName: js.UndefOr[RegionName] = js.undefined): ReplicaDescription = {
-      val _fields = IndexedSeq[(String, js.Any)]("RegionName" -> RegionName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        RegionName: js.UndefOr[RegionName] = js.undefined
+    ): ReplicaDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "RegionName" -> RegionName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicaDescription]
     }
@@ -3260,13 +3507,18 @@ package dynamodb {
   }
 
   object ReplicaUpdate {
-    def apply(Create: js.UndefOr[CreateReplicaAction] = js.undefined,
-              Delete: js.UndefOr[DeleteReplicaAction] = js.undefined): ReplicaUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)]("Create" -> Create.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Delete" -> Delete.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Create: js.UndefOr[CreateReplicaAction] = js.undefined,
+        Delete: js.UndefOr[DeleteReplicaAction] = js.undefined
+    ): ReplicaUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Create" -> Create.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Delete" -> Delete.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReplicaUpdate]
     }
@@ -3284,10 +3536,12 @@ package dynamodb {
   }
 
   object RestoreSummary {
-    def apply(RestoreDateTime: Date,
-              RestoreInProgress: RestoreInProgress,
-              SourceBackupArn: js.UndefOr[BackupArn] = js.undefined,
-              SourceTableArn: js.UndefOr[TableArn] = js.undefined): RestoreSummary = {
+    def apply(
+        RestoreDateTime: Date,
+        RestoreInProgress: RestoreInProgress,
+        SourceBackupArn: js.UndefOr[BackupArn] = js.undefined,
+        SourceTableArn: js.UndefOr[TableArn] = js.undefined
+    ): RestoreSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RestoreDateTime"   -> RestoreDateTime.asInstanceOf[js.Any],
         "RestoreInProgress" -> RestoreInProgress.asInstanceOf[js.Any],
@@ -3310,7 +3564,10 @@ package dynamodb {
   }
 
   object RestoreTableFromBackupInput {
-    def apply(BackupArn: BackupArn, TargetTableName: TableName): RestoreTableFromBackupInput = {
+    def apply(
+        BackupArn: BackupArn,
+        TargetTableName: TableName
+    ): RestoreTableFromBackupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BackupArn"       -> BackupArn.asInstanceOf[js.Any],
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any]
@@ -3326,10 +3583,14 @@ package dynamodb {
   }
 
   object RestoreTableFromBackupOutput {
-    def apply(TableDescription: js.UndefOr[TableDescription] = js.undefined): RestoreTableFromBackupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableDescription" -> TableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableDescription: js.UndefOr[TableDescription] = js.undefined
+    ): RestoreTableFromBackupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableDescription" -> TableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreTableFromBackupOutput]
     }
@@ -3344,10 +3605,12 @@ package dynamodb {
   }
 
   object RestoreTableToPointInTimeInput {
-    def apply(SourceTableName: TableName,
-              TargetTableName: TableName,
-              RestoreDateTime: js.UndefOr[Date] = js.undefined,
-              UseLatestRestorableTime: js.UndefOr[BooleanObject] = js.undefined): RestoreTableToPointInTimeInput = {
+    def apply(
+        SourceTableName: TableName,
+        TargetTableName: TableName,
+        RestoreDateTime: js.UndefOr[Date] = js.undefined,
+        UseLatestRestorableTime: js.UndefOr[BooleanObject] = js.undefined
+    ): RestoreTableToPointInTimeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SourceTableName" -> SourceTableName.asInstanceOf[js.Any],
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any],
@@ -3369,10 +3632,14 @@ package dynamodb {
   }
 
   object RestoreTableToPointInTimeOutput {
-    def apply(TableDescription: js.UndefOr[TableDescription] = js.undefined): RestoreTableToPointInTimeOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableDescription" -> TableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableDescription: js.UndefOr[TableDescription] = js.undefined
+    ): RestoreTableToPointInTimeOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableDescription" -> TableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RestoreTableToPointInTimeOutput]
     }
@@ -3428,9 +3695,11 @@ package dynamodb {
   }
 
   object SSEDescription {
-    def apply(KMSMasterKeyArn: js.UndefOr[KMSMasterKeyArn] = js.undefined,
-              SSEType: js.UndefOr[SSEType] = js.undefined,
-              Status: js.UndefOr[SSEStatus] = js.undefined): SSEDescription = {
+    def apply(
+        KMSMasterKeyArn: js.UndefOr[KMSMasterKeyArn] = js.undefined,
+        SSEType: js.UndefOr[SSEType] = js.undefined,
+        Status: js.UndefOr[SSEStatus] = js.undefined
+    ): SSEDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KMSMasterKeyArn" -> KMSMasterKeyArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -3458,9 +3727,11 @@ package dynamodb {
   }
 
   object SSESpecification {
-    def apply(Enabled: js.UndefOr[SSEEnabled] = js.undefined,
-              KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
-              SSEType: js.UndefOr[SSEType] = js.undefined): SSESpecification = {
+    def apply(
+        Enabled: js.UndefOr[SSEEnabled] = js.undefined,
+        KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
+        SSEType: js.UndefOr[SSEType] = js.undefined
+    ): SSESpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Enabled" -> Enabled.map { x =>
           x.asInstanceOf[js.Any]
@@ -3526,22 +3797,24 @@ package dynamodb {
   }
 
   object ScanInput {
-    def apply(TableName: TableName,
-              AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
-              ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
-              ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
-              ExclusiveStartKey: js.UndefOr[Key] = js.undefined,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
-              FilterExpression: js.UndefOr[ConditionExpression] = js.undefined,
-              IndexName: js.UndefOr[IndexName] = js.undefined,
-              Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
-              ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
-              ScanFilter: js.UndefOr[FilterConditionMap] = js.undefined,
-              Segment: js.UndefOr[ScanSegment] = js.undefined,
-              Select: js.UndefOr[Select] = js.undefined,
-              TotalSegments: js.UndefOr[ScanTotalSegments] = js.undefined): ScanInput = {
+    def apply(
+        TableName: TableName,
+        AttributesToGet: js.UndefOr[AttributeNameList] = js.undefined,
+        ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
+        ConsistentRead: js.UndefOr[ConsistentRead] = js.undefined,
+        ExclusiveStartKey: js.UndefOr[Key] = js.undefined,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
+        FilterExpression: js.UndefOr[ConditionExpression] = js.undefined,
+        IndexName: js.UndefOr[IndexName] = js.undefined,
+        Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
+        ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
+        ScanFilter: js.UndefOr[FilterConditionMap] = js.undefined,
+        Segment: js.UndefOr[ScanSegment] = js.undefined,
+        Select: js.UndefOr[Select] = js.undefined,
+        TotalSegments: js.UndefOr[ScanTotalSegments] = js.undefined
+    ): ScanInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TableName" -> TableName.asInstanceOf[js.Any],
         "AttributesToGet" -> AttributesToGet.map { x =>
@@ -3608,11 +3881,13 @@ package dynamodb {
   }
 
   object ScanOutput {
-    def apply(ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
-              Count: js.UndefOr[Int] = js.undefined,
-              Items: js.UndefOr[ItemList] = js.undefined,
-              LastEvaluatedKey: js.UndefOr[Key] = js.undefined,
-              ScannedCount: js.UndefOr[Int] = js.undefined): ScanOutput = {
+    def apply(
+        ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        Count: js.UndefOr[Int] = js.undefined,
+        Items: js.UndefOr[ItemList] = js.undefined,
+        LastEvaluatedKey: js.UndefOr[Key] = js.undefined,
+        ScannedCount: js.UndefOr[Int] = js.undefined
+    ): ScanOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConsumedCapacity" -> ConsumedCapacity.map { x =>
           x.asInstanceOf[js.Any]
@@ -3661,15 +3936,17 @@ package dynamodb {
   }
 
   object SourceTableDetails {
-    def apply(KeySchema: KeySchema,
-              ProvisionedThroughput: ProvisionedThroughput,
-              TableCreationDateTime: TableCreationDateTime,
-              TableId: TableId,
-              TableName: TableName,
-              BillingMode: js.UndefOr[BillingMode] = js.undefined,
-              ItemCount: js.UndefOr[ItemCount] = js.undefined,
-              TableArn: js.UndefOr[TableArn] = js.undefined,
-              TableSizeBytes: js.UndefOr[Double] = js.undefined): SourceTableDetails = {
+    def apply(
+        KeySchema: KeySchema,
+        ProvisionedThroughput: ProvisionedThroughput,
+        TableCreationDateTime: TableCreationDateTime,
+        TableId: TableId,
+        TableName: TableName,
+        BillingMode: js.UndefOr[BillingMode] = js.undefined,
+        ItemCount: js.UndefOr[ItemCount] = js.undefined,
+        TableArn: js.UndefOr[TableArn] = js.undefined,
+        TableSizeBytes: js.UndefOr[Double] = js.undefined
+    ): SourceTableDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "KeySchema"             -> KeySchema.asInstanceOf[js.Any],
         "ProvisionedThroughput" -> ProvisionedThroughput.asInstanceOf[js.Any],
@@ -3707,11 +3984,13 @@ package dynamodb {
   }
 
   object SourceTableFeatureDetails {
-    def apply(GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexes] = js.undefined,
-              LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexes] = js.undefined,
-              SSEDescription: js.UndefOr[SSEDescription] = js.undefined,
-              StreamDescription: js.UndefOr[StreamSpecification] = js.undefined,
-              TimeToLiveDescription: js.UndefOr[TimeToLiveDescription] = js.undefined): SourceTableFeatureDetails = {
+    def apply(
+        GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexes] = js.undefined,
+        LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexes] = js.undefined,
+        SSEDescription: js.UndefOr[SSEDescription] = js.undefined,
+        StreamDescription: js.UndefOr[StreamSpecification] = js.undefined,
+        TimeToLiveDescription: js.UndefOr[TimeToLiveDescription] = js.undefined
+    ): SourceTableFeatureDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GlobalSecondaryIndexes" -> GlobalSecondaryIndexes.map { x =>
           x.asInstanceOf[js.Any]
@@ -3744,13 +4023,18 @@ package dynamodb {
   }
 
   object StreamSpecification {
-    def apply(StreamEnabled: js.UndefOr[StreamEnabled] = js.undefined,
-              StreamViewType: js.UndefOr[StreamViewType] = js.undefined): StreamSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)]("StreamEnabled" -> StreamEnabled.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StreamViewType" -> StreamViewType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StreamEnabled: js.UndefOr[StreamEnabled] = js.undefined,
+        StreamViewType: js.UndefOr[StreamViewType] = js.undefined
+    ): StreamSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StreamEnabled" -> StreamEnabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StreamViewType" -> StreamViewType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamSpecification]
     }
@@ -3791,24 +4075,26 @@ package dynamodb {
   }
 
   object TableDescription {
-    def apply(AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
-              BillingModeSummary: js.UndefOr[BillingModeSummary] = js.undefined,
-              CreationDateTime: js.UndefOr[Date] = js.undefined,
-              GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexDescriptionList] = js.undefined,
-              ItemCount: js.UndefOr[Double] = js.undefined,
-              KeySchema: js.UndefOr[KeySchema] = js.undefined,
-              LatestStreamArn: js.UndefOr[StreamArn] = js.undefined,
-              LatestStreamLabel: js.UndefOr[String] = js.undefined,
-              LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexDescriptionList] = js.undefined,
-              ProvisionedThroughput: js.UndefOr[ProvisionedThroughputDescription] = js.undefined,
-              RestoreSummary: js.UndefOr[RestoreSummary] = js.undefined,
-              SSEDescription: js.UndefOr[SSEDescription] = js.undefined,
-              StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
-              TableArn: js.UndefOr[String] = js.undefined,
-              TableId: js.UndefOr[TableId] = js.undefined,
-              TableName: js.UndefOr[TableName] = js.undefined,
-              TableSizeBytes: js.UndefOr[Double] = js.undefined,
-              TableStatus: js.UndefOr[TableStatus] = js.undefined): TableDescription = {
+    def apply(
+        AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
+        BillingModeSummary: js.UndefOr[BillingModeSummary] = js.undefined,
+        CreationDateTime: js.UndefOr[Date] = js.undefined,
+        GlobalSecondaryIndexes: js.UndefOr[GlobalSecondaryIndexDescriptionList] = js.undefined,
+        ItemCount: js.UndefOr[Double] = js.undefined,
+        KeySchema: js.UndefOr[KeySchema] = js.undefined,
+        LatestStreamArn: js.UndefOr[StreamArn] = js.undefined,
+        LatestStreamLabel: js.UndefOr[String] = js.undefined,
+        LocalSecondaryIndexes: js.UndefOr[LocalSecondaryIndexDescriptionList] = js.undefined,
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughputDescription] = js.undefined,
+        RestoreSummary: js.UndefOr[RestoreSummary] = js.undefined,
+        SSEDescription: js.UndefOr[SSEDescription] = js.undefined,
+        StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
+        TableArn: js.UndefOr[String] = js.undefined,
+        TableId: js.UndefOr[TableId] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined,
+        TableSizeBytes: js.UndefOr[Double] = js.undefined,
+        TableStatus: js.UndefOr[TableStatus] = js.undefined
+    ): TableDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeDefinitions" -> AttributeDefinitions.map { x =>
           x.asInstanceOf[js.Any]
@@ -3891,10 +4177,14 @@ package dynamodb {
   }
 
   object Tag {
-    def apply(Key: TagKeyString, Value: TagValueString): Tag = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: TagKeyString,
+        Value: TagValueString
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -3907,7 +4197,10 @@ package dynamodb {
   }
 
   object TagResourceInput {
-    def apply(ResourceArn: ResourceArnString, Tags: TagList): TagResourceInput = {
+    def apply(
+        ResourceArn: ResourceArnString,
+        Tags: TagList
+    ): TagResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
@@ -3927,13 +4220,18 @@ package dynamodb {
   }
 
   object TimeToLiveDescription {
-    def apply(AttributeName: js.UndefOr[TimeToLiveAttributeName] = js.undefined,
-              TimeToLiveStatus: js.UndefOr[TimeToLiveStatus] = js.undefined): TimeToLiveDescription = {
-      val _fields = IndexedSeq[(String, js.Any)]("AttributeName" -> AttributeName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TimeToLiveStatus" -> TimeToLiveStatus.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AttributeName: js.UndefOr[TimeToLiveAttributeName] = js.undefined,
+        TimeToLiveStatus: js.UndefOr[TimeToLiveStatus] = js.undefined
+    ): TimeToLiveDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AttributeName" -> AttributeName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeToLiveStatus" -> TimeToLiveStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeToLiveDescription]
     }
@@ -3949,7 +4247,10 @@ package dynamodb {
   }
 
   object TimeToLiveSpecification {
-    def apply(AttributeName: TimeToLiveAttributeName, Enabled: TimeToLiveEnabled): TimeToLiveSpecification = {
+    def apply(
+        AttributeName: TimeToLiveAttributeName,
+        Enabled: TimeToLiveEnabled
+    ): TimeToLiveSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "Enabled"       -> Enabled.asInstanceOf[js.Any]
@@ -3977,9 +4278,12 @@ package dynamodb {
   }
 
   object TransactGetItem {
-    def apply(Get: Get): TransactGetItem = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Get" -> Get.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Get: Get
+    ): TransactGetItem = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Get" -> Get.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransactGetItem]
     }
@@ -3992,8 +4296,10 @@ package dynamodb {
   }
 
   object TransactGetItemsInput {
-    def apply(TransactItems: TransactGetItemList,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined): TransactGetItemsInput = {
+    def apply(
+        TransactItems: TransactGetItemList,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
+    ): TransactGetItemsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TransactItems" -> TransactItems.asInstanceOf[js.Any],
         "ReturnConsumedCapacity" -> ReturnConsumedCapacity.map { x =>
@@ -4012,13 +4318,18 @@ package dynamodb {
   }
 
   object TransactGetItemsOutput {
-    def apply(ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
-              Responses: js.UndefOr[ItemResponseList] = js.undefined): TransactGetItemsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ConsumedCapacity" -> ConsumedCapacity.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Responses" -> Responses.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
+        Responses: js.UndefOr[ItemResponseList] = js.undefined
+    ): TransactGetItemsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConsumedCapacity" -> ConsumedCapacity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Responses" -> Responses.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransactGetItemsOutput]
     }
@@ -4036,10 +4347,12 @@ package dynamodb {
   }
 
   object TransactWriteItem {
-    def apply(ConditionCheck: js.UndefOr[ConditionCheck] = js.undefined,
-              Delete: js.UndefOr[Delete] = js.undefined,
-              Put: js.UndefOr[Put] = js.undefined,
-              Update: js.UndefOr[Update] = js.undefined): TransactWriteItem = {
+    def apply(
+        ConditionCheck: js.UndefOr[ConditionCheck] = js.undefined,
+        Delete: js.UndefOr[Delete] = js.undefined,
+        Put: js.UndefOr[Put] = js.undefined,
+        Update: js.UndefOr[Update] = js.undefined
+    ): TransactWriteItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConditionCheck" -> ConditionCheck.map { x =>
           x.asInstanceOf[js.Any]
@@ -4102,11 +4415,14 @@ package dynamodb {
         ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetricsPerTable] = js.undefined
     ): TransactWriteItemsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ConsumedCapacity" -> ConsumedCapacity.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ItemCollectionMetrics" -> ItemCollectionMetrics.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ConsumedCapacity" -> ConsumedCapacity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ItemCollectionMetrics" -> ItemCollectionMetrics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransactWriteItemsOutput]
     }
@@ -4119,7 +4435,10 @@ package dynamodb {
   }
 
   object UntagResourceInput {
-    def apply(ResourceArn: ResourceArnString, TagKeys: TagKeyList): UntagResourceInput = {
+    def apply(
+        ResourceArn: ResourceArnString,
+        TagKeys: TagKeyList
+    ): UntagResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
@@ -4182,8 +4501,10 @@ package dynamodb {
   }
 
   object UpdateContinuousBackupsInput {
-    def apply(PointInTimeRecoverySpecification: PointInTimeRecoverySpecification,
-              TableName: TableName): UpdateContinuousBackupsInput = {
+    def apply(
+        PointInTimeRecoverySpecification: PointInTimeRecoverySpecification,
+        TableName: TableName
+    ): UpdateContinuousBackupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PointInTimeRecoverySpecification" -> PointInTimeRecoverySpecification.asInstanceOf[js.Any],
         "TableName"                        -> TableName.asInstanceOf[js.Any]
@@ -4202,10 +4523,11 @@ package dynamodb {
     def apply(
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): UpdateContinuousBackupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("ContinuousBackupsDescription" -> ContinuousBackupsDescription.map {
-        x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ContinuousBackupsDescription" -> ContinuousBackupsDescription.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContinuousBackupsOutput]
     }
@@ -4221,7 +4543,10 @@ package dynamodb {
   }
 
   object UpdateGlobalSecondaryIndexAction {
-    def apply(IndexName: IndexName, ProvisionedThroughput: ProvisionedThroughput): UpdateGlobalSecondaryIndexAction = {
+    def apply(
+        IndexName: IndexName,
+        ProvisionedThroughput: ProvisionedThroughput
+    ): UpdateGlobalSecondaryIndexAction = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IndexName"             -> IndexName.asInstanceOf[js.Any],
         "ProvisionedThroughput" -> ProvisionedThroughput.asInstanceOf[js.Any]
@@ -4238,7 +4563,10 @@ package dynamodb {
   }
 
   object UpdateGlobalTableInput {
-    def apply(GlobalTableName: TableName, ReplicaUpdates: ReplicaUpdateList): UpdateGlobalTableInput = {
+    def apply(
+        GlobalTableName: TableName,
+        ReplicaUpdates: ReplicaUpdateList
+    ): UpdateGlobalTableInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any],
         "ReplicaUpdates"  -> ReplicaUpdates.asInstanceOf[js.Any]
@@ -4254,10 +4582,14 @@ package dynamodb {
   }
 
   object UpdateGlobalTableOutput {
-    def apply(GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined): UpdateGlobalTableOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableDescription" -> GlobalTableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
+    ): UpdateGlobalTableOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableDescription" -> GlobalTableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGlobalTableOutput]
     }
@@ -4319,11 +4651,14 @@ package dynamodb {
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicaSettings: js.UndefOr[ReplicaSettingsDescriptionList] = js.undefined
     ): UpdateGlobalTableSettingsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("GlobalTableName" -> GlobalTableName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ReplicaSettings" -> ReplicaSettings.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GlobalTableName" -> GlobalTableName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReplicaSettings" -> ReplicaSettings.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGlobalTableSettingsOutput]
     }
@@ -4349,18 +4684,20 @@ package dynamodb {
   }
 
   object UpdateItemInput {
-    def apply(Key: Key,
-              TableName: TableName,
-              AttributeUpdates: js.UndefOr[AttributeUpdates] = js.undefined,
-              ConditionExpression: js.UndefOr[ConditionExpression] = js.undefined,
-              ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
-              Expected: js.UndefOr[ExpectedAttributeMap] = js.undefined,
-              ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
-              ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
-              ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
-              ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
-              ReturnValues: js.UndefOr[ReturnValue] = js.undefined,
-              UpdateExpression: js.UndefOr[UpdateExpression] = js.undefined): UpdateItemInput = {
+    def apply(
+        Key: Key,
+        TableName: TableName,
+        AttributeUpdates: js.UndefOr[AttributeUpdates] = js.undefined,
+        ConditionExpression: js.UndefOr[ConditionExpression] = js.undefined,
+        ConditionalOperator: js.UndefOr[ConditionalOperator] = js.undefined,
+        Expected: js.UndefOr[ExpectedAttributeMap] = js.undefined,
+        ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
+        ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
+        ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
+        ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
+        ReturnValues: js.UndefOr[ReturnValue] = js.undefined,
+        UpdateExpression: js.UndefOr[UpdateExpression] = js.undefined
+    ): UpdateItemInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any],
@@ -4411,9 +4748,11 @@ package dynamodb {
   }
 
   object UpdateItemOutput {
-    def apply(Attributes: js.UndefOr[AttributeMap] = js.undefined,
-              ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
-              ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined): UpdateItemOutput = {
+    def apply(
+        Attributes: js.UndefOr[AttributeMap] = js.undefined,
+        ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined
+    ): UpdateItemOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -4445,13 +4784,15 @@ package dynamodb {
   }
 
   object UpdateTableInput {
-    def apply(TableName: TableName,
-              AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
-              BillingMode: js.UndefOr[BillingMode] = js.undefined,
-              GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexUpdateList] = js.undefined,
-              ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
-              SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
-              StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined): UpdateTableInput = {
+    def apply(
+        TableName: TableName,
+        AttributeDefinitions: js.UndefOr[AttributeDefinitions] = js.undefined,
+        BillingMode: js.UndefOr[BillingMode] = js.undefined,
+        GlobalSecondaryIndexUpdates: js.UndefOr[GlobalSecondaryIndexUpdateList] = js.undefined,
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
+        SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
+        StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined
+    ): UpdateTableInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TableName" -> TableName.asInstanceOf[js.Any],
         "AttributeDefinitions" -> AttributeDefinitions.map { x =>
@@ -4487,10 +4828,14 @@ package dynamodb {
   }
 
   object UpdateTableOutput {
-    def apply(TableDescription: js.UndefOr[TableDescription] = js.undefined): UpdateTableOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TableDescription" -> TableDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TableDescription: js.UndefOr[TableDescription] = js.undefined
+    ): UpdateTableOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TableDescription" -> TableDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTableOutput]
     }
@@ -4506,7 +4851,10 @@ package dynamodb {
   }
 
   object UpdateTimeToLiveInput {
-    def apply(TableName: TableName, TimeToLiveSpecification: TimeToLiveSpecification): UpdateTimeToLiveInput = {
+    def apply(
+        TableName: TableName,
+        TimeToLiveSpecification: TimeToLiveSpecification
+    ): UpdateTimeToLiveInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TableName"               -> TableName.asInstanceOf[js.Any],
         "TimeToLiveSpecification" -> TimeToLiveSpecification.asInstanceOf[js.Any]
@@ -4522,10 +4870,14 @@ package dynamodb {
   }
 
   object UpdateTimeToLiveOutput {
-    def apply(TimeToLiveSpecification: js.UndefOr[TimeToLiveSpecification] = js.undefined): UpdateTimeToLiveOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("TimeToLiveSpecification" -> TimeToLiveSpecification.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        TimeToLiveSpecification: js.UndefOr[TimeToLiveSpecification] = js.undefined
+    ): UpdateTimeToLiveOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "TimeToLiveSpecification" -> TimeToLiveSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTimeToLiveOutput]
     }
@@ -4541,13 +4893,18 @@ package dynamodb {
   }
 
   object WriteRequest {
-    def apply(DeleteRequest: js.UndefOr[DeleteRequest] = js.undefined,
-              PutRequest: js.UndefOr[PutRequest] = js.undefined): WriteRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("DeleteRequest" -> DeleteRequest.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "PutRequest" -> PutRequest.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DeleteRequest: js.UndefOr[DeleteRequest] = js.undefined,
+        PutRequest: js.UndefOr[PutRequest] = js.undefined
+    ): WriteRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DeleteRequest" -> DeleteRequest.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PutRequest" -> PutRequest.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteRequest]
     }

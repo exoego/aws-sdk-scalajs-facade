@@ -13,7 +13,6 @@ package object kinesisvideo {
   type DataRetentionChangeInHours   = Int
   type DataRetentionInHours         = Int
   type DeviceName                   = String
-  type ErrorMessage                 = String
   type KmsKeyId                     = String
   type ListStreamsInputLimit        = Int
   type MediaType                    = String
@@ -60,22 +59,6 @@ package kinesisvideo {
       IndexedSeq(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL)
   }
 
-  /**
-    * The number of streams created for the account is too high.
-    */
-  @js.native
-  trait AccountStreamLimitExceededExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.
-    */
-  @js.native
-  trait ClientLimitExceededExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
   object ComparisonOperatorEnum {
     val BEGINS_WITH = "BEGINS_WITH"
 
@@ -89,14 +72,18 @@ package kinesisvideo {
     var DeviceName: js.UndefOr[DeviceName]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var MediaType: js.UndefOr[MediaType]
+    var Tags: js.UndefOr[ResourceTags]
   }
 
   object CreateStreamInput {
-    def apply(StreamName: StreamName,
-              DataRetentionInHours: js.UndefOr[DataRetentionInHours] = js.undefined,
-              DeviceName: js.UndefOr[DeviceName] = js.undefined,
-              KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              MediaType: js.UndefOr[MediaType] = js.undefined): CreateStreamInput = {
+    def apply(
+        StreamName: StreamName,
+        DataRetentionInHours: js.UndefOr[DataRetentionInHours] = js.undefined,
+        DeviceName: js.UndefOr[DeviceName] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        MediaType: js.UndefOr[MediaType] = js.undefined,
+        Tags: js.UndefOr[ResourceTags] = js.undefined
+    ): CreateStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StreamName" -> StreamName.asInstanceOf[js.Any],
         "DataRetentionInHours" -> DataRetentionInHours.map { x =>
@@ -109,6 +96,9 @@ package kinesisvideo {
           x.asInstanceOf[js.Any]
         },
         "MediaType" -> MediaType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -123,10 +113,14 @@ package kinesisvideo {
   }
 
   object CreateStreamOutput {
-    def apply(StreamARN: js.UndefOr[ResourceARN] = js.undefined): CreateStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StreamARN" -> StreamARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined
+    ): CreateStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StreamARN" -> StreamARN.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateStreamOutput]
     }
@@ -139,7 +133,10 @@ package kinesisvideo {
   }
 
   object DeleteStreamInput {
-    def apply(StreamARN: ResourceARN, CurrentVersion: js.UndefOr[Version] = js.undefined): DeleteStreamInput = {
+    def apply(
+        StreamARN: ResourceARN,
+        CurrentVersion: js.UndefOr[Version] = js.undefined
+    ): DeleteStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StreamARN" -> StreamARN.asInstanceOf[js.Any],
         "CurrentVersion" -> CurrentVersion.map { x =>
@@ -155,8 +152,10 @@ package kinesisvideo {
   trait DeleteStreamOutput extends js.Object {}
 
   object DeleteStreamOutput {
-    def apply(): DeleteStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteStreamOutput]
     }
@@ -169,13 +168,18 @@ package kinesisvideo {
   }
 
   object DescribeStreamInput {
-    def apply(StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined): DescribeStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StreamARN" -> StreamARN.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StreamName" -> StreamName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): DescribeStreamInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StreamARN" -> StreamARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StreamName" -> StreamName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamInput]
     }
@@ -187,21 +191,17 @@ package kinesisvideo {
   }
 
   object DescribeStreamOutput {
-    def apply(StreamInfo: js.UndefOr[StreamInfo] = js.undefined): DescribeStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("StreamInfo" -> StreamInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        StreamInfo: js.UndefOr[StreamInfo] = js.undefined
+    ): DescribeStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "StreamInfo" -> StreamInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeStreamOutput]
     }
-  }
-
-  /**
-    * Not implemented.
-    */
-  @js.native
-  trait DeviceStreamLimitExceededExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   @js.native
@@ -212,15 +212,20 @@ package kinesisvideo {
   }
 
   object GetDataEndpointInput {
-    def apply(APIName: APIName,
-              StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined): GetDataEndpointInput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("APIName" -> APIName.asInstanceOf[js.Any], "StreamARN" -> StreamARN.map { x =>
+    def apply(
+        APIName: APIName,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): GetDataEndpointInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "APIName" -> APIName.asInstanceOf[js.Any],
+        "StreamARN" -> StreamARN.map { x =>
           x.asInstanceOf[js.Any]
-        }, "StreamName" -> StreamName.map { x =>
+        },
+        "StreamName" -> StreamName.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataEndpointInput]
     }
@@ -232,37 +237,17 @@ package kinesisvideo {
   }
 
   object GetDataEndpointOutput {
-    def apply(DataEndpoint: js.UndefOr[DataEndpoint] = js.undefined): GetDataEndpointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("DataEndpoint" -> DataEndpoint.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DataEndpoint: js.UndefOr[DataEndpoint] = js.undefined
+    ): GetDataEndpointOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DataEndpoint" -> DataEndpoint.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDataEndpointOutput]
     }
-  }
-
-  /**
-    * The value for this input parameter is invalid.
-    */
-  @js.native
-  trait InvalidArgumentExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Not implemented.
-    */
-  @js.native
-  trait InvalidDeviceExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * The format of the <code>StreamARN</code> is invalid.
-    */
-  @js.native
-  trait InvalidResourceFormatExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   @js.native
@@ -273,9 +258,11 @@ package kinesisvideo {
   }
 
   object ListStreamsInput {
-    def apply(MaxResults: js.UndefOr[ListStreamsInputLimit] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              StreamNameCondition: js.UndefOr[StreamNameCondition] = js.undefined): ListStreamsInput = {
+    def apply(
+        MaxResults: js.UndefOr[ListStreamsInputLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StreamNameCondition: js.UndefOr[StreamNameCondition] = js.undefined
+    ): ListStreamsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxResults" -> MaxResults.map { x =>
           x.asInstanceOf[js.Any]
@@ -299,13 +286,18 @@ package kinesisvideo {
   }
 
   object ListStreamsOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StreamInfoList: js.UndefOr[StreamInfoList] = js.undefined): ListStreamsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "StreamInfoList" -> StreamInfoList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StreamInfoList: js.UndefOr[StreamInfoList] = js.undefined
+    ): ListStreamsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StreamInfoList" -> StreamInfoList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListStreamsOutput]
     }
@@ -319,9 +311,11 @@ package kinesisvideo {
   }
 
   object ListTagsForStreamInput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined): ListTagsForStreamInput = {
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): ListTagsForStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NextToken" -> NextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -345,40 +339,21 @@ package kinesisvideo {
   }
 
   object ListTagsForStreamOutput {
-    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
-              Tags: js.UndefOr[ResourceTags] = js.undefined): ListTagsForStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Tags" -> Tags.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Tags: js.UndefOr[ResourceTags] = js.undefined
+    ): ListTagsForStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForStreamOutput]
     }
-  }
-
-  /**
-    * The caller is not authorized to perform this operation.
-    */
-  @js.native
-  trait NotAuthorizedExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * The stream is currently not available for this operation.
-    */
-  @js.native
-  trait ResourceInUseExceptionException extends js.Object {
-    val Message: ErrorMessage
-  }
-
-  /**
-    * Amazon Kinesis Video Streams can't find the stream that you specified.
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   object StatusEnum {
@@ -407,15 +382,17 @@ package kinesisvideo {
   }
 
   object StreamInfo {
-    def apply(CreationTime: js.UndefOr[Timestamp] = js.undefined,
-              DataRetentionInHours: js.UndefOr[DataRetentionInHours] = js.undefined,
-              DeviceName: js.UndefOr[DeviceName] = js.undefined,
-              KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-              MediaType: js.UndefOr[MediaType] = js.undefined,
-              Status: js.UndefOr[Status] = js.undefined,
-              StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined,
-              Version: js.UndefOr[Version] = js.undefined): StreamInfo = {
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DataRetentionInHours: js.UndefOr[DataRetentionInHours] = js.undefined,
+        DeviceName: js.UndefOr[DeviceName] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        MediaType: js.UndefOr[MediaType] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined,
+        Version: js.UndefOr[Version] = js.undefined
+    ): StreamInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -460,13 +437,18 @@ package kinesisvideo {
   }
 
   object StreamNameCondition {
-    def apply(ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
-              ComparisonValue: js.UndefOr[StreamName] = js.undefined): StreamNameCondition = {
-      val _fields = IndexedSeq[(String, js.Any)]("ComparisonOperator" -> ComparisonOperator.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "ComparisonValue" -> ComparisonValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
+        ComparisonValue: js.UndefOr[StreamName] = js.undefined
+    ): StreamNameCondition = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ComparisonOperator" -> ComparisonOperator.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ComparisonValue" -> ComparisonValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StreamNameCondition]
     }
@@ -480,15 +462,20 @@ package kinesisvideo {
   }
 
   object TagStreamInput {
-    def apply(Tags: ResourceTags,
-              StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined): TagStreamInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Tags" -> Tags.asInstanceOf[js.Any], "StreamARN" -> StreamARN.map {
-        x =>
+    def apply(
+        Tags: ResourceTags,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): TagStreamInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.asInstanceOf[js.Any],
+        "StreamARN" -> StreamARN.map { x =>
           x.asInstanceOf[js.Any]
-      }, "StreamName" -> StreamName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        },
+        "StreamName" -> StreamName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagStreamInput]
     }
@@ -498,19 +485,13 @@ package kinesisvideo {
   trait TagStreamOutput extends js.Object {}
 
   object TagStreamOutput {
-    def apply(): TagStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): TagStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagStreamOutput]
     }
-  }
-
-  /**
-    * You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams support up to 50 tags.
-    */
-  @js.native
-  trait TagsPerResourceExceededLimitExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 
   @js.native
@@ -521,9 +502,11 @@ package kinesisvideo {
   }
 
   object UntagStreamInput {
-    def apply(TagKeyList: TagKeyList,
-              StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined): UntagStreamInput = {
+    def apply(
+        TagKeyList: TagKeyList,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): UntagStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TagKeyList" -> TagKeyList.asInstanceOf[js.Any],
         "StreamARN" -> StreamARN.map { x =>
@@ -542,8 +525,10 @@ package kinesisvideo {
   trait UntagStreamOutput extends js.Object {}
 
   object UntagStreamOutput {
-    def apply(): UntagStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UntagStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagStreamOutput]
     }
@@ -559,11 +544,13 @@ package kinesisvideo {
   }
 
   object UpdateDataRetentionInput {
-    def apply(CurrentVersion: Version,
-              DataRetentionChangeInHours: DataRetentionChangeInHours,
-              Operation: UpdateDataRetentionOperation,
-              StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined): UpdateDataRetentionInput = {
+    def apply(
+        CurrentVersion: Version,
+        DataRetentionChangeInHours: DataRetentionChangeInHours,
+        Operation: UpdateDataRetentionOperation,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): UpdateDataRetentionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentVersion"             -> CurrentVersion.asInstanceOf[js.Any],
         "DataRetentionChangeInHours" -> DataRetentionChangeInHours.asInstanceOf[js.Any],
@@ -591,8 +578,10 @@ package kinesisvideo {
   trait UpdateDataRetentionOutput extends js.Object {}
 
   object UpdateDataRetentionOutput {
-    def apply(): UpdateDataRetentionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateDataRetentionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDataRetentionOutput]
     }
@@ -608,11 +597,13 @@ package kinesisvideo {
   }
 
   object UpdateStreamInput {
-    def apply(CurrentVersion: Version,
-              DeviceName: js.UndefOr[DeviceName] = js.undefined,
-              MediaType: js.UndefOr[MediaType] = js.undefined,
-              StreamARN: js.UndefOr[ResourceARN] = js.undefined,
-              StreamName: js.UndefOr[StreamName] = js.undefined): UpdateStreamInput = {
+    def apply(
+        CurrentVersion: Version,
+        DeviceName: js.UndefOr[DeviceName] = js.undefined,
+        MediaType: js.UndefOr[MediaType] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): UpdateStreamInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any],
         "DeviceName" -> DeviceName.map { x =>
@@ -637,18 +628,12 @@ package kinesisvideo {
   trait UpdateStreamOutput extends js.Object {}
 
   object UpdateStreamOutput {
-    def apply(): UpdateStreamOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateStreamOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateStreamOutput]
     }
-  }
-
-  /**
-    * The stream version that you specified is not the latest version. To get the latest version, use the [[http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html|DescribeStream]] API.
-    */
-  @js.native
-  trait VersionMismatchExceptionException extends js.Object {
-    val Message: ErrorMessage
   }
 }

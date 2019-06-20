@@ -15,6 +15,7 @@ package object cloudwatch {
   type AlarmName                        = String
   type AlarmNamePrefix                  = String
   type AlarmNames                       = js.Array[AlarmName]
+  type AmazonResourceName               = String
   type ComparisonOperator               = String
   type Counts                           = js.Array[DatapointValue]
   type DashboardArn                     = String
@@ -78,6 +79,10 @@ package object cloudwatch {
   type Statistics        = js.Array[Statistic]
   type StatusCode        = String
   type StorageResolution = Int
+  type TagKey            = String
+  type TagKeyList        = js.Array[TagKey]
+  type TagList           = js.Array[Tag]
+  type TagValue          = String
   type Threshold         = Double
   type Timestamp         = js.Date
   type Timestamps        = js.Array[Timestamp]
@@ -105,10 +110,13 @@ package cloudwatch {
     def getMetricWidgetImage(params: GetMetricWidgetImageInput): Request[GetMetricWidgetImageOutput] = js.native
     def listDashboards(params: ListDashboardsInput): Request[ListDashboardsOutput]                   = js.native
     def listMetrics(params: ListMetricsInput): Request[ListMetricsOutput]                            = js.native
+    def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput]    = js.native
     def putDashboard(params: PutDashboardInput): Request[PutDashboardOutput]                         = js.native
     def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object]                              = js.native
     def putMetricData(params: PutMetricDataInput): Request[js.Object]                                = js.native
     def setAlarmState(params: SetAlarmStateInput): Request[js.Object]                                = js.native
+    def tagResource(params: TagResourceInput): Request[TagResourceOutput]                            = js.native
+    def untagResource(params: UntagResourceInput): Request[UntagResourceOutput]                      = js.native
   }
 
   /**
@@ -124,11 +132,13 @@ package cloudwatch {
   }
 
   object AlarmHistoryItem {
-    def apply(AlarmName: js.UndefOr[AlarmName] = js.undefined,
-              HistoryData: js.UndefOr[HistoryData] = js.undefined,
-              HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
-              HistorySummary: js.UndefOr[HistorySummary] = js.undefined,
-              Timestamp: js.UndefOr[Timestamp] = js.undefined): AlarmHistoryItem = {
+    def apply(
+        AlarmName: js.UndefOr[AlarmName] = js.undefined,
+        HistoryData: js.UndefOr[HistoryData] = js.undefined,
+        HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
+        HistorySummary: js.UndefOr[HistorySummary] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): AlarmHistoryItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlarmName" -> AlarmName.map { x =>
           x.asInstanceOf[js.Any]
@@ -173,10 +183,12 @@ package cloudwatch {
   }
 
   object DashboardEntry {
-    def apply(DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
-              DashboardName: js.UndefOr[DashboardName] = js.undefined,
-              LastModified: js.UndefOr[LastModified] = js.undefined,
-              Size: js.UndefOr[Size] = js.undefined): DashboardEntry = {
+    def apply(
+        DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
+        DashboardName: js.UndefOr[DashboardName] = js.undefined,
+        LastModified: js.UndefOr[LastModified] = js.undefined,
+        Size: js.UndefOr[Size] = js.undefined
+    ): DashboardEntry = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DashboardArn" -> DashboardArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -206,13 +218,18 @@ package cloudwatch {
   }
 
   object DashboardValidationMessage {
-    def apply(DataPath: js.UndefOr[DataPath] = js.undefined,
-              Message: js.UndefOr[Message] = js.undefined): DashboardValidationMessage = {
-      val _fields = IndexedSeq[(String, js.Any)]("DataPath" -> DataPath.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Message" -> Message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DataPath: js.UndefOr[DataPath] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined
+    ): DashboardValidationMessage = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DataPath" -> DataPath.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DashboardValidationMessage]
     }
@@ -234,14 +251,16 @@ package cloudwatch {
   }
 
   object Datapoint {
-    def apply(Average: js.UndefOr[DatapointValue] = js.undefined,
-              ExtendedStatistics: js.UndefOr[DatapointValueMap] = js.undefined,
-              Maximum: js.UndefOr[DatapointValue] = js.undefined,
-              Minimum: js.UndefOr[DatapointValue] = js.undefined,
-              SampleCount: js.UndefOr[DatapointValue] = js.undefined,
-              Sum: js.UndefOr[DatapointValue] = js.undefined,
-              Timestamp: js.UndefOr[Timestamp] = js.undefined,
-              Unit: js.UndefOr[StandardUnit] = js.undefined): Datapoint = {
+    def apply(
+        Average: js.UndefOr[DatapointValue] = js.undefined,
+        ExtendedStatistics: js.UndefOr[DatapointValueMap] = js.undefined,
+        Maximum: js.UndefOr[DatapointValue] = js.undefined,
+        Minimum: js.UndefOr[DatapointValue] = js.undefined,
+        SampleCount: js.UndefOr[DatapointValue] = js.undefined,
+        Sum: js.UndefOr[DatapointValue] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined,
+        Unit: js.UndefOr[StandardUnit] = js.undefined
+    ): Datapoint = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Average" -> Average.map { x =>
           x.asInstanceOf[js.Any]
@@ -279,9 +298,12 @@ package cloudwatch {
   }
 
   object DeleteAlarmsInput {
-    def apply(AlarmNames: AlarmNames): DeleteAlarmsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("AlarmNames" -> AlarmNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AlarmNames: AlarmNames
+    ): DeleteAlarmsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAlarmsInput]
     }
@@ -293,9 +315,12 @@ package cloudwatch {
   }
 
   object DeleteDashboardsInput {
-    def apply(DashboardNames: DashboardNames): DeleteDashboardsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("DashboardNames" -> DashboardNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DashboardNames: DashboardNames
+    ): DeleteDashboardsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DashboardNames" -> DashboardNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDashboardsInput]
     }
@@ -305,8 +330,10 @@ package cloudwatch {
   trait DeleteDashboardsOutput extends js.Object {}
 
   object DeleteDashboardsOutput {
-    def apply(): DeleteDashboardsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteDashboardsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDashboardsOutput]
     }
@@ -323,12 +350,14 @@ package cloudwatch {
   }
 
   object DescribeAlarmHistoryInput {
-    def apply(AlarmName: js.UndefOr[AlarmName] = js.undefined,
-              EndDate: js.UndefOr[Timestamp] = js.undefined,
-              HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
-              MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              StartDate: js.UndefOr[Timestamp] = js.undefined): DescribeAlarmHistoryInput = {
+    def apply(
+        AlarmName: js.UndefOr[AlarmName] = js.undefined,
+        EndDate: js.UndefOr[Timestamp] = js.undefined,
+        HistoryItemType: js.UndefOr[HistoryItemType] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StartDate: js.UndefOr[Timestamp] = js.undefined
+    ): DescribeAlarmHistoryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlarmName" -> AlarmName.map { x =>
           x.asInstanceOf[js.Any]
@@ -361,13 +390,18 @@ package cloudwatch {
   }
 
   object DescribeAlarmHistoryOutput {
-    def apply(AlarmHistoryItems: js.UndefOr[AlarmHistoryItems] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAlarmHistoryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("AlarmHistoryItems" -> AlarmHistoryItems.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AlarmHistoryItems: js.UndefOr[AlarmHistoryItems] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAlarmHistoryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AlarmHistoryItems" -> AlarmHistoryItems.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAlarmHistoryOutput]
     }
@@ -385,13 +419,15 @@ package cloudwatch {
   }
 
   object DescribeAlarmsForMetricInput {
-    def apply(MetricName: MetricName,
-              Namespace: Namespace,
-              Dimensions: js.UndefOr[Dimensions] = js.undefined,
-              ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
-              Period: js.UndefOr[Period] = js.undefined,
-              Statistic: js.UndefOr[Statistic] = js.undefined,
-              Unit: js.UndefOr[StandardUnit] = js.undefined): DescribeAlarmsForMetricInput = {
+    def apply(
+        MetricName: MetricName,
+        Namespace: Namespace,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
+        Period: js.UndefOr[Period] = js.undefined,
+        Statistic: js.UndefOr[Statistic] = js.undefined,
+        Unit: js.UndefOr[StandardUnit] = js.undefined
+    ): DescribeAlarmsForMetricInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any],
@@ -422,10 +458,14 @@ package cloudwatch {
   }
 
   object DescribeAlarmsForMetricOutput {
-    def apply(MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined): DescribeAlarmsForMetricOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MetricAlarms" -> MetricAlarms.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined
+    ): DescribeAlarmsForMetricOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MetricAlarms" -> MetricAlarms.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAlarmsForMetricOutput]
     }
@@ -442,12 +482,14 @@ package cloudwatch {
   }
 
   object DescribeAlarmsInput {
-    def apply(ActionPrefix: js.UndefOr[ActionPrefix] = js.undefined,
-              AlarmNamePrefix: js.UndefOr[AlarmNamePrefix] = js.undefined,
-              AlarmNames: js.UndefOr[AlarmNames] = js.undefined,
-              MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              StateValue: js.UndefOr[StateValue] = js.undefined): DescribeAlarmsInput = {
+    def apply(
+        ActionPrefix: js.UndefOr[ActionPrefix] = js.undefined,
+        AlarmNamePrefix: js.UndefOr[AlarmNamePrefix] = js.undefined,
+        AlarmNames: js.UndefOr[AlarmNames] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StateValue: js.UndefOr[StateValue] = js.undefined
+    ): DescribeAlarmsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionPrefix" -> ActionPrefix.map { x =>
           x.asInstanceOf[js.Any]
@@ -480,13 +522,18 @@ package cloudwatch {
   }
 
   object DescribeAlarmsOutput {
-    def apply(MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): DescribeAlarmsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MetricAlarms" -> MetricAlarms.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeAlarmsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MetricAlarms" -> MetricAlarms.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAlarmsOutput]
     }
@@ -502,10 +549,14 @@ package cloudwatch {
   }
 
   object Dimension {
-    def apply(Name: DimensionName, Value: DimensionValue): Dimension = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: DimensionName,
+        Value: DimensionValue
+    ): Dimension = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name"  -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Dimension]
     }
@@ -521,10 +572,16 @@ package cloudwatch {
   }
 
   object DimensionFilter {
-    def apply(Name: DimensionName, Value: js.UndefOr[DimensionValue] = js.undefined): DimensionFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Name: DimensionName,
+        Value: js.UndefOr[DimensionValue] = js.undefined
+    ): DimensionFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DimensionFilter]
     }
@@ -536,9 +593,12 @@ package cloudwatch {
   }
 
   object DisableAlarmActionsInput {
-    def apply(AlarmNames: AlarmNames): DisableAlarmActionsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("AlarmNames" -> AlarmNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AlarmNames: AlarmNames
+    ): DisableAlarmActionsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisableAlarmActionsInput]
     }
@@ -550,9 +610,12 @@ package cloudwatch {
   }
 
   object EnableAlarmActionsInput {
-    def apply(AlarmNames: AlarmNames): EnableAlarmActionsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("AlarmNames" -> AlarmNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AlarmNames: AlarmNames
+    ): EnableAlarmActionsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EnableAlarmActionsInput]
     }
@@ -564,9 +627,12 @@ package cloudwatch {
   }
 
   object GetDashboardInput {
-    def apply(DashboardName: DashboardName): GetDashboardInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("DashboardName" -> DashboardName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DashboardName: DashboardName
+    ): GetDashboardInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DashboardName" -> DashboardName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDashboardInput]
     }
@@ -580,9 +646,11 @@ package cloudwatch {
   }
 
   object GetDashboardOutput {
-    def apply(DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
-              DashboardBody: js.UndefOr[DashboardBody] = js.undefined,
-              DashboardName: js.UndefOr[DashboardName] = js.undefined): GetDashboardOutput = {
+    def apply(
+        DashboardArn: js.UndefOr[DashboardArn] = js.undefined,
+        DashboardBody: js.UndefOr[DashboardBody] = js.undefined,
+        DashboardName: js.UndefOr[DashboardName] = js.undefined
+    ): GetDashboardOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DashboardArn" -> DashboardArn.map { x =>
           x.asInstanceOf[js.Any]
@@ -610,12 +678,14 @@ package cloudwatch {
   }
 
   object GetMetricDataInput {
-    def apply(EndTime: Timestamp,
-              MetricDataQueries: MetricDataQueries,
-              StartTime: Timestamp,
-              MaxDatapoints: js.UndefOr[GetMetricDataMaxDatapoints] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined,
-              ScanBy: js.UndefOr[ScanBy] = js.undefined): GetMetricDataInput = {
+    def apply(
+        EndTime: Timestamp,
+        MetricDataQueries: MetricDataQueries,
+        StartTime: Timestamp,
+        MaxDatapoints: js.UndefOr[GetMetricDataMaxDatapoints] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ScanBy: js.UndefOr[ScanBy] = js.undefined
+    ): GetMetricDataInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"           -> EndTime.asInstanceOf[js.Any],
         "MetricDataQueries" -> MetricDataQueries.asInstanceOf[js.Any],
@@ -637,18 +707,28 @@ package cloudwatch {
 
   @js.native
   trait GetMetricDataOutput extends js.Object {
+    var Messages: js.UndefOr[MetricDataResultMessages]
     var MetricDataResults: js.UndefOr[MetricDataResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
   object GetMetricDataOutput {
-    def apply(MetricDataResults: js.UndefOr[MetricDataResults] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): GetMetricDataOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MetricDataResults" -> MetricDataResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Messages: js.UndefOr[MetricDataResultMessages] = js.undefined,
+        MetricDataResults: js.UndefOr[MetricDataResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetMetricDataOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Messages" -> Messages.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MetricDataResults" -> MetricDataResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMetricDataOutput]
     }
@@ -668,15 +748,17 @@ package cloudwatch {
   }
 
   object GetMetricStatisticsInput {
-    def apply(EndTime: Timestamp,
-              MetricName: MetricName,
-              Namespace: Namespace,
-              Period: Period,
-              StartTime: Timestamp,
-              Dimensions: js.UndefOr[Dimensions] = js.undefined,
-              ExtendedStatistics: js.UndefOr[ExtendedStatistics] = js.undefined,
-              Statistics: js.UndefOr[Statistics] = js.undefined,
-              Unit: js.UndefOr[StandardUnit] = js.undefined): GetMetricStatisticsInput = {
+    def apply(
+        EndTime: Timestamp,
+        MetricName: MetricName,
+        Namespace: Namespace,
+        Period: Period,
+        StartTime: Timestamp,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        ExtendedStatistics: js.UndefOr[ExtendedStatistics] = js.undefined,
+        Statistics: js.UndefOr[Statistics] = js.undefined,
+        Unit: js.UndefOr[StandardUnit] = js.undefined
+    ): GetMetricStatisticsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndTime"    -> EndTime.asInstanceOf[js.Any],
         "MetricName" -> MetricName.asInstanceOf[js.Any],
@@ -708,13 +790,18 @@ package cloudwatch {
   }
 
   object GetMetricStatisticsOutput {
-    def apply(Datapoints: js.UndefOr[Datapoints] = js.undefined,
-              Label: js.UndefOr[MetricLabel] = js.undefined): GetMetricStatisticsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Datapoints" -> Datapoints.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Label" -> Label.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Datapoints: js.UndefOr[Datapoints] = js.undefined,
+        Label: js.UndefOr[MetricLabel] = js.undefined
+    ): GetMetricStatisticsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Datapoints" -> Datapoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Label" -> Label.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMetricStatisticsOutput]
     }
@@ -727,8 +814,10 @@ package cloudwatch {
   }
 
   object GetMetricWidgetImageInput {
-    def apply(MetricWidget: MetricWidget,
-              OutputFormat: js.UndefOr[OutputFormat] = js.undefined): GetMetricWidgetImageInput = {
+    def apply(
+        MetricWidget: MetricWidget,
+        OutputFormat: js.UndefOr[OutputFormat] = js.undefined
+    ): GetMetricWidgetImageInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MetricWidget" -> MetricWidget.asInstanceOf[js.Any],
         "OutputFormat" -> OutputFormat.map { x =>
@@ -746,10 +835,14 @@ package cloudwatch {
   }
 
   object GetMetricWidgetImageOutput {
-    def apply(MetricWidgetImage: js.UndefOr[MetricWidgetImage] = js.undefined): GetMetricWidgetImageOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("MetricWidgetImage" -> MetricWidgetImage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MetricWidgetImage: js.UndefOr[MetricWidgetImage] = js.undefined
+    ): GetMetricWidgetImageOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MetricWidgetImage" -> MetricWidgetImage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetMetricWidgetImageOutput]
     }
@@ -770,13 +863,18 @@ package cloudwatch {
   }
 
   object ListDashboardsInput {
-    def apply(DashboardNamePrefix: js.UndefOr[DashboardNamePrefix] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDashboardsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("DashboardNamePrefix" -> DashboardNamePrefix.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DashboardNamePrefix: js.UndefOr[DashboardNamePrefix] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDashboardsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DashboardNamePrefix" -> DashboardNamePrefix.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDashboardsInput]
     }
@@ -789,13 +887,18 @@ package cloudwatch {
   }
 
   object ListDashboardsOutput {
-    def apply(DashboardEntries: js.UndefOr[DashboardEntries] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListDashboardsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("DashboardEntries" -> DashboardEntries.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        DashboardEntries: js.UndefOr[DashboardEntries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDashboardsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DashboardEntries" -> DashboardEntries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDashboardsOutput]
     }
@@ -810,10 +913,12 @@ package cloudwatch {
   }
 
   object ListMetricsInput {
-    def apply(Dimensions: js.UndefOr[DimensionFilters] = js.undefined,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Namespace: js.UndefOr[Namespace] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListMetricsInput = {
+    def apply(
+        Dimensions: js.UndefOr[DimensionFilters] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Dimensions" -> Dimensions.map { x =>
           x.asInstanceOf[js.Any]
@@ -840,15 +945,56 @@ package cloudwatch {
   }
 
   object ListMetricsOutput {
-    def apply(Metrics: js.UndefOr[Metrics] = js.undefined,
-              NextToken: js.UndefOr[NextToken] = js.undefined): ListMetricsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("Metrics" -> Metrics.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Metrics: js.UndefOr[Metrics] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMetricsOutput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceInput extends js.Object {
+    var ResourceARN: AmazonResourceName
+  }
+
+  object ListTagsForResourceInput {
+    def apply(
+        ResourceARN: AmazonResourceName
+    ): ListTagsForResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceInput]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceOutput extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceOutput {
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceOutput]
     }
   }
 
@@ -862,13 +1008,18 @@ package cloudwatch {
   }
 
   object MessageData {
-    def apply(Code: js.UndefOr[MessageDataCode] = js.undefined,
-              Value: js.UndefOr[MessageDataValue] = js.undefined): MessageData = {
-      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Code: js.UndefOr[MessageDataCode] = js.undefined,
+        Value: js.UndefOr[MessageDataValue] = js.undefined
+    ): MessageData = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Code" -> Code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageData]
     }
@@ -885,9 +1036,11 @@ package cloudwatch {
   }
 
   object Metric {
-    def apply(Dimensions: js.UndefOr[Dimensions] = js.undefined,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Namespace: js.UndefOr[Namespace] = js.undefined): Metric = {
+    def apply(
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined
+    ): Metric = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Dimensions" -> Dimensions.map { x =>
           x.asInstanceOf[js.Any]
@@ -938,32 +1091,34 @@ package cloudwatch {
   }
 
   object MetricAlarm {
-    def apply(ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
-              AlarmActions: js.UndefOr[ResourceList] = js.undefined,
-              AlarmArn: js.UndefOr[AlarmArn] = js.undefined,
-              AlarmConfigurationUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
-              AlarmName: js.UndefOr[AlarmName] = js.undefined,
-              ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
-              DatapointsToAlarm: js.UndefOr[DatapointsToAlarm] = js.undefined,
-              Dimensions: js.UndefOr[Dimensions] = js.undefined,
-              EvaluateLowSampleCountPercentile: js.UndefOr[EvaluateLowSampleCountPercentile] = js.undefined,
-              EvaluationPeriods: js.UndefOr[EvaluationPeriods] = js.undefined,
-              ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
-              InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Metrics: js.UndefOr[MetricDataQueries] = js.undefined,
-              Namespace: js.UndefOr[Namespace] = js.undefined,
-              OKActions: js.UndefOr[ResourceList] = js.undefined,
-              Period: js.UndefOr[Period] = js.undefined,
-              StateReason: js.UndefOr[StateReason] = js.undefined,
-              StateReasonData: js.UndefOr[StateReasonData] = js.undefined,
-              StateUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
-              StateValue: js.UndefOr[StateValue] = js.undefined,
-              Statistic: js.UndefOr[Statistic] = js.undefined,
-              Threshold: js.UndefOr[Threshold] = js.undefined,
-              TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
-              Unit: js.UndefOr[StandardUnit] = js.undefined): MetricAlarm = {
+    def apply(
+        ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+        AlarmActions: js.UndefOr[ResourceList] = js.undefined,
+        AlarmArn: js.UndefOr[AlarmArn] = js.undefined,
+        AlarmConfigurationUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
+        AlarmName: js.UndefOr[AlarmName] = js.undefined,
+        ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
+        DatapointsToAlarm: js.UndefOr[DatapointsToAlarm] = js.undefined,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        EvaluateLowSampleCountPercentile: js.UndefOr[EvaluateLowSampleCountPercentile] = js.undefined,
+        EvaluationPeriods: js.UndefOr[EvaluationPeriods] = js.undefined,
+        ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
+        InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Metrics: js.UndefOr[MetricDataQueries] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        OKActions: js.UndefOr[ResourceList] = js.undefined,
+        Period: js.UndefOr[Period] = js.undefined,
+        StateReason: js.UndefOr[StateReason] = js.undefined,
+        StateReasonData: js.UndefOr[StateReasonData] = js.undefined,
+        StateUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        StateValue: js.UndefOr[StateValue] = js.undefined,
+        Statistic: js.UndefOr[Statistic] = js.undefined,
+        Threshold: js.UndefOr[Threshold] = js.undefined,
+        TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
+        Unit: js.UndefOr[StandardUnit] = js.undefined
+    ): MetricAlarm = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ActionsEnabled" -> ActionsEnabled.map { x =>
           x.asInstanceOf[js.Any]
@@ -1052,7 +1207,8 @@ package cloudwatch {
   /**
     * This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.
     *  When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code> structures.
-    *  When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see [[http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax|Metric Math Syntax and Functions]] in the <i>Amazon CloudWatch User Guide</i>.
+    *  When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.
+    *  Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax|Metric Math Syntax and Functions]] in the <i>Amazon CloudWatch User Guide</i>.
     *  Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
     */
   @js.native
@@ -1065,11 +1221,13 @@ package cloudwatch {
   }
 
   object MetricDataQuery {
-    def apply(Id: MetricId,
-              Expression: js.UndefOr[MetricExpression] = js.undefined,
-              Label: js.UndefOr[MetricLabel] = js.undefined,
-              MetricStat: js.UndefOr[MetricStat] = js.undefined,
-              ReturnData: js.UndefOr[ReturnData] = js.undefined): MetricDataQuery = {
+    def apply(
+        Id: MetricId,
+        Expression: js.UndefOr[MetricExpression] = js.undefined,
+        Label: js.UndefOr[MetricLabel] = js.undefined,
+        MetricStat: js.UndefOr[MetricStat] = js.undefined,
+        ReturnData: js.UndefOr[ReturnData] = js.undefined
+    ): MetricDataQuery = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
         "Expression" -> Expression.map { x =>
@@ -1104,12 +1262,14 @@ package cloudwatch {
   }
 
   object MetricDataResult {
-    def apply(Id: js.UndefOr[MetricId] = js.undefined,
-              Label: js.UndefOr[MetricLabel] = js.undefined,
-              Messages: js.UndefOr[MetricDataResultMessages] = js.undefined,
-              StatusCode: js.UndefOr[StatusCode] = js.undefined,
-              Timestamps: js.UndefOr[Timestamps] = js.undefined,
-              Values: js.UndefOr[DatapointValues] = js.undefined): MetricDataResult = {
+    def apply(
+        Id: js.UndefOr[MetricId] = js.undefined,
+        Label: js.UndefOr[MetricLabel] = js.undefined,
+        Messages: js.UndefOr[MetricDataResultMessages] = js.undefined,
+        StatusCode: js.UndefOr[StatusCode] = js.undefined,
+        Timestamps: js.UndefOr[Timestamps] = js.undefined,
+        Values: js.UndefOr[DatapointValues] = js.undefined
+    ): MetricDataResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.map { x =>
           x.asInstanceOf[js.Any]
@@ -1152,15 +1312,17 @@ package cloudwatch {
   }
 
   object MetricDatum {
-    def apply(MetricName: MetricName,
-              Counts: js.UndefOr[Counts] = js.undefined,
-              Dimensions: js.UndefOr[Dimensions] = js.undefined,
-              StatisticValues: js.UndefOr[StatisticSet] = js.undefined,
-              StorageResolution: js.UndefOr[StorageResolution] = js.undefined,
-              Timestamp: js.UndefOr[Timestamp] = js.undefined,
-              Unit: js.UndefOr[StandardUnit] = js.undefined,
-              Value: js.UndefOr[DatapointValue] = js.undefined,
-              Values: js.UndefOr[Values] = js.undefined): MetricDatum = {
+    def apply(
+        MetricName: MetricName,
+        Counts: js.UndefOr[Counts] = js.undefined,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        StatisticValues: js.UndefOr[StatisticSet] = js.undefined,
+        StorageResolution: js.UndefOr[StorageResolution] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined,
+        Unit: js.UndefOr[StandardUnit] = js.undefined,
+        Value: js.UndefOr[DatapointValue] = js.undefined,
+        Values: js.UndefOr[Values] = js.undefined
+    ): MetricDatum = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Counts" -> Counts.map { x =>
@@ -1205,7 +1367,12 @@ package cloudwatch {
   }
 
   object MetricStat {
-    def apply(Metric: Metric, Period: Period, Stat: Stat, Unit: js.UndefOr[StandardUnit] = js.undefined): MetricStat = {
+    def apply(
+        Metric: Metric,
+        Period: Period,
+        Stat: Stat,
+        Unit: js.UndefOr[StandardUnit] = js.undefined
+    ): MetricStat = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Metric" -> Metric.asInstanceOf[js.Any],
         "Period" -> Period.asInstanceOf[js.Any],
@@ -1226,7 +1393,10 @@ package cloudwatch {
   }
 
   object PutDashboardInput {
-    def apply(DashboardBody: DashboardBody, DashboardName: DashboardName): PutDashboardInput = {
+    def apply(
+        DashboardBody: DashboardBody,
+        DashboardName: DashboardName
+    ): PutDashboardInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DashboardBody" -> DashboardBody.asInstanceOf[js.Any],
         "DashboardName" -> DashboardName.asInstanceOf[js.Any]
@@ -1245,9 +1415,11 @@ package cloudwatch {
     def apply(
         DashboardValidationMessages: js.UndefOr[DashboardValidationMessages] = js.undefined
     ): PutDashboardOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("DashboardValidationMessages" -> DashboardValidationMessages.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "DashboardValidationMessages" -> DashboardValidationMessages.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutDashboardOutput]
     }
@@ -1273,31 +1445,35 @@ package cloudwatch {
     var OKActions: js.UndefOr[ResourceList]
     var Period: js.UndefOr[Period]
     var Statistic: js.UndefOr[Statistic]
+    var Tags: js.UndefOr[TagList]
     var TreatMissingData: js.UndefOr[TreatMissingData]
     var Unit: js.UndefOr[StandardUnit]
   }
 
   object PutMetricAlarmInput {
-    def apply(AlarmName: AlarmName,
-              ComparisonOperator: ComparisonOperator,
-              EvaluationPeriods: EvaluationPeriods,
-              Threshold: Threshold,
-              ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
-              AlarmActions: js.UndefOr[ResourceList] = js.undefined,
-              AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
-              DatapointsToAlarm: js.UndefOr[DatapointsToAlarm] = js.undefined,
-              Dimensions: js.UndefOr[Dimensions] = js.undefined,
-              EvaluateLowSampleCountPercentile: js.UndefOr[EvaluateLowSampleCountPercentile] = js.undefined,
-              ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
-              InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
-              MetricName: js.UndefOr[MetricName] = js.undefined,
-              Metrics: js.UndefOr[MetricDataQueries] = js.undefined,
-              Namespace: js.UndefOr[Namespace] = js.undefined,
-              OKActions: js.UndefOr[ResourceList] = js.undefined,
-              Period: js.UndefOr[Period] = js.undefined,
-              Statistic: js.UndefOr[Statistic] = js.undefined,
-              TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
-              Unit: js.UndefOr[StandardUnit] = js.undefined): PutMetricAlarmInput = {
+    def apply(
+        AlarmName: AlarmName,
+        ComparisonOperator: ComparisonOperator,
+        EvaluationPeriods: EvaluationPeriods,
+        Threshold: Threshold,
+        ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+        AlarmActions: js.UndefOr[ResourceList] = js.undefined,
+        AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
+        DatapointsToAlarm: js.UndefOr[DatapointsToAlarm] = js.undefined,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        EvaluateLowSampleCountPercentile: js.UndefOr[EvaluateLowSampleCountPercentile] = js.undefined,
+        ExtendedStatistic: js.UndefOr[ExtendedStatistic] = js.undefined,
+        InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Metrics: js.UndefOr[MetricDataQueries] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        OKActions: js.UndefOr[ResourceList] = js.undefined,
+        Period: js.UndefOr[Period] = js.undefined,
+        Statistic: js.UndefOr[Statistic] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
+        Unit: js.UndefOr[StandardUnit] = js.undefined
+    ): PutMetricAlarmInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlarmName"          -> AlarmName.asInstanceOf[js.Any],
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
@@ -1345,6 +1521,9 @@ package cloudwatch {
         "Statistic" -> Statistic.map { x =>
           x.asInstanceOf[js.Any]
         },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "TreatMissingData" -> TreatMissingData.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -1364,7 +1543,10 @@ package cloudwatch {
   }
 
   object PutMetricDataInput {
-    def apply(MetricData: MetricData, Namespace: Namespace): PutMetricDataInput = {
+    def apply(
+        MetricData: MetricData,
+        Namespace: Namespace
+    ): PutMetricDataInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MetricData" -> MetricData.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any]
@@ -1390,10 +1572,12 @@ package cloudwatch {
   }
 
   object SetAlarmStateInput {
-    def apply(AlarmName: AlarmName,
-              StateReason: StateReason,
-              StateValue: StateValue,
-              StateReasonData: js.UndefOr[StateReasonData] = js.undefined): SetAlarmStateInput = {
+    def apply(
+        AlarmName: AlarmName,
+        StateReason: StateReason,
+        StateValue: StateValue,
+        StateReasonData: js.UndefOr[StateReasonData] = js.undefined
+    ): SetAlarmStateInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlarmName"   -> AlarmName.asInstanceOf[js.Any],
         "StateReason" -> StateReason.asInstanceOf[js.Any],
@@ -1497,10 +1681,12 @@ package cloudwatch {
   }
 
   object StatisticSet {
-    def apply(Maximum: DatapointValue,
-              Minimum: DatapointValue,
-              SampleCount: DatapointValue,
-              Sum: DatapointValue): StatisticSet = {
+    def apply(
+        Maximum: DatapointValue,
+        Minimum: DatapointValue,
+        SampleCount: DatapointValue,
+        Sum: DatapointValue
+    ): StatisticSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Maximum"     -> Maximum.asInstanceOf[js.Any],
         "Minimum"     -> Minimum.asInstanceOf[js.Any],
@@ -1518,5 +1704,94 @@ package cloudwatch {
     val PartialData   = "PartialData"
 
     val values = IndexedSeq(Complete, InternalError, PartialData)
+  }
+
+  /**
+    * A key-value pair associated with a CloudWatch resource.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key"   -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceInput extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceInput {
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceInput]
+    }
+  }
+
+  @js.native
+  trait TagResourceOutput extends js.Object {}
+
+  object TagResourceOutput {
+    def apply(
+        ): TagResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceInput extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceInput {
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceInput]
+    }
+  }
+
+  @js.native
+  trait UntagResourceOutput extends js.Object {}
+
+  object UntagResourceOutput {
+    def apply(
+        ): UntagResourceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceOutput]
+    }
   }
 }

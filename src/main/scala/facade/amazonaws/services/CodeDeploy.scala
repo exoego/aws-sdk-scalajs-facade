@@ -219,7 +219,10 @@ package codedeploy {
   }
 
   object AddTagsToOnPremisesInstancesInput {
-    def apply(instanceNames: InstanceNameList, tags: TagList): AddTagsToOnPremisesInstancesInput = {
+    def apply(
+        instanceNames: InstanceNameList,
+        tags: TagList
+    ): AddTagsToOnPremisesInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "tags"          -> tags.asInstanceOf[js.Any]
@@ -238,10 +241,14 @@ package codedeploy {
   }
 
   object Alarm {
-    def apply(name: js.UndefOr[AlarmName] = js.undefined): Alarm = {
-      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: js.UndefOr[AlarmName] = js.undefined
+    ): Alarm = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Alarm]
     }
@@ -258,9 +265,11 @@ package codedeploy {
   }
 
   object AlarmConfiguration {
-    def apply(alarms: js.UndefOr[AlarmList] = js.undefined,
-              enabled: js.UndefOr[Boolean] = js.undefined,
-              ignorePollAlarmFailure: js.UndefOr[Boolean] = js.undefined): AlarmConfiguration = {
+    def apply(
+        alarms: js.UndefOr[AlarmList] = js.undefined,
+        enabled: js.UndefOr[Boolean] = js.undefined,
+        ignorePollAlarmFailure: js.UndefOr[Boolean] = js.undefined
+    ): AlarmConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "alarms" -> alarms.map { x =>
           x.asInstanceOf[js.Any]
@@ -287,13 +296,18 @@ package codedeploy {
   }
 
   object AppSpecContent {
-    def apply(content: js.UndefOr[RawStringContent] = js.undefined,
-              sha256: js.UndefOr[RawStringSha256] = js.undefined): AppSpecContent = {
-      val _fields = IndexedSeq[(String, js.Any)]("content" -> content.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "sha256" -> sha256.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        content: js.UndefOr[RawStringContent] = js.undefined,
+        sha256: js.UndefOr[RawStringSha256] = js.undefined
+    ): AppSpecContent = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "content" -> content.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sha256" -> sha256.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AppSpecContent]
     }
@@ -313,12 +327,14 @@ package codedeploy {
   }
 
   object ApplicationInfo {
-    def apply(applicationId: js.UndefOr[ApplicationId] = js.undefined,
-              applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-              createTime: js.UndefOr[Timestamp] = js.undefined,
-              gitHubAccountName: js.UndefOr[GitHubAccountTokenName] = js.undefined,
-              linkedToGitHub: js.UndefOr[Boolean] = js.undefined): ApplicationInfo = {
+    def apply(
+        applicationId: js.UndefOr[ApplicationId] = js.undefined,
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+        createTime: js.UndefOr[Timestamp] = js.undefined,
+        gitHubAccountName: js.UndefOr[GitHubAccountTokenName] = js.undefined,
+        linkedToGitHub: js.UndefOr[Boolean] = js.undefined
+    ): ApplicationInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationId" -> applicationId.map { x =>
           x.asInstanceOf[js.Any]
@@ -353,7 +369,7 @@ package codedeploy {
   }
 
   /**
-    * Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment doesn't complete successfully.
+    * Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.
     */
   @js.native
   trait AutoRollbackConfiguration extends js.Object {
@@ -362,13 +378,18 @@ package codedeploy {
   }
 
   object AutoRollbackConfiguration {
-    def apply(enabled: js.UndefOr[Boolean] = js.undefined,
-              events: js.UndefOr[AutoRollbackEventsList] = js.undefined): AutoRollbackConfiguration = {
-      val _fields = IndexedSeq[(String, js.Any)]("enabled" -> enabled.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "events" -> events.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        enabled: js.UndefOr[Boolean] = js.undefined,
+        events: js.UndefOr[AutoRollbackEventsList] = js.undefined
+    ): AutoRollbackConfiguration = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "enabled" -> enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "events" -> events.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoRollbackConfiguration]
     }
@@ -392,13 +413,18 @@ package codedeploy {
   }
 
   object AutoScalingGroup {
-    def apply(hook: js.UndefOr[AutoScalingGroupHook] = js.undefined,
-              name: js.UndefOr[AutoScalingGroupName] = js.undefined): AutoScalingGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("hook" -> hook.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        hook: js.UndefOr[AutoScalingGroupHook] = js.undefined,
+        name: js.UndefOr[AutoScalingGroupName] = js.undefined
+    ): AutoScalingGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "hook" -> hook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AutoScalingGroup]
     }
@@ -414,7 +440,10 @@ package codedeploy {
   }
 
   object BatchGetApplicationRevisionsInput {
-    def apply(applicationName: ApplicationName, revisions: RevisionLocationList): BatchGetApplicationRevisionsInput = {
+    def apply(
+        applicationName: ApplicationName,
+        revisions: RevisionLocationList
+    ): BatchGetApplicationRevisionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revisions"       -> revisions.asInstanceOf[js.Any]
@@ -435,9 +464,11 @@ package codedeploy {
   }
 
   object BatchGetApplicationRevisionsOutput {
-    def apply(applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-              revisions: js.UndefOr[RevisionInfoList] = js.undefined): BatchGetApplicationRevisionsOutput = {
+    def apply(
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        revisions: js.UndefOr[RevisionInfoList] = js.undefined
+    ): BatchGetApplicationRevisionsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -463,9 +494,12 @@ package codedeploy {
   }
 
   object BatchGetApplicationsInput {
-    def apply(applicationNames: ApplicationsList): BatchGetApplicationsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("applicationNames" -> applicationNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        applicationNames: ApplicationsList
+    ): BatchGetApplicationsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "applicationNames" -> applicationNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetApplicationsInput]
     }
@@ -480,10 +514,14 @@ package codedeploy {
   }
 
   object BatchGetApplicationsOutput {
-    def apply(applicationsInfo: js.UndefOr[ApplicationsInfoList] = js.undefined): BatchGetApplicationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("applicationsInfo" -> applicationsInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        applicationsInfo: js.UndefOr[ApplicationsInfoList] = js.undefined
+    ): BatchGetApplicationsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "applicationsInfo" -> applicationsInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetApplicationsOutput]
     }
@@ -499,8 +537,10 @@ package codedeploy {
   }
 
   object BatchGetDeploymentGroupsInput {
-    def apply(applicationName: ApplicationName,
-              deploymentGroupNames: DeploymentGroupsList): BatchGetDeploymentGroupsInput = {
+    def apply(
+        applicationName: ApplicationName,
+        deploymentGroupNames: DeploymentGroupsList
+    ): BatchGetDeploymentGroupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName"      -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupNames" -> deploymentGroupNames.asInstanceOf[js.Any]
@@ -520,13 +560,18 @@ package codedeploy {
   }
 
   object BatchGetDeploymentGroupsOutput {
-    def apply(deploymentGroupsInfo: js.UndefOr[DeploymentGroupInfoList] = js.undefined,
-              errorMessage: js.UndefOr[ErrorMessage] = js.undefined): BatchGetDeploymentGroupsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentGroupsInfo" -> deploymentGroupsInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "errorMessage" -> errorMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentGroupsInfo: js.UndefOr[DeploymentGroupInfoList] = js.undefined,
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined
+    ): BatchGetDeploymentGroupsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentGroupsInfo" -> deploymentGroupsInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "errorMessage" -> errorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentGroupsOutput]
     }
@@ -542,7 +587,10 @@ package codedeploy {
   }
 
   object BatchGetDeploymentInstancesInput {
-    def apply(deploymentId: DeploymentId, instanceIds: InstancesList): BatchGetDeploymentInstancesInput = {
+    def apply(
+        deploymentId: DeploymentId,
+        instanceIds: InstancesList
+    ): BatchGetDeploymentInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceIds"  -> instanceIds.asInstanceOf[js.Any]
@@ -562,13 +610,18 @@ package codedeploy {
   }
 
   object BatchGetDeploymentInstancesOutput {
-    def apply(errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
-              instancesSummary: js.UndefOr[InstanceSummaryList] = js.undefined): BatchGetDeploymentInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("errorMessage" -> errorMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "instancesSummary" -> instancesSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        instancesSummary: js.UndefOr[InstanceSummaryList] = js.undefined
+    ): BatchGetDeploymentInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "errorMessage" -> errorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "instancesSummary" -> instancesSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentInstancesOutput]
     }
@@ -581,13 +634,18 @@ package codedeploy {
   }
 
   object BatchGetDeploymentTargetsInput {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              targetIds: js.UndefOr[TargetIdList] = js.undefined): BatchGetDeploymentTargetsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentId" -> deploymentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "targetIds" -> targetIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        targetIds: js.UndefOr[TargetIdList] = js.undefined
+    ): BatchGetDeploymentTargetsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "targetIds" -> targetIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentTargetsInput]
     }
@@ -599,10 +657,14 @@ package codedeploy {
   }
 
   object BatchGetDeploymentTargetsOutput {
-    def apply(deploymentTargets: js.UndefOr[DeploymentTargetList] = js.undefined): BatchGetDeploymentTargetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentTargets" -> deploymentTargets.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentTargets: js.UndefOr[DeploymentTargetList] = js.undefined
+    ): BatchGetDeploymentTargetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentTargets" -> deploymentTargets.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentTargetsOutput]
     }
@@ -617,9 +679,12 @@ package codedeploy {
   }
 
   object BatchGetDeploymentsInput {
-    def apply(deploymentIds: DeploymentsList): BatchGetDeploymentsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentIds" -> deploymentIds.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentIds: DeploymentsList
+    ): BatchGetDeploymentsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentIds" -> deploymentIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentsInput]
     }
@@ -634,10 +699,14 @@ package codedeploy {
   }
 
   object BatchGetDeploymentsOutput {
-    def apply(deploymentsInfo: js.UndefOr[DeploymentsInfoList] = js.undefined): BatchGetDeploymentsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentsInfo" -> deploymentsInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentsInfo: js.UndefOr[DeploymentsInfoList] = js.undefined
+    ): BatchGetDeploymentsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentsInfo" -> deploymentsInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetDeploymentsOutput]
     }
@@ -652,9 +721,12 @@ package codedeploy {
   }
 
   object BatchGetOnPremisesInstancesInput {
-    def apply(instanceNames: InstanceNameList): BatchGetOnPremisesInstancesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceNames" -> instanceNames.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceNames: InstanceNameList
+    ): BatchGetOnPremisesInstancesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceNames" -> instanceNames.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetOnPremisesInstancesInput]
     }
@@ -669,10 +741,14 @@ package codedeploy {
   }
 
   object BatchGetOnPremisesInstancesOutput {
-    def apply(instanceInfos: js.UndefOr[InstanceInfoList] = js.undefined): BatchGetOnPremisesInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceInfos" -> instanceInfos.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceInfos: js.UndefOr[InstanceInfoList] = js.undefined
+    ): BatchGetOnPremisesInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceInfos" -> instanceInfos.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchGetOnPremisesInstancesOutput]
     }
@@ -720,13 +796,18 @@ package codedeploy {
   }
 
   object BlueInstanceTerminationOption {
-    def apply(action: js.UndefOr[InstanceAction] = js.undefined,
-              terminationWaitTimeInMinutes: js.UndefOr[Duration] = js.undefined): BlueInstanceTerminationOption = {
-      val _fields = IndexedSeq[(String, js.Any)]("action" -> action.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "terminationWaitTimeInMinutes" -> terminationWaitTimeInMinutes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        action: js.UndefOr[InstanceAction] = js.undefined,
+        terminationWaitTimeInMinutes: js.UndefOr[Duration] = js.undefined
+    ): BlueInstanceTerminationOption = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "action" -> action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "terminationWaitTimeInMinutes" -> terminationWaitTimeInMinutes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BlueInstanceTerminationOption]
     }
@@ -757,13 +838,18 @@ package codedeploy {
   }
 
   object ContinueDeploymentInput {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              deploymentWaitType: js.UndefOr[DeploymentWaitType] = js.undefined): ContinueDeploymentInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentId" -> deploymentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "deploymentWaitType" -> deploymentWaitType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        deploymentWaitType: js.UndefOr[DeploymentWaitType] = js.undefined
+    ): ContinueDeploymentInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deploymentWaitType" -> deploymentWaitType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinueDeploymentInput]
     }
@@ -779,8 +865,10 @@ package codedeploy {
   }
 
   object CreateApplicationInput {
-    def apply(applicationName: ApplicationName,
-              computePlatform: js.UndefOr[ComputePlatform] = js.undefined): CreateApplicationInput = {
+    def apply(
+        applicationName: ApplicationName,
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined
+    ): CreateApplicationInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "computePlatform" -> computePlatform.map { x =>
@@ -801,10 +889,14 @@ package codedeploy {
   }
 
   object CreateApplicationOutput {
-    def apply(applicationId: js.UndefOr[ApplicationId] = js.undefined): CreateApplicationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("applicationId" -> applicationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        applicationId: js.UndefOr[ApplicationId] = js.undefined
+    ): CreateApplicationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "applicationId" -> applicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationOutput]
     }
@@ -822,10 +914,12 @@ package codedeploy {
   }
 
   object CreateDeploymentConfigInput {
-    def apply(deploymentConfigName: DeploymentConfigName,
-              computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-              minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
-              trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined): CreateDeploymentConfigInput = {
+    def apply(
+        deploymentConfigName: DeploymentConfigName,
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+        minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
+        trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined
+    ): CreateDeploymentConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any],
         "computePlatform" -> computePlatform.map { x =>
@@ -852,10 +946,14 @@ package codedeploy {
   }
 
   object CreateDeploymentConfigOutput {
-    def apply(deploymentConfigId: js.UndefOr[DeploymentConfigId] = js.undefined): CreateDeploymentConfigOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentConfigId" -> deploymentConfigId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentConfigId: js.UndefOr[DeploymentConfigId] = js.undefined
+    ): CreateDeploymentConfigOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentConfigId" -> deploymentConfigId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentConfigOutput]
     }
@@ -885,22 +983,24 @@ package codedeploy {
   }
 
   object CreateDeploymentGroupInput {
-    def apply(applicationName: ApplicationName,
-              deploymentGroupName: DeploymentGroupName,
-              serviceRoleArn: Role,
-              alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
-              autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
-              autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
-              blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
-              deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-              deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-              ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
-              ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
-              ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
-              loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
-              onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
-              onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
-              triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined): CreateDeploymentGroupInput = {
+    def apply(
+        applicationName: ApplicationName,
+        deploymentGroupName: DeploymentGroupName,
+        serviceRoleArn: Role,
+        alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
+        autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+        autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
+        blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
+        deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+        deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
+        ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
+        ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+        ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
+        loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+        onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+        onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+        triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
+    ): CreateDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName"     -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any],
@@ -959,10 +1059,14 @@ package codedeploy {
   }
 
   object CreateDeploymentGroupOutput {
-    def apply(deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined): CreateDeploymentGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentGroupId" -> deploymentGroupId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined
+    ): CreateDeploymentGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentGroupId" -> deploymentGroupId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentGroupOutput]
     }
@@ -986,16 +1090,18 @@ package codedeploy {
   }
 
   object CreateDeploymentInput {
-    def apply(applicationName: ApplicationName,
-              autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
-              deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-              deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined,
-              fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
-              ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
-              revision: js.UndefOr[RevisionLocation] = js.undefined,
-              targetInstances: js.UndefOr[TargetInstances] = js.undefined,
-              updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined): CreateDeploymentInput = {
+    def apply(
+        applicationName: ApplicationName,
+        autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+        deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+        deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
+        ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
+        revision: js.UndefOr[RevisionLocation] = js.undefined,
+        targetInstances: js.UndefOr[TargetInstances] = js.undefined,
+        updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined
+    ): CreateDeploymentInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "autoRollbackConfiguration" -> autoRollbackConfiguration.map { x =>
@@ -1040,10 +1146,14 @@ package codedeploy {
   }
 
   object CreateDeploymentOutput {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined): CreateDeploymentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentId" -> deploymentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined
+    ): CreateDeploymentOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateDeploymentOutput]
     }
@@ -1058,9 +1168,12 @@ package codedeploy {
   }
 
   object DeleteApplicationInput {
-    def apply(applicationName: ApplicationName): DeleteApplicationInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("applicationName" -> applicationName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        applicationName: ApplicationName
+    ): DeleteApplicationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "applicationName" -> applicationName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApplicationInput]
     }
@@ -1075,9 +1188,12 @@ package codedeploy {
   }
 
   object DeleteDeploymentConfigInput {
-    def apply(deploymentConfigName: DeploymentConfigName): DeleteDeploymentConfigInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentConfigName: DeploymentConfigName
+    ): DeleteDeploymentConfigInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeploymentConfigInput]
     }
@@ -1093,8 +1209,10 @@ package codedeploy {
   }
 
   object DeleteDeploymentGroupInput {
-    def apply(applicationName: ApplicationName,
-              deploymentGroupName: DeploymentGroupName): DeleteDeploymentGroupInput = {
+    def apply(
+        applicationName: ApplicationName,
+        deploymentGroupName: DeploymentGroupName
+    ): DeleteDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName"     -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
@@ -1113,10 +1231,14 @@ package codedeploy {
   }
 
   object DeleteDeploymentGroupOutput {
-    def apply(hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined): DeleteDeploymentGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("hooksNotCleanedUp" -> hooksNotCleanedUp.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined
+    ): DeleteDeploymentGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "hooksNotCleanedUp" -> hooksNotCleanedUp.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeploymentGroupOutput]
     }
@@ -1131,10 +1253,14 @@ package codedeploy {
   }
 
   object DeleteGitHubAccountTokenInput {
-    def apply(tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined): DeleteGitHubAccountTokenInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("tokenName" -> tokenName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined
+    ): DeleteGitHubAccountTokenInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tokenName" -> tokenName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGitHubAccountTokenInput]
     }
@@ -1149,10 +1275,14 @@ package codedeploy {
   }
 
   object DeleteGitHubAccountTokenOutput {
-    def apply(tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined): DeleteGitHubAccountTokenOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("tokenName" -> tokenName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined
+    ): DeleteGitHubAccountTokenOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tokenName" -> tokenName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGitHubAccountTokenOutput]
     }
@@ -1172,12 +1302,14 @@ package codedeploy {
   }
 
   object DeploymentConfigInfo {
-    def apply(computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-              createTime: js.UndefOr[Timestamp] = js.undefined,
-              deploymentConfigId: js.UndefOr[DeploymentConfigId] = js.undefined,
-              deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-              minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
-              trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined): DeploymentConfigInfo = {
+    def apply(
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+        createTime: js.UndefOr[Timestamp] = js.undefined,
+        deploymentConfigId: js.UndefOr[DeploymentConfigId] = js.undefined,
+        deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+        minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
+        trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined
+    ): DeploymentConfigInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "computePlatform" -> computePlatform.map { x =>
           x.asInstanceOf[js.Any]
@@ -1240,27 +1372,29 @@ package codedeploy {
   }
 
   object DeploymentGroupInfo {
-    def apply(alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
-              applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
-              autoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
-              blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
-              computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-              deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-              deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined,
-              deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-              deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-              ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
-              ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
-              ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
-              lastAttemptedDeployment: js.UndefOr[LastDeploymentInfo] = js.undefined,
-              lastSuccessfulDeployment: js.UndefOr[LastDeploymentInfo] = js.undefined,
-              loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
-              onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
-              onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
-              serviceRoleArn: js.UndefOr[Role] = js.undefined,
-              targetRevision: js.UndefOr[RevisionLocation] = js.undefined,
-              triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined): DeploymentGroupInfo = {
+    def apply(
+        alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+        autoScalingGroups: js.UndefOr[AutoScalingGroupList] = js.undefined,
+        blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+        deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+        deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined,
+        deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+        deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
+        ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
+        ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+        ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
+        lastAttemptedDeployment: js.UndefOr[LastDeploymentInfo] = js.undefined,
+        lastSuccessfulDeployment: js.UndefOr[LastDeploymentInfo] = js.undefined,
+        loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+        onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+        onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+        serviceRoleArn: js.UndefOr[Role] = js.undefined,
+        targetRevision: js.UndefOr[RevisionLocation] = js.undefined,
+        triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
+    ): DeploymentGroupInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "alarmConfiguration" -> alarmConfiguration.map { x =>
           x.asInstanceOf[js.Any]
@@ -1366,33 +1500,35 @@ package codedeploy {
   }
 
   object DeploymentInfo {
-    def apply(additionalDeploymentStatusInfo: js.UndefOr[AdditionalDeploymentStatusInfo] = js.undefined,
-              applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
-              blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
-              completeTime: js.UndefOr[Timestamp] = js.undefined,
-              computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
-              createTime: js.UndefOr[Timestamp] = js.undefined,
-              creator: js.UndefOr[DeploymentCreator] = js.undefined,
-              deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-              deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-              deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              deploymentOverview: js.UndefOr[DeploymentOverview] = js.undefined,
-              deploymentStatusMessages: js.UndefOr[DeploymentStatusMessageList] = js.undefined,
-              deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined,
-              errorInformation: js.UndefOr[ErrorInformation] = js.undefined,
-              fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
-              ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
-              instanceTerminationWaitTimeStarted: js.UndefOr[Boolean] = js.undefined,
-              loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
-              previousRevision: js.UndefOr[RevisionLocation] = js.undefined,
-              revision: js.UndefOr[RevisionLocation] = js.undefined,
-              rollbackInfo: js.UndefOr[RollbackInfo] = js.undefined,
-              startTime: js.UndefOr[Timestamp] = js.undefined,
-              status: js.UndefOr[DeploymentStatus] = js.undefined,
-              targetInstances: js.UndefOr[TargetInstances] = js.undefined,
-              updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined): DeploymentInfo = {
+    def apply(
+        additionalDeploymentStatusInfo: js.UndefOr[AdditionalDeploymentStatusInfo] = js.undefined,
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+        blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
+        completeTime: js.UndefOr[Timestamp] = js.undefined,
+        computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
+        createTime: js.UndefOr[Timestamp] = js.undefined,
+        creator: js.UndefOr[DeploymentCreator] = js.undefined,
+        deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+        deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        deploymentOverview: js.UndefOr[DeploymentOverview] = js.undefined,
+        deploymentStatusMessages: js.UndefOr[DeploymentStatusMessageList] = js.undefined,
+        deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        errorInformation: js.UndefOr[ErrorInformation] = js.undefined,
+        fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
+        ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
+        instanceTerminationWaitTimeStarted: js.UndefOr[Boolean] = js.undefined,
+        loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+        previousRevision: js.UndefOr[RevisionLocation] = js.undefined,
+        revision: js.UndefOr[RevisionLocation] = js.undefined,
+        rollbackInfo: js.UndefOr[RollbackInfo] = js.undefined,
+        startTime: js.UndefOr[Timestamp] = js.undefined,
+        status: js.UndefOr[DeploymentStatus] = js.undefined,
+        targetInstances: js.UndefOr[TargetInstances] = js.undefined,
+        updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined
+    ): DeploymentInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "additionalDeploymentStatusInfo" -> additionalDeploymentStatusInfo.map { x =>
           x.asInstanceOf[js.Any]
@@ -1502,12 +1638,14 @@ package codedeploy {
   }
 
   object DeploymentOverview {
-    def apply(Failed: js.UndefOr[InstanceCount] = js.undefined,
-              InProgress: js.UndefOr[InstanceCount] = js.undefined,
-              Pending: js.UndefOr[InstanceCount] = js.undefined,
-              Ready: js.UndefOr[InstanceCount] = js.undefined,
-              Skipped: js.UndefOr[InstanceCount] = js.undefined,
-              Succeeded: js.UndefOr[InstanceCount] = js.undefined): DeploymentOverview = {
+    def apply(
+        Failed: js.UndefOr[InstanceCount] = js.undefined,
+        InProgress: js.UndefOr[InstanceCount] = js.undefined,
+        Pending: js.UndefOr[InstanceCount] = js.undefined,
+        Ready: js.UndefOr[InstanceCount] = js.undefined,
+        Skipped: js.UndefOr[InstanceCount] = js.undefined,
+        Succeeded: js.UndefOr[InstanceCount] = js.undefined
+    ): DeploymentOverview = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Failed" -> Failed.map { x =>
           x.asInstanceOf[js.Any]
@@ -1550,13 +1688,18 @@ package codedeploy {
   }
 
   object DeploymentReadyOption {
-    def apply(actionOnTimeout: js.UndefOr[DeploymentReadyAction] = js.undefined,
-              waitTimeInMinutes: js.UndefOr[Duration] = js.undefined): DeploymentReadyOption = {
-      val _fields = IndexedSeq[(String, js.Any)]("actionOnTimeout" -> actionOnTimeout.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "waitTimeInMinutes" -> waitTimeInMinutes.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        actionOnTimeout: js.UndefOr[DeploymentReadyAction] = js.undefined,
+        waitTimeInMinutes: js.UndefOr[Duration] = js.undefined
+    ): DeploymentReadyOption = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "actionOnTimeout" -> actionOnTimeout.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "waitTimeInMinutes" -> waitTimeInMinutes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentReadyOption]
     }
@@ -1584,13 +1727,18 @@ package codedeploy {
   }
 
   object DeploymentStyle {
-    def apply(deploymentOption: js.UndefOr[DeploymentOption] = js.undefined,
-              deploymentType: js.UndefOr[DeploymentType] = js.undefined): DeploymentStyle = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentOption" -> deploymentOption.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "deploymentType" -> deploymentType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentOption: js.UndefOr[DeploymentOption] = js.undefined,
+        deploymentType: js.UndefOr[DeploymentType] = js.undefined
+    ): DeploymentStyle = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentOption" -> deploymentOption.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deploymentType" -> deploymentType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeploymentStyle]
     }
@@ -1608,10 +1756,12 @@ package codedeploy {
   }
 
   object DeploymentTarget {
-    def apply(deploymentTargetType: js.UndefOr[DeploymentTargetType] = js.undefined,
-              ecsTarget: js.UndefOr[ECSTarget] = js.undefined,
-              instanceTarget: js.UndefOr[InstanceTarget] = js.undefined,
-              lambdaTarget: js.UndefOr[LambdaTarget] = js.undefined): DeploymentTarget = {
+    def apply(
+        deploymentTargetType: js.UndefOr[DeploymentTargetType] = js.undefined,
+        ecsTarget: js.UndefOr[ECSTarget] = js.undefined,
+        instanceTarget: js.UndefOr[InstanceTarget] = js.undefined,
+        lambdaTarget: js.UndefOr[LambdaTarget] = js.undefined
+    ): DeploymentTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentTargetType" -> deploymentTargetType.map { x =>
           x.asInstanceOf[js.Any]
@@ -1662,9 +1812,12 @@ package codedeploy {
   }
 
   object DeregisterOnPremisesInstanceInput {
-    def apply(instanceName: InstanceName): DeregisterOnPremisesInstanceInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceName" -> instanceName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceName: InstanceName
+    ): DeregisterOnPremisesInstanceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceName" -> instanceName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeregisterOnPremisesInstanceInput]
     }
@@ -1682,10 +1835,12 @@ package codedeploy {
   }
 
   object Diagnostics {
-    def apply(errorCode: js.UndefOr[LifecycleErrorCode] = js.undefined,
-              logTail: js.UndefOr[LogTail] = js.undefined,
-              message: js.UndefOr[LifecycleMessage] = js.undefined,
-              scriptName: js.UndefOr[ScriptName] = js.undefined): Diagnostics = {
+    def apply(
+        errorCode: js.UndefOr[LifecycleErrorCode] = js.undefined,
+        logTail: js.UndefOr[LogTail] = js.undefined,
+        message: js.UndefOr[LifecycleMessage] = js.undefined,
+        scriptName: js.UndefOr[ScriptName] = js.undefined
+    ): Diagnostics = {
       val _fields = IndexedSeq[(String, js.Any)](
         "errorCode" -> errorCode.map { x =>
           x.asInstanceOf[js.Any]
@@ -1716,16 +1871,22 @@ package codedeploy {
   }
 
   object EC2TagFilter {
-    def apply(Key: js.UndefOr[Key] = js.undefined,
-              Type: js.UndefOr[EC2TagFilterType] = js.undefined,
-              Value: js.UndefOr[Value] = js.undefined): EC2TagFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[Key] = js.undefined,
+        Type: js.UndefOr[EC2TagFilterType] = js.undefined,
+        Value: js.UndefOr[Value] = js.undefined
+    ): EC2TagFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2TagFilter]
     }
@@ -1748,10 +1909,14 @@ package codedeploy {
   }
 
   object EC2TagSet {
-    def apply(ec2TagSetList: js.UndefOr[EC2TagSetList] = js.undefined): EC2TagSet = {
-      val _fields = IndexedSeq[(String, js.Any)]("ec2TagSetList" -> ec2TagSetList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ec2TagSetList: js.UndefOr[EC2TagSetList] = js.undefined
+    ): EC2TagSet = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ec2TagSetList" -> ec2TagSetList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2TagSet]
     }
@@ -1767,13 +1932,18 @@ package codedeploy {
   }
 
   object ECSService {
-    def apply(clusterName: js.UndefOr[ECSClusterName] = js.undefined,
-              serviceName: js.UndefOr[ECSServiceName] = js.undefined): ECSService = {
-      val _fields = IndexedSeq[(String, js.Any)]("clusterName" -> clusterName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "serviceName" -> serviceName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        clusterName: js.UndefOr[ECSClusterName] = js.undefined,
+        serviceName: js.UndefOr[ECSServiceName] = js.undefined
+    ): ECSService = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "clusterName" -> clusterName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "serviceName" -> serviceName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ECSService]
     }
@@ -1794,13 +1964,15 @@ package codedeploy {
   }
 
   object ECSTarget {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              lastUpdatedAt: js.UndefOr[Time] = js.undefined,
-              lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
-              status: js.UndefOr[TargetStatus] = js.undefined,
-              targetArn: js.UndefOr[TargetArn] = js.undefined,
-              targetId: js.UndefOr[TargetId] = js.undefined,
-              taskSetsInfo: js.UndefOr[ECSTaskSetList] = js.undefined): ECSTarget = {
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        lastUpdatedAt: js.UndefOr[Time] = js.undefined,
+        lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+        status: js.UndefOr[TargetStatus] = js.undefined,
+        targetArn: js.UndefOr[TargetArn] = js.undefined,
+        targetId: js.UndefOr[TargetId] = js.undefined,
+        taskSetsInfo: js.UndefOr[ECSTaskSetList] = js.undefined
+    ): ECSTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1830,7 +2002,7 @@ package codedeploy {
   }
 
   /**
-    * A set of Amazon ECS tasks. A task set runs a specified number of instances of a task definition simultaneously inside an Amazon ECS service. Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic or not.
+    * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set.
     */
   @js.native
   trait ECSTaskSet extends js.Object {
@@ -1845,14 +2017,16 @@ package codedeploy {
   }
 
   object ECSTaskSet {
-    def apply(desiredCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
-              identifer: js.UndefOr[ECSTaskSetIdentifier] = js.undefined,
-              pendingCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
-              runningCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
-              status: js.UndefOr[ECSTaskSetStatus] = js.undefined,
-              targetGroup: js.UndefOr[TargetGroupInfo] = js.undefined,
-              taskSetLabel: js.UndefOr[TargetLabel] = js.undefined,
-              trafficWeight: js.UndefOr[TrafficWeight] = js.undefined): ECSTaskSet = {
+    def apply(
+        desiredCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
+        identifer: js.UndefOr[ECSTaskSetIdentifier] = js.undefined,
+        pendingCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
+        runningCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
+        status: js.UndefOr[ECSTaskSetStatus] = js.undefined,
+        targetGroup: js.UndefOr[TargetGroupInfo] = js.undefined,
+        taskSetLabel: js.UndefOr[TargetLabel] = js.undefined,
+        trafficWeight: js.UndefOr[TrafficWeight] = js.undefined
+    ): ECSTaskSet = {
       val _fields = IndexedSeq[(String, js.Any)](
         "desiredCount" -> desiredCount.map { x =>
           x.asInstanceOf[js.Any]
@@ -1893,10 +2067,14 @@ package codedeploy {
   }
 
   object ELBInfo {
-    def apply(name: js.UndefOr[ELBName] = js.undefined): ELBInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: js.UndefOr[ELBName] = js.undefined
+    ): ELBInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ELBInfo]
     }
@@ -1978,13 +2156,18 @@ package codedeploy {
   }
 
   object ErrorInformation {
-    def apply(code: js.UndefOr[ErrorCode] = js.undefined,
-              message: js.UndefOr[ErrorMessage] = js.undefined): ErrorInformation = {
-      val _fields = IndexedSeq[(String, js.Any)]("code" -> code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "message" -> message.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        code: js.UndefOr[ErrorCode] = js.undefined,
+        message: js.UndefOr[ErrorMessage] = js.undefined
+    ): ErrorInformation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "code" -> code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "message" -> message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ErrorInformation]
     }
@@ -2011,11 +2194,13 @@ package codedeploy {
   }
 
   object GenericRevisionInfo {
-    def apply(deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
-              description: js.UndefOr[Description] = js.undefined,
-              firstUsedTime: js.UndefOr[Timestamp] = js.undefined,
-              lastUsedTime: js.UndefOr[Timestamp] = js.undefined,
-              registerTime: js.UndefOr[Timestamp] = js.undefined): GenericRevisionInfo = {
+    def apply(
+        deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        firstUsedTime: js.UndefOr[Timestamp] = js.undefined,
+        lastUsedTime: js.UndefOr[Timestamp] = js.undefined,
+        registerTime: js.UndefOr[Timestamp] = js.undefined
+    ): GenericRevisionInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentGroups" -> deploymentGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -2047,9 +2232,12 @@ package codedeploy {
   }
 
   object GetApplicationInput {
-    def apply(applicationName: ApplicationName): GetApplicationInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("applicationName" -> applicationName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        applicationName: ApplicationName
+    ): GetApplicationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "applicationName" -> applicationName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationInput]
     }
@@ -2064,10 +2252,14 @@ package codedeploy {
   }
 
   object GetApplicationOutput {
-    def apply(application: js.UndefOr[ApplicationInfo] = js.undefined): GetApplicationOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("application" -> application.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        application: js.UndefOr[ApplicationInfo] = js.undefined
+    ): GetApplicationOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "application" -> application.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationOutput]
     }
@@ -2083,7 +2275,10 @@ package codedeploy {
   }
 
   object GetApplicationRevisionInput {
-    def apply(applicationName: ApplicationName, revision: RevisionLocation): GetApplicationRevisionInput = {
+    def apply(
+        applicationName: ApplicationName,
+        revision: RevisionLocation
+    ): GetApplicationRevisionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revision"        -> revision.asInstanceOf[js.Any]
@@ -2104,9 +2299,11 @@ package codedeploy {
   }
 
   object GetApplicationRevisionOutput {
-    def apply(applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              revision: js.UndefOr[RevisionLocation] = js.undefined,
-              revisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined): GetApplicationRevisionOutput = {
+    def apply(
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        revision: js.UndefOr[RevisionLocation] = js.undefined,
+        revisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined
+    ): GetApplicationRevisionOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2132,9 +2329,12 @@ package codedeploy {
   }
 
   object GetDeploymentConfigInput {
-    def apply(deploymentConfigName: DeploymentConfigName): GetDeploymentConfigInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentConfigName: DeploymentConfigName
+    ): GetDeploymentConfigInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentConfigInput]
     }
@@ -2149,10 +2349,14 @@ package codedeploy {
   }
 
   object GetDeploymentConfigOutput {
-    def apply(deploymentConfigInfo: js.UndefOr[DeploymentConfigInfo] = js.undefined): GetDeploymentConfigOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentConfigInfo" -> deploymentConfigInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentConfigInfo: js.UndefOr[DeploymentConfigInfo] = js.undefined
+    ): GetDeploymentConfigOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentConfigInfo" -> deploymentConfigInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentConfigOutput]
     }
@@ -2168,7 +2372,10 @@ package codedeploy {
   }
 
   object GetDeploymentGroupInput {
-    def apply(applicationName: ApplicationName, deploymentGroupName: DeploymentGroupName): GetDeploymentGroupInput = {
+    def apply(
+        applicationName: ApplicationName,
+        deploymentGroupName: DeploymentGroupName
+    ): GetDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName"     -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
@@ -2187,10 +2394,14 @@ package codedeploy {
   }
 
   object GetDeploymentGroupOutput {
-    def apply(deploymentGroupInfo: js.UndefOr[DeploymentGroupInfo] = js.undefined): GetDeploymentGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentGroupInfo" -> deploymentGroupInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentGroupInfo: js.UndefOr[DeploymentGroupInfo] = js.undefined
+    ): GetDeploymentGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentGroupInfo" -> deploymentGroupInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentGroupOutput]
     }
@@ -2205,9 +2416,12 @@ package codedeploy {
   }
 
   object GetDeploymentInput {
-    def apply(deploymentId: DeploymentId): GetDeploymentInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentId" -> deploymentId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentId: DeploymentId
+    ): GetDeploymentInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentInput]
     }
@@ -2223,7 +2437,10 @@ package codedeploy {
   }
 
   object GetDeploymentInstanceInput {
-    def apply(deploymentId: DeploymentId, instanceId: InstanceId): GetDeploymentInstanceInput = {
+    def apply(
+        deploymentId: DeploymentId,
+        instanceId: InstanceId
+    ): GetDeploymentInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceId"   -> instanceId.asInstanceOf[js.Any]
@@ -2242,10 +2459,14 @@ package codedeploy {
   }
 
   object GetDeploymentInstanceOutput {
-    def apply(instanceSummary: js.UndefOr[InstanceSummary] = js.undefined): GetDeploymentInstanceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceSummary" -> instanceSummary.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceSummary: js.UndefOr[InstanceSummary] = js.undefined
+    ): GetDeploymentInstanceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceSummary" -> instanceSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentInstanceOutput]
     }
@@ -2260,10 +2481,14 @@ package codedeploy {
   }
 
   object GetDeploymentOutput {
-    def apply(deploymentInfo: js.UndefOr[DeploymentInfo] = js.undefined): GetDeploymentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentInfo" -> deploymentInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentInfo: js.UndefOr[DeploymentInfo] = js.undefined
+    ): GetDeploymentOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentInfo" -> deploymentInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentOutput]
     }
@@ -2276,13 +2501,18 @@ package codedeploy {
   }
 
   object GetDeploymentTargetInput {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              targetId: js.UndefOr[TargetId] = js.undefined): GetDeploymentTargetInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentId" -> deploymentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "targetId" -> targetId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        targetId: js.UndefOr[TargetId] = js.undefined
+    ): GetDeploymentTargetInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "targetId" -> targetId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentTargetInput]
     }
@@ -2294,10 +2524,14 @@ package codedeploy {
   }
 
   object GetDeploymentTargetOutput {
-    def apply(deploymentTarget: js.UndefOr[DeploymentTarget] = js.undefined): GetDeploymentTargetOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentTarget" -> deploymentTarget.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentTarget: js.UndefOr[DeploymentTarget] = js.undefined
+    ): GetDeploymentTargetOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentTarget" -> deploymentTarget.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeploymentTargetOutput]
     }
@@ -2312,9 +2546,12 @@ package codedeploy {
   }
 
   object GetOnPremisesInstanceInput {
-    def apply(instanceName: InstanceName): GetOnPremisesInstanceInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceName" -> instanceName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceName: InstanceName
+    ): GetOnPremisesInstanceInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceName" -> instanceName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOnPremisesInstanceInput]
     }
@@ -2329,10 +2566,14 @@ package codedeploy {
   }
 
   object GetOnPremisesInstanceOutput {
-    def apply(instanceInfo: js.UndefOr[InstanceInfo] = js.undefined): GetOnPremisesInstanceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceInfo" -> instanceInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceInfo: js.UndefOr[InstanceInfo] = js.undefined
+    ): GetOnPremisesInstanceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceInfo" -> instanceInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetOnPremisesInstanceOutput]
     }
@@ -2348,13 +2589,18 @@ package codedeploy {
   }
 
   object GitHubLocation {
-    def apply(commitId: js.UndefOr[CommitId] = js.undefined,
-              repository: js.UndefOr[Repository] = js.undefined): GitHubLocation = {
-      val _fields = IndexedSeq[(String, js.Any)]("commitId" -> commitId.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "repository" -> repository.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        commitId: js.UndefOr[CommitId] = js.undefined,
+        repository: js.UndefOr[Repository] = js.undefined
+    ): GitHubLocation = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "commitId" -> commitId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "repository" -> repository.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GitHubLocation]
     }
@@ -2376,10 +2622,14 @@ package codedeploy {
   }
 
   object GreenFleetProvisioningOption {
-    def apply(action: js.UndefOr[GreenFleetProvisioningAction] = js.undefined): GreenFleetProvisioningOption = {
-      val _fields = IndexedSeq[(String, js.Any)]("action" -> action.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        action: js.UndefOr[GreenFleetProvisioningAction] = js.undefined
+    ): GreenFleetProvisioningOption = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "action" -> action.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GreenFleetProvisioningOption]
     }
@@ -2407,13 +2657,15 @@ package codedeploy {
   }
 
   object InstanceInfo {
-    def apply(deregisterTime: js.UndefOr[Timestamp] = js.undefined,
-              iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
-              iamUserArn: js.UndefOr[IamUserArn] = js.undefined,
-              instanceArn: js.UndefOr[InstanceArn] = js.undefined,
-              instanceName: js.UndefOr[InstanceName] = js.undefined,
-              registerTime: js.UndefOr[Timestamp] = js.undefined,
-              tags: js.UndefOr[TagList] = js.undefined): InstanceInfo = {
+    def apply(
+        deregisterTime: js.UndefOr[Timestamp] = js.undefined,
+        iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
+        iamUserArn: js.UndefOr[IamUserArn] = js.undefined,
+        instanceArn: js.UndefOr[InstanceArn] = js.undefined,
+        instanceName: js.UndefOr[InstanceName] = js.undefined,
+        registerTime: js.UndefOr[Timestamp] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): InstanceInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deregisterTime" -> deregisterTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2470,12 +2722,14 @@ package codedeploy {
   }
 
   object InstanceSummary {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              instanceId: js.UndefOr[InstanceId] = js.undefined,
-              instanceType: js.UndefOr[InstanceType] = js.undefined,
-              lastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
-              lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
-              status: js.UndefOr[InstanceStatus] = js.undefined): InstanceSummary = {
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        instanceId: js.UndefOr[InstanceId] = js.undefined,
+        instanceType: js.UndefOr[InstanceType] = js.undefined,
+        lastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+        status: js.UndefOr[InstanceStatus] = js.undefined
+    ): InstanceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2516,13 +2770,15 @@ package codedeploy {
   }
 
   object InstanceTarget {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              instanceLabel: js.UndefOr[TargetLabel] = js.undefined,
-              lastUpdatedAt: js.UndefOr[Time] = js.undefined,
-              lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
-              status: js.UndefOr[TargetStatus] = js.undefined,
-              targetArn: js.UndefOr[TargetArn] = js.undefined,
-              targetId: js.UndefOr[TargetId] = js.undefined): InstanceTarget = {
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        instanceLabel: js.UndefOr[TargetLabel] = js.undefined,
+        lastUpdatedAt: js.UndefOr[Time] = js.undefined,
+        lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+        status: js.UndefOr[TargetStatus] = js.undefined,
+        targetArn: js.UndefOr[TargetArn] = js.undefined,
+        targetId: js.UndefOr[TargetId] = js.undefined
+    ): InstanceTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2572,12 +2828,14 @@ package codedeploy {
   }
 
   object LambdaTarget {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              lastUpdatedAt: js.UndefOr[Time] = js.undefined,
-              lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
-              status: js.UndefOr[TargetStatus] = js.undefined,
-              targetArn: js.UndefOr[TargetArn] = js.undefined,
-              targetId: js.UndefOr[TargetId] = js.undefined): LambdaTarget = {
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        lastUpdatedAt: js.UndefOr[Time] = js.undefined,
+        lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
+        status: js.UndefOr[TargetStatus] = js.undefined,
+        targetArn: js.UndefOr[TargetArn] = js.undefined,
+        targetId: js.UndefOr[TargetId] = js.undefined
+    ): LambdaTarget = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2615,10 +2873,12 @@ package codedeploy {
   }
 
   object LastDeploymentInfo {
-    def apply(createTime: js.UndefOr[Timestamp] = js.undefined,
-              deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              endTime: js.UndefOr[Timestamp] = js.undefined,
-              status: js.UndefOr[DeploymentStatus] = js.undefined): LastDeploymentInfo = {
+    def apply(
+        createTime: js.UndefOr[Timestamp] = js.undefined,
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        endTime: js.UndefOr[Timestamp] = js.undefined,
+        status: js.UndefOr[DeploymentStatus] = js.undefined
+    ): LastDeploymentInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createTime" -> createTime.map { x =>
           x.asInstanceOf[js.Any]
@@ -2662,11 +2922,13 @@ package codedeploy {
   }
 
   object LifecycleEvent {
-    def apply(diagnostics: js.UndefOr[Diagnostics] = js.undefined,
-              endTime: js.UndefOr[Timestamp] = js.undefined,
-              lifecycleEventName: js.UndefOr[LifecycleEventName] = js.undefined,
-              startTime: js.UndefOr[Timestamp] = js.undefined,
-              status: js.UndefOr[LifecycleEventStatus] = js.undefined): LifecycleEvent = {
+    def apply(
+        diagnostics: js.UndefOr[Diagnostics] = js.undefined,
+        endTime: js.UndefOr[Timestamp] = js.undefined,
+        lifecycleEventName: js.UndefOr[LifecycleEventName] = js.undefined,
+        startTime: js.UndefOr[Timestamp] = js.undefined,
+        status: js.UndefOr[LifecycleEventStatus] = js.undefined
+    ): LifecycleEvent = {
       val _fields = IndexedSeq[(String, js.Any)](
         "diagnostics" -> diagnostics.map { x =>
           x.asInstanceOf[js.Any]
@@ -2715,13 +2977,15 @@ package codedeploy {
   }
 
   object ListApplicationRevisionsInput {
-    def apply(applicationName: ApplicationName,
-              deployed: js.UndefOr[ListStateFilterAction] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-              s3KeyPrefix: js.UndefOr[S3Key] = js.undefined,
-              sortBy: js.UndefOr[ApplicationRevisionSortBy] = js.undefined,
-              sortOrder: js.UndefOr[SortOrder] = js.undefined): ListApplicationRevisionsInput = {
+    def apply(
+        applicationName: ApplicationName,
+        deployed: js.UndefOr[ListStateFilterAction] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
+        s3KeyPrefix: js.UndefOr[S3Key] = js.undefined,
+        sortBy: js.UndefOr[ApplicationRevisionSortBy] = js.undefined,
+        sortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListApplicationRevisionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "deployed" -> deployed.map { x =>
@@ -2758,13 +3022,18 @@ package codedeploy {
   }
 
   object ListApplicationRevisionsOutput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              revisions: js.UndefOr[RevisionLocationList] = js.undefined): ListApplicationRevisionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "revisions" -> revisions.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        revisions: js.UndefOr[RevisionLocationList] = js.undefined
+    ): ListApplicationRevisionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "revisions" -> revisions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationRevisionsOutput]
     }
@@ -2779,10 +3048,14 @@ package codedeploy {
   }
 
   object ListApplicationsInput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined): ListApplicationsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApplicationsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationsInput]
     }
@@ -2798,13 +3071,18 @@ package codedeploy {
   }
 
   object ListApplicationsOutput {
-    def apply(applications: js.UndefOr[ApplicationsList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListApplicationsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("applications" -> applications.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        applications: js.UndefOr[ApplicationsList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApplicationsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "applications" -> applications.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListApplicationsOutput]
     }
@@ -2819,10 +3097,14 @@ package codedeploy {
   }
 
   object ListDeploymentConfigsInput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentConfigsInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentConfigsInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentConfigsInput]
     }
@@ -2838,13 +3120,18 @@ package codedeploy {
   }
 
   object ListDeploymentConfigsOutput {
-    def apply(deploymentConfigsList: js.UndefOr[DeploymentConfigsList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentConfigsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentConfigsList" -> deploymentConfigsList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentConfigsList: js.UndefOr[DeploymentConfigsList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentConfigsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentConfigsList" -> deploymentConfigsList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentConfigsOutput]
     }
@@ -2860,8 +3147,10 @@ package codedeploy {
   }
 
   object ListDeploymentGroupsInput {
-    def apply(applicationName: ApplicationName,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentGroupsInput = {
+    def apply(
+        applicationName: ApplicationName,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentGroupsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "nextToken" -> nextToken.map { x =>
@@ -2884,9 +3173,11 @@ package codedeploy {
   }
 
   object ListDeploymentGroupsOutput {
-    def apply(applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentGroupsOutput = {
+    def apply(
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentGroupsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -2915,10 +3206,12 @@ package codedeploy {
   }
 
   object ListDeploymentInstancesInput {
-    def apply(deploymentId: DeploymentId,
-              instanceStatusFilter: js.UndefOr[InstanceStatusList] = js.undefined,
-              instanceTypeFilter: js.UndefOr[InstanceTypeList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentInstancesInput = {
+    def apply(
+        deploymentId: DeploymentId,
+        instanceStatusFilter: js.UndefOr[InstanceStatusList] = js.undefined,
+        instanceTypeFilter: js.UndefOr[InstanceTypeList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceStatusFilter" -> instanceStatusFilter.map { x =>
@@ -2946,13 +3239,18 @@ package codedeploy {
   }
 
   object ListDeploymentInstancesOutput {
-    def apply(instancesList: js.UndefOr[InstancesList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instancesList" -> instancesList.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instancesList: js.UndefOr[InstancesList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instancesList" -> instancesList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentInstancesOutput]
     }
@@ -2966,9 +3264,11 @@ package codedeploy {
   }
 
   object ListDeploymentTargetsInput {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined,
-              targetFilters: js.UndefOr[TargetFilters] = js.undefined): ListDeploymentTargetsInput = {
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        targetFilters: js.UndefOr[TargetFilters] = js.undefined
+    ): ListDeploymentTargetsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -2992,13 +3292,18 @@ package codedeploy {
   }
 
   object ListDeploymentTargetsOutput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              targetIds: js.UndefOr[TargetIdList] = js.undefined): ListDeploymentTargetsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "targetIds" -> targetIds.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        targetIds: js.UndefOr[TargetIdList] = js.undefined
+    ): ListDeploymentTargetsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "targetIds" -> targetIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentTargetsOutput]
     }
@@ -3017,11 +3322,13 @@ package codedeploy {
   }
 
   object ListDeploymentsInput {
-    def apply(applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              createTimeRange: js.UndefOr[TimeRange] = js.undefined,
-              deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-              includeOnlyStatuses: js.UndefOr[DeploymentStatusList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentsInput = {
+    def apply(
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        createTimeRange: js.UndefOr[TimeRange] = js.undefined,
+        deploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+        includeOnlyStatuses: js.UndefOr[DeploymentStatusList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.map { x =>
           x.asInstanceOf[js.Any]
@@ -3054,13 +3361,18 @@ package codedeploy {
   }
 
   object ListDeploymentsOutput {
-    def apply(deployments: js.UndefOr[DeploymentsList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListDeploymentsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deployments" -> deployments.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deployments: js.UndefOr[DeploymentsList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDeploymentsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deployments" -> deployments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeploymentsOutput]
     }
@@ -3075,10 +3387,14 @@ package codedeploy {
   }
 
   object ListGitHubAccountTokenNamesInput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined): ListGitHubAccountTokenNamesInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListGitHubAccountTokenNamesInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGitHubAccountTokenNamesInput]
     }
@@ -3098,11 +3414,14 @@ package codedeploy {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tokenNameList: js.UndefOr[GitHubAccountTokenNameList] = js.undefined
     ): ListGitHubAccountTokenNamesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "tokenNameList" -> tokenNameList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tokenNameList" -> tokenNameList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListGitHubAccountTokenNamesOutput]
     }
@@ -3119,9 +3438,11 @@ package codedeploy {
   }
 
   object ListOnPremisesInstancesInput {
-    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
-              registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
-              tagFilters: js.UndefOr[TagFilterList] = js.undefined): ListOnPremisesInstancesInput = {
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
+        tagFilters: js.UndefOr[TagFilterList] = js.undefined
+    ): ListOnPremisesInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "nextToken" -> nextToken.map { x =>
           x.asInstanceOf[js.Any]
@@ -3139,7 +3460,7 @@ package codedeploy {
   }
 
   /**
-    * Represents the output of list on-premises instances operation.
+    * Represents the output of the list on-premises instances operation.
     */
   @js.native
   trait ListOnPremisesInstancesOutput extends js.Object {
@@ -3148,13 +3469,18 @@ package codedeploy {
   }
 
   object ListOnPremisesInstancesOutput {
-    def apply(instanceNames: js.UndefOr[InstanceNameList] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListOnPremisesInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("instanceNames" -> instanceNames.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        instanceNames: js.UndefOr[InstanceNameList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListOnPremisesInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "instanceNames" -> instanceNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOnPremisesInstancesOutput]
     }
@@ -3179,9 +3505,11 @@ package codedeploy {
   }
 
   object LoadBalancerInfo {
-    def apply(elbInfoList: js.UndefOr[ELBInfoList] = js.undefined,
-              targetGroupInfoList: js.UndefOr[TargetGroupInfoList] = js.undefined,
-              targetGroupPairInfoList: js.UndefOr[TargetGroupPairInfoList] = js.undefined): LoadBalancerInfo = {
+    def apply(
+        elbInfoList: js.UndefOr[ELBInfoList] = js.undefined,
+        targetGroupInfoList: js.UndefOr[TargetGroupInfoList] = js.undefined,
+        targetGroupPairInfoList: js.UndefOr[TargetGroupPairInfoList] = js.undefined
+    ): LoadBalancerInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "elbInfoList" -> elbInfoList.map { x =>
           x.asInstanceOf[js.Any]
@@ -3208,13 +3536,18 @@ package codedeploy {
   }
 
   object MinimumHealthyHosts {
-    def apply(`type`: js.UndefOr[MinimumHealthyHostsType] = js.undefined,
-              value: js.UndefOr[MinimumHealthyHostsValue] = js.undefined): MinimumHealthyHosts = {
-      val _fields = IndexedSeq[(String, js.Any)]("`type`" -> `type`.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "value" -> value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        `type`: js.UndefOr[MinimumHealthyHostsType] = js.undefined,
+        value: js.UndefOr[MinimumHealthyHostsValue] = js.undefined
+    ): MinimumHealthyHosts = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "`type`" -> `type`.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "value" -> value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MinimumHealthyHosts]
     }
@@ -3236,10 +3569,14 @@ package codedeploy {
   }
 
   object OnPremisesTagSet {
-    def apply(onPremisesTagSetList: js.UndefOr[OnPremisesTagSetList] = js.undefined): OnPremisesTagSet = {
-      val _fields = IndexedSeq[(String, js.Any)]("onPremisesTagSetList" -> onPremisesTagSetList.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        onPremisesTagSetList: js.UndefOr[OnPremisesTagSetList] = js.undefined
+    ): OnPremisesTagSet = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "onPremisesTagSetList" -> onPremisesTagSetList.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OnPremisesTagSet]
     }
@@ -3253,9 +3590,11 @@ package codedeploy {
   }
 
   object PutLifecycleEventHookExecutionStatusInput {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined,
-              status: js.UndefOr[LifecycleEventStatus] = js.undefined): PutLifecycleEventHookExecutionStatusInput = {
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined,
+        status: js.UndefOr[LifecycleEventStatus] = js.undefined
+    ): PutLifecycleEventHookExecutionStatusInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3281,10 +3620,11 @@ package codedeploy {
     def apply(
         lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined
     ): PutLifecycleEventHookExecutionStatusOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("lifecycleEventHookExecutionId" -> lifecycleEventHookExecutionId.map {
-        x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "lifecycleEventHookExecutionId" -> lifecycleEventHookExecutionId.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal
         .applyDynamicNamed("apply")(_fields: _*)
@@ -3303,13 +3643,18 @@ package codedeploy {
   }
 
   object RawString {
-    def apply(content: js.UndefOr[RawStringContent] = js.undefined,
-              sha256: js.UndefOr[RawStringSha256] = js.undefined): RawString = {
-      val _fields = IndexedSeq[(String, js.Any)]("content" -> content.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "sha256" -> sha256.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        content: js.UndefOr[RawStringContent] = js.undefined,
+        sha256: js.UndefOr[RawStringSha256] = js.undefined
+    ): RawString = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "content" -> content.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "sha256" -> sha256.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RawString]
     }
@@ -3326,9 +3671,11 @@ package codedeploy {
   }
 
   object RegisterApplicationRevisionInput {
-    def apply(applicationName: ApplicationName,
-              revision: RevisionLocation,
-              description: js.UndefOr[Description] = js.undefined): RegisterApplicationRevisionInput = {
+    def apply(
+        applicationName: ApplicationName,
+        revision: RevisionLocation,
+        description: js.UndefOr[Description] = js.undefined
+    ): RegisterApplicationRevisionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revision"        -> revision.asInstanceOf[js.Any],
@@ -3352,9 +3699,11 @@ package codedeploy {
   }
 
   object RegisterOnPremisesInstanceInput {
-    def apply(instanceName: InstanceName,
-              iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
-              iamUserArn: js.UndefOr[IamUserArn] = js.undefined): RegisterOnPremisesInstanceInput = {
+    def apply(
+        instanceName: InstanceName,
+        iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
+        iamUserArn: js.UndefOr[IamUserArn] = js.undefined
+    ): RegisterOnPremisesInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "iamSessionArn" -> iamSessionArn.map { x =>
@@ -3386,7 +3735,10 @@ package codedeploy {
   }
 
   object RemoveTagsFromOnPremisesInstancesInput {
-    def apply(instanceNames: InstanceNameList, tags: TagList): RemoveTagsFromOnPremisesInstancesInput = {
+    def apply(
+        instanceNames: InstanceNameList,
+        tags: TagList
+    ): RemoveTagsFromOnPremisesInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "tags"          -> tags.asInstanceOf[js.Any]
@@ -3406,13 +3758,18 @@ package codedeploy {
   }
 
   object RevisionInfo {
-    def apply(genericRevisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined,
-              revisionLocation: js.UndefOr[RevisionLocation] = js.undefined): RevisionInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("genericRevisionInfo" -> genericRevisionInfo.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "revisionLocation" -> revisionLocation.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        genericRevisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined,
+        revisionLocation: js.UndefOr[RevisionLocation] = js.undefined
+    ): RevisionInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "genericRevisionInfo" -> genericRevisionInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "revisionLocation" -> revisionLocation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevisionInfo]
     }
@@ -3431,11 +3788,13 @@ package codedeploy {
   }
 
   object RevisionLocation {
-    def apply(appSpecContent: js.UndefOr[AppSpecContent] = js.undefined,
-              gitHubLocation: js.UndefOr[GitHubLocation] = js.undefined,
-              revisionType: js.UndefOr[RevisionLocationType] = js.undefined,
-              s3Location: js.UndefOr[S3Location] = js.undefined,
-              string: js.UndefOr[RawString] = js.undefined): RevisionLocation = {
+    def apply(
+        appSpecContent: js.UndefOr[AppSpecContent] = js.undefined,
+        gitHubLocation: js.UndefOr[GitHubLocation] = js.undefined,
+        revisionType: js.UndefOr[RevisionLocationType] = js.undefined,
+        s3Location: js.UndefOr[S3Location] = js.undefined,
+        string: js.UndefOr[RawString] = js.undefined
+    ): RevisionLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "appSpecContent" -> appSpecContent.map { x =>
           x.asInstanceOf[js.Any]
@@ -3478,9 +3837,11 @@ package codedeploy {
   }
 
   object RollbackInfo {
-    def apply(rollbackDeploymentId: js.UndefOr[DeploymentId] = js.undefined,
-              rollbackMessage: js.UndefOr[Description] = js.undefined,
-              rollbackTriggeringDeploymentId: js.UndefOr[DeploymentId] = js.undefined): RollbackInfo = {
+    def apply(
+        rollbackDeploymentId: js.UndefOr[DeploymentId] = js.undefined,
+        rollbackMessage: js.UndefOr[Description] = js.undefined,
+        rollbackTriggeringDeploymentId: js.UndefOr[DeploymentId] = js.undefined
+    ): RollbackInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "rollbackDeploymentId" -> rollbackDeploymentId.map { x =>
           x.asInstanceOf[js.Any]
@@ -3510,11 +3871,13 @@ package codedeploy {
   }
 
   object S3Location {
-    def apply(bucket: js.UndefOr[S3Bucket] = js.undefined,
-              bundleType: js.UndefOr[BundleType] = js.undefined,
-              eTag: js.UndefOr[ETag] = js.undefined,
-              key: js.UndefOr[S3Key] = js.undefined,
-              version: js.UndefOr[VersionId] = js.undefined): S3Location = {
+    def apply(
+        bucket: js.UndefOr[S3Bucket] = js.undefined,
+        bundleType: js.UndefOr[BundleType] = js.undefined,
+        eTag: js.UndefOr[ETag] = js.undefined,
+        key: js.UndefOr[S3Key] = js.undefined,
+        version: js.UndefOr[VersionId] = js.undefined
+    ): S3Location = {
       val _fields = IndexedSeq[(String, js.Any)](
         "bucket" -> bucket.map { x =>
           x.asInstanceOf[js.Any]
@@ -3543,10 +3906,14 @@ package codedeploy {
   }
 
   object SkipWaitTimeForInstanceTerminationInput {
-    def apply(deploymentId: js.UndefOr[DeploymentId] = js.undefined): SkipWaitTimeForInstanceTerminationInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("deploymentId" -> deploymentId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        deploymentId: js.UndefOr[DeploymentId] = js.undefined
+    ): SkipWaitTimeForInstanceTerminationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "deploymentId" -> deploymentId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkipWaitTimeForInstanceTerminationInput]
     }
@@ -3569,8 +3936,10 @@ package codedeploy {
   }
 
   object StopDeploymentInput {
-    def apply(deploymentId: DeploymentId,
-              autoRollbackEnabled: js.UndefOr[NullableBoolean] = js.undefined): StopDeploymentInput = {
+    def apply(
+        deploymentId: DeploymentId,
+        autoRollbackEnabled: js.UndefOr[NullableBoolean] = js.undefined
+    ): StopDeploymentInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "autoRollbackEnabled" -> autoRollbackEnabled.map { x =>
@@ -3592,13 +3961,18 @@ package codedeploy {
   }
 
   object StopDeploymentOutput {
-    def apply(status: js.UndefOr[StopStatus] = js.undefined,
-              statusMessage: js.UndefOr[Message] = js.undefined): StopDeploymentOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("status" -> status.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "statusMessage" -> statusMessage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        status: js.UndefOr[StopStatus] = js.undefined,
+        statusMessage: js.UndefOr[Message] = js.undefined
+    ): StopDeploymentOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "status" -> status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "statusMessage" -> statusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopDeploymentOutput]
     }
@@ -3621,12 +3995,18 @@ package codedeploy {
   }
 
   object Tag {
-    def apply(Key: js.UndefOr[Key] = js.undefined, Value: js.UndefOr[Value] = js.undefined): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[Key] = js.undefined,
+        Value: js.UndefOr[Value] = js.undefined
+    ): Tag = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -3643,16 +4023,22 @@ package codedeploy {
   }
 
   object TagFilter {
-    def apply(Key: js.UndefOr[Key] = js.undefined,
-              Type: js.UndefOr[TagFilterType] = js.undefined,
-              Value: js.UndefOr[Value] = js.undefined): TagFilter = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[Key] = js.undefined,
+        Type: js.UndefOr[TagFilterType] = js.undefined,
+        Value: js.UndefOr[Value] = js.undefined
+    ): TagFilter = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagFilter]
     }
@@ -3682,17 +4068,21 @@ package codedeploy {
   }
 
   object TargetGroupInfo {
-    def apply(name: js.UndefOr[TargetGroupName] = js.undefined): TargetGroupInfo = {
-      val _fields = IndexedSeq[(String, js.Any)]("name" -> name.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        name: js.UndefOr[TargetGroupName] = js.undefined
+    ): TargetGroupInfo = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "name" -> name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TargetGroupInfo]
     }
   }
 
   /**
-    * Information about two target groups and how traffic routes during an Amazon ECS deployment. An optional test traffic route can be specified.
+    * Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified.
     */
   @js.native
   trait TargetGroupPairInfo extends js.Object {
@@ -3702,9 +4092,11 @@ package codedeploy {
   }
 
   object TargetGroupPairInfo {
-    def apply(prodTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined,
-              targetGroups: js.UndefOr[TargetGroupInfoList] = js.undefined,
-              testTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined): TargetGroupPairInfo = {
+    def apply(
+        prodTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined,
+        targetGroups: js.UndefOr[TargetGroupInfoList] = js.undefined,
+        testTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined
+    ): TargetGroupPairInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
         "prodTrafficRoute" -> prodTrafficRoute.map { x =>
           x.asInstanceOf[js.Any]
@@ -3732,9 +4124,11 @@ package codedeploy {
   }
 
   object TargetInstances {
-    def apply(autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
-              ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
-              tagFilters: js.UndefOr[EC2TagFilterList] = js.undefined): TargetInstances = {
+    def apply(
+        autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
+        ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+        tagFilters: js.UndefOr[EC2TagFilterList] = js.undefined
+    ): TargetInstances = {
       val _fields = IndexedSeq[(String, js.Any)](
         "autoScalingGroups" -> autoScalingGroups.map { x =>
           x.asInstanceOf[js.Any]
@@ -3780,13 +4174,18 @@ package codedeploy {
   }
 
   object TimeBasedCanary {
-    def apply(canaryInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
-              canaryPercentage: js.UndefOr[Percentage] = js.undefined): TimeBasedCanary = {
-      val _fields = IndexedSeq[(String, js.Any)]("canaryInterval" -> canaryInterval.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "canaryPercentage" -> canaryPercentage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        canaryInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
+        canaryPercentage: js.UndefOr[Percentage] = js.undefined
+    ): TimeBasedCanary = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "canaryInterval" -> canaryInterval.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "canaryPercentage" -> canaryPercentage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeBasedCanary]
     }
@@ -3802,13 +4201,18 @@ package codedeploy {
   }
 
   object TimeBasedLinear {
-    def apply(linearInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
-              linearPercentage: js.UndefOr[Percentage] = js.undefined): TimeBasedLinear = {
-      val _fields = IndexedSeq[(String, js.Any)]("linearInterval" -> linearInterval.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "linearPercentage" -> linearPercentage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        linearInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
+        linearPercentage: js.UndefOr[Percentage] = js.undefined
+    ): TimeBasedLinear = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "linearInterval" -> linearInterval.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "linearPercentage" -> linearPercentage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeBasedLinear]
     }
@@ -3824,12 +4228,18 @@ package codedeploy {
   }
 
   object TimeRange {
-    def apply(end: js.UndefOr[Timestamp] = js.undefined, start: js.UndefOr[Timestamp] = js.undefined): TimeRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("end" -> end.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "start" -> start.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        end: js.UndefOr[Timestamp] = js.undefined,
+        start: js.UndefOr[Timestamp] = js.undefined
+    ): TimeRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "end" -> end.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "start" -> start.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeRange]
     }
@@ -3844,10 +4254,14 @@ package codedeploy {
   }
 
   object TrafficRoute {
-    def apply(listenerArns: js.UndefOr[ListenerArnList] = js.undefined): TrafficRoute = {
-      val _fields = IndexedSeq[(String, js.Any)]("listenerArns" -> listenerArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        listenerArns: js.UndefOr[ListenerArnList] = js.undefined
+    ): TrafficRoute = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "listenerArns" -> listenerArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrafficRoute]
     }
@@ -3864,9 +4278,11 @@ package codedeploy {
   }
 
   object TrafficRoutingConfig {
-    def apply(timeBasedCanary: js.UndefOr[TimeBasedCanary] = js.undefined,
-              timeBasedLinear: js.UndefOr[TimeBasedLinear] = js.undefined,
-              `type`: js.UndefOr[TrafficRoutingType] = js.undefined): TrafficRoutingConfig = {
+    def apply(
+        timeBasedCanary: js.UndefOr[TimeBasedCanary] = js.undefined,
+        timeBasedLinear: js.UndefOr[TimeBasedLinear] = js.undefined,
+        `type`: js.UndefOr[TrafficRoutingType] = js.undefined
+    ): TrafficRoutingConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "timeBasedCanary" -> timeBasedCanary.map { x =>
           x.asInstanceOf[js.Any]
@@ -3902,9 +4318,11 @@ package codedeploy {
   }
 
   object TriggerConfig {
-    def apply(triggerEvents: js.UndefOr[TriggerEventTypeList] = js.undefined,
-              triggerName: js.UndefOr[TriggerName] = js.undefined,
-              triggerTargetArn: js.UndefOr[TriggerTargetArn] = js.undefined): TriggerConfig = {
+    def apply(
+        triggerEvents: js.UndefOr[TriggerEventTypeList] = js.undefined,
+        triggerName: js.UndefOr[TriggerName] = js.undefined,
+        triggerTargetArn: js.UndefOr[TriggerTargetArn] = js.undefined
+    ): TriggerConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "triggerEvents" -> triggerEvents.map { x =>
           x.asInstanceOf[js.Any]
@@ -3957,13 +4375,18 @@ package codedeploy {
   }
 
   object UpdateApplicationInput {
-    def apply(applicationName: js.UndefOr[ApplicationName] = js.undefined,
-              newApplicationName: js.UndefOr[ApplicationName] = js.undefined): UpdateApplicationInput = {
-      val _fields = IndexedSeq[(String, js.Any)]("applicationName" -> applicationName.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "newApplicationName" -> newApplicationName.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        applicationName: js.UndefOr[ApplicationName] = js.undefined,
+        newApplicationName: js.UndefOr[ApplicationName] = js.undefined
+    ): UpdateApplicationInput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "applicationName" -> applicationName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "newApplicationName" -> newApplicationName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationInput]
     }
@@ -3994,23 +4417,25 @@ package codedeploy {
   }
 
   object UpdateDeploymentGroupInput {
-    def apply(applicationName: ApplicationName,
-              currentDeploymentGroupName: DeploymentGroupName,
-              alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
-              autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
-              autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
-              blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
-              deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
-              deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
-              ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
-              ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
-              ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
-              loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
-              newDeploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
-              onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
-              onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
-              serviceRoleArn: js.UndefOr[Role] = js.undefined,
-              triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined): UpdateDeploymentGroupInput = {
+    def apply(
+        applicationName: ApplicationName,
+        currentDeploymentGroupName: DeploymentGroupName,
+        alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
+        autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
+        autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
+        blueGreenDeploymentConfiguration: js.UndefOr[BlueGreenDeploymentConfiguration] = js.undefined,
+        deploymentConfigName: js.UndefOr[DeploymentConfigName] = js.undefined,
+        deploymentStyle: js.UndefOr[DeploymentStyle] = js.undefined,
+        ec2TagFilters: js.UndefOr[EC2TagFilterList] = js.undefined,
+        ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
+        ecsServices: js.UndefOr[ECSServiceList] = js.undefined,
+        loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+        newDeploymentGroupName: js.UndefOr[DeploymentGroupName] = js.undefined,
+        onPremisesInstanceTagFilters: js.UndefOr[TagFilterList] = js.undefined,
+        onPremisesTagSet: js.UndefOr[OnPremisesTagSet] = js.undefined,
+        serviceRoleArn: js.UndefOr[Role] = js.undefined,
+        triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
+    ): UpdateDeploymentGroupInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "applicationName"            -> applicationName.asInstanceOf[js.Any],
         "currentDeploymentGroupName" -> currentDeploymentGroupName.asInstanceOf[js.Any],
@@ -4074,10 +4499,14 @@ package codedeploy {
   }
 
   object UpdateDeploymentGroupOutput {
-    def apply(hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined): UpdateDeploymentGroupOutput = {
-      val _fields = IndexedSeq[(String, js.Any)]("hooksNotCleanedUp" -> hooksNotCleanedUp.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined
+    ): UpdateDeploymentGroupOutput = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "hooksNotCleanedUp" -> hooksNotCleanedUp.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeploymentGroupOutput]
     }

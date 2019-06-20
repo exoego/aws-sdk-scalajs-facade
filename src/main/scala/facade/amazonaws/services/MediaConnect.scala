@@ -21,6 +21,7 @@ package object mediaconnect {
   type __listOfListedFlow              = js.Array[ListedFlow]
   type __listOfOutput                  = js.Array[Output]
   type __listOf__string                = js.Array[__string]
+  type __mapOf__string                 = js.Dictionary[__string]
   type __string                        = String
 }
 
@@ -37,10 +38,13 @@ package mediaconnect {
     def grantFlowEntitlements(params: GrantFlowEntitlementsRequest): Request[GrantFlowEntitlementsResponse] = js.native
     def listEntitlements(params: ListEntitlementsRequest): Request[ListEntitlementsResponse]                = js.native
     def listFlows(params: ListFlowsRequest): Request[ListFlowsResponse]                                     = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
     def removeFlowOutput(params: RemoveFlowOutputRequest): Request[RemoveFlowOutputResponse]                = js.native
     def revokeFlowEntitlement(params: RevokeFlowEntitlementRequest): Request[RevokeFlowEntitlementResponse] = js.native
     def startFlow(params: StartFlowRequest): Request[StartFlowResponse]                                     = js.native
     def stopFlow(params: StopFlowRequest): Request[StopFlowResponse]                                        = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object]                                         = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]                                     = js.native
     def updateFlowEntitlement(params: UpdateFlowEntitlementRequest): Request[UpdateFlowEntitlementResponse] = js.native
     def updateFlowOutput(params: UpdateFlowOutputRequest): Request[UpdateFlowOutputResponse]                = js.native
     def updateFlowSource(params: UpdateFlowSourceRequest): Request[UpdateFlowSourceResponse]                = js.native
@@ -56,7 +60,10 @@ package mediaconnect {
   }
 
   object AddFlowOutputsRequest {
-    def apply(FlowArn: __string, Outputs: __listOfAddOutputRequest): AddFlowOutputsRequest = {
+    def apply(
+        FlowArn: __string,
+        Outputs: __listOfAddOutputRequest
+    ): AddFlowOutputsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FlowArn" -> FlowArn.asInstanceOf[js.Any],
         "Outputs" -> Outputs.asInstanceOf[js.Any]
@@ -73,13 +80,18 @@ package mediaconnect {
   }
 
   object AddFlowOutputsResponse {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined,
-              Outputs: js.UndefOr[__listOfOutput] = js.undefined): AddFlowOutputsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Outputs" -> Outputs.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        Outputs: js.UndefOr[__listOfOutput] = js.undefined
+    ): AddFlowOutputsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Outputs" -> Outputs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddFlowOutputsResponse]
     }
@@ -102,15 +114,17 @@ package mediaconnect {
   }
 
   object AddOutputRequest {
-    def apply(Destination: __string,
-              Port: __integer,
-              Protocol: Protocol,
-              Description: js.UndefOr[__string] = js.undefined,
-              Encryption: js.UndefOr[Encryption] = js.undefined,
-              MaxLatency: js.UndefOr[__integer] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              SmoothingLatency: js.UndefOr[__integer] = js.undefined,
-              StreamId: js.UndefOr[__string] = js.undefined): AddOutputRequest = {
+    def apply(
+        Destination: __string,
+        Port: __integer,
+        Protocol: Protocol,
+        Description: js.UndefOr[__string] = js.undefined,
+        Encryption: js.UndefOr[Encryption] = js.undefined,
+        MaxLatency: js.UndefOr[__integer] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        SmoothingLatency: js.UndefOr[__integer] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): AddOutputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destination" -> Destination.asInstanceOf[js.Any],
         "Port"        -> Port.asInstanceOf[js.Any],
@@ -160,11 +174,13 @@ package mediaconnect {
   }
 
   object CreateFlowRequest {
-    def apply(Name: __string,
-              Source: SetSourceRequest,
-              AvailabilityZone: js.UndefOr[__string] = js.undefined,
-              Entitlements: js.UndefOr[__listOfGrantEntitlementRequest] = js.undefined,
-              Outputs: js.UndefOr[__listOfAddOutputRequest] = js.undefined): CreateFlowRequest = {
+    def apply(
+        Name: __string,
+        Source: SetSourceRequest,
+        AvailabilityZone: js.UndefOr[__string] = js.undefined,
+        Entitlements: js.UndefOr[__listOfGrantEntitlementRequest] = js.undefined,
+        Outputs: js.UndefOr[__listOfAddOutputRequest] = js.undefined
+    ): CreateFlowRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"   -> Name.asInstanceOf[js.Any],
         "Source" -> Source.asInstanceOf[js.Any],
@@ -189,10 +205,14 @@ package mediaconnect {
   }
 
   object CreateFlowResponse {
-    def apply(Flow: js.UndefOr[Flow] = js.undefined): CreateFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Flow" -> Flow.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Flow: js.UndefOr[Flow] = js.undefined
+    ): CreateFlowResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Flow" -> Flow.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFlowResponse]
     }
@@ -204,9 +224,12 @@ package mediaconnect {
   }
 
   object DeleteFlowRequest {
-    def apply(FlowArn: __string): DeleteFlowRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: __string
+    ): DeleteFlowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFlowRequest]
     }
@@ -219,13 +242,18 @@ package mediaconnect {
   }
 
   object DeleteFlowResponse {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined,
-              Status: js.UndefOr[Status] = js.undefined): DeleteFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): DeleteFlowResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFlowResponse]
     }
@@ -237,9 +265,12 @@ package mediaconnect {
   }
 
   object DescribeFlowRequest {
-    def apply(FlowArn: __string): DescribeFlowRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: __string
+    ): DescribeFlowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFlowRequest]
     }
@@ -252,13 +283,18 @@ package mediaconnect {
   }
 
   object DescribeFlowResponse {
-    def apply(Flow: js.UndefOr[Flow] = js.undefined,
-              Messages: js.UndefOr[Messages] = js.undefined): DescribeFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Flow" -> Flow.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Messages" -> Messages.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Flow: js.UndefOr[Flow] = js.undefined,
+        Messages: js.UndefOr[Messages] = js.undefined
+    ): DescribeFlowResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Flow" -> Flow.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Messages" -> Messages.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFlowResponse]
     }
@@ -276,10 +312,12 @@ package mediaconnect {
   }
 
   object Encryption {
-    def apply(Algorithm: Algorithm,
-              RoleArn: __string,
-              SecretArn: __string,
-              KeyType: js.UndefOr[KeyType] = js.undefined): Encryption = {
+    def apply(
+        Algorithm: Algorithm,
+        RoleArn: __string,
+        SecretArn: __string,
+        KeyType: js.UndefOr[KeyType] = js.undefined
+    ): Encryption = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Algorithm" -> Algorithm.asInstanceOf[js.Any],
         "RoleArn"   -> RoleArn.asInstanceOf[js.Any],
@@ -306,11 +344,13 @@ package mediaconnect {
   }
 
   object Entitlement {
-    def apply(EntitlementArn: __string,
-              Name: __string,
-              Subscribers: __listOf__string,
-              Description: js.UndefOr[__string] = js.undefined,
-              Encryption: js.UndefOr[Encryption] = js.undefined): Entitlement = {
+    def apply(
+        EntitlementArn: __string,
+        Name: __string,
+        Subscribers: __listOf__string,
+        Description: js.UndefOr[__string] = js.undefined,
+        Encryption: js.UndefOr[Encryption] = js.undefined
+    ): Entitlement = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any],
@@ -344,15 +384,17 @@ package mediaconnect {
   }
 
   object Flow {
-    def apply(AvailabilityZone: __string,
-              Entitlements: __listOfEntitlement,
-              FlowArn: __string,
-              Name: __string,
-              Outputs: __listOfOutput,
-              Source: Source,
-              Status: Status,
-              Description: js.UndefOr[__string] = js.undefined,
-              EgressIp: js.UndefOr[__string] = js.undefined): Flow = {
+    def apply(
+        AvailabilityZone: __string,
+        Entitlements: __listOfEntitlement,
+        FlowArn: __string,
+        Name: __string,
+        Outputs: __listOfOutput,
+        Source: Source,
+        Status: Status,
+        Description: js.UndefOr[__string] = js.undefined,
+        EgressIp: js.UndefOr[__string] = js.undefined
+    ): Flow = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "Entitlements"     -> Entitlements.asInstanceOf[js.Any],
@@ -385,10 +427,12 @@ package mediaconnect {
   }
 
   object GrantEntitlementRequest {
-    def apply(Subscribers: __listOf__string,
-              Description: js.UndefOr[__string] = js.undefined,
-              Encryption: js.UndefOr[Encryption] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined): GrantEntitlementRequest = {
+    def apply(
+        Subscribers: __listOf__string,
+        Description: js.UndefOr[__string] = js.undefined,
+        Encryption: js.UndefOr[Encryption] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined
+    ): GrantEntitlementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Subscribers" -> Subscribers.asInstanceOf[js.Any],
         "Description" -> Description.map { x =>
@@ -416,7 +460,10 @@ package mediaconnect {
   }
 
   object GrantFlowEntitlementsRequest {
-    def apply(Entitlements: __listOfGrantEntitlementRequest, FlowArn: __string): GrantFlowEntitlementsRequest = {
+    def apply(
+        Entitlements: __listOfGrantEntitlementRequest,
+        FlowArn: __string
+    ): GrantFlowEntitlementsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Entitlements" -> Entitlements.asInstanceOf[js.Any],
         "FlowArn"      -> FlowArn.asInstanceOf[js.Any]
@@ -433,13 +480,18 @@ package mediaconnect {
   }
 
   object GrantFlowEntitlementsResponse {
-    def apply(Entitlements: js.UndefOr[__listOfEntitlement] = js.undefined,
-              FlowArn: js.UndefOr[__string] = js.undefined): GrantFlowEntitlementsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Entitlements" -> Entitlements.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entitlements: js.UndefOr[__listOfEntitlement] = js.undefined,
+        FlowArn: js.UndefOr[__string] = js.undefined
+    ): GrantFlowEntitlementsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entitlements" -> Entitlements.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GrantFlowEntitlementsResponse]
     }
@@ -458,13 +510,18 @@ package mediaconnect {
   }
 
   object ListEntitlementsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListEntitlementsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListEntitlementsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitlementsRequest]
     }
@@ -477,13 +534,18 @@ package mediaconnect {
   }
 
   object ListEntitlementsResponse {
-    def apply(Entitlements: js.UndefOr[__listOfListedEntitlement] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListEntitlementsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Entitlements" -> Entitlements.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entitlements: js.UndefOr[__listOfListedEntitlement] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListEntitlementsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entitlements" -> Entitlements.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEntitlementsResponse]
     }
@@ -496,13 +558,18 @@ package mediaconnect {
   }
 
   object ListFlowsRequest {
-    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListFlowsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListFlowsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFlowsRequest]
     }
@@ -515,15 +582,56 @@ package mediaconnect {
   }
 
   object ListFlowsResponse {
-    def apply(Flows: js.UndefOr[__listOfListedFlow] = js.undefined,
-              NextToken: js.UndefOr[__string] = js.undefined): ListFlowsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Flows" -> Flows.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "NextToken" -> NextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Flows: js.UndefOr[__listOfListedFlow] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListFlowsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Flows" -> Flows.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListFlowsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: __string
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        ResourceArn: __string
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[__mapOf__string]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        Tags: js.UndefOr[__mapOf__string] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -537,7 +645,10 @@ package mediaconnect {
   }
 
   object ListedEntitlement {
-    def apply(EntitlementArn: __string, EntitlementName: __string): ListedEntitlement = {
+    def apply(
+        EntitlementArn: __string,
+        EntitlementName: __string
+    ): ListedEntitlement = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EntitlementArn"  -> EntitlementArn.asInstanceOf[js.Any],
         "EntitlementName" -> EntitlementName.asInstanceOf[js.Any]
@@ -561,12 +672,14 @@ package mediaconnect {
   }
 
   object ListedFlow {
-    def apply(AvailabilityZone: __string,
-              Description: __string,
-              FlowArn: __string,
-              Name: __string,
-              SourceType: SourceType,
-              Status: Status): ListedFlow = {
+    def apply(
+        AvailabilityZone: __string,
+        Description: __string,
+        FlowArn: __string,
+        Name: __string,
+        SourceType: SourceType,
+        Status: Status
+    ): ListedFlow = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "Description"      -> Description.asInstanceOf[js.Any],
@@ -589,9 +702,12 @@ package mediaconnect {
   }
 
   object Messages {
-    def apply(Errors: __listOf__string): Messages = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("Errors" -> Errors.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Errors: __listOf__string
+    ): Messages = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Errors" -> Errors.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Messages]
     }
@@ -614,15 +730,17 @@ package mediaconnect {
   }
 
   object Output {
-    def apply(Name: __string,
-              OutputArn: __string,
-              Description: js.UndefOr[__string] = js.undefined,
-              Destination: js.UndefOr[__string] = js.undefined,
-              Encryption: js.UndefOr[Encryption] = js.undefined,
-              EntitlementArn: js.UndefOr[__string] = js.undefined,
-              MediaLiveInputArn: js.UndefOr[__string] = js.undefined,
-              Port: js.UndefOr[__integer] = js.undefined,
-              Transport: js.UndefOr[Transport] = js.undefined): Output = {
+    def apply(
+        Name: __string,
+        OutputArn: __string,
+        Description: js.UndefOr[__string] = js.undefined,
+        Destination: js.UndefOr[__string] = js.undefined,
+        Encryption: js.UndefOr[Encryption] = js.undefined,
+        EntitlementArn: js.UndefOr[__string] = js.undefined,
+        MediaLiveInputArn: js.UndefOr[__string] = js.undefined,
+        Port: js.UndefOr[__integer] = js.undefined,
+        Transport: js.UndefOr[Transport] = js.undefined
+    ): Output = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"      -> Name.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any],
@@ -668,7 +786,10 @@ package mediaconnect {
   }
 
   object RemoveFlowOutputRequest {
-    def apply(FlowArn: __string, OutputArn: __string): RemoveFlowOutputRequest = {
+    def apply(
+        FlowArn: __string,
+        OutputArn: __string
+    ): RemoveFlowOutputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any]
@@ -685,13 +806,18 @@ package mediaconnect {
   }
 
   object RemoveFlowOutputResponse {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined,
-              OutputArn: js.UndefOr[__string] = js.undefined): RemoveFlowOutputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "OutputArn" -> OutputArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        OutputArn: js.UndefOr[__string] = js.undefined
+    ): RemoveFlowOutputResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputArn" -> OutputArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveFlowOutputResponse]
     }
@@ -704,7 +830,10 @@ package mediaconnect {
   }
 
   object RevokeFlowEntitlementRequest {
-    def apply(EntitlementArn: __string, FlowArn: __string): RevokeFlowEntitlementRequest = {
+    def apply(
+        EntitlementArn: __string,
+        FlowArn: __string
+    ): RevokeFlowEntitlementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
         "FlowArn"        -> FlowArn.asInstanceOf[js.Any]
@@ -721,13 +850,18 @@ package mediaconnect {
   }
 
   object RevokeFlowEntitlementResponse {
-    def apply(EntitlementArn: js.UndefOr[__string] = js.undefined,
-              FlowArn: js.UndefOr[__string] = js.undefined): RevokeFlowEntitlementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("EntitlementArn" -> EntitlementArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EntitlementArn: js.UndefOr[__string] = js.undefined,
+        FlowArn: js.UndefOr[__string] = js.undefined
+    ): RevokeFlowEntitlementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EntitlementArn" -> EntitlementArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeFlowEntitlementResponse]
     }
@@ -751,16 +885,18 @@ package mediaconnect {
   }
 
   object SetSourceRequest {
-    def apply(Decryption: js.UndefOr[Encryption] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              EntitlementArn: js.UndefOr[__string] = js.undefined,
-              IngestPort: js.UndefOr[__integer] = js.undefined,
-              MaxBitrate: js.UndefOr[__integer] = js.undefined,
-              MaxLatency: js.UndefOr[__integer] = js.undefined,
-              Name: js.UndefOr[__string] = js.undefined,
-              Protocol: js.UndefOr[Protocol] = js.undefined,
-              StreamId: js.UndefOr[__string] = js.undefined,
-              WhitelistCidr: js.UndefOr[__string] = js.undefined): SetSourceRequest = {
+    def apply(
+        Decryption: js.UndefOr[Encryption] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        EntitlementArn: js.UndefOr[__string] = js.undefined,
+        IngestPort: js.UndefOr[__integer] = js.undefined,
+        MaxBitrate: js.UndefOr[__integer] = js.undefined,
+        MaxLatency: js.UndefOr[__integer] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        Protocol: js.UndefOr[Protocol] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined,
+        WhitelistCidr: js.UndefOr[__string] = js.undefined
+    ): SetSourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Decryption" -> Decryption.map { x =>
           x.asInstanceOf[js.Any]
@@ -815,15 +951,17 @@ package mediaconnect {
   }
 
   object Source {
-    def apply(Name: __string,
-              SourceArn: __string,
-              Decryption: js.UndefOr[Encryption] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              EntitlementArn: js.UndefOr[__string] = js.undefined,
-              IngestIp: js.UndefOr[__string] = js.undefined,
-              IngestPort: js.UndefOr[__integer] = js.undefined,
-              Transport: js.UndefOr[Transport] = js.undefined,
-              WhitelistCidr: js.UndefOr[__string] = js.undefined): Source = {
+    def apply(
+        Name: __string,
+        SourceArn: __string,
+        Decryption: js.UndefOr[Encryption] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        EntitlementArn: js.UndefOr[__string] = js.undefined,
+        IngestIp: js.UndefOr[__string] = js.undefined,
+        IngestPort: js.UndefOr[__integer] = js.undefined,
+        Transport: js.UndefOr[Transport] = js.undefined,
+        WhitelistCidr: js.UndefOr[__string] = js.undefined
+    ): Source = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name"      -> Name.asInstanceOf[js.Any],
         "SourceArn" -> SourceArn.asInstanceOf[js.Any],
@@ -867,9 +1005,12 @@ package mediaconnect {
   }
 
   object StartFlowRequest {
-    def apply(FlowArn: __string): StartFlowRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: __string
+    ): StartFlowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFlowRequest]
     }
@@ -882,13 +1023,18 @@ package mediaconnect {
   }
 
   object StartFlowResponse {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined,
-              Status: js.UndefOr[Status] = js.undefined): StartFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): StartFlowResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartFlowResponse]
     }
@@ -912,9 +1058,12 @@ package mediaconnect {
   }
 
   object StopFlowRequest {
-    def apply(FlowArn: __string): StopFlowRequest = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: __string
+    ): StopFlowRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFlowRequest]
     }
@@ -927,15 +1076,43 @@ package mediaconnect {
   }
 
   object StopFlowResponse {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined,
-              Status: js.UndefOr[Status] = js.undefined): StopFlowResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Status" -> Status.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): StopFlowResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopFlowResponse]
+    }
+  }
+
+  /**
+    * The tags to add to the resource. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    */
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: __string
+    var Tags: __mapOf__string
+  }
+
+  object TagResourceRequest {
+    def apply(
+        ResourceArn: __string,
+        Tags: __mapOf__string
+    ): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -952,11 +1129,13 @@ package mediaconnect {
   }
 
   object Transport {
-    def apply(Protocol: Protocol,
-              MaxBitrate: js.UndefOr[__integer] = js.undefined,
-              MaxLatency: js.UndefOr[__integer] = js.undefined,
-              SmoothingLatency: js.UndefOr[__integer] = js.undefined,
-              StreamId: js.UndefOr[__string] = js.undefined): Transport = {
+    def apply(
+        Protocol: Protocol,
+        MaxBitrate: js.UndefOr[__integer] = js.undefined,
+        MaxLatency: js.UndefOr[__integer] = js.undefined,
+        SmoothingLatency: js.UndefOr[__integer] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): Transport = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Protocol" -> Protocol.asInstanceOf[js.Any],
         "MaxBitrate" -> MaxBitrate.map { x =>
@@ -977,6 +1156,26 @@ package mediaconnect {
     }
   }
 
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: __string
+    var TagKeys: __listOf__string
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        ResourceArn: __string,
+        TagKeys: __listOf__string
+    ): UntagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+    }
+  }
+
   /**
     * Information about the encryption of the flow.
     */
@@ -989,10 +1188,12 @@ package mediaconnect {
   }
 
   object UpdateEncryption {
-    def apply(Algorithm: js.UndefOr[Algorithm] = js.undefined,
-              KeyType: js.UndefOr[KeyType] = js.undefined,
-              RoleArn: js.UndefOr[__string] = js.undefined,
-              SecretArn: js.UndefOr[__string] = js.undefined): UpdateEncryption = {
+    def apply(
+        Algorithm: js.UndefOr[Algorithm] = js.undefined,
+        KeyType: js.UndefOr[KeyType] = js.undefined,
+        RoleArn: js.UndefOr[__string] = js.undefined,
+        SecretArn: js.UndefOr[__string] = js.undefined
+    ): UpdateEncryption = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Algorithm" -> Algorithm.map { x =>
           x.asInstanceOf[js.Any]
@@ -1025,11 +1226,13 @@ package mediaconnect {
   }
 
   object UpdateFlowEntitlementRequest {
-    def apply(EntitlementArn: __string,
-              FlowArn: __string,
-              Description: js.UndefOr[__string] = js.undefined,
-              Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
-              Subscribers: js.UndefOr[__listOf__string] = js.undefined): UpdateFlowEntitlementRequest = {
+    def apply(
+        EntitlementArn: __string,
+        FlowArn: __string,
+        Description: js.UndefOr[__string] = js.undefined,
+        Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
+        Subscribers: js.UndefOr[__listOf__string] = js.undefined
+    ): UpdateFlowEntitlementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EntitlementArn" -> EntitlementArn.asInstanceOf[js.Any],
         "FlowArn"        -> FlowArn.asInstanceOf[js.Any],
@@ -1055,13 +1258,18 @@ package mediaconnect {
   }
 
   object UpdateFlowEntitlementResponse {
-    def apply(Entitlement: js.UndefOr[Entitlement] = js.undefined,
-              FlowArn: js.UndefOr[__string] = js.undefined): UpdateFlowEntitlementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("Entitlement" -> Entitlement.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Entitlement: js.UndefOr[Entitlement] = js.undefined,
+        FlowArn: js.UndefOr[__string] = js.undefined
+    ): UpdateFlowEntitlementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Entitlement" -> Entitlement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowEntitlementResponse]
     }
@@ -1085,16 +1293,18 @@ package mediaconnect {
   }
 
   object UpdateFlowOutputRequest {
-    def apply(FlowArn: __string,
-              OutputArn: __string,
-              Description: js.UndefOr[__string] = js.undefined,
-              Destination: js.UndefOr[__string] = js.undefined,
-              Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
-              MaxLatency: js.UndefOr[__integer] = js.undefined,
-              Port: js.UndefOr[__integer] = js.undefined,
-              Protocol: js.UndefOr[Protocol] = js.undefined,
-              SmoothingLatency: js.UndefOr[__integer] = js.undefined,
-              StreamId: js.UndefOr[__string] = js.undefined): UpdateFlowOutputRequest = {
+    def apply(
+        FlowArn: __string,
+        OutputArn: __string,
+        Description: js.UndefOr[__string] = js.undefined,
+        Destination: js.UndefOr[__string] = js.undefined,
+        Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
+        MaxLatency: js.UndefOr[__integer] = js.undefined,
+        Port: js.UndefOr[__integer] = js.undefined,
+        Protocol: js.UndefOr[Protocol] = js.undefined,
+        SmoothingLatency: js.UndefOr[__integer] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): UpdateFlowOutputRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
         "OutputArn" -> OutputArn.asInstanceOf[js.Any],
@@ -1135,13 +1345,18 @@ package mediaconnect {
   }
 
   object UpdateFlowOutputResponse {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined,
-              Output: js.UndefOr[Output] = js.undefined): UpdateFlowOutputResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Output" -> Output.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        Output: js.UndefOr[Output] = js.undefined
+    ): UpdateFlowOutputResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Output" -> Output.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowOutputResponse]
     }
@@ -1166,17 +1381,19 @@ package mediaconnect {
   }
 
   object UpdateFlowSourceRequest {
-    def apply(FlowArn: __string,
-              SourceArn: __string,
-              Decryption: js.UndefOr[UpdateEncryption] = js.undefined,
-              Description: js.UndefOr[__string] = js.undefined,
-              EntitlementArn: js.UndefOr[__string] = js.undefined,
-              IngestPort: js.UndefOr[__integer] = js.undefined,
-              MaxBitrate: js.UndefOr[__integer] = js.undefined,
-              MaxLatency: js.UndefOr[__integer] = js.undefined,
-              Protocol: js.UndefOr[Protocol] = js.undefined,
-              StreamId: js.UndefOr[__string] = js.undefined,
-              WhitelistCidr: js.UndefOr[__string] = js.undefined): UpdateFlowSourceRequest = {
+    def apply(
+        FlowArn: __string,
+        SourceArn: __string,
+        Decryption: js.UndefOr[UpdateEncryption] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        EntitlementArn: js.UndefOr[__string] = js.undefined,
+        IngestPort: js.UndefOr[__integer] = js.undefined,
+        MaxBitrate: js.UndefOr[__integer] = js.undefined,
+        MaxLatency: js.UndefOr[__integer] = js.undefined,
+        Protocol: js.UndefOr[Protocol] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined,
+        WhitelistCidr: js.UndefOr[__string] = js.undefined
+    ): UpdateFlowSourceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FlowArn"   -> FlowArn.asInstanceOf[js.Any],
         "SourceArn" -> SourceArn.asInstanceOf[js.Any],
@@ -1220,13 +1437,18 @@ package mediaconnect {
   }
 
   object UpdateFlowSourceResponse {
-    def apply(FlowArn: js.UndefOr[__string] = js.undefined,
-              Source: js.UndefOr[Source] = js.undefined): UpdateFlowSourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("FlowArn" -> FlowArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Source" -> Source.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        Source: js.UndefOr[Source] = js.undefined
+    ): UpdateFlowSourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "FlowArn" -> FlowArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Source" -> Source.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFlowSourceResponse]
     }

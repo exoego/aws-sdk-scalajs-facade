@@ -92,14 +92,16 @@ package health {
   }
 
   object AffectedEntity {
-    def apply(awsAccountId: js.UndefOr[accountId] = js.undefined,
-              entityArn: js.UndefOr[entityArn] = js.undefined,
-              entityUrl: js.UndefOr[entityUrl] = js.undefined,
-              entityValue: js.UndefOr[entityValue] = js.undefined,
-              eventArn: js.UndefOr[eventArn] = js.undefined,
-              lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
-              statusCode: js.UndefOr[entityStatusCode] = js.undefined,
-              tags: js.UndefOr[tagSet] = js.undefined): AffectedEntity = {
+    def apply(
+        awsAccountId: js.UndefOr[accountId] = js.undefined,
+        entityArn: js.UndefOr[entityArn] = js.undefined,
+        entityUrl: js.UndefOr[entityUrl] = js.undefined,
+        entityValue: js.UndefOr[entityValue] = js.undefined,
+        eventArn: js.UndefOr[eventArn] = js.undefined,
+        lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
+        statusCode: js.UndefOr[entityStatusCode] = js.undefined,
+        tags: js.UndefOr[tagSet] = js.undefined
+    ): AffectedEntity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "awsAccountId" -> awsAccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -141,12 +143,18 @@ package health {
   }
 
   object DateTimeRange {
-    def apply(from: js.UndefOr[timestamp] = js.undefined, to: js.UndefOr[timestamp] = js.undefined): DateTimeRange = {
-      val _fields = IndexedSeq[(String, js.Any)]("from" -> from.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "to" -> to.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        from: js.UndefOr[timestamp] = js.undefined,
+        to: js.UndefOr[timestamp] = js.undefined
+    ): DateTimeRange = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "from" -> from.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "to" -> to.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DateTimeRange]
     }
@@ -161,10 +169,12 @@ package health {
   }
 
   object DescribeAffectedEntitiesRequest {
-    def apply(filter: EntityFilter,
-              locale: js.UndefOr[locale] = js.undefined,
-              maxResults: js.UndefOr[maxResults] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeAffectedEntitiesRequest = {
+    def apply(
+        filter: EntityFilter,
+        locale: js.UndefOr[locale] = js.undefined,
+        maxResults: js.UndefOr[maxResults] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeAffectedEntitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filter" -> filter.asInstanceOf[js.Any],
         "locale" -> locale.map { x =>
@@ -189,13 +199,18 @@ package health {
   }
 
   object DescribeAffectedEntitiesResponse {
-    def apply(entities: js.UndefOr[EntityList] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeAffectedEntitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("entities" -> entities.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        entities: js.UndefOr[EntityList] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeAffectedEntitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "entities" -> entities.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAffectedEntitiesResponse]
     }
@@ -207,10 +222,14 @@ package health {
   }
 
   object DescribeEntityAggregatesRequest {
-    def apply(eventArns: js.UndefOr[EventArnsList] = js.undefined): DescribeEntityAggregatesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("eventArns" -> eventArns.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        eventArns: js.UndefOr[EventArnsList] = js.undefined
+    ): DescribeEntityAggregatesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "eventArns" -> eventArns.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEntityAggregatesRequest]
     }
@@ -222,10 +241,14 @@ package health {
   }
 
   object DescribeEntityAggregatesResponse {
-    def apply(entityAggregates: js.UndefOr[EntityAggregateList] = js.undefined): DescribeEntityAggregatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("entityAggregates" -> entityAggregates.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        entityAggregates: js.UndefOr[EntityAggregateList] = js.undefined
+    ): DescribeEntityAggregatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "entityAggregates" -> entityAggregates.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEntityAggregatesResponse]
     }
@@ -240,10 +263,12 @@ package health {
   }
 
   object DescribeEventAggregatesRequest {
-    def apply(aggregateField: eventAggregateField,
-              filter: js.UndefOr[EventFilter] = js.undefined,
-              maxResults: js.UndefOr[maxResults] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeEventAggregatesRequest = {
+    def apply(
+        aggregateField: eventAggregateField,
+        filter: js.UndefOr[EventFilter] = js.undefined,
+        maxResults: js.UndefOr[maxResults] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventAggregatesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "aggregateField" -> aggregateField.asInstanceOf[js.Any],
         "filter" -> filter.map { x =>
@@ -268,13 +293,18 @@ package health {
   }
 
   object DescribeEventAggregatesResponse {
-    def apply(eventAggregates: js.UndefOr[EventAggregateList] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeEventAggregatesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("eventAggregates" -> eventAggregates.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        eventAggregates: js.UndefOr[EventAggregateList] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventAggregatesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "eventAggregates" -> eventAggregates.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventAggregatesResponse]
     }
@@ -287,11 +317,16 @@ package health {
   }
 
   object DescribeEventDetailsRequest {
-    def apply(eventArns: eventArnList, locale: js.UndefOr[locale] = js.undefined): DescribeEventDetailsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("eventArns" -> eventArns.asInstanceOf[js.Any], "locale" -> locale.map {
-        x =>
+    def apply(
+        eventArns: eventArnList,
+        locale: js.UndefOr[locale] = js.undefined
+    ): DescribeEventDetailsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "eventArns" -> eventArns.asInstanceOf[js.Any],
+        "locale" -> locale.map { x =>
           x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventDetailsRequest]
     }
@@ -308,11 +343,14 @@ package health {
         failedSet: js.UndefOr[DescribeEventDetailsFailedSet] = js.undefined,
         successfulSet: js.UndefOr[DescribeEventDetailsSuccessfulSet] = js.undefined
     ): DescribeEventDetailsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("failedSet" -> failedSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "successfulSet" -> successfulSet.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+      val _fields = IndexedSeq[(String, js.Any)](
+        "failedSet" -> failedSet.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "successfulSet" -> successfulSet.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventDetailsResponse]
     }
@@ -327,10 +365,12 @@ package health {
   }
 
   object DescribeEventTypesRequest {
-    def apply(filter: js.UndefOr[EventTypeFilter] = js.undefined,
-              locale: js.UndefOr[locale] = js.undefined,
-              maxResults: js.UndefOr[maxResults] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeEventTypesRequest = {
+    def apply(
+        filter: js.UndefOr[EventTypeFilter] = js.undefined,
+        locale: js.UndefOr[locale] = js.undefined,
+        maxResults: js.UndefOr[maxResults] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filter" -> filter.map { x =>
           x.asInstanceOf[js.Any]
@@ -357,13 +397,18 @@ package health {
   }
 
   object DescribeEventTypesResponse {
-    def apply(eventTypes: js.UndefOr[EventTypeList] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeEventTypesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("eventTypes" -> eventTypes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        eventTypes: js.UndefOr[EventTypeList] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventTypesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "eventTypes" -> eventTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventTypesResponse]
     }
@@ -378,10 +423,12 @@ package health {
   }
 
   object DescribeEventsRequest {
-    def apply(filter: js.UndefOr[EventFilter] = js.undefined,
-              locale: js.UndefOr[locale] = js.undefined,
-              maxResults: js.UndefOr[maxResults] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeEventsRequest = {
+    def apply(
+        filter: js.UndefOr[EventFilter] = js.undefined,
+        locale: js.UndefOr[locale] = js.undefined,
+        maxResults: js.UndefOr[maxResults] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "filter" -> filter.map { x =>
           x.asInstanceOf[js.Any]
@@ -408,13 +455,18 @@ package health {
   }
 
   object DescribeEventsResponse {
-    def apply(events: js.UndefOr[EventList] = js.undefined,
-              nextToken: js.UndefOr[nextToken] = js.undefined): DescribeEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("events" -> events.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        events: js.UndefOr[EventList] = js.undefined,
+        nextToken: js.UndefOr[nextToken] = js.undefined
+    ): DescribeEventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "events" -> events.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEventsResponse]
     }
@@ -430,13 +482,18 @@ package health {
   }
 
   object EntityAggregate {
-    def apply(count: js.UndefOr[count] = js.undefined,
-              eventArn: js.UndefOr[eventArn] = js.undefined): EntityAggregate = {
-      val _fields = IndexedSeq[(String, js.Any)]("count" -> count.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "eventArn" -> eventArn.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        count: js.UndefOr[count] = js.undefined,
+        eventArn: js.UndefOr[eventArn] = js.undefined
+    ): EntityAggregate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "count" -> count.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "eventArn" -> eventArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EntityAggregate]
     }
@@ -456,12 +513,14 @@ package health {
   }
 
   object EntityFilter {
-    def apply(eventArns: eventArnList,
-              entityArns: js.UndefOr[entityArnList] = js.undefined,
-              entityValues: js.UndefOr[entityValueList] = js.undefined,
-              lastUpdatedTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
-              statusCodes: js.UndefOr[entityStatusCodeList] = js.undefined,
-              tags: js.UndefOr[tagFilter] = js.undefined): EntityFilter = {
+    def apply(
+        eventArns: eventArnList,
+        entityArns: js.UndefOr[entityArnList] = js.undefined,
+        entityValues: js.UndefOr[entityValueList] = js.undefined,
+        lastUpdatedTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
+        statusCodes: js.UndefOr[entityStatusCodeList] = js.undefined,
+        tags: js.UndefOr[tagFilter] = js.undefined
+    ): EntityFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "eventArns" -> eventArns.asInstanceOf[js.Any],
         "entityArns" -> entityArns.map { x =>
@@ -503,16 +562,18 @@ package health {
   }
 
   object Event {
-    def apply(arn: js.UndefOr[eventArn] = js.undefined,
-              availabilityZone: js.UndefOr[availabilityZone] = js.undefined,
-              endTime: js.UndefOr[timestamp] = js.undefined,
-              eventTypeCategory: js.UndefOr[eventTypeCategory] = js.undefined,
-              eventTypeCode: js.UndefOr[eventTypeCode] = js.undefined,
-              lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
-              region: js.UndefOr[region] = js.undefined,
-              service: js.UndefOr[service] = js.undefined,
-              startTime: js.UndefOr[timestamp] = js.undefined,
-              statusCode: js.UndefOr[eventStatusCode] = js.undefined): Event = {
+    def apply(
+        arn: js.UndefOr[eventArn] = js.undefined,
+        availabilityZone: js.UndefOr[availabilityZone] = js.undefined,
+        endTime: js.UndefOr[timestamp] = js.undefined,
+        eventTypeCategory: js.UndefOr[eventTypeCategory] = js.undefined,
+        eventTypeCode: js.UndefOr[eventTypeCode] = js.undefined,
+        lastUpdatedTime: js.UndefOr[timestamp] = js.undefined,
+        region: js.UndefOr[region] = js.undefined,
+        service: js.UndefOr[service] = js.undefined,
+        startTime: js.UndefOr[timestamp] = js.undefined,
+        statusCode: js.UndefOr[eventStatusCode] = js.undefined
+    ): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
         "arn" -> arn.map { x =>
           x.asInstanceOf[js.Any]
@@ -560,13 +621,18 @@ package health {
   }
 
   object EventAggregate {
-    def apply(aggregateValue: js.UndefOr[aggregateValue] = js.undefined,
-              count: js.UndefOr[count] = js.undefined): EventAggregate = {
-      val _fields = IndexedSeq[(String, js.Any)]("aggregateValue" -> aggregateValue.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "count" -> count.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        aggregateValue: js.UndefOr[aggregateValue] = js.undefined,
+        count: js.UndefOr[count] = js.undefined
+    ): EventAggregate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "aggregateValue" -> aggregateValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "count" -> count.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventAggregate]
     }
@@ -581,10 +647,14 @@ package health {
   }
 
   object EventDescription {
-    def apply(latestDescription: js.UndefOr[eventDescription] = js.undefined): EventDescription = {
-      val _fields = IndexedSeq[(String, js.Any)]("latestDescription" -> latestDescription.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        latestDescription: js.UndefOr[eventDescription] = js.undefined
+    ): EventDescription = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "latestDescription" -> latestDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDescription]
     }
@@ -601,9 +671,11 @@ package health {
   }
 
   object EventDetails {
-    def apply(event: js.UndefOr[Event] = js.undefined,
-              eventDescription: js.UndefOr[EventDescription] = js.undefined,
-              eventMetadata: js.UndefOr[eventMetadata] = js.undefined): EventDetails = {
+    def apply(
+        event: js.UndefOr[Event] = js.undefined,
+        eventDescription: js.UndefOr[EventDescription] = js.undefined,
+        eventMetadata: js.UndefOr[eventMetadata] = js.undefined
+    ): EventDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "event" -> event.map { x =>
           x.asInstanceOf[js.Any]
@@ -631,9 +703,11 @@ package health {
   }
 
   object EventDetailsErrorItem {
-    def apply(errorMessage: js.UndefOr[string] = js.undefined,
-              errorName: js.UndefOr[string] = js.undefined,
-              eventArn: js.UndefOr[eventArn] = js.undefined): EventDetailsErrorItem = {
+    def apply(
+        errorMessage: js.UndefOr[string] = js.undefined,
+        errorName: js.UndefOr[string] = js.undefined,
+        eventArn: js.UndefOr[eventArn] = js.undefined
+    ): EventDetailsErrorItem = {
       val _fields = IndexedSeq[(String, js.Any)](
         "errorMessage" -> errorMessage.map { x =>
           x.asInstanceOf[js.Any]
@@ -671,19 +745,21 @@ package health {
   }
 
   object EventFilter {
-    def apply(availabilityZones: js.UndefOr[availabilityZones] = js.undefined,
-              endTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
-              entityArns: js.UndefOr[entityArnList] = js.undefined,
-              entityValues: js.UndefOr[entityValueList] = js.undefined,
-              eventArns: js.UndefOr[eventArnList] = js.undefined,
-              eventStatusCodes: js.UndefOr[eventStatusCodeList] = js.undefined,
-              eventTypeCategories: js.UndefOr[eventTypeCategoryList] = js.undefined,
-              eventTypeCodes: js.UndefOr[eventTypeList] = js.undefined,
-              lastUpdatedTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
-              regions: js.UndefOr[regionList] = js.undefined,
-              services: js.UndefOr[serviceList] = js.undefined,
-              startTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
-              tags: js.UndefOr[tagFilter] = js.undefined): EventFilter = {
+    def apply(
+        availabilityZones: js.UndefOr[availabilityZones] = js.undefined,
+        endTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
+        entityArns: js.UndefOr[entityArnList] = js.undefined,
+        entityValues: js.UndefOr[entityValueList] = js.undefined,
+        eventArns: js.UndefOr[eventArnList] = js.undefined,
+        eventStatusCodes: js.UndefOr[eventStatusCodeList] = js.undefined,
+        eventTypeCategories: js.UndefOr[eventTypeCategoryList] = js.undefined,
+        eventTypeCodes: js.UndefOr[eventTypeList] = js.undefined,
+        lastUpdatedTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
+        regions: js.UndefOr[regionList] = js.undefined,
+        services: js.UndefOr[serviceList] = js.undefined,
+        startTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
+        tags: js.UndefOr[tagFilter] = js.undefined
+    ): EventFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "availabilityZones" -> availabilityZones.map { x =>
           x.asInstanceOf[js.Any]
@@ -741,16 +817,22 @@ package health {
   }
 
   object EventType {
-    def apply(category: js.UndefOr[eventTypeCategory] = js.undefined,
-              code: js.UndefOr[eventTypeCode] = js.undefined,
-              service: js.UndefOr[service] = js.undefined): EventType = {
-      val _fields = IndexedSeq[(String, js.Any)]("category" -> category.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "code" -> code.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "service" -> service.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        category: js.UndefOr[eventTypeCategory] = js.undefined,
+        code: js.UndefOr[eventTypeCode] = js.undefined,
+        service: js.UndefOr[service] = js.undefined
+    ): EventType = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "category" -> category.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "code" -> code.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "service" -> service.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventType]
     }
@@ -767,9 +849,11 @@ package health {
   }
 
   object EventTypeFilter {
-    def apply(eventTypeCategories: js.UndefOr[EventTypeCategoryList] = js.undefined,
-              eventTypeCodes: js.UndefOr[EventTypeCodeList] = js.undefined,
-              services: js.UndefOr[serviceList] = js.undefined): EventTypeFilter = {
+    def apply(
+        eventTypeCategories: js.UndefOr[EventTypeCategoryList] = js.undefined,
+        eventTypeCodes: js.UndefOr[EventTypeCodeList] = js.undefined,
+        services: js.UndefOr[serviceList] = js.undefined
+    ): EventTypeFilter = {
       val _fields = IndexedSeq[(String, js.Any)](
         "eventTypeCategories" -> eventTypeCategories.map { x =>
           x.asInstanceOf[js.Any]

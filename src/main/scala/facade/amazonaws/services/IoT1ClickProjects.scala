@@ -10,7 +10,6 @@ package object iot1clickprojects {
   type AttributeDefaultValue        = String
   type AttributeName                = String
   type AttributeValue               = String
-  type Code                         = String
   type DefaultPlacementAttributeMap = js.Dictionary[AttributeDefaultValue]
   type Description                  = String
   type DeviceCallbackKey            = String
@@ -22,13 +21,17 @@ package object iot1clickprojects {
   type DeviceTemplateName           = String
   type DeviceType                   = String
   type MaxResults                   = Int
-  type Message                      = String
   type NextToken                    = String
   type PlacementAttributeMap        = js.Dictionary[AttributeValue]
   type PlacementName                = String
   type PlacementSummaryList         = js.Array[PlacementSummary]
+  type ProjectArn                   = String
   type ProjectName                  = String
   type ProjectSummaryList           = js.Array[ProjectSummary]
+  type TagKey                       = String
+  type TagKeyList                   = js.Array[TagKey]
+  type TagMap                       = js.Dictionary[TagValue]
+  type TagValue                     = String
   type Time                         = js.Date
 }
 
@@ -53,6 +56,9 @@ package iot1clickprojects {
     def getDevicesInPlacement(params: GetDevicesInPlacementRequest): Request[GetDevicesInPlacementResponse] = js.native
     def listPlacements(params: ListPlacementsRequest): Request[ListPlacementsResponse]                      = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse]                            = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]       = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                               = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]                         = js.native
     def updatePlacement(params: UpdatePlacementRequest): Request[UpdatePlacementResponse]                   = js.native
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse]                         = js.native
   }
@@ -66,10 +72,12 @@ package iot1clickprojects {
   }
 
   object AssociateDeviceWithPlacementRequest {
-    def apply(deviceId: DeviceId,
-              deviceTemplateName: DeviceTemplateName,
-              placementName: PlacementName,
-              projectName: ProjectName): AssociateDeviceWithPlacementRequest = {
+    def apply(
+        deviceId: DeviceId,
+        deviceTemplateName: DeviceTemplateName,
+        placementName: PlacementName,
+        projectName: ProjectName
+    ): AssociateDeviceWithPlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deviceId"           -> deviceId.asInstanceOf[js.Any],
         "deviceTemplateName" -> deviceTemplateName.asInstanceOf[js.Any],
@@ -85,8 +93,10 @@ package iot1clickprojects {
   trait AssociateDeviceWithPlacementResponse extends js.Object {}
 
   object AssociateDeviceWithPlacementResponse {
-    def apply(): AssociateDeviceWithPlacementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): AssociateDeviceWithPlacementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateDeviceWithPlacementResponse]
     }
@@ -100,9 +110,11 @@ package iot1clickprojects {
   }
 
   object CreatePlacementRequest {
-    def apply(placementName: PlacementName,
-              projectName: ProjectName,
-              attributes: js.UndefOr[PlacementAttributeMap] = js.undefined): CreatePlacementRequest = {
+    def apply(
+        placementName: PlacementName,
+        projectName: ProjectName,
+        attributes: js.UndefOr[PlacementAttributeMap] = js.undefined
+    ): CreatePlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName"   -> projectName.asInstanceOf[js.Any],
@@ -119,8 +131,10 @@ package iot1clickprojects {
   trait CreatePlacementResponse extends js.Object {}
 
   object CreatePlacementResponse {
-    def apply(): CreatePlacementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreatePlacementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePlacementResponse]
     }
@@ -131,18 +145,25 @@ package iot1clickprojects {
     var projectName: ProjectName
     var description: js.UndefOr[Description]
     var placementTemplate: js.UndefOr[PlacementTemplate]
+    var tags: js.UndefOr[TagMap]
   }
 
   object CreateProjectRequest {
-    def apply(projectName: ProjectName,
-              description: js.UndefOr[Description] = js.undefined,
-              placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined): CreateProjectRequest = {
+    def apply(
+        projectName: ProjectName,
+        description: js.UndefOr[Description] = js.undefined,
+        placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectName" -> projectName.asInstanceOf[js.Any],
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
         },
         "placementTemplate" -> placementTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -155,8 +176,10 @@ package iot1clickprojects {
   trait CreateProjectResponse extends js.Object {}
 
   object CreateProjectResponse {
-    def apply(): CreateProjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): CreateProjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProjectResponse]
     }
@@ -169,7 +192,10 @@ package iot1clickprojects {
   }
 
   object DeletePlacementRequest {
-    def apply(placementName: PlacementName, projectName: ProjectName): DeletePlacementRequest = {
+    def apply(
+        placementName: PlacementName,
+        projectName: ProjectName
+    ): DeletePlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName"   -> projectName.asInstanceOf[js.Any]
@@ -183,8 +209,10 @@ package iot1clickprojects {
   trait DeletePlacementResponse extends js.Object {}
 
   object DeletePlacementResponse {
-    def apply(): DeletePlacementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeletePlacementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePlacementResponse]
     }
@@ -196,9 +224,12 @@ package iot1clickprojects {
   }
 
   object DeleteProjectRequest {
-    def apply(projectName: ProjectName): DeleteProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("projectName" -> projectName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        projectName: ProjectName
+    ): DeleteProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projectName" -> projectName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectRequest]
     }
@@ -208,8 +239,10 @@ package iot1clickprojects {
   trait DeleteProjectResponse extends js.Object {}
 
   object DeleteProjectResponse {
-    def apply(): DeleteProjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DeleteProjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProjectResponse]
     }
@@ -222,7 +255,10 @@ package iot1clickprojects {
   }
 
   object DescribePlacementRequest {
-    def apply(placementName: PlacementName, projectName: ProjectName): DescribePlacementRequest = {
+    def apply(
+        placementName: PlacementName,
+        projectName: ProjectName
+    ): DescribePlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName"   -> projectName.asInstanceOf[js.Any]
@@ -238,9 +274,12 @@ package iot1clickprojects {
   }
 
   object DescribePlacementResponse {
-    def apply(placement: PlacementDescription): DescribePlacementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("placement" -> placement.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        placement: PlacementDescription
+    ): DescribePlacementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "placement" -> placement.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePlacementResponse]
     }
@@ -252,9 +291,12 @@ package iot1clickprojects {
   }
 
   object DescribeProjectRequest {
-    def apply(projectName: ProjectName): DescribeProjectRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("projectName" -> projectName.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        projectName: ProjectName
+    ): DescribeProjectRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projectName" -> projectName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProjectRequest]
     }
@@ -266,9 +308,12 @@ package iot1clickprojects {
   }
 
   object DescribeProjectResponse {
-    def apply(project: ProjectDescription): DescribeProjectResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("project" -> project.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        project: ProjectDescription
+    ): DescribeProjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "project" -> project.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProjectResponse]
     }
@@ -284,13 +329,18 @@ package iot1clickprojects {
   }
 
   object DeviceTemplate {
-    def apply(callbackOverrides: js.UndefOr[DeviceCallbackOverrideMap] = js.undefined,
-              deviceType: js.UndefOr[DeviceType] = js.undefined): DeviceTemplate = {
-      val _fields = IndexedSeq[(String, js.Any)]("callbackOverrides" -> callbackOverrides.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "deviceType" -> deviceType.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        callbackOverrides: js.UndefOr[DeviceCallbackOverrideMap] = js.undefined,
+        deviceType: js.UndefOr[DeviceType] = js.undefined
+    ): DeviceTemplate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "callbackOverrides" -> callbackOverrides.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deviceType" -> deviceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceTemplate]
     }
@@ -304,9 +354,11 @@ package iot1clickprojects {
   }
 
   object DisassociateDeviceFromPlacementRequest {
-    def apply(deviceTemplateName: DeviceTemplateName,
-              placementName: PlacementName,
-              projectName: ProjectName): DisassociateDeviceFromPlacementRequest = {
+    def apply(
+        deviceTemplateName: DeviceTemplateName,
+        placementName: PlacementName,
+        projectName: ProjectName
+    ): DisassociateDeviceFromPlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "deviceTemplateName" -> deviceTemplateName.asInstanceOf[js.Any],
         "placementName"      -> placementName.asInstanceOf[js.Any],
@@ -321,8 +373,10 @@ package iot1clickprojects {
   trait DisassociateDeviceFromPlacementResponse extends js.Object {}
 
   object DisassociateDeviceFromPlacementResponse {
-    def apply(): DisassociateDeviceFromPlacementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): DisassociateDeviceFromPlacementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateDeviceFromPlacementResponse]
     }
@@ -335,7 +389,10 @@ package iot1clickprojects {
   }
 
   object GetDevicesInPlacementRequest {
-    def apply(placementName: PlacementName, projectName: ProjectName): GetDevicesInPlacementRequest = {
+    def apply(
+        placementName: PlacementName,
+        projectName: ProjectName
+    ): GetDevicesInPlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName"   -> projectName.asInstanceOf[js.Any]
@@ -351,30 +408,15 @@ package iot1clickprojects {
   }
 
   object GetDevicesInPlacementResponse {
-    def apply(devices: DeviceMap): GetDevicesInPlacementResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("devices" -> devices.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        devices: DeviceMap
+    ): GetDevicesInPlacementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "devices" -> devices.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDevicesInPlacementResponse]
     }
-  }
-
-  /**
-    * <p/>
-    */
-  @js.native
-  trait InternalFailureExceptionException extends js.Object {
-    val code: Code
-    val message: Message
-  }
-
-  /**
-    * <p/>
-    */
-  @js.native
-  trait InvalidRequestExceptionException extends js.Object {
-    val code: Code
-    val message: Message
   }
 
   @js.native
@@ -385,9 +427,11 @@ package iot1clickprojects {
   }
 
   object ListPlacementsRequest {
-    def apply(projectName: ProjectName,
-              maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListPlacementsRequest = {
+    def apply(
+        projectName: ProjectName,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPlacementsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectName" -> projectName.asInstanceOf[js.Any],
         "maxResults" -> maxResults.map { x =>
@@ -409,13 +453,16 @@ package iot1clickprojects {
   }
 
   object ListPlacementsResponse {
-    def apply(placements: PlacementSummaryList,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListPlacementsResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("placements" -> placements.asInstanceOf[js.Any], "nextToken" -> nextToken.map {
-          x =>
-            x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        placements: PlacementSummaryList,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListPlacementsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "placements" -> placements.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPlacementsResponse]
     }
@@ -428,13 +475,18 @@ package iot1clickprojects {
   }
 
   object ListProjectsRequest {
-    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
-              nextToken: js.UndefOr[NextToken] = js.undefined): ListProjectsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "nextToken" -> nextToken.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListProjectsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsRequest]
     }
@@ -447,13 +499,54 @@ package iot1clickprojects {
   }
 
   object ListProjectsResponse {
-    def apply(projects: ProjectSummaryList, nextToken: js.UndefOr[NextToken] = js.undefined): ListProjectsResponse = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("projects" -> projects.asInstanceOf[js.Any], "nextToken" -> nextToken.map { x =>
+    def apply(
+        projects: ProjectSummaryList,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListProjectsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "projects" -> projects.asInstanceOf[js.Any],
+        "nextToken" -> nextToken.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProjectsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: ProjectArn
+  }
+
+  object ListTagsForResourceRequest {
+    def apply(
+        resourceArn: ProjectArn
+    ): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    def apply(
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -470,11 +563,13 @@ package iot1clickprojects {
   }
 
   object PlacementDescription {
-    def apply(attributes: PlacementAttributeMap,
-              createdDate: Time,
-              placementName: PlacementName,
-              projectName: ProjectName,
-              updatedDate: Time): PlacementDescription = {
+    def apply(
+        attributes: PlacementAttributeMap,
+        createdDate: Time,
+        placementName: PlacementName,
+        projectName: ProjectName,
+        updatedDate: Time
+    ): PlacementDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "attributes"    -> attributes.asInstanceOf[js.Any],
         "createdDate"   -> createdDate.asInstanceOf[js.Any],
@@ -499,10 +594,12 @@ package iot1clickprojects {
   }
 
   object PlacementSummary {
-    def apply(createdDate: Time,
-              placementName: PlacementName,
-              projectName: ProjectName,
-              updatedDate: Time): PlacementSummary = {
+    def apply(
+        createdDate: Time,
+        placementName: PlacementName,
+        projectName: ProjectName,
+        updatedDate: Time
+    ): PlacementSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdDate"   -> createdDate.asInstanceOf[js.Any],
         "placementName" -> placementName.asInstanceOf[js.Any],
@@ -524,13 +621,18 @@ package iot1clickprojects {
   }
 
   object PlacementTemplate {
-    def apply(defaultAttributes: js.UndefOr[DefaultPlacementAttributeMap] = js.undefined,
-              deviceTemplates: js.UndefOr[DeviceTemplateMap] = js.undefined): PlacementTemplate = {
-      val _fields = IndexedSeq[(String, js.Any)]("defaultAttributes" -> defaultAttributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "deviceTemplates" -> deviceTemplates.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        defaultAttributes: js.UndefOr[DefaultPlacementAttributeMap] = js.undefined,
+        deviceTemplates: js.UndefOr[DeviceTemplateMap] = js.undefined
+    ): PlacementTemplate = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "defaultAttributes" -> defaultAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "deviceTemplates" -> deviceTemplates.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PlacementTemplate]
     }
@@ -544,24 +646,36 @@ package iot1clickprojects {
     var createdDate: Time
     var projectName: ProjectName
     var updatedDate: Time
+    var arn: js.UndefOr[ProjectArn]
     var description: js.UndefOr[Description]
     var placementTemplate: js.UndefOr[PlacementTemplate]
+    var tags: js.UndefOr[TagMap]
   }
 
   object ProjectDescription {
-    def apply(createdDate: Time,
-              projectName: ProjectName,
-              updatedDate: Time,
-              description: js.UndefOr[Description] = js.undefined,
-              placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined): ProjectDescription = {
+    def apply(
+        createdDate: Time,
+        projectName: ProjectName,
+        updatedDate: Time,
+        arn: js.UndefOr[ProjectArn] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ProjectDescription = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdDate" -> createdDate.asInstanceOf[js.Any],
         "projectName" -> projectName.asInstanceOf[js.Any],
         "updatedDate" -> updatedDate.asInstanceOf[js.Any],
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
         "description" -> description.map { x =>
           x.asInstanceOf[js.Any]
         },
         "placementTemplate" -> placementTemplate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -578,45 +692,98 @@ package iot1clickprojects {
     var createdDate: Time
     var projectName: ProjectName
     var updatedDate: Time
+    var arn: js.UndefOr[ProjectArn]
+    var tags: js.UndefOr[TagMap]
   }
 
   object ProjectSummary {
-    def apply(createdDate: Time, projectName: ProjectName, updatedDate: Time): ProjectSummary = {
+    def apply(
+        createdDate: Time,
+        projectName: ProjectName,
+        updatedDate: Time,
+        arn: js.UndefOr[ProjectArn] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ProjectSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "createdDate" -> createdDate.asInstanceOf[js.Any],
         "projectName" -> projectName.asInstanceOf[js.Any],
-        "updatedDate" -> updatedDate.asInstanceOf[js.Any]
+        "updatedDate" -> updatedDate.asInstanceOf[js.Any],
+        "arn" -> arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "tags" -> tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
       ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProjectSummary]
     }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
-  trait ResourceConflictExceptionException extends js.Object {
-    val code: Code
-    val message: Message
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: ProjectArn
+    var tags: TagMap
   }
 
-  /**
-    * <p/>
-    */
-  @js.native
-  trait ResourceNotFoundExceptionException extends js.Object {
-    val code: Code
-    val message: Message
+  object TagResourceRequest {
+    def apply(
+        resourceArn: ProjectArn,
+        tags: TagMap
+    ): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags"        -> tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
+    }
   }
 
-  /**
-    * <p/>
-    */
   @js.native
-  trait TooManyRequestsExceptionException extends js.Object {
-    val code: Code
-    val message: Message
+  trait TagResourceResponse extends js.Object {}
+
+  object TagResourceResponse {
+    def apply(
+        ): TagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: ProjectArn
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    def apply(
+        resourceArn: ProjectArn,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object {}
+
+  object UntagResourceResponse {
+    def apply(
+        ): UntagResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
+
+      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceResponse]
+    }
   }
 
   @js.native
@@ -627,9 +794,11 @@ package iot1clickprojects {
   }
 
   object UpdatePlacementRequest {
-    def apply(placementName: PlacementName,
-              projectName: ProjectName,
-              attributes: js.UndefOr[PlacementAttributeMap] = js.undefined): UpdatePlacementRequest = {
+    def apply(
+        placementName: PlacementName,
+        projectName: ProjectName,
+        attributes: js.UndefOr[PlacementAttributeMap] = js.undefined
+    ): UpdatePlacementRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "placementName" -> placementName.asInstanceOf[js.Any],
         "projectName"   -> projectName.asInstanceOf[js.Any],
@@ -646,8 +815,10 @@ package iot1clickprojects {
   trait UpdatePlacementResponse extends js.Object {}
 
   object UpdatePlacementResponse {
-    def apply(): UpdatePlacementResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdatePlacementResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePlacementResponse]
     }
@@ -661,9 +832,11 @@ package iot1clickprojects {
   }
 
   object UpdateProjectRequest {
-    def apply(projectName: ProjectName,
-              description: js.UndefOr[Description] = js.undefined,
-              placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined): UpdateProjectRequest = {
+    def apply(
+        projectName: ProjectName,
+        description: js.UndefOr[Description] = js.undefined,
+        placementTemplate: js.UndefOr[PlacementTemplate] = js.undefined
+    ): UpdateProjectRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "projectName" -> projectName.asInstanceOf[js.Any],
         "description" -> description.map { x =>
@@ -682,8 +855,10 @@ package iot1clickprojects {
   trait UpdateProjectResponse extends js.Object {}
 
   object UpdateProjectResponse {
-    def apply(): UpdateProjectResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ): UpdateProjectResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProjectResponse]
     }

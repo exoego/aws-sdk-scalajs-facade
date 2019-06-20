@@ -28,9 +28,12 @@ package s3control {
   }
 
   object DeletePublicAccessBlockRequest {
-    def apply(AccountId: AccountId): DeletePublicAccessBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountId" -> AccountId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountId: AccountId
+    ): DeletePublicAccessBlockRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePublicAccessBlockRequest]
     }
@@ -45,10 +48,11 @@ package s3control {
     def apply(
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.map { x =>
+      val _fields = IndexedSeq[(String, js.Any)](
+        "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.map { x =>
           x.asInstanceOf[js.Any]
-        }).filter(_._2 != (js.undefined: js.Any))
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicAccessBlockOutput]
     }
@@ -60,9 +64,12 @@ package s3control {
   }
 
   object GetPublicAccessBlockRequest {
-    def apply(AccountId: AccountId): GetPublicAccessBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)]("AccountId" -> AccountId.asInstanceOf[js.Any])
-        .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        AccountId: AccountId
+    ): GetPublicAccessBlockRequest = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetPublicAccessBlockRequest]
     }
@@ -93,10 +100,12 @@ package s3control {
   }
 
   object PublicAccessBlockConfiguration {
-    def apply(BlockPublicAcls: js.UndefOr[Setting] = js.undefined,
-              BlockPublicPolicy: js.UndefOr[Setting] = js.undefined,
-              IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
-              RestrictPublicBuckets: js.UndefOr[Setting] = js.undefined): PublicAccessBlockConfiguration = {
+    def apply(
+        BlockPublicAcls: js.UndefOr[Setting] = js.undefined,
+        BlockPublicPolicy: js.UndefOr[Setting] = js.undefined,
+        IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
+        RestrictPublicBuckets: js.UndefOr[Setting] = js.undefined
+    ): PublicAccessBlockConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
         "BlockPublicAcls" -> BlockPublicAcls.map { x =>
           x.asInstanceOf[js.Any]
@@ -123,8 +132,10 @@ package s3control {
   }
 
   object PutPublicAccessBlockRequest {
-    def apply(AccountId: AccountId,
-              PublicAccessBlockConfiguration: PublicAccessBlockConfiguration): PutPublicAccessBlockRequest = {
+    def apply(
+        AccountId: AccountId,
+        PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
+    ): PutPublicAccessBlockRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId"                      -> AccountId.asInstanceOf[js.Any],
         "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]

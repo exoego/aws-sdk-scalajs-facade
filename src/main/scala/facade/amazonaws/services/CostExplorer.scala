@@ -126,9 +126,11 @@ package costexplorer {
   }
 
   object Coverage {
-    def apply(CoverageCost: js.UndefOr[CoverageCost] = js.undefined,
-              CoverageHours: js.UndefOr[CoverageHours] = js.undefined,
-              CoverageNormalizedUnits: js.UndefOr[CoverageNormalizedUnits] = js.undefined): Coverage = {
+    def apply(
+        CoverageCost: js.UndefOr[CoverageCost] = js.undefined,
+        CoverageHours: js.UndefOr[CoverageHours] = js.undefined,
+        CoverageNormalizedUnits: js.UndefOr[CoverageNormalizedUnits] = js.undefined
+    ): Coverage = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CoverageCost" -> CoverageCost.map { x =>
           x.asInstanceOf[js.Any]
@@ -156,16 +158,22 @@ package costexplorer {
   }
 
   object CoverageByTime {
-    def apply(Groups: js.UndefOr[ReservationCoverageGroups] = js.undefined,
-              TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-              Total: js.UndefOr[Coverage] = js.undefined): CoverageByTime = {
-      val _fields = IndexedSeq[(String, js.Any)]("Groups" -> Groups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TimePeriod" -> TimePeriod.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Total" -> Total.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Groups: js.UndefOr[ReservationCoverageGroups] = js.undefined,
+        TimePeriod: js.UndefOr[DateInterval] = js.undefined,
+        Total: js.UndefOr[Coverage] = js.undefined
+    ): CoverageByTime = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Groups" -> Groups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimePeriod" -> TimePeriod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Total" -> Total.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoverageByTime]
     }
@@ -180,10 +188,14 @@ package costexplorer {
   }
 
   object CoverageCost {
-    def apply(OnDemandCost: js.UndefOr[OnDemandCost] = js.undefined): CoverageCost = {
-      val _fields = IndexedSeq[(String, js.Any)]("OnDemandCost" -> OnDemandCost.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OnDemandCost: js.UndefOr[OnDemandCost] = js.undefined
+    ): CoverageCost = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OnDemandCost" -> OnDemandCost.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CoverageCost]
     }
@@ -201,10 +213,12 @@ package costexplorer {
   }
 
   object CoverageHours {
-    def apply(CoverageHoursPercentage: js.UndefOr[CoverageHoursPercentage] = js.undefined,
-              OnDemandHours: js.UndefOr[OnDemandHours] = js.undefined,
-              ReservedHours: js.UndefOr[ReservedHours] = js.undefined,
-              TotalRunningHours: js.UndefOr[TotalRunningHours] = js.undefined): CoverageHours = {
+    def apply(
+        CoverageHoursPercentage: js.UndefOr[CoverageHoursPercentage] = js.undefined,
+        OnDemandHours: js.UndefOr[OnDemandHours] = js.undefined,
+        ReservedHours: js.UndefOr[ReservedHours] = js.undefined,
+        TotalRunningHours: js.UndefOr[TotalRunningHours] = js.undefined
+    ): CoverageHours = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CoverageHoursPercentage" -> CoverageHoursPercentage.map { x =>
           x.asInstanceOf[js.Any]
@@ -272,10 +286,14 @@ package costexplorer {
   }
 
   object DateInterval {
-    def apply(End: YearMonthDay, Start: YearMonthDay): DateInterval = {
-      val _fields =
-        IndexedSeq[(String, js.Any)]("End" -> End.asInstanceOf[js.Any], "Start" -> Start.asInstanceOf[js.Any])
-          .filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        End: YearMonthDay,
+        Start: YearMonthDay
+    ): DateInterval = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "End"   -> End.asInstanceOf[js.Any],
+        "Start" -> Start.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DateInterval]
     }
@@ -341,12 +359,18 @@ package costexplorer {
   }
 
   object DimensionValues {
-    def apply(Key: js.UndefOr[Dimension] = js.undefined, Values: js.UndefOr[Values] = js.undefined): DimensionValues = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[Dimension] = js.undefined,
+        Values: js.UndefOr[Values] = js.undefined
+    ): DimensionValues = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DimensionValues]
     }
@@ -362,13 +386,18 @@ package costexplorer {
   }
 
   object DimensionValuesWithAttributes {
-    def apply(Attributes: js.UndefOr[Attributes] = js.undefined,
-              Value: js.UndefOr[Value] = js.undefined): DimensionValuesWithAttributes = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Value" -> Value.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        Value: js.UndefOr[Value] = js.undefined
+    ): DimensionValuesWithAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DimensionValuesWithAttributes]
     }
@@ -390,14 +419,16 @@ package costexplorer {
   }
 
   object EC2InstanceDetails {
-    def apply(AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
-              CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-              Family: js.UndefOr[GenericString] = js.undefined,
-              InstanceType: js.UndefOr[GenericString] = js.undefined,
-              Platform: js.UndefOr[GenericString] = js.undefined,
-              Region: js.UndefOr[GenericString] = js.undefined,
-              SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined,
-              Tenancy: js.UndefOr[GenericString] = js.undefined): EC2InstanceDetails = {
+    def apply(
+        AvailabilityZone: js.UndefOr[GenericString] = js.undefined,
+        CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
+        Family: js.UndefOr[GenericString] = js.undefined,
+        InstanceType: js.UndefOr[GenericString] = js.undefined,
+        Platform: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined,
+        SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined,
+        Tenancy: js.UndefOr[GenericString] = js.undefined
+    ): EC2InstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AvailabilityZone" -> AvailabilityZone.map { x =>
           x.asInstanceOf[js.Any]
@@ -438,10 +469,14 @@ package costexplorer {
   }
 
   object EC2Specification {
-    def apply(OfferingClass: js.UndefOr[OfferingClass] = js.undefined): EC2Specification = {
-      val _fields = IndexedSeq[(String, js.Any)]("OfferingClass" -> OfferingClass.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        OfferingClass: js.UndefOr[OfferingClass] = js.undefined
+    ): EC2Specification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "OfferingClass" -> OfferingClass.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EC2Specification]
     }
@@ -460,11 +495,13 @@ package costexplorer {
   }
 
   object ESInstanceDetails {
-    def apply(CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-              InstanceClass: js.UndefOr[GenericString] = js.undefined,
-              InstanceSize: js.UndefOr[GenericString] = js.undefined,
-              Region: js.UndefOr[GenericString] = js.undefined,
-              SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): ESInstanceDetails = {
+    def apply(
+        CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
+        InstanceClass: js.UndefOr[GenericString] = js.undefined,
+        InstanceSize: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined,
+        SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined
+    ): ESInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x =>
           x.asInstanceOf[js.Any]
@@ -501,12 +538,14 @@ package costexplorer {
   }
 
   object ElastiCacheInstanceDetails {
-    def apply(CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-              Family: js.UndefOr[GenericString] = js.undefined,
-              NodeType: js.UndefOr[GenericString] = js.undefined,
-              ProductDescription: js.UndefOr[GenericString] = js.undefined,
-              Region: js.UndefOr[GenericString] = js.undefined,
-              SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): ElastiCacheInstanceDetails = {
+    def apply(
+        CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
+        Family: js.UndefOr[GenericString] = js.undefined,
+        NodeType: js.UndefOr[GenericString] = js.undefined,
+        ProductDescription: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined,
+        SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined
+    ): ElastiCacheInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x =>
           x.asInstanceOf[js.Any]
@@ -535,7 +574,7 @@ package costexplorer {
   /**
     * Use <code>Expression</code> to filter by cost or by usage. There are two patterns:
     * * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The <code>Expression</code> for that looks like this:
-    *  <code>{ "Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", �gc4.large�h ] } }</code>
+    *  <code>{ "Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", “c4.large” ] } }</code>
     *  The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines.
     *  <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:
     *  <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.x.large", "c4.large" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
@@ -554,11 +593,13 @@ package costexplorer {
   }
 
   object Expression {
-    def apply(And: js.UndefOr[Expressions] = js.undefined,
-              Dimensions: js.UndefOr[DimensionValues] = js.undefined,
-              Not: js.UndefOr[Expression] = js.undefined,
-              Or: js.UndefOr[Expressions] = js.undefined,
-              Tags: js.UndefOr[TagValues] = js.undefined): Expression = {
+    def apply(
+        And: js.UndefOr[Expressions] = js.undefined,
+        Dimensions: js.UndefOr[DimensionValues] = js.undefined,
+        Not: js.UndefOr[Expression] = js.undefined,
+        Or: js.UndefOr[Expressions] = js.undefined,
+        Tags: js.UndefOr[TagValues] = js.undefined
+    ): Expression = {
       val _fields = IndexedSeq[(String, js.Any)](
         "And" -> And.map { x =>
           x.asInstanceOf[js.Any]
@@ -593,10 +634,12 @@ package costexplorer {
   }
 
   object ForecastResult {
-    def apply(MeanValue: js.UndefOr[GenericString] = js.undefined,
-              PredictionIntervalLowerBound: js.UndefOr[GenericString] = js.undefined,
-              PredictionIntervalUpperBound: js.UndefOr[GenericString] = js.undefined,
-              TimePeriod: js.UndefOr[DateInterval] = js.undefined): ForecastResult = {
+    def apply(
+        MeanValue: js.UndefOr[GenericString] = js.undefined,
+        PredictionIntervalLowerBound: js.UndefOr[GenericString] = js.undefined,
+        PredictionIntervalUpperBound: js.UndefOr[GenericString] = js.undefined,
+        TimePeriod: js.UndefOr[DateInterval] = js.undefined
+    ): ForecastResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MeanValue" -> MeanValue.map { x =>
           x.asInstanceOf[js.Any]
@@ -618,22 +661,25 @@ package costexplorer {
 
   @js.native
   trait GetCostAndUsageRequest extends js.Object {
+    var TimePeriod: DateInterval
     var Filter: js.UndefOr[Expression]
     var Granularity: js.UndefOr[Granularity]
     var GroupBy: js.UndefOr[GroupDefinitions]
     var Metrics: js.UndefOr[MetricNames]
     var NextPageToken: js.UndefOr[NextPageToken]
-    var TimePeriod: js.UndefOr[DateInterval]
   }
 
   object GetCostAndUsageRequest {
-    def apply(Filter: js.UndefOr[Expression] = js.undefined,
-              Granularity: js.UndefOr[Granularity] = js.undefined,
-              GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
-              Metrics: js.UndefOr[MetricNames] = js.undefined,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-              TimePeriod: js.UndefOr[DateInterval] = js.undefined): GetCostAndUsageRequest = {
+    def apply(
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        Granularity: js.UndefOr[Granularity] = js.undefined,
+        GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+        Metrics: js.UndefOr[MetricNames] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetCostAndUsageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
+        "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
         "Filter" -> Filter.map { x =>
           x.asInstanceOf[js.Any]
         },
@@ -647,9 +693,6 @@ package costexplorer {
           x.asInstanceOf[js.Any]
         },
         "NextPageToken" -> NextPageToken.map { x =>
-          x.asInstanceOf[js.Any]
-        },
-        "TimePeriod" -> TimePeriod.map { x =>
           x.asInstanceOf[js.Any]
         }
       ).filter(_._2 != (js.undefined: js.Any))
@@ -666,9 +709,11 @@ package costexplorer {
   }
 
   object GetCostAndUsageResponse {
-    def apply(GroupDefinitions: js.UndefOr[GroupDefinitions] = js.undefined,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-              ResultsByTime: js.UndefOr[ResultsByTime] = js.undefined): GetCostAndUsageResponse = {
+    def apply(
+        GroupDefinitions: js.UndefOr[GroupDefinitions] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        ResultsByTime: js.UndefOr[ResultsByTime] = js.undefined
+    ): GetCostAndUsageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GroupDefinitions" -> GroupDefinitions.map { x =>
           x.asInstanceOf[js.Any]
@@ -695,11 +740,13 @@ package costexplorer {
   }
 
   object GetCostForecastRequest {
-    def apply(Granularity: Granularity,
-              Metric: Metric,
-              TimePeriod: DateInterval,
-              Filter: js.UndefOr[Expression] = js.undefined,
-              PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel] = js.undefined): GetCostForecastRequest = {
+    def apply(
+        Granularity: Granularity,
+        Metric: Metric,
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        PredictionIntervalLevel: js.UndefOr[PredictionIntervalLevel] = js.undefined
+    ): GetCostForecastRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Granularity" -> Granularity.asInstanceOf[js.Any],
         "Metric"      -> Metric.asInstanceOf[js.Any],
@@ -723,13 +770,18 @@ package costexplorer {
   }
 
   object GetCostForecastResponse {
-    def apply(ForecastResultsByTime: js.UndefOr[ForecastResultsByTime] = js.undefined,
-              Total: js.UndefOr[MetricValue] = js.undefined): GetCostForecastResponse = {
-      val _fields = IndexedSeq[(String, js.Any)]("ForecastResultsByTime" -> ForecastResultsByTime.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Total" -> Total.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        ForecastResultsByTime: js.UndefOr[ForecastResultsByTime] = js.undefined,
+        Total: js.UndefOr[MetricValue] = js.undefined
+    ): GetCostForecastResponse = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "ForecastResultsByTime" -> ForecastResultsByTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Total" -> Total.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCostForecastResponse]
     }
@@ -745,11 +797,13 @@ package costexplorer {
   }
 
   object GetDimensionValuesRequest {
-    def apply(Dimension: Dimension,
-              TimePeriod: DateInterval,
-              Context: js.UndefOr[Context] = js.undefined,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-              SearchString: js.UndefOr[SearchString] = js.undefined): GetDimensionValuesRequest = {
+    def apply(
+        Dimension: Dimension,
+        TimePeriod: DateInterval,
+        Context: js.UndefOr[Context] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        SearchString: js.UndefOr[SearchString] = js.undefined
+    ): GetDimensionValuesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Dimension"  -> Dimension.asInstanceOf[js.Any],
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
@@ -777,10 +831,12 @@ package costexplorer {
   }
 
   object GetDimensionValuesResponse {
-    def apply(DimensionValues: DimensionValuesWithAttributesList,
-              ReturnSize: PageSize,
-              TotalSize: PageSize,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetDimensionValuesResponse = {
+    def apply(
+        DimensionValues: DimensionValuesWithAttributesList,
+        ReturnSize: PageSize,
+        TotalSize: PageSize,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetDimensionValuesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DimensionValues" -> DimensionValues.asInstanceOf[js.Any],
         "ReturnSize"      -> ReturnSize.asInstanceOf[js.Any],
@@ -808,12 +864,14 @@ package costexplorer {
   }
 
   object GetReservationCoverageRequest {
-    def apply(TimePeriod: DateInterval,
-              Filter: js.UndefOr[Expression] = js.undefined,
-              Granularity: js.UndefOr[Granularity] = js.undefined,
-              GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
-              Metrics: js.UndefOr[MetricNames] = js.undefined,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationCoverageRequest = {
+    def apply(
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        Granularity: js.UndefOr[Granularity] = js.undefined,
+        GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+        Metrics: js.UndefOr[MetricNames] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetReservationCoverageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
         "Filter" -> Filter.map { x =>
@@ -845,9 +903,11 @@ package costexplorer {
   }
 
   object GetReservationCoverageResponse {
-    def apply(CoveragesByTime: CoveragesByTime,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-              Total: js.UndefOr[Coverage] = js.undefined): GetReservationCoverageResponse = {
+    def apply(
+        CoveragesByTime: CoveragesByTime,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        Total: js.UndefOr[Coverage] = js.undefined
+    ): GetReservationCoverageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CoveragesByTime" -> CoveragesByTime.asInstanceOf[js.Any],
         "NextPageToken" -> NextPageToken.map { x =>
@@ -876,15 +936,17 @@ package costexplorer {
   }
 
   object GetReservationPurchaseRecommendationRequest {
-    def apply(Service: GenericString,
-              AccountId: js.UndefOr[GenericString] = js.undefined,
-              AccountScope: js.UndefOr[AccountScope] = js.undefined,
-              LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-              PageSize: js.UndefOr[NonNegativeInteger] = js.undefined,
-              PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
-              ServiceSpecification: js.UndefOr[ServiceSpecification] = js.undefined,
-              TermInYears: js.UndefOr[TermInYears] = js.undefined): GetReservationPurchaseRecommendationRequest = {
+    def apply(
+        Service: GenericString,
+        AccountId: js.UndefOr[GenericString] = js.undefined,
+        AccountScope: js.UndefOr[AccountScope] = js.undefined,
+        LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        PageSize: js.UndefOr[NonNegativeInteger] = js.undefined,
+        PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
+        ServiceSpecification: js.UndefOr[ServiceSpecification] = js.undefined,
+        TermInYears: js.UndefOr[TermInYears] = js.undefined
+    ): GetReservationPurchaseRecommendationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Service" -> Service.asInstanceOf[js.Any],
         "AccountId" -> AccountId.map { x =>
@@ -960,11 +1022,13 @@ package costexplorer {
   }
 
   object GetReservationUtilizationRequest {
-    def apply(TimePeriod: DateInterval,
-              Filter: js.UndefOr[Expression] = js.undefined,
-              Granularity: js.UndefOr[Granularity] = js.undefined,
-              GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetReservationUtilizationRequest = {
+    def apply(
+        TimePeriod: DateInterval,
+        Filter: js.UndefOr[Expression] = js.undefined,
+        Granularity: js.UndefOr[Granularity] = js.undefined,
+        GroupBy: js.UndefOr[GroupDefinitions] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetReservationUtilizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
         "Filter" -> Filter.map { x =>
@@ -993,9 +1057,11 @@ package costexplorer {
   }
 
   object GetReservationUtilizationResponse {
-    def apply(UtilizationsByTime: UtilizationsByTime,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-              Total: js.UndefOr[ReservationAggregates] = js.undefined): GetReservationUtilizationResponse = {
+    def apply(
+        UtilizationsByTime: UtilizationsByTime,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        Total: js.UndefOr[ReservationAggregates] = js.undefined
+    ): GetReservationUtilizationResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "UtilizationsByTime" -> UtilizationsByTime.asInstanceOf[js.Any],
         "NextPageToken" -> NextPageToken.map { x =>
@@ -1019,10 +1085,12 @@ package costexplorer {
   }
 
   object GetTagsRequest {
-    def apply(TimePeriod: DateInterval,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
-              SearchString: js.UndefOr[SearchString] = js.undefined,
-              TagKey: js.UndefOr[TagKey] = js.undefined): GetTagsRequest = {
+    def apply(
+        TimePeriod: DateInterval,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        SearchString: js.UndefOr[SearchString] = js.undefined,
+        TagKey: js.UndefOr[TagKey] = js.undefined
+    ): GetTagsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TimePeriod" -> TimePeriod.asInstanceOf[js.Any],
         "NextPageToken" -> NextPageToken.map { x =>
@@ -1049,10 +1117,12 @@ package costexplorer {
   }
 
   object GetTagsResponse {
-    def apply(ReturnSize: PageSize,
-              Tags: TagList,
-              TotalSize: PageSize,
-              NextPageToken: js.UndefOr[NextPageToken] = js.undefined): GetTagsResponse = {
+    def apply(
+        ReturnSize: PageSize,
+        Tags: TagList,
+        TotalSize: PageSize,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): GetTagsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ReturnSize" -> ReturnSize.asInstanceOf[js.Any],
         "Tags"       -> Tags.asInstanceOf[js.Any],
@@ -1084,12 +1154,18 @@ package costexplorer {
   }
 
   object Group {
-    def apply(Keys: js.UndefOr[Keys] = js.undefined, Metrics: js.UndefOr[Metrics] = js.undefined): Group = {
-      val _fields = IndexedSeq[(String, js.Any)]("Keys" -> Keys.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Metrics" -> Metrics.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Keys: js.UndefOr[Keys] = js.undefined,
+        Metrics: js.UndefOr[Metrics] = js.undefined
+    ): Group = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Keys" -> Keys.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Group]
     }
@@ -1105,13 +1181,18 @@ package costexplorer {
   }
 
   object GroupDefinition {
-    def apply(Key: js.UndefOr[GroupDefinitionKey] = js.undefined,
-              Type: js.UndefOr[GroupDefinitionType] = js.undefined): GroupDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Type" -> Type.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[GroupDefinitionKey] = js.undefined,
+        Type: js.UndefOr[GroupDefinitionType] = js.undefined
+    ): GroupDefinition = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupDefinition]
     }
@@ -1137,11 +1218,13 @@ package costexplorer {
   }
 
   object InstanceDetails {
-    def apply(EC2InstanceDetails: js.UndefOr[EC2InstanceDetails] = js.undefined,
-              ESInstanceDetails: js.UndefOr[ESInstanceDetails] = js.undefined,
-              ElastiCacheInstanceDetails: js.UndefOr[ElastiCacheInstanceDetails] = js.undefined,
-              RDSInstanceDetails: js.UndefOr[RDSInstanceDetails] = js.undefined,
-              RedshiftInstanceDetails: js.UndefOr[RedshiftInstanceDetails] = js.undefined): InstanceDetails = {
+    def apply(
+        EC2InstanceDetails: js.UndefOr[EC2InstanceDetails] = js.undefined,
+        ESInstanceDetails: js.UndefOr[ESInstanceDetails] = js.undefined,
+        ElastiCacheInstanceDetails: js.UndefOr[ElastiCacheInstanceDetails] = js.undefined,
+        RDSInstanceDetails: js.UndefOr[RDSInstanceDetails] = js.undefined,
+        RedshiftInstanceDetails: js.UndefOr[RedshiftInstanceDetails] = js.undefined
+    ): InstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EC2InstanceDetails" -> EC2InstanceDetails.map { x =>
           x.asInstanceOf[js.Any]
@@ -1202,13 +1285,18 @@ package costexplorer {
   }
 
   object MetricValue {
-    def apply(Amount: js.UndefOr[MetricAmount] = js.undefined,
-              Unit: js.UndefOr[MetricUnit] = js.undefined): MetricValue = {
-      val _fields = IndexedSeq[(String, js.Any)]("Amount" -> Amount.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Unit" -> Unit.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Amount: js.UndefOr[MetricAmount] = js.undefined,
+        Unit: js.UndefOr[MetricUnit] = js.undefined
+    ): MetricValue = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Amount" -> Amount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Unit" -> Unit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricValue]
     }
@@ -1250,15 +1338,17 @@ package costexplorer {
   }
 
   object RDSInstanceDetails {
-    def apply(CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-              DatabaseEdition: js.UndefOr[GenericString] = js.undefined,
-              DatabaseEngine: js.UndefOr[GenericString] = js.undefined,
-              DeploymentOption: js.UndefOr[GenericString] = js.undefined,
-              Family: js.UndefOr[GenericString] = js.undefined,
-              InstanceType: js.UndefOr[GenericString] = js.undefined,
-              LicenseModel: js.UndefOr[GenericString] = js.undefined,
-              Region: js.UndefOr[GenericString] = js.undefined,
-              SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): RDSInstanceDetails = {
+    def apply(
+        CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
+        DatabaseEdition: js.UndefOr[GenericString] = js.undefined,
+        DatabaseEngine: js.UndefOr[GenericString] = js.undefined,
+        DeploymentOption: js.UndefOr[GenericString] = js.undefined,
+        Family: js.UndefOr[GenericString] = js.undefined,
+        InstanceType: js.UndefOr[GenericString] = js.undefined,
+        LicenseModel: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined,
+        SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined
+    ): RDSInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x =>
           x.asInstanceOf[js.Any]
@@ -1306,11 +1396,13 @@ package costexplorer {
   }
 
   object RedshiftInstanceDetails {
-    def apply(CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
-              Family: js.UndefOr[GenericString] = js.undefined,
-              NodeType: js.UndefOr[GenericString] = js.undefined,
-              Region: js.UndefOr[GenericString] = js.undefined,
-              SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined): RedshiftInstanceDetails = {
+    def apply(
+        CurrentGeneration: js.UndefOr[GenericBoolean] = js.undefined,
+        Family: js.UndefOr[GenericString] = js.undefined,
+        NodeType: js.UndefOr[GenericString] = js.undefined,
+        Region: js.UndefOr[GenericString] = js.undefined,
+        SizeFlexEligible: js.UndefOr[GenericBoolean] = js.undefined
+    ): RedshiftInstanceDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CurrentGeneration" -> CurrentGeneration.map { x =>
           x.asInstanceOf[js.Any]
@@ -1430,13 +1522,18 @@ package costexplorer {
   }
 
   object ReservationCoverageGroup {
-    def apply(Attributes: js.UndefOr[Attributes] = js.undefined,
-              Coverage: js.UndefOr[Coverage] = js.undefined): ReservationCoverageGroup = {
-      val _fields = IndexedSeq[(String, js.Any)]("Attributes" -> Attributes.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Coverage" -> Coverage.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        Coverage: js.UndefOr[Coverage] = js.undefined
+    ): ReservationCoverageGroup = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Coverage" -> Coverage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationCoverageGroup]
     }
@@ -1457,13 +1554,15 @@ package costexplorer {
   }
 
   object ReservationPurchaseRecommendation {
-    def apply(AccountScope: js.UndefOr[AccountScope] = js.undefined,
-              LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
-              PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
-              RecommendationDetails: js.UndefOr[ReservationPurchaseRecommendationDetails] = js.undefined,
-              RecommendationSummary: js.UndefOr[ReservationPurchaseRecommendationSummary] = js.undefined,
-              ServiceSpecification: js.UndefOr[ServiceSpecification] = js.undefined,
-              TermInYears: js.UndefOr[TermInYears] = js.undefined): ReservationPurchaseRecommendation = {
+    def apply(
+        AccountScope: js.UndefOr[AccountScope] = js.undefined,
+        LookbackPeriodInDays: js.UndefOr[LookbackPeriodInDays] = js.undefined,
+        PaymentOption: js.UndefOr[PaymentOption] = js.undefined,
+        RecommendationDetails: js.UndefOr[ReservationPurchaseRecommendationDetails] = js.undefined,
+        RecommendationSummary: js.UndefOr[ReservationPurchaseRecommendationSummary] = js.undefined,
+        ServiceSpecification: js.UndefOr[ServiceSpecification] = js.undefined,
+        TermInYears: js.UndefOr[TermInYears] = js.undefined
+    ): ReservationPurchaseRecommendation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountScope" -> AccountScope.map { x =>
           x.asInstanceOf[js.Any]
@@ -1519,25 +1618,27 @@ package costexplorer {
   }
 
   object ReservationPurchaseRecommendationDetail {
-    def apply(AccountId: js.UndefOr[GenericString] = js.undefined,
-              AverageNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-              AverageNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-              AverageUtilization: js.UndefOr[GenericString] = js.undefined,
-              CurrencyCode: js.UndefOr[GenericString] = js.undefined,
-              EstimatedBreakEvenInMonths: js.UndefOr[GenericString] = js.undefined,
-              EstimatedMonthlyOnDemandCost: js.UndefOr[GenericString] = js.undefined,
-              EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
-              EstimatedMonthlySavingsPercentage: js.UndefOr[GenericString] = js.undefined,
-              EstimatedReservationCostForLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
-              InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
-              MaximumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-              MaximumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-              MinimumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-              MinimumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
-              RecommendedNormalizedUnitsToPurchase: js.UndefOr[GenericString] = js.undefined,
-              RecommendedNumberOfInstancesToPurchase: js.UndefOr[GenericString] = js.undefined,
-              RecurringStandardMonthlyCost: js.UndefOr[GenericString] = js.undefined,
-              UpfrontCost: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationDetail = {
+    def apply(
+        AccountId: js.UndefOr[GenericString] = js.undefined,
+        AverageNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+        AverageNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+        AverageUtilization: js.UndefOr[GenericString] = js.undefined,
+        CurrencyCode: js.UndefOr[GenericString] = js.undefined,
+        EstimatedBreakEvenInMonths: js.UndefOr[GenericString] = js.undefined,
+        EstimatedMonthlyOnDemandCost: js.UndefOr[GenericString] = js.undefined,
+        EstimatedMonthlySavingsAmount: js.UndefOr[GenericString] = js.undefined,
+        EstimatedMonthlySavingsPercentage: js.UndefOr[GenericString] = js.undefined,
+        EstimatedReservationCostForLookbackPeriod: js.UndefOr[GenericString] = js.undefined,
+        InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
+        MaximumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+        MaximumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+        MinimumNormalizedUnitsUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+        MinimumNumberOfInstancesUsedPerHour: js.UndefOr[GenericString] = js.undefined,
+        RecommendedNormalizedUnitsToPurchase: js.UndefOr[GenericString] = js.undefined,
+        RecommendedNumberOfInstancesToPurchase: js.UndefOr[GenericString] = js.undefined,
+        RecurringStandardMonthlyCost: js.UndefOr[GenericString] = js.undefined,
+        UpfrontCost: js.UndefOr[GenericString] = js.undefined
+    ): ReservationPurchaseRecommendationDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AccountId" -> AccountId.map { x =>
           x.asInstanceOf[js.Any]
@@ -1612,13 +1713,18 @@ package costexplorer {
   }
 
   object ReservationPurchaseRecommendationMetadata {
-    def apply(GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
-              RecommendationId: js.UndefOr[GenericString] = js.undefined): ReservationPurchaseRecommendationMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)]("GenerationTimestamp" -> GenerationTimestamp.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "RecommendationId" -> RecommendationId.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        GenerationTimestamp: js.UndefOr[GenericString] = js.undefined,
+        RecommendationId: js.UndefOr[GenericString] = js.undefined
+    ): ReservationPurchaseRecommendationMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "GenerationTimestamp" -> GenerationTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecommendationId" -> RecommendationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReservationPurchaseRecommendationMetadata]
     }
@@ -1668,10 +1774,12 @@ package costexplorer {
   }
 
   object ReservationUtilizationGroup {
-    def apply(Attributes: js.UndefOr[Attributes] = js.undefined,
-              Key: js.UndefOr[ReservationGroupKey] = js.undefined,
-              Utilization: js.UndefOr[ReservationAggregates] = js.undefined,
-              Value: js.UndefOr[ReservationGroupValue] = js.undefined): ReservationUtilizationGroup = {
+    def apply(
+        Attributes: js.UndefOr[Attributes] = js.undefined,
+        Key: js.UndefOr[ReservationGroupKey] = js.undefined,
+        Utilization: js.UndefOr[ReservationAggregates] = js.undefined,
+        Value: js.UndefOr[ReservationGroupValue] = js.undefined
+    ): ReservationUtilizationGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Attributes" -> Attributes.map { x =>
           x.asInstanceOf[js.Any]
@@ -1703,10 +1811,12 @@ package costexplorer {
   }
 
   object ResultByTime {
-    def apply(Estimated: js.UndefOr[Estimated] = js.undefined,
-              Groups: js.UndefOr[Groups] = js.undefined,
-              TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-              Total: js.UndefOr[Metrics] = js.undefined): ResultByTime = {
+    def apply(
+        Estimated: js.UndefOr[Estimated] = js.undefined,
+        Groups: js.UndefOr[Groups] = js.undefined,
+        TimePeriod: js.UndefOr[DateInterval] = js.undefined,
+        Total: js.UndefOr[Metrics] = js.undefined
+    ): ResultByTime = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Estimated" -> Estimated.map { x =>
           x.asInstanceOf[js.Any]
@@ -1735,10 +1845,14 @@ package costexplorer {
   }
 
   object ServiceSpecification {
-    def apply(EC2Specification: js.UndefOr[EC2Specification] = js.undefined): ServiceSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)]("EC2Specification" -> EC2Specification.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        EC2Specification: js.UndefOr[EC2Specification] = js.undefined
+    ): ServiceSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "EC2Specification" -> EC2Specification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceSpecification]
     }
@@ -1754,12 +1868,18 @@ package costexplorer {
   }
 
   object TagValues {
-    def apply(Key: js.UndefOr[TagKey] = js.undefined, Values: js.UndefOr[Values] = js.undefined): TagValues = {
-      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Values" -> Values.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Key: js.UndefOr[TagKey] = js.undefined,
+        Values: js.UndefOr[Values] = js.undefined
+    ): TagValues = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Values" -> Values.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagValues]
     }
@@ -1783,16 +1903,22 @@ package costexplorer {
   }
 
   object UtilizationByTime {
-    def apply(Groups: js.UndefOr[ReservationUtilizationGroups] = js.undefined,
-              TimePeriod: js.UndefOr[DateInterval] = js.undefined,
-              Total: js.UndefOr[ReservationAggregates] = js.undefined): UtilizationByTime = {
-      val _fields = IndexedSeq[(String, js.Any)]("Groups" -> Groups.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "TimePeriod" -> TimePeriod.map { x =>
-        x.asInstanceOf[js.Any]
-      }, "Total" -> Total.map { x =>
-        x.asInstanceOf[js.Any]
-      }).filter(_._2 != (js.undefined: js.Any))
+    def apply(
+        Groups: js.UndefOr[ReservationUtilizationGroups] = js.undefined,
+        TimePeriod: js.UndefOr[DateInterval] = js.undefined,
+        Total: js.UndefOr[ReservationAggregates] = js.undefined
+    ): UtilizationByTime = {
+      val _fields = IndexedSeq[(String, js.Any)](
+        "Groups" -> Groups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimePeriod" -> TimePeriod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Total" -> Total.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UtilizationByTime]
     }
