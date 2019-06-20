@@ -136,7 +136,6 @@ package object alexaforbusiness {
   type Utterance                    = String
   type Value                        = String
   type WakeWord                     = String
-  type boolean                      = Boolean
   type user_FirstName               = String
   type user_LastName                = String
   type user_UserId                  = String
@@ -4347,7 +4346,7 @@ package alexaforbusiness {
     var SkillId: js.UndefOr[SkillId]
     var SkillName: js.UndefOr[SkillName]
     var SkillType: js.UndefOr[SkillType]
-    var SupportsLinking: js.UndefOr[boolean]
+    var SupportsLinking: js.UndefOr[Boolean]
   }
 
   object SkillSummary {
@@ -4356,7 +4355,7 @@ package alexaforbusiness {
         SkillId: js.UndefOr[SkillId] = js.undefined,
         SkillName: js.UndefOr[SkillName] = js.undefined,
         SkillType: js.UndefOr[SkillType] = js.undefined,
-        SupportsLinking: js.UndefOr[boolean] = js.undefined
+        SupportsLinking: js.UndefOr[Boolean] = js.undefined
     ): SkillSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EnablementType" -> EnablementType.map { x =>
@@ -4406,7 +4405,7 @@ package alexaforbusiness {
     var SkillDetails: js.UndefOr[SkillDetails]
     var SkillId: js.UndefOr[SkillId]
     var SkillName: js.UndefOr[SkillName]
-    var SupportsLinking: js.UndefOr[boolean]
+    var SupportsLinking: js.UndefOr[Boolean]
   }
 
   object SkillsStoreSkill {
@@ -4417,7 +4416,7 @@ package alexaforbusiness {
         SkillDetails: js.UndefOr[SkillDetails] = js.undefined,
         SkillId: js.UndefOr[SkillId] = js.undefined,
         SkillName: js.UndefOr[SkillName] = js.undefined,
-        SupportsLinking: js.UndefOr[boolean] = js.undefined
+        SupportsLinking: js.UndefOr[Boolean] = js.undefined
     ): SkillsStoreSkill = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IconUrl" -> IconUrl.map { x =>

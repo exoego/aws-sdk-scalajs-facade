@@ -26,7 +26,6 @@ package object sns {
   type attributeName              = String
   type attributeValue             = String
   type authenticateOnUnsubscribe  = String
-  type boolean                    = Boolean
   type delegate                   = String
   type endpoint                   = String
   type label                      = String
@@ -35,7 +34,6 @@ package object sns {
   type messageStructure           = String
   type nextToken                  = String
   type protocol                   = String
-  type string                     = String
   type subject                    = String
   type subscriptionARN            = String
   type token                      = String
@@ -143,12 +141,12 @@ package sns {
     */
   @js.native
   trait CheckIfPhoneNumberIsOptedOutResponse extends js.Object {
-    var isOptedOut: js.UndefOr[boolean]
+    var isOptedOut: js.UndefOr[Boolean]
   }
 
   object CheckIfPhoneNumberIsOptedOutResponse {
     def apply(
-        isOptedOut: js.UndefOr[boolean] = js.undefined
+        isOptedOut: js.UndefOr[Boolean] = js.undefined
     ): CheckIfPhoneNumberIsOptedOutResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "isOptedOut" -> isOptedOut.map { x =>
@@ -715,12 +713,12 @@ package sns {
     */
   @js.native
   trait ListPhoneNumbersOptedOutInput extends js.Object {
-    var nextToken: js.UndefOr[string]
+    var nextToken: js.UndefOr[String]
   }
 
   object ListPhoneNumbersOptedOutInput {
     def apply(
-        nextToken: js.UndefOr[string] = js.undefined
+        nextToken: js.UndefOr[String] = js.undefined
     ): ListPhoneNumbersOptedOutInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "nextToken" -> nextToken.map { x =>
@@ -737,13 +735,13 @@ package sns {
     */
   @js.native
   trait ListPhoneNumbersOptedOutResponse extends js.Object {
-    var nextToken: js.UndefOr[string]
+    var nextToken: js.UndefOr[String]
     var phoneNumbers: js.UndefOr[PhoneNumberList]
   }
 
   object ListPhoneNumbersOptedOutResponse {
     def apply(
-        nextToken: js.UndefOr[string] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
         phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined
     ): ListPhoneNumbersOptedOutResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1291,7 +1289,7 @@ package sns {
     var TopicArn: topicARN
     var Attributes: js.UndefOr[SubscriptionAttributesMap]
     var Endpoint: js.UndefOr[endpoint]
-    var ReturnSubscriptionArn: js.UndefOr[boolean]
+    var ReturnSubscriptionArn: js.UndefOr[Boolean]
   }
 
   object SubscribeInput {
@@ -1300,7 +1298,7 @@ package sns {
         TopicArn: topicARN,
         Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined,
         Endpoint: js.UndefOr[endpoint] = js.undefined,
-        ReturnSubscriptionArn: js.UndefOr[boolean] = js.undefined
+        ReturnSubscriptionArn: js.UndefOr[Boolean] = js.undefined
     ): SubscribeInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Protocol" -> Protocol.asInstanceOf[js.Any],

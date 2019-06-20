@@ -7,30 +7,30 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object cloudfront {
-  type AliasList                                 = js.Array[string]
-  type AwsAccountNumberList                      = js.Array[string]
+  type AliasList                                 = js.Array[String]
+  type AwsAccountNumberList                      = js.Array[String]
   type CacheBehaviorList                         = js.Array[CacheBehavior]
   type CertificateSource                         = String
   type CloudFrontOriginAccessIdentitySummaryList = js.Array[CloudFrontOriginAccessIdentitySummary]
   type ContentTypeProfileList                    = js.Array[ContentTypeProfile]
-  type CookieNameList                            = js.Array[string]
+  type CookieNameList                            = js.Array[String]
   type CustomErrorResponseList                   = js.Array[CustomErrorResponse]
   type DistributionSummaryList                   = js.Array[DistributionSummary]
   type EncryptionEntityList                      = js.Array[EncryptionEntity]
   type EventType                                 = String
   type FieldLevelEncryptionProfileSummaryList    = js.Array[FieldLevelEncryptionProfileSummary]
   type FieldLevelEncryptionSummaryList           = js.Array[FieldLevelEncryptionSummary]
-  type FieldPatternList                          = js.Array[string]
+  type FieldPatternList                          = js.Array[String]
   type Format                                    = String
   type GeoRestrictionType                        = String
-  type HeaderList                                = js.Array[string]
+  type HeaderList                                = js.Array[String]
   type HttpVersion                               = String
   type InvalidationSummaryList                   = js.Array[InvalidationSummary]
   type ItemSelection                             = String
-  type KeyPairIdList                             = js.Array[string]
+  type KeyPairIdList                             = js.Array[String]
   type LambdaFunctionARN                         = String
   type LambdaFunctionAssociationList             = js.Array[LambdaFunctionAssociation]
-  type LocationList                              = js.Array[string]
+  type LocationList                              = js.Array[String]
   type Method                                    = String
   type MethodsList                               = js.Array[Method]
   type MinimumProtocolVersion                    = String
@@ -39,27 +39,23 @@ package object cloudfront {
   type OriginGroupMemberList                     = js.Array[OriginGroupMember]
   type OriginList                                = js.Array[Origin]
   type OriginProtocolPolicy                      = String
-  type PathList                                  = js.Array[string]
+  type PathList                                  = js.Array[String]
   type PriceClass                                = String
   type PublicKeySummaryList                      = js.Array[PublicKeySummary]
   type QueryArgProfileList                       = js.Array[QueryArgProfile]
-  type QueryStringCacheKeysList                  = js.Array[string]
+  type QueryStringCacheKeysList                  = js.Array[String]
   type ResourceARN                               = String
   type SSLSupportMethod                          = String
   type SignerList                                = js.Array[Signer]
   type SslProtocol                               = String
   type SslProtocolsList                          = js.Array[SslProtocol]
-  type StatusCodeList                            = js.Array[integer]
+  type StatusCodeList                            = js.Array[Int]
   type StreamingDistributionSummaryList          = js.Array[StreamingDistributionSummary]
   type TagKey                                    = String
   type TagKeyList                                = js.Array[TagKey]
   type TagList                                   = js.Array[Tag]
   type TagValue                                  = String
   type ViewerProtocolPolicy                      = String
-  type boolean                                   = Boolean
-  type integer                                   = Int
-  type long                                      = Double
-  type string                                    = String
   type timestamp                                 = js.Date
 }
 
@@ -170,15 +166,15 @@ package cloudfront {
     */
   @js.native
   trait ActiveTrustedSigners extends js.Object {
-    var Enabled: boolean
-    var Quantity: integer
+    var Enabled: Boolean
+    var Quantity: Int
     var Items: js.UndefOr[SignerList]
   }
 
   object ActiveTrustedSigners {
     def apply(
-        Enabled: boolean,
-        Quantity: integer,
+        Enabled: Boolean,
+        Quantity: Int,
         Items: js.UndefOr[SignerList] = js.undefined
     ): ActiveTrustedSigners = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -198,13 +194,13 @@ package cloudfront {
     */
   @js.native
   trait Aliases extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[AliasList]
   }
 
   object Aliases {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[AliasList] = js.undefined
     ): Aliases = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -228,14 +224,14 @@ package cloudfront {
   @js.native
   trait AllowedMethods extends js.Object {
     var Items: MethodsList
-    var Quantity: integer
+    var Quantity: Int
     var CachedMethods: js.UndefOr[CachedMethods]
   }
 
   object AllowedMethods {
     def apply(
         Items: MethodsList,
-        Quantity: integer,
+        Quantity: Int,
         CachedMethods: js.UndefOr[CachedMethods] = js.undefined
     ): AllowedMethods = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -262,35 +258,35 @@ package cloudfront {
   @js.native
   trait CacheBehavior extends js.Object {
     var ForwardedValues: ForwardedValues
-    var MinTTL: long
-    var PathPattern: string
-    var TargetOriginId: string
+    var MinTTL: Double
+    var PathPattern: String
+    var TargetOriginId: String
     var TrustedSigners: TrustedSigners
     var ViewerProtocolPolicy: ViewerProtocolPolicy
     var AllowedMethods: js.UndefOr[AllowedMethods]
-    var Compress: js.UndefOr[boolean]
-    var DefaultTTL: js.UndefOr[long]
-    var FieldLevelEncryptionId: js.UndefOr[string]
+    var Compress: js.UndefOr[Boolean]
+    var DefaultTTL: js.UndefOr[Double]
+    var FieldLevelEncryptionId: js.UndefOr[String]
     var LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations]
-    var MaxTTL: js.UndefOr[long]
-    var SmoothStreaming: js.UndefOr[boolean]
+    var MaxTTL: js.UndefOr[Double]
+    var SmoothStreaming: js.UndefOr[Boolean]
   }
 
   object CacheBehavior {
     def apply(
         ForwardedValues: ForwardedValues,
-        MinTTL: long,
-        PathPattern: string,
-        TargetOriginId: string,
+        MinTTL: Double,
+        PathPattern: String,
+        TargetOriginId: String,
         TrustedSigners: TrustedSigners,
         ViewerProtocolPolicy: ViewerProtocolPolicy,
         AllowedMethods: js.UndefOr[AllowedMethods] = js.undefined,
-        Compress: js.UndefOr[boolean] = js.undefined,
-        DefaultTTL: js.UndefOr[long] = js.undefined,
-        FieldLevelEncryptionId: js.UndefOr[string] = js.undefined,
+        Compress: js.UndefOr[Boolean] = js.undefined,
+        DefaultTTL: js.UndefOr[Double] = js.undefined,
+        FieldLevelEncryptionId: js.UndefOr[String] = js.undefined,
         LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations] = js.undefined,
-        MaxTTL: js.UndefOr[long] = js.undefined,
-        SmoothStreaming: js.UndefOr[boolean] = js.undefined
+        MaxTTL: js.UndefOr[Double] = js.undefined,
+        SmoothStreaming: js.UndefOr[Boolean] = js.undefined
     ): CacheBehavior = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ForwardedValues"      -> ForwardedValues.asInstanceOf[js.Any],
@@ -331,13 +327,13 @@ package cloudfront {
     */
   @js.native
   trait CacheBehaviors extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[CacheBehaviorList]
   }
 
   object CacheBehaviors {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[CacheBehaviorList] = js.undefined
     ): CacheBehaviors = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -360,13 +356,13 @@ package cloudfront {
   @js.native
   trait CachedMethods extends js.Object {
     var Items: MethodsList
-    var Quantity: integer
+    var Quantity: Int
   }
 
   object CachedMethods {
     def apply(
         Items: MethodsList,
-        Quantity: integer
+        Quantity: Int
     ): CachedMethods = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Items"    -> Items.asInstanceOf[js.Any],
@@ -390,15 +386,15 @@ package cloudfront {
     */
   @js.native
   trait CloudFrontOriginAccessIdentity extends js.Object {
-    var Id: string
-    var S3CanonicalUserId: string
+    var Id: String
+    var S3CanonicalUserId: String
     var CloudFrontOriginAccessIdentityConfig: js.UndefOr[CloudFrontOriginAccessIdentityConfig]
   }
 
   object CloudFrontOriginAccessIdentity {
     def apply(
-        Id: string,
-        S3CanonicalUserId: string,
+        Id: String,
+        S3CanonicalUserId: String,
         CloudFrontOriginAccessIdentityConfig: js.UndefOr[CloudFrontOriginAccessIdentityConfig] = js.undefined
     ): CloudFrontOriginAccessIdentity = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -418,14 +414,14 @@ package cloudfront {
     */
   @js.native
   trait CloudFrontOriginAccessIdentityConfig extends js.Object {
-    var CallerReference: string
-    var Comment: string
+    var CallerReference: String
+    var Comment: String
   }
 
   object CloudFrontOriginAccessIdentityConfig {
     def apply(
-        CallerReference: string,
-        Comment: string
+        CallerReference: String,
+        Comment: String
     ): CloudFrontOriginAccessIdentityConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
@@ -441,22 +437,22 @@ package cloudfront {
     */
   @js.native
   trait CloudFrontOriginAccessIdentityList extends js.Object {
-    var IsTruncated: boolean
-    var Marker: string
-    var MaxItems: integer
-    var Quantity: integer
+    var IsTruncated: Boolean
+    var Marker: String
+    var MaxItems: Int
+    var Quantity: Int
     var Items: js.UndefOr[CloudFrontOriginAccessIdentitySummaryList]
-    var NextMarker: js.UndefOr[string]
+    var NextMarker: js.UndefOr[String]
   }
 
   object CloudFrontOriginAccessIdentityList {
     def apply(
-        IsTruncated: boolean,
-        Marker: string,
-        MaxItems: integer,
-        Quantity: integer,
+        IsTruncated: Boolean,
+        Marker: String,
+        MaxItems: Int,
+        Quantity: Int,
         Items: js.UndefOr[CloudFrontOriginAccessIdentitySummaryList] = js.undefined,
-        NextMarker: js.UndefOr[string] = js.undefined
+        NextMarker: js.UndefOr[String] = js.undefined
     ): CloudFrontOriginAccessIdentityList = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
@@ -480,16 +476,16 @@ package cloudfront {
     */
   @js.native
   trait CloudFrontOriginAccessIdentitySummary extends js.Object {
-    var Comment: string
-    var Id: string
-    var S3CanonicalUserId: string
+    var Comment: String
+    var Id: String
+    var S3CanonicalUserId: String
   }
 
   object CloudFrontOriginAccessIdentitySummary {
     def apply(
-        Comment: string,
-        Id: string,
-        S3CanonicalUserId: string
+        Comment: String,
+        Id: String,
+        S3CanonicalUserId: String
     ): CloudFrontOriginAccessIdentitySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Comment"           -> Comment.asInstanceOf[js.Any],
@@ -506,16 +502,16 @@ package cloudfront {
     */
   @js.native
   trait ContentTypeProfile extends js.Object {
-    var ContentType: string
+    var ContentType: String
     var Format: Format
-    var ProfileId: js.UndefOr[string]
+    var ProfileId: js.UndefOr[String]
   }
 
   object ContentTypeProfile {
     def apply(
-        ContentType: string,
+        ContentType: String,
         Format: Format,
-        ProfileId: js.UndefOr[string] = js.undefined
+        ProfileId: js.UndefOr[String] = js.undefined
     ): ContentTypeProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContentType" -> ContentType.asInstanceOf[js.Any],
@@ -534,13 +530,13 @@ package cloudfront {
     */
   @js.native
   trait ContentTypeProfileConfig extends js.Object {
-    var ForwardWhenContentTypeIsUnknown: boolean
+    var ForwardWhenContentTypeIsUnknown: Boolean
     var ContentTypeProfiles: js.UndefOr[ContentTypeProfiles]
   }
 
   object ContentTypeProfileConfig {
     def apply(
-        ForwardWhenContentTypeIsUnknown: boolean,
+        ForwardWhenContentTypeIsUnknown: Boolean,
         ContentTypeProfiles: js.UndefOr[ContentTypeProfiles] = js.undefined
     ): ContentTypeProfileConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -559,13 +555,13 @@ package cloudfront {
     */
   @js.native
   trait ContentTypeProfiles extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[ContentTypeProfileList]
   }
 
   object ContentTypeProfiles {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[ContentTypeProfileList] = js.undefined
     ): ContentTypeProfiles = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -584,13 +580,13 @@ package cloudfront {
     */
   @js.native
   trait CookieNames extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[CookieNameList]
   }
 
   object CookieNames {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[CookieNameList] = js.undefined
     ): CookieNames = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -657,15 +653,15 @@ package cloudfront {
   @js.native
   trait CreateCloudFrontOriginAccessIdentityResult extends js.Object {
     var CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity]
-    var ETag: js.UndefOr[string]
-    var Location: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
   }
 
   object CreateCloudFrontOriginAccessIdentityResult {
     def apply(
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined
     ): CreateCloudFrontOriginAccessIdentityResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudFrontOriginAccessIdentity" -> CloudFrontOriginAccessIdentity.map { x =>
@@ -711,15 +707,15 @@ package cloudfront {
   @js.native
   trait CreateDistributionResult extends js.Object {
     var Distribution: js.UndefOr[Distribution]
-    var ETag: js.UndefOr[string]
-    var Location: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
   }
 
   object CreateDistributionResult {
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined
     ): CreateDistributionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Distribution" -> Distribution.map { x =>
@@ -763,15 +759,15 @@ package cloudfront {
   @js.native
   trait CreateDistributionWithTagsResult extends js.Object {
     var Distribution: js.UndefOr[Distribution]
-    var ETag: js.UndefOr[string]
-    var Location: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
   }
 
   object CreateDistributionWithTagsResult {
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined
     ): CreateDistributionWithTagsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Distribution" -> Distribution.map { x =>
@@ -808,16 +804,16 @@ package cloudfront {
 
   @js.native
   trait CreateFieldLevelEncryptionConfigResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryption: js.UndefOr[FieldLevelEncryption]
-    var Location: js.UndefOr[string]
+    var Location: js.UndefOr[String]
   }
 
   object CreateFieldLevelEncryptionConfigResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined
+        Location: js.UndefOr[String] = js.undefined
     ): CreateFieldLevelEncryptionConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ETag" -> ETag.map { x =>
@@ -854,16 +850,16 @@ package cloudfront {
 
   @js.native
   trait CreateFieldLevelEncryptionProfileResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile]
-    var Location: js.UndefOr[string]
+    var Location: js.UndefOr[String]
   }
 
   object CreateFieldLevelEncryptionProfileResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined
+        Location: js.UndefOr[String] = js.undefined
     ): CreateFieldLevelEncryptionProfileResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ETag" -> ETag.map { x =>
@@ -886,13 +882,13 @@ package cloudfront {
     */
   @js.native
   trait CreateInvalidationRequest extends js.Object {
-    var DistributionId: string
+    var DistributionId: String
     var InvalidationBatch: InvalidationBatch
   }
 
   object CreateInvalidationRequest {
     def apply(
-        DistributionId: string,
+        DistributionId: String,
         InvalidationBatch: InvalidationBatch
     ): CreateInvalidationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -910,13 +906,13 @@ package cloudfront {
   @js.native
   trait CreateInvalidationResult extends js.Object {
     var Invalidation: js.UndefOr[Invalidation]
-    var Location: js.UndefOr[string]
+    var Location: js.UndefOr[String]
   }
 
   object CreateInvalidationResult {
     def apply(
         Invalidation: js.UndefOr[Invalidation] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined
+        Location: js.UndefOr[String] = js.undefined
     ): CreateInvalidationResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Invalidation" -> Invalidation.map { x =>
@@ -950,15 +946,15 @@ package cloudfront {
 
   @js.native
   trait CreatePublicKeyResult extends js.Object {
-    var ETag: js.UndefOr[string]
-    var Location: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
     var PublicKey: js.UndefOr[PublicKey]
   }
 
   object CreatePublicKeyResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
     ): CreatePublicKeyResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1002,15 +998,15 @@ package cloudfront {
     */
   @js.native
   trait CreateStreamingDistributionResult extends js.Object {
-    var ETag: js.UndefOr[string]
-    var Location: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
     var StreamingDistribution: js.UndefOr[StreamingDistribution]
   }
 
   object CreateStreamingDistributionResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): CreateStreamingDistributionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1056,15 +1052,15 @@ package cloudfront {
     */
   @js.native
   trait CreateStreamingDistributionWithTagsResult extends js.Object {
-    var ETag: js.UndefOr[string]
-    var Location: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
     var StreamingDistribution: js.UndefOr[StreamingDistribution]
   }
 
   object CreateStreamingDistributionWithTagsResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
-        Location: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): CreateStreamingDistributionWithTagsResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1091,18 +1087,18 @@ package cloudfront {
     */
   @js.native
   trait CustomErrorResponse extends js.Object {
-    var ErrorCode: integer
-    var ErrorCachingMinTTL: js.UndefOr[long]
-    var ResponseCode: js.UndefOr[string]
-    var ResponsePagePath: js.UndefOr[string]
+    var ErrorCode: Int
+    var ErrorCachingMinTTL: js.UndefOr[Double]
+    var ResponseCode: js.UndefOr[String]
+    var ResponsePagePath: js.UndefOr[String]
   }
 
   object CustomErrorResponse {
     def apply(
-        ErrorCode: integer,
-        ErrorCachingMinTTL: js.UndefOr[long] = js.undefined,
-        ResponseCode: js.UndefOr[string] = js.undefined,
-        ResponsePagePath: js.UndefOr[string] = js.undefined
+        ErrorCode: Int,
+        ErrorCachingMinTTL: js.UndefOr[Double] = js.undefined,
+        ResponseCode: js.UndefOr[String] = js.undefined,
+        ResponsePagePath: js.UndefOr[String] = js.undefined
     ): CustomErrorResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ErrorCode" -> ErrorCode.asInstanceOf[js.Any],
@@ -1129,13 +1125,13 @@ package cloudfront {
     */
   @js.native
   trait CustomErrorResponses extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[CustomErrorResponseList]
   }
 
   object CustomErrorResponses {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[CustomErrorResponseList] = js.undefined
     ): CustomErrorResponses = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1154,13 +1150,13 @@ package cloudfront {
     */
   @js.native
   trait CustomHeaders extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[OriginCustomHeadersList]
   }
 
   object CustomHeaders {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[OriginCustomHeadersList] = js.undefined
     ): CustomHeaders = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1179,21 +1175,21 @@ package cloudfront {
     */
   @js.native
   trait CustomOriginConfig extends js.Object {
-    var HTTPPort: integer
-    var HTTPSPort: integer
+    var HTTPPort: Int
+    var HTTPSPort: Int
     var OriginProtocolPolicy: OriginProtocolPolicy
-    var OriginKeepaliveTimeout: js.UndefOr[integer]
-    var OriginReadTimeout: js.UndefOr[integer]
+    var OriginKeepaliveTimeout: js.UndefOr[Int]
+    var OriginReadTimeout: js.UndefOr[Int]
     var OriginSslProtocols: js.UndefOr[OriginSslProtocols]
   }
 
   object CustomOriginConfig {
     def apply(
-        HTTPPort: integer,
-        HTTPSPort: integer,
+        HTTPPort: Int,
+        HTTPSPort: Int,
         OriginProtocolPolicy: OriginProtocolPolicy,
-        OriginKeepaliveTimeout: js.UndefOr[integer] = js.undefined,
-        OriginReadTimeout: js.UndefOr[integer] = js.undefined,
+        OriginKeepaliveTimeout: js.UndefOr[Int] = js.undefined,
+        OriginReadTimeout: js.UndefOr[Int] = js.undefined,
         OriginSslProtocols: js.UndefOr[OriginSslProtocols] = js.undefined
     ): CustomOriginConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1221,33 +1217,33 @@ package cloudfront {
   @js.native
   trait DefaultCacheBehavior extends js.Object {
     var ForwardedValues: ForwardedValues
-    var MinTTL: long
-    var TargetOriginId: string
+    var MinTTL: Double
+    var TargetOriginId: String
     var TrustedSigners: TrustedSigners
     var ViewerProtocolPolicy: ViewerProtocolPolicy
     var AllowedMethods: js.UndefOr[AllowedMethods]
-    var Compress: js.UndefOr[boolean]
-    var DefaultTTL: js.UndefOr[long]
-    var FieldLevelEncryptionId: js.UndefOr[string]
+    var Compress: js.UndefOr[Boolean]
+    var DefaultTTL: js.UndefOr[Double]
+    var FieldLevelEncryptionId: js.UndefOr[String]
     var LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations]
-    var MaxTTL: js.UndefOr[long]
-    var SmoothStreaming: js.UndefOr[boolean]
+    var MaxTTL: js.UndefOr[Double]
+    var SmoothStreaming: js.UndefOr[Boolean]
   }
 
   object DefaultCacheBehavior {
     def apply(
         ForwardedValues: ForwardedValues,
-        MinTTL: long,
-        TargetOriginId: string,
+        MinTTL: Double,
+        TargetOriginId: String,
         TrustedSigners: TrustedSigners,
         ViewerProtocolPolicy: ViewerProtocolPolicy,
         AllowedMethods: js.UndefOr[AllowedMethods] = js.undefined,
-        Compress: js.UndefOr[boolean] = js.undefined,
-        DefaultTTL: js.UndefOr[long] = js.undefined,
-        FieldLevelEncryptionId: js.UndefOr[string] = js.undefined,
+        Compress: js.UndefOr[Boolean] = js.undefined,
+        DefaultTTL: js.UndefOr[Double] = js.undefined,
+        FieldLevelEncryptionId: js.UndefOr[String] = js.undefined,
         LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations] = js.undefined,
-        MaxTTL: js.UndefOr[long] = js.undefined,
-        SmoothStreaming: js.UndefOr[boolean] = js.undefined
+        MaxTTL: js.UndefOr[Double] = js.undefined,
+        SmoothStreaming: js.UndefOr[Boolean] = js.undefined
     ): DefaultCacheBehavior = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ForwardedValues"      -> ForwardedValues.asInstanceOf[js.Any],
@@ -1287,14 +1283,14 @@ package cloudfront {
     */
   @js.native
   trait DeleteCloudFrontOriginAccessIdentityRequest extends js.Object {
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object DeleteCloudFrontOriginAccessIdentityRequest {
     def apply(
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteCloudFrontOriginAccessIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
@@ -1324,14 +1320,14 @@ package cloudfront {
     */
   @js.native
   trait DeleteDistributionRequest extends js.Object {
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object DeleteDistributionRequest {
     def apply(
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteDistributionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
@@ -1346,14 +1342,14 @@ package cloudfront {
 
   @js.native
   trait DeleteFieldLevelEncryptionConfigRequest extends js.Object {
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object DeleteFieldLevelEncryptionConfigRequest {
     def apply(
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteFieldLevelEncryptionConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
@@ -1368,14 +1364,14 @@ package cloudfront {
 
   @js.native
   trait DeleteFieldLevelEncryptionProfileRequest extends js.Object {
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object DeleteFieldLevelEncryptionProfileRequest {
     def apply(
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteFieldLevelEncryptionProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
@@ -1390,14 +1386,14 @@ package cloudfront {
 
   @js.native
   trait DeletePublicKeyRequest extends js.Object {
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object DeletePublicKeyRequest {
     def apply(
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): DeletePublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
@@ -1415,14 +1411,14 @@ package cloudfront {
     */
   @js.native
   trait DeleteStreamingDistributionRequest extends js.Object {
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object DeleteStreamingDistributionRequest {
     def apply(
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): DeleteStreamingDistributionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
@@ -1440,26 +1436,26 @@ package cloudfront {
     */
   @js.native
   trait Distribution extends js.Object {
-    var ARN: string
+    var ARN: String
     var ActiveTrustedSigners: ActiveTrustedSigners
     var DistributionConfig: DistributionConfig
-    var DomainName: string
-    var Id: string
-    var InProgressInvalidationBatches: integer
+    var DomainName: String
+    var Id: String
+    var InProgressInvalidationBatches: Int
     var LastModifiedTime: timestamp
-    var Status: string
+    var Status: String
   }
 
   object Distribution {
     def apply(
-        ARN: string,
+        ARN: String,
         ActiveTrustedSigners: ActiveTrustedSigners,
         DistributionConfig: DistributionConfig,
-        DomainName: string,
-        Id: string,
-        InProgressInvalidationBatches: integer,
+        DomainName: String,
+        Id: String,
+        InProgressInvalidationBatches: Int,
         LastModifiedTime: timestamp,
-        Status: string
+        Status: String
     ): Distribution = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ARN"                           -> ARN.asInstanceOf[js.Any],
@@ -1481,44 +1477,44 @@ package cloudfront {
     */
   @js.native
   trait DistributionConfig extends js.Object {
-    var CallerReference: string
-    var Comment: string
+    var CallerReference: String
+    var Comment: String
     var DefaultCacheBehavior: DefaultCacheBehavior
-    var Enabled: boolean
+    var Enabled: Boolean
     var Origins: Origins
     var Aliases: js.UndefOr[Aliases]
     var CacheBehaviors: js.UndefOr[CacheBehaviors]
     var CustomErrorResponses: js.UndefOr[CustomErrorResponses]
-    var DefaultRootObject: js.UndefOr[string]
+    var DefaultRootObject: js.UndefOr[String]
     var HttpVersion: js.UndefOr[HttpVersion]
-    var IsIPV6Enabled: js.UndefOr[boolean]
+    var IsIPV6Enabled: js.UndefOr[Boolean]
     var Logging: js.UndefOr[LoggingConfig]
     var OriginGroups: js.UndefOr[OriginGroups]
     var PriceClass: js.UndefOr[PriceClass]
     var Restrictions: js.UndefOr[Restrictions]
     var ViewerCertificate: js.UndefOr[ViewerCertificate]
-    var WebACLId: js.UndefOr[string]
+    var WebACLId: js.UndefOr[String]
   }
 
   object DistributionConfig {
     def apply(
-        CallerReference: string,
-        Comment: string,
+        CallerReference: String,
+        Comment: String,
         DefaultCacheBehavior: DefaultCacheBehavior,
-        Enabled: boolean,
+        Enabled: Boolean,
         Origins: Origins,
         Aliases: js.UndefOr[Aliases] = js.undefined,
         CacheBehaviors: js.UndefOr[CacheBehaviors] = js.undefined,
         CustomErrorResponses: js.UndefOr[CustomErrorResponses] = js.undefined,
-        DefaultRootObject: js.UndefOr[string] = js.undefined,
+        DefaultRootObject: js.UndefOr[String] = js.undefined,
         HttpVersion: js.UndefOr[HttpVersion] = js.undefined,
-        IsIPV6Enabled: js.UndefOr[boolean] = js.undefined,
+        IsIPV6Enabled: js.UndefOr[Boolean] = js.undefined,
         Logging: js.UndefOr[LoggingConfig] = js.undefined,
         OriginGroups: js.UndefOr[OriginGroups] = js.undefined,
         PriceClass: js.UndefOr[PriceClass] = js.undefined,
         Restrictions: js.UndefOr[Restrictions] = js.undefined,
         ViewerCertificate: js.UndefOr[ViewerCertificate] = js.undefined,
-        WebACLId: js.UndefOr[string] = js.undefined
+        WebACLId: js.UndefOr[String] = js.undefined
     ): DistributionConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CallerReference"      -> CallerReference.asInstanceOf[js.Any],
@@ -1596,22 +1592,22 @@ package cloudfront {
     */
   @js.native
   trait DistributionList extends js.Object {
-    var IsTruncated: boolean
-    var Marker: string
-    var MaxItems: integer
-    var Quantity: integer
+    var IsTruncated: Boolean
+    var Marker: String
+    var MaxItems: Int
+    var Quantity: Int
     var Items: js.UndefOr[DistributionSummaryList]
-    var NextMarker: js.UndefOr[string]
+    var NextMarker: js.UndefOr[String]
   }
 
   object DistributionList {
     def apply(
-        IsTruncated: boolean,
-        Marker: string,
-        MaxItems: integer,
-        Quantity: integer,
+        IsTruncated: Boolean,
+        Marker: String,
+        MaxItems: Int,
+        Quantity: Int,
         Items: js.UndefOr[DistributionSummaryList] = js.undefined,
-        NextMarker: js.UndefOr[string] = js.undefined
+        NextMarker: js.UndefOr[String] = js.undefined
     ): DistributionList = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
@@ -1635,47 +1631,47 @@ package cloudfront {
     */
   @js.native
   trait DistributionSummary extends js.Object {
-    var ARN: string
+    var ARN: String
     var Aliases: Aliases
     var CacheBehaviors: CacheBehaviors
-    var Comment: string
+    var Comment: String
     var CustomErrorResponses: CustomErrorResponses
     var DefaultCacheBehavior: DefaultCacheBehavior
-    var DomainName: string
-    var Enabled: boolean
+    var DomainName: String
+    var Enabled: Boolean
     var HttpVersion: HttpVersion
-    var Id: string
-    var IsIPV6Enabled: boolean
+    var Id: String
+    var IsIPV6Enabled: Boolean
     var LastModifiedTime: timestamp
     var Origins: Origins
     var PriceClass: PriceClass
     var Restrictions: Restrictions
-    var Status: string
+    var Status: String
     var ViewerCertificate: ViewerCertificate
-    var WebACLId: string
+    var WebACLId: String
     var OriginGroups: js.UndefOr[OriginGroups]
   }
 
   object DistributionSummary {
     def apply(
-        ARN: string,
+        ARN: String,
         Aliases: Aliases,
         CacheBehaviors: CacheBehaviors,
-        Comment: string,
+        Comment: String,
         CustomErrorResponses: CustomErrorResponses,
         DefaultCacheBehavior: DefaultCacheBehavior,
-        DomainName: string,
-        Enabled: boolean,
+        DomainName: String,
+        Enabled: Boolean,
         HttpVersion: HttpVersion,
-        Id: string,
-        IsIPV6Enabled: boolean,
+        Id: String,
+        IsIPV6Enabled: Boolean,
         LastModifiedTime: timestamp,
         Origins: Origins,
         PriceClass: PriceClass,
         Restrictions: Restrictions,
-        Status: string,
+        Status: String,
         ViewerCertificate: ViewerCertificate,
-        WebACLId: string,
+        WebACLId: String,
         OriginGroups: js.UndefOr[OriginGroups] = js.undefined
     ): DistributionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1711,13 +1707,13 @@ package cloudfront {
     */
   @js.native
   trait EncryptionEntities extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[EncryptionEntityList]
   }
 
   object EncryptionEntities {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[EncryptionEntityList] = js.undefined
     ): EncryptionEntities = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1737,15 +1733,15 @@ package cloudfront {
   @js.native
   trait EncryptionEntity extends js.Object {
     var FieldPatterns: FieldPatterns
-    var ProviderId: string
-    var PublicKeyId: string
+    var ProviderId: String
+    var PublicKeyId: String
   }
 
   object EncryptionEntity {
     def apply(
         FieldPatterns: FieldPatterns,
-        ProviderId: string,
-        PublicKeyId: string
+        ProviderId: String,
+        PublicKeyId: String
     ): EncryptionEntity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldPatterns" -> FieldPatterns.asInstanceOf[js.Any],
@@ -1772,14 +1768,14 @@ package cloudfront {
   @js.native
   trait FieldLevelEncryption extends js.Object {
     var FieldLevelEncryptionConfig: FieldLevelEncryptionConfig
-    var Id: string
+    var Id: String
     var LastModifiedTime: timestamp
   }
 
   object FieldLevelEncryption {
     def apply(
         FieldLevelEncryptionConfig: FieldLevelEncryptionConfig,
-        Id: string,
+        Id: String,
         LastModifiedTime: timestamp
     ): FieldLevelEncryption = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1797,16 +1793,16 @@ package cloudfront {
     */
   @js.native
   trait FieldLevelEncryptionConfig extends js.Object {
-    var CallerReference: string
-    var Comment: js.UndefOr[string]
+    var CallerReference: String
+    var Comment: js.UndefOr[String]
     var ContentTypeProfileConfig: js.UndefOr[ContentTypeProfileConfig]
     var QueryArgProfileConfig: js.UndefOr[QueryArgProfileConfig]
   }
 
   object FieldLevelEncryptionConfig {
     def apply(
-        CallerReference: string,
-        Comment: js.UndefOr[string] = js.undefined,
+        CallerReference: String,
+        Comment: js.UndefOr[String] = js.undefined,
         ContentTypeProfileConfig: js.UndefOr[ContentTypeProfileConfig] = js.undefined,
         QueryArgProfileConfig: js.UndefOr[QueryArgProfileConfig] = js.undefined
     ): FieldLevelEncryptionConfig = {
@@ -1832,18 +1828,18 @@ package cloudfront {
     */
   @js.native
   trait FieldLevelEncryptionList extends js.Object {
-    var MaxItems: integer
-    var Quantity: integer
+    var MaxItems: Int
+    var Quantity: Int
     var Items: js.UndefOr[FieldLevelEncryptionSummaryList]
-    var NextMarker: js.UndefOr[string]
+    var NextMarker: js.UndefOr[String]
   }
 
   object FieldLevelEncryptionList {
     def apply(
-        MaxItems: integer,
-        Quantity: integer,
+        MaxItems: Int,
+        Quantity: Int,
         Items: js.UndefOr[FieldLevelEncryptionSummaryList] = js.undefined,
-        NextMarker: js.UndefOr[string] = js.undefined
+        NextMarker: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionList = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxItems" -> MaxItems.asInstanceOf[js.Any],
@@ -1866,14 +1862,14 @@ package cloudfront {
   @js.native
   trait FieldLevelEncryptionProfile extends js.Object {
     var FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig
-    var Id: string
+    var Id: String
     var LastModifiedTime: timestamp
   }
 
   object FieldLevelEncryptionProfile {
     def apply(
         FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig,
-        Id: string,
+        Id: String,
         LastModifiedTime: timestamp
     ): FieldLevelEncryptionProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -1891,18 +1887,18 @@ package cloudfront {
     */
   @js.native
   trait FieldLevelEncryptionProfileConfig extends js.Object {
-    var CallerReference: string
+    var CallerReference: String
     var EncryptionEntities: EncryptionEntities
-    var Name: string
-    var Comment: js.UndefOr[string]
+    var Name: String
+    var Comment: js.UndefOr[String]
   }
 
   object FieldLevelEncryptionProfileConfig {
     def apply(
-        CallerReference: string,
+        CallerReference: String,
         EncryptionEntities: EncryptionEntities,
-        Name: string,
-        Comment: js.UndefOr[string] = js.undefined
+        Name: String,
+        Comment: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionProfileConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CallerReference"    -> CallerReference.asInstanceOf[js.Any],
@@ -1922,18 +1918,18 @@ package cloudfront {
     */
   @js.native
   trait FieldLevelEncryptionProfileList extends js.Object {
-    var MaxItems: integer
-    var Quantity: integer
+    var MaxItems: Int
+    var Quantity: Int
     var Items: js.UndefOr[FieldLevelEncryptionProfileSummaryList]
-    var NextMarker: js.UndefOr[string]
+    var NextMarker: js.UndefOr[String]
   }
 
   object FieldLevelEncryptionProfileList {
     def apply(
-        MaxItems: integer,
-        Quantity: integer,
+        MaxItems: Int,
+        Quantity: Int,
         Items: js.UndefOr[FieldLevelEncryptionProfileSummaryList] = js.undefined,
-        NextMarker: js.UndefOr[string] = js.undefined
+        NextMarker: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionProfileList = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxItems" -> MaxItems.asInstanceOf[js.Any],
@@ -1956,19 +1952,19 @@ package cloudfront {
   @js.native
   trait FieldLevelEncryptionProfileSummary extends js.Object {
     var EncryptionEntities: EncryptionEntities
-    var Id: string
+    var Id: String
     var LastModifiedTime: timestamp
-    var Name: string
-    var Comment: js.UndefOr[string]
+    var Name: String
+    var Comment: js.UndefOr[String]
   }
 
   object FieldLevelEncryptionProfileSummary {
     def apply(
         EncryptionEntities: EncryptionEntities,
-        Id: string,
+        Id: String,
         LastModifiedTime: timestamp,
-        Name: string,
-        Comment: js.UndefOr[string] = js.undefined
+        Name: String,
+        Comment: js.UndefOr[String] = js.undefined
     ): FieldLevelEncryptionProfileSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EncryptionEntities" -> EncryptionEntities.asInstanceOf[js.Any],
@@ -1989,18 +1985,18 @@ package cloudfront {
     */
   @js.native
   trait FieldLevelEncryptionSummary extends js.Object {
-    var Id: string
+    var Id: String
     var LastModifiedTime: timestamp
-    var Comment: js.UndefOr[string]
+    var Comment: js.UndefOr[String]
     var ContentTypeProfileConfig: js.UndefOr[ContentTypeProfileConfig]
     var QueryArgProfileConfig: js.UndefOr[QueryArgProfileConfig]
   }
 
   object FieldLevelEncryptionSummary {
     def apply(
-        Id: string,
+        Id: String,
         LastModifiedTime: timestamp,
-        Comment: js.UndefOr[string] = js.undefined,
+        Comment: js.UndefOr[String] = js.undefined,
         ContentTypeProfileConfig: js.UndefOr[ContentTypeProfileConfig] = js.undefined,
         QueryArgProfileConfig: js.UndefOr[QueryArgProfileConfig] = js.undefined
     ): FieldLevelEncryptionSummary = {
@@ -2027,13 +2023,13 @@ package cloudfront {
     */
   @js.native
   trait FieldPatterns extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[FieldPatternList]
   }
 
   object FieldPatterns {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[FieldPatternList] = js.undefined
     ): FieldPatterns = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2059,7 +2055,7 @@ package cloudfront {
   @js.native
   trait ForwardedValues extends js.Object {
     var Cookies: CookiePreference
-    var QueryString: boolean
+    var QueryString: Boolean
     var Headers: js.UndefOr[Headers]
     var QueryStringCacheKeys: js.UndefOr[QueryStringCacheKeys]
   }
@@ -2067,7 +2063,7 @@ package cloudfront {
   object ForwardedValues {
     def apply(
         Cookies: CookiePreference,
-        QueryString: boolean,
+        QueryString: Boolean,
         Headers: js.UndefOr[Headers] = js.undefined,
         QueryStringCacheKeys: js.UndefOr[QueryStringCacheKeys] = js.undefined
     ): ForwardedValues = {
@@ -2091,14 +2087,14 @@ package cloudfront {
     */
   @js.native
   trait GeoRestriction extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var RestrictionType: GeoRestrictionType
     var Items: js.UndefOr[LocationList]
   }
 
   object GeoRestriction {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         RestrictionType: GeoRestrictionType,
         Items: js.UndefOr[LocationList] = js.undefined
     ): GeoRestriction = {
@@ -2127,12 +2123,12 @@ package cloudfront {
     */
   @js.native
   trait GetCloudFrontOriginAccessIdentityConfigRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetCloudFrontOriginAccessIdentityConfigRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetCloudFrontOriginAccessIdentityConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2150,13 +2146,13 @@ package cloudfront {
   @js.native
   trait GetCloudFrontOriginAccessIdentityConfigResult extends js.Object {
     var CloudFrontOriginAccessIdentityConfig: js.UndefOr[CloudFrontOriginAccessIdentityConfig]
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
   }
 
   object GetCloudFrontOriginAccessIdentityConfigResult {
     def apply(
         CloudFrontOriginAccessIdentityConfig: js.UndefOr[CloudFrontOriginAccessIdentityConfig] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudFrontOriginAccessIdentityConfig" -> CloudFrontOriginAccessIdentityConfig.map { x =>
@@ -2178,12 +2174,12 @@ package cloudfront {
     */
   @js.native
   trait GetCloudFrontOriginAccessIdentityRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetCloudFrontOriginAccessIdentityRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetCloudFrontOriginAccessIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2199,13 +2195,13 @@ package cloudfront {
   @js.native
   trait GetCloudFrontOriginAccessIdentityResult extends js.Object {
     var CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity]
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
   }
 
   object GetCloudFrontOriginAccessIdentityResult {
     def apply(
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined
     ): GetCloudFrontOriginAccessIdentityResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudFrontOriginAccessIdentity" -> CloudFrontOriginAccessIdentity.map { x =>
@@ -2225,12 +2221,12 @@ package cloudfront {
     */
   @js.native
   trait GetDistributionConfigRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetDistributionConfigRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetDistributionConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2246,13 +2242,13 @@ package cloudfront {
   @js.native
   trait GetDistributionConfigResult extends js.Object {
     var DistributionConfig: js.UndefOr[DistributionConfig]
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
   }
 
   object GetDistributionConfigResult {
     def apply(
         DistributionConfig: js.UndefOr[DistributionConfig] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined
     ): GetDistributionConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DistributionConfig" -> DistributionConfig.map { x =>
@@ -2272,12 +2268,12 @@ package cloudfront {
     */
   @js.native
   trait GetDistributionRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetDistributionRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetDistributionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2293,13 +2289,13 @@ package cloudfront {
   @js.native
   trait GetDistributionResult extends js.Object {
     var Distribution: js.UndefOr[Distribution]
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
   }
 
   object GetDistributionResult {
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined
     ): GetDistributionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Distribution" -> Distribution.map { x =>
@@ -2316,12 +2312,12 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionConfigRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetFieldLevelEncryptionConfigRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetFieldLevelEncryptionConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2333,13 +2329,13 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionConfigResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryptionConfig: js.UndefOr[FieldLevelEncryptionConfig]
   }
 
   object GetFieldLevelEncryptionConfigResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionConfig: js.UndefOr[FieldLevelEncryptionConfig] = js.undefined
     ): GetFieldLevelEncryptionConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2357,12 +2353,12 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionProfileConfigRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetFieldLevelEncryptionProfileConfigRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetFieldLevelEncryptionProfileConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2376,13 +2372,13 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionProfileConfigResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryptionProfileConfig: js.UndefOr[FieldLevelEncryptionProfileConfig]
   }
 
   object GetFieldLevelEncryptionProfileConfigResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfileConfig: js.UndefOr[FieldLevelEncryptionProfileConfig] = js.undefined
     ): GetFieldLevelEncryptionProfileConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2402,12 +2398,12 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionProfileRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetFieldLevelEncryptionProfileRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetFieldLevelEncryptionProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2419,13 +2415,13 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionProfileResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile]
   }
 
   object GetFieldLevelEncryptionProfileResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined
     ): GetFieldLevelEncryptionProfileResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2443,12 +2439,12 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetFieldLevelEncryptionRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetFieldLevelEncryptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2460,13 +2456,13 @@ package cloudfront {
 
   @js.native
   trait GetFieldLevelEncryptionResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryption: js.UndefOr[FieldLevelEncryption]
   }
 
   object GetFieldLevelEncryptionResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined
     ): GetFieldLevelEncryptionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2487,14 +2483,14 @@ package cloudfront {
     */
   @js.native
   trait GetInvalidationRequest extends js.Object {
-    var DistributionId: string
-    var Id: string
+    var DistributionId: String
+    var Id: String
   }
 
   object GetInvalidationRequest {
     def apply(
-        DistributionId: string,
-        Id: string
+        DistributionId: String,
+        Id: String
     ): GetInvalidationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DistributionId" -> DistributionId.asInstanceOf[js.Any],
@@ -2529,12 +2525,12 @@ package cloudfront {
 
   @js.native
   trait GetPublicKeyConfigRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetPublicKeyConfigRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetPublicKeyConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2546,13 +2542,13 @@ package cloudfront {
 
   @js.native
   trait GetPublicKeyConfigResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var PublicKeyConfig: js.UndefOr[PublicKeyConfig]
   }
 
   object GetPublicKeyConfigResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         PublicKeyConfig: js.UndefOr[PublicKeyConfig] = js.undefined
     ): GetPublicKeyConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2570,12 +2566,12 @@ package cloudfront {
 
   @js.native
   trait GetPublicKeyRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetPublicKeyRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetPublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2587,13 +2583,13 @@ package cloudfront {
 
   @js.native
   trait GetPublicKeyResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var PublicKey: js.UndefOr[PublicKey]
   }
 
   object GetPublicKeyResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
     ): GetPublicKeyResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2614,12 +2610,12 @@ package cloudfront {
     */
   @js.native
   trait GetStreamingDistributionConfigRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetStreamingDistributionConfigRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetStreamingDistributionConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2634,13 +2630,13 @@ package cloudfront {
     */
   @js.native
   trait GetStreamingDistributionConfigResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var StreamingDistributionConfig: js.UndefOr[StreamingDistributionConfig]
   }
 
   object GetStreamingDistributionConfigResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         StreamingDistributionConfig: js.UndefOr[StreamingDistributionConfig] = js.undefined
     ): GetStreamingDistributionConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2661,12 +2657,12 @@ package cloudfront {
     */
   @js.native
   trait GetStreamingDistributionRequest extends js.Object {
-    var Id: string
+    var Id: String
   }
 
   object GetStreamingDistributionRequest {
     def apply(
-        Id: string
+        Id: String
     ): GetStreamingDistributionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2681,13 +2677,13 @@ package cloudfront {
     */
   @js.native
   trait GetStreamingDistributionResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var StreamingDistribution: js.UndefOr[StreamingDistribution]
   }
 
   object GetStreamingDistributionResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): GetStreamingDistributionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2709,13 +2705,13 @@ package cloudfront {
     */
   @js.native
   trait Headers extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[HeaderList]
   }
 
   object Headers {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[HeaderList] = js.undefined
     ): Headers = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2742,17 +2738,17 @@ package cloudfront {
   @js.native
   trait Invalidation extends js.Object {
     var CreateTime: timestamp
-    var Id: string
+    var Id: String
     var InvalidationBatch: InvalidationBatch
-    var Status: string
+    var Status: String
   }
 
   object Invalidation {
     def apply(
         CreateTime: timestamp,
-        Id: string,
+        Id: String,
         InvalidationBatch: InvalidationBatch,
-        Status: string
+        Status: String
     ): Invalidation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreateTime"        -> CreateTime.asInstanceOf[js.Any],
@@ -2770,13 +2766,13 @@ package cloudfront {
     */
   @js.native
   trait InvalidationBatch extends js.Object {
-    var CallerReference: string
+    var CallerReference: String
     var Paths: Paths
   }
 
   object InvalidationBatch {
     def apply(
-        CallerReference: string,
+        CallerReference: String,
         Paths: Paths
     ): InvalidationBatch = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2793,22 +2789,22 @@ package cloudfront {
     */
   @js.native
   trait InvalidationList extends js.Object {
-    var IsTruncated: boolean
-    var Marker: string
-    var MaxItems: integer
-    var Quantity: integer
+    var IsTruncated: Boolean
+    var Marker: String
+    var MaxItems: Int
+    var Quantity: Int
     var Items: js.UndefOr[InvalidationSummaryList]
-    var NextMarker: js.UndefOr[string]
+    var NextMarker: js.UndefOr[String]
   }
 
   object InvalidationList {
     def apply(
-        IsTruncated: boolean,
-        Marker: string,
-        MaxItems: integer,
-        Quantity: integer,
+        IsTruncated: Boolean,
+        Marker: String,
+        MaxItems: Int,
+        Quantity: Int,
         Items: js.UndefOr[InvalidationSummaryList] = js.undefined,
-        NextMarker: js.UndefOr[string] = js.undefined
+        NextMarker: js.UndefOr[String] = js.undefined
     ): InvalidationList = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
@@ -2833,15 +2829,15 @@ package cloudfront {
   @js.native
   trait InvalidationSummary extends js.Object {
     var CreateTime: timestamp
-    var Id: string
-    var Status: string
+    var Id: String
+    var Status: String
   }
 
   object InvalidationSummary {
     def apply(
         CreateTime: timestamp,
-        Id: string,
-        Status: string
+        Id: String,
+        Status: String
     ): InvalidationSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
@@ -2867,13 +2863,13 @@ package cloudfront {
     */
   @js.native
   trait KeyPairIds extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[KeyPairIdList]
   }
 
   object KeyPairIds {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[KeyPairIdList] = js.undefined
     ): KeyPairIds = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2894,14 +2890,14 @@ package cloudfront {
   trait LambdaFunctionAssociation extends js.Object {
     var EventType: EventType
     var LambdaFunctionARN: LambdaFunctionARN
-    var IncludeBody: js.UndefOr[boolean]
+    var IncludeBody: js.UndefOr[Boolean]
   }
 
   object LambdaFunctionAssociation {
     def apply(
         EventType: EventType,
         LambdaFunctionARN: LambdaFunctionARN,
-        IncludeBody: js.UndefOr[boolean] = js.undefined
+        IncludeBody: js.UndefOr[Boolean] = js.undefined
     ): LambdaFunctionAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EventType"         -> EventType.asInstanceOf[js.Any],
@@ -2922,13 +2918,13 @@ package cloudfront {
     */
   @js.native
   trait LambdaFunctionAssociations extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[LambdaFunctionAssociationList]
   }
 
   object LambdaFunctionAssociations {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[LambdaFunctionAssociationList] = js.undefined
     ): LambdaFunctionAssociations = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -2947,14 +2943,14 @@ package cloudfront {
     */
   @js.native
   trait ListCloudFrontOriginAccessIdentitiesRequest extends js.Object {
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListCloudFrontOriginAccessIdentitiesRequest {
     def apply(
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListCloudFrontOriginAccessIdentitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
@@ -3000,16 +2996,16 @@ package cloudfront {
     */
   @js.native
   trait ListDistributionsByWebACLIdRequest extends js.Object {
-    var WebACLId: string
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var WebACLId: String
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListDistributionsByWebACLIdRequest {
     def apply(
-        WebACLId: string,
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        WebACLId: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListDistributionsByWebACLIdRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WebACLId" -> WebACLId.asInstanceOf[js.Any],
@@ -3052,14 +3048,14 @@ package cloudfront {
     */
   @js.native
   trait ListDistributionsRequest extends js.Object {
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListDistributionsRequest {
     def apply(
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListDistributionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
@@ -3098,14 +3094,14 @@ package cloudfront {
 
   @js.native
   trait ListFieldLevelEncryptionConfigsRequest extends js.Object {
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListFieldLevelEncryptionConfigsRequest {
     def apply(
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListFieldLevelEncryptionConfigsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
@@ -3141,14 +3137,14 @@ package cloudfront {
 
   @js.native
   trait ListFieldLevelEncryptionProfilesRequest extends js.Object {
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListFieldLevelEncryptionProfilesRequest {
     def apply(
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListFieldLevelEncryptionProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
@@ -3187,16 +3183,16 @@ package cloudfront {
     */
   @js.native
   trait ListInvalidationsRequest extends js.Object {
-    var DistributionId: string
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var DistributionId: String
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListInvalidationsRequest {
     def apply(
-        DistributionId: string,
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        DistributionId: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListInvalidationsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DistributionId" -> DistributionId.asInstanceOf[js.Any],
@@ -3236,14 +3232,14 @@ package cloudfront {
 
   @js.native
   trait ListPublicKeysRequest extends js.Object {
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListPublicKeysRequest {
     def apply(
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListPublicKeysRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
@@ -3282,14 +3278,14 @@ package cloudfront {
     */
   @js.native
   trait ListStreamingDistributionsRequest extends js.Object {
-    var Marker: js.UndefOr[string]
-    var MaxItems: js.UndefOr[string]
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
   }
 
   object ListStreamingDistributionsRequest {
     def apply(
-        Marker: js.UndefOr[string] = js.undefined,
-        MaxItems: js.UndefOr[string] = js.undefined
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
     ): ListStreamingDistributionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Marker" -> Marker.map { x =>
@@ -3371,18 +3367,18 @@ package cloudfront {
     */
   @js.native
   trait LoggingConfig extends js.Object {
-    var Bucket: string
-    var Enabled: boolean
-    var IncludeCookies: boolean
-    var Prefix: string
+    var Bucket: String
+    var Enabled: Boolean
+    var IncludeCookies: Boolean
+    var Prefix: String
   }
 
   object LoggingConfig {
     def apply(
-        Bucket: string,
-        Enabled: boolean,
-        IncludeCookies: boolean,
-        Prefix: string
+        Bucket: String,
+        Enabled: Boolean,
+        IncludeCookies: Boolean,
+        Prefix: String
     ): LoggingConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bucket"         -> Bucket.asInstanceOf[js.Any],
@@ -3423,21 +3419,21 @@ package cloudfront {
     */
   @js.native
   trait Origin extends js.Object {
-    var DomainName: string
-    var Id: string
+    var DomainName: String
+    var Id: String
     var CustomHeaders: js.UndefOr[CustomHeaders]
     var CustomOriginConfig: js.UndefOr[CustomOriginConfig]
-    var OriginPath: js.UndefOr[string]
+    var OriginPath: js.UndefOr[String]
     var S3OriginConfig: js.UndefOr[S3OriginConfig]
   }
 
   object Origin {
     def apply(
-        DomainName: string,
-        Id: string,
+        DomainName: String,
+        Id: String,
         CustomHeaders: js.UndefOr[CustomHeaders] = js.undefined,
         CustomOriginConfig: js.UndefOr[CustomOriginConfig] = js.undefined,
-        OriginPath: js.UndefOr[string] = js.undefined,
+        OriginPath: js.UndefOr[String] = js.undefined,
         S3OriginConfig: js.UndefOr[S3OriginConfig] = js.undefined
     ): Origin = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3466,14 +3462,14 @@ package cloudfront {
     */
   @js.native
   trait OriginCustomHeader extends js.Object {
-    var HeaderName: string
-    var HeaderValue: string
+    var HeaderName: String
+    var HeaderValue: String
   }
 
   object OriginCustomHeader {
     def apply(
-        HeaderName: string,
-        HeaderValue: string
+        HeaderName: String,
+        HeaderValue: String
     ): OriginCustomHeader = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HeaderName"  -> HeaderName.asInstanceOf[js.Any],
@@ -3490,14 +3486,14 @@ package cloudfront {
   @js.native
   trait OriginGroup extends js.Object {
     var FailoverCriteria: OriginGroupFailoverCriteria
-    var Id: string
+    var Id: String
     var Members: OriginGroupMembers
   }
 
   object OriginGroup {
     def apply(
         FailoverCriteria: OriginGroupFailoverCriteria,
-        Id: string,
+        Id: String,
         Members: OriginGroupMembers
     ): OriginGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3535,12 +3531,12 @@ package cloudfront {
     */
   @js.native
   trait OriginGroupMember extends js.Object {
-    var OriginId: string
+    var OriginId: String
   }
 
   object OriginGroupMember {
     def apply(
-        OriginId: string
+        OriginId: String
     ): OriginGroupMember = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OriginId" -> OriginId.asInstanceOf[js.Any]
@@ -3556,13 +3552,13 @@ package cloudfront {
   @js.native
   trait OriginGroupMembers extends js.Object {
     var Items: OriginGroupMemberList
-    var Quantity: integer
+    var Quantity: Int
   }
 
   object OriginGroupMembers {
     def apply(
         Items: OriginGroupMemberList,
-        Quantity: integer
+        Quantity: Int
     ): OriginGroupMembers = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Items"    -> Items.asInstanceOf[js.Any],
@@ -3578,13 +3574,13 @@ package cloudfront {
     */
   @js.native
   trait OriginGroups extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[OriginGroupList]
   }
 
   object OriginGroups {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[OriginGroupList] = js.undefined
     ): OriginGroups = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3612,13 +3608,13 @@ package cloudfront {
   @js.native
   trait OriginSslProtocols extends js.Object {
     var Items: SslProtocolsList
-    var Quantity: integer
+    var Quantity: Int
   }
 
   object OriginSslProtocols {
     def apply(
         Items: SslProtocolsList,
-        Quantity: integer
+        Quantity: Int
     ): OriginSslProtocols = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Items"    -> Items.asInstanceOf[js.Any],
@@ -3635,13 +3631,13 @@ package cloudfront {
   @js.native
   trait Origins extends js.Object {
     var Items: OriginList
-    var Quantity: integer
+    var Quantity: Int
   }
 
   object Origins {
     def apply(
         Items: OriginList,
-        Quantity: integer
+        Quantity: Int
     ): Origins = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Items"    -> Items.asInstanceOf[js.Any],
@@ -3657,13 +3653,13 @@ package cloudfront {
     */
   @js.native
   trait Paths extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[PathList]
   }
 
   object Paths {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[PathList] = js.undefined
     ): Paths = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3691,14 +3687,14 @@ package cloudfront {
   @js.native
   trait PublicKey extends js.Object {
     var CreatedTime: timestamp
-    var Id: string
+    var Id: String
     var PublicKeyConfig: PublicKeyConfig
   }
 
   object PublicKey {
     def apply(
         CreatedTime: timestamp,
-        Id: string,
+        Id: String,
         PublicKeyConfig: PublicKeyConfig
     ): PublicKey = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3716,18 +3712,18 @@ package cloudfront {
     */
   @js.native
   trait PublicKeyConfig extends js.Object {
-    var CallerReference: string
-    var EncodedKey: string
-    var Name: string
-    var Comment: js.UndefOr[string]
+    var CallerReference: String
+    var EncodedKey: String
+    var Name: String
+    var Comment: js.UndefOr[String]
   }
 
   object PublicKeyConfig {
     def apply(
-        CallerReference: string,
-        EncodedKey: string,
-        Name: string,
-        Comment: js.UndefOr[string] = js.undefined
+        CallerReference: String,
+        EncodedKey: String,
+        Name: String,
+        Comment: js.UndefOr[String] = js.undefined
     ): PublicKeyConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
@@ -3747,18 +3743,18 @@ package cloudfront {
     */
   @js.native
   trait PublicKeyList extends js.Object {
-    var MaxItems: integer
-    var Quantity: integer
+    var MaxItems: Int
+    var Quantity: Int
     var Items: js.UndefOr[PublicKeySummaryList]
-    var NextMarker: js.UndefOr[string]
+    var NextMarker: js.UndefOr[String]
   }
 
   object PublicKeyList {
     def apply(
-        MaxItems: integer,
-        Quantity: integer,
+        MaxItems: Int,
+        Quantity: Int,
         Items: js.UndefOr[PublicKeySummaryList] = js.undefined,
-        NextMarker: js.UndefOr[string] = js.undefined
+        NextMarker: js.UndefOr[String] = js.undefined
     ): PublicKeyList = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxItems" -> MaxItems.asInstanceOf[js.Any],
@@ -3781,19 +3777,19 @@ package cloudfront {
   @js.native
   trait PublicKeySummary extends js.Object {
     var CreatedTime: timestamp
-    var EncodedKey: string
-    var Id: string
-    var Name: string
-    var Comment: js.UndefOr[string]
+    var EncodedKey: String
+    var Id: String
+    var Name: String
+    var Comment: js.UndefOr[String]
   }
 
   object PublicKeySummary {
     def apply(
         CreatedTime: timestamp,
-        EncodedKey: string,
-        Id: string,
-        Name: string,
-        Comment: js.UndefOr[string] = js.undefined
+        EncodedKey: String,
+        Id: String,
+        Name: String,
+        Comment: js.UndefOr[String] = js.undefined
     ): PublicKeySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreatedTime" -> CreatedTime.asInstanceOf[js.Any],
@@ -3814,14 +3810,14 @@ package cloudfront {
     */
   @js.native
   trait QueryArgProfile extends js.Object {
-    var ProfileId: string
-    var QueryArg: string
+    var ProfileId: String
+    var QueryArg: String
   }
 
   object QueryArgProfile {
     def apply(
-        ProfileId: string,
-        QueryArg: string
+        ProfileId: String,
+        QueryArg: String
     ): QueryArgProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ProfileId" -> ProfileId.asInstanceOf[js.Any],
@@ -3837,13 +3833,13 @@ package cloudfront {
     */
   @js.native
   trait QueryArgProfileConfig extends js.Object {
-    var ForwardWhenQueryArgProfileIsUnknown: boolean
+    var ForwardWhenQueryArgProfileIsUnknown: Boolean
     var QueryArgProfiles: js.UndefOr[QueryArgProfiles]
   }
 
   object QueryArgProfileConfig {
     def apply(
-        ForwardWhenQueryArgProfileIsUnknown: boolean,
+        ForwardWhenQueryArgProfileIsUnknown: Boolean,
         QueryArgProfiles: js.UndefOr[QueryArgProfiles] = js.undefined
     ): QueryArgProfileConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3862,13 +3858,13 @@ package cloudfront {
     */
   @js.native
   trait QueryArgProfiles extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[QueryArgProfileList]
   }
 
   object QueryArgProfiles {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[QueryArgProfileList] = js.undefined
     ): QueryArgProfiles = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3884,13 +3880,13 @@ package cloudfront {
 
   @js.native
   trait QueryStringCacheKeys extends js.Object {
-    var Quantity: integer
+    var Quantity: Int
     var Items: js.UndefOr[QueryStringCacheKeysList]
   }
 
   object QueryStringCacheKeys {
     def apply(
-        Quantity: integer,
+        Quantity: Int,
         Items: js.UndefOr[QueryStringCacheKeysList] = js.undefined
     ): QueryStringCacheKeys = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -3929,14 +3925,14 @@ package cloudfront {
     */
   @js.native
   trait S3Origin extends js.Object {
-    var DomainName: string
-    var OriginAccessIdentity: string
+    var DomainName: String
+    var OriginAccessIdentity: String
   }
 
   object S3Origin {
     def apply(
-        DomainName: string,
-        OriginAccessIdentity: string
+        DomainName: String,
+        OriginAccessIdentity: String
     ): S3Origin = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DomainName"           -> DomainName.asInstanceOf[js.Any],
@@ -3952,12 +3948,12 @@ package cloudfront {
     */
   @js.native
   trait S3OriginConfig extends js.Object {
-    var OriginAccessIdentity: string
+    var OriginAccessIdentity: String
   }
 
   object S3OriginConfig {
     def apply(
-        OriginAccessIdentity: string
+        OriginAccessIdentity: String
     ): S3OriginConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OriginAccessIdentity" -> OriginAccessIdentity.asInstanceOf[js.Any]
@@ -3979,13 +3975,13 @@ package cloudfront {
     */
   @js.native
   trait Signer extends js.Object {
-    var AwsAccountNumber: js.UndefOr[string]
+    var AwsAccountNumber: js.UndefOr[String]
     var KeyPairIds: js.UndefOr[KeyPairIds]
   }
 
   object Signer {
     def apply(
-        AwsAccountNumber: js.UndefOr[string] = js.undefined,
+        AwsAccountNumber: js.UndefOr[String] = js.undefined,
         KeyPairIds: js.UndefOr[KeyPairIds] = js.undefined
     ): Signer = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4016,13 +4012,13 @@ package cloudfront {
   @js.native
   trait StatusCodes extends js.Object {
     var Items: StatusCodeList
-    var Quantity: integer
+    var Quantity: Int
   }
 
   object StatusCodes {
     def apply(
         Items: StatusCodeList,
-        Quantity: integer
+        Quantity: Int
     ): StatusCodes = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Items"    -> Items.asInstanceOf[js.Any],
@@ -4038,22 +4034,22 @@ package cloudfront {
     */
   @js.native
   trait StreamingDistribution extends js.Object {
-    var ARN: string
+    var ARN: String
     var ActiveTrustedSigners: ActiveTrustedSigners
-    var DomainName: string
-    var Id: string
-    var Status: string
+    var DomainName: String
+    var Id: String
+    var Status: String
     var StreamingDistributionConfig: StreamingDistributionConfig
     var LastModifiedTime: js.UndefOr[timestamp]
   }
 
   object StreamingDistribution {
     def apply(
-        ARN: string,
+        ARN: String,
         ActiveTrustedSigners: ActiveTrustedSigners,
-        DomainName: string,
-        Id: string,
-        Status: string,
+        DomainName: String,
+        Id: String,
+        Status: String,
         StreamingDistributionConfig: StreamingDistributionConfig,
         LastModifiedTime: js.UndefOr[timestamp] = js.undefined
     ): StreamingDistribution = {
@@ -4078,9 +4074,9 @@ package cloudfront {
     */
   @js.native
   trait StreamingDistributionConfig extends js.Object {
-    var CallerReference: string
-    var Comment: string
-    var Enabled: boolean
+    var CallerReference: String
+    var Comment: String
+    var Enabled: Boolean
     var S3Origin: S3Origin
     var TrustedSigners: TrustedSigners
     var Aliases: js.UndefOr[Aliases]
@@ -4090,9 +4086,9 @@ package cloudfront {
 
   object StreamingDistributionConfig {
     def apply(
-        CallerReference: string,
-        Comment: string,
-        Enabled: boolean,
+        CallerReference: String,
+        Comment: String,
+        Enabled: Boolean,
         S3Origin: S3Origin,
         TrustedSigners: TrustedSigners,
         Aliases: js.UndefOr[Aliases] = js.undefined,
@@ -4148,22 +4144,22 @@ package cloudfront {
     */
   @js.native
   trait StreamingDistributionList extends js.Object {
-    var IsTruncated: boolean
-    var Marker: string
-    var MaxItems: integer
-    var Quantity: integer
+    var IsTruncated: Boolean
+    var Marker: String
+    var MaxItems: Int
+    var Quantity: Int
     var Items: js.UndefOr[StreamingDistributionSummaryList]
-    var NextMarker: js.UndefOr[string]
+    var NextMarker: js.UndefOr[String]
   }
 
   object StreamingDistributionList {
     def apply(
-        IsTruncated: boolean,
-        Marker: string,
-        MaxItems: integer,
-        Quantity: integer,
+        IsTruncated: Boolean,
+        Marker: String,
+        MaxItems: Int,
+        Quantity: Int,
         Items: js.UndefOr[StreamingDistributionSummaryList] = js.undefined,
-        NextMarker: js.UndefOr[string] = js.undefined
+        NextMarker: js.UndefOr[String] = js.undefined
     ): StreamingDistributionList = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
@@ -4187,31 +4183,31 @@ package cloudfront {
     */
   @js.native
   trait StreamingDistributionSummary extends js.Object {
-    var ARN: string
+    var ARN: String
     var Aliases: Aliases
-    var Comment: string
-    var DomainName: string
-    var Enabled: boolean
-    var Id: string
+    var Comment: String
+    var DomainName: String
+    var Enabled: Boolean
+    var Id: String
     var LastModifiedTime: timestamp
     var PriceClass: PriceClass
     var S3Origin: S3Origin
-    var Status: string
+    var Status: String
     var TrustedSigners: TrustedSigners
   }
 
   object StreamingDistributionSummary {
     def apply(
-        ARN: string,
+        ARN: String,
         Aliases: Aliases,
-        Comment: string,
-        DomainName: string,
-        Enabled: boolean,
-        Id: string,
+        Comment: String,
+        DomainName: String,
+        Enabled: Boolean,
+        Id: String,
         LastModifiedTime: timestamp,
         PriceClass: PriceClass,
         S3Origin: S3Origin,
-        Status: string,
+        Status: String,
         TrustedSigners: TrustedSigners
     ): StreamingDistributionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4237,16 +4233,16 @@ package cloudfront {
     */
   @js.native
   trait StreamingLoggingConfig extends js.Object {
-    var Bucket: string
-    var Enabled: boolean
-    var Prefix: string
+    var Bucket: String
+    var Enabled: Boolean
+    var Prefix: String
   }
 
   object StreamingLoggingConfig {
     def apply(
-        Bucket: string,
-        Enabled: boolean,
-        Prefix: string
+        Bucket: String,
+        Enabled: Boolean,
+        Prefix: String
     ): StreamingLoggingConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Bucket"  -> Bucket.asInstanceOf[js.Any],
@@ -4359,15 +4355,15 @@ package cloudfront {
     */
   @js.native
   trait TrustedSigners extends js.Object {
-    var Enabled: boolean
-    var Quantity: integer
+    var Enabled: Boolean
+    var Quantity: Int
     var Items: js.UndefOr[AwsAccountNumberList]
   }
 
   object TrustedSigners {
     def apply(
-        Enabled: boolean,
-        Quantity: integer,
+        Enabled: Boolean,
+        Quantity: Int,
         Items: js.UndefOr[AwsAccountNumberList] = js.undefined
     ): TrustedSigners = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4411,15 +4407,15 @@ package cloudfront {
   @js.native
   trait UpdateCloudFrontOriginAccessIdentityRequest extends js.Object {
     var CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object UpdateCloudFrontOriginAccessIdentityRequest {
     def apply(
         CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig,
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateCloudFrontOriginAccessIdentityRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudFrontOriginAccessIdentityConfig" -> CloudFrontOriginAccessIdentityConfig.asInstanceOf[js.Any],
@@ -4441,13 +4437,13 @@ package cloudfront {
   @js.native
   trait UpdateCloudFrontOriginAccessIdentityResult extends js.Object {
     var CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity]
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
   }
 
   object UpdateCloudFrontOriginAccessIdentityResult {
     def apply(
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined
     ): UpdateCloudFrontOriginAccessIdentityResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CloudFrontOriginAccessIdentity" -> CloudFrontOriginAccessIdentity.map { x =>
@@ -4470,15 +4466,15 @@ package cloudfront {
   @js.native
   trait UpdateDistributionRequest extends js.Object {
     var DistributionConfig: DistributionConfig
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object UpdateDistributionRequest {
     def apply(
         DistributionConfig: DistributionConfig,
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateDistributionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DistributionConfig" -> DistributionConfig.asInstanceOf[js.Any],
@@ -4498,13 +4494,13 @@ package cloudfront {
   @js.native
   trait UpdateDistributionResult extends js.Object {
     var Distribution: js.UndefOr[Distribution]
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
   }
 
   object UpdateDistributionResult {
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
-        ETag: js.UndefOr[string] = js.undefined
+        ETag: js.UndefOr[String] = js.undefined
     ): UpdateDistributionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Distribution" -> Distribution.map { x =>
@@ -4522,15 +4518,15 @@ package cloudfront {
   @js.native
   trait UpdateFieldLevelEncryptionConfigRequest extends js.Object {
     var FieldLevelEncryptionConfig: FieldLevelEncryptionConfig
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object UpdateFieldLevelEncryptionConfigRequest {
     def apply(
         FieldLevelEncryptionConfig: FieldLevelEncryptionConfig,
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateFieldLevelEncryptionConfigRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldLevelEncryptionConfig" -> FieldLevelEncryptionConfig.asInstanceOf[js.Any],
@@ -4546,13 +4542,13 @@ package cloudfront {
 
   @js.native
   trait UpdateFieldLevelEncryptionConfigResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryption: js.UndefOr[FieldLevelEncryption]
   }
 
   object UpdateFieldLevelEncryptionConfigResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined
     ): UpdateFieldLevelEncryptionConfigResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4571,15 +4567,15 @@ package cloudfront {
   @js.native
   trait UpdateFieldLevelEncryptionProfileRequest extends js.Object {
     var FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig
-    var Id: string
-    var IfMatch: js.UndefOr[string]
+    var Id: String
+    var IfMatch: js.UndefOr[String]
   }
 
   object UpdateFieldLevelEncryptionProfileRequest {
     def apply(
         FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig,
-        Id: string,
-        IfMatch: js.UndefOr[string] = js.undefined
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateFieldLevelEncryptionProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FieldLevelEncryptionProfileConfig" -> FieldLevelEncryptionProfileConfig.asInstanceOf[js.Any],
@@ -4595,13 +4591,13 @@ package cloudfront {
 
   @js.native
   trait UpdateFieldLevelEncryptionProfileResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile]
   }
 
   object UpdateFieldLevelEncryptionProfileResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined
     ): UpdateFieldLevelEncryptionProfileResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4619,16 +4615,16 @@ package cloudfront {
 
   @js.native
   trait UpdatePublicKeyRequest extends js.Object {
-    var Id: string
+    var Id: String
     var PublicKeyConfig: PublicKeyConfig
-    var IfMatch: js.UndefOr[string]
+    var IfMatch: js.UndefOr[String]
   }
 
   object UpdatePublicKeyRequest {
     def apply(
-        Id: string,
+        Id: String,
         PublicKeyConfig: PublicKeyConfig,
-        IfMatch: js.UndefOr[string] = js.undefined
+        IfMatch: js.UndefOr[String] = js.undefined
     ): UpdatePublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id"              -> Id.asInstanceOf[js.Any],
@@ -4644,13 +4640,13 @@ package cloudfront {
 
   @js.native
   trait UpdatePublicKeyResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var PublicKey: js.UndefOr[PublicKey]
   }
 
   object UpdatePublicKeyResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
     ): UpdatePublicKeyResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4671,16 +4667,16 @@ package cloudfront {
     */
   @js.native
   trait UpdateStreamingDistributionRequest extends js.Object {
-    var Id: string
+    var Id: String
     var StreamingDistributionConfig: StreamingDistributionConfig
-    var IfMatch: js.UndefOr[string]
+    var IfMatch: js.UndefOr[String]
   }
 
   object UpdateStreamingDistributionRequest {
     def apply(
-        Id: string,
+        Id: String,
         StreamingDistributionConfig: StreamingDistributionConfig,
-        IfMatch: js.UndefOr[string] = js.undefined
+        IfMatch: js.UndefOr[String] = js.undefined
     ): UpdateStreamingDistributionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id"                          -> Id.asInstanceOf[js.Any],
@@ -4699,13 +4695,13 @@ package cloudfront {
     */
   @js.native
   trait UpdateStreamingDistributionResult extends js.Object {
-    var ETag: js.UndefOr[string]
+    var ETag: js.UndefOr[String]
     var StreamingDistribution: js.UndefOr[StreamingDistribution]
   }
 
   object UpdateStreamingDistributionResult {
     def apply(
-        ETag: js.UndefOr[string] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
     ): UpdateStreamingDistributionResult = {
       val _fields = IndexedSeq[(String, js.Any)](
@@ -4754,22 +4750,22 @@ package cloudfront {
     */
   @js.native
   trait ViewerCertificate extends js.Object {
-    var ACMCertificateArn: js.UndefOr[string]
-    var Certificate: js.UndefOr[string]
+    var ACMCertificateArn: js.UndefOr[String]
+    var Certificate: js.UndefOr[String]
     var CertificateSource: js.UndefOr[CertificateSource]
-    var CloudFrontDefaultCertificate: js.UndefOr[boolean]
-    var IAMCertificateId: js.UndefOr[string]
+    var CloudFrontDefaultCertificate: js.UndefOr[Boolean]
+    var IAMCertificateId: js.UndefOr[String]
     var MinimumProtocolVersion: js.UndefOr[MinimumProtocolVersion]
     var SSLSupportMethod: js.UndefOr[SSLSupportMethod]
   }
 
   object ViewerCertificate {
     def apply(
-        ACMCertificateArn: js.UndefOr[string] = js.undefined,
-        Certificate: js.UndefOr[string] = js.undefined,
+        ACMCertificateArn: js.UndefOr[String] = js.undefined,
+        Certificate: js.UndefOr[String] = js.undefined,
         CertificateSource: js.UndefOr[CertificateSource] = js.undefined,
-        CloudFrontDefaultCertificate: js.UndefOr[boolean] = js.undefined,
-        IAMCertificateId: js.UndefOr[string] = js.undefined,
+        CloudFrontDefaultCertificate: js.UndefOr[Boolean] = js.undefined,
+        IAMCertificateId: js.UndefOr[String] = js.undefined,
         MinimumProtocolVersion: js.UndefOr[MinimumProtocolVersion] = js.undefined,
         SSLSupportMethod: js.UndefOr[SSLSupportMethod] = js.undefined
     ): ViewerCertificate = {

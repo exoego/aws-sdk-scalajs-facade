@@ -51,7 +51,6 @@ package object health {
   type regionList                        = js.Array[region]
   type service                           = String
   type serviceList                       = js.Array[service]
-  type string                            = String
   type tagFilter                         = js.Array[tagSet]
   type tagKey                            = String
   type tagSet                            = js.Dictionary[tagValue]
@@ -697,15 +696,15 @@ package health {
     */
   @js.native
   trait EventDetailsErrorItem extends js.Object {
-    var errorMessage: js.UndefOr[string]
-    var errorName: js.UndefOr[string]
+    var errorMessage: js.UndefOr[String]
+    var errorName: js.UndefOr[String]
     var eventArn: js.UndefOr[eventArn]
   }
 
   object EventDetailsErrorItem {
     def apply(
-        errorMessage: js.UndefOr[string] = js.undefined,
-        errorName: js.UndefOr[string] = js.undefined,
+        errorMessage: js.UndefOr[String] = js.undefined,
+        errorName: js.UndefOr[String] = js.undefined,
         eventArn: js.UndefOr[eventArn] = js.undefined
     ): EventDetailsErrorItem = {
       val _fields = IndexedSeq[(String, js.Any)](
