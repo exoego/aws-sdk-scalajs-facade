@@ -7,87 +7,87 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object workdocs {
-  type ActivityNamesFilterType = String
-  type ActivityType = String
-  type AuthenticationHeaderType = String
-  type BooleanEnumType = String
-  type BooleanType = Boolean
-  type CommentIdType = String
-  type CommentList = js.Array[Comment]
-  type CommentStatusType = String
-  type CommentTextType = String
-  type CommentVisibilityType = String
-  type CustomMetadataKeyList = js.Array[CustomMetadataKeyType]
-  type CustomMetadataKeyType = String
-  type CustomMetadataMap = js.Dictionary[CustomMetadataValueType]
-  type CustomMetadataValueType = String
-  type DocumentContentType = String
-  type DocumentMetadataList = js.Array[DocumentMetadata]
-  type DocumentSourceType = String
-  type DocumentSourceUrlMap = js.Dictionary[UrlType]
-  type DocumentStatusType = String
-  type DocumentThumbnailType = String
-  type DocumentThumbnailUrlMap = js.Dictionary[UrlType]
-  type DocumentVersionIdType = String
+  type ActivityNamesFilterType     = String
+  type ActivityType                = String
+  type AuthenticationHeaderType    = String
+  type BooleanEnumType             = String
+  type BooleanType                 = Boolean
+  type CommentIdType               = String
+  type CommentList                 = js.Array[Comment]
+  type CommentStatusType           = String
+  type CommentTextType             = String
+  type CommentVisibilityType       = String
+  type CustomMetadataKeyList       = js.Array[CustomMetadataKeyType]
+  type CustomMetadataKeyType       = String
+  type CustomMetadataMap           = js.Dictionary[CustomMetadataValueType]
+  type CustomMetadataValueType     = String
+  type DocumentContentType         = String
+  type DocumentMetadataList        = js.Array[DocumentMetadata]
+  type DocumentSourceType          = String
+  type DocumentSourceUrlMap        = js.Dictionary[UrlType]
+  type DocumentStatusType          = String
+  type DocumentThumbnailType       = String
+  type DocumentThumbnailUrlMap     = js.Dictionary[UrlType]
+  type DocumentVersionIdType       = String
   type DocumentVersionMetadataList = js.Array[DocumentVersionMetadata]
-  type DocumentVersionStatus = String
-  type EmailAddressType = String
-  type FieldNamesType = String
-  type FolderContentType = String
-  type FolderMetadataList = js.Array[FolderMetadata]
-  type GroupMetadataList = js.Array[GroupMetadata]
-  type GroupNameType = String
-  type HashType = String
-  type HeaderNameType = String
-  type HeaderValueType = String
-  type IdType = String
-  type LimitType = Int
-  type LocaleType = String
-  type MarkerType = String
-  type MessageType = String
-  type OrderType = String
-  type OrganizationUserList = js.Array[User]
-  type PageMarkerType = String
-  type PasswordType = String
-  type PermissionInfoList = js.Array[PermissionInfo]
-  type PositiveIntegerType = Int
-  type PositiveSizeType = Double
-  type PrincipalList = js.Array[Principal]
-  type PrincipalType = String
-  type ResourceCollectionType = String
-  type ResourceIdType = String
-  type ResourceNameType = String
-  type ResourcePathComponentList = js.Array[ResourcePathComponent]
-  type ResourceSortType = String
-  type ResourceStateType = String
-  type ResourceType = String
-  type RolePermissionType = String
-  type RoleType = String
-  type SearchQueryType = String
-  type SharePrincipalList = js.Array[SharePrincipal]
-  type ShareResultsList = js.Array[ShareResult]
-  type ShareStatusType = String
-  type SharedLabel = String
-  type SharedLabels = js.Array[SharedLabel]
-  type SignedHeaderMap = js.Dictionary[HeaderValueType]
-  type SizeType = Double
-  type StorageType = String
-  type SubscriptionEndPointType = String
-  type SubscriptionList = js.Array[Subscription]
-  type SubscriptionProtocolType = String
-  type SubscriptionType = String
-  type TimeZoneIdType = String
-  type TimestampType = js.Date
-  type UrlType = String
-  type UserActivities = js.Array[Activity]
-  type UserAttributeValueType = String
-  type UserFilterType = String
-  type UserIdsType = String
-  type UserMetadataList = js.Array[UserMetadata]
-  type UserSortType = String
-  type UserStatusType = String
-  type UserType = String
-  type UsernameType = String
+  type DocumentVersionStatus       = String
+  type EmailAddressType            = String
+  type FieldNamesType              = String
+  type FolderContentType           = String
+  type FolderMetadataList          = js.Array[FolderMetadata]
+  type GroupMetadataList           = js.Array[GroupMetadata]
+  type GroupNameType               = String
+  type HashType                    = String
+  type HeaderNameType              = String
+  type HeaderValueType             = String
+  type IdType                      = String
+  type LimitType                   = Int
+  type LocaleType                  = String
+  type MarkerType                  = String
+  type MessageType                 = String
+  type OrderType                   = String
+  type OrganizationUserList        = js.Array[User]
+  type PageMarkerType              = String
+  type PasswordType                = String
+  type PermissionInfoList          = js.Array[PermissionInfo]
+  type PositiveIntegerType         = Int
+  type PositiveSizeType            = Double
+  type PrincipalList               = js.Array[Principal]
+  type PrincipalType               = String
+  type ResourceCollectionType      = String
+  type ResourceIdType              = String
+  type ResourceNameType            = String
+  type ResourcePathComponentList   = js.Array[ResourcePathComponent]
+  type ResourceSortType            = String
+  type ResourceStateType           = String
+  type ResourceType                = String
+  type RolePermissionType          = String
+  type RoleType                    = String
+  type SearchQueryType             = String
+  type SharePrincipalList          = js.Array[SharePrincipal]
+  type ShareResultsList            = js.Array[ShareResult]
+  type ShareStatusType             = String
+  type SharedLabel                 = String
+  type SharedLabels                = js.Array[SharedLabel]
+  type SignedHeaderMap             = js.Dictionary[HeaderValueType]
+  type SizeType                    = Double
+  type StorageType                 = String
+  type SubscriptionEndPointType    = String
+  type SubscriptionList            = js.Array[Subscription]
+  type SubscriptionProtocolType    = String
+  type SubscriptionType            = String
+  type TimeZoneIdType              = String
+  type TimestampType               = js.Date
+  type UrlType                     = String
+  type UserActivities              = js.Array[Activity]
+  type UserAttributeValueType      = String
+  type UserFilterType              = String
+  type UserIdsType                 = String
+  type UserMetadataList            = js.Array[UserMetadata]
+  type UserSortType                = String
+  type UserStatusType              = String
+  type UserType                    = String
+  type UsernameType                = String
 }
 
 package workdocs {
@@ -97,46 +97,57 @@ package workdocs {
     def this(config: AWSConfig) = this()
 
     def abortDocumentVersionUpload(params: AbortDocumentVersionUploadRequest): Request[js.Object] = js.native
-    def activateUser(params: ActivateUserRequest): Request[ActivateUserResponse] = js.native
-    def addResourcePermissions(params: AddResourcePermissionsRequest): Request[AddResourcePermissionsResponse] = js.native
-    def createComment(params: CreateCommentRequest): Request[CreateCommentResponse] = js.native
+    def activateUser(params: ActivateUserRequest): Request[ActivateUserResponse]                  = js.native
+    def addResourcePermissions(params: AddResourcePermissionsRequest): Request[AddResourcePermissionsResponse] =
+      js.native
+    def createComment(params: CreateCommentRequest): Request[CreateCommentResponse]                      = js.native
     def createCustomMetadata(params: CreateCustomMetadataRequest): Request[CreateCustomMetadataResponse] = js.native
-    def createFolder(params: CreateFolderRequest): Request[CreateFolderResponse] = js.native
-    def createLabels(params: CreateLabelsRequest): Request[CreateLabelsResponse] = js.native
-    def createNotificationSubscription(params: CreateNotificationSubscriptionRequest): Request[CreateNotificationSubscriptionResponse] = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
-    def deactivateUser(params: DeactivateUserRequest): Request[js.Object] = js.native
-    def deleteComment(params: DeleteCommentRequest): Request[js.Object] = js.native
-    def deleteCustomMetadata(params: DeleteCustomMetadataRequest): Request[DeleteCustomMetadataResponse] = js.native
-    def deleteDocument(params: DeleteDocumentRequest): Request[js.Object] = js.native
-    def deleteFolder(params: DeleteFolderRequest): Request[js.Object] = js.native
-    def deleteFolderContents(params: DeleteFolderContentsRequest): Request[js.Object] = js.native
-    def deleteLabels(params: DeleteLabelsRequest): Request[DeleteLabelsResponse] = js.native
+    def createFolder(params: CreateFolderRequest): Request[CreateFolderResponse]                         = js.native
+    def createLabels(params: CreateLabelsRequest): Request[CreateLabelsResponse]                         = js.native
+    def createNotificationSubscription(
+        params: CreateNotificationSubscriptionRequest
+    ): Request[CreateNotificationSubscriptionResponse]                                                    = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                                = js.native
+    def deactivateUser(params: DeactivateUserRequest): Request[js.Object]                                 = js.native
+    def deleteComment(params: DeleteCommentRequest): Request[js.Object]                                   = js.native
+    def deleteCustomMetadata(params: DeleteCustomMetadataRequest): Request[DeleteCustomMetadataResponse]  = js.native
+    def deleteDocument(params: DeleteDocumentRequest): Request[js.Object]                                 = js.native
+    def deleteFolder(params: DeleteFolderRequest): Request[js.Object]                                     = js.native
+    def deleteFolderContents(params: DeleteFolderContentsRequest): Request[js.Object]                     = js.native
+    def deleteLabels(params: DeleteLabelsRequest): Request[DeleteLabelsResponse]                          = js.native
     def deleteNotificationSubscription(params: DeleteNotificationSubscriptionRequest): Request[js.Object] = js.native
-    def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
-    def describeActivities(params: DescribeActivitiesRequest): Request[DescribeActivitiesResponse] = js.native
-    def describeComments(params: DescribeCommentsRequest): Request[DescribeCommentsResponse] = js.native
-    def describeDocumentVersions(params: DescribeDocumentVersionsRequest): Request[DescribeDocumentVersionsResponse] = js.native
-    def describeFolderContents(params: DescribeFolderContentsRequest): Request[DescribeFolderContentsResponse] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[js.Object]                                         = js.native
+    def describeActivities(params: DescribeActivitiesRequest): Request[DescribeActivitiesResponse]        = js.native
+    def describeComments(params: DescribeCommentsRequest): Request[DescribeCommentsResponse]              = js.native
+    def describeDocumentVersions(params: DescribeDocumentVersionsRequest): Request[DescribeDocumentVersionsResponse] =
+      js.native
+    def describeFolderContents(params: DescribeFolderContentsRequest): Request[DescribeFolderContentsResponse] =
+      js.native
     def describeGroups(params: DescribeGroupsRequest): Request[DescribeGroupsResponse] = js.native
-    def describeNotificationSubscriptions(params: DescribeNotificationSubscriptionsRequest): Request[DescribeNotificationSubscriptionsResponse] = js.native
-    def describeResourcePermissions(params: DescribeResourcePermissionsRequest): Request[DescribeResourcePermissionsResponse] = js.native
+    def describeNotificationSubscriptions(
+        params: DescribeNotificationSubscriptionsRequest
+    ): Request[DescribeNotificationSubscriptionsResponse] = js.native
+    def describeResourcePermissions(
+        params: DescribeResourcePermissionsRequest
+    ): Request[DescribeResourcePermissionsResponse]                                                   = js.native
     def describeRootFolders(params: DescribeRootFoldersRequest): Request[DescribeRootFoldersResponse] = js.native
-    def describeUsers(params: DescribeUsersRequest): Request[DescribeUsersResponse] = js.native
-    def getCurrentUser(params: GetCurrentUserRequest): Request[GetCurrentUserResponse] = js.native
-    def getDocument(params: GetDocumentRequest): Request[GetDocumentResponse] = js.native
-    def getDocumentPath(params: GetDocumentPathRequest): Request[GetDocumentPathResponse] = js.native
-    def getDocumentVersion(params: GetDocumentVersionRequest): Request[GetDocumentVersionResponse] = js.native
-    def getFolder(params: GetFolderRequest): Request[GetFolderResponse] = js.native
-    def getFolderPath(params: GetFolderPathRequest): Request[GetFolderPathResponse] = js.native
-    def getResources(params: GetResourcesRequest): Request[GetResourcesResponse] = js.native
-    def initiateDocumentVersionUpload(params: InitiateDocumentVersionUploadRequest): Request[InitiateDocumentVersionUploadResponse] = js.native
+    def describeUsers(params: DescribeUsersRequest): Request[DescribeUsersResponse]                   = js.native
+    def getCurrentUser(params: GetCurrentUserRequest): Request[GetCurrentUserResponse]                = js.native
+    def getDocument(params: GetDocumentRequest): Request[GetDocumentResponse]                         = js.native
+    def getDocumentPath(params: GetDocumentPathRequest): Request[GetDocumentPathResponse]             = js.native
+    def getDocumentVersion(params: GetDocumentVersionRequest): Request[GetDocumentVersionResponse]    = js.native
+    def getFolder(params: GetFolderRequest): Request[GetFolderResponse]                               = js.native
+    def getFolderPath(params: GetFolderPathRequest): Request[GetFolderPathResponse]                   = js.native
+    def getResources(params: GetResourcesRequest): Request[GetResourcesResponse]                      = js.native
+    def initiateDocumentVersionUpload(
+        params: InitiateDocumentVersionUploadRequest
+    ): Request[InitiateDocumentVersionUploadResponse]                                                 = js.native
     def removeAllResourcePermissions(params: RemoveAllResourcePermissionsRequest): Request[js.Object] = js.native
-    def removeResourcePermission(params: RemoveResourcePermissionRequest): Request[js.Object] = js.native
-    def updateDocument(params: UpdateDocumentRequest): Request[js.Object] = js.native
-    def updateDocumentVersion(params: UpdateDocumentVersionRequest): Request[js.Object] = js.native
-    def updateFolder(params: UpdateFolderRequest): Request[js.Object] = js.native
-    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
+    def removeResourcePermission(params: RemoveResourcePermissionRequest): Request[js.Object]         = js.native
+    def updateDocument(params: UpdateDocumentRequest): Request[js.Object]                             = js.native
+    def updateDocumentVersion(params: UpdateDocumentVersionRequest): Request[js.Object]               = js.native
+    def updateFolder(params: UpdateFolderRequest): Request[js.Object]                                 = js.native
+    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                            = js.native
   }
 
   @js.native
@@ -148,13 +159,17 @@ package workdocs {
 
   object AbortDocumentVersionUploadRequest {
     def apply(
-      DocumentId: ResourceIdType,
-      VersionId: DocumentVersionIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): AbortDocumentVersionUploadRequest = {
+        DocumentId: ResourceIdType,
+        VersionId: DocumentVersionIdType,
+        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
+    ): AbortDocumentVersionUploadRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AbortDocumentVersionUploadRequest]
     }
@@ -167,12 +182,14 @@ package workdocs {
   }
 
   object ActivateUserRequest {
-    def apply(
-      UserId: IdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): ActivateUserRequest = {
+    def apply(UserId: IdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): ActivateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivateUserRequest]
     }
@@ -184,18 +201,18 @@ package workdocs {
   }
 
   object ActivateUserResponse {
-    def apply(
-      User: js.UndefOr[User] = js.undefined): ActivateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(User: js.UndefOr[User] = js.undefined): ActivateUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("User" -> User.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivateUserResponse]
     }
   }
 
   /**
-   * Describes the activity information.
-   */
+    * Describes the activity information.
+    */
   @js.native
   trait Activity extends js.Object {
     var CommentMetadata: js.UndefOr[CommentMetadata]
@@ -210,67 +227,119 @@ package workdocs {
   }
 
   object Activity {
-    def apply(
-      CommentMetadata: js.UndefOr[CommentMetadata] = js.undefined,
-      Initiator: js.UndefOr[UserMetadata] = js.undefined,
-      IsIndirectActivity: js.UndefOr[BooleanType] = js.undefined,
-      OrganizationId: js.UndefOr[IdType] = js.undefined,
-      OriginalParent: js.UndefOr[ResourceMetadata] = js.undefined,
-      Participants: js.UndefOr[Participants] = js.undefined,
-      ResourceMetadata: js.UndefOr[ResourceMetadata] = js.undefined,
-      TimeStamp: js.UndefOr[TimestampType] = js.undefined,
-      Type: js.UndefOr[ActivityType] = js.undefined): Activity = {
+    def apply(CommentMetadata: js.UndefOr[CommentMetadata] = js.undefined,
+              Initiator: js.UndefOr[UserMetadata] = js.undefined,
+              IsIndirectActivity: js.UndefOr[BooleanType] = js.undefined,
+              OrganizationId: js.UndefOr[IdType] = js.undefined,
+              OriginalParent: js.UndefOr[ResourceMetadata] = js.undefined,
+              Participants: js.UndefOr[Participants] = js.undefined,
+              ResourceMetadata: js.UndefOr[ResourceMetadata] = js.undefined,
+              TimeStamp: js.UndefOr[TimestampType] = js.undefined,
+              Type: js.UndefOr[ActivityType] = js.undefined): Activity = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CommentMetadata" -> CommentMetadata.map { x => x.asInstanceOf[js.Any] },
-        "Initiator" -> Initiator.map { x => x.asInstanceOf[js.Any] },
-        "IsIndirectActivity" -> IsIndirectActivity.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "OriginalParent" -> OriginalParent.map { x => x.asInstanceOf[js.Any] },
-        "Participants" -> Participants.map { x => x.asInstanceOf[js.Any] },
-        "ResourceMetadata" -> ResourceMetadata.map { x => x.asInstanceOf[js.Any] },
-        "TimeStamp" -> TimeStamp.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CommentMetadata" -> CommentMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Initiator" -> Initiator.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsIndirectActivity" -> IsIndirectActivity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OriginalParent" -> OriginalParent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Participants" -> Participants.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceMetadata" -> ResourceMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeStamp" -> TimeStamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Activity]
     }
   }
 
   object ActivityTypeEnum {
-    val DOCUMENT_CHECKED_IN = "DOCUMENT_CHECKED_IN"
-    val DOCUMENT_CHECKED_OUT = "DOCUMENT_CHECKED_OUT"
-    val DOCUMENT_RENAMED = "DOCUMENT_RENAMED"
-    val DOCUMENT_VERSION_UPLOADED = "DOCUMENT_VERSION_UPLOADED"
-    val DOCUMENT_VERSION_DELETED = "DOCUMENT_VERSION_DELETED"
-    val DOCUMENT_VERSION_VIEWED = "DOCUMENT_VERSION_VIEWED"
-    val DOCUMENT_VERSION_DOWNLOADED = "DOCUMENT_VERSION_DOWNLOADED"
-    val DOCUMENT_RECYCLED = "DOCUMENT_RECYCLED"
-    val DOCUMENT_RESTORED = "DOCUMENT_RESTORED"
-    val DOCUMENT_REVERTED = "DOCUMENT_REVERTED"
-    val DOCUMENT_SHARED = "DOCUMENT_SHARED"
-    val DOCUMENT_UNSHARED = "DOCUMENT_UNSHARED"
-    val DOCUMENT_SHARE_PERMISSION_CHANGED = "DOCUMENT_SHARE_PERMISSION_CHANGED"
-    val DOCUMENT_SHAREABLE_LINK_CREATED = "DOCUMENT_SHAREABLE_LINK_CREATED"
-    val DOCUMENT_SHAREABLE_LINK_REMOVED = "DOCUMENT_SHAREABLE_LINK_REMOVED"
+    val DOCUMENT_CHECKED_IN                        = "DOCUMENT_CHECKED_IN"
+    val DOCUMENT_CHECKED_OUT                       = "DOCUMENT_CHECKED_OUT"
+    val DOCUMENT_RENAMED                           = "DOCUMENT_RENAMED"
+    val DOCUMENT_VERSION_UPLOADED                  = "DOCUMENT_VERSION_UPLOADED"
+    val DOCUMENT_VERSION_DELETED                   = "DOCUMENT_VERSION_DELETED"
+    val DOCUMENT_VERSION_VIEWED                    = "DOCUMENT_VERSION_VIEWED"
+    val DOCUMENT_VERSION_DOWNLOADED                = "DOCUMENT_VERSION_DOWNLOADED"
+    val DOCUMENT_RECYCLED                          = "DOCUMENT_RECYCLED"
+    val DOCUMENT_RESTORED                          = "DOCUMENT_RESTORED"
+    val DOCUMENT_REVERTED                          = "DOCUMENT_REVERTED"
+    val DOCUMENT_SHARED                            = "DOCUMENT_SHARED"
+    val DOCUMENT_UNSHARED                          = "DOCUMENT_UNSHARED"
+    val DOCUMENT_SHARE_PERMISSION_CHANGED          = "DOCUMENT_SHARE_PERMISSION_CHANGED"
+    val DOCUMENT_SHAREABLE_LINK_CREATED            = "DOCUMENT_SHAREABLE_LINK_CREATED"
+    val DOCUMENT_SHAREABLE_LINK_REMOVED            = "DOCUMENT_SHAREABLE_LINK_REMOVED"
     val DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED"
-    val DOCUMENT_MOVED = "DOCUMENT_MOVED"
-    val DOCUMENT_COMMENT_ADDED = "DOCUMENT_COMMENT_ADDED"
-    val DOCUMENT_COMMENT_DELETED = "DOCUMENT_COMMENT_DELETED"
-    val DOCUMENT_ANNOTATION_ADDED = "DOCUMENT_ANNOTATION_ADDED"
-    val DOCUMENT_ANNOTATION_DELETED = "DOCUMENT_ANNOTATION_DELETED"
-    val FOLDER_CREATED = "FOLDER_CREATED"
-    val FOLDER_DELETED = "FOLDER_DELETED"
-    val FOLDER_RENAMED = "FOLDER_RENAMED"
-    val FOLDER_RECYCLED = "FOLDER_RECYCLED"
-    val FOLDER_RESTORED = "FOLDER_RESTORED"
-    val FOLDER_SHARED = "FOLDER_SHARED"
-    val FOLDER_UNSHARED = "FOLDER_UNSHARED"
-    val FOLDER_SHARE_PERMISSION_CHANGED = "FOLDER_SHARE_PERMISSION_CHANGED"
-    val FOLDER_SHAREABLE_LINK_CREATED = "FOLDER_SHAREABLE_LINK_CREATED"
-    val FOLDER_SHAREABLE_LINK_REMOVED = "FOLDER_SHAREABLE_LINK_REMOVED"
-    val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
-    val FOLDER_MOVED = "FOLDER_MOVED"
+    val DOCUMENT_MOVED                             = "DOCUMENT_MOVED"
+    val DOCUMENT_COMMENT_ADDED                     = "DOCUMENT_COMMENT_ADDED"
+    val DOCUMENT_COMMENT_DELETED                   = "DOCUMENT_COMMENT_DELETED"
+    val DOCUMENT_ANNOTATION_ADDED                  = "DOCUMENT_ANNOTATION_ADDED"
+    val DOCUMENT_ANNOTATION_DELETED                = "DOCUMENT_ANNOTATION_DELETED"
+    val FOLDER_CREATED                             = "FOLDER_CREATED"
+    val FOLDER_DELETED                             = "FOLDER_DELETED"
+    val FOLDER_RENAMED                             = "FOLDER_RENAMED"
+    val FOLDER_RECYCLED                            = "FOLDER_RECYCLED"
+    val FOLDER_RESTORED                            = "FOLDER_RESTORED"
+    val FOLDER_SHARED                              = "FOLDER_SHARED"
+    val FOLDER_UNSHARED                            = "FOLDER_UNSHARED"
+    val FOLDER_SHARE_PERMISSION_CHANGED            = "FOLDER_SHARE_PERMISSION_CHANGED"
+    val FOLDER_SHAREABLE_LINK_CREATED              = "FOLDER_SHAREABLE_LINK_CREATED"
+    val FOLDER_SHAREABLE_LINK_REMOVED              = "FOLDER_SHAREABLE_LINK_REMOVED"
+    val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED   = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
+    val FOLDER_MOVED                               = "FOLDER_MOVED"
 
-    val values = IndexedSeq(DOCUMENT_CHECKED_IN, DOCUMENT_CHECKED_OUT, DOCUMENT_RENAMED, DOCUMENT_VERSION_UPLOADED, DOCUMENT_VERSION_DELETED, DOCUMENT_VERSION_VIEWED, DOCUMENT_VERSION_DOWNLOADED, DOCUMENT_RECYCLED, DOCUMENT_RESTORED, DOCUMENT_REVERTED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, DOCUMENT_SHARE_PERMISSION_CHANGED, DOCUMENT_SHAREABLE_LINK_CREATED, DOCUMENT_SHAREABLE_LINK_REMOVED, DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED, DOCUMENT_MOVED, DOCUMENT_COMMENT_ADDED, DOCUMENT_COMMENT_DELETED, DOCUMENT_ANNOTATION_ADDED, DOCUMENT_ANNOTATION_DELETED, FOLDER_CREATED, FOLDER_DELETED, FOLDER_RENAMED, FOLDER_RECYCLED, FOLDER_RESTORED, FOLDER_SHARED, FOLDER_UNSHARED, FOLDER_SHARE_PERMISSION_CHANGED, FOLDER_SHAREABLE_LINK_CREATED, FOLDER_SHAREABLE_LINK_REMOVED, FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED, FOLDER_MOVED)
+    val values = IndexedSeq(
+      DOCUMENT_CHECKED_IN,
+      DOCUMENT_CHECKED_OUT,
+      DOCUMENT_RENAMED,
+      DOCUMENT_VERSION_UPLOADED,
+      DOCUMENT_VERSION_DELETED,
+      DOCUMENT_VERSION_VIEWED,
+      DOCUMENT_VERSION_DOWNLOADED,
+      DOCUMENT_RECYCLED,
+      DOCUMENT_RESTORED,
+      DOCUMENT_REVERTED,
+      DOCUMENT_SHARED,
+      DOCUMENT_UNSHARED,
+      DOCUMENT_SHARE_PERMISSION_CHANGED,
+      DOCUMENT_SHAREABLE_LINK_CREATED,
+      DOCUMENT_SHAREABLE_LINK_REMOVED,
+      DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
+      DOCUMENT_MOVED,
+      DOCUMENT_COMMENT_ADDED,
+      DOCUMENT_COMMENT_DELETED,
+      DOCUMENT_ANNOTATION_ADDED,
+      DOCUMENT_ANNOTATION_DELETED,
+      FOLDER_CREATED,
+      FOLDER_DELETED,
+      FOLDER_RENAMED,
+      FOLDER_RECYCLED,
+      FOLDER_RESTORED,
+      FOLDER_SHARED,
+      FOLDER_UNSHARED,
+      FOLDER_SHARE_PERMISSION_CHANGED,
+      FOLDER_SHAREABLE_LINK_CREATED,
+      FOLDER_SHAREABLE_LINK_REMOVED,
+      FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
+      FOLDER_MOVED
+    )
   }
 
   @js.native
@@ -282,16 +351,20 @@ package workdocs {
   }
 
   object AddResourcePermissionsRequest {
-    def apply(
-      Principals: SharePrincipalList,
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      NotificationOptions: js.UndefOr[NotificationOptions] = js.undefined): AddResourcePermissionsRequest = {
+    def apply(Principals: SharePrincipalList,
+              ResourceId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              NotificationOptions: js.UndefOr[NotificationOptions] = js.undefined): AddResourcePermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Principals" -> Principals.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "NotificationOptions" -> NotificationOptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotificationOptions" -> NotificationOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddResourcePermissionsRequest]
     }
@@ -303,25 +376,25 @@ package workdocs {
   }
 
   object AddResourcePermissionsResponse {
-    def apply(
-      ShareResults: js.UndefOr[ShareResultsList] = js.undefined): AddResourcePermissionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ShareResults" -> ShareResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ShareResults: js.UndefOr[ShareResultsList] = js.undefined): AddResourcePermissionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ShareResults" -> ShareResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddResourcePermissionsResponse]
     }
   }
 
   object BooleanEnumTypeEnum {
-    val TRUE = "TRUE"
+    val TRUE  = "TRUE"
     val FALSE = "FALSE"
 
     val values = IndexedSeq(TRUE, FALSE)
   }
 
   /**
-   * Describes a comment.
-   */
+    * Describes a comment.
+    */
   @js.native
   trait Comment extends js.Object {
     var CommentId: CommentIdType
@@ -336,34 +409,50 @@ package workdocs {
   }
 
   object Comment {
-    def apply(
-      CommentId: CommentIdType,
-      Contributor: js.UndefOr[User] = js.undefined,
-      CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      ParentId: js.UndefOr[CommentIdType] = js.undefined,
-      RecipientId: js.UndefOr[IdType] = js.undefined,
-      Status: js.UndefOr[CommentStatusType] = js.undefined,
-      Text: js.UndefOr[CommentTextType] = js.undefined,
-      ThreadId: js.UndefOr[CommentIdType] = js.undefined,
-      Visibility: js.UndefOr[CommentVisibilityType] = js.undefined): Comment = {
+    def apply(CommentId: CommentIdType,
+              Contributor: js.UndefOr[User] = js.undefined,
+              CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              ParentId: js.UndefOr[CommentIdType] = js.undefined,
+              RecipientId: js.UndefOr[IdType] = js.undefined,
+              Status: js.UndefOr[CommentStatusType] = js.undefined,
+              Text: js.UndefOr[CommentTextType] = js.undefined,
+              ThreadId: js.UndefOr[CommentIdType] = js.undefined,
+              Visibility: js.UndefOr[CommentVisibilityType] = js.undefined): Comment = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CommentId" -> CommentId.asInstanceOf[js.Any],
-        "Contributor" -> Contributor.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ParentId" -> ParentId.map { x => x.asInstanceOf[js.Any] },
-        "RecipientId" -> RecipientId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Text" -> Text.map { x => x.asInstanceOf[js.Any] },
-        "ThreadId" -> ThreadId.map { x => x.asInstanceOf[js.Any] },
-        "Visibility" -> Visibility.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Contributor" -> Contributor.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentId" -> ParentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecipientId" -> RecipientId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Text" -> Text.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ThreadId" -> ThreadId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Visibility" -> Visibility.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Comment]
     }
   }
 
   /**
-   * Describes the metadata of a comment.
-   */
+    * Describes the metadata of a comment.
+    */
   @js.native
   trait CommentMetadata extends js.Object {
     var CommentId: js.UndefOr[CommentIdType]
@@ -374,33 +463,43 @@ package workdocs {
   }
 
   object CommentMetadata {
-    def apply(
-      CommentId: js.UndefOr[CommentIdType] = js.undefined,
-      CommentStatus: js.UndefOr[CommentStatusType] = js.undefined,
-      Contributor: js.UndefOr[User] = js.undefined,
-      CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      RecipientId: js.UndefOr[IdType] = js.undefined): CommentMetadata = {
+    def apply(CommentId: js.UndefOr[CommentIdType] = js.undefined,
+              CommentStatus: js.UndefOr[CommentStatusType] = js.undefined,
+              Contributor: js.UndefOr[User] = js.undefined,
+              CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              RecipientId: js.UndefOr[IdType] = js.undefined): CommentMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CommentId" -> CommentId.map { x => x.asInstanceOf[js.Any] },
-        "CommentStatus" -> CommentStatus.map { x => x.asInstanceOf[js.Any] },
-        "Contributor" -> Contributor.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "RecipientId" -> RecipientId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CommentId" -> CommentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CommentStatus" -> CommentStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Contributor" -> Contributor.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecipientId" -> RecipientId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CommentMetadata]
     }
   }
 
   object CommentStatusTypeEnum {
-    val DRAFT = "DRAFT"
+    val DRAFT     = "DRAFT"
     val PUBLISHED = "PUBLISHED"
-    val DELETED = "DELETED"
+    val DELETED   = "DELETED"
 
     val values = IndexedSeq(DRAFT, PUBLISHED, DELETED)
   }
 
   object CommentVisibilityTypeEnum {
-    val PUBLIC = "PUBLIC"
+    val PUBLIC  = "PUBLIC"
     val PRIVATE = "PRIVATE"
 
     val values = IndexedSeq(PUBLIC, PRIVATE)
@@ -419,24 +518,34 @@ package workdocs {
   }
 
   object CreateCommentRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      Text: CommentTextType,
-      VersionId: DocumentVersionIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      NotifyCollaborators: js.UndefOr[BooleanType] = js.undefined,
-      ParentId: js.UndefOr[CommentIdType] = js.undefined,
-      ThreadId: js.UndefOr[CommentIdType] = js.undefined,
-      Visibility: js.UndefOr[CommentVisibilityType] = js.undefined): CreateCommentRequest = {
+    def apply(DocumentId: ResourceIdType,
+              Text: CommentTextType,
+              VersionId: DocumentVersionIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              NotifyCollaborators: js.UndefOr[BooleanType] = js.undefined,
+              ParentId: js.UndefOr[CommentIdType] = js.undefined,
+              ThreadId: js.UndefOr[CommentIdType] = js.undefined,
+              Visibility: js.UndefOr[CommentVisibilityType] = js.undefined): CreateCommentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "Text" -> Text.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "NotifyCollaborators" -> NotifyCollaborators.map { x => x.asInstanceOf[js.Any] },
-        "ParentId" -> ParentId.map { x => x.asInstanceOf[js.Any] },
-        "ThreadId" -> ThreadId.map { x => x.asInstanceOf[js.Any] },
-        "Visibility" -> Visibility.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Text"       -> Text.asInstanceOf[js.Any],
+        "VersionId"  -> VersionId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotifyCollaborators" -> NotifyCollaborators.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentId" -> ParentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ThreadId" -> ThreadId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Visibility" -> Visibility.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCommentRequest]
     }
@@ -448,10 +557,10 @@ package workdocs {
   }
 
   object CreateCommentResponse {
-    def apply(
-      Comment: js.UndefOr[Comment] = js.undefined): CreateCommentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Comment" -> Comment.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Comment: js.UndefOr[Comment] = js.undefined): CreateCommentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Comment" -> Comment.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCommentResponse]
     }
@@ -466,25 +575,27 @@ package workdocs {
   }
 
   object CreateCustomMetadataRequest {
-    def apply(
-      CustomMetadata: CustomMetadataMap,
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined): CreateCustomMetadataRequest = {
+    def apply(CustomMetadata: CustomMetadataMap,
+              ResourceId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined): CreateCustomMetadataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CustomMetadata" -> CustomMetadata.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"     -> ResourceId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VersionId" -> VersionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCustomMetadataRequest]
     }
   }
 
   @js.native
-  trait CreateCustomMetadataResponse extends js.Object {
-
-  }
+  trait CreateCustomMetadataResponse extends js.Object {}
 
   object CreateCustomMetadataResponse {
     def apply(): CreateCustomMetadataResponse = {
@@ -502,14 +613,18 @@ package workdocs {
   }
 
   object CreateFolderRequest {
-    def apply(
-      ParentFolderId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined): CreateFolderRequest = {
+    def apply(ParentFolderId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined): CreateFolderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFolderRequest]
     }
@@ -521,10 +636,10 @@ package workdocs {
   }
 
   object CreateFolderResponse {
-    def apply(
-      Metadata: js.UndefOr[FolderMetadata] = js.undefined): CreateFolderResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Metadata: js.UndefOr[FolderMetadata] = js.undefined): CreateFolderResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Metadata" -> Metadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateFolderResponse]
     }
@@ -538,23 +653,23 @@ package workdocs {
   }
 
   object CreateLabelsRequest {
-    def apply(
-      Labels: SharedLabels,
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): CreateLabelsRequest = {
+    def apply(Labels: SharedLabels,
+              ResourceId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): CreateLabelsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Labels" -> Labels.asInstanceOf[js.Any],
+        "Labels"     -> Labels.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLabelsRequest]
     }
   }
 
   @js.native
-  trait CreateLabelsResponse extends js.Object {
-
-  }
+  trait CreateLabelsResponse extends js.Object {}
 
   object CreateLabelsResponse {
     def apply(): CreateLabelsResponse = {
@@ -573,16 +688,16 @@ package workdocs {
   }
 
   object CreateNotificationSubscriptionRequest {
-    def apply(
-      Endpoint: SubscriptionEndPointType,
-      OrganizationId: IdType,
-      Protocol: SubscriptionProtocolType,
-      SubscriptionType: SubscriptionType): CreateNotificationSubscriptionRequest = {
+    def apply(Endpoint: SubscriptionEndPointType,
+              OrganizationId: IdType,
+              Protocol: SubscriptionProtocolType,
+              SubscriptionType: SubscriptionType): CreateNotificationSubscriptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Endpoint" -> Endpoint.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Protocol" -> Protocol.asInstanceOf[js.Any],
-        "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Endpoint"         -> Endpoint.asInstanceOf[js.Any],
+        "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
+        "Protocol"         -> Protocol.asInstanceOf[js.Any],
+        "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotificationSubscriptionRequest]
     }
@@ -594,10 +709,10 @@ package workdocs {
   }
 
   object CreateNotificationSubscriptionResponse {
-    def apply(
-      Subscription: js.UndefOr[Subscription] = js.undefined): CreateNotificationSubscriptionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Subscription" -> Subscription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Subscription: js.UndefOr[Subscription] = js.undefined): CreateNotificationSubscriptionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Subscription" -> Subscription.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotificationSubscriptionResponse]
     }
@@ -617,26 +732,36 @@ package workdocs {
   }
 
   object CreateUserRequest {
-    def apply(
-      GivenName: UserAttributeValueType,
-      Password: PasswordType,
-      Surname: UserAttributeValueType,
-      Username: UsernameType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
-      OrganizationId: js.UndefOr[IdType] = js.undefined,
-      StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
-      TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined): CreateUserRequest = {
+    def apply(GivenName: UserAttributeValueType,
+              Password: PasswordType,
+              Surname: UserAttributeValueType,
+              Username: UsernameType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
+              OrganizationId: js.UndefOr[IdType] = js.undefined,
+              StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
+              TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "GivenName" -> GivenName.asInstanceOf[js.Any],
-        "Password" -> Password.asInstanceOf[js.Any],
-        "Surname" -> Surname.asInstanceOf[js.Any],
-        "Username" -> Username.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "EmailAddress" -> EmailAddress.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "StorageRule" -> StorageRule.map { x => x.asInstanceOf[js.Any] },
-        "TimeZoneId" -> TimeZoneId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Password"  -> Password.asInstanceOf[js.Any],
+        "Surname"   -> Surname.asInstanceOf[js.Any],
+        "Username"  -> Username.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EmailAddress" -> EmailAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StorageRule" -> StorageRule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeZoneId" -> TimeZoneId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
     }
@@ -648,10 +773,10 @@ package workdocs {
   }
 
   object CreateUserResponse {
-    def apply(
-      User: js.UndefOr[User] = js.undefined): CreateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(User: js.UndefOr[User] = js.undefined): CreateUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("User" -> User.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
     }
@@ -664,12 +789,14 @@ package workdocs {
   }
 
   object DeactivateUserRequest {
-    def apply(
-      UserId: IdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeactivateUserRequest = {
+    def apply(UserId: IdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeactivateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeactivateUserRequest]
     }
@@ -684,16 +811,18 @@ package workdocs {
   }
 
   object DeleteCommentRequest {
-    def apply(
-      CommentId: CommentIdType,
-      DocumentId: ResourceIdType,
-      VersionId: DocumentVersionIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteCommentRequest = {
+    def apply(CommentId: CommentIdType,
+              DocumentId: ResourceIdType,
+              VersionId: DocumentVersionIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteCommentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CommentId" -> CommentId.asInstanceOf[js.Any],
+        "CommentId"  -> CommentId.asInstanceOf[js.Any],
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCommentRequest]
     }
@@ -709,27 +838,33 @@ package workdocs {
   }
 
   object DeleteCustomMetadataRequest {
-    def apply(
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      DeleteAll: js.UndefOr[BooleanType] = js.undefined,
-      Keys: js.UndefOr[CustomMetadataKeyList] = js.undefined,
-      VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined): DeleteCustomMetadataRequest = {
+    def apply(ResourceId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              DeleteAll: js.UndefOr[BooleanType] = js.undefined,
+              Keys: js.UndefOr[CustomMetadataKeyList] = js.undefined,
+              VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined): DeleteCustomMetadataRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "DeleteAll" -> DeleteAll.map { x => x.asInstanceOf[js.Any] },
-        "Keys" -> Keys.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeleteAll" -> DeleteAll.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Keys" -> Keys.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VersionId" -> VersionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCustomMetadataRequest]
     }
   }
 
   @js.native
-  trait DeleteCustomMetadataResponse extends js.Object {
-
-  }
+  trait DeleteCustomMetadataResponse extends js.Object {}
 
   object DeleteCustomMetadataResponse {
     def apply(): DeleteCustomMetadataResponse = {
@@ -746,12 +881,14 @@ package workdocs {
   }
 
   object DeleteDocumentRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteDocumentRequest = {
+    def apply(DocumentId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDocumentRequest]
     }
@@ -764,12 +901,14 @@ package workdocs {
   }
 
   object DeleteFolderContentsRequest {
-    def apply(
-      FolderId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteFolderContentsRequest = {
+    def apply(FolderId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteFolderContentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFolderContentsRequest]
     }
@@ -782,12 +921,14 @@ package workdocs {
   }
 
   object DeleteFolderRequest {
-    def apply(
-      FolderId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteFolderRequest = {
+    def apply(FolderId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteFolderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteFolderRequest]
     }
@@ -802,25 +943,29 @@ package workdocs {
   }
 
   object DeleteLabelsRequest {
-    def apply(
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      DeleteAll: js.UndefOr[BooleanType] = js.undefined,
-      Labels: js.UndefOr[SharedLabels] = js.undefined): DeleteLabelsRequest = {
+    def apply(ResourceId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              DeleteAll: js.UndefOr[BooleanType] = js.undefined,
+              Labels: js.UndefOr[SharedLabels] = js.undefined): DeleteLabelsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "DeleteAll" -> DeleteAll.map { x => x.asInstanceOf[js.Any] },
-        "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeleteAll" -> DeleteAll.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Labels" -> Labels.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteLabelsRequest]
     }
   }
 
   @js.native
-  trait DeleteLabelsResponse extends js.Object {
-
-  }
+  trait DeleteLabelsResponse extends js.Object {}
 
   object DeleteLabelsResponse {
     def apply(): DeleteLabelsResponse = {
@@ -837,12 +982,11 @@ package workdocs {
   }
 
   object DeleteNotificationSubscriptionRequest {
-    def apply(
-      OrganizationId: IdType,
-      SubscriptionId: IdType): DeleteNotificationSubscriptionRequest = {
+    def apply(OrganizationId: IdType, SubscriptionId: IdType): DeleteNotificationSubscriptionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "SubscriptionId" -> SubscriptionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "SubscriptionId" -> SubscriptionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotificationSubscriptionRequest]
     }
@@ -855,12 +999,14 @@ package workdocs {
   }
 
   object DeleteUserRequest {
-    def apply(
-      UserId: IdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteUserRequest = {
+    def apply(UserId: IdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
@@ -881,28 +1027,48 @@ package workdocs {
   }
 
   object DescribeActivitiesRequest {
-    def apply(
-      ActivityTypes: js.UndefOr[ActivityNamesFilterType] = js.undefined,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      EndTime: js.UndefOr[TimestampType] = js.undefined,
-      IncludeIndirectActivities: js.UndefOr[BooleanType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[MarkerType] = js.undefined,
-      OrganizationId: js.UndefOr[IdType] = js.undefined,
-      ResourceId: js.UndefOr[IdType] = js.undefined,
-      StartTime: js.UndefOr[TimestampType] = js.undefined,
-      UserId: js.UndefOr[IdType] = js.undefined): DescribeActivitiesRequest = {
+    def apply(ActivityTypes: js.UndefOr[ActivityNamesFilterType] = js.undefined,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              EndTime: js.UndefOr[TimestampType] = js.undefined,
+              IncludeIndirectActivities: js.UndefOr[BooleanType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[MarkerType] = js.undefined,
+              OrganizationId: js.UndefOr[IdType] = js.undefined,
+              ResourceId: js.UndefOr[IdType] = js.undefined,
+              StartTime: js.UndefOr[TimestampType] = js.undefined,
+              UserId: js.UndefOr[IdType] = js.undefined): DescribeActivitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ActivityTypes" -> ActivityTypes.map { x => x.asInstanceOf[js.Any] },
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "IncludeIndirectActivities" -> IncludeIndirectActivities.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceId" -> ResourceId.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ActivityTypes" -> ActivityTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IncludeIndirectActivities" -> IncludeIndirectActivities.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceId" -> ResourceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTime" -> StartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserId" -> UserId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeActivitiesRequest]
     }
@@ -915,12 +1081,13 @@ package workdocs {
   }
 
   object DescribeActivitiesResponse {
-    def apply(
-      Marker: js.UndefOr[MarkerType] = js.undefined,
-      UserActivities: js.UndefOr[UserActivities] = js.undefined): DescribeActivitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "UserActivities" -> UserActivities.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Marker: js.UndefOr[MarkerType] = js.undefined,
+              UserActivities: js.UndefOr[UserActivities] = js.undefined): DescribeActivitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "UserActivities" -> UserActivities.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeActivitiesResponse]
     }
@@ -936,18 +1103,24 @@ package workdocs {
   }
 
   object DescribeCommentsRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      VersionId: DocumentVersionIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[MarkerType] = js.undefined): DescribeCommentsRequest = {
+    def apply(DocumentId: ResourceIdType,
+              VersionId: DocumentVersionIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[MarkerType] = js.undefined): DescribeCommentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCommentsRequest]
     }
@@ -960,12 +1133,13 @@ package workdocs {
   }
 
   object DescribeCommentsResponse {
-    def apply(
-      Comments: js.UndefOr[CommentList] = js.undefined,
-      Marker: js.UndefOr[MarkerType] = js.undefined): DescribeCommentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Comments" -> Comments.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Comments: js.UndefOr[CommentList] = js.undefined,
+              Marker: js.UndefOr[MarkerType] = js.undefined): DescribeCommentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Comments" -> Comments.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Marker" -> Marker.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCommentsResponse]
     }
@@ -982,20 +1156,30 @@ package workdocs {
   }
 
   object DescribeDocumentVersionsRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Fields: js.UndefOr[FieldNamesType] = js.undefined,
-      Include: js.UndefOr[FieldNamesType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeDocumentVersionsRequest = {
+    def apply(DocumentId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Fields: js.UndefOr[FieldNamesType] = js.undefined,
+              Include: js.UndefOr[FieldNamesType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeDocumentVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Fields" -> Fields.map { x => x.asInstanceOf[js.Any] },
-        "Include" -> Include.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Fields" -> Fields.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Include" -> Include.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentVersionsRequest]
     }
@@ -1008,12 +1192,13 @@ package workdocs {
   }
 
   object DescribeDocumentVersionsResponse {
-    def apply(
-      DocumentVersions: js.UndefOr[DocumentVersionMetadataList] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeDocumentVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DocumentVersions" -> DocumentVersions.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DocumentVersions: js.UndefOr[DocumentVersionMetadataList] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeDocumentVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("DocumentVersions" -> DocumentVersions.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Marker" -> Marker.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDocumentVersionsResponse]
     }
@@ -1032,24 +1217,38 @@ package workdocs {
   }
 
   object DescribeFolderContentsRequest {
-    def apply(
-      FolderId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Include: js.UndefOr[FieldNamesType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined,
-      Order: js.UndefOr[OrderType] = js.undefined,
-      Sort: js.UndefOr[ResourceSortType] = js.undefined,
-      Type: js.UndefOr[FolderContentType] = js.undefined): DescribeFolderContentsRequest = {
+    def apply(FolderId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Include: js.UndefOr[FieldNamesType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined,
+              Order: js.UndefOr[OrderType] = js.undefined,
+              Sort: js.UndefOr[ResourceSortType] = js.undefined,
+              Type: js.UndefOr[FolderContentType] = js.undefined): DescribeFolderContentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Include" -> Include.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Order" -> Order.map { x => x.asInstanceOf[js.Any] },
-        "Sort" -> Sort.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Include" -> Include.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Order" -> Order.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sort" -> Sort.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFolderContentsRequest]
     }
@@ -1063,14 +1262,20 @@ package workdocs {
   }
 
   object DescribeFolderContentsResponse {
-    def apply(
-      Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
-      Folders: js.UndefOr[FolderMetadataList] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeFolderContentsResponse = {
+    def apply(Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
+              Folders: js.UndefOr[FolderMetadataList] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeFolderContentsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Documents" -> Documents.map { x => x.asInstanceOf[js.Any] },
-        "Folders" -> Folders.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Documents" -> Documents.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Folders" -> Folders.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeFolderContentsResponse]
     }
@@ -1086,18 +1291,26 @@ package workdocs {
   }
 
   object DescribeGroupsRequest {
-    def apply(
-      SearchQuery: SearchQueryType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Limit: js.UndefOr[PositiveIntegerType] = js.undefined,
-      Marker: js.UndefOr[MarkerType] = js.undefined,
-      OrganizationId: js.UndefOr[IdType] = js.undefined): DescribeGroupsRequest = {
+    def apply(SearchQuery: SearchQueryType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Limit: js.UndefOr[PositiveIntegerType] = js.undefined,
+              Marker: js.UndefOr[MarkerType] = js.undefined,
+              OrganizationId: js.UndefOr[IdType] = js.undefined): DescribeGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SearchQuery" -> SearchQuery.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGroupsRequest]
     }
@@ -1110,12 +1323,13 @@ package workdocs {
   }
 
   object DescribeGroupsResponse {
-    def apply(
-      Groups: js.UndefOr[GroupMetadataList] = js.undefined,
-      Marker: js.UndefOr[MarkerType] = js.undefined): DescribeGroupsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Groups: js.UndefOr[GroupMetadataList] = js.undefined,
+              Marker: js.UndefOr[MarkerType] = js.undefined): DescribeGroupsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Groups" -> Groups.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Marker" -> Marker.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeGroupsResponse]
     }
@@ -1129,14 +1343,16 @@ package workdocs {
   }
 
   object DescribeNotificationSubscriptionsRequest {
-    def apply(
-      OrganizationId: IdType,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeNotificationSubscriptionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(OrganizationId: IdType,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeNotificationSubscriptionsRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("OrganizationId" -> OrganizationId.asInstanceOf[js.Any], "Limit" -> Limit.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }, "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationSubscriptionsRequest]
     }
@@ -1149,12 +1365,13 @@ package workdocs {
   }
 
   object DescribeNotificationSubscriptionsResponse {
-    def apply(
-      Marker: js.UndefOr[PageMarkerType] = js.undefined,
-      Subscriptions: js.UndefOr[SubscriptionList] = js.undefined): DescribeNotificationSubscriptionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Subscriptions" -> Subscriptions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Marker: js.UndefOr[PageMarkerType] = js.undefined,
+              Subscriptions: js.UndefOr[SubscriptionList] = js.undefined): DescribeNotificationSubscriptionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Subscriptions" -> Subscriptions.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotificationSubscriptionsResponse]
     }
@@ -1170,18 +1387,26 @@ package workdocs {
   }
 
   object DescribeResourcePermissionsRequest {
-    def apply(
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined,
-      PrincipalId: js.UndefOr[IdType] = js.undefined): DescribeResourcePermissionsRequest = {
+    def apply(ResourceId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined,
+              PrincipalId: js.UndefOr[IdType] = js.undefined): DescribeResourcePermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "PrincipalId" -> PrincipalId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrincipalId" -> PrincipalId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourcePermissionsRequest]
     }
@@ -1194,12 +1419,13 @@ package workdocs {
   }
 
   object DescribeResourcePermissionsResponse {
-    def apply(
-      Marker: js.UndefOr[PageMarkerType] = js.undefined,
-      Principals: js.UndefOr[PrincipalList] = js.undefined): DescribeResourcePermissionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Principals" -> Principals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Marker: js.UndefOr[PageMarkerType] = js.undefined,
+              Principals: js.UndefOr[PrincipalList] = js.undefined): DescribeResourcePermissionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Marker" -> Marker.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Principals" -> Principals.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeResourcePermissionsResponse]
     }
@@ -1213,14 +1439,18 @@ package workdocs {
   }
 
   object DescribeRootFoldersRequest {
-    def apply(
-      AuthenticationToken: AuthenticationHeaderType,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeRootFoldersRequest = {
+    def apply(AuthenticationToken: AuthenticationHeaderType,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeRootFoldersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any],
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRootFoldersRequest]
     }
@@ -1233,12 +1463,13 @@ package workdocs {
   }
 
   object DescribeRootFoldersResponse {
-    def apply(
-      Folders: js.UndefOr[FolderMetadataList] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeRootFoldersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Folders" -> Folders.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Folders: js.UndefOr[FolderMetadataList] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): DescribeRootFoldersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Folders" -> Folders.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Marker" -> Marker.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRootFoldersResponse]
     }
@@ -1259,28 +1490,48 @@ package workdocs {
   }
 
   object DescribeUsersRequest {
-    def apply(
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Fields: js.UndefOr[FieldNamesType] = js.undefined,
-      Include: js.UndefOr[UserFilterType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined,
-      Order: js.UndefOr[OrderType] = js.undefined,
-      OrganizationId: js.UndefOr[IdType] = js.undefined,
-      Query: js.UndefOr[SearchQueryType] = js.undefined,
-      Sort: js.UndefOr[UserSortType] = js.undefined,
-      UserIds: js.UndefOr[UserIdsType] = js.undefined): DescribeUsersRequest = {
+    def apply(AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Fields: js.UndefOr[FieldNamesType] = js.undefined,
+              Include: js.UndefOr[UserFilterType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined,
+              Order: js.UndefOr[OrderType] = js.undefined,
+              OrganizationId: js.UndefOr[IdType] = js.undefined,
+              Query: js.UndefOr[SearchQueryType] = js.undefined,
+              Sort: js.UndefOr[UserSortType] = js.undefined,
+              UserIds: js.UndefOr[UserIdsType] = js.undefined): DescribeUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Fields" -> Fields.map { x => x.asInstanceOf[js.Any] },
-        "Include" -> Include.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "Order" -> Order.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "Query" -> Query.map { x => x.asInstanceOf[js.Any] },
-        "Sort" -> Sort.map { x => x.asInstanceOf[js.Any] },
-        "UserIds" -> UserIds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Fields" -> Fields.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Include" -> Include.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Order" -> Order.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Query" -> Query.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sort" -> Sort.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserIds" -> UserIds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUsersRequest]
     }
@@ -1294,22 +1545,28 @@ package workdocs {
   }
 
   object DescribeUsersResponse {
-    def apply(
-      Marker: js.UndefOr[PageMarkerType] = js.undefined,
-      TotalNumberOfUsers: js.UndefOr[SizeType] = js.undefined,
-      Users: js.UndefOr[OrganizationUserList] = js.undefined): DescribeUsersResponse = {
+    def apply(Marker: js.UndefOr[PageMarkerType] = js.undefined,
+              TotalNumberOfUsers: js.UndefOr[SizeType] = js.undefined,
+              Users: js.UndefOr[OrganizationUserList] = js.undefined): DescribeUsersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "TotalNumberOfUsers" -> TotalNumberOfUsers.map { x => x.asInstanceOf[js.Any] },
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalNumberOfUsers" -> TotalNumberOfUsers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Users" -> Users.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUsersResponse]
     }
   }
 
   /**
-   * Describes the document.
-   */
+    * Describes the document.
+    */
   @js.native
   trait DocumentMetadata extends js.Object {
     var CreatedTimestamp: js.UndefOr[TimestampType]
@@ -1323,31 +1580,47 @@ package workdocs {
   }
 
   object DocumentMetadata {
-    def apply(
-      CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      CreatorId: js.UndefOr[IdType] = js.undefined,
-      Id: js.UndefOr[ResourceIdType] = js.undefined,
-      Labels: js.UndefOr[SharedLabels] = js.undefined,
-      LatestVersionMetadata: js.UndefOr[DocumentVersionMetadata] = js.undefined,
-      ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-      ResourceState: js.UndefOr[ResourceStateType] = js.undefined): DocumentMetadata = {
+    def apply(CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              CreatorId: js.UndefOr[IdType] = js.undefined,
+              Id: js.UndefOr[ResourceIdType] = js.undefined,
+              Labels: js.UndefOr[SharedLabels] = js.undefined,
+              LatestVersionMetadata: js.UndefOr[DocumentVersionMetadata] = js.undefined,
+              ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
+              ResourceState: js.UndefOr[ResourceStateType] = js.undefined): DocumentMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "CreatorId" -> CreatorId.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionMetadata" -> LatestVersionMetadata.map { x => x.asInstanceOf[js.Any] },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ParentFolderId" -> ParentFolderId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceState" -> ResourceState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatorId" -> CreatorId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Labels" -> Labels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LatestVersionMetadata" -> LatestVersionMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentFolderId" -> ParentFolderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceState" -> ResourceState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentMetadata]
     }
   }
 
   object DocumentSourceTypeEnum {
-    val ORIGINAL = "ORIGINAL"
+    val ORIGINAL      = "ORIGINAL"
     val WITH_COMMENTS = "WITH_COMMENTS"
 
     val values = IndexedSeq(ORIGINAL, WITH_COMMENTS)
@@ -1355,22 +1628,22 @@ package workdocs {
 
   object DocumentStatusTypeEnum {
     val INITIALIZED = "INITIALIZED"
-    val ACTIVE = "ACTIVE"
+    val ACTIVE      = "ACTIVE"
 
     val values = IndexedSeq(INITIALIZED, ACTIVE)
   }
 
   object DocumentThumbnailTypeEnum {
-    val SMALL = "SMALL"
+    val SMALL    = "SMALL"
     val SMALL_HQ = "SMALL_HQ"
-    val LARGE = "LARGE"
+    val LARGE    = "LARGE"
 
     val values = IndexedSeq(SMALL, SMALL_HQ, LARGE)
   }
 
   /**
-   * Describes a version of a document.
-   */
+    * Describes a version of a document.
+    */
   @js.native
   trait DocumentVersionMetadata extends js.Object {
     var ContentCreatedTimestamp: js.UndefOr[TimestampType]
@@ -1389,34 +1662,60 @@ package workdocs {
   }
 
   object DocumentVersionMetadata {
-    def apply(
-      ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      ContentType: js.UndefOr[DocumentContentType] = js.undefined,
-      CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      CreatorId: js.UndefOr[IdType] = js.undefined,
-      Id: js.UndefOr[DocumentVersionIdType] = js.undefined,
-      ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined,
-      Signature: js.UndefOr[HashType] = js.undefined,
-      Size: js.UndefOr[SizeType] = js.undefined,
-      Source: js.UndefOr[DocumentSourceUrlMap] = js.undefined,
-      Status: js.UndefOr[DocumentStatusType] = js.undefined,
-      Thumbnail: js.UndefOr[DocumentThumbnailUrlMap] = js.undefined): DocumentVersionMetadata = {
+    def apply(ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              ContentType: js.UndefOr[DocumentContentType] = js.undefined,
+              CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              CreatorId: js.UndefOr[IdType] = js.undefined,
+              Id: js.UndefOr[DocumentVersionIdType] = js.undefined,
+              ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined,
+              Signature: js.UndefOr[HashType] = js.undefined,
+              Size: js.UndefOr[SizeType] = js.undefined,
+              Source: js.UndefOr[DocumentSourceUrlMap] = js.undefined,
+              Status: js.UndefOr[DocumentStatusType] = js.undefined,
+              Thumbnail: js.UndefOr[DocumentThumbnailUrlMap] = js.undefined): DocumentVersionMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContentCreatedTimestamp" -> ContentCreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ContentModifiedTimestamp" -> ContentModifiedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "CreatorId" -> CreatorId.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Signature" -> Signature.map { x => x.asInstanceOf[js.Any] },
-        "Size" -> Size.map { x => x.asInstanceOf[js.Any] },
-        "Source" -> Source.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Thumbnail" -> Thumbnail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContentCreatedTimestamp" -> ContentCreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentModifiedTimestamp" -> ContentModifiedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatorId" -> CreatorId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Signature" -> Signature.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Size" -> Size.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Source" -> Source.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Thumbnail" -> Thumbnail.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DocumentVersionMetadata]
     }
@@ -1429,16 +1728,16 @@ package workdocs {
   }
 
   object FolderContentTypeEnum {
-    val ALL = "ALL"
+    val ALL      = "ALL"
     val DOCUMENT = "DOCUMENT"
-    val FOLDER = "FOLDER"
+    val FOLDER   = "FOLDER"
 
     val values = IndexedSeq(ALL, DOCUMENT, FOLDER)
   }
 
   /**
-   * Describes a folder.
-   */
+    * Describes a folder.
+    */
   @js.native
   trait FolderMetadata extends js.Object {
     var CreatedTimestamp: js.UndefOr[TimestampType]
@@ -1455,30 +1754,52 @@ package workdocs {
   }
 
   object FolderMetadata {
-    def apply(
-      CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      CreatorId: js.UndefOr[IdType] = js.undefined,
-      Id: js.UndefOr[ResourceIdType] = js.undefined,
-      Labels: js.UndefOr[SharedLabels] = js.undefined,
-      LatestVersionSize: js.UndefOr[SizeType] = js.undefined,
-      ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined,
-      ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-      ResourceState: js.UndefOr[ResourceStateType] = js.undefined,
-      Signature: js.UndefOr[HashType] = js.undefined,
-      Size: js.UndefOr[SizeType] = js.undefined): FolderMetadata = {
+    def apply(CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              CreatorId: js.UndefOr[IdType] = js.undefined,
+              Id: js.UndefOr[ResourceIdType] = js.undefined,
+              Labels: js.UndefOr[SharedLabels] = js.undefined,
+              LatestVersionSize: js.UndefOr[SizeType] = js.undefined,
+              ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined,
+              ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
+              ResourceState: js.UndefOr[ResourceStateType] = js.undefined,
+              Signature: js.UndefOr[HashType] = js.undefined,
+              Size: js.UndefOr[SizeType] = js.undefined): FolderMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "CreatorId" -> CreatorId.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Labels" -> Labels.map { x => x.asInstanceOf[js.Any] },
-        "LatestVersionSize" -> LatestVersionSize.map { x => x.asInstanceOf[js.Any] },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ParentFolderId" -> ParentFolderId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceState" -> ResourceState.map { x => x.asInstanceOf[js.Any] },
-        "Signature" -> Signature.map { x => x.asInstanceOf[js.Any] },
-        "Size" -> Size.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatorId" -> CreatorId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Labels" -> Labels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LatestVersionSize" -> LatestVersionSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentFolderId" -> ParentFolderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceState" -> ResourceState.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Signature" -> Signature.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Size" -> Size.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FolderMetadata]
     }
@@ -1490,10 +1811,9 @@ package workdocs {
   }
 
   object GetCurrentUserRequest {
-    def apply(
-      AuthenticationToken: AuthenticationHeaderType): GetCurrentUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AuthenticationToken: AuthenticationHeaderType): GetCurrentUserRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCurrentUserRequest]
     }
@@ -1505,10 +1825,10 @@ package workdocs {
   }
 
   object GetCurrentUserResponse {
-    def apply(
-      User: js.UndefOr[User] = js.undefined): GetCurrentUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(User: js.UndefOr[User] = js.undefined): GetCurrentUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("User" -> User.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCurrentUserResponse]
     }
@@ -1524,18 +1844,26 @@ package workdocs {
   }
 
   object GetDocumentPathRequest {
-    def apply(
-      DocumentId: IdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Fields: js.UndefOr[FieldNamesType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): GetDocumentPathRequest = {
+    def apply(DocumentId: IdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Fields: js.UndefOr[FieldNamesType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): GetDocumentPathRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Fields" -> Fields.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Fields" -> Fields.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentPathRequest]
     }
@@ -1547,10 +1875,10 @@ package workdocs {
   }
 
   object GetDocumentPathResponse {
-    def apply(
-      Path: js.UndefOr[ResourcePath] = js.undefined): GetDocumentPathResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Path: js.UndefOr[ResourcePath] = js.undefined): GetDocumentPathResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Path" -> Path.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentPathResponse]
     }
@@ -1564,14 +1892,18 @@ package workdocs {
   }
 
   object GetDocumentRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined): GetDocumentRequest = {
+    def apply(DocumentId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined): GetDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentRequest]
     }
@@ -1584,12 +1916,13 @@ package workdocs {
   }
 
   object GetDocumentResponse {
-    def apply(
-      CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
-      Metadata: js.UndefOr[DocumentMetadata] = js.undefined): GetDocumentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomMetadata" -> CustomMetadata.map { x => x.asInstanceOf[js.Any] },
-        "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
+              Metadata: js.UndefOr[DocumentMetadata] = js.undefined): GetDocumentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CustomMetadata" -> CustomMetadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Metadata" -> Metadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentResponse]
     }
@@ -1605,18 +1938,24 @@ package workdocs {
   }
 
   object GetDocumentVersionRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      VersionId: DocumentVersionIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Fields: js.UndefOr[FieldNamesType] = js.undefined,
-      IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined): GetDocumentVersionRequest = {
+    def apply(DocumentId: ResourceIdType,
+              VersionId: DocumentVersionIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Fields: js.UndefOr[FieldNamesType] = js.undefined,
+              IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined): GetDocumentVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Fields" -> Fields.map { x => x.asInstanceOf[js.Any] },
-        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Fields" -> Fields.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentVersionRequest]
     }
@@ -1629,12 +1968,13 @@ package workdocs {
   }
 
   object GetDocumentVersionResponse {
-    def apply(
-      CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
-      Metadata: js.UndefOr[DocumentVersionMetadata] = js.undefined): GetDocumentVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomMetadata" -> CustomMetadata.map { x => x.asInstanceOf[js.Any] },
-        "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
+              Metadata: js.UndefOr[DocumentVersionMetadata] = js.undefined): GetDocumentVersionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CustomMetadata" -> CustomMetadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Metadata" -> Metadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDocumentVersionResponse]
     }
@@ -1650,18 +1990,26 @@ package workdocs {
   }
 
   object GetFolderPathRequest {
-    def apply(
-      FolderId: IdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Fields: js.UndefOr[FieldNamesType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): GetFolderPathRequest = {
+    def apply(FolderId: IdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Fields: js.UndefOr[FieldNamesType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): GetFolderPathRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Fields" -> Fields.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Fields" -> Fields.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderPathRequest]
     }
@@ -1673,10 +2021,10 @@ package workdocs {
   }
 
   object GetFolderPathResponse {
-    def apply(
-      Path: js.UndefOr[ResourcePath] = js.undefined): GetFolderPathResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Path: js.UndefOr[ResourcePath] = js.undefined): GetFolderPathResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Path" -> Path.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderPathResponse]
     }
@@ -1690,14 +2038,18 @@ package workdocs {
   }
 
   object GetFolderRequest {
-    def apply(
-      FolderId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined): GetFolderRequest = {
+    def apply(FolderId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined): GetFolderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IncludeCustomMetadata" -> IncludeCustomMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderRequest]
     }
@@ -1710,12 +2062,13 @@ package workdocs {
   }
 
   object GetFolderResponse {
-    def apply(
-      CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
-      Metadata: js.UndefOr[FolderMetadata] = js.undefined): GetFolderResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CustomMetadata" -> CustomMetadata.map { x => x.asInstanceOf[js.Any] },
-        "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
+              Metadata: js.UndefOr[FolderMetadata] = js.undefined): GetFolderResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CustomMetadata" -> CustomMetadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Metadata" -> Metadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFolderResponse]
     }
@@ -1731,18 +2084,28 @@ package workdocs {
   }
 
   object GetResourcesRequest {
-    def apply(
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      CollectionType: js.UndefOr[ResourceCollectionType] = js.undefined,
-      Limit: js.UndefOr[LimitType] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined,
-      UserId: js.UndefOr[IdType] = js.undefined): GetResourcesRequest = {
+    def apply(AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              CollectionType: js.UndefOr[ResourceCollectionType] = js.undefined,
+              Limit: js.UndefOr[LimitType] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined,
+              UserId: js.UndefOr[IdType] = js.undefined): GetResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "CollectionType" -> CollectionType.map { x => x.asInstanceOf[js.Any] },
-        "Limit" -> Limit.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CollectionType" -> CollectionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limit" -> Limit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserId" -> UserId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesRequest]
     }
@@ -1756,22 +2119,28 @@ package workdocs {
   }
 
   object GetResourcesResponse {
-    def apply(
-      Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
-      Folders: js.UndefOr[FolderMetadataList] = js.undefined,
-      Marker: js.UndefOr[PageMarkerType] = js.undefined): GetResourcesResponse = {
+    def apply(Documents: js.UndefOr[DocumentMetadataList] = js.undefined,
+              Folders: js.UndefOr[FolderMetadataList] = js.undefined,
+              Marker: js.UndefOr[PageMarkerType] = js.undefined): GetResourcesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Documents" -> Documents.map { x => x.asInstanceOf[js.Any] },
-        "Folders" -> Folders.map { x => x.asInstanceOf[js.Any] },
-        "Marker" -> Marker.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Documents" -> Documents.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Folders" -> Folders.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Marker" -> Marker.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetResourcesResponse]
     }
   }
 
   /**
-   * Describes the metadata of a user group.
-   */
+    * Describes the metadata of a user group.
+    */
   @js.native
   trait GroupMetadata extends js.Object {
     var Id: js.UndefOr[IdType]
@@ -1779,12 +2148,12 @@ package workdocs {
   }
 
   object GroupMetadata {
-    def apply(
-      Id: js.UndefOr[IdType] = js.undefined,
-      Name: js.UndefOr[GroupNameType] = js.undefined): GroupMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: js.UndefOr[IdType] = js.undefined, Name: js.UndefOr[GroupNameType] = js.undefined): GroupMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Name" -> Name.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GroupMetadata]
     }
@@ -1803,24 +2172,38 @@ package workdocs {
   }
 
   object InitiateDocumentVersionUploadRequest {
-    def apply(
-      ParentFolderId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      ContentType: js.UndefOr[DocumentContentType] = js.undefined,
-      DocumentSizeInBytes: js.UndefOr[SizeType] = js.undefined,
-      Id: js.UndefOr[ResourceIdType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined): InitiateDocumentVersionUploadRequest = {
+    def apply(ParentFolderId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              ContentType: js.UndefOr[DocumentContentType] = js.undefined,
+              DocumentSizeInBytes: js.UndefOr[SizeType] = js.undefined,
+              Id: js.UndefOr[ResourceIdType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined): InitiateDocumentVersionUploadRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "ContentCreatedTimestamp" -> ContentCreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ContentModifiedTimestamp" -> ContentModifiedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
-        "DocumentSizeInBytes" -> DocumentSizeInBytes.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentCreatedTimestamp" -> ContentCreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentModifiedTimestamp" -> ContentModifiedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DocumentSizeInBytes" -> DocumentSizeInBytes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateDocumentVersionUploadRequest]
     }
@@ -1833,36 +2216,37 @@ package workdocs {
   }
 
   object InitiateDocumentVersionUploadResponse {
-    def apply(
-      Metadata: js.UndefOr[DocumentMetadata] = js.undefined,
-      UploadMetadata: js.UndefOr[UploadMetadata] = js.undefined): InitiateDocumentVersionUploadResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Metadata" -> Metadata.map { x => x.asInstanceOf[js.Any] },
-        "UploadMetadata" -> UploadMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Metadata: js.UndefOr[DocumentMetadata] = js.undefined,
+              UploadMetadata: js.UndefOr[UploadMetadata] = js.undefined): InitiateDocumentVersionUploadResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Metadata" -> Metadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "UploadMetadata" -> UploadMetadata.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InitiateDocumentVersionUploadResponse]
     }
   }
 
   object LocaleTypeEnum {
-    val en = "en"
-    val fr = "fr"
-    val ko = "ko"
-    val de = "de"
-    val es = "es"
-    val ja = "ja"
-    val ru = "ru"
-    val zh_CN = "zh_CN"
-    val zh_TW = "zh_TW"
-    val pt_BR = "pt_BR"
+    val en      = "en"
+    val fr      = "fr"
+    val ko      = "ko"
+    val de      = "de"
+    val es      = "es"
+    val ja      = "ja"
+    val ru      = "ru"
+    val zh_CN   = "zh_CN"
+    val zh_TW   = "zh_TW"
+    val pt_BR   = "pt_BR"
     val default = "default"
 
     val values = IndexedSeq(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
   }
 
   /**
-   * Set of options which defines notification preferences of given action.
-   */
+    * Set of options which defines notification preferences of given action.
+    */
   @js.native
   trait NotificationOptions extends js.Object {
     var EmailMessage: js.UndefOr[MessageType]
@@ -1870,27 +2254,28 @@ package workdocs {
   }
 
   object NotificationOptions {
-    def apply(
-      EmailMessage: js.UndefOr[MessageType] = js.undefined,
-      SendEmail: js.UndefOr[BooleanType] = js.undefined): NotificationOptions = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailMessage" -> EmailMessage.map { x => x.asInstanceOf[js.Any] },
-        "SendEmail" -> SendEmail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(EmailMessage: js.UndefOr[MessageType] = js.undefined,
+              SendEmail: js.UndefOr[BooleanType] = js.undefined): NotificationOptions = {
+      val _fields = IndexedSeq[(String, js.Any)]("EmailMessage" -> EmailMessage.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SendEmail" -> SendEmail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationOptions]
     }
   }
 
   object OrderTypeEnum {
-    val ASCENDING = "ASCENDING"
+    val ASCENDING  = "ASCENDING"
     val DESCENDING = "DESCENDING"
 
     val values = IndexedSeq(ASCENDING, DESCENDING)
   }
 
   /**
-   * Describes the users or user groups.
-   */
+    * Describes the users or user groups.
+    */
   @js.native
   trait Participants extends js.Object {
     var Groups: js.UndefOr[GroupMetadataList]
@@ -1898,20 +2283,21 @@ package workdocs {
   }
 
   object Participants {
-    def apply(
-      Groups: js.UndefOr[GroupMetadataList] = js.undefined,
-      Users: js.UndefOr[UserMetadataList] = js.undefined): Participants = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Groups: js.UndefOr[GroupMetadataList] = js.undefined,
+              Users: js.UndefOr[UserMetadataList] = js.undefined): Participants = {
+      val _fields = IndexedSeq[(String, js.Any)]("Groups" -> Groups.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Users" -> Users.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Participants]
     }
   }
 
   /**
-   * Describes the permissions.
-   */
+    * Describes the permissions.
+    */
   @js.native
   trait PermissionInfo extends js.Object {
     var Role: js.UndefOr[RoleType]
@@ -1919,20 +2305,21 @@ package workdocs {
   }
 
   object PermissionInfo {
-    def apply(
-      Role: js.UndefOr[RoleType] = js.undefined,
-      Type: js.UndefOr[RolePermissionType] = js.undefined): PermissionInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Role: js.UndefOr[RoleType] = js.undefined,
+              Type: js.UndefOr[RolePermissionType] = js.undefined): PermissionInfo = {
+      val _fields = IndexedSeq[(String, js.Any)]("Role" -> Role.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PermissionInfo]
     }
   }
 
   /**
-   * Describes a resource.
-   */
+    * Describes a resource.
+    */
   @js.native
   trait Principal extends js.Object {
     var Id: js.UndefOr[IdType]
@@ -1941,24 +2328,26 @@ package workdocs {
   }
 
   object Principal {
-    def apply(
-      Id: js.UndefOr[IdType] = js.undefined,
-      Roles: js.UndefOr[PermissionInfoList] = js.undefined,
-      Type: js.UndefOr[PrincipalType] = js.undefined): Principal = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Roles" -> Roles.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: js.UndefOr[IdType] = js.undefined,
+              Roles: js.UndefOr[PermissionInfoList] = js.undefined,
+              Type: js.UndefOr[PrincipalType] = js.undefined): Principal = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Roles" -> Roles.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Principal]
     }
   }
 
   object PrincipalTypeEnum {
-    val USER = "USER"
-    val GROUP = "GROUP"
-    val INVITE = "INVITE"
-    val ANONYMOUS = "ANONYMOUS"
+    val USER         = "USER"
+    val GROUP        = "GROUP"
+    val INVITE       = "INVITE"
+    val ANONYMOUS    = "ANONYMOUS"
     val ORGANIZATION = "ORGANIZATION"
 
     val values = IndexedSeq(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
@@ -1972,11 +2361,15 @@ package workdocs {
 
   object RemoveAllResourcePermissionsRequest {
     def apply(
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined): RemoveAllResourcePermissionsRequest = {
+        ResourceId: ResourceIdType,
+        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
+    ): RemoveAllResourcePermissionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAllResourcePermissionsRequest]
     }
@@ -1991,16 +2384,20 @@ package workdocs {
   }
 
   object RemoveResourcePermissionRequest {
-    def apply(
-      PrincipalId: IdType,
-      ResourceId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      PrincipalType: js.UndefOr[PrincipalType] = js.undefined): RemoveResourcePermissionRequest = {
+    def apply(PrincipalId: IdType,
+              ResourceId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              PrincipalType: js.UndefOr[PrincipalType] = js.undefined): RemoveResourcePermissionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PrincipalId" -> PrincipalId.asInstanceOf[js.Any],
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "PrincipalType" -> PrincipalType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrincipalType" -> PrincipalType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveResourcePermissionRequest]
     }
@@ -2013,8 +2410,8 @@ package workdocs {
   }
 
   /**
-   * Describes the metadata of a resource.
-   */
+    * Describes the metadata of a resource.
+    */
   @js.native
   trait ResourceMetadata extends js.Object {
     var Id: js.UndefOr[ResourceIdType]
@@ -2027,48 +2424,62 @@ package workdocs {
   }
 
   object ResourceMetadata {
-    def apply(
-      Id: js.UndefOr[ResourceIdType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined,
-      OriginalName: js.UndefOr[ResourceNameType] = js.undefined,
-      Owner: js.UndefOr[UserMetadata] = js.undefined,
-      ParentId: js.UndefOr[ResourceIdType] = js.undefined,
-      Type: js.UndefOr[ResourceType] = js.undefined,
-      VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined): ResourceMetadata = {
+    def apply(Id: js.UndefOr[ResourceIdType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined,
+              OriginalName: js.UndefOr[ResourceNameType] = js.undefined,
+              Owner: js.UndefOr[UserMetadata] = js.undefined,
+              ParentId: js.UndefOr[ResourceIdType] = js.undefined,
+              Type: js.UndefOr[ResourceType] = js.undefined,
+              VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined): ResourceMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "OriginalName" -> OriginalName.map { x => x.asInstanceOf[js.Any] },
-        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "ParentId" -> ParentId.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "VersionId" -> VersionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OriginalName" -> OriginalName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Owner" -> Owner.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentId" -> ParentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VersionId" -> VersionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceMetadata]
     }
   }
 
   /**
-   * Describes the path information of a resource.
-   */
+    * Describes the path information of a resource.
+    */
   @js.native
   trait ResourcePath extends js.Object {
     var Components: js.UndefOr[ResourcePathComponentList]
   }
 
   object ResourcePath {
-    def apply(
-      Components: js.UndefOr[ResourcePathComponentList] = js.undefined): ResourcePath = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Components" -> Components.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Components: js.UndefOr[ResourcePathComponentList] = js.undefined): ResourcePath = {
+      val _fields = IndexedSeq[(String, js.Any)]("Components" -> Components.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourcePath]
     }
   }
 
   /**
-   * Describes the resource path.
-   */
+    * Describes the resource path.
+    */
   @js.native
   trait ResourcePathComponent extends js.Object {
     var Id: js.UndefOr[IdType]
@@ -2076,12 +2487,13 @@ package workdocs {
   }
 
   object ResourcePathComponent {
-    def apply(
-      Id: js.UndefOr[IdType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined): ResourcePathComponent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: js.UndefOr[IdType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined): ResourcePathComponent = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Name" -> Name.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourcePathComponent]
     }
@@ -2095,40 +2507,40 @@ package workdocs {
   }
 
   object ResourceStateTypeEnum {
-    val ACTIVE = "ACTIVE"
+    val ACTIVE    = "ACTIVE"
     val RESTORING = "RESTORING"
     val RECYCLING = "RECYCLING"
-    val RECYCLED = "RECYCLED"
+    val RECYCLED  = "RECYCLED"
 
     val values = IndexedSeq(ACTIVE, RESTORING, RECYCLING, RECYCLED)
   }
 
   object ResourceTypeEnum {
-    val FOLDER = "FOLDER"
+    val FOLDER   = "FOLDER"
     val DOCUMENT = "DOCUMENT"
 
     val values = IndexedSeq(FOLDER, DOCUMENT)
   }
 
   object RolePermissionTypeEnum {
-    val DIRECT = "DIRECT"
+    val DIRECT    = "DIRECT"
     val INHERITED = "INHERITED"
 
     val values = IndexedSeq(DIRECT, INHERITED)
   }
 
   object RoleTypeEnum {
-    val VIEWER = "VIEWER"
+    val VIEWER      = "VIEWER"
     val CONTRIBUTOR = "CONTRIBUTOR"
-    val OWNER = "OWNER"
-    val COOWNER = "COOWNER"
+    val OWNER       = "OWNER"
+    val COOWNER     = "COOWNER"
 
     val values = IndexedSeq(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
   }
 
   /**
-   * Describes the recipient type and ID, if available.
-   */
+    * Describes the recipient type and ID, if available.
+    */
   @js.native
   trait SharePrincipal extends js.Object {
     var Id: IdType
@@ -2137,22 +2549,20 @@ package workdocs {
   }
 
   object SharePrincipal {
-    def apply(
-      Id: IdType,
-      Role: RoleType,
-      Type: PrincipalType): SharePrincipal = {
+    def apply(Id: IdType, Role: RoleType, Type: PrincipalType): SharePrincipal = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
+        "Id"   -> Id.asInstanceOf[js.Any],
         "Role" -> Role.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Type" -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SharePrincipal]
     }
   }
 
   /**
-   * Describes the share results of a resource.
-   */
+    * Describes the share results of a resource.
+    */
   @js.native
   trait ShareResult extends js.Object {
     var InviteePrincipalId: js.UndefOr[IdType]
@@ -2164,20 +2574,32 @@ package workdocs {
   }
 
   object ShareResult {
-    def apply(
-      InviteePrincipalId: js.UndefOr[IdType] = js.undefined,
-      PrincipalId: js.UndefOr[IdType] = js.undefined,
-      Role: js.UndefOr[RoleType] = js.undefined,
-      ShareId: js.UndefOr[ResourceIdType] = js.undefined,
-      Status: js.UndefOr[ShareStatusType] = js.undefined,
-      StatusMessage: js.UndefOr[MessageType] = js.undefined): ShareResult = {
+    def apply(InviteePrincipalId: js.UndefOr[IdType] = js.undefined,
+              PrincipalId: js.UndefOr[IdType] = js.undefined,
+              Role: js.UndefOr[RoleType] = js.undefined,
+              ShareId: js.UndefOr[ResourceIdType] = js.undefined,
+              Status: js.UndefOr[ShareStatusType] = js.undefined,
+              StatusMessage: js.UndefOr[MessageType] = js.undefined): ShareResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InviteePrincipalId" -> InviteePrincipalId.map { x => x.asInstanceOf[js.Any] },
-        "PrincipalId" -> PrincipalId.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "ShareId" -> ShareId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InviteePrincipalId" -> InviteePrincipalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrincipalId" -> PrincipalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Role" -> Role.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ShareId" -> ShareId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusMessage" -> StatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShareResult]
     }
@@ -2191,8 +2613,8 @@ package workdocs {
   }
 
   /**
-   * Describes the storage for a user.
-   */
+    * Describes the storage for a user.
+    */
   @js.native
   trait StorageRuleType extends js.Object {
     var StorageAllocatedInBytes: js.UndefOr[PositiveSizeType]
@@ -2200,12 +2622,13 @@ package workdocs {
   }
 
   object StorageRuleType {
-    def apply(
-      StorageAllocatedInBytes: js.UndefOr[PositiveSizeType] = js.undefined,
-      StorageType: js.UndefOr[StorageType] = js.undefined): StorageRuleType = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StorageAllocatedInBytes" -> StorageAllocatedInBytes.map { x => x.asInstanceOf[js.Any] },
-        "StorageType" -> StorageType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(StorageAllocatedInBytes: js.UndefOr[PositiveSizeType] = js.undefined,
+              StorageType: js.UndefOr[StorageType] = js.undefined): StorageRuleType = {
+      val _fields = IndexedSeq[(String, js.Any)]("StorageAllocatedInBytes" -> StorageAllocatedInBytes.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "StorageType" -> StorageType.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StorageRuleType]
     }
@@ -2213,14 +2636,14 @@ package workdocs {
 
   object StorageTypeEnum {
     val UNLIMITED = "UNLIMITED"
-    val QUOTA = "QUOTA"
+    val QUOTA     = "QUOTA"
 
     val values = IndexedSeq(UNLIMITED, QUOTA)
   }
 
   /**
-   * Describes a subscription.
-   */
+    * Describes a subscription.
+    */
   @js.native
   trait Subscription extends js.Object {
     var EndPoint: js.UndefOr[SubscriptionEndPointType]
@@ -2229,14 +2652,20 @@ package workdocs {
   }
 
   object Subscription {
-    def apply(
-      EndPoint: js.UndefOr[SubscriptionEndPointType] = js.undefined,
-      Protocol: js.UndefOr[SubscriptionProtocolType] = js.undefined,
-      SubscriptionId: js.UndefOr[IdType] = js.undefined): Subscription = {
+    def apply(EndPoint: js.UndefOr[SubscriptionEndPointType] = js.undefined,
+              Protocol: js.UndefOr[SubscriptionProtocolType] = js.undefined,
+              SubscriptionId: js.UndefOr[IdType] = js.undefined): Subscription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndPoint" -> EndPoint.map { x => x.asInstanceOf[js.Any] },
-        "Protocol" -> Protocol.map { x => x.asInstanceOf[js.Any] },
-        "SubscriptionId" -> SubscriptionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndPoint" -> EndPoint.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Protocol" -> Protocol.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubscriptionId" -> SubscriptionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subscription]
     }
@@ -2264,18 +2693,26 @@ package workdocs {
   }
 
   object UpdateDocumentRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined,
-      ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-      ResourceState: js.UndefOr[ResourceStateType] = js.undefined): UpdateDocumentRequest = {
+    def apply(DocumentId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined,
+              ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
+              ResourceState: js.UndefOr[ResourceStateType] = js.undefined): UpdateDocumentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ParentFolderId" -> ParentFolderId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceState" -> ResourceState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentFolderId" -> ParentFolderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceState" -> ResourceState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentRequest]
     }
@@ -2290,16 +2727,20 @@ package workdocs {
   }
 
   object UpdateDocumentVersionRequest {
-    def apply(
-      DocumentId: ResourceIdType,
-      VersionId: DocumentVersionIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      VersionStatus: js.UndefOr[DocumentVersionStatus] = js.undefined): UpdateDocumentVersionRequest = {
+    def apply(DocumentId: ResourceIdType,
+              VersionId: DocumentVersionIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              VersionStatus: js.UndefOr[DocumentVersionStatus] = js.undefined): UpdateDocumentVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
-        "VersionId" -> VersionId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "VersionStatus" -> VersionStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VersionId"  -> VersionId.asInstanceOf[js.Any],
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VersionStatus" -> VersionStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDocumentVersionRequest]
     }
@@ -2315,18 +2756,26 @@ package workdocs {
   }
 
   object UpdateFolderRequest {
-    def apply(
-      FolderId: ResourceIdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      Name: js.UndefOr[ResourceNameType] = js.undefined,
-      ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-      ResourceState: js.UndefOr[ResourceStateType] = js.undefined): UpdateFolderRequest = {
+    def apply(FolderId: ResourceIdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              Name: js.UndefOr[ResourceNameType] = js.undefined,
+              ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
+              ResourceState: js.UndefOr[ResourceStateType] = js.undefined): UpdateFolderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FolderId" -> FolderId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ParentFolderId" -> ParentFolderId.map { x => x.asInstanceOf[js.Any] },
-        "ResourceState" -> ResourceState.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParentFolderId" -> ParentFolderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceState" -> ResourceState.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateFolderRequest]
     }
@@ -2346,26 +2795,42 @@ package workdocs {
   }
 
   object UpdateUserRequest {
-    def apply(
-      UserId: IdType,
-      AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
-      GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
-      GrantPoweruserPrivileges: js.UndefOr[BooleanEnumType] = js.undefined,
-      Locale: js.UndefOr[LocaleType] = js.undefined,
-      StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
-      Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
-      TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
-      Type: js.UndefOr[UserType] = js.undefined): UpdateUserRequest = {
+    def apply(UserId: IdType,
+              AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
+              GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
+              GrantPoweruserPrivileges: js.UndefOr[BooleanEnumType] = js.undefined,
+              Locale: js.UndefOr[LocaleType] = js.undefined,
+              StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
+              Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
+              TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
+              Type: js.UndefOr[UserType] = js.undefined): UpdateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "UserId" -> UserId.asInstanceOf[js.Any],
-        "AuthenticationToken" -> AuthenticationToken.map { x => x.asInstanceOf[js.Any] },
-        "GivenName" -> GivenName.map { x => x.asInstanceOf[js.Any] },
-        "GrantPoweruserPrivileges" -> GrantPoweruserPrivileges.map { x => x.asInstanceOf[js.Any] },
-        "Locale" -> Locale.map { x => x.asInstanceOf[js.Any] },
-        "StorageRule" -> StorageRule.map { x => x.asInstanceOf[js.Any] },
-        "Surname" -> Surname.map { x => x.asInstanceOf[js.Any] },
-        "TimeZoneId" -> TimeZoneId.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AuthenticationToken" -> AuthenticationToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GivenName" -> GivenName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GrantPoweruserPrivileges" -> GrantPoweruserPrivileges.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Locale" -> Locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StorageRule" -> StorageRule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Surname" -> Surname.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeZoneId" -> TimeZoneId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
     }
@@ -2377,18 +2842,18 @@ package workdocs {
   }
 
   object UpdateUserResponse {
-    def apply(
-      User: js.UndefOr[User] = js.undefined): UpdateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(User: js.UndefOr[User] = js.undefined): UpdateUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("User" -> User.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserResponse]
     }
   }
 
   /**
-   * Describes the upload.
-   */
+    * Describes the upload.
+    */
   @js.native
   trait UploadMetadata extends js.Object {
     var SignedHeaders: js.UndefOr[SignedHeaderMap]
@@ -2396,20 +2861,21 @@ package workdocs {
   }
 
   object UploadMetadata {
-    def apply(
-      SignedHeaders: js.UndefOr[SignedHeaderMap] = js.undefined,
-      UploadUrl: js.UndefOr[UrlType] = js.undefined): UploadMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SignedHeaders" -> SignedHeaders.map { x => x.asInstanceOf[js.Any] },
-        "UploadUrl" -> UploadUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SignedHeaders: js.UndefOr[SignedHeaderMap] = js.undefined,
+              UploadUrl: js.UndefOr[UrlType] = js.undefined): UploadMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)]("SignedHeaders" -> SignedHeaders.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "UploadUrl" -> UploadUrl.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UploadMetadata]
     }
   }
 
   /**
-   * Describes a user.
-   */
+    * Describes a user.
+    */
   @js.native
   trait User extends js.Object {
     var CreatedTimestamp: js.UndefOr[TimestampType]
@@ -2430,53 +2896,83 @@ package workdocs {
   }
 
   object User {
-    def apply(
-      CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
-      GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
-      Id: js.UndefOr[IdType] = js.undefined,
-      Locale: js.UndefOr[LocaleType] = js.undefined,
-      ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
-      OrganizationId: js.UndefOr[IdType] = js.undefined,
-      RecycleBinFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-      RootFolderId: js.UndefOr[ResourceIdType] = js.undefined,
-      Status: js.UndefOr[UserStatusType] = js.undefined,
-      Storage: js.UndefOr[UserStorageMetadata] = js.undefined,
-      Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
-      TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
-      Type: js.UndefOr[UserType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): User = {
+    def apply(CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
+              GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
+              Id: js.UndefOr[IdType] = js.undefined,
+              Locale: js.UndefOr[LocaleType] = js.undefined,
+              ModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
+              OrganizationId: js.UndefOr[IdType] = js.undefined,
+              RecycleBinFolderId: js.UndefOr[ResourceIdType] = js.undefined,
+              RootFolderId: js.UndefOr[ResourceIdType] = js.undefined,
+              Status: js.UndefOr[UserStatusType] = js.undefined,
+              Storage: js.UndefOr[UserStorageMetadata] = js.undefined,
+              Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
+              TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
+              Type: js.UndefOr[UserType] = js.undefined,
+              Username: js.UndefOr[UsernameType] = js.undefined): User = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTimestamp" -> CreatedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "EmailAddress" -> EmailAddress.map { x => x.asInstanceOf[js.Any] },
-        "GivenName" -> GivenName.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Locale" -> Locale.map { x => x.asInstanceOf[js.Any] },
-        "ModifiedTimestamp" -> ModifiedTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationId" -> OrganizationId.map { x => x.asInstanceOf[js.Any] },
-        "RecycleBinFolderId" -> RecycleBinFolderId.map { x => x.asInstanceOf[js.Any] },
-        "RootFolderId" -> RootFolderId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "Storage" -> Storage.map { x => x.asInstanceOf[js.Any] },
-        "Surname" -> Surname.map { x => x.asInstanceOf[js.Any] },
-        "TimeZoneId" -> TimeZoneId.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTimestamp" -> CreatedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EmailAddress" -> EmailAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GivenName" -> GivenName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Locale" -> Locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModifiedTimestamp" -> ModifiedTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationId" -> OrganizationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecycleBinFolderId" -> RecycleBinFolderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RootFolderId" -> RootFolderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Storage" -> Storage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Surname" -> Surname.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeZoneId" -> TimeZoneId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Username" -> Username.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[User]
     }
   }
 
   object UserFilterTypeEnum {
-    val ALL = "ALL"
+    val ALL            = "ALL"
     val ACTIVE_PENDING = "ACTIVE_PENDING"
 
     val values = IndexedSeq(ALL, ACTIVE_PENDING)
   }
 
   /**
-   * Describes the metadata of the user.
-   */
+    * Describes the metadata of the user.
+    */
   @js.native
   trait UserMetadata extends js.Object {
     var EmailAddress: js.UndefOr[EmailAddressType]
@@ -2487,44 +2983,54 @@ package workdocs {
   }
 
   object UserMetadata {
-    def apply(
-      EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
-      GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
-      Id: js.UndefOr[IdType] = js.undefined,
-      Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
-      Username: js.UndefOr[UsernameType] = js.undefined): UserMetadata = {
+    def apply(EmailAddress: js.UndefOr[EmailAddressType] = js.undefined,
+              GivenName: js.UndefOr[UserAttributeValueType] = js.undefined,
+              Id: js.UndefOr[IdType] = js.undefined,
+              Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
+              Username: js.UndefOr[UsernameType] = js.undefined): UserMetadata = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EmailAddress" -> EmailAddress.map { x => x.asInstanceOf[js.Any] },
-        "GivenName" -> GivenName.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Surname" -> Surname.map { x => x.asInstanceOf[js.Any] },
-        "Username" -> Username.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EmailAddress" -> EmailAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GivenName" -> GivenName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Surname" -> Surname.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Username" -> Username.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserMetadata]
     }
   }
 
   object UserSortTypeEnum {
-    val USER_NAME = "USER_NAME"
-    val FULL_NAME = "FULL_NAME"
+    val USER_NAME     = "USER_NAME"
+    val FULL_NAME     = "FULL_NAME"
     val STORAGE_LIMIT = "STORAGE_LIMIT"
-    val USER_STATUS = "USER_STATUS"
-    val STORAGE_USED = "STORAGE_USED"
+    val USER_STATUS   = "USER_STATUS"
+    val STORAGE_USED  = "STORAGE_USED"
 
     val values = IndexedSeq(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED)
   }
 
   object UserStatusTypeEnum {
-    val ACTIVE = "ACTIVE"
+    val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
-    val PENDING = "PENDING"
+    val PENDING  = "PENDING"
 
     val values = IndexedSeq(ACTIVE, INACTIVE, PENDING)
   }
 
   /**
-   * Describes the storage for a user.
-   */
+    * Describes the storage for a user.
+    */
   @js.native
   trait UserStorageMetadata extends js.Object {
     var StorageRule: js.UndefOr[StorageRuleType]
@@ -2532,22 +3038,23 @@ package workdocs {
   }
 
   object UserStorageMetadata {
-    def apply(
-      StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
-      StorageUtilizedInBytes: js.UndefOr[SizeType] = js.undefined): UserStorageMetadata = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StorageRule" -> StorageRule.map { x => x.asInstanceOf[js.Any] },
-        "StorageUtilizedInBytes" -> StorageUtilizedInBytes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
+              StorageUtilizedInBytes: js.UndefOr[SizeType] = js.undefined): UserStorageMetadata = {
+      val _fields = IndexedSeq[(String, js.Any)]("StorageRule" -> StorageRule.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "StorageUtilizedInBytes" -> StorageUtilizedInBytes.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserStorageMetadata]
     }
   }
 
   object UserTypeEnum {
-    val USER = "USER"
-    val ADMIN = "ADMIN"
-    val POWERUSER = "POWERUSER"
-    val MINIMALUSER = "MINIMALUSER"
+    val USER           = "USER"
+    val ADMIN          = "ADMIN"
+    val POWERUSER      = "POWERUSER"
+    val MINIMALUSER    = "MINIMALUSER"
     val WORKSPACESUSER = "WORKSPACESUSER"
 
     val values = IndexedSeq(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER)

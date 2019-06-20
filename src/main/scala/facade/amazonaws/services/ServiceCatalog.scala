@@ -7,201 +7,201 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object servicecatalog {
-  type AcceptLanguage = String
-  type AccessLevelFilterKey = String
-  type AccessLevelFilterValue = String
-  type AccessStatus = String
-  type AccountId = String
-  type AccountIds = js.Array[AccountId]
-  type AddTags = js.Array[Tag]
-  type AllowedValue = String
-  type AllowedValues = js.Array[AllowedValue]
-  type ApproximateCount = Int
-  type AttributeValue = String
-  type CausingEntity = String
-  type ChangeAction = String
-  type CloudWatchDashboardName = String
-  type CloudWatchDashboards = js.Array[CloudWatchDashboard]
-  type ConstraintDescription = String
-  type ConstraintDetails = js.Array[ConstraintDetail]
-  type ConstraintParameters = String
-  type ConstraintSummaries = js.Array[ConstraintSummary]
-  type ConstraintType = String
-  type CopyOption = String
-  type CopyOptions = js.Array[CopyOption]
-  type CopyProductStatus = String
-  type CreatedTime = js.Date
-  type CreationTime = js.Date
-  type DefaultValue = String
-  type Description = String
-  type Error = String
-  type ErrorCode = String
-  type ErrorDescription = String
-  type EvaluationType = String
-  type FailedServiceActionAssociations = js.Array[FailedServiceActionAssociation]
-  type HasDefaultPath = Boolean
-  type Id = String
-  type IdempotencyToken = String
-  type IgnoreErrors = Boolean
-  type InstructionType = String
-  type InstructionValue = String
-  type LastRequestId = String
-  type LaunchPathSummaries = js.Array[LaunchPathSummary]
-  type LogicalResourceId = String
-  type Message = String
-  type Namespaces = js.Array[AccountId]
-  type NoEcho = Boolean
-  type NotificationArn = String
-  type NotificationArns = js.Array[NotificationArn]
-  type OrganizationNodeType = String
-  type OrganizationNodeValue = String
-  type OrganizationNodes = js.Array[OrganizationNode]
-  type OutputKey = String
-  type OutputValue = String
-  type PageSize = Int
-  type PageToken = String
-  type ParameterKey = String
-  type ParameterType = String
-  type ParameterValue = String
-  type PhysicalId = String
-  type PhysicalResourceId = String
-  type PlanResourceType = String
-  type PortfolioDescription = String
-  type PortfolioDetails = js.Array[PortfolioDetail]
-  type PortfolioDisplayName = String
-  type PortfolioName = String
-  type PortfolioShareToken = String
-  type PortfolioShareType = String
-  type PrincipalARN = String
-  type PrincipalType = String
-  type Principals = js.Array[Principal]
-  type ProductArn = String
-  type ProductSource = String
-  type ProductType = String
-  type ProductViewAggregationType = String
-  type ProductViewAggregationValues = js.Array[ProductViewAggregationValue]
-  type ProductViewAggregations = js.Dictionary[ProductViewAggregationValues]
-  type ProductViewDetails = js.Array[ProductViewDetail]
-  type ProductViewDistributor = String
-  type ProductViewFilterBy = String
-  type ProductViewFilterValue = String
-  type ProductViewFilterValues = js.Array[ProductViewFilterValue]
-  type ProductViewFilters = js.Dictionary[ProductViewFilterValues]
-  type ProductViewName = String
-  type ProductViewOwner = String
-  type ProductViewShortDescription = String
-  type ProductViewSortBy = String
-  type ProductViewSummaries = js.Array[ProductViewSummary]
-  type PropertyName = String
-  type ProviderName = String
-  type ProvisionedProductAttributes = js.Array[ProvisionedProductAttribute]
-  type ProvisionedProductDetails = js.Array[ProvisionedProductDetail]
-  type ProvisionedProductFilters = js.Dictionary[ProvisionedProductViewFilterValues]
-  type ProvisionedProductId = String
-  type ProvisionedProductName = String
-  type ProvisionedProductNameOrArn = String
-  type ProvisionedProductPlanName = String
-  type ProvisionedProductPlanStatus = String
-  type ProvisionedProductPlanType = String
-  type ProvisionedProductPlans = js.Array[ProvisionedProductPlanSummary]
-  type ProvisionedProductStatus = String
-  type ProvisionedProductStatusMessage = String
-  type ProvisionedProductType = String
-  type ProvisionedProductViewFilterBy = String
-  type ProvisionedProductViewFilterValue = String
-  type ProvisionedProductViewFilterValues = js.Array[ProvisionedProductViewFilterValue]
-  type ProvisioningArtifactActive = Boolean
-  type ProvisioningArtifactCreatedTime = js.Date
-  type ProvisioningArtifactDescription = String
-  type ProvisioningArtifactDetails = js.Array[ProvisioningArtifactDetail]
-  type ProvisioningArtifactInfo = js.Dictionary[ProvisioningArtifactInfoValue]
-  type ProvisioningArtifactInfoKey = String
-  type ProvisioningArtifactInfoValue = String
-  type ProvisioningArtifactName = String
-  type ProvisioningArtifactParameters = js.Array[ProvisioningArtifactParameter]
-  type ProvisioningArtifactPropertyName = String
-  type ProvisioningArtifactPropertyValue = String
-  type ProvisioningArtifactSummaries = js.Array[ProvisioningArtifactSummary]
-  type ProvisioningArtifactType = String
-  type ProvisioningArtifactViews = js.Array[ProvisioningArtifactView]
-  type ProvisioningArtifacts = js.Array[ProvisioningArtifact]
-  type ProvisioningParameters = js.Array[ProvisioningParameter]
-  type RecordDetails = js.Array[RecordDetail]
-  type RecordErrors = js.Array[RecordError]
-  type RecordOutputs = js.Array[RecordOutput]
-  type RecordStatus = String
-  type RecordTagKey = String
-  type RecordTagValue = String
-  type RecordTags = js.Array[RecordTag]
-  type RecordType = String
-  type Region = String
-  type Replacement = String
-  type RequiresRecreation = String
-  type ResourceARN = String
-  type ResourceAttribute = String
-  type ResourceChangeDetails = js.Array[ResourceChangeDetail]
-  type ResourceChanges = js.Array[ResourceChange]
-  type ResourceDetailARN = String
-  type ResourceDetailCreatedTime = js.Date
-  type ResourceDetailDescription = String
-  type ResourceDetailId = String
-  type ResourceDetailName = String
-  type ResourceDetails = js.Array[ResourceDetail]
-  type ResourceId = String
-  type ResourceType = String
-  type Scope = js.Array[ResourceAttribute]
-  type SearchFilterKey = String
-  type SearchFilterValue = String
-  type SearchProvisionedProductsPageSize = Int
-  type ServiceActionAssociationErrorCode = String
-  type ServiceActionAssociationErrorMessage = String
-  type ServiceActionAssociations = js.Array[ServiceActionAssociation]
-  type ServiceActionDefinitionKey = String
-  type ServiceActionDefinitionMap = js.Dictionary[ServiceActionDefinitionValue]
-  type ServiceActionDefinitionType = String
-  type ServiceActionDefinitionValue = String
-  type ServiceActionDescription = String
-  type ServiceActionName = String
-  type ServiceActionSummaries = js.Array[ServiceActionSummary]
-  type ShareErrors = js.Array[ShareError]
-  type ShareStatus = String
-  type SortField = String
-  type SortOrder = String
-  type SourceProvisioningArtifactProperties = js.Array[SourceProvisioningArtifactPropertiesMap]
+  type AcceptLanguage                          = String
+  type AccessLevelFilterKey                    = String
+  type AccessLevelFilterValue                  = String
+  type AccessStatus                            = String
+  type AccountId                               = String
+  type AccountIds                              = js.Array[AccountId]
+  type AddTags                                 = js.Array[Tag]
+  type AllowedValue                            = String
+  type AllowedValues                           = js.Array[AllowedValue]
+  type ApproximateCount                        = Int
+  type AttributeValue                          = String
+  type CausingEntity                           = String
+  type ChangeAction                            = String
+  type CloudWatchDashboardName                 = String
+  type CloudWatchDashboards                    = js.Array[CloudWatchDashboard]
+  type ConstraintDescription                   = String
+  type ConstraintDetails                       = js.Array[ConstraintDetail]
+  type ConstraintParameters                    = String
+  type ConstraintSummaries                     = js.Array[ConstraintSummary]
+  type ConstraintType                          = String
+  type CopyOption                              = String
+  type CopyOptions                             = js.Array[CopyOption]
+  type CopyProductStatus                       = String
+  type CreatedTime                             = js.Date
+  type CreationTime                            = js.Date
+  type DefaultValue                            = String
+  type Description                             = String
+  type Error                                   = String
+  type ErrorCode                               = String
+  type ErrorDescription                        = String
+  type EvaluationType                          = String
+  type FailedServiceActionAssociations         = js.Array[FailedServiceActionAssociation]
+  type HasDefaultPath                          = Boolean
+  type Id                                      = String
+  type IdempotencyToken                        = String
+  type IgnoreErrors                            = Boolean
+  type InstructionType                         = String
+  type InstructionValue                        = String
+  type LastRequestId                           = String
+  type LaunchPathSummaries                     = js.Array[LaunchPathSummary]
+  type LogicalResourceId                       = String
+  type Message                                 = String
+  type Namespaces                              = js.Array[AccountId]
+  type NoEcho                                  = Boolean
+  type NotificationArn                         = String
+  type NotificationArns                        = js.Array[NotificationArn]
+  type OrganizationNodeType                    = String
+  type OrganizationNodeValue                   = String
+  type OrganizationNodes                       = js.Array[OrganizationNode]
+  type OutputKey                               = String
+  type OutputValue                             = String
+  type PageSize                                = Int
+  type PageToken                               = String
+  type ParameterKey                            = String
+  type ParameterType                           = String
+  type ParameterValue                          = String
+  type PhysicalId                              = String
+  type PhysicalResourceId                      = String
+  type PlanResourceType                        = String
+  type PortfolioDescription                    = String
+  type PortfolioDetails                        = js.Array[PortfolioDetail]
+  type PortfolioDisplayName                    = String
+  type PortfolioName                           = String
+  type PortfolioShareToken                     = String
+  type PortfolioShareType                      = String
+  type PrincipalARN                            = String
+  type PrincipalType                           = String
+  type Principals                              = js.Array[Principal]
+  type ProductArn                              = String
+  type ProductSource                           = String
+  type ProductType                             = String
+  type ProductViewAggregationType              = String
+  type ProductViewAggregationValues            = js.Array[ProductViewAggregationValue]
+  type ProductViewAggregations                 = js.Dictionary[ProductViewAggregationValues]
+  type ProductViewDetails                      = js.Array[ProductViewDetail]
+  type ProductViewDistributor                  = String
+  type ProductViewFilterBy                     = String
+  type ProductViewFilterValue                  = String
+  type ProductViewFilterValues                 = js.Array[ProductViewFilterValue]
+  type ProductViewFilters                      = js.Dictionary[ProductViewFilterValues]
+  type ProductViewName                         = String
+  type ProductViewOwner                        = String
+  type ProductViewShortDescription             = String
+  type ProductViewSortBy                       = String
+  type ProductViewSummaries                    = js.Array[ProductViewSummary]
+  type PropertyName                            = String
+  type ProviderName                            = String
+  type ProvisionedProductAttributes            = js.Array[ProvisionedProductAttribute]
+  type ProvisionedProductDetails               = js.Array[ProvisionedProductDetail]
+  type ProvisionedProductFilters               = js.Dictionary[ProvisionedProductViewFilterValues]
+  type ProvisionedProductId                    = String
+  type ProvisionedProductName                  = String
+  type ProvisionedProductNameOrArn             = String
+  type ProvisionedProductPlanName              = String
+  type ProvisionedProductPlanStatus            = String
+  type ProvisionedProductPlanType              = String
+  type ProvisionedProductPlans                 = js.Array[ProvisionedProductPlanSummary]
+  type ProvisionedProductStatus                = String
+  type ProvisionedProductStatusMessage         = String
+  type ProvisionedProductType                  = String
+  type ProvisionedProductViewFilterBy          = String
+  type ProvisionedProductViewFilterValue       = String
+  type ProvisionedProductViewFilterValues      = js.Array[ProvisionedProductViewFilterValue]
+  type ProvisioningArtifactActive              = Boolean
+  type ProvisioningArtifactCreatedTime         = js.Date
+  type ProvisioningArtifactDescription         = String
+  type ProvisioningArtifactDetails             = js.Array[ProvisioningArtifactDetail]
+  type ProvisioningArtifactInfo                = js.Dictionary[ProvisioningArtifactInfoValue]
+  type ProvisioningArtifactInfoKey             = String
+  type ProvisioningArtifactInfoValue           = String
+  type ProvisioningArtifactName                = String
+  type ProvisioningArtifactParameters          = js.Array[ProvisioningArtifactParameter]
+  type ProvisioningArtifactPropertyName        = String
+  type ProvisioningArtifactPropertyValue       = String
+  type ProvisioningArtifactSummaries           = js.Array[ProvisioningArtifactSummary]
+  type ProvisioningArtifactType                = String
+  type ProvisioningArtifactViews               = js.Array[ProvisioningArtifactView]
+  type ProvisioningArtifacts                   = js.Array[ProvisioningArtifact]
+  type ProvisioningParameters                  = js.Array[ProvisioningParameter]
+  type RecordDetails                           = js.Array[RecordDetail]
+  type RecordErrors                            = js.Array[RecordError]
+  type RecordOutputs                           = js.Array[RecordOutput]
+  type RecordStatus                            = String
+  type RecordTagKey                            = String
+  type RecordTagValue                          = String
+  type RecordTags                              = js.Array[RecordTag]
+  type RecordType                              = String
+  type Region                                  = String
+  type Replacement                             = String
+  type RequiresRecreation                      = String
+  type ResourceARN                             = String
+  type ResourceAttribute                       = String
+  type ResourceChangeDetails                   = js.Array[ResourceChangeDetail]
+  type ResourceChanges                         = js.Array[ResourceChange]
+  type ResourceDetailARN                       = String
+  type ResourceDetailCreatedTime               = js.Date
+  type ResourceDetailDescription               = String
+  type ResourceDetailId                        = String
+  type ResourceDetailName                      = String
+  type ResourceDetails                         = js.Array[ResourceDetail]
+  type ResourceId                              = String
+  type ResourceType                            = String
+  type Scope                                   = js.Array[ResourceAttribute]
+  type SearchFilterKey                         = String
+  type SearchFilterValue                       = String
+  type SearchProvisionedProductsPageSize       = Int
+  type ServiceActionAssociationErrorCode       = String
+  type ServiceActionAssociationErrorMessage    = String
+  type ServiceActionAssociations               = js.Array[ServiceActionAssociation]
+  type ServiceActionDefinitionKey              = String
+  type ServiceActionDefinitionMap              = js.Dictionary[ServiceActionDefinitionValue]
+  type ServiceActionDefinitionType             = String
+  type ServiceActionDefinitionValue            = String
+  type ServiceActionDescription                = String
+  type ServiceActionName                       = String
+  type ServiceActionSummaries                  = js.Array[ServiceActionSummary]
+  type ShareErrors                             = js.Array[ShareError]
+  type ShareStatus                             = String
+  type SortField                               = String
+  type SortOrder                               = String
+  type SourceProvisioningArtifactProperties    = js.Array[SourceProvisioningArtifactPropertiesMap]
   type SourceProvisioningArtifactPropertiesMap = js.Dictionary[ProvisioningArtifactPropertyValue]
-  type StackSetAccounts = js.Array[AccountId]
-  type StackSetFailureToleranceCount = Int
-  type StackSetFailureTolerancePercentage = Int
-  type StackSetMaxConcurrencyCount = Int
-  type StackSetMaxConcurrencyPercentage = Int
-  type StackSetOperationType = String
-  type StackSetRegions = js.Array[Region]
-  type Status = String
-  type StatusDetail = String
-  type StatusMessage = String
-  type SuccessfulShares = js.Array[AccountId]
-  type SupportDescription = String
-  type SupportEmail = String
-  type SupportUrl = String
-  type TagKey = String
-  type TagKeys = js.Array[TagKey]
-  type TagOptionActive = Boolean
-  type TagOptionDetails = js.Array[TagOptionDetail]
-  type TagOptionId = String
-  type TagOptionKey = String
-  type TagOptionSummaries = js.Array[TagOptionSummary]
-  type TagOptionValue = String
-  type TagOptionValues = js.Array[TagOptionValue]
-  type TagValue = String
-  type Tags = js.Array[Tag]
-  type TotalResultsCount = Int
-  type UpdateProvisioningParameters = js.Array[UpdateProvisioningParameter]
-  type UpdatedTime = js.Date
-  type UsageInstructions = js.Array[UsageInstruction]
-  type UsePreviousValue = Boolean
-  type UserArn = String
-  type UserArnSession = String
-  type Verbose = Boolean
+  type StackSetAccounts                        = js.Array[AccountId]
+  type StackSetFailureToleranceCount           = Int
+  type StackSetFailureTolerancePercentage      = Int
+  type StackSetMaxConcurrencyCount             = Int
+  type StackSetMaxConcurrencyPercentage        = Int
+  type StackSetOperationType                   = String
+  type StackSetRegions                         = js.Array[Region]
+  type Status                                  = String
+  type StatusDetail                            = String
+  type StatusMessage                           = String
+  type SuccessfulShares                        = js.Array[AccountId]
+  type SupportDescription                      = String
+  type SupportEmail                            = String
+  type SupportUrl                              = String
+  type TagKey                                  = String
+  type TagKeys                                 = js.Array[TagKey]
+  type TagOptionActive                         = Boolean
+  type TagOptionDetails                        = js.Array[TagOptionDetail]
+  type TagOptionId                             = String
+  type TagOptionKey                            = String
+  type TagOptionSummaries                      = js.Array[TagOptionSummary]
+  type TagOptionValue                          = String
+  type TagOptionValues                         = js.Array[TagOptionValue]
+  type TagValue                                = String
+  type Tags                                    = js.Array[Tag]
+  type TotalResultsCount                       = Int
+  type UpdateProvisioningParameters            = js.Array[UpdateProvisioningParameter]
+  type UpdatedTime                             = js.Date
+  type UsageInstructions                       = js.Array[UsageInstruction]
+  type UsePreviousValue                        = Boolean
+  type UserArn                                 = String
+  type UserArnSession                          = String
+  type Verbose                                 = Boolean
 }
 
 package servicecatalog {
@@ -211,82 +211,150 @@ package servicecatalog {
     def this(config: AWSConfig) = this()
 
     def acceptPortfolioShare(params: AcceptPortfolioShareInput): Request[AcceptPortfolioShareOutput] = js.native
-    def associatePrincipalWithPortfolio(params: AssociatePrincipalWithPortfolioInput): Request[AssociatePrincipalWithPortfolioOutput] = js.native
-    def associateProductWithPortfolio(params: AssociateProductWithPortfolioInput): Request[AssociateProductWithPortfolioOutput] = js.native
-    def associateServiceActionWithProvisioningArtifact(params: AssociateServiceActionWithProvisioningArtifactInput): Request[AssociateServiceActionWithProvisioningArtifactOutput] = js.native
-    def associateTagOptionWithResource(params: AssociateTagOptionWithResourceInput): Request[AssociateTagOptionWithResourceOutput] = js.native
-    def batchAssociateServiceActionWithProvisioningArtifact(params: BatchAssociateServiceActionWithProvisioningArtifactInput): Request[BatchAssociateServiceActionWithProvisioningArtifactOutput] = js.native
-    def batchDisassociateServiceActionFromProvisioningArtifact(params: BatchDisassociateServiceActionFromProvisioningArtifactInput): Request[BatchDisassociateServiceActionFromProvisioningArtifactOutput] = js.native
-    def copyProduct(params: CopyProductInput): Request[CopyProductOutput] = js.native
-    def createConstraint(params: CreateConstraintInput): Request[CreateConstraintOutput] = js.native
-    def createPortfolio(params: CreatePortfolioInput): Request[CreatePortfolioOutput] = js.native
+    def associatePrincipalWithPortfolio(
+        params: AssociatePrincipalWithPortfolioInput
+    ): Request[AssociatePrincipalWithPortfolioOutput] = js.native
+    def associateProductWithPortfolio(
+        params: AssociateProductWithPortfolioInput
+    ): Request[AssociateProductWithPortfolioOutput] = js.native
+    def associateServiceActionWithProvisioningArtifact(
+        params: AssociateServiceActionWithProvisioningArtifactInput
+    ): Request[AssociateServiceActionWithProvisioningArtifactOutput] = js.native
+    def associateTagOptionWithResource(
+        params: AssociateTagOptionWithResourceInput
+    ): Request[AssociateTagOptionWithResourceOutput] = js.native
+    def batchAssociateServiceActionWithProvisioningArtifact(
+        params: BatchAssociateServiceActionWithProvisioningArtifactInput
+    ): Request[BatchAssociateServiceActionWithProvisioningArtifactOutput] = js.native
+    def batchDisassociateServiceActionFromProvisioningArtifact(
+        params: BatchDisassociateServiceActionFromProvisioningArtifactInput
+    ): Request[BatchDisassociateServiceActionFromProvisioningArtifactOutput]                         = js.native
+    def copyProduct(params: CopyProductInput): Request[CopyProductOutput]                            = js.native
+    def createConstraint(params: CreateConstraintInput): Request[CreateConstraintOutput]             = js.native
+    def createPortfolio(params: CreatePortfolioInput): Request[CreatePortfolioOutput]                = js.native
     def createPortfolioShare(params: CreatePortfolioShareInput): Request[CreatePortfolioShareOutput] = js.native
-    def createProduct(params: CreateProductInput): Request[CreateProductOutput] = js.native
-    def createProvisionedProductPlan(params: CreateProvisionedProductPlanInput): Request[CreateProvisionedProductPlanOutput] = js.native
-    def createProvisioningArtifact(params: CreateProvisioningArtifactInput): Request[CreateProvisioningArtifactOutput] = js.native
-    def createServiceAction(params: CreateServiceActionInput): Request[CreateServiceActionOutput] = js.native
-    def createTagOption(params: CreateTagOptionInput): Request[CreateTagOptionOutput] = js.native
-    def deleteConstraint(params: DeleteConstraintInput): Request[DeleteConstraintOutput] = js.native
-    def deletePortfolio(params: DeletePortfolioInput): Request[DeletePortfolioOutput] = js.native
+    def createProduct(params: CreateProductInput): Request[CreateProductOutput]                      = js.native
+    def createProvisionedProductPlan(
+        params: CreateProvisionedProductPlanInput
+    ): Request[CreateProvisionedProductPlanOutput] = js.native
+    def createProvisioningArtifact(params: CreateProvisioningArtifactInput): Request[CreateProvisioningArtifactOutput] =
+      js.native
+    def createServiceAction(params: CreateServiceActionInput): Request[CreateServiceActionOutput]    = js.native
+    def createTagOption(params: CreateTagOptionInput): Request[CreateTagOptionOutput]                = js.native
+    def deleteConstraint(params: DeleteConstraintInput): Request[DeleteConstraintOutput]             = js.native
+    def deletePortfolio(params: DeletePortfolioInput): Request[DeletePortfolioOutput]                = js.native
     def deletePortfolioShare(params: DeletePortfolioShareInput): Request[DeletePortfolioShareOutput] = js.native
-    def deleteProduct(params: DeleteProductInput): Request[DeleteProductOutput] = js.native
-    def deleteProvisionedProductPlan(params: DeleteProvisionedProductPlanInput): Request[DeleteProvisionedProductPlanOutput] = js.native
-    def deleteProvisioningArtifact(params: DeleteProvisioningArtifactInput): Request[DeleteProvisioningArtifactOutput] = js.native
+    def deleteProduct(params: DeleteProductInput): Request[DeleteProductOutput]                      = js.native
+    def deleteProvisionedProductPlan(
+        params: DeleteProvisionedProductPlanInput
+    ): Request[DeleteProvisionedProductPlanOutput] = js.native
+    def deleteProvisioningArtifact(params: DeleteProvisioningArtifactInput): Request[DeleteProvisioningArtifactOutput] =
+      js.native
     def deleteServiceAction(params: DeleteServiceActionInput): Request[DeleteServiceActionOutput] = js.native
-    def deleteTagOption(params: DeleteTagOptionInput): Request[DeleteTagOptionOutput] = js.native
-    def describeConstraint(params: DescribeConstraintInput): Request[DescribeConstraintOutput] = js.native
-    def describeCopyProductStatus(params: DescribeCopyProductStatusInput): Request[DescribeCopyProductStatusOutput] = js.native
+    def deleteTagOption(params: DeleteTagOptionInput): Request[DeleteTagOptionOutput]             = js.native
+    def describeConstraint(params: DescribeConstraintInput): Request[DescribeConstraintOutput]    = js.native
+    def describeCopyProductStatus(params: DescribeCopyProductStatusInput): Request[DescribeCopyProductStatusOutput] =
+      js.native
     def describePortfolio(params: DescribePortfolioInput): Request[DescribePortfolioOutput] = js.native
-    def describePortfolioShareStatus(params: DescribePortfolioShareStatusInput): Request[DescribePortfolioShareStatusOutput] = js.native
-    def describeProduct(params: DescribeProductInput): Request[DescribeProductOutput] = js.native
+    def describePortfolioShareStatus(
+        params: DescribePortfolioShareStatusInput
+    ): Request[DescribePortfolioShareStatusOutput]                                                         = js.native
+    def describeProduct(params: DescribeProductInput): Request[DescribeProductOutput]                      = js.native
     def describeProductAsAdmin(params: DescribeProductAsAdminInput): Request[DescribeProductAsAdminOutput] = js.native
-    def describeProductView(params: DescribeProductViewInput): Request[DescribeProductViewOutput] = js.native
-    def describeProvisionedProduct(params: DescribeProvisionedProductInput): Request[DescribeProvisionedProductOutput] = js.native
-    def describeProvisionedProductPlan(params: DescribeProvisionedProductPlanInput): Request[DescribeProvisionedProductPlanOutput] = js.native
-    def describeProvisioningArtifact(params: DescribeProvisioningArtifactInput): Request[DescribeProvisioningArtifactOutput] = js.native
-    def describeProvisioningParameters(params: DescribeProvisioningParametersInput): Request[DescribeProvisioningParametersOutput] = js.native
-    def describeRecord(params: DescribeRecordInput): Request[DescribeRecordOutput] = js.native
+    def describeProductView(params: DescribeProductViewInput): Request[DescribeProductViewOutput]          = js.native
+    def describeProvisionedProduct(params: DescribeProvisionedProductInput): Request[DescribeProvisionedProductOutput] =
+      js.native
+    def describeProvisionedProductPlan(
+        params: DescribeProvisionedProductPlanInput
+    ): Request[DescribeProvisionedProductPlanOutput] = js.native
+    def describeProvisioningArtifact(
+        params: DescribeProvisioningArtifactInput
+    ): Request[DescribeProvisioningArtifactOutput] = js.native
+    def describeProvisioningParameters(
+        params: DescribeProvisioningParametersInput
+    ): Request[DescribeProvisioningParametersOutput]                                                    = js.native
+    def describeRecord(params: DescribeRecordInput): Request[DescribeRecordOutput]                      = js.native
     def describeServiceAction(params: DescribeServiceActionInput): Request[DescribeServiceActionOutput] = js.native
-    def describeTagOption(params: DescribeTagOptionInput): Request[DescribeTagOptionOutput] = js.native
-    def disableAWSOrganizationsAccess(params: DisableAWSOrganizationsAccessInput): Request[DisableAWSOrganizationsAccessOutput] = js.native
-    def disassociatePrincipalFromPortfolio(params: DisassociatePrincipalFromPortfolioInput): Request[DisassociatePrincipalFromPortfolioOutput] = js.native
-    def disassociateProductFromPortfolio(params: DisassociateProductFromPortfolioInput): Request[DisassociateProductFromPortfolioOutput] = js.native
-    def disassociateServiceActionFromProvisioningArtifact(params: DisassociateServiceActionFromProvisioningArtifactInput): Request[DisassociateServiceActionFromProvisioningArtifactOutput] = js.native
-    def disassociateTagOptionFromResource(params: DisassociateTagOptionFromResourceInput): Request[DisassociateTagOptionFromResourceOutput] = js.native
-    def enableAWSOrganizationsAccess(params: EnableAWSOrganizationsAccessInput): Request[EnableAWSOrganizationsAccessOutput] = js.native
-    def executeProvisionedProductPlan(params: ExecuteProvisionedProductPlanInput): Request[ExecuteProvisionedProductPlanOutput] = js.native
-    def executeProvisionedProductServiceAction(params: ExecuteProvisionedProductServiceActionInput): Request[ExecuteProvisionedProductServiceActionOutput] = js.native
-    def getAWSOrganizationsAccessStatus(params: GetAWSOrganizationsAccessStatusInput): Request[GetAWSOrganizationsAccessStatusOutput] = js.native
-    def listAcceptedPortfolioShares(params: ListAcceptedPortfolioSharesInput): Request[ListAcceptedPortfolioSharesOutput] = js.native
-    def listConstraintsForPortfolio(params: ListConstraintsForPortfolioInput): Request[ListConstraintsForPortfolioOutput] = js.native
+    def describeTagOption(params: DescribeTagOptionInput): Request[DescribeTagOptionOutput]             = js.native
+    def disableAWSOrganizationsAccess(
+        params: DisableAWSOrganizationsAccessInput
+    ): Request[DisableAWSOrganizationsAccessOutput] = js.native
+    def disassociatePrincipalFromPortfolio(
+        params: DisassociatePrincipalFromPortfolioInput
+    ): Request[DisassociatePrincipalFromPortfolioOutput] = js.native
+    def disassociateProductFromPortfolio(
+        params: DisassociateProductFromPortfolioInput
+    ): Request[DisassociateProductFromPortfolioOutput] = js.native
+    def disassociateServiceActionFromProvisioningArtifact(
+        params: DisassociateServiceActionFromProvisioningArtifactInput
+    ): Request[DisassociateServiceActionFromProvisioningArtifactOutput] = js.native
+    def disassociateTagOptionFromResource(
+        params: DisassociateTagOptionFromResourceInput
+    ): Request[DisassociateTagOptionFromResourceOutput] = js.native
+    def enableAWSOrganizationsAccess(
+        params: EnableAWSOrganizationsAccessInput
+    ): Request[EnableAWSOrganizationsAccessOutput] = js.native
+    def executeProvisionedProductPlan(
+        params: ExecuteProvisionedProductPlanInput
+    ): Request[ExecuteProvisionedProductPlanOutput] = js.native
+    def executeProvisionedProductServiceAction(
+        params: ExecuteProvisionedProductServiceActionInput
+    ): Request[ExecuteProvisionedProductServiceActionOutput] = js.native
+    def getAWSOrganizationsAccessStatus(
+        params: GetAWSOrganizationsAccessStatusInput
+    ): Request[GetAWSOrganizationsAccessStatusOutput] = js.native
+    def listAcceptedPortfolioShares(
+        params: ListAcceptedPortfolioSharesInput
+    ): Request[ListAcceptedPortfolioSharesOutput] = js.native
+    def listConstraintsForPortfolio(
+        params: ListConstraintsForPortfolioInput
+    ): Request[ListConstraintsForPortfolioOutput]                                     = js.native
     def listLaunchPaths(params: ListLaunchPathsInput): Request[ListLaunchPathsOutput] = js.native
-    def listOrganizationPortfolioAccess(params: ListOrganizationPortfolioAccessInput): Request[ListOrganizationPortfolioAccessOutput] = js.native
+    def listOrganizationPortfolioAccess(
+        params: ListOrganizationPortfolioAccessInput
+    ): Request[ListOrganizationPortfolioAccessOutput]                                             = js.native
     def listPortfolioAccess(params: ListPortfolioAccessInput): Request[ListPortfolioAccessOutput] = js.native
-    def listPortfolios(params: ListPortfoliosInput): Request[ListPortfoliosOutput] = js.native
-    def listPortfoliosForProduct(params: ListPortfoliosForProductInput): Request[ListPortfoliosForProductOutput] = js.native
-    def listPrincipalsForPortfolio(params: ListPrincipalsForPortfolioInput): Request[ListPrincipalsForPortfolioOutput] = js.native
-    def listProvisionedProductPlans(params: ListProvisionedProductPlansInput): Request[ListProvisionedProductPlansOutput] = js.native
-    def listProvisioningArtifacts(params: ListProvisioningArtifactsInput): Request[ListProvisioningArtifactsOutput] = js.native
-    def listProvisioningArtifactsForServiceAction(params: ListProvisioningArtifactsForServiceActionInput): Request[ListProvisioningArtifactsForServiceActionOutput] = js.native
+    def listPortfolios(params: ListPortfoliosInput): Request[ListPortfoliosOutput]                = js.native
+    def listPortfoliosForProduct(params: ListPortfoliosForProductInput): Request[ListPortfoliosForProductOutput] =
+      js.native
+    def listPrincipalsForPortfolio(params: ListPrincipalsForPortfolioInput): Request[ListPrincipalsForPortfolioOutput] =
+      js.native
+    def listProvisionedProductPlans(
+        params: ListProvisionedProductPlansInput
+    ): Request[ListProvisionedProductPlansOutput] = js.native
+    def listProvisioningArtifacts(params: ListProvisioningArtifactsInput): Request[ListProvisioningArtifactsOutput] =
+      js.native
+    def listProvisioningArtifactsForServiceAction(
+        params: ListProvisioningArtifactsForServiceActionInput
+    ): Request[ListProvisioningArtifactsForServiceActionOutput]                             = js.native
     def listRecordHistory(params: ListRecordHistoryInput): Request[ListRecordHistoryOutput] = js.native
-    def listResourcesForTagOption(params: ListResourcesForTagOptionInput): Request[ListResourcesForTagOptionOutput] = js.native
+    def listResourcesForTagOption(params: ListResourcesForTagOptionInput): Request[ListResourcesForTagOptionOutput] =
+      js.native
     def listServiceActions(params: ListServiceActionsInput): Request[ListServiceActionsOutput] = js.native
-    def listServiceActionsForProvisioningArtifact(params: ListServiceActionsForProvisioningArtifactInput): Request[ListServiceActionsForProvisioningArtifactOutput] = js.native
-    def listTagOptions(params: ListTagOptionsInput): Request[ListTagOptionsOutput] = js.native
-    def provisionProduct(params: ProvisionProductInput): Request[ProvisionProductOutput] = js.native
+    def listServiceActionsForProvisioningArtifact(
+        params: ListServiceActionsForProvisioningArtifactInput
+    ): Request[ListServiceActionsForProvisioningArtifactOutput]                                      = js.native
+    def listTagOptions(params: ListTagOptionsInput): Request[ListTagOptionsOutput]                   = js.native
+    def provisionProduct(params: ProvisionProductInput): Request[ProvisionProductOutput]             = js.native
     def rejectPortfolioShare(params: RejectPortfolioShareInput): Request[RejectPortfolioShareOutput] = js.native
-    def scanProvisionedProducts(params: ScanProvisionedProductsInput): Request[ScanProvisionedProductsOutput] = js.native
-    def searchProducts(params: SearchProductsInput): Request[SearchProductsOutput] = js.native
+    def scanProvisionedProducts(params: ScanProvisionedProductsInput): Request[ScanProvisionedProductsOutput] =
+      js.native
+    def searchProducts(params: SearchProductsInput): Request[SearchProductsOutput]                      = js.native
     def searchProductsAsAdmin(params: SearchProductsAsAdminInput): Request[SearchProductsAsAdminOutput] = js.native
-    def searchProvisionedProducts(params: SearchProvisionedProductsInput): Request[SearchProvisionedProductsOutput] = js.native
-    def terminateProvisionedProduct(params: TerminateProvisionedProductInput): Request[TerminateProvisionedProductOutput] = js.native
+    def searchProvisionedProducts(params: SearchProvisionedProductsInput): Request[SearchProvisionedProductsOutput] =
+      js.native
+    def terminateProvisionedProduct(
+        params: TerminateProvisionedProductInput
+    ): Request[TerminateProvisionedProductOutput]                                        = js.native
     def updateConstraint(params: UpdateConstraintInput): Request[UpdateConstraintOutput] = js.native
-    def updatePortfolio(params: UpdatePortfolioInput): Request[UpdatePortfolioOutput] = js.native
-    def updateProduct(params: UpdateProductInput): Request[UpdateProductOutput] = js.native
-    def updateProvisionedProduct(params: UpdateProvisionedProductInput): Request[UpdateProvisionedProductOutput] = js.native
-    def updateProvisioningArtifact(params: UpdateProvisioningArtifactInput): Request[UpdateProvisioningArtifactOutput] = js.native
+    def updatePortfolio(params: UpdatePortfolioInput): Request[UpdatePortfolioOutput]    = js.native
+    def updateProduct(params: UpdateProductInput): Request[UpdateProductOutput]          = js.native
+    def updateProvisionedProduct(params: UpdateProvisionedProductInput): Request[UpdateProvisionedProductOutput] =
+      js.native
+    def updateProvisioningArtifact(params: UpdateProvisioningArtifactInput): Request[UpdateProvisioningArtifactOutput] =
+      js.native
     def updateServiceAction(params: UpdateServiceActionInput): Request[UpdateServiceActionOutput] = js.native
-    def updateTagOption(params: UpdateTagOptionInput): Request[UpdateTagOptionOutput] = js.native
+    def updateTagOption(params: UpdateTagOptionInput): Request[UpdateTagOptionOutput]             = js.native
   }
 
   @js.native
@@ -297,23 +365,25 @@ package servicecatalog {
   }
 
   object AcceptPortfolioShareInput {
-    def apply(
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined): AcceptPortfolioShareInput = {
+    def apply(PortfolioId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined): AcceptPortfolioShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioShareType" -> PortfolioShareType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortfolioShareType" -> PortfolioShareType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptPortfolioShareInput]
     }
   }
 
   @js.native
-  trait AcceptPortfolioShareOutput extends js.Object {
-
-  }
+  trait AcceptPortfolioShareOutput extends js.Object {}
 
   object AcceptPortfolioShareOutput {
     def apply(): AcceptPortfolioShareOutput = {
@@ -324,8 +394,8 @@ package servicecatalog {
   }
 
   /**
-   * The access level to use to filter results.
-   */
+    * The access level to use to filter results.
+    */
   @js.native
   trait AccessLevelFilter extends js.Object {
     var Key: js.UndefOr[AccessLevelFilterKey]
@@ -333,12 +403,13 @@ package servicecatalog {
   }
 
   object AccessLevelFilter {
-    def apply(
-      Key: js.UndefOr[AccessLevelFilterKey] = js.undefined,
-      Value: js.UndefOr[AccessLevelFilterValue] = js.undefined): AccessLevelFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: js.UndefOr[AccessLevelFilterKey] = js.undefined,
+              Value: js.UndefOr[AccessLevelFilterValue] = js.undefined): AccessLevelFilter = {
+      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AccessLevelFilter]
     }
@@ -346,16 +417,16 @@ package servicecatalog {
 
   object AccessLevelFilterKeyEnum {
     val Account = "Account"
-    val Role = "Role"
-    val User = "User"
+    val Role    = "Role"
+    val User    = "User"
 
     val values = IndexedSeq(Account, Role, User)
   }
 
   object AccessStatusEnum {
-    val ENABLED = "ENABLED"
+    val ENABLED      = "ENABLED"
     val UNDER_CHANGE = "UNDER_CHANGE"
-    val DISABLED = "DISABLED"
+    val DISABLED     = "DISABLED"
 
     val values = IndexedSeq(ENABLED, UNDER_CHANGE, DISABLED)
   }
@@ -369,25 +440,25 @@ package servicecatalog {
   }
 
   object AssociatePrincipalWithPortfolioInput {
-    def apply(
-      PortfolioId: Id,
-      PrincipalARN: PrincipalARN,
-      PrincipalType: PrincipalType,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): AssociatePrincipalWithPortfolioInput = {
+    def apply(PortfolioId: Id,
+              PrincipalARN: PrincipalARN,
+              PrincipalType: PrincipalType,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): AssociatePrincipalWithPortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "PrincipalARN" -> PrincipalARN.asInstanceOf[js.Any],
+        "PortfolioId"   -> PortfolioId.asInstanceOf[js.Any],
+        "PrincipalARN"  -> PrincipalARN.asInstanceOf[js.Any],
         "PrincipalType" -> PrincipalType.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociatePrincipalWithPortfolioInput]
     }
   }
 
   @js.native
-  trait AssociatePrincipalWithPortfolioOutput extends js.Object {
-
-  }
+  trait AssociatePrincipalWithPortfolioOutput extends js.Object {}
 
   object AssociatePrincipalWithPortfolioOutput {
     def apply(): AssociatePrincipalWithPortfolioOutput = {
@@ -406,25 +477,27 @@ package servicecatalog {
   }
 
   object AssociateProductWithPortfolioInput {
-    def apply(
-      PortfolioId: Id,
-      ProductId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      SourcePortfolioId: js.UndefOr[Id] = js.undefined): AssociateProductWithPortfolioInput = {
+    def apply(PortfolioId: Id,
+              ProductId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              SourcePortfolioId: js.UndefOr[Id] = js.undefined): AssociateProductWithPortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "SourcePortfolioId" -> SourcePortfolioId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProductId"   -> ProductId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourcePortfolioId" -> SourcePortfolioId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateProductWithPortfolioInput]
     }
   }
 
   @js.native
-  trait AssociateProductWithPortfolioOutput extends js.Object {
-
-  }
+  trait AssociateProductWithPortfolioOutput extends js.Object {}
 
   object AssociateProductWithPortfolioOutput {
     def apply(): AssociateProductWithPortfolioOutput = {
@@ -444,30 +517,36 @@ package servicecatalog {
 
   object AssociateServiceActionWithProvisioningArtifactInput {
     def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      ServiceActionId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): AssociateServiceActionWithProvisioningArtifactInput = {
+        ProductId: Id,
+        ProvisioningArtifactId: Id,
+        ServiceActionId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): AssociateServiceActionWithProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateServiceActionWithProvisioningArtifactInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[AssociateServiceActionWithProvisioningArtifactInput]
     }
   }
 
   @js.native
-  trait AssociateServiceActionWithProvisioningArtifactOutput extends js.Object {
-
-  }
+  trait AssociateServiceActionWithProvisioningArtifactOutput extends js.Object {}
 
   object AssociateServiceActionWithProvisioningArtifactOutput {
     def apply(): AssociateServiceActionWithProvisioningArtifactOutput = {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateServiceActionWithProvisioningArtifactOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[AssociateServiceActionWithProvisioningArtifactOutput]
     }
   }
 
@@ -478,21 +557,18 @@ package servicecatalog {
   }
 
   object AssociateTagOptionWithResourceInput {
-    def apply(
-      ResourceId: ResourceId,
-      TagOptionId: TagOptionId): AssociateTagOptionWithResourceInput = {
+    def apply(ResourceId: ResourceId, TagOptionId: TagOptionId): AssociateTagOptionWithResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
+        "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateTagOptionWithResourceInput]
     }
   }
 
   @js.native
-  trait AssociateTagOptionWithResourceOutput extends js.Object {
-
-  }
+  trait AssociateTagOptionWithResourceOutput extends js.Object {}
 
   object AssociateTagOptionWithResourceOutput {
     def apply(): AssociateTagOptionWithResourceOutput = {
@@ -510,13 +586,19 @@ package servicecatalog {
 
   object BatchAssociateServiceActionWithProvisioningArtifactInput {
     def apply(
-      ServiceActionAssociations: ServiceActionAssociations,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): BatchAssociateServiceActionWithProvisioningArtifactInput = {
+        ServiceActionAssociations: ServiceActionAssociations,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): BatchAssociateServiceActionWithProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServiceActionAssociations" -> ServiceActionAssociations.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactInput]
     }
   }
 
@@ -527,11 +609,16 @@ package servicecatalog {
 
   object BatchAssociateServiceActionWithProvisioningArtifactOutput {
     def apply(
-      FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined): BatchAssociateServiceActionWithProvisioningArtifactOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedServiceActionAssociations" -> FailedServiceActionAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
+    ): BatchAssociateServiceActionWithProvisioningArtifactOutput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("FailedServiceActionAssociations" -> FailedServiceActionAssociations.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactOutput]
     }
   }
 
@@ -543,13 +630,19 @@ package servicecatalog {
 
   object BatchDisassociateServiceActionFromProvisioningArtifactInput {
     def apply(
-      ServiceActionAssociations: ServiceActionAssociations,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): BatchDisassociateServiceActionFromProvisioningArtifactInput = {
+        ServiceActionAssociations: ServiceActionAssociations,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): BatchDisassociateServiceActionFromProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServiceActionAssociations" -> ServiceActionAssociations.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactInput]
     }
   }
 
@@ -560,16 +653,21 @@ package servicecatalog {
 
   object BatchDisassociateServiceActionFromProvisioningArtifactOutput {
     def apply(
-      FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined): BatchDisassociateServiceActionFromProvisioningArtifactOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FailedServiceActionAssociations" -> FailedServiceActionAssociations.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
+    ): BatchDisassociateServiceActionFromProvisioningArtifactOutput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("FailedServiceActionAssociations" -> FailedServiceActionAssociations.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactOutput]
     }
   }
 
   object ChangeActionEnum {
-    val ADD = "ADD"
+    val ADD    = "ADD"
     val MODIFY = "MODIFY"
     val REMOVE = "REMOVE"
 
@@ -577,26 +675,26 @@ package servicecatalog {
   }
 
   /**
-   * Information about a CloudWatch dashboard.
-   */
+    * Information about a CloudWatch dashboard.
+    */
   @js.native
   trait CloudWatchDashboard extends js.Object {
     var Name: js.UndefOr[CloudWatchDashboardName]
   }
 
   object CloudWatchDashboard {
-    def apply(
-      Name: js.UndefOr[CloudWatchDashboardName] = js.undefined): CloudWatchDashboard = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Name: js.UndefOr[CloudWatchDashboardName] = js.undefined): CloudWatchDashboard = {
+      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CloudWatchDashboard]
     }
   }
 
   /**
-   * Information about a constraint.
-   */
+    * Information about a constraint.
+    */
   @js.native
   trait ConstraintDetail extends js.Object {
     var ConstraintId: js.UndefOr[Id]
@@ -606,24 +704,32 @@ package servicecatalog {
   }
 
   object ConstraintDetail {
-    def apply(
-      ConstraintId: js.UndefOr[Id] = js.undefined,
-      Description: js.UndefOr[ConstraintDescription] = js.undefined,
-      Owner: js.UndefOr[AccountId] = js.undefined,
-      Type: js.UndefOr[ConstraintType] = js.undefined): ConstraintDetail = {
+    def apply(ConstraintId: js.UndefOr[Id] = js.undefined,
+              Description: js.UndefOr[ConstraintDescription] = js.undefined,
+              Owner: js.UndefOr[AccountId] = js.undefined,
+              Type: js.UndefOr[ConstraintType] = js.undefined): ConstraintDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConstraintId" -> ConstraintId.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConstraintId" -> ConstraintId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Owner" -> Owner.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConstraintDetail]
     }
   }
 
   /**
-   * Summary information about a constraint.
-   */
+    * Summary information about a constraint.
+    */
   @js.native
   trait ConstraintSummary extends js.Object {
     var Description: js.UndefOr[ConstraintDescription]
@@ -631,12 +737,13 @@ package servicecatalog {
   }
 
   object ConstraintSummary {
-    def apply(
-      Description: js.UndefOr[ConstraintDescription] = js.undefined,
-      Type: js.UndefOr[ConstraintType] = js.undefined): ConstraintSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Description: js.UndefOr[ConstraintDescription] = js.undefined,
+              Type: js.UndefOr[ConstraintType] = js.undefined): ConstraintSummary = {
+      val _fields = IndexedSeq[(String, js.Any)]("Description" -> Description.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConstraintSummary]
     }
@@ -660,22 +767,32 @@ package servicecatalog {
   }
 
   object CopyProductInput {
-    def apply(
-      IdempotencyToken: IdempotencyToken,
-      SourceProductArn: ProductArn,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      CopyOptions: js.UndefOr[CopyOptions] = js.undefined,
-      SourceProvisioningArtifactIdentifiers: js.UndefOr[SourceProvisioningArtifactProperties] = js.undefined,
-      TargetProductId: js.UndefOr[Id] = js.undefined,
-      TargetProductName: js.UndefOr[ProductViewName] = js.undefined): CopyProductInput = {
+    def apply(IdempotencyToken: IdempotencyToken,
+              SourceProductArn: ProductArn,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              CopyOptions: js.UndefOr[CopyOptions] = js.undefined,
+              SourceProvisioningArtifactIdentifiers: js.UndefOr[SourceProvisioningArtifactProperties] = js.undefined,
+              TargetProductId: js.UndefOr[Id] = js.undefined,
+              TargetProductName: js.UndefOr[ProductViewName] = js.undefined): CopyProductInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "SourceProductArn" -> SourceProductArn.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "CopyOptions" -> CopyOptions.map { x => x.asInstanceOf[js.Any] },
-        "SourceProvisioningArtifactIdentifiers" -> SourceProvisioningArtifactIdentifiers.map { x => x.asInstanceOf[js.Any] },
-        "TargetProductId" -> TargetProductId.map { x => x.asInstanceOf[js.Any] },
-        "TargetProductName" -> TargetProductName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CopyOptions" -> CopyOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceProvisioningArtifactIdentifiers" -> SourceProvisioningArtifactIdentifiers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetProductId" -> TargetProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetProductName" -> TargetProductName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyProductInput]
     }
@@ -687,19 +804,19 @@ package servicecatalog {
   }
 
   object CopyProductOutput {
-    def apply(
-      CopyProductToken: js.UndefOr[Id] = js.undefined): CopyProductOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CopyProductToken" -> CopyProductToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CopyProductToken: js.UndefOr[Id] = js.undefined): CopyProductOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("CopyProductToken" -> CopyProductToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CopyProductOutput]
     }
   }
 
   object CopyProductStatusEnum {
-    val SUCCEEDED = "SUCCEEDED"
+    val SUCCEEDED   = "SUCCEEDED"
     val IN_PROGRESS = "IN_PROGRESS"
-    val FAILED = "FAILED"
+    val FAILED      = "FAILED"
 
     val values = IndexedSeq(SUCCEEDED, IN_PROGRESS, FAILED)
   }
@@ -716,22 +833,26 @@ package servicecatalog {
   }
 
   object CreateConstraintInput {
-    def apply(
-      IdempotencyToken: IdempotencyToken,
-      Parameters: ConstraintParameters,
-      PortfolioId: Id,
-      ProductId: Id,
-      Type: ConstraintType,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Description: js.UndefOr[ConstraintDescription] = js.undefined): CreateConstraintInput = {
+    def apply(IdempotencyToken: IdempotencyToken,
+              Parameters: ConstraintParameters,
+              PortfolioId: Id,
+              ProductId: Id,
+              Type: ConstraintType,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Description: js.UndefOr[ConstraintDescription] = js.undefined): CreateConstraintInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.asInstanceOf[js.Any],
-        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Parameters"       -> Parameters.asInstanceOf[js.Any],
+        "PortfolioId"      -> PortfolioId.asInstanceOf[js.Any],
+        "ProductId"        -> ProductId.asInstanceOf[js.Any],
+        "Type"             -> Type.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConstraintInput]
     }
@@ -745,14 +866,20 @@ package servicecatalog {
   }
 
   object CreateConstraintOutput {
-    def apply(
-      ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
-      ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
-      Status: js.UndefOr[Status] = js.undefined): CreateConstraintOutput = {
+    def apply(ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
+              ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
+              Status: js.UndefOr[Status] = js.undefined): CreateConstraintOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConstraintDetail" -> ConstraintDetail.map { x => x.asInstanceOf[js.Any] },
-        "ConstraintParameters" -> ConstraintParameters.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConstraintDetail" -> ConstraintDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConstraintParameters" -> ConstraintParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConstraintOutput]
     }
@@ -769,20 +896,26 @@ package servicecatalog {
   }
 
   object CreatePortfolioInput {
-    def apply(
-      DisplayName: PortfolioDisplayName,
-      IdempotencyToken: IdempotencyToken,
-      ProviderName: ProviderName,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Description: js.UndefOr[PortfolioDescription] = js.undefined,
-      Tags: js.UndefOr[AddTags] = js.undefined): CreatePortfolioInput = {
+    def apply(DisplayName: PortfolioDisplayName,
+              IdempotencyToken: IdempotencyToken,
+              ProviderName: ProviderName,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Description: js.UndefOr[PortfolioDescription] = js.undefined,
+              Tags: js.UndefOr[AddTags] = js.undefined): CreatePortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DisplayName" -> DisplayName.asInstanceOf[js.Any],
+        "DisplayName"      -> DisplayName.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "ProviderName" -> ProviderName.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProviderName"     -> ProviderName.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePortfolioInput]
     }
@@ -795,12 +928,13 @@ package servicecatalog {
   }
 
   object CreatePortfolioOutput {
-    def apply(
-      PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): CreatePortfolioOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioDetail" -> PortfolioDetail.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): CreatePortfolioOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("PortfolioDetail" -> PortfolioDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Tags" -> Tags.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePortfolioOutput]
     }
@@ -815,16 +949,22 @@ package servicecatalog {
   }
 
   object CreatePortfolioShareInput {
-    def apply(
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AccountId: js.UndefOr[AccountId] = js.undefined,
-      OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined): CreatePortfolioShareInput = {
+    def apply(PortfolioId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AccountId: js.UndefOr[AccountId] = js.undefined,
+              OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined): CreatePortfolioShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationNode" -> OrganizationNode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AccountId" -> AccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationNode" -> OrganizationNode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePortfolioShareInput]
     }
@@ -836,10 +976,10 @@ package servicecatalog {
   }
 
   object CreatePortfolioShareOutput {
-    def apply(
-      PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined): CreatePortfolioShareOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioShareToken" -> PortfolioShareToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined): CreatePortfolioShareOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("PortfolioShareToken" -> PortfolioShareToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePortfolioShareOutput]
     }
@@ -862,32 +1002,46 @@ package servicecatalog {
   }
 
   object CreateProductInput {
-    def apply(
-      IdempotencyToken: IdempotencyToken,
-      Name: ProductViewName,
-      Owner: ProductViewOwner,
-      ProductType: ProductType,
-      ProvisioningArtifactParameters: ProvisioningArtifactProperties,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Description: js.UndefOr[ProductViewShortDescription] = js.undefined,
-      Distributor: js.UndefOr[ProductViewOwner] = js.undefined,
-      SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
-      SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
-      SupportUrl: js.UndefOr[SupportUrl] = js.undefined,
-      Tags: js.UndefOr[AddTags] = js.undefined): CreateProductInput = {
+    def apply(IdempotencyToken: IdempotencyToken,
+              Name: ProductViewName,
+              Owner: ProductViewOwner,
+              ProductType: ProductType,
+              ProvisioningArtifactParameters: ProvisioningArtifactProperties,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Description: js.UndefOr[ProductViewShortDescription] = js.undefined,
+              Distributor: js.UndefOr[ProductViewOwner] = js.undefined,
+              SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
+              SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
+              SupportUrl: js.UndefOr[SupportUrl] = js.undefined,
+              Tags: js.UndefOr[AddTags] = js.undefined): CreateProductInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Owner" -> Owner.asInstanceOf[js.Any],
-        "ProductType" -> ProductType.asInstanceOf[js.Any],
+        "IdempotencyToken"               -> IdempotencyToken.asInstanceOf[js.Any],
+        "Name"                           -> Name.asInstanceOf[js.Any],
+        "Owner"                          -> Owner.asInstanceOf[js.Any],
+        "ProductType"                    -> ProductType.asInstanceOf[js.Any],
         "ProvisioningArtifactParameters" -> ProvisioningArtifactParameters.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Distributor" -> Distributor.map { x => x.asInstanceOf[js.Any] },
-        "SupportDescription" -> SupportDescription.map { x => x.asInstanceOf[js.Any] },
-        "SupportEmail" -> SupportEmail.map { x => x.asInstanceOf[js.Any] },
-        "SupportUrl" -> SupportUrl.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Distributor" -> Distributor.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportDescription" -> SupportDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportEmail" -> SupportEmail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportUrl" -> SupportUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProductInput]
     }
@@ -901,14 +1055,20 @@ package servicecatalog {
   }
 
   object CreateProductOutput {
-    def apply(
-      ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
-      ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): CreateProductOutput = {
+    def apply(ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
+              ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): CreateProductOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductViewDetail" -> ProductViewDetail.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProductViewDetail" -> ProductViewDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProductOutput]
     }
@@ -930,30 +1090,40 @@ package servicecatalog {
   }
 
   object CreateProvisionedProductPlanInput {
-    def apply(
-      IdempotencyToken: IdempotencyToken,
-      PlanName: ProvisionedProductPlanName,
-      PlanType: ProvisionedProductPlanType,
-      ProductId: Id,
-      ProvisionedProductName: ProvisionedProductName,
-      ProvisioningArtifactId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
-      PathId: js.UndefOr[Id] = js.undefined,
-      ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): CreateProvisionedProductPlanInput = {
+    def apply(IdempotencyToken: IdempotencyToken,
+              PlanName: ProvisionedProductPlanName,
+              PlanType: ProvisionedProductPlanType,
+              ProductId: Id,
+              ProvisionedProductName: ProvisionedProductName,
+              ProvisioningArtifactId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
+              PathId: js.UndefOr[Id] = js.undefined,
+              ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): CreateProvisionedProductPlanInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "PlanName" -> PlanName.asInstanceOf[js.Any],
-        "PlanType" -> PlanType.asInstanceOf[js.Any],
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "IdempotencyToken"       -> IdempotencyToken.asInstanceOf[js.Any],
+        "PlanName"               -> PlanName.asInstanceOf[js.Any],
+        "PlanType"               -> PlanType.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "NotificationArns" -> NotificationArns.map { x => x.asInstanceOf[js.Any] },
-        "PathId" -> PathId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningParameters" -> ProvisioningParameters.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotificationArns" -> NotificationArns.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathId" -> PathId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningParameters" -> ProvisioningParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProvisionedProductPlanInput]
     }
@@ -969,18 +1139,28 @@ package servicecatalog {
   }
 
   object CreateProvisionedProductPlanOutput {
-    def apply(
-      PlanId: js.UndefOr[Id] = js.undefined,
-      PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
-      ProvisionProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionedProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined): CreateProvisionedProductPlanOutput = {
+    def apply(PlanId: js.UndefOr[Id] = js.undefined,
+              PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
+              ProvisionProductId: js.UndefOr[Id] = js.undefined,
+              ProvisionedProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
+              ProvisioningArtifactId: js.UndefOr[Id] = js.undefined): CreateProvisionedProductPlanOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlanId" -> PlanId.map { x => x.asInstanceOf[js.Any] },
-        "PlanName" -> PlanName.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionProductId" -> ProvisionProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductName" -> ProvisionedProductName.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlanId" -> PlanId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlanName" -> PlanName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionProductId" -> ProvisionProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductName" -> ProvisionedProductName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProvisionedProductPlanOutput]
     }
@@ -995,16 +1175,18 @@ package servicecatalog {
   }
 
   object CreateProvisioningArtifactInput {
-    def apply(
-      IdempotencyToken: IdempotencyToken,
-      Parameters: ProvisioningArtifactProperties,
-      ProductId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): CreateProvisioningArtifactInput = {
+    def apply(IdempotencyToken: IdempotencyToken,
+              Parameters: ProvisioningArtifactProperties,
+              ProductId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): CreateProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.asInstanceOf[js.Any],
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Parameters"       -> Parameters.asInstanceOf[js.Any],
+        "ProductId"        -> ProductId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProvisioningArtifactInput]
     }
@@ -1018,14 +1200,20 @@ package servicecatalog {
   }
 
   object CreateProvisioningArtifactOutput {
-    def apply(
-      Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
-      ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
-      Status: js.UndefOr[Status] = js.undefined): CreateProvisioningArtifactOutput = {
+    def apply(Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
+              ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
+              Status: js.UndefOr[Status] = js.undefined): CreateProvisioningArtifactOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Info" -> Info.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Info" -> Info.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProvisioningArtifactOutput]
     }
@@ -1042,20 +1230,24 @@ package servicecatalog {
   }
 
   object CreateServiceActionInput {
-    def apply(
-      Definition: ServiceActionDefinitionMap,
-      DefinitionType: ServiceActionDefinitionType,
-      IdempotencyToken: IdempotencyToken,
-      Name: ServiceActionName,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Description: js.UndefOr[ServiceActionDescription] = js.undefined): CreateServiceActionInput = {
+    def apply(Definition: ServiceActionDefinitionMap,
+              DefinitionType: ServiceActionDefinitionType,
+              IdempotencyToken: IdempotencyToken,
+              Name: ServiceActionName,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Description: js.UndefOr[ServiceActionDescription] = js.undefined): CreateServiceActionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Definition" -> Definition.asInstanceOf[js.Any],
-        "DefinitionType" -> DefinitionType.asInstanceOf[js.Any],
+        "Definition"       -> Definition.asInstanceOf[js.Any],
+        "DefinitionType"   -> DefinitionType.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Name"             -> Name.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceActionInput]
     }
@@ -1067,10 +1259,10 @@ package servicecatalog {
   }
 
   object CreateServiceActionOutput {
-    def apply(
-      ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined): CreateServiceActionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceActionDetail" -> ServiceActionDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined): CreateServiceActionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ServiceActionDetail" -> ServiceActionDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServiceActionOutput]
     }
@@ -1083,12 +1275,10 @@ package servicecatalog {
   }
 
   object CreateTagOptionInput {
-    def apply(
-      Key: TagOptionKey,
-      Value: TagOptionValue): CreateTagOptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: TagOptionKey, Value: TagOptionValue): CreateTagOptionInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagOptionInput]
     }
@@ -1100,10 +1290,10 @@ package servicecatalog {
   }
 
   object CreateTagOptionOutput {
-    def apply(
-      TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined): CreateTagOptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagOptionDetail" -> TagOptionDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined): CreateTagOptionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("TagOptionDetail" -> TagOptionDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTagOptionOutput]
     }
@@ -1116,21 +1306,18 @@ package servicecatalog {
   }
 
   object DeleteConstraintInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteConstraintInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteConstraintInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConstraintInput]
     }
   }
 
   @js.native
-  trait DeleteConstraintOutput extends js.Object {
-
-  }
+  trait DeleteConstraintOutput extends js.Object {}
 
   object DeleteConstraintOutput {
     def apply(): DeleteConstraintOutput = {
@@ -1147,21 +1334,18 @@ package servicecatalog {
   }
 
   object DeletePortfolioInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeletePortfolioInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeletePortfolioInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePortfolioInput]
     }
   }
 
   @js.native
-  trait DeletePortfolioOutput extends js.Object {
-
-  }
+  trait DeletePortfolioOutput extends js.Object {}
 
   object DeletePortfolioOutput {
     def apply(): DeletePortfolioOutput = {
@@ -1180,16 +1364,22 @@ package servicecatalog {
   }
 
   object DeletePortfolioShareInput {
-    def apply(
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AccountId: js.UndefOr[AccountId] = js.undefined,
-      OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined): DeletePortfolioShareInput = {
+    def apply(PortfolioId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AccountId: js.UndefOr[AccountId] = js.undefined,
+              OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined): DeletePortfolioShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AccountId" -> AccountId.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationNode" -> OrganizationNode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AccountId" -> AccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OrganizationNode" -> OrganizationNode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePortfolioShareInput]
     }
@@ -1201,10 +1391,10 @@ package servicecatalog {
   }
 
   object DeletePortfolioShareOutput {
-    def apply(
-      PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined): DeletePortfolioShareOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioShareToken" -> PortfolioShareToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined): DeletePortfolioShareOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("PortfolioShareToken" -> PortfolioShareToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeletePortfolioShareOutput]
     }
@@ -1217,21 +1407,18 @@ package servicecatalog {
   }
 
   object DeleteProductInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteProductInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteProductInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProductInput]
     }
   }
 
   @js.native
-  trait DeleteProductOutput extends js.Object {
-
-  }
+  trait DeleteProductOutput extends js.Object {}
 
   object DeleteProductOutput {
     def apply(): DeleteProductOutput = {
@@ -1249,23 +1436,25 @@ package servicecatalog {
   }
 
   object DeleteProvisionedProductPlanInput {
-    def apply(
-      PlanId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      IgnoreErrors: js.UndefOr[IgnoreErrors] = js.undefined): DeleteProvisionedProductPlanInput = {
+    def apply(PlanId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              IgnoreErrors: js.UndefOr[IgnoreErrors] = js.undefined): DeleteProvisionedProductPlanInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PlanId" -> PlanId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "IgnoreErrors" -> IgnoreErrors.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IgnoreErrors" -> IgnoreErrors.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProvisionedProductPlanInput]
     }
   }
 
   @js.native
-  trait DeleteProvisionedProductPlanOutput extends js.Object {
-
-  }
+  trait DeleteProvisionedProductPlanOutput extends js.Object {}
 
   object DeleteProvisionedProductPlanOutput {
     def apply(): DeleteProvisionedProductPlanOutput = {
@@ -1283,23 +1472,23 @@ package servicecatalog {
   }
 
   object DeleteProvisioningArtifactInput {
-    def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteProvisioningArtifactInput = {
+    def apply(ProductId: Id,
+              ProvisioningArtifactId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProvisioningArtifactInput]
     }
   }
 
   @js.native
-  trait DeleteProvisioningArtifactOutput extends js.Object {
-
-  }
+  trait DeleteProvisioningArtifactOutput extends js.Object {}
 
   object DeleteProvisioningArtifactOutput {
     def apply(): DeleteProvisioningArtifactOutput = {
@@ -1316,21 +1505,18 @@ package servicecatalog {
   }
 
   object DeleteServiceActionInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteServiceActionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DeleteServiceActionInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServiceActionInput]
     }
   }
 
   @js.native
-  trait DeleteServiceActionOutput extends js.Object {
-
-  }
+  trait DeleteServiceActionOutput extends js.Object {}
 
   object DeleteServiceActionOutput {
     def apply(): DeleteServiceActionOutput = {
@@ -1346,19 +1532,15 @@ package servicecatalog {
   }
 
   object DeleteTagOptionInput {
-    def apply(
-      Id: TagOptionId): DeleteTagOptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: TagOptionId): DeleteTagOptionInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagOptionInput]
     }
   }
 
   @js.native
-  trait DeleteTagOptionOutput extends js.Object {
-
-  }
+  trait DeleteTagOptionOutput extends js.Object {}
 
   object DeleteTagOptionOutput {
     def apply(): DeleteTagOptionOutput = {
@@ -1375,12 +1557,11 @@ package servicecatalog {
   }
 
   object DescribeConstraintInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeConstraintInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeConstraintInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConstraintInput]
     }
@@ -1394,14 +1575,20 @@ package servicecatalog {
   }
 
   object DescribeConstraintOutput {
-    def apply(
-      ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
-      ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
-      Status: js.UndefOr[Status] = js.undefined): DescribeConstraintOutput = {
+    def apply(ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
+              ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
+              Status: js.UndefOr[Status] = js.undefined): DescribeConstraintOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConstraintDetail" -> ConstraintDetail.map { x => x.asInstanceOf[js.Any] },
-        "ConstraintParameters" -> ConstraintParameters.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConstraintDetail" -> ConstraintDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConstraintParameters" -> ConstraintParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeConstraintOutput]
     }
@@ -1414,12 +1601,14 @@ package servicecatalog {
   }
 
   object DescribeCopyProductStatusInput {
-    def apply(
-      CopyProductToken: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeCopyProductStatusInput = {
+    def apply(CopyProductToken: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeCopyProductStatusInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CopyProductToken" -> CopyProductToken.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCopyProductStatusInput]
     }
@@ -1433,14 +1622,20 @@ package servicecatalog {
   }
 
   object DescribeCopyProductStatusOutput {
-    def apply(
-      CopyProductStatus: js.UndefOr[CopyProductStatus] = js.undefined,
-      StatusDetail: js.UndefOr[StatusDetail] = js.undefined,
-      TargetProductId: js.UndefOr[Id] = js.undefined): DescribeCopyProductStatusOutput = {
+    def apply(CopyProductStatus: js.UndefOr[CopyProductStatus] = js.undefined,
+              StatusDetail: js.UndefOr[StatusDetail] = js.undefined,
+              TargetProductId: js.UndefOr[Id] = js.undefined): DescribeCopyProductStatusOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CopyProductStatus" -> CopyProductStatus.map { x => x.asInstanceOf[js.Any] },
-        "StatusDetail" -> StatusDetail.map { x => x.asInstanceOf[js.Any] },
-        "TargetProductId" -> TargetProductId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CopyProductStatus" -> CopyProductStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusDetail" -> StatusDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetProductId" -> TargetProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCopyProductStatusOutput]
     }
@@ -1453,12 +1648,11 @@ package servicecatalog {
   }
 
   object DescribePortfolioInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribePortfolioInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribePortfolioInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePortfolioInput]
     }
@@ -1472,14 +1666,20 @@ package servicecatalog {
   }
 
   object DescribePortfolioOutput {
-    def apply(
-      PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
-      TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): DescribePortfolioOutput = {
+    def apply(PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
+              TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): DescribePortfolioOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioDetail" -> PortfolioDetail.map { x => x.asInstanceOf[js.Any] },
-        "TagOptions" -> TagOptions.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PortfolioDetail" -> PortfolioDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TagOptions" -> TagOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePortfolioOutput]
     }
@@ -1491,10 +1691,9 @@ package servicecatalog {
   }
 
   object DescribePortfolioShareStatusInput {
-    def apply(
-      PortfolioShareToken: PortfolioShareToken): DescribePortfolioShareStatusInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioShareToken" -> PortfolioShareToken.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(PortfolioShareToken: PortfolioShareToken): DescribePortfolioShareStatusInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("PortfolioShareToken" -> PortfolioShareToken.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePortfolioShareStatusInput]
     }
@@ -1510,18 +1709,28 @@ package servicecatalog {
   }
 
   object DescribePortfolioShareStatusOutput {
-    def apply(
-      OrganizationNodeValue: js.UndefOr[OrganizationNodeValue] = js.undefined,
-      PortfolioId: js.UndefOr[Id] = js.undefined,
-      PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined,
-      ShareDetails: js.UndefOr[ShareDetails] = js.undefined,
-      Status: js.UndefOr[ShareStatus] = js.undefined): DescribePortfolioShareStatusOutput = {
+    def apply(OrganizationNodeValue: js.UndefOr[OrganizationNodeValue] = js.undefined,
+              PortfolioId: js.UndefOr[Id] = js.undefined,
+              PortfolioShareToken: js.UndefOr[PortfolioShareToken] = js.undefined,
+              ShareDetails: js.UndefOr[ShareDetails] = js.undefined,
+              Status: js.UndefOr[ShareStatus] = js.undefined): DescribePortfolioShareStatusOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "OrganizationNodeValue" -> OrganizationNodeValue.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioId" -> PortfolioId.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioShareToken" -> PortfolioShareToken.map { x => x.asInstanceOf[js.Any] },
-        "ShareDetails" -> ShareDetails.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OrganizationNodeValue" -> OrganizationNodeValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortfolioId" -> PortfolioId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortfolioShareToken" -> PortfolioShareToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ShareDetails" -> ShareDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribePortfolioShareStatusOutput]
     }
@@ -1534,12 +1743,11 @@ package servicecatalog {
   }
 
   object DescribeProductAsAdminInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProductAsAdminInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProductAsAdminInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProductAsAdminInput]
     }
@@ -1554,16 +1762,24 @@ package servicecatalog {
   }
 
   object DescribeProductAsAdminOutput {
-    def apply(
-      ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
-      ProvisioningArtifactSummaries: js.UndefOr[ProvisioningArtifactSummaries] = js.undefined,
-      TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): DescribeProductAsAdminOutput = {
+    def apply(ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
+              ProvisioningArtifactSummaries: js.UndefOr[ProvisioningArtifactSummaries] = js.undefined,
+              TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): DescribeProductAsAdminOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductViewDetail" -> ProductViewDetail.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactSummaries" -> ProvisioningArtifactSummaries.map { x => x.asInstanceOf[js.Any] },
-        "TagOptions" -> TagOptions.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProductViewDetail" -> ProductViewDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactSummaries" -> ProvisioningArtifactSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TagOptions" -> TagOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProductAsAdminOutput]
     }
@@ -1576,12 +1792,11 @@ package servicecatalog {
   }
 
   object DescribeProductInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProductInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProductInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProductInput]
     }
@@ -1594,12 +1809,13 @@ package servicecatalog {
   }
 
   object DescribeProductOutput {
-    def apply(
-      ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
-      ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined): DescribeProductOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProductViewSummary" -> ProductViewSummary.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifacts" -> ProvisioningArtifacts.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
+              ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined): DescribeProductOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProductViewSummary" -> ProductViewSummary.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ProvisioningArtifacts" -> ProvisioningArtifacts.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProductOutput]
     }
@@ -1612,12 +1828,11 @@ package servicecatalog {
   }
 
   object DescribeProductViewInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProductViewInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProductViewInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProductViewInput]
     }
@@ -1630,12 +1845,13 @@ package servicecatalog {
   }
 
   object DescribeProductViewOutput {
-    def apply(
-      ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
-      ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined): DescribeProductViewOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProductViewSummary" -> ProductViewSummary.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifacts" -> ProvisioningArtifacts.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
+              ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined): DescribeProductViewOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProductViewSummary" -> ProductViewSummary.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ProvisioningArtifacts" -> ProvisioningArtifacts.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProductViewOutput]
     }
@@ -1648,12 +1864,11 @@ package servicecatalog {
   }
 
   object DescribeProvisionedProductInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProvisionedProductInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeProvisionedProductInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisionedProductInput]
     }
@@ -1667,11 +1882,17 @@ package servicecatalog {
 
   object DescribeProvisionedProductOutput {
     def apply(
-      CloudWatchDashboards: js.UndefOr[CloudWatchDashboards] = js.undefined,
-      ProvisionedProductDetail: js.UndefOr[ProvisionedProductDetail] = js.undefined): DescribeProvisionedProductOutput = {
+        CloudWatchDashboards: js.UndefOr[CloudWatchDashboards] = js.undefined,
+        ProvisionedProductDetail: js.UndefOr[ProvisionedProductDetail] = js.undefined
+    ): DescribeProvisionedProductOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CloudWatchDashboards" -> CloudWatchDashboards.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductDetail" -> ProvisionedProductDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CloudWatchDashboards" -> CloudWatchDashboards.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductDetail" -> ProvisionedProductDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisionedProductOutput]
     }
@@ -1686,16 +1907,22 @@ package servicecatalog {
   }
 
   object DescribeProvisionedProductPlanInput {
-    def apply(
-      PlanId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): DescribeProvisionedProductPlanInput = {
+    def apply(PlanId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): DescribeProvisionedProductPlanInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PlanId" -> PlanId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisionedProductPlanInput]
     }
@@ -1709,14 +1936,20 @@ package servicecatalog {
   }
 
   object DescribeProvisionedProductPlanOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProvisionedProductPlanDetails: js.UndefOr[ProvisionedProductPlanDetails] = js.undefined,
-      ResourceChanges: js.UndefOr[ResourceChanges] = js.undefined): DescribeProvisionedProductPlanOutput = {
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              ProvisionedProductPlanDetails: js.UndefOr[ProvisionedProductPlanDetails] = js.undefined,
+              ResourceChanges: js.UndefOr[ResourceChanges] = js.undefined): DescribeProvisionedProductPlanOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductPlanDetails" -> ProvisionedProductPlanDetails.map { x => x.asInstanceOf[js.Any] },
-        "ResourceChanges" -> ResourceChanges.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductPlanDetails" -> ProvisionedProductPlanDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceChanges" -> ResourceChanges.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisionedProductPlanOutput]
     }
@@ -1731,16 +1964,20 @@ package servicecatalog {
   }
 
   object DescribeProvisioningArtifactInput {
-    def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Verbose: js.UndefOr[Verbose] = js.undefined): DescribeProvisioningArtifactInput = {
+    def apply(ProductId: Id,
+              ProvisioningArtifactId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Verbose: js.UndefOr[Verbose] = js.undefined): DescribeProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Verbose" -> Verbose.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Verbose" -> Verbose.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisioningArtifactInput]
     }
@@ -1754,14 +1991,20 @@ package servicecatalog {
   }
 
   object DescribeProvisioningArtifactOutput {
-    def apply(
-      Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
-      ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
-      Status: js.UndefOr[Status] = js.undefined): DescribeProvisioningArtifactOutput = {
+    def apply(Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
+              ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
+              Status: js.UndefOr[Status] = js.undefined): DescribeProvisioningArtifactOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Info" -> Info.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Info" -> Info.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisioningArtifactOutput]
     }
@@ -1776,16 +2019,20 @@ package servicecatalog {
   }
 
   object DescribeProvisioningParametersInput {
-    def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PathId: js.UndefOr[Id] = js.undefined): DescribeProvisioningParametersInput = {
+    def apply(ProductId: Id,
+              ProvisioningArtifactId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PathId: js.UndefOr[Id] = js.undefined): DescribeProvisioningParametersInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PathId" -> PathId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathId" -> PathId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisioningParametersInput]
     }
@@ -1801,18 +2048,28 @@ package servicecatalog {
   }
 
   object DescribeProvisioningParametersOutput {
-    def apply(
-      ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
-      ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactParameters] = js.undefined,
-      ProvisioningArtifactPreferences: js.UndefOr[ProvisioningArtifactPreferences] = js.undefined,
-      TagOptions: js.UndefOr[TagOptionSummaries] = js.undefined,
-      UsageInstructions: js.UndefOr[UsageInstructions] = js.undefined): DescribeProvisioningParametersOutput = {
+    def apply(ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
+              ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactParameters] = js.undefined,
+              ProvisioningArtifactPreferences: js.UndefOr[ProvisioningArtifactPreferences] = js.undefined,
+              TagOptions: js.UndefOr[TagOptionSummaries] = js.undefined,
+              UsageInstructions: js.UndefOr[UsageInstructions] = js.undefined): DescribeProvisioningParametersOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConstraintSummaries" -> ConstraintSummaries.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactParameters" -> ProvisioningArtifactParameters.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactPreferences" -> ProvisioningArtifactPreferences.map { x => x.asInstanceOf[js.Any] },
-        "TagOptions" -> TagOptions.map { x => x.asInstanceOf[js.Any] },
-        "UsageInstructions" -> UsageInstructions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConstraintSummaries" -> ConstraintSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactParameters" -> ProvisioningArtifactParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactPreferences" -> ProvisioningArtifactPreferences.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TagOptions" -> TagOptions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UsageInstructions" -> UsageInstructions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProvisioningParametersOutput]
     }
@@ -1827,16 +2084,22 @@ package servicecatalog {
   }
 
   object DescribeRecordInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): DescribeRecordInput = {
+    def apply(Id: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): DescribeRecordInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRecordInput]
     }
@@ -1850,14 +2113,20 @@ package servicecatalog {
   }
 
   object DescribeRecordOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      RecordDetail: js.UndefOr[RecordDetail] = js.undefined,
-      RecordOutputs: js.UndefOr[RecordOutputs] = js.undefined): DescribeRecordOutput = {
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              RecordDetail: js.UndefOr[RecordDetail] = js.undefined,
+              RecordOutputs: js.UndefOr[RecordOutputs] = js.undefined): DescribeRecordOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "RecordDetail" -> RecordDetail.map { x => x.asInstanceOf[js.Any] },
-        "RecordOutputs" -> RecordOutputs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordDetail" -> RecordDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordOutputs" -> RecordOutputs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeRecordOutput]
     }
@@ -1870,12 +2139,11 @@ package servicecatalog {
   }
 
   object DescribeServiceActionInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeServiceActionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DescribeServiceActionInput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServiceActionInput]
     }
@@ -1887,10 +2155,10 @@ package servicecatalog {
   }
 
   object DescribeServiceActionOutput {
-    def apply(
-      ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined): DescribeServiceActionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceActionDetail" -> ServiceActionDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined): DescribeServiceActionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ServiceActionDetail" -> ServiceActionDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServiceActionOutput]
     }
@@ -1902,10 +2170,8 @@ package servicecatalog {
   }
 
   object DescribeTagOptionInput {
-    def apply(
-      Id: TagOptionId): DescribeTagOptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: TagOptionId): DescribeTagOptionInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagOptionInput]
     }
@@ -1917,19 +2183,17 @@ package servicecatalog {
   }
 
   object DescribeTagOptionOutput {
-    def apply(
-      TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined): DescribeTagOptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagOptionDetail" -> TagOptionDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined): DescribeTagOptionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("TagOptionDetail" -> TagOptionDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTagOptionOutput]
     }
   }
 
   @js.native
-  trait DisableAWSOrganizationsAccessInput extends js.Object {
-
-  }
+  trait DisableAWSOrganizationsAccessInput extends js.Object {}
 
   object DisableAWSOrganizationsAccessInput {
     def apply(): DisableAWSOrganizationsAccessInput = {
@@ -1940,9 +2204,7 @@ package servicecatalog {
   }
 
   @js.native
-  trait DisableAWSOrganizationsAccessOutput extends js.Object {
-
-  }
+  trait DisableAWSOrganizationsAccessOutput extends js.Object {}
 
   object DisableAWSOrganizationsAccessOutput {
     def apply(): DisableAWSOrganizationsAccessOutput = {
@@ -1960,23 +2222,23 @@ package servicecatalog {
   }
 
   object DisassociatePrincipalFromPortfolioInput {
-    def apply(
-      PortfolioId: Id,
-      PrincipalARN: PrincipalARN,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DisassociatePrincipalFromPortfolioInput = {
+    def apply(PortfolioId: Id,
+              PrincipalARN: PrincipalARN,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DisassociatePrincipalFromPortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
+        "PortfolioId"  -> PortfolioId.asInstanceOf[js.Any],
         "PrincipalARN" -> PrincipalARN.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociatePrincipalFromPortfolioInput]
     }
   }
 
   @js.native
-  trait DisassociatePrincipalFromPortfolioOutput extends js.Object {
-
-  }
+  trait DisassociatePrincipalFromPortfolioOutput extends js.Object {}
 
   object DisassociatePrincipalFromPortfolioOutput {
     def apply(): DisassociatePrincipalFromPortfolioOutput = {
@@ -1994,23 +2256,23 @@ package servicecatalog {
   }
 
   object DisassociateProductFromPortfolioInput {
-    def apply(
-      PortfolioId: Id,
-      ProductId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DisassociateProductFromPortfolioInput = {
+    def apply(PortfolioId: Id,
+              ProductId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DisassociateProductFromPortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ProductId"   -> ProductId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateProductFromPortfolioInput]
     }
   }
 
   @js.native
-  trait DisassociateProductFromPortfolioOutput extends js.Object {
-
-  }
+  trait DisassociateProductFromPortfolioOutput extends js.Object {}
 
   object DisassociateProductFromPortfolioOutput {
     def apply(): DisassociateProductFromPortfolioOutput = {
@@ -2030,30 +2292,36 @@ package servicecatalog {
 
   object DisassociateServiceActionFromProvisioningArtifactInput {
     def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      ServiceActionId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): DisassociateServiceActionFromProvisioningArtifactInput = {
+        ProductId: Id,
+        ProvisioningArtifactId: Id,
+        ServiceActionId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): DisassociateServiceActionFromProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateServiceActionFromProvisioningArtifactInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DisassociateServiceActionFromProvisioningArtifactInput]
     }
   }
 
   @js.native
-  trait DisassociateServiceActionFromProvisioningArtifactOutput extends js.Object {
-
-  }
+  trait DisassociateServiceActionFromProvisioningArtifactOutput extends js.Object {}
 
   object DisassociateServiceActionFromProvisioningArtifactOutput {
     def apply(): DisassociateServiceActionFromProvisioningArtifactOutput = {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateServiceActionFromProvisioningArtifactOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DisassociateServiceActionFromProvisioningArtifactOutput]
     }
   }
 
@@ -2064,21 +2332,18 @@ package servicecatalog {
   }
 
   object DisassociateTagOptionFromResourceInput {
-    def apply(
-      ResourceId: ResourceId,
-      TagOptionId: TagOptionId): DisassociateTagOptionFromResourceInput = {
+    def apply(ResourceId: ResourceId, TagOptionId: TagOptionId): DisassociateTagOptionFromResourceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
+        "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateTagOptionFromResourceInput]
     }
   }
 
   @js.native
-  trait DisassociateTagOptionFromResourceOutput extends js.Object {
-
-  }
+  trait DisassociateTagOptionFromResourceOutput extends js.Object {}
 
   object DisassociateTagOptionFromResourceOutput {
     def apply(): DisassociateTagOptionFromResourceOutput = {
@@ -2089,9 +2354,7 @@ package servicecatalog {
   }
 
   @js.native
-  trait EnableAWSOrganizationsAccessInput extends js.Object {
-
-  }
+  trait EnableAWSOrganizationsAccessInput extends js.Object {}
 
   object EnableAWSOrganizationsAccessInput {
     def apply(): EnableAWSOrganizationsAccessInput = {
@@ -2102,9 +2365,7 @@ package servicecatalog {
   }
 
   @js.native
-  trait EnableAWSOrganizationsAccessOutput extends js.Object {
-
-  }
+  trait EnableAWSOrganizationsAccessOutput extends js.Object {}
 
   object EnableAWSOrganizationsAccessOutput {
     def apply(): EnableAWSOrganizationsAccessOutput = {
@@ -2115,7 +2376,7 @@ package servicecatalog {
   }
 
   object EvaluationTypeEnum {
-    val STATIC = "STATIC"
+    val STATIC  = "STATIC"
     val DYNAMIC = "DYNAMIC"
 
     val values = IndexedSeq(STATIC, DYNAMIC)
@@ -2129,14 +2390,16 @@ package servicecatalog {
   }
 
   object ExecuteProvisionedProductPlanInput {
-    def apply(
-      IdempotencyToken: IdempotencyToken,
-      PlanId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): ExecuteProvisionedProductPlanInput = {
+    def apply(IdempotencyToken: IdempotencyToken,
+              PlanId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): ExecuteProvisionedProductPlanInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
-        "PlanId" -> PlanId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlanId"           -> PlanId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteProvisionedProductPlanInput]
     }
@@ -2148,10 +2411,10 @@ package servicecatalog {
   }
 
   object ExecuteProvisionedProductPlanOutput {
-    def apply(
-      RecordDetail: js.UndefOr[RecordDetail] = js.undefined): ExecuteProvisionedProductPlanOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecordDetail" -> RecordDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RecordDetail: js.UndefOr[RecordDetail] = js.undefined): ExecuteProvisionedProductPlanOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("RecordDetail" -> RecordDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteProvisionedProductPlanOutput]
     }
@@ -2167,17 +2430,23 @@ package servicecatalog {
 
   object ExecuteProvisionedProductServiceActionInput {
     def apply(
-      ExecuteToken: IdempotencyToken,
-      ProvisionedProductId: Id,
-      ServiceActionId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): ExecuteProvisionedProductServiceActionInput = {
+        ExecuteToken: IdempotencyToken,
+        ProvisionedProductId: Id,
+        ServiceActionId: Id,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+    ): ExecuteProvisionedProductServiceActionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ExecuteToken" -> ExecuteToken.asInstanceOf[js.Any],
+        "ExecuteToken"         -> ExecuteToken.asInstanceOf[js.Any],
         "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any],
-        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ServiceActionId"      -> ServiceActionId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteProvisionedProductServiceActionInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ExecuteProvisionedProductServiceActionInput]
     }
   }
 
@@ -2187,18 +2456,20 @@ package servicecatalog {
   }
 
   object ExecuteProvisionedProductServiceActionOutput {
-    def apply(
-      RecordDetail: js.UndefOr[RecordDetail] = js.undefined): ExecuteProvisionedProductServiceActionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecordDetail" -> RecordDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RecordDetail: js.UndefOr[RecordDetail] = js.undefined): ExecuteProvisionedProductServiceActionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("RecordDetail" -> RecordDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExecuteProvisionedProductServiceActionOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ExecuteProvisionedProductServiceActionOutput]
     }
   }
 
   /**
-   * An object containing information about the error, along with identifying information about the self-service action and its associations.
-   */
+    * An object containing information about the error, along with identifying information about the self-service action and its associations.
+    */
   @js.native
   trait FailedServiceActionAssociation extends js.Object {
     var ErrorCode: js.UndefOr[ServiceActionAssociationErrorCode]
@@ -2209,27 +2480,35 @@ package servicecatalog {
   }
 
   object FailedServiceActionAssociation {
-    def apply(
-      ErrorCode: js.UndefOr[ServiceActionAssociationErrorCode] = js.undefined,
-      ErrorMessage: js.UndefOr[ServiceActionAssociationErrorMessage] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
-      ServiceActionId: js.UndefOr[Id] = js.undefined): FailedServiceActionAssociation = {
+    def apply(ErrorCode: js.UndefOr[ServiceActionAssociationErrorCode] = js.undefined,
+              ErrorMessage: js.UndefOr[ServiceActionAssociationErrorMessage] = js.undefined,
+              ProductId: js.UndefOr[Id] = js.undefined,
+              ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+              ServiceActionId: js.UndefOr[Id] = js.undefined): FailedServiceActionAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "ErrorMessage" -> ErrorMessage.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] },
-        "ServiceActionId" -> ServiceActionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ErrorCode" -> ErrorCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ErrorMessage" -> ErrorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ServiceActionId" -> ServiceActionId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedServiceActionAssociation]
     }
   }
 
   @js.native
-  trait GetAWSOrganizationsAccessStatusInput extends js.Object {
-
-  }
+  trait GetAWSOrganizationsAccessStatusInput extends js.Object {}
 
   object GetAWSOrganizationsAccessStatusInput {
     def apply(): GetAWSOrganizationsAccessStatusInput = {
@@ -2245,18 +2524,18 @@ package servicecatalog {
   }
 
   object GetAWSOrganizationsAccessStatusOutput {
-    def apply(
-      AccessStatus: js.UndefOr[AccessStatus] = js.undefined): GetAWSOrganizationsAccessStatusOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccessStatus" -> AccessStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AccessStatus: js.UndefOr[AccessStatus] = js.undefined): GetAWSOrganizationsAccessStatusOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("AccessStatus" -> AccessStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAWSOrganizationsAccessStatusOutput]
     }
   }
 
   /**
-   * Summary information about a product path for a user.
-   */
+    * Summary information about a product path for a user.
+    */
   @js.native
   trait LaunchPathSummary extends js.Object {
     var ConstraintSummaries: js.UndefOr[ConstraintSummaries]
@@ -2266,16 +2545,24 @@ package servicecatalog {
   }
 
   object LaunchPathSummary {
-    def apply(
-      ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[PortfolioName] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): LaunchPathSummary = {
+    def apply(ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
+              Id: js.UndefOr[Id] = js.undefined,
+              Name: js.UndefOr[PortfolioName] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): LaunchPathSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConstraintSummaries" -> ConstraintSummaries.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConstraintSummaries" -> ConstraintSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LaunchPathSummary]
     }
@@ -2290,16 +2577,24 @@ package servicecatalog {
   }
 
   object ListAcceptedPortfolioSharesInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined): ListAcceptedPortfolioSharesInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined): ListAcceptedPortfolioSharesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioShareType" -> PortfolioShareType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortfolioShareType" -> PortfolioShareType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAcceptedPortfolioSharesInput]
     }
@@ -2312,12 +2607,13 @@ package servicecatalog {
   }
 
   object ListAcceptedPortfolioSharesOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined): ListAcceptedPortfolioSharesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioDetails" -> PortfolioDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined): ListAcceptedPortfolioSharesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "PortfolioDetails" -> PortfolioDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAcceptedPortfolioSharesOutput]
     }
@@ -2333,18 +2629,26 @@ package servicecatalog {
   }
 
   object ListConstraintsForPortfolioInput {
-    def apply(
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined): ListConstraintsForPortfolioInput = {
+    def apply(PortfolioId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              ProductId: js.UndefOr[Id] = js.undefined): ListConstraintsForPortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConstraintsForPortfolioInput]
     }
@@ -2357,12 +2661,13 @@ package servicecatalog {
   }
 
   object ListConstraintsForPortfolioOutput {
-    def apply(
-      ConstraintDetails: js.UndefOr[ConstraintDetails] = js.undefined,
-      NextPageToken: js.UndefOr[PageToken] = js.undefined): ListConstraintsForPortfolioOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConstraintDetails" -> ConstraintDetails.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConstraintDetails: js.UndefOr[ConstraintDetails] = js.undefined,
+              NextPageToken: js.UndefOr[PageToken] = js.undefined): ListConstraintsForPortfolioOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConstraintDetails" -> ConstraintDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConstraintsForPortfolioOutput]
     }
@@ -2377,16 +2682,22 @@ package servicecatalog {
   }
 
   object ListLaunchPathsInput {
-    def apply(
-      ProductId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListLaunchPathsInput = {
+    def apply(ProductId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListLaunchPathsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLaunchPathsInput]
     }
@@ -2399,12 +2710,13 @@ package servicecatalog {
   }
 
   object ListLaunchPathsOutput {
-    def apply(
-      LaunchPathSummaries: js.UndefOr[LaunchPathSummaries] = js.undefined,
-      NextPageToken: js.UndefOr[PageToken] = js.undefined): ListLaunchPathsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LaunchPathSummaries" -> LaunchPathSummaries.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(LaunchPathSummaries: js.UndefOr[LaunchPathSummaries] = js.undefined,
+              NextPageToken: js.UndefOr[PageToken] = js.undefined): ListLaunchPathsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("LaunchPathSummaries" -> LaunchPathSummaries.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLaunchPathsOutput]
     }
@@ -2420,18 +2732,24 @@ package servicecatalog {
   }
 
   object ListOrganizationPortfolioAccessInput {
-    def apply(
-      OrganizationNodeType: OrganizationNodeType,
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListOrganizationPortfolioAccessInput = {
+    def apply(OrganizationNodeType: OrganizationNodeType,
+              PortfolioId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListOrganizationPortfolioAccessInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OrganizationNodeType" -> OrganizationNodeType.asInstanceOf[js.Any],
-        "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PortfolioId"          -> PortfolioId.asInstanceOf[js.Any],
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOrganizationPortfolioAccessInput]
     }
@@ -2445,11 +2763,14 @@ package servicecatalog {
 
   object ListOrganizationPortfolioAccessOutput {
     def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      OrganizationNodes: js.UndefOr[OrganizationNodes] = js.undefined): ListOrganizationPortfolioAccessOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "OrganizationNodes" -> OrganizationNodes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        OrganizationNodes: js.UndefOr[OrganizationNodes] = js.undefined
+    ): ListOrganizationPortfolioAccessOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "OrganizationNodes" -> OrganizationNodes.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListOrganizationPortfolioAccessOutput]
     }
@@ -2462,12 +2783,13 @@ package servicecatalog {
   }
 
   object ListPortfolioAccessInput {
-    def apply(
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): ListPortfolioAccessInput = {
+    def apply(PortfolioId: Id, AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): ListPortfolioAccessInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPortfolioAccessInput]
     }
@@ -2480,12 +2802,13 @@ package servicecatalog {
   }
 
   object ListPortfolioAccessOutput {
-    def apply(
-      AccountIds: js.UndefOr[AccountIds] = js.undefined,
-      NextPageToken: js.UndefOr[PageToken] = js.undefined): ListPortfolioAccessOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AccountIds" -> AccountIds.map { x => x.asInstanceOf[js.Any] },
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AccountIds: js.UndefOr[AccountIds] = js.undefined,
+              NextPageToken: js.UndefOr[PageToken] = js.undefined): ListPortfolioAccessOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("AccountIds" -> AccountIds.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPortfolioAccessOutput]
     }
@@ -2500,16 +2823,22 @@ package servicecatalog {
   }
 
   object ListPortfoliosForProductInput {
-    def apply(
-      ProductId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListPortfoliosForProductInput = {
+    def apply(ProductId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListPortfoliosForProductInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPortfoliosForProductInput]
     }
@@ -2522,12 +2851,13 @@ package servicecatalog {
   }
 
   object ListPortfoliosForProductOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined): ListPortfoliosForProductOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioDetails" -> PortfolioDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined): ListPortfoliosForProductOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "PortfolioDetails" -> PortfolioDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPortfoliosForProductOutput]
     }
@@ -2541,14 +2871,20 @@ package servicecatalog {
   }
 
   object ListPortfoliosInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListPortfoliosInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListPortfoliosInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPortfoliosInput]
     }
@@ -2561,12 +2897,13 @@ package servicecatalog {
   }
 
   object ListPortfoliosOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined): ListPortfoliosOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioDetails" -> PortfolioDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined): ListPortfoliosOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "PortfolioDetails" -> PortfolioDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPortfoliosOutput]
     }
@@ -2581,16 +2918,22 @@ package servicecatalog {
   }
 
   object ListPrincipalsForPortfolioInput {
-    def apply(
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListPrincipalsForPortfolioInput = {
+    def apply(PortfolioId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListPrincipalsForPortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalsForPortfolioInput]
     }
@@ -2603,12 +2946,13 @@ package servicecatalog {
   }
 
   object ListPrincipalsForPortfolioOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      Principals: js.UndefOr[Principals] = js.undefined): ListPrincipalsForPortfolioOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "Principals" -> Principals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              Principals: js.UndefOr[Principals] = js.undefined): ListPrincipalsForPortfolioOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Principals" -> Principals.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListPrincipalsForPortfolioOutput]
     }
@@ -2624,18 +2968,28 @@ package servicecatalog {
   }
 
   object ListProvisionedProductPlansInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      ProvisionProductId: js.UndefOr[Id] = js.undefined): ListProvisionedProductPlansInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              ProvisionProductId: js.UndefOr[Id] = js.undefined): ListProvisionedProductPlansInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AccessLevelFilter" -> AccessLevelFilter.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionProductId" -> ProvisionProductId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AccessLevelFilter" -> AccessLevelFilter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionProductId" -> ProvisionProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisionedProductPlansInput]
     }
@@ -2649,11 +3003,14 @@ package servicecatalog {
 
   object ListProvisionedProductPlansOutput {
     def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProvisionedProductPlans: js.UndefOr[ProvisionedProductPlans] = js.undefined): ListProvisionedProductPlansOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductPlans" -> ProvisionedProductPlans.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        ProvisionedProductPlans: js.UndefOr[ProvisionedProductPlans] = js.undefined
+    ): ListProvisionedProductPlansOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ProvisionedProductPlans" -> ProvisionedProductPlans.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisionedProductPlansOutput]
     }
@@ -2668,18 +3025,26 @@ package servicecatalog {
   }
 
   object ListProvisioningArtifactsForServiceActionInput {
-    def apply(
-      ServiceActionId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListProvisioningArtifactsForServiceActionInput = {
+    def apply(ServiceActionId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListProvisioningArtifactsForServiceActionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisioningArtifactsForServiceActionInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ListProvisioningArtifactsForServiceActionInput]
     }
   }
 
@@ -2691,13 +3056,18 @@ package servicecatalog {
 
   object ListProvisioningArtifactsForServiceActionOutput {
     def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProvisioningArtifactViews: js.UndefOr[ProvisioningArtifactViews] = js.undefined): ListProvisioningArtifactsForServiceActionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactViews" -> ProvisioningArtifactViews.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        ProvisioningArtifactViews: js.UndefOr[ProvisioningArtifactViews] = js.undefined
+    ): ListProvisioningArtifactsForServiceActionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ProvisioningArtifactViews" -> ProvisioningArtifactViews.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisioningArtifactsForServiceActionOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ListProvisioningArtifactsForServiceActionOutput]
     }
   }
 
@@ -2708,12 +3078,14 @@ package servicecatalog {
   }
 
   object ListProvisioningArtifactsInput {
-    def apply(
-      ProductId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): ListProvisioningArtifactsInput = {
+    def apply(ProductId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined): ListProvisioningArtifactsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisioningArtifactsInput]
     }
@@ -2727,11 +3099,17 @@ package servicecatalog {
 
   object ListProvisioningArtifactsOutput {
     def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProvisioningArtifactDetails: js.UndefOr[ProvisioningArtifactDetails] = js.undefined): ListProvisioningArtifactsOutput = {
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        ProvisioningArtifactDetails: js.UndefOr[ProvisioningArtifactDetails] = js.undefined
+    ): ListProvisioningArtifactsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactDetails" -> ProvisioningArtifactDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactDetails" -> ProvisioningArtifactDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProvisioningArtifactsOutput]
     }
@@ -2747,18 +3125,28 @@ package servicecatalog {
   }
 
   object ListRecordHistoryInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      SearchFilter: js.UndefOr[ListRecordHistorySearchFilter] = js.undefined): ListRecordHistoryInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              SearchFilter: js.UndefOr[ListRecordHistorySearchFilter] = js.undefined): ListRecordHistoryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AccessLevelFilter" -> AccessLevelFilter.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "SearchFilter" -> SearchFilter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AccessLevelFilter" -> AccessLevelFilter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SearchFilter" -> SearchFilter.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRecordHistoryInput]
     }
@@ -2771,20 +3159,21 @@ package servicecatalog {
   }
 
   object ListRecordHistoryOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      RecordDetails: js.UndefOr[RecordDetails] = js.undefined): ListRecordHistoryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "RecordDetails" -> RecordDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              RecordDetails: js.UndefOr[RecordDetails] = js.undefined): ListRecordHistoryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "RecordDetails" -> RecordDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRecordHistoryOutput]
     }
   }
 
   /**
-   * The search filter to use when listing history records.
-   */
+    * The search filter to use when listing history records.
+    */
   @js.native
   trait ListRecordHistorySearchFilter extends js.Object {
     var Key: js.UndefOr[SearchFilterKey]
@@ -2792,12 +3181,13 @@ package servicecatalog {
   }
 
   object ListRecordHistorySearchFilter {
-    def apply(
-      Key: js.UndefOr[SearchFilterKey] = js.undefined,
-      Value: js.UndefOr[SearchFilterValue] = js.undefined): ListRecordHistorySearchFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: js.UndefOr[SearchFilterKey] = js.undefined,
+              Value: js.UndefOr[SearchFilterValue] = js.undefined): ListRecordHistorySearchFilter = {
+      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListRecordHistorySearchFilter]
     }
@@ -2812,16 +3202,22 @@ package servicecatalog {
   }
 
   object ListResourcesForTagOptionInput {
-    def apply(
-      TagOptionId: TagOptionId,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      ResourceType: js.UndefOr[ResourceType] = js.undefined): ListResourcesForTagOptionInput = {
+    def apply(TagOptionId: TagOptionId,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              ResourceType: js.UndefOr[ResourceType] = js.undefined): ListResourcesForTagOptionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceType" -> ResourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesForTagOptionInput]
     }
@@ -2834,12 +3230,13 @@ package servicecatalog {
   }
 
   object ListResourcesForTagOptionOutput {
-    def apply(
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined): ListResourcesForTagOptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "ResourceDetails" -> ResourceDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PageToken: js.UndefOr[PageToken] = js.undefined,
+              ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined): ListResourcesForTagOptionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("PageToken" -> PageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ResourceDetails" -> ResourceDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListResourcesForTagOptionOutput]
     }
@@ -2855,20 +3252,28 @@ package servicecatalog {
   }
 
   object ListServiceActionsForProvisioningArtifactInput {
-    def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListServiceActionsForProvisioningArtifactInput = {
+    def apply(ProductId: Id,
+              ProvisioningArtifactId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListServiceActionsForProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServiceActionsForProvisioningArtifactInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ListServiceActionsForProvisioningArtifactInput]
     }
   }
 
@@ -2880,13 +3285,18 @@ package servicecatalog {
 
   object ListServiceActionsForProvisioningArtifactOutput {
     def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined): ListServiceActionsForProvisioningArtifactOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ServiceActionSummaries" -> ServiceActionSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined
+    ): ListServiceActionsForProvisioningArtifactOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ServiceActionSummaries" -> ServiceActionSummaries.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServiceActionsForProvisioningArtifactOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ListServiceActionsForProvisioningArtifactOutput]
     }
   }
 
@@ -2898,14 +3308,20 @@ package servicecatalog {
   }
 
   object ListServiceActionsInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListServiceActionsInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListServiceActionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServiceActionsInput]
     }
@@ -2918,20 +3334,21 @@ package servicecatalog {
   }
 
   object ListServiceActionsOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined): ListServiceActionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ServiceActionSummaries" -> ServiceActionSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined): ListServiceActionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ServiceActionSummaries" -> ServiceActionSummaries.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServiceActionsOutput]
     }
   }
 
   /**
-   * Filters to use when listing TagOptions.
-   */
+    * Filters to use when listing TagOptions.
+    */
   @js.native
   trait ListTagOptionsFilters extends js.Object {
     var Active: js.UndefOr[TagOptionActive]
@@ -2940,14 +3357,16 @@ package servicecatalog {
   }
 
   object ListTagOptionsFilters {
-    def apply(
-      Active: js.UndefOr[TagOptionActive] = js.undefined,
-      Key: js.UndefOr[TagOptionKey] = js.undefined,
-      Value: js.UndefOr[TagOptionValue] = js.undefined): ListTagOptionsFilters = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Active" -> Active.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Active: js.UndefOr[TagOptionActive] = js.undefined,
+              Key: js.UndefOr[TagOptionKey] = js.undefined,
+              Value: js.UndefOr[TagOptionValue] = js.undefined): ListTagOptionsFilters = {
+      val _fields = IndexedSeq[(String, js.Any)]("Active" -> Active.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagOptionsFilters]
     }
@@ -2961,14 +3380,20 @@ package servicecatalog {
   }
 
   object ListTagOptionsInput {
-    def apply(
-      Filters: js.UndefOr[ListTagOptionsFilters] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ListTagOptionsInput = {
+    def apply(Filters: js.UndefOr[ListTagOptionsFilters] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ListTagOptionsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagOptionsInput]
     }
@@ -2981,20 +3406,21 @@ package servicecatalog {
   }
 
   object ListTagOptionsOutput {
-    def apply(
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      TagOptionDetails: js.UndefOr[TagOptionDetails] = js.undefined): ListTagOptionsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "TagOptionDetails" -> TagOptionDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PageToken: js.UndefOr[PageToken] = js.undefined,
+              TagOptionDetails: js.UndefOr[TagOptionDetails] = js.undefined): ListTagOptionsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("PageToken" -> PageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "TagOptionDetails" -> TagOptionDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagOptionsOutput]
     }
   }
 
   /**
-   * Information about the organization node.
-   */
+    * Information about the organization node.
+    */
   @js.native
   trait OrganizationNode extends js.Object {
     var Type: js.UndefOr[OrganizationNodeType]
@@ -3002,46 +3428,47 @@ package servicecatalog {
   }
 
   object OrganizationNode {
-    def apply(
-      Type: js.UndefOr[OrganizationNodeType] = js.undefined,
-      Value: js.UndefOr[OrganizationNodeValue] = js.undefined): OrganizationNode = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Type: js.UndefOr[OrganizationNodeType] = js.undefined,
+              Value: js.UndefOr[OrganizationNodeValue] = js.undefined): OrganizationNode = {
+      val _fields = IndexedSeq[(String, js.Any)]("Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OrganizationNode]
     }
   }
 
   object OrganizationNodeTypeEnum {
-    val ORGANIZATION = "ORGANIZATION"
+    val ORGANIZATION        = "ORGANIZATION"
     val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT"
-    val ACCOUNT = "ACCOUNT"
+    val ACCOUNT             = "ACCOUNT"
 
     val values = IndexedSeq(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT)
   }
 
   /**
-   * The constraints that the administrator has put on the parameter.
-   */
+    * The constraints that the administrator has put on the parameter.
+    */
   @js.native
   trait ParameterConstraints extends js.Object {
     var AllowedValues: js.UndefOr[AllowedValues]
   }
 
   object ParameterConstraints {
-    def apply(
-      AllowedValues: js.UndefOr[AllowedValues] = js.undefined): ParameterConstraints = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AllowedValues" -> AllowedValues.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AllowedValues: js.UndefOr[AllowedValues] = js.undefined): ParameterConstraints = {
+      val _fields = IndexedSeq[(String, js.Any)]("AllowedValues" -> AllowedValues.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterConstraints]
     }
   }
 
   /**
-   * Information about a portfolio.
-   */
+    * Information about a portfolio.
+    */
   @js.native
   trait PortfolioDetail extends js.Object {
     var ARN: js.UndefOr[ResourceARN]
@@ -3053,36 +3480,48 @@ package servicecatalog {
   }
 
   object PortfolioDetail {
-    def apply(
-      ARN: js.UndefOr[ResourceARN] = js.undefined,
-      CreatedTime: js.UndefOr[CreationTime] = js.undefined,
-      Description: js.UndefOr[PortfolioDescription] = js.undefined,
-      DisplayName: js.UndefOr[PortfolioDisplayName] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      ProviderName: js.UndefOr[ProviderName] = js.undefined): PortfolioDetail = {
+    def apply(ARN: js.UndefOr[ResourceARN] = js.undefined,
+              CreatedTime: js.UndefOr[CreationTime] = js.undefined,
+              Description: js.UndefOr[PortfolioDescription] = js.undefined,
+              DisplayName: js.UndefOr[PortfolioDisplayName] = js.undefined,
+              Id: js.UndefOr[Id] = js.undefined,
+              ProviderName: js.UndefOr[ProviderName] = js.undefined): PortfolioDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ARN" -> ARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProviderName" -> ProviderName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PortfolioDetail]
     }
   }
 
   object PortfolioShareTypeEnum {
-    val IMPORTED = "IMPORTED"
+    val IMPORTED           = "IMPORTED"
     val AWS_SERVICECATALOG = "AWS_SERVICECATALOG"
-    val AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS"
+    val AWS_ORGANIZATIONS  = "AWS_ORGANIZATIONS"
 
     val values = IndexedSeq(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
   }
 
   /**
-   * Information about a principal.
-   */
+    * Information about a principal.
+    */
   @js.native
   trait Principal extends js.Object {
     var PrincipalARN: js.UndefOr[PrincipalARN]
@@ -3090,12 +3529,13 @@ package servicecatalog {
   }
 
   object Principal {
-    def apply(
-      PrincipalARN: js.UndefOr[PrincipalARN] = js.undefined,
-      PrincipalType: js.UndefOr[PrincipalType] = js.undefined): Principal = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PrincipalARN" -> PrincipalARN.map { x => x.asInstanceOf[js.Any] },
-        "PrincipalType" -> PrincipalType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PrincipalARN: js.UndefOr[PrincipalARN] = js.undefined,
+              PrincipalType: js.UndefOr[PrincipalType] = js.undefined): Principal = {
+      val _fields = IndexedSeq[(String, js.Any)]("PrincipalARN" -> PrincipalARN.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "PrincipalType" -> PrincipalType.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Principal]
     }
@@ -3115,14 +3555,14 @@ package servicecatalog {
 
   object ProductTypeEnum {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE"
-    val MARKETPLACE = "MARKETPLACE"
+    val MARKETPLACE              = "MARKETPLACE"
 
     val values = IndexedSeq(CLOUD_FORMATION_TEMPLATE, MARKETPLACE)
   }
 
   /**
-   * A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.
-   */
+    * A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access.
+    */
   @js.native
   trait ProductViewAggregationValue extends js.Object {
     var ApproximateCount: js.UndefOr[ApproximateCount]
@@ -3130,20 +3570,21 @@ package servicecatalog {
   }
 
   object ProductViewAggregationValue {
-    def apply(
-      ApproximateCount: js.UndefOr[ApproximateCount] = js.undefined,
-      Value: js.UndefOr[AttributeValue] = js.undefined): ProductViewAggregationValue = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApproximateCount" -> ApproximateCount.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApproximateCount: js.UndefOr[ApproximateCount] = js.undefined,
+              Value: js.UndefOr[AttributeValue] = js.undefined): ProductViewAggregationValue = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApproximateCount" -> ApproximateCount.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProductViewAggregationValue]
     }
   }
 
   /**
-   * Information about a product view.
-   */
+    * Information about a product view.
+    */
   @js.native
   trait ProductViewDetail extends js.Object {
     var CreatedTime: js.UndefOr[CreatedTime]
@@ -3153,32 +3594,40 @@ package servicecatalog {
   }
 
   object ProductViewDetail {
-    def apply(
-      CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
-      ProductARN: js.UndefOr[ResourceARN] = js.undefined,
-      ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
-      Status: js.UndefOr[Status] = js.undefined): ProductViewDetail = {
+    def apply(CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+              ProductARN: js.UndefOr[ResourceARN] = js.undefined,
+              ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
+              Status: js.UndefOr[Status] = js.undefined): ProductViewDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "ProductARN" -> ProductARN.map { x => x.asInstanceOf[js.Any] },
-        "ProductViewSummary" -> ProductViewSummary.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductARN" -> ProductARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductViewSummary" -> ProductViewSummary.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProductViewDetail]
     }
   }
 
   object ProductViewFilterByEnum {
-    val FullTextSearch = "FullTextSearch"
-    val Owner = "Owner"
-    val ProductType = "ProductType"
+    val FullTextSearch  = "FullTextSearch"
+    val Owner           = "Owner"
+    val ProductType     = "ProductType"
     val SourceProductId = "SourceProductId"
 
     val values = IndexedSeq(FullTextSearch, Owner, ProductType, SourceProductId)
   }
 
   object ProductViewSortByEnum {
-    val Title = "Title"
+    val Title        = "Title"
     val VersionCount = "VersionCount"
     val CreationDate = "CreationDate"
 
@@ -3186,8 +3635,8 @@ package servicecatalog {
   }
 
   /**
-   * Summary information about a product view.
-   */
+    * Summary information about a product view.
+    */
   @js.native
   trait ProductViewSummary extends js.Object {
     var Distributor: js.UndefOr[ProductViewDistributor]
@@ -3204,30 +3653,52 @@ package servicecatalog {
   }
 
   object ProductViewSummary {
-    def apply(
-      Distributor: js.UndefOr[ProductViewDistributor] = js.undefined,
-      HasDefaultPath: js.UndefOr[HasDefaultPath] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[ProductViewName] = js.undefined,
-      Owner: js.UndefOr[ProductViewOwner] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined,
-      ShortDescription: js.UndefOr[ProductViewShortDescription] = js.undefined,
-      SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
-      SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
-      SupportUrl: js.UndefOr[SupportUrl] = js.undefined,
-      Type: js.UndefOr[ProductType] = js.undefined): ProductViewSummary = {
+    def apply(Distributor: js.UndefOr[ProductViewDistributor] = js.undefined,
+              HasDefaultPath: js.UndefOr[HasDefaultPath] = js.undefined,
+              Id: js.UndefOr[Id] = js.undefined,
+              Name: js.UndefOr[ProductViewName] = js.undefined,
+              Owner: js.UndefOr[ProductViewOwner] = js.undefined,
+              ProductId: js.UndefOr[Id] = js.undefined,
+              ShortDescription: js.UndefOr[ProductViewShortDescription] = js.undefined,
+              SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
+              SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
+              SupportUrl: js.UndefOr[SupportUrl] = js.undefined,
+              Type: js.UndefOr[ProductType] = js.undefined): ProductViewSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Distributor" -> Distributor.map { x => x.asInstanceOf[js.Any] },
-        "HasDefaultPath" -> HasDefaultPath.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ShortDescription" -> ShortDescription.map { x => x.asInstanceOf[js.Any] },
-        "SupportDescription" -> SupportDescription.map { x => x.asInstanceOf[js.Any] },
-        "SupportEmail" -> SupportEmail.map { x => x.asInstanceOf[js.Any] },
-        "SupportUrl" -> SupportUrl.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Distributor" -> Distributor.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasDefaultPath" -> HasDefaultPath.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Owner" -> Owner.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ShortDescription" -> ShortDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportDescription" -> SupportDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportEmail" -> SupportEmail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportUrl" -> SupportUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProductViewSummary]
     }
@@ -3248,28 +3719,40 @@ package servicecatalog {
   }
 
   object ProvisionProductInput {
-    def apply(
-      ProductId: Id,
-      ProvisionToken: IdempotencyToken,
-      ProvisionedProductName: ProvisionedProductName,
-      ProvisioningArtifactId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
-      PathId: js.UndefOr[Id] = js.undefined,
-      ProvisioningParameters: js.UndefOr[ProvisioningParameters] = js.undefined,
-      ProvisioningPreferences: js.UndefOr[ProvisioningPreferences] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): ProvisionProductInput = {
+    def apply(ProductId: Id,
+              ProvisionToken: IdempotencyToken,
+              ProvisionedProductName: ProvisionedProductName,
+              ProvisioningArtifactId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
+              PathId: js.UndefOr[Id] = js.undefined,
+              ProvisioningParameters: js.UndefOr[ProvisioningParameters] = js.undefined,
+              ProvisioningPreferences: js.UndefOr[ProvisioningPreferences] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): ProvisionProductInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "ProvisionToken" -> ProvisionToken.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
+        "ProvisionToken"         -> ProvisionToken.asInstanceOf[js.Any],
         "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "NotificationArns" -> NotificationArns.map { x => x.asInstanceOf[js.Any] },
-        "PathId" -> PathId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningParameters" -> ProvisioningParameters.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningPreferences" -> ProvisioningPreferences.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotificationArns" -> NotificationArns.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathId" -> PathId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningParameters" -> ProvisioningParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningPreferences" -> ProvisioningPreferences.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionProductInput]
     }
@@ -3281,18 +3764,18 @@ package servicecatalog {
   }
 
   object ProvisionProductOutput {
-    def apply(
-      RecordDetail: js.UndefOr[RecordDetail] = js.undefined): ProvisionProductOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecordDetail" -> RecordDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RecordDetail: js.UndefOr[RecordDetail] = js.undefined): ProvisionProductOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("RecordDetail" -> RecordDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionProductOutput]
     }
   }
 
   /**
-   * Information about a provisioned product.
-   */
+    * Information about a provisioned product.
+    */
   @js.native
   trait ProvisionedProductAttribute extends js.Object {
     var Arn: js.UndefOr[ProvisionedProductNameOrArn]
@@ -3313,46 +3796,76 @@ package servicecatalog {
   }
 
   object ProvisionedProductAttribute {
-    def apply(
-      Arn: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
-      CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
-      LastRecordId: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
-      PhysicalId: js.UndefOr[PhysicalId] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
-      Status: js.UndefOr[ProvisionedProductStatus] = js.undefined,
-      StatusMessage: js.UndefOr[ProvisionedProductStatusMessage] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
-      Type: js.UndefOr[ProvisionedProductType] = js.undefined,
-      UserArn: js.UndefOr[UserArn] = js.undefined,
-      UserArnSession: js.UndefOr[UserArnSession] = js.undefined): ProvisionedProductAttribute = {
+    def apply(Arn: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
+              CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+              Id: js.UndefOr[Id] = js.undefined,
+              IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
+              LastRecordId: js.UndefOr[Id] = js.undefined,
+              Name: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
+              PhysicalId: js.UndefOr[PhysicalId] = js.undefined,
+              ProductId: js.UndefOr[Id] = js.undefined,
+              ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+              Status: js.UndefOr[ProvisionedProductStatus] = js.undefined,
+              StatusMessage: js.UndefOr[ProvisionedProductStatusMessage] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined,
+              Type: js.UndefOr[ProvisionedProductType] = js.undefined,
+              UserArn: js.UndefOr[UserArn] = js.undefined,
+              UserArnSession: js.UndefOr[UserArnSession] = js.undefined): ProvisionedProductAttribute = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IdempotencyToken" -> IdempotencyToken.map { x => x.asInstanceOf[js.Any] },
-        "LastRecordId" -> LastRecordId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "PhysicalId" -> PhysicalId.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] },
-        "UserArnSession" -> UserArnSession.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdempotencyToken" -> IdempotencyToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastRecordId" -> LastRecordId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhysicalId" -> PhysicalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusMessage" -> StatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserArn" -> UserArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserArnSession" -> UserArnSession.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionedProductAttribute]
     }
   }
 
   /**
-   * Information about a provisioned product.
-   */
+    * Information about a provisioned product.
+    */
   @js.native
   trait ProvisionedProductDetail extends js.Object {
     var Arn: js.UndefOr[ProvisionedProductNameOrArn]
@@ -3369,38 +3882,60 @@ package servicecatalog {
   }
 
   object ProvisionedProductDetail {
-    def apply(
-      Arn: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
-      CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
-      Id: js.UndefOr[ProvisionedProductId] = js.undefined,
-      IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
-      LastRecordId: js.UndefOr[LastRequestId] = js.undefined,
-      Name: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
-      Status: js.UndefOr[ProvisionedProductStatus] = js.undefined,
-      StatusMessage: js.UndefOr[ProvisionedProductStatusMessage] = js.undefined,
-      Type: js.UndefOr[ProvisionedProductType] = js.undefined): ProvisionedProductDetail = {
+    def apply(Arn: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
+              CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+              Id: js.UndefOr[ProvisionedProductId] = js.undefined,
+              IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
+              LastRecordId: js.UndefOr[LastRequestId] = js.undefined,
+              Name: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
+              ProductId: js.UndefOr[Id] = js.undefined,
+              ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+              Status: js.UndefOr[ProvisionedProductStatus] = js.undefined,
+              StatusMessage: js.UndefOr[ProvisionedProductStatusMessage] = js.undefined,
+              Type: js.UndefOr[ProvisionedProductType] = js.undefined): ProvisionedProductDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IdempotencyToken" -> IdempotencyToken.map { x => x.asInstanceOf[js.Any] },
-        "LastRecordId" -> LastRecordId.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdempotencyToken" -> IdempotencyToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastRecordId" -> LastRecordId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusMessage" -> StatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionedProductDetail]
     }
   }
 
   /**
-   * Information about a plan.
-   */
+    * Information about a plan.
+    */
   @js.native
   trait ProvisionedProductPlanDetails extends js.Object {
     var CreatedTime: js.UndefOr[CreatedTime]
@@ -3421,57 +3956,94 @@ package servicecatalog {
   }
 
   object ProvisionedProductPlanDetails {
-    def apply(
-      CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
-      NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
-      PathId: js.UndefOr[Id] = js.undefined,
-      PlanId: js.UndefOr[Id] = js.undefined,
-      PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
-      PlanType: js.UndefOr[ProvisionedProductPlanType] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
-      ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
-      Status: js.UndefOr[ProvisionedProductPlanStatus] = js.undefined,
-      StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
-      UpdatedTime: js.UndefOr[UpdatedTime] = js.undefined): ProvisionedProductPlanDetails = {
+    def apply(CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+              NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
+              PathId: js.UndefOr[Id] = js.undefined,
+              PlanId: js.UndefOr[Id] = js.undefined,
+              PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
+              PlanType: js.UndefOr[ProvisionedProductPlanType] = js.undefined,
+              ProductId: js.UndefOr[Id] = js.undefined,
+              ProvisionProductId: js.UndefOr[Id] = js.undefined,
+              ProvisionProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
+              ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+              ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
+              Status: js.UndefOr[ProvisionedProductPlanStatus] = js.undefined,
+              StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined,
+              UpdatedTime: js.UndefOr[UpdatedTime] = js.undefined): ProvisionedProductPlanDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "NotificationArns" -> NotificationArns.map { x => x.asInstanceOf[js.Any] },
-        "PathId" -> PathId.map { x => x.asInstanceOf[js.Any] },
-        "PlanId" -> PlanId.map { x => x.asInstanceOf[js.Any] },
-        "PlanName" -> PlanName.map { x => x.asInstanceOf[js.Any] },
-        "PlanType" -> PlanType.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionProductId" -> ProvisionProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionProductName" -> ProvisionProductName.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningParameters" -> ProvisioningParameters.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "UpdatedTime" -> UpdatedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotificationArns" -> NotificationArns.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathId" -> PathId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlanId" -> PlanId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlanName" -> PlanName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlanType" -> PlanType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionProductId" -> ProvisionProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionProductName" -> ProvisionProductName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningParameters" -> ProvisioningParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusMessage" -> StatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UpdatedTime" -> UpdatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionedProductPlanDetails]
     }
   }
 
   object ProvisionedProductPlanStatusEnum {
-    val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS"
-    val CREATE_SUCCESS = "CREATE_SUCCESS"
-    val CREATE_FAILED = "CREATE_FAILED"
+    val CREATE_IN_PROGRESS  = "CREATE_IN_PROGRESS"
+    val CREATE_SUCCESS      = "CREATE_SUCCESS"
+    val CREATE_FAILED       = "CREATE_FAILED"
     val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS"
-    val EXECUTE_SUCCESS = "EXECUTE_SUCCESS"
-    val EXECUTE_FAILED = "EXECUTE_FAILED"
+    val EXECUTE_SUCCESS     = "EXECUTE_SUCCESS"
+    val EXECUTE_FAILED      = "EXECUTE_FAILED"
 
-    val values = IndexedSeq(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
+    val values = IndexedSeq(
+      CREATE_IN_PROGRESS,
+      CREATE_SUCCESS,
+      CREATE_FAILED,
+      EXECUTE_IN_PROGRESS,
+      EXECUTE_SUCCESS,
+      EXECUTE_FAILED
+    )
   }
 
   /**
-   * Summary information about a plan.
-   */
+    * Summary information about a plan.
+    */
   @js.native
   trait ProvisionedProductPlanSummary extends js.Object {
     var PlanId: js.UndefOr[Id]
@@ -3483,20 +4055,32 @@ package servicecatalog {
   }
 
   object ProvisionedProductPlanSummary {
-    def apply(
-      PlanId: js.UndefOr[Id] = js.undefined,
-      PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
-      PlanType: js.UndefOr[ProvisionedProductPlanType] = js.undefined,
-      ProvisionProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined): ProvisionedProductPlanSummary = {
+    def apply(PlanId: js.UndefOr[Id] = js.undefined,
+              PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
+              PlanType: js.UndefOr[ProvisionedProductPlanType] = js.undefined,
+              ProvisionProductId: js.UndefOr[Id] = js.undefined,
+              ProvisionProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
+              ProvisioningArtifactId: js.UndefOr[Id] = js.undefined): ProvisionedProductPlanSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "PlanId" -> PlanId.map { x => x.asInstanceOf[js.Any] },
-        "PlanName" -> PlanName.map { x => x.asInstanceOf[js.Any] },
-        "PlanType" -> PlanType.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionProductId" -> ProvisionProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionProductName" -> ProvisionProductName.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PlanId" -> PlanId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlanName" -> PlanName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlanType" -> PlanType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionProductId" -> ProvisionProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionProductName" -> ProvisionProductName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisionedProductPlanSummary]
     }
@@ -3509,10 +4093,10 @@ package servicecatalog {
   }
 
   object ProvisionedProductStatusEnum {
-    val AVAILABLE = "AVAILABLE"
-    val UNDER_CHANGE = "UNDER_CHANGE"
-    val TAINTED = "TAINTED"
-    val ERROR = "ERROR"
+    val AVAILABLE        = "AVAILABLE"
+    val UNDER_CHANGE     = "UNDER_CHANGE"
+    val TAINTED          = "TAINTED"
+    val ERROR            = "ERROR"
     val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS"
 
     val values = IndexedSeq(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS)
@@ -3525,8 +4109,8 @@ package servicecatalog {
   }
 
   /**
-   * Information about a provisioning artifact. A provisioning artifact is also known as a product version.
-   */
+    * Information about a provisioning artifact. A provisioning artifact is also known as a product version.
+    */
   @js.native
   trait ProvisioningArtifact extends js.Object {
     var CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime]
@@ -3536,24 +4120,32 @@ package servicecatalog {
   }
 
   object ProvisioningArtifact {
-    def apply(
-      CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime] = js.undefined,
-      Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[ProvisioningArtifactName] = js.undefined): ProvisioningArtifact = {
+    def apply(CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime] = js.undefined,
+              Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
+              Id: js.UndefOr[Id] = js.undefined,
+              Name: js.UndefOr[ProvisioningArtifactName] = js.undefined): ProvisioningArtifact = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningArtifact]
     }
   }
 
   /**
-   * Information about a provisioning artifact (also known as a version) for a product.
-   */
+    * Information about a provisioning artifact (also known as a version) for a product.
+    */
   @js.native
   trait ProvisioningArtifactDetail extends js.Object {
     var Active: js.UndefOr[ProvisioningArtifactActive]
@@ -3565,28 +4157,40 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactDetail {
-    def apply(
-      Active: js.UndefOr[ProvisioningArtifactActive] = js.undefined,
-      CreatedTime: js.UndefOr[CreationTime] = js.undefined,
-      Description: js.UndefOr[ProvisioningArtifactName] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
-      Type: js.UndefOr[ProvisioningArtifactType] = js.undefined): ProvisioningArtifactDetail = {
+    def apply(Active: js.UndefOr[ProvisioningArtifactActive] = js.undefined,
+              CreatedTime: js.UndefOr[CreationTime] = js.undefined,
+              Description: js.UndefOr[ProvisioningArtifactName] = js.undefined,
+              Id: js.UndefOr[Id] = js.undefined,
+              Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
+              Type: js.UndefOr[ProvisioningArtifactType] = js.undefined): ProvisioningArtifactDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Active" -> Active.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Active" -> Active.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningArtifactDetail]
     }
   }
 
   /**
-   * Information about a parameter used to provision a product.
-   */
+    * Information about a parameter used to provision a product.
+    */
   @js.native
   trait ProvisioningArtifactParameter extends js.Object {
     var DefaultValue: js.UndefOr[DefaultValue]
@@ -3598,29 +4202,41 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactParameter {
-    def apply(
-      DefaultValue: js.UndefOr[DefaultValue] = js.undefined,
-      Description: js.UndefOr[Description] = js.undefined,
-      IsNoEcho: js.UndefOr[NoEcho] = js.undefined,
-      ParameterConstraints: js.UndefOr[ParameterConstraints] = js.undefined,
-      ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
-      ParameterType: js.UndefOr[ParameterType] = js.undefined): ProvisioningArtifactParameter = {
+    def apply(DefaultValue: js.UndefOr[DefaultValue] = js.undefined,
+              Description: js.UndefOr[Description] = js.undefined,
+              IsNoEcho: js.UndefOr[NoEcho] = js.undefined,
+              ParameterConstraints: js.UndefOr[ParameterConstraints] = js.undefined,
+              ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
+              ParameterType: js.UndefOr[ParameterType] = js.undefined): ProvisioningArtifactParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "IsNoEcho" -> IsNoEcho.map { x => x.asInstanceOf[js.Any] },
-        "ParameterConstraints" -> ParameterConstraints.map { x => x.asInstanceOf[js.Any] },
-        "ParameterKey" -> ParameterKey.map { x => x.asInstanceOf[js.Any] },
-        "ParameterType" -> ParameterType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefaultValue" -> DefaultValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsNoEcho" -> IsNoEcho.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParameterConstraints" -> ParameterConstraints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParameterKey" -> ParameterKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ParameterType" -> ParameterType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningArtifactParameter]
     }
   }
 
   /**
-   * The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
-   *  For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
-   */
+    * The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
+    *  For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
+    */
   @js.native
   trait ProvisioningArtifactPreferences extends js.Object {
     var StackSetAccounts: js.UndefOr[StackSetAccounts]
@@ -3628,20 +4244,21 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactPreferences {
-    def apply(
-      StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
-      StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined): ProvisioningArtifactPreferences = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StackSetAccounts" -> StackSetAccounts.map { x => x.asInstanceOf[js.Any] },
-        "StackSetRegions" -> StackSetRegions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
+              StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined): ProvisioningArtifactPreferences = {
+      val _fields = IndexedSeq[(String, js.Any)]("StackSetAccounts" -> StackSetAccounts.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "StackSetRegions" -> StackSetRegions.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningArtifactPreferences]
     }
   }
 
   /**
-   * Information about a provisioning artifact (also known as a version) for a product.
-   */
+    * Information about a provisioning artifact (also known as a version) for a product.
+    */
   @js.native
   trait ProvisioningArtifactProperties extends js.Object {
     var Info: ProvisioningArtifactInfo
@@ -3651,16 +4268,22 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactProperties {
-    def apply(
-      Info: ProvisioningArtifactInfo,
-      Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
-      Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
-      Type: js.UndefOr[ProvisioningArtifactType] = js.undefined): ProvisioningArtifactProperties = {
+    def apply(Info: ProvisioningArtifactInfo,
+              Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
+              Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
+              Type: js.UndefOr[ProvisioningArtifactType] = js.undefined): ProvisioningArtifactProperties = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Info" -> Info.asInstanceOf[js.Any],
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningArtifactProperties]
     }
@@ -3673,8 +4296,8 @@ package servicecatalog {
   }
 
   /**
-   * Summary information about a provisioning artifact (also known as a version) for a product.
-   */
+    * Summary information about a provisioning artifact (also known as a version) for a product.
+    */
   @js.native
   trait ProvisioningArtifactSummary extends js.Object {
     var CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime]
@@ -3686,17 +4309,29 @@ package servicecatalog {
 
   object ProvisioningArtifactSummary {
     def apply(
-      CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime] = js.undefined,
-      Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
-      ProvisioningArtifactMetadata: js.UndefOr[ProvisioningArtifactInfo] = js.undefined): ProvisioningArtifactSummary = {
+        CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime] = js.undefined,
+        Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
+        ProvisioningArtifactMetadata: js.UndefOr[ProvisioningArtifactInfo] = js.undefined
+    ): ProvisioningArtifactSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactMetadata" -> ProvisioningArtifactMetadata.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactMetadata" -> ProvisioningArtifactMetadata.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningArtifactSummary]
     }
@@ -3704,15 +4339,15 @@ package servicecatalog {
 
   object ProvisioningArtifactTypeEnum {
     val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE"
-    val MARKETPLACE_AMI = "MARKETPLACE_AMI"
-    val MARKETPLACE_CAR = "MARKETPLACE_CAR"
+    val MARKETPLACE_AMI          = "MARKETPLACE_AMI"
+    val MARKETPLACE_CAR          = "MARKETPLACE_CAR"
 
     val values = IndexedSeq(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR)
   }
 
   /**
-   * An object that contains summary information about a product view and a provisioning artifact.
-   */
+    * An object that contains summary information about a product view and a provisioning artifact.
+    */
   @js.native
   trait ProvisioningArtifactView extends js.Object {
     var ProductViewSummary: js.UndefOr[ProductViewSummary]
@@ -3720,20 +4355,21 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactView {
-    def apply(
-      ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
-      ProvisioningArtifact: js.UndefOr[ProvisioningArtifact] = js.undefined): ProvisioningArtifactView = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProductViewSummary" -> ProductViewSummary.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifact" -> ProvisioningArtifact.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
+              ProvisioningArtifact: js.UndefOr[ProvisioningArtifact] = js.undefined): ProvisioningArtifactView = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProductViewSummary" -> ProductViewSummary.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ProvisioningArtifact" -> ProvisioningArtifact.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningArtifactView]
     }
   }
 
   /**
-   * Information about a parameter used to provision a product.
-   */
+    * Information about a parameter used to provision a product.
+    */
   @js.native
   trait ProvisioningParameter extends js.Object {
     var Key: js.UndefOr[ParameterKey]
@@ -3741,20 +4377,21 @@ package servicecatalog {
   }
 
   object ProvisioningParameter {
-    def apply(
-      Key: js.UndefOr[ParameterKey] = js.undefined,
-      Value: js.UndefOr[ParameterValue] = js.undefined): ProvisioningParameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: js.UndefOr[ParameterKey] = js.undefined,
+              Value: js.UndefOr[ParameterValue] = js.undefined): ProvisioningParameter = {
+      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningParameter]
     }
   }
 
   /**
-   * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
-   */
+    * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
+    */
   @js.native
   trait ProvisioningPreferences extends js.Object {
     var StackSetAccounts: js.UndefOr[StackSetAccounts]
@@ -3766,28 +4403,40 @@ package servicecatalog {
   }
 
   object ProvisioningPreferences {
-    def apply(
-      StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
-      StackSetFailureToleranceCount: js.UndefOr[StackSetFailureToleranceCount] = js.undefined,
-      StackSetFailureTolerancePercentage: js.UndefOr[StackSetFailureTolerancePercentage] = js.undefined,
-      StackSetMaxConcurrencyCount: js.UndefOr[StackSetMaxConcurrencyCount] = js.undefined,
-      StackSetMaxConcurrencyPercentage: js.UndefOr[StackSetMaxConcurrencyPercentage] = js.undefined,
-      StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined): ProvisioningPreferences = {
+    def apply(StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
+              StackSetFailureToleranceCount: js.UndefOr[StackSetFailureToleranceCount] = js.undefined,
+              StackSetFailureTolerancePercentage: js.UndefOr[StackSetFailureTolerancePercentage] = js.undefined,
+              StackSetMaxConcurrencyCount: js.UndefOr[StackSetMaxConcurrencyCount] = js.undefined,
+              StackSetMaxConcurrencyPercentage: js.UndefOr[StackSetMaxConcurrencyPercentage] = js.undefined,
+              StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined): ProvisioningPreferences = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StackSetAccounts" -> StackSetAccounts.map { x => x.asInstanceOf[js.Any] },
-        "StackSetFailureToleranceCount" -> StackSetFailureToleranceCount.map { x => x.asInstanceOf[js.Any] },
-        "StackSetFailureTolerancePercentage" -> StackSetFailureTolerancePercentage.map { x => x.asInstanceOf[js.Any] },
-        "StackSetMaxConcurrencyCount" -> StackSetMaxConcurrencyCount.map { x => x.asInstanceOf[js.Any] },
-        "StackSetMaxConcurrencyPercentage" -> StackSetMaxConcurrencyPercentage.map { x => x.asInstanceOf[js.Any] },
-        "StackSetRegions" -> StackSetRegions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StackSetAccounts" -> StackSetAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetFailureToleranceCount" -> StackSetFailureToleranceCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetFailureTolerancePercentage" -> StackSetFailureTolerancePercentage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetMaxConcurrencyCount" -> StackSetMaxConcurrencyCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetMaxConcurrencyPercentage" -> StackSetMaxConcurrencyPercentage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetRegions" -> StackSetRegions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProvisioningPreferences]
     }
   }
 
   /**
-   * Information about a request operation.
-   */
+    * Information about a request operation.
+    */
   @js.native
   trait RecordDetail extends js.Object {
     var CreatedTime: js.UndefOr[CreatedTime]
@@ -3806,42 +4455,68 @@ package servicecatalog {
   }
 
   object RecordDetail {
-    def apply(
-      CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
-      PathId: js.UndefOr[Id] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionedProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionedProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
-      ProvisionedProductType: js.UndefOr[ProvisionedProductType] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
-      RecordErrors: js.UndefOr[RecordErrors] = js.undefined,
-      RecordId: js.UndefOr[Id] = js.undefined,
-      RecordTags: js.UndefOr[RecordTags] = js.undefined,
-      RecordType: js.UndefOr[RecordType] = js.undefined,
-      Status: js.UndefOr[RecordStatus] = js.undefined,
-      UpdatedTime: js.UndefOr[UpdatedTime] = js.undefined): RecordDetail = {
+    def apply(CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+              PathId: js.UndefOr[Id] = js.undefined,
+              ProductId: js.UndefOr[Id] = js.undefined,
+              ProvisionedProductId: js.UndefOr[Id] = js.undefined,
+              ProvisionedProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
+              ProvisionedProductType: js.UndefOr[ProvisionedProductType] = js.undefined,
+              ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+              RecordErrors: js.UndefOr[RecordErrors] = js.undefined,
+              RecordId: js.UndefOr[Id] = js.undefined,
+              RecordTags: js.UndefOr[RecordTags] = js.undefined,
+              RecordType: js.UndefOr[RecordType] = js.undefined,
+              Status: js.UndefOr[RecordStatus] = js.undefined,
+              UpdatedTime: js.UndefOr[UpdatedTime] = js.undefined): RecordDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "PathId" -> PathId.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductId" -> ProvisionedProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductName" -> ProvisionedProductName.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductType" -> ProvisionedProductType.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] },
-        "RecordErrors" -> RecordErrors.map { x => x.asInstanceOf[js.Any] },
-        "RecordId" -> RecordId.map { x => x.asInstanceOf[js.Any] },
-        "RecordTags" -> RecordTags.map { x => x.asInstanceOf[js.Any] },
-        "RecordType" -> RecordType.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "UpdatedTime" -> UpdatedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathId" -> PathId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductId" -> ProvisionedProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductName" -> ProvisionedProductName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductType" -> ProvisionedProductType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordErrors" -> RecordErrors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordId" -> RecordId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordTags" -> RecordTags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordType" -> RecordType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UpdatedTime" -> UpdatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordDetail]
     }
   }
 
   /**
-   * The error code and description resulting from an operation.
-   */
+    * The error code and description resulting from an operation.
+    */
   @js.native
   trait RecordError extends js.Object {
     var Code: js.UndefOr[ErrorCode]
@@ -3849,20 +4524,21 @@ package servicecatalog {
   }
 
   object RecordError {
-    def apply(
-      Code: js.UndefOr[ErrorCode] = js.undefined,
-      Description: js.UndefOr[ErrorDescription] = js.undefined): RecordError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Code: js.UndefOr[ErrorCode] = js.undefined,
+              Description: js.UndefOr[ErrorDescription] = js.undefined): RecordError = {
+      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Description" -> Description.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordError]
     }
   }
 
   /**
-   * The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
-   */
+    * The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
+    */
   @js.native
   trait RecordOutput extends js.Object {
     var Description: js.UndefOr[Description]
@@ -3871,32 +4547,38 @@ package servicecatalog {
   }
 
   object RecordOutput {
-    def apply(
-      Description: js.UndefOr[Description] = js.undefined,
-      OutputKey: js.UndefOr[OutputKey] = js.undefined,
-      OutputValue: js.UndefOr[OutputValue] = js.undefined): RecordOutput = {
+    def apply(Description: js.UndefOr[Description] = js.undefined,
+              OutputKey: js.UndefOr[OutputKey] = js.undefined,
+              OutputValue: js.UndefOr[OutputValue] = js.undefined): RecordOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "OutputKey" -> OutputKey.map { x => x.asInstanceOf[js.Any] },
-        "OutputValue" -> OutputValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputKey" -> OutputKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputValue" -> OutputValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordOutput]
     }
   }
 
   object RecordStatusEnum {
-    val CREATED = "CREATED"
-    val IN_PROGRESS = "IN_PROGRESS"
+    val CREATED              = "CREATED"
+    val IN_PROGRESS          = "IN_PROGRESS"
     val IN_PROGRESS_IN_ERROR = "IN_PROGRESS_IN_ERROR"
-    val SUCCEEDED = "SUCCEEDED"
-    val FAILED = "FAILED"
+    val SUCCEEDED            = "SUCCEEDED"
+    val FAILED               = "FAILED"
 
     val values = IndexedSeq(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED)
   }
 
   /**
-   * Information about a tag, which is a key-value pair.
-   */
+    * Information about a tag, which is a key-value pair.
+    */
   @js.native
   trait RecordTag extends js.Object {
     var Key: js.UndefOr[RecordTagKey]
@@ -3904,12 +4586,13 @@ package servicecatalog {
   }
 
   object RecordTag {
-    def apply(
-      Key: js.UndefOr[RecordTagKey] = js.undefined,
-      Value: js.UndefOr[RecordTagValue] = js.undefined): RecordTag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: js.UndefOr[RecordTagKey] = js.undefined,
+              Value: js.UndefOr[RecordTagValue] = js.undefined): RecordTag = {
+      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecordTag]
     }
@@ -3923,23 +4606,25 @@ package servicecatalog {
   }
 
   object RejectPortfolioShareInput {
-    def apply(
-      PortfolioId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined): RejectPortfolioShareInput = {
+    def apply(PortfolioId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined): RejectPortfolioShareInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioShareType" -> PortfolioShareType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortfolioShareType" -> PortfolioShareType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectPortfolioShareInput]
     }
   }
 
   @js.native
-  trait RejectPortfolioShareOutput extends js.Object {
-
-  }
+  trait RejectPortfolioShareOutput extends js.Object {}
 
   object RejectPortfolioShareOutput {
     def apply(): RejectPortfolioShareOutput = {
@@ -3950,35 +4635,35 @@ package servicecatalog {
   }
 
   object ReplacementEnum {
-    val TRUE = "TRUE"
-    val FALSE = "FALSE"
+    val TRUE        = "TRUE"
+    val FALSE       = "FALSE"
     val CONDITIONAL = "CONDITIONAL"
 
     val values = IndexedSeq(TRUE, FALSE, CONDITIONAL)
   }
 
   object RequiresRecreationEnum {
-    val NEVER = "NEVER"
+    val NEVER         = "NEVER"
     val CONDITIONALLY = "CONDITIONALLY"
-    val ALWAYS = "ALWAYS"
+    val ALWAYS        = "ALWAYS"
 
     val values = IndexedSeq(NEVER, CONDITIONALLY, ALWAYS)
   }
 
   object ResourceAttributeEnum {
-    val PROPERTIES = "PROPERTIES"
-    val METADATA = "METADATA"
+    val PROPERTIES     = "PROPERTIES"
+    val METADATA       = "METADATA"
     val CREATIONPOLICY = "CREATIONPOLICY"
-    val UPDATEPOLICY = "UPDATEPOLICY"
+    val UPDATEPOLICY   = "UPDATEPOLICY"
     val DELETIONPOLICY = "DELETIONPOLICY"
-    val TAGS = "TAGS"
+    val TAGS           = "TAGS"
 
     val values = IndexedSeq(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS)
   }
 
   /**
-   * Information about a resource change that will occur when a plan is executed.
-   */
+    * Information about a resource change that will occur when a plan is executed.
+    */
   @js.native
   trait ResourceChange extends js.Object {
     var Action: js.UndefOr[ChangeAction]
@@ -3991,30 +4676,44 @@ package servicecatalog {
   }
 
   object ResourceChange {
-    def apply(
-      Action: js.UndefOr[ChangeAction] = js.undefined,
-      Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
-      LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
-      PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
-      Replacement: js.UndefOr[Replacement] = js.undefined,
-      ResourceType: js.UndefOr[PlanResourceType] = js.undefined,
-      Scope: js.UndefOr[Scope] = js.undefined): ResourceChange = {
+    def apply(Action: js.UndefOr[ChangeAction] = js.undefined,
+              Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
+              LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
+              PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
+              Replacement: js.UndefOr[Replacement] = js.undefined,
+              ResourceType: js.UndefOr[PlanResourceType] = js.undefined,
+              Scope: js.UndefOr[Scope] = js.undefined): ResourceChange = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Details" -> Details.map { x => x.asInstanceOf[js.Any] },
-        "LogicalResourceId" -> LogicalResourceId.map { x => x.asInstanceOf[js.Any] },
-        "PhysicalResourceId" -> PhysicalResourceId.map { x => x.asInstanceOf[js.Any] },
-        "Replacement" -> Replacement.map { x => x.asInstanceOf[js.Any] },
-        "ResourceType" -> ResourceType.map { x => x.asInstanceOf[js.Any] },
-        "Scope" -> Scope.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Details" -> Details.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LogicalResourceId" -> LogicalResourceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhysicalResourceId" -> PhysicalResourceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Replacement" -> Replacement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceType" -> ResourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Scope" -> Scope.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceChange]
     }
   }
 
   /**
-   * Information about a change to a resource attribute.
-   */
+    * Information about a change to a resource attribute.
+    */
   @js.native
   trait ResourceChangeDetail extends js.Object {
     var CausingEntity: js.UndefOr[CausingEntity]
@@ -4023,22 +4722,28 @@ package servicecatalog {
   }
 
   object ResourceChangeDetail {
-    def apply(
-      CausingEntity: js.UndefOr[CausingEntity] = js.undefined,
-      Evaluation: js.UndefOr[EvaluationType] = js.undefined,
-      Target: js.UndefOr[ResourceTargetDefinition] = js.undefined): ResourceChangeDetail = {
+    def apply(CausingEntity: js.UndefOr[CausingEntity] = js.undefined,
+              Evaluation: js.UndefOr[EvaluationType] = js.undefined,
+              Target: js.UndefOr[ResourceTargetDefinition] = js.undefined): ResourceChangeDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CausingEntity" -> CausingEntity.map { x => x.asInstanceOf[js.Any] },
-        "Evaluation" -> Evaluation.map { x => x.asInstanceOf[js.Any] },
-        "Target" -> Target.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CausingEntity" -> CausingEntity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Evaluation" -> Evaluation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Target" -> Target.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceChangeDetail]
     }
   }
 
   /**
-   * Information about a resource.
-   */
+    * Information about a resource.
+    */
   @js.native
   trait ResourceDetail extends js.Object {
     var ARN: js.UndefOr[ResourceDetailARN]
@@ -4049,26 +4754,36 @@ package servicecatalog {
   }
 
   object ResourceDetail {
-    def apply(
-      ARN: js.UndefOr[ResourceDetailARN] = js.undefined,
-      CreatedTime: js.UndefOr[ResourceDetailCreatedTime] = js.undefined,
-      Description: js.UndefOr[ResourceDetailDescription] = js.undefined,
-      Id: js.UndefOr[ResourceDetailId] = js.undefined,
-      Name: js.UndefOr[ResourceDetailName] = js.undefined): ResourceDetail = {
+    def apply(ARN: js.UndefOr[ResourceDetailARN] = js.undefined,
+              CreatedTime: js.UndefOr[ResourceDetailCreatedTime] = js.undefined,
+              Description: js.UndefOr[ResourceDetailDescription] = js.undefined,
+              Id: js.UndefOr[ResourceDetailId] = js.undefined,
+              Name: js.UndefOr[ResourceDetailName] = js.undefined): ResourceDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ARN" -> ARN.map { x => x.asInstanceOf[js.Any] },
-        "CreatedTime" -> CreatedTime.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ARN" -> ARN.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreatedTime" -> CreatedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceDetail]
     }
   }
 
   /**
-   * Information about a change to a resource attribute.
-   */
+    * Information about a change to a resource attribute.
+    */
   @js.native
   trait ResourceTargetDefinition extends js.Object {
     var Attribute: js.UndefOr[ResourceAttribute]
@@ -4077,14 +4792,20 @@ package servicecatalog {
   }
 
   object ResourceTargetDefinition {
-    def apply(
-      Attribute: js.UndefOr[ResourceAttribute] = js.undefined,
-      Name: js.UndefOr[PropertyName] = js.undefined,
-      RequiresRecreation: js.UndefOr[RequiresRecreation] = js.undefined): ResourceTargetDefinition = {
+    def apply(Attribute: js.UndefOr[ResourceAttribute] = js.undefined,
+              Name: js.UndefOr[PropertyName] = js.undefined,
+              RequiresRecreation: js.UndefOr[RequiresRecreation] = js.undefined): ResourceTargetDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Attribute" -> Attribute.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "RequiresRecreation" -> RequiresRecreation.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attribute" -> Attribute.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequiresRecreation" -> RequiresRecreation.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceTargetDefinition]
     }
@@ -4099,16 +4820,24 @@ package servicecatalog {
   }
 
   object ScanProvisionedProductsInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined): ScanProvisionedProductsInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined): ScanProvisionedProductsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AccessLevelFilter" -> AccessLevelFilter.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AccessLevelFilter" -> AccessLevelFilter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScanProvisionedProductsInput]
     }
@@ -4122,11 +4851,14 @@ package servicecatalog {
 
   object ScanProvisionedProductsOutput {
     def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProvisionedProducts: js.UndefOr[ProvisionedProductDetails] = js.undefined): ScanProvisionedProductsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProducts" -> ProvisionedProducts.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextPageToken: js.UndefOr[PageToken] = js.undefined,
+        ProvisionedProducts: js.UndefOr[ProvisionedProductDetails] = js.undefined
+    ): ScanProvisionedProductsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ProvisionedProducts" -> ProvisionedProducts.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ScanProvisionedProductsOutput]
     }
@@ -4145,24 +4877,40 @@ package servicecatalog {
   }
 
   object SearchProductsAsAdminInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Filters: js.UndefOr[ProductViewFilters] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      PortfolioId: js.UndefOr[Id] = js.undefined,
-      ProductSource: js.UndefOr[ProductSource] = js.undefined,
-      SortBy: js.UndefOr[ProductViewSortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined): SearchProductsAsAdminInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Filters: js.UndefOr[ProductViewFilters] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              PortfolioId: js.UndefOr[Id] = js.undefined,
+              ProductSource: js.UndefOr[ProductSource] = js.undefined,
+              SortBy: js.UndefOr[ProductViewSortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined): SearchProductsAsAdminInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "PortfolioId" -> PortfolioId.map { x => x.asInstanceOf[js.Any] },
-        "ProductSource" -> ProductSource.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PortfolioId" -> PortfolioId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductSource" -> ProductSource.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProductsAsAdminInput]
     }
@@ -4175,12 +4923,13 @@ package servicecatalog {
   }
 
   object SearchProductsAsAdminOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProductViewDetails: js.UndefOr[ProductViewDetails] = js.undefined): SearchProductsAsAdminOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProductViewDetails" -> ProductViewDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              ProductViewDetails: js.UndefOr[ProductViewDetails] = js.undefined): SearchProductsAsAdminOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextPageToken" -> NextPageToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ProductViewDetails" -> ProductViewDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProductsAsAdminOutput]
     }
@@ -4197,20 +4946,32 @@ package servicecatalog {
   }
 
   object SearchProductsInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Filters: js.UndefOr[ProductViewFilters] = js.undefined,
-      PageSize: js.UndefOr[PageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      SortBy: js.UndefOr[ProductViewSortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined): SearchProductsInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Filters: js.UndefOr[ProductViewFilters] = js.undefined,
+              PageSize: js.UndefOr[PageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              SortBy: js.UndefOr[ProductViewSortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined): SearchProductsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProductsInput]
     }
@@ -4224,14 +4985,20 @@ package servicecatalog {
   }
 
   object SearchProductsOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProductViewAggregations: js.UndefOr[ProductViewAggregations] = js.undefined,
-      ProductViewSummaries: js.UndefOr[ProductViewSummaries] = js.undefined): SearchProductsOutput = {
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              ProductViewAggregations: js.UndefOr[ProductViewAggregations] = js.undefined,
+              ProductViewSummaries: js.UndefOr[ProductViewSummaries] = js.undefined): SearchProductsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProductViewAggregations" -> ProductViewAggregations.map { x => x.asInstanceOf[js.Any] },
-        "ProductViewSummaries" -> ProductViewSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductViewAggregations" -> ProductViewAggregations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductViewSummaries" -> ProductViewSummaries.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProductsOutput]
     }
@@ -4249,22 +5016,36 @@ package servicecatalog {
   }
 
   object SearchProvisionedProductsInput {
-    def apply(
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
-      Filters: js.UndefOr[ProvisionedProductFilters] = js.undefined,
-      PageSize: js.UndefOr[SearchProvisionedProductsPageSize] = js.undefined,
-      PageToken: js.UndefOr[PageToken] = js.undefined,
-      SortBy: js.UndefOr[SortField] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined): SearchProvisionedProductsInput = {
+    def apply(AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
+              Filters: js.UndefOr[ProvisionedProductFilters] = js.undefined,
+              PageSize: js.UndefOr[SearchProvisionedProductsPageSize] = js.undefined,
+              PageToken: js.UndefOr[PageToken] = js.undefined,
+              SortBy: js.UndefOr[SortField] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined): SearchProvisionedProductsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AccessLevelFilter" -> AccessLevelFilter.map { x => x.asInstanceOf[js.Any] },
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "PageToken" -> PageToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AccessLevelFilter" -> AccessLevelFilter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PageToken" -> PageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProvisionedProductsInput]
     }
@@ -4278,22 +5059,28 @@ package servicecatalog {
   }
 
   object SearchProvisionedProductsOutput {
-    def apply(
-      NextPageToken: js.UndefOr[PageToken] = js.undefined,
-      ProvisionedProducts: js.UndefOr[ProvisionedProductAttributes] = js.undefined,
-      TotalResultsCount: js.UndefOr[TotalResultsCount] = js.undefined): SearchProvisionedProductsOutput = {
+    def apply(NextPageToken: js.UndefOr[PageToken] = js.undefined,
+              ProvisionedProducts: js.UndefOr[ProvisionedProductAttributes] = js.undefined,
+              TotalResultsCount: js.UndefOr[TotalResultsCount] = js.undefined): SearchProvisionedProductsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextPageToken" -> NextPageToken.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProducts" -> ProvisionedProducts.map { x => x.asInstanceOf[js.Any] },
-        "TotalResultsCount" -> TotalResultsCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextPageToken" -> NextPageToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProducts" -> ProvisionedProducts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalResultsCount" -> TotalResultsCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProvisionedProductsOutput]
     }
   }
 
   /**
-   * A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.
-   */
+    * A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.
+    */
   @js.native
   trait ServiceActionAssociation extends js.Object {
     var ProductId: Id
@@ -4302,14 +5089,12 @@ package servicecatalog {
   }
 
   object ServiceActionAssociation {
-    def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      ServiceActionId: Id): ServiceActionAssociation = {
+    def apply(ProductId: Id, ProvisioningArtifactId: Id, ServiceActionId: Id): ServiceActionAssociation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceActionAssociation]
     }
@@ -4317,17 +5102,17 @@ package servicecatalog {
 
   object ServiceActionAssociationErrorCodeEnum {
     val DUPLICATE_RESOURCE = "DUPLICATE_RESOURCE"
-    val INTERNAL_FAILURE = "INTERNAL_FAILURE"
-    val LIMIT_EXCEEDED = "LIMIT_EXCEEDED"
+    val INTERNAL_FAILURE   = "INTERNAL_FAILURE"
+    val LIMIT_EXCEEDED     = "LIMIT_EXCEEDED"
     val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND"
-    val THROTTLING = "THROTTLING"
+    val THROTTLING         = "THROTTLING"
 
     val values = IndexedSeq(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING)
   }
 
   object ServiceActionDefinitionKeyEnum {
-    val Name = "Name"
-    val Version = "Version"
+    val Name       = "Name"
+    val Version    = "Version"
     val AssumeRole = "AssumeRole"
     val Parameters = "Parameters"
 
@@ -4341,8 +5126,8 @@ package servicecatalog {
   }
 
   /**
-   * An object containing detailed information about the self-service action.
-   */
+    * An object containing detailed information about the self-service action.
+    */
   @js.native
   trait ServiceActionDetail extends js.Object {
     var Definition: js.UndefOr[ServiceActionDefinitionMap]
@@ -4350,20 +5135,21 @@ package servicecatalog {
   }
 
   object ServiceActionDetail {
-    def apply(
-      Definition: js.UndefOr[ServiceActionDefinitionMap] = js.undefined,
-      ServiceActionSummary: js.UndefOr[ServiceActionSummary] = js.undefined): ServiceActionDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
-        "ServiceActionSummary" -> ServiceActionSummary.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Definition: js.UndefOr[ServiceActionDefinitionMap] = js.undefined,
+              ServiceActionSummary: js.UndefOr[ServiceActionSummary] = js.undefined): ServiceActionDetail = {
+      val _fields = IndexedSeq[(String, js.Any)]("Definition" -> Definition.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ServiceActionSummary" -> ServiceActionSummary.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceActionDetail]
     }
   }
 
   /**
-   * Detailed information about the self-service action.
-   */
+    * Detailed information about the self-service action.
+    */
   @js.native
   trait ServiceActionSummary extends js.Object {
     var DefinitionType: js.UndefOr[ServiceActionDefinitionType]
@@ -4373,24 +5159,32 @@ package servicecatalog {
   }
 
   object ServiceActionSummary {
-    def apply(
-      DefinitionType: js.UndefOr[ServiceActionDefinitionType] = js.undefined,
-      Description: js.UndefOr[ServiceActionDescription] = js.undefined,
-      Id: js.UndefOr[Id] = js.undefined,
-      Name: js.UndefOr[ServiceActionName] = js.undefined): ServiceActionSummary = {
+    def apply(DefinitionType: js.UndefOr[ServiceActionDefinitionType] = js.undefined,
+              Description: js.UndefOr[ServiceActionDescription] = js.undefined,
+              Id: js.UndefOr[Id] = js.undefined,
+              Name: js.UndefOr[ServiceActionName] = js.undefined): ServiceActionSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DefinitionType" -> DefinitionType.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefinitionType" -> DefinitionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ServiceActionSummary]
     }
   }
 
   /**
-   * Information about the portfolio share operation.
-   */
+    * Information about the portfolio share operation.
+    */
   @js.native
   trait ShareDetails extends js.Object {
     var ShareErrors: js.UndefOr[ShareErrors]
@@ -4398,20 +5192,21 @@ package servicecatalog {
   }
 
   object ShareDetails {
-    def apply(
-      ShareErrors: js.UndefOr[ShareErrors] = js.undefined,
-      SuccessfulShares: js.UndefOr[SuccessfulShares] = js.undefined): ShareDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ShareErrors" -> ShareErrors.map { x => x.asInstanceOf[js.Any] },
-        "SuccessfulShares" -> SuccessfulShares.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ShareErrors: js.UndefOr[ShareErrors] = js.undefined,
+              SuccessfulShares: js.UndefOr[SuccessfulShares] = js.undefined): ShareDetails = {
+      val _fields = IndexedSeq[(String, js.Any)]("ShareErrors" -> ShareErrors.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SuccessfulShares" -> SuccessfulShares.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShareDetails]
     }
   }
 
   /**
-   * Errors that occurred during the portfolio share operation.
-   */
+    * Errors that occurred during the portfolio share operation.
+    */
   @js.native
   trait ShareError extends js.Object {
     var Accounts: js.UndefOr[Namespaces]
@@ -4420,31 +5215,33 @@ package servicecatalog {
   }
 
   object ShareError {
-    def apply(
-      Accounts: js.UndefOr[Namespaces] = js.undefined,
-      Error: js.UndefOr[Error] = js.undefined,
-      Message: js.UndefOr[Message] = js.undefined): ShareError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Accounts" -> Accounts.map { x => x.asInstanceOf[js.Any] },
-        "Error" -> Error.map { x => x.asInstanceOf[js.Any] },
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Accounts: js.UndefOr[Namespaces] = js.undefined,
+              Error: js.UndefOr[Error] = js.undefined,
+              Message: js.UndefOr[Message] = js.undefined): ShareError = {
+      val _fields = IndexedSeq[(String, js.Any)]("Accounts" -> Accounts.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Error" -> Error.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Message" -> Message.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShareError]
     }
   }
 
   object ShareStatusEnum {
-    val NOT_STARTED = "NOT_STARTED"
-    val IN_PROGRESS = "IN_PROGRESS"
-    val COMPLETED = "COMPLETED"
+    val NOT_STARTED           = "NOT_STARTED"
+    val IN_PROGRESS           = "IN_PROGRESS"
+    val COMPLETED             = "COMPLETED"
     val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS"
-    val ERROR = "ERROR"
+    val ERROR                 = "ERROR"
 
     val values = IndexedSeq(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR)
   }
 
   object SortOrderEnum {
-    val ASCENDING = "ASCENDING"
+    val ASCENDING  = "ASCENDING"
     val DESCENDING = "DESCENDING"
 
     val values = IndexedSeq(ASCENDING, DESCENDING)
@@ -4460,15 +5257,15 @@ package servicecatalog {
 
   object StatusEnum {
     val AVAILABLE = "AVAILABLE"
-    val CREATING = "CREATING"
-    val FAILED = "FAILED"
+    val CREATING  = "CREATING"
+    val FAILED    = "FAILED"
 
     val values = IndexedSeq(AVAILABLE, CREATING, FAILED)
   }
 
   /**
-   * Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.
-   */
+    * Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product.
+    */
   @js.native
   trait Tag extends js.Object {
     var Key: TagKey
@@ -4476,20 +5273,18 @@ package servicecatalog {
   }
 
   object Tag {
-    def apply(
-      Key: TagKey,
-      Value: TagValue): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: TagKey, Value: TagValue): Tag = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
   }
 
   /**
-   * Information about a TagOption.
-   */
+    * Information about a TagOption.
+    */
   @js.native
   trait TagOptionDetail extends js.Object {
     var Active: js.UndefOr[TagOptionActive]
@@ -4499,24 +5294,32 @@ package servicecatalog {
   }
 
   object TagOptionDetail {
-    def apply(
-      Active: js.UndefOr[TagOptionActive] = js.undefined,
-      Id: js.UndefOr[TagOptionId] = js.undefined,
-      Key: js.UndefOr[TagOptionKey] = js.undefined,
-      Value: js.UndefOr[TagOptionValue] = js.undefined): TagOptionDetail = {
+    def apply(Active: js.UndefOr[TagOptionActive] = js.undefined,
+              Id: js.UndefOr[TagOptionId] = js.undefined,
+              Key: js.UndefOr[TagOptionKey] = js.undefined,
+              Value: js.UndefOr[TagOptionValue] = js.undefined): TagOptionDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Active" -> Active.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Active" -> Active.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagOptionDetail]
     }
   }
 
   /**
-   * Summary information about a TagOption.
-   */
+    * Summary information about a TagOption.
+    */
   @js.native
   trait TagOptionSummary extends js.Object {
     var Key: js.UndefOr[TagOptionKey]
@@ -4524,12 +5327,13 @@ package servicecatalog {
   }
 
   object TagOptionSummary {
-    def apply(
-      Key: js.UndefOr[TagOptionKey] = js.undefined,
-      Values: js.UndefOr[TagOptionValues] = js.undefined): TagOptionSummary = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: js.UndefOr[TagOptionKey] = js.undefined,
+              Values: js.UndefOr[TagOptionValues] = js.undefined): TagOptionSummary = {
+      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Values" -> Values.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagOptionSummary]
     }
@@ -4546,17 +5350,27 @@ package servicecatalog {
 
   object TerminateProvisionedProductInput {
     def apply(
-      TerminateToken: IdempotencyToken,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      IgnoreErrors: js.UndefOr[IgnoreErrors] = js.undefined,
-      ProvisionedProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined): TerminateProvisionedProductInput = {
+        TerminateToken: IdempotencyToken,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        IgnoreErrors: js.UndefOr[IgnoreErrors] = js.undefined,
+        ProvisionedProductId: js.UndefOr[Id] = js.undefined,
+        ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined
+    ): TerminateProvisionedProductInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TerminateToken" -> TerminateToken.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "IgnoreErrors" -> IgnoreErrors.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductId" -> ProvisionedProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductName" -> ProvisionedProductName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IgnoreErrors" -> IgnoreErrors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductId" -> ProvisionedProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductName" -> ProvisionedProductName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateProvisionedProductInput]
     }
@@ -4568,10 +5382,10 @@ package servicecatalog {
   }
 
   object TerminateProvisionedProductOutput {
-    def apply(
-      RecordDetail: js.UndefOr[RecordDetail] = js.undefined): TerminateProvisionedProductOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecordDetail" -> RecordDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RecordDetail: js.UndefOr[RecordDetail] = js.undefined): TerminateProvisionedProductOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("RecordDetail" -> RecordDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TerminateProvisionedProductOutput]
     }
@@ -4585,14 +5399,18 @@ package servicecatalog {
   }
 
   object UpdateConstraintInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Description: js.UndefOr[ConstraintDescription] = js.undefined): UpdateConstraintInput = {
+    def apply(Id: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Description: js.UndefOr[ConstraintDescription] = js.undefined): UpdateConstraintInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConstraintInput]
     }
@@ -4606,14 +5424,20 @@ package servicecatalog {
   }
 
   object UpdateConstraintOutput {
-    def apply(
-      ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
-      ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
-      Status: js.UndefOr[Status] = js.undefined): UpdateConstraintOutput = {
+    def apply(ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
+              ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
+              Status: js.UndefOr[Status] = js.undefined): UpdateConstraintOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConstraintDetail" -> ConstraintDetail.map { x => x.asInstanceOf[js.Any] },
-        "ConstraintParameters" -> ConstraintParameters.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConstraintDetail" -> ConstraintDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConstraintParameters" -> ConstraintParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConstraintOutput]
     }
@@ -4631,22 +5455,34 @@ package servicecatalog {
   }
 
   object UpdatePortfolioInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AddTags: js.UndefOr[AddTags] = js.undefined,
-      Description: js.UndefOr[PortfolioDescription] = js.undefined,
-      DisplayName: js.UndefOr[PortfolioDisplayName] = js.undefined,
-      ProviderName: js.UndefOr[ProviderName] = js.undefined,
-      RemoveTags: js.UndefOr[TagKeys] = js.undefined): UpdatePortfolioInput = {
+    def apply(Id: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AddTags: js.UndefOr[AddTags] = js.undefined,
+              Description: js.UndefOr[PortfolioDescription] = js.undefined,
+              DisplayName: js.UndefOr[PortfolioDisplayName] = js.undefined,
+              ProviderName: js.UndefOr[ProviderName] = js.undefined,
+              RemoveTags: js.UndefOr[TagKeys] = js.undefined): UpdatePortfolioInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AddTags" -> AddTags.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "ProviderName" -> ProviderName.map { x => x.asInstanceOf[js.Any] },
-        "RemoveTags" -> RemoveTags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AddTags" -> AddTags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProviderName" -> ProviderName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RemoveTags" -> RemoveTags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePortfolioInput]
     }
@@ -4659,12 +5495,13 @@ package servicecatalog {
   }
 
   object UpdatePortfolioOutput {
-    def apply(
-      PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): UpdatePortfolioOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PortfolioDetail" -> PortfolioDetail.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): UpdatePortfolioOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("PortfolioDetail" -> PortfolioDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Tags" -> Tags.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdatePortfolioOutput]
     }
@@ -4686,30 +5523,50 @@ package servicecatalog {
   }
 
   object UpdateProductInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      AddTags: js.UndefOr[AddTags] = js.undefined,
-      Description: js.UndefOr[ProductViewShortDescription] = js.undefined,
-      Distributor: js.UndefOr[ProductViewOwner] = js.undefined,
-      Name: js.UndefOr[ProductViewName] = js.undefined,
-      Owner: js.UndefOr[ProductViewOwner] = js.undefined,
-      RemoveTags: js.UndefOr[TagKeys] = js.undefined,
-      SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
-      SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
-      SupportUrl: js.UndefOr[SupportUrl] = js.undefined): UpdateProductInput = {
+    def apply(Id: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              AddTags: js.UndefOr[AddTags] = js.undefined,
+              Description: js.UndefOr[ProductViewShortDescription] = js.undefined,
+              Distributor: js.UndefOr[ProductViewOwner] = js.undefined,
+              Name: js.UndefOr[ProductViewName] = js.undefined,
+              Owner: js.UndefOr[ProductViewOwner] = js.undefined,
+              RemoveTags: js.UndefOr[TagKeys] = js.undefined,
+              SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
+              SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
+              SupportUrl: js.UndefOr[SupportUrl] = js.undefined): UpdateProductInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "AddTags" -> AddTags.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Distributor" -> Distributor.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Owner" -> Owner.map { x => x.asInstanceOf[js.Any] },
-        "RemoveTags" -> RemoveTags.map { x => x.asInstanceOf[js.Any] },
-        "SupportDescription" -> SupportDescription.map { x => x.asInstanceOf[js.Any] },
-        "SupportEmail" -> SupportEmail.map { x => x.asInstanceOf[js.Any] },
-        "SupportUrl" -> SupportUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AddTags" -> AddTags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Distributor" -> Distributor.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Owner" -> Owner.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RemoveTags" -> RemoveTags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportDescription" -> SupportDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportEmail" -> SupportEmail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportUrl" -> SupportUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProductInput]
     }
@@ -4722,12 +5579,13 @@ package servicecatalog {
   }
 
   object UpdateProductOutput {
-    def apply(
-      ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): UpdateProductOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProductViewDetail" -> ProductViewDetail.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): UpdateProductOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProductViewDetail" -> ProductViewDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Tags" -> Tags.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProductOutput]
     }
@@ -4748,25 +5606,43 @@ package servicecatalog {
 
   object UpdateProvisionedProductInput {
     def apply(
-      UpdateToken: IdempotencyToken,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      PathId: js.UndefOr[Id] = js.undefined,
-      ProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionedProductId: js.UndefOr[Id] = js.undefined,
-      ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
-      ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
-      ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
-      ProvisioningPreferences: js.UndefOr[UpdateProvisioningPreferences] = js.undefined): UpdateProvisionedProductInput = {
+        UpdateToken: IdempotencyToken,
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        PathId: js.UndefOr[Id] = js.undefined,
+        ProductId: js.UndefOr[Id] = js.undefined,
+        ProvisionedProductId: js.UndefOr[Id] = js.undefined,
+        ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
+        ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
+        ProvisioningPreferences: js.UndefOr[UpdateProvisioningPreferences] = js.undefined
+    ): UpdateProvisionedProductInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "UpdateToken" -> UpdateToken.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "PathId" -> PathId.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductId" -> ProvisionedProductId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisionedProductName" -> ProvisionedProductName.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningParameters" -> ProvisioningParameters.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningPreferences" -> ProvisioningPreferences.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PathId" -> PathId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductId" -> ProvisionedProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisionedProductName" -> ProvisionedProductName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactId" -> ProvisioningArtifactId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningParameters" -> ProvisioningParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningPreferences" -> ProvisioningPreferences.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProvisionedProductInput]
     }
@@ -4778,10 +5654,10 @@ package servicecatalog {
   }
 
   object UpdateProvisionedProductOutput {
-    def apply(
-      RecordDetail: js.UndefOr[RecordDetail] = js.undefined): UpdateProvisionedProductOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RecordDetail" -> RecordDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RecordDetail: js.UndefOr[RecordDetail] = js.undefined): UpdateProvisionedProductOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("RecordDetail" -> RecordDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProvisionedProductOutput]
     }
@@ -4798,20 +5674,28 @@ package servicecatalog {
   }
 
   object UpdateProvisioningArtifactInput {
-    def apply(
-      ProductId: Id,
-      ProvisioningArtifactId: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Active: js.UndefOr[ProvisioningArtifactActive] = js.undefined,
-      Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
-      Name: js.UndefOr[ProvisioningArtifactName] = js.undefined): UpdateProvisioningArtifactInput = {
+    def apply(ProductId: Id,
+              ProvisioningArtifactId: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Active: js.UndefOr[ProvisioningArtifactActive] = js.undefined,
+              Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
+              Name: js.UndefOr[ProvisioningArtifactName] = js.undefined): UpdateProvisioningArtifactInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
+        "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Active" -> Active.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Active" -> Active.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProvisioningArtifactInput]
     }
@@ -4825,22 +5709,28 @@ package servicecatalog {
   }
 
   object UpdateProvisioningArtifactOutput {
-    def apply(
-      Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
-      ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
-      Status: js.UndefOr[Status] = js.undefined): UpdateProvisioningArtifactOutput = {
+    def apply(Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
+              ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
+              Status: js.UndefOr[Status] = js.undefined): UpdateProvisioningArtifactOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Info" -> Info.map { x => x.asInstanceOf[js.Any] },
-        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Info" -> Info.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProvisioningArtifactDetail" -> ProvisioningArtifactDetail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProvisioningArtifactOutput]
     }
   }
 
   /**
-   * The parameter key-value pair used to update a provisioned product.
-   */
+    * The parameter key-value pair used to update a provisioned product.
+    */
   @js.native
   trait UpdateProvisioningParameter extends js.Object {
     var Key: js.UndefOr[ParameterKey]
@@ -4849,22 +5739,28 @@ package servicecatalog {
   }
 
   object UpdateProvisioningParameter {
-    def apply(
-      Key: js.UndefOr[ParameterKey] = js.undefined,
-      UsePreviousValue: js.UndefOr[UsePreviousValue] = js.undefined,
-      Value: js.UndefOr[ParameterValue] = js.undefined): UpdateProvisioningParameter = {
+    def apply(Key: js.UndefOr[ParameterKey] = js.undefined,
+              UsePreviousValue: js.UndefOr[UsePreviousValue] = js.undefined,
+              Value: js.UndefOr[ParameterValue] = js.undefined): UpdateProvisioningParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "UsePreviousValue" -> UsePreviousValue.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UsePreviousValue" -> UsePreviousValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProvisioningParameter]
     }
   }
 
   /**
-   * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
-   */
+    * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.
+    */
   @js.native
   trait UpdateProvisioningPreferences extends js.Object {
     var StackSetAccounts: js.UndefOr[StackSetAccounts]
@@ -4877,22 +5773,36 @@ package servicecatalog {
   }
 
   object UpdateProvisioningPreferences {
-    def apply(
-      StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
-      StackSetFailureToleranceCount: js.UndefOr[StackSetFailureToleranceCount] = js.undefined,
-      StackSetFailureTolerancePercentage: js.UndefOr[StackSetFailureTolerancePercentage] = js.undefined,
-      StackSetMaxConcurrencyCount: js.UndefOr[StackSetMaxConcurrencyCount] = js.undefined,
-      StackSetMaxConcurrencyPercentage: js.UndefOr[StackSetMaxConcurrencyPercentage] = js.undefined,
-      StackSetOperationType: js.UndefOr[StackSetOperationType] = js.undefined,
-      StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined): UpdateProvisioningPreferences = {
+    def apply(StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
+              StackSetFailureToleranceCount: js.UndefOr[StackSetFailureToleranceCount] = js.undefined,
+              StackSetFailureTolerancePercentage: js.UndefOr[StackSetFailureTolerancePercentage] = js.undefined,
+              StackSetMaxConcurrencyCount: js.UndefOr[StackSetMaxConcurrencyCount] = js.undefined,
+              StackSetMaxConcurrencyPercentage: js.UndefOr[StackSetMaxConcurrencyPercentage] = js.undefined,
+              StackSetOperationType: js.UndefOr[StackSetOperationType] = js.undefined,
+              StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined): UpdateProvisioningPreferences = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "StackSetAccounts" -> StackSetAccounts.map { x => x.asInstanceOf[js.Any] },
-        "StackSetFailureToleranceCount" -> StackSetFailureToleranceCount.map { x => x.asInstanceOf[js.Any] },
-        "StackSetFailureTolerancePercentage" -> StackSetFailureTolerancePercentage.map { x => x.asInstanceOf[js.Any] },
-        "StackSetMaxConcurrencyCount" -> StackSetMaxConcurrencyCount.map { x => x.asInstanceOf[js.Any] },
-        "StackSetMaxConcurrencyPercentage" -> StackSetMaxConcurrencyPercentage.map { x => x.asInstanceOf[js.Any] },
-        "StackSetOperationType" -> StackSetOperationType.map { x => x.asInstanceOf[js.Any] },
-        "StackSetRegions" -> StackSetRegions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "StackSetAccounts" -> StackSetAccounts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetFailureToleranceCount" -> StackSetFailureToleranceCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetFailureTolerancePercentage" -> StackSetFailureTolerancePercentage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetMaxConcurrencyCount" -> StackSetMaxConcurrencyCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetMaxConcurrencyPercentage" -> StackSetMaxConcurrencyPercentage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetOperationType" -> StackSetOperationType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StackSetRegions" -> StackSetRegions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProvisioningPreferences]
     }
@@ -4908,18 +5818,26 @@ package servicecatalog {
   }
 
   object UpdateServiceActionInput {
-    def apply(
-      Id: Id,
-      AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-      Definition: js.UndefOr[ServiceActionDefinitionMap] = js.undefined,
-      Description: js.UndefOr[ServiceActionDescription] = js.undefined,
-      Name: js.UndefOr[ServiceActionName] = js.undefined): UpdateServiceActionInput = {
+    def apply(Id: Id,
+              AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+              Definition: js.UndefOr[ServiceActionDefinitionMap] = js.undefined,
+              Description: js.UndefOr[ServiceActionDescription] = js.undefined,
+              Name: js.UndefOr[ServiceActionName] = js.undefined): UpdateServiceActionInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Id" -> Id.asInstanceOf[js.Any],
-        "AcceptLanguage" -> AcceptLanguage.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptLanguage" -> AcceptLanguage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Definition" -> Definition.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceActionInput]
     }
@@ -4931,10 +5849,10 @@ package servicecatalog {
   }
 
   object UpdateServiceActionOutput {
-    def apply(
-      ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined): UpdateServiceActionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServiceActionDetail" -> ServiceActionDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined): UpdateServiceActionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ServiceActionDetail" -> ServiceActionDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServiceActionOutput]
     }
@@ -4948,14 +5866,14 @@ package servicecatalog {
   }
 
   object UpdateTagOptionInput {
-    def apply(
-      Id: TagOptionId,
-      Active: js.UndefOr[TagOptionActive] = js.undefined,
-      Value: js.UndefOr[TagOptionValue] = js.undefined): UpdateTagOptionInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.asInstanceOf[js.Any],
-        "Active" -> Active.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: TagOptionId,
+              Active: js.UndefOr[TagOptionActive] = js.undefined,
+              Value: js.UndefOr[TagOptionValue] = js.undefined): UpdateTagOptionInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.asInstanceOf[js.Any], "Active" -> Active.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTagOptionInput]
     }
@@ -4967,18 +5885,18 @@ package servicecatalog {
   }
 
   object UpdateTagOptionOutput {
-    def apply(
-      TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined): UpdateTagOptionOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TagOptionDetail" -> TagOptionDetail.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined): UpdateTagOptionOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("TagOptionDetail" -> TagOptionDetail.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateTagOptionOutput]
     }
   }
 
   /**
-   * Additional information provided by the administrator.
-   */
+    * Additional information provided by the administrator.
+    */
   @js.native
   trait UsageInstruction extends js.Object {
     var Type: js.UndefOr[InstructionType]
@@ -4986,12 +5904,13 @@ package servicecatalog {
   }
 
   object UsageInstruction {
-    def apply(
-      Type: js.UndefOr[InstructionType] = js.undefined,
-      Value: js.UndefOr[InstructionValue] = js.undefined): UsageInstruction = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Type: js.UndefOr[InstructionType] = js.undefined,
+              Value: js.UndefOr[InstructionValue] = js.undefined): UsageInstruction = {
+      val _fields = IndexedSeq[(String, js.Any)]("Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UsageInstruction]
     }

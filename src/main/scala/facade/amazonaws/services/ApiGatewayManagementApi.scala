@@ -7,7 +7,7 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object apigatewaymanagementapi {
-  type Data = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type Data     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type __string = String
 }
 
@@ -27,12 +27,11 @@ package apigatewaymanagementapi {
   }
 
   object PostToConnectionRequest {
-    def apply(
-      ConnectionId: __string,
-      Data: Data): PostToConnectionRequest = {
+    def apply(ConnectionId: __string, Data: Data): PostToConnectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConnectionId" -> ConnectionId.asInstanceOf[js.Any],
-        "Data" -> Data.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Data"         -> Data.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PostToConnectionRequest]
     }

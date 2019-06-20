@@ -7,37 +7,37 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object shield {
-  type AttackId = String
-  type AttackLayer = String
-  type AttackProperties = js.Array[AttackProperty]
-  type AttackPropertyIdentifier = String
-  type AttackSummaries = js.Array[AttackSummary]
-  type AttackTimestamp = js.Date
+  type AttackId                    = String
+  type AttackLayer                 = String
+  type AttackProperties            = js.Array[AttackProperty]
+  type AttackPropertyIdentifier    = String
+  type AttackSummaries             = js.Array[AttackSummary]
+  type AttackTimestamp             = js.Date
   type AttackVectorDescriptionList = js.Array[AttackVectorDescription]
-  type AutoRenew = String
-  type DurationInSeconds = Double
-  type EmailAddress = String
-  type EmergencyContactList = js.Array[EmergencyContact]
-  type Limits = js.Array[Limit]
-  type LogBucket = String
-  type LogBucketList = js.Array[LogBucket]
-  type MaxResults = Int
-  type MitigationList = js.Array[Mitigation]
-  type ProtectionId = String
-  type ProtectionName = String
-  type Protections = js.Array[Protection]
-  type ResourceArn = String
-  type ResourceArnFilterList = js.Array[ResourceArn]
-  type RoleArn = String
-  type SubResourceSummaryList = js.Array[SubResourceSummary]
-  type SubResourceType = String
-  type SubscriptionState = String
-  type SummarizedAttackVectorList = js.Array[SummarizedAttackVector]
-  type SummarizedCounterList = js.Array[SummarizedCounter]
-  type Timestamp = js.Date
-  type Token = String
-  type TopContributors = js.Array[Contributor]
-  type Unit = String
+  type AutoRenew                   = String
+  type DurationInSeconds           = Double
+  type EmailAddress                = String
+  type EmergencyContactList        = js.Array[EmergencyContact]
+  type Limits                      = js.Array[Limit]
+  type LogBucket                   = String
+  type LogBucketList               = js.Array[LogBucket]
+  type MaxResults                  = Int
+  type MitigationList              = js.Array[Mitigation]
+  type ProtectionId                = String
+  type ProtectionName              = String
+  type Protections                 = js.Array[Protection]
+  type ResourceArn                 = String
+  type ResourceArnFilterList       = js.Array[ResourceArn]
+  type RoleArn                     = String
+  type SubResourceSummaryList      = js.Array[SubResourceSummary]
+  type SubResourceType             = String
+  type SubscriptionState           = String
+  type SummarizedAttackVectorList  = js.Array[SummarizedAttackVector]
+  type SummarizedCounterList       = js.Array[SummarizedCounter]
+  type Timestamp                   = js.Date
+  type Token                       = String
+  type TopContributors             = js.Array[Contributor]
+  type Unit                        = String
 }
 
 package shield {
@@ -47,22 +47,27 @@ package shield {
     def this(config: AWSConfig) = this()
 
     def associateDRTLogBucket(params: AssociateDRTLogBucketRequest): Request[AssociateDRTLogBucketResponse] = js.native
-    def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse] = js.native
-    def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse] = js.native
-    def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse] = js.native
-    def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse] = js.native
-    def deleteSubscription(params: DeleteSubscriptionRequest): Request[DeleteSubscriptionResponse] = js.native
-    def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse] = js.native
-    def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse] = js.native
-    def describeEmergencyContactSettings(params: DescribeEmergencyContactSettingsRequest): Request[DescribeEmergencyContactSettingsResponse] = js.native
-    def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse] = js.native
+    def associateDRTRole(params: AssociateDRTRoleRequest): Request[AssociateDRTRoleResponse]                = js.native
+    def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse]                = js.native
+    def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse]          = js.native
+    def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse]                = js.native
+    def deleteSubscription(params: DeleteSubscriptionRequest): Request[DeleteSubscriptionResponse]          = js.native
+    def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse]                      = js.native
+    def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse]             = js.native
+    def describeEmergencyContactSettings(
+        params: DescribeEmergencyContactSettingsRequest
+    ): Request[DescribeEmergencyContactSettingsResponse]                                                 = js.native
+    def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse]       = js.native
     def describeSubscription(params: DescribeSubscriptionRequest): Request[DescribeSubscriptionResponse] = js.native
-    def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] = js.native
-    def disassociateDRTRole(params: DisassociateDRTRoleRequest): Request[DisassociateDRTRoleResponse] = js.native
+    def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] =
+      js.native
+    def disassociateDRTRole(params: DisassociateDRTRoleRequest): Request[DisassociateDRTRoleResponse]    = js.native
     def getSubscriptionState(params: GetSubscriptionStateRequest): Request[GetSubscriptionStateResponse] = js.native
-    def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse] = js.native
-    def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse] = js.native
-    def updateEmergencyContactSettings(params: UpdateEmergencyContactSettingsRequest): Request[UpdateEmergencyContactSettingsResponse] = js.native
+    def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse]                            = js.native
+    def listProtections(params: ListProtectionsRequest): Request[ListProtectionsResponse]                = js.native
+    def updateEmergencyContactSettings(
+        params: UpdateEmergencyContactSettingsRequest
+    ): Request[UpdateEmergencyContactSettingsResponse]                                             = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
   }
 
@@ -72,19 +77,16 @@ package shield {
   }
 
   object AssociateDRTLogBucketRequest {
-    def apply(
-      LogBucket: LogBucket): AssociateDRTLogBucketRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LogBucket" -> LogBucket.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(LogBucket: LogBucket): AssociateDRTLogBucketRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("LogBucket" -> LogBucket.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateDRTLogBucketRequest]
     }
   }
 
   @js.native
-  trait AssociateDRTLogBucketResponse extends js.Object {
-
-  }
+  trait AssociateDRTLogBucketResponse extends js.Object {}
 
   object AssociateDRTLogBucketResponse {
     def apply(): AssociateDRTLogBucketResponse = {
@@ -100,19 +102,16 @@ package shield {
   }
 
   object AssociateDRTRoleRequest {
-    def apply(
-      RoleArn: RoleArn): AssociateDRTRoleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoleArn: RoleArn): AssociateDRTRoleRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("RoleArn" -> RoleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateDRTRoleRequest]
     }
   }
 
   @js.native
-  trait AssociateDRTRoleResponse extends js.Object {
-
-  }
+  trait AssociateDRTRoleResponse extends js.Object {}
 
   object AssociateDRTRoleResponse {
     def apply(): AssociateDRTRoleResponse = {
@@ -123,8 +122,8 @@ package shield {
   }
 
   /**
-   * The details of a DDoS attack.
-   */
+    * The details of a DDoS attack.
+    */
   @js.native
   trait AttackDetail extends js.Object {
     var AttackCounters: js.UndefOr[SummarizedCounterList]
@@ -138,39 +137,55 @@ package shield {
   }
 
   object AttackDetail {
-    def apply(
-      AttackCounters: js.UndefOr[SummarizedCounterList] = js.undefined,
-      AttackId: js.UndefOr[AttackId] = js.undefined,
-      AttackProperties: js.UndefOr[AttackProperties] = js.undefined,
-      EndTime: js.UndefOr[AttackTimestamp] = js.undefined,
-      Mitigations: js.UndefOr[MitigationList] = js.undefined,
-      ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
-      StartTime: js.UndefOr[AttackTimestamp] = js.undefined,
-      SubResources: js.UndefOr[SubResourceSummaryList] = js.undefined): AttackDetail = {
+    def apply(AttackCounters: js.UndefOr[SummarizedCounterList] = js.undefined,
+              AttackId: js.UndefOr[AttackId] = js.undefined,
+              AttackProperties: js.UndefOr[AttackProperties] = js.undefined,
+              EndTime: js.UndefOr[AttackTimestamp] = js.undefined,
+              Mitigations: js.UndefOr[MitigationList] = js.undefined,
+              ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
+              StartTime: js.UndefOr[AttackTimestamp] = js.undefined,
+              SubResources: js.UndefOr[SubResourceSummaryList] = js.undefined): AttackDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AttackCounters" -> AttackCounters.map { x => x.asInstanceOf[js.Any] },
-        "AttackId" -> AttackId.map { x => x.asInstanceOf[js.Any] },
-        "AttackProperties" -> AttackProperties.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "Mitigations" -> Mitigations.map { x => x.asInstanceOf[js.Any] },
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "SubResources" -> SubResources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AttackCounters" -> AttackCounters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttackId" -> AttackId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttackProperties" -> AttackProperties.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Mitigations" -> Mitigations.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceArn" -> ResourceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTime" -> StartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubResources" -> SubResources.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttackDetail]
     }
   }
 
   object AttackLayerEnum {
-    val NETWORK = "NETWORK"
+    val NETWORK     = "NETWORK"
     val APPLICATION = "APPLICATION"
 
     val values = IndexedSeq(NETWORK, APPLICATION)
   }
 
   /**
-   * Details of the described attack.
-   */
+    * Details of the described attack.
+    */
   @js.native
   trait AttackProperty extends js.Object {
     var AttackLayer: js.UndefOr[AttackLayer]
@@ -181,28 +196,38 @@ package shield {
   }
 
   object AttackProperty {
-    def apply(
-      AttackLayer: js.UndefOr[AttackLayer] = js.undefined,
-      AttackPropertyIdentifier: js.UndefOr[AttackPropertyIdentifier] = js.undefined,
-      TopContributors: js.UndefOr[TopContributors] = js.undefined,
-      Total: js.UndefOr[Double] = js.undefined,
-      Unit: js.UndefOr[Unit] = js.undefined): AttackProperty = {
+    def apply(AttackLayer: js.UndefOr[AttackLayer] = js.undefined,
+              AttackPropertyIdentifier: js.UndefOr[AttackPropertyIdentifier] = js.undefined,
+              TopContributors: js.UndefOr[TopContributors] = js.undefined,
+              Total: js.UndefOr[Double] = js.undefined,
+              Unit: js.UndefOr[Unit] = js.undefined): AttackProperty = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AttackLayer" -> AttackLayer.map { x => x.asInstanceOf[js.Any] },
-        "AttackPropertyIdentifier" -> AttackPropertyIdentifier.map { x => x.asInstanceOf[js.Any] },
-        "TopContributors" -> TopContributors.map { x => x.asInstanceOf[js.Any] },
-        "Total" -> Total.map { x => x.asInstanceOf[js.Any] },
-        "Unit" -> Unit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AttackLayer" -> AttackLayer.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttackPropertyIdentifier" -> AttackPropertyIdentifier.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TopContributors" -> TopContributors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Total" -> Total.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Unit" -> Unit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttackProperty]
     }
   }
 
   object AttackPropertyIdentifierEnum {
-    val DESTINATION_URL = "DESTINATION_URL"
-    val REFERRER = "REFERRER"
-    val SOURCE_ASN = "SOURCE_ASN"
-    val SOURCE_COUNTRY = "SOURCE_COUNTRY"
+    val DESTINATION_URL   = "DESTINATION_URL"
+    val REFERRER          = "REFERRER"
+    val SOURCE_ASN        = "SOURCE_ASN"
+    val SOURCE_COUNTRY    = "SOURCE_COUNTRY"
     val SOURCE_IP_ADDRESS = "SOURCE_IP_ADDRESS"
     val SOURCE_USER_AGENT = "SOURCE_USER_AGENT"
 
@@ -210,8 +235,8 @@ package shield {
   }
 
   /**
-   * Summarizes all DDoS attacks for a specified time period.
-   */
+    * Summarizes all DDoS attacks for a specified time period.
+    */
   @js.native
   trait AttackSummary extends js.Object {
     var AttackId: js.UndefOr[String]
@@ -222,51 +247,60 @@ package shield {
   }
 
   object AttackSummary {
-    def apply(
-      AttackId: js.UndefOr[String] = js.undefined,
-      AttackVectors: js.UndefOr[AttackVectorDescriptionList] = js.undefined,
-      EndTime: js.UndefOr[AttackTimestamp] = js.undefined,
-      ResourceArn: js.UndefOr[String] = js.undefined,
-      StartTime: js.UndefOr[AttackTimestamp] = js.undefined): AttackSummary = {
+    def apply(AttackId: js.UndefOr[String] = js.undefined,
+              AttackVectors: js.UndefOr[AttackVectorDescriptionList] = js.undefined,
+              EndTime: js.UndefOr[AttackTimestamp] = js.undefined,
+              ResourceArn: js.UndefOr[String] = js.undefined,
+              StartTime: js.UndefOr[AttackTimestamp] = js.undefined): AttackSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AttackId" -> AttackId.map { x => x.asInstanceOf[js.Any] },
-        "AttackVectors" -> AttackVectors.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AttackId" -> AttackId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttackVectors" -> AttackVectors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceArn" -> ResourceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTime" -> StartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttackSummary]
     }
   }
 
   /**
-   * Describes the attack.
-   */
+    * Describes the attack.
+    */
   @js.native
   trait AttackVectorDescription extends js.Object {
     var VectorType: String
   }
 
   object AttackVectorDescription {
-    def apply(
-      VectorType: String): AttackVectorDescription = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VectorType" -> VectorType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(VectorType: String): AttackVectorDescription = {
+      val _fields = IndexedSeq[(String, js.Any)]("VectorType" -> VectorType.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttackVectorDescription]
     }
   }
 
   object AutoRenewEnum {
-    val ENABLED = "ENABLED"
+    val ENABLED  = "ENABLED"
     val DISABLED = "DISABLED"
 
     val values = IndexedSeq(ENABLED, DISABLED)
   }
 
   /**
-   * A contributor to the attack and their contribution.
-   */
+    * A contributor to the attack and their contribution.
+    */
   @js.native
   trait Contributor extends js.Object {
     var Name: js.UndefOr[String]
@@ -274,12 +308,12 @@ package shield {
   }
 
   object Contributor {
-    def apply(
-      Name: js.UndefOr[String] = js.undefined,
-      Value: js.UndefOr[Double] = js.undefined): Contributor = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Name: js.UndefOr[String] = js.undefined, Value: js.UndefOr[Double] = js.undefined): Contributor = {
+      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Contributor]
     }
@@ -292,12 +326,11 @@ package shield {
   }
 
   object CreateProtectionRequest {
-    def apply(
-      Name: ProtectionName,
-      ResourceArn: ResourceArn): CreateProtectionRequest = {
+    def apply(Name: ProtectionName, ResourceArn: ResourceArn): CreateProtectionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Name"        -> Name.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProtectionRequest]
     }
@@ -309,19 +342,17 @@ package shield {
   }
 
   object CreateProtectionResponse {
-    def apply(
-      ProtectionId: js.UndefOr[ProtectionId] = js.undefined): CreateProtectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProtectionId" -> ProtectionId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProtectionId: js.UndefOr[ProtectionId] = js.undefined): CreateProtectionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProtectionId" -> ProtectionId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProtectionResponse]
     }
   }
 
   @js.native
-  trait CreateSubscriptionRequest extends js.Object {
-
-  }
+  trait CreateSubscriptionRequest extends js.Object {}
 
   object CreateSubscriptionRequest {
     def apply(): CreateSubscriptionRequest = {
@@ -332,9 +363,7 @@ package shield {
   }
 
   @js.native
-  trait CreateSubscriptionResponse extends js.Object {
-
-  }
+  trait CreateSubscriptionResponse extends js.Object {}
 
   object CreateSubscriptionResponse {
     def apply(): CreateSubscriptionResponse = {
@@ -350,19 +379,16 @@ package shield {
   }
 
   object DeleteProtectionRequest {
-    def apply(
-      ProtectionId: ProtectionId): DeleteProtectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProtectionId: ProtectionId): DeleteProtectionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProtectionId" -> ProtectionId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProtectionRequest]
     }
   }
 
   @js.native
-  trait DeleteProtectionResponse extends js.Object {
-
-  }
+  trait DeleteProtectionResponse extends js.Object {}
 
   object DeleteProtectionResponse {
     def apply(): DeleteProtectionResponse = {
@@ -374,9 +400,7 @@ package shield {
 
   @deprecated
   @js.native
-  trait DeleteSubscriptionRequest extends js.Object {
-
-  }
+  trait DeleteSubscriptionRequest extends js.Object {}
 
   object DeleteSubscriptionRequest {
     def apply(): DeleteSubscriptionRequest = {
@@ -388,9 +412,7 @@ package shield {
 
   @deprecated
   @js.native
-  trait DeleteSubscriptionResponse extends js.Object {
-
-  }
+  trait DeleteSubscriptionResponse extends js.Object {}
 
   object DeleteSubscriptionResponse {
     def apply(): DeleteSubscriptionResponse = {
@@ -406,10 +428,9 @@ package shield {
   }
 
   object DescribeAttackRequest {
-    def apply(
-      AttackId: AttackId): DescribeAttackRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttackId" -> AttackId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AttackId: AttackId): DescribeAttackRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("AttackId" -> AttackId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAttackRequest]
     }
@@ -421,19 +442,17 @@ package shield {
   }
 
   object DescribeAttackResponse {
-    def apply(
-      Attack: js.UndefOr[AttackDetail] = js.undefined): DescribeAttackResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Attack" -> Attack.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Attack: js.UndefOr[AttackDetail] = js.undefined): DescribeAttackResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Attack" -> Attack.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAttackResponse]
     }
   }
 
   @js.native
-  trait DescribeDRTAccessRequest extends js.Object {
-
-  }
+  trait DescribeDRTAccessRequest extends js.Object {}
 
   object DescribeDRTAccessRequest {
     def apply(): DescribeDRTAccessRequest = {
@@ -450,21 +469,20 @@ package shield {
   }
 
   object DescribeDRTAccessResponse {
-    def apply(
-      LogBucketList: js.UndefOr[LogBucketList] = js.undefined,
-      RoleArn: js.UndefOr[RoleArn] = js.undefined): DescribeDRTAccessResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LogBucketList" -> LogBucketList.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(LogBucketList: js.UndefOr[LogBucketList] = js.undefined,
+              RoleArn: js.UndefOr[RoleArn] = js.undefined): DescribeDRTAccessResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("LogBucketList" -> LogBucketList.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "RoleArn" -> RoleArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeDRTAccessResponse]
     }
   }
 
   @js.native
-  trait DescribeEmergencyContactSettingsRequest extends js.Object {
-
-  }
+  trait DescribeEmergencyContactSettingsRequest extends js.Object {}
 
   object DescribeEmergencyContactSettingsRequest {
     def apply(): DescribeEmergencyContactSettingsRequest = {
@@ -481,9 +499,11 @@ package shield {
 
   object DescribeEmergencyContactSettingsResponse {
     def apply(
-      EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined): DescribeEmergencyContactSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmergencyContactList" -> EmergencyContactList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
+    ): DescribeEmergencyContactSettingsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EmergencyContactList" -> EmergencyContactList.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEmergencyContactSettingsResponse]
     }
@@ -495,10 +515,9 @@ package shield {
   }
 
   object DescribeProtectionRequest {
-    def apply(
-      ProtectionId: ProtectionId): DescribeProtectionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProtectionId: ProtectionId): DescribeProtectionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProtectionId" -> ProtectionId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProtectionRequest]
     }
@@ -510,19 +529,17 @@ package shield {
   }
 
   object DescribeProtectionResponse {
-    def apply(
-      Protection: js.UndefOr[Protection] = js.undefined): DescribeProtectionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Protection" -> Protection.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Protection: js.UndefOr[Protection] = js.undefined): DescribeProtectionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Protection" -> Protection.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeProtectionResponse]
     }
   }
 
   @js.native
-  trait DescribeSubscriptionRequest extends js.Object {
-
-  }
+  trait DescribeSubscriptionRequest extends js.Object {}
 
   object DescribeSubscriptionRequest {
     def apply(): DescribeSubscriptionRequest = {
@@ -538,10 +555,10 @@ package shield {
   }
 
   object DescribeSubscriptionResponse {
-    def apply(
-      Subscription: js.UndefOr[Subscription] = js.undefined): DescribeSubscriptionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Subscription" -> Subscription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Subscription: js.UndefOr[Subscription] = js.undefined): DescribeSubscriptionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Subscription" -> Subscription.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSubscriptionResponse]
     }
@@ -553,19 +570,16 @@ package shield {
   }
 
   object DisassociateDRTLogBucketRequest {
-    def apply(
-      LogBucket: LogBucket): DisassociateDRTLogBucketRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LogBucket" -> LogBucket.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(LogBucket: LogBucket): DisassociateDRTLogBucketRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("LogBucket" -> LogBucket.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateDRTLogBucketRequest]
     }
   }
 
   @js.native
-  trait DisassociateDRTLogBucketResponse extends js.Object {
-
-  }
+  trait DisassociateDRTLogBucketResponse extends js.Object {}
 
   object DisassociateDRTLogBucketResponse {
     def apply(): DisassociateDRTLogBucketResponse = {
@@ -576,9 +590,7 @@ package shield {
   }
 
   @js.native
-  trait DisassociateDRTRoleRequest extends js.Object {
-
-  }
+  trait DisassociateDRTRoleRequest extends js.Object {}
 
   object DisassociateDRTRoleRequest {
     def apply(): DisassociateDRTRoleRequest = {
@@ -589,9 +601,7 @@ package shield {
   }
 
   @js.native
-  trait DisassociateDRTRoleResponse extends js.Object {
-
-  }
+  trait DisassociateDRTRoleResponse extends js.Object {}
 
   object DisassociateDRTRoleResponse {
     def apply(): DisassociateDRTRoleResponse = {
@@ -602,27 +612,24 @@ package shield {
   }
 
   /**
-   * Contact information that the DRT can use to contact you during a suspected attack.
-   */
+    * Contact information that the DRT can use to contact you during a suspected attack.
+    */
   @js.native
   trait EmergencyContact extends js.Object {
     var EmailAddress: EmailAddress
   }
 
   object EmergencyContact {
-    def apply(
-      EmailAddress: EmailAddress): EmergencyContact = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EmailAddress: EmailAddress): EmergencyContact = {
+      val _fields = IndexedSeq[(String, js.Any)]("EmailAddress" -> EmailAddress.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmergencyContact]
     }
   }
 
   @js.native
-  trait GetSubscriptionStateRequest extends js.Object {
-
-  }
+  trait GetSubscriptionStateRequest extends js.Object {}
 
   object GetSubscriptionStateRequest {
     def apply(): GetSubscriptionStateRequest = {
@@ -638,18 +645,17 @@ package shield {
   }
 
   object GetSubscriptionStateResponse {
-    def apply(
-      SubscriptionState: SubscriptionState): GetSubscriptionStateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubscriptionState" -> SubscriptionState.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SubscriptionState: SubscriptionState): GetSubscriptionStateResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SubscriptionState" -> SubscriptionState.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSubscriptionStateResponse]
     }
   }
 
   /**
-   * Specifies how many protections of a given type you can create.
-   */
+    * Specifies how many protections of a given type you can create.
+    */
   @js.native
   trait Limit extends js.Object {
     var Max: js.UndefOr[Double]
@@ -657,12 +663,12 @@ package shield {
   }
 
   object Limit {
-    def apply(
-      Max: js.UndefOr[Double] = js.undefined,
-      Type: js.UndefOr[String] = js.undefined): Limit = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Max" -> Max.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Max: js.UndefOr[Double] = js.undefined, Type: js.UndefOr[String] = js.undefined): Limit = {
+      val _fields = IndexedSeq[(String, js.Any)]("Max" -> Max.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Limit]
     }
@@ -678,18 +684,28 @@ package shield {
   }
 
   object ListAttacksRequest {
-    def apply(
-      EndTime: js.UndefOr[TimeRange] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined,
-      ResourceArns: js.UndefOr[ResourceArnFilterList] = js.undefined,
-      StartTime: js.UndefOr[TimeRange] = js.undefined): ListAttacksRequest = {
+    def apply(EndTime: js.UndefOr[TimeRange] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[Token] = js.undefined,
+              ResourceArns: js.UndefOr[ResourceArnFilterList] = js.undefined,
+              StartTime: js.UndefOr[TimeRange] = js.undefined): ListAttacksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "ResourceArns" -> ResourceArns.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceArns" -> ResourceArns.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTime" -> StartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttacksRequest]
     }
@@ -702,12 +718,13 @@ package shield {
   }
 
   object ListAttacksResponse {
-    def apply(
-      AttackSummaries: js.UndefOr[AttackSummaries] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined): ListAttacksResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttackSummaries" -> AttackSummaries.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AttackSummaries: js.UndefOr[AttackSummaries] = js.undefined,
+              NextToken: js.UndefOr[Token] = js.undefined): ListAttacksResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("AttackSummaries" -> AttackSummaries.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAttacksResponse]
     }
@@ -720,12 +737,13 @@ package shield {
   }
 
   object ListProtectionsRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[Token] = js.undefined): ListProtectionsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[Token] = js.undefined): ListProtectionsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProtectionsRequest]
     }
@@ -738,38 +756,39 @@ package shield {
   }
 
   object ListProtectionsResponse {
-    def apply(
-      NextToken: js.UndefOr[Token] = js.undefined,
-      Protections: js.UndefOr[Protections] = js.undefined): ListProtectionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Protections" -> Protections.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[Token] = js.undefined,
+              Protections: js.UndefOr[Protections] = js.undefined): ListProtectionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Protections" -> Protections.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListProtectionsResponse]
     }
   }
 
   /**
-   * The mitigation applied to a DDoS attack.
-   */
+    * The mitigation applied to a DDoS attack.
+    */
   @js.native
   trait Mitigation extends js.Object {
     var MitigationName: js.UndefOr[String]
   }
 
   object Mitigation {
-    def apply(
-      MitigationName: js.UndefOr[String] = js.undefined): Mitigation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MitigationName" -> MitigationName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MitigationName: js.UndefOr[String] = js.undefined): Mitigation = {
+      val _fields = IndexedSeq[(String, js.Any)]("MitigationName" -> MitigationName.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Mitigation]
     }
   }
 
   /**
-   * An object that represents a resource that is under DDoS protection.
-   */
+    * An object that represents a resource that is under DDoS protection.
+    */
   @js.native
   trait Protection extends js.Object {
     var Id: js.UndefOr[ProtectionId]
@@ -778,22 +797,24 @@ package shield {
   }
 
   object Protection {
-    def apply(
-      Id: js.UndefOr[ProtectionId] = js.undefined,
-      Name: js.UndefOr[ProtectionName] = js.undefined,
-      ResourceArn: js.UndefOr[ResourceArn] = js.undefined): Protection = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "ResourceArn" -> ResourceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: js.UndefOr[ProtectionId] = js.undefined,
+              Name: js.UndefOr[ProtectionName] = js.undefined,
+              ResourceArn: js.UndefOr[ResourceArn] = js.undefined): Protection = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Name" -> Name.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ResourceArn" -> ResourceArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Protection]
     }
   }
 
   /**
-   * The attack information for the specified SubResource.
-   */
+    * The attack information for the specified SubResource.
+    */
   @js.native
   trait SubResourceSummary extends js.Object {
     var AttackVectors: js.UndefOr[SummarizedAttackVectorList]
@@ -803,31 +824,39 @@ package shield {
   }
 
   object SubResourceSummary {
-    def apply(
-      AttackVectors: js.UndefOr[SummarizedAttackVectorList] = js.undefined,
-      Counters: js.UndefOr[SummarizedCounterList] = js.undefined,
-      Id: js.UndefOr[String] = js.undefined,
-      Type: js.UndefOr[SubResourceType] = js.undefined): SubResourceSummary = {
+    def apply(AttackVectors: js.UndefOr[SummarizedAttackVectorList] = js.undefined,
+              Counters: js.UndefOr[SummarizedCounterList] = js.undefined,
+              Id: js.UndefOr[String] = js.undefined,
+              Type: js.UndefOr[SubResourceType] = js.undefined): SubResourceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AttackVectors" -> AttackVectors.map { x => x.asInstanceOf[js.Any] },
-        "Counters" -> Counters.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AttackVectors" -> AttackVectors.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Counters" -> Counters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubResourceSummary]
     }
   }
 
   object SubResourceTypeEnum {
-    val IP = "IP"
+    val IP  = "IP"
     val URL = "URL"
 
     val values = IndexedSeq(IP, URL)
   }
 
   /**
-   * Information about the AWS Shield Advanced subscription for an account.
-   */
+    * Information about the AWS Shield Advanced subscription for an account.
+    */
   @js.native
   trait Subscription extends js.Object {
     var AutoRenew: js.UndefOr[AutoRenew]
@@ -838,33 +867,43 @@ package shield {
   }
 
   object Subscription {
-    def apply(
-      AutoRenew: js.UndefOr[AutoRenew] = js.undefined,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      Limits: js.UndefOr[Limits] = js.undefined,
-      StartTime: js.UndefOr[Timestamp] = js.undefined,
-      TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds] = js.undefined): Subscription = {
+    def apply(AutoRenew: js.UndefOr[AutoRenew] = js.undefined,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              Limits: js.UndefOr[Limits] = js.undefined,
+              StartTime: js.UndefOr[Timestamp] = js.undefined,
+              TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds] = js.undefined): Subscription = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] },
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "Limits" -> Limits.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "TimeCommitmentInSeconds" -> TimeCommitmentInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AutoRenew" -> AutoRenew.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limits" -> Limits.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTime" -> StartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeCommitmentInSeconds" -> TimeCommitmentInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Subscription]
     }
   }
 
   object SubscriptionStateEnum {
-    val ACTIVE = "ACTIVE"
+    val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
 
     val values = IndexedSeq(ACTIVE, INACTIVE)
   }
 
   /**
-   * A summary of information about the attack.
-   */
+    * A summary of information about the attack.
+    */
   @js.native
   trait SummarizedAttackVector extends js.Object {
     var VectorType: String
@@ -872,20 +911,22 @@ package shield {
   }
 
   object SummarizedAttackVector {
-    def apply(
-      VectorType: String,
-      VectorCounters: js.UndefOr[SummarizedCounterList] = js.undefined): SummarizedAttackVector = {
+    def apply(VectorType: String,
+              VectorCounters: js.UndefOr[SummarizedCounterList] = js.undefined): SummarizedAttackVector = {
       val _fields = IndexedSeq[(String, js.Any)](
         "VectorType" -> VectorType.asInstanceOf[js.Any],
-        "VectorCounters" -> VectorCounters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VectorCounters" -> VectorCounters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SummarizedAttackVector]
     }
   }
 
   /**
-   * The counter that describes a DDoS attack.
-   */
+    * The counter that describes a DDoS attack.
+    */
   @js.native
   trait SummarizedCounter extends js.Object {
     var Average: js.UndefOr[Double]
@@ -897,28 +938,40 @@ package shield {
   }
 
   object SummarizedCounter {
-    def apply(
-      Average: js.UndefOr[Double] = js.undefined,
-      Max: js.UndefOr[Double] = js.undefined,
-      N: js.UndefOr[Int] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      Sum: js.UndefOr[Double] = js.undefined,
-      Unit: js.UndefOr[String] = js.undefined): SummarizedCounter = {
+    def apply(Average: js.UndefOr[Double] = js.undefined,
+              Max: js.UndefOr[Double] = js.undefined,
+              N: js.UndefOr[Int] = js.undefined,
+              Name: js.UndefOr[String] = js.undefined,
+              Sum: js.UndefOr[Double] = js.undefined,
+              Unit: js.UndefOr[String] = js.undefined): SummarizedCounter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Average" -> Average.map { x => x.asInstanceOf[js.Any] },
-        "Max" -> Max.map { x => x.asInstanceOf[js.Any] },
-        "N" -> N.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Sum" -> Sum.map { x => x.asInstanceOf[js.Any] },
-        "Unit" -> Unit.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Average" -> Average.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Max" -> Max.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "N" -> N.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sum" -> Sum.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Unit" -> Unit.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SummarizedCounter]
     }
   }
 
   /**
-   * The time range.
-   */
+    * The time range.
+    */
   @js.native
   trait TimeRange extends js.Object {
     var FromInclusive: js.UndefOr[AttackTimestamp]
@@ -926,21 +979,22 @@ package shield {
   }
 
   object TimeRange {
-    def apply(
-      FromInclusive: js.UndefOr[AttackTimestamp] = js.undefined,
-      ToExclusive: js.UndefOr[AttackTimestamp] = js.undefined): TimeRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FromInclusive" -> FromInclusive.map { x => x.asInstanceOf[js.Any] },
-        "ToExclusive" -> ToExclusive.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(FromInclusive: js.UndefOr[AttackTimestamp] = js.undefined,
+              ToExclusive: js.UndefOr[AttackTimestamp] = js.undefined): TimeRange = {
+      val _fields = IndexedSeq[(String, js.Any)]("FromInclusive" -> FromInclusive.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ToExclusive" -> ToExclusive.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TimeRange]
     }
   }
 
   object UnitEnum {
-    val BITS = "BITS"
-    val BYTES = "BYTES"
-    val PACKETS = "PACKETS"
+    val BITS     = "BITS"
+    val BYTES    = "BYTES"
+    val PACKETS  = "PACKETS"
     val REQUESTS = "REQUESTS"
 
     val values = IndexedSeq(BITS, BYTES, PACKETS, REQUESTS)
@@ -953,18 +1007,18 @@ package shield {
 
   object UpdateEmergencyContactSettingsRequest {
     def apply(
-      EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined): UpdateEmergencyContactSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmergencyContactList" -> EmergencyContactList.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
+    ): UpdateEmergencyContactSettingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("EmergencyContactList" -> EmergencyContactList.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEmergencyContactSettingsRequest]
     }
   }
 
   @js.native
-  trait UpdateEmergencyContactSettingsResponse extends js.Object {
-
-  }
+  trait UpdateEmergencyContactSettingsResponse extends js.Object {}
 
   object UpdateEmergencyContactSettingsResponse {
     def apply(): UpdateEmergencyContactSettingsResponse = {
@@ -980,19 +1034,17 @@ package shield {
   }
 
   object UpdateSubscriptionRequest {
-    def apply(
-      AutoRenew: js.UndefOr[AutoRenew] = js.undefined): UpdateSubscriptionRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AutoRenew" -> AutoRenew.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AutoRenew: js.UndefOr[AutoRenew] = js.undefined): UpdateSubscriptionRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("AutoRenew" -> AutoRenew.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSubscriptionRequest]
     }
   }
 
   @js.native
-  trait UpdateSubscriptionResponse extends js.Object {
-
-  }
+  trait UpdateSubscriptionResponse extends js.Object {}
 
   object UpdateSubscriptionResponse {
     def apply(): UpdateSubscriptionResponse = {

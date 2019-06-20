@@ -7,59 +7,59 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object pinpoint {
-  type Action = String
-  type AttributeType = String
-  type CampaignStatus = String
-  type ChannelType = String
-  type DeliveryStatus = String
-  type DimensionType = String
-  type Duration = String
-  type FilterType = String
-  type Format = String
-  type Frequency = String
-  type Include = String
-  type JobStatus = String
-  type ListOfActivityResponse = js.Array[ActivityResponse]
-  type ListOfApplicationResponse = js.Array[ApplicationResponse]
-  type ListOfCampaignResponse = js.Array[CampaignResponse]
-  type ListOfEndpointBatchItem = js.Array[EndpointBatchItem]
-  type ListOfEndpointResponse = js.Array[EndpointResponse]
-  type ListOfExportJobResponse = js.Array[ExportJobResponse]
-  type ListOfImportJobResponse = js.Array[ImportJobResponse]
-  type ListOfSegmentDimensions = js.Array[SegmentDimensions]
-  type ListOfSegmentGroup = js.Array[SegmentGroup]
-  type ListOfSegmentReference = js.Array[SegmentReference]
-  type ListOfSegmentResponse = js.Array[SegmentResponse]
-  type ListOfTreatmentResource = js.Array[TreatmentResource]
-  type ListOfWriteTreatmentResource = js.Array[WriteTreatmentResource]
-  type ListOf__string = js.Array[__string]
-  type MapOfAddressConfiguration = js.Dictionary[AddressConfiguration]
-  type MapOfAttributeDimension = js.Dictionary[AttributeDimension]
-  type MapOfChannelResponse = js.Dictionary[ChannelResponse]
-  type MapOfEndpointMessageResult = js.Dictionary[EndpointMessageResult]
-  type MapOfEndpointSendConfiguration = js.Dictionary[EndpointSendConfiguration]
-  type MapOfEvent = js.Dictionary[Event]
-  type MapOfEventItemResponse = js.Dictionary[EventItemResponse]
-  type MapOfEventsBatch = js.Dictionary[EventsBatch]
-  type MapOfItemResponse = js.Dictionary[ItemResponse]
-  type MapOfListOf__string = js.Dictionary[ListOf__string]
+  type Action                          = String
+  type AttributeType                   = String
+  type CampaignStatus                  = String
+  type ChannelType                     = String
+  type DeliveryStatus                  = String
+  type DimensionType                   = String
+  type Duration                        = String
+  type FilterType                      = String
+  type Format                          = String
+  type Frequency                       = String
+  type Include                         = String
+  type JobStatus                       = String
+  type ListOfActivityResponse          = js.Array[ActivityResponse]
+  type ListOfApplicationResponse       = js.Array[ApplicationResponse]
+  type ListOfCampaignResponse          = js.Array[CampaignResponse]
+  type ListOfEndpointBatchItem         = js.Array[EndpointBatchItem]
+  type ListOfEndpointResponse          = js.Array[EndpointResponse]
+  type ListOfExportJobResponse         = js.Array[ExportJobResponse]
+  type ListOfImportJobResponse         = js.Array[ImportJobResponse]
+  type ListOfSegmentDimensions         = js.Array[SegmentDimensions]
+  type ListOfSegmentGroup              = js.Array[SegmentGroup]
+  type ListOfSegmentReference          = js.Array[SegmentReference]
+  type ListOfSegmentResponse           = js.Array[SegmentResponse]
+  type ListOfTreatmentResource         = js.Array[TreatmentResource]
+  type ListOfWriteTreatmentResource    = js.Array[WriteTreatmentResource]
+  type ListOf__string                  = js.Array[__string]
+  type MapOfAddressConfiguration       = js.Dictionary[AddressConfiguration]
+  type MapOfAttributeDimension         = js.Dictionary[AttributeDimension]
+  type MapOfChannelResponse            = js.Dictionary[ChannelResponse]
+  type MapOfEndpointMessageResult      = js.Dictionary[EndpointMessageResult]
+  type MapOfEndpointSendConfiguration  = js.Dictionary[EndpointSendConfiguration]
+  type MapOfEvent                      = js.Dictionary[Event]
+  type MapOfEventItemResponse          = js.Dictionary[EventItemResponse]
+  type MapOfEventsBatch                = js.Dictionary[EventsBatch]
+  type MapOfItemResponse               = js.Dictionary[ItemResponse]
+  type MapOfListOf__string             = js.Dictionary[ListOf__string]
   type MapOfMapOfEndpointMessageResult = js.Dictionary[MapOfEndpointMessageResult]
-  type MapOfMessageResult = js.Dictionary[MessageResult]
-  type MapOfMetricDimension = js.Dictionary[MetricDimension]
-  type MapOf__double = js.Dictionary[__double]
-  type MapOf__integer = js.Dictionary[__integer]
-  type MapOf__string = js.Dictionary[__string]
-  type MessageType = String
-  type Mode = String
-  type RecencyType = String
-  type SegmentType = String
-  type SourceType = String
-  type Type = String
-  type __blob = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type __boolean = Boolean
-  type __double = Double
-  type __integer = Int
-  type __string = String
+  type MapOfMessageResult              = js.Dictionary[MessageResult]
+  type MapOfMetricDimension            = js.Dictionary[MetricDimension]
+  type MapOf__double                   = js.Dictionary[__double]
+  type MapOf__integer                  = js.Dictionary[__integer]
+  type MapOf__string                   = js.Dictionary[__string]
+  type MessageType                     = String
+  type Mode                            = String
+  type RecencyType                     = String
+  type SegmentType                     = String
+  type SourceType                      = String
+  type Type                            = String
+  type __blob                          = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type __boolean                       = Boolean
+  type __double                        = Double
+  type __integer                       = Int
+  type __string                        = String
 }
 
 package pinpoint {
@@ -68,85 +68,96 @@ package pinpoint {
   class Pinpoint() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
-    def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse] = js.native
-    def createExportJob(params: CreateExportJobRequest): Request[CreateExportJobResponse] = js.native
-    def createImportJob(params: CreateImportJobRequest): Request[CreateImportJobResponse] = js.native
-    def createSegment(params: CreateSegmentRequest): Request[CreateSegmentResponse] = js.native
-    def deleteAdmChannel(params: DeleteAdmChannelRequest): Request[DeleteAdmChannelResponse] = js.native
+    def createApp(params: CreateAppRequest): Request[CreateAppResponse]                         = js.native
+    def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse]          = js.native
+    def createExportJob(params: CreateExportJobRequest): Request[CreateExportJobResponse]       = js.native
+    def createImportJob(params: CreateImportJobRequest): Request[CreateImportJobResponse]       = js.native
+    def createSegment(params: CreateSegmentRequest): Request[CreateSegmentResponse]             = js.native
+    def deleteAdmChannel(params: DeleteAdmChannelRequest): Request[DeleteAdmChannelResponse]    = js.native
     def deleteApnsChannel(params: DeleteApnsChannelRequest): Request[DeleteApnsChannelResponse] = js.native
-    def deleteApnsSandboxChannel(params: DeleteApnsSandboxChannelRequest): Request[DeleteApnsSandboxChannelResponse] = js.native
+    def deleteApnsSandboxChannel(params: DeleteApnsSandboxChannelRequest): Request[DeleteApnsSandboxChannelResponse] =
+      js.native
     def deleteApnsVoipChannel(params: DeleteApnsVoipChannelRequest): Request[DeleteApnsVoipChannelResponse] = js.native
-    def deleteApnsVoipSandboxChannel(params: DeleteApnsVoipSandboxChannelRequest): Request[DeleteApnsVoipSandboxChannelResponse] = js.native
-    def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse] = js.native
-    def deleteBaiduChannel(params: DeleteBaiduChannelRequest): Request[DeleteBaiduChannelResponse] = js.native
-    def deleteCampaign(params: DeleteCampaignRequest): Request[DeleteCampaignResponse] = js.native
-    def deleteEmailChannel(params: DeleteEmailChannelRequest): Request[DeleteEmailChannelResponse] = js.native
-    def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse] = js.native
-    def deleteEventStream(params: DeleteEventStreamRequest): Request[DeleteEventStreamResponse] = js.native
-    def deleteGcmChannel(params: DeleteGcmChannelRequest): Request[DeleteGcmChannelResponse] = js.native
-    def deleteSegment(params: DeleteSegmentRequest): Request[DeleteSegmentResponse] = js.native
-    def deleteSmsChannel(params: DeleteSmsChannelRequest): Request[DeleteSmsChannelResponse] = js.native
-    def deleteUserEndpoints(params: DeleteUserEndpointsRequest): Request[DeleteUserEndpointsResponse] = js.native
-    def deleteVoiceChannel(params: DeleteVoiceChannelRequest): Request[DeleteVoiceChannelResponse] = js.native
-    def getAdmChannel(params: GetAdmChannelRequest): Request[GetAdmChannelResponse] = js.native
-    def getApnsChannel(params: GetApnsChannelRequest): Request[GetApnsChannelResponse] = js.native
+    def deleteApnsVoipSandboxChannel(
+        params: DeleteApnsVoipSandboxChannelRequest
+    ): Request[DeleteApnsVoipSandboxChannelResponse]                                                        = js.native
+    def deleteApp(params: DeleteAppRequest): Request[DeleteAppResponse]                                     = js.native
+    def deleteBaiduChannel(params: DeleteBaiduChannelRequest): Request[DeleteBaiduChannelResponse]          = js.native
+    def deleteCampaign(params: DeleteCampaignRequest): Request[DeleteCampaignResponse]                      = js.native
+    def deleteEmailChannel(params: DeleteEmailChannelRequest): Request[DeleteEmailChannelResponse]          = js.native
+    def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse]                      = js.native
+    def deleteEventStream(params: DeleteEventStreamRequest): Request[DeleteEventStreamResponse]             = js.native
+    def deleteGcmChannel(params: DeleteGcmChannelRequest): Request[DeleteGcmChannelResponse]                = js.native
+    def deleteSegment(params: DeleteSegmentRequest): Request[DeleteSegmentResponse]                         = js.native
+    def deleteSmsChannel(params: DeleteSmsChannelRequest): Request[DeleteSmsChannelResponse]                = js.native
+    def deleteUserEndpoints(params: DeleteUserEndpointsRequest): Request[DeleteUserEndpointsResponse]       = js.native
+    def deleteVoiceChannel(params: DeleteVoiceChannelRequest): Request[DeleteVoiceChannelResponse]          = js.native
+    def getAdmChannel(params: GetAdmChannelRequest): Request[GetAdmChannelResponse]                         = js.native
+    def getApnsChannel(params: GetApnsChannelRequest): Request[GetApnsChannelResponse]                      = js.native
     def getApnsSandboxChannel(params: GetApnsSandboxChannelRequest): Request[GetApnsSandboxChannelResponse] = js.native
-    def getApnsVoipChannel(params: GetApnsVoipChannelRequest): Request[GetApnsVoipChannelResponse] = js.native
-    def getApnsVoipSandboxChannel(params: GetApnsVoipSandboxChannelRequest): Request[GetApnsVoipSandboxChannelResponse] = js.native
+    def getApnsVoipChannel(params: GetApnsVoipChannelRequest): Request[GetApnsVoipChannelResponse]          = js.native
+    def getApnsVoipSandboxChannel(
+        params: GetApnsVoipSandboxChannelRequest
+    ): Request[GetApnsVoipSandboxChannelResponse]              = js.native
     def getApp(params: GetAppRequest): Request[GetAppResponse] = js.native
-    def getApplicationSettings(params: GetApplicationSettingsRequest): Request[GetApplicationSettingsResponse] = js.native
-    def getApps(params: GetAppsRequest): Request[GetAppsResponse] = js.native
-    def getBaiduChannel(params: GetBaiduChannelRequest): Request[GetBaiduChannelResponse] = js.native
-    def getCampaign(params: GetCampaignRequest): Request[GetCampaignResponse] = js.native
+    def getApplicationSettings(params: GetApplicationSettingsRequest): Request[GetApplicationSettingsResponse] =
+      js.native
+    def getApps(params: GetAppsRequest): Request[GetAppsResponse]                                           = js.native
+    def getBaiduChannel(params: GetBaiduChannelRequest): Request[GetBaiduChannelResponse]                   = js.native
+    def getCampaign(params: GetCampaignRequest): Request[GetCampaignResponse]                               = js.native
     def getCampaignActivities(params: GetCampaignActivitiesRequest): Request[GetCampaignActivitiesResponse] = js.native
-    def getCampaignVersion(params: GetCampaignVersionRequest): Request[GetCampaignVersionResponse] = js.native
-    def getCampaignVersions(params: GetCampaignVersionsRequest): Request[GetCampaignVersionsResponse] = js.native
-    def getCampaigns(params: GetCampaignsRequest): Request[GetCampaignsResponse] = js.native
-    def getChannels(params: GetChannelsRequest): Request[GetChannelsResponse] = js.native
-    def getEmailChannel(params: GetEmailChannelRequest): Request[GetEmailChannelResponse] = js.native
-    def getEndpoint(params: GetEndpointRequest): Request[GetEndpointResponse] = js.native
-    def getEventStream(params: GetEventStreamRequest): Request[GetEventStreamResponse] = js.native
-    def getExportJob(params: GetExportJobRequest): Request[GetExportJobResponse] = js.native
-    def getExportJobs(params: GetExportJobsRequest): Request[GetExportJobsResponse] = js.native
-    def getGcmChannel(params: GetGcmChannelRequest): Request[GetGcmChannelResponse] = js.native
-    def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse] = js.native
-    def getImportJobs(params: GetImportJobsRequest): Request[GetImportJobsResponse] = js.native
-    def getSegment(params: GetSegmentRequest): Request[GetSegmentResponse] = js.native
-    def getSegmentExportJobs(params: GetSegmentExportJobsRequest): Request[GetSegmentExportJobsResponse] = js.native
-    def getSegmentImportJobs(params: GetSegmentImportJobsRequest): Request[GetSegmentImportJobsResponse] = js.native
-    def getSegmentVersion(params: GetSegmentVersionRequest): Request[GetSegmentVersionResponse] = js.native
-    def getSegmentVersions(params: GetSegmentVersionsRequest): Request[GetSegmentVersionsResponse] = js.native
-    def getSegments(params: GetSegmentsRequest): Request[GetSegmentsResponse] = js.native
-    def getSmsChannel(params: GetSmsChannelRequest): Request[GetSmsChannelResponse] = js.native
-    def getUserEndpoints(params: GetUserEndpointsRequest): Request[GetUserEndpointsResponse] = js.native
-    def getVoiceChannel(params: GetVoiceChannelRequest): Request[GetVoiceChannelResponse] = js.native
-    def phoneNumberValidate(params: PhoneNumberValidateRequest): Request[PhoneNumberValidateResponse] = js.native
-    def putEventStream(params: PutEventStreamRequest): Request[PutEventStreamResponse] = js.native
-    def putEvents(params: PutEventsRequest): Request[PutEventsResponse] = js.native
-    def removeAttributes(params: RemoveAttributesRequest): Request[RemoveAttributesResponse] = js.native
-    def sendMessages(params: SendMessagesRequest): Request[SendMessagesResponse] = js.native
-    def sendUsersMessages(params: SendUsersMessagesRequest): Request[SendUsersMessagesResponse] = js.native
-    def updateAdmChannel(params: UpdateAdmChannelRequest): Request[UpdateAdmChannelResponse] = js.native
-    def updateApnsChannel(params: UpdateApnsChannelRequest): Request[UpdateApnsChannelResponse] = js.native
-    def updateApnsSandboxChannel(params: UpdateApnsSandboxChannelRequest): Request[UpdateApnsSandboxChannelResponse] = js.native
+    def getCampaignVersion(params: GetCampaignVersionRequest): Request[GetCampaignVersionResponse]          = js.native
+    def getCampaignVersions(params: GetCampaignVersionsRequest): Request[GetCampaignVersionsResponse]       = js.native
+    def getCampaigns(params: GetCampaignsRequest): Request[GetCampaignsResponse]                            = js.native
+    def getChannels(params: GetChannelsRequest): Request[GetChannelsResponse]                               = js.native
+    def getEmailChannel(params: GetEmailChannelRequest): Request[GetEmailChannelResponse]                   = js.native
+    def getEndpoint(params: GetEndpointRequest): Request[GetEndpointResponse]                               = js.native
+    def getEventStream(params: GetEventStreamRequest): Request[GetEventStreamResponse]                      = js.native
+    def getExportJob(params: GetExportJobRequest): Request[GetExportJobResponse]                            = js.native
+    def getExportJobs(params: GetExportJobsRequest): Request[GetExportJobsResponse]                         = js.native
+    def getGcmChannel(params: GetGcmChannelRequest): Request[GetGcmChannelResponse]                         = js.native
+    def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse]                            = js.native
+    def getImportJobs(params: GetImportJobsRequest): Request[GetImportJobsResponse]                         = js.native
+    def getSegment(params: GetSegmentRequest): Request[GetSegmentResponse]                                  = js.native
+    def getSegmentExportJobs(params: GetSegmentExportJobsRequest): Request[GetSegmentExportJobsResponse]    = js.native
+    def getSegmentImportJobs(params: GetSegmentImportJobsRequest): Request[GetSegmentImportJobsResponse]    = js.native
+    def getSegmentVersion(params: GetSegmentVersionRequest): Request[GetSegmentVersionResponse]             = js.native
+    def getSegmentVersions(params: GetSegmentVersionsRequest): Request[GetSegmentVersionsResponse]          = js.native
+    def getSegments(params: GetSegmentsRequest): Request[GetSegmentsResponse]                               = js.native
+    def getSmsChannel(params: GetSmsChannelRequest): Request[GetSmsChannelResponse]                         = js.native
+    def getUserEndpoints(params: GetUserEndpointsRequest): Request[GetUserEndpointsResponse]                = js.native
+    def getVoiceChannel(params: GetVoiceChannelRequest): Request[GetVoiceChannelResponse]                   = js.native
+    def phoneNumberValidate(params: PhoneNumberValidateRequest): Request[PhoneNumberValidateResponse]       = js.native
+    def putEventStream(params: PutEventStreamRequest): Request[PutEventStreamResponse]                      = js.native
+    def putEvents(params: PutEventsRequest): Request[PutEventsResponse]                                     = js.native
+    def removeAttributes(params: RemoveAttributesRequest): Request[RemoveAttributesResponse]                = js.native
+    def sendMessages(params: SendMessagesRequest): Request[SendMessagesResponse]                            = js.native
+    def sendUsersMessages(params: SendUsersMessagesRequest): Request[SendUsersMessagesResponse]             = js.native
+    def updateAdmChannel(params: UpdateAdmChannelRequest): Request[UpdateAdmChannelResponse]                = js.native
+    def updateApnsChannel(params: UpdateApnsChannelRequest): Request[UpdateApnsChannelResponse]             = js.native
+    def updateApnsSandboxChannel(params: UpdateApnsSandboxChannelRequest): Request[UpdateApnsSandboxChannelResponse] =
+      js.native
     def updateApnsVoipChannel(params: UpdateApnsVoipChannelRequest): Request[UpdateApnsVoipChannelResponse] = js.native
-    def updateApnsVoipSandboxChannel(params: UpdateApnsVoipSandboxChannelRequest): Request[UpdateApnsVoipSandboxChannelResponse] = js.native
-    def updateApplicationSettings(params: UpdateApplicationSettingsRequest): Request[UpdateApplicationSettingsResponse] = js.native
-    def updateBaiduChannel(params: UpdateBaiduChannelRequest): Request[UpdateBaiduChannelResponse] = js.native
-    def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse] = js.native
-    def updateEmailChannel(params: UpdateEmailChannelRequest): Request[UpdateEmailChannelResponse] = js.native
-    def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
+    def updateApnsVoipSandboxChannel(
+        params: UpdateApnsVoipSandboxChannelRequest
+    ): Request[UpdateApnsVoipSandboxChannelResponse] = js.native
+    def updateApplicationSettings(
+        params: UpdateApplicationSettingsRequest
+    ): Request[UpdateApplicationSettingsResponse]                                                        = js.native
+    def updateBaiduChannel(params: UpdateBaiduChannelRequest): Request[UpdateBaiduChannelResponse]       = js.native
+    def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse]                   = js.native
+    def updateEmailChannel(params: UpdateEmailChannelRequest): Request[UpdateEmailChannelResponse]       = js.native
+    def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse]                   = js.native
     def updateEndpointsBatch(params: UpdateEndpointsBatchRequest): Request[UpdateEndpointsBatchResponse] = js.native
-    def updateGcmChannel(params: UpdateGcmChannelRequest): Request[UpdateGcmChannelResponse] = js.native
-    def updateSegment(params: UpdateSegmentRequest): Request[UpdateSegmentResponse] = js.native
-    def updateSmsChannel(params: UpdateSmsChannelRequest): Request[UpdateSmsChannelResponse] = js.native
-    def updateVoiceChannel(params: UpdateVoiceChannelRequest): Request[UpdateVoiceChannelResponse] = js.native
+    def updateGcmChannel(params: UpdateGcmChannelRequest): Request[UpdateGcmChannelResponse]             = js.native
+    def updateSegment(params: UpdateSegmentRequest): Request[UpdateSegmentResponse]                      = js.native
+    def updateSmsChannel(params: UpdateSmsChannelRequest): Request[UpdateSmsChannelResponse]             = js.native
+    def updateVoiceChannel(params: UpdateVoiceChannelRequest): Request[UpdateVoiceChannelResponse]       = js.native
   }
 
   /**
-   * Amazon Device Messaging channel definition.
-   */
+    * Amazon Device Messaging channel definition.
+    */
   @js.native
   trait ADMChannelRequest extends js.Object {
     var ClientId: js.UndefOr[__string]
@@ -155,22 +166,28 @@ package pinpoint {
   }
 
   object ADMChannelRequest {
-    def apply(
-      ClientId: js.UndefOr[__string] = js.undefined,
-      ClientSecret: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined): ADMChannelRequest = {
+    def apply(ClientId: js.UndefOr[__string] = js.undefined,
+              ClientSecret: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined): ADMChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClientId" -> ClientId.map { x => x.asInstanceOf[js.Any] },
-        "ClientSecret" -> ClientSecret.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientId" -> ClientId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ClientSecret" -> ClientSecret.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ADMChannelRequest]
     }
   }
 
   /**
-   * Amazon Device Messaging channel definition.
-   */
+    * Amazon Device Messaging channel definition.
+    */
   @js.native
   trait ADMChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -186,36 +203,56 @@ package pinpoint {
   }
 
   object ADMChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): ADMChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): ADMChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ADMChannelResponse]
     }
   }
 
   /**
-   * ADM Message.
-   */
+    * ADM Message.
+    */
   @js.native
   trait ADMMessage extends js.Object {
     var Action: js.UndefOr[Action]
@@ -237,48 +274,80 @@ package pinpoint {
   }
 
   object ADMMessage {
-    def apply(
-      Action: js.UndefOr[Action] = js.undefined,
-      Body: js.UndefOr[__string] = js.undefined,
-      ConsolidationKey: js.UndefOr[__string] = js.undefined,
-      Data: js.UndefOr[MapOf__string] = js.undefined,
-      ExpiresAfter: js.UndefOr[__string] = js.undefined,
-      IconReference: js.UndefOr[__string] = js.undefined,
-      ImageIconUrl: js.UndefOr[__string] = js.undefined,
-      ImageUrl: js.UndefOr[__string] = js.undefined,
-      MD5: js.UndefOr[__string] = js.undefined,
-      RawContent: js.UndefOr[__string] = js.undefined,
-      SilentPush: js.UndefOr[__boolean] = js.undefined,
-      SmallImageIconUrl: js.UndefOr[__string] = js.undefined,
-      Sound: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      Title: js.UndefOr[__string] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined): ADMMessage = {
+    def apply(Action: js.UndefOr[Action] = js.undefined,
+              Body: js.UndefOr[__string] = js.undefined,
+              ConsolidationKey: js.UndefOr[__string] = js.undefined,
+              Data: js.UndefOr[MapOf__string] = js.undefined,
+              ExpiresAfter: js.UndefOr[__string] = js.undefined,
+              IconReference: js.UndefOr[__string] = js.undefined,
+              ImageIconUrl: js.UndefOr[__string] = js.undefined,
+              ImageUrl: js.UndefOr[__string] = js.undefined,
+              MD5: js.UndefOr[__string] = js.undefined,
+              RawContent: js.UndefOr[__string] = js.undefined,
+              SilentPush: js.UndefOr[__boolean] = js.undefined,
+              SmallImageIconUrl: js.UndefOr[__string] = js.undefined,
+              Sound: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              Title: js.UndefOr[__string] = js.undefined,
+              Url: js.UndefOr[__string] = js.undefined): ADMMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "ConsolidationKey" -> ConsolidationKey.map { x => x.asInstanceOf[js.Any] },
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] },
-        "ExpiresAfter" -> ExpiresAfter.map { x => x.asInstanceOf[js.Any] },
-        "IconReference" -> IconReference.map { x => x.asInstanceOf[js.Any] },
-        "ImageIconUrl" -> ImageIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "ImageUrl" -> ImageUrl.map { x => x.asInstanceOf[js.Any] },
-        "MD5" -> MD5.map { x => x.asInstanceOf[js.Any] },
-        "RawContent" -> RawContent.map { x => x.asInstanceOf[js.Any] },
-        "SilentPush" -> SilentPush.map { x => x.asInstanceOf[js.Any] },
-        "SmallImageIconUrl" -> SmallImageIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "Sound" -> Sound.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConsolidationKey" -> ConsolidationKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ExpiresAfter" -> ExpiresAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IconReference" -> IconReference.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageIconUrl" -> ImageIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageUrl" -> ImageUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MD5" -> MD5.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawContent" -> RawContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SilentPush" -> SilentPush.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SmallImageIconUrl" -> SmallImageIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sound" -> Sound.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ADMMessage]
     }
   }
 
   /**
-   * Apple Push Notification Service channel definition.
-   */
+    * Apple Push Notification Service channel definition.
+    */
   @js.native
   trait APNSChannelRequest extends js.Object {
     var BundleId: js.UndefOr[__string]
@@ -292,32 +361,48 @@ package pinpoint {
   }
 
   object APNSChannelRequest {
-    def apply(
-      BundleId: js.UndefOr[__string] = js.undefined,
-      Certificate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      PrivateKey: js.UndefOr[__string] = js.undefined,
-      TeamId: js.UndefOr[__string] = js.undefined,
-      TokenKey: js.UndefOr[__string] = js.undefined,
-      TokenKeyId: js.UndefOr[__string] = js.undefined): APNSChannelRequest = {
+    def apply(BundleId: js.UndefOr[__string] = js.undefined,
+              Certificate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              PrivateKey: js.UndefOr[__string] = js.undefined,
+              TeamId: js.UndefOr[__string] = js.undefined,
+              TokenKey: js.UndefOr[__string] = js.undefined,
+              TokenKeyId: js.UndefOr[__string] = js.undefined): APNSChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
-        "Certificate" -> Certificate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "PrivateKey" -> PrivateKey.map { x => x.asInstanceOf[js.Any] },
-        "TeamId" -> TeamId.map { x => x.asInstanceOf[js.Any] },
-        "TokenKey" -> TokenKey.map { x => x.asInstanceOf[js.Any] },
-        "TokenKeyId" -> TokenKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BundleId" -> BundleId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrivateKey" -> PrivateKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TeamId" -> TeamId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKey" -> TokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKeyId" -> TokenKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSChannelRequest]
     }
   }
 
   /**
-   * Apple Distribution Push Notification Service channel definition.
-   */
+    * Apple Distribution Push Notification Service channel definition.
+    */
   @js.native
   trait APNSChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -335,40 +420,64 @@ package pinpoint {
   }
 
   object APNSChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      HasTokenKey: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): APNSChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              HasTokenKey: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): APNSChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "HasTokenKey" -> HasTokenKey.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasTokenKey" -> HasTokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSChannelResponse]
     }
   }
 
   /**
-   * APNS Message.
-   */
+    * APNS Message.
+    */
   @js.native
   trait APNSMessage extends js.Object {
     var Action: js.UndefOr[Action]
@@ -391,50 +500,84 @@ package pinpoint {
   }
 
   object APNSMessage {
-    def apply(
-      Action: js.UndefOr[Action] = js.undefined,
-      Badge: js.UndefOr[__integer] = js.undefined,
-      Body: js.UndefOr[__string] = js.undefined,
-      Category: js.UndefOr[__string] = js.undefined,
-      CollapseId: js.UndefOr[__string] = js.undefined,
-      Data: js.UndefOr[MapOf__string] = js.undefined,
-      MediaUrl: js.UndefOr[__string] = js.undefined,
-      PreferredAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Priority: js.UndefOr[__string] = js.undefined,
-      RawContent: js.UndefOr[__string] = js.undefined,
-      SilentPush: js.UndefOr[__boolean] = js.undefined,
-      Sound: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      ThreadId: js.UndefOr[__string] = js.undefined,
-      TimeToLive: js.UndefOr[__integer] = js.undefined,
-      Title: js.UndefOr[__string] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined): APNSMessage = {
+    def apply(Action: js.UndefOr[Action] = js.undefined,
+              Badge: js.UndefOr[__integer] = js.undefined,
+              Body: js.UndefOr[__string] = js.undefined,
+              Category: js.UndefOr[__string] = js.undefined,
+              CollapseId: js.UndefOr[__string] = js.undefined,
+              Data: js.UndefOr[MapOf__string] = js.undefined,
+              MediaUrl: js.UndefOr[__string] = js.undefined,
+              PreferredAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Priority: js.UndefOr[__string] = js.undefined,
+              RawContent: js.UndefOr[__string] = js.undefined,
+              SilentPush: js.UndefOr[__boolean] = js.undefined,
+              Sound: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              ThreadId: js.UndefOr[__string] = js.undefined,
+              TimeToLive: js.UndefOr[__integer] = js.undefined,
+              Title: js.UndefOr[__string] = js.undefined,
+              Url: js.UndefOr[__string] = js.undefined): APNSMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Badge" -> Badge.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "Category" -> Category.map { x => x.asInstanceOf[js.Any] },
-        "CollapseId" -> CollapseId.map { x => x.asInstanceOf[js.Any] },
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] },
-        "MediaUrl" -> MediaUrl.map { x => x.asInstanceOf[js.Any] },
-        "PreferredAuthenticationMethod" -> PreferredAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Priority" -> Priority.map { x => x.asInstanceOf[js.Any] },
-        "RawContent" -> RawContent.map { x => x.asInstanceOf[js.Any] },
-        "SilentPush" -> SilentPush.map { x => x.asInstanceOf[js.Any] },
-        "Sound" -> Sound.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "ThreadId" -> ThreadId.map { x => x.asInstanceOf[js.Any] },
-        "TimeToLive" -> TimeToLive.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Badge" -> Badge.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Category" -> Category.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CollapseId" -> CollapseId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MediaUrl" -> MediaUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PreferredAuthenticationMethod" -> PreferredAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Priority" -> Priority.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawContent" -> RawContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SilentPush" -> SilentPush.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sound" -> Sound.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ThreadId" -> ThreadId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeToLive" -> TimeToLive.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSMessage]
     }
   }
 
   /**
-   * Apple Development Push Notification Service channel definition.
-   */
+    * Apple Development Push Notification Service channel definition.
+    */
   @js.native
   trait APNSSandboxChannelRequest extends js.Object {
     var BundleId: js.UndefOr[__string]
@@ -448,32 +591,48 @@ package pinpoint {
   }
 
   object APNSSandboxChannelRequest {
-    def apply(
-      BundleId: js.UndefOr[__string] = js.undefined,
-      Certificate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      PrivateKey: js.UndefOr[__string] = js.undefined,
-      TeamId: js.UndefOr[__string] = js.undefined,
-      TokenKey: js.UndefOr[__string] = js.undefined,
-      TokenKeyId: js.UndefOr[__string] = js.undefined): APNSSandboxChannelRequest = {
+    def apply(BundleId: js.UndefOr[__string] = js.undefined,
+              Certificate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              PrivateKey: js.UndefOr[__string] = js.undefined,
+              TeamId: js.UndefOr[__string] = js.undefined,
+              TokenKey: js.UndefOr[__string] = js.undefined,
+              TokenKeyId: js.UndefOr[__string] = js.undefined): APNSSandboxChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
-        "Certificate" -> Certificate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "PrivateKey" -> PrivateKey.map { x => x.asInstanceOf[js.Any] },
-        "TeamId" -> TeamId.map { x => x.asInstanceOf[js.Any] },
-        "TokenKey" -> TokenKey.map { x => x.asInstanceOf[js.Any] },
-        "TokenKeyId" -> TokenKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BundleId" -> BundleId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrivateKey" -> PrivateKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TeamId" -> TeamId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKey" -> TokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKeyId" -> TokenKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSSandboxChannelRequest]
     }
   }
 
   /**
-   * Apple Development Push Notification Service channel definition.
-   */
+    * Apple Development Push Notification Service channel definition.
+    */
   @js.native
   trait APNSSandboxChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -491,40 +650,64 @@ package pinpoint {
   }
 
   object APNSSandboxChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      HasTokenKey: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): APNSSandboxChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              HasTokenKey: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): APNSSandboxChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "HasTokenKey" -> HasTokenKey.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasTokenKey" -> HasTokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSSandboxChannelResponse]
     }
   }
 
   /**
-   * Apple VoIP Push Notification Service channel definition.
-   */
+    * Apple VoIP Push Notification Service channel definition.
+    */
   @js.native
   trait APNSVoipChannelRequest extends js.Object {
     var BundleId: js.UndefOr[__string]
@@ -538,32 +721,48 @@ package pinpoint {
   }
 
   object APNSVoipChannelRequest {
-    def apply(
-      BundleId: js.UndefOr[__string] = js.undefined,
-      Certificate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      PrivateKey: js.UndefOr[__string] = js.undefined,
-      TeamId: js.UndefOr[__string] = js.undefined,
-      TokenKey: js.UndefOr[__string] = js.undefined,
-      TokenKeyId: js.UndefOr[__string] = js.undefined): APNSVoipChannelRequest = {
+    def apply(BundleId: js.UndefOr[__string] = js.undefined,
+              Certificate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              PrivateKey: js.UndefOr[__string] = js.undefined,
+              TeamId: js.UndefOr[__string] = js.undefined,
+              TokenKey: js.UndefOr[__string] = js.undefined,
+              TokenKeyId: js.UndefOr[__string] = js.undefined): APNSVoipChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
-        "Certificate" -> Certificate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "PrivateKey" -> PrivateKey.map { x => x.asInstanceOf[js.Any] },
-        "TeamId" -> TeamId.map { x => x.asInstanceOf[js.Any] },
-        "TokenKey" -> TokenKey.map { x => x.asInstanceOf[js.Any] },
-        "TokenKeyId" -> TokenKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BundleId" -> BundleId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrivateKey" -> PrivateKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TeamId" -> TeamId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKey" -> TokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKeyId" -> TokenKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipChannelRequest]
     }
   }
 
   /**
-   * Apple VoIP Push Notification Service channel definition.
-   */
+    * Apple VoIP Push Notification Service channel definition.
+    */
   @js.native
   trait APNSVoipChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -581,40 +780,64 @@ package pinpoint {
   }
 
   object APNSVoipChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      HasTokenKey: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): APNSVoipChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              HasTokenKey: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): APNSVoipChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "HasTokenKey" -> HasTokenKey.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasTokenKey" -> HasTokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipChannelResponse]
     }
   }
 
   /**
-   * Apple VoIP Developer Push Notification Service channel definition.
-   */
+    * Apple VoIP Developer Push Notification Service channel definition.
+    */
   @js.native
   trait APNSVoipSandboxChannelRequest extends js.Object {
     var BundleId: js.UndefOr[__string]
@@ -628,32 +851,48 @@ package pinpoint {
   }
 
   object APNSVoipSandboxChannelRequest {
-    def apply(
-      BundleId: js.UndefOr[__string] = js.undefined,
-      Certificate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      PrivateKey: js.UndefOr[__string] = js.undefined,
-      TeamId: js.UndefOr[__string] = js.undefined,
-      TokenKey: js.UndefOr[__string] = js.undefined,
-      TokenKeyId: js.UndefOr[__string] = js.undefined): APNSVoipSandboxChannelRequest = {
+    def apply(BundleId: js.UndefOr[__string] = js.undefined,
+              Certificate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              PrivateKey: js.UndefOr[__string] = js.undefined,
+              TeamId: js.UndefOr[__string] = js.undefined,
+              TokenKey: js.UndefOr[__string] = js.undefined,
+              TokenKeyId: js.UndefOr[__string] = js.undefined): APNSVoipSandboxChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BundleId" -> BundleId.map { x => x.asInstanceOf[js.Any] },
-        "Certificate" -> Certificate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "PrivateKey" -> PrivateKey.map { x => x.asInstanceOf[js.Any] },
-        "TeamId" -> TeamId.map { x => x.asInstanceOf[js.Any] },
-        "TokenKey" -> TokenKey.map { x => x.asInstanceOf[js.Any] },
-        "TokenKeyId" -> TokenKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BundleId" -> BundleId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Certificate" -> Certificate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrivateKey" -> PrivateKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TeamId" -> TeamId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKey" -> TokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TokenKeyId" -> TokenKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipSandboxChannelRequest]
     }
   }
 
   /**
-   * Apple VoIP Developer Push Notification Service channel definition.
-   */
+    * Apple VoIP Developer Push Notification Service channel definition.
+    */
   @js.native
   trait APNSVoipSandboxChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -671,48 +910,72 @@ package pinpoint {
   }
 
   object APNSVoipSandboxChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      HasTokenKey: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): APNSVoipSandboxChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              DefaultAuthenticationMethod: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              HasTokenKey: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): APNSVoipSandboxChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "HasTokenKey" -> HasTokenKey.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultAuthenticationMethod" -> DefaultAuthenticationMethod.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasTokenKey" -> HasTokenKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[APNSVoipSandboxChannelResponse]
     }
   }
 
   object ActionEnum {
-    val OPEN_APP = "OPEN_APP"
+    val OPEN_APP  = "OPEN_APP"
     val DEEP_LINK = "DEEP_LINK"
-    val URL = "URL"
+    val URL       = "URL"
 
     val values = IndexedSeq(OPEN_APP, DEEP_LINK, URL)
   }
 
   /**
-   * Activities for campaign.
-   */
+    * Activities for campaign.
+    */
   @js.native
   trait ActivitiesResponse extends js.Object {
     var Item: js.UndefOr[ListOfActivityResponse]
@@ -720,20 +983,21 @@ package pinpoint {
   }
 
   object ActivitiesResponse {
-    def apply(
-      Item: js.UndefOr[ListOfActivityResponse] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): ActivitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfActivityResponse] = js.undefined,
+              NextToken: js.UndefOr[__string] = js.undefined): ActivitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivitiesResponse]
     }
   }
 
   /**
-   * Activity definition
-   */
+    * Activity definition
+    */
   @js.native
   trait ActivityResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -752,42 +1016,68 @@ package pinpoint {
   }
 
   object ActivityResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CampaignId: js.UndefOr[__string] = js.undefined,
-      End: js.UndefOr[__string] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      Result: js.UndefOr[__string] = js.undefined,
-      ScheduledStart: js.UndefOr[__string] = js.undefined,
-      Start: js.UndefOr[__string] = js.undefined,
-      State: js.UndefOr[__string] = js.undefined,
-      SuccessfulEndpointCount: js.UndefOr[__integer] = js.undefined,
-      TimezonesCompletedCount: js.UndefOr[__integer] = js.undefined,
-      TimezonesTotalCount: js.UndefOr[__integer] = js.undefined,
-      TotalEndpointCount: js.UndefOr[__integer] = js.undefined,
-      TreatmentId: js.UndefOr[__string] = js.undefined): ActivityResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CampaignId: js.UndefOr[__string] = js.undefined,
+              End: js.UndefOr[__string] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              Result: js.UndefOr[__string] = js.undefined,
+              ScheduledStart: js.UndefOr[__string] = js.undefined,
+              Start: js.UndefOr[__string] = js.undefined,
+              State: js.UndefOr[__string] = js.undefined,
+              SuccessfulEndpointCount: js.UndefOr[__integer] = js.undefined,
+              TimezonesCompletedCount: js.UndefOr[__integer] = js.undefined,
+              TimezonesTotalCount: js.UndefOr[__integer] = js.undefined,
+              TotalEndpointCount: js.UndefOr[__integer] = js.undefined,
+              TreatmentId: js.UndefOr[__string] = js.undefined): ActivityResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CampaignId" -> CampaignId.map { x => x.asInstanceOf[js.Any] },
-        "End" -> End.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Result" -> Result.map { x => x.asInstanceOf[js.Any] },
-        "ScheduledStart" -> ScheduledStart.map { x => x.asInstanceOf[js.Any] },
-        "Start" -> Start.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "SuccessfulEndpointCount" -> SuccessfulEndpointCount.map { x => x.asInstanceOf[js.Any] },
-        "TimezonesCompletedCount" -> TimezonesCompletedCount.map { x => x.asInstanceOf[js.Any] },
-        "TimezonesTotalCount" -> TimezonesTotalCount.map { x => x.asInstanceOf[js.Any] },
-        "TotalEndpointCount" -> TotalEndpointCount.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentId" -> TreatmentId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CampaignId" -> CampaignId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "End" -> End.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Result" -> Result.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduledStart" -> ScheduledStart.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Start" -> Start.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SuccessfulEndpointCount" -> SuccessfulEndpointCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimezonesCompletedCount" -> TimezonesCompletedCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimezonesTotalCount" -> TimezonesTotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalEndpointCount" -> TotalEndpointCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentId" -> TreatmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ActivityResponse]
     }
   }
 
   /**
-   * Address configuration.
-   */
+    * Address configuration.
+    */
   @js.native
   trait AddressConfiguration extends js.Object {
     var BodyOverride: js.UndefOr[__string]
@@ -799,28 +1089,40 @@ package pinpoint {
   }
 
   object AddressConfiguration {
-    def apply(
-      BodyOverride: js.UndefOr[__string] = js.undefined,
-      ChannelType: js.UndefOr[ChannelType] = js.undefined,
-      Context: js.UndefOr[MapOf__string] = js.undefined,
-      RawContent: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      TitleOverride: js.UndefOr[__string] = js.undefined): AddressConfiguration = {
+    def apply(BodyOverride: js.UndefOr[__string] = js.undefined,
+              ChannelType: js.UndefOr[ChannelType] = js.undefined,
+              Context: js.UndefOr[MapOf__string] = js.undefined,
+              RawContent: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              TitleOverride: js.UndefOr[__string] = js.undefined): AddressConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BodyOverride" -> BodyOverride.map { x => x.asInstanceOf[js.Any] },
-        "ChannelType" -> ChannelType.map { x => x.asInstanceOf[js.Any] },
-        "Context" -> Context.map { x => x.asInstanceOf[js.Any] },
-        "RawContent" -> RawContent.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "TitleOverride" -> TitleOverride.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BodyOverride" -> BodyOverride.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelType" -> ChannelType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Context" -> Context.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawContent" -> RawContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TitleOverride" -> TitleOverride.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddressConfiguration]
     }
   }
 
   /**
-   * Application Response.
-   */
+    * Application Response.
+    */
   @js.native
   trait ApplicationResponse extends js.Object {
     var Id: js.UndefOr[__string]
@@ -828,20 +1130,21 @@ package pinpoint {
   }
 
   object ApplicationResponse {
-    def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined): ApplicationResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: js.UndefOr[__string] = js.undefined,
+              Name: js.UndefOr[__string] = js.undefined): ApplicationResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Name" -> Name.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationResponse]
     }
   }
 
   /**
-   * Application settings.
-   */
+    * Application settings.
+    */
   @js.native
   trait ApplicationSettingsResource extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -852,26 +1155,36 @@ package pinpoint {
   }
 
   object ApplicationSettingsResource {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Limits: js.UndefOr[CampaignLimits] = js.undefined,
-      QuietTime: js.UndefOr[QuietTime] = js.undefined): ApplicationSettingsResource = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Limits: js.UndefOr[CampaignLimits] = js.undefined,
+              QuietTime: js.UndefOr[QuietTime] = js.undefined): ApplicationSettingsResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CampaignHook" -> CampaignHook.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Limits" -> Limits.map { x => x.asInstanceOf[js.Any] },
-        "QuietTime" -> QuietTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CampaignHook" -> CampaignHook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limits" -> Limits.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QuietTime" -> QuietTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationSettingsResource]
     }
   }
 
   /**
-   * Get Applications Result.
-   */
+    * Get Applications Result.
+    */
   @js.native
   trait ApplicationsResponse extends js.Object {
     var Item: js.UndefOr[ListOfApplicationResponse]
@@ -879,20 +1192,21 @@ package pinpoint {
   }
 
   object ApplicationsResponse {
-    def apply(
-      Item: js.UndefOr[ListOfApplicationResponse] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): ApplicationsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfApplicationResponse] = js.undefined,
+              NextToken: js.UndefOr[__string] = js.undefined): ApplicationsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApplicationsResponse]
     }
   }
 
   /**
-   * Custom attibute dimension
-   */
+    * Custom attibute dimension
+    */
   @js.native
   trait AttributeDimension extends js.Object {
     var AttributeType: js.UndefOr[AttributeType]
@@ -900,12 +1214,13 @@ package pinpoint {
   }
 
   object AttributeDimension {
-    def apply(
-      AttributeType: js.UndefOr[AttributeType] = js.undefined,
-      Values: js.UndefOr[ListOf__string] = js.undefined): AttributeDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributeType" -> AttributeType.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AttributeType: js.UndefOr[AttributeType] = js.undefined,
+              Values: js.UndefOr[ListOf__string] = js.undefined): AttributeDimension = {
+      val _fields = IndexedSeq[(String, js.Any)]("AttributeType" -> AttributeType.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Values" -> Values.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributeDimension]
     }
@@ -919,8 +1234,8 @@ package pinpoint {
   }
 
   /**
-   * Attributes.
-   */
+    * Attributes.
+    */
   @js.native
   trait AttributesResource extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -929,22 +1244,28 @@ package pinpoint {
   }
 
   object AttributesResource {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      AttributeType: js.UndefOr[__string] = js.undefined,
-      Attributes: js.UndefOr[ListOf__string] = js.undefined): AttributesResource = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              AttributeType: js.UndefOr[__string] = js.undefined,
+              Attributes: js.UndefOr[ListOf__string] = js.undefined): AttributesResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "AttributeType" -> AttributeType.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AttributeType" -> AttributeType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AttributesResource]
     }
   }
 
   /**
-   * Baidu Cloud Push credentials
-   */
+    * Baidu Cloud Push credentials
+    */
   @js.native
   trait BaiduChannelRequest extends js.Object {
     var ApiKey: js.UndefOr[__string]
@@ -953,22 +1274,28 @@ package pinpoint {
   }
 
   object BaiduChannelRequest {
-    def apply(
-      ApiKey: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      SecretKey: js.UndefOr[__string] = js.undefined): BaiduChannelRequest = {
+    def apply(ApiKey: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              SecretKey: js.UndefOr[__string] = js.undefined): BaiduChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApiKey" -> ApiKey.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "SecretKey" -> SecretKey.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApiKey" -> ApiKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecretKey" -> SecretKey.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaiduChannelRequest]
     }
   }
 
   /**
-   * Baidu Cloud Messaging channel definition
-   */
+    * Baidu Cloud Messaging channel definition
+    */
   @js.native
   trait BaiduChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -985,38 +1312,60 @@ package pinpoint {
   }
 
   object BaiduChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Credential: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): BaiduChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Credential: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): BaiduChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Credential" -> Credential.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Credential" -> Credential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaiduChannelResponse]
     }
   }
 
   /**
-   * Baidu Message.
-   */
+    * Baidu Message.
+    */
   @js.native
   trait BaiduMessage extends js.Object {
     var Action: js.UndefOr[Action]
@@ -1036,44 +1385,72 @@ package pinpoint {
   }
 
   object BaiduMessage {
-    def apply(
-      Action: js.UndefOr[Action] = js.undefined,
-      Body: js.UndefOr[__string] = js.undefined,
-      Data: js.UndefOr[MapOf__string] = js.undefined,
-      IconReference: js.UndefOr[__string] = js.undefined,
-      ImageIconUrl: js.UndefOr[__string] = js.undefined,
-      ImageUrl: js.UndefOr[__string] = js.undefined,
-      RawContent: js.UndefOr[__string] = js.undefined,
-      SilentPush: js.UndefOr[__boolean] = js.undefined,
-      SmallImageIconUrl: js.UndefOr[__string] = js.undefined,
-      Sound: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      TimeToLive: js.UndefOr[__integer] = js.undefined,
-      Title: js.UndefOr[__string] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined): BaiduMessage = {
+    def apply(Action: js.UndefOr[Action] = js.undefined,
+              Body: js.UndefOr[__string] = js.undefined,
+              Data: js.UndefOr[MapOf__string] = js.undefined,
+              IconReference: js.UndefOr[__string] = js.undefined,
+              ImageIconUrl: js.UndefOr[__string] = js.undefined,
+              ImageUrl: js.UndefOr[__string] = js.undefined,
+              RawContent: js.UndefOr[__string] = js.undefined,
+              SilentPush: js.UndefOr[__boolean] = js.undefined,
+              SmallImageIconUrl: js.UndefOr[__string] = js.undefined,
+              Sound: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              TimeToLive: js.UndefOr[__integer] = js.undefined,
+              Title: js.UndefOr[__string] = js.undefined,
+              Url: js.UndefOr[__string] = js.undefined): BaiduMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] },
-        "IconReference" -> IconReference.map { x => x.asInstanceOf[js.Any] },
-        "ImageIconUrl" -> ImageIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "ImageUrl" -> ImageUrl.map { x => x.asInstanceOf[js.Any] },
-        "RawContent" -> RawContent.map { x => x.asInstanceOf[js.Any] },
-        "SilentPush" -> SilentPush.map { x => x.asInstanceOf[js.Any] },
-        "SmallImageIconUrl" -> SmallImageIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "Sound" -> Sound.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "TimeToLive" -> TimeToLive.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IconReference" -> IconReference.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageIconUrl" -> ImageIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageUrl" -> ImageUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawContent" -> RawContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SilentPush" -> SilentPush.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SmallImageIconUrl" -> SmallImageIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sound" -> Sound.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeToLive" -> TimeToLive.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BaiduMessage]
     }
   }
 
   /**
-   * The email message configuration.
-   */
+    * The email message configuration.
+    */
   @js.native
   trait CampaignEmailMessage extends js.Object {
     var Body: js.UndefOr[__string]
@@ -1083,24 +1460,32 @@ package pinpoint {
   }
 
   object CampaignEmailMessage {
-    def apply(
-      Body: js.UndefOr[__string] = js.undefined,
-      FromAddress: js.UndefOr[__string] = js.undefined,
-      HtmlBody: js.UndefOr[__string] = js.undefined,
-      Title: js.UndefOr[__string] = js.undefined): CampaignEmailMessage = {
+    def apply(Body: js.UndefOr[__string] = js.undefined,
+              FromAddress: js.UndefOr[__string] = js.undefined,
+              HtmlBody: js.UndefOr[__string] = js.undefined,
+              Title: js.UndefOr[__string] = js.undefined): CampaignEmailMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "FromAddress" -> FromAddress.map { x => x.asInstanceOf[js.Any] },
-        "HtmlBody" -> HtmlBody.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FromAddress" -> FromAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HtmlBody" -> HtmlBody.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignEmailMessage]
     }
   }
 
   /**
-   * An object that defines the events that cause the campaign to be sent.
-   */
+    * An object that defines the events that cause the campaign to be sent.
+    */
   @js.native
   trait CampaignEventFilter extends js.Object {
     var Dimensions: js.UndefOr[EventDimensions]
@@ -1108,20 +1493,21 @@ package pinpoint {
   }
 
   object CampaignEventFilter {
-    def apply(
-      Dimensions: js.UndefOr[EventDimensions] = js.undefined,
-      FilterType: js.UndefOr[FilterType] = js.undefined): CampaignEventFilter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
-        "FilterType" -> FilterType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Dimensions: js.UndefOr[EventDimensions] = js.undefined,
+              FilterType: js.UndefOr[FilterType] = js.undefined): CampaignEventFilter = {
+      val _fields = IndexedSeq[(String, js.Any)]("Dimensions" -> Dimensions.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "FilterType" -> FilterType.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignEventFilter]
     }
   }
 
   /**
-   * Campaign hook information.
-   */
+    * Campaign hook information.
+    */
   @js.native
   trait CampaignHook extends js.Object {
     var LambdaFunctionName: js.UndefOr[__string]
@@ -1130,22 +1516,28 @@ package pinpoint {
   }
 
   object CampaignHook {
-    def apply(
-      LambdaFunctionName: js.UndefOr[__string] = js.undefined,
-      Mode: js.UndefOr[Mode] = js.undefined,
-      WebUrl: js.UndefOr[__string] = js.undefined): CampaignHook = {
+    def apply(LambdaFunctionName: js.UndefOr[__string] = js.undefined,
+              Mode: js.UndefOr[Mode] = js.undefined,
+              WebUrl: js.UndefOr[__string] = js.undefined): CampaignHook = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "LambdaFunctionName" -> LambdaFunctionName.map { x => x.asInstanceOf[js.Any] },
-        "Mode" -> Mode.map { x => x.asInstanceOf[js.Any] },
-        "WebUrl" -> WebUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LambdaFunctionName" -> LambdaFunctionName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Mode" -> Mode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WebUrl" -> WebUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignHook]
     }
   }
 
   /**
-   * Campaign Limits are used to limit the number of messages that can be sent to a single endpoint.
-   */
+    * Campaign Limits are used to limit the number of messages that can be sent to a single endpoint.
+    */
   @js.native
   trait CampaignLimits extends js.Object {
     var Daily: js.UndefOr[__integer]
@@ -1155,24 +1547,32 @@ package pinpoint {
   }
 
   object CampaignLimits {
-    def apply(
-      Daily: js.UndefOr[__integer] = js.undefined,
-      MaximumDuration: js.UndefOr[__integer] = js.undefined,
-      MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
-      Total: js.UndefOr[__integer] = js.undefined): CampaignLimits = {
+    def apply(Daily: js.UndefOr[__integer] = js.undefined,
+              MaximumDuration: js.UndefOr[__integer] = js.undefined,
+              MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
+              Total: js.UndefOr[__integer] = js.undefined): CampaignLimits = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Daily" -> Daily.map { x => x.asInstanceOf[js.Any] },
-        "MaximumDuration" -> MaximumDuration.map { x => x.asInstanceOf[js.Any] },
-        "MessagesPerSecond" -> MessagesPerSecond.map { x => x.asInstanceOf[js.Any] },
-        "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Daily" -> Daily.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaximumDuration" -> MaximumDuration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessagesPerSecond" -> MessagesPerSecond.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Total" -> Total.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignLimits]
     }
   }
 
   /**
-   * Campaign definition
-   */
+    * Campaign definition
+    */
   @js.native
   trait CampaignResponse extends js.Object {
     var AdditionalTreatments: js.UndefOr[ListOfTreatmentResource]
@@ -1198,56 +1598,96 @@ package pinpoint {
   }
 
   object CampaignResponse {
-    def apply(
-      AdditionalTreatments: js.UndefOr[ListOfTreatmentResource] = js.undefined,
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      DefaultState: js.UndefOr[CampaignState] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      HoldoutPercent: js.UndefOr[__integer] = js.undefined,
-      Hook: js.UndefOr[CampaignHook] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsPaused: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Limits: js.UndefOr[CampaignLimits] = js.undefined,
-      MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Schedule: js.UndefOr[Schedule] = js.undefined,
-      SegmentId: js.UndefOr[__string] = js.undefined,
-      SegmentVersion: js.UndefOr[__integer] = js.undefined,
-      State: js.UndefOr[CampaignState] = js.undefined,
-      TreatmentDescription: js.UndefOr[__string] = js.undefined,
-      TreatmentName: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): CampaignResponse = {
+    def apply(AdditionalTreatments: js.UndefOr[ListOfTreatmentResource] = js.undefined,
+              ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              DefaultState: js.UndefOr[CampaignState] = js.undefined,
+              Description: js.UndefOr[__string] = js.undefined,
+              HoldoutPercent: js.UndefOr[__integer] = js.undefined,
+              Hook: js.UndefOr[CampaignHook] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsPaused: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Limits: js.UndefOr[CampaignLimits] = js.undefined,
+              MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
+              Name: js.UndefOr[__string] = js.undefined,
+              Schedule: js.UndefOr[Schedule] = js.undefined,
+              SegmentId: js.UndefOr[__string] = js.undefined,
+              SegmentVersion: js.UndefOr[__integer] = js.undefined,
+              State: js.UndefOr[CampaignState] = js.undefined,
+              TreatmentDescription: js.UndefOr[__string] = js.undefined,
+              TreatmentName: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): CampaignResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalTreatments" -> AdditionalTreatments.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "DefaultState" -> DefaultState.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "HoldoutPercent" -> HoldoutPercent.map { x => x.asInstanceOf[js.Any] },
-        "Hook" -> Hook.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsPaused" -> IsPaused.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Limits" -> Limits.map { x => x.asInstanceOf[js.Any] },
-        "MessageConfiguration" -> MessageConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
-        "SegmentId" -> SegmentId.map { x => x.asInstanceOf[js.Any] },
-        "SegmentVersion" -> SegmentVersion.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentDescription" -> TreatmentDescription.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentName" -> TreatmentName.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AdditionalTreatments" -> AdditionalTreatments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultState" -> DefaultState.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HoldoutPercent" -> HoldoutPercent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Hook" -> Hook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsPaused" -> IsPaused.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limits" -> Limits.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageConfiguration" -> MessageConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Schedule" -> Schedule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentId" -> SegmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentVersion" -> SegmentVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentDescription" -> TreatmentDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentName" -> TreatmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignResponse]
     }
   }
 
   /**
-   * SMS message configuration.
-   */
+    * SMS message configuration.
+    */
   @js.native
   trait CampaignSmsMessage extends js.Object {
     var Body: js.UndefOr[__string]
@@ -1256,51 +1696,57 @@ package pinpoint {
   }
 
   object CampaignSmsMessage {
-    def apply(
-      Body: js.UndefOr[__string] = js.undefined,
-      MessageType: js.UndefOr[MessageType] = js.undefined,
-      SenderId: js.UndefOr[__string] = js.undefined): CampaignSmsMessage = {
+    def apply(Body: js.UndefOr[__string] = js.undefined,
+              MessageType: js.UndefOr[MessageType] = js.undefined,
+              SenderId: js.UndefOr[__string] = js.undefined): CampaignSmsMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "MessageType" -> MessageType.map { x => x.asInstanceOf[js.Any] },
-        "SenderId" -> SenderId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageType" -> MessageType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SenderId" -> SenderId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignSmsMessage]
     }
   }
 
   /**
-   * State of the Campaign
-   */
+    * State of the Campaign
+    */
   @js.native
   trait CampaignState extends js.Object {
     var CampaignStatus: js.UndefOr[CampaignStatus]
   }
 
   object CampaignState {
-    def apply(
-      CampaignStatus: js.UndefOr[CampaignStatus] = js.undefined): CampaignState = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignStatus" -> CampaignStatus.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignStatus: js.UndefOr[CampaignStatus] = js.undefined): CampaignState = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignStatus" -> CampaignStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignState]
     }
   }
 
   object CampaignStatusEnum {
-    val SCHEDULED = "SCHEDULED"
-    val EXECUTING = "EXECUTING"
+    val SCHEDULED        = "SCHEDULED"
+    val EXECUTING        = "EXECUTING"
     val PENDING_NEXT_RUN = "PENDING_NEXT_RUN"
-    val COMPLETED = "COMPLETED"
-    val PAUSED = "PAUSED"
-    val DELETED = "DELETED"
+    val COMPLETED        = "COMPLETED"
+    val PAUSED           = "PAUSED"
+    val DELETED          = "DELETED"
 
     val values = IndexedSeq(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED)
   }
 
   /**
-   * List of available campaigns.
-   */
+    * List of available campaigns.
+    */
   @js.native
   trait CampaignsResponse extends js.Object {
     var Item: js.UndefOr[ListOfCampaignResponse]
@@ -1308,20 +1754,21 @@ package pinpoint {
   }
 
   object CampaignsResponse {
-    def apply(
-      Item: js.UndefOr[ListOfCampaignResponse] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): CampaignsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfCampaignResponse] = js.undefined,
+              NextToken: js.UndefOr[__string] = js.undefined): CampaignsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CampaignsResponse]
     }
   }
 
   /**
-   * Base definition for channel response.
-   */
+    * Base definition for channel response.
+    */
   @js.native
   trait ChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -1336,60 +1783,79 @@ package pinpoint {
   }
 
   object ChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): ChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): ChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelResponse]
     }
   }
 
   object ChannelTypeEnum {
-    val GCM = "GCM"
-    val APNS = "APNS"
-    val APNS_SANDBOX = "APNS_SANDBOX"
-    val APNS_VOIP = "APNS_VOIP"
+    val GCM               = "GCM"
+    val APNS              = "APNS"
+    val APNS_SANDBOX      = "APNS_SANDBOX"
+    val APNS_VOIP         = "APNS_VOIP"
     val APNS_VOIP_SANDBOX = "APNS_VOIP_SANDBOX"
-    val ADM = "ADM"
-    val SMS = "SMS"
-    val VOICE = "VOICE"
-    val EMAIL = "EMAIL"
-    val BAIDU = "BAIDU"
-    val CUSTOM = "CUSTOM"
+    val ADM               = "ADM"
+    val SMS               = "SMS"
+    val VOICE             = "VOICE"
+    val EMAIL             = "EMAIL"
+    val BAIDU             = "BAIDU"
+    val CUSTOM            = "CUSTOM"
 
-    val values = IndexedSeq(GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+    val values =
+      IndexedSeq(GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
   }
 
   /**
-   * Get channels definition
-   */
+    * Get channels definition
+    */
   @js.native
   trait ChannelsResponse extends js.Object {
     var Channels: js.UndefOr[MapOfChannelResponse]
   }
 
   object ChannelsResponse {
-    def apply(
-      Channels: js.UndefOr[MapOfChannelResponse] = js.undefined): ChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Channels" -> Channels.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Channels: js.UndefOr[MapOfChannelResponse] = js.undefined): ChannelsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Channels" -> Channels.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelsResponse]
     }
@@ -1401,10 +1867,10 @@ package pinpoint {
   }
 
   object CreateAppRequest {
-    def apply(
-      CreateApplicationRequest: CreateApplicationRequest): CreateAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CreateApplicationRequest" -> CreateApplicationRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CreateApplicationRequest: CreateApplicationRequest): CreateAppRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("CreateApplicationRequest" -> CreateApplicationRequest.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppRequest]
     }
@@ -1416,28 +1882,27 @@ package pinpoint {
   }
 
   object CreateAppResponse {
-    def apply(
-      ApplicationResponse: ApplicationResponse): CreateAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationResponse: ApplicationResponse): CreateAppResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAppResponse]
     }
   }
 
   /**
-   * Application Request.
-   */
+    * Application Request.
+    */
   @js.native
   trait CreateApplicationRequest extends js.Object {
     var Name: js.UndefOr[__string]
   }
 
   object CreateApplicationRequest {
-    def apply(
-      Name: js.UndefOr[__string] = js.undefined): CreateApplicationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Name: js.UndefOr[__string] = js.undefined): CreateApplicationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateApplicationRequest]
     }
@@ -1450,12 +1915,11 @@ package pinpoint {
   }
 
   object CreateCampaignRequest {
-    def apply(
-      ApplicationId: __string,
-      WriteCampaignRequest: WriteCampaignRequest): CreateCampaignRequest = {
+    def apply(ApplicationId: __string, WriteCampaignRequest: WriteCampaignRequest): CreateCampaignRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
+        "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCampaignRequest]
     }
@@ -1467,10 +1931,9 @@ package pinpoint {
   }
 
   object CreateCampaignResponse {
-    def apply(
-      CampaignResponse: CampaignResponse): CreateCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignResponse: CampaignResponse): CreateCampaignResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCampaignResponse]
     }
@@ -1483,12 +1946,11 @@ package pinpoint {
   }
 
   object CreateExportJobRequest {
-    def apply(
-      ApplicationId: __string,
-      ExportJobRequest: ExportJobRequest): CreateExportJobRequest = {
+    def apply(ApplicationId: __string, ExportJobRequest: ExportJobRequest): CreateExportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "ExportJobRequest" -> ExportJobRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
+        "ExportJobRequest" -> ExportJobRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateExportJobRequest]
     }
@@ -1500,10 +1962,9 @@ package pinpoint {
   }
 
   object CreateExportJobResponse {
-    def apply(
-      ExportJobResponse: ExportJobResponse): CreateExportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ExportJobResponse: ExportJobResponse): CreateExportJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateExportJobResponse]
     }
@@ -1516,12 +1977,11 @@ package pinpoint {
   }
 
   object CreateImportJobRequest {
-    def apply(
-      ApplicationId: __string,
-      ImportJobRequest: ImportJobRequest): CreateImportJobRequest = {
+    def apply(ApplicationId: __string, ImportJobRequest: ImportJobRequest): CreateImportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "ImportJobRequest" -> ImportJobRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
+        "ImportJobRequest" -> ImportJobRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImportJobRequest]
     }
@@ -1533,10 +1993,9 @@ package pinpoint {
   }
 
   object CreateImportJobResponse {
-    def apply(
-      ImportJobResponse: ImportJobResponse): CreateImportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ImportJobResponse: ImportJobResponse): CreateImportJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateImportJobResponse]
     }
@@ -1549,12 +2008,11 @@ package pinpoint {
   }
 
   object CreateSegmentRequest {
-    def apply(
-      ApplicationId: __string,
-      WriteSegmentRequest: WriteSegmentRequest): CreateSegmentRequest = {
+    def apply(ApplicationId: __string, WriteSegmentRequest: WriteSegmentRequest): CreateSegmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
+        "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSegmentRequest]
     }
@@ -1566,18 +2024,17 @@ package pinpoint {
   }
 
   object CreateSegmentResponse {
-    def apply(
-      SegmentResponse: SegmentResponse): CreateSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SegmentResponse: SegmentResponse): CreateSegmentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSegmentResponse]
     }
   }
 
   /**
-   * The default message to use across all channels.
-   */
+    * The default message to use across all channels.
+    */
   @js.native
   trait DefaultMessage extends js.Object {
     var Body: js.UndefOr[__string]
@@ -1585,20 +2042,21 @@ package pinpoint {
   }
 
   object DefaultMessage {
-    def apply(
-      Body: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined): DefaultMessage = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Body: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined): DefaultMessage = {
+      val _fields = IndexedSeq[(String, js.Any)]("Body" -> Body.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Substitutions" -> Substitutions.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultMessage]
     }
   }
 
   /**
-   * Default Push Notification Message.
-   */
+    * Default Push Notification Message.
+    */
   @js.native
   trait DefaultPushNotificationMessage extends js.Object {
     var Action: js.UndefOr[Action]
@@ -1611,22 +2069,36 @@ package pinpoint {
   }
 
   object DefaultPushNotificationMessage {
-    def apply(
-      Action: js.UndefOr[Action] = js.undefined,
-      Body: js.UndefOr[__string] = js.undefined,
-      Data: js.UndefOr[MapOf__string] = js.undefined,
-      SilentPush: js.UndefOr[__boolean] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      Title: js.UndefOr[__string] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined): DefaultPushNotificationMessage = {
+    def apply(Action: js.UndefOr[Action] = js.undefined,
+              Body: js.UndefOr[__string] = js.undefined,
+              Data: js.UndefOr[MapOf__string] = js.undefined,
+              SilentPush: js.UndefOr[__boolean] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              Title: js.UndefOr[__string] = js.undefined,
+              Url: js.UndefOr[__string] = js.undefined): DefaultPushNotificationMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] },
-        "SilentPush" -> SilentPush.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SilentPush" -> SilentPush.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DefaultPushNotificationMessage]
     }
@@ -1638,10 +2110,9 @@ package pinpoint {
   }
 
   object DeleteAdmChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteAdmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteAdmChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAdmChannelRequest]
     }
@@ -1653,10 +2124,9 @@ package pinpoint {
   }
 
   object DeleteAdmChannelResponse {
-    def apply(
-      ADMChannelResponse: ADMChannelResponse): DeleteAdmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ADMChannelResponse: ADMChannelResponse): DeleteAdmChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAdmChannelResponse]
     }
@@ -1668,10 +2138,9 @@ package pinpoint {
   }
 
   object DeleteApnsChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteApnsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteApnsChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsChannelRequest]
     }
@@ -1683,10 +2152,9 @@ package pinpoint {
   }
 
   object DeleteApnsChannelResponse {
-    def apply(
-      APNSChannelResponse: APNSChannelResponse): DeleteApnsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSChannelResponse: APNSChannelResponse): DeleteApnsChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsChannelResponse]
     }
@@ -1698,10 +2166,9 @@ package pinpoint {
   }
 
   object DeleteApnsSandboxChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteApnsSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteApnsSandboxChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsSandboxChannelRequest]
     }
@@ -1713,10 +2180,10 @@ package pinpoint {
   }
 
   object DeleteApnsSandboxChannelResponse {
-    def apply(
-      APNSSandboxChannelResponse: APNSSandboxChannelResponse): DeleteApnsSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSSandboxChannelResponse: APNSSandboxChannelResponse): DeleteApnsSandboxChannelResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsSandboxChannelResponse]
     }
@@ -1728,10 +2195,9 @@ package pinpoint {
   }
 
   object DeleteApnsVoipChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteApnsVoipChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteApnsVoipChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipChannelRequest]
     }
@@ -1743,10 +2209,10 @@ package pinpoint {
   }
 
   object DeleteApnsVoipChannelResponse {
-    def apply(
-      APNSVoipChannelResponse: APNSVoipChannelResponse): DeleteApnsVoipChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSVoipChannelResponse: APNSVoipChannelResponse): DeleteApnsVoipChannelResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipChannelResponse]
     }
@@ -1758,10 +2224,9 @@ package pinpoint {
   }
 
   object DeleteApnsVoipSandboxChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteApnsVoipSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteApnsVoipSandboxChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipSandboxChannelRequest]
     }
@@ -1773,10 +2238,10 @@ package pinpoint {
   }
 
   object DeleteApnsVoipSandboxChannelResponse {
-    def apply(
-      APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse): DeleteApnsVoipSandboxChannelResponse = {
+    def apply(APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse): DeleteApnsVoipSandboxChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteApnsVoipSandboxChannelResponse]
     }
@@ -1788,10 +2253,9 @@ package pinpoint {
   }
 
   object DeleteAppRequest {
-    def apply(
-      ApplicationId: __string): DeleteAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteAppRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppRequest]
     }
@@ -1803,10 +2267,9 @@ package pinpoint {
   }
 
   object DeleteAppResponse {
-    def apply(
-      ApplicationResponse: ApplicationResponse): DeleteAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationResponse: ApplicationResponse): DeleteAppResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAppResponse]
     }
@@ -1818,10 +2281,9 @@ package pinpoint {
   }
 
   object DeleteBaiduChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteBaiduChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteBaiduChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBaiduChannelRequest]
     }
@@ -1833,10 +2295,9 @@ package pinpoint {
   }
 
   object DeleteBaiduChannelResponse {
-    def apply(
-      BaiduChannelResponse: BaiduChannelResponse): DeleteBaiduChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(BaiduChannelResponse: BaiduChannelResponse): DeleteBaiduChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBaiduChannelResponse]
     }
@@ -1849,12 +2310,11 @@ package pinpoint {
   }
 
   object DeleteCampaignRequest {
-    def apply(
-      ApplicationId: __string,
-      CampaignId: __string): DeleteCampaignRequest = {
+    def apply(ApplicationId: __string, CampaignId: __string): DeleteCampaignRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId" -> CampaignId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCampaignRequest]
     }
@@ -1866,10 +2326,9 @@ package pinpoint {
   }
 
   object DeleteCampaignResponse {
-    def apply(
-      CampaignResponse: CampaignResponse): DeleteCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignResponse: CampaignResponse): DeleteCampaignResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCampaignResponse]
     }
@@ -1881,10 +2340,9 @@ package pinpoint {
   }
 
   object DeleteEmailChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteEmailChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteEmailChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEmailChannelRequest]
     }
@@ -1896,10 +2354,9 @@ package pinpoint {
   }
 
   object DeleteEmailChannelResponse {
-    def apply(
-      EmailChannelResponse: EmailChannelResponse): DeleteEmailChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EmailChannelResponse: EmailChannelResponse): DeleteEmailChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEmailChannelResponse]
     }
@@ -1912,12 +2369,11 @@ package pinpoint {
   }
 
   object DeleteEndpointRequest {
-    def apply(
-      ApplicationId: __string,
-      EndpointId: __string): DeleteEndpointRequest = {
+    def apply(ApplicationId: __string, EndpointId: __string): DeleteEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "EndpointId" -> EndpointId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EndpointId"    -> EndpointId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointRequest]
     }
@@ -1929,10 +2385,9 @@ package pinpoint {
   }
 
   object DeleteEndpointResponse {
-    def apply(
-      EndpointResponse: EndpointResponse): DeleteEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointResponse: EndpointResponse): DeleteEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointResponse]
     }
@@ -1944,10 +2399,9 @@ package pinpoint {
   }
 
   object DeleteEventStreamRequest {
-    def apply(
-      ApplicationId: __string): DeleteEventStreamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteEventStreamRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventStreamRequest]
     }
@@ -1959,10 +2413,9 @@ package pinpoint {
   }
 
   object DeleteEventStreamResponse {
-    def apply(
-      EventStream: EventStream): DeleteEventStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventStream" -> EventStream.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EventStream: EventStream): DeleteEventStreamResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EventStream" -> EventStream.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEventStreamResponse]
     }
@@ -1974,10 +2427,9 @@ package pinpoint {
   }
 
   object DeleteGcmChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteGcmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteGcmChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGcmChannelRequest]
     }
@@ -1989,10 +2441,9 @@ package pinpoint {
   }
 
   object DeleteGcmChannelResponse {
-    def apply(
-      GCMChannelResponse: GCMChannelResponse): DeleteGcmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(GCMChannelResponse: GCMChannelResponse): DeleteGcmChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteGcmChannelResponse]
     }
@@ -2005,12 +2456,11 @@ package pinpoint {
   }
 
   object DeleteSegmentRequest {
-    def apply(
-      ApplicationId: __string,
-      SegmentId: __string): DeleteSegmentRequest = {
+    def apply(ApplicationId: __string, SegmentId: __string): DeleteSegmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId" -> SegmentId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSegmentRequest]
     }
@@ -2022,10 +2472,9 @@ package pinpoint {
   }
 
   object DeleteSegmentResponse {
-    def apply(
-      SegmentResponse: SegmentResponse): DeleteSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SegmentResponse: SegmentResponse): DeleteSegmentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSegmentResponse]
     }
@@ -2037,10 +2486,9 @@ package pinpoint {
   }
 
   object DeleteSmsChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteSmsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteSmsChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSmsChannelRequest]
     }
@@ -2052,10 +2500,9 @@ package pinpoint {
   }
 
   object DeleteSmsChannelResponse {
-    def apply(
-      SMSChannelResponse: SMSChannelResponse): DeleteSmsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SMSChannelResponse: SMSChannelResponse): DeleteSmsChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSmsChannelResponse]
     }
@@ -2068,12 +2515,11 @@ package pinpoint {
   }
 
   object DeleteUserEndpointsRequest {
-    def apply(
-      ApplicationId: __string,
-      UserId: __string): DeleteUserEndpointsRequest = {
+    def apply(ApplicationId: __string, UserId: __string): DeleteUserEndpointsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserId"        -> UserId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserEndpointsRequest]
     }
@@ -2085,10 +2531,9 @@ package pinpoint {
   }
 
   object DeleteUserEndpointsResponse {
-    def apply(
-      EndpointsResponse: EndpointsResponse): DeleteUserEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointsResponse: EndpointsResponse): DeleteUserEndpointsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserEndpointsResponse]
     }
@@ -2100,10 +2545,9 @@ package pinpoint {
   }
 
   object DeleteVoiceChannelRequest {
-    def apply(
-      ApplicationId: __string): DeleteVoiceChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): DeleteVoiceChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVoiceChannelRequest]
     }
@@ -2115,25 +2559,25 @@ package pinpoint {
   }
 
   object DeleteVoiceChannelResponse {
-    def apply(
-      VoiceChannelResponse: VoiceChannelResponse): DeleteVoiceChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(VoiceChannelResponse: VoiceChannelResponse): DeleteVoiceChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteVoiceChannelResponse]
     }
   }
 
   object DeliveryStatusEnum {
-    val SUCCESSFUL = "SUCCESSFUL"
-    val THROTTLED = "THROTTLED"
+    val SUCCESSFUL        = "SUCCESSFUL"
+    val THROTTLED         = "THROTTLED"
     val TEMPORARY_FAILURE = "TEMPORARY_FAILURE"
     val PERMANENT_FAILURE = "PERMANENT_FAILURE"
-    val UNKNOWN_FAILURE = "UNKNOWN_FAILURE"
-    val OPT_OUT = "OPT_OUT"
-    val DUPLICATE = "DUPLICATE"
+    val UNKNOWN_FAILURE   = "UNKNOWN_FAILURE"
+    val OPT_OUT           = "OPT_OUT"
+    val DUPLICATE         = "DUPLICATE"
 
-    val values = IndexedSeq(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
+    val values =
+      IndexedSeq(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
   }
 
   object DimensionTypeEnum {
@@ -2144,8 +2588,8 @@ package pinpoint {
   }
 
   /**
-   * Message definitions for the default message and any messages that are tailored for specific channels.
-   */
+    * Message definitions for the default message and any messages that are tailored for specific channels.
+    */
   @js.native
   trait DirectMessageConfiguration extends js.Object {
     var ADMMessage: js.UndefOr[ADMMessage]
@@ -2160,34 +2604,52 @@ package pinpoint {
   }
 
   object DirectMessageConfiguration {
-    def apply(
-      ADMMessage: js.UndefOr[ADMMessage] = js.undefined,
-      APNSMessage: js.UndefOr[APNSMessage] = js.undefined,
-      BaiduMessage: js.UndefOr[BaiduMessage] = js.undefined,
-      DefaultMessage: js.UndefOr[DefaultMessage] = js.undefined,
-      DefaultPushNotificationMessage: js.UndefOr[DefaultPushNotificationMessage] = js.undefined,
-      EmailMessage: js.UndefOr[EmailMessage] = js.undefined,
-      GCMMessage: js.UndefOr[GCMMessage] = js.undefined,
-      SMSMessage: js.UndefOr[SMSMessage] = js.undefined,
-      VoiceMessage: js.UndefOr[VoiceMessage] = js.undefined): DirectMessageConfiguration = {
+    def apply(ADMMessage: js.UndefOr[ADMMessage] = js.undefined,
+              APNSMessage: js.UndefOr[APNSMessage] = js.undefined,
+              BaiduMessage: js.UndefOr[BaiduMessage] = js.undefined,
+              DefaultMessage: js.UndefOr[DefaultMessage] = js.undefined,
+              DefaultPushNotificationMessage: js.UndefOr[DefaultPushNotificationMessage] = js.undefined,
+              EmailMessage: js.UndefOr[EmailMessage] = js.undefined,
+              GCMMessage: js.UndefOr[GCMMessage] = js.undefined,
+              SMSMessage: js.UndefOr[SMSMessage] = js.undefined,
+              VoiceMessage: js.UndefOr[VoiceMessage] = js.undefined): DirectMessageConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ADMMessage" -> ADMMessage.map { x => x.asInstanceOf[js.Any] },
-        "APNSMessage" -> APNSMessage.map { x => x.asInstanceOf[js.Any] },
-        "BaiduMessage" -> BaiduMessage.map { x => x.asInstanceOf[js.Any] },
-        "DefaultMessage" -> DefaultMessage.map { x => x.asInstanceOf[js.Any] },
-        "DefaultPushNotificationMessage" -> DefaultPushNotificationMessage.map { x => x.asInstanceOf[js.Any] },
-        "EmailMessage" -> EmailMessage.map { x => x.asInstanceOf[js.Any] },
-        "GCMMessage" -> GCMMessage.map { x => x.asInstanceOf[js.Any] },
-        "SMSMessage" -> SMSMessage.map { x => x.asInstanceOf[js.Any] },
-        "VoiceMessage" -> VoiceMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ADMMessage" -> ADMMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "APNSMessage" -> APNSMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "BaiduMessage" -> BaiduMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultMessage" -> DefaultMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultPushNotificationMessage" -> DefaultPushNotificationMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EmailMessage" -> EmailMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GCMMessage" -> GCMMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SMSMessage" -> SMSMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VoiceMessage" -> VoiceMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DirectMessageConfiguration]
     }
   }
 
   object DurationEnum {
-    val HR_24 = "HR_24"
-    val DAY_7 = "DAY_7"
+    val HR_24  = "HR_24"
+    val DAY_7  = "DAY_7"
     val DAY_14 = "DAY_14"
     val DAY_30 = "DAY_30"
 
@@ -2195,8 +2657,8 @@ package pinpoint {
   }
 
   /**
-   * Email Channel Request
-   */
+    * Email Channel Request
+    */
   @js.native
   trait EmailChannelRequest extends js.Object {
     var ConfigurationSet: js.UndefOr[__string]
@@ -2207,26 +2669,36 @@ package pinpoint {
   }
 
   object EmailChannelRequest {
-    def apply(
-      ConfigurationSet: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      FromAddress: js.UndefOr[__string] = js.undefined,
-      Identity: js.UndefOr[__string] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined): EmailChannelRequest = {
+    def apply(ConfigurationSet: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              FromAddress: js.UndefOr[__string] = js.undefined,
+              Identity: js.UndefOr[__string] = js.undefined,
+              RoleArn: js.UndefOr[__string] = js.undefined): EmailChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConfigurationSet" -> ConfigurationSet.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "FromAddress" -> FromAddress.map { x => x.asInstanceOf[js.Any] },
-        "Identity" -> Identity.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ConfigurationSet" -> ConfigurationSet.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FromAddress" -> FromAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Identity" -> Identity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailChannelRequest]
     }
   }
 
   /**
-   * Email Channel Response.
-   */
+    * Email Channel Response.
+    */
   @js.native
   trait EmailChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -2247,46 +2719,76 @@ package pinpoint {
   }
 
   object EmailChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      ConfigurationSet: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      FromAddress: js.UndefOr[__string] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      Identity: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): EmailChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              ConfigurationSet: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              FromAddress: js.UndefOr[__string] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              Identity: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              RoleArn: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): EmailChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "ConfigurationSet" -> ConfigurationSet.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "FromAddress" -> FromAddress.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Identity" -> Identity.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "MessagesPerSecond" -> MessagesPerSecond.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ConfigurationSet" -> ConfigurationSet.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FromAddress" -> FromAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Identity" -> Identity.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessagesPerSecond" -> MessagesPerSecond.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailChannelResponse]
     }
   }
 
   /**
-   * Email Message.
-   */
+    * Email Message.
+    */
   @js.native
   trait EmailMessage extends js.Object {
     var Body: js.UndefOr[__string]
@@ -2299,30 +2801,44 @@ package pinpoint {
   }
 
   object EmailMessage {
-    def apply(
-      Body: js.UndefOr[__string] = js.undefined,
-      FeedbackForwardingAddress: js.UndefOr[__string] = js.undefined,
-      FromAddress: js.UndefOr[__string] = js.undefined,
-      RawEmail: js.UndefOr[RawEmail] = js.undefined,
-      ReplyToAddresses: js.UndefOr[ListOf__string] = js.undefined,
-      SimpleEmail: js.UndefOr[SimpleEmail] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined): EmailMessage = {
+    def apply(Body: js.UndefOr[__string] = js.undefined,
+              FeedbackForwardingAddress: js.UndefOr[__string] = js.undefined,
+              FromAddress: js.UndefOr[__string] = js.undefined,
+              RawEmail: js.UndefOr[RawEmail] = js.undefined,
+              ReplyToAddresses: js.UndefOr[ListOf__string] = js.undefined,
+              SimpleEmail: js.UndefOr[SimpleEmail] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined): EmailMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "FeedbackForwardingAddress" -> FeedbackForwardingAddress.map { x => x.asInstanceOf[js.Any] },
-        "FromAddress" -> FromAddress.map { x => x.asInstanceOf[js.Any] },
-        "RawEmail" -> RawEmail.map { x => x.asInstanceOf[js.Any] },
-        "ReplyToAddresses" -> ReplyToAddresses.map { x => x.asInstanceOf[js.Any] },
-        "SimpleEmail" -> SimpleEmail.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FeedbackForwardingAddress" -> FeedbackForwardingAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FromAddress" -> FromAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawEmail" -> RawEmail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReplyToAddresses" -> ReplyToAddresses.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SimpleEmail" -> SimpleEmail.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EmailMessage]
     }
   }
 
   /**
-   * Endpoint update request
-   */
+    * Endpoint update request
+    */
   @js.native
   trait EndpointBatchItem extends js.Object {
     var Address: js.UndefOr[__string]
@@ -2340,58 +2856,82 @@ package pinpoint {
   }
 
   object EndpointBatchItem {
-    def apply(
-      Address: js.UndefOr[__string] = js.undefined,
-      Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
-      ChannelType: js.UndefOr[ChannelType] = js.undefined,
-      Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
-      EffectiveDate: js.UndefOr[__string] = js.undefined,
-      EndpointStatus: js.UndefOr[__string] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      Location: js.UndefOr[EndpointLocation] = js.undefined,
-      Metrics: js.UndefOr[MapOf__double] = js.undefined,
-      OptOut: js.UndefOr[__string] = js.undefined,
-      RequestId: js.UndefOr[__string] = js.undefined,
-      User: js.UndefOr[EndpointUser] = js.undefined): EndpointBatchItem = {
+    def apply(Address: js.UndefOr[__string] = js.undefined,
+              Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
+              ChannelType: js.UndefOr[ChannelType] = js.undefined,
+              Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
+              EffectiveDate: js.UndefOr[__string] = js.undefined,
+              EndpointStatus: js.UndefOr[__string] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              Location: js.UndefOr[EndpointLocation] = js.undefined,
+              Metrics: js.UndefOr[MapOf__double] = js.undefined,
+              OptOut: js.UndefOr[__string] = js.undefined,
+              RequestId: js.UndefOr[__string] = js.undefined,
+              User: js.UndefOr[EndpointUser] = js.undefined): EndpointBatchItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "ChannelType" -> ChannelType.map { x => x.asInstanceOf[js.Any] },
-        "Demographic" -> Demographic.map { x => x.asInstanceOf[js.Any] },
-        "EffectiveDate" -> EffectiveDate.map { x => x.asInstanceOf[js.Any] },
-        "EndpointStatus" -> EndpointStatus.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "OptOut" -> OptOut.map { x => x.asInstanceOf[js.Any] },
-        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelType" -> ChannelType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Demographic" -> Demographic.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EffectiveDate" -> EffectiveDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndpointStatus" -> EndpointStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Location" -> Location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OptOut" -> OptOut.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestId" -> RequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "User" -> User.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointBatchItem]
     }
   }
 
   /**
-   * Endpoint batch update request.
-   */
+    * Endpoint batch update request.
+    */
   @js.native
   trait EndpointBatchRequest extends js.Object {
     var Item: js.UndefOr[ListOfEndpointBatchItem]
   }
 
   object EndpointBatchRequest {
-    def apply(
-      Item: js.UndefOr[ListOfEndpointBatchItem] = js.undefined): EndpointBatchRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfEndpointBatchItem] = js.undefined): EndpointBatchRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointBatchRequest]
     }
   }
 
   /**
-   * Demographic information about the endpoint.
-   */
+    * Demographic information about the endpoint.
+    */
   @js.native
   trait EndpointDemographic extends js.Object {
     var AppVersion: js.UndefOr[__string]
@@ -2405,32 +2945,48 @@ package pinpoint {
   }
 
   object EndpointDemographic {
-    def apply(
-      AppVersion: js.UndefOr[__string] = js.undefined,
-      Locale: js.UndefOr[__string] = js.undefined,
-      Make: js.UndefOr[__string] = js.undefined,
-      Model: js.UndefOr[__string] = js.undefined,
-      ModelVersion: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      PlatformVersion: js.UndefOr[__string] = js.undefined,
-      Timezone: js.UndefOr[__string] = js.undefined): EndpointDemographic = {
+    def apply(AppVersion: js.UndefOr[__string] = js.undefined,
+              Locale: js.UndefOr[__string] = js.undefined,
+              Make: js.UndefOr[__string] = js.undefined,
+              Model: js.UndefOr[__string] = js.undefined,
+              ModelVersion: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              PlatformVersion: js.UndefOr[__string] = js.undefined,
+              Timezone: js.UndefOr[__string] = js.undefined): EndpointDemographic = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AppVersion" -> AppVersion.map { x => x.asInstanceOf[js.Any] },
-        "Locale" -> Locale.map { x => x.asInstanceOf[js.Any] },
-        "Make" -> Make.map { x => x.asInstanceOf[js.Any] },
-        "Model" -> Model.map { x => x.asInstanceOf[js.Any] },
-        "ModelVersion" -> ModelVersion.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "PlatformVersion" -> PlatformVersion.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AppVersion" -> AppVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Locale" -> Locale.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Make" -> Make.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Model" -> Model.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelVersion" -> ModelVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PlatformVersion" -> PlatformVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timezone" -> Timezone.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointDemographic]
     }
   }
 
   /**
-   * A complex object that holds the status code and message as a result of processing an endpoint.
-   */
+    * A complex object that holds the status code and message as a result of processing an endpoint.
+    */
   @js.native
   trait EndpointItemResponse extends js.Object {
     var Message: js.UndefOr[__string]
@@ -2438,20 +2994,21 @@ package pinpoint {
   }
 
   object EndpointItemResponse {
-    def apply(
-      Message: js.UndefOr[__string] = js.undefined,
-      StatusCode: js.UndefOr[__integer] = js.undefined): EndpointItemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Message: js.UndefOr[__string] = js.undefined,
+              StatusCode: js.UndefOr[__integer] = js.undefined): EndpointItemResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "StatusCode" -> StatusCode.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointItemResponse]
     }
   }
 
   /**
-   * Location data for the endpoint.
-   */
+    * Location data for the endpoint.
+    */
   @js.native
   trait EndpointLocation extends js.Object {
     var City: js.UndefOr[__string]
@@ -2463,28 +3020,40 @@ package pinpoint {
   }
 
   object EndpointLocation {
-    def apply(
-      City: js.UndefOr[__string] = js.undefined,
-      Country: js.UndefOr[__string] = js.undefined,
-      Latitude: js.UndefOr[__double] = js.undefined,
-      Longitude: js.UndefOr[__double] = js.undefined,
-      PostalCode: js.UndefOr[__string] = js.undefined,
-      Region: js.UndefOr[__string] = js.undefined): EndpointLocation = {
+    def apply(City: js.UndefOr[__string] = js.undefined,
+              Country: js.UndefOr[__string] = js.undefined,
+              Latitude: js.UndefOr[__double] = js.undefined,
+              Longitude: js.UndefOr[__double] = js.undefined,
+              PostalCode: js.UndefOr[__string] = js.undefined,
+              Region: js.UndefOr[__string] = js.undefined): EndpointLocation = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "City" -> City.map { x => x.asInstanceOf[js.Any] },
-        "Country" -> Country.map { x => x.asInstanceOf[js.Any] },
-        "Latitude" -> Latitude.map { x => x.asInstanceOf[js.Any] },
-        "Longitude" -> Longitude.map { x => x.asInstanceOf[js.Any] },
-        "PostalCode" -> PostalCode.map { x => x.asInstanceOf[js.Any] },
-        "Region" -> Region.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "City" -> City.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Country" -> Country.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Latitude" -> Latitude.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Longitude" -> Longitude.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PostalCode" -> PostalCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Region" -> Region.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointLocation]
     }
   }
 
   /**
-   * The result from sending a message to an endpoint.
-   */
+    * The result from sending a message to an endpoint.
+    */
   @js.native
   trait EndpointMessageResult extends js.Object {
     var Address: js.UndefOr[__string]
@@ -2496,28 +3065,40 @@ package pinpoint {
   }
 
   object EndpointMessageResult {
-    def apply(
-      Address: js.UndefOr[__string] = js.undefined,
-      DeliveryStatus: js.UndefOr[DeliveryStatus] = js.undefined,
-      MessageId: js.UndefOr[__string] = js.undefined,
-      StatusCode: js.UndefOr[__integer] = js.undefined,
-      StatusMessage: js.UndefOr[__string] = js.undefined,
-      UpdatedToken: js.UndefOr[__string] = js.undefined): EndpointMessageResult = {
+    def apply(Address: js.UndefOr[__string] = js.undefined,
+              DeliveryStatus: js.UndefOr[DeliveryStatus] = js.undefined,
+              MessageId: js.UndefOr[__string] = js.undefined,
+              StatusCode: js.UndefOr[__integer] = js.undefined,
+              StatusMessage: js.UndefOr[__string] = js.undefined,
+              UpdatedToken: js.UndefOr[__string] = js.undefined): EndpointMessageResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "DeliveryStatus" -> DeliveryStatus.map { x => x.asInstanceOf[js.Any] },
-        "MessageId" -> MessageId.map { x => x.asInstanceOf[js.Any] },
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] },
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] },
-        "UpdatedToken" -> UpdatedToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeliveryStatus" -> DeliveryStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageId" -> MessageId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusCode" -> StatusCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusMessage" -> StatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UpdatedToken" -> UpdatedToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointMessageResult]
     }
   }
 
   /**
-   * An endpoint update request.
-   */
+    * An endpoint update request.
+    */
   @js.native
   trait EndpointRequest extends js.Object {
     var Address: js.UndefOr[__string]
@@ -2534,38 +3115,60 @@ package pinpoint {
   }
 
   object EndpointRequest {
-    def apply(
-      Address: js.UndefOr[__string] = js.undefined,
-      Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
-      ChannelType: js.UndefOr[ChannelType] = js.undefined,
-      Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
-      EffectiveDate: js.UndefOr[__string] = js.undefined,
-      EndpointStatus: js.UndefOr[__string] = js.undefined,
-      Location: js.UndefOr[EndpointLocation] = js.undefined,
-      Metrics: js.UndefOr[MapOf__double] = js.undefined,
-      OptOut: js.UndefOr[__string] = js.undefined,
-      RequestId: js.UndefOr[__string] = js.undefined,
-      User: js.UndefOr[EndpointUser] = js.undefined): EndpointRequest = {
+    def apply(Address: js.UndefOr[__string] = js.undefined,
+              Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
+              ChannelType: js.UndefOr[ChannelType] = js.undefined,
+              Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
+              EffectiveDate: js.UndefOr[__string] = js.undefined,
+              EndpointStatus: js.UndefOr[__string] = js.undefined,
+              Location: js.UndefOr[EndpointLocation] = js.undefined,
+              Metrics: js.UndefOr[MapOf__double] = js.undefined,
+              OptOut: js.UndefOr[__string] = js.undefined,
+              RequestId: js.UndefOr[__string] = js.undefined,
+              User: js.UndefOr[EndpointUser] = js.undefined): EndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "ChannelType" -> ChannelType.map { x => x.asInstanceOf[js.Any] },
-        "Demographic" -> Demographic.map { x => x.asInstanceOf[js.Any] },
-        "EffectiveDate" -> EffectiveDate.map { x => x.asInstanceOf[js.Any] },
-        "EndpointStatus" -> EndpointStatus.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "OptOut" -> OptOut.map { x => x.asInstanceOf[js.Any] },
-        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelType" -> ChannelType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Demographic" -> Demographic.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EffectiveDate" -> EffectiveDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndpointStatus" -> EndpointStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Location" -> Location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OptOut" -> OptOut.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestId" -> RequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "User" -> User.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointRequest]
     }
   }
 
   /**
-   * Endpoint response
-   */
+    * Endpoint response
+    */
   @js.native
   trait EndpointResponse extends js.Object {
     var Address: js.UndefOr[__string]
@@ -2586,46 +3189,76 @@ package pinpoint {
   }
 
   object EndpointResponse {
-    def apply(
-      Address: js.UndefOr[__string] = js.undefined,
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
-      ChannelType: js.UndefOr[ChannelType] = js.undefined,
-      CohortId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
-      EffectiveDate: js.UndefOr[__string] = js.undefined,
-      EndpointStatus: js.UndefOr[__string] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      Location: js.UndefOr[EndpointLocation] = js.undefined,
-      Metrics: js.UndefOr[MapOf__double] = js.undefined,
-      OptOut: js.UndefOr[__string] = js.undefined,
-      RequestId: js.UndefOr[__string] = js.undefined,
-      User: js.UndefOr[EndpointUser] = js.undefined): EndpointResponse = {
+    def apply(Address: js.UndefOr[__string] = js.undefined,
+              ApplicationId: js.UndefOr[__string] = js.undefined,
+              Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
+              ChannelType: js.UndefOr[ChannelType] = js.undefined,
+              CohortId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
+              EffectiveDate: js.UndefOr[__string] = js.undefined,
+              EndpointStatus: js.UndefOr[__string] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              Location: js.UndefOr[EndpointLocation] = js.undefined,
+              Metrics: js.UndefOr[MapOf__double] = js.undefined,
+              OptOut: js.UndefOr[__string] = js.undefined,
+              RequestId: js.UndefOr[__string] = js.undefined,
+              User: js.UndefOr[EndpointUser] = js.undefined): EndpointResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "ChannelType" -> ChannelType.map { x => x.asInstanceOf[js.Any] },
-        "CohortId" -> CohortId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Demographic" -> Demographic.map { x => x.asInstanceOf[js.Any] },
-        "EffectiveDate" -> EffectiveDate.map { x => x.asInstanceOf[js.Any] },
-        "EndpointStatus" -> EndpointStatus.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "OptOut" -> OptOut.map { x => x.asInstanceOf[js.Any] },
-        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelType" -> ChannelType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CohortId" -> CohortId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Demographic" -> Demographic.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EffectiveDate" -> EffectiveDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndpointStatus" -> EndpointStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Location" -> Location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OptOut" -> OptOut.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestId" -> RequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "User" -> User.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointResponse]
     }
   }
 
   /**
-   * Endpoint send configuration.
-   */
+    * Endpoint send configuration.
+    */
   @js.native
   trait EndpointSendConfiguration extends js.Object {
     var BodyOverride: js.UndefOr[__string]
@@ -2636,26 +3269,36 @@ package pinpoint {
   }
 
   object EndpointSendConfiguration {
-    def apply(
-      BodyOverride: js.UndefOr[__string] = js.undefined,
-      Context: js.UndefOr[MapOf__string] = js.undefined,
-      RawContent: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      TitleOverride: js.UndefOr[__string] = js.undefined): EndpointSendConfiguration = {
+    def apply(BodyOverride: js.UndefOr[__string] = js.undefined,
+              Context: js.UndefOr[MapOf__string] = js.undefined,
+              RawContent: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              TitleOverride: js.UndefOr[__string] = js.undefined): EndpointSendConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BodyOverride" -> BodyOverride.map { x => x.asInstanceOf[js.Any] },
-        "Context" -> Context.map { x => x.asInstanceOf[js.Any] },
-        "RawContent" -> RawContent.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "TitleOverride" -> TitleOverride.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BodyOverride" -> BodyOverride.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Context" -> Context.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawContent" -> RawContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TitleOverride" -> TitleOverride.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointSendConfiguration]
     }
   }
 
   /**
-   * Endpoint user specific custom userAttributes
-   */
+    * Endpoint user specific custom userAttributes
+    */
   @js.native
   trait EndpointUser extends js.Object {
     var UserAttributes: js.UndefOr[MapOfListOf__string]
@@ -2663,38 +3306,39 @@ package pinpoint {
   }
 
   object EndpointUser {
-    def apply(
-      UserAttributes: js.UndefOr[MapOfListOf__string] = js.undefined,
-      UserId: js.UndefOr[__string] = js.undefined): EndpointUser = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] },
-        "UserId" -> UserId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(UserAttributes: js.UndefOr[MapOfListOf__string] = js.undefined,
+              UserId: js.UndefOr[__string] = js.undefined): EndpointUser = {
+      val _fields = IndexedSeq[(String, js.Any)]("UserAttributes" -> UserAttributes.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "UserId" -> UserId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointUser]
     }
   }
 
   /**
-   * List of endpoints
-   */
+    * List of endpoints
+    */
   @js.native
   trait EndpointsResponse extends js.Object {
     var Item: js.UndefOr[ListOfEndpointResponse]
   }
 
   object EndpointsResponse {
-    def apply(
-      Item: js.UndefOr[ListOfEndpointResponse] = js.undefined): EndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfEndpointResponse] = js.undefined): EndpointsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointsResponse]
     }
   }
 
   /**
-   * Model for creating or updating events.
-   */
+    * Model for creating or updating events.
+    */
   @js.native
   trait Event extends js.Object {
     var Attributes: js.UndefOr[MapOf__string]
@@ -2706,28 +3350,40 @@ package pinpoint {
   }
 
   object Event {
-    def apply(
-      Attributes: js.UndefOr[MapOf__string] = js.undefined,
-      ClientSdkVersion: js.UndefOr[__string] = js.undefined,
-      EventType: js.UndefOr[__string] = js.undefined,
-      Metrics: js.UndefOr[MapOf__double] = js.undefined,
-      Session: js.UndefOr[Session] = js.undefined,
-      Timestamp: js.UndefOr[__string] = js.undefined): Event = {
+    def apply(Attributes: js.UndefOr[MapOf__string] = js.undefined,
+              ClientSdkVersion: js.UndefOr[__string] = js.undefined,
+              EventType: js.UndefOr[__string] = js.undefined,
+              Metrics: js.UndefOr[MapOf__double] = js.undefined,
+              Session: js.UndefOr[Session] = js.undefined,
+              Timestamp: js.UndefOr[__string] = js.undefined): Event = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "ClientSdkVersion" -> ClientSdkVersion.map { x => x.asInstanceOf[js.Any] },
-        "EventType" -> EventType.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "Session" -> Session.map { x => x.asInstanceOf[js.Any] },
-        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ClientSdkVersion" -> ClientSdkVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EventType" -> EventType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Session" -> Session.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timestamp" -> Timestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Event]
     }
   }
 
   /**
-   * Event dimensions.
-   */
+    * Event dimensions.
+    */
   @js.native
   trait EventDimensions extends js.Object {
     var Attributes: js.UndefOr[MapOfAttributeDimension]
@@ -2736,22 +3392,28 @@ package pinpoint {
   }
 
   object EventDimensions {
-    def apply(
-      Attributes: js.UndefOr[MapOfAttributeDimension] = js.undefined,
-      EventType: js.UndefOr[SetDimension] = js.undefined,
-      Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined): EventDimensions = {
+    def apply(Attributes: js.UndefOr[MapOfAttributeDimension] = js.undefined,
+              EventType: js.UndefOr[SetDimension] = js.undefined,
+              Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined): EventDimensions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "EventType" -> EventType.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EventType" -> EventType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventDimensions]
     }
   }
 
   /**
-   * A complex object that holds the status code and message as a result of processing an event.
-   */
+    * A complex object that holds the status code and message as a result of processing an event.
+    */
   @js.native
   trait EventItemResponse extends js.Object {
     var Message: js.UndefOr[__string]
@@ -2759,20 +3421,21 @@ package pinpoint {
   }
 
   object EventItemResponse {
-    def apply(
-      Message: js.UndefOr[__string] = js.undefined,
-      StatusCode: js.UndefOr[__integer] = js.undefined): EventItemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Message: js.UndefOr[__string] = js.undefined,
+              StatusCode: js.UndefOr[__integer] = js.undefined): EventItemResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "StatusCode" -> StatusCode.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventItemResponse]
     }
   }
 
   /**
-   * Model for an event publishing subscription export.
-   */
+    * Model for an event publishing subscription export.
+    */
   @js.native
   trait EventStream extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -2784,28 +3447,40 @@ package pinpoint {
   }
 
   object EventStream {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      DestinationStreamArn: js.UndefOr[__string] = js.undefined,
-      ExternalId: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      LastUpdatedBy: js.UndefOr[__string] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined): EventStream = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              DestinationStreamArn: js.UndefOr[__string] = js.undefined,
+              ExternalId: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              LastUpdatedBy: js.UndefOr[__string] = js.undefined,
+              RoleArn: js.UndefOr[__string] = js.undefined): EventStream = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "DestinationStreamArn" -> DestinationStreamArn.map { x => x.asInstanceOf[js.Any] },
-        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedBy" -> LastUpdatedBy.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DestinationStreamArn" -> DestinationStreamArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ExternalId" -> ExternalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastUpdatedBy" -> LastUpdatedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventStream]
     }
   }
 
   /**
-   * A batch of PublicEndpoints and Events to process.
-   */
+    * A batch of PublicEndpoints and Events to process.
+    */
   @js.native
   trait EventsBatch extends js.Object {
     var Endpoint: js.UndefOr[PublicEndpoint]
@@ -2813,56 +3488,57 @@ package pinpoint {
   }
 
   object EventsBatch {
-    def apply(
-      Endpoint: js.UndefOr[PublicEndpoint] = js.undefined,
-      Events: js.UndefOr[MapOfEvent] = js.undefined): EventsBatch = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Endpoint" -> Endpoint.map { x => x.asInstanceOf[js.Any] },
-        "Events" -> Events.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Endpoint: js.UndefOr[PublicEndpoint] = js.undefined,
+              Events: js.UndefOr[MapOfEvent] = js.undefined): EventsBatch = {
+      val _fields = IndexedSeq[(String, js.Any)]("Endpoint" -> Endpoint.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Events" -> Events.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsBatch]
     }
   }
 
   /**
-   * A set of events to process.
-   */
+    * A set of events to process.
+    */
   @js.native
   trait EventsRequest extends js.Object {
     var BatchItem: js.UndefOr[MapOfEventsBatch]
   }
 
   object EventsRequest {
-    def apply(
-      BatchItem: js.UndefOr[MapOfEventsBatch] = js.undefined): EventsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BatchItem" -> BatchItem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(BatchItem: js.UndefOr[MapOfEventsBatch] = js.undefined): EventsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("BatchItem" -> BatchItem.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsRequest]
     }
   }
 
   /**
-   * Custom messages associated with events.
-   */
+    * Custom messages associated with events.
+    */
   @js.native
   trait EventsResponse extends js.Object {
     var Results: js.UndefOr[MapOfItemResponse]
   }
 
   object EventsResponse {
-    def apply(
-      Results: js.UndefOr[MapOfItemResponse] = js.undefined): EventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Results" -> Results.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Results: js.UndefOr[MapOfItemResponse] = js.undefined): EventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Results" -> Results.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EventsResponse]
     }
   }
 
   /**
-   * Export job request.
-   */
+    * Export job request.
+    */
   @js.native
   trait ExportJobRequest extends js.Object {
     var RoleArn: js.UndefOr[__string]
@@ -2872,24 +3548,32 @@ package pinpoint {
   }
 
   object ExportJobRequest {
-    def apply(
-      RoleArn: js.UndefOr[__string] = js.undefined,
-      S3UrlPrefix: js.UndefOr[__string] = js.undefined,
-      SegmentId: js.UndefOr[__string] = js.undefined,
-      SegmentVersion: js.UndefOr[__integer] = js.undefined): ExportJobRequest = {
+    def apply(RoleArn: js.UndefOr[__string] = js.undefined,
+              S3UrlPrefix: js.UndefOr[__string] = js.undefined,
+              SegmentId: js.UndefOr[__string] = js.undefined,
+              SegmentVersion: js.UndefOr[__integer] = js.undefined): ExportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "S3UrlPrefix" -> S3UrlPrefix.map { x => x.asInstanceOf[js.Any] },
-        "SegmentId" -> SegmentId.map { x => x.asInstanceOf[js.Any] },
-        "SegmentVersion" -> SegmentVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3UrlPrefix" -> S3UrlPrefix.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentId" -> SegmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentVersion" -> SegmentVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobRequest]
     }
   }
 
   /**
-   * Export job resource.
-   */
+    * Export job resource.
+    */
   @js.native
   trait ExportJobResource extends js.Object {
     var RoleArn: js.UndefOr[__string]
@@ -2899,24 +3583,32 @@ package pinpoint {
   }
 
   object ExportJobResource {
-    def apply(
-      RoleArn: js.UndefOr[__string] = js.undefined,
-      S3UrlPrefix: js.UndefOr[__string] = js.undefined,
-      SegmentId: js.UndefOr[__string] = js.undefined,
-      SegmentVersion: js.UndefOr[__integer] = js.undefined): ExportJobResource = {
+    def apply(RoleArn: js.UndefOr[__string] = js.undefined,
+              S3UrlPrefix: js.UndefOr[__string] = js.undefined,
+              SegmentId: js.UndefOr[__string] = js.undefined,
+              SegmentVersion: js.UndefOr[__integer] = js.undefined): ExportJobResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "S3UrlPrefix" -> S3UrlPrefix.map { x => x.asInstanceOf[js.Any] },
-        "SegmentId" -> SegmentId.map { x => x.asInstanceOf[js.Any] },
-        "SegmentVersion" -> SegmentVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3UrlPrefix" -> S3UrlPrefix.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentId" -> SegmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentVersion" -> SegmentVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobResource]
     }
   }
 
   /**
-   * Export job response.
-   */
+    * Export job response.
+    */
   @js.native
   trait ExportJobResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -2935,42 +3627,68 @@ package pinpoint {
   }
 
   object ExportJobResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CompletedPieces: js.UndefOr[__integer] = js.undefined,
-      CompletionDate: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[ExportJobResource] = js.undefined,
-      FailedPieces: js.UndefOr[__integer] = js.undefined,
-      Failures: js.UndefOr[ListOf__string] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      TotalFailures: js.UndefOr[__integer] = js.undefined,
-      TotalPieces: js.UndefOr[__integer] = js.undefined,
-      TotalProcessed: js.UndefOr[__integer] = js.undefined,
-      Type: js.UndefOr[__string] = js.undefined): ExportJobResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CompletedPieces: js.UndefOr[__integer] = js.undefined,
+              CompletionDate: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Definition: js.UndefOr[ExportJobResource] = js.undefined,
+              FailedPieces: js.UndefOr[__integer] = js.undefined,
+              Failures: js.UndefOr[ListOf__string] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              TotalFailures: js.UndefOr[__integer] = js.undefined,
+              TotalPieces: js.UndefOr[__integer] = js.undefined,
+              TotalProcessed: js.UndefOr[__integer] = js.undefined,
+              Type: js.UndefOr[__string] = js.undefined): ExportJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CompletedPieces" -> CompletedPieces.map { x => x.asInstanceOf[js.Any] },
-        "CompletionDate" -> CompletionDate.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
-        "FailedPieces" -> FailedPieces.map { x => x.asInstanceOf[js.Any] },
-        "Failures" -> Failures.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "TotalFailures" -> TotalFailures.map { x => x.asInstanceOf[js.Any] },
-        "TotalPieces" -> TotalPieces.map { x => x.asInstanceOf[js.Any] },
-        "TotalProcessed" -> TotalProcessed.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompletedPieces" -> CompletedPieces.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompletionDate" -> CompletionDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Definition" -> Definition.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailedPieces" -> FailedPieces.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Failures" -> Failures.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalFailures" -> TotalFailures.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalPieces" -> TotalPieces.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalProcessed" -> TotalProcessed.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobResponse]
     }
   }
 
   /**
-   * Export job list.
-   */
+    * Export job list.
+    */
   @js.native
   trait ExportJobsResponse extends js.Object {
     var Item: js.UndefOr[ListOfExportJobResponse]
@@ -2978,45 +3696,46 @@ package pinpoint {
   }
 
   object ExportJobsResponse {
-    def apply(
-      Item: js.UndefOr[ListOfExportJobResponse] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): ExportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfExportJobResponse] = js.undefined,
+              NextToken: js.UndefOr[__string] = js.undefined): ExportJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ExportJobsResponse]
     }
   }
 
   object FilterTypeEnum {
-    val SYSTEM = "SYSTEM"
+    val SYSTEM   = "SYSTEM"
     val ENDPOINT = "ENDPOINT"
 
     val values = IndexedSeq(SYSTEM, ENDPOINT)
   }
 
   object FormatEnum {
-    val CSV = "CSV"
+    val CSV  = "CSV"
     val JSON = "JSON"
 
     val values = IndexedSeq(CSV, JSON)
   }
 
   object FrequencyEnum {
-    val ONCE = "ONCE"
-    val HOURLY = "HOURLY"
-    val DAILY = "DAILY"
-    val WEEKLY = "WEEKLY"
+    val ONCE    = "ONCE"
+    val HOURLY  = "HOURLY"
+    val DAILY   = "DAILY"
+    val WEEKLY  = "WEEKLY"
     val MONTHLY = "MONTHLY"
-    val EVENT = "EVENT"
+    val EVENT   = "EVENT"
 
     val values = IndexedSeq(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
   }
 
   /**
-   * Google Cloud Messaging credentials
-   */
+    * Google Cloud Messaging credentials
+    */
   @js.native
   trait GCMChannelRequest extends js.Object {
     var ApiKey: js.UndefOr[__string]
@@ -3024,20 +3743,21 @@ package pinpoint {
   }
 
   object GCMChannelRequest {
-    def apply(
-      ApiKey: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined): GCMChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApiKey" -> ApiKey.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApiKey: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined): GCMChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApiKey" -> ApiKey.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Enabled" -> Enabled.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GCMChannelRequest]
     }
   }
 
   /**
-   * Google Cloud Messaging channel definition
-   */
+    * Google Cloud Messaging channel definition
+    */
   @js.native
   trait GCMChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -3054,38 +3774,60 @@ package pinpoint {
   }
 
   object GCMChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Credential: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): GCMChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Credential: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): GCMChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Credential" -> Credential.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Credential" -> Credential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GCMChannelResponse]
     }
   }
 
   /**
-   * GCM Message.
-   */
+    * GCM Message.
+    */
   @js.native
   trait GCMMessage extends js.Object {
     var Action: js.UndefOr[Action]
@@ -3108,50 +3850,84 @@ package pinpoint {
   }
 
   object GCMMessage {
-    def apply(
-      Action: js.UndefOr[Action] = js.undefined,
-      Body: js.UndefOr[__string] = js.undefined,
-      CollapseKey: js.UndefOr[__string] = js.undefined,
-      Data: js.UndefOr[MapOf__string] = js.undefined,
-      IconReference: js.UndefOr[__string] = js.undefined,
-      ImageIconUrl: js.UndefOr[__string] = js.undefined,
-      ImageUrl: js.UndefOr[__string] = js.undefined,
-      Priority: js.UndefOr[__string] = js.undefined,
-      RawContent: js.UndefOr[__string] = js.undefined,
-      RestrictedPackageName: js.UndefOr[__string] = js.undefined,
-      SilentPush: js.UndefOr[__boolean] = js.undefined,
-      SmallImageIconUrl: js.UndefOr[__string] = js.undefined,
-      Sound: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      TimeToLive: js.UndefOr[__integer] = js.undefined,
-      Title: js.UndefOr[__string] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined): GCMMessage = {
+    def apply(Action: js.UndefOr[Action] = js.undefined,
+              Body: js.UndefOr[__string] = js.undefined,
+              CollapseKey: js.UndefOr[__string] = js.undefined,
+              Data: js.UndefOr[MapOf__string] = js.undefined,
+              IconReference: js.UndefOr[__string] = js.undefined,
+              ImageIconUrl: js.UndefOr[__string] = js.undefined,
+              ImageUrl: js.UndefOr[__string] = js.undefined,
+              Priority: js.UndefOr[__string] = js.undefined,
+              RawContent: js.UndefOr[__string] = js.undefined,
+              RestrictedPackageName: js.UndefOr[__string] = js.undefined,
+              SilentPush: js.UndefOr[__boolean] = js.undefined,
+              SmallImageIconUrl: js.UndefOr[__string] = js.undefined,
+              Sound: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              TimeToLive: js.UndefOr[__integer] = js.undefined,
+              Title: js.UndefOr[__string] = js.undefined,
+              Url: js.UndefOr[__string] = js.undefined): GCMMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "CollapseKey" -> CollapseKey.map { x => x.asInstanceOf[js.Any] },
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] },
-        "IconReference" -> IconReference.map { x => x.asInstanceOf[js.Any] },
-        "ImageIconUrl" -> ImageIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "ImageUrl" -> ImageUrl.map { x => x.asInstanceOf[js.Any] },
-        "Priority" -> Priority.map { x => x.asInstanceOf[js.Any] },
-        "RawContent" -> RawContent.map { x => x.asInstanceOf[js.Any] },
-        "RestrictedPackageName" -> RestrictedPackageName.map { x => x.asInstanceOf[js.Any] },
-        "SilentPush" -> SilentPush.map { x => x.asInstanceOf[js.Any] },
-        "SmallImageIconUrl" -> SmallImageIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "Sound" -> Sound.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "TimeToLive" -> TimeToLive.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CollapseKey" -> CollapseKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Data" -> Data.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IconReference" -> IconReference.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageIconUrl" -> ImageIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageUrl" -> ImageUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Priority" -> Priority.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawContent" -> RawContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RestrictedPackageName" -> RestrictedPackageName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SilentPush" -> SilentPush.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SmallImageIconUrl" -> SmallImageIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Sound" -> Sound.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeToLive" -> TimeToLive.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GCMMessage]
     }
   }
 
   /**
-   * GPS coordinates
-   */
+    * GPS coordinates
+    */
   @js.native
   trait GPSCoordinates extends js.Object {
     var Latitude: js.UndefOr[__double]
@@ -3159,20 +3935,21 @@ package pinpoint {
   }
 
   object GPSCoordinates {
-    def apply(
-      Latitude: js.UndefOr[__double] = js.undefined,
-      Longitude: js.UndefOr[__double] = js.undefined): GPSCoordinates = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Latitude" -> Latitude.map { x => x.asInstanceOf[js.Any] },
-        "Longitude" -> Longitude.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Latitude: js.UndefOr[__double] = js.undefined,
+              Longitude: js.UndefOr[__double] = js.undefined): GPSCoordinates = {
+      val _fields = IndexedSeq[(String, js.Any)]("Latitude" -> Latitude.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Longitude" -> Longitude.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GPSCoordinates]
     }
   }
 
   /**
-   * GPS point location dimension
-   */
+    * GPS point location dimension
+    */
   @js.native
   trait GPSPointDimension extends js.Object {
     var Coordinates: js.UndefOr[GPSCoordinates]
@@ -3180,12 +3957,13 @@ package pinpoint {
   }
 
   object GPSPointDimension {
-    def apply(
-      Coordinates: js.UndefOr[GPSCoordinates] = js.undefined,
-      RangeInKilometers: js.UndefOr[__double] = js.undefined): GPSPointDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Coordinates" -> Coordinates.map { x => x.asInstanceOf[js.Any] },
-        "RangeInKilometers" -> RangeInKilometers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Coordinates: js.UndefOr[GPSCoordinates] = js.undefined,
+              RangeInKilometers: js.UndefOr[__double] = js.undefined): GPSPointDimension = {
+      val _fields = IndexedSeq[(String, js.Any)]("Coordinates" -> Coordinates.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "RangeInKilometers" -> RangeInKilometers.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GPSPointDimension]
     }
@@ -3197,10 +3975,9 @@ package pinpoint {
   }
 
   object GetAdmChannelRequest {
-    def apply(
-      ApplicationId: __string): GetAdmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetAdmChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdmChannelRequest]
     }
@@ -3212,10 +3989,9 @@ package pinpoint {
   }
 
   object GetAdmChannelResponse {
-    def apply(
-      ADMChannelResponse: ADMChannelResponse): GetAdmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ADMChannelResponse: ADMChannelResponse): GetAdmChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAdmChannelResponse]
     }
@@ -3227,10 +4003,9 @@ package pinpoint {
   }
 
   object GetApnsChannelRequest {
-    def apply(
-      ApplicationId: __string): GetApnsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetApnsChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsChannelRequest]
     }
@@ -3242,10 +4017,9 @@ package pinpoint {
   }
 
   object GetApnsChannelResponse {
-    def apply(
-      APNSChannelResponse: APNSChannelResponse): GetApnsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSChannelResponse: APNSChannelResponse): GetApnsChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsChannelResponse]
     }
@@ -3257,10 +4031,9 @@ package pinpoint {
   }
 
   object GetApnsSandboxChannelRequest {
-    def apply(
-      ApplicationId: __string): GetApnsSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetApnsSandboxChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsSandboxChannelRequest]
     }
@@ -3272,10 +4045,10 @@ package pinpoint {
   }
 
   object GetApnsSandboxChannelResponse {
-    def apply(
-      APNSSandboxChannelResponse: APNSSandboxChannelResponse): GetApnsSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSSandboxChannelResponse: APNSSandboxChannelResponse): GetApnsSandboxChannelResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsSandboxChannelResponse]
     }
@@ -3287,10 +4060,9 @@ package pinpoint {
   }
 
   object GetApnsVoipChannelRequest {
-    def apply(
-      ApplicationId: __string): GetApnsVoipChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetApnsVoipChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipChannelRequest]
     }
@@ -3302,10 +4074,10 @@ package pinpoint {
   }
 
   object GetApnsVoipChannelResponse {
-    def apply(
-      APNSVoipChannelResponse: APNSVoipChannelResponse): GetApnsVoipChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSVoipChannelResponse: APNSVoipChannelResponse): GetApnsVoipChannelResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipChannelResponse]
     }
@@ -3317,10 +4089,9 @@ package pinpoint {
   }
 
   object GetApnsVoipSandboxChannelRequest {
-    def apply(
-      ApplicationId: __string): GetApnsVoipSandboxChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetApnsVoipSandboxChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipSandboxChannelRequest]
     }
@@ -3332,10 +4103,10 @@ package pinpoint {
   }
 
   object GetApnsVoipSandboxChannelResponse {
-    def apply(
-      APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse): GetApnsVoipSandboxChannelResponse = {
+    def apply(APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse): GetApnsVoipSandboxChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApnsVoipSandboxChannelResponse]
     }
@@ -3347,10 +4118,9 @@ package pinpoint {
   }
 
   object GetAppRequest {
-    def apply(
-      ApplicationId: __string): GetAppRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetAppRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppRequest]
     }
@@ -3362,10 +4132,9 @@ package pinpoint {
   }
 
   object GetAppResponse {
-    def apply(
-      ApplicationResponse: ApplicationResponse): GetAppResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationResponse: ApplicationResponse): GetAppResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppResponse]
     }
@@ -3377,10 +4146,9 @@ package pinpoint {
   }
 
   object GetApplicationSettingsRequest {
-    def apply(
-      ApplicationId: __string): GetApplicationSettingsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetApplicationSettingsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationSettingsRequest]
     }
@@ -3392,10 +4160,10 @@ package pinpoint {
   }
 
   object GetApplicationSettingsResponse {
-    def apply(
-      ApplicationSettingsResource: ApplicationSettingsResource): GetApplicationSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationSettingsResource: ApplicationSettingsResource): GetApplicationSettingsResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetApplicationSettingsResponse]
     }
@@ -3408,12 +4176,13 @@ package pinpoint {
   }
 
   object GetAppsRequest {
-    def apply(
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetAppsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetAppsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("PageSize" -> PageSize.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Token" -> Token.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppsRequest]
     }
@@ -3425,10 +4194,9 @@ package pinpoint {
   }
 
   object GetAppsResponse {
-    def apply(
-      ApplicationsResponse: ApplicationsResponse): GetAppsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationsResponse" -> ApplicationsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationsResponse: ApplicationsResponse): GetAppsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationsResponse" -> ApplicationsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAppsResponse]
     }
@@ -3440,10 +4208,9 @@ package pinpoint {
   }
 
   object GetBaiduChannelRequest {
-    def apply(
-      ApplicationId: __string): GetBaiduChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetBaiduChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBaiduChannelRequest]
     }
@@ -3455,10 +4222,9 @@ package pinpoint {
   }
 
   object GetBaiduChannelResponse {
-    def apply(
-      BaiduChannelResponse: BaiduChannelResponse): GetBaiduChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(BaiduChannelResponse: BaiduChannelResponse): GetBaiduChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetBaiduChannelResponse]
     }
@@ -3473,16 +4239,20 @@ package pinpoint {
   }
 
   object GetCampaignActivitiesRequest {
-    def apply(
-      ApplicationId: __string,
-      CampaignId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetCampaignActivitiesRequest = {
+    def apply(ApplicationId: __string,
+              CampaignId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetCampaignActivitiesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId" -> CampaignId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignActivitiesRequest]
     }
@@ -3494,10 +4264,9 @@ package pinpoint {
   }
 
   object GetCampaignActivitiesResponse {
-    def apply(
-      ActivitiesResponse: ActivitiesResponse): GetCampaignActivitiesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ActivitiesResponse" -> ActivitiesResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ActivitiesResponse: ActivitiesResponse): GetCampaignActivitiesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ActivitiesResponse" -> ActivitiesResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignActivitiesResponse]
     }
@@ -3510,12 +4279,11 @@ package pinpoint {
   }
 
   object GetCampaignRequest {
-    def apply(
-      ApplicationId: __string,
-      CampaignId: __string): GetCampaignRequest = {
+    def apply(ApplicationId: __string, CampaignId: __string): GetCampaignRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId" -> CampaignId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignRequest]
     }
@@ -3527,10 +4295,9 @@ package pinpoint {
   }
 
   object GetCampaignResponse {
-    def apply(
-      CampaignResponse: CampaignResponse): GetCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignResponse: CampaignResponse): GetCampaignResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignResponse]
     }
@@ -3544,14 +4311,12 @@ package pinpoint {
   }
 
   object GetCampaignVersionRequest {
-    def apply(
-      ApplicationId: __string,
-      CampaignId: __string,
-      Version: __string): GetCampaignVersionRequest = {
+    def apply(ApplicationId: __string, CampaignId: __string, Version: __string): GetCampaignVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId" -> CampaignId.asInstanceOf[js.Any],
-        "Version" -> Version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
+        "Version"       -> Version.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionRequest]
     }
@@ -3563,10 +4328,9 @@ package pinpoint {
   }
 
   object GetCampaignVersionResponse {
-    def apply(
-      CampaignResponse: CampaignResponse): GetCampaignVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignResponse: CampaignResponse): GetCampaignVersionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionResponse]
     }
@@ -3581,16 +4345,20 @@ package pinpoint {
   }
 
   object GetCampaignVersionsRequest {
-    def apply(
-      ApplicationId: __string,
-      CampaignId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetCampaignVersionsRequest = {
+    def apply(ApplicationId: __string,
+              CampaignId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetCampaignVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId" -> CampaignId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionsRequest]
     }
@@ -3602,10 +4370,9 @@ package pinpoint {
   }
 
   object GetCampaignVersionsResponse {
-    def apply(
-      CampaignsResponse: CampaignsResponse): GetCampaignVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignsResponse: CampaignsResponse): GetCampaignVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignVersionsResponse]
     }
@@ -3619,14 +4386,16 @@ package pinpoint {
   }
 
   object GetCampaignsRequest {
-    def apply(
-      ApplicationId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetCampaignsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetCampaignsRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any], "PageSize" -> PageSize.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }, "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignsRequest]
     }
@@ -3638,10 +4407,9 @@ package pinpoint {
   }
 
   object GetCampaignsResponse {
-    def apply(
-      CampaignsResponse: CampaignsResponse): GetCampaignsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignsResponse: CampaignsResponse): GetCampaignsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetCampaignsResponse]
     }
@@ -3653,10 +4421,9 @@ package pinpoint {
   }
 
   object GetChannelsRequest {
-    def apply(
-      ApplicationId: __string): GetChannelsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetChannelsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChannelsRequest]
     }
@@ -3668,10 +4435,9 @@ package pinpoint {
   }
 
   object GetChannelsResponse {
-    def apply(
-      ChannelsResponse: ChannelsResponse): GetChannelsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelsResponse" -> ChannelsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ChannelsResponse: ChannelsResponse): GetChannelsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ChannelsResponse" -> ChannelsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetChannelsResponse]
     }
@@ -3683,10 +4449,9 @@ package pinpoint {
   }
 
   object GetEmailChannelRequest {
-    def apply(
-      ApplicationId: __string): GetEmailChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetEmailChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailChannelRequest]
     }
@@ -3698,10 +4463,9 @@ package pinpoint {
   }
 
   object GetEmailChannelResponse {
-    def apply(
-      EmailChannelResponse: EmailChannelResponse): GetEmailChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EmailChannelResponse: EmailChannelResponse): GetEmailChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEmailChannelResponse]
     }
@@ -3714,12 +4478,11 @@ package pinpoint {
   }
 
   object GetEndpointRequest {
-    def apply(
-      ApplicationId: __string,
-      EndpointId: __string): GetEndpointRequest = {
+    def apply(ApplicationId: __string, EndpointId: __string): GetEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "EndpointId" -> EndpointId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EndpointId"    -> EndpointId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEndpointRequest]
     }
@@ -3731,10 +4494,9 @@ package pinpoint {
   }
 
   object GetEndpointResponse {
-    def apply(
-      EndpointResponse: EndpointResponse): GetEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointResponse: EndpointResponse): GetEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEndpointResponse]
     }
@@ -3746,10 +4508,9 @@ package pinpoint {
   }
 
   object GetEventStreamRequest {
-    def apply(
-      ApplicationId: __string): GetEventStreamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetEventStreamRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventStreamRequest]
     }
@@ -3761,10 +4522,9 @@ package pinpoint {
   }
 
   object GetEventStreamResponse {
-    def apply(
-      EventStream: EventStream): GetEventStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventStream" -> EventStream.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EventStream: EventStream): GetEventStreamResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EventStream" -> EventStream.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetEventStreamResponse]
     }
@@ -3777,12 +4537,11 @@ package pinpoint {
   }
 
   object GetExportJobRequest {
-    def apply(
-      ApplicationId: __string,
-      JobId: __string): GetExportJobRequest = {
+    def apply(ApplicationId: __string, JobId: __string): GetExportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "JobId"         -> JobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobRequest]
     }
@@ -3794,10 +4553,9 @@ package pinpoint {
   }
 
   object GetExportJobResponse {
-    def apply(
-      ExportJobResponse: ExportJobResponse): GetExportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ExportJobResponse: ExportJobResponse): GetExportJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobResponse]
     }
@@ -3811,14 +4569,16 @@ package pinpoint {
   }
 
   object GetExportJobsRequest {
-    def apply(
-      ApplicationId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetExportJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetExportJobsRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any], "PageSize" -> PageSize.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }, "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobsRequest]
     }
@@ -3830,10 +4590,9 @@ package pinpoint {
   }
 
   object GetExportJobsResponse {
-    def apply(
-      ExportJobsResponse: ExportJobsResponse): GetExportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ExportJobsResponse: ExportJobsResponse): GetExportJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetExportJobsResponse]
     }
@@ -3845,10 +4604,9 @@ package pinpoint {
   }
 
   object GetGcmChannelRequest {
-    def apply(
-      ApplicationId: __string): GetGcmChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetGcmChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGcmChannelRequest]
     }
@@ -3860,10 +4618,9 @@ package pinpoint {
   }
 
   object GetGcmChannelResponse {
-    def apply(
-      GCMChannelResponse: GCMChannelResponse): GetGcmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(GCMChannelResponse: GCMChannelResponse): GetGcmChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetGcmChannelResponse]
     }
@@ -3876,12 +4633,11 @@ package pinpoint {
   }
 
   object GetImportJobRequest {
-    def apply(
-      ApplicationId: __string,
-      JobId: __string): GetImportJobRequest = {
+    def apply(ApplicationId: __string, JobId: __string): GetImportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "JobId" -> JobId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "JobId"         -> JobId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobRequest]
     }
@@ -3893,10 +4649,9 @@ package pinpoint {
   }
 
   object GetImportJobResponse {
-    def apply(
-      ImportJobResponse: ImportJobResponse): GetImportJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ImportJobResponse: ImportJobResponse): GetImportJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobResponse]
     }
@@ -3910,14 +4665,16 @@ package pinpoint {
   }
 
   object GetImportJobsRequest {
-    def apply(
-      ApplicationId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetImportJobsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetImportJobsRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any], "PageSize" -> PageSize.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }, "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobsRequest]
     }
@@ -3929,10 +4686,9 @@ package pinpoint {
   }
 
   object GetImportJobsResponse {
-    def apply(
-      ImportJobsResponse: ImportJobsResponse): GetImportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ImportJobsResponse: ImportJobsResponse): GetImportJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetImportJobsResponse]
     }
@@ -3947,16 +4703,20 @@ package pinpoint {
   }
 
   object GetSegmentExportJobsRequest {
-    def apply(
-      ApplicationId: __string,
-      SegmentId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetSegmentExportJobsRequest = {
+    def apply(ApplicationId: __string,
+              SegmentId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetSegmentExportJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId" -> SegmentId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentExportJobsRequest]
     }
@@ -3968,10 +4728,9 @@ package pinpoint {
   }
 
   object GetSegmentExportJobsResponse {
-    def apply(
-      ExportJobsResponse: ExportJobsResponse): GetSegmentExportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ExportJobsResponse: ExportJobsResponse): GetSegmentExportJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentExportJobsResponse]
     }
@@ -3986,16 +4745,20 @@ package pinpoint {
   }
 
   object GetSegmentImportJobsRequest {
-    def apply(
-      ApplicationId: __string,
-      SegmentId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetSegmentImportJobsRequest = {
+    def apply(ApplicationId: __string,
+              SegmentId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetSegmentImportJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId" -> SegmentId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentImportJobsRequest]
     }
@@ -4007,10 +4770,9 @@ package pinpoint {
   }
 
   object GetSegmentImportJobsResponse {
-    def apply(
-      ImportJobsResponse: ImportJobsResponse): GetSegmentImportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ImportJobsResponse: ImportJobsResponse): GetSegmentImportJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentImportJobsResponse]
     }
@@ -4023,12 +4785,11 @@ package pinpoint {
   }
 
   object GetSegmentRequest {
-    def apply(
-      ApplicationId: __string,
-      SegmentId: __string): GetSegmentRequest = {
+    def apply(ApplicationId: __string, SegmentId: __string): GetSegmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId" -> SegmentId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentRequest]
     }
@@ -4040,10 +4801,9 @@ package pinpoint {
   }
 
   object GetSegmentResponse {
-    def apply(
-      SegmentResponse: SegmentResponse): GetSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SegmentResponse: SegmentResponse): GetSegmentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentResponse]
     }
@@ -4057,14 +4817,12 @@ package pinpoint {
   }
 
   object GetSegmentVersionRequest {
-    def apply(
-      ApplicationId: __string,
-      SegmentId: __string,
-      Version: __string): GetSegmentVersionRequest = {
+    def apply(ApplicationId: __string, SegmentId: __string, Version: __string): GetSegmentVersionRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId" -> SegmentId.asInstanceOf[js.Any],
-        "Version" -> Version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
+        "Version"       -> Version.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionRequest]
     }
@@ -4076,10 +4834,9 @@ package pinpoint {
   }
 
   object GetSegmentVersionResponse {
-    def apply(
-      SegmentResponse: SegmentResponse): GetSegmentVersionResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SegmentResponse: SegmentResponse): GetSegmentVersionResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionResponse]
     }
@@ -4094,16 +4851,20 @@ package pinpoint {
   }
 
   object GetSegmentVersionsRequest {
-    def apply(
-      ApplicationId: __string,
-      SegmentId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetSegmentVersionsRequest = {
+    def apply(ApplicationId: __string,
+              SegmentId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetSegmentVersionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId" -> SegmentId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
+        "PageSize" -> PageSize.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionsRequest]
     }
@@ -4115,10 +4876,9 @@ package pinpoint {
   }
 
   object GetSegmentVersionsResponse {
-    def apply(
-      SegmentsResponse: SegmentsResponse): GetSegmentVersionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SegmentsResponse: SegmentsResponse): GetSegmentVersionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentVersionsResponse]
     }
@@ -4132,14 +4892,16 @@ package pinpoint {
   }
 
   object GetSegmentsRequest {
-    def apply(
-      ApplicationId: __string,
-      PageSize: js.UndefOr[__string] = js.undefined,
-      Token: js.UndefOr[__string] = js.undefined): GetSegmentsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "PageSize" -> PageSize.map { x => x.asInstanceOf[js.Any] },
-        "Token" -> Token.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string,
+              PageSize: js.UndefOr[__string] = js.undefined,
+              Token: js.UndefOr[__string] = js.undefined): GetSegmentsRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any], "PageSize" -> PageSize.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }, "Token" -> Token.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentsRequest]
     }
@@ -4151,10 +4913,9 @@ package pinpoint {
   }
 
   object GetSegmentsResponse {
-    def apply(
-      SegmentsResponse: SegmentsResponse): GetSegmentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SegmentsResponse: SegmentsResponse): GetSegmentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSegmentsResponse]
     }
@@ -4166,10 +4927,9 @@ package pinpoint {
   }
 
   object GetSmsChannelRequest {
-    def apply(
-      ApplicationId: __string): GetSmsChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetSmsChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSmsChannelRequest]
     }
@@ -4181,10 +4941,9 @@ package pinpoint {
   }
 
   object GetSmsChannelResponse {
-    def apply(
-      SMSChannelResponse: SMSChannelResponse): GetSmsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SMSChannelResponse: SMSChannelResponse): GetSmsChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSmsChannelResponse]
     }
@@ -4197,12 +4956,11 @@ package pinpoint {
   }
 
   object GetUserEndpointsRequest {
-    def apply(
-      ApplicationId: __string,
-      UserId: __string): GetUserEndpointsRequest = {
+    def apply(ApplicationId: __string, UserId: __string): GetUserEndpointsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserId"        -> UserId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserEndpointsRequest]
     }
@@ -4214,10 +4972,9 @@ package pinpoint {
   }
 
   object GetUserEndpointsResponse {
-    def apply(
-      EndpointsResponse: EndpointsResponse): GetUserEndpointsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointsResponse: EndpointsResponse): GetUserEndpointsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetUserEndpointsResponse]
     }
@@ -4229,10 +4986,9 @@ package pinpoint {
   }
 
   object GetVoiceChannelRequest {
-    def apply(
-      ApplicationId: __string): GetVoiceChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationId: __string): GetVoiceChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ApplicationId" -> ApplicationId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVoiceChannelRequest]
     }
@@ -4244,18 +5000,17 @@ package pinpoint {
   }
 
   object GetVoiceChannelResponse {
-    def apply(
-      VoiceChannelResponse: VoiceChannelResponse): GetVoiceChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(VoiceChannelResponse: VoiceChannelResponse): GetVoiceChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetVoiceChannelResponse]
     }
   }
 
   /**
-   * Import job request.
-   */
+    * Import job request.
+    */
   @js.native
   trait ImportJobRequest extends js.Object {
     var DefineSegment: js.UndefOr[__boolean]
@@ -4269,32 +5024,48 @@ package pinpoint {
   }
 
   object ImportJobRequest {
-    def apply(
-      DefineSegment: js.UndefOr[__boolean] = js.undefined,
-      ExternalId: js.UndefOr[__string] = js.undefined,
-      Format: js.UndefOr[Format] = js.undefined,
-      RegisterEndpoints: js.UndefOr[__boolean] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined,
-      S3Url: js.UndefOr[__string] = js.undefined,
-      SegmentId: js.UndefOr[__string] = js.undefined,
-      SegmentName: js.UndefOr[__string] = js.undefined): ImportJobRequest = {
+    def apply(DefineSegment: js.UndefOr[__boolean] = js.undefined,
+              ExternalId: js.UndefOr[__string] = js.undefined,
+              Format: js.UndefOr[Format] = js.undefined,
+              RegisterEndpoints: js.UndefOr[__boolean] = js.undefined,
+              RoleArn: js.UndefOr[__string] = js.undefined,
+              S3Url: js.UndefOr[__string] = js.undefined,
+              SegmentId: js.UndefOr[__string] = js.undefined,
+              SegmentName: js.UndefOr[__string] = js.undefined): ImportJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DefineSegment" -> DefineSegment.map { x => x.asInstanceOf[js.Any] },
-        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
-        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "RegisterEndpoints" -> RegisterEndpoints.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "S3Url" -> S3Url.map { x => x.asInstanceOf[js.Any] },
-        "SegmentId" -> SegmentId.map { x => x.asInstanceOf[js.Any] },
-        "SegmentName" -> SegmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefineSegment" -> DefineSegment.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ExternalId" -> ExternalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Format" -> Format.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RegisterEndpoints" -> RegisterEndpoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3Url" -> S3Url.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentId" -> SegmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentName" -> SegmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobRequest]
     }
   }
 
   /**
-   * Import job resource
-   */
+    * Import job resource
+    */
   @js.native
   trait ImportJobResource extends js.Object {
     var DefineSegment: js.UndefOr[__boolean]
@@ -4308,32 +5079,48 @@ package pinpoint {
   }
 
   object ImportJobResource {
-    def apply(
-      DefineSegment: js.UndefOr[__boolean] = js.undefined,
-      ExternalId: js.UndefOr[__string] = js.undefined,
-      Format: js.UndefOr[Format] = js.undefined,
-      RegisterEndpoints: js.UndefOr[__boolean] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined,
-      S3Url: js.UndefOr[__string] = js.undefined,
-      SegmentId: js.UndefOr[__string] = js.undefined,
-      SegmentName: js.UndefOr[__string] = js.undefined): ImportJobResource = {
+    def apply(DefineSegment: js.UndefOr[__boolean] = js.undefined,
+              ExternalId: js.UndefOr[__string] = js.undefined,
+              Format: js.UndefOr[Format] = js.undefined,
+              RegisterEndpoints: js.UndefOr[__boolean] = js.undefined,
+              RoleArn: js.UndefOr[__string] = js.undefined,
+              S3Url: js.UndefOr[__string] = js.undefined,
+              SegmentId: js.UndefOr[__string] = js.undefined,
+              SegmentName: js.UndefOr[__string] = js.undefined): ImportJobResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DefineSegment" -> DefineSegment.map { x => x.asInstanceOf[js.Any] },
-        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
-        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "RegisterEndpoints" -> RegisterEndpoints.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "S3Url" -> S3Url.map { x => x.asInstanceOf[js.Any] },
-        "SegmentId" -> SegmentId.map { x => x.asInstanceOf[js.Any] },
-        "SegmentName" -> SegmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefineSegment" -> DefineSegment.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ExternalId" -> ExternalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Format" -> Format.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RegisterEndpoints" -> RegisterEndpoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3Url" -> S3Url.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentId" -> SegmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentName" -> SegmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobResource]
     }
   }
 
   /**
-   * Import job response.
-   */
+    * Import job response.
+    */
   @js.native
   trait ImportJobResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -4352,42 +5139,68 @@ package pinpoint {
   }
 
   object ImportJobResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CompletedPieces: js.UndefOr[__integer] = js.undefined,
-      CompletionDate: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Definition: js.UndefOr[ImportJobResource] = js.undefined,
-      FailedPieces: js.UndefOr[__integer] = js.undefined,
-      Failures: js.UndefOr[ListOf__string] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      JobStatus: js.UndefOr[JobStatus] = js.undefined,
-      TotalFailures: js.UndefOr[__integer] = js.undefined,
-      TotalPieces: js.UndefOr[__integer] = js.undefined,
-      TotalProcessed: js.UndefOr[__integer] = js.undefined,
-      Type: js.UndefOr[__string] = js.undefined): ImportJobResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CompletedPieces: js.UndefOr[__integer] = js.undefined,
+              CompletionDate: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Definition: js.UndefOr[ImportJobResource] = js.undefined,
+              FailedPieces: js.UndefOr[__integer] = js.undefined,
+              Failures: js.UndefOr[ListOf__string] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              JobStatus: js.UndefOr[JobStatus] = js.undefined,
+              TotalFailures: js.UndefOr[__integer] = js.undefined,
+              TotalPieces: js.UndefOr[__integer] = js.undefined,
+              TotalProcessed: js.UndefOr[__integer] = js.undefined,
+              Type: js.UndefOr[__string] = js.undefined): ImportJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CompletedPieces" -> CompletedPieces.map { x => x.asInstanceOf[js.Any] },
-        "CompletionDate" -> CompletionDate.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Definition" -> Definition.map { x => x.asInstanceOf[js.Any] },
-        "FailedPieces" -> FailedPieces.map { x => x.asInstanceOf[js.Any] },
-        "Failures" -> Failures.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "JobStatus" -> JobStatus.map { x => x.asInstanceOf[js.Any] },
-        "TotalFailures" -> TotalFailures.map { x => x.asInstanceOf[js.Any] },
-        "TotalPieces" -> TotalPieces.map { x => x.asInstanceOf[js.Any] },
-        "TotalProcessed" -> TotalProcessed.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompletedPieces" -> CompletedPieces.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompletionDate" -> CompletionDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Definition" -> Definition.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailedPieces" -> FailedPieces.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Failures" -> Failures.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobStatus" -> JobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalFailures" -> TotalFailures.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalPieces" -> TotalPieces.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalProcessed" -> TotalProcessed.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobResponse]
     }
   }
 
   /**
-   * Import job list.
-   */
+    * Import job list.
+    */
   @js.native
   trait ImportJobsResponse extends js.Object {
     var Item: js.UndefOr[ListOfImportJobResponse]
@@ -4395,28 +5208,29 @@ package pinpoint {
   }
 
   object ImportJobsResponse {
-    def apply(
-      Item: js.UndefOr[ListOfImportJobResponse] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): ImportJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfImportJobResponse] = js.undefined,
+              NextToken: js.UndefOr[__string] = js.undefined): ImportJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportJobsResponse]
     }
   }
 
   object IncludeEnum {
-    val ALL = "ALL"
-    val ANY = "ANY"
+    val ALL  = "ALL"
+    val ANY  = "ANY"
     val NONE = "NONE"
 
     val values = IndexedSeq(ALL, ANY, NONE)
   }
 
   /**
-   * The response that's provided after registering the endpoint.
-   */
+    * The response that's provided after registering the endpoint.
+    */
   @js.native
   trait ItemResponse extends js.Object {
     var EndpointItemResponse: js.UndefOr[EndpointItemResponse]
@@ -4424,32 +5238,33 @@ package pinpoint {
   }
 
   object ItemResponse {
-    def apply(
-      EndpointItemResponse: js.UndefOr[EndpointItemResponse] = js.undefined,
-      EventsItemResponse: js.UndefOr[MapOfEventItemResponse] = js.undefined): ItemResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointItemResponse" -> EndpointItemResponse.map { x => x.asInstanceOf[js.Any] },
-        "EventsItemResponse" -> EventsItemResponse.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointItemResponse: js.UndefOr[EndpointItemResponse] = js.undefined,
+              EventsItemResponse: js.UndefOr[MapOfEventItemResponse] = js.undefined): ItemResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointItemResponse" -> EndpointItemResponse.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "EventsItemResponse" -> EventsItemResponse.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ItemResponse]
     }
   }
 
   object JobStatusEnum {
-    val CREATED = "CREATED"
+    val CREATED      = "CREATED"
     val INITIALIZING = "INITIALIZING"
-    val PROCESSING = "PROCESSING"
-    val COMPLETING = "COMPLETING"
-    val COMPLETED = "COMPLETED"
-    val FAILING = "FAILING"
-    val FAILED = "FAILED"
+    val PROCESSING   = "PROCESSING"
+    val COMPLETING   = "COMPLETING"
+    val COMPLETED    = "COMPLETED"
+    val FAILING      = "FAILING"
+    val FAILED       = "FAILED"
 
     val values = IndexedSeq(CREATED, INITIALIZING, PROCESSING, COMPLETING, COMPLETED, FAILING, FAILED)
   }
 
   /**
-   * Message to send
-   */
+    * Message to send
+    */
   @js.native
   trait Message extends js.Object {
     var Action: js.UndefOr[Action]
@@ -4467,40 +5282,64 @@ package pinpoint {
   }
 
   object Message {
-    def apply(
-      Action: js.UndefOr[Action] = js.undefined,
-      Body: js.UndefOr[__string] = js.undefined,
-      ImageIconUrl: js.UndefOr[__string] = js.undefined,
-      ImageSmallIconUrl: js.UndefOr[__string] = js.undefined,
-      ImageUrl: js.UndefOr[__string] = js.undefined,
-      JsonBody: js.UndefOr[__string] = js.undefined,
-      MediaUrl: js.UndefOr[__string] = js.undefined,
-      RawContent: js.UndefOr[__string] = js.undefined,
-      SilentPush: js.UndefOr[__boolean] = js.undefined,
-      TimeToLive: js.UndefOr[__integer] = js.undefined,
-      Title: js.UndefOr[__string] = js.undefined,
-      Url: js.UndefOr[__string] = js.undefined): Message = {
+    def apply(Action: js.UndefOr[Action] = js.undefined,
+              Body: js.UndefOr[__string] = js.undefined,
+              ImageIconUrl: js.UndefOr[__string] = js.undefined,
+              ImageSmallIconUrl: js.UndefOr[__string] = js.undefined,
+              ImageUrl: js.UndefOr[__string] = js.undefined,
+              JsonBody: js.UndefOr[__string] = js.undefined,
+              MediaUrl: js.UndefOr[__string] = js.undefined,
+              RawContent: js.UndefOr[__string] = js.undefined,
+              SilentPush: js.UndefOr[__boolean] = js.undefined,
+              TimeToLive: js.UndefOr[__integer] = js.undefined,
+              Title: js.UndefOr[__string] = js.undefined,
+              Url: js.UndefOr[__string] = js.undefined): Message = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Action" -> Action.map { x => x.asInstanceOf[js.Any] },
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "ImageIconUrl" -> ImageIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "ImageSmallIconUrl" -> ImageSmallIconUrl.map { x => x.asInstanceOf[js.Any] },
-        "ImageUrl" -> ImageUrl.map { x => x.asInstanceOf[js.Any] },
-        "JsonBody" -> JsonBody.map { x => x.asInstanceOf[js.Any] },
-        "MediaUrl" -> MediaUrl.map { x => x.asInstanceOf[js.Any] },
-        "RawContent" -> RawContent.map { x => x.asInstanceOf[js.Any] },
-        "SilentPush" -> SilentPush.map { x => x.asInstanceOf[js.Any] },
-        "TimeToLive" -> TimeToLive.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Action" -> Action.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageIconUrl" -> ImageIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageSmallIconUrl" -> ImageSmallIconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageUrl" -> ImageUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JsonBody" -> JsonBody.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MediaUrl" -> MediaUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RawContent" -> RawContent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SilentPush" -> SilentPush.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TimeToLive" -> TimeToLive.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Message]
     }
   }
 
   /**
-   * Simple message object.
-   */
+    * Simple message object.
+    */
   @js.native
   trait MessageBody extends js.Object {
     var Message: js.UndefOr[__string]
@@ -4508,20 +5347,21 @@ package pinpoint {
   }
 
   object MessageBody {
-    def apply(
-      Message: js.UndefOr[__string] = js.undefined,
-      RequestID: js.UndefOr[__string] = js.undefined): MessageBody = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] },
-        "RequestID" -> RequestID.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Message: js.UndefOr[__string] = js.undefined,
+              RequestID: js.UndefOr[__string] = js.undefined): MessageBody = {
+      val _fields = IndexedSeq[(String, js.Any)]("Message" -> Message.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "RequestID" -> RequestID.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageBody]
     }
   }
 
   /**
-   * Message configuration for a campaign.
-   */
+    * Message configuration for a campaign.
+    */
   @js.native
   trait MessageConfiguration extends js.Object {
     var ADMMessage: js.UndefOr[Message]
@@ -4534,30 +5374,44 @@ package pinpoint {
   }
 
   object MessageConfiguration {
-    def apply(
-      ADMMessage: js.UndefOr[Message] = js.undefined,
-      APNSMessage: js.UndefOr[Message] = js.undefined,
-      BaiduMessage: js.UndefOr[Message] = js.undefined,
-      DefaultMessage: js.UndefOr[Message] = js.undefined,
-      EmailMessage: js.UndefOr[CampaignEmailMessage] = js.undefined,
-      GCMMessage: js.UndefOr[Message] = js.undefined,
-      SMSMessage: js.UndefOr[CampaignSmsMessage] = js.undefined): MessageConfiguration = {
+    def apply(ADMMessage: js.UndefOr[Message] = js.undefined,
+              APNSMessage: js.UndefOr[Message] = js.undefined,
+              BaiduMessage: js.UndefOr[Message] = js.undefined,
+              DefaultMessage: js.UndefOr[Message] = js.undefined,
+              EmailMessage: js.UndefOr[CampaignEmailMessage] = js.undefined,
+              GCMMessage: js.UndefOr[Message] = js.undefined,
+              SMSMessage: js.UndefOr[CampaignSmsMessage] = js.undefined): MessageConfiguration = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ADMMessage" -> ADMMessage.map { x => x.asInstanceOf[js.Any] },
-        "APNSMessage" -> APNSMessage.map { x => x.asInstanceOf[js.Any] },
-        "BaiduMessage" -> BaiduMessage.map { x => x.asInstanceOf[js.Any] },
-        "DefaultMessage" -> DefaultMessage.map { x => x.asInstanceOf[js.Any] },
-        "EmailMessage" -> EmailMessage.map { x => x.asInstanceOf[js.Any] },
-        "GCMMessage" -> GCMMessage.map { x => x.asInstanceOf[js.Any] },
-        "SMSMessage" -> SMSMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ADMMessage" -> ADMMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "APNSMessage" -> APNSMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "BaiduMessage" -> BaiduMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultMessage" -> DefaultMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EmailMessage" -> EmailMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GCMMessage" -> GCMMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SMSMessage" -> SMSMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageConfiguration]
     }
   }
 
   /**
-   * Send message request.
-   */
+    * Send message request.
+    */
   @js.native
   trait MessageRequest extends js.Object {
     var Addresses: js.UndefOr[MapOfAddressConfiguration]
@@ -4568,26 +5422,36 @@ package pinpoint {
   }
 
   object MessageRequest {
-    def apply(
-      Addresses: js.UndefOr[MapOfAddressConfiguration] = js.undefined,
-      Context: js.UndefOr[MapOf__string] = js.undefined,
-      Endpoints: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined,
-      MessageConfiguration: js.UndefOr[DirectMessageConfiguration] = js.undefined,
-      TraceId: js.UndefOr[__string] = js.undefined): MessageRequest = {
+    def apply(Addresses: js.UndefOr[MapOfAddressConfiguration] = js.undefined,
+              Context: js.UndefOr[MapOf__string] = js.undefined,
+              Endpoints: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined,
+              MessageConfiguration: js.UndefOr[DirectMessageConfiguration] = js.undefined,
+              TraceId: js.UndefOr[__string] = js.undefined): MessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Addresses" -> Addresses.map { x => x.asInstanceOf[js.Any] },
-        "Context" -> Context.map { x => x.asInstanceOf[js.Any] },
-        "Endpoints" -> Endpoints.map { x => x.asInstanceOf[js.Any] },
-        "MessageConfiguration" -> MessageConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "TraceId" -> TraceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Addresses" -> Addresses.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Context" -> Context.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Endpoints" -> Endpoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageConfiguration" -> MessageConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TraceId" -> TraceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageRequest]
     }
   }
 
   /**
-   * Send message response.
-   */
+    * Send message response.
+    */
   @js.native
   trait MessageResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -4597,24 +5461,32 @@ package pinpoint {
   }
 
   object MessageResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      EndpointResult: js.UndefOr[MapOfEndpointMessageResult] = js.undefined,
-      RequestId: js.UndefOr[__string] = js.undefined,
-      Result: js.UndefOr[MapOfMessageResult] = js.undefined): MessageResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              EndpointResult: js.UndefOr[MapOfEndpointMessageResult] = js.undefined,
+              RequestId: js.UndefOr[__string] = js.undefined,
+              Result: js.UndefOr[MapOfMessageResult] = js.undefined): MessageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "EndpointResult" -> EndpointResult.map { x => x.asInstanceOf[js.Any] },
-        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
-        "Result" -> Result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndpointResult" -> EndpointResult.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestId" -> RequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Result" -> Result.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageResponse]
     }
   }
 
   /**
-   * The result from sending a message to an address.
-   */
+    * The result from sending a message to an address.
+    */
   @js.native
   trait MessageResult extends js.Object {
     var DeliveryStatus: js.UndefOr[DeliveryStatus]
@@ -4625,18 +5497,28 @@ package pinpoint {
   }
 
   object MessageResult {
-    def apply(
-      DeliveryStatus: js.UndefOr[DeliveryStatus] = js.undefined,
-      MessageId: js.UndefOr[__string] = js.undefined,
-      StatusCode: js.UndefOr[__integer] = js.undefined,
-      StatusMessage: js.UndefOr[__string] = js.undefined,
-      UpdatedToken: js.UndefOr[__string] = js.undefined): MessageResult = {
+    def apply(DeliveryStatus: js.UndefOr[DeliveryStatus] = js.undefined,
+              MessageId: js.UndefOr[__string] = js.undefined,
+              StatusCode: js.UndefOr[__integer] = js.undefined,
+              StatusMessage: js.UndefOr[__string] = js.undefined,
+              UpdatedToken: js.UndefOr[__string] = js.undefined): MessageResult = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryStatus" -> DeliveryStatus.map { x => x.asInstanceOf[js.Any] },
-        "MessageId" -> MessageId.map { x => x.asInstanceOf[js.Any] },
-        "StatusCode" -> StatusCode.map { x => x.asInstanceOf[js.Any] },
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] },
-        "UpdatedToken" -> UpdatedToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryStatus" -> DeliveryStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageId" -> MessageId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusCode" -> StatusCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusMessage" -> StatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UpdatedToken" -> UpdatedToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MessageResult]
     }
@@ -4644,14 +5526,14 @@ package pinpoint {
 
   object MessageTypeEnum {
     val TRANSACTIONAL = "TRANSACTIONAL"
-    val PROMOTIONAL = "PROMOTIONAL"
+    val PROMOTIONAL   = "PROMOTIONAL"
 
     val values = IndexedSeq(TRANSACTIONAL, PROMOTIONAL)
   }
 
   /**
-   * Custom metric dimension
-   */
+    * Custom metric dimension
+    */
   @js.native
   trait MetricDimension extends js.Object {
     var ComparisonOperator: js.UndefOr[__string]
@@ -4659,12 +5541,13 @@ package pinpoint {
   }
 
   object MetricDimension {
-    def apply(
-      ComparisonOperator: js.UndefOr[__string] = js.undefined,
-      Value: js.UndefOr[__double] = js.undefined): MetricDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ComparisonOperator" -> ComparisonOperator.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ComparisonOperator: js.UndefOr[__string] = js.undefined,
+              Value: js.UndefOr[__double] = js.undefined): MetricDimension = {
+      val _fields = IndexedSeq[(String, js.Any)]("ComparisonOperator" -> ComparisonOperator.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricDimension]
     }
@@ -4672,14 +5555,14 @@ package pinpoint {
 
   object ModeEnum {
     val DELIVERY = "DELIVERY"
-    val FILTER = "FILTER"
+    val FILTER   = "FILTER"
 
     val values = IndexedSeq(DELIVERY, FILTER)
   }
 
   /**
-   * Phone Number Validate request.
-   */
+    * Phone Number Validate request.
+    */
   @js.native
   trait NumberValidateRequest extends js.Object {
     var IsoCountryCode: js.UndefOr[__string]
@@ -4687,20 +5570,21 @@ package pinpoint {
   }
 
   object NumberValidateRequest {
-    def apply(
-      IsoCountryCode: js.UndefOr[__string] = js.undefined,
-      PhoneNumber: js.UndefOr[__string] = js.undefined): NumberValidateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "IsoCountryCode" -> IsoCountryCode.map { x => x.asInstanceOf[js.Any] },
-        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(IsoCountryCode: js.UndefOr[__string] = js.undefined,
+              PhoneNumber: js.UndefOr[__string] = js.undefined): NumberValidateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("IsoCountryCode" -> IsoCountryCode.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "PhoneNumber" -> PhoneNumber.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NumberValidateRequest]
     }
   }
 
   /**
-   * Phone Number Validate response.
-   */
+    * Phone Number Validate response.
+    */
   @js.native
   trait NumberValidateResponse extends js.Object {
     var Carrier: js.UndefOr[__string]
@@ -4720,36 +5604,64 @@ package pinpoint {
   }
 
   object NumberValidateResponse {
-    def apply(
-      Carrier: js.UndefOr[__string] = js.undefined,
-      City: js.UndefOr[__string] = js.undefined,
-      CleansedPhoneNumberE164: js.UndefOr[__string] = js.undefined,
-      CleansedPhoneNumberNational: js.UndefOr[__string] = js.undefined,
-      Country: js.UndefOr[__string] = js.undefined,
-      CountryCodeIso2: js.UndefOr[__string] = js.undefined,
-      CountryCodeNumeric: js.UndefOr[__string] = js.undefined,
-      County: js.UndefOr[__string] = js.undefined,
-      OriginalCountryCodeIso2: js.UndefOr[__string] = js.undefined,
-      OriginalPhoneNumber: js.UndefOr[__string] = js.undefined,
-      PhoneType: js.UndefOr[__string] = js.undefined,
-      PhoneTypeCode: js.UndefOr[__integer] = js.undefined,
-      Timezone: js.UndefOr[__string] = js.undefined,
-      ZipCode: js.UndefOr[__string] = js.undefined): NumberValidateResponse = {
+    def apply(Carrier: js.UndefOr[__string] = js.undefined,
+              City: js.UndefOr[__string] = js.undefined,
+              CleansedPhoneNumberE164: js.UndefOr[__string] = js.undefined,
+              CleansedPhoneNumberNational: js.UndefOr[__string] = js.undefined,
+              Country: js.UndefOr[__string] = js.undefined,
+              CountryCodeIso2: js.UndefOr[__string] = js.undefined,
+              CountryCodeNumeric: js.UndefOr[__string] = js.undefined,
+              County: js.UndefOr[__string] = js.undefined,
+              OriginalCountryCodeIso2: js.UndefOr[__string] = js.undefined,
+              OriginalPhoneNumber: js.UndefOr[__string] = js.undefined,
+              PhoneType: js.UndefOr[__string] = js.undefined,
+              PhoneTypeCode: js.UndefOr[__integer] = js.undefined,
+              Timezone: js.UndefOr[__string] = js.undefined,
+              ZipCode: js.UndefOr[__string] = js.undefined): NumberValidateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Carrier" -> Carrier.map { x => x.asInstanceOf[js.Any] },
-        "City" -> City.map { x => x.asInstanceOf[js.Any] },
-        "CleansedPhoneNumberE164" -> CleansedPhoneNumberE164.map { x => x.asInstanceOf[js.Any] },
-        "CleansedPhoneNumberNational" -> CleansedPhoneNumberNational.map { x => x.asInstanceOf[js.Any] },
-        "Country" -> Country.map { x => x.asInstanceOf[js.Any] },
-        "CountryCodeIso2" -> CountryCodeIso2.map { x => x.asInstanceOf[js.Any] },
-        "CountryCodeNumeric" -> CountryCodeNumeric.map { x => x.asInstanceOf[js.Any] },
-        "County" -> County.map { x => x.asInstanceOf[js.Any] },
-        "OriginalCountryCodeIso2" -> OriginalCountryCodeIso2.map { x => x.asInstanceOf[js.Any] },
-        "OriginalPhoneNumber" -> OriginalPhoneNumber.map { x => x.asInstanceOf[js.Any] },
-        "PhoneType" -> PhoneType.map { x => x.asInstanceOf[js.Any] },
-        "PhoneTypeCode" -> PhoneTypeCode.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
-        "ZipCode" -> ZipCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Carrier" -> Carrier.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "City" -> City.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CleansedPhoneNumberE164" -> CleansedPhoneNumberE164.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CleansedPhoneNumberNational" -> CleansedPhoneNumberNational.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Country" -> Country.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CountryCodeIso2" -> CountryCodeIso2.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CountryCodeNumeric" -> CountryCodeNumeric.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "County" -> County.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OriginalCountryCodeIso2" -> OriginalCountryCodeIso2.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OriginalPhoneNumber" -> OriginalPhoneNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhoneType" -> PhoneType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhoneTypeCode" -> PhoneTypeCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timezone" -> Timezone.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ZipCode" -> ZipCode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NumberValidateResponse]
     }
@@ -4761,10 +5673,9 @@ package pinpoint {
   }
 
   object PhoneNumberValidateRequest {
-    def apply(
-      NumberValidateRequest: NumberValidateRequest): PhoneNumberValidateRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NumberValidateRequest" -> NumberValidateRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(NumberValidateRequest: NumberValidateRequest): PhoneNumberValidateRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("NumberValidateRequest" -> NumberValidateRequest.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PhoneNumberValidateRequest]
     }
@@ -4776,18 +5687,18 @@ package pinpoint {
   }
 
   object PhoneNumberValidateResponse {
-    def apply(
-      NumberValidateResponse: NumberValidateResponse): PhoneNumberValidateResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NumberValidateResponse" -> NumberValidateResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(NumberValidateResponse: NumberValidateResponse): PhoneNumberValidateResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("NumberValidateResponse" -> NumberValidateResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PhoneNumberValidateResponse]
     }
   }
 
   /**
-   * Public endpoint attributes.
-   */
+    * Public endpoint attributes.
+    */
   @js.native
   trait PublicEndpoint extends js.Object {
     var Address: js.UndefOr[__string]
@@ -4804,30 +5715,52 @@ package pinpoint {
   }
 
   object PublicEndpoint {
-    def apply(
-      Address: js.UndefOr[__string] = js.undefined,
-      Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
-      ChannelType: js.UndefOr[ChannelType] = js.undefined,
-      Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
-      EffectiveDate: js.UndefOr[__string] = js.undefined,
-      EndpointStatus: js.UndefOr[__string] = js.undefined,
-      Location: js.UndefOr[EndpointLocation] = js.undefined,
-      Metrics: js.UndefOr[MapOf__double] = js.undefined,
-      OptOut: js.UndefOr[__string] = js.undefined,
-      RequestId: js.UndefOr[__string] = js.undefined,
-      User: js.UndefOr[EndpointUser] = js.undefined): PublicEndpoint = {
+    def apply(Address: js.UndefOr[__string] = js.undefined,
+              Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
+              ChannelType: js.UndefOr[ChannelType] = js.undefined,
+              Demographic: js.UndefOr[EndpointDemographic] = js.undefined,
+              EffectiveDate: js.UndefOr[__string] = js.undefined,
+              EndpointStatus: js.UndefOr[__string] = js.undefined,
+              Location: js.UndefOr[EndpointLocation] = js.undefined,
+              Metrics: js.UndefOr[MapOf__double] = js.undefined,
+              OptOut: js.UndefOr[__string] = js.undefined,
+              RequestId: js.UndefOr[__string] = js.undefined,
+              User: js.UndefOr[EndpointUser] = js.undefined): PublicEndpoint = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "ChannelType" -> ChannelType.map { x => x.asInstanceOf[js.Any] },
-        "Demographic" -> Demographic.map { x => x.asInstanceOf[js.Any] },
-        "EffectiveDate" -> EffectiveDate.map { x => x.asInstanceOf[js.Any] },
-        "EndpointStatus" -> EndpointStatus.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "OptOut" -> OptOut.map { x => x.asInstanceOf[js.Any] },
-        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
-        "User" -> User.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ChannelType" -> ChannelType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Demographic" -> Demographic.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EffectiveDate" -> EffectiveDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndpointStatus" -> EndpointStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Location" -> Location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OptOut" -> OptOut.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestId" -> RequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "User" -> User.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicEndpoint]
     }
@@ -4840,12 +5773,11 @@ package pinpoint {
   }
 
   object PutEventStreamRequest {
-    def apply(
-      ApplicationId: __string,
-      WriteEventStream: WriteEventStream): PutEventStreamRequest = {
+    def apply(ApplicationId: __string, WriteEventStream: WriteEventStream): PutEventStreamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "WriteEventStream" -> WriteEventStream.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
+        "WriteEventStream" -> WriteEventStream.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventStreamRequest]
     }
@@ -4857,10 +5789,9 @@ package pinpoint {
   }
 
   object PutEventStreamResponse {
-    def apply(
-      EventStream: EventStream): PutEventStreamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventStream" -> EventStream.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EventStream: EventStream): PutEventStreamResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EventStream" -> EventStream.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventStreamResponse]
     }
@@ -4873,12 +5804,11 @@ package pinpoint {
   }
 
   object PutEventsRequest {
-    def apply(
-      ApplicationId: __string,
-      EventsRequest: EventsRequest): PutEventsRequest = {
+    def apply(ApplicationId: __string, EventsRequest: EventsRequest): PutEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "EventsRequest" -> EventsRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EventsRequest" -> EventsRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsRequest]
     }
@@ -4890,18 +5820,17 @@ package pinpoint {
   }
 
   object PutEventsResponse {
-    def apply(
-      EventsResponse: EventsResponse): PutEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EventsResponse" -> EventsResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EventsResponse: EventsResponse): PutEventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EventsResponse" -> EventsResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutEventsResponse]
     }
   }
 
   /**
-   * Quiet Time
-   */
+    * Quiet Time
+    */
   @js.native
   trait QuietTime extends js.Object {
     var End: js.UndefOr[__string]
@@ -4909,38 +5838,38 @@ package pinpoint {
   }
 
   object QuietTime {
-    def apply(
-      End: js.UndefOr[__string] = js.undefined,
-      Start: js.UndefOr[__string] = js.undefined): QuietTime = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "End" -> End.map { x => x.asInstanceOf[js.Any] },
-        "Start" -> Start.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(End: js.UndefOr[__string] = js.undefined, Start: js.UndefOr[__string] = js.undefined): QuietTime = {
+      val _fields = IndexedSeq[(String, js.Any)]("End" -> End.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Start" -> Start.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QuietTime]
     }
   }
 
   /**
-   * An email represented as a raw MIME message.
-   */
+    * An email represented as a raw MIME message.
+    */
   @js.native
   trait RawEmail extends js.Object {
     var Data: js.UndefOr[__blob]
   }
 
   object RawEmail {
-    def apply(
-      Data: js.UndefOr[__blob] = js.undefined): RawEmail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Data: js.UndefOr[__blob] = js.undefined): RawEmail = {
+      val _fields = IndexedSeq[(String, js.Any)]("Data" -> Data.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RawEmail]
     }
   }
 
   /**
-   * Define how a segment based on recency of use.
-   */
+    * Define how a segment based on recency of use.
+    */
   @js.native
   trait RecencyDimension extends js.Object {
     var Duration: js.UndefOr[Duration]
@@ -4948,19 +5877,20 @@ package pinpoint {
   }
 
   object RecencyDimension {
-    def apply(
-      Duration: js.UndefOr[Duration] = js.undefined,
-      RecencyType: js.UndefOr[RecencyType] = js.undefined): RecencyDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "RecencyType" -> RecencyType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Duration: js.UndefOr[Duration] = js.undefined,
+              RecencyType: js.UndefOr[RecencyType] = js.undefined): RecencyDimension = {
+      val _fields = IndexedSeq[(String, js.Any)]("Duration" -> Duration.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "RecencyType" -> RecencyType.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RecencyDimension]
     }
   }
 
   object RecencyTypeEnum {
-    val ACTIVE = "ACTIVE"
+    val ACTIVE   = "ACTIVE"
     val INACTIVE = "INACTIVE"
 
     val values = IndexedSeq(ACTIVE, INACTIVE)
@@ -4974,14 +5904,14 @@ package pinpoint {
   }
 
   object RemoveAttributesRequest {
-    def apply(
-      ApplicationId: __string,
-      AttributeType: __string,
-      UpdateAttributesRequest: UpdateAttributesRequest): RemoveAttributesRequest = {
+    def apply(ApplicationId: __string,
+              AttributeType: __string,
+              UpdateAttributesRequest: UpdateAttributesRequest): RemoveAttributesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "AttributeType" -> AttributeType.asInstanceOf[js.Any],
-        "UpdateAttributesRequest" -> UpdateAttributesRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"           -> ApplicationId.asInstanceOf[js.Any],
+        "AttributeType"           -> AttributeType.asInstanceOf[js.Any],
+        "UpdateAttributesRequest" -> UpdateAttributesRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAttributesRequest]
     }
@@ -4993,18 +5923,17 @@ package pinpoint {
   }
 
   object RemoveAttributesResponse {
-    def apply(
-      AttributesResource: AttributesResource): RemoveAttributesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AttributesResource" -> AttributesResource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AttributesResource: AttributesResource): RemoveAttributesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("AttributesResource" -> AttributesResource.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RemoveAttributesResponse]
     }
   }
 
   /**
-   * SMS Channel Request
-   */
+    * SMS Channel Request
+    */
   @js.native
   trait SMSChannelRequest extends js.Object {
     var Enabled: js.UndefOr[__boolean]
@@ -5013,22 +5942,28 @@ package pinpoint {
   }
 
   object SMSChannelRequest {
-    def apply(
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      SenderId: js.UndefOr[__string] = js.undefined,
-      ShortCode: js.UndefOr[__string] = js.undefined): SMSChannelRequest = {
+    def apply(Enabled: js.UndefOr[__boolean] = js.undefined,
+              SenderId: js.UndefOr[__string] = js.undefined,
+              ShortCode: js.UndefOr[__string] = js.undefined): SMSChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "SenderId" -> SenderId.map { x => x.asInstanceOf[js.Any] },
-        "ShortCode" -> ShortCode.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SenderId" -> SenderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ShortCode" -> ShortCode.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SMSChannelRequest]
     }
   }
 
   /**
-   * SMS Channel Response.
-   */
+    * SMS Channel Response.
+    */
   @js.native
   trait SMSChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -5048,44 +5983,72 @@ package pinpoint {
   }
 
   object SMSChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      PromotionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
-      SenderId: js.UndefOr[__string] = js.undefined,
-      ShortCode: js.UndefOr[__string] = js.undefined,
-      TransactionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): SMSChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              PromotionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
+              SenderId: js.UndefOr[__string] = js.undefined,
+              ShortCode: js.UndefOr[__string] = js.undefined,
+              TransactionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): SMSChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "PromotionalMessagesPerSecond" -> PromotionalMessagesPerSecond.map { x => x.asInstanceOf[js.Any] },
-        "SenderId" -> SenderId.map { x => x.asInstanceOf[js.Any] },
-        "ShortCode" -> ShortCode.map { x => x.asInstanceOf[js.Any] },
-        "TransactionalMessagesPerSecond" -> TransactionalMessagesPerSecond.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PromotionalMessagesPerSecond" -> PromotionalMessagesPerSecond.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SenderId" -> SenderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ShortCode" -> ShortCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TransactionalMessagesPerSecond" -> TransactionalMessagesPerSecond.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SMSChannelResponse]
     }
   }
 
   /**
-   * SMS Message.
-   */
+    * SMS Message.
+    */
   @js.native
   trait SMSMessage extends js.Object {
     var Body: js.UndefOr[__string]
@@ -5097,28 +6060,40 @@ package pinpoint {
   }
 
   object SMSMessage {
-    def apply(
-      Body: js.UndefOr[__string] = js.undefined,
-      Keyword: js.UndefOr[__string] = js.undefined,
-      MessageType: js.UndefOr[MessageType] = js.undefined,
-      OriginationNumber: js.UndefOr[__string] = js.undefined,
-      SenderId: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined): SMSMessage = {
+    def apply(Body: js.UndefOr[__string] = js.undefined,
+              Keyword: js.UndefOr[__string] = js.undefined,
+              MessageType: js.UndefOr[MessageType] = js.undefined,
+              OriginationNumber: js.UndefOr[__string] = js.undefined,
+              SenderId: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined): SMSMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "Keyword" -> Keyword.map { x => x.asInstanceOf[js.Any] },
-        "MessageType" -> MessageType.map { x => x.asInstanceOf[js.Any] },
-        "OriginationNumber" -> OriginationNumber.map { x => x.asInstanceOf[js.Any] },
-        "SenderId" -> SenderId.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Keyword" -> Keyword.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageType" -> MessageType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OriginationNumber" -> OriginationNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SenderId" -> SenderId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SMSMessage]
     }
   }
 
   /**
-   * Shcedule that defines when a campaign is run.
-   */
+    * Shcedule that defines when a campaign is run.
+    */
   @js.native
   trait Schedule extends js.Object {
     var EndTime: js.UndefOr[__string]
@@ -5131,48 +6106,62 @@ package pinpoint {
   }
 
   object Schedule {
-    def apply(
-      EndTime: js.UndefOr[__string] = js.undefined,
-      EventFilter: js.UndefOr[CampaignEventFilter] = js.undefined,
-      Frequency: js.UndefOr[Frequency] = js.undefined,
-      IsLocalTime: js.UndefOr[__boolean] = js.undefined,
-      QuietTime: js.UndefOr[QuietTime] = js.undefined,
-      StartTime: js.UndefOr[__string] = js.undefined,
-      Timezone: js.UndefOr[__string] = js.undefined): Schedule = {
+    def apply(EndTime: js.UndefOr[__string] = js.undefined,
+              EventFilter: js.UndefOr[CampaignEventFilter] = js.undefined,
+              Frequency: js.UndefOr[Frequency] = js.undefined,
+              IsLocalTime: js.UndefOr[__boolean] = js.undefined,
+              QuietTime: js.UndefOr[QuietTime] = js.undefined,
+              StartTime: js.UndefOr[__string] = js.undefined,
+              Timezone: js.UndefOr[__string] = js.undefined): Schedule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "EventFilter" -> EventFilter.map { x => x.asInstanceOf[js.Any] },
-        "Frequency" -> Frequency.map { x => x.asInstanceOf[js.Any] },
-        "IsLocalTime" -> IsLocalTime.map { x => x.asInstanceOf[js.Any] },
-        "QuietTime" -> QuietTime.map { x => x.asInstanceOf[js.Any] },
-        "StartTime" -> StartTime.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EventFilter" -> EventFilter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Frequency" -> Frequency.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsLocalTime" -> IsLocalTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QuietTime" -> QuietTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTime" -> StartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timezone" -> Timezone.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Schedule]
     }
   }
 
   /**
-   * Segment behavior dimensions
-   */
+    * Segment behavior dimensions
+    */
   @js.native
   trait SegmentBehaviors extends js.Object {
     var Recency: js.UndefOr[RecencyDimension]
   }
 
   object SegmentBehaviors {
-    def apply(
-      Recency: js.UndefOr[RecencyDimension] = js.undefined): SegmentBehaviors = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Recency" -> Recency.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Recency: js.UndefOr[RecencyDimension] = js.undefined): SegmentBehaviors = {
+      val _fields = IndexedSeq[(String, js.Any)]("Recency" -> Recency.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentBehaviors]
     }
   }
 
   /**
-   * Segment demographic dimensions
-   */
+    * Segment demographic dimensions
+    */
   @js.native
   trait SegmentDemographics extends js.Object {
     var AppVersion: js.UndefOr[SetDimension]
@@ -5184,28 +6173,40 @@ package pinpoint {
   }
 
   object SegmentDemographics {
-    def apply(
-      AppVersion: js.UndefOr[SetDimension] = js.undefined,
-      Channel: js.UndefOr[SetDimension] = js.undefined,
-      DeviceType: js.UndefOr[SetDimension] = js.undefined,
-      Make: js.UndefOr[SetDimension] = js.undefined,
-      Model: js.UndefOr[SetDimension] = js.undefined,
-      Platform: js.UndefOr[SetDimension] = js.undefined): SegmentDemographics = {
+    def apply(AppVersion: js.UndefOr[SetDimension] = js.undefined,
+              Channel: js.UndefOr[SetDimension] = js.undefined,
+              DeviceType: js.UndefOr[SetDimension] = js.undefined,
+              Make: js.UndefOr[SetDimension] = js.undefined,
+              Model: js.UndefOr[SetDimension] = js.undefined,
+              Platform: js.UndefOr[SetDimension] = js.undefined): SegmentDemographics = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AppVersion" -> AppVersion.map { x => x.asInstanceOf[js.Any] },
-        "Channel" -> Channel.map { x => x.asInstanceOf[js.Any] },
-        "DeviceType" -> DeviceType.map { x => x.asInstanceOf[js.Any] },
-        "Make" -> Make.map { x => x.asInstanceOf[js.Any] },
-        "Model" -> Model.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AppVersion" -> AppVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Channel" -> Channel.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceType" -> DeviceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Make" -> Make.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Model" -> Model.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentDemographics]
     }
   }
 
   /**
-   * Segment dimensions
-   */
+    * Segment dimensions
+    */
   @js.native
   trait SegmentDimensions extends js.Object {
     var Attributes: js.UndefOr[MapOfAttributeDimension]
@@ -5217,28 +6218,40 @@ package pinpoint {
   }
 
   object SegmentDimensions {
-    def apply(
-      Attributes: js.UndefOr[MapOfAttributeDimension] = js.undefined,
-      Behavior: js.UndefOr[SegmentBehaviors] = js.undefined,
-      Demographic: js.UndefOr[SegmentDemographics] = js.undefined,
-      Location: js.UndefOr[SegmentLocation] = js.undefined,
-      Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined,
-      UserAttributes: js.UndefOr[MapOfAttributeDimension] = js.undefined): SegmentDimensions = {
+    def apply(Attributes: js.UndefOr[MapOfAttributeDimension] = js.undefined,
+              Behavior: js.UndefOr[SegmentBehaviors] = js.undefined,
+              Demographic: js.UndefOr[SegmentDemographics] = js.undefined,
+              Location: js.UndefOr[SegmentLocation] = js.undefined,
+              Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined,
+              UserAttributes: js.UndefOr[MapOfAttributeDimension] = js.undefined): SegmentDimensions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Attributes" -> Attributes.map { x => x.asInstanceOf[js.Any] },
-        "Behavior" -> Behavior.map { x => x.asInstanceOf[js.Any] },
-        "Demographic" -> Demographic.map { x => x.asInstanceOf[js.Any] },
-        "Location" -> Location.map { x => x.asInstanceOf[js.Any] },
-        "Metrics" -> Metrics.map { x => x.asInstanceOf[js.Any] },
-        "UserAttributes" -> UserAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Attributes" -> Attributes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Behavior" -> Behavior.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Demographic" -> Demographic.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Location" -> Location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Metrics" -> Metrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserAttributes" -> UserAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentDimensions]
     }
   }
 
   /**
-   * Segment group definition.
-   */
+    * Segment group definition.
+    */
   @js.native
   trait SegmentGroup extends js.Object {
     var Dimensions: js.UndefOr[ListOfSegmentDimensions]
@@ -5248,24 +6261,32 @@ package pinpoint {
   }
 
   object SegmentGroup {
-    def apply(
-      Dimensions: js.UndefOr[ListOfSegmentDimensions] = js.undefined,
-      SourceSegments: js.UndefOr[ListOfSegmentReference] = js.undefined,
-      SourceType: js.UndefOr[SourceType] = js.undefined,
-      Type: js.UndefOr[Type] = js.undefined): SegmentGroup = {
+    def apply(Dimensions: js.UndefOr[ListOfSegmentDimensions] = js.undefined,
+              SourceSegments: js.UndefOr[ListOfSegmentReference] = js.undefined,
+              SourceType: js.UndefOr[SourceType] = js.undefined,
+              Type: js.UndefOr[Type] = js.undefined): SegmentGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
-        "SourceSegments" -> SourceSegments.map { x => x.asInstanceOf[js.Any] },
-        "SourceType" -> SourceType.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Dimensions" -> Dimensions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceSegments" -> SourceSegments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceType" -> SourceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentGroup]
     }
   }
 
   /**
-   * Segment group definition.
-   */
+    * Segment group definition.
+    */
   @js.native
   trait SegmentGroupList extends js.Object {
     var Groups: js.UndefOr[ListOfSegmentGroup]
@@ -5273,20 +6294,21 @@ package pinpoint {
   }
 
   object SegmentGroupList {
-    def apply(
-      Groups: js.UndefOr[ListOfSegmentGroup] = js.undefined,
-      Include: js.UndefOr[Include] = js.undefined): SegmentGroupList = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Groups" -> Groups.map { x => x.asInstanceOf[js.Any] },
-        "Include" -> Include.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Groups: js.UndefOr[ListOfSegmentGroup] = js.undefined,
+              Include: js.UndefOr[Include] = js.undefined): SegmentGroupList = {
+      val _fields = IndexedSeq[(String, js.Any)]("Groups" -> Groups.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Include" -> Include.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentGroupList]
     }
   }
 
   /**
-   * Segment import definition.
-   */
+    * Segment import definition.
+    */
   @js.native
   trait SegmentImportResource extends js.Object {
     var ChannelCounts: js.UndefOr[MapOf__integer]
@@ -5298,28 +6320,40 @@ package pinpoint {
   }
 
   object SegmentImportResource {
-    def apply(
-      ChannelCounts: js.UndefOr[MapOf__integer] = js.undefined,
-      ExternalId: js.UndefOr[__string] = js.undefined,
-      Format: js.UndefOr[Format] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined,
-      S3Url: js.UndefOr[__string] = js.undefined,
-      Size: js.UndefOr[__integer] = js.undefined): SegmentImportResource = {
+    def apply(ChannelCounts: js.UndefOr[MapOf__integer] = js.undefined,
+              ExternalId: js.UndefOr[__string] = js.undefined,
+              Format: js.UndefOr[Format] = js.undefined,
+              RoleArn: js.UndefOr[__string] = js.undefined,
+              S3Url: js.UndefOr[__string] = js.undefined,
+              Size: js.UndefOr[__integer] = js.undefined): SegmentImportResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ChannelCounts" -> ChannelCounts.map { x => x.asInstanceOf[js.Any] },
-        "ExternalId" -> ExternalId.map { x => x.asInstanceOf[js.Any] },
-        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "S3Url" -> S3Url.map { x => x.asInstanceOf[js.Any] },
-        "Size" -> Size.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ChannelCounts" -> ChannelCounts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ExternalId" -> ExternalId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Format" -> Format.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3Url" -> S3Url.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Size" -> Size.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentImportResource]
     }
   }
 
   /**
-   * Segment location dimensions
-   */
+    * Segment location dimensions
+    */
   @js.native
   trait SegmentLocation extends js.Object {
     var Country: js.UndefOr[SetDimension]
@@ -5327,20 +6361,21 @@ package pinpoint {
   }
 
   object SegmentLocation {
-    def apply(
-      Country: js.UndefOr[SetDimension] = js.undefined,
-      GPSPoint: js.UndefOr[GPSPointDimension] = js.undefined): SegmentLocation = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Country" -> Country.map { x => x.asInstanceOf[js.Any] },
-        "GPSPoint" -> GPSPoint.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Country: js.UndefOr[SetDimension] = js.undefined,
+              GPSPoint: js.UndefOr[GPSPointDimension] = js.undefined): SegmentLocation = {
+      val _fields = IndexedSeq[(String, js.Any)]("Country" -> Country.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "GPSPoint" -> GPSPoint.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentLocation]
     }
   }
 
   /**
-   * Segment reference.
-   */
+    * Segment reference.
+    */
   @js.native
   trait SegmentReference extends js.Object {
     var Id: js.UndefOr[__string]
@@ -5348,20 +6383,21 @@ package pinpoint {
   }
 
   object SegmentReference {
-    def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): SegmentReference = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Id: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): SegmentReference = {
+      val _fields = IndexedSeq[(String, js.Any)]("Id" -> Id.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Version" -> Version.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentReference]
     }
   }
 
   /**
-   * Segment definition.
-   */
+    * Segment definition.
+    */
   @js.native
   trait SegmentResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -5377,28 +6413,48 @@ package pinpoint {
   }
 
   object SegmentResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Dimensions: js.UndefOr[SegmentDimensions] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      ImportDefinition: js.UndefOr[SegmentImportResource] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      SegmentGroups: js.UndefOr[SegmentGroupList] = js.undefined,
-      SegmentType: js.UndefOr[SegmentType] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): SegmentResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Dimensions: js.UndefOr[SegmentDimensions] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              ImportDefinition: js.UndefOr[SegmentImportResource] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Name: js.UndefOr[__string] = js.undefined,
+              SegmentGroups: js.UndefOr[SegmentGroupList] = js.undefined,
+              SegmentType: js.UndefOr[SegmentType] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): SegmentResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "ImportDefinition" -> ImportDefinition.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SegmentGroups" -> SegmentGroups.map { x => x.asInstanceOf[js.Any] },
-        "SegmentType" -> SegmentType.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Dimensions" -> Dimensions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImportDefinition" -> ImportDefinition.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentGroups" -> SegmentGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentType" -> SegmentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentResponse]
     }
@@ -5406,14 +6462,14 @@ package pinpoint {
 
   object SegmentTypeEnum {
     val DIMENSIONAL = "DIMENSIONAL"
-    val IMPORT = "IMPORT"
+    val IMPORT      = "IMPORT"
 
     val values = IndexedSeq(DIMENSIONAL, IMPORT)
   }
 
   /**
-   * Segments in your account.
-   */
+    * Segments in your account.
+    */
   @js.native
   trait SegmentsResponse extends js.Object {
     var Item: js.UndefOr[ListOfSegmentResponse]
@@ -5421,12 +6477,13 @@ package pinpoint {
   }
 
   object SegmentsResponse {
-    def apply(
-      Item: js.UndefOr[ListOfSegmentResponse] = js.undefined,
-      NextToken: js.UndefOr[__string] = js.undefined): SegmentsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Item" -> Item.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Item: js.UndefOr[ListOfSegmentResponse] = js.undefined,
+              NextToken: js.UndefOr[__string] = js.undefined): SegmentsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Item" -> Item.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SegmentsResponse]
     }
@@ -5439,12 +6496,11 @@ package pinpoint {
   }
 
   object SendMessagesRequest {
-    def apply(
-      ApplicationId: __string,
-      MessageRequest: MessageRequest): SendMessagesRequest = {
+    def apply(ApplicationId: __string, MessageRequest: MessageRequest): SendMessagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "MessageRequest" -> MessageRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"  -> ApplicationId.asInstanceOf[js.Any],
+        "MessageRequest" -> MessageRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessagesRequest]
     }
@@ -5456,18 +6512,17 @@ package pinpoint {
   }
 
   object SendMessagesResponse {
-    def apply(
-      MessageResponse: MessageResponse): SendMessagesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MessageResponse" -> MessageResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(MessageResponse: MessageResponse): SendMessagesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("MessageResponse" -> MessageResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendMessagesResponse]
     }
   }
 
   /**
-   * Send message request.
-   */
+    * Send message request.
+    */
   @js.native
   trait SendUsersMessageRequest extends js.Object {
     var Context: js.UndefOr[MapOf__string]
@@ -5477,24 +6532,32 @@ package pinpoint {
   }
 
   object SendUsersMessageRequest {
-    def apply(
-      Context: js.UndefOr[MapOf__string] = js.undefined,
-      MessageConfiguration: js.UndefOr[DirectMessageConfiguration] = js.undefined,
-      TraceId: js.UndefOr[__string] = js.undefined,
-      Users: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined): SendUsersMessageRequest = {
+    def apply(Context: js.UndefOr[MapOf__string] = js.undefined,
+              MessageConfiguration: js.UndefOr[DirectMessageConfiguration] = js.undefined,
+              TraceId: js.UndefOr[__string] = js.undefined,
+              Users: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined): SendUsersMessageRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Context" -> Context.map { x => x.asInstanceOf[js.Any] },
-        "MessageConfiguration" -> MessageConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "TraceId" -> TraceId.map { x => x.asInstanceOf[js.Any] },
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Context" -> Context.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageConfiguration" -> MessageConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TraceId" -> TraceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Users" -> Users.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessageRequest]
     }
   }
 
   /**
-   * User send message response.
-   */
+    * User send message response.
+    */
   @js.native
   trait SendUsersMessageResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -5503,14 +6566,20 @@ package pinpoint {
   }
 
   object SendUsersMessageResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      RequestId: js.UndefOr[__string] = js.undefined,
-      Result: js.UndefOr[MapOfMapOfEndpointMessageResult] = js.undefined): SendUsersMessageResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              RequestId: js.UndefOr[__string] = js.undefined,
+              Result: js.UndefOr[MapOfMapOfEndpointMessageResult] = js.undefined): SendUsersMessageResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "RequestId" -> RequestId.map { x => x.asInstanceOf[js.Any] },
-        "Result" -> Result.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequestId" -> RequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Result" -> Result.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessageResponse]
     }
@@ -5523,12 +6592,11 @@ package pinpoint {
   }
 
   object SendUsersMessagesRequest {
-    def apply(
-      ApplicationId: __string,
-      SendUsersMessageRequest: SendUsersMessageRequest): SendUsersMessagesRequest = {
+    def apply(ApplicationId: __string, SendUsersMessageRequest: SendUsersMessageRequest): SendUsersMessagesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SendUsersMessageRequest" -> SendUsersMessageRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"           -> ApplicationId.asInstanceOf[js.Any],
+        "SendUsersMessageRequest" -> SendUsersMessageRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessagesRequest]
     }
@@ -5540,18 +6608,18 @@ package pinpoint {
   }
 
   object SendUsersMessagesResponse {
-    def apply(
-      SendUsersMessageResponse: SendUsersMessageResponse): SendUsersMessagesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SendUsersMessageResponse" -> SendUsersMessageResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SendUsersMessageResponse: SendUsersMessageResponse): SendUsersMessagesResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("SendUsersMessageResponse" -> SendUsersMessageResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendUsersMessagesResponse]
     }
   }
 
   /**
-   * Information about a session.
-   */
+    * Information about a session.
+    */
   @js.native
   trait Session extends js.Object {
     var Duration: js.UndefOr[__integer]
@@ -5561,24 +6629,32 @@ package pinpoint {
   }
 
   object Session {
-    def apply(
-      Duration: js.UndefOr[__integer] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      StartTimestamp: js.UndefOr[__string] = js.undefined,
-      StopTimestamp: js.UndefOr[__string] = js.undefined): Session = {
+    def apply(Duration: js.UndefOr[__integer] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              StartTimestamp: js.UndefOr[__string] = js.undefined,
+              StopTimestamp: js.UndefOr[__string] = js.undefined): Session = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Duration" -> Duration.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "StartTimestamp" -> StartTimestamp.map { x => x.asInstanceOf[js.Any] },
-        "StopTimestamp" -> StopTimestamp.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Duration" -> Duration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StartTimestamp" -> StartTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StopTimestamp" -> StopTimestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Session]
     }
   }
 
   /**
-   * Dimension specification of a segment.
-   */
+    * Dimension specification of a segment.
+    */
   @js.native
   trait SetDimension extends js.Object {
     var DimensionType: js.UndefOr[DimensionType]
@@ -5586,20 +6662,21 @@ package pinpoint {
   }
 
   object SetDimension {
-    def apply(
-      DimensionType: js.UndefOr[DimensionType] = js.undefined,
-      Values: js.UndefOr[ListOf__string] = js.undefined): SetDimension = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DimensionType" -> DimensionType.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DimensionType: js.UndefOr[DimensionType] = js.undefined,
+              Values: js.UndefOr[ListOf__string] = js.undefined): SetDimension = {
+      val _fields = IndexedSeq[(String, js.Any)]("DimensionType" -> DimensionType.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Values" -> Values.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SetDimension]
     }
   }
 
   /**
-   * An email composed of a subject, a text part and a html part.
-   */
+    * An email composed of a subject, a text part and a html part.
+    */
   @js.native
   trait SimpleEmail extends js.Object {
     var HtmlPart: js.UndefOr[SimpleEmailPart]
@@ -5608,22 +6685,28 @@ package pinpoint {
   }
 
   object SimpleEmail {
-    def apply(
-      HtmlPart: js.UndefOr[SimpleEmailPart] = js.undefined,
-      Subject: js.UndefOr[SimpleEmailPart] = js.undefined,
-      TextPart: js.UndefOr[SimpleEmailPart] = js.undefined): SimpleEmail = {
+    def apply(HtmlPart: js.UndefOr[SimpleEmailPart] = js.undefined,
+              Subject: js.UndefOr[SimpleEmailPart] = js.undefined,
+              TextPart: js.UndefOr[SimpleEmailPart] = js.undefined): SimpleEmail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HtmlPart" -> HtmlPart.map { x => x.asInstanceOf[js.Any] },
-        "Subject" -> Subject.map { x => x.asInstanceOf[js.Any] },
-        "TextPart" -> TextPart.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HtmlPart" -> HtmlPart.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Subject" -> Subject.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TextPart" -> TextPart.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimpleEmail]
     }
   }
 
   /**
-   * Textual email data, plus an optional character set specification.
-   */
+    * Textual email data, plus an optional character set specification.
+    */
   @js.native
   trait SimpleEmailPart extends js.Object {
     var Charset: js.UndefOr[__string]
@@ -5631,28 +6714,29 @@ package pinpoint {
   }
 
   object SimpleEmailPart {
-    def apply(
-      Charset: js.UndefOr[__string] = js.undefined,
-      Data: js.UndefOr[__string] = js.undefined): SimpleEmailPart = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Charset" -> Charset.map { x => x.asInstanceOf[js.Any] },
-        "Data" -> Data.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Charset: js.UndefOr[__string] = js.undefined,
+              Data: js.UndefOr[__string] = js.undefined): SimpleEmailPart = {
+      val _fields = IndexedSeq[(String, js.Any)]("Charset" -> Charset.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Data" -> Data.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SimpleEmailPart]
     }
   }
 
   object SourceTypeEnum {
-    val ALL = "ALL"
-    val ANY = "ANY"
+    val ALL  = "ALL"
+    val ANY  = "ANY"
     val NONE = "NONE"
 
     val values = IndexedSeq(ALL, ANY, NONE)
   }
 
   /**
-   * Treatment resource
-   */
+    * Treatment resource
+    */
   @js.native
   trait TreatmentResource extends js.Object {
     var Id: js.UndefOr[__string]
@@ -5665,30 +6749,44 @@ package pinpoint {
   }
 
   object TreatmentResource {
-    def apply(
-      Id: js.UndefOr[__string] = js.undefined,
-      MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
-      Schedule: js.UndefOr[Schedule] = js.undefined,
-      SizePercent: js.UndefOr[__integer] = js.undefined,
-      State: js.UndefOr[CampaignState] = js.undefined,
-      TreatmentDescription: js.UndefOr[__string] = js.undefined,
-      TreatmentName: js.UndefOr[__string] = js.undefined): TreatmentResource = {
+    def apply(Id: js.UndefOr[__string] = js.undefined,
+              MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
+              Schedule: js.UndefOr[Schedule] = js.undefined,
+              SizePercent: js.UndefOr[__integer] = js.undefined,
+              State: js.UndefOr[CampaignState] = js.undefined,
+              TreatmentDescription: js.UndefOr[__string] = js.undefined,
+              TreatmentName: js.UndefOr[__string] = js.undefined): TreatmentResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "MessageConfiguration" -> MessageConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
-        "SizePercent" -> SizePercent.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentDescription" -> TreatmentDescription.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentName" -> TreatmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageConfiguration" -> MessageConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Schedule" -> Schedule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SizePercent" -> SizePercent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentDescription" -> TreatmentDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentName" -> TreatmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TreatmentResource]
     }
   }
 
   object TypeEnum {
-    val ALL = "ALL"
-    val ANY = "ANY"
+    val ALL  = "ALL"
+    val ANY  = "ANY"
     val NONE = "NONE"
 
     val values = IndexedSeq(ALL, ANY, NONE)
@@ -5701,12 +6799,11 @@ package pinpoint {
   }
 
   object UpdateAdmChannelRequest {
-    def apply(
-      ADMChannelRequest: ADMChannelRequest,
-      ApplicationId: __string): UpdateAdmChannelRequest = {
+    def apply(ADMChannelRequest: ADMChannelRequest, ApplicationId: __string): UpdateAdmChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ADMChannelRequest" -> ADMChannelRequest.asInstanceOf[js.Any],
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAdmChannelRequest]
     }
@@ -5718,10 +6815,9 @@ package pinpoint {
   }
 
   object UpdateAdmChannelResponse {
-    def apply(
-      ADMChannelResponse: ADMChannelResponse): UpdateAdmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ADMChannelResponse: ADMChannelResponse): UpdateAdmChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAdmChannelResponse]
     }
@@ -5734,12 +6830,11 @@ package pinpoint {
   }
 
   object UpdateApnsChannelRequest {
-    def apply(
-      APNSChannelRequest: APNSChannelRequest,
-      ApplicationId: __string): UpdateApnsChannelRequest = {
+    def apply(APNSChannelRequest: APNSChannelRequest, ApplicationId: __string): UpdateApnsChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "APNSChannelRequest" -> APNSChannelRequest.asInstanceOf[js.Any],
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"      -> ApplicationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsChannelRequest]
     }
@@ -5751,10 +6846,9 @@ package pinpoint {
   }
 
   object UpdateApnsChannelResponse {
-    def apply(
-      APNSChannelResponse: APNSChannelResponse): UpdateApnsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSChannelResponse: APNSChannelResponse): UpdateApnsChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsChannelResponse]
     }
@@ -5767,12 +6861,12 @@ package pinpoint {
   }
 
   object UpdateApnsSandboxChannelRequest {
-    def apply(
-      APNSSandboxChannelRequest: APNSSandboxChannelRequest,
-      ApplicationId: __string): UpdateApnsSandboxChannelRequest = {
+    def apply(APNSSandboxChannelRequest: APNSSandboxChannelRequest,
+              ApplicationId: __string): UpdateApnsSandboxChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "APNSSandboxChannelRequest" -> APNSSandboxChannelRequest.asInstanceOf[js.Any],
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"             -> ApplicationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsSandboxChannelRequest]
     }
@@ -5784,10 +6878,10 @@ package pinpoint {
   }
 
   object UpdateApnsSandboxChannelResponse {
-    def apply(
-      APNSSandboxChannelResponse: APNSSandboxChannelResponse): UpdateApnsSandboxChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSSandboxChannelResponse: APNSSandboxChannelResponse): UpdateApnsSandboxChannelResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsSandboxChannelResponse]
     }
@@ -5800,12 +6894,11 @@ package pinpoint {
   }
 
   object UpdateApnsVoipChannelRequest {
-    def apply(
-      APNSVoipChannelRequest: APNSVoipChannelRequest,
-      ApplicationId: __string): UpdateApnsVoipChannelRequest = {
+    def apply(APNSVoipChannelRequest: APNSVoipChannelRequest, ApplicationId: __string): UpdateApnsVoipChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "APNSVoipChannelRequest" -> APNSVoipChannelRequest.asInstanceOf[js.Any],
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipChannelRequest]
     }
@@ -5817,10 +6910,10 @@ package pinpoint {
   }
 
   object UpdateApnsVoipChannelResponse {
-    def apply(
-      APNSVoipChannelResponse: APNSVoipChannelResponse): UpdateApnsVoipChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(APNSVoipChannelResponse: APNSVoipChannelResponse): UpdateApnsVoipChannelResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipChannelResponse]
     }
@@ -5833,12 +6926,12 @@ package pinpoint {
   }
 
   object UpdateApnsVoipSandboxChannelRequest {
-    def apply(
-      APNSVoipSandboxChannelRequest: APNSVoipSandboxChannelRequest,
-      ApplicationId: __string): UpdateApnsVoipSandboxChannelRequest = {
+    def apply(APNSVoipSandboxChannelRequest: APNSVoipSandboxChannelRequest,
+              ApplicationId: __string): UpdateApnsVoipSandboxChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "APNSVoipSandboxChannelRequest" -> APNSVoipSandboxChannelRequest.asInstanceOf[js.Any],
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"                 -> ApplicationId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipSandboxChannelRequest]
     }
@@ -5850,10 +6943,10 @@ package pinpoint {
   }
 
   object UpdateApnsVoipSandboxChannelResponse {
-    def apply(
-      APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse): UpdateApnsVoipSandboxChannelResponse = {
+    def apply(APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse): UpdateApnsVoipSandboxChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApnsVoipSandboxChannelResponse]
     }
@@ -5866,12 +6959,12 @@ package pinpoint {
   }
 
   object UpdateApplicationSettingsRequest {
-    def apply(
-      ApplicationId: __string,
-      WriteApplicationSettingsRequest: WriteApplicationSettingsRequest): UpdateApplicationSettingsRequest = {
+    def apply(ApplicationId: __string,
+              WriteApplicationSettingsRequest: WriteApplicationSettingsRequest): UpdateApplicationSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "WriteApplicationSettingsRequest" -> WriteApplicationSettingsRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"                   -> ApplicationId.asInstanceOf[js.Any],
+        "WriteApplicationSettingsRequest" -> WriteApplicationSettingsRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationSettingsRequest]
     }
@@ -5883,28 +6976,28 @@ package pinpoint {
   }
 
   object UpdateApplicationSettingsResponse {
-    def apply(
-      ApplicationSettingsResource: ApplicationSettingsResource): UpdateApplicationSettingsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ApplicationSettingsResource: ApplicationSettingsResource): UpdateApplicationSettingsResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateApplicationSettingsResponse]
     }
   }
 
   /**
-   * Update attributes request
-   */
+    * Update attributes request
+    */
   @js.native
   trait UpdateAttributesRequest extends js.Object {
     var Blacklist: js.UndefOr[ListOf__string]
   }
 
   object UpdateAttributesRequest {
-    def apply(
-      Blacklist: js.UndefOr[ListOf__string] = js.undefined): UpdateAttributesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Blacklist" -> Blacklist.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Blacklist: js.UndefOr[ListOf__string] = js.undefined): UpdateAttributesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Blacklist" -> Blacklist.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAttributesRequest]
     }
@@ -5917,12 +7010,11 @@ package pinpoint {
   }
 
   object UpdateBaiduChannelRequest {
-    def apply(
-      ApplicationId: __string,
-      BaiduChannelRequest: BaiduChannelRequest): UpdateBaiduChannelRequest = {
+    def apply(ApplicationId: __string, BaiduChannelRequest: BaiduChannelRequest): UpdateBaiduChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "BaiduChannelRequest" -> BaiduChannelRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
+        "BaiduChannelRequest" -> BaiduChannelRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBaiduChannelRequest]
     }
@@ -5934,10 +7026,9 @@ package pinpoint {
   }
 
   object UpdateBaiduChannelResponse {
-    def apply(
-      BaiduChannelResponse: BaiduChannelResponse): UpdateBaiduChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(BaiduChannelResponse: BaiduChannelResponse): UpdateBaiduChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBaiduChannelResponse]
     }
@@ -5951,14 +7042,14 @@ package pinpoint {
   }
 
   object UpdateCampaignRequest {
-    def apply(
-      ApplicationId: __string,
-      CampaignId: __string,
-      WriteCampaignRequest: WriteCampaignRequest): UpdateCampaignRequest = {
+    def apply(ApplicationId: __string,
+              CampaignId: __string,
+              WriteCampaignRequest: WriteCampaignRequest): UpdateCampaignRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "CampaignId" -> CampaignId.asInstanceOf[js.Any],
-        "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
+        "CampaignId"           -> CampaignId.asInstanceOf[js.Any],
+        "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCampaignRequest]
     }
@@ -5970,10 +7061,9 @@ package pinpoint {
   }
 
   object UpdateCampaignResponse {
-    def apply(
-      CampaignResponse: CampaignResponse): UpdateCampaignResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CampaignResponse: CampaignResponse): UpdateCampaignResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCampaignResponse]
     }
@@ -5986,12 +7076,11 @@ package pinpoint {
   }
 
   object UpdateEmailChannelRequest {
-    def apply(
-      ApplicationId: __string,
-      EmailChannelRequest: EmailChannelRequest): UpdateEmailChannelRequest = {
+    def apply(ApplicationId: __string, EmailChannelRequest: EmailChannelRequest): UpdateEmailChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "EmailChannelRequest" -> EmailChannelRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
+        "EmailChannelRequest" -> EmailChannelRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEmailChannelRequest]
     }
@@ -6003,10 +7092,9 @@ package pinpoint {
   }
 
   object UpdateEmailChannelResponse {
-    def apply(
-      EmailChannelResponse: EmailChannelResponse): UpdateEmailChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EmailChannelResponse: EmailChannelResponse): UpdateEmailChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEmailChannelResponse]
     }
@@ -6020,14 +7108,14 @@ package pinpoint {
   }
 
   object UpdateEndpointRequest {
-    def apply(
-      ApplicationId: __string,
-      EndpointId: __string,
-      EndpointRequest: EndpointRequest): UpdateEndpointRequest = {
+    def apply(ApplicationId: __string,
+              EndpointId: __string,
+              EndpointRequest: EndpointRequest): UpdateEndpointRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "EndpointId" -> EndpointId.asInstanceOf[js.Any],
-        "EndpointRequest" -> EndpointRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
+        "EndpointId"      -> EndpointId.asInstanceOf[js.Any],
+        "EndpointRequest" -> EndpointRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointRequest]
     }
@@ -6039,10 +7127,9 @@ package pinpoint {
   }
 
   object UpdateEndpointResponse {
-    def apply(
-      MessageBody: MessageBody): UpdateEndpointResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MessageBody" -> MessageBody.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(MessageBody: MessageBody): UpdateEndpointResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("MessageBody" -> MessageBody.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointResponse]
     }
@@ -6055,12 +7142,11 @@ package pinpoint {
   }
 
   object UpdateEndpointsBatchRequest {
-    def apply(
-      ApplicationId: __string,
-      EndpointBatchRequest: EndpointBatchRequest): UpdateEndpointsBatchRequest = {
+    def apply(ApplicationId: __string, EndpointBatchRequest: EndpointBatchRequest): UpdateEndpointsBatchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "EndpointBatchRequest" -> EndpointBatchRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
+        "EndpointBatchRequest" -> EndpointBatchRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointsBatchRequest]
     }
@@ -6072,10 +7158,9 @@ package pinpoint {
   }
 
   object UpdateEndpointsBatchResponse {
-    def apply(
-      MessageBody: MessageBody): UpdateEndpointsBatchResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MessageBody" -> MessageBody.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(MessageBody: MessageBody): UpdateEndpointsBatchResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("MessageBody" -> MessageBody.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointsBatchResponse]
     }
@@ -6088,12 +7173,11 @@ package pinpoint {
   }
 
   object UpdateGcmChannelRequest {
-    def apply(
-      ApplicationId: __string,
-      GCMChannelRequest: GCMChannelRequest): UpdateGcmChannelRequest = {
+    def apply(ApplicationId: __string, GCMChannelRequest: GCMChannelRequest): UpdateGcmChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "GCMChannelRequest" -> GCMChannelRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any],
+        "GCMChannelRequest" -> GCMChannelRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGcmChannelRequest]
     }
@@ -6105,10 +7189,9 @@ package pinpoint {
   }
 
   object UpdateGcmChannelResponse {
-    def apply(
-      GCMChannelResponse: GCMChannelResponse): UpdateGcmChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(GCMChannelResponse: GCMChannelResponse): UpdateGcmChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateGcmChannelResponse]
     }
@@ -6122,14 +7205,14 @@ package pinpoint {
   }
 
   object UpdateSegmentRequest {
-    def apply(
-      ApplicationId: __string,
-      SegmentId: __string,
-      WriteSegmentRequest: WriteSegmentRequest): UpdateSegmentRequest = {
+    def apply(ApplicationId: __string,
+              SegmentId: __string,
+              WriteSegmentRequest: WriteSegmentRequest): UpdateSegmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SegmentId" -> SegmentId.asInstanceOf[js.Any],
-        "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
+        "SegmentId"           -> SegmentId.asInstanceOf[js.Any],
+        "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSegmentRequest]
     }
@@ -6141,10 +7224,9 @@ package pinpoint {
   }
 
   object UpdateSegmentResponse {
-    def apply(
-      SegmentResponse: SegmentResponse): UpdateSegmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SegmentResponse: SegmentResponse): UpdateSegmentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSegmentResponse]
     }
@@ -6157,12 +7239,11 @@ package pinpoint {
   }
 
   object UpdateSmsChannelRequest {
-    def apply(
-      ApplicationId: __string,
-      SMSChannelRequest: SMSChannelRequest): UpdateSmsChannelRequest = {
+    def apply(ApplicationId: __string, SMSChannelRequest: SMSChannelRequest): UpdateSmsChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "SMSChannelRequest" -> SMSChannelRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any],
+        "SMSChannelRequest" -> SMSChannelRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSmsChannelRequest]
     }
@@ -6174,10 +7255,9 @@ package pinpoint {
   }
 
   object UpdateSmsChannelResponse {
-    def apply(
-      SMSChannelResponse: SMSChannelResponse): UpdateSmsChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SMSChannelResponse: SMSChannelResponse): UpdateSmsChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSmsChannelResponse]
     }
@@ -6190,12 +7270,11 @@ package pinpoint {
   }
 
   object UpdateVoiceChannelRequest {
-    def apply(
-      ApplicationId: __string,
-      VoiceChannelRequest: VoiceChannelRequest): UpdateVoiceChannelRequest = {
+    def apply(ApplicationId: __string, VoiceChannelRequest: VoiceChannelRequest): UpdateVoiceChannelRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
-        "VoiceChannelRequest" -> VoiceChannelRequest.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
+        "VoiceChannelRequest" -> VoiceChannelRequest.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVoiceChannelRequest]
     }
@@ -6207,36 +7286,35 @@ package pinpoint {
   }
 
   object UpdateVoiceChannelResponse {
-    def apply(
-      VoiceChannelResponse: VoiceChannelResponse): UpdateVoiceChannelResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(VoiceChannelResponse: VoiceChannelResponse): UpdateVoiceChannelResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateVoiceChannelResponse]
     }
   }
 
   /**
-   * Voice Channel Request
-   */
+    * Voice Channel Request
+    */
   @js.native
   trait VoiceChannelRequest extends js.Object {
     var Enabled: js.UndefOr[__boolean]
   }
 
   object VoiceChannelRequest {
-    def apply(
-      Enabled: js.UndefOr[__boolean] = js.undefined): VoiceChannelRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Enabled: js.UndefOr[__boolean] = js.undefined): VoiceChannelRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Enabled" -> Enabled.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VoiceChannelRequest]
     }
   }
 
   /**
-   * Voice Channel Response.
-   */
+    * Voice Channel Response.
+    */
   @js.native
   trait VoiceChannelResponse extends js.Object {
     var ApplicationId: js.UndefOr[__string]
@@ -6252,36 +7330,56 @@ package pinpoint {
   }
 
   object VoiceChannelResponse {
-    def apply(
-      ApplicationId: js.UndefOr[__string] = js.undefined,
-      CreationDate: js.UndefOr[__string] = js.undefined,
-      Enabled: js.UndefOr[__boolean] = js.undefined,
-      HasCredential: js.UndefOr[__boolean] = js.undefined,
-      Id: js.UndefOr[__string] = js.undefined,
-      IsArchived: js.UndefOr[__boolean] = js.undefined,
-      LastModifiedBy: js.UndefOr[__string] = js.undefined,
-      LastModifiedDate: js.UndefOr[__string] = js.undefined,
-      Platform: js.UndefOr[__string] = js.undefined,
-      Version: js.UndefOr[__integer] = js.undefined): VoiceChannelResponse = {
+    def apply(ApplicationId: js.UndefOr[__string] = js.undefined,
+              CreationDate: js.UndefOr[__string] = js.undefined,
+              Enabled: js.UndefOr[__boolean] = js.undefined,
+              HasCredential: js.UndefOr[__boolean] = js.undefined,
+              Id: js.UndefOr[__string] = js.undefined,
+              IsArchived: js.UndefOr[__boolean] = js.undefined,
+              LastModifiedBy: js.UndefOr[__string] = js.undefined,
+              LastModifiedDate: js.UndefOr[__string] = js.undefined,
+              Platform: js.UndefOr[__string] = js.undefined,
+              Version: js.UndefOr[__integer] = js.undefined): VoiceChannelResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ApplicationId" -> ApplicationId.map { x => x.asInstanceOf[js.Any] },
-        "CreationDate" -> CreationDate.map { x => x.asInstanceOf[js.Any] },
-        "Enabled" -> Enabled.map { x => x.asInstanceOf[js.Any] },
-        "HasCredential" -> HasCredential.map { x => x.asInstanceOf[js.Any] },
-        "Id" -> Id.map { x => x.asInstanceOf[js.Any] },
-        "IsArchived" -> IsArchived.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedBy" -> LastModifiedBy.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedDate" -> LastModifiedDate.map { x => x.asInstanceOf[js.Any] },
-        "Platform" -> Platform.map { x => x.asInstanceOf[js.Any] },
-        "Version" -> Version.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ApplicationId" -> ApplicationId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationDate" -> CreationDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Enabled" -> Enabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HasCredential" -> HasCredential.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Id" -> Id.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsArchived" -> IsArchived.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedBy" -> LastModifiedBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedDate" -> LastModifiedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Platform" -> Platform.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Version" -> Version.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VoiceChannelResponse]
     }
   }
 
   /**
-   * Voice Message.
-   */
+    * Voice Message.
+    */
   @js.native
   trait VoiceMessage extends js.Object {
     var Body: js.UndefOr[__string]
@@ -6292,26 +7390,36 @@ package pinpoint {
   }
 
   object VoiceMessage {
-    def apply(
-      Body: js.UndefOr[__string] = js.undefined,
-      LanguageCode: js.UndefOr[__string] = js.undefined,
-      OriginationNumber: js.UndefOr[__string] = js.undefined,
-      Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
-      VoiceId: js.UndefOr[__string] = js.undefined): VoiceMessage = {
+    def apply(Body: js.UndefOr[__string] = js.undefined,
+              LanguageCode: js.UndefOr[__string] = js.undefined,
+              OriginationNumber: js.UndefOr[__string] = js.undefined,
+              Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
+              VoiceId: js.UndefOr[__string] = js.undefined): VoiceMessage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Body" -> Body.map { x => x.asInstanceOf[js.Any] },
-        "LanguageCode" -> LanguageCode.map { x => x.asInstanceOf[js.Any] },
-        "OriginationNumber" -> OriginationNumber.map { x => x.asInstanceOf[js.Any] },
-        "Substitutions" -> Substitutions.map { x => x.asInstanceOf[js.Any] },
-        "VoiceId" -> VoiceId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Body" -> Body.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LanguageCode" -> LanguageCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OriginationNumber" -> OriginationNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Substitutions" -> Substitutions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VoiceId" -> VoiceId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VoiceMessage]
     }
   }
 
   /**
-   * Creating application setting request
-   */
+    * Creating application setting request
+    */
   @js.native
   trait WriteApplicationSettingsRequest extends js.Object {
     var CampaignHook: js.UndefOr[CampaignHook]
@@ -6321,24 +7429,32 @@ package pinpoint {
   }
 
   object WriteApplicationSettingsRequest {
-    def apply(
-      CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
-      CloudWatchMetricsEnabled: js.UndefOr[__boolean] = js.undefined,
-      Limits: js.UndefOr[CampaignLimits] = js.undefined,
-      QuietTime: js.UndefOr[QuietTime] = js.undefined): WriteApplicationSettingsRequest = {
+    def apply(CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
+              CloudWatchMetricsEnabled: js.UndefOr[__boolean] = js.undefined,
+              Limits: js.UndefOr[CampaignLimits] = js.undefined,
+              QuietTime: js.UndefOr[QuietTime] = js.undefined): WriteApplicationSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CampaignHook" -> CampaignHook.map { x => x.asInstanceOf[js.Any] },
-        "CloudWatchMetricsEnabled" -> CloudWatchMetricsEnabled.map { x => x.asInstanceOf[js.Any] },
-        "Limits" -> Limits.map { x => x.asInstanceOf[js.Any] },
-        "QuietTime" -> QuietTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CampaignHook" -> CampaignHook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CloudWatchMetricsEnabled" -> CloudWatchMetricsEnabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limits" -> Limits.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QuietTime" -> QuietTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteApplicationSettingsRequest]
     }
   }
 
   /**
-   * Used to create a campaign.
-   */
+    * Used to create a campaign.
+    */
   @js.native
   trait WriteCampaignRequest extends js.Object {
     var AdditionalTreatments: js.UndefOr[ListOfWriteTreatmentResource]
@@ -6357,42 +7473,68 @@ package pinpoint {
   }
 
   object WriteCampaignRequest {
-    def apply(
-      AdditionalTreatments: js.UndefOr[ListOfWriteTreatmentResource] = js.undefined,
-      Description: js.UndefOr[__string] = js.undefined,
-      HoldoutPercent: js.UndefOr[__integer] = js.undefined,
-      Hook: js.UndefOr[CampaignHook] = js.undefined,
-      IsPaused: js.UndefOr[__boolean] = js.undefined,
-      Limits: js.UndefOr[CampaignLimits] = js.undefined,
-      MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      Schedule: js.UndefOr[Schedule] = js.undefined,
-      SegmentId: js.UndefOr[__string] = js.undefined,
-      SegmentVersion: js.UndefOr[__integer] = js.undefined,
-      TreatmentDescription: js.UndefOr[__string] = js.undefined,
-      TreatmentName: js.UndefOr[__string] = js.undefined): WriteCampaignRequest = {
+    def apply(AdditionalTreatments: js.UndefOr[ListOfWriteTreatmentResource] = js.undefined,
+              Description: js.UndefOr[__string] = js.undefined,
+              HoldoutPercent: js.UndefOr[__integer] = js.undefined,
+              Hook: js.UndefOr[CampaignHook] = js.undefined,
+              IsPaused: js.UndefOr[__boolean] = js.undefined,
+              Limits: js.UndefOr[CampaignLimits] = js.undefined,
+              MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
+              Name: js.UndefOr[__string] = js.undefined,
+              Schedule: js.UndefOr[Schedule] = js.undefined,
+              SegmentId: js.UndefOr[__string] = js.undefined,
+              SegmentVersion: js.UndefOr[__integer] = js.undefined,
+              TreatmentDescription: js.UndefOr[__string] = js.undefined,
+              TreatmentName: js.UndefOr[__string] = js.undefined): WriteCampaignRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalTreatments" -> AdditionalTreatments.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "HoldoutPercent" -> HoldoutPercent.map { x => x.asInstanceOf[js.Any] },
-        "Hook" -> Hook.map { x => x.asInstanceOf[js.Any] },
-        "IsPaused" -> IsPaused.map { x => x.asInstanceOf[js.Any] },
-        "Limits" -> Limits.map { x => x.asInstanceOf[js.Any] },
-        "MessageConfiguration" -> MessageConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
-        "SegmentId" -> SegmentId.map { x => x.asInstanceOf[js.Any] },
-        "SegmentVersion" -> SegmentVersion.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentDescription" -> TreatmentDescription.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentName" -> TreatmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AdditionalTreatments" -> AdditionalTreatments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HoldoutPercent" -> HoldoutPercent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Hook" -> Hook.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsPaused" -> IsPaused.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Limits" -> Limits.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MessageConfiguration" -> MessageConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Schedule" -> Schedule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentId" -> SegmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentVersion" -> SegmentVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentDescription" -> TreatmentDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentName" -> TreatmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteCampaignRequest]
     }
   }
 
   /**
-   * Request to save an EventStream.
-   */
+    * Request to save an EventStream.
+    */
   @js.native
   trait WriteEventStream extends js.Object {
     var DestinationStreamArn: js.UndefOr[__string]
@@ -6400,20 +7542,21 @@ package pinpoint {
   }
 
   object WriteEventStream {
-    def apply(
-      DestinationStreamArn: js.UndefOr[__string] = js.undefined,
-      RoleArn: js.UndefOr[__string] = js.undefined): WriteEventStream = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DestinationStreamArn" -> DestinationStreamArn.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DestinationStreamArn: js.UndefOr[__string] = js.undefined,
+              RoleArn: js.UndefOr[__string] = js.undefined): WriteEventStream = {
+      val _fields = IndexedSeq[(String, js.Any)]("DestinationStreamArn" -> DestinationStreamArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "RoleArn" -> RoleArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteEventStream]
     }
   }
 
   /**
-   * Segment definition.
-   */
+    * Segment definition.
+    */
   @js.native
   trait WriteSegmentRequest extends js.Object {
     var Dimensions: js.UndefOr[SegmentDimensions]
@@ -6422,22 +7565,28 @@ package pinpoint {
   }
 
   object WriteSegmentRequest {
-    def apply(
-      Dimensions: js.UndefOr[SegmentDimensions] = js.undefined,
-      Name: js.UndefOr[__string] = js.undefined,
-      SegmentGroups: js.UndefOr[SegmentGroupList] = js.undefined): WriteSegmentRequest = {
+    def apply(Dimensions: js.UndefOr[SegmentDimensions] = js.undefined,
+              Name: js.UndefOr[__string] = js.undefined,
+              SegmentGroups: js.UndefOr[SegmentGroupList] = js.undefined): WriteSegmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Dimensions" -> Dimensions.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "SegmentGroups" -> SegmentGroups.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Dimensions" -> Dimensions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SegmentGroups" -> SegmentGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteSegmentRequest]
     }
   }
 
   /**
-   * Used to create a campaign treatment.
-   */
+    * Used to create a campaign treatment.
+    */
   @js.native
   trait WriteTreatmentResource extends js.Object {
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
@@ -6448,18 +7597,28 @@ package pinpoint {
   }
 
   object WriteTreatmentResource {
-    def apply(
-      MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
-      Schedule: js.UndefOr[Schedule] = js.undefined,
-      SizePercent: js.UndefOr[__integer] = js.undefined,
-      TreatmentDescription: js.UndefOr[__string] = js.undefined,
-      TreatmentName: js.UndefOr[__string] = js.undefined): WriteTreatmentResource = {
+    def apply(MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
+              Schedule: js.UndefOr[Schedule] = js.undefined,
+              SizePercent: js.UndefOr[__integer] = js.undefined,
+              TreatmentDescription: js.UndefOr[__string] = js.undefined,
+              TreatmentName: js.UndefOr[__string] = js.undefined): WriteTreatmentResource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MessageConfiguration" -> MessageConfiguration.map { x => x.asInstanceOf[js.Any] },
-        "Schedule" -> Schedule.map { x => x.asInstanceOf[js.Any] },
-        "SizePercent" -> SizePercent.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentDescription" -> TreatmentDescription.map { x => x.asInstanceOf[js.Any] },
-        "TreatmentName" -> TreatmentName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MessageConfiguration" -> MessageConfiguration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Schedule" -> Schedule.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SizePercent" -> SizePercent.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentDescription" -> TreatmentDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TreatmentName" -> TreatmentName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WriteTreatmentResource]
     }

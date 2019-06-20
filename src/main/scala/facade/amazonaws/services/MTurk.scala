@@ -7,50 +7,50 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object mturk {
-  type AssignmentList = js.Array[Assignment]
-  type AssignmentStatus = String
-  type AssignmentStatusList = js.Array[AssignmentStatus]
-  type BonusPaymentList = js.Array[BonusPayment]
-  type Comparator = String
-  type CountryParameters = String
-  type CurrencyAmount = String
-  type CustomerId = String
-  type CustomerIdList = js.Array[CustomerId]
-  type EntityId = String
-  type EventType = String
-  type EventTypeList = js.Array[EventType]
-  type ExceptionMessage = String
-  type HITAccessActions = String
-  type HITLayoutParameterList = js.Array[HITLayoutParameter]
-  type HITList = js.Array[HIT]
-  type HITReviewStatus = String
-  type HITStatus = String
-  type IdempotencyToken = String
-  type IntegerList = js.Array[Int]
-  type LocaleList = js.Array[Locale]
-  type NotificationTransport = String
-  type NotifyWorkersFailureCode = String
+  type AssignmentList                 = js.Array[Assignment]
+  type AssignmentStatus               = String
+  type AssignmentStatusList           = js.Array[AssignmentStatus]
+  type BonusPaymentList               = js.Array[BonusPayment]
+  type Comparator                     = String
+  type CountryParameters              = String
+  type CurrencyAmount                 = String
+  type CustomerId                     = String
+  type CustomerIdList                 = js.Array[CustomerId]
+  type EntityId                       = String
+  type EventType                      = String
+  type EventTypeList                  = js.Array[EventType]
+  type ExceptionMessage               = String
+  type HITAccessActions               = String
+  type HITLayoutParameterList         = js.Array[HITLayoutParameter]
+  type HITList                        = js.Array[HIT]
+  type HITReviewStatus                = String
+  type HITStatus                      = String
+  type IdempotencyToken               = String
+  type IntegerList                    = js.Array[Int]
+  type LocaleList                     = js.Array[Locale]
+  type NotificationTransport          = String
+  type NotifyWorkersFailureCode       = String
   type NotifyWorkersFailureStatusList = js.Array[NotifyWorkersFailureStatus]
-  type PaginationToken = String
-  type ParameterMapEntryList = js.Array[ParameterMapEntry]
-  type PolicyParameterList = js.Array[PolicyParameter]
-  type QualificationList = js.Array[Qualification]
-  type QualificationRequestList = js.Array[QualificationRequest]
-  type QualificationRequirementList = js.Array[QualificationRequirement]
-  type QualificationStatus = String
-  type QualificationTypeList = js.Array[QualificationType]
-  type QualificationTypeStatus = String
-  type ResultSize = Int
-  type ReviewActionDetailList = js.Array[ReviewActionDetail]
-  type ReviewActionStatus = String
-  type ReviewPolicyLevel = String
-  type ReviewPolicyLevelList = js.Array[ReviewPolicyLevel]
-  type ReviewResultDetailList = js.Array[ReviewResultDetail]
-  type ReviewableHITStatus = String
-  type StringList = js.Array[String]
-  type Timestamp = js.Date
-  type TurkErrorCode = String
-  type WorkerBlockList = js.Array[WorkerBlock]
+  type PaginationToken                = String
+  type ParameterMapEntryList          = js.Array[ParameterMapEntry]
+  type PolicyParameterList            = js.Array[PolicyParameter]
+  type QualificationList              = js.Array[Qualification]
+  type QualificationRequestList       = js.Array[QualificationRequest]
+  type QualificationRequirementList   = js.Array[QualificationRequirement]
+  type QualificationStatus            = String
+  type QualificationTypeList          = js.Array[QualificationType]
+  type QualificationTypeStatus        = String
+  type ResultSize                     = Int
+  type ReviewActionDetailList         = js.Array[ReviewActionDetail]
+  type ReviewActionStatus             = String
+  type ReviewPolicyLevel              = String
+  type ReviewPolicyLevelList          = js.Array[ReviewPolicyLevel]
+  type ReviewResultDetailList         = js.Array[ReviewResultDetail]
+  type ReviewableHITStatus            = String
+  type StringList                     = js.Array[String]
+  type Timestamp                      = js.Date
+  type TurkErrorCode                  = String
+  type WorkerBlockList                = js.Array[WorkerBlock]
 }
 
 package mturk {
@@ -59,45 +59,72 @@ package mturk {
   class MTurk() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptQualificationRequest(params: AcceptQualificationRequestRequest): Request[AcceptQualificationRequestResponse] = js.native
+    def acceptQualificationRequest(
+        params: AcceptQualificationRequestRequest
+    ): Request[AcceptQualificationRequestResponse]                                              = js.native
     def approveAssignment(params: ApproveAssignmentRequest): Request[ApproveAssignmentResponse] = js.native
-    def associateQualificationWithWorker(params: AssociateQualificationWithWorkerRequest): Request[AssociateQualificationWithWorkerResponse] = js.native
-    def createAdditionalAssignmentsForHIT(params: CreateAdditionalAssignmentsForHITRequest): Request[CreateAdditionalAssignmentsForHITResponse] = js.native
-    def createHIT(params: CreateHITRequest): Request[CreateHITResponse] = js.native
-    def createHITType(params: CreateHITTypeRequest): Request[CreateHITTypeResponse] = js.native
+    def associateQualificationWithWorker(
+        params: AssociateQualificationWithWorkerRequest
+    ): Request[AssociateQualificationWithWorkerResponse] = js.native
+    def createAdditionalAssignmentsForHIT(
+        params: CreateAdditionalAssignmentsForHITRequest
+    ): Request[CreateAdditionalAssignmentsForHITResponse]                                                = js.native
+    def createHIT(params: CreateHITRequest): Request[CreateHITResponse]                                  = js.native
+    def createHITType(params: CreateHITTypeRequest): Request[CreateHITTypeResponse]                      = js.native
     def createHITWithHITType(params: CreateHITWithHITTypeRequest): Request[CreateHITWithHITTypeResponse] = js.native
-    def createQualificationType(params: CreateQualificationTypeRequest): Request[CreateQualificationTypeResponse] = js.native
+    def createQualificationType(params: CreateQualificationTypeRequest): Request[CreateQualificationTypeResponse] =
+      js.native
     def createWorkerBlock(params: CreateWorkerBlockRequest): Request[CreateWorkerBlockResponse] = js.native
-    def deleteHIT(params: DeleteHITRequest): Request[DeleteHITResponse] = js.native
-    def deleteQualificationType(params: DeleteQualificationTypeRequest): Request[DeleteQualificationTypeResponse] = js.native
+    def deleteHIT(params: DeleteHITRequest): Request[DeleteHITResponse]                         = js.native
+    def deleteQualificationType(params: DeleteQualificationTypeRequest): Request[DeleteQualificationTypeResponse] =
+      js.native
     def deleteWorkerBlock(params: DeleteWorkerBlockRequest): Request[DeleteWorkerBlockResponse] = js.native
-    def disassociateQualificationFromWorker(params: DisassociateQualificationFromWorkerRequest): Request[DisassociateQualificationFromWorkerResponse] = js.native
-    def getAccountBalance(params: GetAccountBalanceRequest): Request[GetAccountBalanceResponse] = js.native
-    def getAssignment(params: GetAssignmentRequest): Request[GetAssignmentResponse] = js.native
-    def getFileUploadURL(params: GetFileUploadURLRequest): Request[GetFileUploadURLResponse] = js.native
-    def getHIT(params: GetHITRequest): Request[GetHITResponse] = js.native
+    def disassociateQualificationFromWorker(
+        params: DisassociateQualificationFromWorkerRequest
+    ): Request[DisassociateQualificationFromWorkerResponse]                                                 = js.native
+    def getAccountBalance(params: GetAccountBalanceRequest): Request[GetAccountBalanceResponse]             = js.native
+    def getAssignment(params: GetAssignmentRequest): Request[GetAssignmentResponse]                         = js.native
+    def getFileUploadURL(params: GetFileUploadURLRequest): Request[GetFileUploadURLResponse]                = js.native
+    def getHIT(params: GetHITRequest): Request[GetHITResponse]                                              = js.native
     def getQualificationScore(params: GetQualificationScoreRequest): Request[GetQualificationScoreResponse] = js.native
-    def getQualificationType(params: GetQualificationTypeRequest): Request[GetQualificationTypeResponse] = js.native
+    def getQualificationType(params: GetQualificationTypeRequest): Request[GetQualificationTypeResponse]    = js.native
     def listAssignmentsForHIT(params: ListAssignmentsForHITRequest): Request[ListAssignmentsForHITResponse] = js.native
-    def listBonusPayments(params: ListBonusPaymentsRequest): Request[ListBonusPaymentsResponse] = js.native
-    def listHITs(params: ListHITsRequest): Request[ListHITsResponse] = js.native
-    def listHITsForQualificationType(params: ListHITsForQualificationTypeRequest): Request[ListHITsForQualificationTypeResponse] = js.native
-    def listQualificationRequests(params: ListQualificationRequestsRequest): Request[ListQualificationRequestsResponse] = js.native
-    def listQualificationTypes(params: ListQualificationTypesRequest): Request[ListQualificationTypesResponse] = js.native
-    def listReviewPolicyResultsForHIT(params: ListReviewPolicyResultsForHITRequest): Request[ListReviewPolicyResultsForHITResponse] = js.native
+    def listBonusPayments(params: ListBonusPaymentsRequest): Request[ListBonusPaymentsResponse]             = js.native
+    def listHITs(params: ListHITsRequest): Request[ListHITsResponse]                                        = js.native
+    def listHITsForQualificationType(
+        params: ListHITsForQualificationTypeRequest
+    ): Request[ListHITsForQualificationTypeResponse] = js.native
+    def listQualificationRequests(
+        params: ListQualificationRequestsRequest
+    ): Request[ListQualificationRequestsResponse] = js.native
+    def listQualificationTypes(params: ListQualificationTypesRequest): Request[ListQualificationTypesResponse] =
+      js.native
+    def listReviewPolicyResultsForHIT(
+        params: ListReviewPolicyResultsForHITRequest
+    ): Request[ListReviewPolicyResultsForHITResponse]                                              = js.native
     def listReviewableHITs(params: ListReviewableHITsRequest): Request[ListReviewableHITsResponse] = js.native
-    def listWorkerBlocks(params: ListWorkerBlocksRequest): Request[ListWorkerBlocksResponse] = js.native
-    def listWorkersWithQualificationType(params: ListWorkersWithQualificationTypeRequest): Request[ListWorkersWithQualificationTypeResponse] = js.native
-    def notifyWorkers(params: NotifyWorkersRequest): Request[NotifyWorkersResponse] = js.native
+    def listWorkerBlocks(params: ListWorkerBlocksRequest): Request[ListWorkerBlocksResponse]       = js.native
+    def listWorkersWithQualificationType(
+        params: ListWorkersWithQualificationTypeRequest
+    ): Request[ListWorkersWithQualificationTypeResponse]                                     = js.native
+    def notifyWorkers(params: NotifyWorkersRequest): Request[NotifyWorkersResponse]          = js.native
     def rejectAssignment(params: RejectAssignmentRequest): Request[RejectAssignmentResponse] = js.native
-    def rejectQualificationRequest(params: RejectQualificationRequestRequest): Request[RejectQualificationRequestResponse] = js.native
+    def rejectQualificationRequest(
+        params: RejectQualificationRequestRequest
+    ): Request[RejectQualificationRequestResponse]                      = js.native
     def sendBonus(params: SendBonusRequest): Request[SendBonusResponse] = js.native
-    def sendTestEventNotification(params: SendTestEventNotificationRequest): Request[SendTestEventNotificationResponse] = js.native
-    def updateExpirationForHIT(params: UpdateExpirationForHITRequest): Request[UpdateExpirationForHITResponse] = js.native
+    def sendTestEventNotification(
+        params: SendTestEventNotificationRequest
+    ): Request[SendTestEventNotificationResponse] = js.native
+    def updateExpirationForHIT(params: UpdateExpirationForHITRequest): Request[UpdateExpirationForHITResponse] =
+      js.native
     def updateHITReviewStatus(params: UpdateHITReviewStatusRequest): Request[UpdateHITReviewStatusResponse] = js.native
-    def updateHITTypeOfHIT(params: UpdateHITTypeOfHITRequest): Request[UpdateHITTypeOfHITResponse] = js.native
-    def updateNotificationSettings(params: UpdateNotificationSettingsRequest): Request[UpdateNotificationSettingsResponse] = js.native
-    def updateQualificationType(params: UpdateQualificationTypeRequest): Request[UpdateQualificationTypeResponse] = js.native
+    def updateHITTypeOfHIT(params: UpdateHITTypeOfHITRequest): Request[UpdateHITTypeOfHITResponse]          = js.native
+    def updateNotificationSettings(
+        params: UpdateNotificationSettingsRequest
+    ): Request[UpdateNotificationSettingsResponse] = js.native
+    def updateQualificationType(params: UpdateQualificationTypeRequest): Request[UpdateQualificationTypeResponse] =
+      js.native
   }
 
   @js.native
@@ -107,21 +134,21 @@ package mturk {
   }
 
   object AcceptQualificationRequestRequest {
-    def apply(
-      QualificationRequestId: String,
-      IntegerValue: js.UndefOr[Int] = js.undefined): AcceptQualificationRequestRequest = {
+    def apply(QualificationRequestId: String,
+              IntegerValue: js.UndefOr[Int] = js.undefined): AcceptQualificationRequestRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any],
-        "IntegerValue" -> IntegerValue.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IntegerValue" -> IntegerValue.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AcceptQualificationRequestRequest]
     }
   }
 
   @js.native
-  trait AcceptQualificationRequestResponse extends js.Object {
-
-  }
+  trait AcceptQualificationRequestResponse extends js.Object {}
 
   object AcceptQualificationRequestResponse {
     def apply(): AcceptQualificationRequestResponse = {
@@ -139,23 +166,25 @@ package mturk {
   }
 
   object ApproveAssignmentRequest {
-    def apply(
-      AssignmentId: EntityId,
-      OverrideRejection: js.UndefOr[Boolean] = js.undefined,
-      RequesterFeedback: js.UndefOr[String] = js.undefined): ApproveAssignmentRequest = {
+    def apply(AssignmentId: EntityId,
+              OverrideRejection: js.UndefOr[Boolean] = js.undefined,
+              RequesterFeedback: js.UndefOr[String] = js.undefined): ApproveAssignmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
-        "OverrideRejection" -> OverrideRejection.map { x => x.asInstanceOf[js.Any] },
-        "RequesterFeedback" -> RequesterFeedback.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OverrideRejection" -> OverrideRejection.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequesterFeedback" -> RequesterFeedback.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApproveAssignmentRequest]
     }
   }
 
   @js.native
-  trait ApproveAssignmentResponse extends js.Object {
-
-  }
+  trait ApproveAssignmentResponse extends js.Object {}
 
   object ApproveAssignmentResponse {
     def apply(): ApproveAssignmentResponse = {
@@ -166,8 +195,8 @@ package mturk {
   }
 
   /**
-   * The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval.
-   */
+    * The Assignment data structure represents a single assignment of a HIT to a Worker. The assignment tracks the Worker's efforts to complete the HIT, and contains the results for later retrieval.
+    */
   @js.native
   trait Assignment extends js.Object {
     var AcceptTime: js.UndefOr[Timestamp]
@@ -185,32 +214,56 @@ package mturk {
   }
 
   object Assignment {
-    def apply(
-      AcceptTime: js.UndefOr[Timestamp] = js.undefined,
-      Answer: js.UndefOr[String] = js.undefined,
-      ApprovalTime: js.UndefOr[Timestamp] = js.undefined,
-      AssignmentId: js.UndefOr[EntityId] = js.undefined,
-      AssignmentStatus: js.UndefOr[AssignmentStatus] = js.undefined,
-      AutoApprovalTime: js.UndefOr[Timestamp] = js.undefined,
-      Deadline: js.UndefOr[Timestamp] = js.undefined,
-      HITId: js.UndefOr[EntityId] = js.undefined,
-      RejectionTime: js.UndefOr[Timestamp] = js.undefined,
-      RequesterFeedback: js.UndefOr[String] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-      WorkerId: js.UndefOr[CustomerId] = js.undefined): Assignment = {
+    def apply(AcceptTime: js.UndefOr[Timestamp] = js.undefined,
+              Answer: js.UndefOr[String] = js.undefined,
+              ApprovalTime: js.UndefOr[Timestamp] = js.undefined,
+              AssignmentId: js.UndefOr[EntityId] = js.undefined,
+              AssignmentStatus: js.UndefOr[AssignmentStatus] = js.undefined,
+              AutoApprovalTime: js.UndefOr[Timestamp] = js.undefined,
+              Deadline: js.UndefOr[Timestamp] = js.undefined,
+              HITId: js.UndefOr[EntityId] = js.undefined,
+              RejectionTime: js.UndefOr[Timestamp] = js.undefined,
+              RequesterFeedback: js.UndefOr[String] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined,
+              WorkerId: js.UndefOr[CustomerId] = js.undefined): Assignment = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceptTime" -> AcceptTime.map { x => x.asInstanceOf[js.Any] },
-        "Answer" -> Answer.map { x => x.asInstanceOf[js.Any] },
-        "ApprovalTime" -> ApprovalTime.map { x => x.asInstanceOf[js.Any] },
-        "AssignmentId" -> AssignmentId.map { x => x.asInstanceOf[js.Any] },
-        "AssignmentStatus" -> AssignmentStatus.map { x => x.asInstanceOf[js.Any] },
-        "AutoApprovalTime" -> AutoApprovalTime.map { x => x.asInstanceOf[js.Any] },
-        "Deadline" -> Deadline.map { x => x.asInstanceOf[js.Any] },
-        "HITId" -> HITId.map { x => x.asInstanceOf[js.Any] },
-        "RejectionTime" -> RejectionTime.map { x => x.asInstanceOf[js.Any] },
-        "RequesterFeedback" -> RequesterFeedback.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] },
-        "WorkerId" -> WorkerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceptTime" -> AcceptTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Answer" -> Answer.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ApprovalTime" -> ApprovalTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AssignmentId" -> AssignmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AssignmentStatus" -> AssignmentStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoApprovalTime" -> AutoApprovalTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Deadline" -> Deadline.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITId" -> HITId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RejectionTime" -> RejectionTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequesterFeedback" -> RequesterFeedback.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkerId" -> WorkerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Assignment]
     }
@@ -218,8 +271,8 @@ package mturk {
 
   object AssignmentStatusEnum {
     val Submitted = "Submitted"
-    val Approved = "Approved"
-    val Rejected = "Rejected"
+    val Approved  = "Approved"
+    val Rejected  = "Rejected"
 
     val values = IndexedSeq(Submitted, Approved, Rejected)
   }
@@ -233,25 +286,27 @@ package mturk {
   }
 
   object AssociateQualificationWithWorkerRequest {
-    def apply(
-      QualificationTypeId: EntityId,
-      WorkerId: CustomerId,
-      IntegerValue: js.UndefOr[Int] = js.undefined,
-      SendNotification: js.UndefOr[Boolean] = js.undefined): AssociateQualificationWithWorkerRequest = {
+    def apply(QualificationTypeId: EntityId,
+              WorkerId: CustomerId,
+              IntegerValue: js.UndefOr[Int] = js.undefined,
+              SendNotification: js.UndefOr[Boolean] = js.undefined): AssociateQualificationWithWorkerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId" -> WorkerId.asInstanceOf[js.Any],
-        "IntegerValue" -> IntegerValue.map { x => x.asInstanceOf[js.Any] },
-        "SendNotification" -> SendNotification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkerId"            -> WorkerId.asInstanceOf[js.Any],
+        "IntegerValue" -> IntegerValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SendNotification" -> SendNotification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateQualificationWithWorkerRequest]
     }
   }
 
   @js.native
-  trait AssociateQualificationWithWorkerResponse extends js.Object {
-
-  }
+  trait AssociateQualificationWithWorkerResponse extends js.Object {}
 
   object AssociateQualificationWithWorkerResponse {
     def apply(): AssociateQualificationWithWorkerResponse = {
@@ -262,8 +317,8 @@ package mturk {
   }
 
   /**
-   * An object representing a Bonus payment paid to a Worker.
-   */
+    * An object representing a Bonus payment paid to a Worker.
+    */
   @js.native
   trait BonusPayment extends js.Object {
     var AssignmentId: js.UndefOr[EntityId]
@@ -274,36 +329,57 @@ package mturk {
   }
 
   object BonusPayment {
-    def apply(
-      AssignmentId: js.UndefOr[EntityId] = js.undefined,
-      BonusAmount: js.UndefOr[CurrencyAmount] = js.undefined,
-      GrantTime: js.UndefOr[Timestamp] = js.undefined,
-      Reason: js.UndefOr[String] = js.undefined,
-      WorkerId: js.UndefOr[CustomerId] = js.undefined): BonusPayment = {
+    def apply(AssignmentId: js.UndefOr[EntityId] = js.undefined,
+              BonusAmount: js.UndefOr[CurrencyAmount] = js.undefined,
+              GrantTime: js.UndefOr[Timestamp] = js.undefined,
+              Reason: js.UndefOr[String] = js.undefined,
+              WorkerId: js.UndefOr[CustomerId] = js.undefined): BonusPayment = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.map { x => x.asInstanceOf[js.Any] },
-        "BonusAmount" -> BonusAmount.map { x => x.asInstanceOf[js.Any] },
-        "GrantTime" -> GrantTime.map { x => x.asInstanceOf[js.Any] },
-        "Reason" -> Reason.map { x => x.asInstanceOf[js.Any] },
-        "WorkerId" -> WorkerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentId" -> AssignmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "BonusAmount" -> BonusAmount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GrantTime" -> GrantTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Reason" -> Reason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkerId" -> WorkerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BonusPayment]
     }
   }
 
   object ComparatorEnum {
-    val LessThan = "LessThan"
-    val LessThanOrEqualTo = "LessThanOrEqualTo"
-    val GreaterThan = "GreaterThan"
+    val LessThan             = "LessThan"
+    val LessThanOrEqualTo    = "LessThanOrEqualTo"
+    val GreaterThan          = "GreaterThan"
     val GreaterThanOrEqualTo = "GreaterThanOrEqualTo"
-    val EqualTo = "EqualTo"
-    val NotEqualTo = "NotEqualTo"
-    val Exists = "Exists"
-    val DoesNotExist = "DoesNotExist"
-    val In = "In"
-    val NotIn = "NotIn"
+    val EqualTo              = "EqualTo"
+    val NotEqualTo           = "NotEqualTo"
+    val Exists               = "Exists"
+    val DoesNotExist         = "DoesNotExist"
+    val In                   = "In"
+    val NotIn                = "NotIn"
 
-    val values = IndexedSeq(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
+    val values = IndexedSeq(
+      LessThan,
+      LessThanOrEqualTo,
+      GreaterThan,
+      GreaterThanOrEqualTo,
+      EqualTo,
+      NotEqualTo,
+      Exists,
+      DoesNotExist,
+      In,
+      NotIn
+    )
   }
 
   @js.native
@@ -315,22 +391,24 @@ package mturk {
 
   object CreateAdditionalAssignmentsForHITRequest {
     def apply(
-      HITId: EntityId,
-      NumberOfAdditionalAssignments: Int,
-      UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined): CreateAdditionalAssignmentsForHITRequest = {
+        HITId: EntityId,
+        NumberOfAdditionalAssignments: Int,
+        UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
+    ): CreateAdditionalAssignmentsForHITRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any],
+        "HITId"                         -> HITId.asInstanceOf[js.Any],
         "NumberOfAdditionalAssignments" -> NumberOfAdditionalAssignments.asInstanceOf[js.Any],
-        "UniqueRequestToken" -> UniqueRequestToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAdditionalAssignmentsForHITRequest]
     }
   }
 
   @js.native
-  trait CreateAdditionalAssignmentsForHITResponse extends js.Object {
-
-  }
+  trait CreateAdditionalAssignmentsForHITResponse extends js.Object {}
 
   object CreateAdditionalAssignmentsForHITResponse {
     def apply(): CreateAdditionalAssignmentsForHITResponse = {
@@ -361,40 +439,62 @@ package mturk {
   }
 
   object CreateHITRequest {
-    def apply(
-      AssignmentDurationInSeconds: Double,
-      Description: String,
-      LifetimeInSeconds: Double,
-      Reward: CurrencyAmount,
-      Title: String,
-      AssignmentReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
-      AutoApprovalDelayInSeconds: js.UndefOr[Double] = js.undefined,
-      HITLayoutId: js.UndefOr[EntityId] = js.undefined,
-      HITLayoutParameters: js.UndefOr[HITLayoutParameterList] = js.undefined,
-      HITReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
-      Keywords: js.UndefOr[String] = js.undefined,
-      MaxAssignments: js.UndefOr[Int] = js.undefined,
-      QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined,
-      Question: js.UndefOr[String] = js.undefined,
-      RequesterAnnotation: js.UndefOr[String] = js.undefined,
-      UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined): CreateHITRequest = {
+    def apply(AssignmentDurationInSeconds: Double,
+              Description: String,
+              LifetimeInSeconds: Double,
+              Reward: CurrencyAmount,
+              Title: String,
+              AssignmentReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
+              AutoApprovalDelayInSeconds: js.UndefOr[Double] = js.undefined,
+              HITLayoutId: js.UndefOr[EntityId] = js.undefined,
+              HITLayoutParameters: js.UndefOr[HITLayoutParameterList] = js.undefined,
+              HITReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
+              Keywords: js.UndefOr[String] = js.undefined,
+              MaxAssignments: js.UndefOr[Int] = js.undefined,
+              QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined,
+              Question: js.UndefOr[String] = js.undefined,
+              RequesterAnnotation: js.UndefOr[String] = js.undefined,
+              UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined): CreateHITRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
-        "Description" -> Description.asInstanceOf[js.Any],
-        "LifetimeInSeconds" -> LifetimeInSeconds.asInstanceOf[js.Any],
-        "Reward" -> Reward.asInstanceOf[js.Any],
-        "Title" -> Title.asInstanceOf[js.Any],
-        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x => x.asInstanceOf[js.Any] },
-        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "HITLayoutId" -> HITLayoutId.map { x => x.asInstanceOf[js.Any] },
-        "HITLayoutParameters" -> HITLayoutParameters.map { x => x.asInstanceOf[js.Any] },
-        "HITReviewPolicy" -> HITReviewPolicy.map { x => x.asInstanceOf[js.Any] },
-        "Keywords" -> Keywords.map { x => x.asInstanceOf[js.Any] },
-        "MaxAssignments" -> MaxAssignments.map { x => x.asInstanceOf[js.Any] },
-        "QualificationRequirements" -> QualificationRequirements.map { x => x.asInstanceOf[js.Any] },
-        "Question" -> Question.map { x => x.asInstanceOf[js.Any] },
-        "RequesterAnnotation" -> RequesterAnnotation.map { x => x.asInstanceOf[js.Any] },
-        "UniqueRequestToken" -> UniqueRequestToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description"                 -> Description.asInstanceOf[js.Any],
+        "LifetimeInSeconds"           -> LifetimeInSeconds.asInstanceOf[js.Any],
+        "Reward"                      -> Reward.asInstanceOf[js.Any],
+        "Title"                       -> Title.asInstanceOf[js.Any],
+        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITLayoutId" -> HITLayoutId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITLayoutParameters" -> HITLayoutParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITReviewPolicy" -> HITReviewPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Keywords" -> Keywords.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxAssignments" -> MaxAssignments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationRequirements" -> QualificationRequirements.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Question" -> Question.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequesterAnnotation" -> RequesterAnnotation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITRequest]
     }
@@ -406,10 +506,10 @@ package mturk {
   }
 
   object CreateHITResponse {
-    def apply(
-      HIT: js.UndefOr[HIT] = js.undefined): CreateHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HIT" -> HIT.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(HIT: js.UndefOr[HIT] = js.undefined): CreateHITResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("HIT" -> HIT.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITResponse]
     }
@@ -428,21 +528,29 @@ package mturk {
 
   object CreateHITTypeRequest {
     def apply(
-      AssignmentDurationInSeconds: Double,
-      Description: String,
-      Reward: CurrencyAmount,
-      Title: String,
-      AutoApprovalDelayInSeconds: js.UndefOr[Double] = js.undefined,
-      Keywords: js.UndefOr[String] = js.undefined,
-      QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined): CreateHITTypeRequest = {
+        AssignmentDurationInSeconds: Double,
+        Description: String,
+        Reward: CurrencyAmount,
+        Title: String,
+        AutoApprovalDelayInSeconds: js.UndefOr[Double] = js.undefined,
+        Keywords: js.UndefOr[String] = js.undefined,
+        QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined
+    ): CreateHITTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
-        "Description" -> Description.asInstanceOf[js.Any],
-        "Reward" -> Reward.asInstanceOf[js.Any],
-        "Title" -> Title.asInstanceOf[js.Any],
-        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Keywords" -> Keywords.map { x => x.asInstanceOf[js.Any] },
-        "QualificationRequirements" -> QualificationRequirements.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description"                 -> Description.asInstanceOf[js.Any],
+        "Reward"                      -> Reward.asInstanceOf[js.Any],
+        "Title"                       -> Title.asInstanceOf[js.Any],
+        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Keywords" -> Keywords.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationRequirements" -> QualificationRequirements.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITTypeRequest]
     }
@@ -454,10 +562,10 @@ package mturk {
   }
 
   object CreateHITTypeResponse {
-    def apply(
-      HITTypeId: js.UndefOr[EntityId] = js.undefined): CreateHITTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITTypeId" -> HITTypeId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(HITTypeId: js.UndefOr[EntityId] = js.undefined): CreateHITTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("HITTypeId" -> HITTypeId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITTypeResponse]
     }
@@ -478,28 +586,44 @@ package mturk {
   }
 
   object CreateHITWithHITTypeRequest {
-    def apply(
-      HITTypeId: EntityId,
-      LifetimeInSeconds: Double,
-      AssignmentReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
-      HITLayoutId: js.UndefOr[EntityId] = js.undefined,
-      HITLayoutParameters: js.UndefOr[HITLayoutParameterList] = js.undefined,
-      HITReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
-      MaxAssignments: js.UndefOr[Int] = js.undefined,
-      Question: js.UndefOr[String] = js.undefined,
-      RequesterAnnotation: js.UndefOr[String] = js.undefined,
-      UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined): CreateHITWithHITTypeRequest = {
+    def apply(HITTypeId: EntityId,
+              LifetimeInSeconds: Double,
+              AssignmentReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
+              HITLayoutId: js.UndefOr[EntityId] = js.undefined,
+              HITLayoutParameters: js.UndefOr[HITLayoutParameterList] = js.undefined,
+              HITReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
+              MaxAssignments: js.UndefOr[Int] = js.undefined,
+              Question: js.UndefOr[String] = js.undefined,
+              RequesterAnnotation: js.UndefOr[String] = js.undefined,
+              UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined): CreateHITWithHITTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HITTypeId" -> HITTypeId.asInstanceOf[js.Any],
+        "HITTypeId"         -> HITTypeId.asInstanceOf[js.Any],
         "LifetimeInSeconds" -> LifetimeInSeconds.asInstanceOf[js.Any],
-        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x => x.asInstanceOf[js.Any] },
-        "HITLayoutId" -> HITLayoutId.map { x => x.asInstanceOf[js.Any] },
-        "HITLayoutParameters" -> HITLayoutParameters.map { x => x.asInstanceOf[js.Any] },
-        "HITReviewPolicy" -> HITReviewPolicy.map { x => x.asInstanceOf[js.Any] },
-        "MaxAssignments" -> MaxAssignments.map { x => x.asInstanceOf[js.Any] },
-        "Question" -> Question.map { x => x.asInstanceOf[js.Any] },
-        "RequesterAnnotation" -> RequesterAnnotation.map { x => x.asInstanceOf[js.Any] },
-        "UniqueRequestToken" -> UniqueRequestToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITLayoutId" -> HITLayoutId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITLayoutParameters" -> HITLayoutParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITReviewPolicy" -> HITReviewPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxAssignments" -> MaxAssignments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Question" -> Question.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequesterAnnotation" -> RequesterAnnotation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITWithHITTypeRequest]
     }
@@ -511,10 +635,10 @@ package mturk {
   }
 
   object CreateHITWithHITTypeResponse {
-    def apply(
-      HIT: js.UndefOr[HIT] = js.undefined): CreateHITWithHITTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HIT" -> HIT.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(HIT: js.UndefOr[HIT] = js.undefined): CreateHITWithHITTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("HIT" -> HIT.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHITWithHITTypeResponse]
     }
@@ -535,28 +659,42 @@ package mturk {
   }
 
   object CreateQualificationTypeRequest {
-    def apply(
-      Description: String,
-      Name: String,
-      QualificationTypeStatus: QualificationTypeStatus,
-      AnswerKey: js.UndefOr[String] = js.undefined,
-      AutoGranted: js.UndefOr[Boolean] = js.undefined,
-      AutoGrantedValue: js.UndefOr[Int] = js.undefined,
-      Keywords: js.UndefOr[String] = js.undefined,
-      RetryDelayInSeconds: js.UndefOr[Double] = js.undefined,
-      Test: js.UndefOr[String] = js.undefined,
-      TestDurationInSeconds: js.UndefOr[Double] = js.undefined): CreateQualificationTypeRequest = {
+    def apply(Description: String,
+              Name: String,
+              QualificationTypeStatus: QualificationTypeStatus,
+              AnswerKey: js.UndefOr[String] = js.undefined,
+              AutoGranted: js.UndefOr[Boolean] = js.undefined,
+              AutoGrantedValue: js.UndefOr[Int] = js.undefined,
+              Keywords: js.UndefOr[String] = js.undefined,
+              RetryDelayInSeconds: js.UndefOr[Double] = js.undefined,
+              Test: js.UndefOr[String] = js.undefined,
+              TestDurationInSeconds: js.UndefOr[Double] = js.undefined): CreateQualificationTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
+        "Description"             -> Description.asInstanceOf[js.Any],
+        "Name"                    -> Name.asInstanceOf[js.Any],
         "QualificationTypeStatus" -> QualificationTypeStatus.asInstanceOf[js.Any],
-        "AnswerKey" -> AnswerKey.map { x => x.asInstanceOf[js.Any] },
-        "AutoGranted" -> AutoGranted.map { x => x.asInstanceOf[js.Any] },
-        "AutoGrantedValue" -> AutoGrantedValue.map { x => x.asInstanceOf[js.Any] },
-        "Keywords" -> Keywords.map { x => x.asInstanceOf[js.Any] },
-        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Test" -> Test.map { x => x.asInstanceOf[js.Any] },
-        "TestDurationInSeconds" -> TestDurationInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnswerKey" -> AnswerKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoGranted" -> AutoGranted.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoGrantedValue" -> AutoGrantedValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Keywords" -> Keywords.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Test" -> Test.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TestDurationInSeconds" -> TestDurationInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQualificationTypeRequest]
     }
@@ -568,10 +706,10 @@ package mturk {
   }
 
   object CreateQualificationTypeResponse {
-    def apply(
-      QualificationType: js.UndefOr[QualificationType] = js.undefined): CreateQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationType" -> QualificationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(QualificationType: js.UndefOr[QualificationType] = js.undefined): CreateQualificationTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("QualificationType" -> QualificationType.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateQualificationTypeResponse]
     }
@@ -584,21 +722,18 @@ package mturk {
   }
 
   object CreateWorkerBlockRequest {
-    def apply(
-      Reason: String,
-      WorkerId: CustomerId): CreateWorkerBlockRequest = {
+    def apply(Reason: String, WorkerId: CustomerId): CreateWorkerBlockRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Reason" -> Reason.asInstanceOf[js.Any],
-        "WorkerId" -> WorkerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Reason"   -> Reason.asInstanceOf[js.Any],
+        "WorkerId" -> WorkerId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkerBlockRequest]
     }
   }
 
   @js.native
-  trait CreateWorkerBlockResponse extends js.Object {
-
-  }
+  trait CreateWorkerBlockResponse extends js.Object {}
 
   object CreateWorkerBlockResponse {
     def apply(): CreateWorkerBlockResponse = {
@@ -614,19 +749,16 @@ package mturk {
   }
 
   object DeleteHITRequest {
-    def apply(
-      HITId: EntityId): DeleteHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(HITId: EntityId): DeleteHITRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("HITId" -> HITId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteHITRequest]
     }
   }
 
   @js.native
-  trait DeleteHITResponse extends js.Object {
-
-  }
+  trait DeleteHITResponse extends js.Object {}
 
   object DeleteHITResponse {
     def apply(): DeleteHITResponse = {
@@ -642,19 +774,16 @@ package mturk {
   }
 
   object DeleteQualificationTypeRequest {
-    def apply(
-      QualificationTypeId: EntityId): DeleteQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(QualificationTypeId: EntityId): DeleteQualificationTypeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteQualificationTypeRequest]
     }
   }
 
   @js.native
-  trait DeleteQualificationTypeResponse extends js.Object {
-
-  }
+  trait DeleteQualificationTypeResponse extends js.Object {}
 
   object DeleteQualificationTypeResponse {
     def apply(): DeleteQualificationTypeResponse = {
@@ -671,21 +800,18 @@ package mturk {
   }
 
   object DeleteWorkerBlockRequest {
-    def apply(
-      WorkerId: CustomerId,
-      Reason: js.UndefOr[String] = js.undefined): DeleteWorkerBlockRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkerId" -> WorkerId.asInstanceOf[js.Any],
-        "Reason" -> Reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(WorkerId: CustomerId, Reason: js.UndefOr[String] = js.undefined): DeleteWorkerBlockRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("WorkerId" -> WorkerId.asInstanceOf[js.Any], "Reason" -> Reason.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkerBlockRequest]
     }
   }
 
   @js.native
-  trait DeleteWorkerBlockResponse extends js.Object {
-
-  }
+  trait DeleteWorkerBlockResponse extends js.Object {}
 
   object DeleteWorkerBlockResponse {
     def apply(): DeleteWorkerBlockResponse = {
@@ -703,53 +829,68 @@ package mturk {
   }
 
   object DisassociateQualificationFromWorkerRequest {
-    def apply(
-      QualificationTypeId: EntityId,
-      WorkerId: CustomerId,
-      Reason: js.UndefOr[String] = js.undefined): DisassociateQualificationFromWorkerRequest = {
+    def apply(QualificationTypeId: EntityId,
+              WorkerId: CustomerId,
+              Reason: js.UndefOr[String] = js.undefined): DisassociateQualificationFromWorkerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId" -> WorkerId.asInstanceOf[js.Any],
-        "Reason" -> Reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkerId"            -> WorkerId.asInstanceOf[js.Any],
+        "Reason" -> Reason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateQualificationFromWorkerRequest]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DisassociateQualificationFromWorkerRequest]
     }
   }
 
   @js.native
-  trait DisassociateQualificationFromWorkerResponse extends js.Object {
-
-  }
+  trait DisassociateQualificationFromWorkerResponse extends js.Object {}
 
   object DisassociateQualificationFromWorkerResponse {
     def apply(): DisassociateQualificationFromWorkerResponse = {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateQualificationFromWorkerResponse]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DisassociateQualificationFromWorkerResponse]
     }
   }
 
   object EventTypeEnum {
-    val AssignmentAccepted = "AssignmentAccepted"
+    val AssignmentAccepted  = "AssignmentAccepted"
     val AssignmentAbandoned = "AssignmentAbandoned"
-    val AssignmentReturned = "AssignmentReturned"
+    val AssignmentReturned  = "AssignmentReturned"
     val AssignmentSubmitted = "AssignmentSubmitted"
-    val AssignmentRejected = "AssignmentRejected"
-    val AssignmentApproved = "AssignmentApproved"
-    val HITCreated = "HITCreated"
-    val HITExpired = "HITExpired"
-    val HITReviewable = "HITReviewable"
-    val HITExtended = "HITExtended"
-    val HITDisposed = "HITDisposed"
-    val Ping = "Ping"
+    val AssignmentRejected  = "AssignmentRejected"
+    val AssignmentApproved  = "AssignmentApproved"
+    val HITCreated          = "HITCreated"
+    val HITExpired          = "HITExpired"
+    val HITReviewable       = "HITReviewable"
+    val HITExtended         = "HITExtended"
+    val HITDisposed         = "HITDisposed"
+    val Ping                = "Ping"
 
-    val values = IndexedSeq(AssignmentAccepted, AssignmentAbandoned, AssignmentReturned, AssignmentSubmitted, AssignmentRejected, AssignmentApproved, HITCreated, HITExpired, HITReviewable, HITExtended, HITDisposed, Ping)
+    val values = IndexedSeq(
+      AssignmentAccepted,
+      AssignmentAbandoned,
+      AssignmentReturned,
+      AssignmentSubmitted,
+      AssignmentRejected,
+      AssignmentApproved,
+      HITCreated,
+      HITExpired,
+      HITReviewable,
+      HITExtended,
+      HITDisposed,
+      Ping
+    )
   }
 
   @js.native
-  trait GetAccountBalanceRequest extends js.Object {
-
-  }
+  trait GetAccountBalanceRequest extends js.Object {}
 
   object GetAccountBalanceRequest {
     def apply(): GetAccountBalanceRequest = {
@@ -766,12 +907,13 @@ package mturk {
   }
 
   object GetAccountBalanceResponse {
-    def apply(
-      AvailableBalance: js.UndefOr[CurrencyAmount] = js.undefined,
-      OnHoldBalance: js.UndefOr[CurrencyAmount] = js.undefined): GetAccountBalanceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AvailableBalance" -> AvailableBalance.map { x => x.asInstanceOf[js.Any] },
-        "OnHoldBalance" -> OnHoldBalance.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AvailableBalance: js.UndefOr[CurrencyAmount] = js.undefined,
+              OnHoldBalance: js.UndefOr[CurrencyAmount] = js.undefined): GetAccountBalanceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("AvailableBalance" -> AvailableBalance.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "OnHoldBalance" -> OnHoldBalance.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAccountBalanceResponse]
     }
@@ -783,10 +925,9 @@ package mturk {
   }
 
   object GetAssignmentRequest {
-    def apply(
-      AssignmentId: EntityId): GetAssignmentRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AssignmentId: EntityId): GetAssignmentRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("AssignmentId" -> AssignmentId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAssignmentRequest]
     }
@@ -799,12 +940,13 @@ package mturk {
   }
 
   object GetAssignmentResponse {
-    def apply(
-      Assignment: js.UndefOr[Assignment] = js.undefined,
-      HIT: js.UndefOr[HIT] = js.undefined): GetAssignmentResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Assignment" -> Assignment.map { x => x.asInstanceOf[js.Any] },
-        "HIT" -> HIT.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Assignment: js.UndefOr[Assignment] = js.undefined,
+              HIT: js.UndefOr[HIT] = js.undefined): GetAssignmentResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Assignment" -> Assignment.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "HIT" -> HIT.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAssignmentResponse]
     }
@@ -817,12 +959,11 @@ package mturk {
   }
 
   object GetFileUploadURLRequest {
-    def apply(
-      AssignmentId: EntityId,
-      QuestionIdentifier: String): GetFileUploadURLRequest = {
+    def apply(AssignmentId: EntityId, QuestionIdentifier: String): GetFileUploadURLRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
-        "QuestionIdentifier" -> QuestionIdentifier.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentId"       -> AssignmentId.asInstanceOf[js.Any],
+        "QuestionIdentifier" -> QuestionIdentifier.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFileUploadURLRequest]
     }
@@ -834,10 +975,10 @@ package mturk {
   }
 
   object GetFileUploadURLResponse {
-    def apply(
-      FileUploadURL: js.UndefOr[String] = js.undefined): GetFileUploadURLResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "FileUploadURL" -> FileUploadURL.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(FileUploadURL: js.UndefOr[String] = js.undefined): GetFileUploadURLResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("FileUploadURL" -> FileUploadURL.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetFileUploadURLResponse]
     }
@@ -849,10 +990,9 @@ package mturk {
   }
 
   object GetHITRequest {
-    def apply(
-      HITId: EntityId): GetHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(HITId: EntityId): GetHITRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("HITId" -> HITId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHITRequest]
     }
@@ -864,10 +1004,10 @@ package mturk {
   }
 
   object GetHITResponse {
-    def apply(
-      HIT: js.UndefOr[HIT] = js.undefined): GetHITResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HIT" -> HIT.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(HIT: js.UndefOr[HIT] = js.undefined): GetHITResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("HIT" -> HIT.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetHITResponse]
     }
@@ -880,12 +1020,11 @@ package mturk {
   }
 
   object GetQualificationScoreRequest {
-    def apply(
-      QualificationTypeId: EntityId,
-      WorkerId: CustomerId): GetQualificationScoreRequest = {
+    def apply(QualificationTypeId: EntityId, WorkerId: CustomerId): GetQualificationScoreRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "WorkerId" -> WorkerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationScoreRequest]
     }
@@ -897,10 +1036,10 @@ package mturk {
   }
 
   object GetQualificationScoreResponse {
-    def apply(
-      Qualification: js.UndefOr[Qualification] = js.undefined): GetQualificationScoreResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Qualification" -> Qualification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Qualification: js.UndefOr[Qualification] = js.undefined): GetQualificationScoreResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Qualification" -> Qualification.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationScoreResponse]
     }
@@ -912,10 +1051,9 @@ package mturk {
   }
 
   object GetQualificationTypeRequest {
-    def apply(
-      QualificationTypeId: EntityId): GetQualificationTypeRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(QualificationTypeId: EntityId): GetQualificationTypeRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationTypeRequest]
     }
@@ -927,18 +1065,18 @@ package mturk {
   }
 
   object GetQualificationTypeResponse {
-    def apply(
-      QualificationType: js.UndefOr[QualificationType] = js.undefined): GetQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationType" -> QualificationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(QualificationType: js.UndefOr[QualificationType] = js.undefined): GetQualificationTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("QualificationType" -> QualificationType.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetQualificationTypeResponse]
     }
   }
 
   /**
-   * The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.
-   */
+    * The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.
+    */
   @js.native
   trait HIT extends js.Object {
     var AssignmentDurationInSeconds: js.UndefOr[Double]
@@ -965,66 +1103,108 @@ package mturk {
   }
 
   object HIT {
-    def apply(
-      AssignmentDurationInSeconds: js.UndefOr[Double] = js.undefined,
-      AutoApprovalDelayInSeconds: js.UndefOr[Double] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      Expiration: js.UndefOr[Timestamp] = js.undefined,
-      HITGroupId: js.UndefOr[EntityId] = js.undefined,
-      HITId: js.UndefOr[EntityId] = js.undefined,
-      HITLayoutId: js.UndefOr[EntityId] = js.undefined,
-      HITReviewStatus: js.UndefOr[HITReviewStatus] = js.undefined,
-      HITStatus: js.UndefOr[HITStatus] = js.undefined,
-      HITTypeId: js.UndefOr[EntityId] = js.undefined,
-      Keywords: js.UndefOr[String] = js.undefined,
-      MaxAssignments: js.UndefOr[Int] = js.undefined,
-      NumberOfAssignmentsAvailable: js.UndefOr[Int] = js.undefined,
-      NumberOfAssignmentsCompleted: js.UndefOr[Int] = js.undefined,
-      NumberOfAssignmentsPending: js.UndefOr[Int] = js.undefined,
-      QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined,
-      Question: js.UndefOr[String] = js.undefined,
-      RequesterAnnotation: js.UndefOr[String] = js.undefined,
-      Reward: js.UndefOr[CurrencyAmount] = js.undefined,
-      Title: js.UndefOr[String] = js.undefined): HIT = {
+    def apply(AssignmentDurationInSeconds: js.UndefOr[Double] = js.undefined,
+              AutoApprovalDelayInSeconds: js.UndefOr[Double] = js.undefined,
+              CreationTime: js.UndefOr[Timestamp] = js.undefined,
+              Description: js.UndefOr[String] = js.undefined,
+              Expiration: js.UndefOr[Timestamp] = js.undefined,
+              HITGroupId: js.UndefOr[EntityId] = js.undefined,
+              HITId: js.UndefOr[EntityId] = js.undefined,
+              HITLayoutId: js.UndefOr[EntityId] = js.undefined,
+              HITReviewStatus: js.UndefOr[HITReviewStatus] = js.undefined,
+              HITStatus: js.UndefOr[HITStatus] = js.undefined,
+              HITTypeId: js.UndefOr[EntityId] = js.undefined,
+              Keywords: js.UndefOr[String] = js.undefined,
+              MaxAssignments: js.UndefOr[Int] = js.undefined,
+              NumberOfAssignmentsAvailable: js.UndefOr[Int] = js.undefined,
+              NumberOfAssignmentsCompleted: js.UndefOr[Int] = js.undefined,
+              NumberOfAssignmentsPending: js.UndefOr[Int] = js.undefined,
+              QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined,
+              Question: js.UndefOr[String] = js.undefined,
+              RequesterAnnotation: js.UndefOr[String] = js.undefined,
+              Reward: js.UndefOr[CurrencyAmount] = js.undefined,
+              Title: js.UndefOr[String] = js.undefined): HIT = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Expiration" -> Expiration.map { x => x.asInstanceOf[js.Any] },
-        "HITGroupId" -> HITGroupId.map { x => x.asInstanceOf[js.Any] },
-        "HITId" -> HITId.map { x => x.asInstanceOf[js.Any] },
-        "HITLayoutId" -> HITLayoutId.map { x => x.asInstanceOf[js.Any] },
-        "HITReviewStatus" -> HITReviewStatus.map { x => x.asInstanceOf[js.Any] },
-        "HITStatus" -> HITStatus.map { x => x.asInstanceOf[js.Any] },
-        "HITTypeId" -> HITTypeId.map { x => x.asInstanceOf[js.Any] },
-        "Keywords" -> Keywords.map { x => x.asInstanceOf[js.Any] },
-        "MaxAssignments" -> MaxAssignments.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfAssignmentsAvailable" -> NumberOfAssignmentsAvailable.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfAssignmentsCompleted" -> NumberOfAssignmentsCompleted.map { x => x.asInstanceOf[js.Any] },
-        "NumberOfAssignmentsPending" -> NumberOfAssignmentsPending.map { x => x.asInstanceOf[js.Any] },
-        "QualificationRequirements" -> QualificationRequirements.map { x => x.asInstanceOf[js.Any] },
-        "Question" -> Question.map { x => x.asInstanceOf[js.Any] },
-        "RequesterAnnotation" -> RequesterAnnotation.map { x => x.asInstanceOf[js.Any] },
-        "Reward" -> Reward.map { x => x.asInstanceOf[js.Any] },
-        "Title" -> Title.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoApprovalDelayInSeconds" -> AutoApprovalDelayInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Expiration" -> Expiration.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITGroupId" -> HITGroupId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITId" -> HITId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITLayoutId" -> HITLayoutId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITReviewStatus" -> HITReviewStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITStatus" -> HITStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITTypeId" -> HITTypeId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Keywords" -> Keywords.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxAssignments" -> MaxAssignments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfAssignmentsAvailable" -> NumberOfAssignmentsAvailable.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfAssignmentsCompleted" -> NumberOfAssignmentsCompleted.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumberOfAssignmentsPending" -> NumberOfAssignmentsPending.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationRequirements" -> QualificationRequirements.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Question" -> Question.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequesterAnnotation" -> RequesterAnnotation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Reward" -> Reward.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Title" -> Title.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HIT]
     }
   }
 
   object HITAccessActionsEnum {
-    val Accept = "Accept"
-    val PreviewAndAccept = "PreviewAndAccept"
+    val Accept                   = "Accept"
+    val PreviewAndAccept         = "PreviewAndAccept"
     val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept"
 
     val values = IndexedSeq(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
   }
 
   /**
-   * The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT.
-   */
+    * The HITLayoutParameter data structure defines parameter values used with a HITLayout. A HITLayout is a reusable Amazon Mechanical Turk project template used to provide Human Intelligence Task (HIT) question data for CreateHIT.
+    */
   @js.native
   trait HITLayoutParameter extends js.Object {
     var Name: String
@@ -1032,32 +1212,30 @@ package mturk {
   }
 
   object HITLayoutParameter {
-    def apply(
-      Name: String,
-      Value: String): HITLayoutParameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Name: String, Value: String): HITLayoutParameter = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HITLayoutParameter]
     }
   }
 
   object HITReviewStatusEnum {
-    val NotReviewed = "NotReviewed"
-    val MarkedForReview = "MarkedForReview"
-    val ReviewedAppropriate = "ReviewedAppropriate"
+    val NotReviewed           = "NotReviewed"
+    val MarkedForReview       = "MarkedForReview"
+    val ReviewedAppropriate   = "ReviewedAppropriate"
     val ReviewedInappropriate = "ReviewedInappropriate"
 
     val values = IndexedSeq(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
   }
 
   object HITStatusEnum {
-    val Assignable = "Assignable"
+    val Assignable   = "Assignable"
     val Unassignable = "Unassignable"
-    val Reviewable = "Reviewable"
-    val Reviewing = "Reviewing"
-    val Disposed = "Disposed"
+    val Reviewable   = "Reviewable"
+    val Reviewing    = "Reviewing"
+    val Disposed     = "Disposed"
 
     val values = IndexedSeq(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
   }
@@ -1071,16 +1249,22 @@ package mturk {
   }
 
   object ListAssignmentsForHITRequest {
-    def apply(
-      HITId: EntityId,
-      AssignmentStatuses: js.UndefOr[AssignmentStatusList] = js.undefined,
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssignmentsForHITRequest = {
+    def apply(HITId: EntityId,
+              AssignmentStatuses: js.UndefOr[AssignmentStatusList] = js.undefined,
+              MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListAssignmentsForHITRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HITId" -> HITId.asInstanceOf[js.Any],
-        "AssignmentStatuses" -> AssignmentStatuses.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentStatuses" -> AssignmentStatuses.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssignmentsForHITRequest]
     }
@@ -1094,14 +1278,20 @@ package mturk {
   }
 
   object ListAssignmentsForHITResponse {
-    def apply(
-      Assignments: js.UndefOr[AssignmentList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined): ListAssignmentsForHITResponse = {
+    def apply(Assignments: js.UndefOr[AssignmentList] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              NumResults: js.UndefOr[Int] = js.undefined): ListAssignmentsForHITResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Assignments" -> Assignments.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Assignments" -> Assignments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAssignmentsForHITResponse]
     }
@@ -1116,16 +1306,24 @@ package mturk {
   }
 
   object ListBonusPaymentsRequest {
-    def apply(
-      AssignmentId: js.UndefOr[EntityId] = js.undefined,
-      HITId: js.UndefOr[EntityId] = js.undefined,
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListBonusPaymentsRequest = {
+    def apply(AssignmentId: js.UndefOr[EntityId] = js.undefined,
+              HITId: js.UndefOr[EntityId] = js.undefined,
+              MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListBonusPaymentsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.map { x => x.asInstanceOf[js.Any] },
-        "HITId" -> HITId.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentId" -> AssignmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITId" -> HITId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBonusPaymentsRequest]
     }
@@ -1139,14 +1337,20 @@ package mturk {
   }
 
   object ListBonusPaymentsResponse {
-    def apply(
-      BonusPayments: js.UndefOr[BonusPaymentList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined): ListBonusPaymentsResponse = {
+    def apply(BonusPayments: js.UndefOr[BonusPaymentList] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              NumResults: js.UndefOr[Int] = js.undefined): ListBonusPaymentsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BonusPayments" -> BonusPayments.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BonusPayments" -> BonusPayments.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBonusPaymentsResponse]
     }
@@ -1160,14 +1364,18 @@ package mturk {
   }
 
   object ListHITsForQualificationTypeRequest {
-    def apply(
-      QualificationTypeId: EntityId,
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHITsForQualificationTypeRequest = {
+    def apply(QualificationTypeId: EntityId,
+              MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHITsForQualificationTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsForQualificationTypeRequest]
     }
@@ -1181,14 +1389,20 @@ package mturk {
   }
 
   object ListHITsForQualificationTypeResponse {
-    def apply(
-      HITs: js.UndefOr[HITList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined): ListHITsForQualificationTypeResponse = {
+    def apply(HITs: js.UndefOr[HITList] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              NumResults: js.UndefOr[Int] = js.undefined): ListHITsForQualificationTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HITs" -> HITs.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HITs" -> HITs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsForQualificationTypeResponse]
     }
@@ -1201,12 +1415,13 @@ package mturk {
   }
 
   object ListHITsRequest {
-    def apply(
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHITsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListHITsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsRequest]
     }
@@ -1220,14 +1435,20 @@ package mturk {
   }
 
   object ListHITsResponse {
-    def apply(
-      HITs: js.UndefOr[HITList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined): ListHITsResponse = {
+    def apply(HITs: js.UndefOr[HITList] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              NumResults: js.UndefOr[Int] = js.undefined): ListHITsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HITs" -> HITs.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HITs" -> HITs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHITsResponse]
     }
@@ -1241,14 +1462,20 @@ package mturk {
   }
 
   object ListQualificationRequestsRequest {
-    def apply(
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      QualificationTypeId: js.UndefOr[EntityId] = js.undefined): ListQualificationRequestsRequest = {
+    def apply(MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              QualificationTypeId: js.UndefOr[EntityId] = js.undefined): ListQualificationRequestsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "QualificationTypeId" -> QualificationTypeId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationTypeId" -> QualificationTypeId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationRequestsRequest]
     }
@@ -1263,13 +1490,21 @@ package mturk {
 
   object ListQualificationRequestsResponse {
     def apply(
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined,
-      QualificationRequests: js.UndefOr[QualificationRequestList] = js.undefined): ListQualificationRequestsResponse = {
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        NumResults: js.UndefOr[Int] = js.undefined,
+        QualificationRequests: js.UndefOr[QualificationRequestList] = js.undefined
+    ): ListQualificationRequestsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] },
-        "QualificationRequests" -> QualificationRequests.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationRequests" -> QualificationRequests.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationRequestsResponse]
     }
@@ -1285,18 +1520,26 @@ package mturk {
   }
 
   object ListQualificationTypesRequest {
-    def apply(
-      MustBeRequestable: Boolean,
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      MustBeOwnedByCaller: js.UndefOr[Boolean] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      Query: js.UndefOr[String] = js.undefined): ListQualificationTypesRequest = {
+    def apply(MustBeRequestable: Boolean,
+              MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              MustBeOwnedByCaller: js.UndefOr[Boolean] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              Query: js.UndefOr[String] = js.undefined): ListQualificationTypesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MustBeRequestable" -> MustBeRequestable.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "MustBeOwnedByCaller" -> MustBeOwnedByCaller.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Query" -> Query.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MustBeOwnedByCaller" -> MustBeOwnedByCaller.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Query" -> Query.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationTypesRequest]
     }
@@ -1310,14 +1553,20 @@ package mturk {
   }
 
   object ListQualificationTypesResponse {
-    def apply(
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined,
-      QualificationTypes: js.UndefOr[QualificationTypeList] = js.undefined): ListQualificationTypesResponse = {
+    def apply(NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              NumResults: js.UndefOr[Int] = js.undefined,
+              QualificationTypes: js.UndefOr[QualificationTypeList] = js.undefined): ListQualificationTypesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] },
-        "QualificationTypes" -> QualificationTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationTypes" -> QualificationTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListQualificationTypesResponse]
     }
@@ -1334,20 +1583,30 @@ package mturk {
   }
 
   object ListReviewPolicyResultsForHITRequest {
-    def apply(
-      HITId: EntityId,
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      PolicyLevels: js.UndefOr[ReviewPolicyLevelList] = js.undefined,
-      RetrieveActions: js.UndefOr[Boolean] = js.undefined,
-      RetrieveResults: js.UndefOr[Boolean] = js.undefined): ListReviewPolicyResultsForHITRequest = {
+    def apply(HITId: EntityId,
+              MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              PolicyLevels: js.UndefOr[ReviewPolicyLevelList] = js.undefined,
+              RetrieveActions: js.UndefOr[Boolean] = js.undefined,
+              RetrieveResults: js.UndefOr[Boolean] = js.undefined): ListReviewPolicyResultsForHITRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HITId" -> HITId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "PolicyLevels" -> PolicyLevels.map { x => x.asInstanceOf[js.Any] },
-        "RetrieveActions" -> RetrieveActions.map { x => x.asInstanceOf[js.Any] },
-        "RetrieveResults" -> RetrieveResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PolicyLevels" -> PolicyLevels.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RetrieveActions" -> RetrieveActions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RetrieveResults" -> RetrieveResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewPolicyResultsForHITRequest]
     }
@@ -1364,20 +1623,32 @@ package mturk {
   }
 
   object ListReviewPolicyResultsForHITResponse {
-    def apply(
-      AssignmentReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
-      AssignmentReviewReport: js.UndefOr[ReviewReport] = js.undefined,
-      HITId: js.UndefOr[EntityId] = js.undefined,
-      HITReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
-      HITReviewReport: js.UndefOr[ReviewReport] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListReviewPolicyResultsForHITResponse = {
+    def apply(AssignmentReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
+              AssignmentReviewReport: js.UndefOr[ReviewReport] = js.undefined,
+              HITId: js.UndefOr[EntityId] = js.undefined,
+              HITReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
+              HITReviewReport: js.UndefOr[ReviewReport] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListReviewPolicyResultsForHITResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x => x.asInstanceOf[js.Any] },
-        "AssignmentReviewReport" -> AssignmentReviewReport.map { x => x.asInstanceOf[js.Any] },
-        "HITId" -> HITId.map { x => x.asInstanceOf[js.Any] },
-        "HITReviewPolicy" -> HITReviewPolicy.map { x => x.asInstanceOf[js.Any] },
-        "HITReviewReport" -> HITReviewReport.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentReviewPolicy" -> AssignmentReviewPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AssignmentReviewReport" -> AssignmentReviewReport.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITId" -> HITId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITReviewPolicy" -> HITReviewPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HITReviewReport" -> HITReviewReport.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewPolicyResultsForHITResponse]
     }
@@ -1392,16 +1663,24 @@ package mturk {
   }
 
   object ListReviewableHITsRequest {
-    def apply(
-      HITTypeId: js.UndefOr[EntityId] = js.undefined,
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      Status: js.UndefOr[ReviewableHITStatus] = js.undefined): ListReviewableHITsRequest = {
+    def apply(HITTypeId: js.UndefOr[EntityId] = js.undefined,
+              MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              Status: js.UndefOr[ReviewableHITStatus] = js.undefined): ListReviewableHITsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HITTypeId" -> HITTypeId.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HITTypeId" -> HITTypeId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewableHITsRequest]
     }
@@ -1415,14 +1694,20 @@ package mturk {
   }
 
   object ListReviewableHITsResponse {
-    def apply(
-      HITs: js.UndefOr[HITList] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined): ListReviewableHITsResponse = {
+    def apply(HITs: js.UndefOr[HITList] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              NumResults: js.UndefOr[Int] = js.undefined): ListReviewableHITsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HITs" -> HITs.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HITs" -> HITs.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListReviewableHITsResponse]
     }
@@ -1435,12 +1720,13 @@ package mturk {
   }
 
   object ListWorkerBlocksRequest {
-    def apply(
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListWorkerBlocksRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListWorkerBlocksRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkerBlocksRequest]
     }
@@ -1454,14 +1740,20 @@ package mturk {
   }
 
   object ListWorkerBlocksResponse {
-    def apply(
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined,
-      WorkerBlocks: js.UndefOr[WorkerBlockList] = js.undefined): ListWorkerBlocksResponse = {
+    def apply(NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              NumResults: js.UndefOr[Int] = js.undefined,
+              WorkerBlocks: js.UndefOr[WorkerBlockList] = js.undefined): ListWorkerBlocksResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] },
-        "WorkerBlocks" -> WorkerBlocks.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkerBlocks" -> WorkerBlocks.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkerBlocksResponse]
     }
@@ -1476,16 +1768,22 @@ package mturk {
   }
 
   object ListWorkersWithQualificationTypeRequest {
-    def apply(
-      QualificationTypeId: EntityId,
-      MaxResults: js.UndefOr[ResultSize] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      Status: js.UndefOr[QualificationStatus] = js.undefined): ListWorkersWithQualificationTypeRequest = {
+    def apply(QualificationTypeId: EntityId,
+              MaxResults: js.UndefOr[ResultSize] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              Status: js.UndefOr[QualificationStatus] = js.undefined): ListWorkersWithQualificationTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkersWithQualificationTypeRequest]
     }
@@ -1500,21 +1798,29 @@ package mturk {
 
   object ListWorkersWithQualificationTypeResponse {
     def apply(
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      NumResults: js.UndefOr[Int] = js.undefined,
-      Qualifications: js.UndefOr[QualificationList] = js.undefined): ListWorkersWithQualificationTypeResponse = {
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        NumResults: js.UndefOr[Int] = js.undefined,
+        Qualifications: js.UndefOr[QualificationList] = js.undefined
+    ): ListWorkersWithQualificationTypeResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NumResults" -> NumResults.map { x => x.asInstanceOf[js.Any] },
-        "Qualifications" -> Qualifications.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NumResults" -> NumResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Qualifications" -> Qualifications.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkersWithQualificationTypeResponse]
     }
   }
 
   /**
-   * The Locale data structure represents a geographical region or location.
-   */
+    * The Locale data structure represents a geographical region or location.
+    */
   @js.native
   trait Locale extends js.Object {
     var Country: CountryParameters
@@ -1522,20 +1828,19 @@ package mturk {
   }
 
   object Locale {
-    def apply(
-      Country: CountryParameters,
-      Subdivision: js.UndefOr[CountryParameters] = js.undefined): Locale = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Country" -> Country.asInstanceOf[js.Any],
-        "Subdivision" -> Subdivision.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Country: CountryParameters, Subdivision: js.UndefOr[CountryParameters] = js.undefined): Locale = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Country" -> Country.asInstanceOf[js.Any], "Subdivision" -> Subdivision.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Locale]
     }
   }
 
   /**
-   * The NotificationSpecification data structure describes a HIT event notification for a HIT type.
-   */
+    * The NotificationSpecification data structure describes a HIT event notification for a HIT type.
+    */
   @js.native
   trait NotificationSpecification extends js.Object {
     var Destination: String
@@ -1545,16 +1850,16 @@ package mturk {
   }
 
   object NotificationSpecification {
-    def apply(
-      Destination: String,
-      EventTypes: EventTypeList,
-      Transport: NotificationTransport,
-      Version: String): NotificationSpecification = {
+    def apply(Destination: String,
+              EventTypes: EventTypeList,
+              Transport: NotificationTransport,
+              Version: String): NotificationSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Destination" -> Destination.asInstanceOf[js.Any],
-        "EventTypes" -> EventTypes.asInstanceOf[js.Any],
-        "Transport" -> Transport.asInstanceOf[js.Any],
-        "Version" -> Version.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EventTypes"  -> EventTypes.asInstanceOf[js.Any],
+        "Transport"   -> Transport.asInstanceOf[js.Any],
+        "Version"     -> Version.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotificationSpecification]
     }
@@ -1562,8 +1867,8 @@ package mturk {
 
   object NotificationTransportEnum {
     val Email = "Email"
-    val SQS = "SQS"
-    val SNS = "SNS"
+    val SQS   = "SQS"
+    val SNS   = "SNS"
 
     val values = IndexedSeq(Email, SQS, SNS)
   }
@@ -1576,8 +1881,8 @@ package mturk {
   }
 
   /**
-   * When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.
-   */
+    * When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details.
+    */
   @js.native
   trait NotifyWorkersFailureStatus extends js.Object {
     var NotifyWorkersFailureCode: js.UndefOr[NotifyWorkersFailureCode]
@@ -1586,14 +1891,20 @@ package mturk {
   }
 
   object NotifyWorkersFailureStatus {
-    def apply(
-      NotifyWorkersFailureCode: js.UndefOr[NotifyWorkersFailureCode] = js.undefined,
-      NotifyWorkersFailureMessage: js.UndefOr[String] = js.undefined,
-      WorkerId: js.UndefOr[CustomerId] = js.undefined): NotifyWorkersFailureStatus = {
+    def apply(NotifyWorkersFailureCode: js.UndefOr[NotifyWorkersFailureCode] = js.undefined,
+              NotifyWorkersFailureMessage: js.UndefOr[String] = js.undefined,
+              WorkerId: js.UndefOr[CustomerId] = js.undefined): NotifyWorkersFailureStatus = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotifyWorkersFailureCode" -> NotifyWorkersFailureCode.map { x => x.asInstanceOf[js.Any] },
-        "NotifyWorkersFailureMessage" -> NotifyWorkersFailureMessage.map { x => x.asInstanceOf[js.Any] },
-        "WorkerId" -> WorkerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NotifyWorkersFailureCode" -> NotifyWorkersFailureCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotifyWorkersFailureMessage" -> NotifyWorkersFailureMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkerId" -> WorkerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWorkersFailureStatus]
     }
@@ -1607,14 +1918,12 @@ package mturk {
   }
 
   object NotifyWorkersRequest {
-    def apply(
-      MessageText: String,
-      Subject: String,
-      WorkerIds: CustomerIdList): NotifyWorkersRequest = {
+    def apply(MessageText: String, Subject: String, WorkerIds: CustomerIdList): NotifyWorkersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MessageText" -> MessageText.asInstanceOf[js.Any],
-        "Subject" -> Subject.asInstanceOf[js.Any],
-        "WorkerIds" -> WorkerIds.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Subject"     -> Subject.asInstanceOf[js.Any],
+        "WorkerIds"   -> WorkerIds.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWorkersRequest]
     }
@@ -1627,17 +1936,20 @@ package mturk {
 
   object NotifyWorkersResponse {
     def apply(
-      NotifyWorkersFailureStatuses: js.UndefOr[NotifyWorkersFailureStatusList] = js.undefined): NotifyWorkersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotifyWorkersFailureStatuses" -> NotifyWorkersFailureStatuses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NotifyWorkersFailureStatuses: js.UndefOr[NotifyWorkersFailureStatusList] = js.undefined
+    ): NotifyWorkersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NotifyWorkersFailureStatuses" -> NotifyWorkersFailureStatuses.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotifyWorkersResponse]
     }
   }
 
   /**
-   * This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.
-   */
+    * This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy.
+    */
   @js.native
   trait ParameterMapEntry extends js.Object {
     var Key: js.UndefOr[String]
@@ -1645,20 +1957,21 @@ package mturk {
   }
 
   object ParameterMapEntry {
-    def apply(
-      Key: js.UndefOr[String] = js.undefined,
-      Values: js.UndefOr[StringList] = js.undefined): ParameterMapEntry = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: js.UndefOr[String] = js.undefined,
+              Values: js.UndefOr[StringList] = js.undefined): ParameterMapEntry = {
+      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Values" -> Values.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterMapEntry]
     }
   }
 
   /**
-   * Name of the parameter from the Review policy.
-   */
+    * Name of the parameter from the Review policy.
+    */
   @js.native
   trait PolicyParameter extends js.Object {
     var Key: js.UndefOr[String]
@@ -1667,22 +1980,24 @@ package mturk {
   }
 
   object PolicyParameter {
-    def apply(
-      Key: js.UndefOr[String] = js.undefined,
-      MapEntries: js.UndefOr[ParameterMapEntryList] = js.undefined,
-      Values: js.UndefOr[StringList] = js.undefined): PolicyParameter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "MapEntries" -> MapEntries.map { x => x.asInstanceOf[js.Any] },
-        "Values" -> Values.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: js.UndefOr[String] = js.undefined,
+              MapEntries: js.UndefOr[ParameterMapEntryList] = js.undefined,
+              Values: js.UndefOr[StringList] = js.undefined): PolicyParameter = {
+      val _fields = IndexedSeq[(String, js.Any)]("Key" -> Key.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "MapEntries" -> MapEntries.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Values" -> Values.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PolicyParameter]
     }
   }
 
   /**
-   * The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).
-   */
+    * The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).
+    */
   @js.native
   trait Qualification extends js.Object {
     var GrantTime: js.UndefOr[Timestamp]
@@ -1694,28 +2009,40 @@ package mturk {
   }
 
   object Qualification {
-    def apply(
-      GrantTime: js.UndefOr[Timestamp] = js.undefined,
-      IntegerValue: js.UndefOr[Int] = js.undefined,
-      LocaleValue: js.UndefOr[Locale] = js.undefined,
-      QualificationTypeId: js.UndefOr[EntityId] = js.undefined,
-      Status: js.UndefOr[QualificationStatus] = js.undefined,
-      WorkerId: js.UndefOr[CustomerId] = js.undefined): Qualification = {
+    def apply(GrantTime: js.UndefOr[Timestamp] = js.undefined,
+              IntegerValue: js.UndefOr[Int] = js.undefined,
+              LocaleValue: js.UndefOr[Locale] = js.undefined,
+              QualificationTypeId: js.UndefOr[EntityId] = js.undefined,
+              Status: js.UndefOr[QualificationStatus] = js.undefined,
+              WorkerId: js.UndefOr[CustomerId] = js.undefined): Qualification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "GrantTime" -> GrantTime.map { x => x.asInstanceOf[js.Any] },
-        "IntegerValue" -> IntegerValue.map { x => x.asInstanceOf[js.Any] },
-        "LocaleValue" -> LocaleValue.map { x => x.asInstanceOf[js.Any] },
-        "QualificationTypeId" -> QualificationTypeId.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "WorkerId" -> WorkerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GrantTime" -> GrantTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegerValue" -> IntegerValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LocaleValue" -> LocaleValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationTypeId" -> QualificationTypeId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkerId" -> WorkerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Qualification]
     }
   }
 
   /**
-   * The QualificationRequest data structure represents a request a Worker has made for a Qualification.
-   */
+    * The QualificationRequest data structure represents a request a Worker has made for a Qualification.
+    */
   @js.native
   trait QualificationRequest extends js.Object {
     var Answer: js.UndefOr[String]
@@ -1727,28 +2054,40 @@ package mturk {
   }
 
   object QualificationRequest {
-    def apply(
-      Answer: js.UndefOr[String] = js.undefined,
-      QualificationRequestId: js.UndefOr[String] = js.undefined,
-      QualificationTypeId: js.UndefOr[EntityId] = js.undefined,
-      SubmitTime: js.UndefOr[Timestamp] = js.undefined,
-      Test: js.UndefOr[String] = js.undefined,
-      WorkerId: js.UndefOr[CustomerId] = js.undefined): QualificationRequest = {
+    def apply(Answer: js.UndefOr[String] = js.undefined,
+              QualificationRequestId: js.UndefOr[String] = js.undefined,
+              QualificationTypeId: js.UndefOr[EntityId] = js.undefined,
+              SubmitTime: js.UndefOr[Timestamp] = js.undefined,
+              Test: js.UndefOr[String] = js.undefined,
+              WorkerId: js.UndefOr[CustomerId] = js.undefined): QualificationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Answer" -> Answer.map { x => x.asInstanceOf[js.Any] },
-        "QualificationRequestId" -> QualificationRequestId.map { x => x.asInstanceOf[js.Any] },
-        "QualificationTypeId" -> QualificationTypeId.map { x => x.asInstanceOf[js.Any] },
-        "SubmitTime" -> SubmitTime.map { x => x.asInstanceOf[js.Any] },
-        "Test" -> Test.map { x => x.asInstanceOf[js.Any] },
-        "WorkerId" -> WorkerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Answer" -> Answer.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationRequestId" -> QualificationRequestId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationTypeId" -> QualificationTypeId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubmitTime" -> SubmitTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Test" -> Test.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WorkerId" -> WorkerId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QualificationRequest]
     }
   }
 
   /**
-   * The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results.
-   */
+    * The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to preview the HIT, or see the HIT in search results.
+    */
   @js.native
   trait QualificationRequirement extends js.Object {
     var Comparator: Comparator
@@ -1760,20 +2099,28 @@ package mturk {
   }
 
   object QualificationRequirement {
-    def apply(
-      Comparator: Comparator,
-      QualificationTypeId: String,
-      ActionsGuarded: js.UndefOr[HITAccessActions] = js.undefined,
-      IntegerValues: js.UndefOr[IntegerList] = js.undefined,
-      LocaleValues: js.UndefOr[LocaleList] = js.undefined,
-      RequiredToPreview: js.UndefOr[Boolean] = js.undefined): QualificationRequirement = {
+    def apply(Comparator: Comparator,
+              QualificationTypeId: String,
+              ActionsGuarded: js.UndefOr[HITAccessActions] = js.undefined,
+              IntegerValues: js.UndefOr[IntegerList] = js.undefined,
+              LocaleValues: js.UndefOr[LocaleList] = js.undefined,
+              RequiredToPreview: js.UndefOr[Boolean] = js.undefined): QualificationRequirement = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Comparator" -> Comparator.asInstanceOf[js.Any],
+        "Comparator"          -> Comparator.asInstanceOf[js.Any],
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "ActionsGuarded" -> ActionsGuarded.map { x => x.asInstanceOf[js.Any] },
-        "IntegerValues" -> IntegerValues.map { x => x.asInstanceOf[js.Any] },
-        "LocaleValues" -> LocaleValues.map { x => x.asInstanceOf[js.Any] },
-        "RequiredToPreview" -> RequiredToPreview.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ActionsGuarded" -> ActionsGuarded.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegerValues" -> IntegerValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LocaleValues" -> LocaleValues.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RequiredToPreview" -> RequiredToPreview.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QualificationRequirement]
     }
@@ -1787,8 +2134,8 @@ package mturk {
   }
 
   /**
-   * The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test.
-   */
+    * The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test.
+    */
   @js.native
   trait QualificationType extends js.Object {
     var AnswerKey: js.UndefOr[String]
@@ -1807,41 +2154,67 @@ package mturk {
   }
 
   object QualificationType {
-    def apply(
-      AnswerKey: js.UndefOr[String] = js.undefined,
-      AutoGranted: js.UndefOr[Boolean] = js.undefined,
-      AutoGrantedValue: js.UndefOr[Int] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      IsRequestable: js.UndefOr[Boolean] = js.undefined,
-      Keywords: js.UndefOr[String] = js.undefined,
-      Name: js.UndefOr[String] = js.undefined,
-      QualificationTypeId: js.UndefOr[EntityId] = js.undefined,
-      QualificationTypeStatus: js.UndefOr[QualificationTypeStatus] = js.undefined,
-      RetryDelayInSeconds: js.UndefOr[Double] = js.undefined,
-      Test: js.UndefOr[String] = js.undefined,
-      TestDurationInSeconds: js.UndefOr[Double] = js.undefined): QualificationType = {
+    def apply(AnswerKey: js.UndefOr[String] = js.undefined,
+              AutoGranted: js.UndefOr[Boolean] = js.undefined,
+              AutoGrantedValue: js.UndefOr[Int] = js.undefined,
+              CreationTime: js.UndefOr[Timestamp] = js.undefined,
+              Description: js.UndefOr[String] = js.undefined,
+              IsRequestable: js.UndefOr[Boolean] = js.undefined,
+              Keywords: js.UndefOr[String] = js.undefined,
+              Name: js.UndefOr[String] = js.undefined,
+              QualificationTypeId: js.UndefOr[EntityId] = js.undefined,
+              QualificationTypeStatus: js.UndefOr[QualificationTypeStatus] = js.undefined,
+              RetryDelayInSeconds: js.UndefOr[Double] = js.undefined,
+              Test: js.UndefOr[String] = js.undefined,
+              TestDurationInSeconds: js.UndefOr[Double] = js.undefined): QualificationType = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AnswerKey" -> AnswerKey.map { x => x.asInstanceOf[js.Any] },
-        "AutoGranted" -> AutoGranted.map { x => x.asInstanceOf[js.Any] },
-        "AutoGrantedValue" -> AutoGrantedValue.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "IsRequestable" -> IsRequestable.map { x => x.asInstanceOf[js.Any] },
-        "Keywords" -> Keywords.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "QualificationTypeId" -> QualificationTypeId.map { x => x.asInstanceOf[js.Any] },
-        "QualificationTypeStatus" -> QualificationTypeStatus.map { x => x.asInstanceOf[js.Any] },
-        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Test" -> Test.map { x => x.asInstanceOf[js.Any] },
-        "TestDurationInSeconds" -> TestDurationInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnswerKey" -> AnswerKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoGranted" -> AutoGranted.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoGrantedValue" -> AutoGrantedValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsRequestable" -> IsRequestable.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Keywords" -> Keywords.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationTypeId" -> QualificationTypeId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationTypeStatus" -> QualificationTypeStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Test" -> Test.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TestDurationInSeconds" -> TestDurationInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[QualificationType]
     }
   }
 
   object QualificationTypeStatusEnum {
-    val Active = "Active"
+    val Active   = "Active"
     val Inactive = "Inactive"
 
     val values = IndexedSeq(Active, Inactive)
@@ -1854,21 +2227,18 @@ package mturk {
   }
 
   object RejectAssignmentRequest {
-    def apply(
-      AssignmentId: EntityId,
-      RequesterFeedback: String): RejectAssignmentRequest = {
+    def apply(AssignmentId: EntityId, RequesterFeedback: String): RejectAssignmentRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
-        "RequesterFeedback" -> RequesterFeedback.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "AssignmentId"      -> AssignmentId.asInstanceOf[js.Any],
+        "RequesterFeedback" -> RequesterFeedback.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectAssignmentRequest]
     }
   }
 
   @js.native
-  trait RejectAssignmentResponse extends js.Object {
-
-  }
+  trait RejectAssignmentResponse extends js.Object {}
 
   object RejectAssignmentResponse {
     def apply(): RejectAssignmentResponse = {
@@ -1885,21 +2255,21 @@ package mturk {
   }
 
   object RejectQualificationRequestRequest {
-    def apply(
-      QualificationRequestId: String,
-      Reason: js.UndefOr[String] = js.undefined): RejectQualificationRequestRequest = {
+    def apply(QualificationRequestId: String,
+              Reason: js.UndefOr[String] = js.undefined): RejectQualificationRequestRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any],
-        "Reason" -> Reason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Reason" -> Reason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectQualificationRequestRequest]
     }
   }
 
   @js.native
-  trait RejectQualificationRequestResponse extends js.Object {
-
-  }
+  trait RejectQualificationRequestResponse extends js.Object {}
 
   object RejectQualificationRequestResponse {
     def apply(): RejectQualificationRequestResponse = {
@@ -1910,8 +2280,8 @@ package mturk {
   }
 
   /**
-   * Your request is invalid.
-   */
+    * Your request is invalid.
+    */
   @js.native
   trait RequestErrorException extends js.Object {
     val Message: ExceptionMessage
@@ -1919,8 +2289,8 @@ package mturk {
   }
 
   /**
-   * Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.
-   */
+    * Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.
+    */
   @js.native
   trait ReviewActionDetail extends js.Object {
     var ActionId: js.UndefOr[EntityId]
@@ -1934,41 +2304,57 @@ package mturk {
   }
 
   object ReviewActionDetail {
-    def apply(
-      ActionId: js.UndefOr[EntityId] = js.undefined,
-      ActionName: js.UndefOr[String] = js.undefined,
-      CompleteTime: js.UndefOr[Timestamp] = js.undefined,
-      ErrorCode: js.UndefOr[String] = js.undefined,
-      Result: js.UndefOr[String] = js.undefined,
-      Status: js.UndefOr[ReviewActionStatus] = js.undefined,
-      TargetId: js.UndefOr[EntityId] = js.undefined,
-      TargetType: js.UndefOr[String] = js.undefined): ReviewActionDetail = {
+    def apply(ActionId: js.UndefOr[EntityId] = js.undefined,
+              ActionName: js.UndefOr[String] = js.undefined,
+              CompleteTime: js.UndefOr[Timestamp] = js.undefined,
+              ErrorCode: js.UndefOr[String] = js.undefined,
+              Result: js.UndefOr[String] = js.undefined,
+              Status: js.UndefOr[ReviewActionStatus] = js.undefined,
+              TargetId: js.UndefOr[EntityId] = js.undefined,
+              TargetType: js.UndefOr[String] = js.undefined): ReviewActionDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ActionId" -> ActionId.map { x => x.asInstanceOf[js.Any] },
-        "ActionName" -> ActionName.map { x => x.asInstanceOf[js.Any] },
-        "CompleteTime" -> CompleteTime.map { x => x.asInstanceOf[js.Any] },
-        "ErrorCode" -> ErrorCode.map { x => x.asInstanceOf[js.Any] },
-        "Result" -> Result.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] },
-        "TargetId" -> TargetId.map { x => x.asInstanceOf[js.Any] },
-        "TargetType" -> TargetType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ActionId" -> ActionId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ActionName" -> ActionName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompleteTime" -> CompleteTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ErrorCode" -> ErrorCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Result" -> Result.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetId" -> TargetId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TargetType" -> TargetType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewActionDetail]
     }
   }
 
   object ReviewActionStatusEnum {
-    val Intended = "Intended"
+    val Intended  = "Intended"
     val Succeeded = "Succeeded"
-    val Failed = "Failed"
+    val Failed    = "Failed"
     val Cancelled = "Cancelled"
 
     val values = IndexedSeq(Intended, Succeeded, Failed, Cancelled)
   }
 
   /**
-   * HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.
-   */
+    * HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT.
+    */
   @js.native
   trait ReviewPolicy extends js.Object {
     var PolicyName: String
@@ -1976,12 +2362,12 @@ package mturk {
   }
 
   object ReviewPolicy {
-    def apply(
-      PolicyName: String,
-      Parameters: js.UndefOr[PolicyParameterList] = js.undefined): ReviewPolicy = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
-        "Parameters" -> Parameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PolicyName: String, Parameters: js.UndefOr[PolicyParameterList] = js.undefined): ReviewPolicy = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("PolicyName" -> PolicyName.asInstanceOf[js.Any], "Parameters" -> Parameters.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewPolicy]
     }
@@ -1989,14 +2375,14 @@ package mturk {
 
   object ReviewPolicyLevelEnum {
     val Assignment = "Assignment"
-    val HIT = "HIT"
+    val HIT        = "HIT"
 
     val values = IndexedSeq(Assignment, HIT)
   }
 
   /**
-   * Contains both ReviewResult and ReviewAction elements for a particular HIT.
-   */
+    * Contains both ReviewResult and ReviewAction elements for a particular HIT.
+    */
   @js.native
   trait ReviewReport extends js.Object {
     var ReviewActions: js.UndefOr[ReviewActionDetailList]
@@ -2004,20 +2390,21 @@ package mturk {
   }
 
   object ReviewReport {
-    def apply(
-      ReviewActions: js.UndefOr[ReviewActionDetailList] = js.undefined,
-      ReviewResults: js.UndefOr[ReviewResultDetailList] = js.undefined): ReviewReport = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ReviewActions" -> ReviewActions.map { x => x.asInstanceOf[js.Any] },
-        "ReviewResults" -> ReviewResults.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ReviewActions: js.UndefOr[ReviewActionDetailList] = js.undefined,
+              ReviewResults: js.UndefOr[ReviewResultDetailList] = js.undefined): ReviewReport = {
+      val _fields = IndexedSeq[(String, js.Any)]("ReviewActions" -> ReviewActions.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ReviewResults" -> ReviewResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewReport]
     }
   }
 
   /**
-   * This data structure is returned multiple times for each result specified in the Review Policy.
-   */
+    * This data structure is returned multiple times for each result specified in the Review Policy.
+    */
   @js.native
   trait ReviewResultDetail extends js.Object {
     var ActionId: js.UndefOr[EntityId]
@@ -2029,20 +2416,32 @@ package mturk {
   }
 
   object ReviewResultDetail {
-    def apply(
-      ActionId: js.UndefOr[EntityId] = js.undefined,
-      Key: js.UndefOr[String] = js.undefined,
-      QuestionId: js.UndefOr[EntityId] = js.undefined,
-      SubjectId: js.UndefOr[EntityId] = js.undefined,
-      SubjectType: js.UndefOr[String] = js.undefined,
-      Value: js.UndefOr[String] = js.undefined): ReviewResultDetail = {
+    def apply(ActionId: js.UndefOr[EntityId] = js.undefined,
+              Key: js.UndefOr[String] = js.undefined,
+              QuestionId: js.UndefOr[EntityId] = js.undefined,
+              SubjectId: js.UndefOr[EntityId] = js.undefined,
+              SubjectType: js.UndefOr[String] = js.undefined,
+              Value: js.UndefOr[String] = js.undefined): ReviewResultDetail = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ActionId" -> ActionId.map { x => x.asInstanceOf[js.Any] },
-        "Key" -> Key.map { x => x.asInstanceOf[js.Any] },
-        "QuestionId" -> QuestionId.map { x => x.asInstanceOf[js.Any] },
-        "SubjectId" -> SubjectId.map { x => x.asInstanceOf[js.Any] },
-        "SubjectType" -> SubjectType.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ActionId" -> ActionId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Key" -> Key.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QuestionId" -> QuestionId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubjectId" -> SubjectId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubjectType" -> SubjectType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ReviewResultDetail]
     }
@@ -2050,7 +2449,7 @@ package mturk {
 
   object ReviewableHITStatusEnum {
     val Reviewable = "Reviewable"
-    val Reviewing = "Reviewing"
+    val Reviewing  = "Reviewing"
 
     val values = IndexedSeq(Reviewable, Reviewing)
   }
@@ -2065,27 +2464,27 @@ package mturk {
   }
 
   object SendBonusRequest {
-    def apply(
-      AssignmentId: EntityId,
-      BonusAmount: CurrencyAmount,
-      Reason: String,
-      WorkerId: CustomerId,
-      UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined): SendBonusRequest = {
+    def apply(AssignmentId: EntityId,
+              BonusAmount: CurrencyAmount,
+              Reason: String,
+              WorkerId: CustomerId,
+              UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined): SendBonusRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
-        "BonusAmount" -> BonusAmount.asInstanceOf[js.Any],
-        "Reason" -> Reason.asInstanceOf[js.Any],
-        "WorkerId" -> WorkerId.asInstanceOf[js.Any],
-        "UniqueRequestToken" -> UniqueRequestToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BonusAmount"  -> BonusAmount.asInstanceOf[js.Any],
+        "Reason"       -> Reason.asInstanceOf[js.Any],
+        "WorkerId"     -> WorkerId.asInstanceOf[js.Any],
+        "UniqueRequestToken" -> UniqueRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendBonusRequest]
     }
   }
 
   @js.native
-  trait SendBonusResponse extends js.Object {
-
-  }
+  trait SendBonusResponse extends js.Object {}
 
   object SendBonusResponse {
     def apply(): SendBonusResponse = {
@@ -2102,21 +2501,18 @@ package mturk {
   }
 
   object SendTestEventNotificationRequest {
-    def apply(
-      Notification: NotificationSpecification,
-      TestEventType: EventType): SendTestEventNotificationRequest = {
+    def apply(Notification: NotificationSpecification, TestEventType: EventType): SendTestEventNotificationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Notification" -> Notification.asInstanceOf[js.Any],
-        "TestEventType" -> TestEventType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Notification"  -> Notification.asInstanceOf[js.Any],
+        "TestEventType" -> TestEventType.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendTestEventNotificationRequest]
     }
   }
 
   @js.native
-  trait SendTestEventNotificationResponse extends js.Object {
-
-  }
+  trait SendTestEventNotificationResponse extends js.Object {}
 
   object SendTestEventNotificationResponse {
     def apply(): SendTestEventNotificationResponse = {
@@ -2127,8 +2523,8 @@ package mturk {
   }
 
   /**
-   * Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.
-   */
+    * Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.
+    */
   @js.native
   trait ServiceFaultException extends js.Object {
     val Message: ExceptionMessage
@@ -2142,21 +2538,17 @@ package mturk {
   }
 
   object UpdateExpirationForHITRequest {
-    def apply(
-      ExpireAt: Timestamp,
-      HITId: EntityId): UpdateExpirationForHITRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ExpireAt" -> ExpireAt.asInstanceOf[js.Any],
-        "HITId" -> HITId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ExpireAt: Timestamp, HITId: EntityId): UpdateExpirationForHITRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ExpireAt" -> ExpireAt.asInstanceOf[js.Any], "HITId" -> HITId.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateExpirationForHITRequest]
     }
   }
 
   @js.native
-  trait UpdateExpirationForHITResponse extends js.Object {
-
-  }
+  trait UpdateExpirationForHITResponse extends js.Object {}
 
   object UpdateExpirationForHITResponse {
     def apply(): UpdateExpirationForHITResponse = {
@@ -2173,21 +2565,17 @@ package mturk {
   }
 
   object UpdateHITReviewStatusRequest {
-    def apply(
-      HITId: EntityId,
-      Revert: js.UndefOr[Boolean] = js.undefined): UpdateHITReviewStatusRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any],
-        "Revert" -> Revert.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(HITId: EntityId, Revert: js.UndefOr[Boolean] = js.undefined): UpdateHITReviewStatusRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("HITId" -> HITId.asInstanceOf[js.Any], "Revert" -> Revert.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateHITReviewStatusRequest]
     }
   }
 
   @js.native
-  trait UpdateHITReviewStatusResponse extends js.Object {
-
-  }
+  trait UpdateHITReviewStatusResponse extends js.Object {}
 
   object UpdateHITReviewStatusResponse {
     def apply(): UpdateHITReviewStatusResponse = {
@@ -2204,21 +2592,18 @@ package mturk {
   }
 
   object UpdateHITTypeOfHITRequest {
-    def apply(
-      HITId: EntityId,
-      HITTypeId: EntityId): UpdateHITTypeOfHITRequest = {
+    def apply(HITId: EntityId, HITTypeId: EntityId): UpdateHITTypeOfHITRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HITId" -> HITId.asInstanceOf[js.Any],
-        "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "HITId"     -> HITId.asInstanceOf[js.Any],
+        "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateHITTypeOfHITRequest]
     }
   }
 
   @js.native
-  trait UpdateHITTypeOfHITResponse extends js.Object {
-
-  }
+  trait UpdateHITTypeOfHITResponse extends js.Object {}
 
   object UpdateHITTypeOfHITResponse {
     def apply(): UpdateHITTypeOfHITResponse = {
@@ -2236,23 +2621,25 @@ package mturk {
   }
 
   object UpdateNotificationSettingsRequest {
-    def apply(
-      HITTypeId: EntityId,
-      Active: js.UndefOr[Boolean] = js.undefined,
-      Notification: js.UndefOr[NotificationSpecification] = js.undefined): UpdateNotificationSettingsRequest = {
+    def apply(HITTypeId: EntityId,
+              Active: js.UndefOr[Boolean] = js.undefined,
+              Notification: js.UndefOr[NotificationSpecification] = js.undefined): UpdateNotificationSettingsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HITTypeId" -> HITTypeId.asInstanceOf[js.Any],
-        "Active" -> Active.map { x => x.asInstanceOf[js.Any] },
-        "Notification" -> Notification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Active" -> Active.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Notification" -> Notification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotificationSettingsRequest]
     }
   }
 
   @js.native
-  trait UpdateNotificationSettingsResponse extends js.Object {
-
-  }
+  trait UpdateNotificationSettingsResponse extends js.Object {}
 
   object UpdateNotificationSettingsResponse {
     def apply(): UpdateNotificationSettingsResponse = {
@@ -2276,26 +2663,42 @@ package mturk {
   }
 
   object UpdateQualificationTypeRequest {
-    def apply(
-      QualificationTypeId: EntityId,
-      AnswerKey: js.UndefOr[String] = js.undefined,
-      AutoGranted: js.UndefOr[Boolean] = js.undefined,
-      AutoGrantedValue: js.UndefOr[Int] = js.undefined,
-      Description: js.UndefOr[String] = js.undefined,
-      QualificationTypeStatus: js.UndefOr[QualificationTypeStatus] = js.undefined,
-      RetryDelayInSeconds: js.UndefOr[Double] = js.undefined,
-      Test: js.UndefOr[String] = js.undefined,
-      TestDurationInSeconds: js.UndefOr[Double] = js.undefined): UpdateQualificationTypeRequest = {
+    def apply(QualificationTypeId: EntityId,
+              AnswerKey: js.UndefOr[String] = js.undefined,
+              AutoGranted: js.UndefOr[Boolean] = js.undefined,
+              AutoGrantedValue: js.UndefOr[Int] = js.undefined,
+              Description: js.UndefOr[String] = js.undefined,
+              QualificationTypeStatus: js.UndefOr[QualificationTypeStatus] = js.undefined,
+              RetryDelayInSeconds: js.UndefOr[Double] = js.undefined,
+              Test: js.UndefOr[String] = js.undefined,
+              TestDurationInSeconds: js.UndefOr[Double] = js.undefined): UpdateQualificationTypeRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
-        "AnswerKey" -> AnswerKey.map { x => x.asInstanceOf[js.Any] },
-        "AutoGranted" -> AutoGranted.map { x => x.asInstanceOf[js.Any] },
-        "AutoGrantedValue" -> AutoGrantedValue.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "QualificationTypeStatus" -> QualificationTypeStatus.map { x => x.asInstanceOf[js.Any] },
-        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "Test" -> Test.map { x => x.asInstanceOf[js.Any] },
-        "TestDurationInSeconds" -> TestDurationInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AnswerKey" -> AnswerKey.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoGranted" -> AutoGranted.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AutoGrantedValue" -> AutoGrantedValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "QualificationTypeStatus" -> QualificationTypeStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RetryDelayInSeconds" -> RetryDelayInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Test" -> Test.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TestDurationInSeconds" -> TestDurationInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateQualificationTypeRequest]
     }
@@ -2307,18 +2710,18 @@ package mturk {
   }
 
   object UpdateQualificationTypeResponse {
-    def apply(
-      QualificationType: js.UndefOr[QualificationType] = js.undefined): UpdateQualificationTypeResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "QualificationType" -> QualificationType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(QualificationType: js.UndefOr[QualificationType] = js.undefined): UpdateQualificationTypeResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("QualificationType" -> QualificationType.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateQualificationTypeResponse]
     }
   }
 
   /**
-   * The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.
-   */
+    * The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block.
+    */
   @js.native
   trait WorkerBlock extends js.Object {
     var Reason: js.UndefOr[String]
@@ -2326,12 +2729,13 @@ package mturk {
   }
 
   object WorkerBlock {
-    def apply(
-      Reason: js.UndefOr[String] = js.undefined,
-      WorkerId: js.UndefOr[CustomerId] = js.undefined): WorkerBlock = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Reason" -> Reason.map { x => x.asInstanceOf[js.Any] },
-        "WorkerId" -> WorkerId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Reason: js.UndefOr[String] = js.undefined,
+              WorkerId: js.UndefOr[CustomerId] = js.undefined): WorkerBlock = {
+      val _fields = IndexedSeq[(String, js.Any)]("Reason" -> Reason.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "WorkerId" -> WorkerId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[WorkerBlock]
     }

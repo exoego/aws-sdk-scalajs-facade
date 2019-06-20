@@ -7,33 +7,33 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object transfer {
-  type Arn = String
-  type DateImported = js.Date
-  type HomeDirectory = String
+  type Arn                  = String
+  type DateImported         = js.Date
+  type HomeDirectory        = String
   type IdentityProviderType = String
-  type ListedServers = js.Array[ListedServer]
-  type ListedUsers = js.Array[ListedUser]
-  type MaxResults = Int
-  type Message = String
-  type NextToken = String
-  type NullableRole = String
-  type Policy = String
-  type Role = String
-  type ServerId = String
-  type SshPublicKeyBody = String
-  type SshPublicKeyCount = Int
-  type SshPublicKeyId = String
-  type SshPublicKeys = js.Array[SshPublicKey]
-  type State = String
-  type StatusCode = Int
-  type TagKey = String
-  type TagKeys = js.Array[TagKey]
-  type TagValue = String
-  type Tags = js.Array[Tag]
-  type Url = String
-  type UserCount = Int
-  type UserName = String
-  type UserPassword = String
+  type ListedServers        = js.Array[ListedServer]
+  type ListedUsers          = js.Array[ListedUser]
+  type MaxResults           = Int
+  type Message              = String
+  type NextToken            = String
+  type NullableRole         = String
+  type Policy               = String
+  type Role                 = String
+  type ServerId             = String
+  type SshPublicKeyBody     = String
+  type SshPublicKeyCount    = Int
+  type SshPublicKeyId       = String
+  type SshPublicKeys        = js.Array[SshPublicKey]
+  type State                = String
+  type StatusCode           = Int
+  type TagKey               = String
+  type TagKeys              = js.Array[TagKey]
+  type TagValue             = String
+  type Tags                 = js.Array[Tag]
+  type Url                  = String
+  type UserCount            = Int
+  type UserName             = String
+  type UserPassword         = String
 }
 
 package transfer {
@@ -42,24 +42,24 @@ package transfer {
   class Transfer() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def createServer(params: CreateServerRequest): Request[CreateServerResponse] = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
-    def deleteServer(params: DeleteServerRequest): Request[js.Object] = js.native
-    def deleteSshPublicKey(params: DeleteSshPublicKeyRequest): Request[js.Object] = js.native
-    def deleteUser(params: DeleteUserRequest): Request[js.Object] = js.native
-    def describeServer(params: DescribeServerRequest): Request[DescribeServerResponse] = js.native
-    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
-    def importSshPublicKey(params: ImportSshPublicKeyRequest): Request[ImportSshPublicKeyResponse] = js.native
-    def listServers(params: ListServersRequest): Request[ListServersResponse] = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
-    def startServer(params: StartServerRequest): Request[js.Object] = js.native
-    def stopServer(params: StopServerRequest): Request[js.Object] = js.native
-    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def createServer(params: CreateServerRequest): Request[CreateServerResponse]                         = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                               = js.native
+    def deleteServer(params: DeleteServerRequest): Request[js.Object]                                    = js.native
+    def deleteSshPublicKey(params: DeleteSshPublicKeyRequest): Request[js.Object]                        = js.native
+    def deleteUser(params: DeleteUserRequest): Request[js.Object]                                        = js.native
+    def describeServer(params: DescribeServerRequest): Request[DescribeServerResponse]                   = js.native
+    def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse]                         = js.native
+    def importSshPublicKey(params: ImportSshPublicKeyRequest): Request[ImportSshPublicKeyResponse]       = js.native
+    def listServers(params: ListServersRequest): Request[ListServersResponse]                            = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse]    = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse]                                  = js.native
+    def startServer(params: StartServerRequest): Request[js.Object]                                      = js.native
+    def stopServer(params: StopServerRequest): Request[js.Object]                                        = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object]                                      = js.native
     def testIdentityProvider(params: TestIdentityProviderRequest): Request[TestIdentityProviderResponse] = js.native
-    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
-    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse] = js.native
-    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
+    def updateServer(params: UpdateServerRequest): Request[UpdateServerResponse]                         = js.native
+    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse]                               = js.native
   }
 
   @js.native
@@ -71,16 +71,24 @@ package transfer {
   }
 
   object CreateServerRequest {
-    def apply(
-      IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
-      IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
-      LoggingRole: js.UndefOr[Role] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): CreateServerRequest = {
+    def apply(IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
+              IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
+              LoggingRole: js.UndefOr[Role] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): CreateServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IdentityProviderDetails" -> IdentityProviderDetails.map { x => x.asInstanceOf[js.Any] },
-        "IdentityProviderType" -> IdentityProviderType.map { x => x.asInstanceOf[js.Any] },
-        "LoggingRole" -> LoggingRole.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProviderDetails" -> IdentityProviderDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityProviderType" -> IdentityProviderType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LoggingRole" -> LoggingRole.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServerRequest]
     }
@@ -92,10 +100,9 @@ package transfer {
   }
 
   object CreateServerResponse {
-    def apply(
-      ServerId: ServerId): CreateServerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServerId: ServerId): CreateServerResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateServerResponse]
     }
@@ -113,22 +120,30 @@ package transfer {
   }
 
   object CreateUserRequest {
-    def apply(
-      Role: Role,
-      ServerId: ServerId,
-      UserName: UserName,
-      HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
-      Policy: js.UndefOr[Policy] = js.undefined,
-      SshPublicKeyBody: js.UndefOr[SshPublicKeyBody] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): CreateUserRequest = {
+    def apply(Role: Role,
+              ServerId: ServerId,
+              UserName: UserName,
+              HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+              Policy: js.UndefOr[Policy] = js.undefined,
+              SshPublicKeyBody: js.UndefOr[SshPublicKeyBody] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Role" -> Role.asInstanceOf[js.Any],
+        "Role"     -> Role.asInstanceOf[js.Any],
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x => x.asInstanceOf[js.Any] },
-        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
-        "SshPublicKeyBody" -> SshPublicKeyBody.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HomeDirectory" -> HomeDirectory.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SshPublicKeyBody" -> SshPublicKeyBody.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
     }
@@ -141,12 +156,11 @@ package transfer {
   }
 
   object CreateUserResponse {
-    def apply(
-      ServerId: ServerId,
-      UserName: UserName): CreateUserResponse = {
+    def apply(ServerId: ServerId, UserName: UserName): CreateUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
     }
@@ -158,10 +172,9 @@ package transfer {
   }
 
   object DeleteServerRequest {
-    def apply(
-      ServerId: ServerId): DeleteServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServerId: ServerId): DeleteServerRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteServerRequest]
     }
@@ -175,14 +188,12 @@ package transfer {
   }
 
   object DeleteSshPublicKeyRequest {
-    def apply(
-      ServerId: ServerId,
-      SshPublicKeyId: SshPublicKeyId,
-      UserName: UserName): DeleteSshPublicKeyRequest = {
+    def apply(ServerId: ServerId, SshPublicKeyId: SshPublicKeyId, UserName: UserName): DeleteSshPublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any],
+        "ServerId"       -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserName"       -> UserName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSshPublicKeyRequest]
     }
@@ -195,12 +206,11 @@ package transfer {
   }
 
   object DeleteUserRequest {
-    def apply(
-      ServerId: ServerId,
-      UserName: UserName): DeleteUserRequest = {
+    def apply(ServerId: ServerId, UserName: UserName): DeleteUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
@@ -212,10 +222,9 @@ package transfer {
   }
 
   object DescribeServerRequest {
-    def apply(
-      ServerId: ServerId): DescribeServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServerId: ServerId): DescribeServerRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServerRequest]
     }
@@ -227,10 +236,9 @@ package transfer {
   }
 
   object DescribeServerResponse {
-    def apply(
-      Server: DescribedServer): DescribeServerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Server" -> Server.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Server: DescribedServer): DescribeServerResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Server" -> Server.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeServerResponse]
     }
@@ -243,12 +251,11 @@ package transfer {
   }
 
   object DescribeUserRequest {
-    def apply(
-      ServerId: ServerId,
-      UserName: UserName): DescribeUserRequest = {
+    def apply(ServerId: ServerId, UserName: UserName): DescribeUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserRequest]
     }
@@ -261,20 +268,18 @@ package transfer {
   }
 
   object DescribeUserResponse {
-    def apply(
-      ServerId: ServerId,
-      User: DescribedUser): DescribeUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "User" -> User.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServerId: ServerId, User: DescribedUser): DescribeUserResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ServerId" -> ServerId.asInstanceOf[js.Any], "User" -> User.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeUserResponse]
     }
   }
 
   /**
-   * Describe the properties of the server that was specified. Information returned includes: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role, server Id and state, and assigned tags or metadata.
-   */
+    * Describe the properties of the server that was specified. Information returned includes: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role, server Id and state, and assigned tags or metadata.
+    */
   @js.native
   trait DescribedServer extends js.Object {
     var Arn: Arn
@@ -288,32 +293,46 @@ package transfer {
   }
 
   object DescribedServer {
-    def apply(
-      Arn: Arn,
-      IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
-      IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
-      LoggingRole: js.UndefOr[Role] = js.undefined,
-      ServerId: js.UndefOr[ServerId] = js.undefined,
-      State: js.UndefOr[State] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
-      UserCount: js.UndefOr[UserCount] = js.undefined): DescribedServer = {
+    def apply(Arn: Arn,
+              IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
+              IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
+              LoggingRole: js.UndefOr[Role] = js.undefined,
+              ServerId: js.UndefOr[ServerId] = js.undefined,
+              State: js.UndefOr[State] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined,
+              UserCount: js.UndefOr[UserCount] = js.undefined): DescribedServer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.asInstanceOf[js.Any],
-        "IdentityProviderDetails" -> IdentityProviderDetails.map { x => x.asInstanceOf[js.Any] },
-        "IdentityProviderType" -> IdentityProviderType.map { x => x.asInstanceOf[js.Any] },
-        "LoggingRole" -> LoggingRole.map { x => x.asInstanceOf[js.Any] },
-        "ServerId" -> ServerId.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "UserCount" -> UserCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProviderDetails" -> IdentityProviderDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IdentityProviderType" -> IdentityProviderType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LoggingRole" -> LoggingRole.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ServerId" -> ServerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserCount" -> UserCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribedServer]
     }
   }
 
   /**
-   * Returns properties of the user that you wish to describe.
-   */
+    * Returns properties of the user that you wish to describe.
+    */
   @js.native
   trait DescribedUser extends js.Object {
     var Arn: Arn
@@ -326,30 +345,42 @@ package transfer {
   }
 
   object DescribedUser {
-    def apply(
-      Arn: Arn,
-      HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
-      Policy: js.UndefOr[Policy] = js.undefined,
-      Role: js.UndefOr[Role] = js.undefined,
-      SshPublicKeys: js.UndefOr[SshPublicKeys] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined,
-      UserName: js.UndefOr[UserName] = js.undefined): DescribedUser = {
+    def apply(Arn: Arn,
+              HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+              Policy: js.UndefOr[Policy] = js.undefined,
+              Role: js.UndefOr[Role] = js.undefined,
+              SshPublicKeys: js.UndefOr[SshPublicKeys] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined,
+              UserName: js.UndefOr[UserName] = js.undefined): DescribedUser = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x => x.asInstanceOf[js.Any] },
-        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "SshPublicKeys" -> SshPublicKeys.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HomeDirectory" -> HomeDirectory.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Role" -> Role.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SshPublicKeys" -> SshPublicKeys.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserName" -> UserName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribedUser]
     }
   }
 
   /**
-   * Returns information related to the type of user authentication that is in use for a server's users. A server can only have one method of authentication.
-   */
+    * Returns information related to the type of user authentication that is in use for a server's users. A server can only have one method of authentication.
+    */
   @js.native
   trait IdentityProviderDetails extends js.Object {
     var InvocationRole: js.UndefOr[Role]
@@ -357,23 +388,24 @@ package transfer {
   }
 
   object IdentityProviderDetails {
-    def apply(
-      InvocationRole: js.UndefOr[Role] = js.undefined,
-      Url: js.UndefOr[Url] = js.undefined): IdentityProviderDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "InvocationRole" -> InvocationRole.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(InvocationRole: js.UndefOr[Role] = js.undefined,
+              Url: js.UndefOr[Url] = js.undefined): IdentityProviderDetails = {
+      val _fields = IndexedSeq[(String, js.Any)]("InvocationRole" -> InvocationRole.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Url" -> Url.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IdentityProviderDetails]
     }
   }
 
   /**
-   * Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can only have one method of authentication.
-   */
+    * Returns information related to the type of user authentication that is in use for a server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by using an API call. A server can only have one method of authentication.
+    */
   object IdentityProviderTypeEnum {
     val SERVICE_MANAGED = "SERVICE_MANAGED"
-    val API_GATEWAY = "API_GATEWAY"
+    val API_GATEWAY     = "API_GATEWAY"
 
     val values = IndexedSeq(SERVICE_MANAGED, API_GATEWAY)
   }
@@ -386,22 +418,20 @@ package transfer {
   }
 
   object ImportSshPublicKeyRequest {
-    def apply(
-      ServerId: ServerId,
-      SshPublicKeyBody: SshPublicKeyBody,
-      UserName: UserName): ImportSshPublicKeyRequest = {
+    def apply(ServerId: ServerId, SshPublicKeyBody: SshPublicKeyBody, UserName: UserName): ImportSshPublicKeyRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any],
+        "ServerId"         -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserName"         -> UserName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportSshPublicKeyRequest]
     }
   }
 
   /**
-   * This response identifies the user, server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associate with.
-   */
+    * This response identifies the user, server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associate with.
+    */
   @js.native
   trait ImportSshPublicKeyResponse extends js.Object {
     var ServerId: ServerId
@@ -410,14 +440,12 @@ package transfer {
   }
 
   object ImportSshPublicKeyResponse {
-    def apply(
-      ServerId: ServerId,
-      SshPublicKeyId: SshPublicKeyId,
-      UserName: UserName): ImportSshPublicKeyResponse = {
+    def apply(ServerId: ServerId, SshPublicKeyId: SshPublicKeyId, UserName: UserName): ImportSshPublicKeyResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any],
+        "ServerId"       -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserName"       -> UserName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ImportSshPublicKeyResponse]
     }
@@ -430,12 +458,13 @@ package transfer {
   }
 
   object ListServersRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListServersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListServersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServersRequest]
     }
@@ -448,12 +477,11 @@ package transfer {
   }
 
   object ListServersResponse {
-    def apply(
-      Servers: ListedServers,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListServersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Servers" -> Servers.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Servers: ListedServers, NextToken: js.UndefOr[NextToken] = js.undefined): ListServersResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Servers" -> Servers.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListServersResponse]
     }
@@ -467,14 +495,15 @@ package transfer {
   }
 
   object ListTagsForResourceRequest {
-    def apply(
-      Arn: Arn,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Arn: Arn,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsForResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceRequest]
     }
@@ -488,14 +517,16 @@ package transfer {
   }
 
   object ListTagsForResourceResponse {
-    def apply(
-      Arn: js.UndefOr[Arn] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Tags: js.UndefOr[Tags] = js.undefined): ListTagsForResourceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Arn: js.UndefOr[Arn] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              Tags: js.UndefOr[Tags] = js.undefined): ListTagsForResourceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Tags" -> Tags.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsForResourceResponse]
     }
@@ -509,14 +540,18 @@ package transfer {
   }
 
   object ListUsersRequest {
-    def apply(
-      ServerId: ServerId,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersRequest = {
+    def apply(ServerId: ServerId,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersRequest]
     }
@@ -530,22 +565,24 @@ package transfer {
   }
 
   object ListUsersResponse {
-    def apply(
-      ServerId: ServerId,
-      Users: ListedUsers,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersResponse = {
+    def apply(ServerId: ServerId,
+              Users: ListedUsers,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListUsersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "Users" -> Users.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Users"    -> Users.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListUsersResponse]
     }
   }
 
   /**
-   * Returns properties of the server that was specified.
-   */
+    * Returns properties of the server that was specified.
+    */
   @js.native
   trait ListedServer extends js.Object {
     var Arn: Arn
@@ -557,28 +594,38 @@ package transfer {
   }
 
   object ListedServer {
-    def apply(
-      Arn: Arn,
-      IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
-      LoggingRole: js.UndefOr[Role] = js.undefined,
-      ServerId: js.UndefOr[ServerId] = js.undefined,
-      State: js.UndefOr[State] = js.undefined,
-      UserCount: js.UndefOr[UserCount] = js.undefined): ListedServer = {
+    def apply(Arn: Arn,
+              IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
+              LoggingRole: js.UndefOr[Role] = js.undefined,
+              ServerId: js.UndefOr[ServerId] = js.undefined,
+              State: js.UndefOr[State] = js.undefined,
+              UserCount: js.UndefOr[UserCount] = js.undefined): ListedServer = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.asInstanceOf[js.Any],
-        "IdentityProviderType" -> IdentityProviderType.map { x => x.asInstanceOf[js.Any] },
-        "LoggingRole" -> LoggingRole.map { x => x.asInstanceOf[js.Any] },
-        "ServerId" -> ServerId.map { x => x.asInstanceOf[js.Any] },
-        "State" -> State.map { x => x.asInstanceOf[js.Any] },
-        "UserCount" -> UserCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProviderType" -> IdentityProviderType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LoggingRole" -> LoggingRole.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ServerId" -> ServerId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "State" -> State.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserCount" -> UserCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListedServer]
     }
   }
 
   /**
-   * Returns properties of the user that you specify.
-   */
+    * Returns properties of the user that you specify.
+    */
   @js.native
   trait ListedUser extends js.Object {
     var Arn: Arn
@@ -589,26 +636,34 @@ package transfer {
   }
 
   object ListedUser {
-    def apply(
-      Arn: Arn,
-      HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
-      Role: js.UndefOr[Role] = js.undefined,
-      SshPublicKeyCount: js.UndefOr[SshPublicKeyCount] = js.undefined,
-      UserName: js.UndefOr[UserName] = js.undefined): ListedUser = {
+    def apply(Arn: Arn,
+              HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+              Role: js.UndefOr[Role] = js.undefined,
+              SshPublicKeyCount: js.UndefOr[SshPublicKeyCount] = js.undefined,
+              UserName: js.UndefOr[UserName] = js.undefined): ListedUser = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Arn" -> Arn.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] },
-        "SshPublicKeyCount" -> SshPublicKeyCount.map { x => x.asInstanceOf[js.Any] },
-        "UserName" -> UserName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HomeDirectory" -> HomeDirectory.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Role" -> Role.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SshPublicKeyCount" -> SshPublicKeyCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserName" -> UserName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListedUser]
     }
   }
 
   /**
-   * Provides information about the public Secure Shell (SSH) key that is associated with a user account for a specific server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific SFTP server.
-   */
+    * Provides information about the public Secure Shell (SSH) key that is associated with a user account for a specific server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific SFTP server.
+    */
   @js.native
   trait SshPublicKey extends js.Object {
     var DateImported: DateImported
@@ -617,14 +672,14 @@ package transfer {
   }
 
   object SshPublicKey {
-    def apply(
-      DateImported: DateImported,
-      SshPublicKeyBody: SshPublicKeyBody,
-      SshPublicKeyId: SshPublicKeyId): SshPublicKey = {
+    def apply(DateImported: DateImported,
+              SshPublicKeyBody: SshPublicKeyBody,
+              SshPublicKeyId: SshPublicKeyId): SshPublicKey = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DateImported" -> DateImported.asInstanceOf[js.Any],
+        "DateImported"     -> DateImported.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
-        "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "SshPublicKeyId"   -> SshPublicKeyId.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SshPublicKey]
     }
@@ -636,26 +691,25 @@ package transfer {
   }
 
   object StartServerRequest {
-    def apply(
-      ServerId: ServerId): StartServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServerId: ServerId): StartServerRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartServerRequest]
     }
   }
 
   /**
-   * Describes the condition of the SFTP server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
-   *  <code>OFFLINE</code> indicates that the SFTP server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the SFTP server is available to perform file operations. <code>STARTING</code> indicates that the SFTP server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for an SFTP server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.
-   */
+    * Describes the condition of the SFTP server with respect to its ability to perform file operations. There are six possible states: <code>OFFLINE</code>, <code>ONLINE</code>, <code>STARTING</code>, <code>STOPPING</code>, <code>START_FAILED</code>, and <code>STOP_FAILED</code>.
+    *  <code>OFFLINE</code> indicates that the SFTP server exists, but that it is not available for file operations. <code>ONLINE</code> indicates that the SFTP server is available to perform file operations. <code>STARTING</code> indicates that the SFTP server's was instantiated, but the server is not yet available to perform file operations. Under normal conditions, it can take a couple of minutes for an SFTP server to be completely operational. Both <code>START_FAILED</code> and <code>STOP_FAILED</code> are error conditions.
+    */
   object StateEnum {
-    val OFFLINE = "OFFLINE"
-    val ONLINE = "ONLINE"
-    val STARTING = "STARTING"
-    val STOPPING = "STOPPING"
+    val OFFLINE      = "OFFLINE"
+    val ONLINE       = "ONLINE"
+    val STARTING     = "STARTING"
+    val STOPPING     = "STOPPING"
     val START_FAILED = "START_FAILED"
-    val STOP_FAILED = "STOP_FAILED"
+    val STOP_FAILED  = "STOP_FAILED"
 
     val values = IndexedSeq(OFFLINE, ONLINE, STARTING, STOPPING, START_FAILED, STOP_FAILED)
   }
@@ -666,18 +720,17 @@ package transfer {
   }
 
   object StopServerRequest {
-    def apply(
-      ServerId: ServerId): StopServerRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServerId: ServerId): StopServerRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopServerRequest]
     }
   }
 
   /**
-   * Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.
-   */
+    * Creates a key-value pair for a specific resource. Tags are metadata that you can use to search for and group a resource for various purposes. You can apply tags to servers, users, and roles. A tag key can take more than one value. For example, to group servers for accounting purposes, you might create a tag called <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code> to that group.
+    */
   @js.native
   trait Tag extends js.Object {
     var Key: TagKey
@@ -685,12 +738,10 @@ package transfer {
   }
 
   object Tag {
-    def apply(
-      Key: TagKey,
-      Value: TagValue): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: TagKey, Value: TagValue): Tag = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -703,12 +754,9 @@ package transfer {
   }
 
   object TagResourceRequest {
-    def apply(
-      Arn: Arn,
-      Tags: Tags): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Arn: Arn, Tags: Tags): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "Tags" -> Tags.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
@@ -722,14 +770,16 @@ package transfer {
   }
 
   object TestIdentityProviderRequest {
-    def apply(
-      ServerId: ServerId,
-      UserName: UserName,
-      UserPassword: js.UndefOr[UserPassword] = js.undefined): TestIdentityProviderRequest = {
+    def apply(ServerId: ServerId,
+              UserName: UserName,
+              UserPassword: js.UndefOr[UserPassword] = js.undefined): TestIdentityProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any],
-        "UserPassword" -> UserPassword.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "UserPassword" -> UserPassword.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestIdentityProviderRequest]
     }
@@ -743,14 +793,16 @@ package transfer {
   }
 
   object TestIdentityProviderResponse {
-    def apply(
-      StatusCode: StatusCode,
-      Url: Url,
-      Message: js.UndefOr[Message] = js.undefined): TestIdentityProviderResponse = {
+    def apply(StatusCode: StatusCode,
+              Url: Url,
+              Message: js.UndefOr[Message] = js.undefined): TestIdentityProviderResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StatusCode" -> StatusCode.asInstanceOf[js.Any],
-        "Url" -> Url.asInstanceOf[js.Any],
-        "Message" -> Message.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Url"        -> Url.asInstanceOf[js.Any],
+        "Message" -> Message.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TestIdentityProviderResponse]
     }
@@ -763,12 +815,10 @@ package transfer {
   }
 
   object UntagResourceRequest {
-    def apply(
-      Arn: Arn,
-      TagKeys: TagKeys): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Arn: Arn, TagKeys: TagKeys): UntagResourceRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "TagKeys" -> TagKeys.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
@@ -782,14 +832,18 @@ package transfer {
   }
 
   object UpdateServerRequest {
-    def apply(
-      ServerId: ServerId,
-      IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
-      LoggingRole: js.UndefOr[NullableRole] = js.undefined): UpdateServerRequest = {
+    def apply(ServerId: ServerId,
+              IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
+              LoggingRole: js.UndefOr[NullableRole] = js.undefined): UpdateServerRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "IdentityProviderDetails" -> IdentityProviderDetails.map { x => x.asInstanceOf[js.Any] },
-        "LoggingRole" -> LoggingRole.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IdentityProviderDetails" -> IdentityProviderDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LoggingRole" -> LoggingRole.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServerRequest]
     }
@@ -801,10 +855,9 @@ package transfer {
   }
 
   object UpdateServerResponse {
-    def apply(
-      ServerId: ServerId): UpdateServerResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ServerId: ServerId): UpdateServerResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ServerId" -> ServerId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateServerResponse]
     }
@@ -820,26 +873,32 @@ package transfer {
   }
 
   object UpdateUserRequest {
-    def apply(
-      ServerId: ServerId,
-      UserName: UserName,
-      HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
-      Policy: js.UndefOr[Policy] = js.undefined,
-      Role: js.UndefOr[Role] = js.undefined): UpdateUserRequest = {
+    def apply(ServerId: ServerId,
+              UserName: UserName,
+              HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
+              Policy: js.UndefOr[Policy] = js.undefined,
+              Role: js.UndefOr[Role] = js.undefined): UpdateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any],
-        "HomeDirectory" -> HomeDirectory.map { x => x.asInstanceOf[js.Any] },
-        "Policy" -> Policy.map { x => x.asInstanceOf[js.Any] },
-        "Role" -> Role.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HomeDirectory" -> HomeDirectory.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Policy" -> Policy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Role" -> Role.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserRequest]
     }
   }
 
   /**
-   * <code>UpdateUserResponse</code> returns the user name and server identifier for the request to update a user's properties.
-   */
+    * <code>UpdateUserResponse</code> returns the user name and server identifier for the request to update a user's properties.
+    */
   @js.native
   trait UpdateUserResponse extends js.Object {
     var ServerId: ServerId
@@ -847,12 +906,11 @@ package transfer {
   }
 
   object UpdateUserResponse {
-    def apply(
-      ServerId: ServerId,
-      UserName: UserName): UpdateUserResponse = {
+    def apply(ServerId: ServerId, UserName: UserName): UpdateUserResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ServerId" -> ServerId.asInstanceOf[js.Any],
-        "UserName" -> UserName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserName" -> UserName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateUserResponse]
     }

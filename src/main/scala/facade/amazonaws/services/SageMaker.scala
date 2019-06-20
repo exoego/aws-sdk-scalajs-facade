@@ -7,265 +7,265 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object sagemaker {
-  type Accept = String
-  type AccountId = String
-  type AdditionalCodeRepositoryNamesOrUrls = js.Array[CodeRepositoryNameOrUrl]
-  type AlgorithmArn = String
-  type AlgorithmImage = String
-  type AlgorithmSortBy = String
-  type AlgorithmStatus = String
-  type AlgorithmStatusItemList = js.Array[AlgorithmStatusItem]
-  type AlgorithmSummaryList = js.Array[AlgorithmSummary]
-  type AlgorithmValidationProfiles = js.Array[AlgorithmValidationProfile]
-  type ArnOrName = String
-  type AssemblyType = String
-  type AttributeName = String
-  type AttributeNames = js.Array[AttributeName]
-  type BatchStrategy = String
-  type BooleanOperator = String
-  type Branch = String
-  type CategoricalParameterRanges = js.Array[CategoricalParameterRange]
-  type Cents = Int
-  type CertifyForMarketplace = Boolean
-  type ChannelName = String
-  type ChannelSpecifications = js.Array[ChannelSpecification]
-  type CodeRepositoryArn = String
-  type CodeRepositoryContains = String
-  type CodeRepositoryNameContains = String
-  type CodeRepositoryNameOrUrl = String
-  type CodeRepositorySortBy = String
-  type CodeRepositorySortOrder = String
-  type CodeRepositorySummaryList = js.Array[CodeRepositorySummary]
-  type CognitoClientId = String
-  type CognitoUserGroup = String
-  type CognitoUserPool = String
-  type CompilationJobArn = String
-  type CompilationJobStatus = String
-  type CompilationJobSummaries = js.Array[CompilationJobSummary]
-  type CompressionType = String
-  type CompressionTypes = js.Array[CompressionType]
-  type ContainerDefinitionList = js.Array[ContainerDefinition]
-  type ContainerHostname = String
-  type ContentClassifier = String
-  type ContentClassifiers = js.Array[ContentClassifier]
-  type ContentType = String
-  type ContentTypes = js.Array[ContentType]
-  type ContinuousParameterRanges = js.Array[ContinuousParameterRange]
-  type CreationTime = js.Date
-  type DataInputConfig = String
-  type DeployedImages = js.Array[DeployedImage]
-  type DesiredWeightAndCapacityList = js.Array[DesiredWeightAndCapacity]
-  type DetailedAlgorithmStatus = String
-  type DetailedModelPackageStatus = String
-  type DirectInternetAccess = String
-  type DisassociateAdditionalCodeRepositories = Boolean
-  type DisassociateDefaultCodeRepository = Boolean
+  type Accept                                       = String
+  type AccountId                                    = String
+  type AdditionalCodeRepositoryNamesOrUrls          = js.Array[CodeRepositoryNameOrUrl]
+  type AlgorithmArn                                 = String
+  type AlgorithmImage                               = String
+  type AlgorithmSortBy                              = String
+  type AlgorithmStatus                              = String
+  type AlgorithmStatusItemList                      = js.Array[AlgorithmStatusItem]
+  type AlgorithmSummaryList                         = js.Array[AlgorithmSummary]
+  type AlgorithmValidationProfiles                  = js.Array[AlgorithmValidationProfile]
+  type ArnOrName                                    = String
+  type AssemblyType                                 = String
+  type AttributeName                                = String
+  type AttributeNames                               = js.Array[AttributeName]
+  type BatchStrategy                                = String
+  type BooleanOperator                              = String
+  type Branch                                       = String
+  type CategoricalParameterRanges                   = js.Array[CategoricalParameterRange]
+  type Cents                                        = Int
+  type CertifyForMarketplace                        = Boolean
+  type ChannelName                                  = String
+  type ChannelSpecifications                        = js.Array[ChannelSpecification]
+  type CodeRepositoryArn                            = String
+  type CodeRepositoryContains                       = String
+  type CodeRepositoryNameContains                   = String
+  type CodeRepositoryNameOrUrl                      = String
+  type CodeRepositorySortBy                         = String
+  type CodeRepositorySortOrder                      = String
+  type CodeRepositorySummaryList                    = js.Array[CodeRepositorySummary]
+  type CognitoClientId                              = String
+  type CognitoUserGroup                             = String
+  type CognitoUserPool                              = String
+  type CompilationJobArn                            = String
+  type CompilationJobStatus                         = String
+  type CompilationJobSummaries                      = js.Array[CompilationJobSummary]
+  type CompressionType                              = String
+  type CompressionTypes                             = js.Array[CompressionType]
+  type ContainerDefinitionList                      = js.Array[ContainerDefinition]
+  type ContainerHostname                            = String
+  type ContentClassifier                            = String
+  type ContentClassifiers                           = js.Array[ContentClassifier]
+  type ContentType                                  = String
+  type ContentTypes                                 = js.Array[ContentType]
+  type ContinuousParameterRanges                    = js.Array[ContinuousParameterRange]
+  type CreationTime                                 = js.Date
+  type DataInputConfig                              = String
+  type DeployedImages                               = js.Array[DeployedImage]
+  type DesiredWeightAndCapacityList                 = js.Array[DesiredWeightAndCapacity]
+  type DetailedAlgorithmStatus                      = String
+  type DetailedModelPackageStatus                   = String
+  type DirectInternetAccess                         = String
+  type DisassociateAdditionalCodeRepositories       = Boolean
+  type DisassociateDefaultCodeRepository            = Boolean
   type DisassociateNotebookInstanceAcceleratorTypes = Boolean
-  type DisassociateNotebookInstanceLifecycleConfig = Boolean
-  type Dollars = Int
-  type EndpointArn = String
-  type EndpointConfigArn = String
-  type EndpointConfigName = String
-  type EndpointConfigNameContains = String
-  type EndpointConfigSortKey = String
-  type EndpointConfigSummaryList = js.Array[EndpointConfigSummary]
-  type EndpointName = String
-  type EndpointNameContains = String
-  type EndpointSortKey = String
-  type EndpointStatus = String
-  type EndpointSummaryList = js.Array[EndpointSummary]
-  type EntityDescription = String
-  type EntityName = String
-  type EnvironmentKey = String
-  type EnvironmentMap = js.Dictionary[EnvironmentValue]
-  type EnvironmentValue = String
-  type FailureReason = String
-  type FilterList = js.Array[Filter]
-  type FilterValue = String
-  type FinalMetricDataList = js.Array[MetricData]
-  type Framework = String
-  type GitConfigUrl = String
-  type HyperParameterSpecifications = js.Array[HyperParameterSpecification]
-  type HyperParameterTrainingJobSummaries = js.Array[HyperParameterTrainingJobSummary]
-  type HyperParameterTuningJobArn = String
-  type HyperParameterTuningJobName = String
-  type HyperParameterTuningJobObjectiveType = String
-  type HyperParameterTuningJobObjectives = js.Array[HyperParameterTuningJobObjective]
-  type HyperParameterTuningJobSortByOptions = String
-  type HyperParameterTuningJobStatus = String
-  type HyperParameterTuningJobStrategyType = String
-  type HyperParameterTuningJobSummaries = js.Array[HyperParameterTuningJobSummary]
-  type HyperParameterTuningJobWarmStartType = String
-  type HyperParameters = js.Dictionary[ParameterValue]
-  type Image = String
-  type ImageDigest = String
-  type InputDataConfig = js.Array[Channel]
-  type InputModes = js.Array[TrainingInputMode]
-  type InstanceType = String
-  type IntegerParameterRanges = js.Array[IntegerParameterRange]
-  type JobReferenceCode = String
-  type JobReferenceCodeContains = String
-  type KmsKeyId = String
-  type LabelAttributeName = String
-  type LabelCounter = Int
-  type LabelingJobAlgorithmSpecificationArn = String
-  type LabelingJobArn = String
-  type LabelingJobForWorkteamSummaryList = js.Array[LabelingJobForWorkteamSummary]
-  type LabelingJobName = String
-  type LabelingJobStatus = String
-  type LabelingJobSummaryList = js.Array[LabelingJobSummary]
-  type LambdaFunctionArn = String
-  type LastModifiedTime = js.Date
-  type ListCompilationJobsSortBy = String
-  type ListLabelingJobsForWorkteamSortByOptions = String
-  type ListTagsMaxResults = Int
-  type ListWorkteamsSortByOptions = String
-  type MaxConcurrentTaskCount = Int
-  type MaxConcurrentTransforms = Int
-  type MaxHumanLabeledObjectCount = Int
-  type MaxNumberOfTrainingJobs = Int
-  type MaxParallelTrainingJobs = Int
-  type MaxPayloadInMB = Int
-  type MaxPercentageOfInputDatasetLabeled = Int
-  type MaxResults = Int
-  type MaxRuntimeInSeconds = Int
-  type MemberDefinitions = js.Array[MemberDefinition]
-  type MetricDefinitionList = js.Array[MetricDefinition]
-  type MetricName = String
-  type MetricRegex = String
-  type MetricValue = Float
-  type ModelArn = String
-  type ModelName = String
-  type ModelNameContains = String
-  type ModelPackageArn = String
-  type ModelPackageContainerDefinitionList = js.Array[ModelPackageContainerDefinition]
-  type ModelPackageSortBy = String
-  type ModelPackageStatus = String
-  type ModelPackageStatusItemList = js.Array[ModelPackageStatusItem]
-  type ModelPackageSummaryList = js.Array[ModelPackageSummary]
-  type ModelPackageValidationProfiles = js.Array[ModelPackageValidationProfile]
-  type ModelSortKey = String
-  type ModelSummaryList = js.Array[ModelSummary]
-  type NameContains = String
-  type NestedFiltersList = js.Array[NestedFilters]
-  type NetworkInterfaceId = String
-  type NextToken = String
-  type NotebookInstanceAcceleratorType = String
-  type NotebookInstanceAcceleratorTypes = js.Array[NotebookInstanceAcceleratorType]
-  type NotebookInstanceArn = String
-  type NotebookInstanceLifecycleConfigArn = String
-  type NotebookInstanceLifecycleConfigContent = String
-  type NotebookInstanceLifecycleConfigList = js.Array[NotebookInstanceLifecycleHook]
-  type NotebookInstanceLifecycleConfigName = String
-  type NotebookInstanceLifecycleConfigNameContains = String
-  type NotebookInstanceLifecycleConfigSortKey = String
-  type NotebookInstanceLifecycleConfigSortOrder = String
-  type NotebookInstanceLifecycleConfigSummaryList = js.Array[NotebookInstanceLifecycleConfigSummary]
-  type NotebookInstanceName = String
-  type NotebookInstanceNameContains = String
-  type NotebookInstanceSortKey = String
-  type NotebookInstanceSortOrder = String
-  type NotebookInstanceStatus = String
-  type NotebookInstanceSummaryList = js.Array[NotebookInstanceSummary]
-  type NotebookInstanceUrl = String
-  type NotebookInstanceVolumeSizeInGB = Int
-  type NumberOfHumanWorkersPerDataObject = Int
-  type ObjectiveStatus = String
-  type ObjectiveStatusCounter = Int
-  type Operator = String
-  type OrderKey = String
-  type PaginationToken = String
-  type ParameterKey = String
-  type ParameterName = String
-  type ParameterType = String
-  type ParameterValue = String
-  type ParameterValues = js.Array[ParameterValue]
-  type ParentHyperParameterTuningJobs = js.Array[ParentHyperParameterTuningJob]
-  type ProductId = String
-  type ProductListings = js.Array[String]
-  type ProductionVariantAcceleratorType = String
-  type ProductionVariantInstanceType = String
-  type ProductionVariantList = js.Array[ProductionVariant]
-  type ProductionVariantSummaryList = js.Array[ProductionVariantSummary]
-  type PropertyNameHint = String
-  type PropertyNameSuggestionList = js.Array[PropertyNameSuggestion]
-  type RealtimeInferenceInstanceTypes = js.Array[ProductionVariantInstanceType]
-  type RecordWrapper = String
-  type RenderingErrorList = js.Array[RenderingError]
-  type ResourceArn = String
-  type ResourcePropertyName = String
-  type ResourceType = String
-  type ResponseMIMEType = String
-  type ResponseMIMETypes = js.Array[ResponseMIMEType]
-  type RoleArn = String
-  type S3DataDistribution = String
-  type S3DataType = String
-  type S3Uri = String
-  type SearchExpressionList = js.Array[SearchExpression]
-  type SearchResultsList = js.Array[SearchRecord]
-  type SearchSortOrder = String
-  type SecondaryStatus = String
-  type SecondaryStatusTransitions = js.Array[SecondaryStatusTransition]
-  type SecretArn = String
-  type SecurityGroupId = String
-  type SecurityGroupIds = js.Array[SecurityGroupId]
-  type Seed = Double
-  type SessionExpirationDurationInSeconds = Int
-  type SortBy = String
-  type SortOrder = String
-  type SourceAlgorithmList = js.Array[SourceAlgorithm]
-  type SplitType = String
-  type StatusMessage = String
-  type String200 = String
-  type SubnetId = String
-  type Subnets = js.Array[SubnetId]
-  type SubscribedWorkteams = js.Array[SubscribedWorkteam]
-  type Success = Boolean
-  type TagKey = String
-  type TagKeyList = js.Array[TagKey]
-  type TagList = js.Array[Tag]
-  type TagValue = String
-  type TargetDevice = String
-  type TaskAvailabilityLifetimeInSeconds = Int
-  type TaskCount = Int
-  type TaskDescription = String
-  type TaskInput = String
-  type TaskKeyword = String
-  type TaskKeywords = js.Array[TaskKeyword]
-  type TaskTimeLimitInSeconds = Int
-  type TaskTitle = String
-  type TemplateContent = String
-  type TenthFractionsOfACent = Int
-  type Timestamp = js.Date
-  type TrainingInputMode = String
-  type TrainingInstanceCount = Int
-  type TrainingInstanceType = String
-  type TrainingInstanceTypes = js.Array[TrainingInstanceType]
-  type TrainingJobArn = String
-  type TrainingJobEarlyStoppingType = String
-  type TrainingJobName = String
-  type TrainingJobSortByOptions = String
-  type TrainingJobStatus = String
-  type TrainingJobStatusCounter = Int
-  type TrainingJobSummaries = js.Array[TrainingJobSummary]
-  type TransformEnvironmentKey = String
-  type TransformEnvironmentMap = js.Dictionary[TransformEnvironmentValue]
-  type TransformEnvironmentValue = String
-  type TransformInstanceCount = Int
-  type TransformInstanceType = String
-  type TransformInstanceTypes = js.Array[TransformInstanceType]
-  type TransformJobArn = String
-  type TransformJobName = String
-  type TransformJobStatus = String
-  type TransformJobSummaries = js.Array[TransformJobSummary]
-  type Url = String
-  type VariantName = String
-  type VariantWeight = Float
-  type VolumeSizeInGB = Int
-  type VpcSecurityGroupIds = js.Array[SecurityGroupId]
-  type WorkteamArn = String
-  type WorkteamName = String
-  type Workteams = js.Array[Workteam]
+  type DisassociateNotebookInstanceLifecycleConfig  = Boolean
+  type Dollars                                      = Int
+  type EndpointArn                                  = String
+  type EndpointConfigArn                            = String
+  type EndpointConfigName                           = String
+  type EndpointConfigNameContains                   = String
+  type EndpointConfigSortKey                        = String
+  type EndpointConfigSummaryList                    = js.Array[EndpointConfigSummary]
+  type EndpointName                                 = String
+  type EndpointNameContains                         = String
+  type EndpointSortKey                              = String
+  type EndpointStatus                               = String
+  type EndpointSummaryList                          = js.Array[EndpointSummary]
+  type EntityDescription                            = String
+  type EntityName                                   = String
+  type EnvironmentKey                               = String
+  type EnvironmentMap                               = js.Dictionary[EnvironmentValue]
+  type EnvironmentValue                             = String
+  type FailureReason                                = String
+  type FilterList                                   = js.Array[Filter]
+  type FilterValue                                  = String
+  type FinalMetricDataList                          = js.Array[MetricData]
+  type Framework                                    = String
+  type GitConfigUrl                                 = String
+  type HyperParameterSpecifications                 = js.Array[HyperParameterSpecification]
+  type HyperParameterTrainingJobSummaries           = js.Array[HyperParameterTrainingJobSummary]
+  type HyperParameterTuningJobArn                   = String
+  type HyperParameterTuningJobName                  = String
+  type HyperParameterTuningJobObjectiveType         = String
+  type HyperParameterTuningJobObjectives            = js.Array[HyperParameterTuningJobObjective]
+  type HyperParameterTuningJobSortByOptions         = String
+  type HyperParameterTuningJobStatus                = String
+  type HyperParameterTuningJobStrategyType          = String
+  type HyperParameterTuningJobSummaries             = js.Array[HyperParameterTuningJobSummary]
+  type HyperParameterTuningJobWarmStartType         = String
+  type HyperParameters                              = js.Dictionary[ParameterValue]
+  type Image                                        = String
+  type ImageDigest                                  = String
+  type InputDataConfig                              = js.Array[Channel]
+  type InputModes                                   = js.Array[TrainingInputMode]
+  type InstanceType                                 = String
+  type IntegerParameterRanges                       = js.Array[IntegerParameterRange]
+  type JobReferenceCode                             = String
+  type JobReferenceCodeContains                     = String
+  type KmsKeyId                                     = String
+  type LabelAttributeName                           = String
+  type LabelCounter                                 = Int
+  type LabelingJobAlgorithmSpecificationArn         = String
+  type LabelingJobArn                               = String
+  type LabelingJobForWorkteamSummaryList            = js.Array[LabelingJobForWorkteamSummary]
+  type LabelingJobName                              = String
+  type LabelingJobStatus                            = String
+  type LabelingJobSummaryList                       = js.Array[LabelingJobSummary]
+  type LambdaFunctionArn                            = String
+  type LastModifiedTime                             = js.Date
+  type ListCompilationJobsSortBy                    = String
+  type ListLabelingJobsForWorkteamSortByOptions     = String
+  type ListTagsMaxResults                           = Int
+  type ListWorkteamsSortByOptions                   = String
+  type MaxConcurrentTaskCount                       = Int
+  type MaxConcurrentTransforms                      = Int
+  type MaxHumanLabeledObjectCount                   = Int
+  type MaxNumberOfTrainingJobs                      = Int
+  type MaxParallelTrainingJobs                      = Int
+  type MaxPayloadInMB                               = Int
+  type MaxPercentageOfInputDatasetLabeled           = Int
+  type MaxResults                                   = Int
+  type MaxRuntimeInSeconds                          = Int
+  type MemberDefinitions                            = js.Array[MemberDefinition]
+  type MetricDefinitionList                         = js.Array[MetricDefinition]
+  type MetricName                                   = String
+  type MetricRegex                                  = String
+  type MetricValue                                  = Float
+  type ModelArn                                     = String
+  type ModelName                                    = String
+  type ModelNameContains                            = String
+  type ModelPackageArn                              = String
+  type ModelPackageContainerDefinitionList          = js.Array[ModelPackageContainerDefinition]
+  type ModelPackageSortBy                           = String
+  type ModelPackageStatus                           = String
+  type ModelPackageStatusItemList                   = js.Array[ModelPackageStatusItem]
+  type ModelPackageSummaryList                      = js.Array[ModelPackageSummary]
+  type ModelPackageValidationProfiles               = js.Array[ModelPackageValidationProfile]
+  type ModelSortKey                                 = String
+  type ModelSummaryList                             = js.Array[ModelSummary]
+  type NameContains                                 = String
+  type NestedFiltersList                            = js.Array[NestedFilters]
+  type NetworkInterfaceId                           = String
+  type NextToken                                    = String
+  type NotebookInstanceAcceleratorType              = String
+  type NotebookInstanceAcceleratorTypes             = js.Array[NotebookInstanceAcceleratorType]
+  type NotebookInstanceArn                          = String
+  type NotebookInstanceLifecycleConfigArn           = String
+  type NotebookInstanceLifecycleConfigContent       = String
+  type NotebookInstanceLifecycleConfigList          = js.Array[NotebookInstanceLifecycleHook]
+  type NotebookInstanceLifecycleConfigName          = String
+  type NotebookInstanceLifecycleConfigNameContains  = String
+  type NotebookInstanceLifecycleConfigSortKey       = String
+  type NotebookInstanceLifecycleConfigSortOrder     = String
+  type NotebookInstanceLifecycleConfigSummaryList   = js.Array[NotebookInstanceLifecycleConfigSummary]
+  type NotebookInstanceName                         = String
+  type NotebookInstanceNameContains                 = String
+  type NotebookInstanceSortKey                      = String
+  type NotebookInstanceSortOrder                    = String
+  type NotebookInstanceStatus                       = String
+  type NotebookInstanceSummaryList                  = js.Array[NotebookInstanceSummary]
+  type NotebookInstanceUrl                          = String
+  type NotebookInstanceVolumeSizeInGB               = Int
+  type NumberOfHumanWorkersPerDataObject            = Int
+  type ObjectiveStatus                              = String
+  type ObjectiveStatusCounter                       = Int
+  type Operator                                     = String
+  type OrderKey                                     = String
+  type PaginationToken                              = String
+  type ParameterKey                                 = String
+  type ParameterName                                = String
+  type ParameterType                                = String
+  type ParameterValue                               = String
+  type ParameterValues                              = js.Array[ParameterValue]
+  type ParentHyperParameterTuningJobs               = js.Array[ParentHyperParameterTuningJob]
+  type ProductId                                    = String
+  type ProductListings                              = js.Array[String]
+  type ProductionVariantAcceleratorType             = String
+  type ProductionVariantInstanceType                = String
+  type ProductionVariantList                        = js.Array[ProductionVariant]
+  type ProductionVariantSummaryList                 = js.Array[ProductionVariantSummary]
+  type PropertyNameHint                             = String
+  type PropertyNameSuggestionList                   = js.Array[PropertyNameSuggestion]
+  type RealtimeInferenceInstanceTypes               = js.Array[ProductionVariantInstanceType]
+  type RecordWrapper                                = String
+  type RenderingErrorList                           = js.Array[RenderingError]
+  type ResourceArn                                  = String
+  type ResourcePropertyName                         = String
+  type ResourceType                                 = String
+  type ResponseMIMEType                             = String
+  type ResponseMIMETypes                            = js.Array[ResponseMIMEType]
+  type RoleArn                                      = String
+  type S3DataDistribution                           = String
+  type S3DataType                                   = String
+  type S3Uri                                        = String
+  type SearchExpressionList                         = js.Array[SearchExpression]
+  type SearchResultsList                            = js.Array[SearchRecord]
+  type SearchSortOrder                              = String
+  type SecondaryStatus                              = String
+  type SecondaryStatusTransitions                   = js.Array[SecondaryStatusTransition]
+  type SecretArn                                    = String
+  type SecurityGroupId                              = String
+  type SecurityGroupIds                             = js.Array[SecurityGroupId]
+  type Seed                                         = Double
+  type SessionExpirationDurationInSeconds           = Int
+  type SortBy                                       = String
+  type SortOrder                                    = String
+  type SourceAlgorithmList                          = js.Array[SourceAlgorithm]
+  type SplitType                                    = String
+  type StatusMessage                                = String
+  type String200                                    = String
+  type SubnetId                                     = String
+  type Subnets                                      = js.Array[SubnetId]
+  type SubscribedWorkteams                          = js.Array[SubscribedWorkteam]
+  type Success                                      = Boolean
+  type TagKey                                       = String
+  type TagKeyList                                   = js.Array[TagKey]
+  type TagList                                      = js.Array[Tag]
+  type TagValue                                     = String
+  type TargetDevice                                 = String
+  type TaskAvailabilityLifetimeInSeconds            = Int
+  type TaskCount                                    = Int
+  type TaskDescription                              = String
+  type TaskInput                                    = String
+  type TaskKeyword                                  = String
+  type TaskKeywords                                 = js.Array[TaskKeyword]
+  type TaskTimeLimitInSeconds                       = Int
+  type TaskTitle                                    = String
+  type TemplateContent                              = String
+  type TenthFractionsOfACent                        = Int
+  type Timestamp                                    = js.Date
+  type TrainingInputMode                            = String
+  type TrainingInstanceCount                        = Int
+  type TrainingInstanceType                         = String
+  type TrainingInstanceTypes                        = js.Array[TrainingInstanceType]
+  type TrainingJobArn                               = String
+  type TrainingJobEarlyStoppingType                 = String
+  type TrainingJobName                              = String
+  type TrainingJobSortByOptions                     = String
+  type TrainingJobStatus                            = String
+  type TrainingJobStatusCounter                     = Int
+  type TrainingJobSummaries                         = js.Array[TrainingJobSummary]
+  type TransformEnvironmentKey                      = String
+  type TransformEnvironmentMap                      = js.Dictionary[TransformEnvironmentValue]
+  type TransformEnvironmentValue                    = String
+  type TransformInstanceCount                       = Int
+  type TransformInstanceType                        = String
+  type TransformInstanceTypes                       = js.Array[TransformInstanceType]
+  type TransformJobArn                              = String
+  type TransformJobName                             = String
+  type TransformJobStatus                           = String
+  type TransformJobSummaries                        = js.Array[TransformJobSummary]
+  type Url                                          = String
+  type VariantName                                  = String
+  type VariantWeight                                = Float
+  type VolumeSizeInGB                               = Int
+  type VpcSecurityGroupIds                          = js.Array[SecurityGroupId]
+  type WorkteamArn                                  = String
+  type WorkteamName                                 = String
+  type Workteams                                    = js.Array[Workteam]
 }
 
 package sagemaker {
@@ -274,80 +274,108 @@ package sagemaker {
   class SageMaker() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
-    def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput] = js.native
-    def createCodeRepository(params: CreateCodeRepositoryInput): Request[CreateCodeRepositoryOutput] = js.native
+    def addTags(params: AddTagsInput): Request[AddTagsOutput]                                            = js.native
+    def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput]                    = js.native
+    def createCodeRepository(params: CreateCodeRepositoryInput): Request[CreateCodeRepositoryOutput]     = js.native
     def createCompilationJob(params: CreateCompilationJobRequest): Request[CreateCompilationJobResponse] = js.native
-    def createEndpoint(params: CreateEndpointInput): Request[CreateEndpointOutput] = js.native
-    def createEndpointConfig(params: CreateEndpointConfigInput): Request[CreateEndpointConfigOutput] = js.native
-    def createHyperParameterTuningJob(params: CreateHyperParameterTuningJobRequest): Request[CreateHyperParameterTuningJobResponse] = js.native
-    def createLabelingJob(params: CreateLabelingJobRequest): Request[CreateLabelingJobResponse] = js.native
-    def createModel(params: CreateModelInput): Request[CreateModelOutput] = js.native
-    def createModelPackage(params: CreateModelPackageInput): Request[CreateModelPackageOutput] = js.native
+    def createEndpoint(params: CreateEndpointInput): Request[CreateEndpointOutput]                       = js.native
+    def createEndpointConfig(params: CreateEndpointConfigInput): Request[CreateEndpointConfigOutput]     = js.native
+    def createHyperParameterTuningJob(
+        params: CreateHyperParameterTuningJobRequest
+    ): Request[CreateHyperParameterTuningJobResponse]                                                      = js.native
+    def createLabelingJob(params: CreateLabelingJobRequest): Request[CreateLabelingJobResponse]            = js.native
+    def createModel(params: CreateModelInput): Request[CreateModelOutput]                                  = js.native
+    def createModelPackage(params: CreateModelPackageInput): Request[CreateModelPackageOutput]             = js.native
     def createNotebookInstance(params: CreateNotebookInstanceInput): Request[CreateNotebookInstanceOutput] = js.native
-    def createNotebookInstanceLifecycleConfig(params: CreateNotebookInstanceLifecycleConfigInput): Request[CreateNotebookInstanceLifecycleConfigOutput] = js.native
-    def createPresignedNotebookInstanceUrl(params: CreatePresignedNotebookInstanceUrlInput): Request[CreatePresignedNotebookInstanceUrlOutput] = js.native
-    def createTrainingJob(params: CreateTrainingJobRequest): Request[CreateTrainingJobResponse] = js.native
+    def createNotebookInstanceLifecycleConfig(
+        params: CreateNotebookInstanceLifecycleConfigInput
+    ): Request[CreateNotebookInstanceLifecycleConfigOutput] = js.native
+    def createPresignedNotebookInstanceUrl(
+        params: CreatePresignedNotebookInstanceUrlInput
+    ): Request[CreatePresignedNotebookInstanceUrlOutput]                                           = js.native
+    def createTrainingJob(params: CreateTrainingJobRequest): Request[CreateTrainingJobResponse]    = js.native
     def createTransformJob(params: CreateTransformJobRequest): Request[CreateTransformJobResponse] = js.native
-    def createWorkteam(params: CreateWorkteamRequest): Request[CreateWorkteamResponse] = js.native
-    def deleteAlgorithm(params: DeleteAlgorithmInput): Request[js.Object] = js.native
-    def deleteCodeRepository(params: DeleteCodeRepositoryInput): Request[js.Object] = js.native
-    def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object] = js.native
-    def deleteEndpointConfig(params: DeleteEndpointConfigInput): Request[js.Object] = js.native
-    def deleteModel(params: DeleteModelInput): Request[js.Object] = js.native
-    def deleteModelPackage(params: DeleteModelPackageInput): Request[js.Object] = js.native
-    def deleteNotebookInstance(params: DeleteNotebookInstanceInput): Request[js.Object] = js.native
-    def deleteNotebookInstanceLifecycleConfig(params: DeleteNotebookInstanceLifecycleConfigInput): Request[js.Object] = js.native
-    def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput] = js.native
-    def deleteWorkteam(params: DeleteWorkteamRequest): Request[DeleteWorkteamResponse] = js.native
-    def describeAlgorithm(params: DescribeAlgorithmInput): Request[DescribeAlgorithmOutput] = js.native
+    def createWorkteam(params: CreateWorkteamRequest): Request[CreateWorkteamResponse]             = js.native
+    def deleteAlgorithm(params: DeleteAlgorithmInput): Request[js.Object]                          = js.native
+    def deleteCodeRepository(params: DeleteCodeRepositoryInput): Request[js.Object]                = js.native
+    def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object]                            = js.native
+    def deleteEndpointConfig(params: DeleteEndpointConfigInput): Request[js.Object]                = js.native
+    def deleteModel(params: DeleteModelInput): Request[js.Object]                                  = js.native
+    def deleteModelPackage(params: DeleteModelPackageInput): Request[js.Object]                    = js.native
+    def deleteNotebookInstance(params: DeleteNotebookInstanceInput): Request[js.Object]            = js.native
+    def deleteNotebookInstanceLifecycleConfig(params: DeleteNotebookInstanceLifecycleConfigInput): Request[js.Object] =
+      js.native
+    def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput]                                     = js.native
+    def deleteWorkteam(params: DeleteWorkteamRequest): Request[DeleteWorkteamResponse]                     = js.native
+    def describeAlgorithm(params: DescribeAlgorithmInput): Request[DescribeAlgorithmOutput]                = js.native
     def describeCodeRepository(params: DescribeCodeRepositoryInput): Request[DescribeCodeRepositoryOutput] = js.native
-    def describeCompilationJob(params: DescribeCompilationJobRequest): Request[DescribeCompilationJobResponse] = js.native
-    def describeEndpoint(params: DescribeEndpointInput): Request[DescribeEndpointOutput] = js.native
+    def describeCompilationJob(params: DescribeCompilationJobRequest): Request[DescribeCompilationJobResponse] =
+      js.native
+    def describeEndpoint(params: DescribeEndpointInput): Request[DescribeEndpointOutput]                   = js.native
     def describeEndpointConfig(params: DescribeEndpointConfigInput): Request[DescribeEndpointConfigOutput] = js.native
-    def describeHyperParameterTuningJob(params: DescribeHyperParameterTuningJobRequest): Request[DescribeHyperParameterTuningJobResponse] = js.native
+    def describeHyperParameterTuningJob(
+        params: DescribeHyperParameterTuningJobRequest
+    ): Request[DescribeHyperParameterTuningJobResponse]                                               = js.native
     def describeLabelingJob(params: DescribeLabelingJobRequest): Request[DescribeLabelingJobResponse] = js.native
-    def describeModel(params: DescribeModelInput): Request[DescribeModelOutput] = js.native
-    def describeModelPackage(params: DescribeModelPackageInput): Request[DescribeModelPackageOutput] = js.native
-    def describeNotebookInstance(params: DescribeNotebookInstanceInput): Request[DescribeNotebookInstanceOutput] = js.native
-    def describeNotebookInstanceLifecycleConfig(params: DescribeNotebookInstanceLifecycleConfigInput): Request[DescribeNotebookInstanceLifecycleConfigOutput] = js.native
-    def describeSubscribedWorkteam(params: DescribeSubscribedWorkteamRequest): Request[DescribeSubscribedWorkteamResponse] = js.native
-    def describeTrainingJob(params: DescribeTrainingJobRequest): Request[DescribeTrainingJobResponse] = js.native
+    def describeModel(params: DescribeModelInput): Request[DescribeModelOutput]                       = js.native
+    def describeModelPackage(params: DescribeModelPackageInput): Request[DescribeModelPackageOutput]  = js.native
+    def describeNotebookInstance(params: DescribeNotebookInstanceInput): Request[DescribeNotebookInstanceOutput] =
+      js.native
+    def describeNotebookInstanceLifecycleConfig(
+        params: DescribeNotebookInstanceLifecycleConfigInput
+    ): Request[DescribeNotebookInstanceLifecycleConfigOutput] = js.native
+    def describeSubscribedWorkteam(
+        params: DescribeSubscribedWorkteamRequest
+    ): Request[DescribeSubscribedWorkteamResponse]                                                       = js.native
+    def describeTrainingJob(params: DescribeTrainingJobRequest): Request[DescribeTrainingJobResponse]    = js.native
     def describeTransformJob(params: DescribeTransformJobRequest): Request[DescribeTransformJobResponse] = js.native
-    def describeWorkteam(params: DescribeWorkteamRequest): Request[DescribeWorkteamResponse] = js.native
+    def describeWorkteam(params: DescribeWorkteamRequest): Request[DescribeWorkteamResponse]             = js.native
     def getSearchSuggestions(params: GetSearchSuggestionsRequest): Request[GetSearchSuggestionsResponse] = js.native
-    def listAlgorithms(params: ListAlgorithmsInput): Request[ListAlgorithmsOutput] = js.native
-    def listCodeRepositories(params: ListCodeRepositoriesInput): Request[ListCodeRepositoriesOutput] = js.native
-    def listCompilationJobs(params: ListCompilationJobsRequest): Request[ListCompilationJobsResponse] = js.native
-    def listEndpointConfigs(params: ListEndpointConfigsInput): Request[ListEndpointConfigsOutput] = js.native
-    def listEndpoints(params: ListEndpointsInput): Request[ListEndpointsOutput] = js.native
-    def listHyperParameterTuningJobs(params: ListHyperParameterTuningJobsRequest): Request[ListHyperParameterTuningJobsResponse] = js.native
+    def listAlgorithms(params: ListAlgorithmsInput): Request[ListAlgorithmsOutput]                       = js.native
+    def listCodeRepositories(params: ListCodeRepositoriesInput): Request[ListCodeRepositoriesOutput]     = js.native
+    def listCompilationJobs(params: ListCompilationJobsRequest): Request[ListCompilationJobsResponse]    = js.native
+    def listEndpointConfigs(params: ListEndpointConfigsInput): Request[ListEndpointConfigsOutput]        = js.native
+    def listEndpoints(params: ListEndpointsInput): Request[ListEndpointsOutput]                          = js.native
+    def listHyperParameterTuningJobs(
+        params: ListHyperParameterTuningJobsRequest
+    ): Request[ListHyperParameterTuningJobsResponse]                                         = js.native
     def listLabelingJobs(params: ListLabelingJobsRequest): Request[ListLabelingJobsResponse] = js.native
-    def listLabelingJobsForWorkteam(params: ListLabelingJobsForWorkteamRequest): Request[ListLabelingJobsForWorkteamResponse] = js.native
+    def listLabelingJobsForWorkteam(
+        params: ListLabelingJobsForWorkteamRequest
+    ): Request[ListLabelingJobsForWorkteamResponse]                                         = js.native
     def listModelPackages(params: ListModelPackagesInput): Request[ListModelPackagesOutput] = js.native
-    def listModels(params: ListModelsInput): Request[ListModelsOutput] = js.native
-    def listNotebookInstanceLifecycleConfigs(params: ListNotebookInstanceLifecycleConfigsInput): Request[ListNotebookInstanceLifecycleConfigsOutput] = js.native
+    def listModels(params: ListModelsInput): Request[ListModelsOutput]                      = js.native
+    def listNotebookInstanceLifecycleConfigs(
+        params: ListNotebookInstanceLifecycleConfigsInput
+    ): Request[ListNotebookInstanceLifecycleConfigsOutput]                                              = js.native
     def listNotebookInstances(params: ListNotebookInstancesInput): Request[ListNotebookInstancesOutput] = js.native
-    def listSubscribedWorkteams(params: ListSubscribedWorkteamsRequest): Request[ListSubscribedWorkteamsResponse] = js.native
-    def listTags(params: ListTagsInput): Request[ListTagsOutput] = js.native
+    def listSubscribedWorkteams(params: ListSubscribedWorkteamsRequest): Request[ListSubscribedWorkteamsResponse] =
+      js.native
+    def listTags(params: ListTagsInput): Request[ListTagsOutput]                             = js.native
     def listTrainingJobs(params: ListTrainingJobsRequest): Request[ListTrainingJobsResponse] = js.native
-    def listTrainingJobsForHyperParameterTuningJob(params: ListTrainingJobsForHyperParameterTuningJobRequest): Request[ListTrainingJobsForHyperParameterTuningJobResponse] = js.native
-    def listTransformJobs(params: ListTransformJobsRequest): Request[ListTransformJobsResponse] = js.native
-    def listWorkteams(params: ListWorkteamsRequest): Request[ListWorkteamsResponse] = js.native
-    def renderUiTemplate(params: RenderUiTemplateRequest): Request[RenderUiTemplateResponse] = js.native
-    def search(params: SearchRequest): Request[SearchResponse] = js.native
-    def startNotebookInstance(params: StartNotebookInstanceInput): Request[js.Object] = js.native
-    def stopCompilationJob(params: StopCompilationJobRequest): Request[js.Object] = js.native
-    def stopHyperParameterTuningJob(params: StopHyperParameterTuningJobRequest): Request[js.Object] = js.native
-    def stopLabelingJob(params: StopLabelingJobRequest): Request[js.Object] = js.native
-    def stopNotebookInstance(params: StopNotebookInstanceInput): Request[js.Object] = js.native
-    def stopTrainingJob(params: StopTrainingJobRequest): Request[js.Object] = js.native
-    def stopTransformJob(params: StopTransformJobRequest): Request[js.Object] = js.native
+    def listTrainingJobsForHyperParameterTuningJob(
+        params: ListTrainingJobsForHyperParameterTuningJobRequest
+    ): Request[ListTrainingJobsForHyperParameterTuningJobResponse]                                   = js.native
+    def listTransformJobs(params: ListTransformJobsRequest): Request[ListTransformJobsResponse]      = js.native
+    def listWorkteams(params: ListWorkteamsRequest): Request[ListWorkteamsResponse]                  = js.native
+    def renderUiTemplate(params: RenderUiTemplateRequest): Request[RenderUiTemplateResponse]         = js.native
+    def search(params: SearchRequest): Request[SearchResponse]                                       = js.native
+    def startNotebookInstance(params: StartNotebookInstanceInput): Request[js.Object]                = js.native
+    def stopCompilationJob(params: StopCompilationJobRequest): Request[js.Object]                    = js.native
+    def stopHyperParameterTuningJob(params: StopHyperParameterTuningJobRequest): Request[js.Object]  = js.native
+    def stopLabelingJob(params: StopLabelingJobRequest): Request[js.Object]                          = js.native
+    def stopNotebookInstance(params: StopNotebookInstanceInput): Request[js.Object]                  = js.native
+    def stopTrainingJob(params: StopTrainingJobRequest): Request[js.Object]                          = js.native
+    def stopTransformJob(params: StopTransformJobRequest): Request[js.Object]                        = js.native
     def updateCodeRepository(params: UpdateCodeRepositoryInput): Request[UpdateCodeRepositoryOutput] = js.native
-    def updateEndpoint(params: UpdateEndpointInput): Request[UpdateEndpointOutput] = js.native
-    def updateEndpointWeightsAndCapacities(params: UpdateEndpointWeightsAndCapacitiesInput): Request[UpdateEndpointWeightsAndCapacitiesOutput] = js.native
+    def updateEndpoint(params: UpdateEndpointInput): Request[UpdateEndpointOutput]                   = js.native
+    def updateEndpointWeightsAndCapacities(
+        params: UpdateEndpointWeightsAndCapacitiesInput
+    ): Request[UpdateEndpointWeightsAndCapacitiesOutput]                                                   = js.native
     def updateNotebookInstance(params: UpdateNotebookInstanceInput): Request[UpdateNotebookInstanceOutput] = js.native
-    def updateNotebookInstanceLifecycleConfig(params: UpdateNotebookInstanceLifecycleConfigInput): Request[UpdateNotebookInstanceLifecycleConfigOutput] = js.native
+    def updateNotebookInstanceLifecycleConfig(
+        params: UpdateNotebookInstanceLifecycleConfigInput
+    ): Request[UpdateNotebookInstanceLifecycleConfigOutput]                            = js.native
     def updateWorkteam(params: UpdateWorkteamRequest): Request[UpdateWorkteamResponse] = js.native
   }
 
@@ -358,12 +386,11 @@ package sagemaker {
   }
 
   object AddTagsInput {
-    def apply(
-      ResourceArn: ResourceArn,
-      Tags: TagList): AddTagsInput = {
+    def apply(ResourceArn: ResourceArn, Tags: TagList): AddTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Tags"        -> Tags.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsInput]
     }
@@ -375,26 +402,26 @@ package sagemaker {
   }
 
   object AddTagsOutput {
-    def apply(
-      Tags: js.UndefOr[TagList] = js.undefined): AddTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Tags: js.UndefOr[TagList] = js.undefined): AddTagsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("Tags" -> Tags.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddTagsOutput]
     }
   }
 
   object AlgorithmSortByEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
 
     val values = IndexedSeq(Name, CreationTime)
   }
 
   /**
-   * Specifies the training algorithm to use in a [[http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html|CreateTrainingJob]] request.
-   *  For more information about algorithms provided by Amazon SageMaker, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]]. For information about using your own algorithms, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html|Using Your Own Algorithms with Amazon SageMaker]].
-   */
+    * Specifies the training algorithm to use in a [[http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html|CreateTrainingJob]] request.
+    *  For more information about algorithms provided by Amazon SageMaker, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]]. For information about using your own algorithms, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html|Using Your Own Algorithms with Amazon SageMaker]].
+    */
   @js.native
   trait AlgorithmSpecification extends js.Object {
     var TrainingInputMode: TrainingInputMode
@@ -404,34 +431,40 @@ package sagemaker {
   }
 
   object AlgorithmSpecification {
-    def apply(
-      TrainingInputMode: TrainingInputMode,
-      AlgorithmName: js.UndefOr[ArnOrName] = js.undefined,
-      MetricDefinitions: js.UndefOr[MetricDefinitionList] = js.undefined,
-      TrainingImage: js.UndefOr[AlgorithmImage] = js.undefined): AlgorithmSpecification = {
+    def apply(TrainingInputMode: TrainingInputMode,
+              AlgorithmName: js.UndefOr[ArnOrName] = js.undefined,
+              MetricDefinitions: js.UndefOr[MetricDefinitionList] = js.undefined,
+              TrainingImage: js.UndefOr[AlgorithmImage] = js.undefined): AlgorithmSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TrainingInputMode" -> TrainingInputMode.asInstanceOf[js.Any],
-        "AlgorithmName" -> AlgorithmName.map { x => x.asInstanceOf[js.Any] },
-        "MetricDefinitions" -> MetricDefinitions.map { x => x.asInstanceOf[js.Any] },
-        "TrainingImage" -> TrainingImage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AlgorithmName" -> AlgorithmName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MetricDefinitions" -> MetricDefinitions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingImage" -> TrainingImage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlgorithmSpecification]
     }
   }
 
   object AlgorithmStatusEnum {
-    val Pending = "Pending"
+    val Pending    = "Pending"
     val InProgress = "InProgress"
-    val Completed = "Completed"
-    val Failed = "Failed"
-    val Deleting = "Deleting"
+    val Completed  = "Completed"
+    val Failed     = "Failed"
+    val Deleting   = "Deleting"
 
     val values = IndexedSeq(Pending, InProgress, Completed, Failed, Deleting)
   }
 
   /**
-   * Specifies the validation and image scan statuses of the algorithm.
-   */
+    * Specifies the validation and image scan statuses of the algorithm.
+    */
   @js.native
   trait AlgorithmStatusDetails extends js.Object {
     var ImageScanStatuses: js.UndefOr[AlgorithmStatusItemList]
@@ -439,20 +472,21 @@ package sagemaker {
   }
 
   object AlgorithmStatusDetails {
-    def apply(
-      ImageScanStatuses: js.UndefOr[AlgorithmStatusItemList] = js.undefined,
-      ValidationStatuses: js.UndefOr[AlgorithmStatusItemList] = js.undefined): AlgorithmStatusDetails = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ImageScanStatuses" -> ImageScanStatuses.map { x => x.asInstanceOf[js.Any] },
-        "ValidationStatuses" -> ValidationStatuses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ImageScanStatuses: js.UndefOr[AlgorithmStatusItemList] = js.undefined,
+              ValidationStatuses: js.UndefOr[AlgorithmStatusItemList] = js.undefined): AlgorithmStatusDetails = {
+      val _fields = IndexedSeq[(String, js.Any)]("ImageScanStatuses" -> ImageScanStatuses.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "ValidationStatuses" -> ValidationStatuses.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlgorithmStatusDetails]
     }
   }
 
   /**
-   * Represents the overall status of an algorithm.
-   */
+    * Represents the overall status of an algorithm.
+    */
   @js.native
   trait AlgorithmStatusItem extends js.Object {
     var Name: EntityName
@@ -461,22 +495,24 @@ package sagemaker {
   }
 
   object AlgorithmStatusItem {
-    def apply(
-      Name: EntityName,
-      Status: DetailedAlgorithmStatus,
-      FailureReason: js.UndefOr[String] = js.undefined): AlgorithmStatusItem = {
+    def apply(Name: EntityName,
+              Status: DetailedAlgorithmStatus,
+              FailureReason: js.UndefOr[String] = js.undefined): AlgorithmStatusItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
+        "Name"   -> Name.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any],
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlgorithmStatusItem]
     }
   }
 
   /**
-   * Provides summary information about an algorithm.
-   */
+    * Provides summary information about an algorithm.
+    */
   @js.native
   trait AlgorithmSummary extends js.Object {
     var AlgorithmArn: AlgorithmArn
@@ -487,27 +523,29 @@ package sagemaker {
   }
 
   object AlgorithmSummary {
-    def apply(
-      AlgorithmArn: AlgorithmArn,
-      AlgorithmName: EntityName,
-      AlgorithmStatus: AlgorithmStatus,
-      CreationTime: CreationTime,
-      AlgorithmDescription: js.UndefOr[EntityDescription] = js.undefined): AlgorithmSummary = {
+    def apply(AlgorithmArn: AlgorithmArn,
+              AlgorithmName: EntityName,
+              AlgorithmStatus: AlgorithmStatus,
+              CreationTime: CreationTime,
+              AlgorithmDescription: js.UndefOr[EntityDescription] = js.undefined): AlgorithmSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any],
-        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any],
+        "AlgorithmArn"    -> AlgorithmArn.asInstanceOf[js.Any],
+        "AlgorithmName"   -> AlgorithmName.asInstanceOf[js.Any],
         "AlgorithmStatus" -> AlgorithmStatus.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "AlgorithmDescription" -> AlgorithmDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"    -> CreationTime.asInstanceOf[js.Any],
+        "AlgorithmDescription" -> AlgorithmDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlgorithmSummary]
     }
   }
 
   /**
-   * Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.
-   *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
-   */
+    * Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm.
+    *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+    */
   @js.native
   trait AlgorithmValidationProfile extends js.Object {
     var ProfileName: EntityName
@@ -516,22 +554,24 @@ package sagemaker {
   }
 
   object AlgorithmValidationProfile {
-    def apply(
-      ProfileName: EntityName,
-      TrainingJobDefinition: TrainingJobDefinition,
-      TransformJobDefinition: js.UndefOr[TransformJobDefinition] = js.undefined): AlgorithmValidationProfile = {
+    def apply(ProfileName: EntityName,
+              TrainingJobDefinition: TrainingJobDefinition,
+              TransformJobDefinition: js.UndefOr[TransformJobDefinition] = js.undefined): AlgorithmValidationProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProfileName" -> ProfileName.asInstanceOf[js.Any],
+        "ProfileName"           -> ProfileName.asInstanceOf[js.Any],
         "TrainingJobDefinition" -> TrainingJobDefinition.asInstanceOf[js.Any],
-        "TransformJobDefinition" -> TransformJobDefinition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TransformJobDefinition" -> TransformJobDefinition.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlgorithmValidationProfile]
     }
   }
 
   /**
-   * Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
-   */
+    * Specifies configurations for one or more training jobs that Amazon SageMaker runs to test the algorithm.
+    */
   @js.native
   trait AlgorithmValidationSpecification extends js.Object {
     var ValidationProfiles: AlgorithmValidationProfiles
@@ -539,30 +579,30 @@ package sagemaker {
   }
 
   object AlgorithmValidationSpecification {
-    def apply(
-      ValidationProfiles: AlgorithmValidationProfiles,
-      ValidationRole: RoleArn): AlgorithmValidationSpecification = {
+    def apply(ValidationProfiles: AlgorithmValidationProfiles,
+              ValidationRole: RoleArn): AlgorithmValidationSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ValidationProfiles" -> ValidationProfiles.asInstanceOf[js.Any],
-        "ValidationRole" -> ValidationRole.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ValidationRole"     -> ValidationRole.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AlgorithmValidationSpecification]
     }
   }
 
   /**
-   * Configures how labels are consolidated across human workers.
-   */
+    * Configures how labels are consolidated across human workers.
+    */
   @js.native
   trait AnnotationConsolidationConfig extends js.Object {
     var AnnotationConsolidationLambdaArn: LambdaFunctionArn
   }
 
   object AnnotationConsolidationConfig {
-    def apply(
-      AnnotationConsolidationLambdaArn: LambdaFunctionArn): AnnotationConsolidationConfig = {
+    def apply(AnnotationConsolidationLambdaArn: LambdaFunctionArn): AnnotationConsolidationConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AnnotationConsolidationLambdaArn" -> AnnotationConsolidationLambdaArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "AnnotationConsolidationLambdaArn" -> AnnotationConsolidationLambdaArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AnnotationConsolidationConfig]
     }
@@ -576,7 +616,7 @@ package sagemaker {
   }
 
   object BatchStrategyEnum {
-    val MultiRecord = "MultiRecord"
+    val MultiRecord  = "MultiRecord"
     val SingleRecord = "SingleRecord"
 
     val values = IndexedSeq(MultiRecord, SingleRecord)
@@ -584,14 +624,14 @@ package sagemaker {
 
   object BooleanOperatorEnum {
     val And = "And"
-    val Or = "Or"
+    val Or  = "Or"
 
     val values = IndexedSeq(And, Or)
   }
 
   /**
-   * A list of categorical hyperparameters to tune.
-   */
+    * A list of categorical hyperparameters to tune.
+    */
   @js.native
   trait CategoricalParameterRange extends js.Object {
     var Name: ParameterKey
@@ -599,38 +639,35 @@ package sagemaker {
   }
 
   object CategoricalParameterRange {
-    def apply(
-      Name: ParameterKey,
-      Values: ParameterValues): CategoricalParameterRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Name: ParameterKey, Values: ParameterValues): CategoricalParameterRange = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CategoricalParameterRange]
     }
   }
 
   /**
-   * Defines the possible values for a categorical hyperparameter.
-   */
+    * Defines the possible values for a categorical hyperparameter.
+    */
   @js.native
   trait CategoricalParameterRangeSpecification extends js.Object {
     var Values: ParameterValues
   }
 
   object CategoricalParameterRangeSpecification {
-    def apply(
-      Values: ParameterValues): CategoricalParameterRangeSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Values: ParameterValues): CategoricalParameterRangeSpecification = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CategoricalParameterRangeSpecification]
     }
   }
 
   /**
-   * A channel is a named input source that training algorithms can consume.
-   */
+    * A channel is a named input source that training algorithms can consume.
+    */
   @js.native
   trait Channel extends js.Object {
     var ChannelName: ChannelName
@@ -643,30 +680,40 @@ package sagemaker {
   }
 
   object Channel {
-    def apply(
-      ChannelName: ChannelName,
-      DataSource: DataSource,
-      CompressionType: js.UndefOr[CompressionType] = js.undefined,
-      ContentType: js.UndefOr[ContentType] = js.undefined,
-      InputMode: js.UndefOr[TrainingInputMode] = js.undefined,
-      RecordWrapperType: js.UndefOr[RecordWrapper] = js.undefined,
-      ShuffleConfig: js.UndefOr[ShuffleConfig] = js.undefined): Channel = {
+    def apply(ChannelName: ChannelName,
+              DataSource: DataSource,
+              CompressionType: js.UndefOr[CompressionType] = js.undefined,
+              ContentType: js.UndefOr[ContentType] = js.undefined,
+              InputMode: js.UndefOr[TrainingInputMode] = js.undefined,
+              RecordWrapperType: js.UndefOr[RecordWrapper] = js.undefined,
+              ShuffleConfig: js.UndefOr[ShuffleConfig] = js.undefined): Channel = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ChannelName" -> ChannelName.asInstanceOf[js.Any],
-        "DataSource" -> DataSource.asInstanceOf[js.Any],
-        "CompressionType" -> CompressionType.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
-        "InputMode" -> InputMode.map { x => x.asInstanceOf[js.Any] },
-        "RecordWrapperType" -> RecordWrapperType.map { x => x.asInstanceOf[js.Any] },
-        "ShuffleConfig" -> ShuffleConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataSource"  -> DataSource.asInstanceOf[js.Any],
+        "CompressionType" -> CompressionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputMode" -> InputMode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RecordWrapperType" -> RecordWrapperType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ShuffleConfig" -> ShuffleConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Channel]
     }
   }
 
   /**
-   * Defines a named input source, called a channel, to be used by an algorithm.
-   */
+    * Defines a named input source, called a channel, to be used by an algorithm.
+    */
   @js.native
   trait ChannelSpecification extends js.Object {
     var Name: ChannelName
@@ -678,43 +725,49 @@ package sagemaker {
   }
 
   object ChannelSpecification {
-    def apply(
-      Name: ChannelName,
-      SupportedContentTypes: ContentTypes,
-      SupportedInputModes: InputModes,
-      Description: js.UndefOr[EntityDescription] = js.undefined,
-      IsRequired: js.UndefOr[Boolean] = js.undefined,
-      SupportedCompressionTypes: js.UndefOr[CompressionTypes] = js.undefined): ChannelSpecification = {
+    def apply(Name: ChannelName,
+              SupportedContentTypes: ContentTypes,
+              SupportedInputModes: InputModes,
+              Description: js.UndefOr[EntityDescription] = js.undefined,
+              IsRequired: js.UndefOr[Boolean] = js.undefined,
+              SupportedCompressionTypes: js.UndefOr[CompressionTypes] = js.undefined): ChannelSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
+        "Name"                  -> Name.asInstanceOf[js.Any],
         "SupportedContentTypes" -> SupportedContentTypes.asInstanceOf[js.Any],
-        "SupportedInputModes" -> SupportedInputModes.asInstanceOf[js.Any],
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "IsRequired" -> IsRequired.map { x => x.asInstanceOf[js.Any] },
-        "SupportedCompressionTypes" -> SupportedCompressionTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SupportedInputModes"   -> SupportedInputModes.asInstanceOf[js.Any],
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsRequired" -> IsRequired.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportedCompressionTypes" -> SupportedCompressionTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ChannelSpecification]
     }
   }
 
   object CodeRepositorySortByEnum {
-    val Name = "Name"
-    val CreationTime = "CreationTime"
+    val Name             = "Name"
+    val CreationTime     = "CreationTime"
     val LastModifiedTime = "LastModifiedTime"
 
     val values = IndexedSeq(Name, CreationTime, LastModifiedTime)
   }
 
   object CodeRepositorySortOrderEnum {
-    val Ascending = "Ascending"
+    val Ascending  = "Ascending"
     val Descending = "Descending"
 
     val values = IndexedSeq(Ascending, Descending)
   }
 
   /**
-   * Specifies summary information about a git repository.
-   */
+    * Specifies summary information about a git repository.
+    */
   @js.native
   trait CodeRepositorySummary extends js.Object {
     var CodeRepositoryArn: CodeRepositoryArn
@@ -725,26 +778,28 @@ package sagemaker {
   }
 
   object CodeRepositorySummary {
-    def apply(
-      CodeRepositoryArn: CodeRepositoryArn,
-      CodeRepositoryName: EntityName,
-      CreationTime: CreationTime,
-      LastModifiedTime: LastModifiedTime,
-      GitConfig: js.UndefOr[GitConfig] = js.undefined): CodeRepositorySummary = {
+    def apply(CodeRepositoryArn: CodeRepositoryArn,
+              CodeRepositoryName: EntityName,
+              CreationTime: CreationTime,
+              LastModifiedTime: LastModifiedTime,
+              GitConfig: js.UndefOr[GitConfig] = js.undefined): CodeRepositorySummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any],
+        "CodeRepositoryArn"  -> CodeRepositoryArn.asInstanceOf[js.Any],
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
-        "GitConfig" -> GitConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime"   -> LastModifiedTime.asInstanceOf[js.Any],
+        "GitConfig" -> GitConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CodeRepositorySummary]
     }
   }
 
   /**
-   * Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
-   */
+    * Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.
+    */
   @js.native
   trait CognitoMemberDefinition extends js.Object {
     var ClientId: CognitoClientId
@@ -753,14 +808,14 @@ package sagemaker {
   }
 
   object CognitoMemberDefinition {
-    def apply(
-      ClientId: CognitoClientId,
-      UserGroup: CognitoUserGroup,
-      UserPool: CognitoUserPool): CognitoMemberDefinition = {
+    def apply(ClientId: CognitoClientId,
+              UserGroup: CognitoUserGroup,
+              UserPool: CognitoUserPool): CognitoMemberDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "ClientId"  -> ClientId.asInstanceOf[js.Any],
         "UserGroup" -> UserGroup.asInstanceOf[js.Any],
-        "UserPool" -> UserPool.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "UserPool"  -> UserPool.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CognitoMemberDefinition]
     }
@@ -768,18 +823,18 @@ package sagemaker {
 
   object CompilationJobStatusEnum {
     val INPROGRESS = "INPROGRESS"
-    val COMPLETED = "COMPLETED"
-    val FAILED = "FAILED"
-    val STARTING = "STARTING"
-    val STOPPING = "STOPPING"
-    val STOPPED = "STOPPED"
+    val COMPLETED  = "COMPLETED"
+    val FAILED     = "FAILED"
+    val STARTING   = "STARTING"
+    val STOPPING   = "STOPPING"
+    val STOPPED    = "STOPPED"
 
     val values = IndexedSeq(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED)
   }
 
   /**
-   * A summary of a model compilation job.
-   */
+    * A summary of a model compilation job.
+    */
   @js.native
   trait CompilationJobSummary extends js.Object {
     var CompilationJobArn: CompilationJobArn
@@ -793,24 +848,30 @@ package sagemaker {
   }
 
   object CompilationJobSummary {
-    def apply(
-      CompilationJobArn: CompilationJobArn,
-      CompilationJobName: EntityName,
-      CompilationJobStatus: CompilationJobStatus,
-      CompilationTargetDevice: TargetDevice,
-      CreationTime: CreationTime,
-      CompilationEndTime: js.UndefOr[Timestamp] = js.undefined,
-      CompilationStartTime: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined): CompilationJobSummary = {
+    def apply(CompilationJobArn: CompilationJobArn,
+              CompilationJobName: EntityName,
+              CompilationJobStatus: CompilationJobStatus,
+              CompilationTargetDevice: TargetDevice,
+              CreationTime: CreationTime,
+              CompilationEndTime: js.UndefOr[Timestamp] = js.undefined,
+              CompilationStartTime: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined): CompilationJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any],
-        "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
-        "CompilationJobStatus" -> CompilationJobStatus.asInstanceOf[js.Any],
+        "CompilationJobArn"       -> CompilationJobArn.asInstanceOf[js.Any],
+        "CompilationJobName"      -> CompilationJobName.asInstanceOf[js.Any],
+        "CompilationJobStatus"    -> CompilationJobStatus.asInstanceOf[js.Any],
         "CompilationTargetDevice" -> CompilationTargetDevice.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "CompilationEndTime" -> CompilationEndTime.map { x => x.asInstanceOf[js.Any] },
-        "CompilationStartTime" -> CompilationStartTime.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"            -> CreationTime.asInstanceOf[js.Any],
+        "CompilationEndTime" -> CompilationEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompilationStartTime" -> CompilationStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CompilationJobSummary]
     }
@@ -824,8 +885,8 @@ package sagemaker {
   }
 
   /**
-   * Describes the container, as part of model definition.
-   */
+    * Describes the container, as part of model definition.
+    */
   @js.native
   trait ContainerDefinition extends js.Object {
     var ContainerHostname: js.UndefOr[ContainerHostname]
@@ -836,18 +897,28 @@ package sagemaker {
   }
 
   object ContainerDefinition {
-    def apply(
-      ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
-      Environment: js.UndefOr[EnvironmentMap] = js.undefined,
-      Image: js.UndefOr[Image] = js.undefined,
-      ModelDataUrl: js.UndefOr[Url] = js.undefined,
-      ModelPackageName: js.UndefOr[ArnOrName] = js.undefined): ContainerDefinition = {
+    def apply(ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
+              Environment: js.UndefOr[EnvironmentMap] = js.undefined,
+              Image: js.UndefOr[Image] = js.undefined,
+              ModelDataUrl: js.UndefOr[Url] = js.undefined,
+              ModelPackageName: js.UndefOr[ArnOrName] = js.undefined): ContainerDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContainerHostname" -> ContainerHostname.map { x => x.asInstanceOf[js.Any] },
-        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
-        "Image" -> Image.map { x => x.asInstanceOf[js.Any] },
-        "ModelDataUrl" -> ModelDataUrl.map { x => x.asInstanceOf[js.Any] },
-        "ModelPackageName" -> ModelPackageName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContainerHostname" -> ContainerHostname.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Environment" -> Environment.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Image" -> Image.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelDataUrl" -> ModelDataUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelPackageName" -> ModelPackageName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContainerDefinition]
     }
@@ -855,14 +926,14 @@ package sagemaker {
 
   object ContentClassifierEnum {
     val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation"
-    val FreeOfAdultContent = "FreeOfAdultContent"
+    val FreeOfAdultContent                      = "FreeOfAdultContent"
 
     val values = IndexedSeq(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
   /**
-   * A list of continuous hyperparameters to tune.
-   */
+    * A list of continuous hyperparameters to tune.
+    */
   @js.native
   trait ContinuousParameterRange extends js.Object {
     var MaxValue: ParameterValue
@@ -871,22 +942,20 @@ package sagemaker {
   }
 
   object ContinuousParameterRange {
-    def apply(
-      MaxValue: ParameterValue,
-      MinValue: ParameterValue,
-      Name: ParameterKey): ContinuousParameterRange = {
+    def apply(MaxValue: ParameterValue, MinValue: ParameterValue, Name: ParameterKey): ContinuousParameterRange = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Name"     -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinuousParameterRange]
     }
   }
 
   /**
-   * Defines the possible values for a continuous hyperparameter.
-   */
+    * Defines the possible values for a continuous hyperparameter.
+    */
   @js.native
   trait ContinuousParameterRangeSpecification extends js.Object {
     var MaxValue: ParameterValue
@@ -894,12 +963,11 @@ package sagemaker {
   }
 
   object ContinuousParameterRangeSpecification {
-    def apply(
-      MaxValue: ParameterValue,
-      MinValue: ParameterValue): ContinuousParameterRangeSpecification = {
+    def apply(MaxValue: ParameterValue, MinValue: ParameterValue): ContinuousParameterRangeSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
-        "MinValue" -> MinValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "MinValue" -> MinValue.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContinuousParameterRangeSpecification]
     }
@@ -917,19 +985,29 @@ package sagemaker {
 
   object CreateAlgorithmInput {
     def apply(
-      AlgorithmName: EntityName,
-      TrainingSpecification: TrainingSpecification,
-      AlgorithmDescription: js.UndefOr[EntityDescription] = js.undefined,
-      CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
-      InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
-      ValidationSpecification: js.UndefOr[AlgorithmValidationSpecification] = js.undefined): CreateAlgorithmInput = {
+        AlgorithmName: EntityName,
+        TrainingSpecification: TrainingSpecification,
+        AlgorithmDescription: js.UndefOr[EntityDescription] = js.undefined,
+        CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
+        InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
+        ValidationSpecification: js.UndefOr[AlgorithmValidationSpecification] = js.undefined
+    ): CreateAlgorithmInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any],
+        "AlgorithmName"         -> AlgorithmName.asInstanceOf[js.Any],
         "TrainingSpecification" -> TrainingSpecification.asInstanceOf[js.Any],
-        "AlgorithmDescription" -> AlgorithmDescription.map { x => x.asInstanceOf[js.Any] },
-        "CertifyForMarketplace" -> CertifyForMarketplace.map { x => x.asInstanceOf[js.Any] },
-        "InferenceSpecification" -> InferenceSpecification.map { x => x.asInstanceOf[js.Any] },
-        "ValidationSpecification" -> ValidationSpecification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AlgorithmDescription" -> AlgorithmDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertifyForMarketplace" -> CertifyForMarketplace.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InferenceSpecification" -> InferenceSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ValidationSpecification" -> ValidationSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAlgorithmInput]
     }
@@ -941,10 +1019,9 @@ package sagemaker {
   }
 
   object CreateAlgorithmOutput {
-    def apply(
-      AlgorithmArn: AlgorithmArn): CreateAlgorithmOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AlgorithmArn: AlgorithmArn): CreateAlgorithmOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAlgorithmOutput]
     }
@@ -957,12 +1034,11 @@ package sagemaker {
   }
 
   object CreateCodeRepositoryInput {
-    def apply(
-      CodeRepositoryName: EntityName,
-      GitConfig: GitConfig): CreateCodeRepositoryInput = {
+    def apply(CodeRepositoryName: EntityName, GitConfig: GitConfig): CreateCodeRepositoryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
-        "GitConfig" -> GitConfig.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "GitConfig"          -> GitConfig.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCodeRepositoryInput]
     }
@@ -974,10 +1050,9 @@ package sagemaker {
   }
 
   object CreateCodeRepositoryOutput {
-    def apply(
-      CodeRepositoryArn: CodeRepositoryArn): CreateCodeRepositoryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CodeRepositoryArn: CodeRepositoryArn): CreateCodeRepositoryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCodeRepositoryOutput]
     }
@@ -993,18 +1068,18 @@ package sagemaker {
   }
 
   object CreateCompilationJobRequest {
-    def apply(
-      CompilationJobName: EntityName,
-      InputConfig: InputConfig,
-      OutputConfig: OutputConfig,
-      RoleArn: RoleArn,
-      StoppingCondition: StoppingCondition): CreateCompilationJobRequest = {
+    def apply(CompilationJobName: EntityName,
+              InputConfig: InputConfig,
+              OutputConfig: OutputConfig,
+              RoleArn: RoleArn,
+              StoppingCondition: StoppingCondition): CreateCompilationJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
-        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
-        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "InputConfig"        -> InputConfig.asInstanceOf[js.Any],
+        "OutputConfig"       -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn"            -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition"  -> StoppingCondition.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCompilationJobRequest]
     }
@@ -1016,10 +1091,9 @@ package sagemaker {
   }
 
   object CreateCompilationJobResponse {
-    def apply(
-      CompilationJobArn: CompilationJobArn): CreateCompilationJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CompilationJobArn: CompilationJobArn): CreateCompilationJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateCompilationJobResponse]
     }
@@ -1034,16 +1108,20 @@ package sagemaker {
   }
 
   object CreateEndpointConfigInput {
-    def apply(
-      EndpointConfigName: EndpointConfigName,
-      ProductionVariants: ProductionVariantList,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateEndpointConfigInput = {
+    def apply(EndpointConfigName: EndpointConfigName,
+              ProductionVariants: ProductionVariantList,
+              KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): CreateEndpointConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
         "ProductionVariants" -> ProductionVariants.asInstanceOf[js.Any],
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KmsKeyId" -> KmsKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointConfigInput]
     }
@@ -1055,10 +1133,9 @@ package sagemaker {
   }
 
   object CreateEndpointConfigOutput {
-    def apply(
-      EndpointConfigArn: EndpointConfigArn): CreateEndpointConfigOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointConfigArn: EndpointConfigArn): CreateEndpointConfigOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointConfigOutput]
     }
@@ -1072,14 +1149,16 @@ package sagemaker {
   }
 
   object CreateEndpointInput {
-    def apply(
-      EndpointConfigName: EndpointConfigName,
-      EndpointName: EndpointName,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateEndpointInput = {
+    def apply(EndpointConfigName: EndpointConfigName,
+              EndpointName: EndpointName,
+              Tags: js.UndefOr[TagList] = js.undefined): CreateEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointName"       -> EndpointName.asInstanceOf[js.Any],
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointInput]
     }
@@ -1091,10 +1170,9 @@ package sagemaker {
   }
 
   object CreateEndpointOutput {
-    def apply(
-      EndpointArn: EndpointArn): CreateEndpointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointArn: EndpointArn): CreateEndpointOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointArn" -> EndpointArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateEndpointOutput]
     }
@@ -1111,17 +1189,23 @@ package sagemaker {
 
   object CreateHyperParameterTuningJobRequest {
     def apply(
-      HyperParameterTuningJobConfig: HyperParameterTuningJobConfig,
-      HyperParameterTuningJobName: HyperParameterTuningJobName,
-      TrainingJobDefinition: HyperParameterTrainingJobDefinition,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig] = js.undefined): CreateHyperParameterTuningJobRequest = {
+        HyperParameterTuningJobConfig: HyperParameterTuningJobConfig,
+        HyperParameterTuningJobName: HyperParameterTuningJobName,
+        TrainingJobDefinition: HyperParameterTrainingJobDefinition,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig] = js.undefined
+    ): CreateHyperParameterTuningJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HyperParameterTuningJobConfig" -> HyperParameterTuningJobConfig.asInstanceOf[js.Any],
-        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any],
-        "TrainingJobDefinition" -> TrainingJobDefinition.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "WarmStartConfig" -> WarmStartConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any],
+        "TrainingJobDefinition"         -> TrainingJobDefinition.asInstanceOf[js.Any],
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WarmStartConfig" -> WarmStartConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHyperParameterTuningJobRequest]
     }
@@ -1133,10 +1217,10 @@ package sagemaker {
   }
 
   object CreateHyperParameterTuningJobResponse {
-    def apply(
-      HyperParameterTuningJobArn: HyperParameterTuningJobArn): CreateHyperParameterTuningJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HyperParameterTuningJobArn" -> HyperParameterTuningJobArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(HyperParameterTuningJobArn: HyperParameterTuningJobArn): CreateHyperParameterTuningJobResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("HyperParameterTuningJobArn" -> HyperParameterTuningJobArn.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateHyperParameterTuningJobResponse]
     }
@@ -1157,28 +1241,36 @@ package sagemaker {
   }
 
   object CreateLabelingJobRequest {
-    def apply(
-      HumanTaskConfig: HumanTaskConfig,
-      InputConfig: LabelingJobInputConfig,
-      LabelAttributeName: LabelAttributeName,
-      LabelingJobName: LabelingJobName,
-      OutputConfig: LabelingJobOutputConfig,
-      RoleArn: RoleArn,
-      LabelCategoryConfigS3Uri: js.UndefOr[S3Uri] = js.undefined,
-      LabelingJobAlgorithmsConfig: js.UndefOr[LabelingJobAlgorithmsConfig] = js.undefined,
-      StoppingConditions: js.UndefOr[LabelingJobStoppingConditions] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateLabelingJobRequest = {
+    def apply(HumanTaskConfig: HumanTaskConfig,
+              InputConfig: LabelingJobInputConfig,
+              LabelAttributeName: LabelAttributeName,
+              LabelingJobName: LabelingJobName,
+              OutputConfig: LabelingJobOutputConfig,
+              RoleArn: RoleArn,
+              LabelCategoryConfigS3Uri: js.UndefOr[S3Uri] = js.undefined,
+              LabelingJobAlgorithmsConfig: js.UndefOr[LabelingJobAlgorithmsConfig] = js.undefined,
+              StoppingConditions: js.UndefOr[LabelingJobStoppingConditions] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): CreateLabelingJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HumanTaskConfig" -> HumanTaskConfig.asInstanceOf[js.Any],
-        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
+        "HumanTaskConfig"    -> HumanTaskConfig.asInstanceOf[js.Any],
+        "InputConfig"        -> InputConfig.asInstanceOf[js.Any],
         "LabelAttributeName" -> LabelAttributeName.asInstanceOf[js.Any],
-        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any],
-        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "LabelCategoryConfigS3Uri" -> LabelCategoryConfigS3Uri.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobAlgorithmsConfig" -> LabelingJobAlgorithmsConfig.map { x => x.asInstanceOf[js.Any] },
-        "StoppingConditions" -> StoppingConditions.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LabelingJobName"    -> LabelingJobName.asInstanceOf[js.Any],
+        "OutputConfig"       -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn"            -> RoleArn.asInstanceOf[js.Any],
+        "LabelCategoryConfigS3Uri" -> LabelCategoryConfigS3Uri.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobAlgorithmsConfig" -> LabelingJobAlgorithmsConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StoppingConditions" -> StoppingConditions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLabelingJobRequest]
     }
@@ -1190,10 +1282,9 @@ package sagemaker {
   }
 
   object CreateLabelingJobResponse {
-    def apply(
-      LabelingJobArn: LabelingJobArn): CreateLabelingJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LabelingJobArn" -> LabelingJobArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(LabelingJobArn: LabelingJobArn): CreateLabelingJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("LabelingJobArn" -> LabelingJobArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateLabelingJobResponse]
     }
@@ -1211,22 +1302,32 @@ package sagemaker {
   }
 
   object CreateModelInput {
-    def apply(
-      ExecutionRoleArn: RoleArn,
-      ModelName: ModelName,
-      Containers: js.UndefOr[ContainerDefinitionList] = js.undefined,
-      EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
-      PrimaryContainer: js.UndefOr[ContainerDefinition] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): CreateModelInput = {
+    def apply(ExecutionRoleArn: RoleArn,
+              ModelName: ModelName,
+              Containers: js.UndefOr[ContainerDefinitionList] = js.undefined,
+              EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+              PrimaryContainer: js.UndefOr[ContainerDefinition] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined,
+              VpcConfig: js.UndefOr[VpcConfig] = js.undefined): CreateModelInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
-        "ModelName" -> ModelName.asInstanceOf[js.Any],
-        "Containers" -> Containers.map { x => x.asInstanceOf[js.Any] },
-        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x => x.asInstanceOf[js.Any] },
-        "PrimaryContainer" -> PrimaryContainer.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ModelName"        -> ModelName.asInstanceOf[js.Any],
+        "Containers" -> Containers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrimaryContainer" -> PrimaryContainer.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcConfig" -> VpcConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelInput]
     }
@@ -1238,10 +1339,9 @@ package sagemaker {
   }
 
   object CreateModelOutput {
-    def apply(
-      ModelArn: ModelArn): CreateModelOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelArn" -> ModelArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ModelArn: ModelArn): CreateModelOutput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("ModelArn" -> ModelArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelOutput]
     }
@@ -1259,19 +1359,31 @@ package sagemaker {
 
   object CreateModelPackageInput {
     def apply(
-      ModelPackageName: EntityName,
-      CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
-      InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
-      ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
-      SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
-      ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined): CreateModelPackageInput = {
+        ModelPackageName: EntityName,
+        CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
+        InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
+        ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
+        SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
+        ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined
+    ): CreateModelPackageInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any],
-        "CertifyForMarketplace" -> CertifyForMarketplace.map { x => x.asInstanceOf[js.Any] },
-        "InferenceSpecification" -> InferenceSpecification.map { x => x.asInstanceOf[js.Any] },
-        "ModelPackageDescription" -> ModelPackageDescription.map { x => x.asInstanceOf[js.Any] },
-        "SourceAlgorithmSpecification" -> SourceAlgorithmSpecification.map { x => x.asInstanceOf[js.Any] },
-        "ValidationSpecification" -> ValidationSpecification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertifyForMarketplace" -> CertifyForMarketplace.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InferenceSpecification" -> InferenceSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelPackageDescription" -> ModelPackageDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceAlgorithmSpecification" -> SourceAlgorithmSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ValidationSpecification" -> ValidationSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelPackageInput]
     }
@@ -1283,10 +1395,9 @@ package sagemaker {
   }
 
   object CreateModelPackageOutput {
-    def apply(
-      ModelPackageArn: ModelPackageArn): CreateModelPackageOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ModelPackageArn: ModelPackageArn): CreateModelPackageOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateModelPackageOutput]
     }
@@ -1311,33 +1422,55 @@ package sagemaker {
 
   object CreateNotebookInstanceInput {
     def apply(
-      InstanceType: InstanceType,
-      NotebookInstanceName: NotebookInstanceName,
-      RoleArn: RoleArn,
-      AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
-      AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
-      DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
-      DirectInternetAccess: js.UndefOr[DirectInternetAccess] = js.undefined,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-      LifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
-      SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
-      SubnetId: js.UndefOr[SubnetId] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      VolumeSizeInGB: js.UndefOr[NotebookInstanceVolumeSizeInGB] = js.undefined): CreateNotebookInstanceInput = {
+        InstanceType: InstanceType,
+        NotebookInstanceName: NotebookInstanceName,
+        RoleArn: RoleArn,
+        AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
+        AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
+        DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
+        DirectInternetAccess: js.UndefOr[DirectInternetAccess] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        LifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VolumeSizeInGB: js.UndefOr[NotebookInstanceVolumeSizeInGB] = js.undefined
+    ): CreateNotebookInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "InstanceType"         -> InstanceType.asInstanceOf[js.Any],
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "AcceleratorTypes" -> AcceleratorTypes.map { x => x.asInstanceOf[js.Any] },
-        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x => x.asInstanceOf[js.Any] },
-        "DefaultCodeRepository" -> DefaultCodeRepository.map { x => x.asInstanceOf[js.Any] },
-        "DirectInternetAccess" -> DirectInternetAccess.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleConfigName" -> LifecycleConfigName.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroupIds" -> SecurityGroupIds.map { x => x.asInstanceOf[js.Any] },
-        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "VolumeSizeInGB" -> VolumeSizeInGB.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn"              -> RoleArn.asInstanceOf[js.Any],
+        "AcceleratorTypes" -> AcceleratorTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultCodeRepository" -> DefaultCodeRepository.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DirectInternetAccess" -> DirectInternetAccess.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "KmsKeyId" -> KmsKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LifecycleConfigName" -> LifecycleConfigName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecurityGroupIds" -> SecurityGroupIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubnetId" -> SubnetId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeSizeInGB" -> VolumeSizeInGB.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotebookInstanceInput]
     }
@@ -1352,15 +1485,23 @@ package sagemaker {
 
   object CreateNotebookInstanceLifecycleConfigInput {
     def apply(
-      NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
-      OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
-      OnStart: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined): CreateNotebookInstanceLifecycleConfigInput = {
+        NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
+        OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
+        OnStart: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined
+    ): CreateNotebookInstanceLifecycleConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any],
-        "OnCreate" -> OnCreate.map { x => x.asInstanceOf[js.Any] },
-        "OnStart" -> OnStart.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OnCreate" -> OnCreate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OnStart" -> OnStart.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotebookInstanceLifecycleConfigInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[CreateNotebookInstanceLifecycleConfigInput]
     }
   }
 
@@ -1371,11 +1512,17 @@ package sagemaker {
 
   object CreateNotebookInstanceLifecycleConfigOutput {
     def apply(
-      NotebookInstanceLifecycleConfigArn: js.UndefOr[NotebookInstanceLifecycleConfigArn] = js.undefined): CreateNotebookInstanceLifecycleConfigOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceLifecycleConfigArn" -> NotebookInstanceLifecycleConfigArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NotebookInstanceLifecycleConfigArn: js.UndefOr[NotebookInstanceLifecycleConfigArn] = js.undefined
+    ): CreateNotebookInstanceLifecycleConfigOutput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("NotebookInstanceLifecycleConfigArn" -> NotebookInstanceLifecycleConfigArn.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotebookInstanceLifecycleConfigOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[CreateNotebookInstanceLifecycleConfigOutput]
     }
   }
 
@@ -1385,10 +1532,10 @@ package sagemaker {
   }
 
   object CreateNotebookInstanceOutput {
-    def apply(
-      NotebookInstanceArn: js.UndefOr[NotebookInstanceArn] = js.undefined): CreateNotebookInstanceOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceArn" -> NotebookInstanceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NotebookInstanceArn: js.UndefOr[NotebookInstanceArn] = js.undefined): CreateNotebookInstanceOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NotebookInstanceArn" -> NotebookInstanceArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateNotebookInstanceOutput]
     }
@@ -1402,11 +1549,15 @@ package sagemaker {
 
   object CreatePresignedNotebookInstanceUrlInput {
     def apply(
-      NotebookInstanceName: NotebookInstanceName,
-      SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds] = js.undefined): CreatePresignedNotebookInstanceUrlInput = {
+        NotebookInstanceName: NotebookInstanceName,
+        SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds] = js.undefined
+    ): CreatePresignedNotebookInstanceUrlInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any],
-        "SessionExpirationDurationInSeconds" -> SessionExpirationDurationInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SessionExpirationDurationInSeconds" -> SessionExpirationDurationInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePresignedNotebookInstanceUrlInput]
     }
@@ -1419,9 +1570,11 @@ package sagemaker {
 
   object CreatePresignedNotebookInstanceUrlOutput {
     def apply(
-      AuthorizedUrl: js.UndefOr[NotebookInstanceUrl] = js.undefined): CreatePresignedNotebookInstanceUrlOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AuthorizedUrl" -> AuthorizedUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        AuthorizedUrl: js.UndefOr[NotebookInstanceUrl] = js.undefined
+    ): CreatePresignedNotebookInstanceUrlOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("AuthorizedUrl" -> AuthorizedUrl.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreatePresignedNotebookInstanceUrlOutput]
     }
@@ -1443,30 +1596,40 @@ package sagemaker {
   }
 
   object CreateTrainingJobRequest {
-    def apply(
-      AlgorithmSpecification: AlgorithmSpecification,
-      OutputDataConfig: OutputDataConfig,
-      ResourceConfig: ResourceConfig,
-      RoleArn: RoleArn,
-      StoppingCondition: StoppingCondition,
-      TrainingJobName: TrainingJobName,
-      EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
-      HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): CreateTrainingJobRequest = {
+    def apply(AlgorithmSpecification: AlgorithmSpecification,
+              OutputDataConfig: OutputDataConfig,
+              ResourceConfig: ResourceConfig,
+              RoleArn: RoleArn,
+              StoppingCondition: StoppingCondition,
+              TrainingJobName: TrainingJobName,
+              EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+              HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined,
+              VpcConfig: js.UndefOr[VpcConfig] = js.undefined): CreateTrainingJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlgorithmSpecification" -> AlgorithmSpecification.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
-        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any],
-        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x => x.asInstanceOf[js.Any] },
-        "HyperParameters" -> HyperParameters.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutputDataConfig"       -> OutputDataConfig.asInstanceOf[js.Any],
+        "ResourceConfig"         -> ResourceConfig.asInstanceOf[js.Any],
+        "RoleArn"                -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition"      -> StoppingCondition.asInstanceOf[js.Any],
+        "TrainingJobName"        -> TrainingJobName.asInstanceOf[js.Any],
+        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HyperParameters" -> HyperParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcConfig" -> VpcConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTrainingJobRequest]
     }
@@ -1478,10 +1641,9 @@ package sagemaker {
   }
 
   object CreateTrainingJobResponse {
-    def apply(
-      TrainingJobArn: TrainingJobArn): CreateTrainingJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(TrainingJobArn: TrainingJobArn): CreateTrainingJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTrainingJobResponse]
     }
@@ -1502,28 +1664,38 @@ package sagemaker {
   }
 
   object CreateTransformJobRequest {
-    def apply(
-      ModelName: ModelName,
-      TransformInput: TransformInput,
-      TransformJobName: TransformJobName,
-      TransformOutput: TransformOutput,
-      TransformResources: TransformResources,
-      BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
-      Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
-      MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
-      MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateTransformJobRequest = {
+    def apply(ModelName: ModelName,
+              TransformInput: TransformInput,
+              TransformJobName: TransformJobName,
+              TransformOutput: TransformOutput,
+              TransformResources: TransformResources,
+              BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
+              Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
+              MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
+              MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): CreateTransformJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ModelName" -> ModelName.asInstanceOf[js.Any],
-        "TransformInput" -> TransformInput.asInstanceOf[js.Any],
-        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any],
-        "TransformOutput" -> TransformOutput.asInstanceOf[js.Any],
+        "ModelName"          -> ModelName.asInstanceOf[js.Any],
+        "TransformInput"     -> TransformInput.asInstanceOf[js.Any],
+        "TransformJobName"   -> TransformJobName.asInstanceOf[js.Any],
+        "TransformOutput"    -> TransformOutput.asInstanceOf[js.Any],
         "TransformResources" -> TransformResources.asInstanceOf[js.Any],
-        "BatchStrategy" -> BatchStrategy.map { x => x.asInstanceOf[js.Any] },
-        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
-        "MaxConcurrentTransforms" -> MaxConcurrentTransforms.map { x => x.asInstanceOf[js.Any] },
-        "MaxPayloadInMB" -> MaxPayloadInMB.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BatchStrategy" -> BatchStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Environment" -> Environment.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxConcurrentTransforms" -> MaxConcurrentTransforms.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxPayloadInMB" -> MaxPayloadInMB.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransformJobRequest]
     }
@@ -1535,10 +1707,9 @@ package sagemaker {
   }
 
   object CreateTransformJobResponse {
-    def apply(
-      TransformJobArn: TransformJobArn): CreateTransformJobResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TransformJobArn" -> TransformJobArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(TransformJobArn: TransformJobArn): CreateTransformJobResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("TransformJobArn" -> TransformJobArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateTransformJobResponse]
     }
@@ -1553,16 +1724,18 @@ package sagemaker {
   }
 
   object CreateWorkteamRequest {
-    def apply(
-      Description: String200,
-      MemberDefinitions: MemberDefinitions,
-      WorkteamName: WorkteamName,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateWorkteamRequest = {
+    def apply(Description: String200,
+              MemberDefinitions: MemberDefinitions,
+              WorkteamName: WorkteamName,
+              Tags: js.UndefOr[TagList] = js.undefined): CreateWorkteamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.asInstanceOf[js.Any],
+        "Description"       -> Description.asInstanceOf[js.Any],
         "MemberDefinitions" -> MemberDefinitions.asInstanceOf[js.Any],
-        "WorkteamName" -> WorkteamName.asInstanceOf[js.Any],
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkteamName"      -> WorkteamName.asInstanceOf[js.Any],
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkteamRequest]
     }
@@ -1574,28 +1747,27 @@ package sagemaker {
   }
 
   object CreateWorkteamResponse {
-    def apply(
-      WorkteamArn: js.UndefOr[WorkteamArn] = js.undefined): CreateWorkteamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkteamArn" -> WorkteamArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(WorkteamArn: js.UndefOr[WorkteamArn] = js.undefined): CreateWorkteamResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("WorkteamArn" -> WorkteamArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateWorkteamResponse]
     }
   }
 
   /**
-   * Describes the location of the channel data.
-   */
+    * Describes the location of the channel data.
+    */
   @js.native
   trait DataSource extends js.Object {
     var S3DataSource: S3DataSource
   }
 
   object DataSource {
-    def apply(
-      S3DataSource: S3DataSource): DataSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3DataSource" -> S3DataSource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3DataSource: S3DataSource): DataSource = {
+      val _fields = IndexedSeq[(String, js.Any)]("S3DataSource" -> S3DataSource.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DataSource]
     }
@@ -1607,10 +1779,9 @@ package sagemaker {
   }
 
   object DeleteAlgorithmInput {
-    def apply(
-      AlgorithmName: EntityName): DeleteAlgorithmInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AlgorithmName: EntityName): DeleteAlgorithmInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAlgorithmInput]
     }
@@ -1622,10 +1793,9 @@ package sagemaker {
   }
 
   object DeleteCodeRepositoryInput {
-    def apply(
-      CodeRepositoryName: EntityName): DeleteCodeRepositoryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CodeRepositoryName: EntityName): DeleteCodeRepositoryInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteCodeRepositoryInput]
     }
@@ -1637,10 +1807,9 @@ package sagemaker {
   }
 
   object DeleteEndpointConfigInput {
-    def apply(
-      EndpointConfigName: EndpointConfigName): DeleteEndpointConfigInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointConfigName: EndpointConfigName): DeleteEndpointConfigInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointConfigInput]
     }
@@ -1652,10 +1821,9 @@ package sagemaker {
   }
 
   object DeleteEndpointInput {
-    def apply(
-      EndpointName: EndpointName): DeleteEndpointInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointName: EndpointName): DeleteEndpointInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointName" -> EndpointName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteEndpointInput]
     }
@@ -1667,10 +1835,9 @@ package sagemaker {
   }
 
   object DeleteModelInput {
-    def apply(
-      ModelName: ModelName): DeleteModelInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelName" -> ModelName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ModelName: ModelName): DeleteModelInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ModelName" -> ModelName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteModelInput]
     }
@@ -1682,10 +1849,9 @@ package sagemaker {
   }
 
   object DeleteModelPackageInput {
-    def apply(
-      ModelPackageName: EntityName): DeleteModelPackageInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ModelPackageName: EntityName): DeleteModelPackageInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteModelPackageInput]
     }
@@ -1697,10 +1863,9 @@ package sagemaker {
   }
 
   object DeleteNotebookInstanceInput {
-    def apply(
-      NotebookInstanceName: NotebookInstanceName): DeleteNotebookInstanceInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(NotebookInstanceName: NotebookInstanceName): DeleteNotebookInstanceInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotebookInstanceInput]
     }
@@ -1713,11 +1878,15 @@ package sagemaker {
 
   object DeleteNotebookInstanceLifecycleConfigInput {
     def apply(
-      NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName): DeleteNotebookInstanceLifecycleConfigInput = {
+        NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName
+    ): DeleteNotebookInstanceLifecycleConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteNotebookInstanceLifecycleConfigInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DeleteNotebookInstanceLifecycleConfigInput]
     }
   }
 
@@ -1728,21 +1897,18 @@ package sagemaker {
   }
 
   object DeleteTagsInput {
-    def apply(
-      ResourceArn: ResourceArn,
-      TagKeys: TagKeyList): DeleteTagsInput = {
+    def apply(ResourceArn: ResourceArn, TagKeys: TagKeyList): DeleteTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteTagsInput]
     }
   }
 
   @js.native
-  trait DeleteTagsOutput extends js.Object {
-
-  }
+  trait DeleteTagsOutput extends js.Object {}
 
   object DeleteTagsOutput {
     def apply(): DeleteTagsOutput = {
@@ -1758,10 +1924,9 @@ package sagemaker {
   }
 
   object DeleteWorkteamRequest {
-    def apply(
-      WorkteamName: WorkteamName): DeleteWorkteamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(WorkteamName: WorkteamName): DeleteWorkteamRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("WorkteamName" -> WorkteamName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkteamRequest]
     }
@@ -1773,19 +1938,18 @@ package sagemaker {
   }
 
   object DeleteWorkteamResponse {
-    def apply(
-      Success: Success): DeleteWorkteamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Success" -> Success.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Success: Success): DeleteWorkteamResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Success" -> Success.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteWorkteamResponse]
     }
   }
 
   /**
-   * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.
-   *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
-   */
+    * Gets the Amazon EC2 Container Registry path of the docker image of the model that is hosted in this <a>ProductionVariant</a>.
+    *  If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see [[http://docs.aws.amazon.com//AmazonECR/latest/userguide/docker-pull-ecr-image.html|Pulling an Image]] in the <i>Amazon ECR User Guide</i>.
+    */
   @js.native
   trait DeployedImage extends js.Object {
     var ResolutionTime: js.UndefOr[Timestamp]
@@ -1794,14 +1958,20 @@ package sagemaker {
   }
 
   object DeployedImage {
-    def apply(
-      ResolutionTime: js.UndefOr[Timestamp] = js.undefined,
-      ResolvedImage: js.UndefOr[Image] = js.undefined,
-      SpecifiedImage: js.UndefOr[Image] = js.undefined): DeployedImage = {
+    def apply(ResolutionTime: js.UndefOr[Timestamp] = js.undefined,
+              ResolvedImage: js.UndefOr[Image] = js.undefined,
+              SpecifiedImage: js.UndefOr[Image] = js.undefined): DeployedImage = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ResolutionTime" -> ResolutionTime.map { x => x.asInstanceOf[js.Any] },
-        "ResolvedImage" -> ResolvedImage.map { x => x.asInstanceOf[js.Any] },
-        "SpecifiedImage" -> SpecifiedImage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ResolutionTime" -> ResolutionTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResolvedImage" -> ResolvedImage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SpecifiedImage" -> SpecifiedImage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeployedImage]
     }
@@ -1813,10 +1983,9 @@ package sagemaker {
   }
 
   object DescribeAlgorithmInput {
-    def apply(
-      AlgorithmName: ArnOrName): DescribeAlgorithmInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AlgorithmName: ArnOrName): DescribeAlgorithmInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAlgorithmInput]
     }
@@ -1839,29 +2008,41 @@ package sagemaker {
 
   object DescribeAlgorithmOutput {
     def apply(
-      AlgorithmArn: AlgorithmArn,
-      AlgorithmName: EntityName,
-      AlgorithmStatus: AlgorithmStatus,
-      AlgorithmStatusDetails: AlgorithmStatusDetails,
-      CreationTime: CreationTime,
-      TrainingSpecification: TrainingSpecification,
-      AlgorithmDescription: js.UndefOr[EntityDescription] = js.undefined,
-      CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
-      InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
-      ProductId: js.UndefOr[ProductId] = js.undefined,
-      ValidationSpecification: js.UndefOr[AlgorithmValidationSpecification] = js.undefined): DescribeAlgorithmOutput = {
+        AlgorithmArn: AlgorithmArn,
+        AlgorithmName: EntityName,
+        AlgorithmStatus: AlgorithmStatus,
+        AlgorithmStatusDetails: AlgorithmStatusDetails,
+        CreationTime: CreationTime,
+        TrainingSpecification: TrainingSpecification,
+        AlgorithmDescription: js.UndefOr[EntityDescription] = js.undefined,
+        CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
+        InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
+        ProductId: js.UndefOr[ProductId] = js.undefined,
+        ValidationSpecification: js.UndefOr[AlgorithmValidationSpecification] = js.undefined
+    ): DescribeAlgorithmOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AlgorithmArn" -> AlgorithmArn.asInstanceOf[js.Any],
-        "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any],
-        "AlgorithmStatus" -> AlgorithmStatus.asInstanceOf[js.Any],
+        "AlgorithmArn"           -> AlgorithmArn.asInstanceOf[js.Any],
+        "AlgorithmName"          -> AlgorithmName.asInstanceOf[js.Any],
+        "AlgorithmStatus"        -> AlgorithmStatus.asInstanceOf[js.Any],
         "AlgorithmStatusDetails" -> AlgorithmStatusDetails.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "TrainingSpecification" -> TrainingSpecification.asInstanceOf[js.Any],
-        "AlgorithmDescription" -> AlgorithmDescription.map { x => x.asInstanceOf[js.Any] },
-        "CertifyForMarketplace" -> CertifyForMarketplace.map { x => x.asInstanceOf[js.Any] },
-        "InferenceSpecification" -> InferenceSpecification.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] },
-        "ValidationSpecification" -> ValidationSpecification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"           -> CreationTime.asInstanceOf[js.Any],
+        "TrainingSpecification"  -> TrainingSpecification.asInstanceOf[js.Any],
+        "AlgorithmDescription" -> AlgorithmDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CertifyForMarketplace" -> CertifyForMarketplace.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InferenceSpecification" -> InferenceSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ValidationSpecification" -> ValidationSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeAlgorithmOutput]
     }
@@ -1873,10 +2054,9 @@ package sagemaker {
   }
 
   object DescribeCodeRepositoryInput {
-    def apply(
-      CodeRepositoryName: EntityName): DescribeCodeRepositoryInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CodeRepositoryName: EntityName): DescribeCodeRepositoryInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCodeRepositoryInput]
     }
@@ -1892,18 +2072,20 @@ package sagemaker {
   }
 
   object DescribeCodeRepositoryOutput {
-    def apply(
-      CodeRepositoryArn: CodeRepositoryArn,
-      CodeRepositoryName: EntityName,
-      CreationTime: CreationTime,
-      LastModifiedTime: LastModifiedTime,
-      GitConfig: js.UndefOr[GitConfig] = js.undefined): DescribeCodeRepositoryOutput = {
+    def apply(CodeRepositoryArn: CodeRepositoryArn,
+              CodeRepositoryName: EntityName,
+              CreationTime: CreationTime,
+              LastModifiedTime: LastModifiedTime,
+              GitConfig: js.UndefOr[GitConfig] = js.undefined): DescribeCodeRepositoryOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any],
+        "CodeRepositoryArn"  -> CodeRepositoryArn.asInstanceOf[js.Any],
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
-        "GitConfig" -> GitConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "LastModifiedTime"   -> LastModifiedTime.asInstanceOf[js.Any],
+        "GitConfig" -> GitConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCodeRepositoryOutput]
     }
@@ -1915,10 +2097,9 @@ package sagemaker {
   }
 
   object DescribeCompilationJobRequest {
-    def apply(
-      CompilationJobName: EntityName): DescribeCompilationJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CompilationJobName: EntityName): DescribeCompilationJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCompilationJobRequest]
     }
@@ -1942,34 +2123,38 @@ package sagemaker {
   }
 
   object DescribeCompilationJobResponse {
-    def apply(
-      CompilationJobArn: CompilationJobArn,
-      CompilationJobName: EntityName,
-      CompilationJobStatus: CompilationJobStatus,
-      CreationTime: CreationTime,
-      FailureReason: FailureReason,
-      InputConfig: InputConfig,
-      LastModifiedTime: LastModifiedTime,
-      ModelArtifacts: ModelArtifacts,
-      OutputConfig: OutputConfig,
-      RoleArn: RoleArn,
-      StoppingCondition: StoppingCondition,
-      CompilationEndTime: js.UndefOr[Timestamp] = js.undefined,
-      CompilationStartTime: js.UndefOr[Timestamp] = js.undefined): DescribeCompilationJobResponse = {
+    def apply(CompilationJobArn: CompilationJobArn,
+              CompilationJobName: EntityName,
+              CompilationJobStatus: CompilationJobStatus,
+              CreationTime: CreationTime,
+              FailureReason: FailureReason,
+              InputConfig: InputConfig,
+              LastModifiedTime: LastModifiedTime,
+              ModelArtifacts: ModelArtifacts,
+              OutputConfig: OutputConfig,
+              RoleArn: RoleArn,
+              StoppingCondition: StoppingCondition,
+              CompilationEndTime: js.UndefOr[Timestamp] = js.undefined,
+              CompilationStartTime: js.UndefOr[Timestamp] = js.undefined): DescribeCompilationJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any],
-        "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
+        "CompilationJobArn"    -> CompilationJobArn.asInstanceOf[js.Any],
+        "CompilationJobName"   -> CompilationJobName.asInstanceOf[js.Any],
         "CompilationJobStatus" -> CompilationJobStatus.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "FailureReason" -> FailureReason.asInstanceOf[js.Any],
-        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
-        "ModelArtifacts" -> ModelArtifacts.asInstanceOf[js.Any],
-        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
-        "CompilationEndTime" -> CompilationEndTime.map { x => x.asInstanceOf[js.Any] },
-        "CompilationStartTime" -> CompilationStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
+        "FailureReason"        -> FailureReason.asInstanceOf[js.Any],
+        "InputConfig"          -> InputConfig.asInstanceOf[js.Any],
+        "LastModifiedTime"     -> LastModifiedTime.asInstanceOf[js.Any],
+        "ModelArtifacts"       -> ModelArtifacts.asInstanceOf[js.Any],
+        "OutputConfig"         -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn"              -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition"    -> StoppingCondition.asInstanceOf[js.Any],
+        "CompilationEndTime" -> CompilationEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CompilationStartTime" -> CompilationStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeCompilationJobResponse]
     }
@@ -1981,10 +2166,9 @@ package sagemaker {
   }
 
   object DescribeEndpointConfigInput {
-    def apply(
-      EndpointConfigName: EndpointConfigName): DescribeEndpointConfigInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointConfigName: EndpointConfigName): DescribeEndpointConfigInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointConfigInput]
     }
@@ -2000,18 +2184,20 @@ package sagemaker {
   }
 
   object DescribeEndpointConfigOutput {
-    def apply(
-      CreationTime: Timestamp,
-      EndpointConfigArn: EndpointConfigArn,
-      EndpointConfigName: EndpointConfigName,
-      ProductionVariants: ProductionVariantList,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): DescribeEndpointConfigOutput = {
+    def apply(CreationTime: Timestamp,
+              EndpointConfigArn: EndpointConfigArn,
+              EndpointConfigName: EndpointConfigName,
+              ProductionVariants: ProductionVariantList,
+              KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): DescribeEndpointConfigOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any],
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "EndpointConfigArn"  -> EndpointConfigArn.asInstanceOf[js.Any],
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
         "ProductionVariants" -> ProductionVariants.asInstanceOf[js.Any],
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "KmsKeyId" -> KmsKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointConfigOutput]
     }
@@ -2023,10 +2209,9 @@ package sagemaker {
   }
 
   object DescribeEndpointInput {
-    def apply(
-      EndpointName: EndpointName): DescribeEndpointInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointName: EndpointName): DescribeEndpointInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointName" -> EndpointName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointInput]
     }
@@ -2045,24 +2230,28 @@ package sagemaker {
   }
 
   object DescribeEndpointOutput {
-    def apply(
-      CreationTime: Timestamp,
-      EndpointArn: EndpointArn,
-      EndpointConfigName: EndpointConfigName,
-      EndpointName: EndpointName,
-      EndpointStatus: EndpointStatus,
-      LastModifiedTime: Timestamp,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      ProductionVariants: js.UndefOr[ProductionVariantSummaryList] = js.undefined): DescribeEndpointOutput = {
+    def apply(CreationTime: Timestamp,
+              EndpointArn: EndpointArn,
+              EndpointConfigName: EndpointConfigName,
+              EndpointName: EndpointName,
+              EndpointStatus: EndpointStatus,
+              LastModifiedTime: Timestamp,
+              FailureReason: js.UndefOr[FailureReason] = js.undefined,
+              ProductionVariants: js.UndefOr[ProductionVariantSummaryList] = js.undefined): DescribeEndpointOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "EndpointArn"        -> EndpointArn.asInstanceOf[js.Any],
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "EndpointStatus" -> EndpointStatus.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "ProductionVariants" -> ProductionVariants.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EndpointName"       -> EndpointName.asInstanceOf[js.Any],
+        "EndpointStatus"     -> EndpointStatus.asInstanceOf[js.Any],
+        "LastModifiedTime"   -> LastModifiedTime.asInstanceOf[js.Any],
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductionVariants" -> ProductionVariants.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeEndpointOutput]
     }
@@ -2074,10 +2263,10 @@ package sagemaker {
   }
 
   object DescribeHyperParameterTuningJobRequest {
-    def apply(
-      HyperParameterTuningJobName: HyperParameterTuningJobName): DescribeHyperParameterTuningJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(HyperParameterTuningJobName: HyperParameterTuningJobName): DescribeHyperParameterTuningJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHyperParameterTuningJobRequest]
     }
@@ -2103,35 +2292,49 @@ package sagemaker {
 
   object DescribeHyperParameterTuningJobResponse {
     def apply(
-      CreationTime: Timestamp,
-      HyperParameterTuningJobArn: HyperParameterTuningJobArn,
-      HyperParameterTuningJobConfig: HyperParameterTuningJobConfig,
-      HyperParameterTuningJobName: HyperParameterTuningJobName,
-      HyperParameterTuningJobStatus: HyperParameterTuningJobStatus,
-      ObjectiveStatusCounters: ObjectiveStatusCounters,
-      TrainingJobDefinition: HyperParameterTrainingJobDefinition,
-      TrainingJobStatusCounters: TrainingJobStatusCounters,
-      BestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary] = js.undefined,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      HyperParameterTuningEndTime: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
-      OverallBestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary] = js.undefined,
-      WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig] = js.undefined): DescribeHyperParameterTuningJobResponse = {
+        CreationTime: Timestamp,
+        HyperParameterTuningJobArn: HyperParameterTuningJobArn,
+        HyperParameterTuningJobConfig: HyperParameterTuningJobConfig,
+        HyperParameterTuningJobName: HyperParameterTuningJobName,
+        HyperParameterTuningJobStatus: HyperParameterTuningJobStatus,
+        ObjectiveStatusCounters: ObjectiveStatusCounters,
+        TrainingJobDefinition: HyperParameterTrainingJobDefinition,
+        TrainingJobStatusCounters: TrainingJobStatusCounters,
+        BestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        HyperParameterTuningEndTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        OverallBestTrainingJob: js.UndefOr[HyperParameterTrainingJobSummary] = js.undefined,
+        WarmStartConfig: js.UndefOr[HyperParameterTuningJobWarmStartConfig] = js.undefined
+    ): DescribeHyperParameterTuningJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "HyperParameterTuningJobArn" -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
+        "CreationTime"                  -> CreationTime.asInstanceOf[js.Any],
+        "HyperParameterTuningJobArn"    -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
         "HyperParameterTuningJobConfig" -> HyperParameterTuningJobConfig.asInstanceOf[js.Any],
-        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any],
+        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any],
         "HyperParameterTuningJobStatus" -> HyperParameterTuningJobStatus.asInstanceOf[js.Any],
-        "ObjectiveStatusCounters" -> ObjectiveStatusCounters.asInstanceOf[js.Any],
-        "TrainingJobDefinition" -> TrainingJobDefinition.asInstanceOf[js.Any],
-        "TrainingJobStatusCounters" -> TrainingJobStatusCounters.asInstanceOf[js.Any],
-        "BestTrainingJob" -> BestTrainingJob.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "HyperParameterTuningEndTime" -> HyperParameterTuningEndTime.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "OverallBestTrainingJob" -> OverallBestTrainingJob.map { x => x.asInstanceOf[js.Any] },
-        "WarmStartConfig" -> WarmStartConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ObjectiveStatusCounters"       -> ObjectiveStatusCounters.asInstanceOf[js.Any],
+        "TrainingJobDefinition"         -> TrainingJobDefinition.asInstanceOf[js.Any],
+        "TrainingJobStatusCounters"     -> TrainingJobStatusCounters.asInstanceOf[js.Any],
+        "BestTrainingJob" -> BestTrainingJob.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HyperParameterTuningEndTime" -> HyperParameterTuningEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OverallBestTrainingJob" -> OverallBestTrainingJob.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WarmStartConfig" -> WarmStartConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeHyperParameterTuningJobResponse]
     }
@@ -2143,10 +2346,9 @@ package sagemaker {
   }
 
   object DescribeLabelingJobRequest {
-    def apply(
-      LabelingJobName: LabelingJobName): DescribeLabelingJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(LabelingJobName: LabelingJobName): DescribeLabelingJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLabelingJobRequest]
     }
@@ -2175,44 +2377,58 @@ package sagemaker {
   }
 
   object DescribeLabelingJobResponse {
-    def apply(
-      CreationTime: Timestamp,
-      HumanTaskConfig: HumanTaskConfig,
-      InputConfig: LabelingJobInputConfig,
-      JobReferenceCode: JobReferenceCode,
-      LabelCounters: LabelCounters,
-      LabelingJobArn: LabelingJobArn,
-      LabelingJobName: LabelingJobName,
-      LabelingJobStatus: LabelingJobStatus,
-      LastModifiedTime: Timestamp,
-      OutputConfig: LabelingJobOutputConfig,
-      RoleArn: RoleArn,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      LabelAttributeName: js.UndefOr[LabelAttributeName] = js.undefined,
-      LabelCategoryConfigS3Uri: js.UndefOr[S3Uri] = js.undefined,
-      LabelingJobAlgorithmsConfig: js.UndefOr[LabelingJobAlgorithmsConfig] = js.undefined,
-      LabelingJobOutput: js.UndefOr[LabelingJobOutput] = js.undefined,
-      StoppingConditions: js.UndefOr[LabelingJobStoppingConditions] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): DescribeLabelingJobResponse = {
+    def apply(CreationTime: Timestamp,
+              HumanTaskConfig: HumanTaskConfig,
+              InputConfig: LabelingJobInputConfig,
+              JobReferenceCode: JobReferenceCode,
+              LabelCounters: LabelCounters,
+              LabelingJobArn: LabelingJobArn,
+              LabelingJobName: LabelingJobName,
+              LabelingJobStatus: LabelingJobStatus,
+              LastModifiedTime: Timestamp,
+              OutputConfig: LabelingJobOutputConfig,
+              RoleArn: RoleArn,
+              FailureReason: js.UndefOr[FailureReason] = js.undefined,
+              LabelAttributeName: js.UndefOr[LabelAttributeName] = js.undefined,
+              LabelCategoryConfigS3Uri: js.UndefOr[S3Uri] = js.undefined,
+              LabelingJobAlgorithmsConfig: js.UndefOr[LabelingJobAlgorithmsConfig] = js.undefined,
+              LabelingJobOutput: js.UndefOr[LabelingJobOutput] = js.undefined,
+              StoppingConditions: js.UndefOr[LabelingJobStoppingConditions] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): DescribeLabelingJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "HumanTaskConfig" -> HumanTaskConfig.asInstanceOf[js.Any],
-        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
-        "JobReferenceCode" -> JobReferenceCode.asInstanceOf[js.Any],
-        "LabelCounters" -> LabelCounters.asInstanceOf[js.Any],
-        "LabelingJobArn" -> LabelingJobArn.asInstanceOf[js.Any],
-        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any],
+        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
+        "HumanTaskConfig"   -> HumanTaskConfig.asInstanceOf[js.Any],
+        "InputConfig"       -> InputConfig.asInstanceOf[js.Any],
+        "JobReferenceCode"  -> JobReferenceCode.asInstanceOf[js.Any],
+        "LabelCounters"     -> LabelCounters.asInstanceOf[js.Any],
+        "LabelingJobArn"    -> LabelingJobArn.asInstanceOf[js.Any],
+        "LabelingJobName"   -> LabelingJobName.asInstanceOf[js.Any],
         "LabelingJobStatus" -> LabelingJobStatus.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
-        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "LabelAttributeName" -> LabelAttributeName.map { x => x.asInstanceOf[js.Any] },
-        "LabelCategoryConfigS3Uri" -> LabelCategoryConfigS3Uri.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobAlgorithmsConfig" -> LabelingJobAlgorithmsConfig.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobOutput" -> LabelingJobOutput.map { x => x.asInstanceOf[js.Any] },
-        "StoppingConditions" -> StoppingConditions.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastModifiedTime"  -> LastModifiedTime.asInstanceOf[js.Any],
+        "OutputConfig"      -> OutputConfig.asInstanceOf[js.Any],
+        "RoleArn"           -> RoleArn.asInstanceOf[js.Any],
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelAttributeName" -> LabelAttributeName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelCategoryConfigS3Uri" -> LabelCategoryConfigS3Uri.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobAlgorithmsConfig" -> LabelingJobAlgorithmsConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobOutput" -> LabelingJobOutput.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StoppingConditions" -> StoppingConditions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeLabelingJobResponse]
     }
@@ -2224,10 +2440,9 @@ package sagemaker {
   }
 
   object DescribeModelInput {
-    def apply(
-      ModelName: ModelName): DescribeModelInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelName" -> ModelName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ModelName: ModelName): DescribeModelInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ModelName" -> ModelName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeModelInput]
     }
@@ -2246,24 +2461,32 @@ package sagemaker {
   }
 
   object DescribeModelOutput {
-    def apply(
-      CreationTime: Timestamp,
-      ExecutionRoleArn: RoleArn,
-      ModelArn: ModelArn,
-      ModelName: ModelName,
-      Containers: js.UndefOr[ContainerDefinitionList] = js.undefined,
-      EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
-      PrimaryContainer: js.UndefOr[ContainerDefinition] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): DescribeModelOutput = {
+    def apply(CreationTime: Timestamp,
+              ExecutionRoleArn: RoleArn,
+              ModelArn: ModelArn,
+              ModelName: ModelName,
+              Containers: js.UndefOr[ContainerDefinitionList] = js.undefined,
+              EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+              PrimaryContainer: js.UndefOr[ContainerDefinition] = js.undefined,
+              VpcConfig: js.UndefOr[VpcConfig] = js.undefined): DescribeModelOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "CreationTime"     -> CreationTime.asInstanceOf[js.Any],
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
-        "ModelArn" -> ModelArn.asInstanceOf[js.Any],
-        "ModelName" -> ModelName.asInstanceOf[js.Any],
-        "Containers" -> Containers.map { x => x.asInstanceOf[js.Any] },
-        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x => x.asInstanceOf[js.Any] },
-        "PrimaryContainer" -> PrimaryContainer.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ModelArn"         -> ModelArn.asInstanceOf[js.Any],
+        "ModelName"        -> ModelName.asInstanceOf[js.Any],
+        "Containers" -> Containers.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrimaryContainer" -> PrimaryContainer.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcConfig" -> VpcConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeModelOutput]
     }
@@ -2275,10 +2498,9 @@ package sagemaker {
   }
 
   object DescribeModelPackageInput {
-    def apply(
-      ModelPackageName: ArnOrName): DescribeModelPackageInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ModelPackageName: ArnOrName): DescribeModelPackageInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeModelPackageInput]
     }
@@ -2300,27 +2522,39 @@ package sagemaker {
 
   object DescribeModelPackageOutput {
     def apply(
-      CreationTime: CreationTime,
-      ModelPackageArn: ModelPackageArn,
-      ModelPackageName: EntityName,
-      ModelPackageStatus: ModelPackageStatus,
-      ModelPackageStatusDetails: ModelPackageStatusDetails,
-      CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
-      InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
-      ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
-      SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
-      ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined): DescribeModelPackageOutput = {
+        CreationTime: CreationTime,
+        ModelPackageArn: ModelPackageArn,
+        ModelPackageName: EntityName,
+        ModelPackageStatus: ModelPackageStatus,
+        ModelPackageStatusDetails: ModelPackageStatusDetails,
+        CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
+        InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
+        ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
+        SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
+        ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined
+    ): DescribeModelPackageOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any],
-        "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any],
-        "ModelPackageStatus" -> ModelPackageStatus.asInstanceOf[js.Any],
+        "CreationTime"              -> CreationTime.asInstanceOf[js.Any],
+        "ModelPackageArn"           -> ModelPackageArn.asInstanceOf[js.Any],
+        "ModelPackageName"          -> ModelPackageName.asInstanceOf[js.Any],
+        "ModelPackageStatus"        -> ModelPackageStatus.asInstanceOf[js.Any],
         "ModelPackageStatusDetails" -> ModelPackageStatusDetails.asInstanceOf[js.Any],
-        "CertifyForMarketplace" -> CertifyForMarketplace.map { x => x.asInstanceOf[js.Any] },
-        "InferenceSpecification" -> InferenceSpecification.map { x => x.asInstanceOf[js.Any] },
-        "ModelPackageDescription" -> ModelPackageDescription.map { x => x.asInstanceOf[js.Any] },
-        "SourceAlgorithmSpecification" -> SourceAlgorithmSpecification.map { x => x.asInstanceOf[js.Any] },
-        "ValidationSpecification" -> ValidationSpecification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CertifyForMarketplace" -> CertifyForMarketplace.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InferenceSpecification" -> InferenceSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelPackageDescription" -> ModelPackageDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SourceAlgorithmSpecification" -> SourceAlgorithmSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ValidationSpecification" -> ValidationSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeModelPackageOutput]
     }
@@ -2332,10 +2566,9 @@ package sagemaker {
   }
 
   object DescribeNotebookInstanceInput {
-    def apply(
-      NotebookInstanceName: NotebookInstanceName): DescribeNotebookInstanceInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(NotebookInstanceName: NotebookInstanceName): DescribeNotebookInstanceInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotebookInstanceInput]
     }
@@ -2348,11 +2581,15 @@ package sagemaker {
 
   object DescribeNotebookInstanceLifecycleConfigInput {
     def apply(
-      NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName): DescribeNotebookInstanceLifecycleConfigInput = {
+        NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName
+    ): DescribeNotebookInstanceLifecycleConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotebookInstanceLifecycleConfigInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DescribeNotebookInstanceLifecycleConfigInput]
     }
   }
 
@@ -2368,21 +2605,37 @@ package sagemaker {
 
   object DescribeNotebookInstanceLifecycleConfigOutput {
     def apply(
-      CreationTime: js.UndefOr[CreationTime] = js.undefined,
-      LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
-      NotebookInstanceLifecycleConfigArn: js.UndefOr[NotebookInstanceLifecycleConfigArn] = js.undefined,
-      NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
-      OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
-      OnStart: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined): DescribeNotebookInstanceLifecycleConfigOutput = {
+        CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
+        NotebookInstanceLifecycleConfigArn: js.UndefOr[NotebookInstanceLifecycleConfigArn] = js.undefined,
+        NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
+        OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
+        OnStart: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined
+    ): DescribeNotebookInstanceLifecycleConfigOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceLifecycleConfigArn" -> NotebookInstanceLifecycleConfigArn.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.map { x => x.asInstanceOf[js.Any] },
-        "OnCreate" -> OnCreate.map { x => x.asInstanceOf[js.Any] },
-        "OnStart" -> OnStart.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceLifecycleConfigArn" -> NotebookInstanceLifecycleConfigArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OnCreate" -> OnCreate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OnStart" -> OnStart.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotebookInstanceLifecycleConfigOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DescribeNotebookInstanceLifecycleConfigOutput]
     }
   }
 
@@ -2411,45 +2664,85 @@ package sagemaker {
 
   object DescribeNotebookInstanceOutput {
     def apply(
-      AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
-      AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
-      CreationTime: js.UndefOr[CreationTime] = js.undefined,
-      DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
-      DirectInternetAccess: js.UndefOr[DirectInternetAccess] = js.undefined,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      InstanceType: js.UndefOr[InstanceType] = js.undefined,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
-      LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
-      NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
-      NotebookInstanceArn: js.UndefOr[NotebookInstanceArn] = js.undefined,
-      NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
-      NotebookInstanceName: js.UndefOr[NotebookInstanceName] = js.undefined,
-      NotebookInstanceStatus: js.UndefOr[NotebookInstanceStatus] = js.undefined,
-      RoleArn: js.UndefOr[RoleArn] = js.undefined,
-      SecurityGroups: js.UndefOr[SecurityGroupIds] = js.undefined,
-      SubnetId: js.UndefOr[SubnetId] = js.undefined,
-      Url: js.UndefOr[NotebookInstanceUrl] = js.undefined,
-      VolumeSizeInGB: js.UndefOr[NotebookInstanceVolumeSizeInGB] = js.undefined): DescribeNotebookInstanceOutput = {
+        AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
+        AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
+        CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
+        DirectInternetAccess: js.UndefOr[DirectInternetAccess] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        InstanceType: js.UndefOr[InstanceType] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
+        NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
+        NotebookInstanceArn: js.UndefOr[NotebookInstanceArn] = js.undefined,
+        NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
+        NotebookInstanceName: js.UndefOr[NotebookInstanceName] = js.undefined,
+        NotebookInstanceStatus: js.UndefOr[NotebookInstanceStatus] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        SecurityGroups: js.UndefOr[SecurityGroupIds] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined,
+        Url: js.UndefOr[NotebookInstanceUrl] = js.undefined,
+        VolumeSizeInGB: js.UndefOr[NotebookInstanceVolumeSizeInGB] = js.undefined
+    ): DescribeNotebookInstanceOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AcceleratorTypes" -> AcceleratorTypes.map { x => x.asInstanceOf[js.Any] },
-        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "DefaultCodeRepository" -> DefaultCodeRepository.map { x => x.asInstanceOf[js.Any] },
-        "DirectInternetAccess" -> DirectInternetAccess.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "NetworkInterfaceId" -> NetworkInterfaceId.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceArn" -> NotebookInstanceArn.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceName" -> NotebookInstanceName.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceStatus" -> NotebookInstanceStatus.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "SecurityGroups" -> SecurityGroups.map { x => x.asInstanceOf[js.Any] },
-        "SubnetId" -> SubnetId.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] },
-        "VolumeSizeInGB" -> VolumeSizeInGB.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceleratorTypes" -> AcceleratorTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultCodeRepository" -> DefaultCodeRepository.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DirectInternetAccess" -> DirectInternetAccess.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceType" -> InstanceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "KmsKeyId" -> KmsKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NetworkInterfaceId" -> NetworkInterfaceId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceArn" -> NotebookInstanceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceName" -> NotebookInstanceName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceStatus" -> NotebookInstanceStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecurityGroups" -> SecurityGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubnetId" -> SubnetId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeSizeInGB" -> VolumeSizeInGB.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeNotebookInstanceOutput]
     }
@@ -2461,10 +2754,9 @@ package sagemaker {
   }
 
   object DescribeSubscribedWorkteamRequest {
-    def apply(
-      WorkteamArn: WorkteamArn): DescribeSubscribedWorkteamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(WorkteamArn: WorkteamArn): DescribeSubscribedWorkteamRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSubscribedWorkteamRequest]
     }
@@ -2476,10 +2768,9 @@ package sagemaker {
   }
 
   object DescribeSubscribedWorkteamResponse {
-    def apply(
-      SubscribedWorkteam: SubscribedWorkteam): DescribeSubscribedWorkteamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SubscribedWorkteam" -> SubscribedWorkteam.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SubscribedWorkteam: SubscribedWorkteam): DescribeSubscribedWorkteamResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SubscribedWorkteam" -> SubscribedWorkteam.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeSubscribedWorkteamResponse]
     }
@@ -2491,10 +2782,9 @@ package sagemaker {
   }
 
   object DescribeTrainingJobRequest {
-    def apply(
-      TrainingJobName: TrainingJobName): DescribeTrainingJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(TrainingJobName: TrainingJobName): DescribeTrainingJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrainingJobRequest]
     }
@@ -2528,54 +2818,82 @@ package sagemaker {
   }
 
   object DescribeTrainingJobResponse {
-    def apply(
-      AlgorithmSpecification: AlgorithmSpecification,
-      CreationTime: Timestamp,
-      ModelArtifacts: ModelArtifacts,
-      ResourceConfig: ResourceConfig,
-      SecondaryStatus: SecondaryStatus,
-      StoppingCondition: StoppingCondition,
-      TrainingJobArn: TrainingJobArn,
-      TrainingJobName: TrainingJobName,
-      TrainingJobStatus: TrainingJobStatus,
-      EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      FinalMetricDataList: js.UndefOr[FinalMetricDataList] = js.undefined,
-      HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
-      LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      RoleArn: js.UndefOr[RoleArn] = js.undefined,
-      SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions] = js.undefined,
-      TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
-      TuningJobArn: js.UndefOr[HyperParameterTuningJobArn] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): DescribeTrainingJobResponse = {
+    def apply(AlgorithmSpecification: AlgorithmSpecification,
+              CreationTime: Timestamp,
+              ModelArtifacts: ModelArtifacts,
+              ResourceConfig: ResourceConfig,
+              SecondaryStatus: SecondaryStatus,
+              StoppingCondition: StoppingCondition,
+              TrainingJobArn: TrainingJobArn,
+              TrainingJobName: TrainingJobName,
+              TrainingJobStatus: TrainingJobStatus,
+              EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+              FailureReason: js.UndefOr[FailureReason] = js.undefined,
+              FinalMetricDataList: js.UndefOr[FinalMetricDataList] = js.undefined,
+              HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
+              LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              RoleArn: js.UndefOr[RoleArn] = js.undefined,
+              SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions] = js.undefined,
+              TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
+              TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
+              TuningJobArn: js.UndefOr[HyperParameterTuningJobArn] = js.undefined,
+              VpcConfig: js.UndefOr[VpcConfig] = js.undefined): DescribeTrainingJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlgorithmSpecification" -> AlgorithmSpecification.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "ModelArtifacts" -> ModelArtifacts.asInstanceOf[js.Any],
-        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
-        "SecondaryStatus" -> SecondaryStatus.asInstanceOf[js.Any],
-        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
-        "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any],
-        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any],
-        "TrainingJobStatus" -> TrainingJobStatus.asInstanceOf[js.Any],
-        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "FinalMetricDataList" -> FinalMetricDataList.map { x => x.asInstanceOf[js.Any] },
-        "HyperParameters" -> HyperParameters.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobArn" -> LabelingJobArn.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "SecondaryStatusTransitions" -> SecondaryStatusTransitions.map { x => x.asInstanceOf[js.Any] },
-        "TrainingEndTime" -> TrainingEndTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingStartTime" -> TrainingStartTime.map { x => x.asInstanceOf[js.Any] },
-        "TuningJobArn" -> TuningJobArn.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"           -> CreationTime.asInstanceOf[js.Any],
+        "ModelArtifacts"         -> ModelArtifacts.asInstanceOf[js.Any],
+        "ResourceConfig"         -> ResourceConfig.asInstanceOf[js.Any],
+        "SecondaryStatus"        -> SecondaryStatus.asInstanceOf[js.Any],
+        "StoppingCondition"      -> StoppingCondition.asInstanceOf[js.Any],
+        "TrainingJobArn"         -> TrainingJobArn.asInstanceOf[js.Any],
+        "TrainingJobName"        -> TrainingJobName.asInstanceOf[js.Any],
+        "TrainingJobStatus"      -> TrainingJobStatus.asInstanceOf[js.Any],
+        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FinalMetricDataList" -> FinalMetricDataList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HyperParameters" -> HyperParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobArn" -> LabelingJobArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecondaryStatusTransitions" -> SecondaryStatusTransitions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingEndTime" -> TrainingEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingStartTime" -> TrainingStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TuningJobArn" -> TuningJobArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcConfig" -> VpcConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTrainingJobResponse]
     }
@@ -2587,10 +2905,9 @@ package sagemaker {
   }
 
   object DescribeTransformJobRequest {
-    def apply(
-      TransformJobName: TransformJobName): DescribeTransformJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(TransformJobName: TransformJobName): DescribeTransformJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("TransformJobName" -> TransformJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransformJobRequest]
     }
@@ -2617,40 +2934,58 @@ package sagemaker {
   }
 
   object DescribeTransformJobResponse {
-    def apply(
-      CreationTime: Timestamp,
-      ModelName: ModelName,
-      TransformInput: TransformInput,
-      TransformJobArn: TransformJobArn,
-      TransformJobName: TransformJobName,
-      TransformJobStatus: TransformJobStatus,
-      TransformResources: TransformResources,
-      BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
-      Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
-      MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
-      MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
-      TransformEndTime: js.UndefOr[Timestamp] = js.undefined,
-      TransformOutput: js.UndefOr[TransformOutput] = js.undefined,
-      TransformStartTime: js.UndefOr[Timestamp] = js.undefined): DescribeTransformJobResponse = {
+    def apply(CreationTime: Timestamp,
+              ModelName: ModelName,
+              TransformInput: TransformInput,
+              TransformJobArn: TransformJobArn,
+              TransformJobName: TransformJobName,
+              TransformJobStatus: TransformJobStatus,
+              TransformResources: TransformResources,
+              BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
+              Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
+              FailureReason: js.UndefOr[FailureReason] = js.undefined,
+              LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
+              MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
+              MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined,
+              TransformEndTime: js.UndefOr[Timestamp] = js.undefined,
+              TransformOutput: js.UndefOr[TransformOutput] = js.undefined,
+              TransformStartTime: js.UndefOr[Timestamp] = js.undefined): DescribeTransformJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "ModelName" -> ModelName.asInstanceOf[js.Any],
-        "TransformInput" -> TransformInput.asInstanceOf[js.Any],
-        "TransformJobArn" -> TransformJobArn.asInstanceOf[js.Any],
-        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any],
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "ModelName"          -> ModelName.asInstanceOf[js.Any],
+        "TransformInput"     -> TransformInput.asInstanceOf[js.Any],
+        "TransformJobArn"    -> TransformJobArn.asInstanceOf[js.Any],
+        "TransformJobName"   -> TransformJobName.asInstanceOf[js.Any],
         "TransformJobStatus" -> TransformJobStatus.asInstanceOf[js.Any],
         "TransformResources" -> TransformResources.asInstanceOf[js.Any],
-        "BatchStrategy" -> BatchStrategy.map { x => x.asInstanceOf[js.Any] },
-        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobArn" -> LabelingJobArn.map { x => x.asInstanceOf[js.Any] },
-        "MaxConcurrentTransforms" -> MaxConcurrentTransforms.map { x => x.asInstanceOf[js.Any] },
-        "MaxPayloadInMB" -> MaxPayloadInMB.map { x => x.asInstanceOf[js.Any] },
-        "TransformEndTime" -> TransformEndTime.map { x => x.asInstanceOf[js.Any] },
-        "TransformOutput" -> TransformOutput.map { x => x.asInstanceOf[js.Any] },
-        "TransformStartTime" -> TransformStartTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BatchStrategy" -> BatchStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Environment" -> Environment.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobArn" -> LabelingJobArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxConcurrentTransforms" -> MaxConcurrentTransforms.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxPayloadInMB" -> MaxPayloadInMB.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TransformEndTime" -> TransformEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TransformOutput" -> TransformOutput.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TransformStartTime" -> TransformStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeTransformJobResponse]
     }
@@ -2662,10 +2997,9 @@ package sagemaker {
   }
 
   object DescribeWorkteamRequest {
-    def apply(
-      WorkteamName: WorkteamName): DescribeWorkteamRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "WorkteamName" -> WorkteamName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(WorkteamName: WorkteamName): DescribeWorkteamRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("WorkteamName" -> WorkteamName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkteamRequest]
     }
@@ -2677,18 +3011,17 @@ package sagemaker {
   }
 
   object DescribeWorkteamResponse {
-    def apply(
-      Workteam: Workteam): DescribeWorkteamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Workteam" -> Workteam.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Workteam: Workteam): DescribeWorkteamResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Workteam" -> Workteam.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DescribeWorkteamResponse]
     }
   }
 
   /**
-   * Specifies weight and capacity values for a production variant.
-   */
+    * Specifies weight and capacity values for a production variant.
+    */
   @js.native
   trait DesiredWeightAndCapacity extends js.Object {
     var VariantName: VariantName
@@ -2697,14 +3030,18 @@ package sagemaker {
   }
 
   object DesiredWeightAndCapacity {
-    def apply(
-      VariantName: VariantName,
-      DesiredInstanceCount: js.UndefOr[TaskCount] = js.undefined,
-      DesiredWeight: js.UndefOr[VariantWeight] = js.undefined): DesiredWeightAndCapacity = {
+    def apply(VariantName: VariantName,
+              DesiredInstanceCount: js.UndefOr[TaskCount] = js.undefined,
+              DesiredWeight: js.UndefOr[VariantWeight] = js.undefined): DesiredWeightAndCapacity = {
       val _fields = IndexedSeq[(String, js.Any)](
         "VariantName" -> VariantName.asInstanceOf[js.Any],
-        "DesiredInstanceCount" -> DesiredInstanceCount.map { x => x.asInstanceOf[js.Any] },
-        "DesiredWeight" -> DesiredWeight.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DesiredInstanceCount" -> DesiredInstanceCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DesiredWeight" -> DesiredWeight.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DesiredWeightAndCapacity]
     }
@@ -2713,8 +3050,8 @@ package sagemaker {
   object DetailedAlgorithmStatusEnum {
     val NotStarted = "NotStarted"
     val InProgress = "InProgress"
-    val Completed = "Completed"
-    val Failed = "Failed"
+    val Completed  = "Completed"
+    val Failed     = "Failed"
 
     val values = IndexedSeq(NotStarted, InProgress, Completed, Failed)
   }
@@ -2722,29 +3059,29 @@ package sagemaker {
   object DetailedModelPackageStatusEnum {
     val NotStarted = "NotStarted"
     val InProgress = "InProgress"
-    val Completed = "Completed"
-    val Failed = "Failed"
+    val Completed  = "Completed"
+    val Failed     = "Failed"
 
     val values = IndexedSeq(NotStarted, InProgress, Completed, Failed)
   }
 
   object DirectInternetAccessEnum {
-    val Enabled = "Enabled"
+    val Enabled  = "Enabled"
     val Disabled = "Disabled"
 
     val values = IndexedSeq(Enabled, Disabled)
   }
 
   object EndpointConfigSortKeyEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
 
     val values = IndexedSeq(Name, CreationTime)
   }
 
   /**
-   * Provides summary information for an endpoint configuration.
-   */
+    * Provides summary information for an endpoint configuration.
+    */
   @js.native
   trait EndpointConfigSummary extends js.Object {
     var CreationTime: Timestamp
@@ -2753,43 +3090,43 @@ package sagemaker {
   }
 
   object EndpointConfigSummary {
-    def apply(
-      CreationTime: Timestamp,
-      EndpointConfigArn: EndpointConfigArn,
-      EndpointConfigName: EndpointConfigName): EndpointConfigSummary = {
+    def apply(CreationTime: Timestamp,
+              EndpointConfigArn: EndpointConfigArn,
+              EndpointConfigName: EndpointConfigName): EndpointConfigSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "EndpointConfigArn" -> EndpointConfigArn.asInstanceOf[js.Any],
-        "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "EndpointConfigArn"  -> EndpointConfigArn.asInstanceOf[js.Any],
+        "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointConfigSummary]
     }
   }
 
   object EndpointSortKeyEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
-    val Status = "Status"
+    val Status       = "Status"
 
     val values = IndexedSeq(Name, CreationTime, Status)
   }
 
   object EndpointStatusEnum {
-    val OutOfService = "OutOfService"
-    val Creating = "Creating"
-    val Updating = "Updating"
+    val OutOfService   = "OutOfService"
+    val Creating       = "Creating"
+    val Updating       = "Updating"
     val SystemUpdating = "SystemUpdating"
-    val RollingBack = "RollingBack"
-    val InService = "InService"
-    val Deleting = "Deleting"
-    val Failed = "Failed"
+    val RollingBack    = "RollingBack"
+    val InService      = "InService"
+    val Deleting       = "Deleting"
+    val Failed         = "Failed"
 
     val values = IndexedSeq(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
   }
 
   /**
-   * Provides summary information for an endpoint.
-   */
+    * Provides summary information for an endpoint.
+    */
   @js.native
   trait EndpointSummary extends js.Object {
     var CreationTime: Timestamp
@@ -2800,43 +3137,43 @@ package sagemaker {
   }
 
   object EndpointSummary {
-    def apply(
-      CreationTime: Timestamp,
-      EndpointArn: EndpointArn,
-      EndpointName: EndpointName,
-      EndpointStatus: EndpointStatus,
-      LastModifiedTime: Timestamp): EndpointSummary = {
+    def apply(CreationTime: Timestamp,
+              EndpointArn: EndpointArn,
+              EndpointName: EndpointName,
+              EndpointStatus: EndpointStatus,
+              LastModifiedTime: Timestamp): EndpointSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
-        "EndpointStatus" -> EndpointStatus.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime"     -> CreationTime.asInstanceOf[js.Any],
+        "EndpointArn"      -> EndpointArn.asInstanceOf[js.Any],
+        "EndpointName"     -> EndpointName.asInstanceOf[js.Any],
+        "EndpointStatus"   -> EndpointStatus.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[EndpointSummary]
     }
   }
 
   /**
-   * A conditional statement for a search expression that includes a Boolean operator, a resource property, and a value.
-   *  If you don't specify an <code>Operator</code> and a <code>Value</code>, the filter searches for only the specified property. For example, defining a <code>Filter</code> for the <code>FailureReason</code> for the <code>TrainingJob</code> <code>Resource</code> searches for training job objects that have a value in the <code>FailureReason</code> field.
-   *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as the default.
-   *  In search, there are several property types:
-   *  <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
-   *  <code>{</code>
-   *  <code>"Name": "Metrics.accuracy",</code>
-   *  <code>"Operator": "GREATER_THAN",</code>
-   *  <code>"Value": "0.9"</code>
-   *  <code>}</code>
-   *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
-   *  <code> {</code>
-   *  <code> "Name": "HyperParameters.learning_rate",</code>
-   *  <code> "Operator": "LESS_THAN",</code>
-   *  <code> "Value": "0.5"</code>
-   *  <code> }</code>
-   *  </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>"Tags.&lt;key&gt;"</code>.
-   *  </dd> </dl>
-   */
+    * A conditional statement for a search expression that includes a Boolean operator, a resource property, and a value.
+    *  If you don't specify an <code>Operator</code> and a <code>Value</code>, the filter searches for only the specified property. For example, defining a <code>Filter</code> for the <code>FailureReason</code> for the <code>TrainingJob</code> <code>Resource</code> searches for training job objects that have a value in the <code>FailureReason</code> field.
+    *  If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as the default.
+    *  In search, there are several property types:
+    *  <dl> <dt>Metrics</dt> <dd> To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>, where <code>&lt;name&gt;</code> is a metric name. For example, the following filter searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
+    *  <code>{</code>
+    *  <code>"Name": "Metrics.accuracy",</code>
+    *  <code>"Operator": "GREATER_THAN",</code>
+    *  <code>"Value": "0.9"</code>
+    *  <code>}</code>
+    *  </dd> <dt>HyperParameters</dt> <dd> To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers. For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter that is less than <code>"0.5"</code>:
+    *  <code> {</code>
+    *  <code> "Name": "HyperParameters.learning_rate",</code>
+    *  <code> "Operator": "LESS_THAN",</code>
+    *  <code> "Value": "0.5"</code>
+    *  <code> }</code>
+    *  </dd> <dt>Tags</dt> <dd> To define a tag filter, enter a value with the form <code>"Tags.&lt;key&gt;"</code>.
+    *  </dd> </dl>
+    */
   @js.native
   trait Filter extends js.Object {
     var Name: ResourcePropertyName
@@ -2845,22 +3182,22 @@ package sagemaker {
   }
 
   object Filter {
-    def apply(
-      Name: ResourcePropertyName,
-      Operator: js.UndefOr[Operator] = js.undefined,
-      Value: js.UndefOr[FilterValue] = js.undefined): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Operator" -> Operator.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Name: ResourcePropertyName,
+              Operator: js.UndefOr[Operator] = js.undefined,
+              Value: js.UndefOr[FilterValue] = js.undefined): Filter = {
+      val _fields = IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Operator" -> Operator.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
   }
 
   /**
-   * Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>.
-   */
+    * Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a>HyperParameterTuningJobConfig</a>.
+    */
   @js.native
   trait FinalHyperParameterTuningJobObjectiveMetric extends js.Object {
     var MetricName: MetricName
@@ -2870,24 +3207,30 @@ package sagemaker {
 
   object FinalHyperParameterTuningJobObjectiveMetric {
     def apply(
-      MetricName: MetricName,
-      Value: MetricValue,
-      Type: js.UndefOr[HyperParameterTuningJobObjectiveType] = js.undefined): FinalHyperParameterTuningJobObjectiveMetric = {
+        MetricName: MetricName,
+        Value: MetricValue,
+        Type: js.UndefOr[HyperParameterTuningJobObjectiveType] = js.undefined
+    ): FinalHyperParameterTuningJobObjectiveMetric = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any],
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Value"      -> Value.asInstanceOf[js.Any],
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FinalHyperParameterTuningJobObjectiveMetric]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[FinalHyperParameterTuningJobObjectiveMetric]
     }
   }
 
   object FrameworkEnum {
     val TENSORFLOW = "TENSORFLOW"
-    val MXNET = "MXNET"
-    val ONNX = "ONNX"
-    val PYTORCH = "PYTORCH"
-    val XGBOOST = "XGBOOST"
+    val MXNET      = "MXNET"
+    val ONNX       = "ONNX"
+    val PYTORCH    = "PYTORCH"
+    val XGBOOST    = "XGBOOST"
 
     val values = IndexedSeq(TENSORFLOW, MXNET, ONNX, PYTORCH, XGBOOST)
   }
@@ -2899,12 +3242,14 @@ package sagemaker {
   }
 
   object GetSearchSuggestionsRequest {
-    def apply(
-      Resource: ResourceType,
-      SuggestionQuery: js.UndefOr[SuggestionQuery] = js.undefined): GetSearchSuggestionsRequest = {
+    def apply(Resource: ResourceType,
+              SuggestionQuery: js.UndefOr[SuggestionQuery] = js.undefined): GetSearchSuggestionsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Resource" -> Resource.asInstanceOf[js.Any],
-        "SuggestionQuery" -> SuggestionQuery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SuggestionQuery" -> SuggestionQuery.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSearchSuggestionsRequest]
     }
@@ -2917,17 +3262,19 @@ package sagemaker {
 
   object GetSearchSuggestionsResponse {
     def apply(
-      PropertyNameSuggestions: js.UndefOr[PropertyNameSuggestionList] = js.undefined): GetSearchSuggestionsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PropertyNameSuggestions" -> PropertyNameSuggestions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        PropertyNameSuggestions: js.UndefOr[PropertyNameSuggestionList] = js.undefined
+    ): GetSearchSuggestionsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("PropertyNameSuggestions" -> PropertyNameSuggestions.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSearchSuggestionsResponse]
     }
   }
 
   /**
-   * Specifies configuration details for a git repository in your AWS account.
-   */
+    * Specifies configuration details for a git repository in your AWS account.
+    */
   @js.native
   trait GitConfig extends js.Object {
     var RepositoryUrl: GitConfigUrl
@@ -2936,40 +3283,44 @@ package sagemaker {
   }
 
   object GitConfig {
-    def apply(
-      RepositoryUrl: GitConfigUrl,
-      Branch: js.UndefOr[Branch] = js.undefined,
-      SecretArn: js.UndefOr[SecretArn] = js.undefined): GitConfig = {
+    def apply(RepositoryUrl: GitConfigUrl,
+              Branch: js.UndefOr[Branch] = js.undefined,
+              SecretArn: js.UndefOr[SecretArn] = js.undefined): GitConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RepositoryUrl" -> RepositoryUrl.asInstanceOf[js.Any],
-        "Branch" -> Branch.map { x => x.asInstanceOf[js.Any] },
-        "SecretArn" -> SecretArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Branch" -> Branch.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecretArn" -> SecretArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GitConfig]
     }
   }
 
   /**
-   * Specifies configuration details for a git repository when the repository is updated.
-   */
+    * Specifies configuration details for a git repository when the repository is updated.
+    */
   @js.native
   trait GitConfigForUpdate extends js.Object {
     var SecretArn: js.UndefOr[SecretArn]
   }
 
   object GitConfigForUpdate {
-    def apply(
-      SecretArn: js.UndefOr[SecretArn] = js.undefined): GitConfigForUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SecretArn" -> SecretArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SecretArn: js.UndefOr[SecretArn] = js.undefined): GitConfigForUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)]("SecretArn" -> SecretArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GitConfigForUpdate]
     }
   }
 
   /**
-   * Information required for human workers to complete a labeling task.
-   */
+    * Information required for human workers to complete a labeling task.
+    */
   @js.native
   trait HumanTaskConfig extends js.Object {
     var AnnotationConsolidationConfig: AnnotationConsolidationConfig
@@ -2987,40 +3338,48 @@ package sagemaker {
   }
 
   object HumanTaskConfig {
-    def apply(
-      AnnotationConsolidationConfig: AnnotationConsolidationConfig,
-      NumberOfHumanWorkersPerDataObject: NumberOfHumanWorkersPerDataObject,
-      PreHumanTaskLambdaArn: LambdaFunctionArn,
-      TaskDescription: TaskDescription,
-      TaskTimeLimitInSeconds: TaskTimeLimitInSeconds,
-      TaskTitle: TaskTitle,
-      UiConfig: UiConfig,
-      WorkteamArn: WorkteamArn,
-      MaxConcurrentTaskCount: js.UndefOr[MaxConcurrentTaskCount] = js.undefined,
-      PublicWorkforceTaskPrice: js.UndefOr[PublicWorkforceTaskPrice] = js.undefined,
-      TaskAvailabilityLifetimeInSeconds: js.UndefOr[TaskAvailabilityLifetimeInSeconds] = js.undefined,
-      TaskKeywords: js.UndefOr[TaskKeywords] = js.undefined): HumanTaskConfig = {
+    def apply(AnnotationConsolidationConfig: AnnotationConsolidationConfig,
+              NumberOfHumanWorkersPerDataObject: NumberOfHumanWorkersPerDataObject,
+              PreHumanTaskLambdaArn: LambdaFunctionArn,
+              TaskDescription: TaskDescription,
+              TaskTimeLimitInSeconds: TaskTimeLimitInSeconds,
+              TaskTitle: TaskTitle,
+              UiConfig: UiConfig,
+              WorkteamArn: WorkteamArn,
+              MaxConcurrentTaskCount: js.UndefOr[MaxConcurrentTaskCount] = js.undefined,
+              PublicWorkforceTaskPrice: js.UndefOr[PublicWorkforceTaskPrice] = js.undefined,
+              TaskAvailabilityLifetimeInSeconds: js.UndefOr[TaskAvailabilityLifetimeInSeconds] = js.undefined,
+              TaskKeywords: js.UndefOr[TaskKeywords] = js.undefined): HumanTaskConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AnnotationConsolidationConfig" -> AnnotationConsolidationConfig.asInstanceOf[js.Any],
+        "AnnotationConsolidationConfig"     -> AnnotationConsolidationConfig.asInstanceOf[js.Any],
         "NumberOfHumanWorkersPerDataObject" -> NumberOfHumanWorkersPerDataObject.asInstanceOf[js.Any],
-        "PreHumanTaskLambdaArn" -> PreHumanTaskLambdaArn.asInstanceOf[js.Any],
-        "TaskDescription" -> TaskDescription.asInstanceOf[js.Any],
-        "TaskTimeLimitInSeconds" -> TaskTimeLimitInSeconds.asInstanceOf[js.Any],
-        "TaskTitle" -> TaskTitle.asInstanceOf[js.Any],
-        "UiConfig" -> UiConfig.asInstanceOf[js.Any],
-        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any],
-        "MaxConcurrentTaskCount" -> MaxConcurrentTaskCount.map { x => x.asInstanceOf[js.Any] },
-        "PublicWorkforceTaskPrice" -> PublicWorkforceTaskPrice.map { x => x.asInstanceOf[js.Any] },
-        "TaskAvailabilityLifetimeInSeconds" -> TaskAvailabilityLifetimeInSeconds.map { x => x.asInstanceOf[js.Any] },
-        "TaskKeywords" -> TaskKeywords.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "PreHumanTaskLambdaArn"             -> PreHumanTaskLambdaArn.asInstanceOf[js.Any],
+        "TaskDescription"                   -> TaskDescription.asInstanceOf[js.Any],
+        "TaskTimeLimitInSeconds"            -> TaskTimeLimitInSeconds.asInstanceOf[js.Any],
+        "TaskTitle"                         -> TaskTitle.asInstanceOf[js.Any],
+        "UiConfig"                          -> UiConfig.asInstanceOf[js.Any],
+        "WorkteamArn"                       -> WorkteamArn.asInstanceOf[js.Any],
+        "MaxConcurrentTaskCount" -> MaxConcurrentTaskCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PublicWorkforceTaskPrice" -> PublicWorkforceTaskPrice.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TaskAvailabilityLifetimeInSeconds" -> TaskAvailabilityLifetimeInSeconds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TaskKeywords" -> TaskKeywords.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HumanTaskConfig]
     }
   }
 
   /**
-   * Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
-   */
+    * Specifies which training algorithm to use for training jobs that a hyperparameter tuning job launches and the metrics to monitor.
+    */
   @js.native
   trait HyperParameterAlgorithmSpecification extends js.Object {
     var TrainingInputMode: TrainingInputMode
@@ -3030,24 +3389,30 @@ package sagemaker {
   }
 
   object HyperParameterAlgorithmSpecification {
-    def apply(
-      TrainingInputMode: TrainingInputMode,
-      AlgorithmName: js.UndefOr[ArnOrName] = js.undefined,
-      MetricDefinitions: js.UndefOr[MetricDefinitionList] = js.undefined,
-      TrainingImage: js.UndefOr[AlgorithmImage] = js.undefined): HyperParameterAlgorithmSpecification = {
+    def apply(TrainingInputMode: TrainingInputMode,
+              AlgorithmName: js.UndefOr[ArnOrName] = js.undefined,
+              MetricDefinitions: js.UndefOr[MetricDefinitionList] = js.undefined,
+              TrainingImage: js.UndefOr[AlgorithmImage] = js.undefined): HyperParameterAlgorithmSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TrainingInputMode" -> TrainingInputMode.asInstanceOf[js.Any],
-        "AlgorithmName" -> AlgorithmName.map { x => x.asInstanceOf[js.Any] },
-        "MetricDefinitions" -> MetricDefinitions.map { x => x.asInstanceOf[js.Any] },
-        "TrainingImage" -> TrainingImage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AlgorithmName" -> AlgorithmName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MetricDefinitions" -> MetricDefinitions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingImage" -> TrainingImage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterAlgorithmSpecification]
     }
   }
 
   /**
-   * Defines a hyperparameter to be used by an algorithm.
-   */
+    * Defines a hyperparameter to be used by an algorithm.
+    */
   @js.native
   trait HyperParameterSpecification extends js.Object {
     var Name: ParameterName
@@ -3060,30 +3425,40 @@ package sagemaker {
   }
 
   object HyperParameterSpecification {
-    def apply(
-      Name: ParameterName,
-      Type: ParameterType,
-      DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
-      Description: js.UndefOr[EntityDescription] = js.undefined,
-      IsRequired: js.UndefOr[Boolean] = js.undefined,
-      IsTunable: js.UndefOr[Boolean] = js.undefined,
-      Range: js.UndefOr[ParameterRange] = js.undefined): HyperParameterSpecification = {
+    def apply(Name: ParameterName,
+              Type: ParameterType,
+              DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
+              Description: js.UndefOr[EntityDescription] = js.undefined,
+              IsRequired: js.UndefOr[Boolean] = js.undefined,
+              IsTunable: js.UndefOr[Boolean] = js.undefined,
+              Range: js.UndefOr[ParameterRange] = js.undefined): HyperParameterSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any],
-        "DefaultValue" -> DefaultValue.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "IsRequired" -> IsRequired.map { x => x.asInstanceOf[js.Any] },
-        "IsTunable" -> IsTunable.map { x => x.asInstanceOf[js.Any] },
-        "Range" -> Range.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DefaultValue" -> DefaultValue.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsRequired" -> IsRequired.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsTunable" -> IsTunable.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Range" -> Range.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterSpecification]
     }
   }
 
   /**
-   * Defines the training jobs launched by a hyperparameter tuning job.
-   */
+    * Defines the training jobs launched by a hyperparameter tuning job.
+    */
   @js.native
   trait HyperParameterTrainingJobDefinition extends js.Object {
     var AlgorithmSpecification: HyperParameterAlgorithmSpecification
@@ -3098,34 +3473,42 @@ package sagemaker {
   }
 
   object HyperParameterTrainingJobDefinition {
-    def apply(
-      AlgorithmSpecification: HyperParameterAlgorithmSpecification,
-      OutputDataConfig: OutputDataConfig,
-      ResourceConfig: ResourceConfig,
-      RoleArn: RoleArn,
-      StoppingCondition: StoppingCondition,
-      EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      StaticHyperParameters: js.UndefOr[HyperParameters] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): HyperParameterTrainingJobDefinition = {
+    def apply(AlgorithmSpecification: HyperParameterAlgorithmSpecification,
+              OutputDataConfig: OutputDataConfig,
+              ResourceConfig: ResourceConfig,
+              RoleArn: RoleArn,
+              StoppingCondition: StoppingCondition,
+              EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              StaticHyperParameters: js.UndefOr[HyperParameters] = js.undefined,
+              VpcConfig: js.UndefOr[VpcConfig] = js.undefined): HyperParameterTrainingJobDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlgorithmSpecification" -> AlgorithmSpecification.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
-        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "StaticHyperParameters" -> StaticHyperParameters.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OutputDataConfig"       -> OutputDataConfig.asInstanceOf[js.Any],
+        "ResourceConfig"         -> ResourceConfig.asInstanceOf[js.Any],
+        "RoleArn"                -> RoleArn.asInstanceOf[js.Any],
+        "StoppingCondition"      -> StoppingCondition.asInstanceOf[js.Any],
+        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StaticHyperParameters" -> StaticHyperParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcConfig" -> VpcConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterTrainingJobDefinition]
     }
   }
 
   /**
-   * Specifies summary information about a training job.
-   */
+    * Specifies summary information about a training job.
+    */
   @js.native
   trait HyperParameterTrainingJobSummary extends js.Object {
     var CreationTime: Timestamp
@@ -3143,37 +3526,52 @@ package sagemaker {
 
   object HyperParameterTrainingJobSummary {
     def apply(
-      CreationTime: Timestamp,
-      TrainingJobArn: TrainingJobArn,
-      TrainingJobName: TrainingJobName,
-      TrainingJobStatus: TrainingJobStatus,
-      TunedHyperParameters: HyperParameters,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      FinalHyperParameterTuningJobObjectiveMetric: js.UndefOr[FinalHyperParameterTuningJobObjectiveMetric] = js.undefined,
-      ObjectiveStatus: js.UndefOr[ObjectiveStatus] = js.undefined,
-      TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
-      TuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined): HyperParameterTrainingJobSummary = {
+        CreationTime: Timestamp,
+        TrainingJobArn: TrainingJobArn,
+        TrainingJobName: TrainingJobName,
+        TrainingJobStatus: TrainingJobStatus,
+        TunedHyperParameters: HyperParameters,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        FinalHyperParameterTuningJobObjectiveMetric: js.UndefOr[FinalHyperParameterTuningJobObjectiveMetric] =
+          js.undefined,
+        ObjectiveStatus: js.UndefOr[ObjectiveStatus] = js.undefined,
+        TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
+        TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
+        TuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined
+    ): HyperParameterTrainingJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any],
-        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any],
-        "TrainingJobStatus" -> TrainingJobStatus.asInstanceOf[js.Any],
+        "CreationTime"         -> CreationTime.asInstanceOf[js.Any],
+        "TrainingJobArn"       -> TrainingJobArn.asInstanceOf[js.Any],
+        "TrainingJobName"      -> TrainingJobName.asInstanceOf[js.Any],
+        "TrainingJobStatus"    -> TrainingJobStatus.asInstanceOf[js.Any],
         "TunedHyperParameters" -> TunedHyperParameters.asInstanceOf[js.Any],
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "FinalHyperParameterTuningJobObjectiveMetric" -> FinalHyperParameterTuningJobObjectiveMetric.map { x => x.asInstanceOf[js.Any] },
-        "ObjectiveStatus" -> ObjectiveStatus.map { x => x.asInstanceOf[js.Any] },
-        "TrainingEndTime" -> TrainingEndTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingStartTime" -> TrainingStartTime.map { x => x.asInstanceOf[js.Any] },
-        "TuningJobName" -> TuningJobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FinalHyperParameterTuningJobObjectiveMetric" -> FinalHyperParameterTuningJobObjectiveMetric.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ObjectiveStatus" -> ObjectiveStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingEndTime" -> TrainingEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingStartTime" -> TrainingStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TuningJobName" -> TuningJobName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterTrainingJobSummary]
     }
   }
 
   /**
-   * Configures a hyperparameter tuning job.
-   */
+    * Configures a hyperparameter tuning job.
+    */
   @js.native
   trait HyperParameterTuningJobConfig extends js.Object {
     var HyperParameterTuningJobObjective: HyperParameterTuningJobObjective
@@ -3185,25 +3583,29 @@ package sagemaker {
 
   object HyperParameterTuningJobConfig {
     def apply(
-      HyperParameterTuningJobObjective: HyperParameterTuningJobObjective,
-      ParameterRanges: ParameterRanges,
-      ResourceLimits: ResourceLimits,
-      Strategy: HyperParameterTuningJobStrategyType,
-      TrainingJobEarlyStoppingType: js.UndefOr[TrainingJobEarlyStoppingType] = js.undefined): HyperParameterTuningJobConfig = {
+        HyperParameterTuningJobObjective: HyperParameterTuningJobObjective,
+        ParameterRanges: ParameterRanges,
+        ResourceLimits: ResourceLimits,
+        Strategy: HyperParameterTuningJobStrategyType,
+        TrainingJobEarlyStoppingType: js.UndefOr[TrainingJobEarlyStoppingType] = js.undefined
+    ): HyperParameterTuningJobConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HyperParameterTuningJobObjective" -> HyperParameterTuningJobObjective.asInstanceOf[js.Any],
-        "ParameterRanges" -> ParameterRanges.asInstanceOf[js.Any],
-        "ResourceLimits" -> ResourceLimits.asInstanceOf[js.Any],
-        "Strategy" -> Strategy.asInstanceOf[js.Any],
-        "TrainingJobEarlyStoppingType" -> TrainingJobEarlyStoppingType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ParameterRanges"                  -> ParameterRanges.asInstanceOf[js.Any],
+        "ResourceLimits"                   -> ResourceLimits.asInstanceOf[js.Any],
+        "Strategy"                         -> Strategy.asInstanceOf[js.Any],
+        "TrainingJobEarlyStoppingType" -> TrainingJobEarlyStoppingType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterTuningJobConfig]
     }
   }
 
   /**
-   * Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.
-   */
+    * Defines the objective metric for a hyperparameter tuning job. Hyperparameter tuning uses the value of this metric to evaluate the training jobs it launches, and returns the training job that results in either the highest or lowest value for this metric, depending on the value you specify for the <code>Type</code> parameter.
+    */
   @js.native
   trait HyperParameterTuningJobObjective extends js.Object {
     var MetricName: MetricName
@@ -3211,12 +3613,11 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobObjective {
-    def apply(
-      MetricName: MetricName,
-      Type: HyperParameterTuningJobObjectiveType): HyperParameterTuningJobObjective = {
+    def apply(MetricName: MetricName, Type: HyperParameterTuningJobObjectiveType): HyperParameterTuningJobObjective = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Type" -> Type.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Type"       -> Type.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterTuningJobObjective]
     }
@@ -3230,26 +3631,26 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobSortByOptionsEnum {
-    val Name = "Name"
-    val Status = "Status"
+    val Name         = "Name"
+    val Status       = "Status"
     val CreationTime = "CreationTime"
 
     val values = IndexedSeq(Name, Status, CreationTime)
   }
 
   object HyperParameterTuningJobStatusEnum {
-    val Completed = "Completed"
+    val Completed  = "Completed"
     val InProgress = "InProgress"
-    val Failed = "Failed"
-    val Stopped = "Stopped"
-    val Stopping = "Stopping"
+    val Failed     = "Failed"
+    val Stopped    = "Stopped"
+    val Stopping   = "Stopping"
 
     val values = IndexedSeq(Completed, InProgress, Failed, Stopped, Stopping)
   }
 
   /**
-   * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
-   */
+    * The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
+    */
   object HyperParameterTuningJobStrategyTypeEnum {
     val Bayesian = "Bayesian"
 
@@ -3257,8 +3658,8 @@ package sagemaker {
   }
 
   /**
-   * Provides summary information about a hyperparameter tuning job.
-   */
+    * Provides summary information about a hyperparameter tuning job.
+    */
   @js.native
   trait HyperParameterTuningJobSummary extends js.Object {
     var CreationTime: Timestamp
@@ -3274,39 +3675,45 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobSummary {
-    def apply(
-      CreationTime: Timestamp,
-      HyperParameterTuningJobArn: HyperParameterTuningJobArn,
-      HyperParameterTuningJobName: HyperParameterTuningJobName,
-      HyperParameterTuningJobStatus: HyperParameterTuningJobStatus,
-      ObjectiveStatusCounters: ObjectiveStatusCounters,
-      Strategy: HyperParameterTuningJobStrategyType,
-      TrainingJobStatusCounters: TrainingJobStatusCounters,
-      HyperParameterTuningEndTime: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
-      ResourceLimits: js.UndefOr[ResourceLimits] = js.undefined): HyperParameterTuningJobSummary = {
+    def apply(CreationTime: Timestamp,
+              HyperParameterTuningJobArn: HyperParameterTuningJobArn,
+              HyperParameterTuningJobName: HyperParameterTuningJobName,
+              HyperParameterTuningJobStatus: HyperParameterTuningJobStatus,
+              ObjectiveStatusCounters: ObjectiveStatusCounters,
+              Strategy: HyperParameterTuningJobStrategyType,
+              TrainingJobStatusCounters: TrainingJobStatusCounters,
+              HyperParameterTuningEndTime: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+              ResourceLimits: js.UndefOr[ResourceLimits] = js.undefined): HyperParameterTuningJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "HyperParameterTuningJobArn" -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
-        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any],
+        "CreationTime"                  -> CreationTime.asInstanceOf[js.Any],
+        "HyperParameterTuningJobArn"    -> HyperParameterTuningJobArn.asInstanceOf[js.Any],
+        "HyperParameterTuningJobName"   -> HyperParameterTuningJobName.asInstanceOf[js.Any],
         "HyperParameterTuningJobStatus" -> HyperParameterTuningJobStatus.asInstanceOf[js.Any],
-        "ObjectiveStatusCounters" -> ObjectiveStatusCounters.asInstanceOf[js.Any],
-        "Strategy" -> Strategy.asInstanceOf[js.Any],
-        "TrainingJobStatusCounters" -> TrainingJobStatusCounters.asInstanceOf[js.Any],
-        "HyperParameterTuningEndTime" -> HyperParameterTuningEndTime.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "ResourceLimits" -> ResourceLimits.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ObjectiveStatusCounters"       -> ObjectiveStatusCounters.asInstanceOf[js.Any],
+        "Strategy"                      -> Strategy.asInstanceOf[js.Any],
+        "TrainingJobStatusCounters"     -> TrainingJobStatusCounters.asInstanceOf[js.Any],
+        "HyperParameterTuningEndTime" -> HyperParameterTuningEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceLimits" -> ResourceLimits.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterTuningJobSummary]
     }
   }
 
   /**
-   * Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.
-   *  All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
-   *
-   * '''Note:'''All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.
-   */
+    * Specifies the configuration for a hyperparameter tuning job that uses one or more previous hyperparameter tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.
+    *  All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric, and the training job that performs the best is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.
+    *
+    * '''Note:'''All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.
+    */
   @js.native
   trait HyperParameterTuningJobWarmStartConfig extends js.Object {
     var ParentHyperParameterTuningJobs: ParentHyperParameterTuningJobs
@@ -3314,12 +3721,12 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobWarmStartConfig {
-    def apply(
-      ParentHyperParameterTuningJobs: ParentHyperParameterTuningJobs,
-      WarmStartType: HyperParameterTuningJobWarmStartType): HyperParameterTuningJobWarmStartConfig = {
+    def apply(ParentHyperParameterTuningJobs: ParentHyperParameterTuningJobs,
+              WarmStartType: HyperParameterTuningJobWarmStartType): HyperParameterTuningJobWarmStartConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParentHyperParameterTuningJobs" -> ParentHyperParameterTuningJobs.asInstanceOf[js.Any],
-        "WarmStartType" -> WarmStartType.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "WarmStartType"                  -> WarmStartType.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[HyperParameterTuningJobWarmStartConfig]
     }
@@ -3327,14 +3734,14 @@ package sagemaker {
 
   object HyperParameterTuningJobWarmStartTypeEnum {
     val IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm"
-    val TransferLearning = "TransferLearning"
+    val TransferLearning          = "TransferLearning"
 
     val values = IndexedSeq(IdenticalDataAndAlgorithm, TransferLearning)
   }
 
   /**
-   * Defines how to perform inference generation after a training job is run.
-   */
+    * Defines how to perform inference generation after a training job is run.
+    */
   @js.native
   trait InferenceSpecification extends js.Object {
     var Containers: ModelPackageContainerDefinitionList
@@ -3345,26 +3752,26 @@ package sagemaker {
   }
 
   object InferenceSpecification {
-    def apply(
-      Containers: ModelPackageContainerDefinitionList,
-      SupportedContentTypes: ContentTypes,
-      SupportedRealtimeInferenceInstanceTypes: RealtimeInferenceInstanceTypes,
-      SupportedResponseMIMETypes: ResponseMIMETypes,
-      SupportedTransformInstanceTypes: TransformInstanceTypes): InferenceSpecification = {
+    def apply(Containers: ModelPackageContainerDefinitionList,
+              SupportedContentTypes: ContentTypes,
+              SupportedRealtimeInferenceInstanceTypes: RealtimeInferenceInstanceTypes,
+              SupportedResponseMIMETypes: ResponseMIMETypes,
+              SupportedTransformInstanceTypes: TransformInstanceTypes): InferenceSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Containers" -> Containers.asInstanceOf[js.Any],
-        "SupportedContentTypes" -> SupportedContentTypes.asInstanceOf[js.Any],
+        "Containers"                              -> Containers.asInstanceOf[js.Any],
+        "SupportedContentTypes"                   -> SupportedContentTypes.asInstanceOf[js.Any],
         "SupportedRealtimeInferenceInstanceTypes" -> SupportedRealtimeInferenceInstanceTypes.asInstanceOf[js.Any],
-        "SupportedResponseMIMETypes" -> SupportedResponseMIMETypes.asInstanceOf[js.Any],
-        "SupportedTransformInstanceTypes" -> SupportedTransformInstanceTypes.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "SupportedResponseMIMETypes"              -> SupportedResponseMIMETypes.asInstanceOf[js.Any],
+        "SupportedTransformInstanceTypes"         -> SupportedTransformInstanceTypes.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InferenceSpecification]
     }
   }
 
   /**
-   * Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.
-   */
+    * Contains information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.
+    */
   @js.native
   trait InputConfig extends js.Object {
     var DataInputConfig: DataInputConfig
@@ -3373,65 +3780,102 @@ package sagemaker {
   }
 
   object InputConfig {
-    def apply(
-      DataInputConfig: DataInputConfig,
-      Framework: Framework,
-      S3Uri: S3Uri): InputConfig = {
+    def apply(DataInputConfig: DataInputConfig, Framework: Framework, S3Uri: S3Uri): InputConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataInputConfig" -> DataInputConfig.asInstanceOf[js.Any],
-        "Framework" -> Framework.asInstanceOf[js.Any],
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Framework"       -> Framework.asInstanceOf[js.Any],
+        "S3Uri"           -> S3Uri.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[InputConfig]
     }
   }
 
   object InstanceTypeEnum {
-    val `ml.t2.medium` = "ml.t2.medium"
-    val `ml.t2.large` = "ml.t2.large"
-    val `ml.t2.xlarge` = "ml.t2.xlarge"
-    val `ml.t2.2xlarge` = "ml.t2.2xlarge"
-    val `ml.t3.medium` = "ml.t3.medium"
-    val `ml.t3.large` = "ml.t3.large"
-    val `ml.t3.xlarge` = "ml.t3.xlarge"
-    val `ml.t3.2xlarge` = "ml.t3.2xlarge"
-    val `ml.m4.xlarge` = "ml.m4.xlarge"
-    val `ml.m4.2xlarge` = "ml.m4.2xlarge"
-    val `ml.m4.4xlarge` = "ml.m4.4xlarge"
-    val `ml.m4.10xlarge` = "ml.m4.10xlarge"
-    val `ml.m4.16xlarge` = "ml.m4.16xlarge"
-    val `ml.m5.xlarge` = "ml.m5.xlarge"
-    val `ml.m5.2xlarge` = "ml.m5.2xlarge"
-    val `ml.m5.4xlarge` = "ml.m5.4xlarge"
-    val `ml.m5.12xlarge` = "ml.m5.12xlarge"
-    val `ml.m5.24xlarge` = "ml.m5.24xlarge"
-    val `ml.c4.xlarge` = "ml.c4.xlarge"
-    val `ml.c4.2xlarge` = "ml.c4.2xlarge"
-    val `ml.c4.4xlarge` = "ml.c4.4xlarge"
-    val `ml.c4.8xlarge` = "ml.c4.8xlarge"
-    val `ml.c5.xlarge` = "ml.c5.xlarge"
-    val `ml.c5.2xlarge` = "ml.c5.2xlarge"
-    val `ml.c5.4xlarge` = "ml.c5.4xlarge"
-    val `ml.c5.9xlarge` = "ml.c5.9xlarge"
-    val `ml.c5.18xlarge` = "ml.c5.18xlarge"
-    val `ml.c5d.xlarge` = "ml.c5d.xlarge"
-    val `ml.c5d.2xlarge` = "ml.c5d.2xlarge"
-    val `ml.c5d.4xlarge` = "ml.c5d.4xlarge"
-    val `ml.c5d.9xlarge` = "ml.c5d.9xlarge"
+    val `ml.t2.medium`    = "ml.t2.medium"
+    val `ml.t2.large`     = "ml.t2.large"
+    val `ml.t2.xlarge`    = "ml.t2.xlarge"
+    val `ml.t2.2xlarge`   = "ml.t2.2xlarge"
+    val `ml.t3.medium`    = "ml.t3.medium"
+    val `ml.t3.large`     = "ml.t3.large"
+    val `ml.t3.xlarge`    = "ml.t3.xlarge"
+    val `ml.t3.2xlarge`   = "ml.t3.2xlarge"
+    val `ml.m4.xlarge`    = "ml.m4.xlarge"
+    val `ml.m4.2xlarge`   = "ml.m4.2xlarge"
+    val `ml.m4.4xlarge`   = "ml.m4.4xlarge"
+    val `ml.m4.10xlarge`  = "ml.m4.10xlarge"
+    val `ml.m4.16xlarge`  = "ml.m4.16xlarge"
+    val `ml.m5.xlarge`    = "ml.m5.xlarge"
+    val `ml.m5.2xlarge`   = "ml.m5.2xlarge"
+    val `ml.m5.4xlarge`   = "ml.m5.4xlarge"
+    val `ml.m5.12xlarge`  = "ml.m5.12xlarge"
+    val `ml.m5.24xlarge`  = "ml.m5.24xlarge"
+    val `ml.c4.xlarge`    = "ml.c4.xlarge"
+    val `ml.c4.2xlarge`   = "ml.c4.2xlarge"
+    val `ml.c4.4xlarge`   = "ml.c4.4xlarge"
+    val `ml.c4.8xlarge`   = "ml.c4.8xlarge"
+    val `ml.c5.xlarge`    = "ml.c5.xlarge"
+    val `ml.c5.2xlarge`   = "ml.c5.2xlarge"
+    val `ml.c5.4xlarge`   = "ml.c5.4xlarge"
+    val `ml.c5.9xlarge`   = "ml.c5.9xlarge"
+    val `ml.c5.18xlarge`  = "ml.c5.18xlarge"
+    val `ml.c5d.xlarge`   = "ml.c5d.xlarge"
+    val `ml.c5d.2xlarge`  = "ml.c5d.2xlarge"
+    val `ml.c5d.4xlarge`  = "ml.c5d.4xlarge"
+    val `ml.c5d.9xlarge`  = "ml.c5d.9xlarge"
     val `ml.c5d.18xlarge` = "ml.c5d.18xlarge"
-    val `ml.p2.xlarge` = "ml.p2.xlarge"
-    val `ml.p2.8xlarge` = "ml.p2.8xlarge"
-    val `ml.p2.16xlarge` = "ml.p2.16xlarge"
-    val `ml.p3.2xlarge` = "ml.p3.2xlarge"
-    val `ml.p3.8xlarge` = "ml.p3.8xlarge"
-    val `ml.p3.16xlarge` = "ml.p3.16xlarge"
+    val `ml.p2.xlarge`    = "ml.p2.xlarge"
+    val `ml.p2.8xlarge`   = "ml.p2.8xlarge"
+    val `ml.p2.16xlarge`  = "ml.p2.16xlarge"
+    val `ml.p3.2xlarge`   = "ml.p3.2xlarge"
+    val `ml.p3.8xlarge`   = "ml.p3.8xlarge"
+    val `ml.p3.16xlarge`  = "ml.p3.16xlarge"
 
-    val values = IndexedSeq(`ml.t2.medium`, `ml.t2.large`, `ml.t2.xlarge`, `ml.t2.2xlarge`, `ml.t3.medium`, `ml.t3.large`, `ml.t3.xlarge`, `ml.t3.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.c5d.xlarge`, `ml.c5d.2xlarge`, `ml.c5d.4xlarge`, `ml.c5d.9xlarge`, `ml.c5d.18xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`)
+    val values = IndexedSeq(
+      `ml.t2.medium`,
+      `ml.t2.large`,
+      `ml.t2.xlarge`,
+      `ml.t2.2xlarge`,
+      `ml.t3.medium`,
+      `ml.t3.large`,
+      `ml.t3.xlarge`,
+      `ml.t3.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.c5d.xlarge`,
+      `ml.c5d.2xlarge`,
+      `ml.c5d.4xlarge`,
+      `ml.c5d.9xlarge`,
+      `ml.c5d.18xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`
+    )
   }
 
   /**
-   * For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.
-   */
+    * For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.
+    */
   @js.native
   trait IntegerParameterRange extends js.Object {
     var MaxValue: ParameterValue
@@ -3440,22 +3884,20 @@ package sagemaker {
   }
 
   object IntegerParameterRange {
-    def apply(
-      MaxValue: ParameterValue,
-      MinValue: ParameterValue,
-      Name: ParameterKey): IntegerParameterRange = {
+    def apply(MaxValue: ParameterValue, MinValue: ParameterValue, Name: ParameterKey): IntegerParameterRange = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Name"     -> Name.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IntegerParameterRange]
     }
   }
 
   /**
-   * Defines the possible values for an integer hyperparameter.
-   */
+    * Defines the possible values for an integer hyperparameter.
+    */
   @js.native
   trait IntegerParameterRangeSpecification extends js.Object {
     var MaxValue: ParameterValue
@@ -3463,20 +3905,19 @@ package sagemaker {
   }
 
   object IntegerParameterRangeSpecification {
-    def apply(
-      MaxValue: ParameterValue,
-      MinValue: ParameterValue): IntegerParameterRangeSpecification = {
+    def apply(MaxValue: ParameterValue, MinValue: ParameterValue): IntegerParameterRangeSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
-        "MinValue" -> MinValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "MinValue" -> MinValue.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IntegerParameterRangeSpecification]
     }
   }
 
   /**
-   * Provides a breakdown of the number of objects labeled.
-   */
+    * Provides a breakdown of the number of objects labeled.
+    */
   @js.native
   trait LabelCounters extends js.Object {
     var FailedNonRetryableError: js.UndefOr[LabelCounter]
@@ -3487,26 +3928,36 @@ package sagemaker {
   }
 
   object LabelCounters {
-    def apply(
-      FailedNonRetryableError: js.UndefOr[LabelCounter] = js.undefined,
-      HumanLabeled: js.UndefOr[LabelCounter] = js.undefined,
-      MachineLabeled: js.UndefOr[LabelCounter] = js.undefined,
-      TotalLabeled: js.UndefOr[LabelCounter] = js.undefined,
-      Unlabeled: js.UndefOr[LabelCounter] = js.undefined): LabelCounters = {
+    def apply(FailedNonRetryableError: js.UndefOr[LabelCounter] = js.undefined,
+              HumanLabeled: js.UndefOr[LabelCounter] = js.undefined,
+              MachineLabeled: js.UndefOr[LabelCounter] = js.undefined,
+              TotalLabeled: js.UndefOr[LabelCounter] = js.undefined,
+              Unlabeled: js.UndefOr[LabelCounter] = js.undefined): LabelCounters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "FailedNonRetryableError" -> FailedNonRetryableError.map { x => x.asInstanceOf[js.Any] },
-        "HumanLabeled" -> HumanLabeled.map { x => x.asInstanceOf[js.Any] },
-        "MachineLabeled" -> MachineLabeled.map { x => x.asInstanceOf[js.Any] },
-        "TotalLabeled" -> TotalLabeled.map { x => x.asInstanceOf[js.Any] },
-        "Unlabeled" -> Unlabeled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FailedNonRetryableError" -> FailedNonRetryableError.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HumanLabeled" -> HumanLabeled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MachineLabeled" -> MachineLabeled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalLabeled" -> TotalLabeled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Unlabeled" -> Unlabeled.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelCounters]
     }
   }
 
   /**
-   * Provides counts for human-labeled tasks in the labeling job.
-   */
+    * Provides counts for human-labeled tasks in the labeling job.
+    */
   @js.native
   trait LabelCountersForWorkteam extends js.Object {
     var HumanLabeled: js.UndefOr[LabelCounter]
@@ -3515,22 +3966,28 @@ package sagemaker {
   }
 
   object LabelCountersForWorkteam {
-    def apply(
-      HumanLabeled: js.UndefOr[LabelCounter] = js.undefined,
-      PendingHuman: js.UndefOr[LabelCounter] = js.undefined,
-      Total: js.UndefOr[LabelCounter] = js.undefined): LabelCountersForWorkteam = {
+    def apply(HumanLabeled: js.UndefOr[LabelCounter] = js.undefined,
+              PendingHuman: js.UndefOr[LabelCounter] = js.undefined,
+              Total: js.UndefOr[LabelCounter] = js.undefined): LabelCountersForWorkteam = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "HumanLabeled" -> HumanLabeled.map { x => x.asInstanceOf[js.Any] },
-        "PendingHuman" -> PendingHuman.map { x => x.asInstanceOf[js.Any] },
-        "Total" -> Total.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HumanLabeled" -> HumanLabeled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PendingHuman" -> PendingHuman.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Total" -> Total.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelCountersForWorkteam]
     }
   }
 
   /**
-   * Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling.
-   */
+    * Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code> object must be supplied in order to use auto-labeling.
+    */
   @js.native
   trait LabelingJobAlgorithmsConfig extends js.Object {
     var LabelingJobAlgorithmSpecificationArn: LabelingJobAlgorithmSpecificationArn
@@ -3540,57 +3997,62 @@ package sagemaker {
 
   object LabelingJobAlgorithmsConfig {
     def apply(
-      LabelingJobAlgorithmSpecificationArn: LabelingJobAlgorithmSpecificationArn,
-      InitialActiveLearningModelArn: js.UndefOr[ModelArn] = js.undefined,
-      LabelingJobResourceConfig: js.UndefOr[LabelingJobResourceConfig] = js.undefined): LabelingJobAlgorithmsConfig = {
+        LabelingJobAlgorithmSpecificationArn: LabelingJobAlgorithmSpecificationArn,
+        InitialActiveLearningModelArn: js.UndefOr[ModelArn] = js.undefined,
+        LabelingJobResourceConfig: js.UndefOr[LabelingJobResourceConfig] = js.undefined
+    ): LabelingJobAlgorithmsConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LabelingJobAlgorithmSpecificationArn" -> LabelingJobAlgorithmSpecificationArn.asInstanceOf[js.Any],
-        "InitialActiveLearningModelArn" -> InitialActiveLearningModelArn.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobResourceConfig" -> LabelingJobResourceConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InitialActiveLearningModelArn" -> InitialActiveLearningModelArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobResourceConfig" -> LabelingJobResourceConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobAlgorithmsConfig]
     }
   }
 
   /**
-   * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
-   */
+    * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
+    */
   @js.native
   trait LabelingJobDataAttributes extends js.Object {
     var ContentClassifiers: js.UndefOr[ContentClassifiers]
   }
 
   object LabelingJobDataAttributes {
-    def apply(
-      ContentClassifiers: js.UndefOr[ContentClassifiers] = js.undefined): LabelingJobDataAttributes = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContentClassifiers" -> ContentClassifiers.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ContentClassifiers: js.UndefOr[ContentClassifiers] = js.undefined): LabelingJobDataAttributes = {
+      val _fields = IndexedSeq[(String, js.Any)]("ContentClassifiers" -> ContentClassifiers.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobDataAttributes]
     }
   }
 
   /**
-   * Provides information about the location of input data.
-   */
+    * Provides information about the location of input data.
+    */
   @js.native
   trait LabelingJobDataSource extends js.Object {
     var S3DataSource: LabelingJobS3DataSource
   }
 
   object LabelingJobDataSource {
-    def apply(
-      S3DataSource: LabelingJobS3DataSource): LabelingJobDataSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3DataSource" -> S3DataSource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3DataSource: LabelingJobS3DataSource): LabelingJobDataSource = {
+      val _fields = IndexedSeq[(String, js.Any)]("S3DataSource" -> S3DataSource.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobDataSource]
     }
   }
 
   /**
-   * Provides summary information for a work team.
-   */
+    * Provides summary information for a work team.
+    */
   @js.native
   trait LabelingJobForWorkteamSummary extends js.Object {
     var CreationTime: Timestamp
@@ -3601,26 +4063,30 @@ package sagemaker {
   }
 
   object LabelingJobForWorkteamSummary {
-    def apply(
-      CreationTime: Timestamp,
-      JobReferenceCode: JobReferenceCode,
-      WorkRequesterAccountId: AccountId,
-      LabelCounters: js.UndefOr[LabelCountersForWorkteam] = js.undefined,
-      LabelingJobName: js.UndefOr[LabelingJobName] = js.undefined): LabelingJobForWorkteamSummary = {
+    def apply(CreationTime: Timestamp,
+              JobReferenceCode: JobReferenceCode,
+              WorkRequesterAccountId: AccountId,
+              LabelCounters: js.UndefOr[LabelCountersForWorkteam] = js.undefined,
+              LabelingJobName: js.UndefOr[LabelingJobName] = js.undefined): LabelingJobForWorkteamSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "JobReferenceCode" -> JobReferenceCode.asInstanceOf[js.Any],
+        "CreationTime"           -> CreationTime.asInstanceOf[js.Any],
+        "JobReferenceCode"       -> JobReferenceCode.asInstanceOf[js.Any],
         "WorkRequesterAccountId" -> WorkRequesterAccountId.asInstanceOf[js.Any],
-        "LabelCounters" -> LabelCounters.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobName" -> LabelingJobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LabelCounters" -> LabelCounters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobName" -> LabelingJobName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobForWorkteamSummary]
     }
   }
 
   /**
-   * Input configuration information for a labeling job.
-   */
+    * Input configuration information for a labeling job.
+    */
   @js.native
   trait LabelingJobInputConfig extends js.Object {
     var DataSource: LabelingJobDataSource
@@ -3628,20 +4094,22 @@ package sagemaker {
   }
 
   object LabelingJobInputConfig {
-    def apply(
-      DataSource: LabelingJobDataSource,
-      DataAttributes: js.UndefOr[LabelingJobDataAttributes] = js.undefined): LabelingJobInputConfig = {
+    def apply(DataSource: LabelingJobDataSource,
+              DataAttributes: js.UndefOr[LabelingJobDataAttributes] = js.undefined): LabelingJobInputConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataSource" -> DataSource.asInstanceOf[js.Any],
-        "DataAttributes" -> DataAttributes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DataAttributes" -> DataAttributes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobInputConfig]
     }
   }
 
   /**
-   * Specifies the location of the output produced by the labeling job.
-   */
+    * Specifies the location of the output produced by the labeling job.
+    */
   @js.native
   trait LabelingJobOutput extends js.Object {
     var OutputDatasetS3Uri: S3Uri
@@ -3649,20 +4117,22 @@ package sagemaker {
   }
 
   object LabelingJobOutput {
-    def apply(
-      OutputDatasetS3Uri: S3Uri,
-      FinalActiveLearningModelArn: js.UndefOr[ModelArn] = js.undefined): LabelingJobOutput = {
+    def apply(OutputDatasetS3Uri: S3Uri,
+              FinalActiveLearningModelArn: js.UndefOr[ModelArn] = js.undefined): LabelingJobOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "OutputDatasetS3Uri" -> OutputDatasetS3Uri.asInstanceOf[js.Any],
-        "FinalActiveLearningModelArn" -> FinalActiveLearningModelArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FinalActiveLearningModelArn" -> FinalActiveLearningModelArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobOutput]
     }
   }
 
   /**
-   * Output configuration information for a labeling job.
-   */
+    * Output configuration information for a labeling job.
+    */
   @js.native
   trait LabelingJobOutputConfig extends js.Object {
     var S3OutputPath: S3Uri
@@ -3670,48 +4140,47 @@ package sagemaker {
   }
 
   object LabelingJobOutputConfig {
-    def apply(
-      S3OutputPath: S3Uri,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): LabelingJobOutputConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3OutputPath" -> S3OutputPath.asInstanceOf[js.Any],
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3OutputPath: S3Uri, KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): LabelingJobOutputConfig = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3OutputPath" -> S3OutputPath.asInstanceOf[js.Any], "KmsKeyId" -> KmsKeyId.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobOutputConfig]
     }
   }
 
   /**
-   * Provides configuration information for labeling jobs.
-   */
+    * Provides configuration information for labeling jobs.
+    */
   @js.native
   trait LabelingJobResourceConfig extends js.Object {
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
   }
 
   object LabelingJobResourceConfig {
-    def apply(
-      VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): LabelingJobResourceConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "VolumeKmsKeyId" -> VolumeKmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): LabelingJobResourceConfig = {
+      val _fields = IndexedSeq[(String, js.Any)]("VolumeKmsKeyId" -> VolumeKmsKeyId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobResourceConfig]
     }
   }
 
   /**
-   * The Amazon S3 location of the input data objects.
-   */
+    * The Amazon S3 location of the input data objects.
+    */
   @js.native
   trait LabelingJobS3DataSource extends js.Object {
     var ManifestS3Uri: S3Uri
   }
 
   object LabelingJobS3DataSource {
-    def apply(
-      ManifestS3Uri: S3Uri): LabelingJobS3DataSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ManifestS3Uri" -> ManifestS3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ManifestS3Uri: S3Uri): LabelingJobS3DataSource = {
+      val _fields = IndexedSeq[(String, js.Any)]("ManifestS3Uri" -> ManifestS3Uri.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobS3DataSource]
     }
@@ -3719,17 +4188,17 @@ package sagemaker {
 
   object LabelingJobStatusEnum {
     val InProgress = "InProgress"
-    val Completed = "Completed"
-    val Failed = "Failed"
-    val Stopping = "Stopping"
-    val Stopped = "Stopped"
+    val Completed  = "Completed"
+    val Failed     = "Failed"
+    val Stopping   = "Stopping"
+    val Stopped    = "Stopped"
 
     val values = IndexedSeq(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
-   * A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.
-   */
+    * A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.
+    */
   @js.native
   trait LabelingJobStoppingConditions extends js.Object {
     var MaxHumanLabeledObjectCount: js.UndefOr[MaxHumanLabeledObjectCount]
@@ -3738,19 +4207,25 @@ package sagemaker {
 
   object LabelingJobStoppingConditions {
     def apply(
-      MaxHumanLabeledObjectCount: js.UndefOr[MaxHumanLabeledObjectCount] = js.undefined,
-      MaxPercentageOfInputDatasetLabeled: js.UndefOr[MaxPercentageOfInputDatasetLabeled] = js.undefined): LabelingJobStoppingConditions = {
+        MaxHumanLabeledObjectCount: js.UndefOr[MaxHumanLabeledObjectCount] = js.undefined,
+        MaxPercentageOfInputDatasetLabeled: js.UndefOr[MaxPercentageOfInputDatasetLabeled] = js.undefined
+    ): LabelingJobStoppingConditions = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxHumanLabeledObjectCount" -> MaxHumanLabeledObjectCount.map { x => x.asInstanceOf[js.Any] },
-        "MaxPercentageOfInputDatasetLabeled" -> MaxPercentageOfInputDatasetLabeled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxHumanLabeledObjectCount" -> MaxHumanLabeledObjectCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxPercentageOfInputDatasetLabeled" -> MaxPercentageOfInputDatasetLabeled.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobStoppingConditions]
     }
   }
 
   /**
-   * Provides summary information about a labeling job.
-   */
+    * Provides summary information about a labeling job.
+    */
   @js.native
   trait LabelingJobSummary extends js.Object {
     var CreationTime: Timestamp
@@ -3768,32 +4243,40 @@ package sagemaker {
   }
 
   object LabelingJobSummary {
-    def apply(
-      CreationTime: Timestamp,
-      LabelCounters: LabelCounters,
-      LabelingJobArn: LabelingJobArn,
-      LabelingJobName: LabelingJobName,
-      LabelingJobStatus: LabelingJobStatus,
-      LastModifiedTime: Timestamp,
-      PreHumanTaskLambdaArn: LambdaFunctionArn,
-      WorkteamArn: WorkteamArn,
-      AnnotationConsolidationLambdaArn: js.UndefOr[LambdaFunctionArn] = js.undefined,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      InputConfig: js.UndefOr[LabelingJobInputConfig] = js.undefined,
-      LabelingJobOutput: js.UndefOr[LabelingJobOutput] = js.undefined): LabelingJobSummary = {
+    def apply(CreationTime: Timestamp,
+              LabelCounters: LabelCounters,
+              LabelingJobArn: LabelingJobArn,
+              LabelingJobName: LabelingJobName,
+              LabelingJobStatus: LabelingJobStatus,
+              LastModifiedTime: Timestamp,
+              PreHumanTaskLambdaArn: LambdaFunctionArn,
+              WorkteamArn: WorkteamArn,
+              AnnotationConsolidationLambdaArn: js.UndefOr[LambdaFunctionArn] = js.undefined,
+              FailureReason: js.UndefOr[FailureReason] = js.undefined,
+              InputConfig: js.UndefOr[LabelingJobInputConfig] = js.undefined,
+              LabelingJobOutput: js.UndefOr[LabelingJobOutput] = js.undefined): LabelingJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "LabelCounters" -> LabelCounters.asInstanceOf[js.Any],
-        "LabelingJobArn" -> LabelingJobArn.asInstanceOf[js.Any],
-        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any],
-        "LabelingJobStatus" -> LabelingJobStatus.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "CreationTime"          -> CreationTime.asInstanceOf[js.Any],
+        "LabelCounters"         -> LabelCounters.asInstanceOf[js.Any],
+        "LabelingJobArn"        -> LabelingJobArn.asInstanceOf[js.Any],
+        "LabelingJobName"       -> LabelingJobName.asInstanceOf[js.Any],
+        "LabelingJobStatus"     -> LabelingJobStatus.asInstanceOf[js.Any],
+        "LastModifiedTime"      -> LastModifiedTime.asInstanceOf[js.Any],
         "PreHumanTaskLambdaArn" -> PreHumanTaskLambdaArn.asInstanceOf[js.Any],
-        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any],
-        "AnnotationConsolidationLambdaArn" -> AnnotationConsolidationLambdaArn.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "InputConfig" -> InputConfig.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobOutput" -> LabelingJobOutput.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkteamArn"           -> WorkteamArn.asInstanceOf[js.Any],
+        "AnnotationConsolidationLambdaArn" -> AnnotationConsolidationLambdaArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputConfig" -> InputConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobOutput" -> LabelingJobOutput.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[LabelingJobSummary]
     }
@@ -3811,22 +4294,36 @@ package sagemaker {
   }
 
   object ListAlgorithmsInput {
-    def apply(
-      CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
-      CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[AlgorithmSortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined): ListAlgorithmsInput = {
+    def apply(CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
+              CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[NameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[AlgorithmSortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined): ListAlgorithmsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAlgorithmsInput]
     }
@@ -3839,12 +4336,14 @@ package sagemaker {
   }
 
   object ListAlgorithmsOutput {
-    def apply(
-      AlgorithmSummaryList: AlgorithmSummaryList,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListAlgorithmsOutput = {
+    def apply(AlgorithmSummaryList: AlgorithmSummaryList,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListAlgorithmsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlgorithmSummaryList" -> AlgorithmSummaryList.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListAlgorithmsOutput]
     }
@@ -3864,26 +4363,44 @@ package sagemaker {
   }
 
   object ListCodeRepositoriesInput {
-    def apply(
-      CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
-      CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[CodeRepositoryNameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[CodeRepositorySortBy] = js.undefined,
-      SortOrder: js.UndefOr[CodeRepositorySortOrder] = js.undefined): ListCodeRepositoriesInput = {
+    def apply(CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
+              CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
+              LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[CodeRepositoryNameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[CodeRepositorySortBy] = js.undefined,
+              SortOrder: js.UndefOr[CodeRepositorySortOrder] = js.undefined): ListCodeRepositoriesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCodeRepositoriesInput]
     }
@@ -3896,12 +4413,14 @@ package sagemaker {
   }
 
   object ListCodeRepositoriesOutput {
-    def apply(
-      CodeRepositorySummaryList: CodeRepositorySummaryList,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListCodeRepositoriesOutput = {
+    def apply(CodeRepositorySummaryList: CodeRepositorySummaryList,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListCodeRepositoriesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CodeRepositorySummaryList" -> CodeRepositorySummaryList.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCodeRepositoriesOutput]
     }
@@ -3922,28 +4441,48 @@ package sagemaker {
   }
 
   object ListCompilationJobsRequest {
-    def apply(
-      CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
-      CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[LastModifiedTime] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[LastModifiedTime] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[ListCompilationJobsSortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
-      StatusEquals: js.UndefOr[CompilationJobStatus] = js.undefined): ListCompilationJobsRequest = {
+    def apply(CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
+              CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
+              LastModifiedTimeAfter: js.UndefOr[LastModifiedTime] = js.undefined,
+              LastModifiedTimeBefore: js.UndefOr[LastModifiedTime] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[NameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[ListCompilationJobsSortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined,
+              StatusEquals: js.UndefOr[CompilationJobStatus] = js.undefined): ListCompilationJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCompilationJobsRequest]
     }
@@ -3956,21 +4495,23 @@ package sagemaker {
   }
 
   object ListCompilationJobsResponse {
-    def apply(
-      CompilationJobSummaries: CompilationJobSummaries,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListCompilationJobsResponse = {
+    def apply(CompilationJobSummaries: CompilationJobSummaries,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListCompilationJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CompilationJobSummaries" -> CompilationJobSummaries.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListCompilationJobsResponse]
     }
   }
 
   object ListCompilationJobsSortByEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
-    val Status = "Status"
+    val Status       = "Status"
 
     val values = IndexedSeq(Name, CreationTime, Status)
   }
@@ -3987,22 +4528,36 @@ package sagemaker {
   }
 
   object ListEndpointConfigsInput {
-    def apply(
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[EndpointConfigNameContains] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      SortBy: js.UndefOr[EndpointConfigSortKey] = js.undefined,
-      SortOrder: js.UndefOr[OrderKey] = js.undefined): ListEndpointConfigsInput = {
+    def apply(CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[EndpointConfigNameContains] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              SortBy: js.UndefOr[EndpointConfigSortKey] = js.undefined,
+              SortOrder: js.UndefOr[OrderKey] = js.undefined): ListEndpointConfigsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEndpointConfigsInput]
     }
@@ -4015,12 +4570,14 @@ package sagemaker {
   }
 
   object ListEndpointConfigsOutput {
-    def apply(
-      EndpointConfigs: EndpointConfigSummaryList,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListEndpointConfigsOutput = {
+    def apply(EndpointConfigs: EndpointConfigSummaryList,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListEndpointConfigsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndpointConfigs" -> EndpointConfigs.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEndpointConfigsOutput]
     }
@@ -4041,28 +4598,48 @@ package sagemaker {
   }
 
   object ListEndpointsInput {
-    def apply(
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[EndpointNameContains] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      SortBy: js.UndefOr[EndpointSortKey] = js.undefined,
-      SortOrder: js.UndefOr[OrderKey] = js.undefined,
-      StatusEquals: js.UndefOr[EndpointStatus] = js.undefined): ListEndpointsInput = {
+    def apply(CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[EndpointNameContains] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              SortBy: js.UndefOr[EndpointSortKey] = js.undefined,
+              SortOrder: js.UndefOr[OrderKey] = js.undefined,
+              StatusEquals: js.UndefOr[EndpointStatus] = js.undefined): ListEndpointsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEndpointsInput]
     }
@@ -4075,12 +4652,12 @@ package sagemaker {
   }
 
   object ListEndpointsOutput {
-    def apply(
-      Endpoints: EndpointSummaryList,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListEndpointsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Endpoints" -> Endpoints.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Endpoints: EndpointSummaryList,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined): ListEndpointsOutput = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Endpoints" -> Endpoints.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListEndpointsOutput]
     }
@@ -4102,27 +4679,49 @@ package sagemaker {
 
   object ListHyperParameterTuningJobsRequest {
     def apply(
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[HyperParameterTuningJobSortByOptions] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
-      StatusEquals: js.UndefOr[HyperParameterTuningJobStatus] = js.undefined): ListHyperParameterTuningJobsRequest = {
+        CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[NameContains] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[HyperParameterTuningJobSortByOptions] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined,
+        StatusEquals: js.UndefOr[HyperParameterTuningJobStatus] = js.undefined
+    ): ListHyperParameterTuningJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHyperParameterTuningJobsRequest]
     }
@@ -4135,12 +4734,14 @@ package sagemaker {
   }
 
   object ListHyperParameterTuningJobsResponse {
-    def apply(
-      HyperParameterTuningJobSummaries: HyperParameterTuningJobSummaries,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListHyperParameterTuningJobsResponse = {
+    def apply(HyperParameterTuningJobSummaries: HyperParameterTuningJobSummaries,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListHyperParameterTuningJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HyperParameterTuningJobSummaries" -> HyperParameterTuningJobSummaries.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListHyperParameterTuningJobsResponse]
     }
@@ -4159,24 +4760,38 @@ package sagemaker {
   }
 
   object ListLabelingJobsForWorkteamRequest {
-    def apply(
-      WorkteamArn: WorkteamArn,
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      JobReferenceCodeContains: js.UndefOr[JobReferenceCodeContains] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[ListLabelingJobsForWorkteamSortByOptions] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined): ListLabelingJobsForWorkteamRequest = {
+    def apply(WorkteamArn: WorkteamArn,
+              CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              JobReferenceCodeContains: js.UndefOr[JobReferenceCodeContains] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[ListLabelingJobsForWorkteamSortByOptions] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined): ListLabelingJobsForWorkteamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any],
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "JobReferenceCodeContains" -> JobReferenceCodeContains.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "JobReferenceCodeContains" -> JobReferenceCodeContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLabelingJobsForWorkteamRequest]
     }
@@ -4189,12 +4804,14 @@ package sagemaker {
   }
 
   object ListLabelingJobsForWorkteamResponse {
-    def apply(
-      LabelingJobSummaryList: LabelingJobForWorkteamSummaryList,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListLabelingJobsForWorkteamResponse = {
+    def apply(LabelingJobSummaryList: LabelingJobForWorkteamSummaryList,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListLabelingJobsForWorkteamResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "LabelingJobSummaryList" -> LabelingJobSummaryList.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLabelingJobsForWorkteamResponse]
     }
@@ -4221,28 +4838,48 @@ package sagemaker {
   }
 
   object ListLabelingJobsRequest {
-    def apply(
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[SortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
-      StatusEquals: js.UndefOr[LabelingJobStatus] = js.undefined): ListLabelingJobsRequest = {
+    def apply(CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[NameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[SortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined,
+              StatusEquals: js.UndefOr[LabelingJobStatus] = js.undefined): ListLabelingJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLabelingJobsRequest]
     }
@@ -4255,12 +4892,13 @@ package sagemaker {
   }
 
   object ListLabelingJobsResponse {
-    def apply(
-      LabelingJobSummaryList: js.UndefOr[LabelingJobSummaryList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListLabelingJobsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LabelingJobSummaryList" -> LabelingJobSummaryList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(LabelingJobSummaryList: js.UndefOr[LabelingJobSummaryList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListLabelingJobsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("LabelingJobSummaryList" -> LabelingJobSummaryList.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListLabelingJobsResponse]
     }
@@ -4278,22 +4916,36 @@ package sagemaker {
   }
 
   object ListModelPackagesInput {
-    def apply(
-      CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
-      CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[ModelPackageSortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined): ListModelPackagesInput = {
+    def apply(CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
+              CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[NameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[ModelPackageSortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined): ListModelPackagesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListModelPackagesInput]
     }
@@ -4306,12 +4958,14 @@ package sagemaker {
   }
 
   object ListModelPackagesOutput {
-    def apply(
-      ModelPackageSummaryList: ModelPackageSummaryList,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListModelPackagesOutput = {
+    def apply(ModelPackageSummaryList: ModelPackageSummaryList,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListModelPackagesOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ModelPackageSummaryList" -> ModelPackageSummaryList.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListModelPackagesOutput]
     }
@@ -4329,22 +4983,36 @@ package sagemaker {
   }
 
   object ListModelsInput {
-    def apply(
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[ModelNameContains] = js.undefined,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined,
-      SortBy: js.UndefOr[ModelSortKey] = js.undefined,
-      SortOrder: js.UndefOr[OrderKey] = js.undefined): ListModelsInput = {
+    def apply(CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[ModelNameContains] = js.undefined,
+              NextToken: js.UndefOr[PaginationToken] = js.undefined,
+              SortBy: js.UndefOr[ModelSortKey] = js.undefined,
+              SortOrder: js.UndefOr[OrderKey] = js.undefined): ListModelsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListModelsInput]
     }
@@ -4357,12 +5025,11 @@ package sagemaker {
   }
 
   object ListModelsOutput {
-    def apply(
-      Models: ModelSummaryList,
-      NextToken: js.UndefOr[PaginationToken] = js.undefined): ListModelsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Models" -> Models.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Models: ModelSummaryList, NextToken: js.UndefOr[PaginationToken] = js.undefined): ListModelsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("Models" -> Models.asInstanceOf[js.Any], "NextToken" -> NextToken.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListModelsOutput]
     }
@@ -4383,25 +5050,45 @@ package sagemaker {
 
   object ListNotebookInstanceLifecycleConfigsInput {
     def apply(
-      CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
-      CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[LastModifiedTime] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[LastModifiedTime] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NotebookInstanceLifecycleConfigNameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[NotebookInstanceLifecycleConfigSortKey] = js.undefined,
-      SortOrder: js.UndefOr[NotebookInstanceLifecycleConfigSortOrder] = js.undefined): ListNotebookInstanceLifecycleConfigsInput = {
+        CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
+        CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
+        LastModifiedTimeAfter: js.UndefOr[LastModifiedTime] = js.undefined,
+        LastModifiedTimeBefore: js.UndefOr[LastModifiedTime] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[NotebookInstanceLifecycleConfigNameContains] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[NotebookInstanceLifecycleConfigSortKey] = js.undefined,
+        SortOrder: js.UndefOr[NotebookInstanceLifecycleConfigSortOrder] = js.undefined
+    ): ListNotebookInstanceLifecycleConfigsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNotebookInstanceLifecycleConfigsInput]
     }
@@ -4415,13 +5102,21 @@ package sagemaker {
 
   object ListNotebookInstanceLifecycleConfigsOutput {
     def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      NotebookInstanceLifecycleConfigs: js.UndefOr[NotebookInstanceLifecycleConfigSummaryList] = js.undefined): ListNotebookInstanceLifecycleConfigsOutput = {
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        NotebookInstanceLifecycleConfigs: js.UndefOr[NotebookInstanceLifecycleConfigSummaryList] = js.undefined
+    ): ListNotebookInstanceLifecycleConfigsOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceLifecycleConfigs" -> NotebookInstanceLifecycleConfigs.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceLifecycleConfigs" -> NotebookInstanceLifecycleConfigs.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNotebookInstanceLifecycleConfigsOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ListNotebookInstanceLifecycleConfigsOutput]
     }
   }
 
@@ -4443,34 +5138,61 @@ package sagemaker {
   }
 
   object ListNotebookInstancesInput {
-    def apply(
-      AdditionalCodeRepositoryEquals: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
-      CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
-      CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
-      DefaultCodeRepositoryContains: js.UndefOr[CodeRepositoryContains] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[LastModifiedTime] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[LastModifiedTime] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NotebookInstanceNameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      NotebookInstanceLifecycleConfigNameContains: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
-      SortBy: js.UndefOr[NotebookInstanceSortKey] = js.undefined,
-      SortOrder: js.UndefOr[NotebookInstanceSortOrder] = js.undefined,
-      StatusEquals: js.UndefOr[NotebookInstanceStatus] = js.undefined): ListNotebookInstancesInput = {
+    def apply(AdditionalCodeRepositoryEquals: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
+              CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
+              CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
+              DefaultCodeRepositoryContains: js.UndefOr[CodeRepositoryContains] = js.undefined,
+              LastModifiedTimeAfter: js.UndefOr[LastModifiedTime] = js.undefined,
+              LastModifiedTimeBefore: js.UndefOr[LastModifiedTime] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[NotebookInstanceNameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              NotebookInstanceLifecycleConfigNameContains: js.UndefOr[NotebookInstanceLifecycleConfigName] =
+                js.undefined,
+              SortBy: js.UndefOr[NotebookInstanceSortKey] = js.undefined,
+              SortOrder: js.UndefOr[NotebookInstanceSortOrder] = js.undefined,
+              StatusEquals: js.UndefOr[NotebookInstanceStatus] = js.undefined): ListNotebookInstancesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AdditionalCodeRepositoryEquals" -> AdditionalCodeRepositoryEquals.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "DefaultCodeRepositoryContains" -> DefaultCodeRepositoryContains.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceLifecycleConfigNameContains" -> NotebookInstanceLifecycleConfigNameContains.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AdditionalCodeRepositoryEquals" -> AdditionalCodeRepositoryEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultCodeRepositoryContains" -> DefaultCodeRepositoryContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceLifecycleConfigNameContains" -> NotebookInstanceLifecycleConfigNameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNotebookInstancesInput]
     }
@@ -4484,11 +5206,14 @@ package sagemaker {
 
   object ListNotebookInstancesOutput {
     def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      NotebookInstances: js.UndefOr[NotebookInstanceSummaryList] = js.undefined): ListNotebookInstancesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstances" -> NotebookInstances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        NotebookInstances: js.UndefOr[NotebookInstanceSummaryList] = js.undefined
+    ): ListNotebookInstancesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NotebookInstances" -> NotebookInstances.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListNotebookInstancesOutput]
     }
@@ -4502,14 +5227,20 @@ package sagemaker {
   }
 
   object ListSubscribedWorkteamsRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[WorkteamName] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListSubscribedWorkteamsRequest = {
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[WorkteamName] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListSubscribedWorkteamsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscribedWorkteamsRequest]
     }
@@ -4522,12 +5253,14 @@ package sagemaker {
   }
 
   object ListSubscribedWorkteamsResponse {
-    def apply(
-      SubscribedWorkteams: SubscribedWorkteams,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListSubscribedWorkteamsResponse = {
+    def apply(SubscribedWorkteams: SubscribedWorkteams,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListSubscribedWorkteamsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SubscribedWorkteams" -> SubscribedWorkteams.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSubscribedWorkteamsResponse]
     }
@@ -4541,14 +5274,18 @@ package sagemaker {
   }
 
   object ListTagsInput {
-    def apply(
-      ResourceArn: ResourceArn,
-      MaxResults: js.UndefOr[ListTagsMaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsInput = {
+    def apply(ResourceArn: ResourceArn,
+              MaxResults: js.UndefOr[ListTagsMaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsInput]
     }
@@ -4561,12 +5298,13 @@ package sagemaker {
   }
 
   object ListTagsOutput {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): ListTagsOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): ListTagsOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Tags" -> Tags.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsOutput]
     }
@@ -4584,21 +5322,35 @@ package sagemaker {
 
   object ListTrainingJobsForHyperParameterTuningJobRequest {
     def apply(
-      HyperParameterTuningJobName: HyperParameterTuningJobName,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[TrainingJobSortByOptions] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
-      StatusEquals: js.UndefOr[TrainingJobStatus] = js.undefined): ListTrainingJobsForHyperParameterTuningJobRequest = {
+        HyperParameterTuningJobName: HyperParameterTuningJobName,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[TrainingJobSortByOptions] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined,
+        StatusEquals: js.UndefOr[TrainingJobStatus] = js.undefined
+    ): ListTrainingJobsForHyperParameterTuningJobRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTrainingJobsForHyperParameterTuningJobRequest]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ListTrainingJobsForHyperParameterTuningJobRequest]
     }
   }
 
@@ -4609,14 +5361,18 @@ package sagemaker {
   }
 
   object ListTrainingJobsForHyperParameterTuningJobResponse {
-    def apply(
-      TrainingJobSummaries: HyperParameterTrainingJobSummaries,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTrainingJobsForHyperParameterTuningJobResponse = {
+    def apply(TrainingJobSummaries: HyperParameterTrainingJobSummaries,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListTrainingJobsForHyperParameterTuningJobResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TrainingJobSummaries" -> TrainingJobSummaries.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTrainingJobsForHyperParameterTuningJobResponse]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[ListTrainingJobsForHyperParameterTuningJobResponse]
     }
   }
 
@@ -4635,28 +5391,48 @@ package sagemaker {
   }
 
   object ListTrainingJobsRequest {
-    def apply(
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[SortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
-      StatusEquals: js.UndefOr[TrainingJobStatus] = js.undefined): ListTrainingJobsRequest = {
+    def apply(CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[NameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[SortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined,
+              StatusEquals: js.UndefOr[TrainingJobStatus] = js.undefined): ListTrainingJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTrainingJobsRequest]
     }
@@ -4669,12 +5445,14 @@ package sagemaker {
   }
 
   object ListTrainingJobsResponse {
-    def apply(
-      TrainingJobSummaries: TrainingJobSummaries,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTrainingJobsResponse = {
+    def apply(TrainingJobSummaries: TrainingJobSummaries,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListTrainingJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TrainingJobSummaries" -> TrainingJobSummaries.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTrainingJobsResponse]
     }
@@ -4695,28 +5473,48 @@ package sagemaker {
   }
 
   object ListTransformJobsRequest {
-    def apply(
-      CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
-      LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[NameContains] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[SortBy] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined,
-      StatusEquals: js.UndefOr[TransformJobStatus] = js.undefined): ListTransformJobsRequest = {
+    def apply(CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+              LastModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[NameContains] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[SortBy] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined,
+              StatusEquals: js.UndefOr[TransformJobStatus] = js.undefined): ListTransformJobsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTimeAfter" -> CreationTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "CreationTimeBefore" -> CreationTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] },
-        "StatusEquals" -> StatusEquals.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTimeAfter" -> CreationTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTimeBefore" -> CreationTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeAfter" -> LastModifiedTimeAfter.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTimeBefore" -> LastModifiedTimeBefore.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusEquals" -> StatusEquals.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTransformJobsRequest]
     }
@@ -4729,12 +5527,14 @@ package sagemaker {
   }
 
   object ListTransformJobsResponse {
-    def apply(
-      TransformJobSummaries: TransformJobSummaries,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTransformJobsResponse = {
+    def apply(TransformJobSummaries: TransformJobSummaries,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListTransformJobsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
         "TransformJobSummaries" -> TransformJobSummaries.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTransformJobsResponse]
     }
@@ -4750,18 +5550,28 @@ package sagemaker {
   }
 
   object ListWorkteamsRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NameContains: js.UndefOr[WorkteamName] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortBy: js.UndefOr[ListWorkteamsSortByOptions] = js.undefined,
-      SortOrder: js.UndefOr[SortOrder] = js.undefined): ListWorkteamsRequest = {
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NameContains: js.UndefOr[WorkteamName] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortBy: js.UndefOr[ListWorkteamsSortByOptions] = js.undefined,
+              SortOrder: js.UndefOr[SortOrder] = js.undefined): ListWorkteamsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NameContains" -> NameContains.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NameContains" -> NameContains.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkteamsRequest]
     }
@@ -4774,45 +5584,44 @@ package sagemaker {
   }
 
   object ListWorkteamsResponse {
-    def apply(
-      Workteams: Workteams,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListWorkteamsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Workteams" -> Workteams.asInstanceOf[js.Any],
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Workteams: Workteams, NextToken: js.UndefOr[NextToken] = js.undefined): ListWorkteamsResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Workteams" -> Workteams.asInstanceOf[js.Any], "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListWorkteamsResponse]
     }
   }
 
   object ListWorkteamsSortByOptionsEnum {
-    val Name = "Name"
+    val Name       = "Name"
     val CreateDate = "CreateDate"
 
     val values = IndexedSeq(Name, CreateDate)
   }
 
   /**
-   * Defines the Amazon Cognito user group that is part of a work team.
-   */
+    * Defines the Amazon Cognito user group that is part of a work team.
+    */
   @js.native
   trait MemberDefinition extends js.Object {
     var CognitoMemberDefinition: js.UndefOr[CognitoMemberDefinition]
   }
 
   object MemberDefinition {
-    def apply(
-      CognitoMemberDefinition: js.UndefOr[CognitoMemberDefinition] = js.undefined): MemberDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CognitoMemberDefinition" -> CognitoMemberDefinition.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CognitoMemberDefinition: js.UndefOr[CognitoMemberDefinition] = js.undefined): MemberDefinition = {
+      val _fields = IndexedSeq[(String, js.Any)]("CognitoMemberDefinition" -> CognitoMemberDefinition.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MemberDefinition]
     }
   }
 
   /**
-   * The name, value, and date and time of a metric that was emitted to Amazon CloudWatch.
-   */
+    * The name, value, and date and time of a metric that was emitted to Amazon CloudWatch.
+    */
   @js.native
   trait MetricData extends js.Object {
     var MetricName: js.UndefOr[MetricName]
@@ -4821,22 +5630,28 @@ package sagemaker {
   }
 
   object MetricData {
-    def apply(
-      MetricName: js.UndefOr[MetricName] = js.undefined,
-      Timestamp: js.UndefOr[Timestamp] = js.undefined,
-      Value: js.UndefOr[Float] = js.undefined): MetricData = {
+    def apply(MetricName: js.UndefOr[MetricName] = js.undefined,
+              Timestamp: js.UndefOr[Timestamp] = js.undefined,
+              Value: js.UndefOr[Float] = js.undefined): MetricData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "MetricName" -> MetricName.map { x => x.asInstanceOf[js.Any] },
-        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MetricName" -> MetricName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timestamp" -> Timestamp.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Value" -> Value.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricData]
     }
   }
 
   /**
-   * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
-   */
+    * Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
+    */
   @js.native
   trait MetricDefinition extends js.Object {
     var Name: MetricName
@@ -4844,38 +5659,35 @@ package sagemaker {
   }
 
   object MetricDefinition {
-    def apply(
-      Name: MetricName,
-      Regex: MetricRegex): MetricDefinition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Regex" -> Regex.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Name: MetricName, Regex: MetricRegex): MetricDefinition = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Name" -> Name.asInstanceOf[js.Any], "Regex" -> Regex.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MetricDefinition]
     }
   }
 
   /**
-   * Provides information about the location that is configured for storing model artifacts.
-   */
+    * Provides information about the location that is configured for storing model artifacts.
+    */
   @js.native
   trait ModelArtifacts extends js.Object {
     var S3ModelArtifacts: S3Uri
   }
 
   object ModelArtifacts {
-    def apply(
-      S3ModelArtifacts: S3Uri): ModelArtifacts = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3ModelArtifacts" -> S3ModelArtifacts.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3ModelArtifacts: S3Uri): ModelArtifacts = {
+      val _fields = IndexedSeq[(String, js.Any)]("S3ModelArtifacts" -> S3ModelArtifacts.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelArtifacts]
     }
   }
 
   /**
-   * Describes the Docker container for the model package.
-   */
+    * Describes the Docker container for the model package.
+    */
   @js.native
   trait ModelPackageContainerDefinition extends js.Object {
     var Image: Image
@@ -4886,43 +5698,51 @@ package sagemaker {
   }
 
   object ModelPackageContainerDefinition {
-    def apply(
-      Image: Image,
-      ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
-      ImageDigest: js.UndefOr[ImageDigest] = js.undefined,
-      ModelDataUrl: js.UndefOr[Url] = js.undefined,
-      ProductId: js.UndefOr[ProductId] = js.undefined): ModelPackageContainerDefinition = {
+    def apply(Image: Image,
+              ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
+              ImageDigest: js.UndefOr[ImageDigest] = js.undefined,
+              ModelDataUrl: js.UndefOr[Url] = js.undefined,
+              ProductId: js.UndefOr[ProductId] = js.undefined): ModelPackageContainerDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Image" -> Image.asInstanceOf[js.Any],
-        "ContainerHostname" -> ContainerHostname.map { x => x.asInstanceOf[js.Any] },
-        "ImageDigest" -> ImageDigest.map { x => x.asInstanceOf[js.Any] },
-        "ModelDataUrl" -> ModelDataUrl.map { x => x.asInstanceOf[js.Any] },
-        "ProductId" -> ProductId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContainerHostname" -> ContainerHostname.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ImageDigest" -> ImageDigest.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelDataUrl" -> ModelDataUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductId" -> ProductId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelPackageContainerDefinition]
     }
   }
 
   object ModelPackageSortByEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
 
     val values = IndexedSeq(Name, CreationTime)
   }
 
   object ModelPackageStatusEnum {
-    val Pending = "Pending"
+    val Pending    = "Pending"
     val InProgress = "InProgress"
-    val Completed = "Completed"
-    val Failed = "Failed"
-    val Deleting = "Deleting"
+    val Completed  = "Completed"
+    val Failed     = "Failed"
+    val Deleting   = "Deleting"
 
     val values = IndexedSeq(Pending, InProgress, Completed, Failed, Deleting)
   }
 
   /**
-   * Specifies the validation and image scan statuses of the model package.
-   */
+    * Specifies the validation and image scan statuses of the model package.
+    */
   @js.native
   trait ModelPackageStatusDetails extends js.Object {
     var ValidationStatuses: ModelPackageStatusItemList
@@ -4930,20 +5750,22 @@ package sagemaker {
   }
 
   object ModelPackageStatusDetails {
-    def apply(
-      ValidationStatuses: ModelPackageStatusItemList,
-      ImageScanStatuses: js.UndefOr[ModelPackageStatusItemList] = js.undefined): ModelPackageStatusDetails = {
+    def apply(ValidationStatuses: ModelPackageStatusItemList,
+              ImageScanStatuses: js.UndefOr[ModelPackageStatusItemList] = js.undefined): ModelPackageStatusDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ValidationStatuses" -> ValidationStatuses.asInstanceOf[js.Any],
-        "ImageScanStatuses" -> ImageScanStatuses.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ImageScanStatuses" -> ImageScanStatuses.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelPackageStatusDetails]
     }
   }
 
   /**
-   * Represents the overall status of a model package.
-   */
+    * Represents the overall status of a model package.
+    */
   @js.native
   trait ModelPackageStatusItem extends js.Object {
     var Name: EntityName
@@ -4952,22 +5774,24 @@ package sagemaker {
   }
 
   object ModelPackageStatusItem {
-    def apply(
-      Name: EntityName,
-      Status: DetailedModelPackageStatus,
-      FailureReason: js.UndefOr[String] = js.undefined): ModelPackageStatusItem = {
+    def apply(Name: EntityName,
+              Status: DetailedModelPackageStatus,
+              FailureReason: js.UndefOr[String] = js.undefined): ModelPackageStatusItem = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Name" -> Name.asInstanceOf[js.Any],
+        "Name"   -> Name.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any],
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelPackageStatusItem]
     }
   }
 
   /**
-   * Provides summary information about a model package.
-   */
+    * Provides summary information about a model package.
+    */
   @js.native
   trait ModelPackageSummary extends js.Object {
     var CreationTime: CreationTime
@@ -4978,27 +5802,29 @@ package sagemaker {
   }
 
   object ModelPackageSummary {
-    def apply(
-      CreationTime: CreationTime,
-      ModelPackageArn: ModelPackageArn,
-      ModelPackageName: EntityName,
-      ModelPackageStatus: ModelPackageStatus,
-      ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined): ModelPackageSummary = {
+    def apply(CreationTime: CreationTime,
+              ModelPackageArn: ModelPackageArn,
+              ModelPackageName: EntityName,
+              ModelPackageStatus: ModelPackageStatus,
+              ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined): ModelPackageSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any],
-        "ModelPackageName" -> ModelPackageName.asInstanceOf[js.Any],
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "ModelPackageArn"    -> ModelPackageArn.asInstanceOf[js.Any],
+        "ModelPackageName"   -> ModelPackageName.asInstanceOf[js.Any],
         "ModelPackageStatus" -> ModelPackageStatus.asInstanceOf[js.Any],
-        "ModelPackageDescription" -> ModelPackageDescription.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ModelPackageDescription" -> ModelPackageDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelPackageSummary]
     }
   }
 
   /**
-   * Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package.
-   *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
-   */
+    * Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package.
+    *  The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+    */
   @js.native
   trait ModelPackageValidationProfile extends js.Object {
     var ProfileName: EntityName
@@ -5006,20 +5832,20 @@ package sagemaker {
   }
 
   object ModelPackageValidationProfile {
-    def apply(
-      ProfileName: EntityName,
-      TransformJobDefinition: TransformJobDefinition): ModelPackageValidationProfile = {
+    def apply(ProfileName: EntityName,
+              TransformJobDefinition: TransformJobDefinition): ModelPackageValidationProfile = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ProfileName" -> ProfileName.asInstanceOf[js.Any],
-        "TransformJobDefinition" -> TransformJobDefinition.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ProfileName"            -> ProfileName.asInstanceOf[js.Any],
+        "TransformJobDefinition" -> TransformJobDefinition.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelPackageValidationProfile]
     }
   }
 
   /**
-   * Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.
-   */
+    * Specifies batch transform jobs that Amazon SageMaker runs to validate your model package.
+    */
   @js.native
   trait ModelPackageValidationSpecification extends js.Object {
     var ValidationProfiles: ModelPackageValidationProfiles
@@ -5027,27 +5853,27 @@ package sagemaker {
   }
 
   object ModelPackageValidationSpecification {
-    def apply(
-      ValidationProfiles: ModelPackageValidationProfiles,
-      ValidationRole: RoleArn): ModelPackageValidationSpecification = {
+    def apply(ValidationProfiles: ModelPackageValidationProfiles,
+              ValidationRole: RoleArn): ModelPackageValidationSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ValidationProfiles" -> ValidationProfiles.asInstanceOf[js.Any],
-        "ValidationRole" -> ValidationRole.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ValidationRole"     -> ValidationRole.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelPackageValidationSpecification]
     }
   }
 
   object ModelSortKeyEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
 
     val values = IndexedSeq(Name, CreationTime)
   }
 
   /**
-   * Provides summary information about a model.
-   */
+    * Provides summary information about a model.
+    */
   @js.native
   trait ModelSummary extends js.Object {
     var CreationTime: Timestamp
@@ -5056,26 +5882,24 @@ package sagemaker {
   }
 
   object ModelSummary {
-    def apply(
-      CreationTime: Timestamp,
-      ModelArn: ModelArn,
-      ModelName: ModelName): ModelSummary = {
+    def apply(CreationTime: Timestamp, ModelArn: ModelArn, ModelName: ModelName): ModelSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "ModelArn" -> ModelArn.asInstanceOf[js.Any],
-        "ModelName" -> ModelName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ModelArn"     -> ModelArn.asInstanceOf[js.Any],
+        "ModelName"    -> ModelName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ModelSummary]
     }
   }
 
   /**
-   * Defines a list of <code>NestedFilter</code> objects. To satisfy the conditions specified in the <code>NestedFilters</code> call, a resource must satisfy the conditions of all of the filters.
-   *  For example, a <code>NestedFilters</code> could be defined using the training job's <code>InputDataConfig</code> property, this would be defined as a list of <code>Channel</code> objects.
-   *  A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs whose name contains <code>train</code> and that have <code>cat/data</code> in their <code>S3Uri</code> (specified in <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specifies the <code>InputDataConfig</code> property with the following <code>Filter</code> objects:
-   * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"EQUALS", "Value":"train"}',</code>
-   *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"CONTAINS", "Value":"cat/data"}'</code>
-   */
+    * Defines a list of <code>NestedFilter</code> objects. To satisfy the conditions specified in the <code>NestedFilters</code> call, a resource must satisfy the conditions of all of the filters.
+    *  For example, a <code>NestedFilters</code> could be defined using the training job's <code>InputDataConfig</code> property, this would be defined as a list of <code>Channel</code> objects.
+    *  A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs whose name contains <code>train</code> and that have <code>cat/data</code> in their <code>S3Uri</code> (specified in <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specifies the <code>InputDataConfig</code> property with the following <code>Filter</code> objects:
+    * * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"EQUALS", "Value":"train"}',</code>
+    *  * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"CONTAINS", "Value":"cat/data"}'</code>
+    */
   @js.native
   trait NestedFilters extends js.Object {
     var Filters: FilterList
@@ -5083,12 +5907,11 @@ package sagemaker {
   }
 
   object NestedFilters {
-    def apply(
-      Filters: FilterList,
-      NestedPropertyName: ResourcePropertyName): NestedFilters = {
+    def apply(Filters: FilterList, NestedPropertyName: ResourcePropertyName): NestedFilters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.asInstanceOf[js.Any],
-        "NestedPropertyName" -> NestedPropertyName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Filters"            -> Filters.asInstanceOf[js.Any],
+        "NestedPropertyName" -> NestedPropertyName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NestedFilters]
     }
@@ -5096,30 +5919,30 @@ package sagemaker {
 
   object NotebookInstanceAcceleratorTypeEnum {
     val `ml.eia1.medium` = "ml.eia1.medium"
-    val `ml.eia1.large` = "ml.eia1.large"
+    val `ml.eia1.large`  = "ml.eia1.large"
     val `ml.eia1.xlarge` = "ml.eia1.xlarge"
 
     val values = IndexedSeq(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`)
   }
 
   object NotebookInstanceLifecycleConfigSortKeyEnum {
-    val Name = "Name"
-    val CreationTime = "CreationTime"
+    val Name             = "Name"
+    val CreationTime     = "CreationTime"
     val LastModifiedTime = "LastModifiedTime"
 
     val values = IndexedSeq(Name, CreationTime, LastModifiedTime)
   }
 
   object NotebookInstanceLifecycleConfigSortOrderEnum {
-    val Ascending = "Ascending"
+    val Ascending  = "Ascending"
     val Descending = "Descending"
 
     val values = IndexedSeq(Ascending, Descending)
   }
 
   /**
-   * Provides a summary of a notebook instance lifecycle configuration.
-   */
+    * Provides a summary of a notebook instance lifecycle configuration.
+    */
   @js.native
   trait NotebookInstanceLifecycleConfigSummary extends js.Object {
     var NotebookInstanceLifecycleConfigArn: NotebookInstanceLifecycleConfigArn
@@ -5129,29 +5952,33 @@ package sagemaker {
   }
 
   object NotebookInstanceLifecycleConfigSummary {
-    def apply(
-      NotebookInstanceLifecycleConfigArn: NotebookInstanceLifecycleConfigArn,
-      NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
-      CreationTime: js.UndefOr[CreationTime] = js.undefined,
-      LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined): NotebookInstanceLifecycleConfigSummary = {
+    def apply(NotebookInstanceLifecycleConfigArn: NotebookInstanceLifecycleConfigArn,
+              NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
+              CreationTime: js.UndefOr[CreationTime] = js.undefined,
+              LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined): NotebookInstanceLifecycleConfigSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceLifecycleConfigArn" -> NotebookInstanceLifecycleConfigArn.asInstanceOf[js.Any],
+        "NotebookInstanceLifecycleConfigArn"  -> NotebookInstanceLifecycleConfigArn.asInstanceOf[js.Any],
         "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any],
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotebookInstanceLifecycleConfigSummary]
     }
   }
 
   /**
-   * Contains the notebook instance lifecycle configuration script.
-   *  Each lifecycle configuration script has a limit of 16384 characters.
-   *  The value of the <code>PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
-   *  View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
-   *  Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.
-   *  For information about notebook instance lifestyle configurations, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html|Step 2.1: (Optional) Customize a Notebook Instance]].
-   */
+    * Contains the notebook instance lifecycle configuration script.
+    *  Each lifecycle configuration script has a limit of 16384 characters.
+    *  The value of the <code>PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
+    *  View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
+    *  Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.
+    *  For information about notebook instance lifestyle configurations, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html|Step 2.1: (Optional) Customize a Notebook Instance]].
+    */
   @js.native
   trait NotebookInstanceLifecycleHook extends js.Object {
     var Content: js.UndefOr[NotebookInstanceLifecycleConfigContent]
@@ -5159,44 +5986,46 @@ package sagemaker {
 
   object NotebookInstanceLifecycleHook {
     def apply(
-      Content: js.UndefOr[NotebookInstanceLifecycleConfigContent] = js.undefined): NotebookInstanceLifecycleHook = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Content" -> Content.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        Content: js.UndefOr[NotebookInstanceLifecycleConfigContent] = js.undefined
+    ): NotebookInstanceLifecycleHook = {
+      val _fields = IndexedSeq[(String, js.Any)]("Content" -> Content.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotebookInstanceLifecycleHook]
     }
   }
 
   object NotebookInstanceSortKeyEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
-    val Status = "Status"
+    val Status       = "Status"
 
     val values = IndexedSeq(Name, CreationTime, Status)
   }
 
   object NotebookInstanceSortOrderEnum {
-    val Ascending = "Ascending"
+    val Ascending  = "Ascending"
     val Descending = "Descending"
 
     val values = IndexedSeq(Ascending, Descending)
   }
 
   object NotebookInstanceStatusEnum {
-    val Pending = "Pending"
+    val Pending   = "Pending"
     val InService = "InService"
-    val Stopping = "Stopping"
-    val Stopped = "Stopped"
-    val Failed = "Failed"
-    val Deleting = "Deleting"
-    val Updating = "Updating"
+    val Stopping  = "Stopping"
+    val Stopped   = "Stopped"
+    val Failed    = "Failed"
+    val Deleting  = "Deleting"
+    val Updating  = "Updating"
 
     val values = IndexedSeq(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating)
   }
 
   /**
-   * Provides summary information for an Amazon SageMaker notebook instance.
-   */
+    * Provides summary information for an Amazon SageMaker notebook instance.
+    */
   @js.native
   trait NotebookInstanceSummary extends js.Object {
     var NotebookInstanceArn: NotebookInstanceArn
@@ -5212,28 +6041,44 @@ package sagemaker {
   }
 
   object NotebookInstanceSummary {
-    def apply(
-      NotebookInstanceArn: NotebookInstanceArn,
-      NotebookInstanceName: NotebookInstanceName,
-      AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
-      CreationTime: js.UndefOr[CreationTime] = js.undefined,
-      DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
-      InstanceType: js.UndefOr[InstanceType] = js.undefined,
-      LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
-      NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
-      NotebookInstanceStatus: js.UndefOr[NotebookInstanceStatus] = js.undefined,
-      Url: js.UndefOr[NotebookInstanceUrl] = js.undefined): NotebookInstanceSummary = {
+    def apply(NotebookInstanceArn: NotebookInstanceArn,
+              NotebookInstanceName: NotebookInstanceName,
+              AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
+              CreationTime: js.UndefOr[CreationTime] = js.undefined,
+              DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
+              InstanceType: js.UndefOr[InstanceType] = js.undefined,
+              LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
+              NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
+              NotebookInstanceStatus: js.UndefOr[NotebookInstanceStatus] = js.undefined,
+              Url: js.UndefOr[NotebookInstanceUrl] = js.undefined): NotebookInstanceSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceArn" -> NotebookInstanceArn.asInstanceOf[js.Any],
+        "NotebookInstanceArn"  -> NotebookInstanceArn.asInstanceOf[js.Any],
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any],
-        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "DefaultCodeRepository" -> DefaultCodeRepository.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.map { x => x.asInstanceOf[js.Any] },
-        "NotebookInstanceStatus" -> NotebookInstanceStatus.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultCodeRepository" -> DefaultCodeRepository.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceType" -> InstanceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NotebookInstanceStatus" -> NotebookInstanceStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[NotebookInstanceSummary]
     }
@@ -5241,15 +6086,15 @@ package sagemaker {
 
   object ObjectiveStatusEnum {
     val Succeeded = "Succeeded"
-    val Pending = "Pending"
-    val Failed = "Failed"
+    val Pending   = "Pending"
+    val Failed    = "Failed"
 
     val values = IndexedSeq(Succeeded, Pending, Failed)
   }
 
   /**
-   * Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.
-   */
+    * Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.
+    */
   @js.native
   trait ObjectiveStatusCounters extends js.Object {
     var Failed: js.UndefOr[ObjectiveStatusCounter]
@@ -5258,41 +6103,47 @@ package sagemaker {
   }
 
   object ObjectiveStatusCounters {
-    def apply(
-      Failed: js.UndefOr[ObjectiveStatusCounter] = js.undefined,
-      Pending: js.UndefOr[ObjectiveStatusCounter] = js.undefined,
-      Succeeded: js.UndefOr[ObjectiveStatusCounter] = js.undefined): ObjectiveStatusCounters = {
+    def apply(Failed: js.UndefOr[ObjectiveStatusCounter] = js.undefined,
+              Pending: js.UndefOr[ObjectiveStatusCounter] = js.undefined,
+              Succeeded: js.UndefOr[ObjectiveStatusCounter] = js.undefined): ObjectiveStatusCounters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Failed" -> Failed.map { x => x.asInstanceOf[js.Any] },
-        "Pending" -> Pending.map { x => x.asInstanceOf[js.Any] },
-        "Succeeded" -> Succeeded.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Failed" -> Failed.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Pending" -> Pending.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Succeeded" -> Succeeded.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ObjectiveStatusCounters]
     }
   }
 
   object OperatorEnum {
-    val Equals = "Equals"
-    val NotEquals = "NotEquals"
-    val GreaterThan = "GreaterThan"
+    val Equals               = "Equals"
+    val NotEquals            = "NotEquals"
+    val GreaterThan          = "GreaterThan"
     val GreaterThanOrEqualTo = "GreaterThanOrEqualTo"
-    val LessThan = "LessThan"
-    val LessThanOrEqualTo = "LessThanOrEqualTo"
-    val Contains = "Contains"
+    val LessThan             = "LessThan"
+    val LessThanOrEqualTo    = "LessThanOrEqualTo"
+    val Contains             = "Contains"
 
     val values = IndexedSeq(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains)
   }
 
   object OrderKeyEnum {
-    val Ascending = "Ascending"
+    val Ascending  = "Ascending"
     val Descending = "Descending"
 
     val values = IndexedSeq(Ascending, Descending)
   }
 
   /**
-   * Contains information about the output location for the compiled model and the device (target) that the model runs on.
-   */
+    * Contains information about the output location for the compiled model and the device (target) that the model runs on.
+    */
   @js.native
   trait OutputConfig extends js.Object {
     var S3OutputLocation: S3Uri
@@ -5300,20 +6151,19 @@ package sagemaker {
   }
 
   object OutputConfig {
-    def apply(
-      S3OutputLocation: S3Uri,
-      TargetDevice: TargetDevice): OutputConfig = {
+    def apply(S3OutputLocation: S3Uri, TargetDevice: TargetDevice): OutputConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "S3OutputLocation" -> S3OutputLocation.asInstanceOf[js.Any],
-        "TargetDevice" -> TargetDevice.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "TargetDevice"     -> TargetDevice.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputConfig]
     }
   }
 
   /**
-   * Provides information about how to store model training results (model artifacts).
-   */
+    * Provides information about how to store model training results (model artifacts).
+    */
   @js.native
   trait OutputDataConfig extends js.Object {
     var S3OutputPath: S3Uri
@@ -5321,20 +6171,20 @@ package sagemaker {
   }
 
   object OutputDataConfig {
-    def apply(
-      S3OutputPath: S3Uri,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): OutputDataConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3OutputPath" -> S3OutputPath.asInstanceOf[js.Any],
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3OutputPath: S3Uri, KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): OutputDataConfig = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("S3OutputPath" -> S3OutputPath.asInstanceOf[js.Any], "KmsKeyId" -> KmsKeyId.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[OutputDataConfig]
     }
   }
 
   /**
-   * Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm.
-   */
+    * Defines the possible values for categorical, continuous, and integer hyperparameters to be used by an algorithm.
+    */
   @js.native
   trait ParameterRange extends js.Object {
     var CategoricalParameterRangeSpecification: js.UndefOr[CategoricalParameterRangeSpecification]
@@ -5344,23 +6194,31 @@ package sagemaker {
 
   object ParameterRange {
     def apply(
-      CategoricalParameterRangeSpecification: js.UndefOr[CategoricalParameterRangeSpecification] = js.undefined,
-      ContinuousParameterRangeSpecification: js.UndefOr[ContinuousParameterRangeSpecification] = js.undefined,
-      IntegerParameterRangeSpecification: js.UndefOr[IntegerParameterRangeSpecification] = js.undefined): ParameterRange = {
+        CategoricalParameterRangeSpecification: js.UndefOr[CategoricalParameterRangeSpecification] = js.undefined,
+        ContinuousParameterRangeSpecification: js.UndefOr[ContinuousParameterRangeSpecification] = js.undefined,
+        IntegerParameterRangeSpecification: js.UndefOr[IntegerParameterRangeSpecification] = js.undefined
+    ): ParameterRange = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CategoricalParameterRangeSpecification" -> CategoricalParameterRangeSpecification.map { x => x.asInstanceOf[js.Any] },
-        "ContinuousParameterRangeSpecification" -> ContinuousParameterRangeSpecification.map { x => x.asInstanceOf[js.Any] },
-        "IntegerParameterRangeSpecification" -> IntegerParameterRangeSpecification.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CategoricalParameterRangeSpecification" -> CategoricalParameterRangeSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContinuousParameterRangeSpecification" -> ContinuousParameterRangeSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegerParameterRangeSpecification" -> IntegerParameterRangeSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterRange]
     }
   }
 
   /**
-   * Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.
-   *
-   * '''Note:'''You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.
-   */
+    * Specifies ranges of integer, continuous, and categorical hyperparameters that a hyperparameter tuning job searches. The hyperparameter tuning job launches training jobs with hyperparameter values within these ranges to find the combination of values that result in the training job with the best performance as measured by the objective metric of the hyperparameter tuning job.
+    *
+    * '''Note:'''You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can search over. Every possible value of a categorical parameter range counts against this limit.
+    */
   @js.native
   trait ParameterRanges extends js.Object {
     var CategoricalParameterRanges: js.UndefOr[CategoricalParameterRanges]
@@ -5369,31 +6227,37 @@ package sagemaker {
   }
 
   object ParameterRanges {
-    def apply(
-      CategoricalParameterRanges: js.UndefOr[CategoricalParameterRanges] = js.undefined,
-      ContinuousParameterRanges: js.UndefOr[ContinuousParameterRanges] = js.undefined,
-      IntegerParameterRanges: js.UndefOr[IntegerParameterRanges] = js.undefined): ParameterRanges = {
+    def apply(CategoricalParameterRanges: js.UndefOr[CategoricalParameterRanges] = js.undefined,
+              ContinuousParameterRanges: js.UndefOr[ContinuousParameterRanges] = js.undefined,
+              IntegerParameterRanges: js.UndefOr[IntegerParameterRanges] = js.undefined): ParameterRanges = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CategoricalParameterRanges" -> CategoricalParameterRanges.map { x => x.asInstanceOf[js.Any] },
-        "ContinuousParameterRanges" -> ContinuousParameterRanges.map { x => x.asInstanceOf[js.Any] },
-        "IntegerParameterRanges" -> IntegerParameterRanges.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CategoricalParameterRanges" -> CategoricalParameterRanges.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContinuousParameterRanges" -> ContinuousParameterRanges.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IntegerParameterRanges" -> IntegerParameterRanges.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParameterRanges]
     }
   }
 
   object ParameterTypeEnum {
-    val Integer = "Integer"
-    val Continuous = "Continuous"
+    val Integer     = "Integer"
+    val Continuous  = "Continuous"
     val Categorical = "Categorical"
-    val FreeText = "FreeText"
+    val FreeText    = "FreeText"
 
     val values = IndexedSeq(Integer, Continuous, Categorical, FreeText)
   }
 
   /**
-   * A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.
-   */
+    * A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.
+    */
   @js.native
   trait ParentHyperParameterTuningJob extends js.Object {
     var HyperParameterTuningJobName: js.UndefOr[HyperParameterTuningJobName]
@@ -5401,17 +6265,19 @@ package sagemaker {
 
   object ParentHyperParameterTuningJob {
     def apply(
-      HyperParameterTuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined): ParentHyperParameterTuningJob = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        HyperParameterTuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined
+    ): ParentHyperParameterTuningJob = {
+      val _fields = IndexedSeq[(String, js.Any)]("HyperParameterTuningJobName" -> HyperParameterTuningJobName.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ParentHyperParameterTuningJob]
     }
   }
 
   /**
-   * Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
-   */
+    * Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
+    */
   @js.native
   trait ProductionVariant extends js.Object {
     var InitialInstanceCount: TaskCount
@@ -5423,20 +6289,24 @@ package sagemaker {
   }
 
   object ProductionVariant {
-    def apply(
-      InitialInstanceCount: TaskCount,
-      InstanceType: ProductionVariantInstanceType,
-      ModelName: ModelName,
-      VariantName: VariantName,
-      AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType] = js.undefined,
-      InitialVariantWeight: js.UndefOr[VariantWeight] = js.undefined): ProductionVariant = {
+    def apply(InitialInstanceCount: TaskCount,
+              InstanceType: ProductionVariantInstanceType,
+              ModelName: ModelName,
+              VariantName: VariantName,
+              AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType] = js.undefined,
+              InitialVariantWeight: js.UndefOr[VariantWeight] = js.undefined): ProductionVariant = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InitialInstanceCount" -> InitialInstanceCount.asInstanceOf[js.Any],
-        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
-        "ModelName" -> ModelName.asInstanceOf[js.Any],
-        "VariantName" -> VariantName.asInstanceOf[js.Any],
-        "AcceleratorType" -> AcceleratorType.map { x => x.asInstanceOf[js.Any] },
-        "InitialVariantWeight" -> InitialVariantWeight.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceType"         -> InstanceType.asInstanceOf[js.Any],
+        "ModelName"            -> ModelName.asInstanceOf[js.Any],
+        "VariantName"          -> VariantName.asInstanceOf[js.Any],
+        "AcceleratorType" -> AcceleratorType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InitialVariantWeight" -> InitialVariantWeight.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProductionVariant]
     }
@@ -5444,52 +6314,85 @@ package sagemaker {
 
   object ProductionVariantAcceleratorTypeEnum {
     val `ml.eia1.medium` = "ml.eia1.medium"
-    val `ml.eia1.large` = "ml.eia1.large"
+    val `ml.eia1.large`  = "ml.eia1.large"
     val `ml.eia1.xlarge` = "ml.eia1.xlarge"
 
     val values = IndexedSeq(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`)
   }
 
   object ProductionVariantInstanceTypeEnum {
-    val `ml.t2.medium` = "ml.t2.medium"
-    val `ml.t2.large` = "ml.t2.large"
-    val `ml.t2.xlarge` = "ml.t2.xlarge"
-    val `ml.t2.2xlarge` = "ml.t2.2xlarge"
-    val `ml.m4.xlarge` = "ml.m4.xlarge"
-    val `ml.m4.2xlarge` = "ml.m4.2xlarge"
-    val `ml.m4.4xlarge` = "ml.m4.4xlarge"
+    val `ml.t2.medium`   = "ml.t2.medium"
+    val `ml.t2.large`    = "ml.t2.large"
+    val `ml.t2.xlarge`   = "ml.t2.xlarge"
+    val `ml.t2.2xlarge`  = "ml.t2.2xlarge"
+    val `ml.m4.xlarge`   = "ml.m4.xlarge"
+    val `ml.m4.2xlarge`  = "ml.m4.2xlarge"
+    val `ml.m4.4xlarge`  = "ml.m4.4xlarge"
     val `ml.m4.10xlarge` = "ml.m4.10xlarge"
     val `ml.m4.16xlarge` = "ml.m4.16xlarge"
-    val `ml.m5.large` = "ml.m5.large"
-    val `ml.m5.xlarge` = "ml.m5.xlarge"
-    val `ml.m5.2xlarge` = "ml.m5.2xlarge"
-    val `ml.m5.4xlarge` = "ml.m5.4xlarge"
+    val `ml.m5.large`    = "ml.m5.large"
+    val `ml.m5.xlarge`   = "ml.m5.xlarge"
+    val `ml.m5.2xlarge`  = "ml.m5.2xlarge"
+    val `ml.m5.4xlarge`  = "ml.m5.4xlarge"
     val `ml.m5.12xlarge` = "ml.m5.12xlarge"
     val `ml.m5.24xlarge` = "ml.m5.24xlarge"
-    val `ml.c4.large` = "ml.c4.large"
-    val `ml.c4.xlarge` = "ml.c4.xlarge"
-    val `ml.c4.2xlarge` = "ml.c4.2xlarge"
-    val `ml.c4.4xlarge` = "ml.c4.4xlarge"
-    val `ml.c4.8xlarge` = "ml.c4.8xlarge"
-    val `ml.p2.xlarge` = "ml.p2.xlarge"
-    val `ml.p2.8xlarge` = "ml.p2.8xlarge"
+    val `ml.c4.large`    = "ml.c4.large"
+    val `ml.c4.xlarge`   = "ml.c4.xlarge"
+    val `ml.c4.2xlarge`  = "ml.c4.2xlarge"
+    val `ml.c4.4xlarge`  = "ml.c4.4xlarge"
+    val `ml.c4.8xlarge`  = "ml.c4.8xlarge"
+    val `ml.p2.xlarge`   = "ml.p2.xlarge"
+    val `ml.p2.8xlarge`  = "ml.p2.8xlarge"
     val `ml.p2.16xlarge` = "ml.p2.16xlarge"
-    val `ml.p3.2xlarge` = "ml.p3.2xlarge"
-    val `ml.p3.8xlarge` = "ml.p3.8xlarge"
+    val `ml.p3.2xlarge`  = "ml.p3.2xlarge"
+    val `ml.p3.8xlarge`  = "ml.p3.8xlarge"
     val `ml.p3.16xlarge` = "ml.p3.16xlarge"
-    val `ml.c5.large` = "ml.c5.large"
-    val `ml.c5.xlarge` = "ml.c5.xlarge"
-    val `ml.c5.2xlarge` = "ml.c5.2xlarge"
-    val `ml.c5.4xlarge` = "ml.c5.4xlarge"
-    val `ml.c5.9xlarge` = "ml.c5.9xlarge"
+    val `ml.c5.large`    = "ml.c5.large"
+    val `ml.c5.xlarge`   = "ml.c5.xlarge"
+    val `ml.c5.2xlarge`  = "ml.c5.2xlarge"
+    val `ml.c5.4xlarge`  = "ml.c5.4xlarge"
+    val `ml.c5.9xlarge`  = "ml.c5.9xlarge"
     val `ml.c5.18xlarge` = "ml.c5.18xlarge"
 
-    val values = IndexedSeq(`ml.t2.medium`, `ml.t2.large`, `ml.t2.xlarge`, `ml.t2.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.c4.large`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.large`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`)
+    val values = IndexedSeq(
+      `ml.t2.medium`,
+      `ml.t2.large`,
+      `ml.t2.xlarge`,
+      `ml.t2.2xlarge`,
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c4.large`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.large`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`
+    )
   }
 
   /**
-   * Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.
-   */
+    * Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.
+    */
   @js.native
   trait ProductionVariantSummary extends js.Object {
     var VariantName: VariantName
@@ -5501,118 +6404,127 @@ package sagemaker {
   }
 
   object ProductionVariantSummary {
-    def apply(
-      VariantName: VariantName,
-      CurrentInstanceCount: js.UndefOr[TaskCount] = js.undefined,
-      CurrentWeight: js.UndefOr[VariantWeight] = js.undefined,
-      DeployedImages: js.UndefOr[DeployedImages] = js.undefined,
-      DesiredInstanceCount: js.UndefOr[TaskCount] = js.undefined,
-      DesiredWeight: js.UndefOr[VariantWeight] = js.undefined): ProductionVariantSummary = {
+    def apply(VariantName: VariantName,
+              CurrentInstanceCount: js.UndefOr[TaskCount] = js.undefined,
+              CurrentWeight: js.UndefOr[VariantWeight] = js.undefined,
+              DeployedImages: js.UndefOr[DeployedImages] = js.undefined,
+              DesiredInstanceCount: js.UndefOr[TaskCount] = js.undefined,
+              DesiredWeight: js.UndefOr[VariantWeight] = js.undefined): ProductionVariantSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
         "VariantName" -> VariantName.asInstanceOf[js.Any],
-        "CurrentInstanceCount" -> CurrentInstanceCount.map { x => x.asInstanceOf[js.Any] },
-        "CurrentWeight" -> CurrentWeight.map { x => x.asInstanceOf[js.Any] },
-        "DeployedImages" -> DeployedImages.map { x => x.asInstanceOf[js.Any] },
-        "DesiredInstanceCount" -> DesiredInstanceCount.map { x => x.asInstanceOf[js.Any] },
-        "DesiredWeight" -> DesiredWeight.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CurrentInstanceCount" -> CurrentInstanceCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CurrentWeight" -> CurrentWeight.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeployedImages" -> DeployedImages.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DesiredInstanceCount" -> DesiredInstanceCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DesiredWeight" -> DesiredWeight.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProductionVariantSummary]
     }
   }
 
   /**
-   * A type of <code>SuggestionQuery</code>. A suggestion query for retrieving property names that match the specified hint.
-   */
+    * A type of <code>SuggestionQuery</code>. A suggestion query for retrieving property names that match the specified hint.
+    */
   @js.native
   trait PropertyNameQuery extends js.Object {
     var PropertyNameHint: PropertyNameHint
   }
 
   object PropertyNameQuery {
-    def apply(
-      PropertyNameHint: PropertyNameHint): PropertyNameQuery = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PropertyNameHint" -> PropertyNameHint.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(PropertyNameHint: PropertyNameHint): PropertyNameQuery = {
+      val _fields = IndexedSeq[(String, js.Any)]("PropertyNameHint" -> PropertyNameHint.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PropertyNameQuery]
     }
   }
 
   /**
-   * A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field.
-   */
+    * A property name returned from a <code>GetSearchSuggestions</code> call that specifies a value in the <code>PropertyNameQuery</code> field.
+    */
   @js.native
   trait PropertyNameSuggestion extends js.Object {
     var PropertyName: js.UndefOr[ResourcePropertyName]
   }
 
   object PropertyNameSuggestion {
-    def apply(
-      PropertyName: js.UndefOr[ResourcePropertyName] = js.undefined): PropertyNameSuggestion = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PropertyName" -> PropertyName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PropertyName: js.UndefOr[ResourcePropertyName] = js.undefined): PropertyNameSuggestion = {
+      val _fields = IndexedSeq[(String, js.Any)]("PropertyName" -> PropertyName.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PropertyNameSuggestion]
     }
   }
 
   /**
-   * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
-   *  Use one of the following prices for bounding box tasks. Prices are in US dollars.
-   * * 0.036
-   *  * 0.048
-   *  * 0.060
-   *  * 0.072
-   *  * 0.120
-   *  * 0.240
-   *  * 0.360
-   *  * 0.480
-   *  * 0.600
-   *  * 0.720
-   *  * 0.840
-   *  * 0.960
-   *  * 1.080
-   *  * 1.200
-   * Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.
-   * * 0.012
-   *  * 0.024
-   *  * 0.036
-   *  * 0.048
-   *  * 0.060
-   *  * 0.072
-   *  * 0.120
-   *  * 0.240
-   *  * 0.360
-   *  * 0.480
-   *  * 0.600
-   *  * 0.720
-   *  * 0.840
-   *  * 0.960
-   *  * 1.080
-   *  * 1.200
-   * Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.
-   * * 0.840
-   *  * 0.960
-   *  * 1.080
-   *  * 1.200
-   */
+    * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
+    *  Use one of the following prices for bounding box tasks. Prices are in US dollars.
+    * * 0.036
+    *  * 0.048
+    *  * 0.060
+    *  * 0.072
+    *  * 0.120
+    *  * 0.240
+    *  * 0.360
+    *  * 0.480
+    *  * 0.600
+    *  * 0.720
+    *  * 0.840
+    *  * 0.960
+    *  * 1.080
+    *  * 1.200
+    * Use one of the following prices for image classification, text classification, and custom tasks. Prices are in US dollars.
+    * * 0.012
+    *  * 0.024
+    *  * 0.036
+    *  * 0.048
+    *  * 0.060
+    *  * 0.072
+    *  * 0.120
+    *  * 0.240
+    *  * 0.360
+    *  * 0.480
+    *  * 0.600
+    *  * 0.720
+    *  * 0.840
+    *  * 0.960
+    *  * 1.080
+    *  * 1.200
+    * Use one of the following prices for semantic segmentation tasks. Prices are in US dollars.
+    * * 0.840
+    *  * 0.960
+    *  * 1.080
+    *  * 1.200
+    */
   @js.native
   trait PublicWorkforceTaskPrice extends js.Object {
     var AmountInUsd: js.UndefOr[USD]
   }
 
   object PublicWorkforceTaskPrice {
-    def apply(
-      AmountInUsd: js.UndefOr[USD] = js.undefined): PublicWorkforceTaskPrice = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AmountInUsd" -> AmountInUsd.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AmountInUsd: js.UndefOr[USD] = js.undefined): PublicWorkforceTaskPrice = {
+      val _fields = IndexedSeq[(String, js.Any)]("AmountInUsd" -> AmountInUsd.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PublicWorkforceTaskPrice]
     }
   }
 
   object RecordWrapperEnum {
-    val None = "None"
+    val None     = "None"
     val RecordIO = "RecordIO"
 
     val values = IndexedSeq(None, RecordIO)
@@ -5626,14 +6538,12 @@ package sagemaker {
   }
 
   object RenderUiTemplateRequest {
-    def apply(
-      RoleArn: RoleArn,
-      Task: RenderableTask,
-      UiTemplate: UiTemplate): RenderUiTemplateRequest = {
+    def apply(RoleArn: RoleArn, Task: RenderableTask, UiTemplate: UiTemplate): RenderUiTemplateRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "Task" -> Task.asInstanceOf[js.Any],
-        "UiTemplate" -> UiTemplate.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "RoleArn"    -> RoleArn.asInstanceOf[js.Any],
+        "Task"       -> Task.asInstanceOf[js.Any],
+        "UiTemplate" -> UiTemplate.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenderUiTemplateRequest]
     }
@@ -5646,38 +6556,36 @@ package sagemaker {
   }
 
   object RenderUiTemplateResponse {
-    def apply(
-      Errors: RenderingErrorList,
-      RenderedContent: String): RenderUiTemplateResponse = {
+    def apply(Errors: RenderingErrorList, RenderedContent: String): RenderUiTemplateResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Errors" -> Errors.asInstanceOf[js.Any],
-        "RenderedContent" -> RenderedContent.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Errors"          -> Errors.asInstanceOf[js.Any],
+        "RenderedContent" -> RenderedContent.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenderUiTemplateResponse]
     }
   }
 
   /**
-   * Contains input values for a task.
-   */
+    * Contains input values for a task.
+    */
   @js.native
   trait RenderableTask extends js.Object {
     var Input: TaskInput
   }
 
   object RenderableTask {
-    def apply(
-      Input: TaskInput): RenderableTask = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Input" -> Input.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Input: TaskInput): RenderableTask = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Input" -> Input.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenderableTask]
     }
   }
 
   /**
-   * A description of an error that occurred while rendering the template.
-   */
+    * A description of an error that occurred while rendering the template.
+    */
   @js.native
   trait RenderingError extends js.Object {
     var Code: String
@@ -5685,20 +6593,18 @@ package sagemaker {
   }
 
   object RenderingError {
-    def apply(
-      Code: String,
-      Message: String): RenderingError = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.asInstanceOf[js.Any],
-        "Message" -> Message.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Code: String, Message: String): RenderingError = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Code" -> Code.asInstanceOf[js.Any], "Message" -> Message.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RenderingError]
     }
   }
 
   /**
-   * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
-   */
+    * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
+    */
   @js.native
   trait ResourceConfig extends js.Object {
     var InstanceCount: TrainingInstanceCount
@@ -5708,24 +6614,26 @@ package sagemaker {
   }
 
   object ResourceConfig {
-    def apply(
-      InstanceCount: TrainingInstanceCount,
-      InstanceType: TrainingInstanceType,
-      VolumeSizeInGB: VolumeSizeInGB,
-      VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): ResourceConfig = {
+    def apply(InstanceCount: TrainingInstanceCount,
+              InstanceType: TrainingInstanceType,
+              VolumeSizeInGB: VolumeSizeInGB,
+              VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): ResourceConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "InstanceCount"  -> InstanceCount.asInstanceOf[js.Any],
+        "InstanceType"   -> InstanceType.asInstanceOf[js.Any],
         "VolumeSizeInGB" -> VolumeSizeInGB.asInstanceOf[js.Any],
-        "VolumeKmsKeyId" -> VolumeKmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "VolumeKmsKeyId" -> VolumeKmsKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceConfig]
     }
   }
 
   /**
-   * Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
-   */
+    * Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.
+    */
   @js.native
   trait ResourceLimits extends js.Object {
     var MaxNumberOfTrainingJobs: MaxNumberOfTrainingJobs
@@ -5733,12 +6641,12 @@ package sagemaker {
   }
 
   object ResourceLimits {
-    def apply(
-      MaxNumberOfTrainingJobs: MaxNumberOfTrainingJobs,
-      MaxParallelTrainingJobs: MaxParallelTrainingJobs): ResourceLimits = {
+    def apply(MaxNumberOfTrainingJobs: MaxNumberOfTrainingJobs,
+              MaxParallelTrainingJobs: MaxParallelTrainingJobs): ResourceLimits = {
       val _fields = IndexedSeq[(String, js.Any)](
         "MaxNumberOfTrainingJobs" -> MaxNumberOfTrainingJobs.asInstanceOf[js.Any],
-        "MaxParallelTrainingJobs" -> MaxParallelTrainingJobs.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "MaxParallelTrainingJobs" -> MaxParallelTrainingJobs.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResourceLimits]
     }
@@ -5752,14 +6660,14 @@ package sagemaker {
 
   object S3DataDistributionEnum {
     val FullyReplicated = "FullyReplicated"
-    val ShardedByS3Key = "ShardedByS3Key"
+    val ShardedByS3Key  = "ShardedByS3Key"
 
     val values = IndexedSeq(FullyReplicated, ShardedByS3Key)
   }
 
   /**
-   * Describes the S3 data source.
-   */
+    * Describes the S3 data source.
+    */
   @js.native
   trait S3DataSource extends js.Object {
     var S3DataType: S3DataType
@@ -5769,37 +6677,41 @@ package sagemaker {
   }
 
   object S3DataSource {
-    def apply(
-      S3DataType: S3DataType,
-      S3Uri: S3Uri,
-      AttributeNames: js.UndefOr[AttributeNames] = js.undefined,
-      S3DataDistributionType: js.UndefOr[S3DataDistribution] = js.undefined): S3DataSource = {
+    def apply(S3DataType: S3DataType,
+              S3Uri: S3Uri,
+              AttributeNames: js.UndefOr[AttributeNames] = js.undefined,
+              S3DataDistributionType: js.UndefOr[S3DataDistribution] = js.undefined): S3DataSource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "S3DataType" -> S3DataType.asInstanceOf[js.Any],
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any],
-        "AttributeNames" -> AttributeNames.map { x => x.asInstanceOf[js.Any] },
-        "S3DataDistributionType" -> S3DataDistributionType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "S3Uri"      -> S3Uri.asInstanceOf[js.Any],
+        "AttributeNames" -> AttributeNames.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3DataDistributionType" -> S3DataDistributionType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3DataSource]
     }
   }
 
   object S3DataTypeEnum {
-    val ManifestFile = "ManifestFile"
-    val S3Prefix = "S3Prefix"
+    val ManifestFile          = "ManifestFile"
+    val S3Prefix              = "S3Prefix"
     val AugmentedManifestFile = "AugmentedManifestFile"
 
     val values = IndexedSeq(ManifestFile, S3Prefix, AugmentedManifestFile)
   }
 
   /**
-   * A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
-   *  A <code>SearchExpression</code> contains the following components:
-   * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.
-   *  * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
-   *  * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
-   *  * A Boolean operator: <code>And</code> or <code>Or</code>.
-   */
+    * A multi-expression that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. You must specify at least one subexpression, filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
+    *  A <code>SearchExpression</code> contains the following components:
+    * * A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression comprised of a resource property name, Boolean operator, and value.
+    *  * A list of <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean expressions using a list of resource properties. A nested filter is satisfied if a single object in the list satisfies all Boolean expressions.
+    *  * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search expression objects.
+    *  * A Boolean operator: <code>And</code> or <code>Or</code>.
+    */
   @js.native
   trait SearchExpression extends js.Object {
     var Filters: js.UndefOr[FilterList]
@@ -5809,34 +6721,42 @@ package sagemaker {
   }
 
   object SearchExpression {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      NestedFilters: js.UndefOr[NestedFiltersList] = js.undefined,
-      Operator: js.UndefOr[BooleanOperator] = js.undefined,
-      SubExpressions: js.UndefOr[SearchExpressionList] = js.undefined): SearchExpression = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              NestedFilters: js.UndefOr[NestedFiltersList] = js.undefined,
+              Operator: js.UndefOr[BooleanOperator] = js.undefined,
+              SubExpressions: js.UndefOr[SearchExpressionList] = js.undefined): SearchExpression = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "NestedFilters" -> NestedFilters.map { x => x.asInstanceOf[js.Any] },
-        "Operator" -> Operator.map { x => x.asInstanceOf[js.Any] },
-        "SubExpressions" -> SubExpressions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NestedFilters" -> NestedFilters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Operator" -> Operator.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubExpressions" -> SubExpressions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchExpression]
     }
   }
 
   /**
-   * An individual search result record that contains a single resource object.
-   */
+    * An individual search result record that contains a single resource object.
+    */
   @js.native
   trait SearchRecord extends js.Object {
     var TrainingJob: js.UndefOr[TrainingJob]
   }
 
   object SearchRecord {
-    def apply(
-      TrainingJob: js.UndefOr[TrainingJob] = js.undefined): SearchRecord = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TrainingJob" -> TrainingJob.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(TrainingJob: js.UndefOr[TrainingJob] = js.undefined): SearchRecord = {
+      val _fields = IndexedSeq[(String, js.Any)]("TrainingJob" -> TrainingJob.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchRecord]
     }
@@ -5853,20 +6773,30 @@ package sagemaker {
   }
 
   object SearchRequest {
-    def apply(
-      Resource: ResourceType,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SearchExpression: js.UndefOr[SearchExpression] = js.undefined,
-      SortBy: js.UndefOr[ResourcePropertyName] = js.undefined,
-      SortOrder: js.UndefOr[SearchSortOrder] = js.undefined): SearchRequest = {
+    def apply(Resource: ResourceType,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SearchExpression: js.UndefOr[SearchExpression] = js.undefined,
+              SortBy: js.UndefOr[ResourcePropertyName] = js.undefined,
+              SortOrder: js.UndefOr[SearchSortOrder] = js.undefined): SearchRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Resource" -> Resource.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SearchExpression" -> SearchExpression.map { x => x.asInstanceOf[js.Any] },
-        "SortBy" -> SortBy.map { x => x.asInstanceOf[js.Any] },
-        "SortOrder" -> SortOrder.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SearchExpression" -> SearchExpression.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortBy" -> SortBy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortOrder" -> SortOrder.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchRequest]
     }
@@ -5879,45 +6809,59 @@ package sagemaker {
   }
 
   object SearchResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Results: js.UndefOr[SearchResultsList] = js.undefined): SearchResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Results" -> Results.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Results: js.UndefOr[SearchResultsList] = js.undefined): SearchResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Results" -> Results.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchResponse]
     }
   }
 
   object SearchSortOrderEnum {
-    val Ascending = "Ascending"
+    val Ascending  = "Ascending"
     val Descending = "Descending"
 
     val values = IndexedSeq(Ascending, Descending)
   }
 
   object SecondaryStatusEnum {
-    val Starting = "Starting"
-    val LaunchingMLInstances = "LaunchingMLInstances"
-    val PreparingTrainingStack = "PreparingTrainingStack"
-    val Downloading = "Downloading"
+    val Starting                 = "Starting"
+    val LaunchingMLInstances     = "LaunchingMLInstances"
+    val PreparingTrainingStack   = "PreparingTrainingStack"
+    val Downloading              = "Downloading"
     val DownloadingTrainingImage = "DownloadingTrainingImage"
-    val Training = "Training"
-    val Uploading = "Uploading"
-    val Stopping = "Stopping"
-    val Stopped = "Stopped"
-    val MaxRuntimeExceeded = "MaxRuntimeExceeded"
-    val Completed = "Completed"
-    val Failed = "Failed"
+    val Training                 = "Training"
+    val Uploading                = "Uploading"
+    val Stopping                 = "Stopping"
+    val Stopped                  = "Stopped"
+    val MaxRuntimeExceeded       = "MaxRuntimeExceeded"
+    val Completed                = "Completed"
+    val Failed                   = "Failed"
 
-    val values = IndexedSeq(Starting, LaunchingMLInstances, PreparingTrainingStack, Downloading, DownloadingTrainingImage, Training, Uploading, Stopping, Stopped, MaxRuntimeExceeded, Completed, Failed)
+    val values = IndexedSeq(
+      Starting,
+      LaunchingMLInstances,
+      PreparingTrainingStack,
+      Downloading,
+      DownloadingTrainingImage,
+      Training,
+      Uploading,
+      Stopping,
+      Stopped,
+      MaxRuntimeExceeded,
+      Completed,
+      Failed
+    )
   }
 
   /**
-   * An array element of [[DescribeTrainingJobResponse.SecondaryStatusTransitions]]. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status.
-   *  <p/>
-   */
+    * An array element of [[DescribeTrainingJobResponse.SecondaryStatusTransitions]]. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, Amazon SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status.
+    *  <p/>
+    */
   @js.native
   trait SecondaryStatusTransition extends js.Object {
     var StartTime: Timestamp
@@ -5927,58 +6871,61 @@ package sagemaker {
   }
 
   object SecondaryStatusTransition {
-    def apply(
-      StartTime: Timestamp,
-      Status: SecondaryStatus,
-      EndTime: js.UndefOr[Timestamp] = js.undefined,
-      StatusMessage: js.UndefOr[StatusMessage] = js.undefined): SecondaryStatusTransition = {
+    def apply(StartTime: Timestamp,
+              Status: SecondaryStatus,
+              EndTime: js.UndefOr[Timestamp] = js.undefined,
+              StatusMessage: js.UndefOr[StatusMessage] = js.undefined): SecondaryStatusTransition = {
       val _fields = IndexedSeq[(String, js.Any)](
         "StartTime" -> StartTime.asInstanceOf[js.Any],
-        "Status" -> Status.asInstanceOf[js.Any],
-        "EndTime" -> EndTime.map { x => x.asInstanceOf[js.Any] },
-        "StatusMessage" -> StatusMessage.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Status"    -> Status.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StatusMessage" -> StatusMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SecondaryStatusTransition]
     }
   }
 
   /**
-   * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.
-   *  For Pipe input mode, shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
-   */
+    * A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.
+    *  For Pipe input mode, shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.
+    */
   @js.native
   trait ShuffleConfig extends js.Object {
     var Seed: Seed
   }
 
   object ShuffleConfig {
-    def apply(
-      Seed: Seed): ShuffleConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Seed" -> Seed.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Seed: Seed): ShuffleConfig = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Seed" -> Seed.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ShuffleConfig]
     }
   }
 
   object SortByEnum {
-    val Name = "Name"
+    val Name         = "Name"
     val CreationTime = "CreationTime"
-    val Status = "Status"
+    val Status       = "Status"
 
     val values = IndexedSeq(Name, CreationTime, Status)
   }
 
   object SortOrderEnum {
-    val Ascending = "Ascending"
+    val Ascending  = "Ascending"
     val Descending = "Descending"
 
     val values = IndexedSeq(Ascending, Descending)
   }
 
   /**
-   * Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
-   */
+    * Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+    */
   @js.native
   trait SourceAlgorithm extends js.Object {
     var AlgorithmName: ArnOrName
@@ -5986,38 +6933,38 @@ package sagemaker {
   }
 
   object SourceAlgorithm {
-    def apply(
-      AlgorithmName: ArnOrName,
-      ModelDataUrl: js.UndefOr[Url] = js.undefined): SourceAlgorithm = {
+    def apply(AlgorithmName: ArnOrName, ModelDataUrl: js.UndefOr[Url] = js.undefined): SourceAlgorithm = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AlgorithmName" -> AlgorithmName.asInstanceOf[js.Any],
-        "ModelDataUrl" -> ModelDataUrl.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ModelDataUrl" -> ModelDataUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceAlgorithm]
     }
   }
 
   /**
-   * A list of algorithms that were used to create a model package.
-   */
+    * A list of algorithms that were used to create a model package.
+    */
   @js.native
   trait SourceAlgorithmSpecification extends js.Object {
     var SourceAlgorithms: SourceAlgorithmList
   }
 
   object SourceAlgorithmSpecification {
-    def apply(
-      SourceAlgorithms: SourceAlgorithmList): SourceAlgorithmSpecification = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SourceAlgorithms" -> SourceAlgorithms.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SourceAlgorithms: SourceAlgorithmList): SourceAlgorithmSpecification = {
+      val _fields = IndexedSeq[(String, js.Any)]("SourceAlgorithms" -> SourceAlgorithms.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SourceAlgorithmSpecification]
     }
   }
 
   object SplitTypeEnum {
-    val None = "None"
-    val Line = "Line"
+    val None     = "None"
+    val Line     = "Line"
     val RecordIO = "RecordIO"
     val TFRecord = "TFRecord"
 
@@ -6030,10 +6977,9 @@ package sagemaker {
   }
 
   object StartNotebookInstanceInput {
-    def apply(
-      NotebookInstanceName: NotebookInstanceName): StartNotebookInstanceInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(NotebookInstanceName: NotebookInstanceName): StartNotebookInstanceInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartNotebookInstanceInput]
     }
@@ -6045,10 +6991,9 @@ package sagemaker {
   }
 
   object StopCompilationJobRequest {
-    def apply(
-      CompilationJobName: EntityName): StopCompilationJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CompilationJobName: EntityName): StopCompilationJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopCompilationJobRequest]
     }
@@ -6060,10 +7005,10 @@ package sagemaker {
   }
 
   object StopHyperParameterTuningJobRequest {
-    def apply(
-      HyperParameterTuningJobName: HyperParameterTuningJobName): StopHyperParameterTuningJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(HyperParameterTuningJobName: HyperParameterTuningJobName): StopHyperParameterTuningJobRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("HyperParameterTuningJobName" -> HyperParameterTuningJobName.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopHyperParameterTuningJobRequest]
     }
@@ -6075,10 +7020,9 @@ package sagemaker {
   }
 
   object StopLabelingJobRequest {
-    def apply(
-      LabelingJobName: LabelingJobName): StopLabelingJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(LabelingJobName: LabelingJobName): StopLabelingJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("LabelingJobName" -> LabelingJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopLabelingJobRequest]
     }
@@ -6090,10 +7034,9 @@ package sagemaker {
   }
 
   object StopNotebookInstanceInput {
-    def apply(
-      NotebookInstanceName: NotebookInstanceName): StopNotebookInstanceInput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(NotebookInstanceName: NotebookInstanceName): StopNotebookInstanceInput = {
+      val _fields = IndexedSeq[(String, js.Any)]("NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopNotebookInstanceInput]
     }
@@ -6105,10 +7048,9 @@ package sagemaker {
   }
 
   object StopTrainingJobRequest {
-    def apply(
-      TrainingJobName: TrainingJobName): StopTrainingJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(TrainingJobName: TrainingJobName): StopTrainingJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTrainingJobRequest]
     }
@@ -6120,38 +7062,37 @@ package sagemaker {
   }
 
   object StopTransformJobRequest {
-    def apply(
-      TransformJobName: TransformJobName): StopTransformJobRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(TransformJobName: TransformJobName): StopTransformJobRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("TransformJobName" -> TransformJobName.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StopTransformJobRequest]
     }
   }
 
   /**
-   * Specifies how long model training can run. When model training reaches the limit, Amazon SageMaker ends the training job. Use this API to cap model training cost.
-   *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of training is not lost.
-   *  Training algorithms provided by Amazon SageMaker automatically saves the intermediate results of a model training job (it is best effort case, as model might not be ready to save as some stages, for example training just started). This intermediate data is a valid model artifact. You can use it to create a model (<code>CreateModel</code>).
-   */
+    * Specifies how long model training can run. When model training reaches the limit, Amazon SageMaker ends the training job. Use this API to cap model training cost.
+    *  To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of training is not lost.
+    *  Training algorithms provided by Amazon SageMaker automatically saves the intermediate results of a model training job (it is best effort case, as model might not be ready to save as some stages, for example training just started). This intermediate data is a valid model artifact. You can use it to create a model (<code>CreateModel</code>).
+    */
   @js.native
   trait StoppingCondition extends js.Object {
     var MaxRuntimeInSeconds: js.UndefOr[MaxRuntimeInSeconds]
   }
 
   object StoppingCondition {
-    def apply(
-      MaxRuntimeInSeconds: js.UndefOr[MaxRuntimeInSeconds] = js.undefined): StoppingCondition = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxRuntimeInSeconds" -> MaxRuntimeInSeconds.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxRuntimeInSeconds: js.UndefOr[MaxRuntimeInSeconds] = js.undefined): StoppingCondition = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxRuntimeInSeconds" -> MaxRuntimeInSeconds.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StoppingCondition]
     }
   }
 
   /**
-   * Describes a work team of a vendor that does the a labelling job.
-   */
+    * Describes a work team of a vendor that does the a labelling job.
+    */
   @js.native
   trait SubscribedWorkteam extends js.Object {
     var WorkteamArn: WorkteamArn
@@ -6162,44 +7103,52 @@ package sagemaker {
   }
 
   object SubscribedWorkteam {
-    def apply(
-      WorkteamArn: WorkteamArn,
-      ListingId: js.UndefOr[String] = js.undefined,
-      MarketplaceDescription: js.UndefOr[String200] = js.undefined,
-      MarketplaceTitle: js.UndefOr[String200] = js.undefined,
-      SellerName: js.UndefOr[String] = js.undefined): SubscribedWorkteam = {
+    def apply(WorkteamArn: WorkteamArn,
+              ListingId: js.UndefOr[String] = js.undefined,
+              MarketplaceDescription: js.UndefOr[String200] = js.undefined,
+              MarketplaceTitle: js.UndefOr[String200] = js.undefined,
+              SellerName: js.UndefOr[String] = js.undefined): SubscribedWorkteam = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any],
-        "ListingId" -> ListingId.map { x => x.asInstanceOf[js.Any] },
-        "MarketplaceDescription" -> MarketplaceDescription.map { x => x.asInstanceOf[js.Any] },
-        "MarketplaceTitle" -> MarketplaceTitle.map { x => x.asInstanceOf[js.Any] },
-        "SellerName" -> SellerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ListingId" -> ListingId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MarketplaceDescription" -> MarketplaceDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MarketplaceTitle" -> MarketplaceTitle.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SellerName" -> SellerName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SubscribedWorkteam]
     }
   }
 
   /**
-   * Limits the property names that are included in the response.
-   */
+    * Limits the property names that are included in the response.
+    */
   @js.native
   trait SuggestionQuery extends js.Object {
     var PropertyNameQuery: js.UndefOr[PropertyNameQuery]
   }
 
   object SuggestionQuery {
-    def apply(
-      PropertyNameQuery: js.UndefOr[PropertyNameQuery] = js.undefined): SuggestionQuery = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "PropertyNameQuery" -> PropertyNameQuery.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(PropertyNameQuery: js.UndefOr[PropertyNameQuery] = js.undefined): SuggestionQuery = {
+      val _fields = IndexedSeq[(String, js.Any)]("PropertyNameQuery" -> PropertyNameQuery.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SuggestionQuery]
     }
   }
 
   /**
-   * Describes a tag.
-   */
+    * Describes a tag.
+    */
   @js.native
   trait Tag extends js.Object {
     var Key: TagKey
@@ -6207,28 +7156,26 @@ package sagemaker {
   }
 
   object Tag {
-    def apply(
-      Key: TagKey,
-      Value: TagValue): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: TagKey, Value: TagValue): Tag = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
   }
 
   object TargetDeviceEnum {
-    val ml_m4 = "ml_m4"
-    val ml_m5 = "ml_m5"
-    val ml_c4 = "ml_c4"
-    val ml_c5 = "ml_c5"
-    val ml_p2 = "ml_p2"
-    val ml_p3 = "ml_p3"
+    val ml_m4      = "ml_m4"
+    val ml_m5      = "ml_m5"
+    val ml_c4      = "ml_c4"
+    val ml_c5      = "ml_c5"
+    val ml_p2      = "ml_p2"
+    val ml_p3      = "ml_p3"
     val jetson_tx1 = "jetson_tx1"
     val jetson_tx2 = "jetson_tx2"
-    val rasp3b = "rasp3b"
-    val deeplens = "deeplens"
+    val rasp3b     = "rasp3b"
+    val deeplens   = "deeplens"
 
     val values = IndexedSeq(ml_m4, ml_m5, ml_c4, ml_c5, ml_p2, ml_p3, jetson_tx1, jetson_tx2, rasp3b, deeplens)
   }
@@ -6241,39 +7188,66 @@ package sagemaker {
   }
 
   object TrainingInstanceTypeEnum {
-    val `ml.m4.xlarge` = "ml.m4.xlarge"
-    val `ml.m4.2xlarge` = "ml.m4.2xlarge"
-    val `ml.m4.4xlarge` = "ml.m4.4xlarge"
+    val `ml.m4.xlarge`   = "ml.m4.xlarge"
+    val `ml.m4.2xlarge`  = "ml.m4.2xlarge"
+    val `ml.m4.4xlarge`  = "ml.m4.4xlarge"
     val `ml.m4.10xlarge` = "ml.m4.10xlarge"
     val `ml.m4.16xlarge` = "ml.m4.16xlarge"
-    val `ml.m5.large` = "ml.m5.large"
-    val `ml.m5.xlarge` = "ml.m5.xlarge"
-    val `ml.m5.2xlarge` = "ml.m5.2xlarge"
-    val `ml.m5.4xlarge` = "ml.m5.4xlarge"
+    val `ml.m5.large`    = "ml.m5.large"
+    val `ml.m5.xlarge`   = "ml.m5.xlarge"
+    val `ml.m5.2xlarge`  = "ml.m5.2xlarge"
+    val `ml.m5.4xlarge`  = "ml.m5.4xlarge"
     val `ml.m5.12xlarge` = "ml.m5.12xlarge"
     val `ml.m5.24xlarge` = "ml.m5.24xlarge"
-    val `ml.c4.xlarge` = "ml.c4.xlarge"
-    val `ml.c4.2xlarge` = "ml.c4.2xlarge"
-    val `ml.c4.4xlarge` = "ml.c4.4xlarge"
-    val `ml.c4.8xlarge` = "ml.c4.8xlarge"
-    val `ml.p2.xlarge` = "ml.p2.xlarge"
-    val `ml.p2.8xlarge` = "ml.p2.8xlarge"
+    val `ml.c4.xlarge`   = "ml.c4.xlarge"
+    val `ml.c4.2xlarge`  = "ml.c4.2xlarge"
+    val `ml.c4.4xlarge`  = "ml.c4.4xlarge"
+    val `ml.c4.8xlarge`  = "ml.c4.8xlarge"
+    val `ml.p2.xlarge`   = "ml.p2.xlarge"
+    val `ml.p2.8xlarge`  = "ml.p2.8xlarge"
     val `ml.p2.16xlarge` = "ml.p2.16xlarge"
-    val `ml.p3.2xlarge` = "ml.p3.2xlarge"
-    val `ml.p3.8xlarge` = "ml.p3.8xlarge"
+    val `ml.p3.2xlarge`  = "ml.p3.2xlarge"
+    val `ml.p3.8xlarge`  = "ml.p3.8xlarge"
     val `ml.p3.16xlarge` = "ml.p3.16xlarge"
-    val `ml.c5.xlarge` = "ml.c5.xlarge"
-    val `ml.c5.2xlarge` = "ml.c5.2xlarge"
-    val `ml.c5.4xlarge` = "ml.c5.4xlarge"
-    val `ml.c5.9xlarge` = "ml.c5.9xlarge"
+    val `ml.c5.xlarge`   = "ml.c5.xlarge"
+    val `ml.c5.2xlarge`  = "ml.c5.2xlarge"
+    val `ml.c5.4xlarge`  = "ml.c5.4xlarge"
+    val `ml.c5.9xlarge`  = "ml.c5.9xlarge"
     val `ml.c5.18xlarge` = "ml.c5.18xlarge"
 
-    val values = IndexedSeq(`ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`)
+    val values = IndexedSeq(
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`
+    )
   }
 
   /**
-   * Contains information about a training job.
-   */
+    * Contains information about a training job.
+    */
   @js.native
   trait TrainingJob extends js.Object {
     var AlgorithmSpecification: js.UndefOr[AlgorithmSpecification]
@@ -6303,64 +7277,112 @@ package sagemaker {
   }
 
   object TrainingJob {
-    def apply(
-      AlgorithmSpecification: js.UndefOr[AlgorithmSpecification] = js.undefined,
-      CreationTime: js.UndefOr[Timestamp] = js.undefined,
-      EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      FinalMetricDataList: js.UndefOr[FinalMetricDataList] = js.undefined,
-      HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
-      InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
-      LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
-      LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
-      ModelArtifacts: js.UndefOr[ModelArtifacts] = js.undefined,
-      OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
-      ResourceConfig: js.UndefOr[ResourceConfig] = js.undefined,
-      RoleArn: js.UndefOr[RoleArn] = js.undefined,
-      SecondaryStatus: js.UndefOr[SecondaryStatus] = js.undefined,
-      SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions] = js.undefined,
-      StoppingCondition: js.UndefOr[StoppingCondition] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined,
-      TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingJobArn: js.UndefOr[TrainingJobArn] = js.undefined,
-      TrainingJobName: js.UndefOr[TrainingJobName] = js.undefined,
-      TrainingJobStatus: js.UndefOr[TrainingJobStatus] = js.undefined,
-      TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
-      TuningJobArn: js.UndefOr[HyperParameterTuningJobArn] = js.undefined,
-      VpcConfig: js.UndefOr[VpcConfig] = js.undefined): TrainingJob = {
+    def apply(AlgorithmSpecification: js.UndefOr[AlgorithmSpecification] = js.undefined,
+              CreationTime: js.UndefOr[Timestamp] = js.undefined,
+              EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
+              FailureReason: js.UndefOr[FailureReason] = js.undefined,
+              FinalMetricDataList: js.UndefOr[FinalMetricDataList] = js.undefined,
+              HyperParameters: js.UndefOr[HyperParameters] = js.undefined,
+              InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+              LabelingJobArn: js.UndefOr[LabelingJobArn] = js.undefined,
+              LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+              ModelArtifacts: js.UndefOr[ModelArtifacts] = js.undefined,
+              OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+              ResourceConfig: js.UndefOr[ResourceConfig] = js.undefined,
+              RoleArn: js.UndefOr[RoleArn] = js.undefined,
+              SecondaryStatus: js.UndefOr[SecondaryStatus] = js.undefined,
+              SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions] = js.undefined,
+              StoppingCondition: js.UndefOr[StoppingCondition] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined,
+              TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
+              TrainingJobArn: js.UndefOr[TrainingJobArn] = js.undefined,
+              TrainingJobName: js.UndefOr[TrainingJobName] = js.undefined,
+              TrainingJobStatus: js.UndefOr[TrainingJobStatus] = js.undefined,
+              TrainingStartTime: js.UndefOr[Timestamp] = js.undefined,
+              TuningJobArn: js.UndefOr[HyperParameterTuningJobArn] = js.undefined,
+              VpcConfig: js.UndefOr[VpcConfig] = js.undefined): TrainingJob = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AlgorithmSpecification" -> AlgorithmSpecification.map { x => x.asInstanceOf[js.Any] },
-        "CreationTime" -> CreationTime.map { x => x.asInstanceOf[js.Any] },
-        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x => x.asInstanceOf[js.Any] },
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "FinalMetricDataList" -> FinalMetricDataList.map { x => x.asInstanceOf[js.Any] },
-        "HyperParameters" -> HyperParameters.map { x => x.asInstanceOf[js.Any] },
-        "InputDataConfig" -> InputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "LabelingJobArn" -> LabelingJobArn.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "ModelArtifacts" -> ModelArtifacts.map { x => x.asInstanceOf[js.Any] },
-        "OutputDataConfig" -> OutputDataConfig.map { x => x.asInstanceOf[js.Any] },
-        "ResourceConfig" -> ResourceConfig.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "SecondaryStatus" -> SecondaryStatus.map { x => x.asInstanceOf[js.Any] },
-        "SecondaryStatusTransitions" -> SecondaryStatusTransitions.map { x => x.asInstanceOf[js.Any] },
-        "StoppingCondition" -> StoppingCondition.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] },
-        "TrainingEndTime" -> TrainingEndTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingJobArn" -> TrainingJobArn.map { x => x.asInstanceOf[js.Any] },
-        "TrainingJobName" -> TrainingJobName.map { x => x.asInstanceOf[js.Any] },
-        "TrainingJobStatus" -> TrainingJobStatus.map { x => x.asInstanceOf[js.Any] },
-        "TrainingStartTime" -> TrainingStartTime.map { x => x.asInstanceOf[js.Any] },
-        "TuningJobArn" -> TuningJobArn.map { x => x.asInstanceOf[js.Any] },
-        "VpcConfig" -> VpcConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AlgorithmSpecification" -> AlgorithmSpecification.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "CreationTime" -> CreationTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnableNetworkIsolation" -> EnableNetworkIsolation.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FinalMetricDataList" -> FinalMetricDataList.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "HyperParameters" -> HyperParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InputDataConfig" -> InputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LabelingJobArn" -> LabelingJobArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ModelArtifacts" -> ModelArtifacts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OutputDataConfig" -> OutputDataConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ResourceConfig" -> ResourceConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecondaryStatus" -> SecondaryStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SecondaryStatusTransitions" -> SecondaryStatusTransitions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "StoppingCondition" -> StoppingCondition.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingEndTime" -> TrainingEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingJobArn" -> TrainingJobArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingJobName" -> TrainingJobName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingJobStatus" -> TrainingJobStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingStartTime" -> TrainingStartTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TuningJobArn" -> TuningJobArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VpcConfig" -> VpcConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrainingJob]
     }
   }
 
   /**
-   * Defines the input needed to run a training job using the algorithm.
-   */
+    * Defines the input needed to run a training job using the algorithm.
+    */
   @js.native
   trait TrainingJobDefinition extends js.Object {
     var InputDataConfig: InputDataConfig
@@ -6372,36 +7394,38 @@ package sagemaker {
   }
 
   object TrainingJobDefinition {
-    def apply(
-      InputDataConfig: InputDataConfig,
-      OutputDataConfig: OutputDataConfig,
-      ResourceConfig: ResourceConfig,
-      StoppingCondition: StoppingCondition,
-      TrainingInputMode: TrainingInputMode,
-      HyperParameters: js.UndefOr[HyperParameters] = js.undefined): TrainingJobDefinition = {
+    def apply(InputDataConfig: InputDataConfig,
+              OutputDataConfig: OutputDataConfig,
+              ResourceConfig: ResourceConfig,
+              StoppingCondition: StoppingCondition,
+              TrainingInputMode: TrainingInputMode,
+              HyperParameters: js.UndefOr[HyperParameters] = js.undefined): TrainingJobDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
-        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any],
-        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
+        "InputDataConfig"   -> InputDataConfig.asInstanceOf[js.Any],
+        "OutputDataConfig"  -> OutputDataConfig.asInstanceOf[js.Any],
+        "ResourceConfig"    -> ResourceConfig.asInstanceOf[js.Any],
         "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any],
         "TrainingInputMode" -> TrainingInputMode.asInstanceOf[js.Any],
-        "HyperParameters" -> HyperParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "HyperParameters" -> HyperParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrainingJobDefinition]
     }
   }
 
   object TrainingJobEarlyStoppingTypeEnum {
-    val Off = "Off"
+    val Off  = "Off"
     val Auto = "Auto"
 
     val values = IndexedSeq(Off, Auto)
   }
 
   object TrainingJobSortByOptionsEnum {
-    val Name = "Name"
-    val CreationTime = "CreationTime"
-    val Status = "Status"
+    val Name                      = "Name"
+    val CreationTime              = "CreationTime"
+    val Status                    = "Status"
     val FinalObjectiveMetricValue = "FinalObjectiveMetricValue"
 
     val values = IndexedSeq(Name, CreationTime, Status, FinalObjectiveMetricValue)
@@ -6409,17 +7433,17 @@ package sagemaker {
 
   object TrainingJobStatusEnum {
     val InProgress = "InProgress"
-    val Completed = "Completed"
-    val Failed = "Failed"
-    val Stopping = "Stopping"
-    val Stopped = "Stopped"
+    val Completed  = "Completed"
+    val Failed     = "Failed"
+    val Stopping   = "Stopping"
+    val Stopped    = "Stopped"
 
     val values = IndexedSeq(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
-   * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
-   */
+    * The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.
+    */
   @js.native
   trait TrainingJobStatusCounters extends js.Object {
     var Completed: js.UndefOr[TrainingJobStatusCounter]
@@ -6430,26 +7454,36 @@ package sagemaker {
   }
 
   object TrainingJobStatusCounters {
-    def apply(
-      Completed: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
-      InProgress: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
-      NonRetryableError: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
-      RetryableError: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
-      Stopped: js.UndefOr[TrainingJobStatusCounter] = js.undefined): TrainingJobStatusCounters = {
+    def apply(Completed: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
+              InProgress: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
+              NonRetryableError: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
+              RetryableError: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
+              Stopped: js.UndefOr[TrainingJobStatusCounter] = js.undefined): TrainingJobStatusCounters = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Completed" -> Completed.map { x => x.asInstanceOf[js.Any] },
-        "InProgress" -> InProgress.map { x => x.asInstanceOf[js.Any] },
-        "NonRetryableError" -> NonRetryableError.map { x => x.asInstanceOf[js.Any] },
-        "RetryableError" -> RetryableError.map { x => x.asInstanceOf[js.Any] },
-        "Stopped" -> Stopped.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Completed" -> Completed.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InProgress" -> InProgress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NonRetryableError" -> NonRetryableError.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RetryableError" -> RetryableError.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Stopped" -> Stopped.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrainingJobStatusCounters]
     }
   }
 
   /**
-   * Provides summary information about a training job.
-   */
+    * Provides summary information about a training job.
+    */
   @js.native
   trait TrainingJobSummary extends js.Object {
     var CreationTime: Timestamp
@@ -6461,28 +7495,32 @@ package sagemaker {
   }
 
   object TrainingJobSummary {
-    def apply(
-      CreationTime: Timestamp,
-      TrainingJobArn: TrainingJobArn,
-      TrainingJobName: TrainingJobName,
-      TrainingJobStatus: TrainingJobStatus,
-      LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
-      TrainingEndTime: js.UndefOr[Timestamp] = js.undefined): TrainingJobSummary = {
+    def apply(CreationTime: Timestamp,
+              TrainingJobArn: TrainingJobArn,
+              TrainingJobName: TrainingJobName,
+              TrainingJobStatus: TrainingJobStatus,
+              LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+              TrainingEndTime: js.UndefOr[Timestamp] = js.undefined): TrainingJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "TrainingJobArn" -> TrainingJobArn.asInstanceOf[js.Any],
-        "TrainingJobName" -> TrainingJobName.asInstanceOf[js.Any],
+        "CreationTime"      -> CreationTime.asInstanceOf[js.Any],
+        "TrainingJobArn"    -> TrainingJobArn.asInstanceOf[js.Any],
+        "TrainingJobName"   -> TrainingJobName.asInstanceOf[js.Any],
         "TrainingJobStatus" -> TrainingJobStatus.asInstanceOf[js.Any],
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "TrainingEndTime" -> TrainingEndTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingEndTime" -> TrainingEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrainingJobSummary]
     }
   }
 
   /**
-   * Defines how the algorithm is used for a training job.
-   */
+    * Defines how the algorithm is used for a training job.
+    */
   @js.native
   trait TrainingSpecification extends js.Object {
     var SupportedTrainingInstanceTypes: TrainingInstanceTypes
@@ -6496,50 +7534,59 @@ package sagemaker {
   }
 
   object TrainingSpecification {
-    def apply(
-      SupportedTrainingInstanceTypes: TrainingInstanceTypes,
-      TrainingChannels: ChannelSpecifications,
-      TrainingImage: Image,
-      MetricDefinitions: js.UndefOr[MetricDefinitionList] = js.undefined,
-      SupportedHyperParameters: js.UndefOr[HyperParameterSpecifications] = js.undefined,
-      SupportedTuningJobObjectiveMetrics: js.UndefOr[HyperParameterTuningJobObjectives] = js.undefined,
-      SupportsDistributedTraining: js.UndefOr[Boolean] = js.undefined,
-      TrainingImageDigest: js.UndefOr[ImageDigest] = js.undefined): TrainingSpecification = {
+    def apply(SupportedTrainingInstanceTypes: TrainingInstanceTypes,
+              TrainingChannels: ChannelSpecifications,
+              TrainingImage: Image,
+              MetricDefinitions: js.UndefOr[MetricDefinitionList] = js.undefined,
+              SupportedHyperParameters: js.UndefOr[HyperParameterSpecifications] = js.undefined,
+              SupportedTuningJobObjectiveMetrics: js.UndefOr[HyperParameterTuningJobObjectives] = js.undefined,
+              SupportsDistributedTraining: js.UndefOr[Boolean] = js.undefined,
+              TrainingImageDigest: js.UndefOr[ImageDigest] = js.undefined): TrainingSpecification = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SupportedTrainingInstanceTypes" -> SupportedTrainingInstanceTypes.asInstanceOf[js.Any],
-        "TrainingChannels" -> TrainingChannels.asInstanceOf[js.Any],
-        "TrainingImage" -> TrainingImage.asInstanceOf[js.Any],
-        "MetricDefinitions" -> MetricDefinitions.map { x => x.asInstanceOf[js.Any] },
-        "SupportedHyperParameters" -> SupportedHyperParameters.map { x => x.asInstanceOf[js.Any] },
-        "SupportedTuningJobObjectiveMetrics" -> SupportedTuningJobObjectiveMetrics.map { x => x.asInstanceOf[js.Any] },
-        "SupportsDistributedTraining" -> SupportsDistributedTraining.map { x => x.asInstanceOf[js.Any] },
-        "TrainingImageDigest" -> TrainingImageDigest.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "TrainingChannels"               -> TrainingChannels.asInstanceOf[js.Any],
+        "TrainingImage"                  -> TrainingImage.asInstanceOf[js.Any],
+        "MetricDefinitions" -> MetricDefinitions.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportedHyperParameters" -> SupportedHyperParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportedTuningJobObjectiveMetrics" -> SupportedTuningJobObjectiveMetrics.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportsDistributedTraining" -> SupportsDistributedTraining.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TrainingImageDigest" -> TrainingImageDigest.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TrainingSpecification]
     }
   }
 
   /**
-   * Describes the location of the channel data.
-   */
+    * Describes the location of the channel data.
+    */
   @js.native
   trait TransformDataSource extends js.Object {
     var S3DataSource: TransformS3DataSource
   }
 
   object TransformDataSource {
-    def apply(
-      S3DataSource: TransformS3DataSource): TransformDataSource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "S3DataSource" -> S3DataSource.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(S3DataSource: TransformS3DataSource): TransformDataSource = {
+      val _fields = IndexedSeq[(String, js.Any)]("S3DataSource" -> S3DataSource.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransformDataSource]
     }
   }
 
   /**
-   * Describes the input source of a transform job and the way the transform job consumes it.
-   */
+    * Describes the input source of a transform job and the way the transform job consumes it.
+    */
   @js.native
   trait TransformInput extends js.Object {
     var DataSource: TransformDataSource
@@ -6549,55 +7596,88 @@ package sagemaker {
   }
 
   object TransformInput {
-    def apply(
-      DataSource: TransformDataSource,
-      CompressionType: js.UndefOr[CompressionType] = js.undefined,
-      ContentType: js.UndefOr[ContentType] = js.undefined,
-      SplitType: js.UndefOr[SplitType] = js.undefined): TransformInput = {
+    def apply(DataSource: TransformDataSource,
+              CompressionType: js.UndefOr[CompressionType] = js.undefined,
+              ContentType: js.UndefOr[ContentType] = js.undefined,
+              SplitType: js.UndefOr[SplitType] = js.undefined): TransformInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DataSource" -> DataSource.asInstanceOf[js.Any],
-        "CompressionType" -> CompressionType.map { x => x.asInstanceOf[js.Any] },
-        "ContentType" -> ContentType.map { x => x.asInstanceOf[js.Any] },
-        "SplitType" -> SplitType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "CompressionType" -> CompressionType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ContentType" -> ContentType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SplitType" -> SplitType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransformInput]
     }
   }
 
   object TransformInstanceTypeEnum {
-    val `ml.m4.xlarge` = "ml.m4.xlarge"
-    val `ml.m4.2xlarge` = "ml.m4.2xlarge"
-    val `ml.m4.4xlarge` = "ml.m4.4xlarge"
+    val `ml.m4.xlarge`   = "ml.m4.xlarge"
+    val `ml.m4.2xlarge`  = "ml.m4.2xlarge"
+    val `ml.m4.4xlarge`  = "ml.m4.4xlarge"
     val `ml.m4.10xlarge` = "ml.m4.10xlarge"
     val `ml.m4.16xlarge` = "ml.m4.16xlarge"
-    val `ml.c4.xlarge` = "ml.c4.xlarge"
-    val `ml.c4.2xlarge` = "ml.c4.2xlarge"
-    val `ml.c4.4xlarge` = "ml.c4.4xlarge"
-    val `ml.c4.8xlarge` = "ml.c4.8xlarge"
-    val `ml.p2.xlarge` = "ml.p2.xlarge"
-    val `ml.p2.8xlarge` = "ml.p2.8xlarge"
+    val `ml.c4.xlarge`   = "ml.c4.xlarge"
+    val `ml.c4.2xlarge`  = "ml.c4.2xlarge"
+    val `ml.c4.4xlarge`  = "ml.c4.4xlarge"
+    val `ml.c4.8xlarge`  = "ml.c4.8xlarge"
+    val `ml.p2.xlarge`   = "ml.p2.xlarge"
+    val `ml.p2.8xlarge`  = "ml.p2.8xlarge"
     val `ml.p2.16xlarge` = "ml.p2.16xlarge"
-    val `ml.p3.2xlarge` = "ml.p3.2xlarge"
-    val `ml.p3.8xlarge` = "ml.p3.8xlarge"
+    val `ml.p3.2xlarge`  = "ml.p3.2xlarge"
+    val `ml.p3.8xlarge`  = "ml.p3.8xlarge"
     val `ml.p3.16xlarge` = "ml.p3.16xlarge"
-    val `ml.c5.xlarge` = "ml.c5.xlarge"
-    val `ml.c5.2xlarge` = "ml.c5.2xlarge"
-    val `ml.c5.4xlarge` = "ml.c5.4xlarge"
-    val `ml.c5.9xlarge` = "ml.c5.9xlarge"
+    val `ml.c5.xlarge`   = "ml.c5.xlarge"
+    val `ml.c5.2xlarge`  = "ml.c5.2xlarge"
+    val `ml.c5.4xlarge`  = "ml.c5.4xlarge"
+    val `ml.c5.9xlarge`  = "ml.c5.9xlarge"
     val `ml.c5.18xlarge` = "ml.c5.18xlarge"
-    val `ml.m5.large` = "ml.m5.large"
-    val `ml.m5.xlarge` = "ml.m5.xlarge"
-    val `ml.m5.2xlarge` = "ml.m5.2xlarge"
-    val `ml.m5.4xlarge` = "ml.m5.4xlarge"
+    val `ml.m5.large`    = "ml.m5.large"
+    val `ml.m5.xlarge`   = "ml.m5.xlarge"
+    val `ml.m5.2xlarge`  = "ml.m5.2xlarge"
+    val `ml.m5.4xlarge`  = "ml.m5.4xlarge"
     val `ml.m5.12xlarge` = "ml.m5.12xlarge"
     val `ml.m5.24xlarge` = "ml.m5.24xlarge"
 
-    val values = IndexedSeq(`ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`)
+    val values = IndexedSeq(
+      `ml.m4.xlarge`,
+      `ml.m4.2xlarge`,
+      `ml.m4.4xlarge`,
+      `ml.m4.10xlarge`,
+      `ml.m4.16xlarge`,
+      `ml.c4.xlarge`,
+      `ml.c4.2xlarge`,
+      `ml.c4.4xlarge`,
+      `ml.c4.8xlarge`,
+      `ml.p2.xlarge`,
+      `ml.p2.8xlarge`,
+      `ml.p2.16xlarge`,
+      `ml.p3.2xlarge`,
+      `ml.p3.8xlarge`,
+      `ml.p3.16xlarge`,
+      `ml.c5.xlarge`,
+      `ml.c5.2xlarge`,
+      `ml.c5.4xlarge`,
+      `ml.c5.9xlarge`,
+      `ml.c5.18xlarge`,
+      `ml.m5.large`,
+      `ml.m5.xlarge`,
+      `ml.m5.2xlarge`,
+      `ml.m5.4xlarge`,
+      `ml.m5.12xlarge`,
+      `ml.m5.24xlarge`
+    )
   }
 
   /**
-   * Defines the input needed to run a transform job using the inference specification specified in the algorithm.
-   */
+    * Defines the input needed to run a transform job using the inference specification specified in the algorithm.
+    */
   @js.native
   trait TransformJobDefinition extends js.Object {
     var TransformInput: TransformInput
@@ -6610,22 +7690,30 @@ package sagemaker {
   }
 
   object TransformJobDefinition {
-    def apply(
-      TransformInput: TransformInput,
-      TransformOutput: TransformOutput,
-      TransformResources: TransformResources,
-      BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
-      Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
-      MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
-      MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined): TransformJobDefinition = {
+    def apply(TransformInput: TransformInput,
+              TransformOutput: TransformOutput,
+              TransformResources: TransformResources,
+              BatchStrategy: js.UndefOr[BatchStrategy] = js.undefined,
+              Environment: js.UndefOr[TransformEnvironmentMap] = js.undefined,
+              MaxConcurrentTransforms: js.UndefOr[MaxConcurrentTransforms] = js.undefined,
+              MaxPayloadInMB: js.UndefOr[MaxPayloadInMB] = js.undefined): TransformJobDefinition = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "TransformInput" -> TransformInput.asInstanceOf[js.Any],
-        "TransformOutput" -> TransformOutput.asInstanceOf[js.Any],
+        "TransformInput"     -> TransformInput.asInstanceOf[js.Any],
+        "TransformOutput"    -> TransformOutput.asInstanceOf[js.Any],
         "TransformResources" -> TransformResources.asInstanceOf[js.Any],
-        "BatchStrategy" -> BatchStrategy.map { x => x.asInstanceOf[js.Any] },
-        "Environment" -> Environment.map { x => x.asInstanceOf[js.Any] },
-        "MaxConcurrentTransforms" -> MaxConcurrentTransforms.map { x => x.asInstanceOf[js.Any] },
-        "MaxPayloadInMB" -> MaxPayloadInMB.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BatchStrategy" -> BatchStrategy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Environment" -> Environment.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxConcurrentTransforms" -> MaxConcurrentTransforms.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxPayloadInMB" -> MaxPayloadInMB.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransformJobDefinition]
     }
@@ -6633,17 +7721,17 @@ package sagemaker {
 
   object TransformJobStatusEnum {
     val InProgress = "InProgress"
-    val Completed = "Completed"
-    val Failed = "Failed"
-    val Stopping = "Stopping"
-    val Stopped = "Stopped"
+    val Completed  = "Completed"
+    val Failed     = "Failed"
+    val Stopping   = "Stopping"
+    val Stopped    = "Stopped"
 
     val values = IndexedSeq(InProgress, Completed, Failed, Stopping, Stopped)
   }
 
   /**
-   * Provides a summary of a transform job. Multiple TransformJobSummary objects are returned as a list after calling <a>ListTransformJobs</a>.
-   */
+    * Provides a summary of a transform job. Multiple TransformJobSummary objects are returned as a list after calling <a>ListTransformJobs</a>.
+    */
   @js.native
   trait TransformJobSummary extends js.Object {
     var CreationTime: Timestamp
@@ -6656,30 +7744,36 @@ package sagemaker {
   }
 
   object TransformJobSummary {
-    def apply(
-      CreationTime: Timestamp,
-      TransformJobArn: TransformJobArn,
-      TransformJobName: TransformJobName,
-      TransformJobStatus: TransformJobStatus,
-      FailureReason: js.UndefOr[FailureReason] = js.undefined,
-      LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
-      TransformEndTime: js.UndefOr[Timestamp] = js.undefined): TransformJobSummary = {
+    def apply(CreationTime: Timestamp,
+              TransformJobArn: TransformJobArn,
+              TransformJobName: TransformJobName,
+              TransformJobStatus: TransformJobStatus,
+              FailureReason: js.UndefOr[FailureReason] = js.undefined,
+              LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+              TransformEndTime: js.UndefOr[Timestamp] = js.undefined): TransformJobSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "TransformJobArn" -> TransformJobArn.asInstanceOf[js.Any],
-        "TransformJobName" -> TransformJobName.asInstanceOf[js.Any],
+        "CreationTime"       -> CreationTime.asInstanceOf[js.Any],
+        "TransformJobArn"    -> TransformJobArn.asInstanceOf[js.Any],
+        "TransformJobName"   -> TransformJobName.asInstanceOf[js.Any],
         "TransformJobStatus" -> TransformJobStatus.asInstanceOf[js.Any],
-        "FailureReason" -> FailureReason.map { x => x.asInstanceOf[js.Any] },
-        "LastModifiedTime" -> LastModifiedTime.map { x => x.asInstanceOf[js.Any] },
-        "TransformEndTime" -> TransformEndTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "FailureReason" -> FailureReason.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastModifiedTime" -> LastModifiedTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TransformEndTime" -> TransformEndTime.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransformJobSummary]
     }
   }
 
   /**
-   * Describes the results of a transform job output.
-   */
+    * Describes the results of a transform job output.
+    */
   @js.native
   trait TransformOutput extends js.Object {
     var S3OutputPath: S3Uri
@@ -6689,24 +7783,30 @@ package sagemaker {
   }
 
   object TransformOutput {
-    def apply(
-      S3OutputPath: S3Uri,
-      Accept: js.UndefOr[Accept] = js.undefined,
-      AssembleWith: js.UndefOr[AssemblyType] = js.undefined,
-      KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): TransformOutput = {
+    def apply(S3OutputPath: S3Uri,
+              Accept: js.UndefOr[Accept] = js.undefined,
+              AssembleWith: js.UndefOr[AssemblyType] = js.undefined,
+              KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): TransformOutput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "S3OutputPath" -> S3OutputPath.asInstanceOf[js.Any],
-        "Accept" -> Accept.map { x => x.asInstanceOf[js.Any] },
-        "AssembleWith" -> AssembleWith.map { x => x.asInstanceOf[js.Any] },
-        "KmsKeyId" -> KmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Accept" -> Accept.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AssembleWith" -> AssembleWith.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "KmsKeyId" -> KmsKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransformOutput]
     }
   }
 
   /**
-   * Describes the resources, including ML instance types and ML instance count, to use for transform job.
-   */
+    * Describes the resources, including ML instance types and ML instance count, to use for transform job.
+    */
   @js.native
   trait TransformResources extends js.Object {
     var InstanceCount: TransformInstanceCount
@@ -6715,22 +7815,24 @@ package sagemaker {
   }
 
   object TransformResources {
-    def apply(
-      InstanceCount: TransformInstanceCount,
-      InstanceType: TransformInstanceType,
-      VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): TransformResources = {
+    def apply(InstanceCount: TransformInstanceCount,
+              InstanceType: TransformInstanceType,
+              VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined): TransformResources = {
       val _fields = IndexedSeq[(String, js.Any)](
         "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
-        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
-        "VolumeKmsKeyId" -> VolumeKmsKeyId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "InstanceType"  -> InstanceType.asInstanceOf[js.Any],
+        "VolumeKmsKeyId" -> VolumeKmsKeyId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransformResources]
     }
   }
 
   /**
-   * Describes the S3 data source.
-   */
+    * Describes the S3 data source.
+    */
   @js.native
   trait TransformS3DataSource extends js.Object {
     var S3DataType: S3DataType
@@ -6738,20 +7840,19 @@ package sagemaker {
   }
 
   object TransformS3DataSource {
-    def apply(
-      S3DataType: S3DataType,
-      S3Uri: S3Uri): TransformS3DataSource = {
+    def apply(S3DataType: S3DataType, S3Uri: S3Uri): TransformS3DataSource = {
       val _fields = IndexedSeq[(String, js.Any)](
         "S3DataType" -> S3DataType.asInstanceOf[js.Any],
-        "S3Uri" -> S3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "S3Uri"      -> S3Uri.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TransformS3DataSource]
     }
   }
 
   /**
-   * Represents an amount of money in United States dollars/
-   */
+    * Represents an amount of money in United States dollars/
+    */
   @js.native
   trait USD extends js.Object {
     var Cents: js.UndefOr[Cents]
@@ -6760,50 +7861,54 @@ package sagemaker {
   }
 
   object USD {
-    def apply(
-      Cents: js.UndefOr[Cents] = js.undefined,
-      Dollars: js.UndefOr[Dollars] = js.undefined,
-      TenthFractionsOfACent: js.UndefOr[TenthFractionsOfACent] = js.undefined): USD = {
+    def apply(Cents: js.UndefOr[Cents] = js.undefined,
+              Dollars: js.UndefOr[Dollars] = js.undefined,
+              TenthFractionsOfACent: js.UndefOr[TenthFractionsOfACent] = js.undefined): USD = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Cents" -> Cents.map { x => x.asInstanceOf[js.Any] },
-        "Dollars" -> Dollars.map { x => x.asInstanceOf[js.Any] },
-        "TenthFractionsOfACent" -> TenthFractionsOfACent.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Cents" -> Cents.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Dollars" -> Dollars.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TenthFractionsOfACent" -> TenthFractionsOfACent.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[USD]
     }
   }
 
   /**
-   * Provided configuration information for the worker UI for a labeling job.
-   */
+    * Provided configuration information for the worker UI for a labeling job.
+    */
   @js.native
   trait UiConfig extends js.Object {
     var UiTemplateS3Uri: S3Uri
   }
 
   object UiConfig {
-    def apply(
-      UiTemplateS3Uri: S3Uri): UiConfig = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UiTemplateS3Uri" -> UiTemplateS3Uri.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(UiTemplateS3Uri: S3Uri): UiConfig = {
+      val _fields = IndexedSeq[(String, js.Any)]("UiTemplateS3Uri" -> UiTemplateS3Uri.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UiConfig]
     }
   }
 
   /**
-   * The Liquid template for the worker user interface.
-   */
+    * The Liquid template for the worker user interface.
+    */
   @js.native
   trait UiTemplate extends js.Object {
     var Content: TemplateContent
   }
 
   object UiTemplate {
-    def apply(
-      Content: TemplateContent): UiTemplate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Content" -> Content.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Content: TemplateContent): UiTemplate = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Content" -> Content.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UiTemplate]
     }
@@ -6816,12 +7921,14 @@ package sagemaker {
   }
 
   object UpdateCodeRepositoryInput {
-    def apply(
-      CodeRepositoryName: EntityName,
-      GitConfig: js.UndefOr[GitConfigForUpdate] = js.undefined): UpdateCodeRepositoryInput = {
+    def apply(CodeRepositoryName: EntityName,
+              GitConfig: js.UndefOr[GitConfigForUpdate] = js.undefined): UpdateCodeRepositoryInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CodeRepositoryName" -> CodeRepositoryName.asInstanceOf[js.Any],
-        "GitConfig" -> GitConfig.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "GitConfig" -> GitConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCodeRepositoryInput]
     }
@@ -6833,10 +7940,9 @@ package sagemaker {
   }
 
   object UpdateCodeRepositoryOutput {
-    def apply(
-      CodeRepositoryArn: CodeRepositoryArn): UpdateCodeRepositoryOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(CodeRepositoryArn: CodeRepositoryArn): UpdateCodeRepositoryOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("CodeRepositoryArn" -> CodeRepositoryArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateCodeRepositoryOutput]
     }
@@ -6849,12 +7955,11 @@ package sagemaker {
   }
 
   object UpdateEndpointInput {
-    def apply(
-      EndpointConfigName: EndpointConfigName,
-      EndpointName: EndpointName): UpdateEndpointInput = {
+    def apply(EndpointConfigName: EndpointConfigName, EndpointName: EndpointName): UpdateEndpointInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EndpointName"       -> EndpointName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointInput]
     }
@@ -6866,10 +7971,9 @@ package sagemaker {
   }
 
   object UpdateEndpointOutput {
-    def apply(
-      EndpointArn: EndpointArn): UpdateEndpointOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointArn: EndpointArn): UpdateEndpointOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointArn" -> EndpointArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointOutput]
     }
@@ -6882,12 +7986,12 @@ package sagemaker {
   }
 
   object UpdateEndpointWeightsAndCapacitiesInput {
-    def apply(
-      DesiredWeightsAndCapacities: DesiredWeightAndCapacityList,
-      EndpointName: EndpointName): UpdateEndpointWeightsAndCapacitiesInput = {
+    def apply(DesiredWeightsAndCapacities: DesiredWeightAndCapacityList,
+              EndpointName: EndpointName): UpdateEndpointWeightsAndCapacitiesInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DesiredWeightsAndCapacities" -> DesiredWeightsAndCapacities.asInstanceOf[js.Any],
-        "EndpointName" -> EndpointName.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "EndpointName"                -> EndpointName.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointWeightsAndCapacitiesInput]
     }
@@ -6899,10 +8003,9 @@ package sagemaker {
   }
 
   object UpdateEndpointWeightsAndCapacitiesOutput {
-    def apply(
-      EndpointArn: EndpointArn): UpdateEndpointWeightsAndCapacitiesOutput = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(EndpointArn: EndpointArn): UpdateEndpointWeightsAndCapacitiesOutput = {
+      val _fields = IndexedSeq[(String, js.Any)]("EndpointArn" -> EndpointArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateEndpointWeightsAndCapacitiesOutput]
     }
@@ -6926,31 +8029,55 @@ package sagemaker {
 
   object UpdateNotebookInstanceInput {
     def apply(
-      NotebookInstanceName: NotebookInstanceName,
-      AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
-      AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
-      DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
-      DisassociateAcceleratorTypes: js.UndefOr[DisassociateNotebookInstanceAcceleratorTypes] = js.undefined,
-      DisassociateAdditionalCodeRepositories: js.UndefOr[DisassociateAdditionalCodeRepositories] = js.undefined,
-      DisassociateDefaultCodeRepository: js.UndefOr[DisassociateDefaultCodeRepository] = js.undefined,
-      DisassociateLifecycleConfig: js.UndefOr[DisassociateNotebookInstanceLifecycleConfig] = js.undefined,
-      InstanceType: js.UndefOr[InstanceType] = js.undefined,
-      LifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
-      RoleArn: js.UndefOr[RoleArn] = js.undefined,
-      VolumeSizeInGB: js.UndefOr[NotebookInstanceVolumeSizeInGB] = js.undefined): UpdateNotebookInstanceInput = {
+        NotebookInstanceName: NotebookInstanceName,
+        AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
+        AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
+        DefaultCodeRepository: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
+        DisassociateAcceleratorTypes: js.UndefOr[DisassociateNotebookInstanceAcceleratorTypes] = js.undefined,
+        DisassociateAdditionalCodeRepositories: js.UndefOr[DisassociateAdditionalCodeRepositories] = js.undefined,
+        DisassociateDefaultCodeRepository: js.UndefOr[DisassociateDefaultCodeRepository] = js.undefined,
+        DisassociateLifecycleConfig: js.UndefOr[DisassociateNotebookInstanceLifecycleConfig] = js.undefined,
+        InstanceType: js.UndefOr[InstanceType] = js.undefined,
+        LifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
+        VolumeSizeInGB: js.UndefOr[NotebookInstanceVolumeSizeInGB] = js.undefined
+    ): UpdateNotebookInstanceInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NotebookInstanceName" -> NotebookInstanceName.asInstanceOf[js.Any],
-        "AcceleratorTypes" -> AcceleratorTypes.map { x => x.asInstanceOf[js.Any] },
-        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x => x.asInstanceOf[js.Any] },
-        "DefaultCodeRepository" -> DefaultCodeRepository.map { x => x.asInstanceOf[js.Any] },
-        "DisassociateAcceleratorTypes" -> DisassociateAcceleratorTypes.map { x => x.asInstanceOf[js.Any] },
-        "DisassociateAdditionalCodeRepositories" -> DisassociateAdditionalCodeRepositories.map { x => x.asInstanceOf[js.Any] },
-        "DisassociateDefaultCodeRepository" -> DisassociateDefaultCodeRepository.map { x => x.asInstanceOf[js.Any] },
-        "DisassociateLifecycleConfig" -> DisassociateLifecycleConfig.map { x => x.asInstanceOf[js.Any] },
-        "InstanceType" -> InstanceType.map { x => x.asInstanceOf[js.Any] },
-        "LifecycleConfigName" -> LifecycleConfigName.map { x => x.asInstanceOf[js.Any] },
-        "RoleArn" -> RoleArn.map { x => x.asInstanceOf[js.Any] },
-        "VolumeSizeInGB" -> VolumeSizeInGB.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AcceleratorTypes" -> AcceleratorTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AdditionalCodeRepositories" -> AdditionalCodeRepositories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DefaultCodeRepository" -> DefaultCodeRepository.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisassociateAcceleratorTypes" -> DisassociateAcceleratorTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisassociateAdditionalCodeRepositories" -> DisassociateAdditionalCodeRepositories.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisassociateDefaultCodeRepository" -> DisassociateDefaultCodeRepository.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisassociateLifecycleConfig" -> DisassociateLifecycleConfig.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InstanceType" -> InstanceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LifecycleConfigName" -> LifecycleConfigName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoleArn" -> RoleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "VolumeSizeInGB" -> VolumeSizeInGB.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotebookInstanceInput]
     }
@@ -6965,35 +8092,41 @@ package sagemaker {
 
   object UpdateNotebookInstanceLifecycleConfigInput {
     def apply(
-      NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
-      OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
-      OnStart: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined): UpdateNotebookInstanceLifecycleConfigInput = {
+        NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
+        OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
+        OnStart: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined
+    ): UpdateNotebookInstanceLifecycleConfigInput = {
       val _fields = IndexedSeq[(String, js.Any)](
         "NotebookInstanceLifecycleConfigName" -> NotebookInstanceLifecycleConfigName.asInstanceOf[js.Any],
-        "OnCreate" -> OnCreate.map { x => x.asInstanceOf[js.Any] },
-        "OnStart" -> OnStart.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OnCreate" -> OnCreate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "OnStart" -> OnStart.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotebookInstanceLifecycleConfigInput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[UpdateNotebookInstanceLifecycleConfigInput]
     }
   }
 
   @js.native
-  trait UpdateNotebookInstanceLifecycleConfigOutput extends js.Object {
-
-  }
+  trait UpdateNotebookInstanceLifecycleConfigOutput extends js.Object {}
 
   object UpdateNotebookInstanceLifecycleConfigOutput {
     def apply(): UpdateNotebookInstanceLifecycleConfigOutput = {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateNotebookInstanceLifecycleConfigOutput]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[UpdateNotebookInstanceLifecycleConfigOutput]
     }
   }
 
   @js.native
-  trait UpdateNotebookInstanceOutput extends js.Object {
-
-  }
+  trait UpdateNotebookInstanceOutput extends js.Object {}
 
   object UpdateNotebookInstanceOutput {
     def apply(): UpdateNotebookInstanceOutput = {
@@ -7011,14 +8144,18 @@ package sagemaker {
   }
 
   object UpdateWorkteamRequest {
-    def apply(
-      WorkteamName: WorkteamName,
-      Description: js.UndefOr[String200] = js.undefined,
-      MemberDefinitions: js.UndefOr[MemberDefinitions] = js.undefined): UpdateWorkteamRequest = {
+    def apply(WorkteamName: WorkteamName,
+              Description: js.UndefOr[String200] = js.undefined,
+              MemberDefinitions: js.UndefOr[MemberDefinitions] = js.undefined): UpdateWorkteamRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "WorkteamName" -> WorkteamName.asInstanceOf[js.Any],
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "MemberDefinitions" -> MemberDefinitions.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MemberDefinitions" -> MemberDefinitions.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWorkteamRequest]
     }
@@ -7030,18 +8167,17 @@ package sagemaker {
   }
 
   object UpdateWorkteamResponse {
-    def apply(
-      Workteam: Workteam): UpdateWorkteamResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Workteam" -> Workteam.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Workteam: Workteam): UpdateWorkteamResponse = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Workteam" -> Workteam.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateWorkteamResponse]
     }
   }
 
   /**
-   * Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html|Protect Endpoints by Using an Amazon Virtual Private Cloud]] and [[http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html|Protect Training Jobs by Using an Amazon Virtual Private Cloud]].
-   */
+    * Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see [[http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html|Protect Endpoints by Using an Amazon Virtual Private Cloud]] and [[http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html|Protect Training Jobs by Using an Amazon Virtual Private Cloud]].
+    */
   @js.native
   trait VpcConfig extends js.Object {
     var SecurityGroupIds: VpcSecurityGroupIds
@@ -7049,20 +8185,19 @@ package sagemaker {
   }
 
   object VpcConfig {
-    def apply(
-      SecurityGroupIds: VpcSecurityGroupIds,
-      Subnets: Subnets): VpcConfig = {
+    def apply(SecurityGroupIds: VpcSecurityGroupIds, Subnets: Subnets): VpcConfig = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
-        "Subnets" -> Subnets.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Subnets"          -> Subnets.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[VpcConfig]
     }
   }
 
   /**
-   * Provides details about a labeling work team.
-   */
+    * Provides details about a labeling work team.
+    */
   @js.native
   trait Workteam extends js.Object {
     var Description: String200
@@ -7076,24 +8211,32 @@ package sagemaker {
   }
 
   object Workteam {
-    def apply(
-      Description: String200,
-      MemberDefinitions: MemberDefinitions,
-      WorkteamArn: WorkteamArn,
-      WorkteamName: WorkteamName,
-      CreateDate: js.UndefOr[Timestamp] = js.undefined,
-      LastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
-      ProductListingIds: js.UndefOr[ProductListings] = js.undefined,
-      SubDomain: js.UndefOr[String] = js.undefined): Workteam = {
+    def apply(Description: String200,
+              MemberDefinitions: MemberDefinitions,
+              WorkteamArn: WorkteamArn,
+              WorkteamName: WorkteamName,
+              CreateDate: js.UndefOr[Timestamp] = js.undefined,
+              LastUpdatedDate: js.UndefOr[Timestamp] = js.undefined,
+              ProductListingIds: js.UndefOr[ProductListings] = js.undefined,
+              SubDomain: js.UndefOr[String] = js.undefined): Workteam = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.asInstanceOf[js.Any],
+        "Description"       -> Description.asInstanceOf[js.Any],
         "MemberDefinitions" -> MemberDefinitions.asInstanceOf[js.Any],
-        "WorkteamArn" -> WorkteamArn.asInstanceOf[js.Any],
-        "WorkteamName" -> WorkteamName.asInstanceOf[js.Any],
-        "CreateDate" -> CreateDate.map { x => x.asInstanceOf[js.Any] },
-        "LastUpdatedDate" -> LastUpdatedDate.map { x => x.asInstanceOf[js.Any] },
-        "ProductListingIds" -> ProductListingIds.map { x => x.asInstanceOf[js.Any] },
-        "SubDomain" -> SubDomain.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "WorkteamArn"       -> WorkteamArn.asInstanceOf[js.Any],
+        "WorkteamName"      -> WorkteamName.asInstanceOf[js.Any],
+        "CreateDate" -> CreateDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastUpdatedDate" -> LastUpdatedDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductListingIds" -> ProductListingIds.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SubDomain" -> SubDomain.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Workteam]
     }

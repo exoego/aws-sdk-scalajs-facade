@@ -7,21 +7,21 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object macie {
-  type AWSAccountId = String
-  type BucketName = String
-  type ErrorCode = String
-  type ExceptionMessage = String
-  type FailedS3Resources = js.Array[FailedS3Resource]
-  type FieldName = String
-  type MaxResults = Int
-  type MemberAccounts = js.Array[MemberAccount]
-  type NextToken = String
-  type Prefix = String
-  type ResourceType = String
-  type S3ContinuousClassificationType = String
-  type S3OneTimeClassificationType = String
-  type S3Resources = js.Array[S3Resource]
-  type S3ResourcesClassification = js.Array[S3ResourceClassification]
+  type AWSAccountId                    = String
+  type BucketName                      = String
+  type ErrorCode                       = String
+  type ExceptionMessage                = String
+  type FailedS3Resources               = js.Array[FailedS3Resource]
+  type FieldName                       = String
+  type MaxResults                      = Int
+  type MemberAccounts                  = js.Array[MemberAccount]
+  type NextToken                       = String
+  type Prefix                          = String
+  type ResourceType                    = String
+  type S3ContinuousClassificationType  = String
+  type S3OneTimeClassificationType     = String
+  type S3Resources                     = js.Array[S3Resource]
+  type S3ResourcesClassification       = js.Array[S3ResourceClassification]
   type S3ResourcesClassificationUpdate = js.Array[S3ResourceClassificationUpdate]
 }
 
@@ -31,18 +31,19 @@ package macie {
   class Macie() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateMemberAccount(params: AssociateMemberAccountRequest): Request[js.Object] = js.native
+    def associateMemberAccount(params: AssociateMemberAccountRequest): Request[js.Object]              = js.native
     def associateS3Resources(params: AssociateS3ResourcesRequest): Request[AssociateS3ResourcesResult] = js.native
-    def disassociateMemberAccount(params: DisassociateMemberAccountRequest): Request[js.Object] = js.native
-    def disassociateS3Resources(params: DisassociateS3ResourcesRequest): Request[DisassociateS3ResourcesResult] = js.native
+    def disassociateMemberAccount(params: DisassociateMemberAccountRequest): Request[js.Object]        = js.native
+    def disassociateS3Resources(params: DisassociateS3ResourcesRequest): Request[DisassociateS3ResourcesResult] =
+      js.native
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResult] = js.native
-    def listS3Resources(params: ListS3ResourcesRequest): Request[ListS3ResourcesResult] = js.native
-    def updateS3Resources(params: UpdateS3ResourcesRequest): Request[UpdateS3ResourcesResult] = js.native
+    def listS3Resources(params: ListS3ResourcesRequest): Request[ListS3ResourcesResult]          = js.native
+    def updateS3Resources(params: UpdateS3ResourcesRequest): Request[UpdateS3ResourcesResult]    = js.native
   }
 
   /**
-   * You do not have required permissions to access the requested resource.
-   */
+    * You do not have required permissions to access the requested resource.
+    */
   @js.native
   trait AccessDeniedExceptionException extends js.Object {
     val message: ExceptionMessage
@@ -55,10 +56,9 @@ package macie {
   }
 
   object AssociateMemberAccountRequest {
-    def apply(
-      memberAccountId: AWSAccountId): AssociateMemberAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "memberAccountId" -> memberAccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(memberAccountId: AWSAccountId): AssociateMemberAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("memberAccountId" -> memberAccountId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateMemberAccountRequest]
     }
@@ -71,12 +71,14 @@ package macie {
   }
 
   object AssociateS3ResourcesRequest {
-    def apply(
-      s3Resources: S3ResourcesClassification,
-      memberAccountId: js.UndefOr[AWSAccountId] = js.undefined): AssociateS3ResourcesRequest = {
+    def apply(s3Resources: S3ResourcesClassification,
+              memberAccountId: js.UndefOr[AWSAccountId] = js.undefined): AssociateS3ResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "s3Resources" -> s3Resources.asInstanceOf[js.Any],
-        "memberAccountId" -> memberAccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "memberAccountId" -> memberAccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateS3ResourcesRequest]
     }
@@ -88,18 +90,18 @@ package macie {
   }
 
   object AssociateS3ResourcesResult {
-    def apply(
-      failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined): AssociateS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failedS3Resources" -> failedS3Resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined): AssociateS3ResourcesResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("failedS3Resources" -> failedS3Resources.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateS3ResourcesResult]
     }
   }
 
   /**
-   * The classification type that Amazon Macie applies to the associated S3 resources.
-   */
+    * The classification type that Amazon Macie applies to the associated S3 resources.
+    */
   @js.native
   trait ClassificationType extends js.Object {
     var continuous: S3ContinuousClassificationType
@@ -107,20 +109,19 @@ package macie {
   }
 
   object ClassificationType {
-    def apply(
-      continuous: S3ContinuousClassificationType,
-      oneTime: S3OneTimeClassificationType): ClassificationType = {
+    def apply(continuous: S3ContinuousClassificationType, oneTime: S3OneTimeClassificationType): ClassificationType = {
       val _fields = IndexedSeq[(String, js.Any)](
         "continuous" -> continuous.asInstanceOf[js.Any],
-        "oneTime" -> oneTime.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "oneTime"    -> oneTime.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassificationType]
     }
   }
 
   /**
-   * The classification type that Amazon Macie applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified.
-   */
+    * The classification type that Amazon Macie applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified.
+    */
   @js.native
   trait ClassificationTypeUpdate extends js.Object {
     var continuous: js.UndefOr[S3ContinuousClassificationType]
@@ -128,12 +129,13 @@ package macie {
   }
 
   object ClassificationTypeUpdate {
-    def apply(
-      continuous: js.UndefOr[S3ContinuousClassificationType] = js.undefined,
-      oneTime: js.UndefOr[S3OneTimeClassificationType] = js.undefined): ClassificationTypeUpdate = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "continuous" -> continuous.map { x => x.asInstanceOf[js.Any] },
-        "oneTime" -> oneTime.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(continuous: js.UndefOr[S3ContinuousClassificationType] = js.undefined,
+              oneTime: js.UndefOr[S3OneTimeClassificationType] = js.undefined): ClassificationTypeUpdate = {
+      val _fields = IndexedSeq[(String, js.Any)]("continuous" -> continuous.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "oneTime" -> oneTime.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ClassificationTypeUpdate]
     }
@@ -145,10 +147,9 @@ package macie {
   }
 
   object DisassociateMemberAccountRequest {
-    def apply(
-      memberAccountId: AWSAccountId): DisassociateMemberAccountRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "memberAccountId" -> memberAccountId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(memberAccountId: AWSAccountId): DisassociateMemberAccountRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("memberAccountId" -> memberAccountId.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateMemberAccountRequest]
     }
@@ -161,12 +162,14 @@ package macie {
   }
 
   object DisassociateS3ResourcesRequest {
-    def apply(
-      associatedS3Resources: S3Resources,
-      memberAccountId: js.UndefOr[AWSAccountId] = js.undefined): DisassociateS3ResourcesRequest = {
+    def apply(associatedS3Resources: S3Resources,
+              memberAccountId: js.UndefOr[AWSAccountId] = js.undefined): DisassociateS3ResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "associatedS3Resources" -> associatedS3Resources.asInstanceOf[js.Any],
-        "memberAccountId" -> memberAccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "memberAccountId" -> memberAccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateS3ResourcesRequest]
     }
@@ -178,18 +181,18 @@ package macie {
   }
 
   object DisassociateS3ResourcesResult {
-    def apply(
-      failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined): DisassociateS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failedS3Resources" -> failedS3Resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined): DisassociateS3ResourcesResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("failedS3Resources" -> failedS3Resources.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateS3ResourcesResult]
     }
   }
 
   /**
-   * Includes details about the failed S3 resources.
-   */
+    * Includes details about the failed S3 resources.
+    */
   @js.native
   trait FailedS3Resource extends js.Object {
     var errorCode: js.UndefOr[ErrorCode]
@@ -198,22 +201,28 @@ package macie {
   }
 
   object FailedS3Resource {
-    def apply(
-      errorCode: js.UndefOr[ErrorCode] = js.undefined,
-      errorMessage: js.UndefOr[ExceptionMessage] = js.undefined,
-      failedItem: js.UndefOr[S3Resource] = js.undefined): FailedS3Resource = {
+    def apply(errorCode: js.UndefOr[ErrorCode] = js.undefined,
+              errorMessage: js.UndefOr[ExceptionMessage] = js.undefined,
+              failedItem: js.UndefOr[S3Resource] = js.undefined): FailedS3Resource = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "errorCode" -> errorCode.map { x => x.asInstanceOf[js.Any] },
-        "errorMessage" -> errorMessage.map { x => x.asInstanceOf[js.Any] },
-        "failedItem" -> failedItem.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "errorCode" -> errorCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "errorMessage" -> errorMessage.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "failedItem" -> failedItem.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[FailedS3Resource]
     }
   }
 
   /**
-   * Internal server error.
-   */
+    * Internal server error.
+    */
   @js.native
   trait InternalExceptionException extends js.Object {
     val errorCode: ErrorCode
@@ -221,8 +230,8 @@ package macie {
   }
 
   /**
-   * The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
-   */
+    * The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+    */
   @js.native
   trait InvalidInputExceptionException extends js.Object {
     val errorCode: ErrorCode
@@ -231,8 +240,8 @@ package macie {
   }
 
   /**
-   * The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.
-   */
+    * The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.
+    */
   @js.native
   trait LimitExceededExceptionException extends js.Object {
     val errorCode: ErrorCode
@@ -247,12 +256,13 @@ package macie {
   }
 
   object ListMemberAccountsRequest {
-    def apply(
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListMemberAccountsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): ListMemberAccountsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("maxResults" -> maxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsRequest]
     }
@@ -265,12 +275,13 @@ package macie {
   }
 
   object ListMemberAccountsResult {
-    def apply(
-      memberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListMemberAccountsResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "memberAccounts" -> memberAccounts.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(memberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): ListMemberAccountsResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("memberAccounts" -> memberAccounts.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListMemberAccountsResult]
     }
@@ -284,14 +295,20 @@ package macie {
   }
 
   object ListS3ResourcesRequest {
-    def apply(
-      maxResults: js.UndefOr[MaxResults] = js.undefined,
-      memberAccountId: js.UndefOr[AWSAccountId] = js.undefined,
-      nextToken: js.UndefOr[NextToken] = js.undefined): ListS3ResourcesRequest = {
+    def apply(maxResults: js.UndefOr[MaxResults] = js.undefined,
+              memberAccountId: js.UndefOr[AWSAccountId] = js.undefined,
+              nextToken: js.UndefOr[NextToken] = js.undefined): ListS3ResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "maxResults" -> maxResults.map { x => x.asInstanceOf[js.Any] },
-        "memberAccountId" -> memberAccountId.map { x => x.asInstanceOf[js.Any] },
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "maxResults" -> maxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "memberAccountId" -> memberAccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "nextToken" -> nextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListS3ResourcesRequest]
     }
@@ -304,30 +321,31 @@ package macie {
   }
 
   object ListS3ResourcesResult {
-    def apply(
-      nextToken: js.UndefOr[NextToken] = js.undefined,
-      s3Resources: js.UndefOr[S3ResourcesClassification] = js.undefined): ListS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "nextToken" -> nextToken.map { x => x.asInstanceOf[js.Any] },
-        "s3Resources" -> s3Resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(nextToken: js.UndefOr[NextToken] = js.undefined,
+              s3Resources: js.UndefOr[S3ResourcesClassification] = js.undefined): ListS3ResourcesResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("nextToken" -> nextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "s3Resources" -> s3Resources.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListS3ResourcesResult]
     }
   }
 
   /**
-   * Contains information about the Amazon Macie member account.
-   */
+    * Contains information about the Amazon Macie member account.
+    */
   @js.native
   trait MemberAccount extends js.Object {
     var accountId: js.UndefOr[AWSAccountId]
   }
 
   object MemberAccount {
-    def apply(
-      accountId: js.UndefOr[AWSAccountId] = js.undefined): MemberAccount = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "accountId" -> accountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(accountId: js.UndefOr[AWSAccountId] = js.undefined): MemberAccount = {
+      val _fields = IndexedSeq[(String, js.Any)]("accountId" -> accountId.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MemberAccount]
     }
@@ -347,8 +365,8 @@ package macie {
   }
 
   /**
-   * Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions.
-   */
+    * Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions.
+    */
   @js.native
   trait S3Resource extends js.Object {
     var bucketName: BucketName
@@ -356,20 +374,19 @@ package macie {
   }
 
   object S3Resource {
-    def apply(
-      bucketName: BucketName,
-      prefix: js.UndefOr[Prefix] = js.undefined): S3Resource = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "bucketName" -> bucketName.asInstanceOf[js.Any],
-        "prefix" -> prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(bucketName: BucketName, prefix: js.UndefOr[Prefix] = js.undefined): S3Resource = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("bucketName" -> bucketName.asInstanceOf[js.Any], "prefix" -> prefix.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3Resource]
     }
   }
 
   /**
-   * The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action.
-   */
+    * The S3 resources that you want to associate with Amazon Macie for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action.
+    */
   @js.native
   trait S3ResourceClassification extends js.Object {
     var bucketName: BucketName
@@ -378,22 +395,24 @@ package macie {
   }
 
   object S3ResourceClassification {
-    def apply(
-      bucketName: BucketName,
-      classificationType: ClassificationType,
-      prefix: js.UndefOr[Prefix] = js.undefined): S3ResourceClassification = {
+    def apply(bucketName: BucketName,
+              classificationType: ClassificationType,
+              prefix: js.UndefOr[Prefix] = js.undefined): S3ResourceClassification = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "bucketName"         -> bucketName.asInstanceOf[js.Any],
         "classificationType" -> classificationType.asInstanceOf[js.Any],
-        "prefix" -> prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "prefix" -> prefix.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3ResourceClassification]
     }
   }
 
   /**
-   * The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action.
-   */
+    * The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action.
+    */
   @js.native
   trait S3ResourceClassificationUpdate extends js.Object {
     var bucketName: BucketName
@@ -402,14 +421,16 @@ package macie {
   }
 
   object S3ResourceClassificationUpdate {
-    def apply(
-      bucketName: BucketName,
-      classificationTypeUpdate: ClassificationTypeUpdate,
-      prefix: js.UndefOr[Prefix] = js.undefined): S3ResourceClassificationUpdate = {
+    def apply(bucketName: BucketName,
+              classificationTypeUpdate: ClassificationTypeUpdate,
+              prefix: js.UndefOr[Prefix] = js.undefined): S3ResourceClassificationUpdate = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "bucketName"               -> bucketName.asInstanceOf[js.Any],
         "classificationTypeUpdate" -> classificationTypeUpdate.asInstanceOf[js.Any],
-        "prefix" -> prefix.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "prefix" -> prefix.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[S3ResourceClassificationUpdate]
     }
@@ -422,12 +443,14 @@ package macie {
   }
 
   object UpdateS3ResourcesRequest {
-    def apply(
-      s3ResourcesUpdate: S3ResourcesClassificationUpdate,
-      memberAccountId: js.UndefOr[AWSAccountId] = js.undefined): UpdateS3ResourcesRequest = {
+    def apply(s3ResourcesUpdate: S3ResourcesClassificationUpdate,
+              memberAccountId: js.UndefOr[AWSAccountId] = js.undefined): UpdateS3ResourcesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "s3ResourcesUpdate" -> s3ResourcesUpdate.asInstanceOf[js.Any],
-        "memberAccountId" -> memberAccountId.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "memberAccountId" -> memberAccountId.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateS3ResourcesRequest]
     }
@@ -439,10 +462,10 @@ package macie {
   }
 
   object UpdateS3ResourcesResult {
-    def apply(
-      failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined): UpdateS3ResourcesResult = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "failedS3Resources" -> failedS3Resources.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(failedS3Resources: js.UndefOr[FailedS3Resources] = js.undefined): UpdateS3ResourcesResult = {
+      val _fields = IndexedSeq[(String, js.Any)]("failedS3Resources" -> failedS3Resources.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateS3ResourcesResult]
     }

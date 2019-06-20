@@ -7,137 +7,137 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object alexaforbusiness {
-  type Address = String
-  type AddressBookDataList = js.Array[AddressBookData]
-  type AddressBookDescription = String
-  type AddressBookName = String
-  type AmazonId = String
-  type ApplianceDescription = String
-  type ApplianceFriendlyName = String
-  type ApplianceManufacturerName = String
-  type Arn = String
-  type AuthorizationResult = js.Dictionary[Value]
-  type BulletPoint = String
-  type BulletPoints = js.Array[BulletPoint]
-  type BusinessReportDownloadUrl = String
-  type BusinessReportFailureCode = String
-  type BusinessReportFormat = String
-  type BusinessReportInterval = String
-  type BusinessReportS3Path = String
-  type BusinessReportScheduleList = js.Array[BusinessReportSchedule]
-  type BusinessReportScheduleName = String
-  type BusinessReportStatus = String
-  type CategoryId = Double
-  type CategoryList = js.Array[Category]
-  type CategoryName = String
-  type ClientId = String
-  type ClientRequestToken = String
-  type CommsProtocol = String
-  type ConferenceProviderName = String
-  type ConferenceProviderType = String
-  type ConferenceProvidersList = js.Array[ConferenceProvider]
-  type ConnectionStatus = String
-  type ContactDataList = js.Array[ContactData]
-  type ContactName = String
-  type CountryCode = String
-  type CustomerS3BucketName = String
-  type Date = String
-  type DeveloperName = String
-  type DeviceDataList = js.Array[DeviceData]
-  type DeviceEventList = js.Array[DeviceEvent]
-  type DeviceEventType = String
-  type DeviceEventValue = String
-  type DeviceName = String
-  type DeviceSerialNumber = String
-  type DeviceSerialNumberForAVS = String
-  type DeviceStatus = String
-  type DeviceStatusDetailCode = String
-  type DeviceStatusDetails = js.Array[DeviceStatusDetail]
-  type DeviceType = String
-  type DistanceUnit = String
-  type E164PhoneNumber = String
-  type Email = String
-  type EnablementType = String
-  type EnablementTypeFilter = String
-  type EndUserLicenseAgreement = String
-  type Endpoint = String
-  type EnrollmentId = String
-  type EnrollmentStatus = String
-  type Feature = String
-  type Features = js.Array[Feature]
-  type FilterKey = String
-  type FilterList = js.Array[Filter]
-  type FilterValue = String
-  type FilterValueList = js.Array[FilterValue]
-  type GenericKeyword = String
-  type GenericKeywords = js.Array[GenericKeyword]
-  type IconUrl = String
-  type InvocationPhrase = String
-  type Key = String
-  type MacAddress = String
-  type MaxResults = Int
-  type MaxVolumeLimit = Int
+  type Address                      = String
+  type AddressBookDataList          = js.Array[AddressBookData]
+  type AddressBookDescription       = String
+  type AddressBookName              = String
+  type AmazonId                     = String
+  type ApplianceDescription         = String
+  type ApplianceFriendlyName        = String
+  type ApplianceManufacturerName    = String
+  type Arn                          = String
+  type AuthorizationResult          = js.Dictionary[Value]
+  type BulletPoint                  = String
+  type BulletPoints                 = js.Array[BulletPoint]
+  type BusinessReportDownloadUrl    = String
+  type BusinessReportFailureCode    = String
+  type BusinessReportFormat         = String
+  type BusinessReportInterval       = String
+  type BusinessReportS3Path         = String
+  type BusinessReportScheduleList   = js.Array[BusinessReportSchedule]
+  type BusinessReportScheduleName   = String
+  type BusinessReportStatus         = String
+  type CategoryId                   = Double
+  type CategoryList                 = js.Array[Category]
+  type CategoryName                 = String
+  type ClientId                     = String
+  type ClientRequestToken           = String
+  type CommsProtocol                = String
+  type ConferenceProviderName       = String
+  type ConferenceProviderType       = String
+  type ConferenceProvidersList      = js.Array[ConferenceProvider]
+  type ConnectionStatus             = String
+  type ContactDataList              = js.Array[ContactData]
+  type ContactName                  = String
+  type CountryCode                  = String
+  type CustomerS3BucketName         = String
+  type Date                         = String
+  type DeveloperName                = String
+  type DeviceDataList               = js.Array[DeviceData]
+  type DeviceEventList              = js.Array[DeviceEvent]
+  type DeviceEventType              = String
+  type DeviceEventValue             = String
+  type DeviceName                   = String
+  type DeviceSerialNumber           = String
+  type DeviceSerialNumberForAVS     = String
+  type DeviceStatus                 = String
+  type DeviceStatusDetailCode       = String
+  type DeviceStatusDetails          = js.Array[DeviceStatusDetail]
+  type DeviceType                   = String
+  type DistanceUnit                 = String
+  type E164PhoneNumber              = String
+  type Email                        = String
+  type EnablementType               = String
+  type EnablementTypeFilter         = String
+  type EndUserLicenseAgreement      = String
+  type Endpoint                     = String
+  type EnrollmentId                 = String
+  type EnrollmentStatus             = String
+  type Feature                      = String
+  type Features                     = js.Array[Feature]
+  type FilterKey                    = String
+  type FilterList                   = js.Array[Filter]
+  type FilterValue                  = String
+  type FilterValueList              = js.Array[FilterValue]
+  type GenericKeyword               = String
+  type GenericKeywords              = js.Array[GenericKeyword]
+  type IconUrl                      = String
+  type InvocationPhrase             = String
+  type Key                          = String
+  type MacAddress                   = String
+  type MaxResults                   = Int
+  type MaxVolumeLimit               = Int
   type NewInThisVersionBulletPoints = js.Array[BulletPoint]
-  type NextToken = String
-  type OneClickIdDelay = String
-  type OneClickPinDelay = String
-  type OutboundPhoneNumber = String
-  type PrivacyPolicy = String
-  type ProductDescription = String
-  type ProductId = String
-  type ProfileDataList = js.Array[ProfileData]
-  type ProfileName = String
-  type ProviderCalendarId = String
-  type ReleaseDate = String
-  type RequirePin = String
-  type ReviewKey = String
-  type ReviewValue = String
-  type Reviews = js.Dictionary[ReviewValue]
-  type RoomDataList = js.Array[RoomData]
-  type RoomDescription = String
-  type RoomName = String
-  type RoomSkillParameterKey = String
-  type RoomSkillParameterValue = String
-  type RoomSkillParameters = js.Array[RoomSkillParameter]
-  type S3KeyPrefix = String
-  type SampleUtterances = js.Array[Utterance]
-  type ShortDescription = String
-  type SkillGroupDataList = js.Array[SkillGroupData]
-  type SkillGroupDescription = String
-  type SkillGroupName = String
-  type SkillId = String
-  type SkillListMaxResults = Int
-  type SkillName = String
-  type SkillStoreType = String
-  type SkillSummaryList = js.Array[SkillSummary]
-  type SkillType = String
-  type SkillTypeFilter = String
-  type SkillTypes = js.Array[SkillStoreType]
-  type SkillsStoreSkillList = js.Array[SkillsStoreSkill]
-  type SmartHomeApplianceList = js.Array[SmartHomeAppliance]
-  type SoftwareVersion = String
-  type SortKey = String
-  type SortList = js.Array[Sort]
-  type SortValue = String
-  type TagKey = String
-  type TagKeyList = js.Array[TagKey]
-  type TagList = js.Array[Tag]
-  type TagValue = String
-  type TemperatureUnit = String
-  type Timestamp = js.Date
-  type Timezone = String
-  type TotalCount = Int
-  type Url = String
-  type UserCode = String
-  type UserDataList = js.Array[UserData]
-  type UserId = String
-  type Utterance = String
-  type Value = String
-  type WakeWord = String
-  type boolean = Boolean
-  type user_FirstName = String
-  type user_LastName = String
-  type user_UserId = String
+  type NextToken                    = String
+  type OneClickIdDelay              = String
+  type OneClickPinDelay             = String
+  type OutboundPhoneNumber          = String
+  type PrivacyPolicy                = String
+  type ProductDescription           = String
+  type ProductId                    = String
+  type ProfileDataList              = js.Array[ProfileData]
+  type ProfileName                  = String
+  type ProviderCalendarId           = String
+  type ReleaseDate                  = String
+  type RequirePin                   = String
+  type ReviewKey                    = String
+  type ReviewValue                  = String
+  type Reviews                      = js.Dictionary[ReviewValue]
+  type RoomDataList                 = js.Array[RoomData]
+  type RoomDescription              = String
+  type RoomName                     = String
+  type RoomSkillParameterKey        = String
+  type RoomSkillParameterValue      = String
+  type RoomSkillParameters          = js.Array[RoomSkillParameter]
+  type S3KeyPrefix                  = String
+  type SampleUtterances             = js.Array[Utterance]
+  type ShortDescription             = String
+  type SkillGroupDataList           = js.Array[SkillGroupData]
+  type SkillGroupDescription        = String
+  type SkillGroupName               = String
+  type SkillId                      = String
+  type SkillListMaxResults          = Int
+  type SkillName                    = String
+  type SkillStoreType               = String
+  type SkillSummaryList             = js.Array[SkillSummary]
+  type SkillType                    = String
+  type SkillTypeFilter              = String
+  type SkillTypes                   = js.Array[SkillStoreType]
+  type SkillsStoreSkillList         = js.Array[SkillsStoreSkill]
+  type SmartHomeApplianceList       = js.Array[SmartHomeAppliance]
+  type SoftwareVersion              = String
+  type SortKey                      = String
+  type SortList                     = js.Array[Sort]
+  type SortValue                    = String
+  type TagKey                       = String
+  type TagKeyList                   = js.Array[TagKey]
+  type TagList                      = js.Array[Tag]
+  type TagValue                     = String
+  type TemperatureUnit              = String
+  type Timestamp                    = js.Date
+  type Timezone                     = String
+  type TotalCount                   = Int
+  type Url                          = String
+  type UserCode                     = String
+  type UserDataList                 = js.Array[UserData]
+  type UserId                       = String
+  type Utterance                    = String
+  type Value                        = String
+  type WakeWord                     = String
+  type boolean                      = Boolean
+  type user_FirstName               = String
+  type user_LastName                = String
+  type user_UserId                  = String
 }
 
 package alexaforbusiness {
@@ -147,85 +147,128 @@ package alexaforbusiness {
     def this(config: AWSConfig) = this()
 
     def approveSkill(params: ApproveSkillRequest): Request[ApproveSkillResponse] = js.native
-    def associateContactWithAddressBook(params: AssociateContactWithAddressBookRequest): Request[AssociateContactWithAddressBookResponse] = js.native
-    def associateDeviceWithRoom(params: AssociateDeviceWithRoomRequest): Request[AssociateDeviceWithRoomResponse] = js.native
-    def associateSkillGroupWithRoom(params: AssociateSkillGroupWithRoomRequest): Request[AssociateSkillGroupWithRoomResponse] = js.native
-    def associateSkillWithSkillGroup(params: AssociateSkillWithSkillGroupRequest): Request[AssociateSkillWithSkillGroupResponse] = js.native
-    def associateSkillWithUsers(params: AssociateSkillWithUsersRequest): Request[AssociateSkillWithUsersResponse] = js.native
+    def associateContactWithAddressBook(
+        params: AssociateContactWithAddressBookRequest
+    ): Request[AssociateContactWithAddressBookResponse] = js.native
+    def associateDeviceWithRoom(params: AssociateDeviceWithRoomRequest): Request[AssociateDeviceWithRoomResponse] =
+      js.native
+    def associateSkillGroupWithRoom(
+        params: AssociateSkillGroupWithRoomRequest
+    ): Request[AssociateSkillGroupWithRoomResponse] = js.native
+    def associateSkillWithSkillGroup(
+        params: AssociateSkillWithSkillGroupRequest
+    ): Request[AssociateSkillWithSkillGroupResponse] = js.native
+    def associateSkillWithUsers(params: AssociateSkillWithUsersRequest): Request[AssociateSkillWithUsersResponse] =
+      js.native
     def createAddressBook(params: CreateAddressBookRequest): Request[CreateAddressBookResponse] = js.native
-    def createBusinessReportSchedule(params: CreateBusinessReportScheduleRequest): Request[CreateBusinessReportScheduleResponse] = js.native
-    def createConferenceProvider(params: CreateConferenceProviderRequest): Request[CreateConferenceProviderResponse] = js.native
-    def createContact(params: CreateContactRequest): Request[CreateContactResponse] = js.native
-    def createProfile(params: CreateProfileRequest): Request[CreateProfileResponse] = js.native
-    def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse] = js.native
-    def createSkillGroup(params: CreateSkillGroupRequest): Request[CreateSkillGroupResponse] = js.native
-    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
+    def createBusinessReportSchedule(
+        params: CreateBusinessReportScheduleRequest
+    ): Request[CreateBusinessReportScheduleResponse] = js.native
+    def createConferenceProvider(params: CreateConferenceProviderRequest): Request[CreateConferenceProviderResponse] =
+      js.native
+    def createContact(params: CreateContactRequest): Request[CreateContactResponse]             = js.native
+    def createProfile(params: CreateProfileRequest): Request[CreateProfileResponse]             = js.native
+    def createRoom(params: CreateRoomRequest): Request[CreateRoomResponse]                      = js.native
+    def createSkillGroup(params: CreateSkillGroupRequest): Request[CreateSkillGroupResponse]    = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse]                      = js.native
     def deleteAddressBook(params: DeleteAddressBookRequest): Request[DeleteAddressBookResponse] = js.native
-    def deleteBusinessReportSchedule(params: DeleteBusinessReportScheduleRequest): Request[DeleteBusinessReportScheduleResponse] = js.native
-    def deleteConferenceProvider(params: DeleteConferenceProviderRequest): Request[DeleteConferenceProviderResponse] = js.native
+    def deleteBusinessReportSchedule(
+        params: DeleteBusinessReportScheduleRequest
+    ): Request[DeleteBusinessReportScheduleResponse] = js.native
+    def deleteConferenceProvider(params: DeleteConferenceProviderRequest): Request[DeleteConferenceProviderResponse] =
+      js.native
     def deleteContact(params: DeleteContactRequest): Request[DeleteContactResponse] = js.native
-    def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse] = js.native
+    def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse]    = js.native
     def deleteProfile(params: DeleteProfileRequest): Request[DeleteProfileResponse] = js.native
-    def deleteRoom(params: DeleteRoomRequest): Request[DeleteRoomResponse] = js.native
-    def deleteRoomSkillParameter(params: DeleteRoomSkillParameterRequest): Request[DeleteRoomSkillParameterResponse] = js.native
-    def deleteSkillAuthorization(params: DeleteSkillAuthorizationRequest): Request[DeleteSkillAuthorizationResponse] = js.native
+    def deleteRoom(params: DeleteRoomRequest): Request[DeleteRoomResponse]          = js.native
+    def deleteRoomSkillParameter(params: DeleteRoomSkillParameterRequest): Request[DeleteRoomSkillParameterResponse] =
+      js.native
+    def deleteSkillAuthorization(params: DeleteSkillAuthorizationRequest): Request[DeleteSkillAuthorizationResponse] =
+      js.native
     def deleteSkillGroup(params: DeleteSkillGroupRequest): Request[DeleteSkillGroupResponse] = js.native
-    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
-    def disassociateContactFromAddressBook(params: DisassociateContactFromAddressBookRequest): Request[DisassociateContactFromAddressBookResponse] = js.native
-    def disassociateDeviceFromRoom(params: DisassociateDeviceFromRoomRequest): Request[DisassociateDeviceFromRoomResponse] = js.native
-    def disassociateSkillFromSkillGroup(params: DisassociateSkillFromSkillGroupRequest): Request[DisassociateSkillFromSkillGroupResponse] = js.native
-    def disassociateSkillFromUsers(params: DisassociateSkillFromUsersRequest): Request[DisassociateSkillFromUsersResponse] = js.native
-    def disassociateSkillGroupFromRoom(params: DisassociateSkillGroupFromRoomRequest): Request[DisassociateSkillGroupFromRoomResponse] = js.native
-    def forgetSmartHomeAppliances(params: ForgetSmartHomeAppliancesRequest): Request[ForgetSmartHomeAppliancesResponse] = js.native
+    def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse]                   = js.native
+    def disassociateContactFromAddressBook(
+        params: DisassociateContactFromAddressBookRequest
+    ): Request[DisassociateContactFromAddressBookResponse] = js.native
+    def disassociateDeviceFromRoom(
+        params: DisassociateDeviceFromRoomRequest
+    ): Request[DisassociateDeviceFromRoomResponse] = js.native
+    def disassociateSkillFromSkillGroup(
+        params: DisassociateSkillFromSkillGroupRequest
+    ): Request[DisassociateSkillFromSkillGroupResponse] = js.native
+    def disassociateSkillFromUsers(
+        params: DisassociateSkillFromUsersRequest
+    ): Request[DisassociateSkillFromUsersResponse] = js.native
+    def disassociateSkillGroupFromRoom(
+        params: DisassociateSkillGroupFromRoomRequest
+    ): Request[DisassociateSkillGroupFromRoomResponse] = js.native
+    def forgetSmartHomeAppliances(
+        params: ForgetSmartHomeAppliancesRequest
+    ): Request[ForgetSmartHomeAppliancesResponse]                                      = js.native
     def getAddressBook(params: GetAddressBookRequest): Request[GetAddressBookResponse] = js.native
-    def getConferencePreference(params: GetConferencePreferenceRequest): Request[GetConferencePreferenceResponse] = js.native
+    def getConferencePreference(params: GetConferencePreferenceRequest): Request[GetConferencePreferenceResponse] =
+      js.native
     def getConferenceProvider(params: GetConferenceProviderRequest): Request[GetConferenceProviderResponse] = js.native
-    def getContact(params: GetContactRequest): Request[GetContactResponse] = js.native
-    def getDevice(params: GetDeviceRequest): Request[GetDeviceResponse] = js.native
-    def getProfile(params: GetProfileRequest): Request[GetProfileResponse] = js.native
-    def getRoom(params: GetRoomRequest): Request[GetRoomResponse] = js.native
+    def getContact(params: GetContactRequest): Request[GetContactResponse]                                  = js.native
+    def getDevice(params: GetDeviceRequest): Request[GetDeviceResponse]                                     = js.native
+    def getProfile(params: GetProfileRequest): Request[GetProfileResponse]                                  = js.native
+    def getRoom(params: GetRoomRequest): Request[GetRoomResponse]                                           = js.native
     def getRoomSkillParameter(params: GetRoomSkillParameterRequest): Request[GetRoomSkillParameterResponse] = js.native
-    def getSkillGroup(params: GetSkillGroupRequest): Request[GetSkillGroupResponse] = js.native
-    def listBusinessReportSchedules(params: ListBusinessReportSchedulesRequest): Request[ListBusinessReportSchedulesResponse] = js.native
-    def listConferenceProviders(params: ListConferenceProvidersRequest): Request[ListConferenceProvidersResponse] = js.native
+    def getSkillGroup(params: GetSkillGroupRequest): Request[GetSkillGroupResponse]                         = js.native
+    def listBusinessReportSchedules(
+        params: ListBusinessReportSchedulesRequest
+    ): Request[ListBusinessReportSchedulesResponse] = js.native
+    def listConferenceProviders(params: ListConferenceProvidersRequest): Request[ListConferenceProvidersResponse] =
+      js.native
     def listDeviceEvents(params: ListDeviceEventsRequest): Request[ListDeviceEventsResponse] = js.native
-    def listSkills(params: ListSkillsRequest): Request[ListSkillsResponse] = js.native
-    def listSkillsStoreCategories(params: ListSkillsStoreCategoriesRequest): Request[ListSkillsStoreCategoriesResponse] = js.native
-    def listSkillsStoreSkillsByCategory(params: ListSkillsStoreSkillsByCategoryRequest): Request[ListSkillsStoreSkillsByCategoryResponse] = js.native
-    def listSmartHomeAppliances(params: ListSmartHomeAppliancesRequest): Request[ListSmartHomeAppliancesResponse] = js.native
+    def listSkills(params: ListSkillsRequest): Request[ListSkillsResponse]                   = js.native
+    def listSkillsStoreCategories(
+        params: ListSkillsStoreCategoriesRequest
+    ): Request[ListSkillsStoreCategoriesResponse] = js.native
+    def listSkillsStoreSkillsByCategory(
+        params: ListSkillsStoreSkillsByCategoryRequest
+    ): Request[ListSkillsStoreSkillsByCategoryResponse] = js.native
+    def listSmartHomeAppliances(params: ListSmartHomeAppliancesRequest): Request[ListSmartHomeAppliancesResponse] =
+      js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
-    def putConferencePreference(params: PutConferencePreferenceRequest): Request[PutConferencePreferenceResponse] = js.native
+    def putConferencePreference(params: PutConferencePreferenceRequest): Request[PutConferencePreferenceResponse] =
+      js.native
     def putRoomSkillParameter(params: PutRoomSkillParameterRequest): Request[PutRoomSkillParameterResponse] = js.native
     def putSkillAuthorization(params: PutSkillAuthorizationRequest): Request[PutSkillAuthorizationResponse] = js.native
-    def registerAVSDevice(params: RegisterAVSDeviceRequest): Request[RegisterAVSDeviceResponse] = js.native
-    def rejectSkill(params: RejectSkillRequest): Request[RejectSkillResponse] = js.native
-    def resolveRoom(params: ResolveRoomRequest): Request[ResolveRoomResponse] = js.native
-    def revokeInvitation(params: RevokeInvitationRequest): Request[RevokeInvitationResponse] = js.native
-    def searchAddressBooks(params: SearchAddressBooksRequest): Request[SearchAddressBooksResponse] = js.native
-    def searchContacts(params: SearchContactsRequest): Request[SearchContactsResponse] = js.native
-    def searchDevices(params: SearchDevicesRequest): Request[SearchDevicesResponse] = js.native
-    def searchProfiles(params: SearchProfilesRequest): Request[SearchProfilesResponse] = js.native
-    def searchRooms(params: SearchRoomsRequest): Request[SearchRoomsResponse] = js.native
-    def searchSkillGroups(params: SearchSkillGroupsRequest): Request[SearchSkillGroupsResponse] = js.native
-    def searchUsers(params: SearchUsersRequest): Request[SearchUsersResponse] = js.native
-    def sendInvitation(params: SendInvitationRequest): Request[SendInvitationResponse] = js.native
-    def startDeviceSync(params: StartDeviceSyncRequest): Request[StartDeviceSyncResponse] = js.native
-    def startSmartHomeApplianceDiscovery(params: StartSmartHomeApplianceDiscoveryRequest): Request[StartSmartHomeApplianceDiscoveryResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def registerAVSDevice(params: RegisterAVSDeviceRequest): Request[RegisterAVSDeviceResponse]             = js.native
+    def rejectSkill(params: RejectSkillRequest): Request[RejectSkillResponse]                               = js.native
+    def resolveRoom(params: ResolveRoomRequest): Request[ResolveRoomResponse]                               = js.native
+    def revokeInvitation(params: RevokeInvitationRequest): Request[RevokeInvitationResponse]                = js.native
+    def searchAddressBooks(params: SearchAddressBooksRequest): Request[SearchAddressBooksResponse]          = js.native
+    def searchContacts(params: SearchContactsRequest): Request[SearchContactsResponse]                      = js.native
+    def searchDevices(params: SearchDevicesRequest): Request[SearchDevicesResponse]                         = js.native
+    def searchProfiles(params: SearchProfilesRequest): Request[SearchProfilesResponse]                      = js.native
+    def searchRooms(params: SearchRoomsRequest): Request[SearchRoomsResponse]                               = js.native
+    def searchSkillGroups(params: SearchSkillGroupsRequest): Request[SearchSkillGroupsResponse]             = js.native
+    def searchUsers(params: SearchUsersRequest): Request[SearchUsersResponse]                               = js.native
+    def sendInvitation(params: SendInvitationRequest): Request[SendInvitationResponse]                      = js.native
+    def startDeviceSync(params: StartDeviceSyncRequest): Request[StartDeviceSyncResponse]                   = js.native
+    def startSmartHomeApplianceDiscovery(
+        params: StartSmartHomeApplianceDiscoveryRequest
+    ): Request[StartSmartHomeApplianceDiscoveryResponse]                                        = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse]                   = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse]             = js.native
     def updateAddressBook(params: UpdateAddressBookRequest): Request[UpdateAddressBookResponse] = js.native
-    def updateBusinessReportSchedule(params: UpdateBusinessReportScheduleRequest): Request[UpdateBusinessReportScheduleResponse] = js.native
-    def updateConferenceProvider(params: UpdateConferenceProviderRequest): Request[UpdateConferenceProviderResponse] = js.native
-    def updateContact(params: UpdateContactRequest): Request[UpdateContactResponse] = js.native
-    def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse] = js.native
-    def updateProfile(params: UpdateProfileRequest): Request[UpdateProfileResponse] = js.native
-    def updateRoom(params: UpdateRoomRequest): Request[UpdateRoomResponse] = js.native
+    def updateBusinessReportSchedule(
+        params: UpdateBusinessReportScheduleRequest
+    ): Request[UpdateBusinessReportScheduleResponse] = js.native
+    def updateConferenceProvider(params: UpdateConferenceProviderRequest): Request[UpdateConferenceProviderResponse] =
+      js.native
+    def updateContact(params: UpdateContactRequest): Request[UpdateContactResponse]          = js.native
+    def updateDevice(params: UpdateDeviceRequest): Request[UpdateDeviceResponse]             = js.native
+    def updateProfile(params: UpdateProfileRequest): Request[UpdateProfileResponse]          = js.native
+    def updateRoom(params: UpdateRoomRequest): Request[UpdateRoomResponse]                   = js.native
     def updateSkillGroup(params: UpdateSkillGroupRequest): Request[UpdateSkillGroupResponse] = js.native
   }
 
   /**
-   * An address book with attributes.
-   */
+    * An address book with attributes.
+    */
   @js.native
   trait AddressBook extends js.Object {
     var AddressBookArn: js.UndefOr[Arn]
@@ -234,22 +277,28 @@ package alexaforbusiness {
   }
 
   object AddressBook {
-    def apply(
-      AddressBookArn: js.UndefOr[Arn] = js.undefined,
-      Description: js.UndefOr[AddressBookDescription] = js.undefined,
-      Name: js.UndefOr[AddressBookName] = js.undefined): AddressBook = {
+    def apply(AddressBookArn: js.UndefOr[Arn] = js.undefined,
+              Description: js.UndefOr[AddressBookDescription] = js.undefined,
+              Name: js.UndefOr[AddressBookName] = js.undefined): AddressBook = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AddressBookArn" -> AddressBookArn.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AddressBookArn" -> AddressBookArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddressBook]
     }
   }
 
   /**
-   * Information related to an address book.
-   */
+    * Information related to an address book.
+    */
   @js.native
   trait AddressBookData extends js.Object {
     var AddressBookArn: js.UndefOr[Arn]
@@ -258,14 +307,20 @@ package alexaforbusiness {
   }
 
   object AddressBookData {
-    def apply(
-      AddressBookArn: js.UndefOr[Arn] = js.undefined,
-      Description: js.UndefOr[AddressBookDescription] = js.undefined,
-      Name: js.UndefOr[AddressBookName] = js.undefined): AddressBookData = {
+    def apply(AddressBookArn: js.UndefOr[Arn] = js.undefined,
+              Description: js.UndefOr[AddressBookDescription] = js.undefined,
+              Name: js.UndefOr[AddressBookName] = js.undefined): AddressBookData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AddressBookArn" -> AddressBookArn.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AddressBookArn" -> AddressBookArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AddressBookData]
     }
@@ -277,19 +332,16 @@ package alexaforbusiness {
   }
 
   object ApproveSkillRequest {
-    def apply(
-      SkillId: SkillId): ApproveSkillRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillId" -> SkillId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillId: SkillId): ApproveSkillRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("SkillId" -> SkillId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ApproveSkillRequest]
     }
   }
 
   @js.native
-  trait ApproveSkillResponse extends js.Object {
-
-  }
+  trait ApproveSkillResponse extends js.Object {}
 
   object ApproveSkillResponse {
     def apply(): ApproveSkillResponse = {
@@ -306,21 +358,18 @@ package alexaforbusiness {
   }
 
   object AssociateContactWithAddressBookRequest {
-    def apply(
-      AddressBookArn: Arn,
-      ContactArn: Arn): AssociateContactWithAddressBookRequest = {
+    def apply(AddressBookArn: Arn, ContactArn: Arn): AssociateContactWithAddressBookRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any],
-        "ContactArn" -> ContactArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ContactArn"     -> ContactArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateContactWithAddressBookRequest]
     }
   }
 
   @js.native
-  trait AssociateContactWithAddressBookResponse extends js.Object {
-
-  }
+  trait AssociateContactWithAddressBookResponse extends js.Object {}
 
   object AssociateContactWithAddressBookResponse {
     def apply(): AssociateContactWithAddressBookResponse = {
@@ -337,21 +386,20 @@ package alexaforbusiness {
   }
 
   object AssociateDeviceWithRoomRequest {
-    def apply(
-      DeviceArn: js.UndefOr[Arn] = js.undefined,
-      RoomArn: js.UndefOr[Arn] = js.undefined): AssociateDeviceWithRoomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] },
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DeviceArn: js.UndefOr[Arn] = js.undefined,
+              RoomArn: js.UndefOr[Arn] = js.undefined): AssociateDeviceWithRoomRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DeviceArn" -> DeviceArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "RoomArn" -> RoomArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateDeviceWithRoomRequest]
     }
   }
 
   @js.native
-  trait AssociateDeviceWithRoomResponse extends js.Object {
-
-  }
+  trait AssociateDeviceWithRoomResponse extends js.Object {}
 
   object AssociateDeviceWithRoomResponse {
     def apply(): AssociateDeviceWithRoomResponse = {
@@ -368,21 +416,20 @@ package alexaforbusiness {
   }
 
   object AssociateSkillGroupWithRoomRequest {
-    def apply(
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined): AssociateSkillGroupWithRoomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: js.UndefOr[Arn] = js.undefined,
+              SkillGroupArn: js.UndefOr[Arn] = js.undefined): AssociateSkillGroupWithRoomRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SkillGroupArn" -> SkillGroupArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSkillGroupWithRoomRequest]
     }
   }
 
   @js.native
-  trait AssociateSkillGroupWithRoomResponse extends js.Object {
-
-  }
+  trait AssociateSkillGroupWithRoomResponse extends js.Object {}
 
   object AssociateSkillGroupWithRoomResponse {
     def apply(): AssociateSkillGroupWithRoomResponse = {
@@ -399,21 +446,19 @@ package alexaforbusiness {
   }
 
   object AssociateSkillWithSkillGroupRequest {
-    def apply(
-      SkillId: SkillId,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined): AssociateSkillWithSkillGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillId: SkillId, SkillGroupArn: js.UndefOr[Arn] = js.undefined): AssociateSkillWithSkillGroupRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("SkillId" -> SkillId.asInstanceOf[js.Any], "SkillGroupArn" -> SkillGroupArn.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSkillWithSkillGroupRequest]
     }
   }
 
   @js.native
-  trait AssociateSkillWithSkillGroupResponse extends js.Object {
-
-  }
+  trait AssociateSkillWithSkillGroupResponse extends js.Object {}
 
   object AssociateSkillWithSkillGroupResponse {
     def apply(): AssociateSkillWithSkillGroupResponse = {
@@ -430,21 +475,20 @@ package alexaforbusiness {
   }
 
   object AssociateSkillWithUsersRequest {
-    def apply(
-      SkillId: SkillId,
-      OrganizationArn: js.UndefOr[Arn] = js.undefined): AssociateSkillWithUsersRequest = {
+    def apply(SkillId: SkillId, OrganizationArn: js.UndefOr[Arn] = js.undefined): AssociateSkillWithUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "OrganizationArn" -> OrganizationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OrganizationArn" -> OrganizationArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[AssociateSkillWithUsersRequest]
     }
   }
 
   @js.native
-  trait AssociateSkillWithUsersResponse extends js.Object {
-
-  }
+  trait AssociateSkillWithUsersResponse extends js.Object {}
 
   object AssociateSkillWithUsersResponse {
     def apply(): AssociateSkillWithUsersResponse = {
@@ -455,8 +499,8 @@ package alexaforbusiness {
   }
 
   /**
-   * Usage report with specified parameters.
-   */
+    * Usage report with specified parameters.
+    */
   @js.native
   trait BusinessReport extends js.Object {
     var DeliveryTime: js.UndefOr[Timestamp]
@@ -467,84 +511,94 @@ package alexaforbusiness {
   }
 
   object BusinessReport {
-    def apply(
-      DeliveryTime: js.UndefOr[Timestamp] = js.undefined,
-      DownloadUrl: js.UndefOr[BusinessReportDownloadUrl] = js.undefined,
-      FailureCode: js.UndefOr[BusinessReportFailureCode] = js.undefined,
-      S3Location: js.UndefOr[BusinessReportS3Location] = js.undefined,
-      Status: js.UndefOr[BusinessReportStatus] = js.undefined): BusinessReport = {
+    def apply(DeliveryTime: js.UndefOr[Timestamp] = js.undefined,
+              DownloadUrl: js.UndefOr[BusinessReportDownloadUrl] = js.undefined,
+              FailureCode: js.UndefOr[BusinessReportFailureCode] = js.undefined,
+              S3Location: js.UndefOr[BusinessReportS3Location] = js.undefined,
+              Status: js.UndefOr[BusinessReportStatus] = js.undefined): BusinessReport = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeliveryTime" -> DeliveryTime.map { x => x.asInstanceOf[js.Any] },
-        "DownloadUrl" -> DownloadUrl.map { x => x.asInstanceOf[js.Any] },
-        "FailureCode" -> FailureCode.map { x => x.asInstanceOf[js.Any] },
-        "S3Location" -> S3Location.map { x => x.asInstanceOf[js.Any] },
-        "Status" -> Status.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeliveryTime" -> DeliveryTime.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DownloadUrl" -> DownloadUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FailureCode" -> FailureCode.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3Location" -> S3Location.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Status" -> Status.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReport]
     }
   }
 
   /**
-   * The content range of the report.
-   */
+    * The content range of the report.
+    */
   @js.native
   trait BusinessReportContentRange extends js.Object {
     var Interval: js.UndefOr[BusinessReportInterval]
   }
 
   object BusinessReportContentRange {
-    def apply(
-      Interval: js.UndefOr[BusinessReportInterval] = js.undefined): BusinessReportContentRange = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Interval" -> Interval.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Interval: js.UndefOr[BusinessReportInterval] = js.undefined): BusinessReportContentRange = {
+      val _fields = IndexedSeq[(String, js.Any)]("Interval" -> Interval.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportContentRange]
     }
   }
 
   object BusinessReportFailureCodeEnum {
-    val ACCESS_DENIED = "ACCESS_DENIED"
-    val NO_SUCH_BUCKET = "NO_SUCH_BUCKET"
+    val ACCESS_DENIED    = "ACCESS_DENIED"
+    val NO_SUCH_BUCKET   = "NO_SUCH_BUCKET"
     val INTERNAL_FAILURE = "INTERNAL_FAILURE"
 
     val values = IndexedSeq(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
   }
 
   object BusinessReportFormatEnum {
-    val CSV = "CSV"
+    val CSV     = "CSV"
     val CSV_ZIP = "CSV_ZIP"
 
     val values = IndexedSeq(CSV, CSV_ZIP)
   }
 
   object BusinessReportIntervalEnum {
-    val ONE_DAY = "ONE_DAY"
+    val ONE_DAY  = "ONE_DAY"
     val ONE_WEEK = "ONE_WEEK"
 
     val values = IndexedSeq(ONE_DAY, ONE_WEEK)
   }
 
   /**
-   * The recurrence of the reports.
-   */
+    * The recurrence of the reports.
+    */
   @js.native
   trait BusinessReportRecurrence extends js.Object {
     var StartDate: js.UndefOr[Date]
   }
 
   object BusinessReportRecurrence {
-    def apply(
-      StartDate: js.UndefOr[Date] = js.undefined): BusinessReportRecurrence = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "StartDate" -> StartDate.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(StartDate: js.UndefOr[Date] = js.undefined): BusinessReportRecurrence = {
+      val _fields = IndexedSeq[(String, js.Any)]("StartDate" -> StartDate.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportRecurrence]
     }
   }
 
   /**
-   * The S3 location of the output reports.
-   */
+    * The S3 location of the output reports.
+    */
   @js.native
   trait BusinessReportS3Location extends js.Object {
     var BucketName: js.UndefOr[CustomerS3BucketName]
@@ -552,20 +606,21 @@ package alexaforbusiness {
   }
 
   object BusinessReportS3Location {
-    def apply(
-      BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-      Path: js.UndefOr[BusinessReportS3Path] = js.undefined): BusinessReportS3Location = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BucketName" -> BucketName.map { x => x.asInstanceOf[js.Any] },
-        "Path" -> Path.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+              Path: js.UndefOr[BusinessReportS3Path] = js.undefined): BusinessReportS3Location = {
+      val _fields = IndexedSeq[(String, js.Any)]("BucketName" -> BucketName.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Path" -> Path.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportS3Location]
     }
   }
 
   /**
-   * The schedule of the usage report.
-   */
+    * The schedule of the usage report.
+    */
   @js.native
   trait BusinessReportSchedule extends js.Object {
     var ContentRange: js.UndefOr[BusinessReportContentRange]
@@ -579,40 +634,56 @@ package alexaforbusiness {
   }
 
   object BusinessReportSchedule {
-    def apply(
-      ContentRange: js.UndefOr[BusinessReportContentRange] = js.undefined,
-      Format: js.UndefOr[BusinessReportFormat] = js.undefined,
-      LastBusinessReport: js.UndefOr[BusinessReport] = js.undefined,
-      Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
-      S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-      S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-      ScheduleArn: js.UndefOr[Arn] = js.undefined,
-      ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined): BusinessReportSchedule = {
+    def apply(ContentRange: js.UndefOr[BusinessReportContentRange] = js.undefined,
+              Format: js.UndefOr[BusinessReportFormat] = js.undefined,
+              LastBusinessReport: js.UndefOr[BusinessReport] = js.undefined,
+              Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
+              S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+              S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+              ScheduleArn: js.UndefOr[Arn] = js.undefined,
+              ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined): BusinessReportSchedule = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContentRange" -> ContentRange.map { x => x.asInstanceOf[js.Any] },
-        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "LastBusinessReport" -> LastBusinessReport.map { x => x.asInstanceOf[js.Any] },
-        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "ScheduleArn" -> ScheduleArn.map { x => x.asInstanceOf[js.Any] },
-        "ScheduleName" -> ScheduleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContentRange" -> ContentRange.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Format" -> Format.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastBusinessReport" -> LastBusinessReport.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Recurrence" -> Recurrence.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3BucketName" -> S3BucketName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduleArn" -> ScheduleArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduleName" -> ScheduleName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[BusinessReportSchedule]
     }
   }
 
   object BusinessReportStatusEnum {
-    val RUNNING = "RUNNING"
+    val RUNNING   = "RUNNING"
     val SUCCEEDED = "SUCCEEDED"
-    val FAILED = "FAILED"
+    val FAILED    = "FAILED"
 
     val values = IndexedSeq(RUNNING, SUCCEEDED, FAILED)
   }
 
   /**
-   * The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.
-   */
+    * The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.
+    */
   @js.native
   trait Category extends js.Object {
     var CategoryId: js.UndefOr[CategoryId]
@@ -620,19 +691,20 @@ package alexaforbusiness {
   }
 
   object Category {
-    def apply(
-      CategoryId: js.UndefOr[CategoryId] = js.undefined,
-      CategoryName: js.UndefOr[CategoryName] = js.undefined): Category = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CategoryId" -> CategoryId.map { x => x.asInstanceOf[js.Any] },
-        "CategoryName" -> CategoryName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CategoryId: js.UndefOr[CategoryId] = js.undefined,
+              CategoryName: js.UndefOr[CategoryName] = js.undefined): Category = {
+      val _fields = IndexedSeq[(String, js.Any)]("CategoryId" -> CategoryId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "CategoryName" -> CategoryName.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Category]
     }
   }
 
   object CommsProtocolEnum {
-    val SIP = "SIP"
+    val SIP  = "SIP"
     val SIPS = "SIPS"
     val H323 = "H323"
 
@@ -640,26 +712,27 @@ package alexaforbusiness {
   }
 
   /**
-   * The default conference provider that is used if no other scheduled meetings are detected.
-   */
+    * The default conference provider that is used if no other scheduled meetings are detected.
+    */
   @js.native
   trait ConferencePreference extends js.Object {
     var DefaultConferenceProviderArn: js.UndefOr[Arn]
   }
 
   object ConferencePreference {
-    def apply(
-      DefaultConferenceProviderArn: js.UndefOr[Arn] = js.undefined): ConferencePreference = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DefaultConferenceProviderArn" -> DefaultConferenceProviderArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DefaultConferenceProviderArn: js.UndefOr[Arn] = js.undefined): ConferencePreference = {
+      val _fields = IndexedSeq[(String, js.Any)]("DefaultConferenceProviderArn" -> DefaultConferenceProviderArn.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConferencePreference]
     }
   }
 
   /**
-   * An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom.
-   */
+    * An entity that provides a conferencing solution. Alexa for Business acts as the voice interface and mediator that connects users to their preferred conference provider. Examples of conference providers include Amazon Chime, Zoom, Cisco, and Polycom.
+    */
   @js.native
   trait ConferenceProvider extends js.Object {
     var Arn: js.UndefOr[Arn]
@@ -671,50 +744,63 @@ package alexaforbusiness {
   }
 
   object ConferenceProvider {
-    def apply(
-      Arn: js.UndefOr[Arn] = js.undefined,
-      IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
-      MeetingSetting: js.UndefOr[MeetingSetting] = js.undefined,
-      Name: js.UndefOr[ConferenceProviderName] = js.undefined,
-      PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined,
-      Type: js.UndefOr[ConferenceProviderType] = js.undefined): ConferenceProvider = {
+    def apply(Arn: js.UndefOr[Arn] = js.undefined,
+              IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
+              MeetingSetting: js.UndefOr[MeetingSetting] = js.undefined,
+              Name: js.UndefOr[ConferenceProviderName] = js.undefined,
+              PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined,
+              Type: js.UndefOr[ConferenceProviderType] = js.undefined): ConferenceProvider = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.map { x => x.asInstanceOf[js.Any] },
-        "IPDialIn" -> IPDialIn.map { x => x.asInstanceOf[js.Any] },
-        "MeetingSetting" -> MeetingSetting.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] },
-        "PSTNDialIn" -> PSTNDialIn.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Arn" -> Arn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IPDialIn" -> IPDialIn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MeetingSetting" -> MeetingSetting.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PSTNDialIn" -> PSTNDialIn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Type" -> Type.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ConferenceProvider]
     }
   }
 
   object ConferenceProviderTypeEnum {
-    val CHIME = "CHIME"
-    val BLUEJEANS = "BLUEJEANS"
-    val FUZE = "FUZE"
-    val GOOGLE_HANGOUTS = "GOOGLE_HANGOUTS"
-    val POLYCOM = "POLYCOM"
-    val RINGCENTRAL = "RINGCENTRAL"
+    val CHIME              = "CHIME"
+    val BLUEJEANS          = "BLUEJEANS"
+    val FUZE               = "FUZE"
+    val GOOGLE_HANGOUTS    = "GOOGLE_HANGOUTS"
+    val POLYCOM            = "POLYCOM"
+    val RINGCENTRAL        = "RINGCENTRAL"
     val SKYPE_FOR_BUSINESS = "SKYPE_FOR_BUSINESS"
-    val WEBEX = "WEBEX"
-    val ZOOM = "ZOOM"
-    val CUSTOM = "CUSTOM"
+    val WEBEX              = "WEBEX"
+    val ZOOM               = "ZOOM"
+    val CUSTOM             = "CUSTOM"
 
-    val values = IndexedSeq(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
+    val values =
+      IndexedSeq(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
   }
 
   object ConnectionStatusEnum {
-    val ONLINE = "ONLINE"
+    val ONLINE  = "ONLINE"
     val OFFLINE = "OFFLINE"
 
     val values = IndexedSeq(ONLINE, OFFLINE)
   }
 
   /**
-   * A contact with attributes.
-   */
+    * A contact with attributes.
+    */
   @js.native
   trait Contact extends js.Object {
     var ContactArn: js.UndefOr[Arn]
@@ -725,26 +811,36 @@ package alexaforbusiness {
   }
 
   object Contact {
-    def apply(
-      ContactArn: js.UndefOr[Arn] = js.undefined,
-      DisplayName: js.UndefOr[ContactName] = js.undefined,
-      FirstName: js.UndefOr[ContactName] = js.undefined,
-      LastName: js.UndefOr[ContactName] = js.undefined,
-      PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): Contact = {
+    def apply(ContactArn: js.UndefOr[Arn] = js.undefined,
+              DisplayName: js.UndefOr[ContactName] = js.undefined,
+              FirstName: js.UndefOr[ContactName] = js.undefined,
+              LastName: js.UndefOr[ContactName] = js.undefined,
+              PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): Contact = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContactArn" -> ContactArn.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContactArn" -> ContactArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FirstName" -> FirstName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastName" -> LastName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhoneNumber" -> PhoneNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Contact]
     }
   }
 
   /**
-   * Information related to a contact.
-   */
+    * Information related to a contact.
+    */
   @js.native
   trait ContactData extends js.Object {
     var ContactArn: js.UndefOr[Arn]
@@ -755,18 +851,28 @@ package alexaforbusiness {
   }
 
   object ContactData {
-    def apply(
-      ContactArn: js.UndefOr[Arn] = js.undefined,
-      DisplayName: js.UndefOr[ContactName] = js.undefined,
-      FirstName: js.UndefOr[ContactName] = js.undefined,
-      LastName: js.UndefOr[ContactName] = js.undefined,
-      PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): ContactData = {
+    def apply(ContactArn: js.UndefOr[Arn] = js.undefined,
+              DisplayName: js.UndefOr[ContactName] = js.undefined,
+              FirstName: js.UndefOr[ContactName] = js.undefined,
+              LastName: js.UndefOr[ContactName] = js.undefined,
+              PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): ContactData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ContactArn" -> ContactArn.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ContactArn" -> ContactArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FirstName" -> FirstName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastName" -> LastName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhoneNumber" -> PhoneNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ContactData]
     }
@@ -780,14 +886,18 @@ package alexaforbusiness {
   }
 
   object CreateAddressBookRequest {
-    def apply(
-      Name: AddressBookName,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      Description: js.UndefOr[AddressBookDescription] = js.undefined): CreateAddressBookRequest = {
+    def apply(Name: AddressBookName,
+              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+              Description: js.UndefOr[AddressBookDescription] = js.undefined): CreateAddressBookRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "Name" -> Name.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAddressBookRequest]
     }
@@ -799,10 +909,10 @@ package alexaforbusiness {
   }
 
   object CreateAddressBookResponse {
-    def apply(
-      AddressBookArn: js.UndefOr[Arn] = js.undefined): CreateAddressBookResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AddressBookArn" -> AddressBookArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AddressBookArn: js.UndefOr[Arn] = js.undefined): CreateAddressBookResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("AddressBookArn" -> AddressBookArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateAddressBookResponse]
     }
@@ -821,21 +931,33 @@ package alexaforbusiness {
 
   object CreateBusinessReportScheduleRequest {
     def apply(
-      ContentRange: BusinessReportContentRange,
-      Format: BusinessReportFormat,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
-      S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-      S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-      ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined): CreateBusinessReportScheduleRequest = {
+        ContentRange: BusinessReportContentRange,
+        Format: BusinessReportFormat,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
+        S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined
+    ): CreateBusinessReportScheduleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContentRange" -> ContentRange.asInstanceOf[js.Any],
-        "Format" -> Format.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "ScheduleName" -> ScheduleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Format"       -> Format.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Recurrence" -> Recurrence.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3BucketName" -> S3BucketName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduleName" -> ScheduleName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBusinessReportScheduleRequest]
     }
@@ -847,10 +969,10 @@ package alexaforbusiness {
   }
 
   object CreateBusinessReportScheduleResponse {
-    def apply(
-      ScheduleArn: js.UndefOr[Arn] = js.undefined): CreateBusinessReportScheduleResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ScheduleArn" -> ScheduleArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ScheduleArn: js.UndefOr[Arn] = js.undefined): CreateBusinessReportScheduleResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ScheduleArn" -> ScheduleArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateBusinessReportScheduleResponse]
     }
@@ -867,20 +989,26 @@ package alexaforbusiness {
   }
 
   object CreateConferenceProviderRequest {
-    def apply(
-      ConferenceProviderName: ConferenceProviderName,
-      ConferenceProviderType: ConferenceProviderType,
-      MeetingSetting: MeetingSetting,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
-      PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined): CreateConferenceProviderRequest = {
+    def apply(ConferenceProviderName: ConferenceProviderName,
+              ConferenceProviderType: ConferenceProviderType,
+              MeetingSetting: MeetingSetting,
+              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+              IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
+              PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined): CreateConferenceProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ConferenceProviderName" -> ConferenceProviderName.asInstanceOf[js.Any],
         "ConferenceProviderType" -> ConferenceProviderType.asInstanceOf[js.Any],
-        "MeetingSetting" -> MeetingSetting.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "IPDialIn" -> IPDialIn.map { x => x.asInstanceOf[js.Any] },
-        "PSTNDialIn" -> PSTNDialIn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MeetingSetting"         -> MeetingSetting.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IPDialIn" -> IPDialIn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PSTNDialIn" -> PSTNDialIn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConferenceProviderRequest]
     }
@@ -892,10 +1020,10 @@ package alexaforbusiness {
   }
 
   object CreateConferenceProviderResponse {
-    def apply(
-      ConferenceProviderArn: js.UndefOr[Arn] = js.undefined): CreateConferenceProviderResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConferenceProviderArn" -> ConferenceProviderArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConferenceProviderArn: js.UndefOr[Arn] = js.undefined): CreateConferenceProviderResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConferenceProviderArn" -> ConferenceProviderArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateConferenceProviderResponse]
     }
@@ -911,18 +1039,26 @@ package alexaforbusiness {
   }
 
   object CreateContactRequest {
-    def apply(
-      FirstName: ContactName,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      DisplayName: js.UndefOr[ContactName] = js.undefined,
-      LastName: js.UndefOr[ContactName] = js.undefined,
-      PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): CreateContactRequest = {
+    def apply(FirstName: ContactName,
+              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+              DisplayName: js.UndefOr[ContactName] = js.undefined,
+              LastName: js.UndefOr[ContactName] = js.undefined,
+              PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): CreateContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "FirstName" -> FirstName.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastName" -> LastName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhoneNumber" -> PhoneNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateContactRequest]
     }
@@ -934,10 +1070,10 @@ package alexaforbusiness {
   }
 
   object CreateContactResponse {
-    def apply(
-      ContactArn: js.UndefOr[Arn] = js.undefined): CreateContactResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContactArn" -> ContactArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ContactArn: js.UndefOr[Arn] = js.undefined): CreateContactResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ContactArn" -> ContactArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateContactResponse]
     }
@@ -958,28 +1094,36 @@ package alexaforbusiness {
   }
 
   object CreateProfileRequest {
-    def apply(
-      Address: Address,
-      DistanceUnit: DistanceUnit,
-      ProfileName: ProfileName,
-      TemperatureUnit: TemperatureUnit,
-      Timezone: Timezone,
-      WakeWord: WakeWord,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
-      PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
-      SetupModeDisabled: js.UndefOr[Boolean] = js.undefined): CreateProfileRequest = {
+    def apply(Address: Address,
+              DistanceUnit: DistanceUnit,
+              ProfileName: ProfileName,
+              TemperatureUnit: TemperatureUnit,
+              Timezone: Timezone,
+              WakeWord: WakeWord,
+              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+              MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
+              PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
+              SetupModeDisabled: js.UndefOr[Boolean] = js.undefined): CreateProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.asInstanceOf[js.Any],
-        "DistanceUnit" -> DistanceUnit.asInstanceOf[js.Any],
-        "ProfileName" -> ProfileName.asInstanceOf[js.Any],
+        "Address"         -> Address.asInstanceOf[js.Any],
+        "DistanceUnit"    -> DistanceUnit.asInstanceOf[js.Any],
+        "ProfileName"     -> ProfileName.asInstanceOf[js.Any],
         "TemperatureUnit" -> TemperatureUnit.asInstanceOf[js.Any],
-        "Timezone" -> Timezone.asInstanceOf[js.Any],
-        "WakeWord" -> WakeWord.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "MaxVolumeLimit" -> MaxVolumeLimit.map { x => x.asInstanceOf[js.Any] },
-        "PSTNEnabled" -> PSTNEnabled.map { x => x.asInstanceOf[js.Any] },
-        "SetupModeDisabled" -> SetupModeDisabled.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Timezone"        -> Timezone.asInstanceOf[js.Any],
+        "WakeWord"        -> WakeWord.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxVolumeLimit" -> MaxVolumeLimit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PSTNEnabled" -> PSTNEnabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SetupModeDisabled" -> SetupModeDisabled.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProfileRequest]
     }
@@ -991,10 +1135,10 @@ package alexaforbusiness {
   }
 
   object CreateProfileResponse {
-    def apply(
-      ProfileArn: js.UndefOr[Arn] = js.undefined): CreateProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProfileArn: js.UndefOr[Arn] = js.undefined): CreateProfileResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProfileArn" -> ProfileArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateProfileResponse]
     }
@@ -1011,20 +1155,30 @@ package alexaforbusiness {
   }
 
   object CreateRoomRequest {
-    def apply(
-      RoomName: RoomName,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      Description: js.UndefOr[RoomDescription] = js.undefined,
-      ProfileArn: js.UndefOr[Arn] = js.undefined,
-      ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateRoomRequest = {
+    def apply(RoomName: RoomName,
+              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+              Description: js.UndefOr[RoomDescription] = js.undefined,
+              ProfileArn: js.UndefOr[Arn] = js.undefined,
+              ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): CreateRoomRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RoomName" -> RoomName.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "ProviderCalendarId" -> ProviderCalendarId.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileArn" -> ProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProviderCalendarId" -> ProviderCalendarId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRoomRequest]
     }
@@ -1036,10 +1190,10 @@ package alexaforbusiness {
   }
 
   object CreateRoomResponse {
-    def apply(
-      RoomArn: js.UndefOr[Arn] = js.undefined): CreateRoomResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: js.UndefOr[Arn] = js.undefined): CreateRoomResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateRoomResponse]
     }
@@ -1053,14 +1207,18 @@ package alexaforbusiness {
   }
 
   object CreateSkillGroupRequest {
-    def apply(
-      SkillGroupName: SkillGroupName,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      Description: js.UndefOr[SkillGroupDescription] = js.undefined): CreateSkillGroupRequest = {
+    def apply(SkillGroupName: SkillGroupName,
+              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+              Description: js.UndefOr[SkillGroupDescription] = js.undefined): CreateSkillGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SkillGroupName" -> SkillGroupName.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSkillGroupRequest]
     }
@@ -1072,10 +1230,10 @@ package alexaforbusiness {
   }
 
   object CreateSkillGroupResponse {
-    def apply(
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined): CreateSkillGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillGroupArn: js.UndefOr[Arn] = js.undefined): CreateSkillGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SkillGroupArn" -> SkillGroupArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateSkillGroupResponse]
     }
@@ -1092,20 +1250,30 @@ package alexaforbusiness {
   }
 
   object CreateUserRequest {
-    def apply(
-      UserId: user_UserId,
-      ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
-      Email: js.UndefOr[Email] = js.undefined,
-      FirstName: js.UndefOr[user_FirstName] = js.undefined,
-      LastName: js.UndefOr[user_LastName] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): CreateUserRequest = {
+    def apply(UserId: user_UserId,
+              ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+              Email: js.UndefOr[Email] = js.undefined,
+              FirstName: js.UndefOr[user_FirstName] = js.undefined,
+              LastName: js.UndefOr[user_LastName] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): CreateUserRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "UserId" -> UserId.asInstanceOf[js.Any],
-        "ClientRequestToken" -> ClientRequestToken.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "ClientRequestToken" -> ClientRequestToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FirstName" -> FirstName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastName" -> LastName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Tags" -> Tags.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserRequest]
     }
@@ -1117,10 +1285,10 @@ package alexaforbusiness {
   }
 
   object CreateUserResponse {
-    def apply(
-      UserArn: js.UndefOr[Arn] = js.undefined): CreateUserResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(UserArn: js.UndefOr[Arn] = js.undefined): CreateUserResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("UserArn" -> UserArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[CreateUserResponse]
     }
@@ -1132,19 +1300,16 @@ package alexaforbusiness {
   }
 
   object DeleteAddressBookRequest {
-    def apply(
-      AddressBookArn: Arn): DeleteAddressBookRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AddressBookArn: Arn): DeleteAddressBookRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteAddressBookRequest]
     }
   }
 
   @js.native
-  trait DeleteAddressBookResponse extends js.Object {
-
-  }
+  trait DeleteAddressBookResponse extends js.Object {}
 
   object DeleteAddressBookResponse {
     def apply(): DeleteAddressBookResponse = {
@@ -1160,19 +1325,16 @@ package alexaforbusiness {
   }
 
   object DeleteBusinessReportScheduleRequest {
-    def apply(
-      ScheduleArn: Arn): DeleteBusinessReportScheduleRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ScheduleArn" -> ScheduleArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ScheduleArn: Arn): DeleteBusinessReportScheduleRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ScheduleArn" -> ScheduleArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteBusinessReportScheduleRequest]
     }
   }
 
   @js.native
-  trait DeleteBusinessReportScheduleResponse extends js.Object {
-
-  }
+  trait DeleteBusinessReportScheduleResponse extends js.Object {}
 
   object DeleteBusinessReportScheduleResponse {
     def apply(): DeleteBusinessReportScheduleResponse = {
@@ -1188,19 +1350,16 @@ package alexaforbusiness {
   }
 
   object DeleteConferenceProviderRequest {
-    def apply(
-      ConferenceProviderArn: Arn): DeleteConferenceProviderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConferenceProviderArn" -> ConferenceProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConferenceProviderArn: Arn): DeleteConferenceProviderRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConferenceProviderArn" -> ConferenceProviderArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteConferenceProviderRequest]
     }
   }
 
   @js.native
-  trait DeleteConferenceProviderResponse extends js.Object {
-
-  }
+  trait DeleteConferenceProviderResponse extends js.Object {}
 
   object DeleteConferenceProviderResponse {
     def apply(): DeleteConferenceProviderResponse = {
@@ -1216,19 +1375,16 @@ package alexaforbusiness {
   }
 
   object DeleteContactRequest {
-    def apply(
-      ContactArn: Arn): DeleteContactRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContactArn" -> ContactArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ContactArn: Arn): DeleteContactRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ContactArn" -> ContactArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteContactRequest]
     }
   }
 
   @js.native
-  trait DeleteContactResponse extends js.Object {
-
-  }
+  trait DeleteContactResponse extends js.Object {}
 
   object DeleteContactResponse {
     def apply(): DeleteContactResponse = {
@@ -1244,19 +1400,16 @@ package alexaforbusiness {
   }
 
   object DeleteDeviceRequest {
-    def apply(
-      DeviceArn: Arn): DeleteDeviceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(DeviceArn: Arn): DeleteDeviceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DeviceArn" -> DeviceArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteDeviceRequest]
     }
   }
 
   @js.native
-  trait DeleteDeviceResponse extends js.Object {
-
-  }
+  trait DeleteDeviceResponse extends js.Object {}
 
   object DeleteDeviceResponse {
     def apply(): DeleteDeviceResponse = {
@@ -1272,19 +1425,17 @@ package alexaforbusiness {
   }
 
   object DeleteProfileRequest {
-    def apply(
-      ProfileArn: js.UndefOr[Arn] = js.undefined): DeleteProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProfileArn: js.UndefOr[Arn] = js.undefined): DeleteProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProfileArn" -> ProfileArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteProfileRequest]
     }
   }
 
   @js.native
-  trait DeleteProfileResponse extends js.Object {
-
-  }
+  trait DeleteProfileResponse extends js.Object {}
 
   object DeleteProfileResponse {
     def apply(): DeleteProfileResponse = {
@@ -1300,19 +1451,17 @@ package alexaforbusiness {
   }
 
   object DeleteRoomRequest {
-    def apply(
-      RoomArn: js.UndefOr[Arn] = js.undefined): DeleteRoomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: js.UndefOr[Arn] = js.undefined): DeleteRoomRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRoomRequest]
     }
   }
 
   @js.native
-  trait DeleteRoomResponse extends js.Object {
-
-  }
+  trait DeleteRoomResponse extends js.Object {}
 
   object DeleteRoomResponse {
     def apply(): DeleteRoomResponse = {
@@ -1330,23 +1479,23 @@ package alexaforbusiness {
   }
 
   object DeleteRoomSkillParameterRequest {
-    def apply(
-      ParameterKey: RoomSkillParameterKey,
-      SkillId: SkillId,
-      RoomArn: js.UndefOr[Arn] = js.undefined): DeleteRoomSkillParameterRequest = {
+    def apply(ParameterKey: RoomSkillParameterKey,
+              SkillId: SkillId,
+              RoomArn: js.UndefOr[Arn] = js.undefined): DeleteRoomSkillParameterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterKey" -> ParameterKey.asInstanceOf[js.Any],
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SkillId"      -> SkillId.asInstanceOf[js.Any],
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteRoomSkillParameterRequest]
     }
   }
 
   @js.native
-  trait DeleteRoomSkillParameterResponse extends js.Object {
-
-  }
+  trait DeleteRoomSkillParameterResponse extends js.Object {}
 
   object DeleteRoomSkillParameterResponse {
     def apply(): DeleteRoomSkillParameterResponse = {
@@ -1363,21 +1512,18 @@ package alexaforbusiness {
   }
 
   object DeleteSkillAuthorizationRequest {
-    def apply(
-      SkillId: SkillId,
-      RoomArn: js.UndefOr[Arn] = js.undefined): DeleteSkillAuthorizationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillId: SkillId, RoomArn: js.UndefOr[Arn] = js.undefined): DeleteSkillAuthorizationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("SkillId" -> SkillId.asInstanceOf[js.Any], "RoomArn" -> RoomArn.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSkillAuthorizationRequest]
     }
   }
 
   @js.native
-  trait DeleteSkillAuthorizationResponse extends js.Object {
-
-  }
+  trait DeleteSkillAuthorizationResponse extends js.Object {}
 
   object DeleteSkillAuthorizationResponse {
     def apply(): DeleteSkillAuthorizationResponse = {
@@ -1393,19 +1539,17 @@ package alexaforbusiness {
   }
 
   object DeleteSkillGroupRequest {
-    def apply(
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined): DeleteSkillGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillGroupArn: js.UndefOr[Arn] = js.undefined): DeleteSkillGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("SkillGroupArn" -> SkillGroupArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteSkillGroupRequest]
     }
   }
 
   @js.native
-  trait DeleteSkillGroupResponse extends js.Object {
-
-  }
+  trait DeleteSkillGroupResponse extends js.Object {}
 
   object DeleteSkillGroupResponse {
     def apply(): DeleteSkillGroupResponse = {
@@ -1422,21 +1566,19 @@ package alexaforbusiness {
   }
 
   object DeleteUserRequest {
-    def apply(
-      EnrollmentId: EnrollmentId,
-      UserArn: js.UndefOr[Arn] = js.undefined): DeleteUserRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnrollmentId" -> EnrollmentId.asInstanceOf[js.Any],
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(EnrollmentId: EnrollmentId, UserArn: js.UndefOr[Arn] = js.undefined): DeleteUserRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("EnrollmentId" -> EnrollmentId.asInstanceOf[js.Any], "UserArn" -> UserArn.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeleteUserRequest]
     }
   }
 
   @js.native
-  trait DeleteUserResponse extends js.Object {
-
-  }
+  trait DeleteUserResponse extends js.Object {}
 
   object DeleteUserResponse {
     def apply(): DeleteUserResponse = {
@@ -1447,8 +1589,8 @@ package alexaforbusiness {
   }
 
   /**
-   * The details about the developer that published the skill.
-   */
+    * The details about the developer that published the skill.
+    */
   @js.native
   trait DeveloperInfo extends js.Object {
     var DeveloperName: js.UndefOr[DeveloperName]
@@ -1458,24 +1600,32 @@ package alexaforbusiness {
   }
 
   object DeveloperInfo {
-    def apply(
-      DeveloperName: js.UndefOr[DeveloperName] = js.undefined,
-      Email: js.UndefOr[Email] = js.undefined,
-      PrivacyPolicy: js.UndefOr[PrivacyPolicy] = js.undefined,
-      Url: js.UndefOr[Url] = js.undefined): DeveloperInfo = {
+    def apply(DeveloperName: js.UndefOr[DeveloperName] = js.undefined,
+              Email: js.UndefOr[Email] = js.undefined,
+              PrivacyPolicy: js.UndefOr[PrivacyPolicy] = js.undefined,
+              Url: js.UndefOr[Url] = js.undefined): DeveloperInfo = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeveloperName" -> DeveloperName.map { x => x.asInstanceOf[js.Any] },
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "PrivacyPolicy" -> PrivacyPolicy.map { x => x.asInstanceOf[js.Any] },
-        "Url" -> Url.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeveloperName" -> DeveloperName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PrivacyPolicy" -> PrivacyPolicy.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Url" -> Url.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeveloperInfo]
     }
   }
 
   /**
-   * A device with attributes.
-   */
+    * A device with attributes.
+    */
   @js.native
   trait Device extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
@@ -1490,34 +1640,52 @@ package alexaforbusiness {
   }
 
   object Device {
-    def apply(
-      DeviceArn: js.UndefOr[Arn] = js.undefined,
-      DeviceName: js.UndefOr[DeviceName] = js.undefined,
-      DeviceSerialNumber: js.UndefOr[DeviceSerialNumber] = js.undefined,
-      DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined,
-      DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
-      DeviceType: js.UndefOr[DeviceType] = js.undefined,
-      MacAddress: js.UndefOr[MacAddress] = js.undefined,
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined): Device = {
+    def apply(DeviceArn: js.UndefOr[Arn] = js.undefined,
+              DeviceName: js.UndefOr[DeviceName] = js.undefined,
+              DeviceSerialNumber: js.UndefOr[DeviceSerialNumber] = js.undefined,
+              DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined,
+              DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
+              DeviceType: js.UndefOr[DeviceType] = js.undefined,
+              MacAddress: js.UndefOr[MacAddress] = js.undefined,
+              RoomArn: js.UndefOr[Arn] = js.undefined,
+              SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined): Device = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] },
-        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] },
-        "DeviceSerialNumber" -> DeviceSerialNumber.map { x => x.asInstanceOf[js.Any] },
-        "DeviceStatus" -> DeviceStatus.map { x => x.asInstanceOf[js.Any] },
-        "DeviceStatusInfo" -> DeviceStatusInfo.map { x => x.asInstanceOf[js.Any] },
-        "DeviceType" -> DeviceType.map { x => x.asInstanceOf[js.Any] },
-        "MacAddress" -> MacAddress.map { x => x.asInstanceOf[js.Any] },
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "SoftwareVersion" -> SoftwareVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceArn" -> DeviceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceName" -> DeviceName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceSerialNumber" -> DeviceSerialNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceStatus" -> DeviceStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceStatusInfo" -> DeviceStatusInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceType" -> DeviceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MacAddress" -> MacAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SoftwareVersion" -> SoftwareVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Device]
     }
   }
 
   /**
-   * Device attributes.
-   */
+    * Device attributes.
+    */
   @js.native
   trait DeviceData extends js.Object {
     var DeviceArn: js.UndefOr[Arn]
@@ -1533,36 +1701,56 @@ package alexaforbusiness {
   }
 
   object DeviceData {
-    def apply(
-      DeviceArn: js.UndefOr[Arn] = js.undefined,
-      DeviceName: js.UndefOr[DeviceName] = js.undefined,
-      DeviceSerialNumber: js.UndefOr[DeviceSerialNumber] = js.undefined,
-      DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined,
-      DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
-      DeviceType: js.UndefOr[DeviceType] = js.undefined,
-      MacAddress: js.UndefOr[MacAddress] = js.undefined,
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      RoomName: js.UndefOr[RoomName] = js.undefined,
-      SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined): DeviceData = {
+    def apply(DeviceArn: js.UndefOr[Arn] = js.undefined,
+              DeviceName: js.UndefOr[DeviceName] = js.undefined,
+              DeviceSerialNumber: js.UndefOr[DeviceSerialNumber] = js.undefined,
+              DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined,
+              DeviceStatusInfo: js.UndefOr[DeviceStatusInfo] = js.undefined,
+              DeviceType: js.UndefOr[DeviceType] = js.undefined,
+              MacAddress: js.UndefOr[MacAddress] = js.undefined,
+              RoomArn: js.UndefOr[Arn] = js.undefined,
+              RoomName: js.UndefOr[RoomName] = js.undefined,
+              SoftwareVersion: js.UndefOr[SoftwareVersion] = js.undefined): DeviceData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] },
-        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] },
-        "DeviceSerialNumber" -> DeviceSerialNumber.map { x => x.asInstanceOf[js.Any] },
-        "DeviceStatus" -> DeviceStatus.map { x => x.asInstanceOf[js.Any] },
-        "DeviceStatusInfo" -> DeviceStatusInfo.map { x => x.asInstanceOf[js.Any] },
-        "DeviceType" -> DeviceType.map { x => x.asInstanceOf[js.Any] },
-        "MacAddress" -> MacAddress.map { x => x.asInstanceOf[js.Any] },
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "RoomName" -> RoomName.map { x => x.asInstanceOf[js.Any] },
-        "SoftwareVersion" -> SoftwareVersion.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DeviceArn" -> DeviceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceName" -> DeviceName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceSerialNumber" -> DeviceSerialNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceStatus" -> DeviceStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceStatusInfo" -> DeviceStatusInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeviceType" -> DeviceType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MacAddress" -> MacAddress.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomName" -> RoomName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SoftwareVersion" -> SoftwareVersion.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceData]
     }
   }
 
   /**
-   * The list of device events.
-   */
+    * The list of device events.
+    */
   @js.native
   trait DeviceEvent extends js.Object {
     var Timestamp: js.UndefOr[Timestamp]
@@ -1571,14 +1759,16 @@ package alexaforbusiness {
   }
 
   object DeviceEvent {
-    def apply(
-      Timestamp: js.UndefOr[Timestamp] = js.undefined,
-      Type: js.UndefOr[DeviceEventType] = js.undefined,
-      Value: js.UndefOr[DeviceEventValue] = js.undefined): DeviceEvent = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Timestamp" -> Timestamp.map { x => x.asInstanceOf[js.Any] },
-        "Type" -> Type.map { x => x.asInstanceOf[js.Any] },
-        "Value" -> Value.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Timestamp: js.UndefOr[Timestamp] = js.undefined,
+              Type: js.UndefOr[DeviceEventType] = js.undefined,
+              Value: js.UndefOr[DeviceEventValue] = js.undefined): DeviceEvent = {
+      val _fields = IndexedSeq[(String, js.Any)]("Timestamp" -> Timestamp.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Type" -> Type.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Value" -> Value.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceEvent]
     }
@@ -1586,33 +1776,33 @@ package alexaforbusiness {
 
   object DeviceEventTypeEnum {
     val CONNECTION_STATUS = "CONNECTION_STATUS"
-    val DEVICE_STATUS = "DEVICE_STATUS"
+    val DEVICE_STATUS     = "DEVICE_STATUS"
 
     val values = IndexedSeq(CONNECTION_STATUS, DEVICE_STATUS)
   }
 
   object DeviceStatusEnum {
-    val READY = "READY"
-    val PENDING = "PENDING"
-    val WAS_OFFLINE = "WAS_OFFLINE"
+    val READY        = "READY"
+    val PENDING      = "PENDING"
+    val WAS_OFFLINE  = "WAS_OFFLINE"
     val DEREGISTERED = "DEREGISTERED"
 
     val values = IndexedSeq(READY, PENDING, WAS_OFFLINE, DEREGISTERED)
   }
 
   /**
-   * Details of a device�fs status.
-   */
+    * Details of a device�fs status.
+    */
   @js.native
   trait DeviceStatusDetail extends js.Object {
     var Code: js.UndefOr[DeviceStatusDetailCode]
   }
 
   object DeviceStatusDetail {
-    def apply(
-      Code: js.UndefOr[DeviceStatusDetailCode] = js.undefined): DeviceStatusDetail = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Code" -> Code.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Code: js.UndefOr[DeviceStatusDetailCode] = js.undefined): DeviceStatusDetail = {
+      val _fields = IndexedSeq[(String, js.Any)]("Code" -> Code.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceStatusDetail]
     }
@@ -1620,14 +1810,14 @@ package alexaforbusiness {
 
   object DeviceStatusDetailCodeEnum {
     val DEVICE_SOFTWARE_UPDATE_NEEDED = "DEVICE_SOFTWARE_UPDATE_NEEDED"
-    val DEVICE_WAS_OFFLINE = "DEVICE_WAS_OFFLINE"
+    val DEVICE_WAS_OFFLINE            = "DEVICE_WAS_OFFLINE"
 
     val values = IndexedSeq(DEVICE_SOFTWARE_UPDATE_NEEDED, DEVICE_WAS_OFFLINE)
   }
 
   /**
-   * Detailed information about a device's status.
-   */
+    * Detailed information about a device's status.
+    */
   @js.native
   trait DeviceStatusInfo extends js.Object {
     var ConnectionStatus: js.UndefOr[ConnectionStatus]
@@ -1635,12 +1825,13 @@ package alexaforbusiness {
   }
 
   object DeviceStatusInfo {
-    def apply(
-      ConnectionStatus: js.UndefOr[ConnectionStatus] = js.undefined,
-      DeviceStatusDetails: js.UndefOr[DeviceStatusDetails] = js.undefined): DeviceStatusInfo = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConnectionStatus" -> ConnectionStatus.map { x => x.asInstanceOf[js.Any] },
-        "DeviceStatusDetails" -> DeviceStatusDetails.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConnectionStatus: js.UndefOr[ConnectionStatus] = js.undefined,
+              DeviceStatusDetails: js.UndefOr[DeviceStatusDetails] = js.undefined): DeviceStatusInfo = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConnectionStatus" -> ConnectionStatus.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "DeviceStatusDetails" -> DeviceStatusDetails.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DeviceStatusInfo]
     }
@@ -1653,27 +1844,26 @@ package alexaforbusiness {
   }
 
   object DisassociateContactFromAddressBookRequest {
-    def apply(
-      AddressBookArn: Arn,
-      ContactArn: Arn): DisassociateContactFromAddressBookRequest = {
+    def apply(AddressBookArn: Arn, ContactArn: Arn): DisassociateContactFromAddressBookRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any],
-        "ContactArn" -> ContactArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ContactArn"     -> ContactArn.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateContactFromAddressBookRequest]
     }
   }
 
   @js.native
-  trait DisassociateContactFromAddressBookResponse extends js.Object {
-
-  }
+  trait DisassociateContactFromAddressBookResponse extends js.Object {}
 
   object DisassociateContactFromAddressBookResponse {
     def apply(): DisassociateContactFromAddressBookResponse = {
       val _fields = IndexedSeq[(String, js.Any)]().filter(_._2 != (js.undefined: js.Any))
 
-      js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateContactFromAddressBookResponse]
+      js.Dynamic.literal
+        .applyDynamicNamed("apply")(_fields: _*)
+        .asInstanceOf[DisassociateContactFromAddressBookResponse]
     }
   }
 
@@ -1683,19 +1873,17 @@ package alexaforbusiness {
   }
 
   object DisassociateDeviceFromRoomRequest {
-    def apply(
-      DeviceArn: js.UndefOr[Arn] = js.undefined): DisassociateDeviceFromRoomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DeviceArn: js.UndefOr[Arn] = js.undefined): DisassociateDeviceFromRoomRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DeviceArn" -> DeviceArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateDeviceFromRoomRequest]
     }
   }
 
   @js.native
-  trait DisassociateDeviceFromRoomResponse extends js.Object {
-
-  }
+  trait DisassociateDeviceFromRoomResponse extends js.Object {}
 
   object DisassociateDeviceFromRoomResponse {
     def apply(): DisassociateDeviceFromRoomResponse = {
@@ -1712,21 +1900,20 @@ package alexaforbusiness {
   }
 
   object DisassociateSkillFromSkillGroupRequest {
-    def apply(
-      SkillId: SkillId,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined): DisassociateSkillFromSkillGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillId: SkillId,
+              SkillGroupArn: js.UndefOr[Arn] = js.undefined): DisassociateSkillFromSkillGroupRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("SkillId" -> SkillId.asInstanceOf[js.Any], "SkillGroupArn" -> SkillGroupArn.map {
+          x =>
+            x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateSkillFromSkillGroupRequest]
     }
   }
 
   @js.native
-  trait DisassociateSkillFromSkillGroupResponse extends js.Object {
-
-  }
+  trait DisassociateSkillFromSkillGroupResponse extends js.Object {}
 
   object DisassociateSkillFromSkillGroupResponse {
     def apply(): DisassociateSkillFromSkillGroupResponse = {
@@ -1743,21 +1930,20 @@ package alexaforbusiness {
   }
 
   object DisassociateSkillFromUsersRequest {
-    def apply(
-      SkillId: SkillId,
-      OrganizationArn: js.UndefOr[Arn] = js.undefined): DisassociateSkillFromUsersRequest = {
+    def apply(SkillId: SkillId, OrganizationArn: js.UndefOr[Arn] = js.undefined): DisassociateSkillFromUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "OrganizationArn" -> OrganizationArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "OrganizationArn" -> OrganizationArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateSkillFromUsersRequest]
     }
   }
 
   @js.native
-  trait DisassociateSkillFromUsersResponse extends js.Object {
-
-  }
+  trait DisassociateSkillFromUsersResponse extends js.Object {}
 
   object DisassociateSkillFromUsersResponse {
     def apply(): DisassociateSkillFromUsersResponse = {
@@ -1774,21 +1960,20 @@ package alexaforbusiness {
   }
 
   object DisassociateSkillGroupFromRoomRequest {
-    def apply(
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined): DisassociateSkillGroupFromRoomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: js.UndefOr[Arn] = js.undefined,
+              SkillGroupArn: js.UndefOr[Arn] = js.undefined): DisassociateSkillGroupFromRoomRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SkillGroupArn" -> SkillGroupArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[DisassociateSkillGroupFromRoomRequest]
     }
   }
 
   @js.native
-  trait DisassociateSkillGroupFromRoomResponse extends js.Object {
-
-  }
+  trait DisassociateSkillGroupFromRoomResponse extends js.Object {}
 
   object DisassociateSkillGroupFromRoomResponse {
     def apply(): DisassociateSkillGroupFromRoomResponse = {
@@ -1799,7 +1984,7 @@ package alexaforbusiness {
   }
 
   object DistanceUnitEnum {
-    val METRIC = "METRIC"
+    val METRIC   = "METRIC"
     val IMPERIAL = "IMPERIAL"
 
     val values = IndexedSeq(METRIC, IMPERIAL)
@@ -1820,29 +2005,29 @@ package alexaforbusiness {
   }
 
   object EnrollmentStatusEnum {
-    val INITIALIZED = "INITIALIZED"
-    val PENDING = "PENDING"
-    val REGISTERED = "REGISTERED"
+    val INITIALIZED    = "INITIALIZED"
+    val PENDING        = "PENDING"
+    val REGISTERED     = "REGISTERED"
     val DISASSOCIATING = "DISASSOCIATING"
-    val DEREGISTERING = "DEREGISTERING"
+    val DEREGISTERING  = "DEREGISTERING"
 
     val values = IndexedSeq(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING)
   }
 
   object FeatureEnum {
-    val BLUETOOTH = "BLUETOOTH"
-    val VOLUME = "VOLUME"
+    val BLUETOOTH     = "BLUETOOTH"
+    val VOLUME        = "VOLUME"
     val NOTIFICATIONS = "NOTIFICATIONS"
-    val LISTS = "LISTS"
-    val SKILLS = "SKILLS"
-    val ALL = "ALL"
+    val LISTS         = "LISTS"
+    val SKILLS        = "SKILLS"
+    val ALL           = "ALL"
 
     val values = IndexedSeq(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, ALL)
   }
 
   /**
-   * A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.
-   */
+    * A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.
+    */
   @js.native
   trait Filter extends js.Object {
     var Key: FilterKey
@@ -1850,12 +2035,10 @@ package alexaforbusiness {
   }
 
   object Filter {
-    def apply(
-      Key: FilterKey,
-      Values: FilterValueList): Filter = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Values" -> Values.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: FilterKey, Values: FilterValueList): Filter = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Values" -> Values.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Filter]
     }
@@ -1867,19 +2050,16 @@ package alexaforbusiness {
   }
 
   object ForgetSmartHomeAppliancesRequest {
-    def apply(
-      RoomArn: Arn): ForgetSmartHomeAppliancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: Arn): ForgetSmartHomeAppliancesRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ForgetSmartHomeAppliancesRequest]
     }
   }
 
   @js.native
-  trait ForgetSmartHomeAppliancesResponse extends js.Object {
-
-  }
+  trait ForgetSmartHomeAppliancesResponse extends js.Object {}
 
   object ForgetSmartHomeAppliancesResponse {
     def apply(): ForgetSmartHomeAppliancesResponse = {
@@ -1895,10 +2075,9 @@ package alexaforbusiness {
   }
 
   object GetAddressBookRequest {
-    def apply(
-      AddressBookArn: Arn): GetAddressBookRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(AddressBookArn: Arn): GetAddressBookRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAddressBookRequest]
     }
@@ -1910,19 +2089,17 @@ package alexaforbusiness {
   }
 
   object GetAddressBookResponse {
-    def apply(
-      AddressBook: js.UndefOr[AddressBook] = js.undefined): GetAddressBookResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "AddressBook" -> AddressBook.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(AddressBook: js.UndefOr[AddressBook] = js.undefined): GetAddressBookResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("AddressBook" -> AddressBook.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetAddressBookResponse]
     }
   }
 
   @js.native
-  trait GetConferencePreferenceRequest extends js.Object {
-
-  }
+  trait GetConferencePreferenceRequest extends js.Object {}
 
   object GetConferencePreferenceRequest {
     def apply(): GetConferencePreferenceRequest = {
@@ -1938,10 +2115,10 @@ package alexaforbusiness {
   }
 
   object GetConferencePreferenceResponse {
-    def apply(
-      Preference: js.UndefOr[ConferencePreference] = js.undefined): GetConferencePreferenceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Preference" -> Preference.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Preference: js.UndefOr[ConferencePreference] = js.undefined): GetConferencePreferenceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Preference" -> Preference.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConferencePreferenceResponse]
     }
@@ -1953,10 +2130,9 @@ package alexaforbusiness {
   }
 
   object GetConferenceProviderRequest {
-    def apply(
-      ConferenceProviderArn: Arn): GetConferenceProviderRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConferenceProviderArn" -> ConferenceProviderArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConferenceProviderArn: Arn): GetConferenceProviderRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConferenceProviderArn" -> ConferenceProviderArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConferenceProviderRequest]
     }
@@ -1968,10 +2144,10 @@ package alexaforbusiness {
   }
 
   object GetConferenceProviderResponse {
-    def apply(
-      ConferenceProvider: js.UndefOr[ConferenceProvider] = js.undefined): GetConferenceProviderResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConferenceProvider" -> ConferenceProvider.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConferenceProvider: js.UndefOr[ConferenceProvider] = js.undefined): GetConferenceProviderResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConferenceProvider" -> ConferenceProvider.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetConferenceProviderResponse]
     }
@@ -1983,10 +2159,9 @@ package alexaforbusiness {
   }
 
   object GetContactRequest {
-    def apply(
-      ContactArn: Arn): GetContactRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ContactArn" -> ContactArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ContactArn: Arn): GetContactRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ContactArn" -> ContactArn.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContactRequest]
     }
@@ -1998,10 +2173,10 @@ package alexaforbusiness {
   }
 
   object GetContactResponse {
-    def apply(
-      Contact: js.UndefOr[Contact] = js.undefined): GetContactResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Contact" -> Contact.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Contact: js.UndefOr[Contact] = js.undefined): GetContactResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Contact" -> Contact.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetContactResponse]
     }
@@ -2013,10 +2188,10 @@ package alexaforbusiness {
   }
 
   object GetDeviceRequest {
-    def apply(
-      DeviceArn: js.UndefOr[Arn] = js.undefined): GetDeviceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DeviceArn: js.UndefOr[Arn] = js.undefined): GetDeviceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DeviceArn" -> DeviceArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceRequest]
     }
@@ -2028,10 +2203,10 @@ package alexaforbusiness {
   }
 
   object GetDeviceResponse {
-    def apply(
-      Device: js.UndefOr[Device] = js.undefined): GetDeviceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Device" -> Device.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Device: js.UndefOr[Device] = js.undefined): GetDeviceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Device" -> Device.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetDeviceResponse]
     }
@@ -2043,10 +2218,10 @@ package alexaforbusiness {
   }
 
   object GetProfileRequest {
-    def apply(
-      ProfileArn: js.UndefOr[Arn] = js.undefined): GetProfileRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ProfileArn: js.UndefOr[Arn] = js.undefined): GetProfileRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ProfileArn" -> ProfileArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProfileRequest]
     }
@@ -2058,10 +2233,10 @@ package alexaforbusiness {
   }
 
   object GetProfileResponse {
-    def apply(
-      Profile: js.UndefOr[Profile] = js.undefined): GetProfileResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Profile" -> Profile.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Profile: js.UndefOr[Profile] = js.undefined): GetProfileResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Profile" -> Profile.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetProfileResponse]
     }
@@ -2073,10 +2248,10 @@ package alexaforbusiness {
   }
 
   object GetRoomRequest {
-    def apply(
-      RoomArn: js.UndefOr[Arn] = js.undefined): GetRoomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: js.UndefOr[Arn] = js.undefined): GetRoomRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoomRequest]
     }
@@ -2088,10 +2263,10 @@ package alexaforbusiness {
   }
 
   object GetRoomResponse {
-    def apply(
-      Room: js.UndefOr[Room] = js.undefined): GetRoomResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Room" -> Room.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Room: js.UndefOr[Room] = js.undefined): GetRoomResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("Room" -> Room.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoomResponse]
     }
@@ -2105,14 +2280,16 @@ package alexaforbusiness {
   }
 
   object GetRoomSkillParameterRequest {
-    def apply(
-      ParameterKey: RoomSkillParameterKey,
-      SkillId: SkillId,
-      RoomArn: js.UndefOr[Arn] = js.undefined): GetRoomSkillParameterRequest = {
+    def apply(ParameterKey: RoomSkillParameterKey,
+              SkillId: SkillId,
+              RoomArn: js.UndefOr[Arn] = js.undefined): GetRoomSkillParameterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ParameterKey" -> ParameterKey.asInstanceOf[js.Any],
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SkillId"      -> SkillId.asInstanceOf[js.Any],
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoomSkillParameterRequest]
     }
@@ -2124,10 +2301,10 @@ package alexaforbusiness {
   }
 
   object GetRoomSkillParameterResponse {
-    def apply(
-      RoomSkillParameter: js.UndefOr[RoomSkillParameter] = js.undefined): GetRoomSkillParameterResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomSkillParameter" -> RoomSkillParameter.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomSkillParameter: js.UndefOr[RoomSkillParameter] = js.undefined): GetRoomSkillParameterResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("RoomSkillParameter" -> RoomSkillParameter.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetRoomSkillParameterResponse]
     }
@@ -2139,10 +2316,10 @@ package alexaforbusiness {
   }
 
   object GetSkillGroupRequest {
-    def apply(
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined): GetSkillGroupRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillGroupArn: js.UndefOr[Arn] = js.undefined): GetSkillGroupRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("SkillGroupArn" -> SkillGroupArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSkillGroupRequest]
     }
@@ -2154,18 +2331,18 @@ package alexaforbusiness {
   }
 
   object GetSkillGroupResponse {
-    def apply(
-      SkillGroup: js.UndefOr[SkillGroup] = js.undefined): GetSkillGroupResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillGroup" -> SkillGroup.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillGroup: js.UndefOr[SkillGroup] = js.undefined): GetSkillGroupResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("SkillGroup" -> SkillGroup.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[GetSkillGroupResponse]
     }
   }
 
   /**
-   * The IP endpoint and protocol for calling.
-   */
+    * The IP endpoint and protocol for calling.
+    */
   @js.native
   trait IPDialIn extends js.Object {
     var CommsProtocol: CommsProtocol
@@ -2173,12 +2350,11 @@ package alexaforbusiness {
   }
 
   object IPDialIn {
-    def apply(
-      CommsProtocol: CommsProtocol,
-      Endpoint: Endpoint): IPDialIn = {
+    def apply(CommsProtocol: CommsProtocol, Endpoint: Endpoint): IPDialIn = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CommsProtocol" -> CommsProtocol.asInstanceOf[js.Any],
-        "Endpoint" -> Endpoint.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "Endpoint"      -> Endpoint.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[IPDialIn]
     }
@@ -2191,12 +2367,13 @@ package alexaforbusiness {
   }
 
   object ListBusinessReportSchedulesRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListBusinessReportSchedulesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListBusinessReportSchedulesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBusinessReportSchedulesRequest]
     }
@@ -2209,12 +2386,13 @@ package alexaforbusiness {
   }
 
   object ListBusinessReportSchedulesResponse {
-    def apply(
-      BusinessReportSchedules: js.UndefOr[BusinessReportScheduleList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListBusinessReportSchedulesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "BusinessReportSchedules" -> BusinessReportSchedules.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(BusinessReportSchedules: js.UndefOr[BusinessReportScheduleList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListBusinessReportSchedulesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("BusinessReportSchedules" -> BusinessReportSchedules.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListBusinessReportSchedulesResponse]
     }
@@ -2227,12 +2405,13 @@ package alexaforbusiness {
   }
 
   object ListConferenceProvidersRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListConferenceProvidersRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListConferenceProvidersRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConferenceProvidersRequest]
     }
@@ -2245,12 +2424,13 @@ package alexaforbusiness {
   }
 
   object ListConferenceProvidersResponse {
-    def apply(
-      ConferenceProviders: js.UndefOr[ConferenceProvidersList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListConferenceProvidersResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConferenceProviders" -> ConferenceProviders.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConferenceProviders: js.UndefOr[ConferenceProvidersList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListConferenceProvidersResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConferenceProviders" -> ConferenceProviders.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListConferenceProvidersResponse]
     }
@@ -2265,16 +2445,22 @@ package alexaforbusiness {
   }
 
   object ListDeviceEventsRequest {
-    def apply(
-      DeviceArn: Arn,
-      EventType: js.UndefOr[DeviceEventType] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListDeviceEventsRequest = {
+    def apply(DeviceArn: Arn,
+              EventType: js.UndefOr[DeviceEventType] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListDeviceEventsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "DeviceArn" -> DeviceArn.asInstanceOf[js.Any],
-        "EventType" -> EventType.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EventType" -> EventType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeviceEventsRequest]
     }
@@ -2287,12 +2473,13 @@ package alexaforbusiness {
   }
 
   object ListDeviceEventsResponse {
-    def apply(
-      DeviceEvents: js.UndefOr[DeviceEventList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListDeviceEventsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceEvents" -> DeviceEvents.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DeviceEvents: js.UndefOr[DeviceEventList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListDeviceEventsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("DeviceEvents" -> DeviceEvents.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListDeviceEventsResponse]
     }
@@ -2308,18 +2495,28 @@ package alexaforbusiness {
   }
 
   object ListSkillsRequest {
-    def apply(
-      EnablementType: js.UndefOr[EnablementTypeFilter] = js.undefined,
-      MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-      SkillType: js.UndefOr[SkillTypeFilter] = js.undefined): ListSkillsRequest = {
+    def apply(EnablementType: js.UndefOr[EnablementTypeFilter] = js.undefined,
+              MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SkillGroupArn: js.UndefOr[Arn] = js.undefined,
+              SkillType: js.UndefOr[SkillTypeFilter] = js.undefined): ListSkillsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EnablementType" -> EnablementType.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "SkillType" -> SkillType.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EnablementType" -> EnablementType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroupArn" -> SkillGroupArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillType" -> SkillType.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSkillsRequest]
     }
@@ -2332,12 +2529,13 @@ package alexaforbusiness {
   }
 
   object ListSkillsResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SkillSummaries: js.UndefOr[SkillSummaryList] = js.undefined): ListSkillsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SkillSummaries" -> SkillSummaries.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              SkillSummaries: js.UndefOr[SkillSummaryList] = js.undefined): ListSkillsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SkillSummaries" -> SkillSummaries.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSkillsResponse]
     }
@@ -2350,12 +2548,13 @@ package alexaforbusiness {
   }
 
   object ListSkillsStoreCategoriesRequest {
-    def apply(
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListSkillsStoreCategoriesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListSkillsStoreCategoriesRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("MaxResults" -> MaxResults.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSkillsStoreCategoriesRequest]
     }
@@ -2368,12 +2567,13 @@ package alexaforbusiness {
   }
 
   object ListSkillsStoreCategoriesResponse {
-    def apply(
-      CategoryList: js.UndefOr[CategoryList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListSkillsStoreCategoriesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "CategoryList" -> CategoryList.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(CategoryList: js.UndefOr[CategoryList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListSkillsStoreCategoriesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("CategoryList" -> CategoryList.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSkillsStoreCategoriesResponse]
     }
@@ -2387,14 +2587,18 @@ package alexaforbusiness {
   }
 
   object ListSkillsStoreSkillsByCategoryRequest {
-    def apply(
-      CategoryId: CategoryId,
-      MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListSkillsStoreSkillsByCategoryRequest = {
+    def apply(CategoryId: CategoryId,
+              MaxResults: js.UndefOr[SkillListMaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListSkillsStoreSkillsByCategoryRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "CategoryId" -> CategoryId.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSkillsStoreSkillsByCategoryRequest]
     }
@@ -2408,11 +2612,14 @@ package alexaforbusiness {
 
   object ListSkillsStoreSkillsByCategoryResponse {
     def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SkillsStoreSkills: js.UndefOr[SkillsStoreSkillList] = js.undefined): ListSkillsStoreSkillsByCategoryResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SkillsStoreSkills" -> SkillsStoreSkills.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SkillsStoreSkills: js.UndefOr[SkillsStoreSkillList] = js.undefined
+    ): ListSkillsStoreSkillsByCategoryResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SkillsStoreSkills" -> SkillsStoreSkills.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSkillsStoreSkillsByCategoryResponse]
     }
@@ -2426,14 +2633,15 @@ package alexaforbusiness {
   }
 
   object ListSmartHomeAppliancesRequest {
-    def apply(
-      RoomArn: Arn,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListSmartHomeAppliancesRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: Arn,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListSmartHomeAppliancesRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        }, "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSmartHomeAppliancesRequest]
     }
@@ -2447,11 +2655,14 @@ package alexaforbusiness {
 
   object ListSmartHomeAppliancesResponse {
     def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SmartHomeAppliances: js.UndefOr[SmartHomeApplianceList] = js.undefined): ListSmartHomeAppliancesResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SmartHomeAppliances" -> SmartHomeAppliances.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SmartHomeAppliances: js.UndefOr[SmartHomeApplianceList] = js.undefined
+    ): ListSmartHomeAppliancesResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "SmartHomeAppliances" -> SmartHomeAppliances.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListSmartHomeAppliancesResponse]
     }
@@ -2465,14 +2676,15 @@ package alexaforbusiness {
   }
 
   object ListTagsRequest {
-    def apply(
-      Arn: Arn,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Arn: Arn,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined): ListTagsRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "MaxResults" -> MaxResults.map {
+        x =>
+          x.asInstanceOf[js.Any]
+      }, "NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsRequest]
     }
@@ -2485,41 +2697,41 @@ package alexaforbusiness {
   }
 
   object ListTagsResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Tags: js.UndefOr[TagList] = js.undefined): ListTagsResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Tags" -> Tags.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Tags: js.UndefOr[TagList] = js.undefined): ListTagsResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("NextToken" -> NextToken.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "Tags" -> Tags.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ListTagsResponse]
     }
   }
 
   /**
-   * The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.
-   * * If YES, Alexa will always ask for a meeting pin.
-   *  * If NO, Alexa will never ask for a meeting pin.
-   *  * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
-   */
+    * The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.
+    * * If YES, Alexa will always ask for a meeting pin.
+    *  * If NO, Alexa will never ask for a meeting pin.
+    *  * If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.
+    */
   @js.native
   trait MeetingSetting extends js.Object {
     var RequirePin: RequirePin
   }
 
   object MeetingSetting {
-    def apply(
-      RequirePin: RequirePin): MeetingSetting = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RequirePin" -> RequirePin.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(RequirePin: RequirePin): MeetingSetting = {
+      val _fields = IndexedSeq[(String, js.Any)]("RequirePin" -> RequirePin.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[MeetingSetting]
     }
   }
 
   /**
-   * The information for public switched telephone network (PSTN) conferencing.
-   */
+    * The information for public switched telephone network (PSTN) conferencing.
+    */
   @js.native
   trait PSTNDialIn extends js.Object {
     var CountryCode: CountryCode
@@ -2529,24 +2741,24 @@ package alexaforbusiness {
   }
 
   object PSTNDialIn {
-    def apply(
-      CountryCode: CountryCode,
-      OneClickIdDelay: OneClickIdDelay,
-      OneClickPinDelay: OneClickPinDelay,
-      PhoneNumber: OutboundPhoneNumber): PSTNDialIn = {
+    def apply(CountryCode: CountryCode,
+              OneClickIdDelay: OneClickIdDelay,
+              OneClickPinDelay: OneClickPinDelay,
+              PhoneNumber: OutboundPhoneNumber): PSTNDialIn = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "CountryCode" -> CountryCode.asInstanceOf[js.Any],
-        "OneClickIdDelay" -> OneClickIdDelay.asInstanceOf[js.Any],
+        "CountryCode"      -> CountryCode.asInstanceOf[js.Any],
+        "OneClickIdDelay"  -> OneClickIdDelay.asInstanceOf[js.Any],
         "OneClickPinDelay" -> OneClickPinDelay.asInstanceOf[js.Any],
-        "PhoneNumber" -> PhoneNumber.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "PhoneNumber"      -> PhoneNumber.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PSTNDialIn]
     }
   }
 
   /**
-   * A room profile with attributes.
-   */
+    * A room profile with attributes.
+    */
   @js.native
   trait Profile extends js.Object {
     var Address: js.UndefOr[Address]
@@ -2564,40 +2776,64 @@ package alexaforbusiness {
   }
 
   object Profile {
-    def apply(
-      Address: js.UndefOr[Address] = js.undefined,
-      AddressBookArn: js.UndefOr[Arn] = js.undefined,
-      DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
-      IsDefault: js.UndefOr[Boolean] = js.undefined,
-      MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
-      PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
-      ProfileArn: js.UndefOr[Arn] = js.undefined,
-      ProfileName: js.UndefOr[ProfileName] = js.undefined,
-      SetupModeDisabled: js.UndefOr[Boolean] = js.undefined,
-      TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
-      Timezone: js.UndefOr[Timezone] = js.undefined,
-      WakeWord: js.UndefOr[WakeWord] = js.undefined): Profile = {
+    def apply(Address: js.UndefOr[Address] = js.undefined,
+              AddressBookArn: js.UndefOr[Arn] = js.undefined,
+              DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
+              IsDefault: js.UndefOr[Boolean] = js.undefined,
+              MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
+              PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
+              ProfileArn: js.UndefOr[Arn] = js.undefined,
+              ProfileName: js.UndefOr[ProfileName] = js.undefined,
+              SetupModeDisabled: js.UndefOr[Boolean] = js.undefined,
+              TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
+              Timezone: js.UndefOr[Timezone] = js.undefined,
+              WakeWord: js.UndefOr[WakeWord] = js.undefined): Profile = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "AddressBookArn" -> AddressBookArn.map { x => x.asInstanceOf[js.Any] },
-        "DistanceUnit" -> DistanceUnit.map { x => x.asInstanceOf[js.Any] },
-        "IsDefault" -> IsDefault.map { x => x.asInstanceOf[js.Any] },
-        "MaxVolumeLimit" -> MaxVolumeLimit.map { x => x.asInstanceOf[js.Any] },
-        "PSTNEnabled" -> PSTNEnabled.map { x => x.asInstanceOf[js.Any] },
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "ProfileName" -> ProfileName.map { x => x.asInstanceOf[js.Any] },
-        "SetupModeDisabled" -> SetupModeDisabled.map { x => x.asInstanceOf[js.Any] },
-        "TemperatureUnit" -> TemperatureUnit.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
-        "WakeWord" -> WakeWord.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "AddressBookArn" -> AddressBookArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DistanceUnit" -> DistanceUnit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsDefault" -> IsDefault.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxVolumeLimit" -> MaxVolumeLimit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PSTNEnabled" -> PSTNEnabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileArn" -> ProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileName" -> ProfileName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SetupModeDisabled" -> SetupModeDisabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemperatureUnit" -> TemperatureUnit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timezone" -> Timezone.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WakeWord" -> WakeWord.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Profile]
     }
   }
 
   /**
-   * The data of a room profile.
-   */
+    * The data of a room profile.
+    */
   @js.native
   trait ProfileData extends js.Object {
     var Address: js.UndefOr[Address]
@@ -2611,24 +2847,40 @@ package alexaforbusiness {
   }
 
   object ProfileData {
-    def apply(
-      Address: js.UndefOr[Address] = js.undefined,
-      DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
-      IsDefault: js.UndefOr[Boolean] = js.undefined,
-      ProfileArn: js.UndefOr[Arn] = js.undefined,
-      ProfileName: js.UndefOr[ProfileName] = js.undefined,
-      TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
-      Timezone: js.UndefOr[Timezone] = js.undefined,
-      WakeWord: js.UndefOr[WakeWord] = js.undefined): ProfileData = {
+    def apply(Address: js.UndefOr[Address] = js.undefined,
+              DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
+              IsDefault: js.UndefOr[Boolean] = js.undefined,
+              ProfileArn: js.UndefOr[Arn] = js.undefined,
+              ProfileName: js.UndefOr[ProfileName] = js.undefined,
+              TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
+              Timezone: js.UndefOr[Timezone] = js.undefined,
+              WakeWord: js.UndefOr[WakeWord] = js.undefined): ProfileData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "DistanceUnit" -> DistanceUnit.map { x => x.asInstanceOf[js.Any] },
-        "IsDefault" -> IsDefault.map { x => x.asInstanceOf[js.Any] },
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "ProfileName" -> ProfileName.map { x => x.asInstanceOf[js.Any] },
-        "TemperatureUnit" -> TemperatureUnit.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
-        "WakeWord" -> WakeWord.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DistanceUnit" -> DistanceUnit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsDefault" -> IsDefault.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileArn" -> ProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileName" -> ProfileName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemperatureUnit" -> TemperatureUnit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timezone" -> Timezone.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WakeWord" -> WakeWord.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ProfileData]
     }
@@ -2640,19 +2892,16 @@ package alexaforbusiness {
   }
 
   object PutConferencePreferenceRequest {
-    def apply(
-      ConferencePreference: ConferencePreference): PutConferencePreferenceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "ConferencePreference" -> ConferencePreference.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(ConferencePreference: ConferencePreference): PutConferencePreferenceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("ConferencePreference" -> ConferencePreference.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutConferencePreferenceRequest]
     }
   }
 
   @js.native
-  trait PutConferencePreferenceResponse extends js.Object {
-
-  }
+  trait PutConferencePreferenceResponse extends js.Object {}
 
   object PutConferencePreferenceResponse {
     def apply(): PutConferencePreferenceResponse = {
@@ -2670,23 +2919,23 @@ package alexaforbusiness {
   }
 
   object PutRoomSkillParameterRequest {
-    def apply(
-      RoomSkillParameter: RoomSkillParameter,
-      SkillId: SkillId,
-      RoomArn: js.UndefOr[Arn] = js.undefined): PutRoomSkillParameterRequest = {
+    def apply(RoomSkillParameter: RoomSkillParameter,
+              SkillId: SkillId,
+              RoomArn: js.UndefOr[Arn] = js.undefined): PutRoomSkillParameterRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "RoomSkillParameter" -> RoomSkillParameter.asInstanceOf[js.Any],
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SkillId"            -> SkillId.asInstanceOf[js.Any],
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutRoomSkillParameterRequest]
     }
   }
 
   @js.native
-  trait PutRoomSkillParameterResponse extends js.Object {
-
-  }
+  trait PutRoomSkillParameterResponse extends js.Object {}
 
   object PutRoomSkillParameterResponse {
     def apply(): PutRoomSkillParameterResponse = {
@@ -2704,23 +2953,23 @@ package alexaforbusiness {
   }
 
   object PutSkillAuthorizationRequest {
-    def apply(
-      AuthorizationResult: AuthorizationResult,
-      SkillId: SkillId,
-      RoomArn: js.UndefOr[Arn] = js.undefined): PutSkillAuthorizationRequest = {
+    def apply(AuthorizationResult: AuthorizationResult,
+              SkillId: SkillId,
+              RoomArn: js.UndefOr[Arn] = js.undefined): PutSkillAuthorizationRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AuthorizationResult" -> AuthorizationResult.asInstanceOf[js.Any],
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "SkillId"             -> SkillId.asInstanceOf[js.Any],
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[PutSkillAuthorizationRequest]
     }
   }
 
   @js.native
-  trait PutSkillAuthorizationResponse extends js.Object {
-
-  }
+  trait PutSkillAuthorizationResponse extends js.Object {}
 
   object PutSkillAuthorizationResponse {
     def apply(): PutSkillAuthorizationResponse = {
@@ -2740,18 +2989,18 @@ package alexaforbusiness {
   }
 
   object RegisterAVSDeviceRequest {
-    def apply(
-      AmazonId: AmazonId,
-      ClientId: ClientId,
-      DeviceSerialNumber: DeviceSerialNumberForAVS,
-      ProductId: ProductId,
-      UserCode: UserCode): RegisterAVSDeviceRequest = {
+    def apply(AmazonId: AmazonId,
+              ClientId: ClientId,
+              DeviceSerialNumber: DeviceSerialNumberForAVS,
+              ProductId: ProductId,
+              UserCode: UserCode): RegisterAVSDeviceRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AmazonId" -> AmazonId.asInstanceOf[js.Any],
-        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "AmazonId"           -> AmazonId.asInstanceOf[js.Any],
+        "ClientId"           -> ClientId.asInstanceOf[js.Any],
         "DeviceSerialNumber" -> DeviceSerialNumber.asInstanceOf[js.Any],
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "UserCode" -> UserCode.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ProductId"          -> ProductId.asInstanceOf[js.Any],
+        "UserCode"           -> UserCode.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterAVSDeviceRequest]
     }
@@ -2763,10 +3012,10 @@ package alexaforbusiness {
   }
 
   object RegisterAVSDeviceResponse {
-    def apply(
-      DeviceArn: js.UndefOr[Arn] = js.undefined): RegisterAVSDeviceResponse = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DeviceArn: js.UndefOr[Arn] = js.undefined): RegisterAVSDeviceResponse = {
+      val _fields = IndexedSeq[(String, js.Any)]("DeviceArn" -> DeviceArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RegisterAVSDeviceResponse]
     }
@@ -2778,19 +3027,16 @@ package alexaforbusiness {
   }
 
   object RejectSkillRequest {
-    def apply(
-      SkillId: SkillId): RejectSkillRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillId" -> SkillId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillId: SkillId): RejectSkillRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("SkillId" -> SkillId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RejectSkillRequest]
     }
   }
 
   @js.native
-  trait RejectSkillResponse extends js.Object {
-
-  }
+  trait RejectSkillResponse extends js.Object {}
 
   object RejectSkillResponse {
     def apply(): RejectSkillResponse = {
@@ -2801,8 +3047,8 @@ package alexaforbusiness {
   }
 
   object RequirePinEnum {
-    val YES = "YES"
-    val NO = "NO"
+    val YES      = "YES"
+    val NO       = "NO"
     val OPTIONAL = "OPTIONAL"
 
     val values = IndexedSeq(YES, NO, OPTIONAL)
@@ -2815,12 +3061,10 @@ package alexaforbusiness {
   }
 
   object ResolveRoomRequest {
-    def apply(
-      SkillId: SkillId,
-      UserId: UserId): ResolveRoomRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "SkillId" -> SkillId.asInstanceOf[js.Any],
-        "UserId" -> UserId.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(SkillId: SkillId, UserId: UserId): ResolveRoomRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("SkillId" -> SkillId.asInstanceOf[js.Any], "UserId" -> UserId.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveRoomRequest]
     }
@@ -2834,14 +3078,20 @@ package alexaforbusiness {
   }
 
   object ResolveRoomResponse {
-    def apply(
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      RoomName: js.UndefOr[RoomName] = js.undefined,
-      RoomSkillParameters: js.UndefOr[RoomSkillParameters] = js.undefined): ResolveRoomResponse = {
+    def apply(RoomArn: js.UndefOr[Arn] = js.undefined,
+              RoomName: js.UndefOr[RoomName] = js.undefined,
+              RoomSkillParameters: js.UndefOr[RoomSkillParameters] = js.undefined): ResolveRoomResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "RoomName" -> RoomName.map { x => x.asInstanceOf[js.Any] },
-        "RoomSkillParameters" -> RoomSkillParameters.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomName" -> RoomName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomSkillParameters" -> RoomSkillParameters.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[ResolveRoomResponse]
     }
@@ -2854,21 +3104,20 @@ package alexaforbusiness {
   }
 
   object RevokeInvitationRequest {
-    def apply(
-      EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,
-      UserArn: js.UndefOr[Arn] = js.undefined): RevokeInvitationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "EnrollmentId" -> EnrollmentId.map { x => x.asInstanceOf[js.Any] },
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,
+              UserArn: js.UndefOr[Arn] = js.undefined): RevokeInvitationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("EnrollmentId" -> EnrollmentId.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "UserArn" -> UserArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RevokeInvitationRequest]
     }
   }
 
   @js.native
-  trait RevokeInvitationResponse extends js.Object {
-
-  }
+  trait RevokeInvitationResponse extends js.Object {}
 
   object RevokeInvitationResponse {
     def apply(): RevokeInvitationResponse = {
@@ -2879,8 +3128,8 @@ package alexaforbusiness {
   }
 
   /**
-   * A room with attributes.
-   */
+    * A room with attributes.
+    */
   @js.native
   trait Room extends js.Object {
     var Description: js.UndefOr[RoomDescription]
@@ -2891,26 +3140,36 @@ package alexaforbusiness {
   }
 
   object Room {
-    def apply(
-      Description: js.UndefOr[RoomDescription] = js.undefined,
-      ProfileArn: js.UndefOr[Arn] = js.undefined,
-      ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      RoomName: js.UndefOr[RoomName] = js.undefined): Room = {
+    def apply(Description: js.UndefOr[RoomDescription] = js.undefined,
+              ProfileArn: js.UndefOr[Arn] = js.undefined,
+              ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
+              RoomArn: js.UndefOr[Arn] = js.undefined,
+              RoomName: js.UndefOr[RoomName] = js.undefined): Room = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "ProviderCalendarId" -> ProviderCalendarId.map { x => x.asInstanceOf[js.Any] },
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "RoomName" -> RoomName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileArn" -> ProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProviderCalendarId" -> ProviderCalendarId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomName" -> RoomName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Room]
     }
   }
 
   /**
-   * The data of a room.
-   */
+    * The data of a room.
+    */
   @js.native
   trait RoomData extends js.Object {
     var Description: js.UndefOr[RoomDescription]
@@ -2922,28 +3181,40 @@ package alexaforbusiness {
   }
 
   object RoomData {
-    def apply(
-      Description: js.UndefOr[RoomDescription] = js.undefined,
-      ProfileArn: js.UndefOr[Arn] = js.undefined,
-      ProfileName: js.UndefOr[ProfileName] = js.undefined,
-      ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      RoomName: js.UndefOr[RoomName] = js.undefined): RoomData = {
+    def apply(Description: js.UndefOr[RoomDescription] = js.undefined,
+              ProfileArn: js.UndefOr[Arn] = js.undefined,
+              ProfileName: js.UndefOr[ProfileName] = js.undefined,
+              ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
+              RoomArn: js.UndefOr[Arn] = js.undefined,
+              RoomName: js.UndefOr[RoomName] = js.undefined): RoomData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "ProfileName" -> ProfileName.map { x => x.asInstanceOf[js.Any] },
-        "ProviderCalendarId" -> ProviderCalendarId.map { x => x.asInstanceOf[js.Any] },
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "RoomName" -> RoomName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileArn" -> ProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileName" -> ProfileName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProviderCalendarId" -> ProviderCalendarId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomName" -> RoomName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoomData]
     }
   }
 
   /**
-   * A skill parameter associated with a room.
-   */
+    * A skill parameter associated with a room.
+    */
   @js.native
   trait RoomSkillParameter extends js.Object {
     var ParameterKey: RoomSkillParameterKey
@@ -2951,12 +3222,11 @@ package alexaforbusiness {
   }
 
   object RoomSkillParameter {
-    def apply(
-      ParameterKey: RoomSkillParameterKey,
-      ParameterValue: RoomSkillParameterValue): RoomSkillParameter = {
+    def apply(ParameterKey: RoomSkillParameterKey, ParameterValue: RoomSkillParameterValue): RoomSkillParameter = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ParameterKey" -> ParameterKey.asInstanceOf[js.Any],
-        "ParameterValue" -> ParameterValue.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+        "ParameterKey"   -> ParameterKey.asInstanceOf[js.Any],
+        "ParameterValue" -> ParameterValue.asInstanceOf[js.Any]
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[RoomSkillParameter]
     }
@@ -2971,16 +3241,24 @@ package alexaforbusiness {
   }
 
   object SearchAddressBooksRequest {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortCriteria: js.UndefOr[SortList] = js.undefined): SearchAddressBooksRequest = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortCriteria: js.UndefOr[SortList] = js.undefined): SearchAddressBooksRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortCriteria" -> SortCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortCriteria" -> SortCriteria.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchAddressBooksRequest]
     }
@@ -2994,14 +3272,20 @@ package alexaforbusiness {
   }
 
   object SearchAddressBooksResponse {
-    def apply(
-      AddressBooks: js.UndefOr[AddressBookDataList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchAddressBooksResponse = {
+    def apply(AddressBooks: js.UndefOr[AddressBookDataList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchAddressBooksResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "AddressBooks" -> AddressBooks.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "AddressBooks" -> AddressBooks.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchAddressBooksResponse]
     }
@@ -3016,16 +3300,24 @@ package alexaforbusiness {
   }
 
   object SearchContactsRequest {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortCriteria: js.UndefOr[SortList] = js.undefined): SearchContactsRequest = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortCriteria: js.UndefOr[SortList] = js.undefined): SearchContactsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortCriteria" -> SortCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortCriteria" -> SortCriteria.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchContactsRequest]
     }
@@ -3039,14 +3331,20 @@ package alexaforbusiness {
   }
 
   object SearchContactsResponse {
-    def apply(
-      Contacts: js.UndefOr[ContactDataList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchContactsResponse = {
+    def apply(Contacts: js.UndefOr[ContactDataList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchContactsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Contacts" -> Contacts.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Contacts" -> Contacts.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchContactsResponse]
     }
@@ -3061,16 +3359,24 @@ package alexaforbusiness {
   }
 
   object SearchDevicesRequest {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortCriteria: js.UndefOr[SortList] = js.undefined): SearchDevicesRequest = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortCriteria: js.UndefOr[SortList] = js.undefined): SearchDevicesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortCriteria" -> SortCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortCriteria" -> SortCriteria.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchDevicesRequest]
     }
@@ -3084,14 +3390,20 @@ package alexaforbusiness {
   }
 
   object SearchDevicesResponse {
-    def apply(
-      Devices: js.UndefOr[DeviceDataList] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchDevicesResponse = {
+    def apply(Devices: js.UndefOr[DeviceDataList] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchDevicesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Devices" -> Devices.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Devices" -> Devices.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchDevicesResponse]
     }
@@ -3106,16 +3418,24 @@ package alexaforbusiness {
   }
 
   object SearchProfilesRequest {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortCriteria: js.UndefOr[SortList] = js.undefined): SearchProfilesRequest = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortCriteria: js.UndefOr[SortList] = js.undefined): SearchProfilesRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortCriteria" -> SortCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortCriteria" -> SortCriteria.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProfilesRequest]
     }
@@ -3129,14 +3449,20 @@ package alexaforbusiness {
   }
 
   object SearchProfilesResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Profiles: js.UndefOr[ProfileDataList] = js.undefined,
-      TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchProfilesResponse = {
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Profiles: js.UndefOr[ProfileDataList] = js.undefined,
+              TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchProfilesResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Profiles" -> Profiles.map { x => x.asInstanceOf[js.Any] },
-        "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Profiles" -> Profiles.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchProfilesResponse]
     }
@@ -3151,16 +3477,24 @@ package alexaforbusiness {
   }
 
   object SearchRoomsRequest {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortCriteria: js.UndefOr[SortList] = js.undefined): SearchRoomsRequest = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortCriteria: js.UndefOr[SortList] = js.undefined): SearchRoomsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortCriteria" -> SortCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortCriteria" -> SortCriteria.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchRoomsRequest]
     }
@@ -3174,14 +3508,20 @@ package alexaforbusiness {
   }
 
   object SearchRoomsResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      Rooms: js.UndefOr[RoomDataList] = js.undefined,
-      TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchRoomsResponse = {
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              Rooms: js.UndefOr[RoomDataList] = js.undefined,
+              TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchRoomsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "Rooms" -> Rooms.map { x => x.asInstanceOf[js.Any] },
-        "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Rooms" -> Rooms.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchRoomsResponse]
     }
@@ -3196,16 +3536,24 @@ package alexaforbusiness {
   }
 
   object SearchSkillGroupsRequest {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortCriteria: js.UndefOr[SortList] = js.undefined): SearchSkillGroupsRequest = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortCriteria: js.UndefOr[SortList] = js.undefined): SearchSkillGroupsRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortCriteria" -> SortCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortCriteria" -> SortCriteria.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchSkillGroupsRequest]
     }
@@ -3219,14 +3567,20 @@ package alexaforbusiness {
   }
 
   object SearchSkillGroupsResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SkillGroups: js.UndefOr[SkillGroupDataList] = js.undefined,
-      TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchSkillGroupsResponse = {
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              SkillGroups: js.UndefOr[SkillGroupDataList] = js.undefined,
+              TotalCount: js.UndefOr[TotalCount] = js.undefined): SearchSkillGroupsResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroups" -> SkillGroups.map { x => x.asInstanceOf[js.Any] },
-        "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroups" -> SkillGroups.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchSkillGroupsResponse]
     }
@@ -3241,16 +3595,24 @@ package alexaforbusiness {
   }
 
   object SearchUsersRequest {
-    def apply(
-      Filters: js.UndefOr[FilterList] = js.undefined,
-      MaxResults: js.UndefOr[MaxResults] = js.undefined,
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      SortCriteria: js.UndefOr[SortList] = js.undefined): SearchUsersRequest = {
+    def apply(Filters: js.UndefOr[FilterList] = js.undefined,
+              MaxResults: js.UndefOr[MaxResults] = js.undefined,
+              NextToken: js.UndefOr[NextToken] = js.undefined,
+              SortCriteria: js.UndefOr[SortList] = js.undefined): SearchUsersRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Filters" -> Filters.map { x => x.asInstanceOf[js.Any] },
-        "MaxResults" -> MaxResults.map { x => x.asInstanceOf[js.Any] },
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "SortCriteria" -> SortCriteria.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Filters" -> Filters.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxResults" -> MaxResults.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SortCriteria" -> SortCriteria.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchUsersRequest]
     }
@@ -3264,14 +3626,20 @@ package alexaforbusiness {
   }
 
   object SearchUsersResponse {
-    def apply(
-      NextToken: js.UndefOr[NextToken] = js.undefined,
-      TotalCount: js.UndefOr[TotalCount] = js.undefined,
-      Users: js.UndefOr[UserDataList] = js.undefined): SearchUsersResponse = {
+    def apply(NextToken: js.UndefOr[NextToken] = js.undefined,
+              TotalCount: js.UndefOr[TotalCount] = js.undefined,
+              Users: js.UndefOr[UserDataList] = js.undefined): SearchUsersResponse = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "NextToken" -> NextToken.map { x => x.asInstanceOf[js.Any] },
-        "TotalCount" -> TotalCount.map { x => x.asInstanceOf[js.Any] },
-        "Users" -> Users.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "NextToken" -> NextToken.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TotalCount" -> TotalCount.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Users" -> Users.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SearchUsersResponse]
     }
@@ -3283,19 +3651,17 @@ package alexaforbusiness {
   }
 
   object SendInvitationRequest {
-    def apply(
-      UserArn: js.UndefOr[Arn] = js.undefined): SendInvitationRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(UserArn: js.UndefOr[Arn] = js.undefined): SendInvitationRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("UserArn" -> UserArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SendInvitationRequest]
     }
   }
 
   @js.native
-  trait SendInvitationResponse extends js.Object {
-
-  }
+  trait SendInvitationResponse extends js.Object {}
 
   object SendInvitationResponse {
     def apply(): SendInvitationResponse = {
@@ -3306,8 +3672,8 @@ package alexaforbusiness {
   }
 
   /**
-   * Granular information about the skill.
-   */
+    * Granular information about the skill.
+    */
   @js.native
   trait SkillDetails extends js.Object {
     var BulletPoints: js.UndefOr[BulletPoints]
@@ -3323,36 +3689,56 @@ package alexaforbusiness {
   }
 
   object SkillDetails {
-    def apply(
-      BulletPoints: js.UndefOr[BulletPoints] = js.undefined,
-      DeveloperInfo: js.UndefOr[DeveloperInfo] = js.undefined,
-      EndUserLicenseAgreement: js.UndefOr[EndUserLicenseAgreement] = js.undefined,
-      GenericKeywords: js.UndefOr[GenericKeywords] = js.undefined,
-      InvocationPhrase: js.UndefOr[InvocationPhrase] = js.undefined,
-      NewInThisVersionBulletPoints: js.UndefOr[NewInThisVersionBulletPoints] = js.undefined,
-      ProductDescription: js.UndefOr[ProductDescription] = js.undefined,
-      ReleaseDate: js.UndefOr[ReleaseDate] = js.undefined,
-      Reviews: js.UndefOr[Reviews] = js.undefined,
-      SkillTypes: js.UndefOr[SkillTypes] = js.undefined): SkillDetails = {
+    def apply(BulletPoints: js.UndefOr[BulletPoints] = js.undefined,
+              DeveloperInfo: js.UndefOr[DeveloperInfo] = js.undefined,
+              EndUserLicenseAgreement: js.UndefOr[EndUserLicenseAgreement] = js.undefined,
+              GenericKeywords: js.UndefOr[GenericKeywords] = js.undefined,
+              InvocationPhrase: js.UndefOr[InvocationPhrase] = js.undefined,
+              NewInThisVersionBulletPoints: js.UndefOr[NewInThisVersionBulletPoints] = js.undefined,
+              ProductDescription: js.UndefOr[ProductDescription] = js.undefined,
+              ReleaseDate: js.UndefOr[ReleaseDate] = js.undefined,
+              Reviews: js.UndefOr[Reviews] = js.undefined,
+              SkillTypes: js.UndefOr[SkillTypes] = js.undefined): SkillDetails = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "BulletPoints" -> BulletPoints.map { x => x.asInstanceOf[js.Any] },
-        "DeveloperInfo" -> DeveloperInfo.map { x => x.asInstanceOf[js.Any] },
-        "EndUserLicenseAgreement" -> EndUserLicenseAgreement.map { x => x.asInstanceOf[js.Any] },
-        "GenericKeywords" -> GenericKeywords.map { x => x.asInstanceOf[js.Any] },
-        "InvocationPhrase" -> InvocationPhrase.map { x => x.asInstanceOf[js.Any] },
-        "NewInThisVersionBulletPoints" -> NewInThisVersionBulletPoints.map { x => x.asInstanceOf[js.Any] },
-        "ProductDescription" -> ProductDescription.map { x => x.asInstanceOf[js.Any] },
-        "ReleaseDate" -> ReleaseDate.map { x => x.asInstanceOf[js.Any] },
-        "Reviews" -> Reviews.map { x => x.asInstanceOf[js.Any] },
-        "SkillTypes" -> SkillTypes.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "BulletPoints" -> BulletPoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DeveloperInfo" -> DeveloperInfo.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EndUserLicenseAgreement" -> EndUserLicenseAgreement.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "GenericKeywords" -> GenericKeywords.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "InvocationPhrase" -> InvocationPhrase.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "NewInThisVersionBulletPoints" -> NewInThisVersionBulletPoints.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProductDescription" -> ProductDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ReleaseDate" -> ReleaseDate.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Reviews" -> Reviews.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillTypes" -> SkillTypes.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkillDetails]
     }
   }
 
   /**
-   * A skill group with attributes.
-   */
+    * A skill group with attributes.
+    */
   @js.native
   trait SkillGroup extends js.Object {
     var Description: js.UndefOr[SkillGroupDescription]
@@ -3361,22 +3747,28 @@ package alexaforbusiness {
   }
 
   object SkillGroup {
-    def apply(
-      Description: js.UndefOr[SkillGroupDescription] = js.undefined,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-      SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined): SkillGroup = {
+    def apply(Description: js.UndefOr[SkillGroupDescription] = js.undefined,
+              SkillGroupArn: js.UndefOr[Arn] = js.undefined,
+              SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined): SkillGroup = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupName" -> SkillGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroupArn" -> SkillGroupArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroupName" -> SkillGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkillGroup]
     }
   }
 
   /**
-   * The attributes of a skill group.
-   */
+    * The attributes of a skill group.
+    */
   @js.native
   trait SkillGroupData extends js.Object {
     var Description: js.UndefOr[SkillGroupDescription]
@@ -3385,22 +3777,28 @@ package alexaforbusiness {
   }
 
   object SkillGroupData {
-    def apply(
-      Description: js.UndefOr[SkillGroupDescription] = js.undefined,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-      SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined): SkillGroupData = {
+    def apply(Description: js.UndefOr[SkillGroupDescription] = js.undefined,
+              SkillGroupArn: js.UndefOr[Arn] = js.undefined,
+              SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined): SkillGroupData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupName" -> SkillGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroupArn" -> SkillGroupArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroupName" -> SkillGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkillGroupData]
     }
   }
 
   /**
-   * The summary of skills.
-   */
+    * The summary of skills.
+    */
   @js.native
   trait SkillSummary extends js.Object {
     var EnablementType: js.UndefOr[EnablementType]
@@ -3411,41 +3809,51 @@ package alexaforbusiness {
   }
 
   object SkillSummary {
-    def apply(
-      EnablementType: js.UndefOr[EnablementType] = js.undefined,
-      SkillId: js.UndefOr[SkillId] = js.undefined,
-      SkillName: js.UndefOr[SkillName] = js.undefined,
-      SkillType: js.UndefOr[SkillType] = js.undefined,
-      SupportsLinking: js.UndefOr[boolean] = js.undefined): SkillSummary = {
+    def apply(EnablementType: js.UndefOr[EnablementType] = js.undefined,
+              SkillId: js.UndefOr[SkillId] = js.undefined,
+              SkillName: js.UndefOr[SkillName] = js.undefined,
+              SkillType: js.UndefOr[SkillType] = js.undefined,
+              SupportsLinking: js.UndefOr[boolean] = js.undefined): SkillSummary = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "EnablementType" -> EnablementType.map { x => x.asInstanceOf[js.Any] },
-        "SkillId" -> SkillId.map { x => x.asInstanceOf[js.Any] },
-        "SkillName" -> SkillName.map { x => x.asInstanceOf[js.Any] },
-        "SkillType" -> SkillType.map { x => x.asInstanceOf[js.Any] },
-        "SupportsLinking" -> SupportsLinking.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "EnablementType" -> EnablementType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillId" -> SkillId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillName" -> SkillName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillType" -> SkillType.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportsLinking" -> SupportsLinking.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkillSummary]
     }
   }
 
   object SkillTypeEnum {
-    val PUBLIC = "PUBLIC"
+    val PUBLIC  = "PUBLIC"
     val PRIVATE = "PRIVATE"
 
     val values = IndexedSeq(PUBLIC, PRIVATE)
   }
 
   object SkillTypeFilterEnum {
-    val PUBLIC = "PUBLIC"
+    val PUBLIC  = "PUBLIC"
     val PRIVATE = "PRIVATE"
-    val ALL = "ALL"
+    val ALL     = "ALL"
 
     val values = IndexedSeq(PUBLIC, PRIVATE, ALL)
   }
 
   /**
-   * The detailed information about an Alexa skill.
-   */
+    * The detailed information about an Alexa skill.
+    */
   @js.native
   trait SkillsStoreSkill extends js.Object {
     var IconUrl: js.UndefOr[IconUrl]
@@ -3458,30 +3866,44 @@ package alexaforbusiness {
   }
 
   object SkillsStoreSkill {
-    def apply(
-      IconUrl: js.UndefOr[IconUrl] = js.undefined,
-      SampleUtterances: js.UndefOr[SampleUtterances] = js.undefined,
-      ShortDescription: js.UndefOr[ShortDescription] = js.undefined,
-      SkillDetails: js.UndefOr[SkillDetails] = js.undefined,
-      SkillId: js.UndefOr[SkillId] = js.undefined,
-      SkillName: js.UndefOr[SkillName] = js.undefined,
-      SupportsLinking: js.UndefOr[boolean] = js.undefined): SkillsStoreSkill = {
+    def apply(IconUrl: js.UndefOr[IconUrl] = js.undefined,
+              SampleUtterances: js.UndefOr[SampleUtterances] = js.undefined,
+              ShortDescription: js.UndefOr[ShortDescription] = js.undefined,
+              SkillDetails: js.UndefOr[SkillDetails] = js.undefined,
+              SkillId: js.UndefOr[SkillId] = js.undefined,
+              SkillName: js.UndefOr[SkillName] = js.undefined,
+              SupportsLinking: js.UndefOr[boolean] = js.undefined): SkillsStoreSkill = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "IconUrl" -> IconUrl.map { x => x.asInstanceOf[js.Any] },
-        "SampleUtterances" -> SampleUtterances.map { x => x.asInstanceOf[js.Any] },
-        "ShortDescription" -> ShortDescription.map { x => x.asInstanceOf[js.Any] },
-        "SkillDetails" -> SkillDetails.map { x => x.asInstanceOf[js.Any] },
-        "SkillId" -> SkillId.map { x => x.asInstanceOf[js.Any] },
-        "SkillName" -> SkillName.map { x => x.asInstanceOf[js.Any] },
-        "SupportsLinking" -> SupportsLinking.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "IconUrl" -> IconUrl.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SampleUtterances" -> SampleUtterances.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ShortDescription" -> ShortDescription.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillDetails" -> SkillDetails.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillId" -> SkillId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillName" -> SkillName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SupportsLinking" -> SupportsLinking.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SkillsStoreSkill]
     }
   }
 
   /**
-   * A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance.
-   */
+    * A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance.
+    */
   @js.native
   trait SmartHomeAppliance extends js.Object {
     var Description: js.UndefOr[ApplianceDescription]
@@ -3490,22 +3912,28 @@ package alexaforbusiness {
   }
 
   object SmartHomeAppliance {
-    def apply(
-      Description: js.UndefOr[ApplianceDescription] = js.undefined,
-      FriendlyName: js.UndefOr[ApplianceFriendlyName] = js.undefined,
-      ManufacturerName: js.UndefOr[ApplianceManufacturerName] = js.undefined): SmartHomeAppliance = {
+    def apply(Description: js.UndefOr[ApplianceDescription] = js.undefined,
+              FriendlyName: js.UndefOr[ApplianceFriendlyName] = js.undefined,
+              ManufacturerName: js.UndefOr[ApplianceManufacturerName] = js.undefined): SmartHomeAppliance = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "FriendlyName" -> FriendlyName.map { x => x.asInstanceOf[js.Any] },
-        "ManufacturerName" -> ManufacturerName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FriendlyName" -> FriendlyName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ManufacturerName" -> ManufacturerName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SmartHomeAppliance]
     }
   }
 
   /**
-   * An object representing a sort criteria.
-   */
+    * An object representing a sort criteria.
+    */
   @js.native
   trait Sort extends js.Object {
     var Key: SortKey
@@ -3513,19 +3941,17 @@ package alexaforbusiness {
   }
 
   object Sort {
-    def apply(
-      Key: SortKey,
-      Value: SortValue): Sort = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: SortKey, Value: SortValue): Sort = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Sort]
     }
   }
 
   object SortValueEnum {
-    val ASC = "ASC"
+    val ASC  = "ASC"
     val DESC = "DESC"
 
     val values = IndexedSeq(ASC, DESC)
@@ -3539,23 +3965,22 @@ package alexaforbusiness {
   }
 
   object StartDeviceSyncRequest {
-    def apply(
-      Features: Features,
-      DeviceArn: js.UndefOr[Arn] = js.undefined,
-      RoomArn: js.UndefOr[Arn] = js.undefined): StartDeviceSyncRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Features" -> Features.asInstanceOf[js.Any],
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] },
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(Features: Features,
+              DeviceArn: js.UndefOr[Arn] = js.undefined,
+              RoomArn: js.UndefOr[Arn] = js.undefined): StartDeviceSyncRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Features" -> Features.asInstanceOf[js.Any], "DeviceArn" -> DeviceArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }, "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartDeviceSyncRequest]
     }
   }
 
   @js.native
-  trait StartDeviceSyncResponse extends js.Object {
-
-  }
+  trait StartDeviceSyncResponse extends js.Object {}
 
   object StartDeviceSyncResponse {
     def apply(): StartDeviceSyncResponse = {
@@ -3571,19 +3996,16 @@ package alexaforbusiness {
   }
 
   object StartSmartHomeApplianceDiscoveryRequest {
-    def apply(
-      RoomArn: Arn): StartSmartHomeApplianceDiscoveryRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "RoomArn" -> RoomArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(RoomArn: Arn): StartSmartHomeApplianceDiscoveryRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("RoomArn" -> RoomArn.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[StartSmartHomeApplianceDiscoveryRequest]
     }
   }
 
   @js.native
-  trait StartSmartHomeApplianceDiscoveryResponse extends js.Object {
-
-  }
+  trait StartSmartHomeApplianceDiscoveryResponse extends js.Object {}
 
   object StartSmartHomeApplianceDiscoveryResponse {
     def apply(): StartSmartHomeApplianceDiscoveryResponse = {
@@ -3594,8 +4016,8 @@ package alexaforbusiness {
   }
 
   /**
-   * A key-value pair that can be associated with a resource.
-   */
+    * A key-value pair that can be associated with a resource.
+    */
   @js.native
   trait Tag extends js.Object {
     var Key: TagKey
@@ -3603,12 +4025,10 @@ package alexaforbusiness {
   }
 
   object Tag {
-    def apply(
-      Key: TagKey,
-      Value: TagValue): Tag = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Key" -> Key.asInstanceOf[js.Any],
-        "Value" -> Value.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Key: TagKey, Value: TagValue): Tag = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Key" -> Key.asInstanceOf[js.Any], "Value" -> Value.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[Tag]
     }
@@ -3621,21 +4041,16 @@ package alexaforbusiness {
   }
 
   object TagResourceRequest {
-    def apply(
-      Arn: Arn,
-      Tags: TagList): TagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "Tags" -> Tags.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Arn: Arn, Tags: TagList): TagResourceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "Tags" -> Tags.asInstanceOf[js.Any])
+        .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[TagResourceRequest]
     }
   }
 
   @js.native
-  trait TagResourceResponse extends js.Object {
-
-  }
+  trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
     def apply(): TagResourceResponse = {
@@ -3647,7 +4062,7 @@ package alexaforbusiness {
 
   object TemperatureUnitEnum {
     val FAHRENHEIT = "FAHRENHEIT"
-    val CELSIUS = "CELSIUS"
+    val CELSIUS    = "CELSIUS"
 
     val values = IndexedSeq(FAHRENHEIT, CELSIUS)
   }
@@ -3659,21 +4074,17 @@ package alexaforbusiness {
   }
 
   object UntagResourceRequest {
-    def apply(
-      Arn: Arn,
-      TagKeys: TagKeyList): UntagResourceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "Arn" -> Arn.asInstanceOf[js.Any],
-        "TagKeys" -> TagKeys.asInstanceOf[js.Any]).filter(_._2 != (js.undefined: js.Any))
+    def apply(Arn: Arn, TagKeys: TagKeyList): UntagResourceRequest = {
+      val _fields =
+        IndexedSeq[(String, js.Any)]("Arn" -> Arn.asInstanceOf[js.Any], "TagKeys" -> TagKeys.asInstanceOf[js.Any])
+          .filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UntagResourceRequest]
     }
   }
 
   @js.native
-  trait UntagResourceResponse extends js.Object {
-
-  }
+  trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
     def apply(): UntagResourceResponse = {
@@ -3691,23 +4102,25 @@ package alexaforbusiness {
   }
 
   object UpdateAddressBookRequest {
-    def apply(
-      AddressBookArn: Arn,
-      Description: js.UndefOr[AddressBookDescription] = js.undefined,
-      Name: js.UndefOr[AddressBookName] = js.undefined): UpdateAddressBookRequest = {
+    def apply(AddressBookArn: Arn,
+              Description: js.UndefOr[AddressBookDescription] = js.undefined,
+              Name: js.UndefOr[AddressBookName] = js.undefined): UpdateAddressBookRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "AddressBookArn" -> AddressBookArn.asInstanceOf[js.Any],
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "Name" -> Name.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Name" -> Name.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateAddressBookRequest]
     }
   }
 
   @js.native
-  trait UpdateAddressBookResponse extends js.Object {
-
-  }
+  trait UpdateAddressBookResponse extends js.Object {}
 
   object UpdateAddressBookResponse {
     def apply(): UpdateAddressBookResponse = {
@@ -3729,28 +4142,38 @@ package alexaforbusiness {
 
   object UpdateBusinessReportScheduleRequest {
     def apply(
-      ScheduleArn: Arn,
-      Format: js.UndefOr[BusinessReportFormat] = js.undefined,
-      Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
-      S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
-      S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
-      ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined): UpdateBusinessReportScheduleRequest = {
+        ScheduleArn: Arn,
+        Format: js.UndefOr[BusinessReportFormat] = js.undefined,
+        Recurrence: js.UndefOr[BusinessReportRecurrence] = js.undefined,
+        S3BucketName: js.UndefOr[CustomerS3BucketName] = js.undefined,
+        S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
+        ScheduleName: js.UndefOr[BusinessReportScheduleName] = js.undefined
+    ): UpdateBusinessReportScheduleRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ScheduleArn" -> ScheduleArn.asInstanceOf[js.Any],
-        "Format" -> Format.map { x => x.asInstanceOf[js.Any] },
-        "Recurrence" -> Recurrence.map { x => x.asInstanceOf[js.Any] },
-        "S3BucketName" -> S3BucketName.map { x => x.asInstanceOf[js.Any] },
-        "S3KeyPrefix" -> S3KeyPrefix.map { x => x.asInstanceOf[js.Any] },
-        "ScheduleName" -> ScheduleName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Format" -> Format.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Recurrence" -> Recurrence.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3BucketName" -> S3BucketName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "S3KeyPrefix" -> S3KeyPrefix.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ScheduleName" -> ScheduleName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateBusinessReportScheduleRequest]
     }
   }
 
   @js.native
-  trait UpdateBusinessReportScheduleResponse extends js.Object {
-
-  }
+  trait UpdateBusinessReportScheduleResponse extends js.Object {}
 
   object UpdateBusinessReportScheduleResponse {
     def apply(): UpdateBusinessReportScheduleResponse = {
@@ -3770,27 +4193,29 @@ package alexaforbusiness {
   }
 
   object UpdateConferenceProviderRequest {
-    def apply(
-      ConferenceProviderArn: Arn,
-      ConferenceProviderType: ConferenceProviderType,
-      MeetingSetting: MeetingSetting,
-      IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
-      PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined): UpdateConferenceProviderRequest = {
+    def apply(ConferenceProviderArn: Arn,
+              ConferenceProviderType: ConferenceProviderType,
+              MeetingSetting: MeetingSetting,
+              IPDialIn: js.UndefOr[IPDialIn] = js.undefined,
+              PSTNDialIn: js.UndefOr[PSTNDialIn] = js.undefined): UpdateConferenceProviderRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "ConferenceProviderArn" -> ConferenceProviderArn.asInstanceOf[js.Any],
+        "ConferenceProviderArn"  -> ConferenceProviderArn.asInstanceOf[js.Any],
         "ConferenceProviderType" -> ConferenceProviderType.asInstanceOf[js.Any],
-        "MeetingSetting" -> MeetingSetting.asInstanceOf[js.Any],
-        "IPDialIn" -> IPDialIn.map { x => x.asInstanceOf[js.Any] },
-        "PSTNDialIn" -> PSTNDialIn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "MeetingSetting"         -> MeetingSetting.asInstanceOf[js.Any],
+        "IPDialIn" -> IPDialIn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PSTNDialIn" -> PSTNDialIn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateConferenceProviderRequest]
     }
   }
 
   @js.native
-  trait UpdateConferenceProviderResponse extends js.Object {
-
-  }
+  trait UpdateConferenceProviderResponse extends js.Object {}
 
   object UpdateConferenceProviderResponse {
     def apply(): UpdateConferenceProviderResponse = {
@@ -3810,27 +4235,33 @@ package alexaforbusiness {
   }
 
   object UpdateContactRequest {
-    def apply(
-      ContactArn: Arn,
-      DisplayName: js.UndefOr[ContactName] = js.undefined,
-      FirstName: js.UndefOr[ContactName] = js.undefined,
-      LastName: js.UndefOr[ContactName] = js.undefined,
-      PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): UpdateContactRequest = {
+    def apply(ContactArn: Arn,
+              DisplayName: js.UndefOr[ContactName] = js.undefined,
+              FirstName: js.UndefOr[ContactName] = js.undefined,
+              LastName: js.UndefOr[ContactName] = js.undefined,
+              PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined): UpdateContactRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
         "ContactArn" -> ContactArn.asInstanceOf[js.Any],
-        "DisplayName" -> DisplayName.map { x => x.asInstanceOf[js.Any] },
-        "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "PhoneNumber" -> PhoneNumber.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "DisplayName" -> DisplayName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FirstName" -> FirstName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastName" -> LastName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PhoneNumber" -> PhoneNumber.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateContactRequest]
     }
   }
 
   @js.native
-  trait UpdateContactResponse extends js.Object {
-
-  }
+  trait UpdateContactResponse extends js.Object {}
 
   object UpdateContactResponse {
     def apply(): UpdateContactResponse = {
@@ -3847,21 +4278,20 @@ package alexaforbusiness {
   }
 
   object UpdateDeviceRequest {
-    def apply(
-      DeviceArn: js.UndefOr[Arn] = js.undefined,
-      DeviceName: js.UndefOr[DeviceName] = js.undefined): UpdateDeviceRequest = {
-      val _fields = IndexedSeq[(String, js.Any)](
-        "DeviceArn" -> DeviceArn.map { x => x.asInstanceOf[js.Any] },
-        "DeviceName" -> DeviceName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+    def apply(DeviceArn: js.UndefOr[Arn] = js.undefined,
+              DeviceName: js.UndefOr[DeviceName] = js.undefined): UpdateDeviceRequest = {
+      val _fields = IndexedSeq[(String, js.Any)]("DeviceArn" -> DeviceArn.map { x =>
+        x.asInstanceOf[js.Any]
+      }, "DeviceName" -> DeviceName.map { x =>
+        x.asInstanceOf[js.Any]
+      }).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateDeviceRequest]
     }
   }
 
   @js.native
-  trait UpdateDeviceResponse extends js.Object {
-
-  }
+  trait UpdateDeviceResponse extends js.Object {}
 
   object UpdateDeviceResponse {
     def apply(): UpdateDeviceResponse = {
@@ -3887,39 +4317,59 @@ package alexaforbusiness {
   }
 
   object UpdateProfileRequest {
-    def apply(
-      Address: js.UndefOr[Address] = js.undefined,
-      DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
-      IsDefault: js.UndefOr[Boolean] = js.undefined,
-      MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
-      PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
-      ProfileArn: js.UndefOr[Arn] = js.undefined,
-      ProfileName: js.UndefOr[ProfileName] = js.undefined,
-      SetupModeDisabled: js.UndefOr[Boolean] = js.undefined,
-      TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
-      Timezone: js.UndefOr[Timezone] = js.undefined,
-      WakeWord: js.UndefOr[WakeWord] = js.undefined): UpdateProfileRequest = {
+    def apply(Address: js.UndefOr[Address] = js.undefined,
+              DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
+              IsDefault: js.UndefOr[Boolean] = js.undefined,
+              MaxVolumeLimit: js.UndefOr[MaxVolumeLimit] = js.undefined,
+              PSTNEnabled: js.UndefOr[Boolean] = js.undefined,
+              ProfileArn: js.UndefOr[Arn] = js.undefined,
+              ProfileName: js.UndefOr[ProfileName] = js.undefined,
+              SetupModeDisabled: js.UndefOr[Boolean] = js.undefined,
+              TemperatureUnit: js.UndefOr[TemperatureUnit] = js.undefined,
+              Timezone: js.UndefOr[Timezone] = js.undefined,
+              WakeWord: js.UndefOr[WakeWord] = js.undefined): UpdateProfileRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Address" -> Address.map { x => x.asInstanceOf[js.Any] },
-        "DistanceUnit" -> DistanceUnit.map { x => x.asInstanceOf[js.Any] },
-        "IsDefault" -> IsDefault.map { x => x.asInstanceOf[js.Any] },
-        "MaxVolumeLimit" -> MaxVolumeLimit.map { x => x.asInstanceOf[js.Any] },
-        "PSTNEnabled" -> PSTNEnabled.map { x => x.asInstanceOf[js.Any] },
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "ProfileName" -> ProfileName.map { x => x.asInstanceOf[js.Any] },
-        "SetupModeDisabled" -> SetupModeDisabled.map { x => x.asInstanceOf[js.Any] },
-        "TemperatureUnit" -> TemperatureUnit.map { x => x.asInstanceOf[js.Any] },
-        "Timezone" -> Timezone.map { x => x.asInstanceOf[js.Any] },
-        "WakeWord" -> WakeWord.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Address" -> Address.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "DistanceUnit" -> DistanceUnit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "IsDefault" -> IsDefault.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "MaxVolumeLimit" -> MaxVolumeLimit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "PSTNEnabled" -> PSTNEnabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileArn" -> ProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileName" -> ProfileName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SetupModeDisabled" -> SetupModeDisabled.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "TemperatureUnit" -> TemperatureUnit.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "Timezone" -> Timezone.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "WakeWord" -> WakeWord.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateProfileRequest]
     }
   }
 
   @js.native
-  trait UpdateProfileResponse extends js.Object {
-
-  }
+  trait UpdateProfileResponse extends js.Object {}
 
   object UpdateProfileResponse {
     def apply(): UpdateProfileResponse = {
@@ -3939,27 +4389,35 @@ package alexaforbusiness {
   }
 
   object UpdateRoomRequest {
-    def apply(
-      Description: js.UndefOr[RoomDescription] = js.undefined,
-      ProfileArn: js.UndefOr[Arn] = js.undefined,
-      ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
-      RoomArn: js.UndefOr[Arn] = js.undefined,
-      RoomName: js.UndefOr[RoomName] = js.undefined): UpdateRoomRequest = {
+    def apply(Description: js.UndefOr[RoomDescription] = js.undefined,
+              ProfileArn: js.UndefOr[Arn] = js.undefined,
+              ProviderCalendarId: js.UndefOr[ProviderCalendarId] = js.undefined,
+              RoomArn: js.UndefOr[Arn] = js.undefined,
+              RoomName: js.UndefOr[RoomName] = js.undefined): UpdateRoomRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "ProfileArn" -> ProfileArn.map { x => x.asInstanceOf[js.Any] },
-        "ProviderCalendarId" -> ProviderCalendarId.map { x => x.asInstanceOf[js.Any] },
-        "RoomArn" -> RoomArn.map { x => x.asInstanceOf[js.Any] },
-        "RoomName" -> RoomName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProfileArn" -> ProfileArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "ProviderCalendarId" -> ProviderCalendarId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomArn" -> RoomArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "RoomName" -> RoomName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateRoomRequest]
     }
   }
 
   @js.native
-  trait UpdateRoomResponse extends js.Object {
-
-  }
+  trait UpdateRoomResponse extends js.Object {}
 
   object UpdateRoomResponse {
     def apply(): UpdateRoomResponse = {
@@ -3977,23 +4435,27 @@ package alexaforbusiness {
   }
 
   object UpdateSkillGroupRequest {
-    def apply(
-      Description: js.UndefOr[SkillGroupDescription] = js.undefined,
-      SkillGroupArn: js.UndefOr[Arn] = js.undefined,
-      SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined): UpdateSkillGroupRequest = {
+    def apply(Description: js.UndefOr[SkillGroupDescription] = js.undefined,
+              SkillGroupArn: js.UndefOr[Arn] = js.undefined,
+              SkillGroupName: js.UndefOr[SkillGroupName] = js.undefined): UpdateSkillGroupRequest = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Description" -> Description.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupArn" -> SkillGroupArn.map { x => x.asInstanceOf[js.Any] },
-        "SkillGroupName" -> SkillGroupName.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Description" -> Description.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroupArn" -> SkillGroupArn.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "SkillGroupName" -> SkillGroupName.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UpdateSkillGroupRequest]
     }
   }
 
   @js.native
-  trait UpdateSkillGroupResponse extends js.Object {
-
-  }
+  trait UpdateSkillGroupResponse extends js.Object {}
 
   object UpdateSkillGroupResponse {
     def apply(): UpdateSkillGroupResponse = {
@@ -4004,8 +4466,8 @@ package alexaforbusiness {
   }
 
   /**
-   * Information related to a user.
-   */
+    * Information related to a user.
+    */
   @js.native
   trait UserData extends js.Object {
     var Email: js.UndefOr[Email]
@@ -4017,29 +4479,41 @@ package alexaforbusiness {
   }
 
   object UserData {
-    def apply(
-      Email: js.UndefOr[Email] = js.undefined,
-      EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,
-      EnrollmentStatus: js.UndefOr[EnrollmentStatus] = js.undefined,
-      FirstName: js.UndefOr[user_FirstName] = js.undefined,
-      LastName: js.UndefOr[user_LastName] = js.undefined,
-      UserArn: js.UndefOr[Arn] = js.undefined): UserData = {
+    def apply(Email: js.UndefOr[Email] = js.undefined,
+              EnrollmentId: js.UndefOr[EnrollmentId] = js.undefined,
+              EnrollmentStatus: js.UndefOr[EnrollmentStatus] = js.undefined,
+              FirstName: js.UndefOr[user_FirstName] = js.undefined,
+              LastName: js.UndefOr[user_LastName] = js.undefined,
+              UserArn: js.UndefOr[Arn] = js.undefined): UserData = {
       val _fields = IndexedSeq[(String, js.Any)](
-        "Email" -> Email.map { x => x.asInstanceOf[js.Any] },
-        "EnrollmentId" -> EnrollmentId.map { x => x.asInstanceOf[js.Any] },
-        "EnrollmentStatus" -> EnrollmentStatus.map { x => x.asInstanceOf[js.Any] },
-        "FirstName" -> FirstName.map { x => x.asInstanceOf[js.Any] },
-        "LastName" -> LastName.map { x => x.asInstanceOf[js.Any] },
-        "UserArn" -> UserArn.map { x => x.asInstanceOf[js.Any] }).filter(_._2 != (js.undefined: js.Any))
+        "Email" -> Email.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnrollmentId" -> EnrollmentId.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "EnrollmentStatus" -> EnrollmentStatus.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "FirstName" -> FirstName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "LastName" -> LastName.map { x =>
+          x.asInstanceOf[js.Any]
+        },
+        "UserArn" -> UserArn.map { x =>
+          x.asInstanceOf[js.Any]
+        }
+      ).filter(_._2 != (js.undefined: js.Any))
 
       js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[UserData]
     }
   }
 
   object WakeWordEnum {
-    val ALEXA = "ALEXA"
-    val AMAZON = "AMAZON"
-    val ECHO = "ECHO"
+    val ALEXA    = "ALEXA"
+    val AMAZON   = "AMAZON"
+    val ECHO     = "ECHO"
     val COMPUTER = "COMPUTER"
 
     val values = IndexedSeq(ALEXA, AMAZON, ECHO, COMPUTER)
