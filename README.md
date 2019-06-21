@@ -9,7 +9,7 @@ Now with AWS introduced in re:Invent 2018.
 ## Getting Started
 
 ```sbt
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.22.0-v2-473"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.23.0-v2-473-0"
 ```
 
 Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-v2-473`,
