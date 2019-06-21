@@ -98,8 +98,6 @@ package object directconnect {
         params: AcceptDirectConnectGatewayAssociationProposalRequest
     ): Future[AcceptDirectConnectGatewayAssociationProposalResult] =
       service.acceptDirectConnectGatewayAssociationProposal(params).promise.toFuture
-    def allocateConnectionOnInterconnectFuture(params: AllocateConnectionOnInterconnectRequest): Future[Connection] =
-      service.allocateConnectionOnInterconnect(params).promise.toFuture
     def allocateHostedConnectionFuture(params: AllocateHostedConnectionRequest): Future[Connection] =
       service.allocateHostedConnection(params).promise.toFuture
     def allocatePrivateVirtualInterfaceFuture(
@@ -163,12 +161,8 @@ package object directconnect {
     def deleteLagFuture(params: DeleteLagRequest): Future[Lag] = service.deleteLag(params).promise.toFuture
     def deleteVirtualInterfaceFuture(params: DeleteVirtualInterfaceRequest): Future[DeleteVirtualInterfaceResponse] =
       service.deleteVirtualInterface(params).promise.toFuture
-    def describeConnectionLoaFuture(params: DescribeConnectionLoaRequest): Future[DescribeConnectionLoaResponse] =
-      service.describeConnectionLoa(params).promise.toFuture
     def describeConnectionsFuture(params: DescribeConnectionsRequest): Future[Connections] =
       service.describeConnections(params).promise.toFuture
-    def describeConnectionsOnInterconnectFuture(params: DescribeConnectionsOnInterconnectRequest): Future[Connections] =
-      service.describeConnectionsOnInterconnect(params).promise.toFuture
     def describeDirectConnectGatewayAssociationProposalsFuture(
         params: DescribeDirectConnectGatewayAssociationProposalsRequest
     ): Future[DescribeDirectConnectGatewayAssociationProposalsResult] =
@@ -186,8 +180,6 @@ package object directconnect {
     ): Future[DescribeDirectConnectGatewaysResult] = service.describeDirectConnectGateways(params).promise.toFuture
     def describeHostedConnectionsFuture(params: DescribeHostedConnectionsRequest): Future[Connections] =
       service.describeHostedConnections(params).promise.toFuture
-    def describeInterconnectLoaFuture(params: DescribeInterconnectLoaRequest): Future[DescribeInterconnectLoaResponse] =
-      service.describeInterconnectLoa(params).promise.toFuture
     def describeInterconnectsFuture(params: DescribeInterconnectsRequest): Future[Interconnects] =
       service.describeInterconnects(params).promise.toFuture
     def describeLagsFuture(params: DescribeLagsRequest): Future[Lags] = service.describeLags(params).promise.toFuture
@@ -223,9 +215,7 @@ package directconnect {
 
     def acceptDirectConnectGatewayAssociationProposal(
         params: AcceptDirectConnectGatewayAssociationProposalRequest
-    ): Request[AcceptDirectConnectGatewayAssociationProposalResult] = js.native
-    def allocateConnectionOnInterconnect(params: AllocateConnectionOnInterconnectRequest): Request[Connection] =
-      js.native
+    ): Request[AcceptDirectConnectGatewayAssociationProposalResult]                            = js.native
     def allocateHostedConnection(params: AllocateHostedConnectionRequest): Request[Connection] = js.native
     def allocatePrivateVirtualInterface(params: AllocatePrivateVirtualInterfaceRequest): Request[VirtualInterface] =
       js.native
@@ -272,10 +262,7 @@ package directconnect {
     def deleteLag(params: DeleteLagRequest): Request[Lag]                                          = js.native
     def deleteVirtualInterface(params: DeleteVirtualInterfaceRequest): Request[DeleteVirtualInterfaceResponse] =
       js.native
-    def describeConnectionLoa(params: DescribeConnectionLoaRequest): Request[DescribeConnectionLoaResponse] = js.native
-    def describeConnections(params: DescribeConnectionsRequest): Request[Connections]                       = js.native
-    def describeConnectionsOnInterconnect(params: DescribeConnectionsOnInterconnectRequest): Request[Connections] =
-      js.native
+    def describeConnections(params: DescribeConnectionsRequest): Request[Connections] = js.native
     def describeDirectConnectGatewayAssociationProposals(
         params: DescribeDirectConnectGatewayAssociationProposalsRequest
     ): Request[DescribeDirectConnectGatewayAssociationProposalsResult] = js.native
@@ -287,10 +274,8 @@ package directconnect {
     ): Request[DescribeDirectConnectGatewayAttachmentsResult] = js.native
     def describeDirectConnectGateways(
         params: DescribeDirectConnectGatewaysRequest
-    ): Request[DescribeDirectConnectGatewaysResult]                                               = js.native
-    def describeHostedConnections(params: DescribeHostedConnectionsRequest): Request[Connections] = js.native
-    def describeInterconnectLoa(params: DescribeInterconnectLoaRequest): Request[DescribeInterconnectLoaResponse] =
-      js.native
+    ): Request[DescribeDirectConnectGatewaysResult]                                                      = js.native
+    def describeHostedConnections(params: DescribeHostedConnectionsRequest): Request[Connections]        = js.native
     def describeInterconnects(params: DescribeInterconnectsRequest): Request[Interconnects]              = js.native
     def describeLags(params: DescribeLagsRequest): Request[Lags]                                         = js.native
     def describeLoa(params: DescribeLoaRequest): Request[Loa]                                            = js.native
@@ -307,6 +292,18 @@ package directconnect {
     def updateLag(params: UpdateLagRequest): Request[Lag]   = js.native
     def updateVirtualInterfaceAttributes(params: UpdateVirtualInterfaceAttributesRequest): Request[VirtualInterface] =
       js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def allocateConnectionOnInterconnect(
+        params: AllocateConnectionOnInterconnectRequest
+    ): Request[Connection] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeConnectionLoa(
+        params: DescribeConnectionLoaRequest
+    ): Request[DescribeConnectionLoaResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeConnectionsOnInterconnect(
+        params: DescribeConnectionsOnInterconnectRequest
+    ): Request[Connections] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeInterconnectLoa(
+        params: DescribeInterconnectLoaRequest
+    ): Request[DescribeInterconnectLoaResponse] = js.native
   }
 
   @js.native

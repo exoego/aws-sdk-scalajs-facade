@@ -309,8 +309,6 @@ package object s3 {
     def getBucketLifecycleConfigurationFuture(
         params: GetBucketLifecycleConfigurationRequest
     ): Future[GetBucketLifecycleConfigurationOutput] = service.getBucketLifecycleConfiguration(params).promise.toFuture
-    def getBucketLifecycleFuture(params: GetBucketLifecycleRequest): Future[GetBucketLifecycleOutput] =
-      service.getBucketLifecycle(params).promise.toFuture
     def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] =
       service.getBucketLocation(params).promise.toFuture
     def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] =
@@ -321,9 +319,6 @@ package object s3 {
     def getBucketNotificationConfigurationFuture(
         params: GetBucketNotificationConfigurationRequest
     ): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise.toFuture
-    def getBucketNotificationFuture(
-        params: GetBucketNotificationConfigurationRequest
-    ): Future[NotificationConfigurationDeprecated] = service.getBucketNotification(params).promise.toFuture
     def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] =
       service.getBucketPolicy(params).promise.toFuture
     def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] =
@@ -392,16 +387,12 @@ package object s3 {
       service.putBucketInventoryConfiguration(params).promise.toFuture
     def putBucketLifecycleConfigurationFuture(params: PutBucketLifecycleConfigurationRequest): Future[js.Object] =
       service.putBucketLifecycleConfiguration(params).promise.toFuture
-    def putBucketLifecycleFuture(params: PutBucketLifecycleRequest): Future[js.Object] =
-      service.putBucketLifecycle(params).promise.toFuture
     def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] =
       service.putBucketLogging(params).promise.toFuture
     def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] =
       service.putBucketMetricsConfiguration(params).promise.toFuture
     def putBucketNotificationConfigurationFuture(params: PutBucketNotificationConfigurationRequest): Future[js.Object] =
       service.putBucketNotificationConfiguration(params).promise.toFuture
-    def putBucketNotificationFuture(params: PutBucketNotificationRequest): Future[js.Object] =
-      service.putBucketNotification(params).promise.toFuture
     def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] =
       service.putBucketPolicy(params).promise.toFuture
     def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] =
@@ -480,8 +471,7 @@ package s3 {
     def getBucketEncryption(params: GetBucketEncryptionRequest): Request[GetBucketEncryptionOutput] = js.native
     def getBucketInventoryConfiguration(
         params: GetBucketInventoryConfigurationRequest
-    ): Request[GetBucketInventoryConfigurationOutput]                                            = js.native
-    def getBucketLifecycle(params: GetBucketLifecycleRequest): Request[GetBucketLifecycleOutput] = js.native
+    ): Request[GetBucketInventoryConfigurationOutput] = js.native
     def getBucketLifecycleConfiguration(
         params: GetBucketLifecycleConfigurationRequest
     ): Request[GetBucketLifecycleConfigurationOutput]                                         = js.native
@@ -490,9 +480,6 @@ package s3 {
     def getBucketMetricsConfiguration(
         params: GetBucketMetricsConfigurationRequest
     ): Request[GetBucketMetricsConfigurationOutput] = js.native
-    def getBucketNotification(
-        params: GetBucketNotificationConfigurationRequest
-    ): Request[NotificationConfigurationDeprecated] = js.native
     def getBucketNotificationConfiguration(
         params: GetBucketNotificationConfigurationRequest
     ): Request[NotificationConfiguration]                                                                 = js.native
@@ -538,11 +525,9 @@ package s3 {
     def putBucketCors(params: PutBucketCorsRequest): Request[js.Object]                                     = js.native
     def putBucketEncryption(params: PutBucketEncryptionRequest): Request[js.Object]                         = js.native
     def putBucketInventoryConfiguration(params: PutBucketInventoryConfigurationRequest): Request[js.Object] = js.native
-    def putBucketLifecycle(params: PutBucketLifecycleRequest): Request[js.Object]                           = js.native
     def putBucketLifecycleConfiguration(params: PutBucketLifecycleConfigurationRequest): Request[js.Object] = js.native
     def putBucketLogging(params: PutBucketLoggingRequest): Request[js.Object]                               = js.native
     def putBucketMetricsConfiguration(params: PutBucketMetricsConfigurationRequest): Request[js.Object]     = js.native
-    def putBucketNotification(params: PutBucketNotificationRequest): Request[js.Object]                     = js.native
     def putBucketNotificationConfiguration(params: PutBucketNotificationConfigurationRequest): Request[js.Object] =
       js.native
     def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object]                      = js.native
@@ -564,6 +549,18 @@ package s3 {
     def selectObjectContent(params: SelectObjectContentRequest): Request[SelectObjectContentOutput] = js.native
     def uploadPart(params: UploadPartRequest): Request[UploadPartOutput]                            = js.native
     def uploadPartCopy(params: UploadPartCopyRequest): Request[UploadPartCopyOutput]                = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def getBucketLifecycle(
+        params: GetBucketLifecycleRequest
+    ): Request[GetBucketLifecycleOutput] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def getBucketNotification(
+        params: GetBucketNotificationConfigurationRequest
+    ): Request[NotificationConfigurationDeprecated] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def putBucketLifecycle(
+        params: PutBucketLifecycleRequest
+    ): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def putBucketNotification(
+        params: PutBucketNotificationRequest
+    ): Request[js.Object] = js.native
   }
 
   /**

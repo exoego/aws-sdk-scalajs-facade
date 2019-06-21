@@ -52,8 +52,6 @@ package object shield {
       service.createSubscription(params).promise.toFuture
     def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] =
       service.deleteProtection(params).promise.toFuture
-    def deleteSubscriptionFuture(params: DeleteSubscriptionRequest): Future[DeleteSubscriptionResponse] =
-      service.deleteSubscription(params).promise.toFuture
     def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] =
       service.describeAttack(params).promise.toFuture
     def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] =
@@ -96,7 +94,6 @@ package shield {
     def createProtection(params: CreateProtectionRequest): Request[CreateProtectionResponse]                = js.native
     def createSubscription(params: CreateSubscriptionRequest): Request[CreateSubscriptionResponse]          = js.native
     def deleteProtection(params: DeleteProtectionRequest): Request[DeleteProtectionResponse]                = js.native
-    def deleteSubscription(params: DeleteSubscriptionRequest): Request[DeleteSubscriptionResponse]          = js.native
     def describeAttack(params: DescribeAttackRequest): Request[DescribeAttackResponse]                      = js.native
     def describeDRTAccess(params: DescribeDRTAccessRequest): Request[DescribeDRTAccessResponse]             = js.native
     def describeEmergencyContactSettings(
@@ -114,6 +111,9 @@ package shield {
         params: UpdateEmergencyContactSettingsRequest
     ): Request[UpdateEmergencyContactSettingsResponse]                                             = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def deleteSubscription(
+        params: DeleteSubscriptionRequest
+    ): Request[DeleteSubscriptionResponse] = js.native
   }
 
   @js.native
@@ -484,7 +484,7 @@ package shield {
     }
   }
 
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait DeleteSubscriptionRequest extends js.Object {}
 
@@ -498,7 +498,7 @@ package shield {
     }
   }
 
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait DeleteSubscriptionResponse extends js.Object {}
 

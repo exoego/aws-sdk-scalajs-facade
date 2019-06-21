@@ -134,7 +134,6 @@ package object elastictranscoder {
       service.readPipeline(params).promise.toFuture
     def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
       service.readPreset(params).promise.toFuture
-    def testRoleFuture(params: TestRoleRequest): Future[TestRoleResponse] = service.testRole(params).promise.toFuture
     def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
       service.updatePipeline(params).promise.toFuture
     def updatePipelineNotificationsFuture(
@@ -164,12 +163,13 @@ package elastictranscoder {
     def readJob(params: ReadJobRequest): Request[ReadJobResponse]                                  = js.native
     def readPipeline(params: ReadPipelineRequest): Request[ReadPipelineResponse]                   = js.native
     def readPreset(params: ReadPresetRequest): Request[ReadPresetResponse]                         = js.native
-    def testRole(params: TestRoleRequest): Request[TestRoleResponse]                               = js.native
     def updatePipeline(params: UpdatePipelineRequest): Request[UpdatePipelineResponse]             = js.native
     def updatePipelineNotifications(
         params: UpdatePipelineNotificationsRequest
     ): Request[UpdatePipelineNotificationsResponse]                                                      = js.native
     def updatePipelineStatus(params: UpdatePipelineStatusRequest): Request[UpdatePipelineStatusResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def testRole(params: TestRoleRequest): Request[TestRoleResponse] =
+      js.native
   }
 
   /**
@@ -455,7 +455,7 @@ package elastictranscoder {
   /**
     * Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.
     */
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait Clip extends js.Object {
     var TimeSpan: js.UndefOr[TimeSpan]
@@ -2128,7 +2128,7 @@ package elastictranscoder {
   /**
     * The <code>TestRoleRequest</code> structure.
     */
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait TestRoleRequest extends js.Object {
     var InputBucket: BucketName
@@ -2158,7 +2158,7 @@ package elastictranscoder {
   /**
     * The <code>TestRoleResponse</code> structure.
     */
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait TestRoleResponse extends js.Object {
     var Messages: js.UndefOr[ExceptionMessages]

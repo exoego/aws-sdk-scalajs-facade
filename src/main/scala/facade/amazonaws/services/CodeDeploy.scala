@@ -151,9 +151,6 @@ package object codedeploy {
       service.batchGetApplications(params).promise.toFuture
     def batchGetDeploymentGroupsFuture(params: BatchGetDeploymentGroupsInput): Future[BatchGetDeploymentGroupsOutput] =
       service.batchGetDeploymentGroups(params).promise.toFuture
-    def batchGetDeploymentInstancesFuture(
-        params: BatchGetDeploymentInstancesInput
-    ): Future[BatchGetDeploymentInstancesOutput] = service.batchGetDeploymentInstances(params).promise.toFuture
     def batchGetDeploymentTargetsFuture(
         params: BatchGetDeploymentTargetsInput
     ): Future[BatchGetDeploymentTargetsOutput] = service.batchGetDeploymentTargets(params).promise.toFuture
@@ -192,8 +189,6 @@ package object codedeploy {
       service.getDeployment(params).promise.toFuture
     def getDeploymentGroupFuture(params: GetDeploymentGroupInput): Future[GetDeploymentGroupOutput] =
       service.getDeploymentGroup(params).promise.toFuture
-    def getDeploymentInstanceFuture(params: GetDeploymentInstanceInput): Future[GetDeploymentInstanceOutput] =
-      service.getDeploymentInstance(params).promise.toFuture
     def getDeploymentTargetFuture(params: GetDeploymentTargetInput): Future[GetDeploymentTargetOutput] =
       service.getDeploymentTarget(params).promise.toFuture
     def getOnPremisesInstanceFuture(params: GetOnPremisesInstanceInput): Future[GetOnPremisesInstanceOutput] =
@@ -206,8 +201,6 @@ package object codedeploy {
       service.listDeploymentConfigs(params).promise.toFuture
     def listDeploymentGroupsFuture(params: ListDeploymentGroupsInput): Future[ListDeploymentGroupsOutput] =
       service.listDeploymentGroups(params).promise.toFuture
-    def listDeploymentInstancesFuture(params: ListDeploymentInstancesInput): Future[ListDeploymentInstancesOutput] =
-      service.listDeploymentInstances(params).promise.toFuture
     def listDeploymentTargetsFuture(params: ListDeploymentTargetsInput): Future[ListDeploymentTargetsOutput] =
       service.listDeploymentTargets(params).promise.toFuture
     def listDeploymentsFuture(params: ListDeploymentsInput): Future[ListDeploymentsOutput] =
@@ -227,8 +220,6 @@ package object codedeploy {
       service.registerOnPremisesInstance(params).promise.toFuture
     def removeTagsFromOnPremisesInstancesFuture(params: RemoveTagsFromOnPremisesInstancesInput): Future[js.Object] =
       service.removeTagsFromOnPremisesInstances(params).promise.toFuture
-    def skipWaitTimeForInstanceTerminationFuture(params: SkipWaitTimeForInstanceTerminationInput): Future[js.Object] =
-      service.skipWaitTimeForInstanceTermination(params).promise.toFuture
     def stopDeploymentFuture(params: StopDeploymentInput): Future[StopDeploymentOutput] =
       service.stopDeployment(params).promise.toFuture
     def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] =
@@ -251,9 +242,6 @@ package codedeploy {
     def batchGetApplications(params: BatchGetApplicationsInput): Request[BatchGetApplicationsOutput] = js.native
     def batchGetDeploymentGroups(params: BatchGetDeploymentGroupsInput): Request[BatchGetDeploymentGroupsOutput] =
       js.native
-    def batchGetDeploymentInstances(
-        params: BatchGetDeploymentInstancesInput
-    ): Request[BatchGetDeploymentInstancesOutput] = js.native
     def batchGetDeploymentTargets(params: BatchGetDeploymentTargetsInput): Request[BatchGetDeploymentTargetsOutput] =
       js.native
     def batchGetDeployments(params: BatchGetDeploymentsInput): Request[BatchGetDeploymentsOutput] = js.native
@@ -276,7 +264,6 @@ package codedeploy {
     def getDeployment(params: GetDeploymentInput): Request[GetDeploymentOutput]                            = js.native
     def getDeploymentConfig(params: GetDeploymentConfigInput): Request[GetDeploymentConfigOutput]          = js.native
     def getDeploymentGroup(params: GetDeploymentGroupInput): Request[GetDeploymentGroupOutput]             = js.native
-    def getDeploymentInstance(params: GetDeploymentInstanceInput): Request[GetDeploymentInstanceOutput]    = js.native
     def getDeploymentTarget(params: GetDeploymentTargetInput): Request[GetDeploymentTargetOutput]          = js.native
     def getOnPremisesInstance(params: GetOnPremisesInstanceInput): Request[GetOnPremisesInstanceOutput]    = js.native
     def listApplicationRevisions(params: ListApplicationRevisionsInput): Request[ListApplicationRevisionsOutput] =
@@ -284,8 +271,6 @@ package codedeploy {
     def listApplications(params: ListApplicationsInput): Request[ListApplicationsOutput]                = js.native
     def listDeploymentConfigs(params: ListDeploymentConfigsInput): Request[ListDeploymentConfigsOutput] = js.native
     def listDeploymentGroups(params: ListDeploymentGroupsInput): Request[ListDeploymentGroupsOutput]    = js.native
-    def listDeploymentInstances(params: ListDeploymentInstancesInput): Request[ListDeploymentInstancesOutput] =
-      js.native
     def listDeploymentTargets(params: ListDeploymentTargetsInput): Request[ListDeploymentTargetsOutput] = js.native
     def listDeployments(params: ListDeploymentsInput): Request[ListDeploymentsOutput]                   = js.native
     def listGitHubAccountTokenNames(
@@ -300,11 +285,21 @@ package codedeploy {
     def registerOnPremisesInstance(params: RegisterOnPremisesInstanceInput): Request[js.Object]   = js.native
     def removeTagsFromOnPremisesInstances(params: RemoveTagsFromOnPremisesInstancesInput): Request[js.Object] =
       js.native
-    def skipWaitTimeForInstanceTermination(params: SkipWaitTimeForInstanceTerminationInput): Request[js.Object] =
-      js.native
     def stopDeployment(params: StopDeploymentInput): Request[StopDeploymentOutput]                      = js.native
     def updateApplication(params: UpdateApplicationInput): Request[js.Object]                           = js.native
     def updateDeploymentGroup(params: UpdateDeploymentGroupInput): Request[UpdateDeploymentGroupOutput] = js.native
+    @deprecated("This operation is deprecated, use BatchGetDeploymentTargets instead.", "forever") def batchGetDeploymentInstances(
+        params: BatchGetDeploymentInstancesInput
+    ): Request[BatchGetDeploymentInstancesOutput] = js.native
+    @deprecated("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.", "forever") def skipWaitTimeForInstanceTermination(
+        params: SkipWaitTimeForInstanceTerminationInput
+    ): Request[js.Object] = js.native
+    @deprecated("This operation is deprecated, use GetDeploymentTarget instead.", "forever") def getDeploymentInstance(
+        params: GetDeploymentInstanceInput
+    ): Request[GetDeploymentInstanceOutput] = js.native
+    @deprecated("This operation is deprecated, use ListDeploymentTargets instead.", "forever") def listDeploymentInstances(
+        params: ListDeploymentInstancesInput
+    ): Request[ListDeploymentInstancesOutput] = js.native
   }
 
   /**
@@ -2792,7 +2787,7 @@ package codedeploy {
     }
   }
 
-  @deprecated
+  @deprecated("InstanceStatus is deprecated, use TargetStatus instead.", "forever")
   object InstanceStatusEnum {
     val Pending    = "Pending"
     val InProgress = "InProgress"
@@ -2808,7 +2803,7 @@ package codedeploy {
   /**
     * Information about an instance in a deployment.
     */
-  @deprecated
+  @deprecated("InstanceSummary is deprecated, use DeploymentTarget instead.", "forever")
   @js.native
   trait InstanceSummary extends js.Object {
     var deploymentId: js.UndefOr[DeploymentId]
@@ -3733,7 +3728,7 @@ package codedeploy {
   /**
     * A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
     */
-  @deprecated
+  @deprecated("RawString and String revision type are deprecated, use AppSpecContent type instead.", "forever")
   @js.native
   trait RawString extends js.Object {
     var content: js.UndefOr[RawStringContent]

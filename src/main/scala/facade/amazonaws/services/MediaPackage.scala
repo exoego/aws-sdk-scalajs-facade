@@ -50,9 +50,6 @@ package object mediapackage {
       service.listOriginEndpoints(params).promise.toFuture
     def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def rotateChannelCredentialsFuture(
-        params: RotateChannelCredentialsRequest
-    ): Future[RotateChannelCredentialsResponse] = service.rotateChannelCredentials(params).promise.toFuture
     def rotateIngestEndpointCredentialsFuture(
         params: RotateIngestEndpointCredentialsRequest
     ): Future[RotateIngestEndpointCredentialsResponse] =
@@ -83,8 +80,6 @@ package mediapackage {
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse]                      = js.native
     def listOriginEndpoints(params: ListOriginEndpointsRequest): Request[ListOriginEndpointsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def rotateChannelCredentials(params: RotateChannelCredentialsRequest): Request[RotateChannelCredentialsResponse] =
-      js.native
     def rotateIngestEndpointCredentials(
         params: RotateIngestEndpointCredentialsRequest
     ): Request[RotateIngestEndpointCredentialsResponse]                                                  = js.native
@@ -92,6 +87,9 @@ package mediapackage {
     def untagResource(params: UntagResourceRequest): Request[js.Object]                                  = js.native
     def updateChannel(params: UpdateChannelRequest): Request[UpdateChannelResponse]                      = js.native
     def updateOriginEndpoint(params: UpdateOriginEndpointRequest): Request[UpdateOriginEndpointResponse] = js.native
+    @deprecated("This API is deprecated. Please use RotateIngestEndpointCredentials instead", "forever") def rotateChannelCredentials(
+        params: RotateChannelCredentialsRequest
+    ): Request[RotateChannelCredentialsResponse] = js.native
   }
 
   object AdMarkersEnum {
@@ -1369,7 +1367,7 @@ package mediapackage {
     val values = IndexedSeq(NONE, HBBTV_1_5)
   }
 
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait RotateChannelCredentialsRequest extends js.Object {
     var Id: __string
@@ -1387,7 +1385,7 @@ package mediapackage {
     }
   }
 
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait RotateChannelCredentialsResponse extends js.Object {
     var Arn: js.UndefOr[__string]
