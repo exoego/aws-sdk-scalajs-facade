@@ -151,9 +151,6 @@ package object codedeploy {
       service.batchGetApplications(params).promise.toFuture
     def batchGetDeploymentGroupsFuture(params: BatchGetDeploymentGroupsInput): Future[BatchGetDeploymentGroupsOutput] =
       service.batchGetDeploymentGroups(params).promise.toFuture
-    def batchGetDeploymentInstancesFuture(
-        params: BatchGetDeploymentInstancesInput
-    ): Future[BatchGetDeploymentInstancesOutput] = service.batchGetDeploymentInstances(params).promise.toFuture
     def batchGetDeploymentTargetsFuture(
         params: BatchGetDeploymentTargetsInput
     ): Future[BatchGetDeploymentTargetsOutput] = service.batchGetDeploymentTargets(params).promise.toFuture
@@ -192,8 +189,6 @@ package object codedeploy {
       service.getDeployment(params).promise.toFuture
     def getDeploymentGroupFuture(params: GetDeploymentGroupInput): Future[GetDeploymentGroupOutput] =
       service.getDeploymentGroup(params).promise.toFuture
-    def getDeploymentInstanceFuture(params: GetDeploymentInstanceInput): Future[GetDeploymentInstanceOutput] =
-      service.getDeploymentInstance(params).promise.toFuture
     def getDeploymentTargetFuture(params: GetDeploymentTargetInput): Future[GetDeploymentTargetOutput] =
       service.getDeploymentTarget(params).promise.toFuture
     def getOnPremisesInstanceFuture(params: GetOnPremisesInstanceInput): Future[GetOnPremisesInstanceOutput] =
@@ -206,8 +201,6 @@ package object codedeploy {
       service.listDeploymentConfigs(params).promise.toFuture
     def listDeploymentGroupsFuture(params: ListDeploymentGroupsInput): Future[ListDeploymentGroupsOutput] =
       service.listDeploymentGroups(params).promise.toFuture
-    def listDeploymentInstancesFuture(params: ListDeploymentInstancesInput): Future[ListDeploymentInstancesOutput] =
-      service.listDeploymentInstances(params).promise.toFuture
     def listDeploymentTargetsFuture(params: ListDeploymentTargetsInput): Future[ListDeploymentTargetsOutput] =
       service.listDeploymentTargets(params).promise.toFuture
     def listDeploymentsFuture(params: ListDeploymentsInput): Future[ListDeploymentsOutput] =
@@ -227,8 +220,6 @@ package object codedeploy {
       service.registerOnPremisesInstance(params).promise.toFuture
     def removeTagsFromOnPremisesInstancesFuture(params: RemoveTagsFromOnPremisesInstancesInput): Future[js.Object] =
       service.removeTagsFromOnPremisesInstances(params).promise.toFuture
-    def skipWaitTimeForInstanceTerminationFuture(params: SkipWaitTimeForInstanceTerminationInput): Future[js.Object] =
-      service.skipWaitTimeForInstanceTermination(params).promise.toFuture
     def stopDeploymentFuture(params: StopDeploymentInput): Future[StopDeploymentOutput] =
       service.stopDeployment(params).promise.toFuture
     def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] =

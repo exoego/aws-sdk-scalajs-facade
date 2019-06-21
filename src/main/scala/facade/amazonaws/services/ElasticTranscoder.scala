@@ -134,7 +134,6 @@ package object elastictranscoder {
       service.readPipeline(params).promise.toFuture
     def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
       service.readPreset(params).promise.toFuture
-    def testRoleFuture(params: TestRoleRequest): Future[TestRoleResponse] = service.testRole(params).promise.toFuture
     def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
       service.updatePipeline(params).promise.toFuture
     def updatePipelineNotificationsFuture(

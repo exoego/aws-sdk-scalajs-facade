@@ -98,9 +98,6 @@ package object applicationdiscovery {
     def describeContinuousExportsFuture(
         params: DescribeContinuousExportsRequest
     ): Future[DescribeContinuousExportsResponse] = service.describeContinuousExports(params).promise.toFuture
-    def describeExportConfigurationsFuture(
-        params: DescribeExportConfigurationsRequest
-    ): Future[DescribeExportConfigurationsResponse] = service.describeExportConfigurations(params).promise.toFuture
     def describeExportTasksFuture(params: DescribeExportTasksRequest): Future[DescribeExportTasksResponse] =
       service.describeExportTasks(params).promise.toFuture
     def describeImportTasksFuture(params: DescribeImportTasksRequest): Future[DescribeImportTasksResponse] =
@@ -111,8 +108,6 @@ package object applicationdiscovery {
         params: DisassociateConfigurationItemsFromApplicationRequest
     ): Future[DisassociateConfigurationItemsFromApplicationResponse] =
       service.disassociateConfigurationItemsFromApplication(params).promise.toFuture
-    def exportConfigurationsFuture(): Future[ExportConfigurationsResponse] =
-      service.exportConfigurations().promise.toFuture
     def getDiscoverySummaryFuture(params: GetDiscoverySummaryRequest): Future[GetDiscoverySummaryResponse] =
       service.getDiscoverySummary(params).promise.toFuture
     def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =

@@ -123,8 +123,6 @@ package object lambda {
       service.getLayerVersionPolicy(params).promise.toFuture
     def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
       service.getPolicy(params).promise.toFuture
-    def invokeAsyncFuture(params: InvokeAsyncRequest): Future[InvokeAsyncResponse] =
-      service.invokeAsync(params).promise.toFuture
     def invokeFuture(params: InvocationRequest): Future[InvocationResponse] = service.invoke(params).promise.toFuture
     def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] =
       service.listAliases(params).promise.toFuture

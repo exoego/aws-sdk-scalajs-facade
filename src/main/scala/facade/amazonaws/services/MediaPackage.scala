@@ -50,9 +50,6 @@ package object mediapackage {
       service.listOriginEndpoints(params).promise.toFuture
     def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
       service.listTagsForResource(params).promise.toFuture
-    def rotateChannelCredentialsFuture(
-        params: RotateChannelCredentialsRequest
-    ): Future[RotateChannelCredentialsResponse] = service.rotateChannelCredentials(params).promise.toFuture
     def rotateIngestEndpointCredentialsFuture(
         params: RotateIngestEndpointCredentialsRequest
     ): Future[RotateIngestEndpointCredentialsResponse] =

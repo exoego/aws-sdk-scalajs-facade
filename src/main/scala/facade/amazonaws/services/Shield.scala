@@ -52,8 +52,6 @@ package object shield {
       service.createSubscription(params).promise.toFuture
     def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] =
       service.deleteProtection(params).promise.toFuture
-    def deleteSubscriptionFuture(params: DeleteSubscriptionRequest): Future[DeleteSubscriptionResponse] =
-      service.deleteSubscription(params).promise.toFuture
     def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] =
       service.describeAttack(params).promise.toFuture
     def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] =

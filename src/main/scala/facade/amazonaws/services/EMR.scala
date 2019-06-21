@@ -114,8 +114,6 @@ package object emr {
     ): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise.toFuture
     def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] =
       service.describeCluster(params).promise.toFuture
-    def describeJobFlowsFuture(params: DescribeJobFlowsInput): Future[DescribeJobFlowsOutput] =
-      service.describeJobFlows(params).promise.toFuture
     def describeSecurityConfigurationFuture(
         params: DescribeSecurityConfigurationInput
     ): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise.toFuture

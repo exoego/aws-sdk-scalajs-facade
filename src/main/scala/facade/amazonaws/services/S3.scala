@@ -309,8 +309,6 @@ package object s3 {
     def getBucketLifecycleConfigurationFuture(
         params: GetBucketLifecycleConfigurationRequest
     ): Future[GetBucketLifecycleConfigurationOutput] = service.getBucketLifecycleConfiguration(params).promise.toFuture
-    def getBucketLifecycleFuture(params: GetBucketLifecycleRequest): Future[GetBucketLifecycleOutput] =
-      service.getBucketLifecycle(params).promise.toFuture
     def getBucketLocationFuture(params: GetBucketLocationRequest): Future[GetBucketLocationOutput] =
       service.getBucketLocation(params).promise.toFuture
     def getBucketLoggingFuture(params: GetBucketLoggingRequest): Future[GetBucketLoggingOutput] =
@@ -321,9 +319,6 @@ package object s3 {
     def getBucketNotificationConfigurationFuture(
         params: GetBucketNotificationConfigurationRequest
     ): Future[NotificationConfiguration] = service.getBucketNotificationConfiguration(params).promise.toFuture
-    def getBucketNotificationFuture(
-        params: GetBucketNotificationConfigurationRequest
-    ): Future[NotificationConfigurationDeprecated] = service.getBucketNotification(params).promise.toFuture
     def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyOutput] =
       service.getBucketPolicy(params).promise.toFuture
     def getBucketPolicyStatusFuture(params: GetBucketPolicyStatusRequest): Future[GetBucketPolicyStatusOutput] =
@@ -392,16 +387,12 @@ package object s3 {
       service.putBucketInventoryConfiguration(params).promise.toFuture
     def putBucketLifecycleConfigurationFuture(params: PutBucketLifecycleConfigurationRequest): Future[js.Object] =
       service.putBucketLifecycleConfiguration(params).promise.toFuture
-    def putBucketLifecycleFuture(params: PutBucketLifecycleRequest): Future[js.Object] =
-      service.putBucketLifecycle(params).promise.toFuture
     def putBucketLoggingFuture(params: PutBucketLoggingRequest): Future[js.Object] =
       service.putBucketLogging(params).promise.toFuture
     def putBucketMetricsConfigurationFuture(params: PutBucketMetricsConfigurationRequest): Future[js.Object] =
       service.putBucketMetricsConfiguration(params).promise.toFuture
     def putBucketNotificationConfigurationFuture(params: PutBucketNotificationConfigurationRequest): Future[js.Object] =
       service.putBucketNotificationConfiguration(params).promise.toFuture
-    def putBucketNotificationFuture(params: PutBucketNotificationRequest): Future[js.Object] =
-      service.putBucketNotification(params).promise.toFuture
     def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] =
       service.putBucketPolicy(params).promise.toFuture
     def putBucketReplicationFuture(params: PutBucketReplicationRequest): Future[js.Object] =

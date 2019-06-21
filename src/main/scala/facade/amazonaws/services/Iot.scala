@@ -384,8 +384,6 @@ package object iot {
       service.associateTargetsWithJob(params).promise.toFuture
     def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] =
       service.attachPolicy(params).promise.toFuture
-    def attachPrincipalPolicyFuture(params: AttachPrincipalPolicyRequest): Future[js.Object] =
-      service.attachPrincipalPolicy(params).promise.toFuture
     def attachSecurityProfileFuture(params: AttachSecurityProfileRequest): Future[AttachSecurityProfileResponse] =
       service.attachSecurityProfile(params).promise.toFuture
     def attachThingPrincipalFuture(params: AttachThingPrincipalRequest): Future[AttachThingPrincipalResponse] =
@@ -528,8 +526,6 @@ package object iot {
       service.describeThingType(params).promise.toFuture
     def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] =
       service.detachPolicy(params).promise.toFuture
-    def detachPrincipalPolicyFuture(params: DetachPrincipalPolicyRequest): Future[js.Object] =
-      service.detachPrincipalPolicy(params).promise.toFuture
     def detachSecurityProfileFuture(params: DetachSecurityProfileRequest): Future[DetachSecurityProfileResponse] =
       service.detachSecurityProfile(params).promise.toFuture
     def detachThingPrincipalFuture(params: DetachThingPrincipalRequest): Future[DetachThingPrincipalResponse] =
@@ -594,12 +590,8 @@ package object iot {
     ): Future[ListOutgoingCertificatesResponse] = service.listOutgoingCertificates(params).promise.toFuture
     def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
       service.listPolicies(params).promise.toFuture
-    def listPolicyPrincipalsFuture(params: ListPolicyPrincipalsRequest): Future[ListPolicyPrincipalsResponse] =
-      service.listPolicyPrincipals(params).promise.toFuture
     def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] =
       service.listPolicyVersions(params).promise.toFuture
-    def listPrincipalPoliciesFuture(params: ListPrincipalPoliciesRequest): Future[ListPrincipalPoliciesResponse] =
-      service.listPrincipalPolicies(params).promise.toFuture
     def listPrincipalThingsFuture(params: ListPrincipalThingsRequest): Future[ListPrincipalThingsResponse] =
       service.listPrincipalThings(params).promise.toFuture
     def listRoleAliasesFuture(params: ListRoleAliasesRequest): Future[ListRoleAliasesResponse] =

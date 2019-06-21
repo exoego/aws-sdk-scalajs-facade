@@ -98,8 +98,6 @@ package object directconnect {
         params: AcceptDirectConnectGatewayAssociationProposalRequest
     ): Future[AcceptDirectConnectGatewayAssociationProposalResult] =
       service.acceptDirectConnectGatewayAssociationProposal(params).promise.toFuture
-    def allocateConnectionOnInterconnectFuture(params: AllocateConnectionOnInterconnectRequest): Future[Connection] =
-      service.allocateConnectionOnInterconnect(params).promise.toFuture
     def allocateHostedConnectionFuture(params: AllocateHostedConnectionRequest): Future[Connection] =
       service.allocateHostedConnection(params).promise.toFuture
     def allocatePrivateVirtualInterfaceFuture(
@@ -163,12 +161,8 @@ package object directconnect {
     def deleteLagFuture(params: DeleteLagRequest): Future[Lag] = service.deleteLag(params).promise.toFuture
     def deleteVirtualInterfaceFuture(params: DeleteVirtualInterfaceRequest): Future[DeleteVirtualInterfaceResponse] =
       service.deleteVirtualInterface(params).promise.toFuture
-    def describeConnectionLoaFuture(params: DescribeConnectionLoaRequest): Future[DescribeConnectionLoaResponse] =
-      service.describeConnectionLoa(params).promise.toFuture
     def describeConnectionsFuture(params: DescribeConnectionsRequest): Future[Connections] =
       service.describeConnections(params).promise.toFuture
-    def describeConnectionsOnInterconnectFuture(params: DescribeConnectionsOnInterconnectRequest): Future[Connections] =
-      service.describeConnectionsOnInterconnect(params).promise.toFuture
     def describeDirectConnectGatewayAssociationProposalsFuture(
         params: DescribeDirectConnectGatewayAssociationProposalsRequest
     ): Future[DescribeDirectConnectGatewayAssociationProposalsResult] =
@@ -186,8 +180,6 @@ package object directconnect {
     ): Future[DescribeDirectConnectGatewaysResult] = service.describeDirectConnectGateways(params).promise.toFuture
     def describeHostedConnectionsFuture(params: DescribeHostedConnectionsRequest): Future[Connections] =
       service.describeHostedConnections(params).promise.toFuture
-    def describeInterconnectLoaFuture(params: DescribeInterconnectLoaRequest): Future[DescribeInterconnectLoaResponse] =
-      service.describeInterconnectLoa(params).promise.toFuture
     def describeInterconnectsFuture(params: DescribeInterconnectsRequest): Future[Interconnects] =
       service.describeInterconnects(params).promise.toFuture
     def describeLagsFuture(params: DescribeLagsRequest): Future[Lags] = service.describeLags(params).promise.toFuture
