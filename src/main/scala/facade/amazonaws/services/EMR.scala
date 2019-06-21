@@ -172,9 +172,8 @@ package emr {
     ): Request[CreateSecurityConfigurationOutput] = js.native
     def deleteSecurityConfiguration(
         params: DeleteSecurityConfigurationInput
-    ): Request[DeleteSecurityConfigurationOutput]                                        = js.native
-    def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput]    = js.native
-    def describeJobFlows(params: DescribeJobFlowsInput): Request[DescribeJobFlowsOutput] = js.native
+    ): Request[DeleteSecurityConfigurationOutput]                                     = js.native
+    def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
     def describeSecurityConfiguration(
         params: DescribeSecurityConfigurationInput
     ): Request[DescribeSecurityConfigurationOutput]                                                  = js.native
@@ -197,6 +196,9 @@ package emr {
     def setTerminationProtection(params: SetTerminationProtectionInput): Request[js.Object] = js.native
     def setVisibleToAllUsers(params: SetVisibleToAllUsersInput): Request[js.Object]         = js.native
     def terminateJobFlows(params: TerminateJobFlowsInput): Request[js.Object]               = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeJobFlows(
+        params: DescribeJobFlowsInput
+    ): Request[DescribeJobFlowsOutput] = js.native
   }
 
   object ActionOnFailureEnum {

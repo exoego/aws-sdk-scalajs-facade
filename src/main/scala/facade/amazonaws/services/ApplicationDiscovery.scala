@@ -157,17 +157,13 @@ package applicationdiscovery {
       js.native
     def describeContinuousExports(
         params: DescribeContinuousExportsRequest
-    ): Request[DescribeContinuousExportsResponse] = js.native
-    def describeExportConfigurations(
-        params: DescribeExportConfigurationsRequest
-    ): Request[DescribeExportConfigurationsResponse]                                                  = js.native
+    ): Request[DescribeContinuousExportsResponse]                                                     = js.native
     def describeExportTasks(params: DescribeExportTasksRequest): Request[DescribeExportTasksResponse] = js.native
     def describeImportTasks(params: DescribeImportTasksRequest): Request[DescribeImportTasksResponse] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse]                      = js.native
     def disassociateConfigurationItemsFromApplication(
         params: DisassociateConfigurationItemsFromApplicationRequest
     ): Request[DisassociateConfigurationItemsFromApplicationResponse]                                       = js.native
-    def exportConfigurations(): Request[ExportConfigurationsResponse]                                       = js.native
     def getDiscoverySummary(params: GetDiscoverySummaryRequest): Request[GetDiscoverySummaryResponse]       = js.native
     def listConfigurations(params: ListConfigurationsRequest): Request[ListConfigurationsResponse]          = js.native
     def listServerNeighbors(params: ListServerNeighborsRequest): Request[ListServerNeighborsResponse]       = js.native
@@ -182,6 +178,11 @@ package applicationdiscovery {
         params: StopDataCollectionByAgentIdsRequest
     ): Request[StopDataCollectionByAgentIdsResponse]                                            = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def describeExportConfigurations(
+        params: DescribeExportConfigurationsRequest
+    ): Request[DescribeExportConfigurationsResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def exportConfigurations(): Request[ExportConfigurationsResponse] =
+      js.native
   }
 
   /**

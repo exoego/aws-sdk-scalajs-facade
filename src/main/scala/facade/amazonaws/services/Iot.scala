@@ -750,7 +750,6 @@ package iot {
     def associateTargetsWithJob(params: AssociateTargetsWithJobRequest): Request[AssociateTargetsWithJobResponse] =
       js.native
     def attachPolicy(params: AttachPolicyRequest): Request[js.Object]                                       = js.native
-    def attachPrincipalPolicy(params: AttachPrincipalPolicyRequest): Request[js.Object]                     = js.native
     def attachSecurityProfile(params: AttachSecurityProfileRequest): Request[AttachSecurityProfileResponse] = js.native
     def attachThingPrincipal(params: AttachThingPrincipalRequest): Request[AttachThingPrincipalResponse]    = js.native
     def cancelAuditTask(params: CancelAuditTaskRequest): Request[CancelAuditTaskResponse]                   = js.native
@@ -836,7 +835,6 @@ package iot {
     ): Request[DescribeThingRegistrationTaskResponse]                                                       = js.native
     def describeThingType(params: DescribeThingTypeRequest): Request[DescribeThingTypeResponse]             = js.native
     def detachPolicy(params: DetachPolicyRequest): Request[js.Object]                                       = js.native
-    def detachPrincipalPolicy(params: DetachPrincipalPolicyRequest): Request[js.Object]                     = js.native
     def detachSecurityProfile(params: DetachSecurityProfileRequest): Request[DetachSecurityProfileResponse] = js.native
     def detachThingPrincipal(params: DetachThingPrincipalRequest): Request[DetachThingPrincipalResponse]    = js.native
     def disableTopicRule(params: DisableTopicRuleRequest): Request[js.Object]                               = js.native
@@ -872,14 +870,12 @@ package iot {
     def listOTAUpdates(params: ListOTAUpdatesRequest): Request[ListOTAUpdatesResponse] = js.native
     def listOutgoingCertificates(params: ListOutgoingCertificatesRequest): Request[ListOutgoingCertificatesResponse] =
       js.native
-    def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse]                            = js.native
-    def listPolicyPrincipals(params: ListPolicyPrincipalsRequest): Request[ListPolicyPrincipalsResponse]    = js.native
-    def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse]          = js.native
-    def listPrincipalPolicies(params: ListPrincipalPoliciesRequest): Request[ListPrincipalPoliciesResponse] = js.native
-    def listPrincipalThings(params: ListPrincipalThingsRequest): Request[ListPrincipalThingsResponse]       = js.native
-    def listRoleAliases(params: ListRoleAliasesRequest): Request[ListRoleAliasesResponse]                   = js.native
-    def listScheduledAudits(params: ListScheduledAuditsRequest): Request[ListScheduledAuditsResponse]       = js.native
-    def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse]    = js.native
+    def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse]                         = js.native
+    def listPolicyVersions(params: ListPolicyVersionsRequest): Request[ListPolicyVersionsResponse]       = js.native
+    def listPrincipalThings(params: ListPrincipalThingsRequest): Request[ListPrincipalThingsResponse]    = js.native
+    def listRoleAliases(params: ListRoleAliasesRequest): Request[ListRoleAliasesResponse]                = js.native
+    def listScheduledAudits(params: ListScheduledAuditsRequest): Request[ListScheduledAuditsResponse]    = js.native
+    def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
     def listSecurityProfilesForTarget(
         params: ListSecurityProfilesForTargetRequest
     ): Request[ListSecurityProfilesForTargetResponse]                                                    = js.native
@@ -966,6 +962,18 @@ package iot {
     def validateSecurityProfileBehaviors(
         params: ValidateSecurityProfileBehaviorsRequest
     ): Request[ValidateSecurityProfileBehaviorsResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def attachPrincipalPolicy(
+        params: AttachPrincipalPolicyRequest
+    ): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def detachPrincipalPolicy(
+        params: DetachPrincipalPolicyRequest
+    ): Request[js.Object] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def listPolicyPrincipals(
+        params: ListPolicyPrincipalsRequest
+    ): Request[ListPolicyPrincipalsResponse] = js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def listPrincipalPolicies(
+        params: ListPrincipalPoliciesRequest
+    ): Request[ListPrincipalPoliciesResponse] = js.native
   }
 
   object AbortActionEnum {

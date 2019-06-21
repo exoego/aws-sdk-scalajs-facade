@@ -194,7 +194,6 @@ package lambda {
     def getLayerVersionPolicy(params: GetLayerVersionPolicyRequest): Request[GetLayerVersionPolicyResponse] = js.native
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse]                                     = js.native
     def invoke(params: InvocationRequest): Request[InvocationResponse]                                      = js.native
-    def invokeAsync(params: InvokeAsyncRequest): Request[InvokeAsyncResponse]                               = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse]                               = js.native
     def listEventSourceMappings(params: ListEventSourceMappingsRequest): Request[ListEventSourceMappingsResponse] =
       js.native
@@ -217,6 +216,9 @@ package lambda {
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] =
       js.native
+    @deprecated("Deprecated in AWS SDK", "forever") def invokeAsync(
+        params: InvokeAsyncRequest
+    ): Request[InvokeAsyncResponse] = js.native
   }
 
   /**
@@ -1517,7 +1519,7 @@ package lambda {
     val values = IndexedSeq(Event, RequestResponse, DryRun)
   }
 
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait InvokeAsyncRequest extends js.Object {
     var FunctionName: NamespacedFunctionName
@@ -1541,7 +1543,7 @@ package lambda {
   /**
     * A success response (<code>202 Accepted</code>) indicates that the request is queued for invocation.
     */
-  @deprecated
+  @deprecated("Deprecated in AWS SDK", "forever")
   @js.native
   trait InvokeAsyncResponse extends js.Object {
     var Status: js.UndefOr[HttpStatus]
