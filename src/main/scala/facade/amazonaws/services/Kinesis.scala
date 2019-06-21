@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -53,6 +54,59 @@ package object kinesis {
   type TagMap                        = js.Dictionary[TagValue]
   type TagValue                      = String
   type Timestamp                     = js.Date
+
+  implicit final class KinesisOps(val service: Kinesis) extends AnyVal {
+
+    def addTagsToStreamFuture(params: AddTagsToStreamInput): Future[js.Object] =
+      service.addTagsToStream(params).promise.toFuture
+    def createStreamFuture(params: CreateStreamInput): Future[js.Object] = service.createStream(params).promise.toFuture
+    def decreaseStreamRetentionPeriodFuture(params: DecreaseStreamRetentionPeriodInput): Future[js.Object] =
+      service.decreaseStreamRetentionPeriod(params).promise.toFuture
+    def deleteStreamFuture(params: DeleteStreamInput): Future[js.Object] = service.deleteStream(params).promise.toFuture
+    def deregisterStreamConsumerFuture(params: DeregisterStreamConsumerInput): Future[js.Object] =
+      service.deregisterStreamConsumer(params).promise.toFuture
+    def describeLimitsFuture(params: DescribeLimitsInput): Future[DescribeLimitsOutput] =
+      service.describeLimits(params).promise.toFuture
+    def describeStreamConsumerFuture(params: DescribeStreamConsumerInput): Future[DescribeStreamConsumerOutput] =
+      service.describeStreamConsumer(params).promise.toFuture
+    def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
+      service.describeStream(params).promise.toFuture
+    def describeStreamSummaryFuture(params: DescribeStreamSummaryInput): Future[DescribeStreamSummaryOutput] =
+      service.describeStreamSummary(params).promise.toFuture
+    def disableEnhancedMonitoringFuture(params: DisableEnhancedMonitoringInput): Future[EnhancedMonitoringOutput] =
+      service.disableEnhancedMonitoring(params).promise.toFuture
+    def enableEnhancedMonitoringFuture(params: EnableEnhancedMonitoringInput): Future[EnhancedMonitoringOutput] =
+      service.enableEnhancedMonitoring(params).promise.toFuture
+    def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
+      service.getRecords(params).promise.toFuture
+    def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
+      service.getShardIterator(params).promise.toFuture
+    def increaseStreamRetentionPeriodFuture(params: IncreaseStreamRetentionPeriodInput): Future[js.Object] =
+      service.increaseStreamRetentionPeriod(params).promise.toFuture
+    def listShardsFuture(params: ListShardsInput): Future[ListShardsOutput] =
+      service.listShards(params).promise.toFuture
+    def listStreamConsumersFuture(params: ListStreamConsumersInput): Future[ListStreamConsumersOutput] =
+      service.listStreamConsumers(params).promise.toFuture
+    def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
+      service.listStreams(params).promise.toFuture
+    def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
+      service.listTagsForStream(params).promise.toFuture
+    def mergeShardsFuture(params: MergeShardsInput): Future[js.Object]   = service.mergeShards(params).promise.toFuture
+    def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] = service.putRecord(params).promise.toFuture
+    def putRecordsFuture(params: PutRecordsInput): Future[PutRecordsOutput] =
+      service.putRecords(params).promise.toFuture
+    def registerStreamConsumerFuture(params: RegisterStreamConsumerInput): Future[RegisterStreamConsumerOutput] =
+      service.registerStreamConsumer(params).promise.toFuture
+    def removeTagsFromStreamFuture(params: RemoveTagsFromStreamInput): Future[js.Object] =
+      service.removeTagsFromStream(params).promise.toFuture
+    def splitShardFuture(params: SplitShardInput): Future[js.Object] = service.splitShard(params).promise.toFuture
+    def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] =
+      service.startStreamEncryption(params).promise.toFuture
+    def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] =
+      service.stopStreamEncryption(params).promise.toFuture
+    def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] =
+      service.updateShardCount(params).promise.toFuture
+  }
 }
 
 package kinesis {

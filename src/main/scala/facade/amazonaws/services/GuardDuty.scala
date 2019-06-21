@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -76,6 +77,94 @@ package object guardduty {
   type __mapOfCountBySeverityFindingStatistic = js.Dictionary[CountBySeverityFindingStatistic]
   type __string                               = String
   type __stringMin0Max64                      = String
+
+  implicit final class GuardDutyOps(val service: GuardDuty) extends AnyVal {
+
+    def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
+      service.acceptInvitation(params).promise.toFuture
+    def archiveFindingsFuture(params: ArchiveFindingsRequest): Future[ArchiveFindingsResponse] =
+      service.archiveFindings(params).promise.toFuture
+    def createDetectorFuture(params: CreateDetectorRequest): Future[CreateDetectorResponse] =
+      service.createDetector(params).promise.toFuture
+    def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] =
+      service.createFilter(params).promise.toFuture
+    def createIPSetFuture(params: CreateIPSetRequest): Future[CreateIPSetResponse] =
+      service.createIPSet(params).promise.toFuture
+    def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
+      service.createMembers(params).promise.toFuture
+    def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] =
+      service.createSampleFindings(params).promise.toFuture
+    def createThreatIntelSetFuture(params: CreateThreatIntelSetRequest): Future[CreateThreatIntelSetResponse] =
+      service.createThreatIntelSet(params).promise.toFuture
+    def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
+      service.declineInvitations(params).promise.toFuture
+    def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResponse] =
+      service.deleteDetector(params).promise.toFuture
+    def deleteFilterFuture(params: DeleteFilterRequest): Future[DeleteFilterResponse] =
+      service.deleteFilter(params).promise.toFuture
+    def deleteIPSetFuture(params: DeleteIPSetRequest): Future[DeleteIPSetResponse] =
+      service.deleteIPSet(params).promise.toFuture
+    def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
+      service.deleteInvitations(params).promise.toFuture
+    def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
+      service.deleteMembers(params).promise.toFuture
+    def deleteThreatIntelSetFuture(params: DeleteThreatIntelSetRequest): Future[DeleteThreatIntelSetResponse] =
+      service.deleteThreatIntelSet(params).promise.toFuture
+    def disassociateFromMasterAccountFuture(
+        params: DisassociateFromMasterAccountRequest
+    ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise.toFuture
+    def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
+      service.disassociateMembers(params).promise.toFuture
+    def getDetectorFuture(params: GetDetectorRequest): Future[GetDetectorResponse] =
+      service.getDetector(params).promise.toFuture
+    def getFilterFuture(params: GetFilterRequest): Future[GetFilterResponse] =
+      service.getFilter(params).promise.toFuture
+    def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
+      service.getFindings(params).promise.toFuture
+    def getFindingsStatisticsFuture(params: GetFindingsStatisticsRequest): Future[GetFindingsStatisticsResponse] =
+      service.getFindingsStatistics(params).promise.toFuture
+    def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise.toFuture
+    def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
+      service.getInvitationsCount(params).promise.toFuture
+    def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
+      service.getMasterAccount(params).promise.toFuture
+    def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
+      service.getMembers(params).promise.toFuture
+    def getThreatIntelSetFuture(params: GetThreatIntelSetRequest): Future[GetThreatIntelSetResponse] =
+      service.getThreatIntelSet(params).promise.toFuture
+    def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
+      service.inviteMembers(params).promise.toFuture
+    def listDetectorsFuture(params: ListDetectorsRequest): Future[ListDetectorsResponse] =
+      service.listDetectors(params).promise.toFuture
+    def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] =
+      service.listFilters(params).promise.toFuture
+    def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] =
+      service.listFindings(params).promise.toFuture
+    def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] =
+      service.listIPSets(params).promise.toFuture
+    def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
+      service.listInvitations(params).promise.toFuture
+    def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
+      service.listMembers(params).promise.toFuture
+    def listThreatIntelSetsFuture(params: ListThreatIntelSetsRequest): Future[ListThreatIntelSetsResponse] =
+      service.listThreatIntelSets(params).promise.toFuture
+    def startMonitoringMembersFuture(params: StartMonitoringMembersRequest): Future[StartMonitoringMembersResponse] =
+      service.startMonitoringMembers(params).promise.toFuture
+    def stopMonitoringMembersFuture(params: StopMonitoringMembersRequest): Future[StopMonitoringMembersResponse] =
+      service.stopMonitoringMembers(params).promise.toFuture
+    def unarchiveFindingsFuture(params: UnarchiveFindingsRequest): Future[UnarchiveFindingsResponse] =
+      service.unarchiveFindings(params).promise.toFuture
+    def updateDetectorFuture(params: UpdateDetectorRequest): Future[UpdateDetectorResponse] =
+      service.updateDetector(params).promise.toFuture
+    def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] =
+      service.updateFilter(params).promise.toFuture
+    def updateFindingsFeedbackFuture(params: UpdateFindingsFeedbackRequest): Future[UpdateFindingsFeedbackResponse] =
+      service.updateFindingsFeedback(params).promise.toFuture
+    def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] =
+      service.updateIPSet(params).promise.toFuture
+    def updateThreatIntelSetFuture(params: UpdateThreatIntelSetRequest): Future[UpdateThreatIntelSetResponse] =
+      service.updateThreatIntelSet(params).promise.toFuture
+  }
 }
 
 package guardduty {

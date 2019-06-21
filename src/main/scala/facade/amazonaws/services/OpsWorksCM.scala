@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -34,6 +35,46 @@ package object opsworkscm {
   type Strings                        = js.Array[String]
   type TimeWindowDefinition           = String
   type Timestamp                      = js.Date
+
+  implicit final class OpsWorksCMOps(val service: OpsWorksCM) extends AnyVal {
+
+    def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] =
+      service.associateNode(params).promise.toFuture
+    def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
+      service.createBackup(params).promise.toFuture
+    def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
+      service.createServer(params).promise.toFuture
+    def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
+      service.deleteBackup(params).promise.toFuture
+    def deleteServerFuture(params: DeleteServerRequest): Future[DeleteServerResponse] =
+      service.deleteServer(params).promise.toFuture
+    def describeAccountAttributesFuture(
+        params: DescribeAccountAttributesRequest
+    ): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise.toFuture
+    def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
+      service.describeBackups(params).promise.toFuture
+    def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
+      service.describeEvents(params).promise.toFuture
+    def describeNodeAssociationStatusFuture(
+        params: DescribeNodeAssociationStatusRequest
+    ): Future[DescribeNodeAssociationStatusResponse] = service.describeNodeAssociationStatus(params).promise.toFuture
+    def describeServersFuture(params: DescribeServersRequest): Future[DescribeServersResponse] =
+      service.describeServers(params).promise.toFuture
+    def disassociateNodeFuture(params: DisassociateNodeRequest): Future[DisassociateNodeResponse] =
+      service.disassociateNode(params).promise.toFuture
+    def exportServerEngineAttributeFuture(
+        params: ExportServerEngineAttributeRequest
+    ): Future[ExportServerEngineAttributeResponse] = service.exportServerEngineAttribute(params).promise.toFuture
+    def restoreServerFuture(params: RestoreServerRequest): Future[RestoreServerResponse] =
+      service.restoreServer(params).promise.toFuture
+    def startMaintenanceFuture(params: StartMaintenanceRequest): Future[StartMaintenanceResponse] =
+      service.startMaintenance(params).promise.toFuture
+    def updateServerEngineAttributesFuture(
+        params: UpdateServerEngineAttributesRequest
+    ): Future[UpdateServerEngineAttributesResponse] = service.updateServerEngineAttributes(params).promise.toFuture
+    def updateServerFuture(params: UpdateServerRequest): Future[UpdateServerResponse] =
+      service.updateServer(params).promise.toFuture
+  }
 }
 
 package opsworkscm {

@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -39,6 +40,76 @@ package object sns {
   type token                      = String
   type topicARN                   = String
   type topicName                  = String
+
+  implicit final class SNSOps(val service: SNS) extends AnyVal {
+
+    def addPermissionFuture(params: AddPermissionInput): Future[js.Object] =
+      service.addPermission(params).promise.toFuture
+    def checkIfPhoneNumberIsOptedOutFuture(
+        params: CheckIfPhoneNumberIsOptedOutInput
+    ): Future[CheckIfPhoneNumberIsOptedOutResponse] = service.checkIfPhoneNumberIsOptedOut(params).promise.toFuture
+    def confirmSubscriptionFuture(params: ConfirmSubscriptionInput): Future[ConfirmSubscriptionResponse] =
+      service.confirmSubscription(params).promise.toFuture
+    def createPlatformApplicationFuture(
+        params: CreatePlatformApplicationInput
+    ): Future[CreatePlatformApplicationResponse] = service.createPlatformApplication(params).promise.toFuture
+    def createPlatformEndpointFuture(params: CreatePlatformEndpointInput): Future[CreateEndpointResponse] =
+      service.createPlatformEndpoint(params).promise.toFuture
+    def createTopicFuture(params: CreateTopicInput): Future[CreateTopicResponse] =
+      service.createTopic(params).promise.toFuture
+    def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] =
+      service.deleteEndpoint(params).promise.toFuture
+    def deletePlatformApplicationFuture(params: DeletePlatformApplicationInput): Future[js.Object] =
+      service.deletePlatformApplication(params).promise.toFuture
+    def deleteTopicFuture(params: DeleteTopicInput): Future[js.Object] = service.deleteTopic(params).promise.toFuture
+    def getEndpointAttributesFuture(params: GetEndpointAttributesInput): Future[GetEndpointAttributesResponse] =
+      service.getEndpointAttributes(params).promise.toFuture
+    def getPlatformApplicationAttributesFuture(
+        params: GetPlatformApplicationAttributesInput
+    ): Future[GetPlatformApplicationAttributesResponse] =
+      service.getPlatformApplicationAttributes(params).promise.toFuture
+    def getSMSAttributesFuture(params: GetSMSAttributesInput): Future[GetSMSAttributesResponse] =
+      service.getSMSAttributes(params).promise.toFuture
+    def getSubscriptionAttributesFuture(
+        params: GetSubscriptionAttributesInput
+    ): Future[GetSubscriptionAttributesResponse] = service.getSubscriptionAttributes(params).promise.toFuture
+    def getTopicAttributesFuture(params: GetTopicAttributesInput): Future[GetTopicAttributesResponse] =
+      service.getTopicAttributes(params).promise.toFuture
+    def listEndpointsByPlatformApplicationFuture(
+        params: ListEndpointsByPlatformApplicationInput
+    ): Future[ListEndpointsByPlatformApplicationResponse] =
+      service.listEndpointsByPlatformApplication(params).promise.toFuture
+    def listPhoneNumbersOptedOutFuture(
+        params: ListPhoneNumbersOptedOutInput
+    ): Future[ListPhoneNumbersOptedOutResponse] = service.listPhoneNumbersOptedOut(params).promise.toFuture
+    def listPlatformApplicationsFuture(
+        params: ListPlatformApplicationsInput
+    ): Future[ListPlatformApplicationsResponse] = service.listPlatformApplications(params).promise.toFuture
+    def listSubscriptionsByTopicFuture(
+        params: ListSubscriptionsByTopicInput
+    ): Future[ListSubscriptionsByTopicResponse] = service.listSubscriptionsByTopic(params).promise.toFuture
+    def listSubscriptionsFuture(params: ListSubscriptionsInput): Future[ListSubscriptionsResponse] =
+      service.listSubscriptions(params).promise.toFuture
+    def listTopicsFuture(params: ListTopicsInput): Future[ListTopicsResponse] =
+      service.listTopics(params).promise.toFuture
+    def optInPhoneNumberFuture(params: OptInPhoneNumberInput): Future[OptInPhoneNumberResponse] =
+      service.optInPhoneNumber(params).promise.toFuture
+    def publishFuture(params: PublishInput): Future[PublishResponse] = service.publish(params).promise.toFuture
+    def removePermissionFuture(params: RemovePermissionInput): Future[js.Object] =
+      service.removePermission(params).promise.toFuture
+    def setEndpointAttributesFuture(params: SetEndpointAttributesInput): Future[js.Object] =
+      service.setEndpointAttributes(params).promise.toFuture
+    def setPlatformApplicationAttributesFuture(params: SetPlatformApplicationAttributesInput): Future[js.Object] =
+      service.setPlatformApplicationAttributes(params).promise.toFuture
+    def setSMSAttributesFuture(params: SetSMSAttributesInput): Future[SetSMSAttributesResponse] =
+      service.setSMSAttributes(params).promise.toFuture
+    def setSubscriptionAttributesFuture(params: SetSubscriptionAttributesInput): Future[js.Object] =
+      service.setSubscriptionAttributes(params).promise.toFuture
+    def setTopicAttributesFuture(params: SetTopicAttributesInput): Future[js.Object] =
+      service.setTopicAttributes(params).promise.toFuture
+    def subscribeFuture(params: SubscribeInput): Future[SubscribeResponse] = service.subscribe(params).promise.toFuture
+    def unsubscribeFuture(params: UnsubscribeInput): Future[js.Object]     = service.unsubscribe(params).promise.toFuture
+  }
 }
 
 package sns {

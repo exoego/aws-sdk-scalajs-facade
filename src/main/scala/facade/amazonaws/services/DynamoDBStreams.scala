@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -39,6 +40,18 @@ package object dynamodbstreams {
   type StringAttributeValue    = String
   type StringSetAttributeValue = js.Array[StringAttributeValue]
   type TableName               = String
+
+  implicit final class DynamoDBStreamsOps(val service: DynamoDBStreams) extends AnyVal {
+
+    def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
+      service.describeStream(params).promise.toFuture
+    def getRecordsFuture(params: GetRecordsInput): Future[GetRecordsOutput] =
+      service.getRecords(params).promise.toFuture
+    def getShardIteratorFuture(params: GetShardIteratorInput): Future[GetShardIteratorOutput] =
+      service.getShardIterator(params).promise.toFuture
+    def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
+      service.listStreams(params).promise.toFuture
+  }
 }
 
 package dynamodbstreams {

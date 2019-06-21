@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -78,6 +79,72 @@ package object swf {
   type WorkflowRunId                                     = String
   type WorkflowRunIdOptional                             = String
   type WorkflowTypeInfoList                              = js.Array[WorkflowTypeInfo]
+
+  implicit final class SWFOps(val service: SWF) extends AnyVal {
+
+    def countClosedWorkflowExecutionsFuture(
+        params: CountClosedWorkflowExecutionsInput
+    ): Future[WorkflowExecutionCount] = service.countClosedWorkflowExecutions(params).promise.toFuture
+    def countOpenWorkflowExecutionsFuture(params: CountOpenWorkflowExecutionsInput): Future[WorkflowExecutionCount] =
+      service.countOpenWorkflowExecutions(params).promise.toFuture
+    def countPendingActivityTasksFuture(params: CountPendingActivityTasksInput): Future[PendingTaskCount] =
+      service.countPendingActivityTasks(params).promise.toFuture
+    def countPendingDecisionTasksFuture(params: CountPendingDecisionTasksInput): Future[PendingTaskCount] =
+      service.countPendingDecisionTasks(params).promise.toFuture
+    def deprecateActivityTypeFuture(params: DeprecateActivityTypeInput): Future[js.Object] =
+      service.deprecateActivityType(params).promise.toFuture
+    def deprecateDomainFuture(params: DeprecateDomainInput): Future[js.Object] =
+      service.deprecateDomain(params).promise.toFuture
+    def deprecateWorkflowTypeFuture(params: DeprecateWorkflowTypeInput): Future[js.Object] =
+      service.deprecateWorkflowType(params).promise.toFuture
+    def describeActivityTypeFuture(params: DescribeActivityTypeInput): Future[ActivityTypeDetail] =
+      service.describeActivityType(params).promise.toFuture
+    def describeDomainFuture(params: DescribeDomainInput): Future[DomainDetail] =
+      service.describeDomain(params).promise.toFuture
+    def describeWorkflowExecutionFuture(params: DescribeWorkflowExecutionInput): Future[WorkflowExecutionDetail] =
+      service.describeWorkflowExecution(params).promise.toFuture
+    def describeWorkflowTypeFuture(params: DescribeWorkflowTypeInput): Future[WorkflowTypeDetail] =
+      service.describeWorkflowType(params).promise.toFuture
+    def getWorkflowExecutionHistoryFuture(params: GetWorkflowExecutionHistoryInput): Future[History] =
+      service.getWorkflowExecutionHistory(params).promise.toFuture
+    def listActivityTypesFuture(params: ListActivityTypesInput): Future[ActivityTypeInfos] =
+      service.listActivityTypes(params).promise.toFuture
+    def listClosedWorkflowExecutionsFuture(params: ListClosedWorkflowExecutionsInput): Future[WorkflowExecutionInfos] =
+      service.listClosedWorkflowExecutions(params).promise.toFuture
+    def listDomainsFuture(params: ListDomainsInput): Future[DomainInfos] = service.listDomains(params).promise.toFuture
+    def listOpenWorkflowExecutionsFuture(params: ListOpenWorkflowExecutionsInput): Future[WorkflowExecutionInfos] =
+      service.listOpenWorkflowExecutions(params).promise.toFuture
+    def listWorkflowTypesFuture(params: ListWorkflowTypesInput): Future[WorkflowTypeInfos] =
+      service.listWorkflowTypes(params).promise.toFuture
+    def pollForActivityTaskFuture(params: PollForActivityTaskInput): Future[ActivityTask] =
+      service.pollForActivityTask(params).promise.toFuture
+    def pollForDecisionTaskFuture(params: PollForDecisionTaskInput): Future[DecisionTask] =
+      service.pollForDecisionTask(params).promise.toFuture
+    def recordActivityTaskHeartbeatFuture(params: RecordActivityTaskHeartbeatInput): Future[ActivityTaskStatus] =
+      service.recordActivityTaskHeartbeat(params).promise.toFuture
+    def registerActivityTypeFuture(params: RegisterActivityTypeInput): Future[js.Object] =
+      service.registerActivityType(params).promise.toFuture
+    def registerDomainFuture(params: RegisterDomainInput): Future[js.Object] =
+      service.registerDomain(params).promise.toFuture
+    def registerWorkflowTypeFuture(params: RegisterWorkflowTypeInput): Future[js.Object] =
+      service.registerWorkflowType(params).promise.toFuture
+    def requestCancelWorkflowExecutionFuture(params: RequestCancelWorkflowExecutionInput): Future[js.Object] =
+      service.requestCancelWorkflowExecution(params).promise.toFuture
+    def respondActivityTaskCanceledFuture(params: RespondActivityTaskCanceledInput): Future[js.Object] =
+      service.respondActivityTaskCanceled(params).promise.toFuture
+    def respondActivityTaskCompletedFuture(params: RespondActivityTaskCompletedInput): Future[js.Object] =
+      service.respondActivityTaskCompleted(params).promise.toFuture
+    def respondActivityTaskFailedFuture(params: RespondActivityTaskFailedInput): Future[js.Object] =
+      service.respondActivityTaskFailed(params).promise.toFuture
+    def respondDecisionTaskCompletedFuture(params: RespondDecisionTaskCompletedInput): Future[js.Object] =
+      service.respondDecisionTaskCompleted(params).promise.toFuture
+    def signalWorkflowExecutionFuture(params: SignalWorkflowExecutionInput): Future[js.Object] =
+      service.signalWorkflowExecution(params).promise.toFuture
+    def startWorkflowExecutionFuture(params: StartWorkflowExecutionInput): Future[Run] =
+      service.startWorkflowExecution(params).promise.toFuture
+    def terminateWorkflowExecutionFuture(params: TerminateWorkflowExecutionInput): Future[js.Object] =
+      service.terminateWorkflowExecution(params).promise.toFuture
+  }
 }
 
 package swf {

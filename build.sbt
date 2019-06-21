@@ -8,7 +8,7 @@ lazy val root = (project in file(".")).settings(
   organization := Organization,
   name := "aws-sdk-scalajs-facade",
   crossScalaVersions := SupportedScalaVersions,
-  scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault"),
+  scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault", "-deprecation"),
   licenses := Seq("APL2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt")),
   scmInfo := Some(
     ScmInfo(

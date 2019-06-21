@@ -3,12 +3,23 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object s3control {
   type AccountId = String
   type Setting   = Boolean
+
+  implicit final class S3ControlOps(val service: S3Control) extends AnyVal {
+
+    def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =
+      service.deletePublicAccessBlock(params).promise.toFuture
+    def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] =
+      service.getPublicAccessBlock(params).promise.toFuture
+    def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] =
+      service.putPublicAccessBlock(params).promise.toFuture
+  }
 }
 
 package s3control {

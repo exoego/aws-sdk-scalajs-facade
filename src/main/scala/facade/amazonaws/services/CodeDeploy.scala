@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -138,6 +139,103 @@ package object codedeploy {
   type Value                          = String
   type VersionId                      = String
   type WaitTimeInMins                 = Int
+
+  implicit final class CodeDeployOps(val service: CodeDeploy) extends AnyVal {
+
+    def addTagsToOnPremisesInstancesFuture(params: AddTagsToOnPremisesInstancesInput): Future[js.Object] =
+      service.addTagsToOnPremisesInstances(params).promise.toFuture
+    def batchGetApplicationRevisionsFuture(
+        params: BatchGetApplicationRevisionsInput
+    ): Future[BatchGetApplicationRevisionsOutput] = service.batchGetApplicationRevisions(params).promise.toFuture
+    def batchGetApplicationsFuture(params: BatchGetApplicationsInput): Future[BatchGetApplicationsOutput] =
+      service.batchGetApplications(params).promise.toFuture
+    def batchGetDeploymentGroupsFuture(params: BatchGetDeploymentGroupsInput): Future[BatchGetDeploymentGroupsOutput] =
+      service.batchGetDeploymentGroups(params).promise.toFuture
+    def batchGetDeploymentInstancesFuture(
+        params: BatchGetDeploymentInstancesInput
+    ): Future[BatchGetDeploymentInstancesOutput] = service.batchGetDeploymentInstances(params).promise.toFuture
+    def batchGetDeploymentTargetsFuture(
+        params: BatchGetDeploymentTargetsInput
+    ): Future[BatchGetDeploymentTargetsOutput] = service.batchGetDeploymentTargets(params).promise.toFuture
+    def batchGetDeploymentsFuture(params: BatchGetDeploymentsInput): Future[BatchGetDeploymentsOutput] =
+      service.batchGetDeployments(params).promise.toFuture
+    def batchGetOnPremisesInstancesFuture(
+        params: BatchGetOnPremisesInstancesInput
+    ): Future[BatchGetOnPremisesInstancesOutput] = service.batchGetOnPremisesInstances(params).promise.toFuture
+    def continueDeploymentFuture(params: ContinueDeploymentInput): Future[js.Object] =
+      service.continueDeployment(params).promise.toFuture
+    def createApplicationFuture(params: CreateApplicationInput): Future[CreateApplicationOutput] =
+      service.createApplication(params).promise.toFuture
+    def createDeploymentConfigFuture(params: CreateDeploymentConfigInput): Future[CreateDeploymentConfigOutput] =
+      service.createDeploymentConfig(params).promise.toFuture
+    def createDeploymentFuture(params: CreateDeploymentInput): Future[CreateDeploymentOutput] =
+      service.createDeployment(params).promise.toFuture
+    def createDeploymentGroupFuture(params: CreateDeploymentGroupInput): Future[CreateDeploymentGroupOutput] =
+      service.createDeploymentGroup(params).promise.toFuture
+    def deleteApplicationFuture(params: DeleteApplicationInput): Future[js.Object] =
+      service.deleteApplication(params).promise.toFuture
+    def deleteDeploymentConfigFuture(params: DeleteDeploymentConfigInput): Future[js.Object] =
+      service.deleteDeploymentConfig(params).promise.toFuture
+    def deleteDeploymentGroupFuture(params: DeleteDeploymentGroupInput): Future[DeleteDeploymentGroupOutput] =
+      service.deleteDeploymentGroup(params).promise.toFuture
+    def deleteGitHubAccountTokenFuture(params: DeleteGitHubAccountTokenInput): Future[DeleteGitHubAccountTokenOutput] =
+      service.deleteGitHubAccountToken(params).promise.toFuture
+    def deregisterOnPremisesInstanceFuture(params: DeregisterOnPremisesInstanceInput): Future[js.Object] =
+      service.deregisterOnPremisesInstance(params).promise.toFuture
+    def getApplicationFuture(params: GetApplicationInput): Future[GetApplicationOutput] =
+      service.getApplication(params).promise.toFuture
+    def getApplicationRevisionFuture(params: GetApplicationRevisionInput): Future[GetApplicationRevisionOutput] =
+      service.getApplicationRevision(params).promise.toFuture
+    def getDeploymentConfigFuture(params: GetDeploymentConfigInput): Future[GetDeploymentConfigOutput] =
+      service.getDeploymentConfig(params).promise.toFuture
+    def getDeploymentFuture(params: GetDeploymentInput): Future[GetDeploymentOutput] =
+      service.getDeployment(params).promise.toFuture
+    def getDeploymentGroupFuture(params: GetDeploymentGroupInput): Future[GetDeploymentGroupOutput] =
+      service.getDeploymentGroup(params).promise.toFuture
+    def getDeploymentInstanceFuture(params: GetDeploymentInstanceInput): Future[GetDeploymentInstanceOutput] =
+      service.getDeploymentInstance(params).promise.toFuture
+    def getDeploymentTargetFuture(params: GetDeploymentTargetInput): Future[GetDeploymentTargetOutput] =
+      service.getDeploymentTarget(params).promise.toFuture
+    def getOnPremisesInstanceFuture(params: GetOnPremisesInstanceInput): Future[GetOnPremisesInstanceOutput] =
+      service.getOnPremisesInstance(params).promise.toFuture
+    def listApplicationRevisionsFuture(params: ListApplicationRevisionsInput): Future[ListApplicationRevisionsOutput] =
+      service.listApplicationRevisions(params).promise.toFuture
+    def listApplicationsFuture(params: ListApplicationsInput): Future[ListApplicationsOutput] =
+      service.listApplications(params).promise.toFuture
+    def listDeploymentConfigsFuture(params: ListDeploymentConfigsInput): Future[ListDeploymentConfigsOutput] =
+      service.listDeploymentConfigs(params).promise.toFuture
+    def listDeploymentGroupsFuture(params: ListDeploymentGroupsInput): Future[ListDeploymentGroupsOutput] =
+      service.listDeploymentGroups(params).promise.toFuture
+    def listDeploymentInstancesFuture(params: ListDeploymentInstancesInput): Future[ListDeploymentInstancesOutput] =
+      service.listDeploymentInstances(params).promise.toFuture
+    def listDeploymentTargetsFuture(params: ListDeploymentTargetsInput): Future[ListDeploymentTargetsOutput] =
+      service.listDeploymentTargets(params).promise.toFuture
+    def listDeploymentsFuture(params: ListDeploymentsInput): Future[ListDeploymentsOutput] =
+      service.listDeployments(params).promise.toFuture
+    def listGitHubAccountTokenNamesFuture(
+        params: ListGitHubAccountTokenNamesInput
+    ): Future[ListGitHubAccountTokenNamesOutput] = service.listGitHubAccountTokenNames(params).promise.toFuture
+    def listOnPremisesInstancesFuture(params: ListOnPremisesInstancesInput): Future[ListOnPremisesInstancesOutput] =
+      service.listOnPremisesInstances(params).promise.toFuture
+    def putLifecycleEventHookExecutionStatusFuture(
+        params: PutLifecycleEventHookExecutionStatusInput
+    ): Future[PutLifecycleEventHookExecutionStatusOutput] =
+      service.putLifecycleEventHookExecutionStatus(params).promise.toFuture
+    def registerApplicationRevisionFuture(params: RegisterApplicationRevisionInput): Future[js.Object] =
+      service.registerApplicationRevision(params).promise.toFuture
+    def registerOnPremisesInstanceFuture(params: RegisterOnPremisesInstanceInput): Future[js.Object] =
+      service.registerOnPremisesInstance(params).promise.toFuture
+    def removeTagsFromOnPremisesInstancesFuture(params: RemoveTagsFromOnPremisesInstancesInput): Future[js.Object] =
+      service.removeTagsFromOnPremisesInstances(params).promise.toFuture
+    def skipWaitTimeForInstanceTerminationFuture(params: SkipWaitTimeForInstanceTerminationInput): Future[js.Object] =
+      service.skipWaitTimeForInstanceTermination(params).promise.toFuture
+    def stopDeploymentFuture(params: StopDeploymentInput): Future[StopDeploymentOutput] =
+      service.stopDeployment(params).promise.toFuture
+    def updateApplicationFuture(params: UpdateApplicationInput): Future[js.Object] =
+      service.updateApplication(params).promise.toFuture
+    def updateDeploymentGroupFuture(params: UpdateDeploymentGroupInput): Future[UpdateDeploymentGroupOutput] =
+      service.updateDeploymentGroup(params).promise.toFuture
+  }
 }
 
 package codedeploy {

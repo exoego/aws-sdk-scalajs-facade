@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -87,6 +88,90 @@ package object codecommit {
   type TargetList                               = js.Array[Target]
   type Title                                    = String
   type blob                                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+
+  implicit final class CodeCommitOps(val service: CodeCommit) extends AnyVal {
+
+    def batchGetRepositoriesFuture(params: BatchGetRepositoriesInput): Future[BatchGetRepositoriesOutput] =
+      service.batchGetRepositories(params).promise.toFuture
+    def createBranchFuture(params: CreateBranchInput): Future[js.Object] = service.createBranch(params).promise.toFuture
+    def createCommitFuture(params: CreateCommitInput): Future[CreateCommitOutput] =
+      service.createCommit(params).promise.toFuture
+    def createPullRequestFuture(params: CreatePullRequestInput): Future[CreatePullRequestOutput] =
+      service.createPullRequest(params).promise.toFuture
+    def createRepositoryFuture(params: CreateRepositoryInput): Future[CreateRepositoryOutput] =
+      service.createRepository(params).promise.toFuture
+    def deleteBranchFuture(params: DeleteBranchInput): Future[DeleteBranchOutput] =
+      service.deleteBranch(params).promise.toFuture
+    def deleteCommentContentFuture(params: DeleteCommentContentInput): Future[DeleteCommentContentOutput] =
+      service.deleteCommentContent(params).promise.toFuture
+    def deleteFileFuture(params: DeleteFileInput): Future[DeleteFileOutput] =
+      service.deleteFile(params).promise.toFuture
+    def deleteRepositoryFuture(params: DeleteRepositoryInput): Future[DeleteRepositoryOutput] =
+      service.deleteRepository(params).promise.toFuture
+    def describePullRequestEventsFuture(
+        params: DescribePullRequestEventsInput
+    ): Future[DescribePullRequestEventsOutput]                           = service.describePullRequestEvents(params).promise.toFuture
+    def getBlobFuture(params: GetBlobInput): Future[GetBlobOutput]       = service.getBlob(params).promise.toFuture
+    def getBranchFuture(params: GetBranchInput): Future[GetBranchOutput] = service.getBranch(params).promise.toFuture
+    def getCommentFuture(params: GetCommentInput): Future[GetCommentOutput] =
+      service.getComment(params).promise.toFuture
+    def getCommentsForComparedCommitFuture(
+        params: GetCommentsForComparedCommitInput
+    ): Future[GetCommentsForComparedCommitOutput] = service.getCommentsForComparedCommit(params).promise.toFuture
+    def getCommentsForPullRequestFuture(
+        params: GetCommentsForPullRequestInput
+    ): Future[GetCommentsForPullRequestOutput]                           = service.getCommentsForPullRequest(params).promise.toFuture
+    def getCommitFuture(params: GetCommitInput): Future[GetCommitOutput] = service.getCommit(params).promise.toFuture
+    def getDifferencesFuture(params: GetDifferencesInput): Future[GetDifferencesOutput] =
+      service.getDifferences(params).promise.toFuture
+    def getFileFuture(params: GetFileInput): Future[GetFileOutput]       = service.getFile(params).promise.toFuture
+    def getFolderFuture(params: GetFolderInput): Future[GetFolderOutput] = service.getFolder(params).promise.toFuture
+    def getMergeConflictsFuture(params: GetMergeConflictsInput): Future[GetMergeConflictsOutput] =
+      service.getMergeConflicts(params).promise.toFuture
+    def getPullRequestFuture(params: GetPullRequestInput): Future[GetPullRequestOutput] =
+      service.getPullRequest(params).promise.toFuture
+    def getRepositoryFuture(params: GetRepositoryInput): Future[GetRepositoryOutput] =
+      service.getRepository(params).promise.toFuture
+    def getRepositoryTriggersFuture(params: GetRepositoryTriggersInput): Future[GetRepositoryTriggersOutput] =
+      service.getRepositoryTriggers(params).promise.toFuture
+    def listBranchesFuture(params: ListBranchesInput): Future[ListBranchesOutput] =
+      service.listBranches(params).promise.toFuture
+    def listPullRequestsFuture(params: ListPullRequestsInput): Future[ListPullRequestsOutput] =
+      service.listPullRequests(params).promise.toFuture
+    def listRepositoriesFuture(params: ListRepositoriesInput): Future[ListRepositoriesOutput] =
+      service.listRepositories(params).promise.toFuture
+    def mergePullRequestByFastForwardFuture(
+        params: MergePullRequestByFastForwardInput
+    ): Future[MergePullRequestByFastForwardOutput] = service.mergePullRequestByFastForward(params).promise.toFuture
+    def postCommentForComparedCommitFuture(
+        params: PostCommentForComparedCommitInput
+    ): Future[PostCommentForComparedCommitOutput] = service.postCommentForComparedCommit(params).promise.toFuture
+    def postCommentForPullRequestFuture(
+        params: PostCommentForPullRequestInput
+    ): Future[PostCommentForPullRequestOutput] = service.postCommentForPullRequest(params).promise.toFuture
+    def postCommentReplyFuture(params: PostCommentReplyInput): Future[PostCommentReplyOutput] =
+      service.postCommentReply(params).promise.toFuture
+    def putFileFuture(params: PutFileInput): Future[PutFileOutput] = service.putFile(params).promise.toFuture
+    def putRepositoryTriggersFuture(params: PutRepositoryTriggersInput): Future[PutRepositoryTriggersOutput] =
+      service.putRepositoryTriggers(params).promise.toFuture
+    def testRepositoryTriggersFuture(params: TestRepositoryTriggersInput): Future[TestRepositoryTriggersOutput] =
+      service.testRepositoryTriggers(params).promise.toFuture
+    def updateCommentFuture(params: UpdateCommentInput): Future[UpdateCommentOutput] =
+      service.updateComment(params).promise.toFuture
+    def updateDefaultBranchFuture(params: UpdateDefaultBranchInput): Future[js.Object] =
+      service.updateDefaultBranch(params).promise.toFuture
+    def updatePullRequestDescriptionFuture(
+        params: UpdatePullRequestDescriptionInput
+    ): Future[UpdatePullRequestDescriptionOutput] = service.updatePullRequestDescription(params).promise.toFuture
+    def updatePullRequestStatusFuture(params: UpdatePullRequestStatusInput): Future[UpdatePullRequestStatusOutput] =
+      service.updatePullRequestStatus(params).promise.toFuture
+    def updatePullRequestTitleFuture(params: UpdatePullRequestTitleInput): Future[UpdatePullRequestTitleOutput] =
+      service.updatePullRequestTitle(params).promise.toFuture
+    def updateRepositoryDescriptionFuture(params: UpdateRepositoryDescriptionInput): Future[js.Object] =
+      service.updateRepositoryDescription(params).promise.toFuture
+    def updateRepositoryNameFuture(params: UpdateRepositoryNameInput): Future[js.Object] =
+      service.updateRepositoryName(params).promise.toFuture
+  }
 }
 
 package codecommit {

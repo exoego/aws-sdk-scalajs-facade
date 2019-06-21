@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -53,6 +54,53 @@ package object servicediscovery {
   type ServiceName             = String
   type ServiceSummariesList    = js.Array[ServiceSummary]
   type Timestamp               = js.Date
+
+  implicit final class ServiceDiscoveryOps(val service: ServiceDiscovery) extends AnyVal {
+
+    def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] =
+      service.createHttpNamespace(params).promise.toFuture
+    def createPrivateDnsNamespaceFuture(
+        params: CreatePrivateDnsNamespaceRequest
+    ): Future[CreatePrivateDnsNamespaceResponse] = service.createPrivateDnsNamespace(params).promise.toFuture
+    def createPublicDnsNamespaceFuture(
+        params: CreatePublicDnsNamespaceRequest
+    ): Future[CreatePublicDnsNamespaceResponse] = service.createPublicDnsNamespace(params).promise.toFuture
+    def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] =
+      service.createService(params).promise.toFuture
+    def deleteNamespaceFuture(params: DeleteNamespaceRequest): Future[DeleteNamespaceResponse] =
+      service.deleteNamespace(params).promise.toFuture
+    def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] =
+      service.deleteService(params).promise.toFuture
+    def deregisterInstanceFuture(params: DeregisterInstanceRequest): Future[DeregisterInstanceResponse] =
+      service.deregisterInstance(params).promise.toFuture
+    def discoverInstancesFuture(params: DiscoverInstancesRequest): Future[DiscoverInstancesResponse] =
+      service.discoverInstances(params).promise.toFuture
+    def getInstanceFuture(params: GetInstanceRequest): Future[GetInstanceResponse] =
+      service.getInstance(params).promise.toFuture
+    def getInstancesHealthStatusFuture(
+        params: GetInstancesHealthStatusRequest
+    ): Future[GetInstancesHealthStatusResponse] = service.getInstancesHealthStatus(params).promise.toFuture
+    def getNamespaceFuture(params: GetNamespaceRequest): Future[GetNamespaceResponse] =
+      service.getNamespace(params).promise.toFuture
+    def getOperationFuture(params: GetOperationRequest): Future[GetOperationResponse] =
+      service.getOperation(params).promise.toFuture
+    def getServiceFuture(params: GetServiceRequest): Future[GetServiceResponse] =
+      service.getService(params).promise.toFuture
+    def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] =
+      service.listInstances(params).promise.toFuture
+    def listNamespacesFuture(params: ListNamespacesRequest): Future[ListNamespacesResponse] =
+      service.listNamespaces(params).promise.toFuture
+    def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
+      service.listOperations(params).promise.toFuture
+    def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] =
+      service.listServices(params).promise.toFuture
+    def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] =
+      service.registerInstance(params).promise.toFuture
+    def updateInstanceCustomHealthStatusFuture(params: UpdateInstanceCustomHealthStatusRequest): Future[js.Object] =
+      service.updateInstanceCustomHealthStatus(params).promise.toFuture
+    def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] =
+      service.updateService(params).promise.toFuture
+  }
 }
 
 package servicediscovery {

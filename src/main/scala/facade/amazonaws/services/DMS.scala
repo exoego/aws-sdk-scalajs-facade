@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -61,6 +62,126 @@ package object dms {
   type TagList                                 = js.Array[Tag]
   type VpcSecurityGroupIdList                  = js.Array[String]
   type VpcSecurityGroupMembershipList          = js.Array[VpcSecurityGroupMembership]
+
+  implicit final class DMSOps(val service: DMS) extends AnyVal {
+
+    def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[AddTagsToResourceResponse] =
+      service.addTagsToResource(params).promise.toFuture
+    def applyPendingMaintenanceActionFuture(
+        params: ApplyPendingMaintenanceActionMessage
+    ): Future[ApplyPendingMaintenanceActionResponse] = service.applyPendingMaintenanceAction(params).promise.toFuture
+    def createEndpointFuture(params: CreateEndpointMessage): Future[CreateEndpointResponse] =
+      service.createEndpoint(params).promise.toFuture
+    def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResponse] =
+      service.createEventSubscription(params).promise.toFuture
+    def createReplicationInstanceFuture(
+        params: CreateReplicationInstanceMessage
+    ): Future[CreateReplicationInstanceResponse] = service.createReplicationInstance(params).promise.toFuture
+    def createReplicationSubnetGroupFuture(
+        params: CreateReplicationSubnetGroupMessage
+    ): Future[CreateReplicationSubnetGroupResponse] = service.createReplicationSubnetGroup(params).promise.toFuture
+    def createReplicationTaskFuture(params: CreateReplicationTaskMessage): Future[CreateReplicationTaskResponse] =
+      service.createReplicationTask(params).promise.toFuture
+    def deleteCertificateFuture(params: DeleteCertificateMessage): Future[DeleteCertificateResponse] =
+      service.deleteCertificate(params).promise.toFuture
+    def deleteEndpointFuture(params: DeleteEndpointMessage): Future[DeleteEndpointResponse] =
+      service.deleteEndpoint(params).promise.toFuture
+    def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResponse] =
+      service.deleteEventSubscription(params).promise.toFuture
+    def deleteReplicationInstanceFuture(
+        params: DeleteReplicationInstanceMessage
+    ): Future[DeleteReplicationInstanceResponse] = service.deleteReplicationInstance(params).promise.toFuture
+    def deleteReplicationSubnetGroupFuture(
+        params: DeleteReplicationSubnetGroupMessage
+    ): Future[DeleteReplicationSubnetGroupResponse] = service.deleteReplicationSubnetGroup(params).promise.toFuture
+    def deleteReplicationTaskFuture(params: DeleteReplicationTaskMessage): Future[DeleteReplicationTaskResponse] =
+      service.deleteReplicationTask(params).promise.toFuture
+    def describeAccountAttributesFuture(
+        params: DescribeAccountAttributesMessage
+    ): Future[DescribeAccountAttributesResponse] = service.describeAccountAttributes(params).promise.toFuture
+    def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[DescribeCertificatesResponse] =
+      service.describeCertificates(params).promise.toFuture
+    def describeConnectionsFuture(params: DescribeConnectionsMessage): Future[DescribeConnectionsResponse] =
+      service.describeConnections(params).promise.toFuture
+    def describeEndpointTypesFuture(params: DescribeEndpointTypesMessage): Future[DescribeEndpointTypesResponse] =
+      service.describeEndpointTypes(params).promise.toFuture
+    def describeEndpointsFuture(params: DescribeEndpointsMessage): Future[DescribeEndpointsResponse] =
+      service.describeEndpoints(params).promise.toFuture
+    def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[DescribeEventCategoriesResponse] =
+      service.describeEventCategories(params).promise.toFuture
+    def describeEventSubscriptionsFuture(
+        params: DescribeEventSubscriptionsMessage
+    ): Future[DescribeEventSubscriptionsResponse] = service.describeEventSubscriptions(params).promise.toFuture
+    def describeEventsFuture(params: DescribeEventsMessage): Future[DescribeEventsResponse] =
+      service.describeEvents(params).promise.toFuture
+    def describeOrderableReplicationInstancesFuture(
+        params: DescribeOrderableReplicationInstancesMessage
+    ): Future[DescribeOrderableReplicationInstancesResponse] =
+      service.describeOrderableReplicationInstances(params).promise.toFuture
+    def describePendingMaintenanceActionsFuture(
+        params: DescribePendingMaintenanceActionsMessage
+    ): Future[DescribePendingMaintenanceActionsResponse] =
+      service.describePendingMaintenanceActions(params).promise.toFuture
+    def describeRefreshSchemasStatusFuture(
+        params: DescribeRefreshSchemasStatusMessage
+    ): Future[DescribeRefreshSchemasStatusResponse] = service.describeRefreshSchemasStatus(params).promise.toFuture
+    def describeReplicationInstanceTaskLogsFuture(
+        params: DescribeReplicationInstanceTaskLogsMessage
+    ): Future[DescribeReplicationInstanceTaskLogsResponse] =
+      service.describeReplicationInstanceTaskLogs(params).promise.toFuture
+    def describeReplicationInstancesFuture(
+        params: DescribeReplicationInstancesMessage
+    ): Future[DescribeReplicationInstancesResponse] = service.describeReplicationInstances(params).promise.toFuture
+    def describeReplicationSubnetGroupsFuture(
+        params: DescribeReplicationSubnetGroupsMessage
+    ): Future[DescribeReplicationSubnetGroupsResponse] =
+      service.describeReplicationSubnetGroups(params).promise.toFuture
+    def describeReplicationTaskAssessmentResultsFuture(
+        params: DescribeReplicationTaskAssessmentResultsMessage
+    ): Future[DescribeReplicationTaskAssessmentResultsResponse] =
+      service.describeReplicationTaskAssessmentResults(params).promise.toFuture
+    def describeReplicationTasksFuture(
+        params: DescribeReplicationTasksMessage
+    ): Future[DescribeReplicationTasksResponse] = service.describeReplicationTasks(params).promise.toFuture
+    def describeSchemasFuture(params: DescribeSchemasMessage): Future[DescribeSchemasResponse] =
+      service.describeSchemas(params).promise.toFuture
+    def describeTableStatisticsFuture(params: DescribeTableStatisticsMessage): Future[DescribeTableStatisticsResponse] =
+      service.describeTableStatistics(params).promise.toFuture
+    def importCertificateFuture(params: ImportCertificateMessage): Future[ImportCertificateResponse] =
+      service.importCertificate(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def modifyEndpointFuture(params: ModifyEndpointMessage): Future[ModifyEndpointResponse] =
+      service.modifyEndpoint(params).promise.toFuture
+    def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResponse] =
+      service.modifyEventSubscription(params).promise.toFuture
+    def modifyReplicationInstanceFuture(
+        params: ModifyReplicationInstanceMessage
+    ): Future[ModifyReplicationInstanceResponse] = service.modifyReplicationInstance(params).promise.toFuture
+    def modifyReplicationSubnetGroupFuture(
+        params: ModifyReplicationSubnetGroupMessage
+    ): Future[ModifyReplicationSubnetGroupResponse] = service.modifyReplicationSubnetGroup(params).promise.toFuture
+    def modifyReplicationTaskFuture(params: ModifyReplicationTaskMessage): Future[ModifyReplicationTaskResponse] =
+      service.modifyReplicationTask(params).promise.toFuture
+    def rebootReplicationInstanceFuture(
+        params: RebootReplicationInstanceMessage
+    ): Future[RebootReplicationInstanceResponse] = service.rebootReplicationInstance(params).promise.toFuture
+    def refreshSchemasFuture(params: RefreshSchemasMessage): Future[RefreshSchemasResponse] =
+      service.refreshSchemas(params).promise.toFuture
+    def reloadTablesFuture(params: ReloadTablesMessage): Future[ReloadTablesResponse] =
+      service.reloadTables(params).promise.toFuture
+    def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[RemoveTagsFromResourceResponse] =
+      service.removeTagsFromResource(params).promise.toFuture
+    def startReplicationTaskAssessmentFuture(
+        params: StartReplicationTaskAssessmentMessage
+    ): Future[StartReplicationTaskAssessmentResponse] = service.startReplicationTaskAssessment(params).promise.toFuture
+    def startReplicationTaskFuture(params: StartReplicationTaskMessage): Future[StartReplicationTaskResponse] =
+      service.startReplicationTask(params).promise.toFuture
+    def stopReplicationTaskFuture(params: StopReplicationTaskMessage): Future[StopReplicationTaskResponse] =
+      service.stopReplicationTask(params).promise.toFuture
+    def testConnectionFuture(params: TestConnectionMessage): Future[TestConnectionResponse] =
+      service.testConnection(params).promise.toFuture
+  }
 }
 
 package dms {

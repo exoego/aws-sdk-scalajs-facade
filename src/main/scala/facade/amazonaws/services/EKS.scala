@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -23,6 +24,26 @@ package object eks {
   type UpdateParams                  = js.Array[UpdateParam]
   type UpdateStatus                  = String
   type UpdateType                    = String
+
+  implicit final class EKSOps(val service: EKS) extends AnyVal {
+
+    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+      service.createCluster(params).promise.toFuture
+    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+      service.deleteCluster(params).promise.toFuture
+    def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
+      service.describeCluster(params).promise.toFuture
+    def describeUpdateFuture(params: DescribeUpdateRequest): Future[DescribeUpdateResponse] =
+      service.describeUpdate(params).promise.toFuture
+    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
+      service.listClusters(params).promise.toFuture
+    def listUpdatesFuture(params: ListUpdatesRequest): Future[ListUpdatesResponse] =
+      service.listUpdates(params).promise.toFuture
+    def updateClusterConfigFuture(params: UpdateClusterConfigRequest): Future[UpdateClusterConfigResponse] =
+      service.updateClusterConfig(params).promise.toFuture
+    def updateClusterVersionFuture(params: UpdateClusterVersionRequest): Future[UpdateClusterVersionResponse] =
+      service.updateClusterVersion(params).promise.toFuture
+  }
 }
 
 package eks {

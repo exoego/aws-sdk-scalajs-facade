@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -93,6 +94,66 @@ package object emr {
   type XmlStringList                          = js.Array[XmlString]
   type XmlStringMaxLen256                     = String
   type XmlStringMaxLen256List                 = js.Array[XmlStringMaxLen256]
+
+  implicit final class EMROps(val service: EMR) extends AnyVal {
+
+    def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
+      service.addInstanceFleet(params).promise.toFuture
+    def addInstanceGroupsFuture(params: AddInstanceGroupsInput): Future[AddInstanceGroupsOutput] =
+      service.addInstanceGroups(params).promise.toFuture
+    def addJobFlowStepsFuture(params: AddJobFlowStepsInput): Future[AddJobFlowStepsOutput] =
+      service.addJobFlowSteps(params).promise.toFuture
+    def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
+    def cancelStepsFuture(params: CancelStepsInput): Future[CancelStepsOutput] =
+      service.cancelSteps(params).promise.toFuture
+    def createSecurityConfigurationFuture(
+        params: CreateSecurityConfigurationInput
+    ): Future[CreateSecurityConfigurationOutput] = service.createSecurityConfiguration(params).promise.toFuture
+    def deleteSecurityConfigurationFuture(
+        params: DeleteSecurityConfigurationInput
+    ): Future[DeleteSecurityConfigurationOutput] = service.deleteSecurityConfiguration(params).promise.toFuture
+    def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] =
+      service.describeCluster(params).promise.toFuture
+    def describeJobFlowsFuture(params: DescribeJobFlowsInput): Future[DescribeJobFlowsOutput] =
+      service.describeJobFlows(params).promise.toFuture
+    def describeSecurityConfigurationFuture(
+        params: DescribeSecurityConfigurationInput
+    ): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise.toFuture
+    def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] =
+      service.describeStep(params).promise.toFuture
+    def listBootstrapActionsFuture(params: ListBootstrapActionsInput): Future[ListBootstrapActionsOutput] =
+      service.listBootstrapActions(params).promise.toFuture
+    def listClustersFuture(params: ListClustersInput): Future[ListClustersOutput] =
+      service.listClusters(params).promise.toFuture
+    def listInstanceFleetsFuture(params: ListInstanceFleetsInput): Future[ListInstanceFleetsOutput] =
+      service.listInstanceFleets(params).promise.toFuture
+    def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] =
+      service.listInstanceGroups(params).promise.toFuture
+    def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] =
+      service.listInstances(params).promise.toFuture
+    def listSecurityConfigurationsFuture(
+        params: ListSecurityConfigurationsInput
+    ): Future[ListSecurityConfigurationsOutput]                          = service.listSecurityConfigurations(params).promise.toFuture
+    def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] = service.listSteps(params).promise.toFuture
+    def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] =
+      service.modifyInstanceFleet(params).promise.toFuture
+    def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] =
+      service.modifyInstanceGroups(params).promise.toFuture
+    def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] =
+      service.putAutoScalingPolicy(params).promise.toFuture
+    def removeAutoScalingPolicyFuture(params: RemoveAutoScalingPolicyInput): Future[RemoveAutoScalingPolicyOutput] =
+      service.removeAutoScalingPolicy(params).promise.toFuture
+    def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] =
+      service.removeTags(params).promise.toFuture
+    def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] =
+      service.runJobFlow(params).promise.toFuture
+    def setTerminationProtectionFuture(params: SetTerminationProtectionInput): Future[js.Object] =
+      service.setTerminationProtection(params).promise.toFuture
+    def setVisibleToAllUsersFuture(params: SetVisibleToAllUsersInput): Future[js.Object] =
+      service.setVisibleToAllUsers(params).promise.toFuture
+    def terminateJobFlowsFuture(params: TerminateJobFlowsInput): Future[js.Object] =
+      service.terminateJobFlows(params).promise.toFuture
+  }
 }
 
 package emr {

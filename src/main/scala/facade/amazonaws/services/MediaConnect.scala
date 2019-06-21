@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -23,6 +24,42 @@ package object mediaconnect {
   type __listOf__string                = js.Array[__string]
   type __mapOf__string                 = js.Dictionary[__string]
   type __string                        = String
+
+  implicit final class MediaConnectOps(val service: MediaConnect) extends AnyVal {
+
+    def addFlowOutputsFuture(params: AddFlowOutputsRequest): Future[AddFlowOutputsResponse] =
+      service.addFlowOutputs(params).promise.toFuture
+    def createFlowFuture(params: CreateFlowRequest): Future[CreateFlowResponse] =
+      service.createFlow(params).promise.toFuture
+    def deleteFlowFuture(params: DeleteFlowRequest): Future[DeleteFlowResponse] =
+      service.deleteFlow(params).promise.toFuture
+    def describeFlowFuture(params: DescribeFlowRequest): Future[DescribeFlowResponse] =
+      service.describeFlow(params).promise.toFuture
+    def grantFlowEntitlementsFuture(params: GrantFlowEntitlementsRequest): Future[GrantFlowEntitlementsResponse] =
+      service.grantFlowEntitlements(params).promise.toFuture
+    def listEntitlementsFuture(params: ListEntitlementsRequest): Future[ListEntitlementsResponse] =
+      service.listEntitlements(params).promise.toFuture
+    def listFlowsFuture(params: ListFlowsRequest): Future[ListFlowsResponse] =
+      service.listFlows(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def removeFlowOutputFuture(params: RemoveFlowOutputRequest): Future[RemoveFlowOutputResponse] =
+      service.removeFlowOutput(params).promise.toFuture
+    def revokeFlowEntitlementFuture(params: RevokeFlowEntitlementRequest): Future[RevokeFlowEntitlementResponse] =
+      service.revokeFlowEntitlement(params).promise.toFuture
+    def startFlowFuture(params: StartFlowRequest): Future[StartFlowResponse] =
+      service.startFlow(params).promise.toFuture
+    def stopFlowFuture(params: StopFlowRequest): Future[StopFlowResponse] = service.stopFlow(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[js.Object]  = service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
+    def updateFlowEntitlementFuture(params: UpdateFlowEntitlementRequest): Future[UpdateFlowEntitlementResponse] =
+      service.updateFlowEntitlement(params).promise.toFuture
+    def updateFlowOutputFuture(params: UpdateFlowOutputRequest): Future[UpdateFlowOutputResponse] =
+      service.updateFlowOutput(params).promise.toFuture
+    def updateFlowSourceFuture(params: UpdateFlowSourceRequest): Future[UpdateFlowSourceResponse] =
+      service.updateFlowSource(params).promise.toFuture
+  }
 }
 
 package mediaconnect {

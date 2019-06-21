@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -281,6 +282,70 @@ package object medialive {
   type __stringMin34Max34                            = String
   type __stringMin3Max3                              = String
   type __stringMin6Max6                              = String
+
+  implicit final class MediaLiveOps(val service: MediaLive) extends AnyVal {
+
+    def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] =
+      service.batchUpdateSchedule(params).promise.toFuture
+    def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
+      service.createChannel(params).promise.toFuture
+    def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] =
+      service.createInput(params).promise.toFuture
+    def createInputSecurityGroupFuture(
+        params: CreateInputSecurityGroupRequest
+    ): Future[CreateInputSecurityGroupResponse]                        = service.createInputSecurityGroup(params).promise.toFuture
+    def createTagsFuture(params: CreateTagsRequest): Future[js.Object] = service.createTags(params).promise.toFuture
+    def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
+      service.deleteChannel(params).promise.toFuture
+    def deleteInputFuture(params: DeleteInputRequest): Future[DeleteInputResponse] =
+      service.deleteInput(params).promise.toFuture
+    def deleteInputSecurityGroupFuture(
+        params: DeleteInputSecurityGroupRequest
+    ): Future[DeleteInputSecurityGroupResponse] = service.deleteInputSecurityGroup(params).promise.toFuture
+    def deleteReservationFuture(params: DeleteReservationRequest): Future[DeleteReservationResponse] =
+      service.deleteReservation(params).promise.toFuture
+    def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise.toFuture
+    def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
+      service.describeChannel(params).promise.toFuture
+    def describeInputFuture(params: DescribeInputRequest): Future[DescribeInputResponse] =
+      service.describeInput(params).promise.toFuture
+    def describeInputSecurityGroupFuture(
+        params: DescribeInputSecurityGroupRequest
+    ): Future[DescribeInputSecurityGroupResponse] = service.describeInputSecurityGroup(params).promise.toFuture
+    def describeOfferingFuture(params: DescribeOfferingRequest): Future[DescribeOfferingResponse] =
+      service.describeOffering(params).promise.toFuture
+    def describeReservationFuture(params: DescribeReservationRequest): Future[DescribeReservationResponse] =
+      service.describeReservation(params).promise.toFuture
+    def describeScheduleFuture(params: DescribeScheduleRequest): Future[DescribeScheduleResponse] =
+      service.describeSchedule(params).promise.toFuture
+    def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
+      service.listChannels(params).promise.toFuture
+    def listInputSecurityGroupsFuture(params: ListInputSecurityGroupsRequest): Future[ListInputSecurityGroupsResponse] =
+      service.listInputSecurityGroups(params).promise.toFuture
+    def listInputsFuture(params: ListInputsRequest): Future[ListInputsResponse] =
+      service.listInputs(params).promise.toFuture
+    def listOfferingsFuture(params: ListOfferingsRequest): Future[ListOfferingsResponse] =
+      service.listOfferings(params).promise.toFuture
+    def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] =
+      service.listReservations(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] =
+      service.purchaseOffering(params).promise.toFuture
+    def startChannelFuture(params: StartChannelRequest): Future[StartChannelResponse] =
+      service.startChannel(params).promise.toFuture
+    def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] =
+      service.stopChannel(params).promise.toFuture
+    def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
+      service.updateChannel(params).promise.toFuture
+    def updateInputFuture(params: UpdateInputRequest): Future[UpdateInputResponse] =
+      service.updateInput(params).promise.toFuture
+    def updateInputSecurityGroupFuture(
+        params: UpdateInputSecurityGroupRequest
+    ): Future[UpdateInputSecurityGroupResponse] = service.updateInputSecurityGroup(params).promise.toFuture
+    def updateReservationFuture(params: UpdateReservationRequest): Future[UpdateReservationResponse] =
+      service.updateReservation(params).promise.toFuture
+  }
 }
 
 package medialive {

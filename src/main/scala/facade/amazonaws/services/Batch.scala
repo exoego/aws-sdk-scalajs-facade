@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -37,6 +38,45 @@ package object batch {
   type TagsMap                      = js.Dictionary[String]
   type Ulimits                      = js.Array[Ulimit]
   type Volumes                      = js.Array[Volume]
+
+  implicit final class BatchOps(val service: Batch) extends AnyVal {
+
+    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
+      service.cancelJob(params).promise.toFuture
+    def createComputeEnvironmentFuture(
+        params: CreateComputeEnvironmentRequest
+    ): Future[CreateComputeEnvironmentResponse] = service.createComputeEnvironment(params).promise.toFuture
+    def createJobQueueFuture(params: CreateJobQueueRequest): Future[CreateJobQueueResponse] =
+      service.createJobQueue(params).promise.toFuture
+    def deleteComputeEnvironmentFuture(
+        params: DeleteComputeEnvironmentRequest
+    ): Future[DeleteComputeEnvironmentResponse] = service.deleteComputeEnvironment(params).promise.toFuture
+    def deleteJobQueueFuture(params: DeleteJobQueueRequest): Future[DeleteJobQueueResponse] =
+      service.deleteJobQueue(params).promise.toFuture
+    def deregisterJobDefinitionFuture(params: DeregisterJobDefinitionRequest): Future[DeregisterJobDefinitionResponse] =
+      service.deregisterJobDefinition(params).promise.toFuture
+    def describeComputeEnvironmentsFuture(
+        params: DescribeComputeEnvironmentsRequest
+    ): Future[DescribeComputeEnvironmentsResponse] = service.describeComputeEnvironments(params).promise.toFuture
+    def describeJobDefinitionsFuture(params: DescribeJobDefinitionsRequest): Future[DescribeJobDefinitionsResponse] =
+      service.describeJobDefinitions(params).promise.toFuture
+    def describeJobQueuesFuture(params: DescribeJobQueuesRequest): Future[DescribeJobQueuesResponse] =
+      service.describeJobQueues(params).promise.toFuture
+    def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] =
+      service.describeJobs(params).promise.toFuture
+    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise.toFuture
+    def registerJobDefinitionFuture(params: RegisterJobDefinitionRequest): Future[RegisterJobDefinitionResponse] =
+      service.registerJobDefinition(params).promise.toFuture
+    def submitJobFuture(params: SubmitJobRequest): Future[SubmitJobResponse] =
+      service.submitJob(params).promise.toFuture
+    def terminateJobFuture(params: TerminateJobRequest): Future[TerminateJobResponse] =
+      service.terminateJob(params).promise.toFuture
+    def updateComputeEnvironmentFuture(
+        params: UpdateComputeEnvironmentRequest
+    ): Future[UpdateComputeEnvironmentResponse] = service.updateComputeEnvironment(params).promise.toFuture
+    def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] =
+      service.updateJobQueue(params).promise.toFuture
+  }
 }
 
 package batch {

@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -53,6 +54,60 @@ package object acmpca {
   type TagList                          = js.Array[Tag]
   type TagValue                         = String
   type ValidityPeriodType               = String
+
+  implicit final class ACMPCAOps(val service: ACMPCA) extends AnyVal {
+
+    def createCertificateAuthorityAuditReportFuture(
+        params: CreateCertificateAuthorityAuditReportRequest
+    ): Future[CreateCertificateAuthorityAuditReportResponse] =
+      service.createCertificateAuthorityAuditReport(params).promise.toFuture
+    def createCertificateAuthorityFuture(
+        params: CreateCertificateAuthorityRequest
+    ): Future[CreateCertificateAuthorityResponse] = service.createCertificateAuthority(params).promise.toFuture
+    def createPermissionFuture(params: CreatePermissionRequest): Future[js.Object] =
+      service.createPermission(params).promise.toFuture
+    def deleteCertificateAuthorityFuture(params: DeleteCertificateAuthorityRequest): Future[js.Object] =
+      service.deleteCertificateAuthority(params).promise.toFuture
+    def deletePermissionFuture(params: DeletePermissionRequest): Future[js.Object] =
+      service.deletePermission(params).promise.toFuture
+    def describeCertificateAuthorityAuditReportFuture(
+        params: DescribeCertificateAuthorityAuditReportRequest
+    ): Future[DescribeCertificateAuthorityAuditReportResponse] =
+      service.describeCertificateAuthorityAuditReport(params).promise.toFuture
+    def describeCertificateAuthorityFuture(
+        params: DescribeCertificateAuthorityRequest
+    ): Future[DescribeCertificateAuthorityResponse] = service.describeCertificateAuthority(params).promise.toFuture
+    def getCertificateAuthorityCertificateFuture(
+        params: GetCertificateAuthorityCertificateRequest
+    ): Future[GetCertificateAuthorityCertificateResponse] =
+      service.getCertificateAuthorityCertificate(params).promise.toFuture
+    def getCertificateAuthorityCsrFuture(
+        params: GetCertificateAuthorityCsrRequest
+    ): Future[GetCertificateAuthorityCsrResponse] = service.getCertificateAuthorityCsr(params).promise.toFuture
+    def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
+      service.getCertificate(params).promise.toFuture
+    def importCertificateAuthorityCertificateFuture(
+        params: ImportCertificateAuthorityCertificateRequest
+    ): Future[js.Object] = service.importCertificateAuthorityCertificate(params).promise.toFuture
+    def issueCertificateFuture(params: IssueCertificateRequest): Future[IssueCertificateResponse] =
+      service.issueCertificate(params).promise.toFuture
+    def listCertificateAuthoritiesFuture(
+        params: ListCertificateAuthoritiesRequest
+    ): Future[ListCertificateAuthoritiesResponse] = service.listCertificateAuthorities(params).promise.toFuture
+    def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] =
+      service.listPermissions(params).promise.toFuture
+    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
+    def restoreCertificateAuthorityFuture(params: RestoreCertificateAuthorityRequest): Future[js.Object] =
+      service.restoreCertificateAuthority(params).promise.toFuture
+    def revokeCertificateFuture(params: RevokeCertificateRequest): Future[js.Object] =
+      service.revokeCertificate(params).promise.toFuture
+    def tagCertificateAuthorityFuture(params: TagCertificateAuthorityRequest): Future[js.Object] =
+      service.tagCertificateAuthority(params).promise.toFuture
+    def untagCertificateAuthorityFuture(params: UntagCertificateAuthorityRequest): Future[js.Object] =
+      service.untagCertificateAuthority(params).promise.toFuture
+    def updateCertificateAuthorityFuture(params: UpdateCertificateAuthorityRequest): Future[js.Object] =
+      service.updateCertificateAuthority(params).promise.toFuture
+  }
 }
 
 package acmpca {

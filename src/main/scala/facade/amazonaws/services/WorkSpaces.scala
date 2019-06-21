@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -99,6 +100,83 @@ package object workspaces {
   type WorkspaceRequestList                  = js.Array[WorkspaceRequest]
   type WorkspaceState                        = String
   type WorkspacesIpGroupsList                = js.Array[WorkspacesIpGroup]
+
+  implicit final class WorkSpacesOps(val service: WorkSpaces) extends AnyVal {
+
+    def associateIpGroupsFuture(params: AssociateIpGroupsRequest): Future[AssociateIpGroupsResult] =
+      service.associateIpGroups(params).promise.toFuture
+    def authorizeIpRulesFuture(params: AuthorizeIpRulesRequest): Future[AuthorizeIpRulesResult] =
+      service.authorizeIpRules(params).promise.toFuture
+    def createIpGroupFuture(params: CreateIpGroupRequest): Future[CreateIpGroupResult] =
+      service.createIpGroup(params).promise.toFuture
+    def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResult] =
+      service.createTags(params).promise.toFuture
+    def createWorkspacesFuture(params: CreateWorkspacesRequest): Future[CreateWorkspacesResult] =
+      service.createWorkspaces(params).promise.toFuture
+    def deleteIpGroupFuture(params: DeleteIpGroupRequest): Future[DeleteIpGroupResult] =
+      service.deleteIpGroup(params).promise.toFuture
+    def deleteTagsFuture(params: DeleteTagsRequest): Future[DeleteTagsResult] =
+      service.deleteTags(params).promise.toFuture
+    def deleteWorkspaceImageFuture(params: DeleteWorkspaceImageRequest): Future[DeleteWorkspaceImageResult] =
+      service.deleteWorkspaceImage(params).promise.toFuture
+    def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResult] =
+      service.describeAccount(params).promise.toFuture
+    def describeAccountModificationsFuture(
+        params: DescribeAccountModificationsRequest
+    ): Future[DescribeAccountModificationsResult] = service.describeAccountModifications(params).promise.toFuture
+    def describeClientPropertiesFuture(
+        params: DescribeClientPropertiesRequest
+    ): Future[DescribeClientPropertiesResult] = service.describeClientProperties(params).promise.toFuture
+    def describeIpGroupsFuture(params: DescribeIpGroupsRequest): Future[DescribeIpGroupsResult] =
+      service.describeIpGroups(params).promise.toFuture
+    def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResult] =
+      service.describeTags(params).promise.toFuture
+    def describeWorkspaceBundlesFuture(
+        params: DescribeWorkspaceBundlesRequest
+    ): Future[DescribeWorkspaceBundlesResult] = service.describeWorkspaceBundles(params).promise.toFuture
+    def describeWorkspaceDirectoriesFuture(
+        params: DescribeWorkspaceDirectoriesRequest
+    ): Future[DescribeWorkspaceDirectoriesResult] = service.describeWorkspaceDirectories(params).promise.toFuture
+    def describeWorkspaceImagesFuture(params: DescribeWorkspaceImagesRequest): Future[DescribeWorkspaceImagesResult] =
+      service.describeWorkspaceImages(params).promise.toFuture
+    def describeWorkspacesConnectionStatusFuture(
+        params: DescribeWorkspacesConnectionStatusRequest
+    ): Future[DescribeWorkspacesConnectionStatusResult] =
+      service.describeWorkspacesConnectionStatus(params).promise.toFuture
+    def describeWorkspacesFuture(params: DescribeWorkspacesRequest): Future[DescribeWorkspacesResult] =
+      service.describeWorkspaces(params).promise.toFuture
+    def disassociateIpGroupsFuture(params: DisassociateIpGroupsRequest): Future[DisassociateIpGroupsResult] =
+      service.disassociateIpGroups(params).promise.toFuture
+    def importWorkspaceImageFuture(params: ImportWorkspaceImageRequest): Future[ImportWorkspaceImageResult] =
+      service.importWorkspaceImage(params).promise.toFuture
+    def listAvailableManagementCidrRangesFuture(
+        params: ListAvailableManagementCidrRangesRequest
+    ): Future[ListAvailableManagementCidrRangesResult] =
+      service.listAvailableManagementCidrRanges(params).promise.toFuture
+    def modifyAccountFuture(params: ModifyAccountRequest): Future[ModifyAccountResult] =
+      service.modifyAccount(params).promise.toFuture
+    def modifyClientPropertiesFuture(params: ModifyClientPropertiesRequest): Future[ModifyClientPropertiesResult] =
+      service.modifyClientProperties(params).promise.toFuture
+    def modifyWorkspacePropertiesFuture(
+        params: ModifyWorkspacePropertiesRequest
+    ): Future[ModifyWorkspacePropertiesResult] = service.modifyWorkspaceProperties(params).promise.toFuture
+    def modifyWorkspaceStateFuture(params: ModifyWorkspaceStateRequest): Future[ModifyWorkspaceStateResult] =
+      service.modifyWorkspaceState(params).promise.toFuture
+    def rebootWorkspacesFuture(params: RebootWorkspacesRequest): Future[RebootWorkspacesResult] =
+      service.rebootWorkspaces(params).promise.toFuture
+    def rebuildWorkspacesFuture(params: RebuildWorkspacesRequest): Future[RebuildWorkspacesResult] =
+      service.rebuildWorkspaces(params).promise.toFuture
+    def revokeIpRulesFuture(params: RevokeIpRulesRequest): Future[RevokeIpRulesResult] =
+      service.revokeIpRules(params).promise.toFuture
+    def startWorkspacesFuture(params: StartWorkspacesRequest): Future[StartWorkspacesResult] =
+      service.startWorkspaces(params).promise.toFuture
+    def stopWorkspacesFuture(params: StopWorkspacesRequest): Future[StopWorkspacesResult] =
+      service.stopWorkspaces(params).promise.toFuture
+    def terminateWorkspacesFuture(params: TerminateWorkspacesRequest): Future[TerminateWorkspacesResult] =
+      service.terminateWorkspaces(params).promise.toFuture
+    def updateRulesOfIpGroupFuture(params: UpdateRulesOfIpGroupRequest): Future[UpdateRulesOfIpGroupResult] =
+      service.updateRulesOfIpGroup(params).promise.toFuture
+  }
 }
 
 package workspaces {

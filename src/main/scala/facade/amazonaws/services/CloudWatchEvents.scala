@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -56,6 +57,42 @@ package object cloudwatchevents {
   type TargetPartitionKeyPath       = String
   type TransformerInput             = String
   type TransformerPaths             = js.Dictionary[TargetInputPath]
+
+  implicit final class CloudWatchEventsOps(val service: CloudWatchEvents) extends AnyVal {
+
+    def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] = service.deleteRule(params).promise.toFuture
+    def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] =
+      service.describeEventBus(params).promise.toFuture
+    def describeRuleFuture(params: DescribeRuleRequest): Future[DescribeRuleResponse] =
+      service.describeRule(params).promise.toFuture
+    def disableRuleFuture(params: DisableRuleRequest): Future[js.Object] = service.disableRule(params).promise.toFuture
+    def enableRuleFuture(params: EnableRuleRequest): Future[js.Object]   = service.enableRule(params).promise.toFuture
+    def listRuleNamesByTargetFuture(params: ListRuleNamesByTargetRequest): Future[ListRuleNamesByTargetResponse] =
+      service.listRuleNamesByTarget(params).promise.toFuture
+    def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] =
+      service.listRules(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def listTargetsByRuleFuture(params: ListTargetsByRuleRequest): Future[ListTargetsByRuleResponse] =
+      service.listTargetsByRule(params).promise.toFuture
+    def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] =
+      service.putEvents(params).promise.toFuture
+    def putPermissionFuture(params: PutPermissionRequest): Future[js.Object] =
+      service.putPermission(params).promise.toFuture
+    def putRuleFuture(params: PutRuleRequest): Future[PutRuleResponse] = service.putRule(params).promise.toFuture
+    def putTargetsFuture(params: PutTargetsRequest): Future[PutTargetsResponse] =
+      service.putTargets(params).promise.toFuture
+    def removePermissionFuture(params: RemovePermissionRequest): Future[js.Object] =
+      service.removePermission(params).promise.toFuture
+    def removeTargetsFuture(params: RemoveTargetsRequest): Future[RemoveTargetsResponse] =
+      service.removeTargets(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def testEventPatternFuture(params: TestEventPatternRequest): Future[TestEventPatternResponse] =
+      service.testEventPattern(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+  }
 }
 
 package cloudwatchevents {

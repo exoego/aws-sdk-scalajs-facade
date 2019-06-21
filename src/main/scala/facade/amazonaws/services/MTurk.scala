@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -51,6 +52,101 @@ package object mturk {
   type Timestamp                      = js.Date
   type TurkErrorCode                  = String
   type WorkerBlockList                = js.Array[WorkerBlock]
+
+  implicit final class MTurkOps(val service: MTurk) extends AnyVal {
+
+    def acceptQualificationRequestFuture(
+        params: AcceptQualificationRequestRequest
+    ): Future[AcceptQualificationRequestResponse] = service.acceptQualificationRequest(params).promise.toFuture
+    def approveAssignmentFuture(params: ApproveAssignmentRequest): Future[ApproveAssignmentResponse] =
+      service.approveAssignment(params).promise.toFuture
+    def associateQualificationWithWorkerFuture(
+        params: AssociateQualificationWithWorkerRequest
+    ): Future[AssociateQualificationWithWorkerResponse] =
+      service.associateQualificationWithWorker(params).promise.toFuture
+    def createAdditionalAssignmentsForHITFuture(
+        params: CreateAdditionalAssignmentsForHITRequest
+    ): Future[CreateAdditionalAssignmentsForHITResponse] =
+      service.createAdditionalAssignmentsForHIT(params).promise.toFuture
+    def createHITFuture(params: CreateHITRequest): Future[CreateHITResponse] =
+      service.createHIT(params).promise.toFuture
+    def createHITTypeFuture(params: CreateHITTypeRequest): Future[CreateHITTypeResponse] =
+      service.createHITType(params).promise.toFuture
+    def createHITWithHITTypeFuture(params: CreateHITWithHITTypeRequest): Future[CreateHITWithHITTypeResponse] =
+      service.createHITWithHITType(params).promise.toFuture
+    def createQualificationTypeFuture(params: CreateQualificationTypeRequest): Future[CreateQualificationTypeResponse] =
+      service.createQualificationType(params).promise.toFuture
+    def createWorkerBlockFuture(params: CreateWorkerBlockRequest): Future[CreateWorkerBlockResponse] =
+      service.createWorkerBlock(params).promise.toFuture
+    def deleteHITFuture(params: DeleteHITRequest): Future[DeleteHITResponse] =
+      service.deleteHIT(params).promise.toFuture
+    def deleteQualificationTypeFuture(params: DeleteQualificationTypeRequest): Future[DeleteQualificationTypeResponse] =
+      service.deleteQualificationType(params).promise.toFuture
+    def deleteWorkerBlockFuture(params: DeleteWorkerBlockRequest): Future[DeleteWorkerBlockResponse] =
+      service.deleteWorkerBlock(params).promise.toFuture
+    def disassociateQualificationFromWorkerFuture(
+        params: DisassociateQualificationFromWorkerRequest
+    ): Future[DisassociateQualificationFromWorkerResponse] =
+      service.disassociateQualificationFromWorker(params).promise.toFuture
+    def getAccountBalanceFuture(params: GetAccountBalanceRequest): Future[GetAccountBalanceResponse] =
+      service.getAccountBalance(params).promise.toFuture
+    def getAssignmentFuture(params: GetAssignmentRequest): Future[GetAssignmentResponse] =
+      service.getAssignment(params).promise.toFuture
+    def getFileUploadURLFuture(params: GetFileUploadURLRequest): Future[GetFileUploadURLResponse] =
+      service.getFileUploadURL(params).promise.toFuture
+    def getHITFuture(params: GetHITRequest): Future[GetHITResponse] = service.getHIT(params).promise.toFuture
+    def getQualificationScoreFuture(params: GetQualificationScoreRequest): Future[GetQualificationScoreResponse] =
+      service.getQualificationScore(params).promise.toFuture
+    def getQualificationTypeFuture(params: GetQualificationTypeRequest): Future[GetQualificationTypeResponse] =
+      service.getQualificationType(params).promise.toFuture
+    def listAssignmentsForHITFuture(params: ListAssignmentsForHITRequest): Future[ListAssignmentsForHITResponse] =
+      service.listAssignmentsForHIT(params).promise.toFuture
+    def listBonusPaymentsFuture(params: ListBonusPaymentsRequest): Future[ListBonusPaymentsResponse] =
+      service.listBonusPayments(params).promise.toFuture
+    def listHITsForQualificationTypeFuture(
+        params: ListHITsForQualificationTypeRequest
+    ): Future[ListHITsForQualificationTypeResponse]                       = service.listHITsForQualificationType(params).promise.toFuture
+    def listHITsFuture(params: ListHITsRequest): Future[ListHITsResponse] = service.listHITs(params).promise.toFuture
+    def listQualificationRequestsFuture(
+        params: ListQualificationRequestsRequest
+    ): Future[ListQualificationRequestsResponse] = service.listQualificationRequests(params).promise.toFuture
+    def listQualificationTypesFuture(params: ListQualificationTypesRequest): Future[ListQualificationTypesResponse] =
+      service.listQualificationTypes(params).promise.toFuture
+    def listReviewPolicyResultsForHITFuture(
+        params: ListReviewPolicyResultsForHITRequest
+    ): Future[ListReviewPolicyResultsForHITResponse] = service.listReviewPolicyResultsForHIT(params).promise.toFuture
+    def listReviewableHITsFuture(params: ListReviewableHITsRequest): Future[ListReviewableHITsResponse] =
+      service.listReviewableHITs(params).promise.toFuture
+    def listWorkerBlocksFuture(params: ListWorkerBlocksRequest): Future[ListWorkerBlocksResponse] =
+      service.listWorkerBlocks(params).promise.toFuture
+    def listWorkersWithQualificationTypeFuture(
+        params: ListWorkersWithQualificationTypeRequest
+    ): Future[ListWorkersWithQualificationTypeResponse] =
+      service.listWorkersWithQualificationType(params).promise.toFuture
+    def notifyWorkersFuture(params: NotifyWorkersRequest): Future[NotifyWorkersResponse] =
+      service.notifyWorkers(params).promise.toFuture
+    def rejectAssignmentFuture(params: RejectAssignmentRequest): Future[RejectAssignmentResponse] =
+      service.rejectAssignment(params).promise.toFuture
+    def rejectQualificationRequestFuture(
+        params: RejectQualificationRequestRequest
+    ): Future[RejectQualificationRequestResponse] = service.rejectQualificationRequest(params).promise.toFuture
+    def sendBonusFuture(params: SendBonusRequest): Future[SendBonusResponse] =
+      service.sendBonus(params).promise.toFuture
+    def sendTestEventNotificationFuture(
+        params: SendTestEventNotificationRequest
+    ): Future[SendTestEventNotificationResponse] = service.sendTestEventNotification(params).promise.toFuture
+    def updateExpirationForHITFuture(params: UpdateExpirationForHITRequest): Future[UpdateExpirationForHITResponse] =
+      service.updateExpirationForHIT(params).promise.toFuture
+    def updateHITReviewStatusFuture(params: UpdateHITReviewStatusRequest): Future[UpdateHITReviewStatusResponse] =
+      service.updateHITReviewStatus(params).promise.toFuture
+    def updateHITTypeOfHITFuture(params: UpdateHITTypeOfHITRequest): Future[UpdateHITTypeOfHITResponse] =
+      service.updateHITTypeOfHIT(params).promise.toFuture
+    def updateNotificationSettingsFuture(
+        params: UpdateNotificationSettingsRequest
+    ): Future[UpdateNotificationSettingsResponse] = service.updateNotificationSettings(params).promise.toFuture
+    def updateQualificationTypeFuture(params: UpdateQualificationTypeRequest): Future[UpdateQualificationTypeResponse] =
+      service.updateQualificationType(params).promise.toFuture
+  }
 }
 
 package mturk {

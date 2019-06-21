@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -58,6 +59,126 @@ package object chime {
   type UserList                         = js.Array[User]
   type VoiceConnectorList               = js.Array[VoiceConnector]
   type VoiceConnectorName               = String
+
+  implicit final class ChimeOps(val service: Chime) extends AnyVal {
+
+    def associatePhoneNumberWithUserFuture(
+        params: AssociatePhoneNumberWithUserRequest
+    ): Future[AssociatePhoneNumberWithUserResponse] = service.associatePhoneNumberWithUser(params).promise.toFuture
+    def associatePhoneNumbersWithVoiceConnectorFuture(
+        params: AssociatePhoneNumbersWithVoiceConnectorRequest
+    ): Future[AssociatePhoneNumbersWithVoiceConnectorResponse] =
+      service.associatePhoneNumbersWithVoiceConnector(params).promise.toFuture
+    def batchDeletePhoneNumberFuture(params: BatchDeletePhoneNumberRequest): Future[BatchDeletePhoneNumberResponse] =
+      service.batchDeletePhoneNumber(params).promise.toFuture
+    def batchSuspendUserFuture(params: BatchSuspendUserRequest): Future[BatchSuspendUserResponse] =
+      service.batchSuspendUser(params).promise.toFuture
+    def batchUnsuspendUserFuture(params: BatchUnsuspendUserRequest): Future[BatchUnsuspendUserResponse] =
+      service.batchUnsuspendUser(params).promise.toFuture
+    def batchUpdatePhoneNumberFuture(params: BatchUpdatePhoneNumberRequest): Future[BatchUpdatePhoneNumberResponse] =
+      service.batchUpdatePhoneNumber(params).promise.toFuture
+    def batchUpdateUserFuture(params: BatchUpdateUserRequest): Future[BatchUpdateUserResponse] =
+      service.batchUpdateUser(params).promise.toFuture
+    def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] =
+      service.createAccount(params).promise.toFuture
+    def createPhoneNumberOrderFuture(params: CreatePhoneNumberOrderRequest): Future[CreatePhoneNumberOrderResponse] =
+      service.createPhoneNumberOrder(params).promise.toFuture
+    def createVoiceConnectorFuture(params: CreateVoiceConnectorRequest): Future[CreateVoiceConnectorResponse] =
+      service.createVoiceConnector(params).promise.toFuture
+    def deleteAccountFuture(params: DeleteAccountRequest): Future[DeleteAccountResponse] =
+      service.deleteAccount(params).promise.toFuture
+    def deletePhoneNumberFuture(params: DeletePhoneNumberRequest): Future[js.Object] =
+      service.deletePhoneNumber(params).promise.toFuture
+    def deleteVoiceConnectorFuture(params: DeleteVoiceConnectorRequest): Future[js.Object] =
+      service.deleteVoiceConnector(params).promise.toFuture
+    def deleteVoiceConnectorOriginationFuture(params: DeleteVoiceConnectorOriginationRequest): Future[js.Object] =
+      service.deleteVoiceConnectorOrigination(params).promise.toFuture
+    def deleteVoiceConnectorTerminationCredentialsFuture(
+        params: DeleteVoiceConnectorTerminationCredentialsRequest
+    ): Future[js.Object] = service.deleteVoiceConnectorTerminationCredentials(params).promise.toFuture
+    def deleteVoiceConnectorTerminationFuture(params: DeleteVoiceConnectorTerminationRequest): Future[js.Object] =
+      service.deleteVoiceConnectorTermination(params).promise.toFuture
+    def disassociatePhoneNumberFromUserFuture(
+        params: DisassociatePhoneNumberFromUserRequest
+    ): Future[DisassociatePhoneNumberFromUserResponse] =
+      service.disassociatePhoneNumberFromUser(params).promise.toFuture
+    def disassociatePhoneNumbersFromVoiceConnectorFuture(
+        params: DisassociatePhoneNumbersFromVoiceConnectorRequest
+    ): Future[DisassociatePhoneNumbersFromVoiceConnectorResponse] =
+      service.disassociatePhoneNumbersFromVoiceConnector(params).promise.toFuture
+    def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
+      service.getAccount(params).promise.toFuture
+    def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] =
+      service.getAccountSettings(params).promise.toFuture
+    def getGlobalSettingsFuture(): Future[GetGlobalSettingsResponse] = service.getGlobalSettings().promise.toFuture
+    def getPhoneNumberFuture(params: GetPhoneNumberRequest): Future[GetPhoneNumberResponse] =
+      service.getPhoneNumber(params).promise.toFuture
+    def getPhoneNumberOrderFuture(params: GetPhoneNumberOrderRequest): Future[GetPhoneNumberOrderResponse] =
+      service.getPhoneNumberOrder(params).promise.toFuture
+    def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise.toFuture
+    def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] =
+      service.getUserSettings(params).promise.toFuture
+    def getVoiceConnectorFuture(params: GetVoiceConnectorRequest): Future[GetVoiceConnectorResponse] =
+      service.getVoiceConnector(params).promise.toFuture
+    def getVoiceConnectorOriginationFuture(
+        params: GetVoiceConnectorOriginationRequest
+    ): Future[GetVoiceConnectorOriginationResponse] = service.getVoiceConnectorOrigination(params).promise.toFuture
+    def getVoiceConnectorTerminationFuture(
+        params: GetVoiceConnectorTerminationRequest
+    ): Future[GetVoiceConnectorTerminationResponse] = service.getVoiceConnectorTermination(params).promise.toFuture
+    def getVoiceConnectorTerminationHealthFuture(
+        params: GetVoiceConnectorTerminationHealthRequest
+    ): Future[GetVoiceConnectorTerminationHealthResponse] =
+      service.getVoiceConnectorTerminationHealth(params).promise.toFuture
+    def inviteUsersFuture(params: InviteUsersRequest): Future[InviteUsersResponse] =
+      service.inviteUsers(params).promise.toFuture
+    def listAccountsFuture(params: ListAccountsRequest): Future[ListAccountsResponse] =
+      service.listAccounts(params).promise.toFuture
+    def listPhoneNumberOrdersFuture(params: ListPhoneNumberOrdersRequest): Future[ListPhoneNumberOrdersResponse] =
+      service.listPhoneNumberOrders(params).promise.toFuture
+    def listPhoneNumbersFuture(params: ListPhoneNumbersRequest): Future[ListPhoneNumbersResponse] =
+      service.listPhoneNumbers(params).promise.toFuture
+    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+      service.listUsers(params).promise.toFuture
+    def listVoiceConnectorTerminationCredentialsFuture(
+        params: ListVoiceConnectorTerminationCredentialsRequest
+    ): Future[ListVoiceConnectorTerminationCredentialsResponse] =
+      service.listVoiceConnectorTerminationCredentials(params).promise.toFuture
+    def listVoiceConnectorsFuture(params: ListVoiceConnectorsRequest): Future[ListVoiceConnectorsResponse] =
+      service.listVoiceConnectors(params).promise.toFuture
+    def logoutUserFuture(params: LogoutUserRequest): Future[LogoutUserResponse] =
+      service.logoutUser(params).promise.toFuture
+    def putVoiceConnectorOriginationFuture(
+        params: PutVoiceConnectorOriginationRequest
+    ): Future[PutVoiceConnectorOriginationResponse] = service.putVoiceConnectorOrigination(params).promise.toFuture
+    def putVoiceConnectorTerminationCredentialsFuture(
+        params: PutVoiceConnectorTerminationCredentialsRequest
+    ): Future[js.Object] = service.putVoiceConnectorTerminationCredentials(params).promise.toFuture
+    def putVoiceConnectorTerminationFuture(
+        params: PutVoiceConnectorTerminationRequest
+    ): Future[PutVoiceConnectorTerminationResponse] = service.putVoiceConnectorTermination(params).promise.toFuture
+    def resetPersonalPINFuture(params: ResetPersonalPINRequest): Future[ResetPersonalPINResponse] =
+      service.resetPersonalPIN(params).promise.toFuture
+    def restorePhoneNumberFuture(params: RestorePhoneNumberRequest): Future[RestorePhoneNumberResponse] =
+      service.restorePhoneNumber(params).promise.toFuture
+    def searchAvailablePhoneNumbersFuture(
+        params: SearchAvailablePhoneNumbersRequest
+    ): Future[SearchAvailablePhoneNumbersResponse] = service.searchAvailablePhoneNumbers(params).promise.toFuture
+    def updateAccountFuture(params: UpdateAccountRequest): Future[UpdateAccountResponse] =
+      service.updateAccount(params).promise.toFuture
+    def updateAccountSettingsFuture(params: UpdateAccountSettingsRequest): Future[UpdateAccountSettingsResponse] =
+      service.updateAccountSettings(params).promise.toFuture
+    def updateGlobalSettingsFuture(params: UpdateGlobalSettingsRequest): Future[js.Object] =
+      service.updateGlobalSettings(params).promise.toFuture
+    def updatePhoneNumberFuture(params: UpdatePhoneNumberRequest): Future[UpdatePhoneNumberResponse] =
+      service.updatePhoneNumber(params).promise.toFuture
+    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+      service.updateUser(params).promise.toFuture
+    def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] =
+      service.updateUserSettings(params).promise.toFuture
+    def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] =
+      service.updateVoiceConnector(params).promise.toFuture
+  }
 }
 
 package chime {

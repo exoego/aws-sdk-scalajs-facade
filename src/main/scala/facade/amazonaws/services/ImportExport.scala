@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -49,6 +50,17 @@ package object importexport {
   type street1               = String
   type street2               = String
   type street3               = String
+
+  implicit final class ImportExportOps(val service: ImportExport) extends AnyVal {
+
+    def cancelJobFuture(params: CancelJobInput): Future[CancelJobOutput] = service.cancelJob(params).promise.toFuture
+    def createJobFuture(params: CreateJobInput): Future[CreateJobOutput] = service.createJob(params).promise.toFuture
+    def getShippingLabelFuture(params: GetShippingLabelInput): Future[GetShippingLabelOutput] =
+      service.getShippingLabel(params).promise.toFuture
+    def getStatusFuture(params: GetStatusInput): Future[GetStatusOutput] = service.getStatus(params).promise.toFuture
+    def listJobsFuture(params: ListJobsInput): Future[ListJobsOutput]    = service.listJobs(params).promise.toFuture
+    def updateJobFuture(params: UpdateJobInput): Future[UpdateJobOutput] = service.updateJob(params).promise.toFuture
+  }
 }
 
 package importexport {

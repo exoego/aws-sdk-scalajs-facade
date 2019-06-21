@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -28,6 +29,13 @@ package object lexruntime {
   type UserId                      = String
   type genericAttachmentList       = js.Array[GenericAttachment]
   type listOfButtons               = js.Array[Button]
+
+  implicit final class LexRuntimeOps(val service: LexRuntime) extends AnyVal {
+
+    def postContentFuture(params: PostContentRequest): Future[PostContentResponse] =
+      service.postContent(params).promise.toFuture
+    def postTextFuture(params: PostTextRequest): Future[PostTextResponse] = service.postText(params).promise.toFuture
+  }
 }
 
 package lexruntime {

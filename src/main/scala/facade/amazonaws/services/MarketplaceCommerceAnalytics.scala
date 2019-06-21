@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -20,6 +21,14 @@ package object marketplacecommerceanalytics {
   type RoleNameArn             = String
   type SnsTopicArn             = String
   type SupportDataSetType      = String
+
+  implicit final class MarketplaceCommerceAnalyticsOps(val service: MarketplaceCommerceAnalytics) extends AnyVal {
+
+    def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
+      service.generateDataSet(params).promise.toFuture
+    def startSupportDataExportFuture(params: StartSupportDataExportRequest): Future[StartSupportDataExportResult] =
+      service.startSupportDataExport(params).promise.toFuture
+  }
 }
 
 package marketplacecommerceanalytics {

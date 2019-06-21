@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -42,6 +43,33 @@ package object applicationautoscaling {
   type StepAdjustments           = js.Array[StepAdjustment]
   type TimestampType             = js.Date
   type XmlString                 = String
+
+  implicit final class ApplicationAutoScalingOps(val service: ApplicationAutoScaling) extends AnyVal {
+
+    def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
+      service.deleteScalingPolicy(params).promise.toFuture
+    def deleteScheduledActionFuture(params: DeleteScheduledActionRequest): Future[DeleteScheduledActionResponse] =
+      service.deleteScheduledAction(params).promise.toFuture
+    def deregisterScalableTargetFuture(
+        params: DeregisterScalableTargetRequest
+    ): Future[DeregisterScalableTargetResponse] = service.deregisterScalableTarget(params).promise.toFuture
+    def describeScalableTargetsFuture(params: DescribeScalableTargetsRequest): Future[DescribeScalableTargetsResponse] =
+      service.describeScalableTargets(params).promise.toFuture
+    def describeScalingActivitiesFuture(
+        params: DescribeScalingActivitiesRequest
+    ): Future[DescribeScalingActivitiesResponse] = service.describeScalingActivities(params).promise.toFuture
+    def describeScalingPoliciesFuture(params: DescribeScalingPoliciesRequest): Future[DescribeScalingPoliciesResponse] =
+      service.describeScalingPolicies(params).promise.toFuture
+    def describeScheduledActionsFuture(
+        params: DescribeScheduledActionsRequest
+    ): Future[DescribeScheduledActionsResponse] = service.describeScheduledActions(params).promise.toFuture
+    def putScalingPolicyFuture(params: PutScalingPolicyRequest): Future[PutScalingPolicyResponse] =
+      service.putScalingPolicy(params).promise.toFuture
+    def putScheduledActionFuture(params: PutScheduledActionRequest): Future[PutScheduledActionResponse] =
+      service.putScheduledAction(params).promise.toFuture
+    def registerScalableTargetFuture(params: RegisterScalableTargetRequest): Future[RegisterScalableTargetResponse] =
+      service.registerScalableTarget(params).promise.toFuture
+  }
 }
 
 package applicationautoscaling {

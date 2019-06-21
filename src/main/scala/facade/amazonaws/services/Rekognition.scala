@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -86,6 +87,79 @@ package object rekognition {
   type Url                   = String
   type Urls                  = js.Array[Url]
   type VideoJobStatus        = String
+
+  implicit final class RekognitionOps(val service: Rekognition) extends AnyVal {
+
+    def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] =
+      service.compareFaces(params).promise.toFuture
+    def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] =
+      service.createCollection(params).promise.toFuture
+    def createStreamProcessorFuture(params: CreateStreamProcessorRequest): Future[CreateStreamProcessorResponse] =
+      service.createStreamProcessor(params).promise.toFuture
+    def deleteCollectionFuture(params: DeleteCollectionRequest): Future[DeleteCollectionResponse] =
+      service.deleteCollection(params).promise.toFuture
+    def deleteFacesFuture(params: DeleteFacesRequest): Future[DeleteFacesResponse] =
+      service.deleteFaces(params).promise.toFuture
+    def deleteStreamProcessorFuture(params: DeleteStreamProcessorRequest): Future[DeleteStreamProcessorResponse] =
+      service.deleteStreamProcessor(params).promise.toFuture
+    def describeCollectionFuture(params: DescribeCollectionRequest): Future[DescribeCollectionResponse] =
+      service.describeCollection(params).promise.toFuture
+    def describeStreamProcessorFuture(params: DescribeStreamProcessorRequest): Future[DescribeStreamProcessorResponse] =
+      service.describeStreamProcessor(params).promise.toFuture
+    def detectFacesFuture(params: DetectFacesRequest): Future[DetectFacesResponse] =
+      service.detectFaces(params).promise.toFuture
+    def detectLabelsFuture(params: DetectLabelsRequest): Future[DetectLabelsResponse] =
+      service.detectLabels(params).promise.toFuture
+    def detectModerationLabelsFuture(params: DetectModerationLabelsRequest): Future[DetectModerationLabelsResponse] =
+      service.detectModerationLabels(params).promise.toFuture
+    def detectTextFuture(params: DetectTextRequest): Future[DetectTextResponse] =
+      service.detectText(params).promise.toFuture
+    def getCelebrityInfoFuture(params: GetCelebrityInfoRequest): Future[GetCelebrityInfoResponse] =
+      service.getCelebrityInfo(params).promise.toFuture
+    def getCelebrityRecognitionFuture(params: GetCelebrityRecognitionRequest): Future[GetCelebrityRecognitionResponse] =
+      service.getCelebrityRecognition(params).promise.toFuture
+    def getContentModerationFuture(params: GetContentModerationRequest): Future[GetContentModerationResponse] =
+      service.getContentModeration(params).promise.toFuture
+    def getFaceDetectionFuture(params: GetFaceDetectionRequest): Future[GetFaceDetectionResponse] =
+      service.getFaceDetection(params).promise.toFuture
+    def getFaceSearchFuture(params: GetFaceSearchRequest): Future[GetFaceSearchResponse] =
+      service.getFaceSearch(params).promise.toFuture
+    def getLabelDetectionFuture(params: GetLabelDetectionRequest): Future[GetLabelDetectionResponse] =
+      service.getLabelDetection(params).promise.toFuture
+    def getPersonTrackingFuture(params: GetPersonTrackingRequest): Future[GetPersonTrackingResponse] =
+      service.getPersonTracking(params).promise.toFuture
+    def indexFacesFuture(params: IndexFacesRequest): Future[IndexFacesResponse] =
+      service.indexFaces(params).promise.toFuture
+    def listCollectionsFuture(params: ListCollectionsRequest): Future[ListCollectionsResponse] =
+      service.listCollections(params).promise.toFuture
+    def listFacesFuture(params: ListFacesRequest): Future[ListFacesResponse] =
+      service.listFaces(params).promise.toFuture
+    def listStreamProcessorsFuture(params: ListStreamProcessorsRequest): Future[ListStreamProcessorsResponse] =
+      service.listStreamProcessors(params).promise.toFuture
+    def recognizeCelebritiesFuture(params: RecognizeCelebritiesRequest): Future[RecognizeCelebritiesResponse] =
+      service.recognizeCelebrities(params).promise.toFuture
+    def searchFacesByImageFuture(params: SearchFacesByImageRequest): Future[SearchFacesByImageResponse] =
+      service.searchFacesByImage(params).promise.toFuture
+    def searchFacesFuture(params: SearchFacesRequest): Future[SearchFacesResponse] =
+      service.searchFaces(params).promise.toFuture
+    def startCelebrityRecognitionFuture(
+        params: StartCelebrityRecognitionRequest
+    ): Future[StartCelebrityRecognitionResponse] = service.startCelebrityRecognition(params).promise.toFuture
+    def startContentModerationFuture(params: StartContentModerationRequest): Future[StartContentModerationResponse] =
+      service.startContentModeration(params).promise.toFuture
+    def startFaceDetectionFuture(params: StartFaceDetectionRequest): Future[StartFaceDetectionResponse] =
+      service.startFaceDetection(params).promise.toFuture
+    def startFaceSearchFuture(params: StartFaceSearchRequest): Future[StartFaceSearchResponse] =
+      service.startFaceSearch(params).promise.toFuture
+    def startLabelDetectionFuture(params: StartLabelDetectionRequest): Future[StartLabelDetectionResponse] =
+      service.startLabelDetection(params).promise.toFuture
+    def startPersonTrackingFuture(params: StartPersonTrackingRequest): Future[StartPersonTrackingResponse] =
+      service.startPersonTracking(params).promise.toFuture
+    def startStreamProcessorFuture(params: StartStreamProcessorRequest): Future[StartStreamProcessorResponse] =
+      service.startStreamProcessor(params).promise.toFuture
+    def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] =
+      service.stopStreamProcessor(params).promise.toFuture
+  }
 }
 
 package rekognition {

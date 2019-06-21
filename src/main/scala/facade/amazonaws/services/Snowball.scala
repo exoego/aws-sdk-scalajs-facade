@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -33,6 +34,42 @@ package object snowball {
   type SnowballType               = String
   type SnsTopicARN                = String
   type Timestamp                  = js.Date
+
+  implicit final class SnowballOps(val service: Snowball) extends AnyVal {
+
+    def cancelClusterFuture(params: CancelClusterRequest): Future[CancelClusterResult] =
+      service.cancelCluster(params).promise.toFuture
+    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResult] = service.cancelJob(params).promise.toFuture
+    def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] =
+      service.createAddress(params).promise.toFuture
+    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] =
+      service.createCluster(params).promise.toFuture
+    def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise.toFuture
+    def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] =
+      service.describeAddress(params).promise.toFuture
+    def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] =
+      service.describeAddresses(params).promise.toFuture
+    def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResult] =
+      service.describeCluster(params).promise.toFuture
+    def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] =
+      service.describeJob(params).promise.toFuture
+    def getJobManifestFuture(params: GetJobManifestRequest): Future[GetJobManifestResult] =
+      service.getJobManifest(params).promise.toFuture
+    def getJobUnlockCodeFuture(params: GetJobUnlockCodeRequest): Future[GetJobUnlockCodeResult] =
+      service.getJobUnlockCode(params).promise.toFuture
+    def getSnowballUsageFuture(params: GetSnowballUsageRequest): Future[GetSnowballUsageResult] =
+      service.getSnowballUsage(params).promise.toFuture
+    def listClusterJobsFuture(params: ListClusterJobsRequest): Future[ListClusterJobsResult] =
+      service.listClusterJobs(params).promise.toFuture
+    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] =
+      service.listClusters(params).promise.toFuture
+    def listCompatibleImagesFuture(params: ListCompatibleImagesRequest): Future[ListCompatibleImagesResult] =
+      service.listCompatibleImages(params).promise.toFuture
+    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise.toFuture
+    def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] =
+      service.updateCluster(params).promise.toFuture
+    def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] = service.updateJob(params).promise.toFuture
+  }
 }
 
 package snowball {

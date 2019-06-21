@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -88,6 +89,49 @@ package object cloudwatch {
   type Timestamps        = js.Array[Timestamp]
   type TreatMissingData  = String
   type Values            = js.Array[DatapointValue]
+
+  implicit final class CloudWatchOps(val service: CloudWatch) extends AnyVal {
+
+    def deleteAlarmsFuture(params: DeleteAlarmsInput): Future[js.Object] = service.deleteAlarms(params).promise.toFuture
+    def deleteDashboardsFuture(params: DeleteDashboardsInput): Future[DeleteDashboardsOutput] =
+      service.deleteDashboards(params).promise.toFuture
+    def describeAlarmHistoryFuture(params: DescribeAlarmHistoryInput): Future[DescribeAlarmHistoryOutput] =
+      service.describeAlarmHistory(params).promise.toFuture
+    def describeAlarmsForMetricFuture(params: DescribeAlarmsForMetricInput): Future[DescribeAlarmsForMetricOutput] =
+      service.describeAlarmsForMetric(params).promise.toFuture
+    def describeAlarmsFuture(params: DescribeAlarmsInput): Future[DescribeAlarmsOutput] =
+      service.describeAlarms(params).promise.toFuture
+    def disableAlarmActionsFuture(params: DisableAlarmActionsInput): Future[js.Object] =
+      service.disableAlarmActions(params).promise.toFuture
+    def enableAlarmActionsFuture(params: EnableAlarmActionsInput): Future[js.Object] =
+      service.enableAlarmActions(params).promise.toFuture
+    def getDashboardFuture(params: GetDashboardInput): Future[GetDashboardOutput] =
+      service.getDashboard(params).promise.toFuture
+    def getMetricDataFuture(params: GetMetricDataInput): Future[GetMetricDataOutput] =
+      service.getMetricData(params).promise.toFuture
+    def getMetricStatisticsFuture(params: GetMetricStatisticsInput): Future[GetMetricStatisticsOutput] =
+      service.getMetricStatistics(params).promise.toFuture
+    def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] =
+      service.getMetricWidgetImage(params).promise.toFuture
+    def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] =
+      service.listDashboards(params).promise.toFuture
+    def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] =
+      service.listMetrics(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] =
+      service.listTagsForResource(params).promise.toFuture
+    def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] =
+      service.putDashboard(params).promise.toFuture
+    def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] =
+      service.putMetricAlarm(params).promise.toFuture
+    def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] =
+      service.putMetricData(params).promise.toFuture
+    def setAlarmStateFuture(params: SetAlarmStateInput): Future[js.Object] =
+      service.setAlarmState(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] =
+      service.untagResource(params).promise.toFuture
+  }
 }
 
 package cloudwatch {

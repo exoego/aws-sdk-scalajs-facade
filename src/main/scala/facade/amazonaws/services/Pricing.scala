@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -16,6 +17,16 @@ package object pricing {
   type PriceListItemJSON  = String
   type ServiceList        = js.Array[Service]
   type errorMessage       = String
+
+  implicit final class PricingOps(val service: Pricing) extends AnyVal {
+
+    def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
+      service.describeServices(params).promise.toFuture
+    def getAttributeValuesFuture(params: GetAttributeValuesRequest): Future[GetAttributeValuesResponse] =
+      service.getAttributeValues(params).promise.toFuture
+    def getProductsFuture(params: GetProductsRequest): Future[GetProductsResponse] =
+      service.getProducts(params).promise.toFuture
+  }
 }
 
 package pricing {

@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -44,6 +45,26 @@ package object sts {
   type userIdType                     = String
   type userNameType                   = String
   type webIdentitySubjectType         = String
+
+  implicit final class STSOps(val service: STS) extends AnyVal {
+
+    def assumeRoleFuture(params: AssumeRoleRequest): Future[AssumeRoleResponse] =
+      service.assumeRole(params).promise.toFuture
+    def assumeRoleWithSAMLFuture(params: AssumeRoleWithSAMLRequest): Future[AssumeRoleWithSAMLResponse] =
+      service.assumeRoleWithSAML(params).promise.toFuture
+    def assumeRoleWithWebIdentityFuture(
+        params: AssumeRoleWithWebIdentityRequest
+    ): Future[AssumeRoleWithWebIdentityResponse] = service.assumeRoleWithWebIdentity(params).promise.toFuture
+    def decodeAuthorizationMessageFuture(
+        params: DecodeAuthorizationMessageRequest
+    ): Future[DecodeAuthorizationMessageResponse] = service.decodeAuthorizationMessage(params).promise.toFuture
+    def getCallerIdentityFuture(params: GetCallerIdentityRequest): Future[GetCallerIdentityResponse] =
+      service.getCallerIdentity(params).promise.toFuture
+    def getFederationTokenFuture(params: GetFederationTokenRequest): Future[GetFederationTokenResponse] =
+      service.getFederationToken(params).promise.toFuture
+    def getSessionTokenFuture(params: GetSessionTokenRequest): Future[GetSessionTokenResponse] =
+      service.getSessionToken(params).promise.toFuture
+  }
 }
 
 package sts {

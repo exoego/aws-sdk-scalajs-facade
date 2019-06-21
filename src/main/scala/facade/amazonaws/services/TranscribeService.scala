@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -26,6 +27,28 @@ package object transcribeservice {
   type Vocabularies              = js.Array[VocabularyInfo]
   type VocabularyName            = String
   type VocabularyState           = String
+
+  implicit final class TranscribeServiceOps(val service: TranscribeService) extends AnyVal {
+
+    def createVocabularyFuture(params: CreateVocabularyRequest): Future[CreateVocabularyResponse] =
+      service.createVocabulary(params).promise.toFuture
+    def deleteTranscriptionJobFuture(params: DeleteTranscriptionJobRequest): Future[js.Object] =
+      service.deleteTranscriptionJob(params).promise.toFuture
+    def deleteVocabularyFuture(params: DeleteVocabularyRequest): Future[js.Object] =
+      service.deleteVocabulary(params).promise.toFuture
+    def getTranscriptionJobFuture(params: GetTranscriptionJobRequest): Future[GetTranscriptionJobResponse] =
+      service.getTranscriptionJob(params).promise.toFuture
+    def getVocabularyFuture(params: GetVocabularyRequest): Future[GetVocabularyResponse] =
+      service.getVocabulary(params).promise.toFuture
+    def listTranscriptionJobsFuture(params: ListTranscriptionJobsRequest): Future[ListTranscriptionJobsResponse] =
+      service.listTranscriptionJobs(params).promise.toFuture
+    def listVocabulariesFuture(params: ListVocabulariesRequest): Future[ListVocabulariesResponse] =
+      service.listVocabularies(params).promise.toFuture
+    def startTranscriptionJobFuture(params: StartTranscriptionJobRequest): Future[StartTranscriptionJobResponse] =
+      service.startTranscriptionJob(params).promise.toFuture
+    def updateVocabularyFuture(params: UpdateVocabularyRequest): Future[UpdateVocabularyResponse] =
+      service.updateVocabulary(params).promise.toFuture
+  }
 }
 
 package transcribeservice {

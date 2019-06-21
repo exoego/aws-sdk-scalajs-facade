@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -31,6 +32,43 @@ package object budgetsservice {
   type ThresholdType                   = String
   type TimeUnit                        = String
   type UnitValue                       = String
+
+  implicit final class BudgetsServiceOps(val service: BudgetsService) extends AnyVal {
+
+    def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
+      service.createBudget(params).promise.toFuture
+    def createNotificationFuture(params: CreateNotificationRequest): Future[CreateNotificationResponse] =
+      service.createNotification(params).promise.toFuture
+    def createSubscriberFuture(params: CreateSubscriberRequest): Future[CreateSubscriberResponse] =
+      service.createSubscriber(params).promise.toFuture
+    def deleteBudgetFuture(params: DeleteBudgetRequest): Future[DeleteBudgetResponse] =
+      service.deleteBudget(params).promise.toFuture
+    def deleteNotificationFuture(params: DeleteNotificationRequest): Future[DeleteNotificationResponse] =
+      service.deleteNotification(params).promise.toFuture
+    def deleteSubscriberFuture(params: DeleteSubscriberRequest): Future[DeleteSubscriberResponse] =
+      service.deleteSubscriber(params).promise.toFuture
+    def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] =
+      service.describeBudget(params).promise.toFuture
+    def describeBudgetPerformanceHistoryFuture(
+        params: DescribeBudgetPerformanceHistoryRequest
+    ): Future[DescribeBudgetPerformanceHistoryResponse] =
+      service.describeBudgetPerformanceHistory(params).promise.toFuture
+    def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] =
+      service.describeBudgets(params).promise.toFuture
+    def describeNotificationsForBudgetFuture(
+        params: DescribeNotificationsForBudgetRequest
+    ): Future[DescribeNotificationsForBudgetResponse] = service.describeNotificationsForBudget(params).promise.toFuture
+    def describeSubscribersForNotificationFuture(
+        params: DescribeSubscribersForNotificationRequest
+    ): Future[DescribeSubscribersForNotificationResponse] =
+      service.describeSubscribersForNotification(params).promise.toFuture
+    def updateBudgetFuture(params: UpdateBudgetRequest): Future[UpdateBudgetResponse] =
+      service.updateBudget(params).promise.toFuture
+    def updateNotificationFuture(params: UpdateNotificationRequest): Future[UpdateNotificationResponse] =
+      service.updateNotification(params).promise.toFuture
+    def updateSubscriberFuture(params: UpdateSubscriberRequest): Future[UpdateSubscriberResponse] =
+      service.updateSubscriber(params).promise.toFuture
+  }
 }
 
 package budgetsservice {

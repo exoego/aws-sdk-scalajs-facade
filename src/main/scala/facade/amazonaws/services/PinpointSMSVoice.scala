@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -15,6 +16,34 @@ package object pinpointsmsvoice {
   type NonEmptyString               = String
   type WordCharactersWithDelimiters = String
   type __string                     = String
+
+  implicit final class PinpointSMSVoiceOps(val service: PinpointSMSVoice) extends AnyVal {
+
+    def createConfigurationSetEventDestinationFuture(
+        params: CreateConfigurationSetEventDestinationRequest
+    ): Future[CreateConfigurationSetEventDestinationResponse] =
+      service.createConfigurationSetEventDestination(params).promise.toFuture
+    def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] =
+      service.createConfigurationSet(params).promise.toFuture
+    def deleteConfigurationSetEventDestinationFuture(
+        params: DeleteConfigurationSetEventDestinationRequest
+    ): Future[DeleteConfigurationSetEventDestinationResponse] =
+      service.deleteConfigurationSetEventDestination(params).promise.toFuture
+    def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] =
+      service.deleteConfigurationSet(params).promise.toFuture
+    def getConfigurationSetEventDestinationsFuture(
+        params: GetConfigurationSetEventDestinationsRequest
+    ): Future[GetConfigurationSetEventDestinationsResponse] =
+      service.getConfigurationSetEventDestinations(params).promise.toFuture
+    def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] =
+      service.listConfigurationSets(params).promise.toFuture
+    def sendVoiceMessageFuture(params: SendVoiceMessageRequest): Future[SendVoiceMessageResponse] =
+      service.sendVoiceMessage(params).promise.toFuture
+    def updateConfigurationSetEventDestinationFuture(
+        params: UpdateConfigurationSetEventDestinationRequest
+    ): Future[UpdateConfigurationSetEventDestinationResponse] =
+      service.updateConfigurationSetEventDestination(params).promise.toFuture
+  }
 }
 
 package pinpointsmsvoice {

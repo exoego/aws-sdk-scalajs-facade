@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -27,6 +28,35 @@ package object cloud9 {
   type SubnetId                   = String
   type Timestamp                  = js.Date
   type UserArn                    = String
+
+  implicit final class Cloud9Ops(val service: Cloud9) extends AnyVal {
+
+    def createEnvironmentEC2Future(params: CreateEnvironmentEC2Request): Future[CreateEnvironmentEC2Result] =
+      service.createEnvironmentEC2(params).promise.toFuture
+    def createEnvironmentMembershipFuture(
+        params: CreateEnvironmentMembershipRequest
+    ): Future[CreateEnvironmentMembershipResult] = service.createEnvironmentMembership(params).promise.toFuture
+    def deleteEnvironmentFuture(params: DeleteEnvironmentRequest): Future[DeleteEnvironmentResult] =
+      service.deleteEnvironment(params).promise.toFuture
+    def deleteEnvironmentMembershipFuture(
+        params: DeleteEnvironmentMembershipRequest
+    ): Future[DeleteEnvironmentMembershipResult] = service.deleteEnvironmentMembership(params).promise.toFuture
+    def describeEnvironmentMembershipsFuture(
+        params: DescribeEnvironmentMembershipsRequest
+    ): Future[DescribeEnvironmentMembershipsResult] = service.describeEnvironmentMemberships(params).promise.toFuture
+    def describeEnvironmentStatusFuture(
+        params: DescribeEnvironmentStatusRequest
+    ): Future[DescribeEnvironmentStatusResult] = service.describeEnvironmentStatus(params).promise.toFuture
+    def describeEnvironmentsFuture(params: DescribeEnvironmentsRequest): Future[DescribeEnvironmentsResult] =
+      service.describeEnvironments(params).promise.toFuture
+    def listEnvironmentsFuture(params: ListEnvironmentsRequest): Future[ListEnvironmentsResult] =
+      service.listEnvironments(params).promise.toFuture
+    def updateEnvironmentFuture(params: UpdateEnvironmentRequest): Future[UpdateEnvironmentResult] =
+      service.updateEnvironment(params).promise.toFuture
+    def updateEnvironmentMembershipFuture(
+        params: UpdateEnvironmentMembershipRequest
+    ): Future[UpdateEnvironmentMembershipResult] = service.updateEnvironmentMembership(params).promise.toFuture
+  }
 }
 
 package cloud9 {

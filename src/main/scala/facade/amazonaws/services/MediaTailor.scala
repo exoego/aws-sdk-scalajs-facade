@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -12,6 +13,27 @@ package object mediatailor {
   type __listOf__string               = js.Array[__string]
   type __mapOf__string                = js.Dictionary[__string]
   type __string                       = String
+
+  implicit final class MediaTailorOps(val service: MediaTailor) extends AnyVal {
+
+    def deletePlaybackConfigurationFuture(
+        params: DeletePlaybackConfigurationRequest
+    ): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise.toFuture
+    def getPlaybackConfigurationFuture(
+        params: GetPlaybackConfigurationRequest
+    ): Future[GetPlaybackConfigurationResponse] = service.getPlaybackConfiguration(params).promise.toFuture
+    def listPlaybackConfigurationsFuture(
+        params: ListPlaybackConfigurationsRequest
+    ): Future[ListPlaybackConfigurationsResponse] = service.listPlaybackConfigurations(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def putPlaybackConfigurationFuture(
+        params: PutPlaybackConfigurationRequest
+    ): Future[PutPlaybackConfigurationResponse]                          = service.putPlaybackConfiguration(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
+  }
 }
 
 package mediatailor {

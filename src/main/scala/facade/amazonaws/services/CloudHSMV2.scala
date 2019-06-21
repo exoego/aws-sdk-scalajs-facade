@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -40,6 +41,35 @@ package object cloudhsmv2 {
   type TagValue              = String
   type Timestamp             = js.Date
   type VpcId                 = String
+
+  implicit final class CloudHSMV2Ops(val service: CloudHSMV2) extends AnyVal {
+
+    def copyBackupToRegionFuture(params: CopyBackupToRegionRequest): Future[CopyBackupToRegionResponse] =
+      service.copyBackupToRegion(params).promise.toFuture
+    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+      service.createCluster(params).promise.toFuture
+    def createHsmFuture(params: CreateHsmRequest): Future[CreateHsmResponse] =
+      service.createHsm(params).promise.toFuture
+    def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
+      service.deleteBackup(params).promise.toFuture
+    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+      service.deleteCluster(params).promise.toFuture
+    def deleteHsmFuture(params: DeleteHsmRequest): Future[DeleteHsmResponse] =
+      service.deleteHsm(params).promise.toFuture
+    def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
+      service.describeBackups(params).promise.toFuture
+    def describeClustersFuture(params: DescribeClustersRequest): Future[DescribeClustersResponse] =
+      service.describeClusters(params).promise.toFuture
+    def initializeClusterFuture(params: InitializeClusterRequest): Future[InitializeClusterResponse] =
+      service.initializeCluster(params).promise.toFuture
+    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
+    def restoreBackupFuture(params: RestoreBackupRequest): Future[RestoreBackupResponse] =
+      service.restoreBackup(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+  }
 }
 
 package cloudhsmv2 {

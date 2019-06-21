@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -76,6 +77,123 @@ package object pinpointemail {
   type Timestamp       = js.Date
   type Volume          = Double
   type WarmupStatus    = String
+
+  implicit final class PinpointEmailOps(val service: PinpointEmail) extends AnyVal {
+
+    def createConfigurationSetEventDestinationFuture(
+        params: CreateConfigurationSetEventDestinationRequest
+    ): Future[CreateConfigurationSetEventDestinationResponse] =
+      service.createConfigurationSetEventDestination(params).promise.toFuture
+    def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] =
+      service.createConfigurationSet(params).promise.toFuture
+    def createDedicatedIpPoolFuture(params: CreateDedicatedIpPoolRequest): Future[CreateDedicatedIpPoolResponse] =
+      service.createDedicatedIpPool(params).promise.toFuture
+    def createDeliverabilityTestReportFuture(
+        params: CreateDeliverabilityTestReportRequest
+    ): Future[CreateDeliverabilityTestReportResponse] = service.createDeliverabilityTestReport(params).promise.toFuture
+    def createEmailIdentityFuture(params: CreateEmailIdentityRequest): Future[CreateEmailIdentityResponse] =
+      service.createEmailIdentity(params).promise.toFuture
+    def deleteConfigurationSetEventDestinationFuture(
+        params: DeleteConfigurationSetEventDestinationRequest
+    ): Future[DeleteConfigurationSetEventDestinationResponse] =
+      service.deleteConfigurationSetEventDestination(params).promise.toFuture
+    def deleteConfigurationSetFuture(params: DeleteConfigurationSetRequest): Future[DeleteConfigurationSetResponse] =
+      service.deleteConfigurationSet(params).promise.toFuture
+    def deleteDedicatedIpPoolFuture(params: DeleteDedicatedIpPoolRequest): Future[DeleteDedicatedIpPoolResponse] =
+      service.deleteDedicatedIpPool(params).promise.toFuture
+    def deleteEmailIdentityFuture(params: DeleteEmailIdentityRequest): Future[DeleteEmailIdentityResponse] =
+      service.deleteEmailIdentity(params).promise.toFuture
+    def getAccountFuture(params: GetAccountRequest): Future[GetAccountResponse] =
+      service.getAccount(params).promise.toFuture
+    def getBlacklistReportsFuture(params: GetBlacklistReportsRequest): Future[GetBlacklistReportsResponse] =
+      service.getBlacklistReports(params).promise.toFuture
+    def getConfigurationSetEventDestinationsFuture(
+        params: GetConfigurationSetEventDestinationsRequest
+    ): Future[GetConfigurationSetEventDestinationsResponse] =
+      service.getConfigurationSetEventDestinations(params).promise.toFuture
+    def getConfigurationSetFuture(params: GetConfigurationSetRequest): Future[GetConfigurationSetResponse] =
+      service.getConfigurationSet(params).promise.toFuture
+    def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] =
+      service.getDedicatedIp(params).promise.toFuture
+    def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] =
+      service.getDedicatedIps(params).promise.toFuture
+    def getDeliverabilityDashboardOptionsFuture(
+        params: GetDeliverabilityDashboardOptionsRequest
+    ): Future[GetDeliverabilityDashboardOptionsResponse] =
+      service.getDeliverabilityDashboardOptions(params).promise.toFuture
+    def getDeliverabilityTestReportFuture(
+        params: GetDeliverabilityTestReportRequest
+    ): Future[GetDeliverabilityTestReportResponse] = service.getDeliverabilityTestReport(params).promise.toFuture
+    def getDomainStatisticsReportFuture(
+        params: GetDomainStatisticsReportRequest
+    ): Future[GetDomainStatisticsReportResponse] = service.getDomainStatisticsReport(params).promise.toFuture
+    def getEmailIdentityFuture(params: GetEmailIdentityRequest): Future[GetEmailIdentityResponse] =
+      service.getEmailIdentity(params).promise.toFuture
+    def listConfigurationSetsFuture(params: ListConfigurationSetsRequest): Future[ListConfigurationSetsResponse] =
+      service.listConfigurationSets(params).promise.toFuture
+    def listDedicatedIpPoolsFuture(params: ListDedicatedIpPoolsRequest): Future[ListDedicatedIpPoolsResponse] =
+      service.listDedicatedIpPools(params).promise.toFuture
+    def listDeliverabilityTestReportsFuture(
+        params: ListDeliverabilityTestReportsRequest
+    ): Future[ListDeliverabilityTestReportsResponse] = service.listDeliverabilityTestReports(params).promise.toFuture
+    def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] =
+      service.listEmailIdentities(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def putAccountDedicatedIpWarmupAttributesFuture(
+        params: PutAccountDedicatedIpWarmupAttributesRequest
+    ): Future[PutAccountDedicatedIpWarmupAttributesResponse] =
+      service.putAccountDedicatedIpWarmupAttributes(params).promise.toFuture
+    def putAccountSendingAttributesFuture(
+        params: PutAccountSendingAttributesRequest
+    ): Future[PutAccountSendingAttributesResponse] = service.putAccountSendingAttributes(params).promise.toFuture
+    def putConfigurationSetDeliveryOptionsFuture(
+        params: PutConfigurationSetDeliveryOptionsRequest
+    ): Future[PutConfigurationSetDeliveryOptionsResponse] =
+      service.putConfigurationSetDeliveryOptions(params).promise.toFuture
+    def putConfigurationSetReputationOptionsFuture(
+        params: PutConfigurationSetReputationOptionsRequest
+    ): Future[PutConfigurationSetReputationOptionsResponse] =
+      service.putConfigurationSetReputationOptions(params).promise.toFuture
+    def putConfigurationSetSendingOptionsFuture(
+        params: PutConfigurationSetSendingOptionsRequest
+    ): Future[PutConfigurationSetSendingOptionsResponse] =
+      service.putConfigurationSetSendingOptions(params).promise.toFuture
+    def putConfigurationSetTrackingOptionsFuture(
+        params: PutConfigurationSetTrackingOptionsRequest
+    ): Future[PutConfigurationSetTrackingOptionsResponse] =
+      service.putConfigurationSetTrackingOptions(params).promise.toFuture
+    def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] =
+      service.putDedicatedIpInPool(params).promise.toFuture
+    def putDedicatedIpWarmupAttributesFuture(
+        params: PutDedicatedIpWarmupAttributesRequest
+    ): Future[PutDedicatedIpWarmupAttributesResponse] = service.putDedicatedIpWarmupAttributes(params).promise.toFuture
+    def putDeliverabilityDashboardOptionFuture(
+        params: PutDeliverabilityDashboardOptionRequest
+    ): Future[PutDeliverabilityDashboardOptionResponse] =
+      service.putDeliverabilityDashboardOption(params).promise.toFuture
+    def putEmailIdentityDkimAttributesFuture(
+        params: PutEmailIdentityDkimAttributesRequest
+    ): Future[PutEmailIdentityDkimAttributesResponse] = service.putEmailIdentityDkimAttributes(params).promise.toFuture
+    def putEmailIdentityFeedbackAttributesFuture(
+        params: PutEmailIdentityFeedbackAttributesRequest
+    ): Future[PutEmailIdentityFeedbackAttributesResponse] =
+      service.putEmailIdentityFeedbackAttributes(params).promise.toFuture
+    def putEmailIdentityMailFromAttributesFuture(
+        params: PutEmailIdentityMailFromAttributesRequest
+    ): Future[PutEmailIdentityMailFromAttributesResponse] =
+      service.putEmailIdentityMailFromAttributes(params).promise.toFuture
+    def sendEmailFuture(params: SendEmailRequest): Future[SendEmailResponse] =
+      service.sendEmail(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+    def updateConfigurationSetEventDestinationFuture(
+        params: UpdateConfigurationSetEventDestinationRequest
+    ): Future[UpdateConfigurationSetEventDestinationResponse] =
+      service.updateConfigurationSetEventDestination(params).promise.toFuture
+  }
 }
 
 package pinpointemail {

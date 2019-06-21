@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -16,6 +17,12 @@ package object marketplaceentitlementservice {
   type NonEmptyString           = String
   type ProductCode              = String
   type Timestamp                = js.Date
+
+  implicit final class MarketplaceEntitlementServiceOps(val service: MarketplaceEntitlementService) extends AnyVal {
+
+    def getEntitlementsFuture(params: GetEntitlementsRequest): Future[GetEntitlementsResult] =
+      service.getEntitlements(params).promise.toFuture
+  }
 }
 
 package marketplaceentitlementservice {

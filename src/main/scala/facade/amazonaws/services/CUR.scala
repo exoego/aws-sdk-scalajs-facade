@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -24,6 +25,17 @@ package object cur {
   type SchemaElement          = String
   type SchemaElementList      = js.Array[SchemaElement]
   type TimeUnit               = String
+
+  implicit final class CUROps(val service: CUR) extends AnyVal {
+
+    def deleteReportDefinitionFuture(params: DeleteReportDefinitionRequest): Future[DeleteReportDefinitionResponse] =
+      service.deleteReportDefinition(params).promise.toFuture
+    def describeReportDefinitionsFuture(
+        params: DescribeReportDefinitionsRequest
+    ): Future[DescribeReportDefinitionsResponse] = service.describeReportDefinitions(params).promise.toFuture
+    def putReportDefinitionFuture(params: PutReportDefinitionRequest): Future[PutReportDefinitionResponse] =
+      service.putReportDefinition(params).promise.toFuture
+  }
 }
 
 package cur {

@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -79,6 +80,26 @@ package object costexplorer {
   type Value                                    = String
   type Values                                   = js.Array[Value]
   type YearMonthDay                             = String
+
+  implicit final class CostExplorerOps(val service: CostExplorer) extends AnyVal {
+
+    def getCostAndUsageFuture(params: GetCostAndUsageRequest): Future[GetCostAndUsageResponse] =
+      service.getCostAndUsage(params).promise.toFuture
+    def getCostForecastFuture(params: GetCostForecastRequest): Future[GetCostForecastResponse] =
+      service.getCostForecast(params).promise.toFuture
+    def getDimensionValuesFuture(params: GetDimensionValuesRequest): Future[GetDimensionValuesResponse] =
+      service.getDimensionValues(params).promise.toFuture
+    def getReservationCoverageFuture(params: GetReservationCoverageRequest): Future[GetReservationCoverageResponse] =
+      service.getReservationCoverage(params).promise.toFuture
+    def getReservationPurchaseRecommendationFuture(
+        params: GetReservationPurchaseRecommendationRequest
+    ): Future[GetReservationPurchaseRecommendationResponse] =
+      service.getReservationPurchaseRecommendation(params).promise.toFuture
+    def getReservationUtilizationFuture(
+        params: GetReservationUtilizationRequest
+    ): Future[GetReservationUtilizationResponse]                       = service.getReservationUtilization(params).promise.toFuture
+    def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise.toFuture
+  }
 }
 
 package costexplorer {

@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -50,6 +51,46 @@ package object codestar {
   type UserArn                = String
   type UserProfileDisplayName = String
   type UserProfilesList       = js.Array[UserProfileSummary]
+
+  implicit final class CodeStarOps(val service: CodeStar) extends AnyVal {
+
+    def associateTeamMemberFuture(params: AssociateTeamMemberRequest): Future[AssociateTeamMemberResult] =
+      service.associateTeamMember(params).promise.toFuture
+    def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
+      service.createProject(params).promise.toFuture
+    def createUserProfileFuture(params: CreateUserProfileRequest): Future[CreateUserProfileResult] =
+      service.createUserProfile(params).promise.toFuture
+    def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
+      service.deleteProject(params).promise.toFuture
+    def deleteUserProfileFuture(params: DeleteUserProfileRequest): Future[DeleteUserProfileResult] =
+      service.deleteUserProfile(params).promise.toFuture
+    def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResult] =
+      service.describeProject(params).promise.toFuture
+    def describeUserProfileFuture(params: DescribeUserProfileRequest): Future[DescribeUserProfileResult] =
+      service.describeUserProfile(params).promise.toFuture
+    def disassociateTeamMemberFuture(params: DisassociateTeamMemberRequest): Future[DisassociateTeamMemberResult] =
+      service.disassociateTeamMember(params).promise.toFuture
+    def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
+      service.listProjects(params).promise.toFuture
+    def listResourcesFuture(params: ListResourcesRequest): Future[ListResourcesResult] =
+      service.listResources(params).promise.toFuture
+    def listTagsForProjectFuture(params: ListTagsForProjectRequest): Future[ListTagsForProjectResult] =
+      service.listTagsForProject(params).promise.toFuture
+    def listTeamMembersFuture(params: ListTeamMembersRequest): Future[ListTeamMembersResult] =
+      service.listTeamMembers(params).promise.toFuture
+    def listUserProfilesFuture(params: ListUserProfilesRequest): Future[ListUserProfilesResult] =
+      service.listUserProfiles(params).promise.toFuture
+    def tagProjectFuture(params: TagProjectRequest): Future[TagProjectResult] =
+      service.tagProject(params).promise.toFuture
+    def untagProjectFuture(params: UntagProjectRequest): Future[UntagProjectResult] =
+      service.untagProject(params).promise.toFuture
+    def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
+      service.updateProject(params).promise.toFuture
+    def updateTeamMemberFuture(params: UpdateTeamMemberRequest): Future[UpdateTeamMemberResult] =
+      service.updateTeamMember(params).promise.toFuture
+    def updateUserProfileFuture(params: UpdateUserProfileRequest): Future[UpdateUserProfileResult] =
+      service.updateUserProfile(params).promise.toFuture
+  }
 }
 
 package codestar {

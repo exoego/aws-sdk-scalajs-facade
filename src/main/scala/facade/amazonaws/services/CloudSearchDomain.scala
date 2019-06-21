@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -37,6 +38,14 @@ package object cloudsearchdomain {
   type Suggester               = String
   type Suggestions             = js.Array[SuggestionMatch]
   type SuggestionsSize         = Double
+
+  implicit final class CloudSearchDomainOps(val service: CloudSearchDomain) extends AnyVal {
+
+    def searchFuture(params: SearchRequest): Future[SearchResponse]    = service.search(params).promise.toFuture
+    def suggestFuture(params: SuggestRequest): Future[SuggestResponse] = service.suggest(params).promise.toFuture
+    def uploadDocumentsFuture(params: UploadDocumentsRequest): Future[UploadDocumentsResponse] =
+      service.uploadDocuments(params).promise.toFuture
+  }
 }
 
 package cloudsearchdomain {

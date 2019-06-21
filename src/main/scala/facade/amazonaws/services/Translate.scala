@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -26,6 +27,20 @@ package object translate {
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type TerminologyPropertiesList = js.Array[TerminologyProperties]
   type Timestamp                 = js.Date
+
+  implicit final class TranslateOps(val service: Translate) extends AnyVal {
+
+    def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
+      service.deleteTerminology(params).promise.toFuture
+    def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] =
+      service.getTerminology(params).promise.toFuture
+    def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] =
+      service.importTerminology(params).promise.toFuture
+    def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] =
+      service.listTerminologies(params).promise.toFuture
+    def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] =
+      service.translateText(params).promise.toFuture
+  }
 }
 
 package translate {

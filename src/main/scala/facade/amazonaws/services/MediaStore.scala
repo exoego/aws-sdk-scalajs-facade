@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -27,6 +28,40 @@ package object mediastore {
   type Origin                        = String
   type PaginationToken               = String
   type TimeStamp                     = js.Date
+
+  implicit final class MediaStoreOps(val service: MediaStore) extends AnyVal {
+
+    def createContainerFuture(params: CreateContainerInput): Future[CreateContainerOutput] =
+      service.createContainer(params).promise.toFuture
+    def deleteContainerFuture(params: DeleteContainerInput): Future[DeleteContainerOutput] =
+      service.deleteContainer(params).promise.toFuture
+    def deleteContainerPolicyFuture(params: DeleteContainerPolicyInput): Future[DeleteContainerPolicyOutput] =
+      service.deleteContainerPolicy(params).promise.toFuture
+    def deleteCorsPolicyFuture(params: DeleteCorsPolicyInput): Future[DeleteCorsPolicyOutput] =
+      service.deleteCorsPolicy(params).promise.toFuture
+    def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyInput): Future[DeleteLifecyclePolicyOutput] =
+      service.deleteLifecyclePolicy(params).promise.toFuture
+    def describeContainerFuture(params: DescribeContainerInput): Future[DescribeContainerOutput] =
+      service.describeContainer(params).promise.toFuture
+    def getContainerPolicyFuture(params: GetContainerPolicyInput): Future[GetContainerPolicyOutput] =
+      service.getContainerPolicy(params).promise.toFuture
+    def getCorsPolicyFuture(params: GetCorsPolicyInput): Future[GetCorsPolicyOutput] =
+      service.getCorsPolicy(params).promise.toFuture
+    def getLifecyclePolicyFuture(params: GetLifecyclePolicyInput): Future[GetLifecyclePolicyOutput] =
+      service.getLifecyclePolicy(params).promise.toFuture
+    def listContainersFuture(params: ListContainersInput): Future[ListContainersOutput] =
+      service.listContainers(params).promise.toFuture
+    def putContainerPolicyFuture(params: PutContainerPolicyInput): Future[PutContainerPolicyOutput] =
+      service.putContainerPolicy(params).promise.toFuture
+    def putCorsPolicyFuture(params: PutCorsPolicyInput): Future[PutCorsPolicyOutput] =
+      service.putCorsPolicy(params).promise.toFuture
+    def putLifecyclePolicyFuture(params: PutLifecyclePolicyInput): Future[PutLifecyclePolicyOutput] =
+      service.putLifecyclePolicy(params).promise.toFuture
+    def startAccessLoggingFuture(params: StartAccessLoggingInput): Future[StartAccessLoggingOutput] =
+      service.startAccessLogging(params).promise.toFuture
+    def stopAccessLoggingFuture(params: StopAccessLoggingInput): Future[StopAccessLoggingOutput] =
+      service.stopAccessLogging(params).promise.toFuture
+  }
 }
 
 package mediastore {

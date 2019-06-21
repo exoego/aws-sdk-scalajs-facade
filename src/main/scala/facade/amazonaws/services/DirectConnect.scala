@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -90,6 +91,128 @@ package object directconnect {
   type VirtualInterfaceRegion = String
   type VirtualInterfaceState  = String
   type VirtualInterfaceType   = String
+
+  implicit final class DirectConnectOps(val service: DirectConnect) extends AnyVal {
+
+    def acceptDirectConnectGatewayAssociationProposalFuture(
+        params: AcceptDirectConnectGatewayAssociationProposalRequest
+    ): Future[AcceptDirectConnectGatewayAssociationProposalResult] =
+      service.acceptDirectConnectGatewayAssociationProposal(params).promise.toFuture
+    def allocateConnectionOnInterconnectFuture(params: AllocateConnectionOnInterconnectRequest): Future[Connection] =
+      service.allocateConnectionOnInterconnect(params).promise.toFuture
+    def allocateHostedConnectionFuture(params: AllocateHostedConnectionRequest): Future[Connection] =
+      service.allocateHostedConnection(params).promise.toFuture
+    def allocatePrivateVirtualInterfaceFuture(
+        params: AllocatePrivateVirtualInterfaceRequest
+    ): Future[VirtualInterface] = service.allocatePrivateVirtualInterface(params).promise.toFuture
+    def allocatePublicVirtualInterfaceFuture(params: AllocatePublicVirtualInterfaceRequest): Future[VirtualInterface] =
+      service.allocatePublicVirtualInterface(params).promise.toFuture
+    def associateConnectionWithLagFuture(params: AssociateConnectionWithLagRequest): Future[Connection] =
+      service.associateConnectionWithLag(params).promise.toFuture
+    def associateHostedConnectionFuture(params: AssociateHostedConnectionRequest): Future[Connection] =
+      service.associateHostedConnection(params).promise.toFuture
+    def associateVirtualInterfaceFuture(params: AssociateVirtualInterfaceRequest): Future[VirtualInterface] =
+      service.associateVirtualInterface(params).promise.toFuture
+    def confirmConnectionFuture(params: ConfirmConnectionRequest): Future[ConfirmConnectionResponse] =
+      service.confirmConnection(params).promise.toFuture
+    def confirmPrivateVirtualInterfaceFuture(
+        params: ConfirmPrivateVirtualInterfaceRequest
+    ): Future[ConfirmPrivateVirtualInterfaceResponse] = service.confirmPrivateVirtualInterface(params).promise.toFuture
+    def confirmPublicVirtualInterfaceFuture(
+        params: ConfirmPublicVirtualInterfaceRequest
+    ): Future[ConfirmPublicVirtualInterfaceResponse] = service.confirmPublicVirtualInterface(params).promise.toFuture
+    def createBGPPeerFuture(params: CreateBGPPeerRequest): Future[CreateBGPPeerResponse] =
+      service.createBGPPeer(params).promise.toFuture
+    def createConnectionFuture(params: CreateConnectionRequest): Future[Connection] =
+      service.createConnection(params).promise.toFuture
+    def createDirectConnectGatewayAssociationFuture(
+        params: CreateDirectConnectGatewayAssociationRequest
+    ): Future[CreateDirectConnectGatewayAssociationResult] =
+      service.createDirectConnectGatewayAssociation(params).promise.toFuture
+    def createDirectConnectGatewayAssociationProposalFuture(
+        params: CreateDirectConnectGatewayAssociationProposalRequest
+    ): Future[CreateDirectConnectGatewayAssociationProposalResult] =
+      service.createDirectConnectGatewayAssociationProposal(params).promise.toFuture
+    def createDirectConnectGatewayFuture(
+        params: CreateDirectConnectGatewayRequest
+    ): Future[CreateDirectConnectGatewayResult] = service.createDirectConnectGateway(params).promise.toFuture
+    def createInterconnectFuture(params: CreateInterconnectRequest): Future[Interconnect] =
+      service.createInterconnect(params).promise.toFuture
+    def createLagFuture(params: CreateLagRequest): Future[Lag] = service.createLag(params).promise.toFuture
+    def createPrivateVirtualInterfaceFuture(params: CreatePrivateVirtualInterfaceRequest): Future[VirtualInterface] =
+      service.createPrivateVirtualInterface(params).promise.toFuture
+    def createPublicVirtualInterfaceFuture(params: CreatePublicVirtualInterfaceRequest): Future[VirtualInterface] =
+      service.createPublicVirtualInterface(params).promise.toFuture
+    def deleteBGPPeerFuture(params: DeleteBGPPeerRequest): Future[DeleteBGPPeerResponse] =
+      service.deleteBGPPeer(params).promise.toFuture
+    def deleteConnectionFuture(params: DeleteConnectionRequest): Future[Connection] =
+      service.deleteConnection(params).promise.toFuture
+    def deleteDirectConnectGatewayAssociationFuture(
+        params: DeleteDirectConnectGatewayAssociationRequest
+    ): Future[DeleteDirectConnectGatewayAssociationResult] =
+      service.deleteDirectConnectGatewayAssociation(params).promise.toFuture
+    def deleteDirectConnectGatewayAssociationProposalFuture(
+        params: DeleteDirectConnectGatewayAssociationProposalRequest
+    ): Future[DeleteDirectConnectGatewayAssociationProposalResult] =
+      service.deleteDirectConnectGatewayAssociationProposal(params).promise.toFuture
+    def deleteDirectConnectGatewayFuture(
+        params: DeleteDirectConnectGatewayRequest
+    ): Future[DeleteDirectConnectGatewayResult] = service.deleteDirectConnectGateway(params).promise.toFuture
+    def deleteInterconnectFuture(params: DeleteInterconnectRequest): Future[DeleteInterconnectResponse] =
+      service.deleteInterconnect(params).promise.toFuture
+    def deleteLagFuture(params: DeleteLagRequest): Future[Lag] = service.deleteLag(params).promise.toFuture
+    def deleteVirtualInterfaceFuture(params: DeleteVirtualInterfaceRequest): Future[DeleteVirtualInterfaceResponse] =
+      service.deleteVirtualInterface(params).promise.toFuture
+    def describeConnectionLoaFuture(params: DescribeConnectionLoaRequest): Future[DescribeConnectionLoaResponse] =
+      service.describeConnectionLoa(params).promise.toFuture
+    def describeConnectionsFuture(params: DescribeConnectionsRequest): Future[Connections] =
+      service.describeConnections(params).promise.toFuture
+    def describeConnectionsOnInterconnectFuture(params: DescribeConnectionsOnInterconnectRequest): Future[Connections] =
+      service.describeConnectionsOnInterconnect(params).promise.toFuture
+    def describeDirectConnectGatewayAssociationProposalsFuture(
+        params: DescribeDirectConnectGatewayAssociationProposalsRequest
+    ): Future[DescribeDirectConnectGatewayAssociationProposalsResult] =
+      service.describeDirectConnectGatewayAssociationProposals(params).promise.toFuture
+    def describeDirectConnectGatewayAssociationsFuture(
+        params: DescribeDirectConnectGatewayAssociationsRequest
+    ): Future[DescribeDirectConnectGatewayAssociationsResult] =
+      service.describeDirectConnectGatewayAssociations(params).promise.toFuture
+    def describeDirectConnectGatewayAttachmentsFuture(
+        params: DescribeDirectConnectGatewayAttachmentsRequest
+    ): Future[DescribeDirectConnectGatewayAttachmentsResult] =
+      service.describeDirectConnectGatewayAttachments(params).promise.toFuture
+    def describeDirectConnectGatewaysFuture(
+        params: DescribeDirectConnectGatewaysRequest
+    ): Future[DescribeDirectConnectGatewaysResult] = service.describeDirectConnectGateways(params).promise.toFuture
+    def describeHostedConnectionsFuture(params: DescribeHostedConnectionsRequest): Future[Connections] =
+      service.describeHostedConnections(params).promise.toFuture
+    def describeInterconnectLoaFuture(params: DescribeInterconnectLoaRequest): Future[DescribeInterconnectLoaResponse] =
+      service.describeInterconnectLoa(params).promise.toFuture
+    def describeInterconnectsFuture(params: DescribeInterconnectsRequest): Future[Interconnects] =
+      service.describeInterconnects(params).promise.toFuture
+    def describeLagsFuture(params: DescribeLagsRequest): Future[Lags] = service.describeLags(params).promise.toFuture
+    def describeLoaFuture(params: DescribeLoaRequest): Future[Loa]    = service.describeLoa(params).promise.toFuture
+    def describeLocationsFuture(): Future[Locations]                  = service.describeLocations().promise.toFuture
+    def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] =
+      service.describeTags(params).promise.toFuture
+    def describeVirtualGatewaysFuture(): Future[VirtualGateways] = service.describeVirtualGateways().promise.toFuture
+    def describeVirtualInterfacesFuture(params: DescribeVirtualInterfacesRequest): Future[VirtualInterfaces] =
+      service.describeVirtualInterfaces(params).promise.toFuture
+    def disassociateConnectionFromLagFuture(params: DisassociateConnectionFromLagRequest): Future[Connection] =
+      service.disassociateConnectionFromLag(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+    def updateDirectConnectGatewayAssociationFuture(
+        params: UpdateDirectConnectGatewayAssociationRequest
+    ): Future[UpdateDirectConnectGatewayAssociationResult] =
+      service.updateDirectConnectGatewayAssociation(params).promise.toFuture
+    def updateLagFuture(params: UpdateLagRequest): Future[Lag] = service.updateLag(params).promise.toFuture
+    def updateVirtualInterfaceAttributesFuture(
+        params: UpdateVirtualInterfaceAttributesRequest
+    ): Future[VirtualInterface] = service.updateVirtualInterfaceAttributes(params).promise.toFuture
+  }
 }
 
 package directconnect {

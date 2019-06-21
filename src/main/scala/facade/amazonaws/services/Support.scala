@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -53,6 +54,46 @@ package object support {
   type TrustedAdvisorCheckRefreshStatusList = js.Array[TrustedAdvisorCheckRefreshStatus]
   type TrustedAdvisorCheckSummaryList       = js.Array[TrustedAdvisorCheckSummary]
   type TrustedAdvisorResourceDetailList     = js.Array[TrustedAdvisorResourceDetail]
+
+  implicit final class SupportOps(val service: Support) extends AnyVal {
+
+    def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
+      service.addAttachmentsToSet(params).promise.toFuture
+    def addCommunicationToCaseFuture(params: AddCommunicationToCaseRequest): Future[AddCommunicationToCaseResponse] =
+      service.addCommunicationToCase(params).promise.toFuture
+    def createCaseFuture(params: CreateCaseRequest): Future[CreateCaseResponse] =
+      service.createCase(params).promise.toFuture
+    def describeAttachmentFuture(params: DescribeAttachmentRequest): Future[DescribeAttachmentResponse] =
+      service.describeAttachment(params).promise.toFuture
+    def describeCasesFuture(params: DescribeCasesRequest): Future[DescribeCasesResponse] =
+      service.describeCases(params).promise.toFuture
+    def describeCommunicationsFuture(params: DescribeCommunicationsRequest): Future[DescribeCommunicationsResponse] =
+      service.describeCommunications(params).promise.toFuture
+    def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
+      service.describeServices(params).promise.toFuture
+    def describeSeverityLevelsFuture(params: DescribeSeverityLevelsRequest): Future[DescribeSeverityLevelsResponse] =
+      service.describeSeverityLevels(params).promise.toFuture
+    def describeTrustedAdvisorCheckRefreshStatusesFuture(
+        params: DescribeTrustedAdvisorCheckRefreshStatusesRequest
+    ): Future[DescribeTrustedAdvisorCheckRefreshStatusesResponse] =
+      service.describeTrustedAdvisorCheckRefreshStatuses(params).promise.toFuture
+    def describeTrustedAdvisorCheckResultFuture(
+        params: DescribeTrustedAdvisorCheckResultRequest
+    ): Future[DescribeTrustedAdvisorCheckResultResponse] =
+      service.describeTrustedAdvisorCheckResult(params).promise.toFuture
+    def describeTrustedAdvisorCheckSummariesFuture(
+        params: DescribeTrustedAdvisorCheckSummariesRequest
+    ): Future[DescribeTrustedAdvisorCheckSummariesResponse] =
+      service.describeTrustedAdvisorCheckSummaries(params).promise.toFuture
+    def describeTrustedAdvisorChecksFuture(
+        params: DescribeTrustedAdvisorChecksRequest
+    ): Future[DescribeTrustedAdvisorChecksResponse] = service.describeTrustedAdvisorChecks(params).promise.toFuture
+    def refreshTrustedAdvisorCheckFuture(
+        params: RefreshTrustedAdvisorCheckRequest
+    ): Future[RefreshTrustedAdvisorCheckResponse] = service.refreshTrustedAdvisorCheck(params).promise.toFuture
+    def resolveCaseFuture(params: ResolveCaseRequest): Future[ResolveCaseResponse] =
+      service.resolveCase(params).promise.toFuture
+  }
 }
 
 package support {

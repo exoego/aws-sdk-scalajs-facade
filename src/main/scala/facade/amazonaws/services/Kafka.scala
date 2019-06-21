@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -24,6 +25,22 @@ package object kafka {
   type __stringMin1Max64     = String
   type __stringMin5Max32     = String
   type __timestampIso8601    = js.Date
+
+  implicit final class KafkaOps(val service: Kafka) extends AnyVal {
+
+    def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
+      service.createCluster(params).promise.toFuture
+    def deleteClusterFuture(params: DeleteClusterRequest): Future[DeleteClusterResponse] =
+      service.deleteCluster(params).promise.toFuture
+    def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] =
+      service.describeCluster(params).promise.toFuture
+    def getBootstrapBrokersFuture(params: GetBootstrapBrokersRequest): Future[GetBootstrapBrokersResponse] =
+      service.getBootstrapBrokers(params).promise.toFuture
+    def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] =
+      service.listClusters(params).promise.toFuture
+    def listNodesFuture(params: ListNodesRequest): Future[ListNodesResponse] =
+      service.listNodes(params).promise.toFuture
+  }
 }
 
 package kafka {
