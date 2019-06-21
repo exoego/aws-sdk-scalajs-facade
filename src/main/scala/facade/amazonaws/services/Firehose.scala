@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -88,6 +89,36 @@ package object firehose {
   type TagValue                                = String
   type Timestamp                               = js.Date
   type Username                                = String
+
+  implicit final class FirehoseOps(val service: Firehose) extends AnyVal {
+
+    def createDeliveryStreamFuture(params: CreateDeliveryStreamInput): Future[CreateDeliveryStreamOutput] =
+      service.createDeliveryStream(params).promise.toFuture
+    def deleteDeliveryStreamFuture(params: DeleteDeliveryStreamInput): Future[DeleteDeliveryStreamOutput] =
+      service.deleteDeliveryStream(params).promise.toFuture
+    def describeDeliveryStreamFuture(params: DescribeDeliveryStreamInput): Future[DescribeDeliveryStreamOutput] =
+      service.describeDeliveryStream(params).promise.toFuture
+    def listDeliveryStreamsFuture(params: ListDeliveryStreamsInput): Future[ListDeliveryStreamsOutput] =
+      service.listDeliveryStreams(params).promise.toFuture
+    def listTagsForDeliveryStreamFuture(
+        params: ListTagsForDeliveryStreamInput
+    ): Future[ListTagsForDeliveryStreamOutput] = service.listTagsForDeliveryStream(params).promise.toFuture
+    def putRecordBatchFuture(params: PutRecordBatchInput): Future[PutRecordBatchOutput] =
+      service.putRecordBatch(params).promise.toFuture
+    def putRecordFuture(params: PutRecordInput): Future[PutRecordOutput] = service.putRecord(params).promise.toFuture
+    def startDeliveryStreamEncryptionFuture(
+        params: StartDeliveryStreamEncryptionInput
+    ): Future[StartDeliveryStreamEncryptionOutput] = service.startDeliveryStreamEncryption(params).promise.toFuture
+    def stopDeliveryStreamEncryptionFuture(
+        params: StopDeliveryStreamEncryptionInput
+    ): Future[StopDeliveryStreamEncryptionOutput] = service.stopDeliveryStreamEncryption(params).promise.toFuture
+    def tagDeliveryStreamFuture(params: TagDeliveryStreamInput): Future[TagDeliveryStreamOutput] =
+      service.tagDeliveryStream(params).promise.toFuture
+    def untagDeliveryStreamFuture(params: UntagDeliveryStreamInput): Future[UntagDeliveryStreamOutput] =
+      service.untagDeliveryStream(params).promise.toFuture
+    def updateDestinationFuture(params: UpdateDestinationInput): Future[UpdateDestinationOutput] =
+      service.updateDestination(params).promise.toFuture
+  }
 }
 
 package firehose {

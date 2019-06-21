@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -33,6 +34,45 @@ package object iot1clickprojects {
   type TagMap                       = js.Dictionary[TagValue]
   type TagValue                     = String
   type Time                         = js.Date
+
+  implicit final class IoT1ClickProjectsOps(val service: IoT1ClickProjects) extends AnyVal {
+
+    def associateDeviceWithPlacementFuture(
+        params: AssociateDeviceWithPlacementRequest
+    ): Future[AssociateDeviceWithPlacementResponse] = service.associateDeviceWithPlacement(params).promise.toFuture
+    def createPlacementFuture(params: CreatePlacementRequest): Future[CreatePlacementResponse] =
+      service.createPlacement(params).promise.toFuture
+    def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] =
+      service.createProject(params).promise.toFuture
+    def deletePlacementFuture(params: DeletePlacementRequest): Future[DeletePlacementResponse] =
+      service.deletePlacement(params).promise.toFuture
+    def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] =
+      service.deleteProject(params).promise.toFuture
+    def describePlacementFuture(params: DescribePlacementRequest): Future[DescribePlacementResponse] =
+      service.describePlacement(params).promise.toFuture
+    def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] =
+      service.describeProject(params).promise.toFuture
+    def disassociateDeviceFromPlacementFuture(
+        params: DisassociateDeviceFromPlacementRequest
+    ): Future[DisassociateDeviceFromPlacementResponse] =
+      service.disassociateDeviceFromPlacement(params).promise.toFuture
+    def getDevicesInPlacementFuture(params: GetDevicesInPlacementRequest): Future[GetDevicesInPlacementResponse] =
+      service.getDevicesInPlacement(params).promise.toFuture
+    def listPlacementsFuture(params: ListPlacementsRequest): Future[ListPlacementsResponse] =
+      service.listPlacements(params).promise.toFuture
+    def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] =
+      service.listProjects(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+    def updatePlacementFuture(params: UpdatePlacementRequest): Future[UpdatePlacementResponse] =
+      service.updatePlacement(params).promise.toFuture
+    def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] =
+      service.updateProject(params).promise.toFuture
+  }
 }
 
 package iot1clickprojects {

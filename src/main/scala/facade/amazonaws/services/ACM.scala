@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -52,6 +53,36 @@ package object acm {
   type TagValue            = String
   type ValidationEmailList = js.Array[String]
   type ValidationMethod    = String
+
+  implicit final class ACMOps(val service: ACM) extends AnyVal {
+
+    def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
+      service.addTagsToCertificate(params).promise.toFuture
+    def deleteCertificateFuture(params: DeleteCertificateRequest): Future[js.Object] =
+      service.deleteCertificate(params).promise.toFuture
+    def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResponse] =
+      service.describeCertificate(params).promise.toFuture
+    def exportCertificateFuture(params: ExportCertificateRequest): Future[ExportCertificateResponse] =
+      service.exportCertificate(params).promise.toFuture
+    def getCertificateFuture(params: GetCertificateRequest): Future[GetCertificateResponse] =
+      service.getCertificate(params).promise.toFuture
+    def importCertificateFuture(params: ImportCertificateRequest): Future[ImportCertificateResponse] =
+      service.importCertificate(params).promise.toFuture
+    def listCertificatesFuture(params: ListCertificatesRequest): Future[ListCertificatesResponse] =
+      service.listCertificates(params).promise.toFuture
+    def listTagsForCertificateFuture(params: ListTagsForCertificateRequest): Future[ListTagsForCertificateResponse] =
+      service.listTagsForCertificate(params).promise.toFuture
+    def removeTagsFromCertificateFuture(params: RemoveTagsFromCertificateRequest): Future[js.Object] =
+      service.removeTagsFromCertificate(params).promise.toFuture
+    def renewCertificateFuture(params: RenewCertificateRequest): Future[js.Object] =
+      service.renewCertificate(params).promise.toFuture
+    def requestCertificateFuture(params: RequestCertificateRequest): Future[RequestCertificateResponse] =
+      service.requestCertificate(params).promise.toFuture
+    def resendValidationEmailFuture(params: ResendValidationEmailRequest): Future[js.Object] =
+      service.resendValidationEmail(params).promise.toFuture
+    def updateCertificateOptionsFuture(params: UpdateCertificateOptionsRequest): Future[js.Object] =
+      service.updateCertificateOptions(params).promise.toFuture
+  }
 }
 
 package acm {

@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -26,6 +27,36 @@ package object cloudtrail {
   type TagsList             = js.Array[Tag]
   type TrailList            = js.Array[Trail]
   type TrailNameList        = js.Array[String]
+
+  implicit final class CloudTrailOps(val service: CloudTrail) extends AnyVal {
+
+    def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] = service.addTags(params).promise.toFuture
+    def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] =
+      service.createTrail(params).promise.toFuture
+    def deleteTrailFuture(params: DeleteTrailRequest): Future[DeleteTrailResponse] =
+      service.deleteTrail(params).promise.toFuture
+    def describeTrailsFuture(params: DescribeTrailsRequest): Future[DescribeTrailsResponse] =
+      service.describeTrails(params).promise.toFuture
+    def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] =
+      service.getEventSelectors(params).promise.toFuture
+    def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] =
+      service.getTrailStatus(params).promise.toFuture
+    def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] =
+      service.listPublicKeys(params).promise.toFuture
+    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
+    def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] =
+      service.lookupEvents(params).promise.toFuture
+    def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] =
+      service.putEventSelectors(params).promise.toFuture
+    def removeTagsFuture(params: RemoveTagsRequest): Future[RemoveTagsResponse] =
+      service.removeTags(params).promise.toFuture
+    def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] =
+      service.startLogging(params).promise.toFuture
+    def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] =
+      service.stopLogging(params).promise.toFuture
+    def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] =
+      service.updateTrail(params).promise.toFuture
+  }
 }
 
 package cloudtrail {

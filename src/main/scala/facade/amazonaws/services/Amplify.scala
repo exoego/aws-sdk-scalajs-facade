@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -80,6 +81,39 @@ package object amplify {
   type TotalNumberOfJobs                = String
   type UpdateTime                       = js.Date
   type Verified                         = Boolean
+
+  implicit final class AmplifyOps(val service: Amplify) extends AnyVal {
+
+    def createAppFuture(params: CreateAppRequest): Future[CreateAppResult] = service.createApp(params).promise.toFuture
+    def createBranchFuture(params: CreateBranchRequest): Future[CreateBranchResult] =
+      service.createBranch(params).promise.toFuture
+    def createDomainAssociationFuture(params: CreateDomainAssociationRequest): Future[CreateDomainAssociationResult] =
+      service.createDomainAssociation(params).promise.toFuture
+    def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResult] = service.deleteApp(params).promise.toFuture
+    def deleteBranchFuture(params: DeleteBranchRequest): Future[DeleteBranchResult] =
+      service.deleteBranch(params).promise.toFuture
+    def deleteDomainAssociationFuture(params: DeleteDomainAssociationRequest): Future[DeleteDomainAssociationResult] =
+      service.deleteDomainAssociation(params).promise.toFuture
+    def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResult] = service.deleteJob(params).promise.toFuture
+    def getAppFuture(params: GetAppRequest): Future[GetAppResult]          = service.getApp(params).promise.toFuture
+    def getBranchFuture(params: GetBranchRequest): Future[GetBranchResult] = service.getBranch(params).promise.toFuture
+    def getDomainAssociationFuture(params: GetDomainAssociationRequest): Future[GetDomainAssociationResult] =
+      service.getDomainAssociation(params).promise.toFuture
+    def getJobFuture(params: GetJobRequest): Future[GetJobResult]       = service.getJob(params).promise.toFuture
+    def listAppsFuture(params: ListAppsRequest): Future[ListAppsResult] = service.listApps(params).promise.toFuture
+    def listBranchesFuture(params: ListBranchesRequest): Future[ListBranchesResult] =
+      service.listBranches(params).promise.toFuture
+    def listDomainAssociationsFuture(params: ListDomainAssociationsRequest): Future[ListDomainAssociationsResult] =
+      service.listDomainAssociations(params).promise.toFuture
+    def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult]    = service.listJobs(params).promise.toFuture
+    def startJobFuture(params: StartJobRequest): Future[StartJobResult]    = service.startJob(params).promise.toFuture
+    def stopJobFuture(params: StopJobRequest): Future[StopJobResult]       = service.stopJob(params).promise.toFuture
+    def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResult] = service.updateApp(params).promise.toFuture
+    def updateBranchFuture(params: UpdateBranchRequest): Future[UpdateBranchResult] =
+      service.updateBranch(params).promise.toFuture
+    def updateDomainAssociationFuture(params: UpdateDomainAssociationRequest): Future[UpdateDomainAssociationResult] =
+      service.updateDomainAssociation(params).promise.toFuture
+  }
 }
 
 package amplify {

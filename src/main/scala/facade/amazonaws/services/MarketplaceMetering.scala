@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -18,6 +19,18 @@ package object marketplacemetering {
   type UsageRecordResultList   = js.Array[UsageRecordResult]
   type UsageRecordResultStatus = String
   type VersionInteger          = Int
+
+  implicit final class MarketplaceMeteringOps(val service: MarketplaceMetering) extends AnyVal {
+
+    def batchMeterUsageFuture(params: BatchMeterUsageRequest): Future[BatchMeterUsageResult] =
+      service.batchMeterUsage(params).promise.toFuture
+    def meterUsageFuture(params: MeterUsageRequest): Future[MeterUsageResult] =
+      service.meterUsage(params).promise.toFuture
+    def registerUsageFuture(params: RegisterUsageRequest): Future[RegisterUsageResult] =
+      service.registerUsage(params).promise.toFuture
+    def resolveCustomerFuture(params: ResolveCustomerRequest): Future[ResolveCustomerResult] =
+      service.resolveCustomer(params).promise.toFuture
+  }
 }
 
 package marketplacemetering {

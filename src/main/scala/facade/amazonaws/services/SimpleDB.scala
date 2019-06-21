@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -15,6 +16,29 @@ package object simpledb {
   type ItemList                 = js.Array[Item]
   type ReplaceableAttributeList = js.Array[ReplaceableAttribute]
   type ReplaceableItemList      = js.Array[ReplaceableItem]
+
+  implicit final class SimpleDBOps(val service: SimpleDB) extends AnyVal {
+
+    def batchDeleteAttributesFuture(params: BatchDeleteAttributesRequest): Future[js.Object] =
+      service.batchDeleteAttributes(params).promise.toFuture
+    def batchPutAttributesFuture(params: BatchPutAttributesRequest): Future[js.Object] =
+      service.batchPutAttributes(params).promise.toFuture
+    def createDomainFuture(params: CreateDomainRequest): Future[js.Object] =
+      service.createDomain(params).promise.toFuture
+    def deleteAttributesFuture(params: DeleteAttributesRequest): Future[js.Object] =
+      service.deleteAttributes(params).promise.toFuture
+    def deleteDomainFuture(params: DeleteDomainRequest): Future[js.Object] =
+      service.deleteDomain(params).promise.toFuture
+    def domainMetadataFuture(params: DomainMetadataRequest): Future[DomainMetadataResult] =
+      service.domainMetadata(params).promise.toFuture
+    def getAttributesFuture(params: GetAttributesRequest): Future[GetAttributesResult] =
+      service.getAttributes(params).promise.toFuture
+    def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResult] =
+      service.listDomains(params).promise.toFuture
+    def putAttributesFuture(params: PutAttributesRequest): Future[js.Object] =
+      service.putAttributes(params).promise.toFuture
+    def selectFuture(params: SelectRequest): Future[SelectResult] = service.select(params).promise.toFuture
+  }
 }
 
 package simpledb {

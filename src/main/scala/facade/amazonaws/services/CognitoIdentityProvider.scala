@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -159,6 +160,216 @@ package object cognitoidentityprovider {
   type VerifiedAttributeType              = String
   type VerifiedAttributesListType         = js.Array[VerifiedAttributeType]
   type VerifySoftwareTokenResponseType    = String
+
+  implicit final class CognitoIdentityProviderOps(val service: CognitoIdentityProvider) extends AnyVal {
+
+    def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] =
+      service.addCustomAttributes(params).promise.toFuture
+    def adminAddUserToGroupFuture(params: AdminAddUserToGroupRequest): Future[js.Object] =
+      service.adminAddUserToGroup(params).promise.toFuture
+    def adminConfirmSignUpFuture(params: AdminConfirmSignUpRequest): Future[AdminConfirmSignUpResponse] =
+      service.adminConfirmSignUp(params).promise.toFuture
+    def adminCreateUserFuture(params: AdminCreateUserRequest): Future[AdminCreateUserResponse] =
+      service.adminCreateUser(params).promise.toFuture
+    def adminDeleteUserAttributesFuture(
+        params: AdminDeleteUserAttributesRequest
+    ): Future[AdminDeleteUserAttributesResponse] = service.adminDeleteUserAttributes(params).promise.toFuture
+    def adminDeleteUserFuture(params: AdminDeleteUserRequest): Future[js.Object] =
+      service.adminDeleteUser(params).promise.toFuture
+    def adminDisableProviderForUserFuture(
+        params: AdminDisableProviderForUserRequest
+    ): Future[AdminDisableProviderForUserResponse] = service.adminDisableProviderForUser(params).promise.toFuture
+    def adminDisableUserFuture(params: AdminDisableUserRequest): Future[AdminDisableUserResponse] =
+      service.adminDisableUser(params).promise.toFuture
+    def adminEnableUserFuture(params: AdminEnableUserRequest): Future[AdminEnableUserResponse] =
+      service.adminEnableUser(params).promise.toFuture
+    def adminForgetDeviceFuture(params: AdminForgetDeviceRequest): Future[js.Object] =
+      service.adminForgetDevice(params).promise.toFuture
+    def adminGetDeviceFuture(params: AdminGetDeviceRequest): Future[AdminGetDeviceResponse] =
+      service.adminGetDevice(params).promise.toFuture
+    def adminGetUserFuture(params: AdminGetUserRequest): Future[AdminGetUserResponse] =
+      service.adminGetUser(params).promise.toFuture
+    def adminInitiateAuthFuture(params: AdminInitiateAuthRequest): Future[AdminInitiateAuthResponse] =
+      service.adminInitiateAuth(params).promise.toFuture
+    def adminLinkProviderForUserFuture(
+        params: AdminLinkProviderForUserRequest
+    ): Future[AdminLinkProviderForUserResponse] = service.adminLinkProviderForUser(params).promise.toFuture
+    def adminListDevicesFuture(params: AdminListDevicesRequest): Future[AdminListDevicesResponse] =
+      service.adminListDevices(params).promise.toFuture
+    def adminListGroupsForUserFuture(params: AdminListGroupsForUserRequest): Future[AdminListGroupsForUserResponse] =
+      service.adminListGroupsForUser(params).promise.toFuture
+    def adminListUserAuthEventsFuture(params: AdminListUserAuthEventsRequest): Future[AdminListUserAuthEventsResponse] =
+      service.adminListUserAuthEvents(params).promise.toFuture
+    def adminRemoveUserFromGroupFuture(params: AdminRemoveUserFromGroupRequest): Future[js.Object] =
+      service.adminRemoveUserFromGroup(params).promise.toFuture
+    def adminResetUserPasswordFuture(params: AdminResetUserPasswordRequest): Future[AdminResetUserPasswordResponse] =
+      service.adminResetUserPassword(params).promise.toFuture
+    def adminRespondToAuthChallengeFuture(
+        params: AdminRespondToAuthChallengeRequest
+    ): Future[AdminRespondToAuthChallengeResponse] = service.adminRespondToAuthChallenge(params).promise.toFuture
+    def adminSetUserMFAPreferenceFuture(
+        params: AdminSetUserMFAPreferenceRequest
+    ): Future[AdminSetUserMFAPreferenceResponse] = service.adminSetUserMFAPreference(params).promise.toFuture
+    def adminSetUserSettingsFuture(params: AdminSetUserSettingsRequest): Future[AdminSetUserSettingsResponse] =
+      service.adminSetUserSettings(params).promise.toFuture
+    def adminUpdateAuthEventFeedbackFuture(
+        params: AdminUpdateAuthEventFeedbackRequest
+    ): Future[AdminUpdateAuthEventFeedbackResponse] = service.adminUpdateAuthEventFeedback(params).promise.toFuture
+    def adminUpdateDeviceStatusFuture(params: AdminUpdateDeviceStatusRequest): Future[AdminUpdateDeviceStatusResponse] =
+      service.adminUpdateDeviceStatus(params).promise.toFuture
+    def adminUpdateUserAttributesFuture(
+        params: AdminUpdateUserAttributesRequest
+    ): Future[AdminUpdateUserAttributesResponse] = service.adminUpdateUserAttributes(params).promise.toFuture
+    def adminUserGlobalSignOutFuture(params: AdminUserGlobalSignOutRequest): Future[AdminUserGlobalSignOutResponse] =
+      service.adminUserGlobalSignOut(params).promise.toFuture
+    def associateSoftwareTokenFuture(params: AssociateSoftwareTokenRequest): Future[AssociateSoftwareTokenResponse] =
+      service.associateSoftwareToken(params).promise.toFuture
+    def changePasswordFuture(params: ChangePasswordRequest): Future[ChangePasswordResponse] =
+      service.changePassword(params).promise.toFuture
+    def confirmDeviceFuture(params: ConfirmDeviceRequest): Future[ConfirmDeviceResponse] =
+      service.confirmDevice(params).promise.toFuture
+    def confirmForgotPasswordFuture(params: ConfirmForgotPasswordRequest): Future[ConfirmForgotPasswordResponse] =
+      service.confirmForgotPassword(params).promise.toFuture
+    def confirmSignUpFuture(params: ConfirmSignUpRequest): Future[ConfirmSignUpResponse] =
+      service.confirmSignUp(params).promise.toFuture
+    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
+      service.createGroup(params).promise.toFuture
+    def createIdentityProviderFuture(params: CreateIdentityProviderRequest): Future[CreateIdentityProviderResponse] =
+      service.createIdentityProvider(params).promise.toFuture
+    def createResourceServerFuture(params: CreateResourceServerRequest): Future[CreateResourceServerResponse] =
+      service.createResourceServer(params).promise.toFuture
+    def createUserImportJobFuture(params: CreateUserImportJobRequest): Future[CreateUserImportJobResponse] =
+      service.createUserImportJob(params).promise.toFuture
+    def createUserPoolClientFuture(params: CreateUserPoolClientRequest): Future[CreateUserPoolClientResponse] =
+      service.createUserPoolClient(params).promise.toFuture
+    def createUserPoolDomainFuture(params: CreateUserPoolDomainRequest): Future[CreateUserPoolDomainResponse] =
+      service.createUserPoolDomain(params).promise.toFuture
+    def createUserPoolFuture(params: CreateUserPoolRequest): Future[CreateUserPoolResponse] =
+      service.createUserPool(params).promise.toFuture
+    def deleteGroupFuture(params: DeleteGroupRequest): Future[js.Object] = service.deleteGroup(params).promise.toFuture
+    def deleteIdentityProviderFuture(params: DeleteIdentityProviderRequest): Future[js.Object] =
+      service.deleteIdentityProvider(params).promise.toFuture
+    def deleteResourceServerFuture(params: DeleteResourceServerRequest): Future[js.Object] =
+      service.deleteResourceServer(params).promise.toFuture
+    def deleteUserAttributesFuture(params: DeleteUserAttributesRequest): Future[DeleteUserAttributesResponse] =
+      service.deleteUserAttributes(params).promise.toFuture
+    def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise.toFuture
+    def deleteUserPoolClientFuture(params: DeleteUserPoolClientRequest): Future[js.Object] =
+      service.deleteUserPoolClient(params).promise.toFuture
+    def deleteUserPoolDomainFuture(params: DeleteUserPoolDomainRequest): Future[DeleteUserPoolDomainResponse] =
+      service.deleteUserPoolDomain(params).promise.toFuture
+    def deleteUserPoolFuture(params: DeleteUserPoolRequest): Future[js.Object] =
+      service.deleteUserPool(params).promise.toFuture
+    def describeIdentityProviderFuture(
+        params: DescribeIdentityProviderRequest
+    ): Future[DescribeIdentityProviderResponse] = service.describeIdentityProvider(params).promise.toFuture
+    def describeResourceServerFuture(params: DescribeResourceServerRequest): Future[DescribeResourceServerResponse] =
+      service.describeResourceServer(params).promise.toFuture
+    def describeRiskConfigurationFuture(
+        params: DescribeRiskConfigurationRequest
+    ): Future[DescribeRiskConfigurationResponse] = service.describeRiskConfiguration(params).promise.toFuture
+    def describeUserImportJobFuture(params: DescribeUserImportJobRequest): Future[DescribeUserImportJobResponse] =
+      service.describeUserImportJob(params).promise.toFuture
+    def describeUserPoolClientFuture(params: DescribeUserPoolClientRequest): Future[DescribeUserPoolClientResponse] =
+      service.describeUserPoolClient(params).promise.toFuture
+    def describeUserPoolDomainFuture(params: DescribeUserPoolDomainRequest): Future[DescribeUserPoolDomainResponse] =
+      service.describeUserPoolDomain(params).promise.toFuture
+    def describeUserPoolFuture(params: DescribeUserPoolRequest): Future[DescribeUserPoolResponse] =
+      service.describeUserPool(params).promise.toFuture
+    def forgetDeviceFuture(params: ForgetDeviceRequest): Future[js.Object] =
+      service.forgetDevice(params).promise.toFuture
+    def forgotPasswordFuture(params: ForgotPasswordRequest): Future[ForgotPasswordResponse] =
+      service.forgotPassword(params).promise.toFuture
+    def getCSVHeaderFuture(params: GetCSVHeaderRequest): Future[GetCSVHeaderResponse] =
+      service.getCSVHeader(params).promise.toFuture
+    def getDeviceFuture(params: GetDeviceRequest): Future[GetDeviceResponse] =
+      service.getDevice(params).promise.toFuture
+    def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] = service.getGroup(params).promise.toFuture
+    def getIdentityProviderByIdentifierFuture(
+        params: GetIdentityProviderByIdentifierRequest
+    ): Future[GetIdentityProviderByIdentifierResponse] =
+      service.getIdentityProviderByIdentifier(params).promise.toFuture
+    def getSigningCertificateFuture(params: GetSigningCertificateRequest): Future[GetSigningCertificateResponse] =
+      service.getSigningCertificate(params).promise.toFuture
+    def getUICustomizationFuture(params: GetUICustomizationRequest): Future[GetUICustomizationResponse] =
+      service.getUICustomization(params).promise.toFuture
+    def getUserAttributeVerificationCodeFuture(
+        params: GetUserAttributeVerificationCodeRequest
+    ): Future[GetUserAttributeVerificationCodeResponse] =
+      service.getUserAttributeVerificationCode(params).promise.toFuture
+    def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise.toFuture
+    def getUserPoolMfaConfigFuture(params: GetUserPoolMfaConfigRequest): Future[GetUserPoolMfaConfigResponse] =
+      service.getUserPoolMfaConfig(params).promise.toFuture
+    def globalSignOutFuture(params: GlobalSignOutRequest): Future[GlobalSignOutResponse] =
+      service.globalSignOut(params).promise.toFuture
+    def initiateAuthFuture(params: InitiateAuthRequest): Future[InitiateAuthResponse] =
+      service.initiateAuth(params).promise.toFuture
+    def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
+      service.listDevices(params).promise.toFuture
+    def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
+      service.listGroups(params).promise.toFuture
+    def listIdentityProvidersFuture(params: ListIdentityProvidersRequest): Future[ListIdentityProvidersResponse] =
+      service.listIdentityProviders(params).promise.toFuture
+    def listResourceServersFuture(params: ListResourceServersRequest): Future[ListResourceServersResponse] =
+      service.listResourceServers(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def listUserImportJobsFuture(params: ListUserImportJobsRequest): Future[ListUserImportJobsResponse] =
+      service.listUserImportJobs(params).promise.toFuture
+    def listUserPoolClientsFuture(params: ListUserPoolClientsRequest): Future[ListUserPoolClientsResponse] =
+      service.listUserPoolClients(params).promise.toFuture
+    def listUserPoolsFuture(params: ListUserPoolsRequest): Future[ListUserPoolsResponse] =
+      service.listUserPools(params).promise.toFuture
+    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+      service.listUsers(params).promise.toFuture
+    def listUsersInGroupFuture(params: ListUsersInGroupRequest): Future[ListUsersInGroupResponse] =
+      service.listUsersInGroup(params).promise.toFuture
+    def resendConfirmationCodeFuture(params: ResendConfirmationCodeRequest): Future[ResendConfirmationCodeResponse] =
+      service.resendConfirmationCode(params).promise.toFuture
+    def respondToAuthChallengeFuture(params: RespondToAuthChallengeRequest): Future[RespondToAuthChallengeResponse] =
+      service.respondToAuthChallenge(params).promise.toFuture
+    def setRiskConfigurationFuture(params: SetRiskConfigurationRequest): Future[SetRiskConfigurationResponse] =
+      service.setRiskConfiguration(params).promise.toFuture
+    def setUICustomizationFuture(params: SetUICustomizationRequest): Future[SetUICustomizationResponse] =
+      service.setUICustomization(params).promise.toFuture
+    def setUserMFAPreferenceFuture(params: SetUserMFAPreferenceRequest): Future[SetUserMFAPreferenceResponse] =
+      service.setUserMFAPreference(params).promise.toFuture
+    def setUserPoolMfaConfigFuture(params: SetUserPoolMfaConfigRequest): Future[SetUserPoolMfaConfigResponse] =
+      service.setUserPoolMfaConfig(params).promise.toFuture
+    def setUserSettingsFuture(params: SetUserSettingsRequest): Future[SetUserSettingsResponse] =
+      service.setUserSettings(params).promise.toFuture
+    def signUpFuture(params: SignUpRequest): Future[SignUpResponse] = service.signUp(params).promise.toFuture
+    def startUserImportJobFuture(params: StartUserImportJobRequest): Future[StartUserImportJobResponse] =
+      service.startUserImportJob(params).promise.toFuture
+    def stopUserImportJobFuture(params: StopUserImportJobRequest): Future[StopUserImportJobResponse] =
+      service.stopUserImportJob(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+    def updateAuthEventFeedbackFuture(params: UpdateAuthEventFeedbackRequest): Future[UpdateAuthEventFeedbackResponse] =
+      service.updateAuthEventFeedback(params).promise.toFuture
+    def updateDeviceStatusFuture(params: UpdateDeviceStatusRequest): Future[UpdateDeviceStatusResponse] =
+      service.updateDeviceStatus(params).promise.toFuture
+    def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] =
+      service.updateGroup(params).promise.toFuture
+    def updateIdentityProviderFuture(params: UpdateIdentityProviderRequest): Future[UpdateIdentityProviderResponse] =
+      service.updateIdentityProvider(params).promise.toFuture
+    def updateResourceServerFuture(params: UpdateResourceServerRequest): Future[UpdateResourceServerResponse] =
+      service.updateResourceServer(params).promise.toFuture
+    def updateUserAttributesFuture(params: UpdateUserAttributesRequest): Future[UpdateUserAttributesResponse] =
+      service.updateUserAttributes(params).promise.toFuture
+    def updateUserPoolClientFuture(params: UpdateUserPoolClientRequest): Future[UpdateUserPoolClientResponse] =
+      service.updateUserPoolClient(params).promise.toFuture
+    def updateUserPoolDomainFuture(params: UpdateUserPoolDomainRequest): Future[UpdateUserPoolDomainResponse] =
+      service.updateUserPoolDomain(params).promise.toFuture
+    def updateUserPoolFuture(params: UpdateUserPoolRequest): Future[UpdateUserPoolResponse] =
+      service.updateUserPool(params).promise.toFuture
+    def verifySoftwareTokenFuture(params: VerifySoftwareTokenRequest): Future[VerifySoftwareTokenResponse] =
+      service.verifySoftwareToken(params).promise.toFuture
+    def verifyUserAttributeFuture(params: VerifyUserAttributeRequest): Future[VerifyUserAttributeResponse] =
+      service.verifyUserAttribute(params).promise.toFuture
+  }
 }
 
 package cognitoidentityprovider {

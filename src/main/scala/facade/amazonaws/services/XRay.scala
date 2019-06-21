@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -81,6 +82,47 @@ package object xray {
   type UnprocessedTraceSegmentList     = js.Array[UnprocessedTraceSegment]
   type ValuesWithServiceIds            = js.Array[ValueWithServiceIds]
   type Version                         = Int
+
+  implicit final class XRayOps(val service: XRay) extends AnyVal {
+
+    def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] =
+      service.batchGetTraces(params).promise.toFuture
+    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] =
+      service.createGroup(params).promise.toFuture
+    def createSamplingRuleFuture(params: CreateSamplingRuleRequest): Future[CreateSamplingRuleResult] =
+      service.createSamplingRule(params).promise.toFuture
+    def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResult] =
+      service.deleteGroup(params).promise.toFuture
+    def deleteSamplingRuleFuture(params: DeleteSamplingRuleRequest): Future[DeleteSamplingRuleResult] =
+      service.deleteSamplingRule(params).promise.toFuture
+    def getEncryptionConfigFuture(params: GetEncryptionConfigRequest): Future[GetEncryptionConfigResult] =
+      service.getEncryptionConfig(params).promise.toFuture
+    def getGroupFuture(params: GetGroupRequest): Future[GetGroupResult]    = service.getGroup(params).promise.toFuture
+    def getGroupsFuture(params: GetGroupsRequest): Future[GetGroupsResult] = service.getGroups(params).promise.toFuture
+    def getSamplingRulesFuture(params: GetSamplingRulesRequest): Future[GetSamplingRulesResult] =
+      service.getSamplingRules(params).promise.toFuture
+    def getSamplingStatisticSummariesFuture(
+        params: GetSamplingStatisticSummariesRequest
+    ): Future[GetSamplingStatisticSummariesResult] = service.getSamplingStatisticSummaries(params).promise.toFuture
+    def getSamplingTargetsFuture(params: GetSamplingTargetsRequest): Future[GetSamplingTargetsResult] =
+      service.getSamplingTargets(params).promise.toFuture
+    def getServiceGraphFuture(params: GetServiceGraphRequest): Future[GetServiceGraphResult] =
+      service.getServiceGraph(params).promise.toFuture
+    def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] =
+      service.getTraceGraph(params).promise.toFuture
+    def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] =
+      service.getTraceSummaries(params).promise.toFuture
+    def putEncryptionConfigFuture(params: PutEncryptionConfigRequest): Future[PutEncryptionConfigResult] =
+      service.putEncryptionConfig(params).promise.toFuture
+    def putTelemetryRecordsFuture(params: PutTelemetryRecordsRequest): Future[PutTelemetryRecordsResult] =
+      service.putTelemetryRecords(params).promise.toFuture
+    def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] =
+      service.putTraceSegments(params).promise.toFuture
+    def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResult] =
+      service.updateGroup(params).promise.toFuture
+    def updateSamplingRuleFuture(params: UpdateSamplingRuleRequest): Future[UpdateSamplingRuleResult] =
+      service.updateSamplingRule(params).promise.toFuture
+  }
 }
 
 package xray {

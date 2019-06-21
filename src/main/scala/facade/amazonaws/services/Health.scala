@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -56,6 +57,24 @@ package object health {
   type tagSet                            = js.Dictionary[tagValue]
   type tagValue                          = String
   type timestamp                         = js.Date
+
+  implicit final class HealthOps(val service: Health) extends AnyVal {
+
+    def describeAffectedEntitiesFuture(
+        params: DescribeAffectedEntitiesRequest
+    ): Future[DescribeAffectedEntitiesResponse] = service.describeAffectedEntities(params).promise.toFuture
+    def describeEntityAggregatesFuture(
+        params: DescribeEntityAggregatesRequest
+    ): Future[DescribeEntityAggregatesResponse] = service.describeEntityAggregates(params).promise.toFuture
+    def describeEventAggregatesFuture(params: DescribeEventAggregatesRequest): Future[DescribeEventAggregatesResponse] =
+      service.describeEventAggregates(params).promise.toFuture
+    def describeEventDetailsFuture(params: DescribeEventDetailsRequest): Future[DescribeEventDetailsResponse] =
+      service.describeEventDetails(params).promise.toFuture
+    def describeEventTypesFuture(params: DescribeEventTypesRequest): Future[DescribeEventTypesResponse] =
+      service.describeEventTypes(params).promise.toFuture
+    def describeEventsFuture(params: DescribeEventsRequest): Future[DescribeEventsResponse] =
+      service.describeEvents(params).promise.toFuture
+  }
 }
 
 package health {

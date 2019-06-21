@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -28,6 +29,29 @@ package object kinesisvideo {
   type Timestamp                    = js.Date
   type UpdateDataRetentionOperation = String
   type Version                      = String
+
+  implicit final class KinesisVideoOps(val service: KinesisVideo) extends AnyVal {
+
+    def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] =
+      service.createStream(params).promise.toFuture
+    def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] =
+      service.deleteStream(params).promise.toFuture
+    def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
+      service.describeStream(params).promise.toFuture
+    def getDataEndpointFuture(params: GetDataEndpointInput): Future[GetDataEndpointOutput] =
+      service.getDataEndpoint(params).promise.toFuture
+    def listStreamsFuture(params: ListStreamsInput): Future[ListStreamsOutput] =
+      service.listStreams(params).promise.toFuture
+    def listTagsForStreamFuture(params: ListTagsForStreamInput): Future[ListTagsForStreamOutput] =
+      service.listTagsForStream(params).promise.toFuture
+    def tagStreamFuture(params: TagStreamInput): Future[TagStreamOutput] = service.tagStream(params).promise.toFuture
+    def untagStreamFuture(params: UntagStreamInput): Future[UntagStreamOutput] =
+      service.untagStream(params).promise.toFuture
+    def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] =
+      service.updateDataRetention(params).promise.toFuture
+    def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] =
+      service.updateStream(params).promise.toFuture
+  }
 }
 
 package kinesisvideo {

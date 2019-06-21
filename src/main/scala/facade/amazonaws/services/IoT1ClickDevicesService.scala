@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -20,6 +21,35 @@ package object iot1clickdevicesservice {
   type __string                  = String
   type __stringMin12Max40        = String
   type __timestampIso8601        = js.Date
+
+  implicit final class IoT1ClickDevicesServiceOps(val service: IoT1ClickDevicesService) extends AnyVal {
+
+    def claimDevicesByClaimCodeFuture(params: ClaimDevicesByClaimCodeRequest): Future[ClaimDevicesByClaimCodeResponse] =
+      service.claimDevicesByClaimCode(params).promise.toFuture
+    def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] =
+      service.describeDevice(params).promise.toFuture
+    def finalizeDeviceClaimFuture(params: FinalizeDeviceClaimRequest): Future[FinalizeDeviceClaimResponse] =
+      service.finalizeDeviceClaim(params).promise.toFuture
+    def getDeviceMethodsFuture(params: GetDeviceMethodsRequest): Future[GetDeviceMethodsResponse] =
+      service.getDeviceMethods(params).promise.toFuture
+    def initiateDeviceClaimFuture(params: InitiateDeviceClaimRequest): Future[InitiateDeviceClaimResponse] =
+      service.initiateDeviceClaim(params).promise.toFuture
+    def invokeDeviceMethodFuture(params: InvokeDeviceMethodRequest): Future[InvokeDeviceMethodResponse] =
+      service.invokeDeviceMethod(params).promise.toFuture
+    def listDeviceEventsFuture(params: ListDeviceEventsRequest): Future[ListDeviceEventsResponse] =
+      service.listDeviceEvents(params).promise.toFuture
+    def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] =
+      service.listDevices(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
+    def unclaimDeviceFuture(params: UnclaimDeviceRequest): Future[UnclaimDeviceResponse] =
+      service.unclaimDevice(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
+    def updateDeviceStateFuture(params: UpdateDeviceStateRequest): Future[UpdateDeviceStateResponse] =
+      service.updateDeviceState(params).promise.toFuture
+  }
 }
 
 package iot1clickdevicesservice {

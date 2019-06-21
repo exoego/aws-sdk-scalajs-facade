@@ -1,4 +1,4 @@
 -Xss4M
--Xmx2G
--XX:MaxMetaspaceSize=2G
+-Xmx4G
+-XX:MaxMetaspaceSize=4G
 -XX:+CMSClassUnloadingEnabled

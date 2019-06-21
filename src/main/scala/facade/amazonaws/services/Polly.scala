@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -45,6 +46,28 @@ package object polly {
   type VoiceId                        = String
   type VoiceList                      = js.Array[Voice]
   type VoiceName                      = String
+
+  implicit final class PollyOps(val service: Polly) extends AnyVal {
+
+    def deleteLexiconFuture(params: DeleteLexiconInput): Future[DeleteLexiconOutput] =
+      service.deleteLexicon(params).promise.toFuture
+    def describeVoicesFuture(params: DescribeVoicesInput): Future[DescribeVoicesOutput] =
+      service.describeVoices(params).promise.toFuture
+    def getLexiconFuture(params: GetLexiconInput): Future[GetLexiconOutput] =
+      service.getLexicon(params).promise.toFuture
+    def getSpeechSynthesisTaskFuture(params: GetSpeechSynthesisTaskInput): Future[GetSpeechSynthesisTaskOutput] =
+      service.getSpeechSynthesisTask(params).promise.toFuture
+    def listLexiconsFuture(params: ListLexiconsInput): Future[ListLexiconsOutput] =
+      service.listLexicons(params).promise.toFuture
+    def listSpeechSynthesisTasksFuture(params: ListSpeechSynthesisTasksInput): Future[ListSpeechSynthesisTasksOutput] =
+      service.listSpeechSynthesisTasks(params).promise.toFuture
+    def putLexiconFuture(params: PutLexiconInput): Future[PutLexiconOutput] =
+      service.putLexicon(params).promise.toFuture
+    def startSpeechSynthesisTaskFuture(params: StartSpeechSynthesisTaskInput): Future[StartSpeechSynthesisTaskOutput] =
+      service.startSpeechSynthesisTask(params).promise.toFuture
+    def synthesizeSpeechFuture(params: SynthesizeSpeechInput): Future[SynthesizeSpeechOutput] =
+      service.synthesizeSpeech(params).promise.toFuture
+  }
 }
 
 package polly {

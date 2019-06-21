@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -12,6 +13,12 @@ package object sagemakerruntime {
   type CustomAttributesHeader = String
   type EndpointName           = String
   type Header                 = String
+
+  implicit final class SageMakerRuntimeOps(val service: SageMakerRuntime) extends AnyVal {
+
+    def invokeEndpointFuture(params: InvokeEndpointInput): Future[InvokeEndpointOutput] =
+      service.invokeEndpoint(params).promise.toFuture
+  }
 }
 
 package sagemakerruntime {

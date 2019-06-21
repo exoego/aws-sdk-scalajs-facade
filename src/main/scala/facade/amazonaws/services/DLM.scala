@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -30,6 +31,20 @@ package object dlm {
   type Time                       = String
   type TimesList                  = js.Array[Time]
   type Timestamp                  = js.Date
+
+  implicit final class DLMOps(val service: DLM) extends AnyVal {
+
+    def createLifecyclePolicyFuture(params: CreateLifecyclePolicyRequest): Future[CreateLifecyclePolicyResponse] =
+      service.createLifecyclePolicy(params).promise.toFuture
+    def deleteLifecyclePolicyFuture(params: DeleteLifecyclePolicyRequest): Future[DeleteLifecyclePolicyResponse] =
+      service.deleteLifecyclePolicy(params).promise.toFuture
+    def getLifecyclePoliciesFuture(params: GetLifecyclePoliciesRequest): Future[GetLifecyclePoliciesResponse] =
+      service.getLifecyclePolicies(params).promise.toFuture
+    def getLifecyclePolicyFuture(params: GetLifecyclePolicyRequest): Future[GetLifecyclePolicyResponse] =
+      service.getLifecyclePolicy(params).promise.toFuture
+    def updateLifecyclePolicyFuture(params: UpdateLifecyclePolicyRequest): Future[UpdateLifecyclePolicyResponse] =
+      service.updateLifecyclePolicy(params).promise.toFuture
+  }
 }
 
 package dlm {

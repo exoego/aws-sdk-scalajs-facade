@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -28,6 +29,42 @@ package object mediapackage {
   type __listOf__string                            = js.Array[__string]
   type __mapOf__string                             = js.Dictionary[__string]
   type __string                                    = String
+
+  implicit final class MediaPackageOps(val service: MediaPackage) extends AnyVal {
+
+    def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
+      service.createChannel(params).promise.toFuture
+    def createOriginEndpointFuture(params: CreateOriginEndpointRequest): Future[CreateOriginEndpointResponse] =
+      service.createOriginEndpoint(params).promise.toFuture
+    def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] =
+      service.deleteChannel(params).promise.toFuture
+    def deleteOriginEndpointFuture(params: DeleteOriginEndpointRequest): Future[DeleteOriginEndpointResponse] =
+      service.deleteOriginEndpoint(params).promise.toFuture
+    def describeChannelFuture(params: DescribeChannelRequest): Future[DescribeChannelResponse] =
+      service.describeChannel(params).promise.toFuture
+    def describeOriginEndpointFuture(params: DescribeOriginEndpointRequest): Future[DescribeOriginEndpointResponse] =
+      service.describeOriginEndpoint(params).promise.toFuture
+    def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] =
+      service.listChannels(params).promise.toFuture
+    def listOriginEndpointsFuture(params: ListOriginEndpointsRequest): Future[ListOriginEndpointsResponse] =
+      service.listOriginEndpoints(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def rotateChannelCredentialsFuture(
+        params: RotateChannelCredentialsRequest
+    ): Future[RotateChannelCredentialsResponse] = service.rotateChannelCredentials(params).promise.toFuture
+    def rotateIngestEndpointCredentialsFuture(
+        params: RotateIngestEndpointCredentialsRequest
+    ): Future[RotateIngestEndpointCredentialsResponse] =
+      service.rotateIngestEndpointCredentials(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
+    def updateChannelFuture(params: UpdateChannelRequest): Future[UpdateChannelResponse] =
+      service.updateChannel(params).promise.toFuture
+    def updateOriginEndpointFuture(params: UpdateOriginEndpointRequest): Future[UpdateOriginEndpointResponse] =
+      service.updateOriginEndpoint(params).promise.toFuture
+  }
 }
 
 package mediapackage {

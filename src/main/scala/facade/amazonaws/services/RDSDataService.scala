@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -16,6 +17,12 @@ package object rdsdataservice {
   type Row                 = js.Array[Value]
   type SqlStatement        = String
   type SqlStatementResults = js.Array[SqlStatementResult]
+
+  implicit final class RDSDataServiceOps(val service: RDSDataService) extends AnyVal {
+
+    def executeSqlFuture(params: ExecuteSqlRequest): Future[ExecuteSqlResponse] =
+      service.executeSql(params).promise.toFuture
+  }
 }
 
 package rdsdataservice {

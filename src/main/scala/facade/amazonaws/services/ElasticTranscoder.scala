@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -105,6 +106,43 @@ package object elastictranscoder {
   type WatermarkSizingPolicy       = String
   type ZeroTo255String             = String
   type ZeroTo512String             = String
+
+  implicit final class ElasticTranscoderOps(val service: ElasticTranscoder) extends AnyVal {
+
+    def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
+      service.cancelJob(params).promise.toFuture
+    def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] =
+      service.createJob(params).promise.toFuture
+    def createPipelineFuture(params: CreatePipelineRequest): Future[CreatePipelineResponse] =
+      service.createPipeline(params).promise.toFuture
+    def createPresetFuture(params: CreatePresetRequest): Future[CreatePresetResponse] =
+      service.createPreset(params).promise.toFuture
+    def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] =
+      service.deletePipeline(params).promise.toFuture
+    def deletePresetFuture(params: DeletePresetRequest): Future[DeletePresetResponse] =
+      service.deletePreset(params).promise.toFuture
+    def listJobsByPipelineFuture(params: ListJobsByPipelineRequest): Future[ListJobsByPipelineResponse] =
+      service.listJobsByPipeline(params).promise.toFuture
+    def listJobsByStatusFuture(params: ListJobsByStatusRequest): Future[ListJobsByStatusResponse] =
+      service.listJobsByStatus(params).promise.toFuture
+    def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] =
+      service.listPipelines(params).promise.toFuture
+    def listPresetsFuture(params: ListPresetsRequest): Future[ListPresetsResponse] =
+      service.listPresets(params).promise.toFuture
+    def readJobFuture(params: ReadJobRequest): Future[ReadJobResponse] = service.readJob(params).promise.toFuture
+    def readPipelineFuture(params: ReadPipelineRequest): Future[ReadPipelineResponse] =
+      service.readPipeline(params).promise.toFuture
+    def readPresetFuture(params: ReadPresetRequest): Future[ReadPresetResponse] =
+      service.readPreset(params).promise.toFuture
+    def testRoleFuture(params: TestRoleRequest): Future[TestRoleResponse] = service.testRole(params).promise.toFuture
+    def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] =
+      service.updatePipeline(params).promise.toFuture
+    def updatePipelineNotificationsFuture(
+        params: UpdatePipelineNotificationsRequest
+    ): Future[UpdatePipelineNotificationsResponse] = service.updatePipelineNotifications(params).promise.toFuture
+    def updatePipelineStatusFuture(params: UpdatePipelineStatusRequest): Future[UpdatePipelineStatusResponse] =
+      service.updatePipelineStatus(params).promise.toFuture
+  }
 }
 
 package elastictranscoder {

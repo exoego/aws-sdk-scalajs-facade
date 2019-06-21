@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -150,6 +151,296 @@ package object iam {
   type userNameType                                    = String
   type virtualMFADeviceListType                        = js.Array[VirtualMFADevice]
   type virtualMFADeviceName                            = String
+
+  implicit final class IAMOps(val service: IAM) extends AnyVal {
+
+    def addClientIDToOpenIDConnectProviderFuture(params: AddClientIDToOpenIDConnectProviderRequest): Future[js.Object] =
+      service.addClientIDToOpenIDConnectProvider(params).promise.toFuture
+    def addRoleToInstanceProfileFuture(params: AddRoleToInstanceProfileRequest): Future[js.Object] =
+      service.addRoleToInstanceProfile(params).promise.toFuture
+    def addUserToGroupFuture(params: AddUserToGroupRequest): Future[js.Object] =
+      service.addUserToGroup(params).promise.toFuture
+    def attachGroupPolicyFuture(params: AttachGroupPolicyRequest): Future[js.Object] =
+      service.attachGroupPolicy(params).promise.toFuture
+    def attachRolePolicyFuture(params: AttachRolePolicyRequest): Future[js.Object] =
+      service.attachRolePolicy(params).promise.toFuture
+    def attachUserPolicyFuture(params: AttachUserPolicyRequest): Future[js.Object] =
+      service.attachUserPolicy(params).promise.toFuture
+    def changePasswordFuture(params: ChangePasswordRequest): Future[js.Object] =
+      service.changePassword(params).promise.toFuture
+    def createAccessKeyFuture(params: CreateAccessKeyRequest): Future[CreateAccessKeyResponse] =
+      service.createAccessKey(params).promise.toFuture
+    def createAccountAliasFuture(params: CreateAccountAliasRequest): Future[js.Object] =
+      service.createAccountAlias(params).promise.toFuture
+    def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
+      service.createGroup(params).promise.toFuture
+    def createInstanceProfileFuture(params: CreateInstanceProfileRequest): Future[CreateInstanceProfileResponse] =
+      service.createInstanceProfile(params).promise.toFuture
+    def createLoginProfileFuture(params: CreateLoginProfileRequest): Future[CreateLoginProfileResponse] =
+      service.createLoginProfile(params).promise.toFuture
+    def createOpenIDConnectProviderFuture(
+        params: CreateOpenIDConnectProviderRequest
+    ): Future[CreateOpenIDConnectProviderResponse] = service.createOpenIDConnectProvider(params).promise.toFuture
+    def createPolicyFuture(params: CreatePolicyRequest): Future[CreatePolicyResponse] =
+      service.createPolicy(params).promise.toFuture
+    def createPolicyVersionFuture(params: CreatePolicyVersionRequest): Future[CreatePolicyVersionResponse] =
+      service.createPolicyVersion(params).promise.toFuture
+    def createRoleFuture(params: CreateRoleRequest): Future[CreateRoleResponse] =
+      service.createRole(params).promise.toFuture
+    def createSAMLProviderFuture(params: CreateSAMLProviderRequest): Future[CreateSAMLProviderResponse] =
+      service.createSAMLProvider(params).promise.toFuture
+    def createServiceLinkedRoleFuture(params: CreateServiceLinkedRoleRequest): Future[CreateServiceLinkedRoleResponse] =
+      service.createServiceLinkedRole(params).promise.toFuture
+    def createServiceSpecificCredentialFuture(
+        params: CreateServiceSpecificCredentialRequest
+    ): Future[CreateServiceSpecificCredentialResponse] =
+      service.createServiceSpecificCredential(params).promise.toFuture
+    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+      service.createUser(params).promise.toFuture
+    def createVirtualMFADeviceFuture(params: CreateVirtualMFADeviceRequest): Future[CreateVirtualMFADeviceResponse] =
+      service.createVirtualMFADevice(params).promise.toFuture
+    def deactivateMFADeviceFuture(params: DeactivateMFADeviceRequest): Future[js.Object] =
+      service.deactivateMFADevice(params).promise.toFuture
+    def deleteAccessKeyFuture(params: DeleteAccessKeyRequest): Future[js.Object] =
+      service.deleteAccessKey(params).promise.toFuture
+    def deleteAccountAliasFuture(params: DeleteAccountAliasRequest): Future[js.Object] =
+      service.deleteAccountAlias(params).promise.toFuture
+    def deleteAccountPasswordPolicyFuture(): Future[js.Object]           = service.deleteAccountPasswordPolicy().promise.toFuture
+    def deleteGroupFuture(params: DeleteGroupRequest): Future[js.Object] = service.deleteGroup(params).promise.toFuture
+    def deleteGroupPolicyFuture(params: DeleteGroupPolicyRequest): Future[js.Object] =
+      service.deleteGroupPolicy(params).promise.toFuture
+    def deleteInstanceProfileFuture(params: DeleteInstanceProfileRequest): Future[js.Object] =
+      service.deleteInstanceProfile(params).promise.toFuture
+    def deleteLoginProfileFuture(params: DeleteLoginProfileRequest): Future[js.Object] =
+      service.deleteLoginProfile(params).promise.toFuture
+    def deleteOpenIDConnectProviderFuture(params: DeleteOpenIDConnectProviderRequest): Future[js.Object] =
+      service.deleteOpenIDConnectProvider(params).promise.toFuture
+    def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
+      service.deletePolicy(params).promise.toFuture
+    def deletePolicyVersionFuture(params: DeletePolicyVersionRequest): Future[js.Object] =
+      service.deletePolicyVersion(params).promise.toFuture
+    def deleteRoleFuture(params: DeleteRoleRequest): Future[js.Object] = service.deleteRole(params).promise.toFuture
+    def deleteRolePermissionsBoundaryFuture(params: DeleteRolePermissionsBoundaryRequest): Future[js.Object] =
+      service.deleteRolePermissionsBoundary(params).promise.toFuture
+    def deleteRolePolicyFuture(params: DeleteRolePolicyRequest): Future[js.Object] =
+      service.deleteRolePolicy(params).promise.toFuture
+    def deleteSAMLProviderFuture(params: DeleteSAMLProviderRequest): Future[js.Object] =
+      service.deleteSAMLProvider(params).promise.toFuture
+    def deleteSSHPublicKeyFuture(params: DeleteSSHPublicKeyRequest): Future[js.Object] =
+      service.deleteSSHPublicKey(params).promise.toFuture
+    def deleteServerCertificateFuture(params: DeleteServerCertificateRequest): Future[js.Object] =
+      service.deleteServerCertificate(params).promise.toFuture
+    def deleteServiceLinkedRoleFuture(params: DeleteServiceLinkedRoleRequest): Future[DeleteServiceLinkedRoleResponse] =
+      service.deleteServiceLinkedRole(params).promise.toFuture
+    def deleteServiceSpecificCredentialFuture(params: DeleteServiceSpecificCredentialRequest): Future[js.Object] =
+      service.deleteServiceSpecificCredential(params).promise.toFuture
+    def deleteSigningCertificateFuture(params: DeleteSigningCertificateRequest): Future[js.Object] =
+      service.deleteSigningCertificate(params).promise.toFuture
+    def deleteUserFuture(params: DeleteUserRequest): Future[js.Object] = service.deleteUser(params).promise.toFuture
+    def deleteUserPermissionsBoundaryFuture(params: DeleteUserPermissionsBoundaryRequest): Future[js.Object] =
+      service.deleteUserPermissionsBoundary(params).promise.toFuture
+    def deleteUserPolicyFuture(params: DeleteUserPolicyRequest): Future[js.Object] =
+      service.deleteUserPolicy(params).promise.toFuture
+    def deleteVirtualMFADeviceFuture(params: DeleteVirtualMFADeviceRequest): Future[js.Object] =
+      service.deleteVirtualMFADevice(params).promise.toFuture
+    def detachGroupPolicyFuture(params: DetachGroupPolicyRequest): Future[js.Object] =
+      service.detachGroupPolicy(params).promise.toFuture
+    def detachRolePolicyFuture(params: DetachRolePolicyRequest): Future[js.Object] =
+      service.detachRolePolicy(params).promise.toFuture
+    def detachUserPolicyFuture(params: DetachUserPolicyRequest): Future[js.Object] =
+      service.detachUserPolicy(params).promise.toFuture
+    def enableMFADeviceFuture(params: EnableMFADeviceRequest): Future[js.Object] =
+      service.enableMFADevice(params).promise.toFuture
+    def generateCredentialReportFuture(): Future[GenerateCredentialReportResponse] =
+      service.generateCredentialReport().promise.toFuture
+    def generateServiceLastAccessedDetailsFuture(
+        params: GenerateServiceLastAccessedDetailsRequest
+    ): Future[GenerateServiceLastAccessedDetailsResponse] =
+      service.generateServiceLastAccessedDetails(params).promise.toFuture
+    def getAccessKeyLastUsedFuture(params: GetAccessKeyLastUsedRequest): Future[GetAccessKeyLastUsedResponse] =
+      service.getAccessKeyLastUsed(params).promise.toFuture
+    def getAccountAuthorizationDetailsFuture(
+        params: GetAccountAuthorizationDetailsRequest
+    ): Future[GetAccountAuthorizationDetailsResponse] = service.getAccountAuthorizationDetails(params).promise.toFuture
+    def getAccountPasswordPolicyFuture(): Future[GetAccountPasswordPolicyResponse] =
+      service.getAccountPasswordPolicy().promise.toFuture
+    def getAccountSummaryFuture(): Future[GetAccountSummaryResponse] = service.getAccountSummary().promise.toFuture
+    def getContextKeysForCustomPolicyFuture(
+        params: GetContextKeysForCustomPolicyRequest
+    ): Future[GetContextKeysForPolicyResponse] = service.getContextKeysForCustomPolicy(params).promise.toFuture
+    def getContextKeysForPrincipalPolicyFuture(
+        params: GetContextKeysForPrincipalPolicyRequest
+    ): Future[GetContextKeysForPolicyResponse] = service.getContextKeysForPrincipalPolicy(params).promise.toFuture
+    def getCredentialReportFuture(): Future[GetCredentialReportResponse] =
+      service.getCredentialReport().promise.toFuture
+    def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] = service.getGroup(params).promise.toFuture
+    def getGroupPolicyFuture(params: GetGroupPolicyRequest): Future[GetGroupPolicyResponse] =
+      service.getGroupPolicy(params).promise.toFuture
+    def getInstanceProfileFuture(params: GetInstanceProfileRequest): Future[GetInstanceProfileResponse] =
+      service.getInstanceProfile(params).promise.toFuture
+    def getLoginProfileFuture(params: GetLoginProfileRequest): Future[GetLoginProfileResponse] =
+      service.getLoginProfile(params).promise.toFuture
+    def getOpenIDConnectProviderFuture(
+        params: GetOpenIDConnectProviderRequest
+    ): Future[GetOpenIDConnectProviderResponse] = service.getOpenIDConnectProvider(params).promise.toFuture
+    def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
+      service.getPolicy(params).promise.toFuture
+    def getPolicyVersionFuture(params: GetPolicyVersionRequest): Future[GetPolicyVersionResponse] =
+      service.getPolicyVersion(params).promise.toFuture
+    def getRoleFuture(params: GetRoleRequest): Future[GetRoleResponse] = service.getRole(params).promise.toFuture
+    def getRolePolicyFuture(params: GetRolePolicyRequest): Future[GetRolePolicyResponse] =
+      service.getRolePolicy(params).promise.toFuture
+    def getSAMLProviderFuture(params: GetSAMLProviderRequest): Future[GetSAMLProviderResponse] =
+      service.getSAMLProvider(params).promise.toFuture
+    def getSSHPublicKeyFuture(params: GetSSHPublicKeyRequest): Future[GetSSHPublicKeyResponse] =
+      service.getSSHPublicKey(params).promise.toFuture
+    def getServerCertificateFuture(params: GetServerCertificateRequest): Future[GetServerCertificateResponse] =
+      service.getServerCertificate(params).promise.toFuture
+    def getServiceLastAccessedDetailsFuture(
+        params: GetServiceLastAccessedDetailsRequest
+    ): Future[GetServiceLastAccessedDetailsResponse] = service.getServiceLastAccessedDetails(params).promise.toFuture
+    def getServiceLastAccessedDetailsWithEntitiesFuture(
+        params: GetServiceLastAccessedDetailsWithEntitiesRequest
+    ): Future[GetServiceLastAccessedDetailsWithEntitiesResponse] =
+      service.getServiceLastAccessedDetailsWithEntities(params).promise.toFuture
+    def getServiceLinkedRoleDeletionStatusFuture(
+        params: GetServiceLinkedRoleDeletionStatusRequest
+    ): Future[GetServiceLinkedRoleDeletionStatusResponse] =
+      service.getServiceLinkedRoleDeletionStatus(params).promise.toFuture
+    def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise.toFuture
+    def getUserPolicyFuture(params: GetUserPolicyRequest): Future[GetUserPolicyResponse] =
+      service.getUserPolicy(params).promise.toFuture
+    def listAccessKeysFuture(params: ListAccessKeysRequest): Future[ListAccessKeysResponse] =
+      service.listAccessKeys(params).promise.toFuture
+    def listAccountAliasesFuture(params: ListAccountAliasesRequest): Future[ListAccountAliasesResponse] =
+      service.listAccountAliases(params).promise.toFuture
+    def listAttachedGroupPoliciesFuture(
+        params: ListAttachedGroupPoliciesRequest
+    ): Future[ListAttachedGroupPoliciesResponse] = service.listAttachedGroupPolicies(params).promise.toFuture
+    def listAttachedRolePoliciesFuture(
+        params: ListAttachedRolePoliciesRequest
+    ): Future[ListAttachedRolePoliciesResponse] = service.listAttachedRolePolicies(params).promise.toFuture
+    def listAttachedUserPoliciesFuture(
+        params: ListAttachedUserPoliciesRequest
+    ): Future[ListAttachedUserPoliciesResponse] = service.listAttachedUserPolicies(params).promise.toFuture
+    def listEntitiesForPolicyFuture(params: ListEntitiesForPolicyRequest): Future[ListEntitiesForPolicyResponse] =
+      service.listEntitiesForPolicy(params).promise.toFuture
+    def listGroupPoliciesFuture(params: ListGroupPoliciesRequest): Future[ListGroupPoliciesResponse] =
+      service.listGroupPolicies(params).promise.toFuture
+    def listGroupsForUserFuture(params: ListGroupsForUserRequest): Future[ListGroupsForUserResponse] =
+      service.listGroupsForUser(params).promise.toFuture
+    def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] =
+      service.listGroups(params).promise.toFuture
+    def listInstanceProfilesForRoleFuture(
+        params: ListInstanceProfilesForRoleRequest
+    ): Future[ListInstanceProfilesForRoleResponse] = service.listInstanceProfilesForRole(params).promise.toFuture
+    def listInstanceProfilesFuture(params: ListInstanceProfilesRequest): Future[ListInstanceProfilesResponse] =
+      service.listInstanceProfiles(params).promise.toFuture
+    def listMFADevicesFuture(params: ListMFADevicesRequest): Future[ListMFADevicesResponse] =
+      service.listMFADevices(params).promise.toFuture
+    def listOpenIDConnectProvidersFuture(
+        params: ListOpenIDConnectProvidersRequest
+    ): Future[ListOpenIDConnectProvidersResponse] = service.listOpenIDConnectProviders(params).promise.toFuture
+    def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
+      service.listPolicies(params).promise.toFuture
+    def listPoliciesGrantingServiceAccessFuture(
+        params: ListPoliciesGrantingServiceAccessRequest
+    ): Future[ListPoliciesGrantingServiceAccessResponse] =
+      service.listPoliciesGrantingServiceAccess(params).promise.toFuture
+    def listPolicyVersionsFuture(params: ListPolicyVersionsRequest): Future[ListPolicyVersionsResponse] =
+      service.listPolicyVersions(params).promise.toFuture
+    def listRolePoliciesFuture(params: ListRolePoliciesRequest): Future[ListRolePoliciesResponse] =
+      service.listRolePolicies(params).promise.toFuture
+    def listRoleTagsFuture(params: ListRoleTagsRequest): Future[ListRoleTagsResponse] =
+      service.listRoleTags(params).promise.toFuture
+    def listRolesFuture(params: ListRolesRequest): Future[ListRolesResponse] =
+      service.listRoles(params).promise.toFuture
+    def listSAMLProvidersFuture(params: ListSAMLProvidersRequest): Future[ListSAMLProvidersResponse] =
+      service.listSAMLProviders(params).promise.toFuture
+    def listSSHPublicKeysFuture(params: ListSSHPublicKeysRequest): Future[ListSSHPublicKeysResponse] =
+      service.listSSHPublicKeys(params).promise.toFuture
+    def listServerCertificatesFuture(params: ListServerCertificatesRequest): Future[ListServerCertificatesResponse] =
+      service.listServerCertificates(params).promise.toFuture
+    def listServiceSpecificCredentialsFuture(
+        params: ListServiceSpecificCredentialsRequest
+    ): Future[ListServiceSpecificCredentialsResponse] = service.listServiceSpecificCredentials(params).promise.toFuture
+    def listSigningCertificatesFuture(params: ListSigningCertificatesRequest): Future[ListSigningCertificatesResponse] =
+      service.listSigningCertificates(params).promise.toFuture
+    def listUserPoliciesFuture(params: ListUserPoliciesRequest): Future[ListUserPoliciesResponse] =
+      service.listUserPolicies(params).promise.toFuture
+    def listUserTagsFuture(params: ListUserTagsRequest): Future[ListUserTagsResponse] =
+      service.listUserTags(params).promise.toFuture
+    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+      service.listUsers(params).promise.toFuture
+    def listVirtualMFADevicesFuture(params: ListVirtualMFADevicesRequest): Future[ListVirtualMFADevicesResponse] =
+      service.listVirtualMFADevices(params).promise.toFuture
+    def putGroupPolicyFuture(params: PutGroupPolicyRequest): Future[js.Object] =
+      service.putGroupPolicy(params).promise.toFuture
+    def putRolePermissionsBoundaryFuture(params: PutRolePermissionsBoundaryRequest): Future[js.Object] =
+      service.putRolePermissionsBoundary(params).promise.toFuture
+    def putRolePolicyFuture(params: PutRolePolicyRequest): Future[js.Object] =
+      service.putRolePolicy(params).promise.toFuture
+    def putUserPermissionsBoundaryFuture(params: PutUserPermissionsBoundaryRequest): Future[js.Object] =
+      service.putUserPermissionsBoundary(params).promise.toFuture
+    def putUserPolicyFuture(params: PutUserPolicyRequest): Future[js.Object] =
+      service.putUserPolicy(params).promise.toFuture
+    def removeClientIDFromOpenIDConnectProviderFuture(
+        params: RemoveClientIDFromOpenIDConnectProviderRequest
+    ): Future[js.Object] = service.removeClientIDFromOpenIDConnectProvider(params).promise.toFuture
+    def removeRoleFromInstanceProfileFuture(params: RemoveRoleFromInstanceProfileRequest): Future[js.Object] =
+      service.removeRoleFromInstanceProfile(params).promise.toFuture
+    def removeUserFromGroupFuture(params: RemoveUserFromGroupRequest): Future[js.Object] =
+      service.removeUserFromGroup(params).promise.toFuture
+    def resetServiceSpecificCredentialFuture(
+        params: ResetServiceSpecificCredentialRequest
+    ): Future[ResetServiceSpecificCredentialResponse] = service.resetServiceSpecificCredential(params).promise.toFuture
+    def resyncMFADeviceFuture(params: ResyncMFADeviceRequest): Future[js.Object] =
+      service.resyncMFADevice(params).promise.toFuture
+    def setDefaultPolicyVersionFuture(params: SetDefaultPolicyVersionRequest): Future[js.Object] =
+      service.setDefaultPolicyVersion(params).promise.toFuture
+    def simulateCustomPolicyFuture(params: SimulateCustomPolicyRequest): Future[SimulatePolicyResponse] =
+      service.simulateCustomPolicy(params).promise.toFuture
+    def simulatePrincipalPolicyFuture(params: SimulatePrincipalPolicyRequest): Future[SimulatePolicyResponse] =
+      service.simulatePrincipalPolicy(params).promise.toFuture
+    def tagRoleFuture(params: TagRoleRequest): Future[js.Object]     = service.tagRole(params).promise.toFuture
+    def tagUserFuture(params: TagUserRequest): Future[js.Object]     = service.tagUser(params).promise.toFuture
+    def untagRoleFuture(params: UntagRoleRequest): Future[js.Object] = service.untagRole(params).promise.toFuture
+    def untagUserFuture(params: UntagUserRequest): Future[js.Object] = service.untagUser(params).promise.toFuture
+    def updateAccessKeyFuture(params: UpdateAccessKeyRequest): Future[js.Object] =
+      service.updateAccessKey(params).promise.toFuture
+    def updateAccountPasswordPolicyFuture(params: UpdateAccountPasswordPolicyRequest): Future[js.Object] =
+      service.updateAccountPasswordPolicy(params).promise.toFuture
+    def updateAssumeRolePolicyFuture(params: UpdateAssumeRolePolicyRequest): Future[js.Object] =
+      service.updateAssumeRolePolicy(params).promise.toFuture
+    def updateGroupFuture(params: UpdateGroupRequest): Future[js.Object] = service.updateGroup(params).promise.toFuture
+    def updateLoginProfileFuture(params: UpdateLoginProfileRequest): Future[js.Object] =
+      service.updateLoginProfile(params).promise.toFuture
+    def updateOpenIDConnectProviderThumbprintFuture(
+        params: UpdateOpenIDConnectProviderThumbprintRequest
+    ): Future[js.Object] = service.updateOpenIDConnectProviderThumbprint(params).promise.toFuture
+    def updateRoleDescriptionFuture(params: UpdateRoleDescriptionRequest): Future[UpdateRoleDescriptionResponse] =
+      service.updateRoleDescription(params).promise.toFuture
+    def updateRoleFuture(params: UpdateRoleRequest): Future[UpdateRoleResponse] =
+      service.updateRole(params).promise.toFuture
+    def updateSAMLProviderFuture(params: UpdateSAMLProviderRequest): Future[UpdateSAMLProviderResponse] =
+      service.updateSAMLProvider(params).promise.toFuture
+    def updateSSHPublicKeyFuture(params: UpdateSSHPublicKeyRequest): Future[js.Object] =
+      service.updateSSHPublicKey(params).promise.toFuture
+    def updateServerCertificateFuture(params: UpdateServerCertificateRequest): Future[js.Object] =
+      service.updateServerCertificate(params).promise.toFuture
+    def updateServiceSpecificCredentialFuture(params: UpdateServiceSpecificCredentialRequest): Future[js.Object] =
+      service.updateServiceSpecificCredential(params).promise.toFuture
+    def updateSigningCertificateFuture(params: UpdateSigningCertificateRequest): Future[js.Object] =
+      service.updateSigningCertificate(params).promise.toFuture
+    def updateUserFuture(params: UpdateUserRequest): Future[js.Object] = service.updateUser(params).promise.toFuture
+    def uploadSSHPublicKeyFuture(params: UploadSSHPublicKeyRequest): Future[UploadSSHPublicKeyResponse] =
+      service.uploadSSHPublicKey(params).promise.toFuture
+    def uploadServerCertificateFuture(params: UploadServerCertificateRequest): Future[UploadServerCertificateResponse] =
+      service.uploadServerCertificate(params).promise.toFuture
+    def uploadSigningCertificateFuture(
+        params: UploadSigningCertificateRequest
+    ): Future[UploadSigningCertificateResponse] = service.uploadSigningCertificate(params).promise.toFuture
+  }
 }
 
 package iam {

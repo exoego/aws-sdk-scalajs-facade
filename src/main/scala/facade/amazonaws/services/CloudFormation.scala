@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -157,6 +158,105 @@ package object cloudformation {
   type UsePreviousValue                 = Boolean
   type Value                            = String
   type Version                          = String
+
+  implicit final class CloudFormationOps(val service: CloudFormation) extends AnyVal {
+
+    def cancelUpdateStackFuture(params: CancelUpdateStackInput): Future[js.Object] =
+      service.cancelUpdateStack(params).promise.toFuture
+    def continueUpdateRollbackFuture(params: ContinueUpdateRollbackInput): Future[ContinueUpdateRollbackOutput] =
+      service.continueUpdateRollback(params).promise.toFuture
+    def createChangeSetFuture(params: CreateChangeSetInput): Future[CreateChangeSetOutput] =
+      service.createChangeSet(params).promise.toFuture
+    def createStackFuture(params: CreateStackInput): Future[CreateStackOutput] =
+      service.createStack(params).promise.toFuture
+    def createStackInstancesFuture(params: CreateStackInstancesInput): Future[CreateStackInstancesOutput] =
+      service.createStackInstances(params).promise.toFuture
+    def createStackSetFuture(params: CreateStackSetInput): Future[CreateStackSetOutput] =
+      service.createStackSet(params).promise.toFuture
+    def deleteChangeSetFuture(params: DeleteChangeSetInput): Future[DeleteChangeSetOutput] =
+      service.deleteChangeSet(params).promise.toFuture
+    def deleteStackFuture(params: DeleteStackInput): Future[js.Object] = service.deleteStack(params).promise.toFuture
+    def deleteStackInstancesFuture(params: DeleteStackInstancesInput): Future[DeleteStackInstancesOutput] =
+      service.deleteStackInstances(params).promise.toFuture
+    def deleteStackSetFuture(params: DeleteStackSetInput): Future[DeleteStackSetOutput] =
+      service.deleteStackSet(params).promise.toFuture
+    def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] =
+      service.describeAccountLimits(params).promise.toFuture
+    def describeChangeSetFuture(params: DescribeChangeSetInput): Future[DescribeChangeSetOutput] =
+      service.describeChangeSet(params).promise.toFuture
+    def describeStackDriftDetectionStatusFuture(
+        params: DescribeStackDriftDetectionStatusInput
+    ): Future[DescribeStackDriftDetectionStatusOutput] =
+      service.describeStackDriftDetectionStatus(params).promise.toFuture
+    def describeStackEventsFuture(params: DescribeStackEventsInput): Future[DescribeStackEventsOutput] =
+      service.describeStackEvents(params).promise.toFuture
+    def describeStackInstanceFuture(params: DescribeStackInstanceInput): Future[DescribeStackInstanceOutput] =
+      service.describeStackInstance(params).promise.toFuture
+    def describeStackResourceDriftsFuture(
+        params: DescribeStackResourceDriftsInput
+    ): Future[DescribeStackResourceDriftsOutput] = service.describeStackResourceDrifts(params).promise.toFuture
+    def describeStackResourceFuture(params: DescribeStackResourceInput): Future[DescribeStackResourceOutput] =
+      service.describeStackResource(params).promise.toFuture
+    def describeStackResourcesFuture(params: DescribeStackResourcesInput): Future[DescribeStackResourcesOutput] =
+      service.describeStackResources(params).promise.toFuture
+    def describeStackSetFuture(params: DescribeStackSetInput): Future[DescribeStackSetOutput] =
+      service.describeStackSet(params).promise.toFuture
+    def describeStackSetOperationFuture(
+        params: DescribeStackSetOperationInput
+    ): Future[DescribeStackSetOperationOutput] = service.describeStackSetOperation(params).promise.toFuture
+    def describeStacksFuture(params: DescribeStacksInput): Future[DescribeStacksOutput] =
+      service.describeStacks(params).promise.toFuture
+    def detectStackDriftFuture(params: DetectStackDriftInput): Future[DetectStackDriftOutput] =
+      service.detectStackDrift(params).promise.toFuture
+    def detectStackResourceDriftFuture(params: DetectStackResourceDriftInput): Future[DetectStackResourceDriftOutput] =
+      service.detectStackResourceDrift(params).promise.toFuture
+    def estimateTemplateCostFuture(params: EstimateTemplateCostInput): Future[EstimateTemplateCostOutput] =
+      service.estimateTemplateCost(params).promise.toFuture
+    def executeChangeSetFuture(params: ExecuteChangeSetInput): Future[ExecuteChangeSetOutput] =
+      service.executeChangeSet(params).promise.toFuture
+    def getStackPolicyFuture(params: GetStackPolicyInput): Future[GetStackPolicyOutput] =
+      service.getStackPolicy(params).promise.toFuture
+    def getTemplateFuture(params: GetTemplateInput): Future[GetTemplateOutput] =
+      service.getTemplate(params).promise.toFuture
+    def getTemplateSummaryFuture(params: GetTemplateSummaryInput): Future[GetTemplateSummaryOutput] =
+      service.getTemplateSummary(params).promise.toFuture
+    def listChangeSetsFuture(params: ListChangeSetsInput): Future[ListChangeSetsOutput] =
+      service.listChangeSets(params).promise.toFuture
+    def listExportsFuture(params: ListExportsInput): Future[ListExportsOutput] =
+      service.listExports(params).promise.toFuture
+    def listImportsFuture(params: ListImportsInput): Future[ListImportsOutput] =
+      service.listImports(params).promise.toFuture
+    def listStackInstancesFuture(params: ListStackInstancesInput): Future[ListStackInstancesOutput] =
+      service.listStackInstances(params).promise.toFuture
+    def listStackResourcesFuture(params: ListStackResourcesInput): Future[ListStackResourcesOutput] =
+      service.listStackResources(params).promise.toFuture
+    def listStackSetOperationResultsFuture(
+        params: ListStackSetOperationResultsInput
+    ): Future[ListStackSetOperationResultsOutput] = service.listStackSetOperationResults(params).promise.toFuture
+    def listStackSetOperationsFuture(params: ListStackSetOperationsInput): Future[ListStackSetOperationsOutput] =
+      service.listStackSetOperations(params).promise.toFuture
+    def listStackSetsFuture(params: ListStackSetsInput): Future[ListStackSetsOutput] =
+      service.listStackSets(params).promise.toFuture
+    def listStacksFuture(params: ListStacksInput): Future[ListStacksOutput] =
+      service.listStacks(params).promise.toFuture
+    def setStackPolicyFuture(params: SetStackPolicyInput): Future[js.Object] =
+      service.setStackPolicy(params).promise.toFuture
+    def signalResourceFuture(params: SignalResourceInput): Future[js.Object] =
+      service.signalResource(params).promise.toFuture
+    def stopStackSetOperationFuture(params: StopStackSetOperationInput): Future[StopStackSetOperationOutput] =
+      service.stopStackSetOperation(params).promise.toFuture
+    def updateStackFuture(params: UpdateStackInput): Future[UpdateStackOutput] =
+      service.updateStack(params).promise.toFuture
+    def updateStackInstancesFuture(params: UpdateStackInstancesInput): Future[UpdateStackInstancesOutput] =
+      service.updateStackInstances(params).promise.toFuture
+    def updateStackSetFuture(params: UpdateStackSetInput): Future[UpdateStackSetOutput] =
+      service.updateStackSet(params).promise.toFuture
+    def updateTerminationProtectionFuture(
+        params: UpdateTerminationProtectionInput
+    ): Future[UpdateTerminationProtectionOutput] = service.updateTerminationProtection(params).promise.toFuture
+    def validateTemplateFuture(params: ValidateTemplateInput): Future[ValidateTemplateOutput] =
+      service.validateTemplate(params).promise.toFuture
+  }
 }
 
 package cloudformation {

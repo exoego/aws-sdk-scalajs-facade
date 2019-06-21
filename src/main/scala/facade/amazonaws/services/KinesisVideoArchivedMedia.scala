@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -25,6 +26,17 @@ package object kinesisvideoarchivedmedia {
   type ResourceARN  = String
   type StreamName   = String
   type Timestamp    = js.Date
+
+  implicit final class KinesisVideoArchivedMediaOps(val service: KinesisVideoArchivedMedia) extends AnyVal {
+
+    def getHLSStreamingSessionURLFuture(
+        params: GetHLSStreamingSessionURLInput
+    ): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise.toFuture
+    def getMediaForFragmentListFuture(params: GetMediaForFragmentListInput): Future[GetMediaForFragmentListOutput] =
+      service.getMediaForFragmentList(params).promise.toFuture
+    def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] =
+      service.listFragments(params).promise.toFuture
+  }
 }
 
 package kinesisvideoarchivedmedia {

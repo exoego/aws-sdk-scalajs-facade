@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -50,6 +51,46 @@ package object secretsmanager {
   type TagKeyType                    = String
   type TagListType                   = js.Array[Tag]
   type TagValueType                  = String
+
+  implicit final class SecretsManagerOps(val service: SecretsManager) extends AnyVal {
+
+    def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] =
+      service.cancelRotateSecret(params).promise.toFuture
+    def createSecretFuture(params: CreateSecretRequest): Future[CreateSecretResponse] =
+      service.createSecret(params).promise.toFuture
+    def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] =
+      service.deleteResourcePolicy(params).promise.toFuture
+    def deleteSecretFuture(params: DeleteSecretRequest): Future[DeleteSecretResponse] =
+      service.deleteSecret(params).promise.toFuture
+    def describeSecretFuture(params: DescribeSecretRequest): Future[DescribeSecretResponse] =
+      service.describeSecret(params).promise.toFuture
+    def getRandomPasswordFuture(params: GetRandomPasswordRequest): Future[GetRandomPasswordResponse] =
+      service.getRandomPassword(params).promise.toFuture
+    def getResourcePolicyFuture(params: GetResourcePolicyRequest): Future[GetResourcePolicyResponse] =
+      service.getResourcePolicy(params).promise.toFuture
+    def getSecretValueFuture(params: GetSecretValueRequest): Future[GetSecretValueResponse] =
+      service.getSecretValue(params).promise.toFuture
+    def listSecretVersionIdsFuture(params: ListSecretVersionIdsRequest): Future[ListSecretVersionIdsResponse] =
+      service.listSecretVersionIds(params).promise.toFuture
+    def listSecretsFuture(params: ListSecretsRequest): Future[ListSecretsResponse] =
+      service.listSecrets(params).promise.toFuture
+    def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] =
+      service.putResourcePolicy(params).promise.toFuture
+    def putSecretValueFuture(params: PutSecretValueRequest): Future[PutSecretValueResponse] =
+      service.putSecretValue(params).promise.toFuture
+    def restoreSecretFuture(params: RestoreSecretRequest): Future[RestoreSecretResponse] =
+      service.restoreSecret(params).promise.toFuture
+    def rotateSecretFuture(params: RotateSecretRequest): Future[RotateSecretResponse] =
+      service.rotateSecret(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] =
+      service.untagResource(params).promise.toFuture
+    def updateSecretFuture(params: UpdateSecretRequest): Future[UpdateSecretResponse] =
+      service.updateSecret(params).promise.toFuture
+    def updateSecretVersionStageFuture(
+        params: UpdateSecretVersionStageRequest
+    ): Future[UpdateSecretVersionStageResponse] = service.updateSecretVersionStage(params).promise.toFuture
+  }
 }
 
 package secretsmanager {

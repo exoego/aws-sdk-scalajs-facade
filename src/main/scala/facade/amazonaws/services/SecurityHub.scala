@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -57,6 +58,73 @@ package object securityhub {
   type TypeList                      = js.Array[NonEmptyString]
   type VerificationState             = String
   type WorkflowState                 = String
+
+  implicit final class SecurityHubOps(val service: SecurityHub) extends AnyVal {
+
+    def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
+      service.acceptInvitation(params).promise.toFuture
+    def batchDisableStandardsFuture(params: BatchDisableStandardsRequest): Future[BatchDisableStandardsResponse] =
+      service.batchDisableStandards(params).promise.toFuture
+    def batchEnableStandardsFuture(params: BatchEnableStandardsRequest): Future[BatchEnableStandardsResponse] =
+      service.batchEnableStandards(params).promise.toFuture
+    def batchImportFindingsFuture(params: BatchImportFindingsRequest): Future[BatchImportFindingsResponse] =
+      service.batchImportFindings(params).promise.toFuture
+    def createInsightFuture(params: CreateInsightRequest): Future[CreateInsightResponse] =
+      service.createInsight(params).promise.toFuture
+    def createMembersFuture(params: CreateMembersRequest): Future[CreateMembersResponse] =
+      service.createMembers(params).promise.toFuture
+    def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] =
+      service.declineInvitations(params).promise.toFuture
+    def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] =
+      service.deleteInsight(params).promise.toFuture
+    def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] =
+      service.deleteInvitations(params).promise.toFuture
+    def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] =
+      service.deleteMembers(params).promise.toFuture
+    def disableImportFindingsForProductFuture(
+        params: DisableImportFindingsForProductRequest
+    ): Future[DisableImportFindingsForProductResponse] =
+      service.disableImportFindingsForProduct(params).promise.toFuture
+    def disableSecurityHubFuture(params: DisableSecurityHubRequest): Future[DisableSecurityHubResponse] =
+      service.disableSecurityHub(params).promise.toFuture
+    def disassociateFromMasterAccountFuture(
+        params: DisassociateFromMasterAccountRequest
+    ): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise.toFuture
+    def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] =
+      service.disassociateMembers(params).promise.toFuture
+    def enableImportFindingsForProductFuture(
+        params: EnableImportFindingsForProductRequest
+    ): Future[EnableImportFindingsForProductResponse] = service.enableImportFindingsForProduct(params).promise.toFuture
+    def enableSecurityHubFuture(params: EnableSecurityHubRequest): Future[EnableSecurityHubResponse] =
+      service.enableSecurityHub(params).promise.toFuture
+    def getEnabledStandardsFuture(params: GetEnabledStandardsRequest): Future[GetEnabledStandardsResponse] =
+      service.getEnabledStandards(params).promise.toFuture
+    def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] =
+      service.getFindings(params).promise.toFuture
+    def getInsightResultsFuture(params: GetInsightResultsRequest): Future[GetInsightResultsResponse] =
+      service.getInsightResults(params).promise.toFuture
+    def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] =
+      service.getInsights(params).promise.toFuture
+    def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] =
+      service.getInvitationsCount(params).promise.toFuture
+    def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] =
+      service.getMasterAccount(params).promise.toFuture
+    def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] =
+      service.getMembers(params).promise.toFuture
+    def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] =
+      service.inviteMembers(params).promise.toFuture
+    def listEnabledProductsForImportFuture(
+        params: ListEnabledProductsForImportRequest
+    ): Future[ListEnabledProductsForImportResponse] = service.listEnabledProductsForImport(params).promise.toFuture
+    def listInvitationsFuture(params: ListInvitationsRequest): Future[ListInvitationsResponse] =
+      service.listInvitations(params).promise.toFuture
+    def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] =
+      service.listMembers(params).promise.toFuture
+    def updateFindingsFuture(params: UpdateFindingsRequest): Future[UpdateFindingsResponse] =
+      service.updateFindings(params).promise.toFuture
+    def updateInsightFuture(params: UpdateInsightRequest): Future[UpdateInsightResponse] =
+      service.updateInsight(params).promise.toFuture
+  }
 }
 
 package securityhub {

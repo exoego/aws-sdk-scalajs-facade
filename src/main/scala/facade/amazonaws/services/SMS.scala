@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -89,6 +90,72 @@ package object sms {
   type VmName                               = String
   type VmPath                               = String
   type VmServerAddressList                  = js.Array[VmServerAddress]
+
+  implicit final class SMSOps(val service: SMS) extends AnyVal {
+
+    def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
+      service.createApp(params).promise.toFuture
+    def createReplicationJobFuture(params: CreateReplicationJobRequest): Future[CreateReplicationJobResponse] =
+      service.createReplicationJob(params).promise.toFuture
+    def deleteAppFuture(params: DeleteAppRequest): Future[DeleteAppResponse] =
+      service.deleteApp(params).promise.toFuture
+    def deleteAppLaunchConfigurationFuture(
+        params: DeleteAppLaunchConfigurationRequest
+    ): Future[DeleteAppLaunchConfigurationResponse] = service.deleteAppLaunchConfiguration(params).promise.toFuture
+    def deleteAppReplicationConfigurationFuture(
+        params: DeleteAppReplicationConfigurationRequest
+    ): Future[DeleteAppReplicationConfigurationResponse] =
+      service.deleteAppReplicationConfiguration(params).promise.toFuture
+    def deleteReplicationJobFuture(params: DeleteReplicationJobRequest): Future[DeleteReplicationJobResponse] =
+      service.deleteReplicationJob(params).promise.toFuture
+    def deleteServerCatalogFuture(params: DeleteServerCatalogRequest): Future[DeleteServerCatalogResponse] =
+      service.deleteServerCatalog(params).promise.toFuture
+    def disassociateConnectorFuture(params: DisassociateConnectorRequest): Future[DisassociateConnectorResponse] =
+      service.disassociateConnector(params).promise.toFuture
+    def generateChangeSetFuture(params: GenerateChangeSetRequest): Future[GenerateChangeSetResponse] =
+      service.generateChangeSet(params).promise.toFuture
+    def generateTemplateFuture(params: GenerateTemplateRequest): Future[GenerateTemplateResponse] =
+      service.generateTemplate(params).promise.toFuture
+    def getAppFuture(params: GetAppRequest): Future[GetAppResponse] = service.getApp(params).promise.toFuture
+    def getAppLaunchConfigurationFuture(
+        params: GetAppLaunchConfigurationRequest
+    ): Future[GetAppLaunchConfigurationResponse] = service.getAppLaunchConfiguration(params).promise.toFuture
+    def getAppReplicationConfigurationFuture(
+        params: GetAppReplicationConfigurationRequest
+    ): Future[GetAppReplicationConfigurationResponse] = service.getAppReplicationConfiguration(params).promise.toFuture
+    def getConnectorsFuture(params: GetConnectorsRequest): Future[GetConnectorsResponse] =
+      service.getConnectors(params).promise.toFuture
+    def getReplicationJobsFuture(params: GetReplicationJobsRequest): Future[GetReplicationJobsResponse] =
+      service.getReplicationJobs(params).promise.toFuture
+    def getReplicationRunsFuture(params: GetReplicationRunsRequest): Future[GetReplicationRunsResponse] =
+      service.getReplicationRuns(params).promise.toFuture
+    def getServersFuture(params: GetServersRequest): Future[GetServersResponse] =
+      service.getServers(params).promise.toFuture
+    def importServerCatalogFuture(params: ImportServerCatalogRequest): Future[ImportServerCatalogResponse] =
+      service.importServerCatalog(params).promise.toFuture
+    def launchAppFuture(params: LaunchAppRequest): Future[LaunchAppResponse] =
+      service.launchApp(params).promise.toFuture
+    def listAppsFuture(params: ListAppsRequest): Future[ListAppsResponse] = service.listApps(params).promise.toFuture
+    def putAppLaunchConfigurationFuture(
+        params: PutAppLaunchConfigurationRequest
+    ): Future[PutAppLaunchConfigurationResponse] = service.putAppLaunchConfiguration(params).promise.toFuture
+    def putAppReplicationConfigurationFuture(
+        params: PutAppReplicationConfigurationRequest
+    ): Future[PutAppReplicationConfigurationResponse] = service.putAppReplicationConfiguration(params).promise.toFuture
+    def startAppReplicationFuture(params: StartAppReplicationRequest): Future[StartAppReplicationResponse] =
+      service.startAppReplication(params).promise.toFuture
+    def startOnDemandReplicationRunFuture(
+        params: StartOnDemandReplicationRunRequest
+    ): Future[StartOnDemandReplicationRunResponse] = service.startOnDemandReplicationRun(params).promise.toFuture
+    def stopAppReplicationFuture(params: StopAppReplicationRequest): Future[StopAppReplicationResponse] =
+      service.stopAppReplication(params).promise.toFuture
+    def terminateAppFuture(params: TerminateAppRequest): Future[TerminateAppResponse] =
+      service.terminateApp(params).promise.toFuture
+    def updateAppFuture(params: UpdateAppRequest): Future[UpdateAppResponse] =
+      service.updateApp(params).promise.toFuture
+    def updateReplicationJobFuture(params: UpdateReplicationJobRequest): Future[UpdateReplicationJobResponse] =
+      service.updateReplicationJob(params).promise.toFuture
+  }
 }
 
 package sms {

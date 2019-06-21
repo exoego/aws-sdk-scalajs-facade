@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -40,6 +41,38 @@ package object fms {
   type TagValue                   = String
   type TimeStamp                  = js.Date
   type ViolationReason            = String
+
+  implicit final class FMSOps(val service: FMS) extends AnyVal {
+
+    def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
+      service.associateAdminAccount(params).promise.toFuture
+    def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] =
+      service.deleteNotificationChannel(params).promise.toFuture
+    def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] =
+      service.deletePolicy(params).promise.toFuture
+    def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] =
+      service.disassociateAdminAccount(params).promise.toFuture
+    def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] =
+      service.getAdminAccount(params).promise.toFuture
+    def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] =
+      service.getComplianceDetail(params).promise.toFuture
+    def getNotificationChannelFuture(params: GetNotificationChannelRequest): Future[GetNotificationChannelResponse] =
+      service.getNotificationChannel(params).promise.toFuture
+    def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] =
+      service.getPolicy(params).promise.toFuture
+    def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] =
+      service.getProtectionStatus(params).promise.toFuture
+    def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] =
+      service.listComplianceStatus(params).promise.toFuture
+    def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] =
+      service.listMemberAccounts(params).promise.toFuture
+    def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] =
+      service.listPolicies(params).promise.toFuture
+    def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] =
+      service.putNotificationChannel(params).promise.toFuture
+    def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] =
+      service.putPolicy(params).promise.toFuture
+  }
 }
 
 package fms {

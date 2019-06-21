@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -53,6 +54,33 @@ package object fsx {
   type Tags                            = js.Array[Tag]
   type VpcId                           = String
   type WeeklyTime                      = String
+
+  implicit final class FSxOps(val service: FSx) extends AnyVal {
+
+    def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
+      service.createBackup(params).promise.toFuture
+    def createFileSystemFromBackupFuture(
+        params: CreateFileSystemFromBackupRequest
+    ): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise.toFuture
+    def createFileSystemFuture(params: CreateFileSystemRequest): Future[CreateFileSystemResponse] =
+      service.createFileSystem(params).promise.toFuture
+    def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] =
+      service.deleteBackup(params).promise.toFuture
+    def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] =
+      service.deleteFileSystem(params).promise.toFuture
+    def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] =
+      service.describeBackups(params).promise.toFuture
+    def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] =
+      service.describeFileSystems(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] =
+      service.listTagsForResource(params).promise.toFuture
+    def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] =
+      service.tagResource(params).promise.toFuture
+    def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] =
+      service.untagResource(params).promise.toFuture
+    def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] =
+      service.updateFileSystem(params).promise.toFuture
+  }
 }
 
 package fsx {

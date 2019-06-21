@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -34,6 +35,30 @@ package object resourcegroups {
   type TagKeyList             = js.Array[TagKey]
   type TagValue               = String
   type Tags                   = js.Dictionary[TagValue]
+
+  implicit final class ResourceGroupsOps(val service: ResourceGroups) extends AnyVal {
+
+    def createGroupFuture(params: CreateGroupInput): Future[CreateGroupOutput] =
+      service.createGroup(params).promise.toFuture
+    def deleteGroupFuture(params: DeleteGroupInput): Future[DeleteGroupOutput] =
+      service.deleteGroup(params).promise.toFuture
+    def getGroupFuture(params: GetGroupInput): Future[GetGroupOutput] = service.getGroup(params).promise.toFuture
+    def getGroupQueryFuture(params: GetGroupQueryInput): Future[GetGroupQueryOutput] =
+      service.getGroupQuery(params).promise.toFuture
+    def getTagsFuture(params: GetTagsInput): Future[GetTagsOutput] = service.getTags(params).promise.toFuture
+    def listGroupResourcesFuture(params: ListGroupResourcesInput): Future[ListGroupResourcesOutput] =
+      service.listGroupResources(params).promise.toFuture
+    def listGroupsFuture(params: ListGroupsInput): Future[ListGroupsOutput] =
+      service.listGroups(params).promise.toFuture
+    def searchResourcesFuture(params: SearchResourcesInput): Future[SearchResourcesOutput] =
+      service.searchResources(params).promise.toFuture
+    def tagFuture(params: TagInput): Future[TagOutput]       = service.tag(params).promise.toFuture
+    def untagFuture(params: UntagInput): Future[UntagOutput] = service.untag(params).promise.toFuture
+    def updateGroupFuture(params: UpdateGroupInput): Future[UpdateGroupOutput] =
+      service.updateGroup(params).promise.toFuture
+    def updateGroupQueryFuture(params: UpdateGroupQueryInput): Future[UpdateGroupQueryOutput] =
+      service.updateGroupQuery(params).promise.toFuture
+  }
 }
 
 package resourcegroups {

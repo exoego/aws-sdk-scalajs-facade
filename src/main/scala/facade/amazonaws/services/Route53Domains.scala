@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -57,6 +58,64 @@ package object route53domains {
   type Timestamp             = js.Date
   type Transferable          = String
   type ZipCode               = String
+
+  implicit final class Route53DomainsOps(val service: Route53Domains) extends AnyVal {
+
+    def checkDomainAvailabilityFuture(params: CheckDomainAvailabilityRequest): Future[CheckDomainAvailabilityResponse] =
+      service.checkDomainAvailability(params).promise.toFuture
+    def checkDomainTransferabilityFuture(
+        params: CheckDomainTransferabilityRequest
+    ): Future[CheckDomainTransferabilityResponse] = service.checkDomainTransferability(params).promise.toFuture
+    def deleteTagsForDomainFuture(params: DeleteTagsForDomainRequest): Future[DeleteTagsForDomainResponse] =
+      service.deleteTagsForDomain(params).promise.toFuture
+    def disableDomainAutoRenewFuture(params: DisableDomainAutoRenewRequest): Future[DisableDomainAutoRenewResponse] =
+      service.disableDomainAutoRenew(params).promise.toFuture
+    def disableDomainTransferLockFuture(
+        params: DisableDomainTransferLockRequest
+    ): Future[DisableDomainTransferLockResponse] = service.disableDomainTransferLock(params).promise.toFuture
+    def enableDomainAutoRenewFuture(params: EnableDomainAutoRenewRequest): Future[EnableDomainAutoRenewResponse] =
+      service.enableDomainAutoRenew(params).promise.toFuture
+    def enableDomainTransferLockFuture(
+        params: EnableDomainTransferLockRequest
+    ): Future[EnableDomainTransferLockResponse] = service.enableDomainTransferLock(params).promise.toFuture
+    def getContactReachabilityStatusFuture(
+        params: GetContactReachabilityStatusRequest
+    ): Future[GetContactReachabilityStatusResponse] = service.getContactReachabilityStatus(params).promise.toFuture
+    def getDomainDetailFuture(params: GetDomainDetailRequest): Future[GetDomainDetailResponse] =
+      service.getDomainDetail(params).promise.toFuture
+    def getDomainSuggestionsFuture(params: GetDomainSuggestionsRequest): Future[GetDomainSuggestionsResponse] =
+      service.getDomainSuggestions(params).promise.toFuture
+    def getOperationDetailFuture(params: GetOperationDetailRequest): Future[GetOperationDetailResponse] =
+      service.getOperationDetail(params).promise.toFuture
+    def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] =
+      service.listDomains(params).promise.toFuture
+    def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] =
+      service.listOperations(params).promise.toFuture
+    def listTagsForDomainFuture(params: ListTagsForDomainRequest): Future[ListTagsForDomainResponse] =
+      service.listTagsForDomain(params).promise.toFuture
+    def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] =
+      service.registerDomain(params).promise.toFuture
+    def renewDomainFuture(params: RenewDomainRequest): Future[RenewDomainResponse] =
+      service.renewDomain(params).promise.toFuture
+    def resendContactReachabilityEmailFuture(
+        params: ResendContactReachabilityEmailRequest
+    ): Future[ResendContactReachabilityEmailResponse] = service.resendContactReachabilityEmail(params).promise.toFuture
+    def retrieveDomainAuthCodeFuture(params: RetrieveDomainAuthCodeRequest): Future[RetrieveDomainAuthCodeResponse] =
+      service.retrieveDomainAuthCode(params).promise.toFuture
+    def transferDomainFuture(params: TransferDomainRequest): Future[TransferDomainResponse] =
+      service.transferDomain(params).promise.toFuture
+    def updateDomainContactFuture(params: UpdateDomainContactRequest): Future[UpdateDomainContactResponse] =
+      service.updateDomainContact(params).promise.toFuture
+    def updateDomainContactPrivacyFuture(
+        params: UpdateDomainContactPrivacyRequest
+    ): Future[UpdateDomainContactPrivacyResponse] = service.updateDomainContactPrivacy(params).promise.toFuture
+    def updateDomainNameserversFuture(params: UpdateDomainNameserversRequest): Future[UpdateDomainNameserversResponse] =
+      service.updateDomainNameservers(params).promise.toFuture
+    def updateTagsForDomainFuture(params: UpdateTagsForDomainRequest): Future[UpdateTagsForDomainResponse] =
+      service.updateTagsForDomain(params).promise.toFuture
+    def viewBillingFuture(params: ViewBillingRequest): Future[ViewBillingResponse] =
+      service.viewBilling(params).promise.toFuture
+  }
 }
 
 package route53domains {

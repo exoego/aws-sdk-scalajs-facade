@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -465,6 +466,303 @@ package object ssm {
   type ValidNextStep                           = String
   type ValidNextStepList                       = js.Array[ValidNextStep]
   type Version                                 = String
+
+  implicit final class SSMOps(val service: SSM) extends AnyVal {
+
+    def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
+      service.addTagsToResource(params).promise.toFuture
+    def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] =
+      service.cancelCommand(params).promise.toFuture
+    def cancelMaintenanceWindowExecutionFuture(
+        params: CancelMaintenanceWindowExecutionRequest
+    ): Future[CancelMaintenanceWindowExecutionResult] =
+      service.cancelMaintenanceWindowExecution(params).promise.toFuture
+    def createActivationFuture(params: CreateActivationRequest): Future[CreateActivationResult] =
+      service.createActivation(params).promise.toFuture
+    def createAssociationBatchFuture(params: CreateAssociationBatchRequest): Future[CreateAssociationBatchResult] =
+      service.createAssociationBatch(params).promise.toFuture
+    def createAssociationFuture(params: CreateAssociationRequest): Future[CreateAssociationResult] =
+      service.createAssociation(params).promise.toFuture
+    def createDocumentFuture(params: CreateDocumentRequest): Future[CreateDocumentResult] =
+      service.createDocument(params).promise.toFuture
+    def createMaintenanceWindowFuture(params: CreateMaintenanceWindowRequest): Future[CreateMaintenanceWindowResult] =
+      service.createMaintenanceWindow(params).promise.toFuture
+    def createPatchBaselineFuture(params: CreatePatchBaselineRequest): Future[CreatePatchBaselineResult] =
+      service.createPatchBaseline(params).promise.toFuture
+    def createResourceDataSyncFuture(params: CreateResourceDataSyncRequest): Future[CreateResourceDataSyncResult] =
+      service.createResourceDataSync(params).promise.toFuture
+    def deleteActivationFuture(params: DeleteActivationRequest): Future[DeleteActivationResult] =
+      service.deleteActivation(params).promise.toFuture
+    def deleteAssociationFuture(params: DeleteAssociationRequest): Future[DeleteAssociationResult] =
+      service.deleteAssociation(params).promise.toFuture
+    def deleteDocumentFuture(params: DeleteDocumentRequest): Future[DeleteDocumentResult] =
+      service.deleteDocument(params).promise.toFuture
+    def deleteInventoryFuture(params: DeleteInventoryRequest): Future[DeleteInventoryResult] =
+      service.deleteInventory(params).promise.toFuture
+    def deleteMaintenanceWindowFuture(params: DeleteMaintenanceWindowRequest): Future[DeleteMaintenanceWindowResult] =
+      service.deleteMaintenanceWindow(params).promise.toFuture
+    def deleteParameterFuture(params: DeleteParameterRequest): Future[DeleteParameterResult] =
+      service.deleteParameter(params).promise.toFuture
+    def deleteParametersFuture(params: DeleteParametersRequest): Future[DeleteParametersResult] =
+      service.deleteParameters(params).promise.toFuture
+    def deletePatchBaselineFuture(params: DeletePatchBaselineRequest): Future[DeletePatchBaselineResult] =
+      service.deletePatchBaseline(params).promise.toFuture
+    def deleteResourceDataSyncFuture(params: DeleteResourceDataSyncRequest): Future[DeleteResourceDataSyncResult] =
+      service.deleteResourceDataSync(params).promise.toFuture
+    def deregisterManagedInstanceFuture(
+        params: DeregisterManagedInstanceRequest
+    ): Future[DeregisterManagedInstanceResult] = service.deregisterManagedInstance(params).promise.toFuture
+    def deregisterPatchBaselineForPatchGroupFuture(
+        params: DeregisterPatchBaselineForPatchGroupRequest
+    ): Future[DeregisterPatchBaselineForPatchGroupResult] =
+      service.deregisterPatchBaselineForPatchGroup(params).promise.toFuture
+    def deregisterTargetFromMaintenanceWindowFuture(
+        params: DeregisterTargetFromMaintenanceWindowRequest
+    ): Future[DeregisterTargetFromMaintenanceWindowResult] =
+      service.deregisterTargetFromMaintenanceWindow(params).promise.toFuture
+    def deregisterTaskFromMaintenanceWindowFuture(
+        params: DeregisterTaskFromMaintenanceWindowRequest
+    ): Future[DeregisterTaskFromMaintenanceWindowResult] =
+      service.deregisterTaskFromMaintenanceWindow(params).promise.toFuture
+    def describeActivationsFuture(params: DescribeActivationsRequest): Future[DescribeActivationsResult] =
+      service.describeActivations(params).promise.toFuture
+    def describeAssociationExecutionTargetsFuture(
+        params: DescribeAssociationExecutionTargetsRequest
+    ): Future[DescribeAssociationExecutionTargetsResult] =
+      service.describeAssociationExecutionTargets(params).promise.toFuture
+    def describeAssociationExecutionsFuture(
+        params: DescribeAssociationExecutionsRequest
+    ): Future[DescribeAssociationExecutionsResult] = service.describeAssociationExecutions(params).promise.toFuture
+    def describeAssociationFuture(params: DescribeAssociationRequest): Future[DescribeAssociationResult] =
+      service.describeAssociation(params).promise.toFuture
+    def describeAutomationExecutionsFuture(
+        params: DescribeAutomationExecutionsRequest
+    ): Future[DescribeAutomationExecutionsResult] = service.describeAutomationExecutions(params).promise.toFuture
+    def describeAutomationStepExecutionsFuture(
+        params: DescribeAutomationStepExecutionsRequest
+    ): Future[DescribeAutomationStepExecutionsResult] =
+      service.describeAutomationStepExecutions(params).promise.toFuture
+    def describeAvailablePatchesFuture(
+        params: DescribeAvailablePatchesRequest
+    ): Future[DescribeAvailablePatchesResult] = service.describeAvailablePatches(params).promise.toFuture
+    def describeDocumentFuture(params: DescribeDocumentRequest): Future[DescribeDocumentResult] =
+      service.describeDocument(params).promise.toFuture
+    def describeDocumentPermissionFuture(
+        params: DescribeDocumentPermissionRequest
+    ): Future[DescribeDocumentPermissionResponse] = service.describeDocumentPermission(params).promise.toFuture
+    def describeEffectiveInstanceAssociationsFuture(
+        params: DescribeEffectiveInstanceAssociationsRequest
+    ): Future[DescribeEffectiveInstanceAssociationsResult] =
+      service.describeEffectiveInstanceAssociations(params).promise.toFuture
+    def describeEffectivePatchesForPatchBaselineFuture(
+        params: DescribeEffectivePatchesForPatchBaselineRequest
+    ): Future[DescribeEffectivePatchesForPatchBaselineResult] =
+      service.describeEffectivePatchesForPatchBaseline(params).promise.toFuture
+    def describeInstanceAssociationsStatusFuture(
+        params: DescribeInstanceAssociationsStatusRequest
+    ): Future[DescribeInstanceAssociationsStatusResult] =
+      service.describeInstanceAssociationsStatus(params).promise.toFuture
+    def describeInstanceInformationFuture(
+        params: DescribeInstanceInformationRequest
+    ): Future[DescribeInstanceInformationResult] = service.describeInstanceInformation(params).promise.toFuture
+    def describeInstancePatchStatesForPatchGroupFuture(
+        params: DescribeInstancePatchStatesForPatchGroupRequest
+    ): Future[DescribeInstancePatchStatesForPatchGroupResult] =
+      service.describeInstancePatchStatesForPatchGroup(params).promise.toFuture
+    def describeInstancePatchStatesFuture(
+        params: DescribeInstancePatchStatesRequest
+    ): Future[DescribeInstancePatchStatesResult] = service.describeInstancePatchStates(params).promise.toFuture
+    def describeInstancePatchesFuture(params: DescribeInstancePatchesRequest): Future[DescribeInstancePatchesResult] =
+      service.describeInstancePatches(params).promise.toFuture
+    def describeInventoryDeletionsFuture(
+        params: DescribeInventoryDeletionsRequest
+    ): Future[DescribeInventoryDeletionsResult] = service.describeInventoryDeletions(params).promise.toFuture
+    def describeMaintenanceWindowExecutionTaskInvocationsFuture(
+        params: DescribeMaintenanceWindowExecutionTaskInvocationsRequest
+    ): Future[DescribeMaintenanceWindowExecutionTaskInvocationsResult] =
+      service.describeMaintenanceWindowExecutionTaskInvocations(params).promise.toFuture
+    def describeMaintenanceWindowExecutionTasksFuture(
+        params: DescribeMaintenanceWindowExecutionTasksRequest
+    ): Future[DescribeMaintenanceWindowExecutionTasksResult] =
+      service.describeMaintenanceWindowExecutionTasks(params).promise.toFuture
+    def describeMaintenanceWindowExecutionsFuture(
+        params: DescribeMaintenanceWindowExecutionsRequest
+    ): Future[DescribeMaintenanceWindowExecutionsResult] =
+      service.describeMaintenanceWindowExecutions(params).promise.toFuture
+    def describeMaintenanceWindowScheduleFuture(
+        params: DescribeMaintenanceWindowScheduleRequest
+    ): Future[DescribeMaintenanceWindowScheduleResult] =
+      service.describeMaintenanceWindowSchedule(params).promise.toFuture
+    def describeMaintenanceWindowTargetsFuture(
+        params: DescribeMaintenanceWindowTargetsRequest
+    ): Future[DescribeMaintenanceWindowTargetsResult] =
+      service.describeMaintenanceWindowTargets(params).promise.toFuture
+    def describeMaintenanceWindowTasksFuture(
+        params: DescribeMaintenanceWindowTasksRequest
+    ): Future[DescribeMaintenanceWindowTasksResult] = service.describeMaintenanceWindowTasks(params).promise.toFuture
+    def describeMaintenanceWindowsForTargetFuture(
+        params: DescribeMaintenanceWindowsForTargetRequest
+    ): Future[DescribeMaintenanceWindowsForTargetResult] =
+      service.describeMaintenanceWindowsForTarget(params).promise.toFuture
+    def describeMaintenanceWindowsFuture(
+        params: DescribeMaintenanceWindowsRequest
+    ): Future[DescribeMaintenanceWindowsResult] = service.describeMaintenanceWindows(params).promise.toFuture
+    def describeParametersFuture(params: DescribeParametersRequest): Future[DescribeParametersResult] =
+      service.describeParameters(params).promise.toFuture
+    def describePatchBaselinesFuture(params: DescribePatchBaselinesRequest): Future[DescribePatchBaselinesResult] =
+      service.describePatchBaselines(params).promise.toFuture
+    def describePatchGroupStateFuture(params: DescribePatchGroupStateRequest): Future[DescribePatchGroupStateResult] =
+      service.describePatchGroupState(params).promise.toFuture
+    def describePatchGroupsFuture(params: DescribePatchGroupsRequest): Future[DescribePatchGroupsResult] =
+      service.describePatchGroups(params).promise.toFuture
+    def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResponse] =
+      service.describeSessions(params).promise.toFuture
+    def getAutomationExecutionFuture(params: GetAutomationExecutionRequest): Future[GetAutomationExecutionResult] =
+      service.getAutomationExecution(params).promise.toFuture
+    def getCommandInvocationFuture(params: GetCommandInvocationRequest): Future[GetCommandInvocationResult] =
+      service.getCommandInvocation(params).promise.toFuture
+    def getConnectionStatusFuture(params: GetConnectionStatusRequest): Future[GetConnectionStatusResponse] =
+      service.getConnectionStatus(params).promise.toFuture
+    def getDefaultPatchBaselineFuture(params: GetDefaultPatchBaselineRequest): Future[GetDefaultPatchBaselineResult] =
+      service.getDefaultPatchBaseline(params).promise.toFuture
+    def getDeployablePatchSnapshotForInstanceFuture(
+        params: GetDeployablePatchSnapshotForInstanceRequest
+    ): Future[GetDeployablePatchSnapshotForInstanceResult] =
+      service.getDeployablePatchSnapshotForInstance(params).promise.toFuture
+    def getDocumentFuture(params: GetDocumentRequest): Future[GetDocumentResult] =
+      service.getDocument(params).promise.toFuture
+    def getInventoryFuture(params: GetInventoryRequest): Future[GetInventoryResult] =
+      service.getInventory(params).promise.toFuture
+    def getInventorySchemaFuture(params: GetInventorySchemaRequest): Future[GetInventorySchemaResult] =
+      service.getInventorySchema(params).promise.toFuture
+    def getMaintenanceWindowExecutionFuture(
+        params: GetMaintenanceWindowExecutionRequest
+    ): Future[GetMaintenanceWindowExecutionResult] = service.getMaintenanceWindowExecution(params).promise.toFuture
+    def getMaintenanceWindowExecutionTaskFuture(
+        params: GetMaintenanceWindowExecutionTaskRequest
+    ): Future[GetMaintenanceWindowExecutionTaskResult] =
+      service.getMaintenanceWindowExecutionTask(params).promise.toFuture
+    def getMaintenanceWindowExecutionTaskInvocationFuture(
+        params: GetMaintenanceWindowExecutionTaskInvocationRequest
+    ): Future[GetMaintenanceWindowExecutionTaskInvocationResult] =
+      service.getMaintenanceWindowExecutionTaskInvocation(params).promise.toFuture
+    def getMaintenanceWindowFuture(params: GetMaintenanceWindowRequest): Future[GetMaintenanceWindowResult] =
+      service.getMaintenanceWindow(params).promise.toFuture
+    def getMaintenanceWindowTaskFuture(
+        params: GetMaintenanceWindowTaskRequest
+    ): Future[GetMaintenanceWindowTaskResult] = service.getMaintenanceWindowTask(params).promise.toFuture
+    def getParameterFuture(params: GetParameterRequest): Future[GetParameterResult] =
+      service.getParameter(params).promise.toFuture
+    def getParameterHistoryFuture(params: GetParameterHistoryRequest): Future[GetParameterHistoryResult] =
+      service.getParameterHistory(params).promise.toFuture
+    def getParametersByPathFuture(params: GetParametersByPathRequest): Future[GetParametersByPathResult] =
+      service.getParametersByPath(params).promise.toFuture
+    def getParametersFuture(params: GetParametersRequest): Future[GetParametersResult] =
+      service.getParameters(params).promise.toFuture
+    def getPatchBaselineForPatchGroupFuture(
+        params: GetPatchBaselineForPatchGroupRequest
+    ): Future[GetPatchBaselineForPatchGroupResult] = service.getPatchBaselineForPatchGroup(params).promise.toFuture
+    def getPatchBaselineFuture(params: GetPatchBaselineRequest): Future[GetPatchBaselineResult] =
+      service.getPatchBaseline(params).promise.toFuture
+    def getServiceSettingFuture(params: GetServiceSettingRequest): Future[GetServiceSettingResult] =
+      service.getServiceSetting(params).promise.toFuture
+    def labelParameterVersionFuture(params: LabelParameterVersionRequest): Future[LabelParameterVersionResult] =
+      service.labelParameterVersion(params).promise.toFuture
+    def listAssociationVersionsFuture(params: ListAssociationVersionsRequest): Future[ListAssociationVersionsResult] =
+      service.listAssociationVersions(params).promise.toFuture
+    def listAssociationsFuture(params: ListAssociationsRequest): Future[ListAssociationsResult] =
+      service.listAssociations(params).promise.toFuture
+    def listCommandInvocationsFuture(params: ListCommandInvocationsRequest): Future[ListCommandInvocationsResult] =
+      service.listCommandInvocations(params).promise.toFuture
+    def listCommandsFuture(params: ListCommandsRequest): Future[ListCommandsResult] =
+      service.listCommands(params).promise.toFuture
+    def listComplianceItemsFuture(params: ListComplianceItemsRequest): Future[ListComplianceItemsResult] =
+      service.listComplianceItems(params).promise.toFuture
+    def listComplianceSummariesFuture(params: ListComplianceSummariesRequest): Future[ListComplianceSummariesResult] =
+      service.listComplianceSummaries(params).promise.toFuture
+    def listDocumentVersionsFuture(params: ListDocumentVersionsRequest): Future[ListDocumentVersionsResult] =
+      service.listDocumentVersions(params).promise.toFuture
+    def listDocumentsFuture(params: ListDocumentsRequest): Future[ListDocumentsResult] =
+      service.listDocuments(params).promise.toFuture
+    def listInventoryEntriesFuture(params: ListInventoryEntriesRequest): Future[ListInventoryEntriesResult] =
+      service.listInventoryEntries(params).promise.toFuture
+    def listResourceComplianceSummariesFuture(
+        params: ListResourceComplianceSummariesRequest
+    ): Future[ListResourceComplianceSummariesResult] = service.listResourceComplianceSummaries(params).promise.toFuture
+    def listResourceDataSyncFuture(params: ListResourceDataSyncRequest): Future[ListResourceDataSyncResult] =
+      service.listResourceDataSync(params).promise.toFuture
+    def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] =
+      service.listTagsForResource(params).promise.toFuture
+    def modifyDocumentPermissionFuture(
+        params: ModifyDocumentPermissionRequest
+    ): Future[ModifyDocumentPermissionResponse] = service.modifyDocumentPermission(params).promise.toFuture
+    def putComplianceItemsFuture(params: PutComplianceItemsRequest): Future[PutComplianceItemsResult] =
+      service.putComplianceItems(params).promise.toFuture
+    def putInventoryFuture(params: PutInventoryRequest): Future[PutInventoryResult] =
+      service.putInventory(params).promise.toFuture
+    def putParameterFuture(params: PutParameterRequest): Future[PutParameterResult] =
+      service.putParameter(params).promise.toFuture
+    def registerDefaultPatchBaselineFuture(
+        params: RegisterDefaultPatchBaselineRequest
+    ): Future[RegisterDefaultPatchBaselineResult] = service.registerDefaultPatchBaseline(params).promise.toFuture
+    def registerPatchBaselineForPatchGroupFuture(
+        params: RegisterPatchBaselineForPatchGroupRequest
+    ): Future[RegisterPatchBaselineForPatchGroupResult] =
+      service.registerPatchBaselineForPatchGroup(params).promise.toFuture
+    def registerTargetWithMaintenanceWindowFuture(
+        params: RegisterTargetWithMaintenanceWindowRequest
+    ): Future[RegisterTargetWithMaintenanceWindowResult] =
+      service.registerTargetWithMaintenanceWindow(params).promise.toFuture
+    def registerTaskWithMaintenanceWindowFuture(
+        params: RegisterTaskWithMaintenanceWindowRequest
+    ): Future[RegisterTaskWithMaintenanceWindowResult] =
+      service.registerTaskWithMaintenanceWindow(params).promise.toFuture
+    def removeTagsFromResourceFuture(params: RemoveTagsFromResourceRequest): Future[RemoveTagsFromResourceResult] =
+      service.removeTagsFromResource(params).promise.toFuture
+    def resetServiceSettingFuture(params: ResetServiceSettingRequest): Future[ResetServiceSettingResult] =
+      service.resetServiceSetting(params).promise.toFuture
+    def resumeSessionFuture(params: ResumeSessionRequest): Future[ResumeSessionResponse] =
+      service.resumeSession(params).promise.toFuture
+    def sendAutomationSignalFuture(params: SendAutomationSignalRequest): Future[SendAutomationSignalResult] =
+      service.sendAutomationSignal(params).promise.toFuture
+    def sendCommandFuture(params: SendCommandRequest): Future[SendCommandResult] =
+      service.sendCommand(params).promise.toFuture
+    def startAssociationsOnceFuture(params: StartAssociationsOnceRequest): Future[StartAssociationsOnceResult] =
+      service.startAssociationsOnce(params).promise.toFuture
+    def startAutomationExecutionFuture(
+        params: StartAutomationExecutionRequest
+    ): Future[StartAutomationExecutionResult] = service.startAutomationExecution(params).promise.toFuture
+    def startSessionFuture(params: StartSessionRequest): Future[StartSessionResponse] =
+      service.startSession(params).promise.toFuture
+    def stopAutomationExecutionFuture(params: StopAutomationExecutionRequest): Future[StopAutomationExecutionResult] =
+      service.stopAutomationExecution(params).promise.toFuture
+    def terminateSessionFuture(params: TerminateSessionRequest): Future[TerminateSessionResponse] =
+      service.terminateSession(params).promise.toFuture
+    def updateAssociationFuture(params: UpdateAssociationRequest): Future[UpdateAssociationResult] =
+      service.updateAssociation(params).promise.toFuture
+    def updateAssociationStatusFuture(params: UpdateAssociationStatusRequest): Future[UpdateAssociationStatusResult] =
+      service.updateAssociationStatus(params).promise.toFuture
+    def updateDocumentDefaultVersionFuture(
+        params: UpdateDocumentDefaultVersionRequest
+    ): Future[UpdateDocumentDefaultVersionResult] = service.updateDocumentDefaultVersion(params).promise.toFuture
+    def updateDocumentFuture(params: UpdateDocumentRequest): Future[UpdateDocumentResult] =
+      service.updateDocument(params).promise.toFuture
+    def updateMaintenanceWindowFuture(params: UpdateMaintenanceWindowRequest): Future[UpdateMaintenanceWindowResult] =
+      service.updateMaintenanceWindow(params).promise.toFuture
+    def updateMaintenanceWindowTargetFuture(
+        params: UpdateMaintenanceWindowTargetRequest
+    ): Future[UpdateMaintenanceWindowTargetResult] = service.updateMaintenanceWindowTarget(params).promise.toFuture
+    def updateMaintenanceWindowTaskFuture(
+        params: UpdateMaintenanceWindowTaskRequest
+    ): Future[UpdateMaintenanceWindowTaskResult] = service.updateMaintenanceWindowTask(params).promise.toFuture
+    def updateManagedInstanceRoleFuture(
+        params: UpdateManagedInstanceRoleRequest
+    ): Future[UpdateManagedInstanceRoleResult] = service.updateManagedInstanceRole(params).promise.toFuture
+    def updatePatchBaselineFuture(params: UpdatePatchBaselineRequest): Future[UpdatePatchBaselineResult] =
+      service.updatePatchBaseline(params).promise.toFuture
+    def updateServiceSettingFuture(params: UpdateServiceSettingRequest): Future[UpdateServiceSettingResult] =
+      service.updateServiceSetting(params).promise.toFuture
+  }
 }
 
 package ssm {

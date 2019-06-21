@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -14,6 +15,11 @@ package object mobileanalytics {
   type String0to1000Chars  = String
   type String10Chars       = String
   type String50Chars       = String
+
+  implicit final class MobileAnalyticsOps(val service: MobileAnalytics) extends AnyVal {
+
+    def putEventsFuture(params: PutEventsInput): Future[js.Object] = service.putEvents(params).promise.toFuture
+  }
 }
 
 package mobileanalytics {

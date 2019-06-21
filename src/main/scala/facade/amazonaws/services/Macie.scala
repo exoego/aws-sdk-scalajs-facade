@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -23,6 +24,24 @@ package object macie {
   type S3Resources                     = js.Array[S3Resource]
   type S3ResourcesClassification       = js.Array[S3ResourceClassification]
   type S3ResourcesClassificationUpdate = js.Array[S3ResourceClassificationUpdate]
+
+  implicit final class MacieOps(val service: Macie) extends AnyVal {
+
+    def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
+      service.associateMemberAccount(params).promise.toFuture
+    def associateS3ResourcesFuture(params: AssociateS3ResourcesRequest): Future[AssociateS3ResourcesResult] =
+      service.associateS3Resources(params).promise.toFuture
+    def disassociateMemberAccountFuture(params: DisassociateMemberAccountRequest): Future[js.Object] =
+      service.disassociateMemberAccount(params).promise.toFuture
+    def disassociateS3ResourcesFuture(params: DisassociateS3ResourcesRequest): Future[DisassociateS3ResourcesResult] =
+      service.disassociateS3Resources(params).promise.toFuture
+    def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResult] =
+      service.listMemberAccounts(params).promise.toFuture
+    def listS3ResourcesFuture(params: ListS3ResourcesRequest): Future[ListS3ResourcesResult] =
+      service.listS3Resources(params).promise.toFuture
+    def updateS3ResourcesFuture(params: UpdateS3ResourcesRequest): Future[UpdateS3ResourcesResult] =
+      service.updateS3Resources(params).promise.toFuture
+  }
 }
 
 package macie {

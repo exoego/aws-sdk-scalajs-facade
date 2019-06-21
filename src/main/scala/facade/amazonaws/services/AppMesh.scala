@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -33,6 +34,48 @@ package object appmesh {
   type VirtualRouterList         = js.Array[VirtualRouterRef]
   type VirtualRouterStatusCode   = String
   type WeightedTargets           = js.Array[WeightedTarget]
+
+  implicit final class AppMeshOps(val service: AppMesh) extends AnyVal {
+
+    def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] =
+      service.createMesh(params).promise.toFuture
+    def createRouteFuture(params: CreateRouteInput): Future[CreateRouteOutput] =
+      service.createRoute(params).promise.toFuture
+    def createVirtualNodeFuture(params: CreateVirtualNodeInput): Future[CreateVirtualNodeOutput] =
+      service.createVirtualNode(params).promise.toFuture
+    def createVirtualRouterFuture(params: CreateVirtualRouterInput): Future[CreateVirtualRouterOutput] =
+      service.createVirtualRouter(params).promise.toFuture
+    def deleteMeshFuture(params: DeleteMeshInput): Future[DeleteMeshOutput] =
+      service.deleteMesh(params).promise.toFuture
+    def deleteRouteFuture(params: DeleteRouteInput): Future[DeleteRouteOutput] =
+      service.deleteRoute(params).promise.toFuture
+    def deleteVirtualNodeFuture(params: DeleteVirtualNodeInput): Future[DeleteVirtualNodeOutput] =
+      service.deleteVirtualNode(params).promise.toFuture
+    def deleteVirtualRouterFuture(params: DeleteVirtualRouterInput): Future[DeleteVirtualRouterOutput] =
+      service.deleteVirtualRouter(params).promise.toFuture
+    def describeMeshFuture(params: DescribeMeshInput): Future[DescribeMeshOutput] =
+      service.describeMesh(params).promise.toFuture
+    def describeRouteFuture(params: DescribeRouteInput): Future[DescribeRouteOutput] =
+      service.describeRoute(params).promise.toFuture
+    def describeVirtualNodeFuture(params: DescribeVirtualNodeInput): Future[DescribeVirtualNodeOutput] =
+      service.describeVirtualNode(params).promise.toFuture
+    def describeVirtualRouterFuture(params: DescribeVirtualRouterInput): Future[DescribeVirtualRouterOutput] =
+      service.describeVirtualRouter(params).promise.toFuture
+    def listMeshesFuture(params: ListMeshesInput): Future[ListMeshesOutput] =
+      service.listMeshes(params).promise.toFuture
+    def listRoutesFuture(params: ListRoutesInput): Future[ListRoutesOutput] =
+      service.listRoutes(params).promise.toFuture
+    def listVirtualNodesFuture(params: ListVirtualNodesInput): Future[ListVirtualNodesOutput] =
+      service.listVirtualNodes(params).promise.toFuture
+    def listVirtualRoutersFuture(params: ListVirtualRoutersInput): Future[ListVirtualRoutersOutput] =
+      service.listVirtualRouters(params).promise.toFuture
+    def updateRouteFuture(params: UpdateRouteInput): Future[UpdateRouteOutput] =
+      service.updateRoute(params).promise.toFuture
+    def updateVirtualNodeFuture(params: UpdateVirtualNodeInput): Future[UpdateVirtualNodeOutput] =
+      service.updateVirtualNode(params).promise.toFuture
+    def updateVirtualRouterFuture(params: UpdateVirtualRouterInput): Future[UpdateVirtualRouterOutput] =
+      service.updateVirtualRouter(params).promise.toFuture
+  }
 }
 
 package appmesh {

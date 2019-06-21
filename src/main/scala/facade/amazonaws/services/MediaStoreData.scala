@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -26,6 +27,20 @@ package object mediastoredata {
   type StringPrimitive = String
   type TimeStamp       = js.Date
   type statusCode      = Int
+
+  implicit final class MediaStoreDataOps(val service: MediaStoreData) extends AnyVal {
+
+    def deleteObjectFuture(params: DeleteObjectRequest): Future[DeleteObjectResponse] =
+      service.deleteObject(params).promise.toFuture
+    def describeObjectFuture(params: DescribeObjectRequest): Future[DescribeObjectResponse] =
+      service.describeObject(params).promise.toFuture
+    def getObjectFuture(params: GetObjectRequest): Future[GetObjectResponse] =
+      service.getObject(params).promise.toFuture
+    def listItemsFuture(params: ListItemsRequest): Future[ListItemsResponse] =
+      service.listItems(params).promise.toFuture
+    def putObjectFuture(params: PutObjectRequest): Future[PutObjectResponse] =
+      service.putObject(params).promise.toFuture
+  }
 }
 
 package mediastoredata {

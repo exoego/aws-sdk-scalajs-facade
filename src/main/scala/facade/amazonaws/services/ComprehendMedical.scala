@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -15,6 +16,14 @@ package object comprehendmedical {
   type EntityType            = String
   type TraitList             = js.Array[Trait]
   type UnmappedAttributeList = js.Array[UnmappedAttribute]
+
+  implicit final class ComprehendMedicalOps(val service: ComprehendMedical) extends AnyVal {
+
+    def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] =
+      service.detectEntities(params).promise.toFuture
+    def detectPHIFuture(params: DetectPHIRequest): Future[DetectPHIResponse] =
+      service.detectPHI(params).promise.toFuture
+  }
 }
 
 package comprehendmedical {

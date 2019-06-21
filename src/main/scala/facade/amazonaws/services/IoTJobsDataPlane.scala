@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -26,6 +27,19 @@ package object iotjobsdataplane {
   type StepTimeoutInMinutes             = Double
   type ThingName                        = String
   type VersionNumber                    = Double
+
+  implicit final class IoTJobsDataPlaneOps(val service: IoTJobsDataPlane) extends AnyVal {
+
+    def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
+      service.describeJobExecution(params).promise.toFuture
+    def getPendingJobExecutionsFuture(params: GetPendingJobExecutionsRequest): Future[GetPendingJobExecutionsResponse] =
+      service.getPendingJobExecutions(params).promise.toFuture
+    def startNextPendingJobExecutionFuture(
+        params: StartNextPendingJobExecutionRequest
+    ): Future[StartNextPendingJobExecutionResponse] = service.startNextPendingJobExecution(params).promise.toFuture
+    def updateJobExecutionFuture(params: UpdateJobExecutionRequest): Future[UpdateJobExecutionResponse] =
+      service.updateJobExecution(params).promise.toFuture
+  }
 }
 
 package iotjobsdataplane {

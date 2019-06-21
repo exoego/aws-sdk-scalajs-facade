@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -38,6 +39,28 @@ package object mobile {
   type Resources        = js.Array[Resource]
   type ShareUrl         = String
   type SnapshotId       = String
+
+  implicit final class MobileOps(val service: Mobile) extends AnyVal {
+
+    def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
+      service.createProject(params).promise.toFuture
+    def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResult] =
+      service.deleteProject(params).promise.toFuture
+    def describeBundleFuture(params: DescribeBundleRequest): Future[DescribeBundleResult] =
+      service.describeBundle(params).promise.toFuture
+    def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResult] =
+      service.describeProject(params).promise.toFuture
+    def exportBundleFuture(params: ExportBundleRequest): Future[ExportBundleResult] =
+      service.exportBundle(params).promise.toFuture
+    def exportProjectFuture(params: ExportProjectRequest): Future[ExportProjectResult] =
+      service.exportProject(params).promise.toFuture
+    def listBundlesFuture(params: ListBundlesRequest): Future[ListBundlesResult] =
+      service.listBundles(params).promise.toFuture
+    def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResult] =
+      service.listProjects(params).promise.toFuture
+    def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResult] =
+      service.updateProject(params).promise.toFuture
+  }
 }
 
 package mobile {

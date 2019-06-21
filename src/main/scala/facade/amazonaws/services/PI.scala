@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -20,6 +21,14 @@ package object pi {
   type ResponsePartitionKeyList    = js.Array[ResponsePartitionKey]
   type ServiceType                 = String
   type StringList                  = js.Array[String]
+
+  implicit final class PIOps(val service: PI) extends AnyVal {
+
+    def describeDimensionKeysFuture(params: DescribeDimensionKeysRequest): Future[DescribeDimensionKeysResponse] =
+      service.describeDimensionKeys(params).promise.toFuture
+    def getResourceMetricsFuture(params: GetResourceMetricsRequest): Future[GetResourceMetricsResponse] =
+      service.getResourceMetrics(params).promise.toFuture
+  }
 }
 
 package pi {

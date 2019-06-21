@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -29,6 +30,49 @@ package object mq {
   type __mapOf__string               = js.Dictionary[__string]
   type __string                      = String
   type __timestampIso8601            = js.Date
+
+  implicit final class MQOps(val service: MQ) extends AnyVal {
+
+    def createBrokerFuture(params: CreateBrokerRequest): Future[CreateBrokerResponse] =
+      service.createBroker(params).promise.toFuture
+    def createConfigurationFuture(params: CreateConfigurationRequest): Future[CreateConfigurationResponse] =
+      service.createConfiguration(params).promise.toFuture
+    def createTagsFuture(params: CreateTagsRequest): Future[js.Object] = service.createTags(params).promise.toFuture
+    def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] =
+      service.createUser(params).promise.toFuture
+    def deleteBrokerFuture(params: DeleteBrokerRequest): Future[DeleteBrokerResponse] =
+      service.deleteBroker(params).promise.toFuture
+    def deleteTagsFuture(params: DeleteTagsRequest): Future[js.Object] = service.deleteTags(params).promise.toFuture
+    def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] =
+      service.deleteUser(params).promise.toFuture
+    def describeBrokerFuture(params: DescribeBrokerRequest): Future[DescribeBrokerResponse] =
+      service.describeBroker(params).promise.toFuture
+    def describeConfigurationFuture(params: DescribeConfigurationRequest): Future[DescribeConfigurationResponse] =
+      service.describeConfiguration(params).promise.toFuture
+    def describeConfigurationRevisionFuture(
+        params: DescribeConfigurationRevisionRequest
+    ): Future[DescribeConfigurationRevisionResponse] = service.describeConfigurationRevision(params).promise.toFuture
+    def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] =
+      service.describeUser(params).promise.toFuture
+    def listBrokersFuture(params: ListBrokersRequest): Future[ListBrokersResponse] =
+      service.listBrokers(params).promise.toFuture
+    def listConfigurationRevisionsFuture(
+        params: ListConfigurationRevisionsRequest
+    ): Future[ListConfigurationRevisionsResponse] = service.listConfigurationRevisions(params).promise.toFuture
+    def listConfigurationsFuture(params: ListConfigurationsRequest): Future[ListConfigurationsResponse] =
+      service.listConfigurations(params).promise.toFuture
+    def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise.toFuture
+    def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] =
+      service.listUsers(params).promise.toFuture
+    def rebootBrokerFuture(params: RebootBrokerRequest): Future[RebootBrokerResponse] =
+      service.rebootBroker(params).promise.toFuture
+    def updateBrokerFuture(params: UpdateBrokerRequest): Future[UpdateBrokerResponse] =
+      service.updateBroker(params).promise.toFuture
+    def updateConfigurationFuture(params: UpdateConfigurationRequest): Future[UpdateConfigurationResponse] =
+      service.updateConfiguration(params).promise.toFuture
+    def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] =
+      service.updateUser(params).promise.toFuture
+  }
 }
 
 package mq {

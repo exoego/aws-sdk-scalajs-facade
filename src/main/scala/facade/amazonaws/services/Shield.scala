@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -38,6 +39,50 @@ package object shield {
   type Token                       = String
   type TopContributors             = js.Array[Contributor]
   type Unit                        = String
+
+  implicit final class ShieldOps(val service: Shield) extends AnyVal {
+
+    def associateDRTLogBucketFuture(params: AssociateDRTLogBucketRequest): Future[AssociateDRTLogBucketResponse] =
+      service.associateDRTLogBucket(params).promise.toFuture
+    def associateDRTRoleFuture(params: AssociateDRTRoleRequest): Future[AssociateDRTRoleResponse] =
+      service.associateDRTRole(params).promise.toFuture
+    def createProtectionFuture(params: CreateProtectionRequest): Future[CreateProtectionResponse] =
+      service.createProtection(params).promise.toFuture
+    def createSubscriptionFuture(params: CreateSubscriptionRequest): Future[CreateSubscriptionResponse] =
+      service.createSubscription(params).promise.toFuture
+    def deleteProtectionFuture(params: DeleteProtectionRequest): Future[DeleteProtectionResponse] =
+      service.deleteProtection(params).promise.toFuture
+    def deleteSubscriptionFuture(params: DeleteSubscriptionRequest): Future[DeleteSubscriptionResponse] =
+      service.deleteSubscription(params).promise.toFuture
+    def describeAttackFuture(params: DescribeAttackRequest): Future[DescribeAttackResponse] =
+      service.describeAttack(params).promise.toFuture
+    def describeDRTAccessFuture(params: DescribeDRTAccessRequest): Future[DescribeDRTAccessResponse] =
+      service.describeDRTAccess(params).promise.toFuture
+    def describeEmergencyContactSettingsFuture(
+        params: DescribeEmergencyContactSettingsRequest
+    ): Future[DescribeEmergencyContactSettingsResponse] =
+      service.describeEmergencyContactSettings(params).promise.toFuture
+    def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] =
+      service.describeProtection(params).promise.toFuture
+    def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] =
+      service.describeSubscription(params).promise.toFuture
+    def disassociateDRTLogBucketFuture(
+        params: DisassociateDRTLogBucketRequest
+    ): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise.toFuture
+    def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] =
+      service.disassociateDRTRole(params).promise.toFuture
+    def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] =
+      service.getSubscriptionState(params).promise.toFuture
+    def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] =
+      service.listAttacks(params).promise.toFuture
+    def listProtectionsFuture(params: ListProtectionsRequest): Future[ListProtectionsResponse] =
+      service.listProtections(params).promise.toFuture
+    def updateEmergencyContactSettingsFuture(
+        params: UpdateEmergencyContactSettingsRequest
+    ): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise.toFuture
+    def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] =
+      service.updateSubscription(params).promise.toFuture
+  }
 }
 
 package shield {

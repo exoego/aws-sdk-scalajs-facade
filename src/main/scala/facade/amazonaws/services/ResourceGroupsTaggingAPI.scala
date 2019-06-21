@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -29,6 +30,20 @@ package object resourcegroupstaggingapi {
   type TagValueList           = js.Array[TagValue]
   type TagValuesOutputList    = js.Array[TagValue]
   type TagsPerPage            = Int
+
+  implicit final class ResourceGroupsTaggingAPIOps(val service: ResourceGroupsTaggingAPI) extends AnyVal {
+
+    def getResourcesFuture(params: GetResourcesInput): Future[GetResourcesOutput] =
+      service.getResources(params).promise.toFuture
+    def getTagKeysFuture(params: GetTagKeysInput): Future[GetTagKeysOutput] =
+      service.getTagKeys(params).promise.toFuture
+    def getTagValuesFuture(params: GetTagValuesInput): Future[GetTagValuesOutput] =
+      service.getTagValues(params).promise.toFuture
+    def tagResourcesFuture(params: TagResourcesInput): Future[TagResourcesOutput] =
+      service.tagResources(params).promise.toFuture
+    def untagResourcesFuture(params: UntagResourcesInput): Future[UntagResourcesOutput] =
+      service.untagResources(params).promise.toFuture
+  }
 }
 
 package resourcegroupstaggingapi {

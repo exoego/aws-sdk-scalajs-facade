@@ -3,6 +3,7 @@ package facade.amazonaws.services
 import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
+import scala.concurrent.Future
 import io.scalajs.nodejs
 import facade.amazonaws._
 
@@ -55,6 +56,56 @@ package object kinesisanalytics {
   type ResourceARN                         = String
   type RoleARN                             = String
   type Timestamp                           = js.Date
+
+  implicit final class KinesisAnalyticsOps(val service: KinesisAnalytics) extends AnyVal {
+
+    def addApplicationCloudWatchLoggingOptionFuture(
+        params: AddApplicationCloudWatchLoggingOptionRequest
+    ): Future[AddApplicationCloudWatchLoggingOptionResponse] =
+      service.addApplicationCloudWatchLoggingOption(params).promise.toFuture
+    def addApplicationInputFuture(params: AddApplicationInputRequest): Future[AddApplicationInputResponse] =
+      service.addApplicationInput(params).promise.toFuture
+    def addApplicationInputProcessingConfigurationFuture(
+        params: AddApplicationInputProcessingConfigurationRequest
+    ): Future[AddApplicationInputProcessingConfigurationResponse] =
+      service.addApplicationInputProcessingConfiguration(params).promise.toFuture
+    def addApplicationOutputFuture(params: AddApplicationOutputRequest): Future[AddApplicationOutputResponse] =
+      service.addApplicationOutput(params).promise.toFuture
+    def addApplicationReferenceDataSourceFuture(
+        params: AddApplicationReferenceDataSourceRequest
+    ): Future[AddApplicationReferenceDataSourceResponse] =
+      service.addApplicationReferenceDataSource(params).promise.toFuture
+    def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
+      service.createApplication(params).promise.toFuture
+    def deleteApplicationCloudWatchLoggingOptionFuture(
+        params: DeleteApplicationCloudWatchLoggingOptionRequest
+    ): Future[DeleteApplicationCloudWatchLoggingOptionResponse] =
+      service.deleteApplicationCloudWatchLoggingOption(params).promise.toFuture
+    def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResponse] =
+      service.deleteApplication(params).promise.toFuture
+    def deleteApplicationInputProcessingConfigurationFuture(
+        params: DeleteApplicationInputProcessingConfigurationRequest
+    ): Future[DeleteApplicationInputProcessingConfigurationResponse] =
+      service.deleteApplicationInputProcessingConfiguration(params).promise.toFuture
+    def deleteApplicationOutputFuture(params: DeleteApplicationOutputRequest): Future[DeleteApplicationOutputResponse] =
+      service.deleteApplicationOutput(params).promise.toFuture
+    def deleteApplicationReferenceDataSourceFuture(
+        params: DeleteApplicationReferenceDataSourceRequest
+    ): Future[DeleteApplicationReferenceDataSourceResponse] =
+      service.deleteApplicationReferenceDataSource(params).promise.toFuture
+    def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] =
+      service.describeApplication(params).promise.toFuture
+    def discoverInputSchemaFuture(params: DiscoverInputSchemaRequest): Future[DiscoverInputSchemaResponse] =
+      service.discoverInputSchema(params).promise.toFuture
+    def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] =
+      service.listApplications(params).promise.toFuture
+    def startApplicationFuture(params: StartApplicationRequest): Future[StartApplicationResponse] =
+      service.startApplication(params).promise.toFuture
+    def stopApplicationFuture(params: StopApplicationRequest): Future[StopApplicationResponse] =
+      service.stopApplication(params).promise.toFuture
+    def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] =
+      service.updateApplication(params).promise.toFuture
+  }
 }
 
 package kinesisanalytics {
