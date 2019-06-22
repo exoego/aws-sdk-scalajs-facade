@@ -12,8 +12,66 @@ Now with AWS introduced in re:Invent 2018.
 libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.23.0-v2-473-0"
 ```
 
-Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-v2-473`,
+Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-v2-473-0`,
 which the facade is built for.
+
+
+### Using constructor
+
+Every AWS services and their-related types are defined in `facade.amazonaws.services.<service_name>` package.
+
+Service class can be instantiated with their constructor.
+
+```scala
+import facade.amazonaws.services.s3._
+for {
+  image <- new S3().getObjectFuture(GetObjectRequest(
+    Bucket = "foo-bar",
+    Key = "123.json"
+  ))
+} yield {
+  println(image.Body)
+}
+```
+
+### Using AWS Object
+
+As same as in aws-sdk-js, this facade offers `AWS` companion object.
+The `AWS` companion object aggregates all service classes so you can instantiate service class like below.
+
+
+```scala
+import facade.amazonaws.AWS
+import facade.amazonaws.services.dynamodb._
+import scala.scalajs.js.Dictionary
+
+for {
+  record <- new AWS.DynamoDB().getItemFuture(GetItemInput(
+    Key = Dictionary("product-id" -> AttributeValue.S("ABC-123")),
+    TableName = "product-table"
+  ))
+} yield {
+  println(record.Item)
+}
+```
+
+Or using `apply` method, you can skip `new` keyword.
+
+```scala
+import facade.amazonaws.AWS
+import facade.amazonaws.services.dynamodb._
+import scala.scalajs.js.Dictionary
+
+for {
+  record <- AWS.DynamoDB().getItemFuture(GetItemInput(
+    Key = Dictionary("product-id" -> AttributeValue.S("ABC-123")),
+    TableName = "product-table"
+  ))
+} yield {
+  println(record.Item)
+}
+```
+
 
 ## Support matrix
 
