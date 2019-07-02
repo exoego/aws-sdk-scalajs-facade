@@ -9,8 +9,16 @@ jdk:
   - openjdk8
   - openjdk11
 
+install:
+  - pip install --user codecov
+
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck test
+  - sbt ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck clean coverage test
+  - if [[ "$TRAVIS_SCALA_VERSION" != 2.13.* ]]; # Primary support is 2.12.x
+    then
+      sbt ++$TRAVIS_SCALA_VERSION coverageReport && codecov;
+    else echo "Skipping code coverage reporting on 2.13";
+    fi
 
 before_cache:
   - rm -fv $HOME/.ivy2/.sbt.ivy.lock
