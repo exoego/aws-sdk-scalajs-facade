@@ -32,7 +32,45 @@ object SignerOptionsWithPolicy {
 
     js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignerOptionsWithPolicy]
   }
+
+  def apply(
+      policy: PolicyStatements
+  ): SignerOptionsWithPolicy = {
+    apply(js.JSON.stringify(policy))
+  }
+
+  def createPolicy(policyStatements: js.Array[PolicyStatement]): SignerOptionsWithPolicy = {
+    val tPolicy = new PolicyStatements(policyStatements)
+    SignerOptionsWithPolicy(tPolicy)
+  }
 }
+
+class PolicyStatements(
+    var Statement: js.Array[PolicyStatement]
+) extends js.Object
+
+class PolicyStatement(
+    var Resource: String,
+    var Condition: PolicyStatementCondition
+)
+
+class PolicyStatementCondition(
+    var DateLessThan: DateLessThan,
+    var DateGreaterThan: js.UndefOr[DateGreaterThan] = js.undefined,
+    var IpAddress: js.UndefOr[IpAddress] = js.undefined
+) extends js.Object
+
+class DateLessThan(
+    var `AWS:EpochTime`: Int
+) extends js.Object
+
+class DateGreaterThan(
+    var `AWS:EpochTime`: Int
+) extends js.Object
+
+class IpAddress(
+    var `AWS:SourceIp`: String
+) extends js.Object
 
 @js.native
 trait SignerOptionsWithoutPolicy extends js.Object {
