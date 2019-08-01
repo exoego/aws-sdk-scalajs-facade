@@ -1,4 +1,4 @@
-package facade.amazonaws.services.cloudfront
+package facade.amazonaws.services.cloudfront.signer
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
