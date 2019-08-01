@@ -12,19 +12,9 @@ class CloudFrontSigner protected () extends js.Object {
 
   def getSignedCookie(options: SignerOptionsWithoutPolicy): CannedPolicy = js.native
 
-  def getSignedCookie(options: SignerOptionsWithPolicy, callback: js.Function2[Error, CustomPolicy, Unit]): Unit =
-    js.native
-
-  def getSignedCookie(options: SignerOptionsWithoutPolicy, callback: js.Function2[Error, CannedPolicy, Unit]): Unit =
-    js.native
-
   def getSignedUrl(options: SignerOptionsWithPolicy): String = js.native
 
   def getSignedUrl(options: SignerOptionsWithoutPolicy): String = js.native
-
-  def getSignedUrl(options: SignerOptionsWithPolicy, callback: js.Function2[Error, String, Unit]): Unit = js.native
-
-  def getSignedUrl(options: SignerOptionsWithoutPolicy, callback: js.Function2[Error, String, Unit]): Unit = js.native
 }
 
 @js.native
