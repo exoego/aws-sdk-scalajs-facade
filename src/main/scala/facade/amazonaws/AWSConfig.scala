@@ -11,13 +11,13 @@ class AWSConfig(var computeChecksums: js.UndefOr[Boolean] = js.undefined,
                 var accessKeyId: js.UndefOr[String] = js.undefined,
                 var secretAccessKey: js.UndefOr[String] = js.undefined,
                 var sessionToken: js.UndefOr[String] = js.undefined,
-                var httpOptions: HttpOptions = HttpOptions(),
+                var httpOptions: js.UndefOr[HttpOptions] = js.undefined,
                 var logger: js.UndefOr[Logger] = js.undefined,
                 var maxRetries: js.UndefOr[Int] = js.undefined,
                 var maxRedirects: js.UndefOr[Int] = js.undefined,
-                var paramValidation: ParamValidation = ParamValidation(),
+                var paramValidation: js.UndefOr[ParamValidation] = js.undefined,
                 var region: js.UndefOr[String] = js.undefined,
-                var retryDelayOptions: RetryDelayOptions = RetryDelayOptions(),
+                var retryDelayOptions: js.UndefOr[RetryDelayOptions] = js.undefined,
                 var s3BucketEndpoint: js.UndefOr[Boolean] = js.undefined,
                 var s3DisableBodySigning: js.UndefOr[Boolean] = js.undefined,
                 var s3ForcePathStyle: js.UndefOr[Boolean] = js.undefined,
@@ -29,7 +29,11 @@ class AWSConfig(var computeChecksums: js.UndefOr[Boolean] = js.undefined,
                 var dynamoDbCrc32: js.UndefOr[Boolean] = js.undefined,
                 var endpointDiscoveryEnabled: js.UndefOr[Boolean] = js.undefined,
                 var endpointCacheSize: js.UndefOr[Double] = js.undefined,
-                var hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined)
+                var hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined,
+                var endpoint: js.UndefOr[String] = js.undefined,
+                var apiVersion: js.UndefOr[String] = js.undefined,
+                var apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined,
+                var clientSideMonitoring: js.UndefOr[Boolean] = js.undefined)
     extends js.Object
 
 object AWSConfig {
@@ -42,11 +46,11 @@ object AWSConfig {
             accessKeyId: js.UndefOr[String] = js.undefined,
             secretAccessKey: js.UndefOr[String] = js.undefined,
             sessionToken: js.UndefOr[String] = js.undefined,
-            httpOptions: HttpOptions = HttpOptions(),
+            httpOptions: js.UndefOr[HttpOptions] = js.undefined,
             logger: js.UndefOr[Logger] = js.undefined,
             maxRetries: js.UndefOr[Int] = js.undefined,
             maxRedirects: js.UndefOr[Int] = js.undefined,
-            paramValidation: ParamValidation = ParamValidation(),
+            paramValidation: js.UndefOr[ParamValidation] = js.undefined,
             region: js.UndefOr[String] = js.undefined,
             retryDelayOptions: RetryDelayOptions = RetryDelayOptions(),
             s3BucketEndpoint: js.UndefOr[Boolean] = js.undefined,
@@ -60,7 +64,11 @@ object AWSConfig {
             dynamoDbCrc32: js.UndefOr[Boolean] = js.undefined,
             endpointDiscoveryEnabled: js.UndefOr[Boolean] = js.undefined,
             endpointCacheSize: js.UndefOr[Double] = js.undefined,
-            hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined): AWSConfig = {
+            hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined,
+            endpoint: js.UndefOr[String] = js.undefined,
+            apiVersion: js.UndefOr[String] = js.undefined,
+            apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined,
+            clientSideMonitoring: js.UndefOr[Boolean] = js.undefined): AWSConfig = {
     new AWSConfig(
       computeChecksums,
       convertResponseTypes,
@@ -89,7 +97,11 @@ object AWSConfig {
       dynamoDbCrc32,
       endpointDiscoveryEnabled,
       endpointCacheSize,
-      hostPrefixEnabled
+      hostPrefixEnabled,
+      endpoint,
+      apiVersion,
+      apiVersions,
+      clientSideMonitoring
     )
   }
 }
