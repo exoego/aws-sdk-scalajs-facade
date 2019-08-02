@@ -1,4 +1,4 @@
-package facade.amazonaws.services.cloudfront
+package facade.amazonaws.services.cloudfront.signer
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
@@ -12,19 +12,9 @@ class CloudFrontSigner protected () extends js.Object {
 
   def getSignedCookie(options: SignerOptionsWithoutPolicy): CannedPolicy = js.native
 
-  def getSignedCookie(options: SignerOptionsWithPolicy, callback: js.Function2[Error, CustomPolicy, Unit]): Unit =
-    js.native
-
-  def getSignedCookie(options: SignerOptionsWithoutPolicy, callback: js.Function2[Error, CannedPolicy, Unit]): Unit =
-    js.native
-
   def getSignedUrl(options: SignerOptionsWithPolicy): String = js.native
 
   def getSignedUrl(options: SignerOptionsWithoutPolicy): String = js.native
-
-  def getSignedUrl(options: SignerOptionsWithPolicy, callback: js.Function2[Error, String, Unit]): Unit = js.native
-
-  def getSignedUrl(options: SignerOptionsWithoutPolicy, callback: js.Function2[Error, String, Unit]): Unit = js.native
 }
 
 @js.native
@@ -42,7 +32,45 @@ object SignerOptionsWithPolicy {
 
     js.Dynamic.literal.applyDynamicNamed("apply")(_fields: _*).asInstanceOf[SignerOptionsWithPolicy]
   }
+
+  def apply(
+      policy: PolicyStatements
+  ): SignerOptionsWithPolicy = {
+    apply(js.JSON.stringify(policy))
+  }
+
+  def createPolicy(policyStatements: js.Array[PolicyStatement]): SignerOptionsWithPolicy = {
+    val tPolicy = new PolicyStatements(policyStatements)
+    SignerOptionsWithPolicy(tPolicy)
+  }
 }
+
+class PolicyStatements(
+    var Statement: js.Array[PolicyStatement]
+) extends js.Object
+
+class PolicyStatement(
+    var Resource: String,
+    var Condition: PolicyStatementCondition
+)
+
+class PolicyStatementCondition(
+    var DateLessThan: DateLessThan,
+    var DateGreaterThan: js.UndefOr[DateGreaterThan] = js.undefined,
+    var IpAddress: js.UndefOr[IpAddress] = js.undefined
+) extends js.Object
+
+class DateLessThan(
+    var `AWS:EpochTime`: Int
+) extends js.Object
+
+class DateGreaterThan(
+    var `AWS:EpochTime`: Int
+) extends js.Object
+
+class IpAddress(
+    var `AWS:SourceIp`: String
+) extends js.Object
 
 @js.native
 trait SignerOptionsWithoutPolicy extends js.Object {
