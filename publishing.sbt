@@ -45,7 +45,7 @@ releaseProcess in ThisBuild := Seq[ReleaseStep](
   checkSnapshotDependencies,
   inquireVersions,
   runClean,
-  runTest,
+//  runTest,
   setReleaseVersion,
   commitReleaseVersion,
   tagRelease,
