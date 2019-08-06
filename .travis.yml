@@ -2,7 +2,7 @@ dist: xenial
 language: scala
 
 scala:
-  - 2.12.8
+  - 2.12.9
   - 2.13.0
 
 jdk:
@@ -10,7 +10,14 @@ jdk:
   - openjdk11
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck test
+  - sbt ++$TRAVIS_SCALA_VERSION all/test
+
+matrix:
+  include:
+    - scala: 2.13.0
+      jdk: openjdk11
+      script: sbt ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
+      env: JOB_NAME=FORMAT_CHECK_ONLY
 
 before_cache:
   - rm -fv $HOME/.ivy2/.sbt.ivy.lock
@@ -22,3 +29,6 @@ cache:
     - $HOME/.ivy2/cache
     - $HOME/.sbt/boot
 
+env:
+  global:
+    - SCALAJS_LINK_MAX="1"

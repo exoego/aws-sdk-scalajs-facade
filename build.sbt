@@ -1,3 +1,10 @@
+import scala.util._
+
+concurrentRestrictions in ThisBuild += Tags.limit(
+  ScalaJSTags.Link,
+  max = Try(System.getenv("SCALAJS_LINK_MAX").toInt).getOrElse(4)
+)
+
 lazy val core = (project in file("core"))
   .settings(SharedConfig.settings)
   .settings(

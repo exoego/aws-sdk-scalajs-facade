@@ -7,7 +7,7 @@ import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
 import autoImport._
 
 object SharedConfig {
-  val SupportedScalaVersions = List("2.12.8", "2.13.0")
+  val SupportedScalaVersions = List("2.12.9", "2.13.0")
   val Organization           = "net.exoego"
   val libraryName            = "aws-sdk-scalajs-facade"
 
@@ -15,6 +15,10 @@ object SharedConfig {
     organization := Organization,
     crossScalaVersions := SupportedScalaVersions,
     scalacOptions ++= Seq("-P:scalajs:sjsDefinedByDefault", "-deprecation"),
-    scalaJSModuleKind := ModuleKind.CommonJSModule
+    scalaJSModuleKind := ModuleKind.CommonJSModule,
+    scalaJSLinkerConfig ~= {
+      val isCI = Option(System.getenv("CI")).exists(_.contains("true"))
+      _.withBatchMode(isCI).withSourceMap(false)
+    }
   )
 }
