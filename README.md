@@ -17,7 +17,8 @@ which the facade is built for.
 
 Note) You may reduce Scala.js's `fastOptJS`/`fullOptJS` time by minimizing dependencies. The all-in-one artifact `aws-sdk-scalajs-facade` includes all AWS facade and quite huge. You may depend only minimum dependencies and gain build performance boost. See the below list of separate artifacts.`
 
-<detail>
+<details>
+<summary>List of separate artifacts</summary>
 ```scala
 val awsSdkScalajsFacadeVersion = "0.24.0-v2-473-0"
 libraryDependencies ++= Seq(
@@ -188,7 +189,7 @@ libraryDependencies ++= Seq(
     "net.exoego" %%% "aws-sdk-scalajs-facade-xray" % awsSdkScalajsFacadeVersion
 )
 ```
-</detail>
+</details>
 
 ### Using constructor
 
