@@ -9,16 +9,17 @@ Now with AWS introduced in re:Invent 2018.
 ## Getting Started
 
 ```sbt
-libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.23.0-v2-473-0"
+libraryDependencies += "net.exoego" %%% "aws-sdk-scalajs-facade" % "0.24.0-v2-473-0"
 ```
 
 Note) Starting from `0.22.0`, version number includes the version of AWS SDK, as qualifier like `-v2-473-0`,
 which the facade is built for.
 
+Note) You may reduce Scala.js's `fastOptJS`/`fullOptJS` time by minimizing dependencies. The all-in-one artifact `aws-sdk-scalajs-facade` includes all AWS facade and quite huge. You may depend only minimum dependencies and gain build performance boost. See [the list of separate artifacts](ARTIFACTS.md).
 
 ### Using constructor
 
-Every AWS services and their-related types are defined in `facade.amazonaws.services.<service_name>` package.
+Every AWS services and their-related types are defined in `facade.amazonaws.services.<service_name>` package in `  "net.exoego" %%% "aws-sdk-scalajs-facade-<service_name>" % VERSION`. See [the list of separate artifacts](ARTIFACTS.md).
 
 Service class can be instantiated with their constructor.
 
@@ -35,6 +36,8 @@ for {
 ```
 
 ### Using AWS Object
+
+Note) To use `AWS` object, the artifact `"net.exoego" %%% "aws-sdk-scalajs-facade" % VERSION` should be added to `libraryDependencies`.
 
 As same as in aws-sdk-js, this facade offers `AWS` companion object.
 The `AWS` companion object aggregates all service classes so you can instantiate service class like below.
