@@ -205,7 +205,7 @@ lazy val root = (project in file("."))
   .settings(SharedConfig.noPublishingSettings)
   .enablePlugins(ScalaJSPlugin)
   .aggregate(subProjects.map(_.project): _*)
-  .aggregate(all)
+//  .aggregate(all)
 
 lazy val all = (project in file("all"))
   .settings(SharedConfig.settings)
