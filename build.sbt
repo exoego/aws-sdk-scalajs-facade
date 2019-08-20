@@ -213,10 +213,14 @@ lazy val all = (project in file("all"))
   .settings(
     name := s"${SharedConfig.libraryName}",
     libraryDependencies ++= Seq(
-      Dependencies.scalajs.nodejs.value
+      Dependencies.scalajs.nodejs.value,
+      Dependencies.shared.scalatest.value,
+    ),
+    npmDependencies in Test ++= Seq(
+      "aws-sdk" -> "2.473.0",
     )
   )
-  .enablePlugins(ScalaJSPlugin)
+  .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
   .dependsOn(subProjects.map(p => ClasspathDependency(p, None)): _*)
 
 lazy val subProjects: Seq[Project] = Seq(

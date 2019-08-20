@@ -7,6 +7,9 @@ import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
 import autoImport._
 
 object Dependencies {
+  object shared {
+    val scalatest = Def.setting("org.scalatest" %%% "scalatest" % "3.0.8" % Test)
+  }
   object scalajs {
     val nodejs = Def.setting("net.exoego" %%% "scala-js-nodejs-v8" % "0.8.0")
   }

@@ -1,13 +1,21 @@
 package net.exoego
 
 import facade.amazonaws.AWS
+import facade.amazonaws.services.s3
+import org.scalatest._
 
-class ExtensionTest {
+class ExtensionTest extends FunSuite {
 
-  def hoge(): Unit = {
+  test("can instantiate") {
+    val s3 = AWS.S3()
+    assert(s3 !== null)
+  }
 
-    AWS.S3().getObjectFuture(???)
-
+  ignore("offer extension method") {
+    AWS.S3().getObjectFuture(       s3.GetObjectRequest(
+          Bucket = "test",
+          Key = "hoge.jpg"
+        )     )
   }
 
 }
