@@ -12,10 +12,14 @@ class ExtensionTest extends FunSuite {
   }
 
   ignore("offer extension method") {
-    AWS.S3().getObjectFuture(       s3.GetObjectRequest(
+    AWS
+      .S3()
+      .getObjectFuture(
+        s3.GetObjectRequest(
           Bucket = "test",
           Key = "hoge.jpg"
-        )     )
+        )
+      )
   }
 
 }

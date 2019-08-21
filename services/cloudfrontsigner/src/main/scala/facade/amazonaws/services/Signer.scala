@@ -52,7 +52,7 @@ class PolicyStatements(
 class PolicyStatement(
     var Resource: String,
     var Condition: PolicyStatementCondition
-)
+) extends js.Object
 
 class PolicyStatementCondition(
     var DateLessThan: DateLessThan,
