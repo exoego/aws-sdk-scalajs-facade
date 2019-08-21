@@ -10,13 +10,13 @@ jdk:
   - openjdk11
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION all/test
+  - sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION all/test
 
 matrix:
   include:
     - scala: 2.13.0
       jdk: openjdk11
-      script: sbt ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
+      script: sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
       env: JOB_NAME=FORMAT_CHECK_ONLY
 
 before_cache:
