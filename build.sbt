@@ -214,10 +214,10 @@ lazy val all = (project in file("all"))
     name := s"${SharedConfig.libraryName}",
     libraryDependencies ++= Seq(
       Dependencies.scalajs.nodejs.value,
-      Dependencies.shared.scalatest.value,
+      Dependencies.shared.scalatest.value
     ),
     npmDependencies in Test ++= Seq(
-      "aws-sdk" -> "2.473.0",
+      "aws-sdk" -> "2.473.0"
     )
   )
   .enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin)
