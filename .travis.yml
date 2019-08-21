@@ -16,7 +16,7 @@ matrix:
   include:
     - scala: 2.13.0
       jdk: openjdk11
-      script: sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck a
+      script: sbt -jvm-opts .travis/jvmopts ++$TRAVIS_SCALA_VERSION scalafmtSbtCheck scalafmtCheck test:scalafmtCheck all/test
       env: JOB_NAME=FORMAT_CHECK_ONLY
 
 before_cache:
