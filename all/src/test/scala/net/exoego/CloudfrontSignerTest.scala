@@ -1,15 +1,13 @@
 package net.exoego
 
-import facade.amazonaws.AWS
 import facade.amazonaws.services.cloudfront.signer
-import facade.amazonaws.services.s3
 import org.scalatest._
 
 import scala.scalajs.js
 
 class CloudfrontSignerTest extends FunSuite {
 
-  test("can instantiate") {
+  test("SignerOptionsWithPolicy.apply(PolicyStatement)") {
     val tPolicy = new signer.PolicyStatements(
       js.Array(
         new signer.PolicyStatement(
@@ -21,7 +19,9 @@ class CloudfrontSignerTest extends FunSuite {
       )
     )
     assert(
-      signer.SignerOptionsWithPolicy(tPolicy).policy === """{"Statement":[{"Resource":"https://example.com/hoge/*","Condition":{"DateLessThan":{"AWS:EpochTime":100}}}]}"""
+      signer
+        .SignerOptionsWithPolicy(tPolicy)
+        .policy === """{"Statement":[{"Resource":"https://example.com/hoge/*","Condition":{"DateLessThan":{"AWS:EpochTime":100}}}]}"""
     )
   }
 
