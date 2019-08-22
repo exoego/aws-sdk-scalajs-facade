@@ -5,21 +5,8 @@ import scala.scalajs.js.annotation.JSImport
 
 @js.native
 @JSImport("aws-sdk", JSImport.Namespace)
-private[amazonaws] object AWSGlobal extends js.Object {
+object AWS extends js.Object {
   var config: AWSConfigWithServicesDefault = js.native
-}
-
-object AWSGlobalConfig {
-  def config: AWSConfigWithServicesDefault = AWSGlobal.config
-  def config_=(config: AWSConfig): Unit = {
-    AWSGlobal.config = config match {
-      case global: AWSConfigWithServicesDefault => global
-      case _                                    => config.asInstanceOf[AWSConfigWithServicesDefault]
-    }
-  }
-  def config_=(config: AWSConfigWithServicesDefault): Unit = {
-    AWSGlobal.config = config
-  }
 }
 
 class ParamsWithEndpoint(
