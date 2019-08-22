@@ -4,7 +4,7 @@ import scala.scalajs.js
 
 @js.native
 trait Request[T <: js.Object] extends js.Object {
-  def on(event: String, callback: Callback[T]): Request[T] = js.native
+  def on(event: String, callback: js.Function2[Error, T, Unit]): Request[T] = js.native
 
   def send(): Response[T] = js.native
 
