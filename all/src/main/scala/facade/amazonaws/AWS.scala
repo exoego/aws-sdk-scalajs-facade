@@ -1,18 +1,12 @@
 package facade.amazonaws
 
-import scala.scalajs.js
-import scala.scalajs.js.annotation.JSImport
-
-@js.native
-@JSImport("aws-sdk", JSImport.Namespace)
-private[amazonaws] object AWSGlobal extends js.Object {
-  var config: AWSConfig = js.native
-}
-
-object AWS extends js.Object {
-  def config: AWSConfig = AWSGlobal.config
+object AWS {
+  def config: AWSConfigWithServicesDefault = AWSGlobal.config
   def config_=(config: AWSConfig): Unit = {
-    AWSGlobal.config = config
+    AWSGlobalConfig.config = config
+  }
+  def config_=(config: AWSConfigWithServicesDefault): Unit = {
+    AWSGlobalConfig.config = config
   }
 
   type ACM = services.acm.ACM
