@@ -3,16 +3,6 @@ package facade.amazonaws
 import scala.scalajs.js
 
 class AWSConfigWithServicesDefault extends AWSConfig {
-  // TODO: var groundstation         : js.UndefOr[ParamsWithEndpoint]             = js.undefined
-  // TODO: var lakeformation           : js.UndefOr[ParamsWithEndpoint]             = js.undefined
-  // TODO: var managedblockchain      : js.UndefOr[ParamsWithEndpoint]          = js.undefined
-  // TODO: var mediapackagevod           : js.UndefOr[ParamsWithEndpoint]          = js.undefined
-  // TODO: var personalize                      : js.UndefOr[ParamsWithEndpoint]          = js.undefined
-  // TODO: var personalizeevents                       : js.UndefOr[ParamsWithEndpoint]          = js.undefined
-  // TODO: var personalizeruntime                        : js.UndefOr[ParamsWithEndpoint]          = js.undefined
-  // TODO: var servicequotas  : js.UndefOr[ParamsWithEndpoint]             = js.undefined
-  // TODO: var textract          : js.UndefOr[ParamsWithEndpoint]             = js.undefined
-  // TODO: var worklink        : js.UndefOr[ParamsWithEndpoint]             = js.undefined
   var acm: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var acmpca: js.UndefOr[ParamsWithEndpoint]                          = js.undefined
   var alexaforbusiness: js.UndefOr[ParamsWithEndpoint]                = js.undefined
@@ -21,14 +11,11 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var apigatewaymanagementapi: js.UndefOr[ParamsWithEndpoint]         = js.undefined
   var apigatewayv2: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
   var applicationautoscaling: js.UndefOr[ParamsWithEndpoint]          = js.undefined
-  var applicationinsights: js.UndefOr[ParamsWithEndpoint]             = js.undefined
   var appmesh: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
   var appstream: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
   var appsync: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
   var athena: js.UndefOr[ParamsWithEndpoint]                          = js.undefined
   var autoscaling: js.UndefOr[ParamsWithEndpoint]                     = js.undefined
-  var autoscalingplans: js.UndefOr[ParamsWithEndpoint]                = js.undefined
-  var backup: js.UndefOr[ParamsWithEndpoint]                          = js.undefined
   var batch: js.UndefOr[ParamsWithEndpoint]                           = js.undefined
   var budgets: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
   var chime: js.UndefOr[ParamsWithEndpoint]                           = js.undefined
@@ -44,10 +31,8 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var cloudwatch: js.UndefOr[ParamsWithEndpoint]                      = js.undefined
   var cloudwatchevents: js.UndefOr[ParamsWithEndpoint]                = js.undefined
   var cloudwatchlogs: js.UndefOr[ParamsWithEndpoint]                  = js.undefined
-  var codebuild: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
   var codecommit: js.UndefOr[ParamsWithEndpoint]                      = js.undefined
   var codedeploy: js.UndefOr[ParamsWithEndpoint]                      = js.undefined
-  var codepipeline: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
   var codestar: js.UndefOr[ParamsWithEndpoint]                        = js.undefined
   var cognitoidentity: js.UndefOr[ParamsWithEndpoint]                 = js.undefined
   var cognitoidentityserviceprovider: js.UndefOr[ParamsWithEndpoint]  = js.undefined
@@ -67,11 +52,9 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var discovery: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
   var dlm: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var dms: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
-  var docdb: js.UndefOr[ParamsWithEndpoint]                           = js.undefined
   var dynamodb: js.UndefOr[ParamsWithEndpoint]                        = js.undefined
   var dynamodbstreams: js.UndefOr[ParamsWithEndpoint]                 = js.undefined
   var ec2: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
-  var ec2instanceconnect: js.UndefOr[ParamsWithEndpoint]              = js.undefined
   var ecr: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var ecs: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var efs: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
@@ -83,10 +66,8 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var elbv2: js.UndefOr[ParamsWithEndpoint]                           = js.undefined
   var emr: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var es: js.UndefOr[ParamsWithEndpoint]                              = js.undefined
-  var eventbridge: js.UndefOr[ParamsWithEndpoint]                     = js.undefined
   var firehose: js.UndefOr[ParamsWithEndpoint]                        = js.undefined
   var fms: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
-  var forecastqueryservice: js.UndefOr[ParamsWithEndpoint]            = js.undefined
   var fsx: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var gamelift: js.UndefOr[ParamsWithEndpoint]                        = js.undefined
   var glacier: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
@@ -102,17 +83,14 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var iot1clickdevicesservice: js.UndefOr[ParamsWithEndpoint]         = js.undefined
   var iot1clickprojects: js.UndefOr[ParamsWithEndpoint]               = js.undefined
   var iotanalytics: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
-  var iotdata: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
-  var iotevents: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
-  var ioteventsdata: js.UndefOr[ParamsWithEndpoint]                   = js.undefined
   var iotjobsdataplane: js.UndefOr[ParamsWithEndpoint]                = js.undefined
-  var iotthingsgraph: js.UndefOr[ParamsWithEndpoint]                  = js.undefined
   var kafka: js.UndefOr[ParamsWithEndpoint]                           = js.undefined
   var kinesis: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
   var kinesisanalytics: js.UndefOr[ParamsWithEndpoint]                = js.undefined
   var kinesisanalyticsv2: js.UndefOr[ParamsWithEndpoint]              = js.undefined
   var kinesisvideo: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
   var kinesisvideoarchivedmedia: js.UndefOr[ParamsWithEndpoint]       = js.undefined
+  var kinesisvideomedia: js.UndefOr[ParamsWithEndpoint]               = js.undefined
   var kms: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var lambda: js.UndefOr[ParamsWithEndpoint]                          = js.undefined
   var lexmodelbuildingservice: js.UndefOr[ParamsWithEndpoint]         = js.undefined
@@ -128,6 +106,7 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var mediaconvert: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
   var medialive: js.UndefOr[ParamsWithEndpoint]                       = js.undefined
   var mediapackage: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
+  var mediastore: js.UndefOr[ParamsWithEndpoint]                      = js.undefined
   var mediastoredata: js.UndefOr[ParamsWithEndpoint]                  = js.undefined
   var mediatailor: js.UndefOr[ParamsWithEndpoint]                     = js.undefined
   var migrationhub: js.UndefOr[ParamsWithEndpoint]                    = js.undefined
@@ -145,7 +124,6 @@ class AWSConfigWithServicesDefault extends AWSConfig {
   var pinpointsmsvoice: js.UndefOr[ParamsWithEndpoint]                = js.undefined
   var polly: js.UndefOr[ParamsWithEndpoint]                           = js.undefined
   var pricing: js.UndefOr[ParamsWithEndpoint]                         = js.undefined
-  var quicksight: js.UndefOr[ParamsWithEndpoint]                      = js.undefined
   var ram: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var rds: js.UndefOr[ParamsWithEndpoint]                             = js.undefined
   var rdsdataservice: js.UndefOr[ParamsWithEndpoint]                  = js.undefined
