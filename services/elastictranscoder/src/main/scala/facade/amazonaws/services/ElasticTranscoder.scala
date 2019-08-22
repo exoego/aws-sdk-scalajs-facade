@@ -8,29 +8,30 @@ import io.scalajs.nodejs
 import facade.amazonaws._
 
 package object elastictranscoder {
-  type AccessControl               = String
-  type AccessControls              = js.Array[AccessControl]
-  type Artworks                    = js.Array[Artwork]
-  type Ascending                   = String
-  type AspectRatio                 = String
-  type AudioBitDepth               = String
-  type AudioBitOrder               = String
-  type AudioBitRate                = String
-  type AudioChannels               = String
-  type AudioCodec                  = String
-  type AudioCodecProfile           = String
-  type AudioPackingMode            = String
-  type AudioSampleRate             = String
-  type AudioSigned                 = String
-  type Base64EncodedString         = String
-  type BucketName                  = String
-  type CaptionFormatFormat         = String
-  type CaptionFormatPattern        = String
-  type CaptionFormats              = js.Array[CaptionFormat]
-  type CaptionMergePolicy          = String
-  type CaptionSources              = js.Array[CaptionSource]
-  type CodecOption                 = String
-  type CodecOptions                = js.Dictionary[CodecOption]
+  type AccessControl        = String
+  type AccessControls       = js.Array[AccessControl]
+  type Artworks             = js.Array[Artwork]
+  type Ascending            = String
+  type AspectRatio          = String
+  type AudioBitDepth        = String
+  type AudioBitOrder        = String
+  type AudioBitRate         = String
+  type AudioChannels        = String
+  type AudioCodec           = String
+  type AudioCodecProfile    = String
+  type AudioPackingMode     = String
+  type AudioSampleRate      = String
+  type AudioSigned          = String
+  type Base64EncodedString  = String
+  type BucketName           = String
+  type CaptionFormatFormat  = String
+  type CaptionFormatPattern = String
+  type CaptionFormats       = js.Array[CaptionFormat]
+  type CaptionMergePolicy   = String
+  type CaptionSources       = js.Array[CaptionSource]
+  type CodecOption          = String
+  type CodecOptions         = js.Dictionary[CodecOption]
+  @deprecated("Deprecated in AWS SDK", "forever")
   type Composition                 = js.Array[Clip]
   type CreateJobOutputs            = js.Array[CreateJobOutput]
   type CreateJobPlaylists          = js.Array[CreateJobPlaylist]
