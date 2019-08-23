@@ -30,6 +30,7 @@ class AWSConfig(var computeChecksums: js.UndefOr[Boolean] = js.undefined,
                 var endpointDiscoveryEnabled: js.UndefOr[Boolean] = js.undefined,
                 var endpointCacheSize: js.UndefOr[Double] = js.undefined,
                 var hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined,
+                var endpoint: js.UndefOr[String] = js.undefined,
                 var apiVersion: js.UndefOr[String] = js.undefined,
                 var apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined,
                 var clientSideMonitoring: js.UndefOr[Boolean] = js.undefined)
@@ -64,6 +65,7 @@ object AWSConfig {
             endpointDiscoveryEnabled: js.UndefOr[Boolean] = js.undefined,
             endpointCacheSize: js.UndefOr[Double] = js.undefined,
             hostPrefixEnabled: js.UndefOr[Boolean] = js.undefined,
+            endpoint: js.UndefOr[String] = js.undefined,
             apiVersion: js.UndefOr[String] = js.undefined,
             apiVersions: js.UndefOr[js.Dictionary[String]] = js.undefined,
             clientSideMonitoring: js.UndefOr[Boolean] = js.undefined): AWSConfig = {
@@ -96,6 +98,7 @@ object AWSConfig {
       endpointDiscoveryEnabled,
       endpointCacheSize,
       hostPrefixEnabled,
+      endpoint,
       apiVersion,
       apiVersions,
       clientSideMonitoring
