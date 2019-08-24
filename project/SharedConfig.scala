@@ -57,11 +57,11 @@ object SharedConfig {
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
-      //  runClean,
       //  runTest,
       setReleaseVersion,
       commitReleaseVersion,
       tagRelease,
+      runClean,
       releaseStepCommandAndRemaining("+publishSigned"),
       releaseStepCommand("sonatypeReleaseAll"),
       setNextVersion,
