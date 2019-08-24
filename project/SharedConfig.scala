@@ -43,7 +43,7 @@ object SharedConfig {
     ),
     publishMavenStyle := true,
     publishArtifact in Test := false,
-    publishArtifact in (Compile, packageDoc) := true,
+    publishArtifact in (Compile, packageDoc) := false,
     publishArtifact in (Compile, packageSrc) := true,
     pomIncludeRepository := { _ =>
       false
@@ -57,11 +57,11 @@ object SharedConfig {
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
-      //  runClean,
       //  runTest,
       setReleaseVersion,
       commitReleaseVersion,
       tagRelease,
+      runClean,
       releaseStepCommandAndRemaining("+publishSigned"),
       releaseStepCommand("sonatypeReleaseAll"),
       setNextVersion,
@@ -73,6 +73,8 @@ object SharedConfig {
   val noPublishingSettings = Seq(
     publish := {},
     publishLocal := {},
-    publishArtifact := false
+    publishArtifact := false,
+    publishArtifact in (Compile, packageDoc) := false,
+    publishArtifact in (Compile, packageSrc) := false
   )
 }
