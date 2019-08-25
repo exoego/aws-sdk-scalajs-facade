@@ -29,7 +29,7 @@ object SharedConfig {
         id = "exoego",
         name = "TATSUNO Yasuhiro",
         email = "ytatsuno.jp@gmail.com",
-        url = url("https://exoego.net")
+        url = url("https://www.exoego.net")
       )
     )
   )
